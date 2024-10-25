@@ -1,0 +1,51 @@
+---
+import MarkdownContent from "@components/MarkdownContent.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const materialEntries = await getCollection("materials");
+  return materialEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<Layout
+  title={`${entry.data.title} | Material | Reverse 1999 Gnomon`}
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Materials",
+      href: "/materials",
+    },
+    {
+      label: entry.data.title,
+    },
+  ]}
+>
+  <h2>{entry.data.title}</h2>
+  <div class="paper-texture !flex-row !max-w-full gap-6">
+    <img
+      loading="lazy"
+      class="w-40 h-40"
+      src={`/data/materials/${entry.data.image}`}
+      alt={`material ${entry.data.title}`}
+    />
+    <div>
+      <Content
+        components={{
+          p: MarkdownContent,
+        }}
+      />
+    </div>
+  </div>
+</Layout>

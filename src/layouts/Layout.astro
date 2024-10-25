@@ -4,9 +4,13 @@ import Footer from "@layouts/Footer.astro";
 
 interface Props {
   title: string;
+  breadcrumbs?: {
+    href?: string;
+    label: string;
+  }[];
 }
 
-const { title } = Astro.props;
+const { title, breadcrumbs } = Astro.props;
 
 const menu = [
   {
@@ -15,11 +19,19 @@ const menu = [
   },
   {
     title: "Characters",
-    href: "/characters/list",
+    href: "/characters",
   },
   {
-    title: "Artefacts",
-    href: "/artefacts/list",
+    title: "Materials",
+    href: "/materials",
+  },
+  {
+    title: "Effects",
+    href: "/effects",
+  },
+  {
+    title: "A Series of Dusks",
+    href: "/a-series-of-dusks",
   },
 ];
 ---
@@ -40,7 +52,7 @@ const menu = [
       <div class="drawer-content flex flex-col">
         <!-- Navbar -->
         <div
-          class="w-full navbar bg-base-300 h-16 sticky top-0 z-50 shadow-md shadow-primary"
+          class="w-full navbar bg-base-300 h-16 sticky top-0 z-40 shadow-md shadow-primary"
         >
           <div class="flex-none lg:hidden">
             <label
@@ -81,12 +93,32 @@ const menu = [
         </div>
         <main class="container flex-1 pt-6 pb-20">
           <!-- Page content here -->
-           <img class="fixed top-0 left-0 w-screen h-screen -z-10" src="/layout/bg.png" alt="bg" />
+          <img
+            class="fixed top-0 left-0 w-screen h-screen -z-10"
+            src="/layout/bg.png"
+            alt="bg"
+          />
+          {
+            breadcrumbs && (
+              <div class="text-sm breadcrumbs">
+                <ul>
+                  {breadcrumbs.map((ele) => {
+                    if (!ele.href) return <li>{ele.label}</li>;
+                    return (
+                      <li>
+                        <a href={ele.href}>{ele.label}</a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )
+          }
           <slot />
         </main>
         <Footer />
       </div>
-      <div class="drawer-side">
+      <div class="drawer-side z-50">
         <label
           for="my-drawer-3"
           aria-label="close sidebar"

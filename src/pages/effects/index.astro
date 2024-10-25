@@ -1,0 +1,101 @@
+---
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import { EFFECT_TYPE } from "@data/effect";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const effectEntries = await getCollection("effects");
+---
+
+<Layout
+  title="Effects | Reverse 1999 Gnomon"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Effects",
+    },
+  ]}
+>
+  <h1 class="text-center">Effect List</h1>
+
+  <div x-data={"dataset"}>
+    <div class="filters">
+      <div class="grid grid-cols-filter">
+        <div class="py-2 px-4">Type</div>
+        <ul class="py-2 px-4 flex gap-1">
+          <template x-for="type in types">
+            <li>
+              <button
+                class="btn btn-outline btn-xs"
+                :class="type.code === typeFilter ? 'btn-active' : ''"
+                @click="filterType(type)"
+                x-text="type.title"
+              >
+              </button>
+            </li>
+          </template>
+        </ul>
+      </div>
+
+      <ul class="mt-8">
+        {
+          effectEntries.map(async (effectEntry) => {
+            const { Content } = await effectEntry.render();
+
+            return (
+              <li
+                class="border p-4 grid grid-cols-6"
+                x-show={`filterEffect({ 
+                type:'${effectEntry.data.type}'
+              })`}
+              >
+                <h6 class="col-span-2">{effectEntry.data.title}</h6>
+                <span>{EFFECT_TYPE[effectEntry.data.type].title}</span>
+                <div class="col-span-3 pl-2">
+                  <Content
+                    components={{
+                      p: MarkdownContent,
+                      strong: MarkdownHighlight,
+                      effect: EffectTooltip,
+                    }}
+                  />
+                </div>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    import { EFFECT_TYPE } from "@data/effect";
+    import Alpine from "alpinejs";
+
+    window.Alpine = Alpine;
+
+    Alpine.data("dataset", () => ({
+      typeFilter: "ALL",
+      types: [
+        { title: "All", code: "ALL" },
+        ...Object.keys(EFFECT_TYPE).map((code) => ({
+          title: EFFECT_TYPE[code].title,
+          code,
+        })),
+      ],
+
+      filterEffect({ type }) {
+        return this.typeFilter === "ALL" || this.typeFilter === type;
+      },
+
+      filterType(type) {
+        this.typeFilter = type.code;
+      },
+    }));
+  </script>
+</Layout>

@@ -24,14 +24,22 @@ function sortArtefact(a, b) {
 }
 ---
 
-<Layout title="Reverse 1999 Gnomon">
-  <div class="text-sm breadcrumbs">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li>Artefacts</li>
-    </ul>
-  </div>
-
+<Layout
+  title="Artefacts | A Series of Dusks | Reverse 1999 Gnomon"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "A Series of Dusks",
+      href: "/a-series-of-dusks",
+    },
+    {
+      label: "Artefacts",
+    },
+  ]}
+>
   <h1>Artefact List</h1>
 
   <div x-data={"dataset"}>

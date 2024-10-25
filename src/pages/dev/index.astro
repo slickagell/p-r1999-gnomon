@@ -1,0 +1,38 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout
+  title="Developer | Reverse 1999 Gnomon"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Developer",
+    },
+  ]}
+>
+  <main>
+    <h1 class="text-6xl font-bold text-center">For Developer</h1>
+    <div class="mt-8 grid grid-cols-2 gap-4">
+      <a href="/dev/snip">
+        <div class="card card-compact border border-primary">
+          <div class="card-body">
+            <h2 class="card-title">Snip</h2>
+            <p>Snip tool to capture game screen and get text</p>
+          </div>
+        </div>
+      </a>
+      <a href="/dev/resonate">
+        <div class="card card-compact border border-primary">
+          <div class="card-body">
+            <h2 class="card-title">Resonate</h2>
+            <p>Resonate playground</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </main>
+</Layout>
