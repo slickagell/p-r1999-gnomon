@@ -44,51 +44,88 @@ function sortArtefact(a, b) {
 
   <div x-data={"dataset"}>
     <div class="filters p-2">
-      <div class="grid grid-cols-filter">
-        <div class="py-2 px-4">Rarity</div>
-        <ul class="py-2 px-4 flex gap-1">
+      <div class="md:grid md:grid-cols-filter">
+        <!-- Rarity -->
+        <div class="py-2 md:px-4">Rarity</div>
+        <ul class="hidden md:flex py-2 px-4 gap-1">
           <template x-for="rarity in rarities">
             <li>
               <button
                 class="btn btn-outline btn-xs"
                 :class="rarity.code === rarityFilter ? 'btn-active' : ''"
-                @click="filterRarity(rarity)"
+                @click="filterRarity(rarity.code)"
                 x-text="rarity.title"
               >
               </button>
             </li>
           </template>
         </ul>
-
-        <div class="py-2 px-4">Type</div>
-        <ul class="py-2 px-4 flex gap-1">
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterRarity($event.target.value)"
+        >
+          <template x-for="rarity in rarities">
+            <option
+              :value="rarity.code"
+              :selected="rarity.code === rarityFilter"
+              x-text="rarity.title"></option>
+          </template>
+        </select>
+        <!-- End Rarity -->
+        <!-- Type -->
+        <div class="py-2 md:px-4">Type</div>
+        <ul class="hidden md:flex py-2 px-4 gap-1">
           <template x-for="type in types">
             <li>
               <button
                 class="btn btn-outline btn-xs"
                 :class="type.code === typeFilter ? 'btn-active' : ''"
-                @click="filterType(type)"
+                @click="filterType(type.code)"
                 x-text="type.title"
               >
               </button>
             </li>
           </template>
         </ul>
-
-        <div class="py-2 px-4">Tag</div>
-        <ul class="py-2 px-4 flex gap-1">
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterType($event.target.value)"
+        >
+          <template x-for="type in types">
+            <option
+              :value="type.code"
+              :selected="type.code === typeFilter"
+              x-text="type.title"></option>
+          </template>
+        </select>
+        <!-- End Type -->
+        <!-- Tag -->
+        <div class="py-2 md:px-4">Tag</div>
+        <ul class="hidden md:flex py-2 px-4 gap-1">
           <template x-for="tag in tags">
             <li>
               <button
                 class="btn btn-outline btn-xs"
                 :class="tag.code === tagFilter ? 'btn-active' : ''"
-                @click="filterTag(tag)"
+                @click="filterTag(tag.code)"
                 x-text="tag.title"
               >
               </button>
             </li>
           </template>
         </ul>
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterTag($event.target.value)"
+        >
+          <template x-for="tag in tags">
+            <option
+              :value="tag.code"
+              :selected="tag.code === tagFilter"
+              x-text="tag.title"></option>
+          </template>
+        </select>
+        <!-- End Tag -->
       </div>
     </div>
 
@@ -105,7 +142,7 @@ function sortArtefact(a, b) {
 
             return (
               <li
-                class="flex gap-4"
+                class="flex flex-col md:flex-row gap-4"
                 x-show={`filterArtefact({
                         rarity: '${artefactEntry.data.rarity}',
                         type: '${artefactEntry.data.type}',
@@ -223,15 +260,15 @@ function sortArtefact(a, b) {
     },
 
     filterRarity(rarity) {
-      this.rarityFilter = rarity.code;
+      this.rarityFilter = rarity;
     },
 
     filterType(type) {
-      this.typeFilter = type.code;
+      this.typeFilter = type;
     },
 
     filterTag(tag) {
-      this.tagFilter = tag.code;
+      this.tagFilter = tag;
     },
   }));
 </script>

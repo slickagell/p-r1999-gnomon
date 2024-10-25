@@ -22,17 +22,17 @@ export default {
         gray: "#808080",
 
         common: "#617594",
-        rare: '#623583',
-        epic: '#d3c47c',
+        rare: "#623583",
+        epic: "#d3c47c",
 
         syntony: "#597463",
         abundance: "#9f844d",
         craft: "#58537b",
         ritual: "#572530",
-        ['extra-action']: "#795e4b",
+        ["extra-action"]: "#795e4b",
         resonance: "#5f7281",
         voltaic: "#838554",
-        support: "#848887"
+        support: "#848887",
       },
       gridTemplateColumns: {
         filter: "auto 1fr",
@@ -44,7 +44,7 @@ export default {
       {
         r1999: {
           primary: "#db6f39",
-          secondary: "#d926a9",
+          secondary: "#e9dccd",
           accent: "#1fb2a6",
           neutral: "#2a323c",
           "base-100": "#000000",

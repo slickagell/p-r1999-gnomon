@@ -1,16 +1,16 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Reverse 1999 Gnomon">
   <main>
-    <h1 class="text-6xl font-bold text-center">
-      Welcome to <p class="text-primary">Reverse 1999 Gnomon</p>
+    <h1>
+      Welcome to <p class="text-primary">Reverse:1999 Gnomon</p>
     </h1>
-    <p class="mt-12 text-xl text-center">
-      A fanmade website to view info about game Reverse 1999
-    </p>
-    <div class="mt-8 grid grid-cols-2 gap-4">
+    <h5 class="font-medium text-center">
+      A fanmade website to view info about game Reverse:1999
+    </h5>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
       <a href="/characters">
         <div class="card card-compact border border-primary">
           <div class="card-body">
@@ -43,14 +43,14 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
       </a>
-      <a href="/dev">
+      <!-- <a href="/dev">
         <div class="card card-compact border border-primary">
           <div class="card-body">
             <h2 class="card-title">For Developer</h2>
             <p>For ones need tools to build</p>
           </div>
         </div>
-      </a>
+      </a> -->
     </div>
   </main>
 </Layout>

@@ -1,7 +1,4 @@
 ---
-import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
-import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import Material from "@components/Material.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -25,29 +22,48 @@ const materialEntries = await getCollection("materials");
 
   <div x-data={"dataset"}>
     <div class="filters">
-      <div class="grid grid-cols-filter">
-        <div class="py-2 px-4">Rarity</div>
-        <ul class="py-2 px-4 flex gap-1">
+      <div class="md:grid md:grid-cols-filter">
+        <!-- Rarity -->
+        <div class="py-2 md:px-4">Rarity</div>
+        <ul class="hidden md:flex py-2 px-4 gap-1">
           <template x-for="rarity in rarities">
             <li>
               <button
                 class="btn btn-outline btn-xs"
                 :class="rarity.code === rarityFilter ? 'btn-active' : ''"
-                @click="filterRarity(rarity)"
+                @click="filterRarity(rarity.code)"
                 x-text="rarity.title"
               >
               </button>
             </li>
           </template>
         </ul>
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterRarity($event.target.value)"
+        >
+          <template x-for="rarity in rarities">
+            <option
+              :value="rarity.code"
+              :selected="rarity.code === rarityFilter"
+              x-text="rarity.title"></option>
+          </template>
+        </select>
+        <!-- End Rarity -->
       </div>
+      <input
+        type="text"
+        placeholder="Search"
+        class="my-4 input input-bordered input-secondary w-full"
+        x-model="searchText"
+      />
 
-      <ul class="mt-8 grid grid-cols-2 gap-4">
+      <ul class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         {
           materialEntries.map(async (effectEntry) => {
             return (
               <li
-                x-show={`filterMaterial({rarity:'${effectEntry.data.rarity}'})`}
+                x-show={`filterMaterial({rarity:'${effectEntry.data.rarity}', title: '${effectEntry.data.title}'})`}
               >
                 <Material code={effectEntry.data.code} />
               </li>
@@ -65,6 +81,7 @@ const materialEntries = await getCollection("materials");
     window.Alpine = Alpine;
 
     Alpine.data("dataset", () => ({
+      searchText: "",
       rarityFilter: "ALL",
       rarities: [
         { title: "All", code: "ALL" },
@@ -74,12 +91,15 @@ const materialEntries = await getCollection("materials");
         })),
       ],
 
-      filterMaterial({ rarity }) {
-        return this.rarityFilter === "ALL" || this.rarityFilter === rarity;
+      filterMaterial({ rarity, title }) {
+        return (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
+          !this.searchText
+          ? true
+          : title.toLowerCase().includes(this.searchText.toLowerCase());
       },
 
       filterRarity(rarity) {
-        this.rarityFilter = rarity.code;
+        this.rarityFilter = rarity;
       },
     }));
   </script>
