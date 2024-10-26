@@ -49,7 +49,7 @@ h6 {
 }
 
 .paper-texture {
-  @apply min-w-60 p-2 relative text-black flex flex-col max-w-80 flex-1 bg-paper border-2 border-line-paper;
+  @apply min-w-40 lg:min-w-60 p-2 relative text-black flex flex-col max-w-80 flex-1 bg-paper border-2 border-line-paper;
 }
 
 .highlight {

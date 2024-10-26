@@ -28,6 +28,7 @@ const { Content } = await effect.render();
   class="inline-block relative"
 >
   <span
+    x-ref="content"
     @click="isToggle = !isToggle"
     @mouseenter="isShow = true"
     @mouseleave="isShow = false"
@@ -35,8 +36,15 @@ const { Content } = await effect.render();
   >
   <div
     @mousedown.outside="isToggle = false"
-    class="absolute block bottom-full left-1/2 -translate-x-1/2 bg-base-100 w-40 text-base-content border-line-paper border p-2 transition-all duration-300 invisible opacity-0"
-    :class="isShow || isToggle ? '!visible !opacity-100' : ''"
+    x-show="isShow || isToggle"
+    x-anchor.top="$refs.content"
+    class="bg-base-100 w-60 text-base-content border-line-paper border p-2"
+    x-transition:enter="ease duration-300 transition-opacity"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="ease duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
   >
     <Content
       components={{
@@ -47,3 +55,10 @@ const { Content } = await effect.render();
     />
   </div>
 </span>
+
+<script>
+  import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
+</script>

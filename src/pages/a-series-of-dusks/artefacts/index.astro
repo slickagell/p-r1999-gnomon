@@ -127,11 +127,13 @@ function sortArtefact(a, b) {
         </select>
         <!-- End Tag -->
       </div>
+      <input
+        type="text"
+        placeholder="Search"
+        class="mt-6 mb-4 input input-bordered input-secondary w-full"
+        x-model="searchText"
+      />
     </div>
-
-    <span>
-      Total <span>{artefactEntries.length}</span> items
-    </span>
 
     <ul class="mt-8 flex flex-col gap-8">
       {
@@ -146,7 +148,8 @@ function sortArtefact(a, b) {
                 x-show={`filterArtefact({
                         rarity: '${artefactEntry.data.rarity}',
                         type: '${artefactEntry.data.type}',
-                        tags: '${artefactEntry.data.tags}'
+                        tags: '${artefactEntry.data.tags}',
+                        name: '${artefactEntry.data.name.replace("'s", "")}'
                       })`}
               >
                 <div>
@@ -154,7 +157,7 @@ function sortArtefact(a, b) {
                   <img
                     loading="lazy"
                     class="w-20 h-20"
-                    src={`/data/rouge/artefacts/${artefactEntry.data.image}`}
+                    src={`/data/a-series-of-dusks/artefacts/${artefactEntry.data.image}`}
                     alt={`artefact ${artefactEntry.slug}`}
                   />
                 </div>
@@ -226,6 +229,7 @@ function sortArtefact(a, b) {
   window.Alpine = Alpine;
 
   Alpine.data("dataset", () => ({
+    searchText: "",
     rarityFilter: "ALL",
     rarities: [
       { title: "All", code: "ALL" },
@@ -251,12 +255,15 @@ function sortArtefact(a, b) {
       })),
     ],
 
-    filterArtefact({ rarity, type, tags }) {
-      return (
+    filterArtefact({ rarity, type, tags, name }) {
+      const filters =
         (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
         (this.typeFilter === "ALL" || this.typeFilter === type) &&
-        (this.tagFilter === "ALL" || tags.includes(this.tagFilter))
-      );
+        (this.tagFilter === "ALL" || tags.includes(this.tagFilter));
+
+      return !this.searchText
+        ? filters
+        : filters && name.toLowerCase().includes(this.searchText.toLowerCase());
     },
 
     filterRarity(rarity) {

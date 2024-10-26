@@ -25,7 +25,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@data/character";
 
 <div class="flex justify-between flex-col-reverse md:flex-row gap-8">
   <div>
-    <div class="flex gap-8 items-center">
+    <div class="flex gap-8 items-center justify-center md:justify-start">
       <img
         class="w-32" 
         src={`/data/afflatus/af-${AFFLATUS_TYPE[frontmatter.afflatus].assetCode}.png`}
@@ -40,10 +40,12 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@data/character";
         ##### {DMG_TYPE[frontmatter.dmgType].title}
       </div>
     </div>
-    {
-      frontmatter.specialties.map((specialty) => (
-        <div class="mx-1 my-2 badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
-    ))}
+    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {
+        frontmatter.specialties.map((specialty) => (
+          <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
+      ))}
+    </div>
     <div class="mt-4">
       Arcanist's work, exhibited in the 1990s for 16 years, created on July 27th in summer. Exhibition location: an island in the Aegean Sea region.
 
@@ -102,9 +104,10 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@data/character";
 
 ### Triangulation
 
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch">
-  <div class="w-48 shrink-0">
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
     <img
+      class="w-48"
       src={`/data/characters/${frontmatter.id}/skill-1.png`}
       alt="Triangulation"
     />
@@ -126,9 +129,10 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@data/character";
 
 ### Curve Mapping
 
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch">
-  <div class="w-48 shrink-0">
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
     <img
+      class="w-48"
       src={`/data/characters/${frontmatter.id}/skill-2.png`}
       alt="Curve Mapping"
     />
@@ -152,9 +156,10 @@ enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
 
 ### Kingdom of Geometry
 
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch">
-  <div class="w-48 shrink-0">
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
     <img
+      class="w-48"
       src={`/data/characters/${frontmatter.id}/ultimate.png`}
       alt="Kingdom of Geometry"
     />
@@ -214,8 +219,8 @@ to **3** stacks; Eureka gained increased to **4**.
 
 ## Insight Materials
 
-<div class="flex flex-col md:flex-row gap-4">
-  <div class="flex-1">
+<div class="flex flex-col md:flex-row flex-wrap  justify-center">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
       :img{.w-6.mr-2 src="/data/insight/insight-1.png" alt="insight-1 icon"}
       ##### Insight 1
@@ -225,7 +230,7 @@ to **3** stacks; Eureka gained increased to **4**.
     :material{code="LIQUEFIED_TERROR" variant="small" require="5"}
     :material{code="MAGNESIA_CRYSTAL" variant="small" require="6"}
   </div>
-  <div class="flex-1">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
       :img{.w-6.mr-2 src="/data/insight/insight-2.png" alt="insight-2 icon"}
       ##### Insight 2
@@ -235,7 +240,7 @@ to **3** stacks; Eureka gained increased to **4**.
     :material{code="WINGED_KEY" variant="small" require="6"}
     :material{code="ESOTERIC_BONES" variant="small" require="6"}
   </div>
-  <div class="flex-1">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
       :img{.w-6.mr-2 src="/data/insight/insight-3.png" alt="insight-3 icon"}
       ##### Insight 3

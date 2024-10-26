@@ -92,10 +92,12 @@ const materialEntries = await getCollection("materials");
       ],
 
       filterMaterial({ rarity, title }) {
-        return (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
-          !this.searchText
-          ? true
-          : title.toLowerCase().includes(this.searchText.toLowerCase());
+        const filters =
+        (this.rarityFilter === "ALL" || this.rarityFilter === rarity)
+
+      return !this.searchText
+        ? filters
+        : filters && title.toLowerCase().includes(this.searchText.toLowerCase());
       },
 
       filterRarity(rarity) {

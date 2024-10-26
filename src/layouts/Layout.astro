@@ -47,6 +47,12 @@ const menu = [
     <title>{title}</title>
   </head>
   <body>
+    <img
+      loading="lazy"
+      class="fixed top-0 left-0 w-screen h-screen -z-10"
+      src="/layout/bg.png"
+      alt="bg"
+    />
     <div class="drawer min-h-screen">
       <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
@@ -93,11 +99,6 @@ const menu = [
         </div>
         <main class="container flex-1 pt-6 pb-20">
           <!-- Page content here -->
-          <img
-            class="fixed top-0 left-0 w-screen h-screen -z-10"
-            src="/layout/bg.png"
-            alt="bg"
-          />
           {
             breadcrumbs && (
               <div class="text-sm breadcrumbs">
