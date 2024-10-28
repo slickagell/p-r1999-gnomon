@@ -1,8 +1,6 @@
 ---
-import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
-import MarkdownHighlight from "@components/MarkdownHighlight.astro";
-import { ARTEFACT_RARITY, ARTEFACT_TAG, ARTEFACT_TYPE } from "@data/artefact";
+import ArtefactItem from "@components/ArtefactItem.astro";
+import { ArtefactVirtualList } from "@components/VirtualList";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -134,8 +132,19 @@ function sortArtefact(a, b) {
         x-model="searchText"
       />
     </div>
-
-    <ul class="mt-8 flex flex-col gap-8">
+    <ArtefactVirtualList client:only="solid-js">
+      <Fragment slot="filters">
+        <div :data-rarity="rarityFilter"></div>
+      </Fragment>
+      <Fragment slot="artefacts">
+        {
+          artefactEntries.map((artefactEntry) => (
+            <ArtefactItem artefactEntry={artefactEntry} />
+          ))
+        }
+      </Fragment>
+    </ArtefactVirtualList>
+    <!-- <ul class="mt-8 flex flex-col gap-8">
       {
         artefactEntries
           .sort((a, b) => sortArtefact(a, b))
@@ -218,7 +227,7 @@ function sortArtefact(a, b) {
             );
           })
       }
-    </ul>
+    </ul> -->
   </div>
 </Layout>
 

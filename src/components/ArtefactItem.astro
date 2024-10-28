@@ -1,0 +1,77 @@
+---
+import { ARTEFACT_RARITY, ARTEFACT_TAG, ARTEFACT_TYPE } from "@data/artefact";
+import MarkdownContent from "./MarkdownContent.astro";
+import MarkdownHighlight from "./MarkdownHighlight.astro";
+import EffectTooltip from "./EffectTooltip.astro";
+
+interface Props {
+  artefactEntry: any;
+}
+
+const { artefactEntry } = Astro.props;
+
+const { Content } = await artefactEntry.render();
+---
+
+<div class="flex flex-col md:flex-row gap-4 py-4">
+  <div>
+    <h5 class="w-48">{artefactEntry.data.name}</h5>
+    <img
+      loading="lazy"
+      class="w-20 h-20"
+      src={`/data/a-series-of-dusks/artefacts/${artefactEntry.data.image}`}
+      alt={`artefact ${artefactEntry.slug}`}
+    />
+  </div>
+  <div>
+    <div class="flex gap-1">
+      <span
+        class:list={[
+          "badge font-medium border-transparent",
+          {
+            "text-common ": artefactEntry.data.rarity === "COMMON",
+            "text-rare ": artefactEntry.data.rarity === "RARE",
+            "text-epic ": artefactEntry.data.rarity === "EPIC",
+          },
+        ]}
+      >
+        {ARTEFACT_RARITY[artefactEntry.data.rarity].title}
+      </span>
+      <span class="badge font-medium border-transparent">
+        {ARTEFACT_TYPE[artefactEntry.data.type].title}
+      </span>
+    </div>
+    <div class="mt-1 flex gap-1">
+      {
+        artefactEntry.data.tags.map((tag) => (
+          <span
+            class:list={[
+              "badge font-bold",
+              {
+                "border-support text-support": tag === "SUPPORT",
+                "border-ritual text-ritual": tag === "RITUAL",
+                "border-craft text-craft": tag === "CRAFT",
+                "border-syntony text-syntony": tag === "SYNTONY",
+                "border-resonance text-resonance": tag === "RESONANCE",
+                "border-abundance text-abundance": tag === "ABUNDANCE",
+                "border-extra-action text-extra-action": tag === "EXTRA_ACTION",
+                "border-voltaic text-voltaic": tag === "VOLTAIC",
+              },
+            ]}
+          >
+            {ARTEFACT_TAG[tag].title}
+          </span>
+        ))
+      }
+    </div>
+    <div class="mt-2">
+      <Content
+        components={{
+          p: MarkdownContent,
+          strong: MarkdownHighlight,
+          effect: EffectTooltip,
+        }}
+      />
+    </div>
+  </div>
+</div>
