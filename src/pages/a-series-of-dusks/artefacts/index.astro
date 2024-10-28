@@ -130,110 +130,36 @@ function sortArtefact(a, b) {
         placeholder="Search"
         class="mt-6 mb-4 input input-bordered input-secondary w-full"
         x-model="searchText"
+        @change.debounce="search($event.target.value)"
       />
     </div>
     <ArtefactVirtualList client:only="solid-js">
-      <Fragment slot="filters">
-        <div :data-rarity="rarityFilter"></div>
-      </Fragment>
+      <div slot="fallback">
+        <span class="loading loading-dots text-primary block mx-auto"></span>
+      </div>
+
       <Fragment slot="artefacts">
         {
-          artefactEntries.map((artefactEntry) => (
-            <ArtefactItem artefactEntry={artefactEntry} />
-          ))
+          artefactEntries
+            .sort(sortArtefact)
+            .map((artefactEntry) => (
+              <ArtefactItem artefactEntry={artefactEntry} />
+            ))
         }
       </Fragment>
     </ArtefactVirtualList>
-    <!-- <ul class="mt-8 flex flex-col gap-8">
-      {
-        artefactEntries
-          .sort((a, b) => sortArtefact(a, b))
-          .map(async (artefactEntry) => {
-            const { Content } = await artefactEntry.render();
-
-            return (
-              <li
-                class="flex flex-col md:flex-row gap-4"
-                x-show={`filterArtefact({
-                        rarity: '${artefactEntry.data.rarity}',
-                        type: '${artefactEntry.data.type}',
-                        tags: '${artefactEntry.data.tags}',
-                        name: '${artefactEntry.data.name.replace("'s", "")}'
-                      })`}
-              >
-                <div>
-                  <h5 class="w-48">{artefactEntry.data.name}</h5>
-                  <img
-                    loading="lazy"
-                    class="w-20 h-20"
-                    src={`/data/a-series-of-dusks/artefacts/${artefactEntry.data.image}`}
-                    alt={`artefact ${artefactEntry.slug}`}
-                  />
-                </div>
-                <div>
-                  <div class="flex gap-1">
-                    <span
-                      class:list={[
-                        "badge font-medium border-transparent",
-                        {
-                          "text-common ":
-                            artefactEntry.data.rarity === "COMMON",
-                          "text-rare ": artefactEntry.data.rarity === "RARE",
-                          "text-epic ": artefactEntry.data.rarity === "EPIC",
-                        },
-                      ]}
-                    >
-                      {ARTEFACT_RARITY[artefactEntry.data.rarity].title}
-                    </span>
-                    <span class="badge font-medium border-transparent">
-                      {ARTEFACT_TYPE[artefactEntry.data.type].title}
-                    </span>
-                  </div>
-                  <div class="mt-1 flex gap-1">
-                    {artefactEntry.data.tags.map((tag) => (
-                      <span
-                        class:list={[
-                          "badge font-bold",
-                          {
-                            "border-support text-support": tag === "SUPPORT",
-                            "border-ritual text-ritual": tag === "RITUAL",
-                            "border-craft text-craft": tag === "CRAFT",
-                            "border-syntony text-syntony": tag === "SYNTONY",
-                            "border-resonance text-resonance":
-                              tag === "RESONANCE",
-                            "border-abundance text-abundance":
-                              tag === "ABUNDANCE",
-                            "border-extra-action text-extra-action":
-                              tag === "EXTRA_ACTION",
-                            "border-voltaic text-voltaic": tag === "VOLTAIC",
-                          },
-                        ]}
-                      >
-                        {ARTEFACT_TAG[tag].title}
-                      </span>
-                    ))}
-                  </div>
-                  <div class="mt-2">
-                    <Content
-                      components={{
-                        p: MarkdownContent,
-                        strong: MarkdownHighlight,
-                        effect: EffectTooltip,
-                      }}
-                    />
-                  </div>
-                </div>
-              </li>
-            );
-          })
-      }
-    </ul> -->
   </div>
 </Layout>
 
 <script>
   import { ARTEFACT_RARITY, ARTEFACT_TAG, ARTEFACT_TYPE } from "@data/artefact";
   import Alpine from "alpinejs";
+  import {
+    rarityFilter,
+    typeFilter,
+    tagFilter,
+    nameFilter,
+  } from "@stores/artefactFilterStore";
 
   window.Alpine = Alpine;
 
@@ -264,27 +190,23 @@ function sortArtefact(a, b) {
       })),
     ],
 
-    filterArtefact({ rarity, type, tags, name }) {
-      const filters =
-        (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
-        (this.typeFilter === "ALL" || this.typeFilter === type) &&
-        (this.tagFilter === "ALL" || tags.includes(this.tagFilter));
-
-      return !this.searchText
-        ? filters
-        : filters && name.toLowerCase().includes(this.searchText.toLowerCase());
-    },
-
     filterRarity(rarity) {
       this.rarityFilter = rarity;
+      rarityFilter.set(rarity);
     },
 
     filterType(type) {
       this.typeFilter = type;
+      typeFilter.set(type);
     },
 
     filterTag(tag) {
       this.tagFilter = tag;
+      tagFilter.set(tag);
+    },
+
+    search(searchText) {
+      nameFilter.set(searchText);
     },
   }));
 </script>
