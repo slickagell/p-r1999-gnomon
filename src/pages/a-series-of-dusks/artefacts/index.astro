@@ -42,10 +42,10 @@ function sortArtefact(a, b) {
 
   <div x-data={"dataset"}>
     <div class="filters p-2">
-      <div class="md:grid md:grid-cols-filter">
-        <!-- Rarity -->
-        <div class="py-2 md:px-4">Rarity</div>
-        <ul class="hidden md:flex py-2 px-4 gap-1">
+      <!-- Rarity -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Rarity
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
           <template x-for="rarity in rarities">
             <li>
               <button
@@ -58,7 +58,11 @@ function sortArtefact(a, b) {
             </li>
           </template>
         </ul>
+      </div>
+      <label for="rarityFilter" class="py-2 block md:hidden">
+        Rarity
         <select
+          id="rarityFilter"
           class="md:hidden select select-secondary w-full"
           @change="filterRarity($event.target.value)"
         >
@@ -69,10 +73,12 @@ function sortArtefact(a, b) {
               x-text="rarity.title"></option>
           </template>
         </select>
-        <!-- End Rarity -->
-        <!-- Type -->
-        <div class="py-2 md:px-4">Type</div>
-        <ul class="hidden md:flex py-2 px-4 gap-1">
+      </label>
+      <!-- End Rarity -->
+      <!-- Type -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Type
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
           <template x-for="type in types">
             <li>
               <button
@@ -85,7 +91,11 @@ function sortArtefact(a, b) {
             </li>
           </template>
         </ul>
+      </div>
+      <label for="typeFilter" class="py-2 block md:hidden">
+        Type
         <select
+          id="typeFilter"
           class="md:hidden select select-secondary w-full"
           @change="filterType($event.target.value)"
         >
@@ -96,10 +106,12 @@ function sortArtefact(a, b) {
               x-text="type.title"></option>
           </template>
         </select>
-        <!-- End Type -->
-        <!-- Tag -->
-        <div class="py-2 md:px-4">Tag</div>
-        <ul class="hidden md:flex py-2 px-4 gap-1">
+      </label>
+      <!-- End Type -->
+      <!-- Tag -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Tag
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
           <template x-for="tag in tags">
             <li>
               <button
@@ -112,8 +124,12 @@ function sortArtefact(a, b) {
             </li>
           </template>
         </ul>
+      </div>
+      <label for="tagFilter" class="py-2 block md:hidden">
+        Tag
         <select
-          class="md:hidden select select-secondary w-full"
+          id="tagFilter"
+          class="mt-1 select select-secondary w-full"
           @change="filterTag($event.target.value)"
         >
           <template x-for="tag in tags">
@@ -123,8 +139,8 @@ function sortArtefact(a, b) {
               x-text="tag.title"></option>
           </template>
         </select>
-        <!-- End Tag -->
-      </div>
+      </label>
+      <!-- End Tag -->
       <input
         type="text"
         placeholder="Search"
@@ -137,7 +153,6 @@ function sortArtefact(a, b) {
       <div slot="fallback">
         <span class="loading loading-dots text-primary block mx-auto"></span>
       </div>
-
       <Fragment slot="artefacts">
         {
           artefactEntries

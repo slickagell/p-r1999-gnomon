@@ -21,7 +21,7 @@ const { Content } = await artefactEntry.render();
   data-artefact-tags={artefactEntry.data.tags}
 >
   <div>
-    <h5 class="w-48">{artefactEntry.data.name}</h5>
+    <p class="w-48 text-lg font-bold">{artefactEntry.data.name}</p>
     <img
       loading="lazy"
       class="w-20 h-20"
@@ -35,15 +35,15 @@ const { Content } = await artefactEntry.render();
         class:list={[
           "badge font-medium border-transparent",
           {
-            "text-common ": artefactEntry.data.rarity === "COMMON",
-            "text-rare ": artefactEntry.data.rarity === "RARE",
-            "text-epic ": artefactEntry.data.rarity === "EPIC",
+            "text-common bg-common/20": artefactEntry.data.rarity === "COMMON",
+            "text-rare bg-rare/20": artefactEntry.data.rarity === "RARE",
+            "text-epic bg-epic/20": artefactEntry.data.rarity === "EPIC",
           },
         ]}
       >
         {ARTEFACT_RARITY[artefactEntry.data.rarity].title}
       </span>
-      <span class="badge font-medium border-transparent">
+      <span class="badge font-medium border-transparent bg-base-content/20">
         {ARTEFACT_TYPE[artefactEntry.data.type].title}
       </span>
     </div>

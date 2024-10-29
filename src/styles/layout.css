@@ -59,3 +59,7 @@ h6 {
 strong {
   @apply text-primary font-bold;
 }
+
+.main-background {
+  background-image: linear-gradient(to bottom, #434343, #070707 20rem);
+}

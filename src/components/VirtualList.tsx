@@ -1,19 +1,19 @@
-import { createMemo, type JSXElement } from "solid-js";
-import { VList } from "virtua/solid";
 import { useStore } from "@nanostores/solid";
 import {
-  rarityFilter,
-  typeFilter,
-  tagFilter,
   nameFilter,
+  rarityFilter,
+  tagFilter,
+  typeFilter,
 } from "@stores/artefactFilterStore";
+import { createMemo, createSignal } from "solid-js";
+import { WindowVirtualizer } from "virtua/solid";
 
 export const ArtefactVirtualList = ({ artefacts }: any) => {
   if (!artefacts) {
     return null;
   }
 
-  const frozenArtefacts = [...artefacts.children];
+  const [frozenArtefacts] = createSignal([...artefacts.children]);
 
   const $rarityFilter = useStore(rarityFilter);
   const $typeFilter = useStore(typeFilter);
@@ -26,7 +26,7 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
     const tagFilter = $tagFilter();
     const nameFilter = $nameFilter();
 
-    const filteredArtefacts = frozenArtefacts.filter((ele) => {
+    const filteredArtefacts = frozenArtefacts().filter((ele) => {
       const rarity = ele.getAttribute("data-artefact-rarity");
       const type = ele.getAttribute("data-artefact-type");
       const tags = ele.getAttribute("data-artefact-tags");
@@ -46,10 +46,8 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
   });
 
   return (
-    <>
-      <VList data={list()} style={{ height: "50vh" }}>
-        {(_, i) => <div data-index={i}>{list()[i]}</div>}
-      </VList>
-    </>
+    <WindowVirtualizer data={list()}>
+      {(_, i) => <div data-index={i}>{list()[i]}</div>}
+    </WindowVirtualizer>
   );
 };

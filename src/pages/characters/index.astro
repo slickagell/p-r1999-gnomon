@@ -22,10 +22,10 @@ const characterEntries = await getCollection("characters");
 
   <div x-data={"dataset"}>
     <div class="filters">
-      <div class="md:grid md:grid-cols-filter">
-        <!-- Rarity -->
-        <div class="py-2 md:px-4">Rarity</div>
-        <ul class="hidden md:flex py-2 px-4 gap-1">
+      <!-- Rarity -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Rarity
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
           <template x-for="rarity in rarities">
             <li>
               <button
@@ -38,7 +38,11 @@ const characterEntries = await getCollection("characters");
             </li>
           </template>
         </ul>
+      </div>
+      <label for="rarityFilter" class="py-2 block md:hidden">
+        Rarity
         <select
+          id="rarityFilter"
           class="md:hidden select select-secondary w-full"
           @change="filterRarity($event.target.value)"
         >
@@ -49,11 +53,13 @@ const characterEntries = await getCollection("characters");
               x-text="rarity.title"></option>
           </template>
         </select>
-        <!-- End Rarity -->
+      </label>
+      <!-- End Rarity -->
 
-        <!-- Afflatus -->
-        <div class="py-2 md:px-4">Afflatus</div>
-        <ul class="hidden md:flex py-2 px-4 gap-1">
+      <!-- Afflatus -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Afflatus
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
           <template x-for="afflatusType in afflatusTypes">
             <li>
               <button
@@ -66,6 +72,9 @@ const characterEntries = await getCollection("characters");
             </li>
           </template>
         </ul>
+      </div>
+      <label for="afflatusFilter" class="py-2 block md:hidden">
+        Afflatus
         <select
           class="md:hidden select select-secondary w-full"
           @change="filterAfflatusType($event.target.value)"
@@ -77,36 +86,36 @@ const characterEntries = await getCollection("characters");
               x-text="afflatusType.title"></option>
           </template>
         </select>
-        <!-- End Afflatus -->
+      </label>
+      <!-- End Afflatus -->
 
-        <!-- Dmg -->
-        <div class="py-2 md:px-4">Damage type</div>
-        <ul class="hidden md:flex py-2 px-4 gap-1">
-          <template x-for="dmgType in dmgTypes">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                :class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
-                @click="filterDmgType(dmgType.code)"
-                x-text="dmgType.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-        <select
-          class="md:hidden select select-secondary w-full"
-          @change="filterDmgType($event.target.value)"
-        >
-          <template x-for="dmgType in dmgTypes">
-            <option
-              :value="dmgType.code"
-              :selected="dmgType.code === dmgTypeFilter"
-              x-text="dmgType.title"></option>
-          </template>
-        </select>
-        <!-- End Dmg -->
-      </div>
+      <!-- Dmg -->
+      <div class="py-2 md:px-4">Damage type</div>
+      <ul class="hidden md:flex py-2 px-4 gap-1">
+        <template x-for="dmgType in dmgTypes">
+          <li>
+            <button
+              class="btn btn-outline btn-xs"
+              :class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
+              @click="filterDmgType(dmgType.code)"
+              x-text="dmgType.title"
+            >
+            </button>
+          </li>
+        </template>
+      </ul>
+      <select
+        class="md:hidden select select-secondary w-full"
+        @change="filterDmgType($event.target.value)"
+      >
+        <template x-for="dmgType in dmgTypes">
+          <option
+            :value="dmgType.code"
+            :selected="dmgType.code === dmgTypeFilter"
+            x-text="dmgType.title"></option>
+        </template>
+      </select>
+      <!-- End Dmg -->
       <input
         type="text"
         placeholder="Search"

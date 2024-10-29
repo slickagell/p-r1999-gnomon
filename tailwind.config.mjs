@@ -27,9 +27,9 @@ export default {
 
         syntony: "#597463",
         abundance: "#9f844d",
-        craft: "#58537b",
-        ritual: "#572530",
-        ["extra-action"]: "#795e4b",
+        craft: "#8680aa",
+        ritual: "#873a4b",
+        ["extra-action"]: "#95745d",
         resonance: "#5f7281",
         voltaic: "#838554",
         support: "#848887",
