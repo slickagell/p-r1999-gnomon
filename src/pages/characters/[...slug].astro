@@ -7,8 +7,8 @@ import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
 import Layout from "@layouts/Layout.astro";
-import "@styles/markdown-layout.css";
 import { getCollection } from "astro:content";
+import InsightImg from "@components/InsightImg.astro";
 
 export async function getStaticPaths() {
   const characterEntries = await getCollection("characters");
@@ -46,6 +46,7 @@ const { Content } = await entry.render();
       tooltip: Tooltip,
       material: Material,
       "card-info": CardInfo,
+      "insight-img": InsightImg,
     }}
   />
 </Layout>
