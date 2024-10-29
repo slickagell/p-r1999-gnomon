@@ -1,0 +1,227 @@
+---
+import AfflatusIcon from "@components/AfflatusIcon.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const characterEntries = await getCollection("characters");
+---
+
+<Layout
+  title="Characters | Reverse 1999 Gnomon"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Characters",
+    },
+  ]}
+>
+  <h1 class="text-center">Character List</h1>
+
+  <div x-data={"dataset"}>
+    <div class="filters">
+      <!-- Rarity -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Rarity
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
+          <template x-for="rarity in rarities">
+            <li>
+              <button
+                class="btn btn-outline btn-xs"
+                :class="rarity.code === rarityFilter ? 'btn-active' : ''"
+                @click="filterRarity(rarity.code)"
+                x-text="rarity.title"
+              >
+              </button>
+            </li>
+          </template>
+        </ul>
+      </div>
+      <label for="rarityFilter" class="py-2 block md:hidden">
+        Rarity
+        <select
+          id="rarityFilter"
+          class="md:hidden select select-secondary w-full"
+          @change="filterRarity($event.target.value)"
+        >
+          <template x-for="rarity in rarities">
+            <option
+              :value="rarity.code"
+              :selected="rarity.code === rarityFilter"
+              x-text="rarity.title"></option>
+          </template>
+        </select>
+      </label>
+      <!-- End Rarity -->
+
+      <!-- Afflatus -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Afflatus
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
+          <template x-for="afflatusType in afflatusTypes">
+            <li>
+              <button
+                class="btn btn-outline btn-xs"
+                :class="afflatusType.code === afflatusTypeFilter ? 'btn-active' : ''"
+                @click="filterAfflatusType(afflatusType.code)"
+                x-text="afflatusType.title"
+              >
+              </button>
+            </li>
+          </template>
+        </ul>
+      </div>
+      <label for="afflatusFilter" class="py-2 block md:hidden">
+        Afflatus
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterAfflatusType($event.target.value)"
+        >
+          <template x-for="afflatusType in afflatusTypes">
+            <option
+              :value="afflatusType.code"
+              :selected="afflatusType.code === afflatusTypeFilter"
+              x-text="afflatusType.title"></option>
+          </template>
+        </select>
+      </label>
+      <!-- End Afflatus -->
+
+      <!-- Dmg -->
+      <div class="py-2 md:px-4">Damage type</div>
+      <ul class="hidden md:flex py-2 px-4 gap-1">
+        <template x-for="dmgType in dmgTypes">
+          <li>
+            <button
+              class="btn btn-outline btn-xs"
+              :class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
+              @click="filterDmgType(dmgType.code)"
+              x-text="dmgType.title"
+            >
+            </button>
+          </li>
+        </template>
+      </ul>
+      <select
+        class="md:hidden select select-secondary w-full"
+        @change="filterDmgType($event.target.value)"
+      >
+        <template x-for="dmgType in dmgTypes">
+          <option
+            :value="dmgType.code"
+            :selected="dmgType.code === dmgTypeFilter"
+            x-text="dmgType.title"></option>
+        </template>
+      </select>
+      <!-- End Dmg -->
+      <input
+        type="text"
+        placeholder="Search"
+        class="mt-6 mb-4 input input-bordered input-secondary w-full"
+        x-model="searchText"
+      />
+    </div>
+
+    <ul class="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+      {
+        characterEntries.map((characterEntry) => {
+          return (
+            <li
+              x-show={`filterCharacter({ 
+                rarity:'${characterEntry.data.star}',
+                afflatus:'${characterEntry.data.afflatus}',
+                dmgType:'${characterEntry.data.dmgType}',
+                title:'${characterEntry.data.title}'
+              })`}
+            >
+              <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
+                <a class="h-full" href={`/characters/${characterEntry.slug}`}>
+                  <div class="h-full relative ">
+                    <div class="absolute -top-1 left-2 w-7 md:w-6 group-hover:-top-2 transition-all">
+                      <AfflatusIcon type={characterEntry.data.afflatus} />
+                    </div>
+
+                    <img
+                      class="w-full"
+                      src={`/data/characters/${characterEntry.data.id}/card.png`}
+                    />
+                    <img
+                      class="absolute bottom-0 left-0 w-full"
+                      src={`/data/characters/common/bg-rare-${characterEntry.data.star}.png`}
+                    />
+
+                    <h5 class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white font-normal">
+                      {characterEntry.data.title}
+                    </h5>
+                  </div>
+                </a>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</Layout>
+
+<script>
+  import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "@data/character";
+  import Alpine from "alpinejs";
+
+  window.Alpine = Alpine;
+
+  Alpine.data("dataset", () => ({
+    searchText: "",
+    rarityFilter: "ALL",
+    rarities: [
+      { title: "All", code: "ALL" },
+      ...Object.keys(RARITY).map((code) => ({
+        title: RARITY[code].value.toString(),
+        code: RARITY[code].value.toString(),
+      })),
+    ],
+    afflatusTypeFilter: "ALL",
+    afflatusTypes: [
+      { title: "All", code: "ALL" },
+      ...Object.keys(AFFLATUS_TYPE).map((code) => ({
+        title: AFFLATUS_TYPE[code].title,
+        code,
+      })),
+    ],
+    dmgTypeFilter: "ALL",
+    dmgTypes: [
+      { title: "All", code: "ALL" },
+      ...Object.keys(DMG_TYPE).map((code) => ({
+        title: DMG_TYPE[code].title,
+        code,
+      })),
+    ],
+
+    filterCharacter({ rarity, afflatus, dmgType, title }) {
+      const filters =
+        (this.afflatusTypeFilter === "ALL" ||
+          this.afflatusTypeFilter === afflatus) &&
+        (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
+        (this.dmgTypeFilter === "ALL" || this.dmgTypeFilter === dmgType);
+
+      return !this.searchText
+        ? filters
+        : filters &&
+            title.toLowerCase().includes(this.searchText.toLowerCase());
+    },
+
+    filterRarity(rarity) {
+      this.rarityFilter = rarity;
+    },
+
+    filterAfflatusType(afflatusType) {
+      this.afflatusTypeFilter = afflatusType;
+    },
+
+    filterDmgType(dmgType) {
+      this.dmgTypeFilter = dmgType;
+    },
+  }));
+</script>

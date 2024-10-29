@@ -1,50 +1,135 @@
 ---
+import "../styles/layout.css";
+import Footer from "@layouts/Footer.astro";
+
 interface Props {
-	title: string;
+  title: string;
+  breadcrumbs?: {
+    href?: string;
+    label: string;
+  }[];
 }
 
-const { title } = Astro.props;
+const { title, breadcrumbs } = Astro.props;
+
+const menu = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "Characters",
+    href: "/characters",
+  },
+  {
+    title: "Materials",
+    href: "/materials",
+  },
+  {
+    title: "Effects",
+    href: "/effects",
+  },
+  {
+    title: "A Series of Dusks",
+    href: "/a-series-of-dusks",
+  },
+];
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="drawer min-h-screen">
+      <input id="sidebar" type="checkbox" class="drawer-toggle" />
+      <div class="main-background drawer-content flex flex-col">
+        <!-- Navbar -->
+        <div
+          class="w-full navbar bg-base-300 h-16 sticky top-0 z-40 shadow-md shadow-primary"
+        >
+          <div class="flex-none lg:hidden">
+            <label
+              for="sidebar"
+              aria-label="open sidebar"
+              class="btn btn-square btn-ghost"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block w-6 h-6 stroke-current"
+                ><path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path></svg
+              >
+            </label>
+          </div>
+          <div class="flex-1 mx-2">
+            <a href="/" class="flex items-center">
+              <img class="w-10 h-10 mr-2" src="/layout/logo.png" alt="logo" />
+              <span class="text-xl text-primary italic">
+                Reverse:1999 Gnomon
+              </span>
+            </a>
+          </div>
+          <div class="flex-none hidden lg:block">
+            <ul class="menu menu-horizontal py-1">
+              <!-- Navbar menu content here -->
+              {
+                menu.map((item) => (
+                  <li>
+                    <a href={item.href}>{item.title}</a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+        <main class="container flex-1 pt-6 pb-20">
+          <!-- Page content here -->
+          {
+            breadcrumbs && (
+              <div class="text-sm breadcrumbs">
+                <ul>
+                  {breadcrumbs.map((ele) => {
+                    if (!ele.href) return <li>{ele.label}</li>;
+                    return (
+                      <li>
+                        <a href={ele.href}>{ele.label}</a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )
+          }
+          <slot />
+        </main>
+        <Footer />
+      </div>
+      <div class="drawer-side z-50">
+        <label for="sidebar" aria-label="close sidebar" class="drawer-overlay"
+        ></label>
+        <ul class="menu p-4 w-80 min-h-full bg-base-200">
+          <!-- Sidebar content here -->
+          {
+            menu.map((item) => (
+              <li>
+                <a href={item.href}>{item.title}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

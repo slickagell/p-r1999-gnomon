@@ -1,0 +1,129 @@
+---
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import { EFFECT_TYPE } from "@data/effect";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const effectEntries = await getCollection("effects");
+---
+
+<Layout
+  title="Effects | Reverse 1999 Gnomon"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Effects",
+    },
+  ]}
+>
+  <h1 class="text-center">Effect List</h1>
+
+  <div x-data={"dataset"}>
+    <div class="filters">
+      <div class="md:grid md:grid-cols-filter">
+        <!-- Type -->
+        <div class="py-2 md:px-4">Type</div>
+        <ul class="hidden md:flex py-2 px-4 gap-1">
+          <template x-for="type in types">
+            <li>
+              <button
+                class="btn btn-outline btn-xs"
+                :class="type.code === typeFilter ? 'btn-active' : ''"
+                @click="filterType(type.code)"
+                x-text="type.title"
+              >
+              </button>
+            </li>
+          </template>
+        </ul>
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterType($event.target.value)"
+        >
+          <template x-for="type in types">
+            <option
+              :value="type.code"
+              :selected="type.code === typeFilter"
+              x-text="type.title"></option>
+          </template>
+        </select>
+        <!-- End Type -->
+      </div>
+      <input
+        type="text"
+        placeholder="Search"
+        class="mt-6 mb-4 input input-bordered input-secondary w-full"
+        x-model="searchText"
+      />
+    </div>
+
+    <ul class="mt-8">
+      {
+        effectEntries.map(async (effectEntry) => {
+          const { Content } = await effectEntry.render();
+
+          return (
+            <li
+              class="border p-4 flex flex-wrap justify-between md:justify-start"
+              x-show={`filterEffect({ 
+                type:'${effectEntry.data.type}',
+                title: '${effectEntry.data.title}'
+              })`}
+            >
+              <h6 class="basis-2/3 md:basis-1/3">{effectEntry.data.title}</h6>
+              <span class="basis-1/3 md:basis-1/6 px-2 ">
+                {EFFECT_TYPE[effectEntry.data.type].title}
+              </span>
+              <div class="mt-2 md:mt-0 md:basis-1/2">
+                <Content
+                  components={{
+                    p: MarkdownContent,
+                    strong: MarkdownHighlight,
+                    effect: EffectTooltip,
+                  }}
+                />
+              </div>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+
+  <script>
+    import { EFFECT_TYPE } from "@data/effect";
+    import Alpine from "alpinejs";
+
+    window.Alpine = Alpine;
+
+    Alpine.data("dataset", () => ({
+      searchText: "",
+      typeFilter: "ALL",
+      types: [
+        { title: "All", code: "ALL" },
+        ...Object.keys(EFFECT_TYPE).map((code) => ({
+          title: EFFECT_TYPE[code].title,
+          code,
+        })),
+      ],
+
+      filterEffect({ type, title }) {
+        const filters = this.typeFilter === "ALL" || this.typeFilter === type;
+
+        return !this.searchText
+          ? filters
+          : filters &&
+              title.toLowerCase().includes(this.searchText.toLowerCase());
+      },
+
+      filterType(type) {
+        this.typeFilter = type;
+      },
+    }));
+  </script>
+</Layout>

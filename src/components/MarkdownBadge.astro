@@ -1,0 +1,20 @@
+---
+interface Props {
+  variant?: "gray" | "red";
+}
+
+const { variant = "gray", ...props } = Astro.props;
+---
+
+<div
+  class:list={[
+    "badge bg-transparent",
+    {
+      "border border-gray text-gray": variant === "gray",
+      "border border-error text-error": variant === "red",
+    },
+  ]}
+  {...props}
+>
+  <slot />
+</div>

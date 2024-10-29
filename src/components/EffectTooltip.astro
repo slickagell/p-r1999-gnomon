@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import MarkdownHighlight from "./MarkdownHighlight.astro";
+import MarkdownContent from "./MarkdownContent.astro";
+interface Props {
+  code: string;
+}
+
+const { code, ...props } = Astro.props;
+
+const effectEntries = await getCollection("effects");
+
+const effects = effectEntries.reduce((prev, curr) => {
+  return {
+    ...prev,
+    [curr.data.code]: curr,
+  };
+}, {});
+
+const effect = effects[code];
+
+const { Content } = await effect.render();
+---
+
+<span
+  {...props}
+  x-data="{isShow: false, isToggle: false}"
+  class="inline-block relative"
+>
+  <span
+    x-ref="content"
+    @click="isToggle = !isToggle"
+    @mouseenter="isShow = true"
+    @mouseleave="isShow = false"
+    class="text-effect cursor-pointer">[{effect.data.title}]</span
+  >
+  <div
+    @mousedown.outside="isToggle = false"
+    x-show="isShow || isToggle"
+    x-anchor.top="$refs.content"
+    class="bg-base-100 w-60 text-base-content border-line-paper border p-2"
+    x-transition:enter="ease duration-300 transition-opacity"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="ease duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+  >
+    <Content
+      components={{
+        p: MarkdownContent,
+        strong: MarkdownHighlight,
+        effect: Astro.self,
+      }}
+    />
+  </div>
+</span>
+
+<script>
+  import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
+</script>

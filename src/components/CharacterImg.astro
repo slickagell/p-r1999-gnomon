@@ -1,0 +1,119 @@
+---
+interface Props {
+  variant:
+    | "afflatus"
+    | "dmg-type"
+    | "signature"
+    | "portrait"
+    | "udimo"
+    | "chibi"
+    | "skill-1"
+    | "skill-2"
+    | "ultimate";
+  id?: string;
+  code?: string;
+}
+
+const { variant, id = "", code = "" } = Astro.props;
+---
+
+<Fragment>
+  {
+    (() => {
+      switch (variant) {
+        case "afflatus": {
+          if (!code) return null;
+          return (
+            <img
+              class="w-32"
+              src={`/data/afflatus/af-${code}.png`}
+              alt={`afflatus ${code}`}
+            />
+          );
+        }
+        case "dmg-type": {
+          if (!code) return null;
+          return (
+            <img
+              class="w-14 h-14"
+              src={`/data/dmg-type/${code}.png`}
+              alt={`damage type ${code}`}
+            />
+          );
+        }
+        case "signature": {
+          if (!id) return null;
+          return (
+            <img
+              class="w-64"
+              src={`/data/characters/${id}/signature.png`}
+              alt="signature"
+            />
+          );
+        }
+        case "portrait": {
+          if (!id) return null;
+          return (
+            <img
+              class="w-80"
+              src={`/data/characters/${id}/portrait.png`}
+              alt="portrait"
+            />
+          );
+        }
+        case "udimo": {
+          if (!id) return null;
+          return (
+            <img
+              class="w-40"
+              src={`/data/characters/${id}/udimo.png`}
+              alt="udimo"
+            />
+          );
+        }
+        case "chibi": {
+          if (!id) return null;
+          return (
+            <img
+              class="w-24"
+              src={`/data/characters/${id}/chibi.png`}
+              alt="chibi"
+            />
+          );
+        }
+        case "skill-1": {
+          if (!id) return null;
+          return (
+            <img
+              class="w-48"
+              src={`/data/characters/${id}/skill-1.png`}
+              alt="skill-1"
+            />
+          );
+        }
+        case "skill-2": {
+          if (!id) return null;
+          return (
+            <img
+              class="w-48"
+              src={`/data/characters/${id}/skill-2.png`}
+              alt="skill-2"
+            />
+          );
+        }
+        case "ultimate": {
+          if (!id) return null;
+          return (
+            <img
+              class="w-48"
+              src={`/data/characters/${id}/ultimate.png`}
+              alt="ultimate"
+            />
+          );
+        }
+        default:
+          return null;
+      }
+    })()
+  }
+</Fragment>
