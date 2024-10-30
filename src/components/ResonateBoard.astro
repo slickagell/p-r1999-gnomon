@@ -49,13 +49,17 @@
 </div>
 
 <script>
-  import SAT from "sat";
   import Alpine from "alpinejs";
   import matrix from "matrix-js";
-  import { diff, intersection, union } from "martinez-polygon-clipping";
+  import { intersection, union } from "martinez-polygon-clipping";
+  import type { Feature, Position } from "geojson";
+  import { polygon } from "@turf/helpers";
+  import { centroid } from "@turf/centroid";
 
   window.Alpine = Alpine;
   const BLOCK_SIZE = 40;
+  const BOARD_COL = 10;
+  const BOARD_ROW = 10;
 
   const BLOCKS = new Map([
     [
@@ -84,24 +88,19 @@
       {
         shape: [
           [1, 0, 1, 0],
-          [1, 1, 1, 1],
+          [1, 0, 0, 1],
         ],
       },
     ],
   ]);
 
-  const V = function (x, y) {
-    return new SAT.Vector(x, y);
-  };
-  const P = function (pos, points) {
-    return new SAT.Polygon(pos, points);
-  };
-
   Alpine.data("dataset", () => ({
-    boardCol: 6,
-    boardRow: 6,
+    boardCol: BOARD_COL,
+    boardRow: BOARD_ROW,
     dragItem: null,
     dragPoly: null,
+    dragShapeDimension: null,
+
     canvas: null,
     ctx: null,
     initBlocks: [],
@@ -114,6 +113,7 @@
     isDragging: false,
     polyPoints: [],
 
+    //* Init board canvas and blocks array
     init() {
       this.canvas = this.$refs.canvas;
       this.ctx = this.$refs.canvas.getContext("2d");
@@ -138,17 +138,29 @@
       this.blocks = JSON.parse(JSON.stringify(initBlocks));
     },
 
-    drawPoly(poly, fill) {
+    drawPoly(coords, fill) {
       if (!this.ctx) return;
       this.ctx.fillStyle = fill;
 
       this.ctx.beginPath();
-      this.ctx.moveTo(poly.pos.x, poly.pos.y);
-      poly.calcPoints.forEach((p) => {
-        this.ctx.lineTo(poly.pos.x + p.x, poly.pos.y + p.y);
+      this.ctx.moveTo(coords[0][0], coords[0][1]);
+      coords.forEach((point) => {
+        this.ctx.lineTo(point[0], point[1]);
       });
       this.ctx.closePath();
       this.ctx.fill();
+    },
+
+    drawGeoJson(geoJsonData: Feature, fill) {
+      if (geoJsonData.geometry.type === "Polygon") {
+        this.drawPoly(geoJsonData.geometry.coordinates[0], fill);
+      }
+
+      if (geoJsonData.geometry.type === "MultiPolygon") {
+        geoJsonData.geometry.coordinates.forEach((coords, idx) => {
+          this.drawPoly(coords[0], fill);
+        });
+      }
     },
 
     onDragStart(event) {
@@ -166,10 +178,9 @@
       this.canvas.height = this.canvas.offsetHeight;
       this.dragItem = event.target;
 
-      let rect = event.target.getBoundingClientRect();
-
       const blockShapeMatrix = matrix(blockData.shape);
       const blockShapeDimension = blockShapeMatrix.size();
+      this.dragShapeDimension = blockShapeDimension;
       const shapeRow = blockShapeDimension[0];
       const shapeCol = blockShapeDimension[1];
 
@@ -181,12 +192,14 @@
             const x = col * BLOCK_SIZE;
             const y = row * BLOCK_SIZE;
 
-            itemBlocks.push([
+            const itemBlock = [
               [x, y],
               [(col + 1) * BLOCK_SIZE, y],
               [(col + 1) * BLOCK_SIZE, (row + 1) * BLOCK_SIZE],
               [x, (row + 1) * BLOCK_SIZE],
-            ]);
+            ];
+
+            itemBlocks.push(itemBlock);
           }
         }
       }
@@ -219,15 +232,7 @@
         }
       });
 
-      const polyPoints = itemGeometry.geometry.coordinates
-        .flat(2)
-        .map((p) => V(p[0], p[1]));
-
-      this.polyPoints = polyPoints;
-
-      let dragPoly = P(V(rect.left, rect.top), [...polyPoints]);
-
-      this.dragPoly = dragPoly;
+      this.initDragPoly = itemGeometry;
     },
 
     onDrag(event) {
@@ -236,27 +241,73 @@
       this.lastMouseX = event.clientX;
       this.lastMouseY = event.clientY;
 
-      this.dragPoly.pos.x = event.clientX;
-      this.dragPoly.pos.y = event.clientY;
-
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      this.drawPoly(this.dragPoly, "rgba(255,0,0,1)");
+
+      const drawPoly = Object.assign(this.initDragPoly, {}) as Feature;
+
+      if (drawPoly.geometry.type === "Polygon") {
+        const coords = drawPoly.geometry.coordinates[0];
+        let delta = {
+          x: event.clientX - coords[0][0],
+          y: event.clientY - coords[0][1],
+        };
+        const transformCoords = coords[0].map((point) => {
+          return [point[0] + delta.x, point[1] + delta.y];
+        });
+        this.dragPoly = {
+          ...drawPoly,
+          geometry: {
+            coordinates: [[transformCoords]],
+          },
+        } as Feature;
+      } else if (drawPoly.geometry.type === "MultiPolygon") {
+        const startPolyPoint = drawPoly.geometry.coordinates[0][0][0];
+        const centroidPoint = centroid(drawPoly);
+        const startPoint = {
+          x: event.clientX - centroidPoint.geometry.coordinates[0],
+          y: event.clientY - centroidPoint.geometry.coordinates[1],
+        };
+
+        const tranformDrawPoly = drawPoly.geometry.coordinates.reduce(
+          (prevPolysCoords, polys) => {
+            const transformPolys = polys.reduce((prev: Position[], coords) => {
+              let delta = {
+                x: startPoint.x - startPolyPoint[0],
+                y: startPoint.y - startPolyPoint[1],
+              };
+              const transformCoords = coords.map((point) => {
+                return [point[0] + delta.x, point[1] + delta.y] as Position;
+              });
+              return [...prev, transformCoords];
+            }, []);
+            return [...prevPolysCoords, transformPolys];
+          },
+          []
+        );
+
+        this.dragPoly = {
+          ...drawPoly,
+          geometry: {
+            ...drawPoly.geometry,
+            coordinates: tranformDrawPoly,
+          },
+        } as Feature;
+      }
+
+      this.drawGeoJson(this.dragPoly, "rgba(255,0,0,1)");
       this.blocks = JSON.parse(JSON.stringify(this.initBlocks));
       this.sweepAndPrune(this.dragPoly, this.blocks);
     },
 
     onDragEnd(event) {
       const delta = 6;
-
       const diffX = Math.abs(event.clientX - this.lastMouseX);
       const diffY = Math.abs(event.clientY - this.lastMouseY);
-
       if (diffX < delta && diffY < delta) {
         this.isDragging = false;
-        this.dragPoly.pos.x = event.clientX;
-        this.dragPoly.pos.y = event.clientY;
+        // this.initDragPoly.pos.x = event.clientX;
+        // this.initDragPoly.pos.y = event.clientY;
         this.polyPoints = [];
-
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       }
     },
@@ -270,86 +321,105 @@
     checkCollision(item, block) {
       const BLOCK_OFFSET = 10;
 
-      let blockPoly = P(
-        V(block.pos.x + BLOCK_OFFSET, block.pos.y + BLOCK_OFFSET),
+      const blockStartPoint = [
+        block.pos.x + BLOCK_OFFSET,
+        block.pos.y + BLOCK_OFFSET,
+      ];
+
+      const blockSize = block.size - BLOCK_OFFSET * 2;
+
+      const blockPoly = polygon([
         [
-          V(0, 0),
-          V(block.size - BLOCK_OFFSET * 2, 0),
-          V(block.size - BLOCK_OFFSET * 2, block.size - BLOCK_OFFSET * 2),
-          V(0, block.size - BLOCK_OFFSET * 2),
-        ]
-      );
-
-      this.drawPoly(blockPoly, "rgba(220,220,220,1)");
-
-      const itemCoord = item.calcPoints.map((p) => [
-        item.pos.x + p.x,
-        item.pos.y + p.y,
+          [blockStartPoint[0], blockStartPoint[1]],
+          [blockSize + blockStartPoint[0], blockStartPoint[1]],
+          [blockSize + blockStartPoint[0], blockSize + blockStartPoint[1]],
+          [blockStartPoint[0], blockSize + blockStartPoint[1]],
+          [blockStartPoint[0], blockStartPoint[1]],
+        ],
       ]);
 
-      const blockCoord = blockPoly.calcPoints.map((p) => [
-        blockPoly.pos.x + p.x,
-        blockPoly.pos.y + p.y,
-      ]);
+      this.drawGeoJson(blockPoly, "rgba(220,220,220,1)");
 
-      const itemGj = {
+      const intersectionPoly = {
         type: "Feature",
-        geometry: { type: "Polygon", coordinates: [[itemCoord]] },
-      } as any;
-      const blockGj = {
-        type: "Feature",
-        geometry: { type: "Polygon", coordinates: [[blockCoord]] },
-      } as any;
+        geometry: {
+          type: "Polygon",
+          coordinates: intersection(
+            item.geometry.coordinates,
+            blockPoly.geometry.coordinates
+          ),
+        },
+      };
 
-      const polyPoints = intersection(
-        itemGj.geometry.coordinates,
-        blockGj.geometry.coordinates
-      );
-
-      if (!polyPoints || !polyPoints?.[0]?.[0]) return false;
-      // console.log("itemGj.geometry.coordinates", itemGj.geometry.coordinates);
-      // console.log("blockGj.geometry.coordinates", blockGj.geometry.coordinates);
-      // console.log("🚀 ~ checkCollision ~ polyPoints:", polyPoints[0][0]);
-
-      // const sortedPoints = this.sortPointsClockwise(
-      //   polyPoints[0][0].map((p) => ({ x: p[0], y: p[1] }))
-      // );
-
-      // const startPoint = sortedPoints[0];
-      // const diffPoints = this.sortPointsClockwise(
-      //   polyPoints[0][0].map((p) => ({ x: p[0], y: p[1] }))
-      // ).map((ele) => V(ele.x - startPoint.x, ele.y - startPoint.y));
-      // let diffPoly = P(startPoint, diffPoints);
-      // this.drawPoly(diffPoly, "rgba(0,0,255,1)");
-
-      // let response = new SAT.Response();
-      // let collided = SAT.testPolygonPolygon(item, blockPoly, response);
-
-      // if (collided) {
-      //   console.log("response.overlap", response.overlap);
-      // }
+      if (
+        !intersectionPoly.geometry.coordinates ||
+        !intersectionPoly.geometry.coordinates?.[0]
+      ) {
+        return false;
+      }
 
       return true; // Collision detected
     },
 
-    sweepAndPrune(item, blocks) {
-      const sweepRadius = BLOCK_SIZE * 3; // (slightly larger than the block size) is the maximum distance between the item's position and a block's position that is considered "close enough" to warrant a collision check
-      const pruneRadius = BLOCK_SIZE * 4; // (slightly larger than the sweepRadius) is the maximum distance between the item's position and a block's position that is considered "far enough" to warrant pruning the block from the search space
+    sweepAndPrune(item: Feature, blocks) {
+      const dimension = JSON.parse(JSON.stringify(this.dragShapeDimension));
+      const sweepRadius = BLOCK_SIZE * (Math.max(...dimension) / 2 + 1); // (slightly larger than the block size) is the maximum distance between the item's position and a block's position that is considered "close enough" to warrant a collision check
+      const pruneRadius = BLOCK_SIZE * (Math.max(...dimension) / 2 + 1.5); // (slightly larger than the sweepRadius) is the maximum distance between the item's position and a block's position that is considered "far enough" to warrant pruning the block from the search space
+
+      if (item.geometry.type !== "MultiPolygon") return;
+
+      const itemPosX = item.geometry.coordinates[0][0][0][0];
+      const itemPosY = item.geometry.coordinates[0][0][0][1];
+
+      const column = Math.floor(itemPosX / BLOCK_SIZE);
+      const row = Math.floor(itemPosY / BLOCK_SIZE);
+
+      const startPoint = item.geometry.coordinates[0][0][0];
+      const tranformDrawPoly = item.geometry.coordinates.reduce(
+        (prevPolysCoords, polys) => {
+          const transformPolys = polys.reduce((prev: Position[], coords) => {
+            let delta = {
+              x: column * BLOCK_SIZE - startPoint[0],
+              y: row * BLOCK_SIZE - startPoint[1],
+            };
+            const transformCoords = coords.map((point) => {
+              return [point[0] + delta.x, point[1] + delta.y] as Position;
+            });
+            return [...prev, transformCoords];
+          }, []);
+          return [...prevPolysCoords, transformPolys];
+        },
+        []
+      );
+
+      const transformGeoJson = {
+        ...item,
+        geometry: {
+          ...item.geometry,
+          coordinates: tranformDrawPoly,
+        },
+      } as Feature;
+
       for (const block of blocks) {
         const idx = blocks.indexOf(block);
-        const column = Math.floor(item.pos.x / BLOCK_SIZE);
-        const row = Math.floor(item.pos.y / BLOCK_SIZE);
+        const centroidPoint = centroid(transformGeoJson);
 
-        let itemPoly = P(V(column * BLOCK_SIZE, row * BLOCK_SIZE), [
-          ...JSON.parse(JSON.stringify(this.polyPoints)),
-        ]);
+        const distance = this.distanceBetween(
+          {
+            x: centroidPoint.geometry.coordinates[0],
+            y: centroidPoint.geometry.coordinates[1],
+          },
+          {
+            x: block.pos.x + BLOCK_SIZE / 2,
+            y: block.pos.y + BLOCK_SIZE / 2,
+          }
+        );
 
-        const distance = this.distanceBetween(item.pos, block.pos);
-        if (distance > sweepRadius) continue; // Prune blocks that are too far away
+        if (distance > sweepRadius) continue; // Sweep blocks that are too far away
 
-        this.drawPoly(itemPoly, "rgba(0,255,0,1)");
+        this.drawGeoJson(transformGeoJson, "rgba(0,255,0,1)");
 
-        const collision = this.checkCollision(itemPoly, block);
+        const collision = this.checkCollision(transformGeoJson, block);
 
         if (collision) {
           blocks[idx].isCollided = true;
@@ -359,7 +429,7 @@
         if (distance > pruneRadius) continue; // Prune blocks that are too far away
       }
 
-      // return false; // No collision detected
+      return false; // No collision detected
     },
   }));
 </script>
