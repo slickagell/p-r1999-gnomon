@@ -3,64 +3,53 @@
 ---
 
 <div
-  class="resonate relative"
+  class="resonate relative z-10"
   x-data="dataset"
   @mousemove="onDrag"
   @mousedown="onDragStart"
   @mouseup="onDragEnd"
+  style={`min-width: ${600}px; min-height: ${600}px`}
 >
+  <button class="btn absolute bottom-0" @click="changeBoardSize(6)"> 6 </button>
+  <button class="btn absolute bottom-0 left-20" @click="changeBoardSize(10)">
+    10
+  </button>
+
   <canvas
     x-ref="canvas"
     class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
   ></canvas>
 
-  <template x-for="row in boardRow">
-    <div class="flex">
-      <template x-for="col in boardCol">
-        <div
-          data-col="col"
-          data-row="row"
-          class="w-10 h-10 border"
-          x-data="{ isDragOver: false }"
-          :class="isDragOver ? 'bg-primary' : ''"
-        >
-        </div>
-      </template>
-    </div>
-  </template>
-
-  <template x-for="block in blocks">
+  <template x-for="block in blocks" :key="block.id">
     <div
-      data-col="block.col"
-      data-row="block.row"
-      x-data="{ x: block.pos.x, y: block.pos.y }"
+      x-data="{ x: block.pos.x, y: block.pos.y, isDragOver: false}"
       class="w-10 h-10 border absolute"
-      :class="block.isCollided ? 'bg-primary/50' : ''"
+      :class="(block.isCollided ? 'bg-primary/50' : '') || (isDragOver ? 'bg-primary' : '')"
       :style="{ left: x + 'px', top: y + 'px' }"
     >
     </div>
   </template>
 
   <div class="mt-10"></div>
-  <div data-block-id="1" class="w-10 h-20 border"></div>
-  <div data-block-id="2" class="w-20 h-10 border"></div>
-  <div data-block-id="5" class="w-20 h-20 border"></div>
-  <div data-block-id="6" class="w-20 h-20 border"></div>
+  <div data-block-id="1" class="w-10 h-20 border absolute right-0 top-0"></div>
+  <div data-block-id="2" class="w-20 h-10 border absolute right-0 top-20"></div>
+  <div data-block-id="5" class="w-20 h-20 border absolute right-0 top-40"></div>
+  <div data-block-id="6" class="w-20 h-20 border absolute right-0 top-60"></div>
 </div>
 
 <script>
-  import Alpine from "alpinejs";
-  import matrix from "matrix-js";
-  import { intersection, union } from "martinez-polygon-clipping";
-  import type { Feature, Position } from "geojson";
-  import { polygon } from "@turf/helpers";
   import { centroid } from "@turf/centroid";
+  import { polygon } from "@turf/helpers";
+  import Alpine from "alpinejs";
+  import type { Feature, Polygon, Position } from "geojson";
+  import { intersection, union } from "martinez-polygon-clipping";
+  import matrix from "matrix-js";
 
-  window.Alpine = Alpine;
   const BLOCK_SIZE = 40;
   const BOARD_COL = 10;
   const BOARD_ROW = 10;
 
+  window.Alpine = Alpine;
   const BLOCKS = new Map([
     [
       "1",
@@ -105,16 +94,16 @@
     ctx: null,
     initBlocks: [],
     blocks: [],
+    afterDragBlocks: [],
     boardX: 0,
     boardY: 0,
 
     lastMouseX: 0,
     lastMouseY: 0,
     isDragging: false,
-    polyPoints: [],
 
     //* Init board canvas and blocks array
-    init() {
+    initCanvas() {
       this.canvas = this.$refs.canvas;
       this.ctx = this.$refs.canvas.getContext("2d");
 
@@ -122,6 +111,7 @@
       for (let row = 0; row < this.boardRow; row++) {
         for (let col = 0; col < this.boardCol; col++) {
           initBlocks.push({
+            id: `${this.boardX + col * BLOCK_SIZE}-${this.boardY + row * BLOCK_SIZE}`,
             col: col,
             row: row,
             pos: {
@@ -136,6 +126,13 @@
 
       this.initBlocks = JSON.parse(JSON.stringify(initBlocks));
       this.blocks = JSON.parse(JSON.stringify(initBlocks));
+
+      this.canvas.width = this.canvas.offsetWidth;
+      this.canvas.height = this.canvas.offsetHeight;
+    },
+
+    init() {
+      this.initCanvas();
     },
 
     drawPoly(coords, fill) {
@@ -157,7 +154,7 @@
       }
 
       if (geoJsonData.geometry.type === "MultiPolygon") {
-        geoJsonData.geometry.coordinates.forEach((coords, idx) => {
+        geoJsonData.geometry.coordinates.forEach((coords) => {
           this.drawPoly(coords[0], fill);
         });
       }
@@ -184,7 +181,7 @@
       const shapeRow = blockShapeDimension[0];
       const shapeCol = blockShapeDimension[1];
 
-      let itemBlocks: any[] = [];
+      let itemBlocks: Position[][] = [];
 
       for (let row = 0; row < shapeRow; row++) {
         for (let col = 0; col < shapeCol; col++) {
@@ -212,7 +209,7 @@
             type: "Polygon",
             coordinates: [[...element, element[0]]],
           },
-        } as any;
+        } as Feature<Polygon>;
 
         if (!itemGeometry) {
           itemGeometry = eleBlock;
@@ -238,8 +235,10 @@
     onDrag(event) {
       if (!this.isDragging) return;
 
-      this.lastMouseX = event.clientX;
-      this.lastMouseY = event.clientY;
+      let rect = this.canvas.getBoundingClientRect();
+
+      this.lastMouseX = event.clientX - rect.left;
+      this.lastMouseY = event.clientY - rect.top;
 
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -248,8 +247,8 @@
       if (drawPoly.geometry.type === "Polygon") {
         const coords = drawPoly.geometry.coordinates[0];
         let delta = {
-          x: event.clientX - coords[0][0],
-          y: event.clientY - coords[0][1],
+          x: this.lastMouseX - coords[0][0],
+          y: this.lastMouseY - coords[0][1],
         };
         const transformCoords = coords[0].map((point) => {
           return [point[0] + delta.x, point[1] + delta.y];
@@ -264,8 +263,8 @@
         const startPolyPoint = drawPoly.geometry.coordinates[0][0][0];
         const centroidPoint = centroid(drawPoly);
         const startPoint = {
-          x: event.clientX - centroidPoint.geometry.coordinates[0],
-          y: event.clientY - centroidPoint.geometry.coordinates[1],
+          x: this.lastMouseX - centroidPoint.geometry.coordinates[0],
+          y: this.lastMouseY - centroidPoint.geometry.coordinates[1],
         };
 
         const tranformDrawPoly = drawPoly.geometry.coordinates.reduce(
@@ -300,14 +299,16 @@
     },
 
     onDragEnd(event) {
+      let rect = this.canvas.getBoundingClientRect();
+
       const delta = 6;
-      const diffX = Math.abs(event.clientX - this.lastMouseX);
-      const diffY = Math.abs(event.clientY - this.lastMouseY);
+      const diffX = Math.abs(event.clientX - rect.left - this.lastMouseX);
+      const diffY = Math.abs(event.clientY - rect.top - this.lastMouseY);
       if (diffX < delta && diffY < delta) {
+        this.initBlocks = this.blocks;
         this.isDragging = false;
         // this.initDragPoly.pos.x = event.clientX;
         // this.initDragPoly.pos.y = event.clientY;
-        this.polyPoints = [];
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       }
     },
@@ -430,6 +431,13 @@
       }
 
       return false; // No collision detected
+    },
+
+    changeBoardSize(size: number) {
+      this.boardCol = size;
+      this.boardRow = size;
+
+      this.initCanvas();
     },
   }));
 </script>
