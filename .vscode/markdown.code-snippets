@@ -16,40 +16,8 @@
   // 	"description": "Log output to console"
   // }
 
-  "Create new astro components": {
-    "prefix": "astro-component",
-    "body": [
-      "---",
-      "interface Props {}",
-      "",
-      "const {} = Astro.props;",
-      "---",
-      "",
-      "<div>",
-      "</div>",
-    ],
-  },
-  "Create new astro pages": {
-    "prefix": "astro-page",
-    "body": [
-      "---",
-      "import Layout from \"@layouts/Layout.astro\";",
-      "---",
-      "",
-      "<Layout",
-      "title=\"${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/} | Reverse 1999 Gnomon\"",
-      "breadcrumbs={[",
-      "{",
-      "label: \"Home\",",
-      "href: \"/\",",
-      "},",
-      "{",
-      "label: \"${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}\",",
-      "},",
-      "]}",
-      ">",
-      "<h1>${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}</h1>",
-      "</Layout>",
-    ],
+  "Create new markdown effect": {
+    "prefix": "markdown-effect",
+    "body": [":effect{code=\"\"}"],
   },
 }

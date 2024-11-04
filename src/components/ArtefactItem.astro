@@ -1,8 +1,9 @@
 ---
 import { ARTEFACT_RARITY, ARTEFACT_TAG, ARTEFACT_TYPE } from "@data/artefact";
+import matrix from "matrix-js";
+import EffectTooltip from "./EffectTooltip.astro";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
-import EffectTooltip from "./EffectTooltip.astro";
 
 interface Props {
   artefactEntry: any;
@@ -11,6 +12,9 @@ interface Props {
 const { artefactEntry } = Astro.props;
 
 const { Content } = await artefactEntry.render();
+
+const shape = matrix(artefactEntry.data.shape);
+const shapeSize = shape.size();
 ---
 
 <div
@@ -22,12 +26,37 @@ const { Content } = await artefactEntry.render();
 >
   <div>
     <p class="w-48 text-lg font-bold">{artefactEntry.data.name}</p>
-    <img
-      loading="lazy"
-      class="w-20 h-20"
-      src={`/data/a-series-of-dusks/artefacts/${artefactEntry.data.image}`}
-      alt={`artefact ${artefactEntry.slug}`}
-    />
+    <div class="flex gap-4">
+      <img
+        loading="lazy"
+        class="w-20 h-20"
+        src={`/data/a-series-of-dusks/artefacts/${artefactEntry.data.image}`}
+        alt={`artefact ${artefactEntry.slug}`}
+      />
+      <div class="flex flex-col gap-1">
+        {
+          Array.from({ length: shapeSize[0] }).map((_, rowIdx) => (
+            <div class="flex gap-1">
+              {Array.from({ length: shapeSize[1] }).map((_, colIdx) => (
+                <div
+                  class:list={[
+                    "w-6 h-6",
+                    !shape(rowIdx, colIdx)
+                      ? "bg-transparent"
+                      : {
+                          "bg-common/30":
+                            artefactEntry.data.rarity === "COMMON",
+                          "bg-rare/30": artefactEntry.data.rarity === "RARE",
+                          "bg-epic/30": artefactEntry.data.rarity === "EPIC",
+                        },
+                  ]}
+                />
+              ))}
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </div>
   <div>
     <div class="flex gap-1">

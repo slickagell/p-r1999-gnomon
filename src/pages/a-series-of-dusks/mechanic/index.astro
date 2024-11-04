@@ -1,0 +1,33 @@
+---
+import "@styles/markdown-layout.css";
+import Layout from "@layouts/Layout.astro";
+import { getEntry } from "astro:content";
+import MarkdownContent from "@components/MarkdownContent.astro";
+
+const mechanicEntry = await getEntry("a-series-of-dusks", "mechanic");
+
+const { Content } = await mechanicEntry.render();
+---
+
+<Layout
+  title="Mechanic | A Series of Dusks | Reverse 1999 Gnomon"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "A Series of Dusks",
+      href: "/a-series-of-dusks",
+    },
+    {
+      label: "Mechanic",
+    },
+  ]}
+>
+  <Content
+    components={{
+      p: MarkdownContent,
+    }}
+  />
+</Layout>
