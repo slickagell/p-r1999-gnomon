@@ -1,9 +1,9 @@
 import { useStore } from "@nanostores/solid";
 import {
-  nameFilter,
-  rarityFilter,
-  tagFilter,
-  typeFilter,
+  nameFilter as artefactNameFilter,
+  rarityFilter as artefactRarityFilter,
+  tagFilter as artefactTagFilter,
+  typeFilter as artefactTypeFilter,
 } from "@stores/artefactFilterStore";
 import {
   nameFilter as effectNameFilter,
@@ -12,17 +12,17 @@ import {
 import { createMemo, createSignal } from "solid-js";
 import { WindowVirtualizer } from "virtua/solid";
 
-export const ArtefactVirtualList = ({ effects }: any) => {
-  if (!effects) {
+export const ArtefactVirtualList = ({ artefacts }: any) => {
+  if (!artefacts) {
     return null;
   }
 
-  const [frozenEffects] = createSignal([...effects.children]);
+  const [frozenArtefacts] = createSignal([...artefacts.children]);
 
-  const $rarityFilter = useStore(rarityFilter);
-  const $typeFilter = useStore(typeFilter);
-  const $tagFilter = useStore(tagFilter);
-  const $nameFilter = useStore(nameFilter);
+  const $rarityFilter = useStore(artefactRarityFilter);
+  const $typeFilter = useStore(artefactTypeFilter);
+  const $tagFilter = useStore(artefactTagFilter);
+  const $nameFilter = useStore(artefactNameFilter);
 
   const list = createMemo(() => {
     const rarityFilter = $rarityFilter();
@@ -30,7 +30,7 @@ export const ArtefactVirtualList = ({ effects }: any) => {
     const tagFilter = $tagFilter();
     const nameFilter = $nameFilter();
 
-    const filteredEffects = frozenEffects().filter((ele) => {
+    const filteredArtefacts = frozenArtefacts().filter((ele) => {
       const rarity = ele.getAttribute("data-artefact-rarity");
       const type = ele.getAttribute("data-artefact-type");
       const tags = ele.getAttribute("data-artefact-tags");
@@ -46,7 +46,7 @@ export const ArtefactVirtualList = ({ effects }: any) => {
         : filters && name.toLowerCase().includes(nameFilter.toLowerCase());
     });
 
-    return filteredEffects;
+    return filteredArtefacts;
   });
 
   return (

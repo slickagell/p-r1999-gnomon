@@ -63,7 +63,10 @@ export const SPECIALTY = {
   },
   CONTROL: {
     title: "Control",
-  }
+  },
+  BURN: {
+    title: "Burn",
+  },
 };
 
 export const RARITY = {
@@ -82,5 +85,5 @@ export const RARITY = {
   THREE_STAR: {
     title: "3 star",
     value: 3,
-  }
+  },
 };

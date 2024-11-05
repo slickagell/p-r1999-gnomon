@@ -19,6 +19,7 @@ Any suggestions or reported issues are appreciated.
     ├── /materials (Material list)
     └── /a-series-of-dusks (A Series of Dusks)
         └── /artefacts (Artefact list)
+        └── /mechanic (Mechanic)
 ```
 
 ## Thanks

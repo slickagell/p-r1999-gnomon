@@ -9,7 +9,7 @@ interface Props {
     | "chibi"
     | "skill-1"
     | "skill-2"
-    | "ultimate";
+    | "unique";
   id?: string;
   code?: string;
 }
@@ -101,13 +101,13 @@ const { variant, id = "", code = "" } = Astro.props;
             />
           );
         }
-        case "ultimate": {
+        case "unique": {
           if (!id) return null;
           return (
             <img
               class="w-48"
-              src={`/data/characters/${id}/ultimate.png`}
-              alt="ultimate"
+              src={`/data/characters/${id}/unique.png`}
+              alt="unique"
             />
           );
         }
