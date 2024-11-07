@@ -17,4 +17,10 @@ export const EFFECT_TYPE = {
   UNKNOWN: {
     title: "Unknown",
   },
+  NONE: {
+    title: "None",
+  },
+  CHANNEL: {
+    title: "Channel",
+  },
 };
