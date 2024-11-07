@@ -67,6 +67,18 @@ export const SPECIALTY = {
   BURN: {
     title: "Burn",
   },
+  BURST_DMG: {
+    title: "Burst DMG",
+  },
+  DEBUFF: {
+    title: "Debuff",
+  },
+  EXTRA_ACTION: {
+    title: "Extra Action",
+  },
+  SHIELD: {
+    title: "Shield",
+  },
 };
 
 export const RARITY = {

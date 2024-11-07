@@ -90,31 +90,36 @@ const characterEntries = await getCollection("characters");
       <!-- End Afflatus -->
 
       <!-- Dmg -->
-      <div class="py-2 md:px-4">Damage type</div>
-      <ul class="hidden md:flex py-2 px-4 gap-1">
-        <template x-for="dmgType in dmgTypes">
-          <li>
-            <button
-              class="btn btn-outline btn-xs"
-              :class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
-              @click="filterDmgType(dmgType.code)"
-              x-text="dmgType.title"
-            >
-            </button>
-          </li>
-        </template>
-      </ul>
-      <select
-        class="md:hidden select select-secondary w-full"
-        @change="filterDmgType($event.target.value)"
-      >
-        <template x-for="dmgType in dmgTypes">
-          <option
-            :value="dmgType.code"
-            :selected="dmgType.code === dmgTypeFilter"
-            x-text="dmgType.title"></option>
-        </template>
-      </select>
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Damage type
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
+          <template x-for="dmgType in dmgTypes">
+            <li>
+              <button
+                class="btn btn-outline btn-xs"
+                :class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
+                @click="filterDmgType(dmgType.code)"
+                x-text="dmgType.title"
+              >
+              </button>
+            </li>
+          </template>
+        </ul>
+      </div>
+      <label for="dmgTypeFilter" class="py-2 block md:hidden">
+        Damage type
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterDmgType($event.target.value)"
+        >
+          <template x-for="dmgType in dmgTypes">
+            <option
+              :value="dmgType.code"
+              :selected="dmgType.code === dmgTypeFilter"
+              x-text="dmgType.title"></option>
+          </template>
+        </select>
+      </label>
       <!-- End Dmg -->
       <input
         type="text"

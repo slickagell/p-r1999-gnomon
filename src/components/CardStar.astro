@@ -6,45 +6,45 @@ interface Props {
 const { star } = Astro.props;
 ---
 
-<ul class="flex justify-center gap-1">
+<div class="flex justify-center gap-1">
     {(()=>{
         switch (star) {
             case '2':
                 return (
-                    <li>
+                    <div>
                         <img class="w-8 h-8" src="/data/card/lv-star.png" alt="lv-star icon"/>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <img class="w-8 h-8" src="/data/card/lv-star.png" alt="lv-star icon" />
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <img class="w-8 h-8" src="/data/card/lv-unstar.png" alt="lv-unstar icon" />
-                    </li>
+                    </div>
                 )
             case '3':
                 return (
-                    <li>
+                    <div>
                         <img class="w-8 h-8" src="/data/card/lv-star.png" alt="lv-star icon"/>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <img class="w-8 h-8" src="/data/card/lv-star.png" alt="lv-star icon" />
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                         <img class="w-8 h-8" src="/data/card/lv-star.png" alt="lv-star icon" />
-                    </li>
+                    </div>
                 )
             default:
                 return (
-                        <li>
+                        <div>
                             <img class="w-8 h-8" src="/data/card/lv-star.png" alt="lv-star icon"/>
-                        </li>
-                        <li>
+                        </div>
+                        <div>
                             <img class="w-8 h-8" src="/data/card/lv-unstar.png" alt="lv-unstar icon" />
-                        </li>
-                        <li>
+                        </div>
+                        <div>
                             <img class="w-8 h-8" src="/data/card/lv-unstar.png" alt="lv-unstar icon" />
-                        </li>
+                        </div>
                     )
         }
     })()}
-</ul>
+</div>

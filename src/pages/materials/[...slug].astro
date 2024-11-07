@@ -37,11 +37,11 @@ const { Content } = await entry.render();
   <div class="paper-texture md:!flex-row !max-w-full gap-4 md:gap-6">
     <img
       loading="lazy"
-      class="w-40 h-40 mx-auto"
+      class="w-40 h-40 mx-auto shrink-0"
       src={`/data/materials/${entry.data.image}`}
       alt={`material ${entry.data.title}`}
     />
-    <div>
+    <div class="flex-1">
       <Content
         components={{
           p: MarkdownContent,
