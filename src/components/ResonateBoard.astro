@@ -5,9 +5,9 @@
 <div
   class="resonate relative z-10"
   x-data="dataset"
-  @mousemove="onDrag"
-  @mousedown="onDragStart"
-  @mouseup="onDragEnd"
+  @mousemove="onMouseMove"
+  @mousedown="onMouseDown"
+  @mouseup="onMouseUp"
   style={`min-width: ${600}px; min-height: ${600}px`}
 >
   <button class="btn absolute bottom-0" @click="changeBoardSize(6)"> 6 </button>
@@ -19,12 +19,12 @@
     x-ref="canvas"
     class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
   ></canvas>
-  <canvas
-    x-ref="boardCanvas"
-    class="border absolute top-0 left-0 bg-success/10 -z-20"></canvas>
+  <canvas x-ref="boardCanvas" class="absolute top-0 left-0 bg-success/10 -z-20"
+  ></canvas>
 
   <template x-for="block in blocks" :key="block.id">
     <div
+      :data-block-id="block.id"
       x-data="{ x: block.pos.x, y: block.pos.y, isDragOver: false}"
       class="w-10 h-10 border absolute"
       :class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-primary/50' : '') || (isDragOver ? 'bg-primary' : '')"
@@ -34,10 +34,10 @@
   </template>
 
   <div class="mt-10"></div>
-  <div data-block-id="1" class="w-10 h-20 border absolute right-0 top-0"></div>
-  <div data-block-id="2" class="w-20 h-10 border absolute right-0 top-20"></div>
-  <div data-block-id="5" class="w-20 h-20 border absolute right-0 top-40"></div>
-  <div data-block-id="6" class="w-20 h-20 border absolute right-0 top-60"></div>
+  <div data-shape-id="1" class="w-10 h-20 border absolute right-0 top-0"></div>
+  <div data-shape-id="2" class="w-20 h-10 border absolute right-0 top-20"></div>
+  <div data-shape-id="5" class="w-20 h-20 border absolute right-0 top-40"></div>
+  <div data-shape-id="6" class="w-20 h-20 border absolute right-0 top-60"></div>
 </div>
 
 <script>
@@ -51,6 +51,8 @@
   const BLOCK_SIZE = 40;
   const BOARD_COL = 10;
   const BOARD_ROW = 10;
+  const BOARD_X = 20;
+  const BOARD_Y = 20;
 
   window.Alpine = Alpine;
   const BLOCKS = new Map([
@@ -102,12 +104,16 @@
   Alpine.data("dataset", () => ({
     boardCol: BOARD_COL,
     boardRow: BOARD_ROW,
-    boardX: 0,
-    boardY: 0,
+    boardX: BOARD_X,
+    boardY: BOARD_Y,
 
     initDragPoly: null,
     dragPoly: null,
+    dragShape: [],
     dragShapeDimension: null,
+
+    selectGeoJson: null,
+    selectGeoJsonIdx: -1,
 
     ctx: null,
     canvas: null,
@@ -122,9 +128,12 @@
     blocks: [],
     blockSize: BLOCK_SIZE,
 
+    startMouseX: 0,
+    startMouseY: 0,
     lastMouseX: 0,
     lastMouseY: 0,
     isDragging: false,
+    isMouseDown: false,
 
     //* Init board canvas and blocks array
     initCanvas() {
@@ -132,6 +141,9 @@
       this.boardCanvas = this.$refs.boardCanvas;
       this.ctx = this.$refs.canvas.getContext("2d");
       this.boardCtx = this.$refs.boardCanvas.getContext("2d");
+
+      this.boardCanvas.style.top = `${this.boardY}px`;
+      this.boardCanvas.style.left = `${this.boardX}px`;
 
       let initBlocks: BlockType[] = [];
       for (let row = 0; row < this.boardRow; row++) {
@@ -155,6 +167,7 @@
 
       this.canvas.width = this.canvas.offsetWidth;
       this.canvas.height = this.canvas.offsetHeight;
+
       this.boardCanvas.width = this.boardCol * this.blockSize;
       this.boardCanvas.height = this.boardRow * this.blockSize;
     },
@@ -188,19 +201,9 @@
       }
     },
 
-    onInitDragGeoJson(blockId) {
-      const blockData = BLOCKS.get(blockId);
-
-      if (!blockData) return;
-
-      this.isDragging = true;
-
-      this.canvas.width = this.canvas.offsetWidth;
-      this.canvas.height = this.canvas.offsetHeight;
-
-      const blockShapeMatrix = matrix(blockData.shape);
+    initGeoJsonByShape(shape: number[][], initialX = 0, initialY = 0) {
+      const blockShapeMatrix = matrix(shape);
       const blockShapeDimension = blockShapeMatrix.size();
-      this.dragShapeDimension = JSON.parse(JSON.stringify(blockShapeDimension));
       const shapeRow = blockShapeDimension[0];
       const shapeCol = blockShapeDimension[1];
 
@@ -209,14 +212,17 @@
       for (let row = 0; row < shapeRow; row++) {
         for (let col = 0; col < shapeCol; col++) {
           if (blockShapeMatrix(row, col)) {
-            const x = col * this.blockSize;
-            const y = row * this.blockSize;
+            const x = this.boardX + col * this.blockSize;
+            const y = this.boardY + row * this.blockSize;
 
             const itemBlock = [
               [x, y],
-              [(col + 1) * this.blockSize, y],
-              [(col + 1) * this.blockSize, (row + 1) * this.blockSize],
-              [x, (row + 1) * this.blockSize],
+              [this.boardX + (col + 1) * this.blockSize, y],
+              [
+                this.boardX + (col + 1) * this.blockSize,
+                this.boardY + (row + 1) * this.blockSize,
+              ],
+              [x, this.boardY + (row + 1) * this.blockSize],
             ];
 
             itemBlocks.push(itemBlock);
@@ -252,24 +258,142 @@
         }
       });
 
+      if (!initialX && !initialY) {
+        return {
+          shape: JSON.parse(JSON.stringify(shape)),
+          shapeDimension: JSON.parse(JSON.stringify(blockShapeDimension)),
+          itemGeometry: JSON.parse(JSON.stringify(itemGeometry)),
+        };
+      }
+
+      const startPoint = {
+        x: initialX,
+        y: initialY,
+      };
+      const startPolyPoint = itemGeometry.geometry.coordinates[0][0][0];
+
+      const translatedCoords = itemGeometry.geometry.coordinates.reduce(
+        (prevPolysCoords, polys) => {
+          const transformPolys = polys.reduce((prev: Position[], coords) => {
+            let delta = {
+              x: startPoint.x - startPolyPoint[0],
+              y: startPoint.y - startPolyPoint[1],
+            };
+            const transformCoords = coords.map((point) => {
+              return [point[0] + delta.x, point[1] + delta.y] as Position;
+            });
+            return [...prev, transformCoords];
+          }, []);
+          return [...prevPolysCoords, transformPolys];
+        },
+        []
+      );
+
+      let transformItemGeometry = {
+        ...itemGeometry,
+        geometry: {
+          ...itemGeometry.geometry,
+          coordinates: translatedCoords,
+        },
+      } as Feature;
+
+      return {
+        shape: JSON.parse(JSON.stringify(shape)),
+        shapeDimension: JSON.parse(JSON.stringify(blockShapeDimension)),
+        itemGeometry: JSON.parse(JSON.stringify(transformItemGeometry)),
+      };
+    },
+
+    onInitDragGeoJson(blockId) {
+      const blockData = BLOCKS.get(blockId);
+
+      if (!blockData) return;
+
+      this.isDragging = true;
+
+      this.canvas.width = this.canvas.offsetWidth;
+      this.canvas.height = this.canvas.offsetHeight;
+
+      const { shape, shapeDimension, itemGeometry } = this.initGeoJsonByShape(
+        blockData.shape
+      );
+
+      this.dragShape = shape;
+      this.dragShapeDimension = shapeDimension;
       this.initDragPoly = itemGeometry;
     },
 
-    onDragStart(event) {
+    onMouseDown(event) {
       let rect = this.canvas.getBoundingClientRect();
       this.lastMouseX = event.clientX - rect.left;
       this.lastMouseY = event.clientY - rect.top;
+      this.startMouseX = event.clientX - rect.left;
+      this.startMouseY = event.clientY - rect.top;
+      this.isMouseDown = true;
 
-      if (!event.target.attributes["data-block-id"]) return;
-      const blockId = event.target.attributes["data-block-id"].value;
-      this.onInitDragGeoJson(blockId);
+      if (!event.target.attributes["data-shape-id"]) {
+        const { selectGeoJson, selectGeoJsonIdx } =
+          this.checkSelectGeoJson(event);
+
+        this.selectGeoJson = selectGeoJson;
+        this.selectGeoJsonIdx = selectGeoJsonIdx;
+
+        return;
+      }
+      const shapeId = event.target.attributes["data-shape-id"].value;
+      this.onInitDragGeoJson(shapeId);
     },
 
-    onDrag(event) {
-      if (!this.isDragging) return;
+    onMouseMove(event) {
+      if (!this.isMouseDown) return;
+
+      if (!this.isDragging) {
+        let rect = this.canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const delta = this.blockSize;
+        const diffX = Math.abs(x - this.startMouseX);
+        const diffY = Math.abs(y - this.startMouseY);
+
+        if (!(diffX > delta || diffY > delta)) {
+          return;
+        }
+
+        const selectGeoJson = this.selectGeoJson;
+        const selectGeoJsonIdx = this.selectGeoJsonIdx;
+
+        if (selectGeoJson) {
+          if (selectGeoJsonIdx > -1) {
+            this.resonateGeoJsonList = JSON.parse(
+              JSON.stringify(this.resonateGeoJsonList)
+            ).filter((_, idx) => idx !== selectGeoJsonIdx);
+          }
+          const blocksData = JSON.parse(JSON.stringify(this.blocks)).map(
+            (block) => {
+              if (selectGeoJson.properties?.blocks.includes(block.id)) {
+                return {
+                  ...block,
+                  isCollided: false,
+                };
+              }
+              return block;
+            }
+          );
+          this.initBlocks = blocksData;
+          this.blocks = blocksData;
+          this.isDragging = true;
+          const { shape, shapeDimension, itemGeometry } =
+            this.initGeoJsonByShape(selectGeoJson.properties?.shape);
+          this.dragShape = shape;
+          this.dragShapeDimension = shapeDimension;
+          this.initDragPoly = itemGeometry;
+        }
+
+        return;
+      }
 
       let rect = this.canvas.getBoundingClientRect();
-
       this.lastMouseX = event.clientX - rect.left;
       this.lastMouseY = event.clientY - rect.top;
 
@@ -284,7 +408,10 @@
           y: this.lastMouseY - coords[0][1],
         };
         const transformCoords = coords[0].map((point) => {
-          return [point[0] + delta.x, point[1] + delta.y];
+          return [
+            point[0] + this.boardX + delta.x,
+            point[1] + this.boardY + delta.y,
+          ];
         });
         this.dragPoly = {
           ...drawPoly,
@@ -294,7 +421,9 @@
         } as Feature;
       } else if (drawPoly.geometry.type === "MultiPolygon") {
         const startPolyPoint = drawPoly.geometry.coordinates[0][0][0];
+
         const centroidPoint = centroid(drawPoly);
+
         const startPoint = {
           x: this.lastMouseX - centroidPoint.geometry.coordinates[0],
           y: this.lastMouseY - centroidPoint.geometry.coordinates[1],
@@ -331,52 +460,8 @@
       this.processCheckCollision(this.dragPoly, this.blocks);
     },
 
-    onDragEnd(event) {
-      //* If we're currently dragging a block
-      if (this.isDragging) {
-        this.isDragging = false;
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-        const isItemInsideBoard = this.itemOnBoardGeoJson.geometry.coordinates
-          .flat(2)
-          .every(
-            (point: Position) =>
-              point[0] <= this.blockSize * this.boardCol &&
-              point[1] <= this.blockSize * this.boardRow
-          );
-
-        if (!isItemInsideBoard) {
-          this.blocks = this.initBlocks;
-          return;
-        }
-
-        const blocks = JSON.parse(JSON.stringify(this.blocks)) as BlockType[];
-
-        const invalidBlock = blocks.find((ele) => ele.isNotValid);
-        if (!invalidBlock) {
-          this.initBlocks = this.blocks;
-          const unionGeoJson = !this.resonateGeoJson
-            ? this.itemOnBoardGeoJson
-            : {
-                type: "Feature",
-                geometry: {
-                  coordinates: union(
-                    this.resonateGeoJson.geometry.coordinates,
-                    this.itemOnBoardGeoJson.geometry.coordinates
-                  ),
-                },
-              };
-
-          this.resonateGeoJson = unionGeoJson;
-          this.resonateGeoJsonList.push(this.itemOnBoardGeoJson);
-          this.resonateGeoJsonList.forEach((geoJson) => {
-            this.drawGeoJson(geoJson, this.boardCtx, "rgba(219,111,57,0.7)");
-          });
-        } else {
-          this.blocks = this.initBlocks;
-        }
-        return;
-      }
+    onMouseUp(event) {
+      this.isMouseDown = false;
 
       //* If user click on the board
       let rect = this.canvas.getBoundingClientRect();
@@ -384,35 +469,174 @@
       const y = event.clientY - rect.top;
 
       if (
-        x > this.blockSize * this.boardCol ||
-        y > this.blockSize * this.boardRow
-      )
+        x > this.boardX + this.blockSize * this.boardCol ||
+        y > this.boardY + this.blockSize * this.boardRow
+      ) {
+        //* If we're currently dragging a block
+        if (this.isDragging) {
+          this.isDragging = false;
+          this.processEndCollision();
+          return;
+        }
         return;
+      }
 
-      const delta = 5;
-      const diffX = Math.abs(x - this.lastMouseX);
-      const diffY = Math.abs(y - this.lastMouseY);
+      const delta = this.blockSize;
+      const diffX = Math.abs(x - this.startMouseX);
+      const diffY = Math.abs(y - this.startMouseY);
 
-      if (diffX > delta || diffY > delta) return;
+      if (diffX > delta || diffY > delta) {
+        //* If we're currently dragging a block
+        if (this.isDragging) {
+          this.isDragging = false;
+          this.processEndCollision();
+          return;
+        }
 
-      this.onBoardClick(x, y);
+        return;
+      }
+
+      //* If user click on the board
+      this.onBoardClick(event);
     },
 
-    onBoardClick(x: number, y: number) {
-      const column = Math.floor(x / this.blockSize);
-      const row = Math.floor(y / this.blockSize);
+    shape90degRotate(shape) {
+      const shapeMatrix = matrix(shape);
+
+      //* Transpose
+      const rotateShapeMatrix = shapeMatrix.trans();
+
+      //* Reverse rows
+      for (let i = 0; i < rotateShapeMatrix.length; i++) {
+        rotateShapeMatrix[i].reverse();
+      }
+
+      return rotateShapeMatrix;
+    },
+
+    processEndCollision() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+      const isItemInsideBoard = this.itemOnBoardGeoJson.geometry.coordinates
+        .flat(2)
+        .every(
+          (point: Position) =>
+            point[0] <= this.boardX + this.blockSize * this.boardCol &&
+            point[1] <= this.boardY + this.blockSize * this.boardRow
+        );
+
+      if (!isItemInsideBoard) {
+        this.blocks = this.initBlocks;
+        this.resonateGeoJsonList.push(this.selectGeoJson);
+        return;
+      }
+
+      const blocks = JSON.parse(JSON.stringify(this.blocks)) as BlockType[];
+
+      const invalidBlock = blocks.find((ele) => ele.isNotValid);
+      if (!invalidBlock) {
+        this.initBlocks = this.blocks;
+        const unionGeoJson = !this.resonateGeoJson
+          ? this.itemOnBoardGeoJson
+          : {
+              type: "Feature",
+              geometry: {
+                coordinates: union(
+                  this.resonateGeoJson.geometry.coordinates,
+                  this.itemOnBoardGeoJson.geometry.coordinates
+                ),
+              },
+            };
+
+        this.resonateGeoJson = unionGeoJson;
+        this.itemOnBoardGeoJson = {
+          ...this.itemOnBoardGeoJson,
+          properties: {
+            ...this.itemOnBoardGeoJson.properties,
+            shape: this.dragShape,
+          },
+        };
+        this.resonateGeoJsonList.push(this.itemOnBoardGeoJson);
+        // this.resonateGeoJsonList.forEach((geoJson) => {
+        //   this.drawGeoJson(geoJson, this.boardCtx, "rgba(219,111,57,0.7)");
+        // });
+      } else {
+        this.blocks = this.initBlocks;
+        this.resonateGeoJsonList.push(this.selectGeoJson);
+      }
+
+      this.selectGeoJson = null;
+    },
+
+    checkSelectGeoJson(event) {
+      //* If user click on the item on the board
+      const blockId = event.target.attributes["data-block-id"]?.value;
+      if (!blockId) return;
+      const [column, row] = blockId.split("-");
 
       let selectGeoJson;
+      let selectGeoJsonIdx = -1;
 
-      this.resonateGeoJsonList.some((geoJson) => {
+      this.resonateGeoJsonList.some((geoJson, idx) => {
         if (geoJson.properties.blocks.includes(`${column}-${row}`)) {
           selectGeoJson = geoJson;
+          selectGeoJsonIdx = idx;
           return true;
         }
 
         return false;
       });
+
+      return {
+        selectGeoJson,
+        selectGeoJsonIdx,
+      };
+    },
+
+    onBoardClick(event) {
+      const selectGeoJson = this.selectGeoJson;
+      const selectGeoJsonIdx = this.selectGeoJsonIdx;
+
       if (selectGeoJson) {
+        if (selectGeoJsonIdx > -1) {
+          this.resonateGeoJsonList = JSON.parse(
+            JSON.stringify(this.resonateGeoJsonList)
+          ).filter((_, idx) => idx !== selectGeoJsonIdx);
+        }
+
+        const rotatedShape = this.shape90degRotate(
+          selectGeoJson.properties?.shape
+        );
+        const firstBlock = selectGeoJson.properties?.blocks[0];
+        const firstBlockCoords = firstBlock
+          .split("-")
+          .map((ele) => ele * this.blockSize);
+
+        const { itemGeometry } = this.initGeoJsonByShape(
+          rotatedShape,
+          firstBlockCoords[0],
+          firstBlockCoords[1]
+        );
+
+        // this.drawGeoJson(itemGeometry, this.ctx, "rgba(255, 233, 0, 1)");
+
+        const blocksData = JSON.parse(JSON.stringify(this.blocks)).map(
+          (block) => {
+            if (selectGeoJson.properties?.blocks.includes(block.id)) {
+              return {
+                ...block,
+                isCollided: false,
+              };
+            }
+            return block;
+          }
+        );
+
+        this.blocks = blocksData;
+        this.dragShape = rotatedShape;
+
+        this.processCheckCollision(itemGeometry, this.blocks);
+        this.processEndCollision();
       }
     },
 
@@ -486,8 +710,8 @@
         (prevPolysCoords, polys) => {
           const transformPolys = polys.reduce((prev: Position[], coords) => {
             let delta = {
-              x: column * this.blockSize - startPoint[0],
-              y: row * this.blockSize - startPoint[1],
+              x: this.boardX + column * this.blockSize - startPoint[0],
+              y: this.boardY + row * this.blockSize - startPoint[1],
             };
             const transformCoords = coords.map((point) => {
               return [point[0] + delta.x, point[1] + delta.y] as Position;
@@ -507,6 +731,7 @@
         },
         properties: {
           blocks: [],
+          shape: [],
         },
       } as Feature;
 
