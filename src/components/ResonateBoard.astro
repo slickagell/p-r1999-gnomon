@@ -1,47 +1,91 @@
 ---
+interface Props {
+  maxResonateLevel: number;
+  resonatePieces: {
+    id: string;
+    image: string;
+    shape: number[][];
+    dimension: number[];
+  }[];
+}
 
+const { maxResonateLevel, resonatePieces } = Astro.props;
 ---
 
-<div
-  class="resonate relative z-10"
-  x-data="dataset"
-  @mousemove="onMouseMove"
-  @mousedown="onMouseDown"
-  @mouseup="onMouseUp"
-  style={`min-width: ${600}px; min-height: ${600}px`}
->
-  <button class="btn absolute bottom-0" @click="changeBoardSize(6)"> 6 </button>
-  <button class="btn absolute bottom-0 left-20" @click="changeBoardSize(10)">
-    10
-  </button>
+<div x-data="dataset">
+  <div class="flex">
+    <template x-for="i in $store.resonate.maxResonateLevel">
+      <button
+        class="btn"
+        :class="i === activeResonateLevel?'btn-outline btn-primary':''"
+        @click="changeBoardSize(i)"
+        x-text="i"></button>
+    </template>
+  </div>
+  <div
+    class="resonate relative z-10"
+    @mousemove="onMouseMove"
+    @mousedown="onMouseDown"
+    @mouseup="onMouseUp"
+    style={`min-width: 100%; min-height: 70vh`}
+  >
+    <canvas
+      x-ref="canvas"
+      class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
+    ></canvas>
+    <canvas
+      x-ref="boardCanvas"
+      class="absolute top-0 left-0 bg-success/10 -z-20"></canvas>
 
-  <canvas
-    x-ref="canvas"
-    class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
-  ></canvas>
-  <canvas x-ref="boardCanvas" class="absolute top-0 left-0 bg-success/10 -z-20"
-  ></canvas>
+    <template x-for="block in blocks" :key="block.id">
+      <div
+        :data-block-id="block.id"
+        x-data="{ x: block.pos.x, y: block.pos.y, size: block.size, isDragOver: false}"
+        class="border absolute"
+        :class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-primary/50 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
+        :style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
+      >
+      </div>
+    </template>
 
-  <template x-for="block in blocks" :key="block.id">
-    <div
-      :data-block-id="block.id"
-      x-data="{ x: block.pos.x, y: block.pos.y, size: block.size, isDragOver: false}"
-      class="border absolute"
-      :class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-primary/50 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
-      :style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
-    >
+    <div class="absolute top-0 right-0 h-full w-1/2 overflow-auto">
+      {
+        resonatePieces.map((ele) => (
+          <div class="flex">
+            <div class="relative">
+              <div
+                data-shape-id={ele.id}
+                style={{
+                  width: ele.dimension[1] * 40 + "px",
+                  height: ele.dimension[0] * 40 + "px",
+                }}
+              />
+              <img
+                class="absolute top-0 left-0 pointer-events-none"
+                style={{ width: ele.dimension[1] * 40 + "px" }}
+                src={`/data/resonate/pieces/${ele.image}.png`}
+                alt={`${ele.image}`}
+              />
+            </div>
+            <div />
+          </div>
+        ))
+      }
     </div>
-  </template>
-
-  <div class="mt-10"></div>
-  <div data-shape-id="1" class="w-10 h-20 border absolute right-0 top-0"></div>
-  <div data-shape-id="2" class="w-20 h-10 border absolute right-0 top-20"></div>
-  <div data-shape-id="5" class="w-20 h-20 border absolute right-0 top-40"></div>
-  <div data-shape-id="6" class="w-20 h-20 border absolute right-0 top-60"></div>
-  <div data-shape-id="7" class="w-20 h-20 border absolute right-0 top-80"></div>
+  </div>
 </div>
 
+<script define:vars={{ resonatePieces, maxResonateLevel }}>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("resonate", {
+      resonatePieces: resonatePieces,
+      maxResonateLevel,
+    });
+  });
+</script>
+
 <script>
+  import { getResonateBoardRowCol } from "@data/resonate";
   import { centroid } from "@turf/centroid";
   import { polygon } from "@turf/helpers";
   import Alpine from "alpinejs";
@@ -50,51 +94,12 @@
   import matrix from "matrix-js";
 
   const BLOCK_SIZE = 40;
-  const BOARD_COL = 10;
-  const BOARD_ROW = 10;
-  const BOARD_X = 20;
-  const BOARD_Y = 20;
+  const BOARD_X = 60;
+  const BOARD_Y = 60;
   const BLOCK_OFFSET = BLOCK_SIZE / 4;
+  const DEFAULT_RESONATE_LEVEL = 10;
 
   window.Alpine = Alpine;
-  const BLOCKS = new Map([
-    [
-      "1",
-      {
-        shape: [[1], [1]],
-      },
-    ],
-    [
-      "2",
-      {
-        shape: [[1, 1]],
-      },
-    ],
-    [
-      "5",
-      {
-        shape: [
-          [0, 1, 0],
-          [1, 1, 1],
-        ],
-      },
-    ],
-    [
-      "6",
-      {
-        shape: [
-          [1, 0, 1, 0],
-          [1, 0, 0, 1],
-        ],
-      },
-    ],
-    [
-      "7",
-      {
-        shape: [[1]],
-      },
-    ],
-  ]);
 
   interface BlockType {
     id: string;
@@ -110,10 +115,11 @@
   }
 
   Alpine.data("dataset", () => ({
-    boardCol: BOARD_COL,
-    boardRow: BOARD_ROW,
+    boardCol: 0,
+    boardRow: 0,
     boardX: BOARD_X,
     boardY: BOARD_Y,
+    activeResonateLevel: DEFAULT_RESONATE_LEVEL,
 
     initDragGeoJson: null,
     dragGeoJson: null,
@@ -153,6 +159,17 @@
 
       this.boardCanvas.style.top = `${this.boardY}px`;
       this.boardCanvas.style.left = `${this.boardX}px`;
+
+      if (!this.boardRow || !this.boardCol) {
+        const { row, col } = getResonateBoardRowCol(
+          this.$store.resonate.maxResonateLevel > this.activeResonateLevel
+            ? this.activeResonateLevel
+            : this.$store.resonate.maxResonateLevel
+        );
+
+        this.boardRow = row;
+        this.boardCol = col;
+      }
 
       let initBlocks: BlockType[] = [];
       for (let row = 0; row < this.boardRow; row++) {
@@ -354,7 +371,9 @@
     },
 
     onInitDragGeoJson(blockId) {
-      const blockData = BLOCKS.get(blockId);
+      const blockData = this.$store.resonate.resonatePieces.find(
+        (ele) => ele.id === blockId
+      );
 
       if (!blockData) return;
 
@@ -452,8 +471,10 @@
       const centroidPoint = centroid(drawPoly);
 
       const startPoint = {
-        x: this.lastMouseX - centroidPoint.geometry.coordinates[0],
-        y: this.lastMouseY - centroidPoint.geometry.coordinates[1],
+        x:
+          this.lastMouseX + this.boardX - centroidPoint.geometry.coordinates[0],
+        y:
+          this.lastMouseY + this.boardY - centroidPoint.geometry.coordinates[1],
       };
 
       const { transformGeoJson } = this.transformGeoJson(drawPoly, startPoint);
@@ -695,7 +716,7 @@
       ]);
 
       //* Draw potential collide block
-      this.drawGeoJson(blockPoly, this.ctx, "rgba(220,220,220,1)");
+      // this.drawGeoJson(blockPoly, this.ctx, "rgba(220,220,220,1)");
 
       const intersectionPoly = {
         type: "Feature",
@@ -727,8 +748,10 @@
       if (item.geometry.type === "Polygon") {
         const startPoint = item.geometry.coordinates[0][0];
 
-        const column = Math.floor(startPoint[0] / this.blockSize);
-        const row = Math.floor(startPoint[1] / this.blockSize);
+        const column = Math.floor(
+          (startPoint[0] - this.boardY) / this.blockSize
+        );
+        const row = Math.floor((startPoint[1] - this.boardX) / this.blockSize);
 
         const { transformGeoJson } = this.transformGeoJson(item, {
           x: this.boardX + column * this.blockSize,
@@ -739,13 +762,13 @@
           ...transformGeoJson,
           properties: { shape: [], blocks: [] },
         };
-      }
-
-      if (item.geometry.type === "MultiPolygon") {
+      } else if (item.geometry.type === "MultiPolygon") {
         const startPoint = item.geometry.coordinates[0][0][0];
 
-        const column = Math.floor(startPoint[0] / this.blockSize);
-        const row = Math.floor(startPoint[1] / this.blockSize);
+        const column = Math.floor(
+          (startPoint[0] - this.boardY) / this.blockSize
+        );
+        const row = Math.floor((startPoint[1] - this.boardX) / this.blockSize);
 
         const { transformGeoJson } = this.transformGeoJson(item, {
           x: this.boardX + column * this.blockSize,
@@ -797,9 +820,11 @@
       return false; // No collision detected
     },
 
-    changeBoardSize(size: number) {
-      this.boardCol = size;
-      this.boardRow = size;
+    changeBoardSize(level: number) {
+      const { row, col } = getResonateBoardRowCol(level);
+      this.activeResonateLevel = level;
+      this.boardCol = col;
+      this.boardRow = row;
 
       this.initCanvas();
     },
