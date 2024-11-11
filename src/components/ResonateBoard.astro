@@ -50,8 +50,8 @@
   import matrix from "matrix-js";
 
   const BLOCK_SIZE = 40;
-  const BOARD_COL = 4;
-  const BOARD_ROW = 4;
+  const BOARD_COL = 10;
+  const BOARD_ROW = 10;
   const BOARD_X = 20;
   const BOARD_Y = 20;
   const BLOCK_OFFSET = BLOCK_SIZE / 4;
@@ -210,6 +210,67 @@
       }
     },
 
+    transformGeoJson(
+      itemGeometry: Feature,
+      startPoint: { x: number; y: number }
+    ) {
+      let transformGeoJson;
+
+      if (itemGeometry.geometry.type === "Polygon") {
+        const startPolyPoint = itemGeometry.geometry.coordinates[0][0];
+
+        let delta = {
+          x: startPoint.x - startPolyPoint[0],
+          y: startPoint.y - startPolyPoint[1],
+        };
+
+        const transformCoords = itemGeometry.geometry.coordinates[0].map(
+          (point) => {
+            return [point[0] + delta.x, point[1] + delta.y] as Position;
+          }
+        );
+
+        transformGeoJson = {
+          ...itemGeometry,
+          geometry: {
+            ...itemGeometry.geometry,
+            coordinates: [transformCoords],
+          },
+        } as Feature<Polygon>;
+      }
+
+      if (itemGeometry.geometry.type === "MultiPolygon") {
+        const startPolyPoint = itemGeometry.geometry.coordinates[0][0][0];
+
+        const translatedCoords = itemGeometry.geometry.coordinates.reduce(
+          (prevPolysCoords, polys) => {
+            const transformPolys = polys.reduce((prev: Position[], coords) => {
+              let delta = {
+                x: startPoint.x - startPolyPoint[0],
+                y: startPoint.y - startPolyPoint[1],
+              };
+              const transformCoords = coords.map((point) => {
+                return [point[0] + delta.x, point[1] + delta.y] as Position;
+              });
+              return [...prev, transformCoords];
+            }, []);
+            return [...prevPolysCoords, transformPolys];
+          },
+          []
+        );
+
+        transformGeoJson = {
+          ...itemGeometry,
+          geometry: {
+            ...itemGeometry.geometry,
+            coordinates: translatedCoords,
+          },
+        } as Feature<MultiPolygon>;
+      }
+
+      return { transformGeoJson };
+    },
+
     initGeoJsonByShape(shape: number[][], initialX = 0, initialY = 0) {
       const blockShapeMatrix = matrix(shape);
       const blockShapeDimension = blockShapeMatrix.size();
@@ -279,37 +340,16 @@
         x: initialX,
         y: initialY,
       };
-      const startPolyPoint = itemGeometry.geometry.coordinates[0][0][0];
 
-      const translatedCoords = itemGeometry.geometry.coordinates.reduce(
-        (prevPolysCoords, polys) => {
-          const transformPolys = polys.reduce((prev: Position[], coords) => {
-            let delta = {
-              x: startPoint.x - startPolyPoint[0],
-              y: startPoint.y - startPolyPoint[1],
-            };
-            const transformCoords = coords.map((point) => {
-              return [point[0] + delta.x, point[1] + delta.y] as Position;
-            });
-            return [...prev, transformCoords];
-          }, []);
-          return [...prevPolysCoords, transformPolys];
-        },
-        []
+      const { transformGeoJson } = this.transformGeoJson(
+        itemGeometry,
+        startPoint
       );
-
-      let transformItemGeometry = {
-        ...itemGeometry,
-        geometry: {
-          ...itemGeometry.geometry,
-          coordinates: translatedCoords,
-        },
-      } as Feature;
 
       return {
         shape: JSON.parse(JSON.stringify(shape)),
         shapeDimension: JSON.parse(JSON.stringify(blockShapeDimension)),
-        itemGeometry: JSON.parse(JSON.stringify(transformItemGeometry)),
+        itemGeometry: JSON.parse(JSON.stringify(transformGeoJson)),
       };
     },
 
@@ -409,63 +449,16 @@
 
       const drawPoly = Object.assign(this.initDragGeoJson, {}) as Feature;
 
-      if (drawPoly.geometry.type === "Polygon") {
-        const coords = drawPoly.geometry.coordinates[0];
+      const centroidPoint = centroid(drawPoly);
 
-        let delta = {
-          x: this.lastMouseX - coords[0][0],
-          y: this.lastMouseY - coords[0][1],
-        };
+      const startPoint = {
+        x: this.lastMouseX - centroidPoint.geometry.coordinates[0],
+        y: this.lastMouseY - centroidPoint.geometry.coordinates[1],
+      };
 
-        const transformCoords: Position[] = coords.map((point) => {
-          return [
-            point[0] + this.boardX + delta.x,
-            point[1] + this.boardY + delta.y,
-          ];
-        });
+      const { transformGeoJson } = this.transformGeoJson(drawPoly, startPoint);
 
-        this.dragGeoJson = {
-          ...drawPoly,
-          geometry: {
-            ...drawPoly.geometry,
-            coordinates: [[transformCoords]],
-          },
-        };
-      } else if (drawPoly.geometry.type === "MultiPolygon") {
-        const startPolyPoint = drawPoly.geometry.coordinates[0][0][0];
-
-        const centroidPoint = centroid(drawPoly);
-
-        const startPoint = {
-          x: this.lastMouseX - centroidPoint.geometry.coordinates[0],
-          y: this.lastMouseY - centroidPoint.geometry.coordinates[1],
-        };
-
-        const tranformDragPoly = drawPoly.geometry.coordinates.reduce(
-          (prevPolysCoords, polys) => {
-            const transformPolys = polys.reduce((prev: Position[], coords) => {
-              let delta = {
-                x: startPoint.x - startPolyPoint[0],
-                y: startPoint.y - startPolyPoint[1],
-              };
-              const transformCoords = coords.map((point) => {
-                return [point[0] + delta.x, point[1] + delta.y] as Position;
-              });
-              return [...prev, transformCoords];
-            }, []);
-            return [...prevPolysCoords, transformPolys];
-          },
-          []
-        );
-
-        this.dragGeoJson = {
-          ...drawPoly,
-          geometry: {
-            ...drawPoly.geometry,
-            coordinates: tranformDragPoly,
-          },
-        } as Feature;
-      }
+      this.dragGeoJson = transformGeoJson;
 
       this.drawGeoJson(this.dragGeoJson, this.ctx, "rgba(233,220,205,0.5)");
       this.blocks = JSON.parse(JSON.stringify(this.initBlocks));
@@ -523,11 +516,23 @@
       return rotateShapeMatrix;
     },
 
+    resetInitialState() {
+      this.selectGeoJson = null;
+      this.dragGeoJson = null;
+      this.initDragGeoJson = null;
+      this.dragShape = [];
+      this.dragShapeDimension = null;
+      this.itemOnBoardGeoJson = null;
+      this.isDragging = false;
+    },
+
     processEndCollision() {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
+      if (!this.itemOnBoardGeoJson) return;
+
       const isItemInsideBoard = this.itemOnBoardGeoJson.geometry.coordinates
-        .flat(2)
+        .flat(this.itemOnBoardGeoJson.geometry.type === "MultiPolygon" ? 2 : 1)
         .every((point: Position) => {
           return (
             point[0] >= 0 &&
@@ -541,6 +546,8 @@
         this.blocks = this.initBlocks;
         if (this.selectGeoJson)
           this.resonateGeoJsonList.push(this.selectGeoJson);
+
+        this.resetInitialState();
         return;
       }
 
@@ -579,8 +586,7 @@
           this.resonateGeoJsonList.push(this.selectGeoJson);
       }
 
-      this.selectGeoJson = null;
-      this.isDragging = false;
+      this.resetInitialState();
     },
 
     checkSelectGeoJson(event) {
@@ -632,7 +638,7 @@
           .split("-")
           .map((ele) => ele * this.blockSize);
 
-        const { itemGeometry } = this.initGeoJsonByShape(
+        const { itemGeometry, shape, shapeDimension } = this.initGeoJsonByShape(
           rotatedShape,
           firstBlockCoords[0],
           firstBlockCoords[1]
@@ -653,7 +659,8 @@
         );
 
         this.blocks = blocksData;
-        this.dragShape = rotatedShape;
+        this.dragShape = shape;
+        this.dragShapeDimension = shapeDimension;
 
         this.processCheckCollision(itemGeometry, this.blocks);
         this.processEndCollision();
@@ -715,47 +722,46 @@
       const bufferRadius =
         this.blockSize * (Math.max(...this.dragShapeDimension) / 2 + 1); // (slightly larger than the sweepRadius) is the maximum distance between the item's position and a block's position that is considered "far enough" to warrant pruning the block from the search space
 
-      if (item.geometry.type !== "MultiPolygon") return;
+      let geoJson;
 
-      const itemPosX = item.geometry.coordinates[0][0][0][0];
-      const itemPosY = item.geometry.coordinates[0][0][0][1];
+      if (item.geometry.type === "Polygon") {
+        const startPoint = item.geometry.coordinates[0][0];
 
-      const column = Math.floor(itemPosX / this.blockSize);
-      const row = Math.floor(itemPosY / this.blockSize);
+        const column = Math.floor(startPoint[0] / this.blockSize);
+        const row = Math.floor(startPoint[1] / this.blockSize);
 
-      const startPoint = item.geometry.coordinates[0][0][0];
-      const tranformDragPoly = item.geometry.coordinates.reduce(
-        (prevPolysCoords, polys) => {
-          const transformPolys = polys.reduce((prev: Position[], coords) => {
-            let delta = {
-              x: this.boardX + column * this.blockSize - startPoint[0],
-              y: this.boardY + row * this.blockSize - startPoint[1],
-            };
-            const transformCoords = coords.map((point) => {
-              return [point[0] + delta.x, point[1] + delta.y] as Position;
-            });
-            return [...prev, transformCoords];
-          }, []);
-          return [...prevPolysCoords, transformPolys];
-        },
-        []
-      );
+        const { transformGeoJson } = this.transformGeoJson(item, {
+          x: this.boardX + column * this.blockSize,
+          y: this.boardY + row * this.blockSize,
+        });
 
-      const transformGeoJson = {
-        ...item,
-        geometry: {
-          ...item.geometry,
-          coordinates: tranformDragPoly,
-        },
-        properties: {
-          blocks: [],
-          shape: [],
-        },
-      } as Feature;
+        geoJson = {
+          ...transformGeoJson,
+          properties: { shape: [], blocks: [] },
+        };
+      }
+
+      if (item.geometry.type === "MultiPolygon") {
+        const startPoint = item.geometry.coordinates[0][0][0];
+
+        const column = Math.floor(startPoint[0] / this.blockSize);
+        const row = Math.floor(startPoint[1] / this.blockSize);
+
+        const { transformGeoJson } = this.transformGeoJson(item, {
+          x: this.boardX + column * this.blockSize,
+          y: this.boardY + row * this.blockSize,
+        });
+
+        geoJson = {
+          ...transformGeoJson,
+          properties: { shape: [], blocks: [] },
+        };
+      }
+
+      const centroidPoint = centroid(geoJson);
 
       for (const block of blocks) {
         const idx = blocks.indexOf(block);
-        const centroidPoint = centroid(transformGeoJson);
 
         const distance = this.distanceBetween(
           {
@@ -771,22 +777,22 @@
         if (distance > bufferRadius) continue;
 
         //* Draw item on canvas
-        this.drawGeoJson(transformGeoJson, this.ctx, "rgba(0,255,0,0.3)");
+        this.drawGeoJson(geoJson, this.ctx, "rgba(0,255,0,0.3)");
 
-        const collision = this.checkCollision(transformGeoJson, block);
+        const collision = this.checkCollision(geoJson, block);
 
         if (collision) {
           if (blocks[idx].isCollided) {
             blocks[idx].isNotValid = true;
           } else {
             blocks[idx].isCollided = true;
-            transformGeoJson.properties?.blocks.push(blocks[idx].id);
+            geoJson.properties?.blocks.push(blocks[idx].id);
           }
           // return true; // Collision detected, return true
         }
       }
 
-      this.itemOnBoardGeoJson = transformGeoJson;
+      this.itemOnBoardGeoJson = geoJson;
 
       return false; // No collision detected
     },
