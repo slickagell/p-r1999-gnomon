@@ -16,7 +16,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
 
   if (piece) {
     const dimension = matrix(piece.shape).size();
-    return [...prev, { ...piece, dimension }];
+    return [...prev, { ...piece, dimension, orientation: 1 }];
   }
 
   return prev;
@@ -71,8 +71,12 @@ const pieces = resonancePieces.reduce((prev, ele) => {
               />
               <img
                 data-piece-img-id={ele.id}
-                class={`absolute top-0 left-0 pointer-events-none select-none`}
-                style={{ width: ele.dimension[1] * 40 + "px" }}
+                data-piece-img-orientation={ele.orientation}
+                class={`absolute top-0 left-0 pointer-events-none select-none rotate-0`}
+                style={{
+                  width: ele.dimension[1] * 40 + "px",
+                  height: ele.dimension[0] * 40 + "px",
+                }}
                 src={`/data/resonance/pieces/${ele.image}`}
                 alt={`${ele.image}`}
               />
@@ -145,6 +149,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
 
     selectGeoJson: null,
     selectGeoJsonIdx: -1,
+    selectPieceId: null,
 
     ctx: null,
     canvas: null,
@@ -260,36 +265,34 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       height: number;
       orientation?: number;
     }) {
-      return function () {
-        const hiddenCanvas = document.createElement("canvas");
-        const hiddenCtx = hiddenCanvas.getContext("2d");
+      const hiddenCanvas = document.createElement("canvas");
+      const hiddenCtx = hiddenCanvas.getContext("2d");
 
-        const isRotated90Deg = orientation === 6 || orientation === 8;
+      const isRotated90Deg = orientation === 6 || orientation === 8;
 
-        const originWidth = isRotated90Deg ? height : width;
-        const originHeight = isRotated90Deg ? width : height;
+      const originWidth = isRotated90Deg ? height : width;
+      const originHeight = isRotated90Deg ? width : height;
 
-        hiddenCanvas.width = width;
-        hiddenCanvas.height = height;
+      hiddenCanvas.width = width;
+      hiddenCanvas.height = height;
 
-        if (!hiddenCtx) return;
+      if (!hiddenCtx) return;
 
-        hiddenCtx.translate(width / 2, height / 2);
+      hiddenCtx.translate(width / 2, height / 2);
 
-        hiddenCtx.rotate((IMAGE_ORIENTATION[orientation].deg * Math.PI) / 180);
+      hiddenCtx.rotate((IMAGE_ORIENTATION[orientation].deg * Math.PI) / 180);
 
-        hiddenCtx.drawImage(
-          image,
-          -originWidth / 2,
-          -originHeight / 2,
-          originWidth,
-          originHeight
-        );
+      hiddenCtx.drawImage(
+        image,
+        -originWidth / 2,
+        -originHeight / 2,
+        originWidth,
+        originHeight
+      );
 
-        ctx.drawImage(hiddenCanvas, x, y, width, height);
+      ctx.drawImage(hiddenCanvas, x, y, width, height);
 
-        hiddenCanvas.remove();
-      };
+      hiddenCanvas.remove();
     },
 
     drawResonanceGeoJsonList() {
@@ -303,9 +306,11 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         const { x: startBlockX, y: startBlockY } =
           this.getStartBlockCoords(geoJson);
 
-        const image = new Image(width, height);
+        const image = document.querySelector(
+          "img[data-piece-img-id=" + geoJson.properties?.pieceId + "]"
+        ) as HTMLImageElement;
 
-        image.onload = this.drawImageOnCanvas({
+        this.drawImageOnCanvas({
           ctx: this.boardCtx,
           image: image,
           x: startBlockX,
@@ -314,8 +319,6 @@ const pieces = resonancePieces.reduce((prev, ele) => {
           height: height,
           orientation: orientation,
         });
-
-        image.src = `/data/resonance/pieces/${geoJson.properties?.imageSrc}`;
       });
     },
 
@@ -521,7 +524,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
             col: shapeDimension[1],
           },
           orientation: 1,
-          imageSrc: blockData.image,
+          pieceId: blockData.id,
         },
       };
     },
@@ -544,7 +547,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         return;
       }
       const shapeId = event.target.attributes["data-piece-id"].value;
-      this.onInitDragGeoJson(shapeId);
+      this.selectPieceId = shapeId;
     },
 
     onMouseMove(event) {
@@ -560,6 +563,11 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         const diffY = Math.abs(y - this.startMouseY);
 
         if (!(diffX > delta || diffY > delta)) {
+          return;
+        }
+
+        if (this.selectPieceId) {
+          this.onInitDragGeoJson(this.selectPieceId);
           return;
         }
 
@@ -630,6 +638,9 @@ const pieces = resonancePieces.reduce((prev, ele) => {
 
       this.dragGeoJson = {
         ...transformGeoJson,
+        properties: {
+          ...this.initDragGeoJson.properties,
+        },
       };
 
       this.drawGeoJson(this.dragGeoJson, this.ctx, "rgba(233,220,205,0.5)");
@@ -651,7 +662,48 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         //* If we're currently dragging a block
         if (this.isDragging) {
           this.processEndCollision();
-          return;
+        } else {
+          if (this.selectPieceId) {
+            const container = document.querySelector(
+              "div[data-piece-id=" + this.selectPieceId + "]"
+            ) as HTMLDivElement;
+            const image = document.querySelector(
+              "img[data-piece-img-id=" + this.selectPieceId + "]"
+            ) as HTMLImageElement;
+
+            if (!image || !container) return;
+            const piece = RESONATE_PIECES[this.selectPieceId];
+            const dimension = matrix(piece.shape).size();
+            let newDimension = dimension;
+
+            const currentOrientation = +(
+              image.dataset.pieceImgOrientation || 1
+            );
+            const newOrientation = changeImageOrientation(currentOrientation);
+
+            const currentOrientationStyle =
+              IMAGE_ORIENTATION[currentOrientation].style;
+            const newOrientationStyle = IMAGE_ORIENTATION[newOrientation].style;
+
+            if (newOrientation === 6 || newOrientation === 8) {
+              newDimension = [dimension[1], dimension[0]];
+              image.style.left = `${20}px`;
+              image.style.top = `-${20}px`;
+            } else {
+              image.style.left = `${0}px`;
+              image.style.top = `${0}px`;
+            }
+
+            image.classList.remove(currentOrientationStyle);
+            image.classList.add(newOrientationStyle);
+
+            image.dataset.pieceImgOrientation = newOrientation.toString();
+
+            container.style.width = `${newDimension[1] * 40}px`;
+            container.style.height = `${newDimension[0] * 40}px`;
+
+            this.resetInitialState();
+          }
         }
         return;
       }
@@ -696,6 +748,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       this.dragShapeDimension = null;
       this.itemOnBoardGeoJson = null;
       this.isDragging = false;
+      this.selectPieceId = null;
     },
 
     processEndCollision() {
@@ -980,7 +1033,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         if (distance > bufferRadius) continue;
 
         //* Draw item on canvas
-        this.drawGeoJson(geoJson, this.ctx, "rgba(0,255,0,0.3)");
+        this.drawGeoJson(geoJson, this.ctx, "rgba(219, 111, 57, 0.1)");
 
         const collision = this.checkCollision(geoJson, block);
 
