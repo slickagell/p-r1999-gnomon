@@ -1,29 +1,40 @@
 ---
+import { RESONATE_PIECES } from "@data/resonance";
+import matrix from "matrix-js";
+
 interface Props {
-  maxResonateLevel: number;
-  resonatePieces: {
+  maxResonanceLevel: number;
+  resonancePieces: {
     id: string;
-    image: string;
-    shape: number[][];
-    dimension: number[];
   }[];
 }
 
-const { maxResonateLevel, resonatePieces } = Astro.props;
+const { maxResonanceLevel, resonancePieces } = Astro.props;
+
+const pieces = resonancePieces.reduce((prev, ele) => {
+  const piece = RESONATE_PIECES[ele.id];
+
+  if (piece) {
+    const dimension = matrix(piece.shape).size();
+    return [...prev, { ...piece, dimension }];
+  }
+
+  return prev;
+}, []);
 ---
 
 <div x-data="dataset">
   <div class="flex">
-    <template x-for="i in $store.resonate.maxResonateLevel">
+    <template x-for="i in $store.resonance.maxResonanceLevel">
       <button
         class="btn"
-        :class="i === activeResonateLevel?'btn-outline btn-primary':''"
+        :class="i === activeResonanceLevel?'btn-outline btn-primary':''"
         @click="changeBoardSize(i)"
         x-text="i"></button>
     </template>
   </div>
   <div
-    class="resonate relative z-10"
+    class="resonance relative z-10"
     @mousemove="onMouseMove"
     @mousedown="onMouseDown"
     @mouseup="onMouseUp"
@@ -33,16 +44,14 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
       x-ref="canvas"
       class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
     ></canvas>
-    <canvas
-      x-ref="boardCanvas"
-      class="absolute top-0 left-0 bg-success/10 -z-20"></canvas>
+    <canvas x-ref="boardCanvas" class="absolute top-0 left-0 -z-20"></canvas>
 
     <template x-for="block in blocks" :key="block.id">
       <div
         :data-block-id="block.id"
         x-data="{ x: block.pos.x, y: block.pos.y, size: block.size, isDragOver: false}"
-        class="border absolute"
-        :class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-primary/50 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
+        class="border absolute select-none"
+        :class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
         :style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
       >
       </div>
@@ -50,20 +59,21 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
     <div class="absolute top-0 right-0 h-full w-1/2 overflow-auto">
       {
-        resonatePieces.map((ele) => (
+        pieces.map((ele) => (
           <div class="flex">
             <div class="relative">
               <div
-                data-shape-id={ele.id}
+                data-piece-id={ele.id}
                 style={{
                   width: ele.dimension[1] * 40 + "px",
                   height: ele.dimension[0] * 40 + "px",
                 }}
               />
               <img
-                class="absolute top-0 left-0 pointer-events-none"
+                data-piece-img-id={ele.id}
+                class={`absolute top-0 left-0 pointer-events-none select-none`}
                 style={{ width: ele.dimension[1] * 40 + "px" }}
-                src={`/data/resonate/pieces/${ele.image}.png`}
+                src={`/data/resonance/pieces/${ele.image}`}
                 alt={`${ele.image}`}
               />
             </div>
@@ -75,21 +85,27 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
   </div>
 </div>
 
-<script define:vars={{ resonatePieces, maxResonateLevel }}>
+<script define:vars={{ resonancePieces, maxResonanceLevel }}>
   document.addEventListener("alpine:init", () => {
-    window.Alpine.store("resonate", {
-      resonatePieces: resonatePieces,
-      maxResonateLevel,
+    window.Alpine.store("resonance", {
+      resonancePieces: resonancePieces,
+      maxResonanceLevel,
     });
   });
 </script>
 
 <script>
-  import { getResonateBoardRowCol } from "@data/resonate";
+  import {
+    IMAGE_ORIENTATION,
+    RESONATE_PIECES,
+    changeImageOrientation,
+    getResonanceBoardRowCol,
+  } from "@data/resonance";
   import { centroid } from "@turf/centroid";
   import { polygon } from "@turf/helpers";
   import Alpine from "alpinejs";
   import type { Feature, MultiPolygon, Polygon, Position } from "geojson";
+  import { h } from "hastscript";
   import { intersection, union } from "martinez-polygon-clipping";
   import matrix from "matrix-js";
 
@@ -119,7 +135,7 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
     boardRow: 0,
     boardX: BOARD_X,
     boardY: BOARD_Y,
-    activeResonateLevel: DEFAULT_RESONATE_LEVEL,
+    activeResonanceLevel: DEFAULT_RESONATE_LEVEL,
 
     initDragGeoJson: null,
     dragGeoJson: null,
@@ -135,9 +151,9 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
     boardCtx: null,
     boardCanvas: null,
 
-    resonateGeoJson: null,
+    resonanceGeoJson: null,
     itemOnBoardGeoJson: null,
-    resonateGeoJsonList: [],
+    resonanceGeoJsonList: [],
 
     initBlocks: [],
     blocks: [],
@@ -161,10 +177,10 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
       this.boardCanvas.style.left = `${this.boardX}px`;
 
       if (!this.boardRow || !this.boardCol) {
-        const { row, col } = getResonateBoardRowCol(
-          this.$store.resonate.maxResonateLevel > this.activeResonateLevel
-            ? this.activeResonateLevel
-            : this.$store.resonate.maxResonateLevel
+        const { row, col } = getResonanceBoardRowCol(
+          this.$store.resonance.maxResonanceLevel > this.activeResonanceLevel
+            ? this.activeResonanceLevel
+            : this.$store.resonance.maxResonanceLevel
         );
 
         this.boardRow = row;
@@ -227,39 +243,150 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
       }
     },
 
+    drawImageOnCanvas({
+      ctx,
+      image,
+      x,
+      y,
+      width,
+      height,
+      orientation,
+    }: {
+      ctx: CanvasRenderingContext2D;
+      image: HTMLImageElement;
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      orientation?: number;
+    }) {
+      return function () {
+        const hiddenCanvas = document.createElement("canvas");
+        const hiddenCtx = hiddenCanvas.getContext("2d");
+
+        const isRotated90Deg = orientation === 6 || orientation === 8;
+
+        const originWidth = isRotated90Deg ? height : width;
+        const originHeight = isRotated90Deg ? width : height;
+
+        hiddenCanvas.width = width;
+        hiddenCanvas.height = height;
+
+        if (!hiddenCtx) return;
+
+        hiddenCtx.translate(width / 2, height / 2);
+
+        hiddenCtx.rotate((IMAGE_ORIENTATION[orientation].deg * Math.PI) / 180);
+
+        hiddenCtx.drawImage(
+          image,
+          -originWidth / 2,
+          -originHeight / 2,
+          originWidth,
+          originHeight
+        );
+
+        ctx.drawImage(hiddenCanvas, x, y, width, height);
+
+        hiddenCanvas.remove();
+      };
+    },
+
+    drawResonanceGeoJsonList() {
+      this.resonanceGeoJsonList.forEach((geoJson) => {
+        if (!geoJson.properties) return;
+
+        const width = geoJson.properties.shapeDimension.col * this.blockSize;
+        const height = geoJson.properties.shapeDimension.row * this.blockSize;
+        const orientation = geoJson.properties.orientation;
+
+        const { x: startBlockX, y: startBlockY } =
+          this.getStartBlockCoords(geoJson);
+
+        const image = new Image(width, height);
+
+        image.onload = this.drawImageOnCanvas({
+          ctx: this.boardCtx,
+          image: image,
+          x: startBlockX,
+          y: startBlockY,
+          width: width,
+          height: height,
+          orientation: orientation,
+        });
+
+        image.src = `/data/resonance/pieces/${geoJson.properties?.imageSrc}`;
+      });
+    },
+
+    updateBoardCanvas() {
+      this.boardCtx.clearRect(
+        0,
+        0,
+        this.boardCanvas.width,
+        this.boardCanvas.height
+      );
+      this.drawResonanceGeoJsonList();
+    },
+
+    getStartBlockCoords(geoJson: Feature) {
+      if (!geoJson.properties) return;
+
+      let startBlockCol = this.boardCol;
+      let startBlockRow = this.boardRow;
+
+      geoJson.properties.blocks.forEach((ele) => {
+        const [col, row] = ele.split("-");
+        if (+col < startBlockCol) {
+          startBlockCol = +col;
+        }
+        if (+row < +startBlockRow) {
+          startBlockRow = +row;
+        }
+      });
+
+      const startBlockX = startBlockCol * this.blockSize;
+      const startBlockY = startBlockRow * this.blockSize;
+
+      return {
+        x: startBlockX,
+        y: startBlockY,
+      };
+    },
+
     transformGeoJson(
-      itemGeometry: Feature,
+      itemGeoJson: Feature,
       startPoint: { x: number; y: number }
     ) {
       let transformGeoJson;
 
-      if (itemGeometry.geometry.type === "Polygon") {
-        const startPolyPoint = itemGeometry.geometry.coordinates[0][0];
+      if (itemGeoJson.geometry.type === "Polygon") {
+        const startPolyPoint = itemGeoJson.geometry.coordinates[0][0];
 
         let delta = {
           x: startPoint.x - startPolyPoint[0],
           y: startPoint.y - startPolyPoint[1],
         };
 
-        const transformCoords = itemGeometry.geometry.coordinates[0].map(
+        const transformCoords = itemGeoJson.geometry.coordinates[0].map(
           (point) => {
             return [point[0] + delta.x, point[1] + delta.y] as Position;
           }
         );
 
         transformGeoJson = {
-          ...itemGeometry,
+          ...itemGeoJson,
           geometry: {
-            ...itemGeometry.geometry,
+            ...itemGeoJson.geometry,
             coordinates: [transformCoords],
           },
         } as Feature<Polygon>;
       }
 
-      if (itemGeometry.geometry.type === "MultiPolygon") {
-        const startPolyPoint = itemGeometry.geometry.coordinates[0][0][0];
+      if (itemGeoJson.geometry.type === "MultiPolygon") {
+        const startPolyPoint = itemGeoJson.geometry.coordinates[0][0][0];
 
-        const translatedCoords = itemGeometry.geometry.coordinates.reduce(
+        const translatedCoords = itemGeoJson.geometry.coordinates.reduce(
           (prevPolysCoords, polys) => {
             const transformPolys = polys.reduce((prev: Position[], coords) => {
               let delta = {
@@ -277,9 +404,9 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
         );
 
         transformGeoJson = {
-          ...itemGeometry,
+          ...itemGeoJson,
           geometry: {
-            ...itemGeometry.geometry,
+            ...itemGeoJson.geometry,
             coordinates: translatedCoords,
           },
         } as Feature<MultiPolygon>;
@@ -317,7 +444,7 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
         }
       }
 
-      let itemGeometry;
+      let itemGeoJson;
       itemBlocks.forEach((element) => {
         const eleBlock = {
           type: "Feature",
@@ -327,15 +454,15 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
           },
         } as Feature<Polygon>;
 
-        if (!itemGeometry) {
-          itemGeometry = eleBlock;
+        if (!itemGeoJson) {
+          itemGeoJson = eleBlock;
         } else {
           const newPolyBlockCoords = union(
-            itemGeometry.geometry.coordinates,
+            itemGeoJson.geometry.coordinates,
             eleBlock.geometry.coordinates
           );
 
-          itemGeometry = {
+          itemGeoJson = {
             type: "Feature",
             geometry: {
               type: "MultiPolygon",
@@ -349,7 +476,7 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
         return {
           shape: JSON.parse(JSON.stringify(shape)),
           shapeDimension: JSON.parse(JSON.stringify(blockShapeDimension)),
-          itemGeometry: JSON.parse(JSON.stringify(itemGeometry)),
+          itemGeoJson: JSON.parse(JSON.stringify(itemGeoJson)),
         };
       }
 
@@ -359,33 +486,44 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
       };
 
       const { transformGeoJson } = this.transformGeoJson(
-        itemGeometry,
+        itemGeoJson,
         startPoint
       );
 
       return {
         shape: JSON.parse(JSON.stringify(shape)),
         shapeDimension: JSON.parse(JSON.stringify(blockShapeDimension)),
-        itemGeometry: JSON.parse(JSON.stringify(transformGeoJson)),
+        itemGeoJson: JSON.parse(JSON.stringify(transformGeoJson)),
       };
     },
 
     onInitDragGeoJson(blockId) {
-      const blockData = this.$store.resonate.resonatePieces.find(
-        (ele) => ele.id === blockId
-      );
+      const blockData = RESONATE_PIECES[blockId];
 
       if (!blockData) return;
 
       this.isDragging = true;
 
-      const { shape, shapeDimension, itemGeometry } = this.initGeoJsonByShape(
+      const { shape, shapeDimension, itemGeoJson } = this.initGeoJsonByShape(
         blockData.shape
       );
 
       this.dragShape = shape;
       this.dragShapeDimension = shapeDimension;
-      this.initDragGeoJson = itemGeometry;
+      this.initDragGeoJson = {
+        ...itemGeoJson,
+        properties: {
+          ...itemGeoJson.properties,
+          blocks: [],
+          shape: shape,
+          shapeDimension: {
+            row: shapeDimension[0],
+            col: shapeDimension[1],
+          },
+          orientation: 1,
+          imageSrc: blockData.image,
+        },
+      };
     },
 
     onMouseDown(event) {
@@ -396,7 +534,7 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
       this.startMouseY = event.clientY - rect.top;
       this.isMouseDown = true;
 
-      if (!event.target.attributes["data-shape-id"]) {
+      if (!event.target.attributes["data-piece-id"]) {
         const { selectGeoJson, selectGeoJsonIdx } =
           this.checkSelectGeoJson(event);
 
@@ -405,7 +543,7 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
         return;
       }
-      const shapeId = event.target.attributes["data-shape-id"].value;
+      const shapeId = event.target.attributes["data-piece-id"].value;
       this.onInitDragGeoJson(shapeId);
     },
 
@@ -430,8 +568,8 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
         if (selectGeoJson) {
           if (selectGeoJsonIdx > -1) {
-            this.resonateGeoJsonList = JSON.parse(
-              JSON.stringify(this.resonateGeoJsonList)
+            this.resonanceGeoJsonList = JSON.parse(
+              JSON.stringify(this.resonanceGeoJsonList)
             ).filter((_, idx) => idx !== selectGeoJsonIdx);
           }
           const blocksData = JSON.parse(JSON.stringify(this.blocks)).map(
@@ -450,11 +588,16 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
           this.blocks = blocksData;
 
           this.isDragging = true;
-          const { shape, shapeDimension, itemGeometry } =
+          const { shape, shapeDimension, itemGeoJson } =
             this.initGeoJsonByShape(selectGeoJson.properties?.shape);
           this.dragShape = shape;
           this.dragShapeDimension = shapeDimension;
-          this.initDragGeoJson = itemGeometry;
+          this.initDragGeoJson = {
+            ...itemGeoJson,
+            properties: {
+              ...selectGeoJson.properties,
+            },
+          };
         }
 
         return;
@@ -466,9 +609,12 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      const drawPoly = Object.assign(this.initDragGeoJson, {}) as Feature;
+      const draggingGeoJson = Object.assign(
+        this.initDragGeoJson,
+        {}
+      ) as Feature;
 
-      const centroidPoint = centroid(drawPoly);
+      const centroidPoint = centroid(draggingGeoJson);
 
       const startPoint = {
         x:
@@ -477,9 +623,14 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
           this.lastMouseY + this.boardY - centroidPoint.geometry.coordinates[1],
       };
 
-      const { transformGeoJson } = this.transformGeoJson(drawPoly, startPoint);
+      const { transformGeoJson } = this.transformGeoJson(
+        draggingGeoJson,
+        startPoint
+      );
 
-      this.dragGeoJson = transformGeoJson;
+      this.dragGeoJson = {
+        ...transformGeoJson,
+      };
 
       this.drawGeoJson(this.dragGeoJson, this.ctx, "rgba(233,220,205,0.5)");
       this.blocks = JSON.parse(JSON.stringify(this.initBlocks));
@@ -556,8 +707,8 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
         .flat(this.itemOnBoardGeoJson.geometry.type === "MultiPolygon" ? 2 : 1)
         .every((point: Position) => {
           return (
-            point[0] >= 0 &&
-            point[1] >= 0 &&
+            point[0] >= this.boardX &&
+            point[1] >= this.boardY &&
             point[0] <= this.boardX + this.blockSize * this.boardCol &&
             point[1] <= this.boardY + this.blockSize * this.boardRow
           );
@@ -565,10 +716,20 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
       if (!isItemInsideBoard) {
         this.blocks = this.initBlocks;
-        if (this.selectGeoJson)
-          this.resonateGeoJsonList.push(this.selectGeoJson);
+
+        if (!this.isDragging) {
+          if (this.selectGeoJson)
+            this.resonanceGeoJsonList.push(this.selectGeoJson);
+        } else {
+          if (this.selectGeoJson && this.selectGeoJsonIdx > -1) {
+            this.resonanceGeoJsonList = JSON.parse(
+              JSON.stringify(this.resonanceGeoJsonList)
+            ).filter((_, idx) => idx !== this.selectGeoJsonIdx);
+          }
+        }
 
         this.resetInitialState();
+        this.updateBoardCanvas();
         return;
       }
 
@@ -577,19 +738,19 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
       const invalidBlock = blocks.find((ele) => ele.isNotValid);
       if (!invalidBlock) {
         this.initBlocks = this.blocks;
-        const unionGeoJson = !this.resonateGeoJson
+        const unionGeoJson = !this.resonanceGeoJson
           ? this.itemOnBoardGeoJson
           : {
               type: "Feature",
               geometry: {
                 coordinates: union(
-                  this.resonateGeoJson.geometry.coordinates,
+                  this.resonanceGeoJson.geometry.coordinates,
                   this.itemOnBoardGeoJson.geometry.coordinates
                 ),
               },
             };
 
-        this.resonateGeoJson = unionGeoJson;
+        this.resonanceGeoJson = unionGeoJson;
         this.itemOnBoardGeoJson = {
           ...this.itemOnBoardGeoJson,
           properties: {
@@ -597,17 +758,16 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
             shape: this.dragShape,
           },
         };
-        this.resonateGeoJsonList.push(this.itemOnBoardGeoJson);
-        // this.resonateGeoJsonList.forEach((geoJson) => {
-        //   this.drawGeoJson(geoJson, this.boardCtx, "rgba(219,111,57,0.7)");
-        // });
+
+        this.resonanceGeoJsonList.push(this.itemOnBoardGeoJson);
       } else {
         this.blocks = this.initBlocks;
         if (this.selectGeoJson)
-          this.resonateGeoJsonList.push(this.selectGeoJson);
+          this.resonanceGeoJsonList.push(this.selectGeoJson);
       }
 
       this.resetInitialState();
+      this.updateBoardCanvas();
     },
 
     checkSelectGeoJson(event) {
@@ -624,7 +784,7 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
       const [column, row] = blockId.split("-");
 
-      this.resonateGeoJsonList.some((geoJson, idx) => {
+      this.resonanceGeoJsonList.some((geoJson, idx) => {
         if (geoJson.properties.blocks.includes(`${column}-${row}`)) {
           selectGeoJson = geoJson;
           selectGeoJsonIdx = idx;
@@ -644,48 +804,62 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
       const selectGeoJson = this.selectGeoJson;
       const selectGeoJsonIdx = this.selectGeoJsonIdx;
 
-      if (selectGeoJson) {
-        if (selectGeoJsonIdx > -1) {
-          this.resonateGeoJsonList = JSON.parse(
-            JSON.stringify(this.resonateGeoJsonList)
-          ).filter((_, idx) => idx !== selectGeoJsonIdx);
-        }
+      if (!selectGeoJson || !selectGeoJson.properties) return;
 
-        const rotatedShape = this.shape90degRotate(
-          selectGeoJson.properties?.shape
-        );
-        const firstBlock = selectGeoJson.properties?.blocks[0];
-        const firstBlockCoords = firstBlock
-          .split("-")
-          .map((ele) => ele * this.blockSize);
-
-        const { itemGeometry, shape, shapeDimension } = this.initGeoJsonByShape(
-          rotatedShape,
-          firstBlockCoords[0],
-          firstBlockCoords[1]
-        );
-
-        // this.drawGeoJson(itemGeometry, this.ctx, "rgba(255, 233, 0, 1)");
-
-        const blocksData = JSON.parse(JSON.stringify(this.blocks)).map(
-          (block) => {
-            if (selectGeoJson.properties?.blocks.includes(block.id)) {
-              return {
-                ...block,
-                isCollided: false,
-              };
-            }
-            return block;
-          }
-        );
-
-        this.blocks = blocksData;
-        this.dragShape = shape;
-        this.dragShapeDimension = shapeDimension;
-
-        this.processCheckCollision(itemGeometry, this.blocks);
-        this.processEndCollision();
+      if (selectGeoJsonIdx > -1) {
+        this.resonanceGeoJsonList = JSON.parse(
+          JSON.stringify(this.resonanceGeoJsonList)
+        ).filter((_, idx) => idx !== selectGeoJsonIdx);
       }
+
+      const rotatedShape = this.shape90degRotate(
+        selectGeoJson.properties?.shape
+      );
+
+      const { x: startBlockX, y: startBlockY } =
+        this.getStartBlockCoords(selectGeoJson);
+
+      const { itemGeoJson, shape, shapeDimension } = this.initGeoJsonByShape(
+        rotatedShape,
+        startBlockX + this.boardX,
+        startBlockY + this.boardY
+      );
+
+      const newItemGeoJson = {
+        ...itemGeoJson,
+        properties: {
+          ...selectGeoJson.properties,
+          shape: shape,
+          shapeDimension: {
+            row: shapeDimension[0],
+            col: shapeDimension[1],
+          },
+          orientation: changeImageOrientation(
+            selectGeoJson.properties.orientation
+          ),
+        },
+      };
+
+      // this.drawGeoJson(itemGeoJson, this.ctx, "rgba(255, 233, 0, 1)");
+
+      const blocksData = JSON.parse(JSON.stringify(this.blocks)).map(
+        (block) => {
+          if (selectGeoJson.properties?.blocks.includes(block.id)) {
+            return {
+              ...block,
+              isCollided: false,
+            };
+          }
+          return block;
+        }
+      );
+
+      this.blocks = blocksData;
+      this.dragShape = shape;
+      this.dragShapeDimension = shapeDimension;
+
+      this.processCheckCollision(newItemGeoJson, this.blocks);
+      this.processEndCollision();
     },
 
     distanceBetween(
@@ -760,7 +934,10 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
         geoJson = {
           ...transformGeoJson,
-          properties: { shape: [], blocks: [] },
+          properties: {
+            ...transformGeoJson.properties,
+            blocks: [],
+          },
         };
       } else if (item.geometry.type === "MultiPolygon") {
         const startPoint = item.geometry.coordinates[0][0][0];
@@ -777,7 +954,10 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
 
         geoJson = {
           ...transformGeoJson,
-          properties: { shape: [], blocks: [] },
+          properties: {
+            ...transformGeoJson.properties,
+            blocks: [],
+          },
         };
       }
 
@@ -821,8 +1001,8 @@ const { maxResonateLevel, resonatePieces } = Astro.props;
     },
 
     changeBoardSize(level: number) {
-      const { row, col } = getResonateBoardRowCol(level);
-      this.activeResonateLevel = level;
+      const { row, col } = getResonanceBoardRowCol(level);
+      this.activeResonanceLevel = level;
       this.boardCol = col;
       this.boardRow = row;
 

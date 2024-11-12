@@ -1,0 +1,17 @@
+---
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import Layout from "@layouts/Layout.astro";
+
+const PIECES = [
+  {
+    id: "RP_X_01",
+  },
+  {
+    id: "RP_L_01",
+  },
+];
+---
+
+<Layout title="Resonance">
+  <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES} />
+</Layout>
