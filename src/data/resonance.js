@@ -53,39 +53,11 @@ export const getResonanceBoardRowCol = (level) => {
   }
 };
 
-export const RESONATE_PIECES = {
-  RP_X_01: {
-    id: "RP_X_01",
-    image: "rp-x-01.png",
-    shape: [
-      [0, 1, 0],
-      [1, 1, 1],
-      [0, 1, 0],
-    ],
-    stats: {
-      1: {
-        HP: {
-          data: 1,
-        },
-      },
-    },
-  },
-  RP_L_01: {
-    id: "RP_L_01",
-    image: "rp-l-01.png",
-    shape: [
-      [1, 0],
-      [1, 0],
-      [1, 1],
-    ],
-    stats: {
-      1: {
-        HP: {
-          data: 1,
-        },
-      },
-    },
-  },
+export const IMAGE_DEGREE_ORIENTATIONS = {
+  "0deg": 1,
+  "180deg": 3,
+  "90deg": 6,
+  "270deg": 8,
 };
 
 export const IMAGE_ORIENTATION = {
@@ -121,3 +93,80 @@ export function changeImageOrientation(previousOrientation) {
       return 1;
   }
 }
+
+export const RESONANCE_PIECES = {
+  RP_X_01: {
+    id: "RP_X_01",
+    image: "rp-x-01.png",
+    shape: [
+      [0, 1, 0],
+      [1, 1, 1],
+      [0, 1, 0],
+    ],
+    stats: {
+      1: {
+        HP: {
+          data: 1,
+        },
+      },
+    },
+  },
+  RP_L_01: {
+    id: "RP_L_01",
+    image: "rp-l-01.png",
+    shape: [
+      [1, 0],
+      [1, 0],
+      [1, 1],
+    ],
+    stats: {
+      1: {
+        HP: {
+          data: 1,
+        },
+      },
+    },
+  },
+  RP_I_01: {
+    id: "RP_I_01",
+    image: "rp-i-01.png",
+    shape: [[1], [1], [1], [1]],
+    stats: {
+      1: {
+        HP: {
+          data: 1,
+        },
+      },
+    },
+  },
+  RP_Z_01: {
+    id: "RP_Z_01",
+    image: "rp-z-01.png",
+    shape: [
+      [1, 1, 0],
+      [0, 1, 1],
+    ],
+    stats: {
+      1: {
+        HP: {
+          data: 1,
+        },
+      },
+    },
+  },
+  RP_T_01: {
+    id: "RP_T_01",
+    image: "rp-t-01.png",
+    shape: [
+      [0, 1, 0],
+      [1, 1, 1],
+    ],
+    stats: {
+      1: {
+        HP: {
+          data: 1,
+        },
+      },
+    },
+  },
+};

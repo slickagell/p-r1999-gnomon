@@ -1,6 +1,11 @@
 ---
-import { RESONATE_PIECES } from "@data/resonance";
+import { RESONANCE_PIECES } from "@data/resonance";
 import matrix from "matrix-js";
+
+const BLOCK_SIZE = 40;
+const BOARD_X = 40;
+const BOARD_Y = 40;
+const DEFAULT_RESONATE_LEVEL = 10;
 
 interface Props {
   maxResonanceLevel: number;
@@ -12,7 +17,7 @@ interface Props {
 const { maxResonanceLevel, resonancePieces } = Astro.props;
 
 const pieces = resonancePieces.reduce((prev, ele) => {
-  const piece = RESONATE_PIECES[ele.id];
+  const piece = RESONANCE_PIECES[ele.id];
 
   if (piece) {
     const dimension = matrix(piece.shape).size();
@@ -60,22 +65,24 @@ const pieces = resonancePieces.reduce((prev, ele) => {
     <div class="absolute top-0 right-0 h-full w-1/2 overflow-auto">
       {
         pieces.map((ele) => (
-          <div class="flex">
+          <div class="flex my-4">
             <div class="relative">
               <div
                 data-piece-id={ele.id}
+                data-piece-orientation={ele.orientation}
                 style={{
-                  width: ele.dimension[1] * 40 + "px",
-                  height: ele.dimension[0] * 40 + "px",
+                  width: ele.dimension[1] * BLOCK_SIZE + "px",
+                  height: ele.dimension[0] * BLOCK_SIZE + "px",
                 }}
               />
               <img
                 data-piece-img-id={ele.id}
-                data-piece-img-orientation={ele.orientation}
-                class={`absolute top-0 left-0 pointer-events-none select-none rotate-0`}
+                class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
                 style={{
-                  width: ele.dimension[1] * 40 + "px",
-                  height: ele.dimension[0] * 40 + "px",
+                  width: ele.dimension[1] * BLOCK_SIZE + "px",
+                  height: ele.dimension[0] * BLOCK_SIZE + "px",
+                  top: 0 + "px",
+                  left: 0 + "px",
                 }}
                 src={`/data/resonance/pieces/${ele.image}`}
                 alt={`${ele.image}`}
@@ -89,19 +96,33 @@ const pieces = resonancePieces.reduce((prev, ele) => {
   </div>
 </div>
 
-<script define:vars={{ resonancePieces, maxResonanceLevel }}>
+<script
+  define:vars={{
+    resonancePieces,
+    maxResonanceLevel,
+    blockSize: BLOCK_SIZE,
+    boardX: BOARD_X,
+    boardY: BOARD_Y,
+    defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
+  }}
+>
   document.addEventListener("alpine:init", () => {
     window.Alpine.store("resonance", {
-      resonancePieces: resonancePieces,
+      resonancePieces,
       maxResonanceLevel,
+      blockSize,
+      boardX,
+      boardY,
+      defaultResonanceLevel,
     });
   });
 </script>
 
 <script>
   import {
+    IMAGE_DEGREE_ORIENTATIONS,
     IMAGE_ORIENTATION,
-    RESONATE_PIECES,
+    RESONANCE_PIECES,
     changeImageOrientation,
     getResonanceBoardRowCol,
   } from "@data/resonance";
@@ -109,15 +130,8 @@ const pieces = resonancePieces.reduce((prev, ele) => {
   import { polygon } from "@turf/helpers";
   import Alpine from "alpinejs";
   import type { Feature, MultiPolygon, Polygon, Position } from "geojson";
-  import { h } from "hastscript";
   import { intersection, union } from "martinez-polygon-clipping";
   import matrix from "matrix-js";
-
-  const BLOCK_SIZE = 40;
-  const BOARD_X = 60;
-  const BOARD_Y = 60;
-  const BLOCK_OFFSET = BLOCK_SIZE / 4;
-  const DEFAULT_RESONATE_LEVEL = 10;
 
   window.Alpine = Alpine;
 
@@ -137,9 +151,9 @@ const pieces = resonancePieces.reduce((prev, ele) => {
   Alpine.data("dataset", () => ({
     boardCol: 0,
     boardRow: 0,
-    boardX: BOARD_X,
-    boardY: BOARD_Y,
-    activeResonanceLevel: DEFAULT_RESONATE_LEVEL,
+    boardX: 0,
+    boardY: 0,
+    activeResonanceLevel: 0,
 
     initDragGeoJson: null,
     dragGeoJson: null,
@@ -150,6 +164,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
     selectGeoJson: null,
     selectGeoJsonIdx: -1,
     selectPieceId: null,
+    selectPieceOrientation: 1,
 
     ctx: null,
     canvas: null,
@@ -162,7 +177,8 @@ const pieces = resonancePieces.reduce((prev, ele) => {
 
     initBlocks: [],
     blocks: [],
-    blockSize: BLOCK_SIZE,
+    blockSize: 0,
+    blockOffset: 0,
 
     startMouseX: 0,
     startMouseY: 0,
@@ -220,6 +236,11 @@ const pieces = resonancePieces.reduce((prev, ele) => {
     },
 
     init() {
+      this.blockSize = this.$store.resonance.blockSize;
+      this.blockOffset = this.blockSize / 4;
+      this.boardX = this.$store.resonance.boardX;
+      this.boardY = this.$store.resonance.boardY;
+      this.activeResonanceLevel = this.$store.resonance.defaultResonanceLevel;
       this.initCanvas();
     },
 
@@ -500,16 +521,21 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       };
     },
 
-    onInitDragGeoJson(blockId) {
-      const blockData = RESONATE_PIECES[blockId];
+    onInitDragGeoJson(blockId, orientation = 1) {
+      const blockData = RESONANCE_PIECES[blockId];
 
       if (!blockData) return;
 
       this.isDragging = true;
 
-      const { shape, shapeDimension, itemGeoJson } = this.initGeoJsonByShape(
-        blockData.shape
-      );
+      let rotateShape = blockData.shape;
+
+      if (orientation > 1) {
+        rotateShape = this.shapeRotate(blockData.shape, orientation);
+      }
+
+      const { shape, shapeDimension, itemGeoJson } =
+        this.initGeoJsonByShape(rotateShape);
 
       this.dragShape = shape;
       this.dragShapeDimension = shapeDimension;
@@ -523,7 +549,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
             row: shapeDimension[0],
             col: shapeDimension[1],
           },
-          orientation: 1,
+          orientation: orientation,
           pieceId: blockData.id,
         },
       };
@@ -547,7 +573,10 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         return;
       }
       const shapeId = event.target.attributes["data-piece-id"].value;
+      const pieceOrientation =
+        event.target.attributes["data-piece-orientation"].value;
       this.selectPieceId = shapeId;
+      this.selectPieceOrientation = +pieceOrientation;
     },
 
     onMouseMove(event) {
@@ -567,7 +596,10 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         }
 
         if (this.selectPieceId) {
-          this.onInitDragGeoJson(this.selectPieceId);
+          this.onInitDragGeoJson(
+            this.selectPieceId,
+            this.selectPieceOrientation
+          );
           return;
         }
 
@@ -664,45 +696,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
           this.processEndCollision();
         } else {
           if (this.selectPieceId) {
-            const container = document.querySelector(
-              "div[data-piece-id=" + this.selectPieceId + "]"
-            ) as HTMLDivElement;
-            const image = document.querySelector(
-              "img[data-piece-img-id=" + this.selectPieceId + "]"
-            ) as HTMLImageElement;
-
-            if (!image || !container) return;
-            const piece = RESONATE_PIECES[this.selectPieceId];
-            const dimension = matrix(piece.shape).size();
-            let newDimension = dimension;
-
-            const currentOrientation = +(
-              image.dataset.pieceImgOrientation || 1
-            );
-            const newOrientation = changeImageOrientation(currentOrientation);
-
-            const currentOrientationStyle =
-              IMAGE_ORIENTATION[currentOrientation].style;
-            const newOrientationStyle = IMAGE_ORIENTATION[newOrientation].style;
-
-            if (newOrientation === 6 || newOrientation === 8) {
-              newDimension = [dimension[1], dimension[0]];
-              image.style.left = `${20}px`;
-              image.style.top = `-${20}px`;
-            } else {
-              image.style.left = `${0}px`;
-              image.style.top = `${0}px`;
-            }
-
-            image.classList.remove(currentOrientationStyle);
-            image.classList.add(newOrientationStyle);
-
-            image.dataset.pieceImgOrientation = newOrientation.toString();
-
-            container.style.width = `${newDimension[1] * 40}px`;
-            container.style.height = `${newDimension[0] * 40}px`;
-
-            this.resetInitialState();
+            this.selectPieceRotation();
           }
         }
         return;
@@ -726,18 +720,117 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       this.onBoardClick();
     },
 
-    shape90degRotate(shape) {
+    shapeRotate(originShape, orientation = 1) {
+      //* Clone shape
+      const shape = JSON.parse(JSON.stringify(originShape));
       const shapeMatrix = matrix(shape);
 
-      //* Transpose
-      const rotateShapeMatrix = shapeMatrix.trans();
+      switch (orientation) {
+        //* Rotate 90deg
+        case 6: {
+          //* Transpose
+          const rotateShapeMatrix = shapeMatrix.trans();
 
-      //* Reverse rows
-      for (let i = 0; i < rotateShapeMatrix.length; i++) {
-        rotateShapeMatrix[i].reverse();
+          //* Reverse rows
+          for (let i = 0; i < rotateShapeMatrix.length; i++) {
+            rotateShapeMatrix[i].reverse();
+          }
+
+          return rotateShapeMatrix;
+        }
+        //* Rotate 180deg
+        case 3: {
+          let rotateShape = shape;
+
+          let [rows, cols] = shapeMatrix.size();
+
+          if (rows % 2 !== 0) {
+            // If N is odd reverse the middle
+            // row in the matrix
+            const index = Math.floor(rows / 2);
+            let cols = rotateShape[index].length;
+            for (let i = 0; i < cols / 2; i++) {
+              rotateShape[index].reverse();
+            }
+          }
+
+          // Swap the value of matrix [i][j]
+          // with [rows - i - 1][cols - j - 1]
+          // for half the rows size.
+          for (let i = 0; i <= rows / 2 - 1; i++) {
+            for (let j = 0; j < cols; j++) {
+              let temp = rotateShape[i][j];
+              rotateShape[i][j] = rotateShape[rows - i - 1][cols - j - 1];
+              rotateShape[rows - i - 1][cols - j - 1] = temp;
+            }
+          }
+
+          return rotateShape;
+        }
+        //* Rotate 270deg (-90deg)
+        case 8: {
+          let [rows, cols] = shapeMatrix.size();
+
+          //* Transpose
+          const rotateShapeMatrix = shapeMatrix.trans();
+
+          //* Reverse cols
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols / 2; c++) {
+              let temp = rotateShapeMatrix[c][r];
+              rotateShapeMatrix[c][r] = rotateShapeMatrix[cols - c - 1][r];
+              rotateShapeMatrix[cols - c - 1][r] = temp;
+            }
+          }
+
+          return rotateShapeMatrix;
+        }
+        default: {
+          return originShape;
+        }
+      }
+    },
+
+    selectPieceRotation() {
+      const wrapper = document.querySelector(
+        "div[data-piece-id=" + this.selectPieceId + "]"
+      ) as HTMLDivElement;
+      const image = document.querySelector(
+        "img[data-piece-img-id=" + this.selectPieceId + "]"
+      ) as HTMLImageElement;
+
+      if (!image || !wrapper) return;
+      const piece = RESONANCE_PIECES[this.selectPieceId];
+      const dimension = matrix(piece.shape).size();
+      let newDimension = dimension;
+
+      const currentOrientation = +(wrapper.dataset.pieceOrientation || 1);
+
+      const newOrientation = changeImageOrientation(currentOrientation);
+
+      const currentOrientationStyle =
+        IMAGE_ORIENTATION[currentOrientation].style;
+      const newOrientationStyle = IMAGE_ORIENTATION[newOrientation].style;
+
+      if (newOrientation === 6 || newOrientation === 8) {
+        //* [row, col]
+        newDimension = [dimension[1], dimension[0]];
+        image.style.left = `${((dimension[0] - newDimension[0]) * this.blockSize) / 2}px`;
+        image.style.top = `${((dimension[1] - newDimension[1]) * this.blockSize) / 2}px`;
+      } else {
+        image.style.left = `0px`;
+        image.style.top = `0px`;
       }
 
-      return rotateShapeMatrix;
+      image.classList.remove(currentOrientationStyle);
+      image.classList.add(newOrientationStyle);
+
+      wrapper.dataset.pieceOrientation = newOrientation.toString();
+
+      wrapper.style.width = `${newDimension[1] * 40}px`;
+      wrapper.style.height = `${newDimension[0] * 40}px`;
+
+      this.resetInitialState();
     },
 
     resetInitialState() {
@@ -749,6 +842,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       this.itemOnBoardGeoJson = null;
       this.isDragging = false;
       this.selectPieceId = null;
+      this.selectPieceOrientation = 1;
     },
 
     processEndCollision() {
@@ -865,8 +959,9 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         ).filter((_, idx) => idx !== selectGeoJsonIdx);
       }
 
-      const rotatedShape = this.shape90degRotate(
-        selectGeoJson.properties?.shape
+      const rotatedShape = this.shapeRotate(
+        selectGeoJson.properties?.shape,
+        IMAGE_DEGREE_ORIENTATIONS["90deg"]
       );
 
       const { x: startBlockX, y: startBlockY } =
@@ -926,11 +1021,11 @@ const pieces = resonancePieces.reduce((prev, ele) => {
 
     checkCollision(item: Feature<MultiPolygon>, block: BlockType) {
       const blockStartPoint = [
-        block.pos.x + BLOCK_OFFSET,
-        block.pos.y + BLOCK_OFFSET,
+        block.pos.x + this.blockOffset,
+        block.pos.y + this.blockOffset,
       ];
 
-      const blockSize = block.size - BLOCK_OFFSET * 2;
+      const blockSize = block.size - this.blockOffset * 2;
 
       const blockPoly = polygon([
         [
