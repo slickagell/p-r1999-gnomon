@@ -10,18 +10,22 @@ const DEFAULT_RESONATE_LEVEL = 10;
 interface Props {
   maxResonanceLevel: number;
   resonancePieces: {
-    id: string;
-  }[];
+    [resonateLevel: string]: {
+      id: string;
+      total: number;
+    }[];
+  };
+  isDev?: boolean;
 }
 
-const { maxResonanceLevel, resonancePieces } = Astro.props;
+const { maxResonanceLevel, resonancePieces, isDev } = Astro.props;
 
-const pieces = resonancePieces.reduce((prev, ele) => {
+const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
   const piece = RESONANCE_PIECES[ele.id];
 
   if (piece) {
     const dimension = matrix(piece.shape).size();
-    return [...prev, { ...piece, dimension, orientation: 1 }];
+    return [...prev, { ...piece, dimension, total: ele.total, orientation: 1 }];
   }
 
   return prev;
@@ -66,27 +70,38 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       {
         pieces.map((ele) => (
           <div class="flex my-4">
-            <div class="relative">
-              <div
-                data-piece-id={ele.id}
-                data-piece-orientation={ele.orientation}
-                style={{
-                  width: ele.dimension[1] * BLOCK_SIZE + "px",
-                  height: ele.dimension[0] * BLOCK_SIZE + "px",
-                }}
-              />
-              <img
-                data-piece-img-id={ele.id}
-                class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
-                style={{
-                  width: ele.dimension[1] * BLOCK_SIZE + "px",
-                  height: ele.dimension[0] * BLOCK_SIZE + "px",
-                  top: 0 + "px",
-                  left: 0 + "px",
-                }}
-                src={`/data/resonance/pieces/${ele.image}`}
-                alt={`${ele.image}`}
-              />
+            <div
+              x-data={`piece({ id: '${ele.id}', total : ${ele.total}, orientation : ${ele.orientation} })`}
+            >
+              <div class="relative">
+                <div
+                  x-bind="pieceDiv"
+                  style={{
+                    width: ele.dimension[1] * BLOCK_SIZE + "px",
+                    height: ele.dimension[0] * BLOCK_SIZE + "px",
+                  }}
+                />
+                <img
+                  x-bind="pieceImg"
+                  class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
+                  style={{
+                    width: ele.dimension[1] * BLOCK_SIZE + "px",
+                    height: ele.dimension[0] * BLOCK_SIZE + "px",
+                    top: 0 + "px",
+                    left: 0 + "px",
+                  }}
+                  src={`/data/resonance/pieces/${ele.image}`}
+                  alt={`${ele.image}`}
+                />
+              </div>
+              <p class="mt-1 text-center pointer-events-none select-none">
+                <span
+                  x-text="quantity"
+                  x-bind:class="quantity === 0 ? 'text-error' : ''"
+                />
+                /
+                <span x-text="total" />
+              </p>
             </div>
             <div />
           </div>
@@ -94,6 +109,15 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       }
     </div>
   </div>
+  {
+    isDev && (
+      <textarea
+        rows="10"
+        class="textarea textarea-secondary w-full"
+        x-model="printResonanceGeoJsonList()"
+      />
+    )
+  }
 </div>
 
 <script
@@ -164,7 +188,6 @@ const pieces = resonancePieces.reduce((prev, ele) => {
     selectGeoJson: null,
     selectGeoJsonIdx: -1,
     selectPieceId: null,
-    selectPieceOrientation: 1,
 
     ctx: null,
     canvas: null,
@@ -521,7 +544,17 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       };
     },
 
-    onInitDragGeoJson(blockId, orientation = 1) {
+    onInitDragGeoJson(blockId) {
+      const wrapper = document.querySelector(
+        "div[data-piece-id=" + this.selectPieceId + "]"
+      ) as HTMLDivElement;
+
+      let pieceAlpineData: any = Alpine.$data(wrapper);
+
+      const orientation = pieceAlpineData.orientation;
+
+      pieceAlpineData.updateQuantity(-1);
+
       const blockData = RESONANCE_PIECES[blockId];
 
       if (!blockData) return;
@@ -573,10 +606,9 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         return;
       }
       const shapeId = event.target.attributes["data-piece-id"].value;
-      const pieceOrientation =
-        event.target.attributes["data-piece-orientation"].value;
+      let pieceAlpineData: any = Alpine.$data(event.target);
+      if (!pieceAlpineData.quantity) return;
       this.selectPieceId = shapeId;
-      this.selectPieceOrientation = +pieceOrientation;
     },
 
     onMouseMove(event) {
@@ -596,10 +628,7 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         }
 
         if (this.selectPieceId) {
-          this.onInitDragGeoJson(
-            this.selectPieceId,
-            this.selectPieceOrientation
-          );
+          this.onInitDragGeoJson(this.selectPieceId);
           return;
         }
 
@@ -694,10 +723,13 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         //* If we're currently dragging a block
         if (this.isDragging) {
           this.processEndCollision();
-        } else {
-          if (this.selectPieceId) {
-            this.selectPieceRotation();
-          }
+        } else if (this.selectPieceId) {
+          const wrapper = document.querySelector(
+            "div[data-piece-id=" + this.selectPieceId + "]"
+          ) as HTMLDivElement;
+          let pieceAlpineData: any = Alpine.$data(wrapper);
+          pieceAlpineData.selectPieceRotation();
+          this.resetInitialState();
         }
         return;
       }
@@ -791,48 +823,6 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       }
     },
 
-    selectPieceRotation() {
-      const wrapper = document.querySelector(
-        "div[data-piece-id=" + this.selectPieceId + "]"
-      ) as HTMLDivElement;
-      const image = document.querySelector(
-        "img[data-piece-img-id=" + this.selectPieceId + "]"
-      ) as HTMLImageElement;
-
-      if (!image || !wrapper) return;
-      const piece = RESONANCE_PIECES[this.selectPieceId];
-      const dimension = matrix(piece.shape).size();
-      let newDimension = dimension;
-
-      const currentOrientation = +(wrapper.dataset.pieceOrientation || 1);
-
-      const newOrientation = changeImageOrientation(currentOrientation);
-
-      const currentOrientationStyle =
-        IMAGE_ORIENTATION[currentOrientation].style;
-      const newOrientationStyle = IMAGE_ORIENTATION[newOrientation].style;
-
-      if (newOrientation === 6 || newOrientation === 8) {
-        //* [row, col]
-        newDimension = [dimension[1], dimension[0]];
-        image.style.left = `${((dimension[0] - newDimension[0]) * this.blockSize) / 2}px`;
-        image.style.top = `${((dimension[1] - newDimension[1]) * this.blockSize) / 2}px`;
-      } else {
-        image.style.left = `0px`;
-        image.style.top = `0px`;
-      }
-
-      image.classList.remove(currentOrientationStyle);
-      image.classList.add(newOrientationStyle);
-
-      wrapper.dataset.pieceOrientation = newOrientation.toString();
-
-      wrapper.style.width = `${newDimension[1] * 40}px`;
-      wrapper.style.height = `${newDimension[0] * 40}px`;
-
-      this.resetInitialState();
-    },
-
     resetInitialState() {
       this.selectGeoJson = null;
       this.dragGeoJson = null;
@@ -842,13 +832,18 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       this.itemOnBoardGeoJson = null;
       this.isDragging = false;
       this.selectPieceId = null;
-      this.selectPieceOrientation = 1;
     },
 
     processEndCollision() {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       if (!this.itemOnBoardGeoJson) return;
+
+      const pieceId = this.itemOnBoardGeoJson.properties.pieceId;
+      const wrapper = document.querySelector(
+        "div[data-piece-id=" + pieceId + "]"
+      ) as HTMLDivElement;
+      let pieceAlpineData: any = Alpine.$data(wrapper);
 
       const isItemInsideBoard = this.itemOnBoardGeoJson.geometry.coordinates
         .flat(this.itemOnBoardGeoJson.geometry.type === "MultiPolygon" ? 2 : 1)
@@ -877,6 +872,8 @@ const pieces = resonancePieces.reduce((prev, ele) => {
 
         this.resetInitialState();
         this.updateBoardCanvas();
+
+        pieceAlpineData.updateQuantity(1);
         return;
       }
 
@@ -911,6 +908,8 @@ const pieces = resonancePieces.reduce((prev, ele) => {
         this.blocks = this.initBlocks;
         if (this.selectGeoJson)
           this.resonanceGeoJsonList.push(this.selectGeoJson);
+
+        pieceAlpineData.updateQuantity(1);
       }
 
       this.resetInitialState();
@@ -1155,6 +1154,69 @@ const pieces = resonancePieces.reduce((prev, ele) => {
       this.boardRow = row;
 
       this.initCanvas();
+    },
+
+    printResonanceGeoJsonList() {
+      return JSON.stringify(this.resonanceGeoJsonList);
+    },
+  }));
+
+  Alpine.data("piece", ({ id, total = 1, orientation = 1 }) => ({
+    id: id,
+    quantity: total,
+    total: total,
+    orientation: orientation,
+
+    pieceDiv: {
+      ["data-piece-id"]: id,
+    },
+
+    pieceImg: {
+      ["data-piece-img-id"]: id,
+    },
+
+    updateQuantity(updateQuantity: number) {
+      const newQuantity = parseInt(this.quantity) + updateQuantity;
+      this.quantity = newQuantity;
+    },
+
+    selectPieceRotation() {
+      const container = this.$el;
+      const wrapper = container.querySelector("div[data-piece-id=" + id + "]");
+      const image = container.querySelector(
+        "img[data-piece-img-id=" + id + "]"
+      ) as HTMLImageElement;
+
+      if (!image || !wrapper) return;
+      const piece = RESONANCE_PIECES[id];
+      const dimension = matrix(piece.shape).size();
+      let newDimension = dimension;
+
+      const currentOrientation = +(this.orientation || 1);
+
+      const newOrientation = changeImageOrientation(currentOrientation);
+
+      const currentOrientationStyle =
+        IMAGE_ORIENTATION[currentOrientation].style;
+      const newOrientationStyle = IMAGE_ORIENTATION[newOrientation].style;
+
+      if (newOrientation === 6 || newOrientation === 8) {
+        //* [row, col]
+        newDimension = [dimension[1], dimension[0]];
+        image.style.left = `${((dimension[0] - newDimension[0]) * this.blockSize) / 2}px`;
+        image.style.top = `${((dimension[1] - newDimension[1]) * this.blockSize) / 2}px`;
+      } else {
+        image.style.left = `0px`;
+        image.style.top = `0px`;
+      }
+
+      image.classList.remove(currentOrientationStyle);
+      image.classList.add(newOrientationStyle);
+
+      this.orientation = newOrientation;
+
+      wrapper.style.width = `${newDimension[1] * this.blockSize}px`;
+      wrapper.style.height = `${newDimension[0] * this.blockSize}px`;
     },
   }));
 </script>

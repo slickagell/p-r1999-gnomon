@@ -14,7 +14,7 @@
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@scripts/*": ["src/scripts/*"],
-      "@stores/*": ["src/stores/*"],
+      "@stores/*": ["src/stores/*"]
     },
     "jsx": "preserve",
     "jsxImportSource": "solid-js"

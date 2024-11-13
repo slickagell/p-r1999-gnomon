@@ -2,25 +2,32 @@
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import Layout from "@layouts/Layout.astro";
 
-const PIECES = [
-  {
-    id: "RP_X_01",
-  },
-  {
-    id: "RP_L_01",
-  },
-  {
-    id: "RP_I_01",
-  },
-  {
-    id: "RP_Z_01",
-  },
-  {
-    id: "RP_T_01",
-  },
-];
+const PIECES = {
+  10: [
+    {
+      id: "RP_X_01",
+      total: 1,
+    },
+    {
+      id: "RP_L_01",
+      total: 2,
+    },
+    {
+      id: "RP_I_01",
+      total: 2,
+    },
+    {
+      id: "RP_Z_01",
+      total: 1,
+    },
+    {
+      id: "RP_T_01",
+      total: 1,
+    },
+  ],
+};
 ---
 
 <Layout title="Resonance">
-  <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES} />
+  <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES} isDev />
 </Layout>

@@ -38,6 +38,8 @@
     "@types/alpinejs": "^3.13.10",
     "@types/geojson": "^7946.0.14",
     "daisyui": "^3.9.4",
-    "plop": "^4.0.1"
+    "plop": "^4.0.1",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
