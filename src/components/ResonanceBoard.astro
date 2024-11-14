@@ -7,6 +7,13 @@ const BOARD_X = 40;
 const BOARD_Y = 40;
 const DEFAULT_RESONATE_LEVEL = 10;
 
+interface InitResonanceDataType {
+  blocks: string[];
+  shape: number[][];
+  orientation: number;
+  pieceId: string;
+}
+
 interface Props {
   maxResonanceLevel: number;
   resonancePieces: {
@@ -15,21 +22,39 @@ interface Props {
       total: number;
     }[];
   };
+  initResonanceList?: {
+    [resonateLevel: string]: {
+      name: string;
+      resonance: InitResonanceDataType[];
+    }[];
+  };
   isDev?: boolean;
 }
 
-const { maxResonanceLevel, resonancePieces, isDev } = Astro.props;
+const { maxResonanceLevel, resonancePieces, initResonanceList, isDev } =
+  Astro.props;
 
-const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
-  const piece = RESONANCE_PIECES[ele.id];
+const initialActiveResonanceLevel =
+  maxResonanceLevel > DEFAULT_RESONATE_LEVEL
+    ? DEFAULT_RESONATE_LEVEL
+    : maxResonanceLevel;
 
-  if (piece) {
-    const dimension = matrix(piece.shape).size();
-    return [...prev, { ...piece, dimension, total: ele.total, orientation: 1 }];
-  }
+const pieces = resonancePieces[initialActiveResonanceLevel].reduce(
+  (prev, ele) => {
+    const piece = RESONANCE_PIECES[ele.id];
 
-  return prev;
-}, []);
+    if (piece) {
+      const dimension = matrix(piece.shape).size();
+      return [
+        ...prev,
+        { ...piece, dimension, total: ele.total, orientation: 1 },
+      ];
+    }
+
+    return prev;
+  },
+  []
+);
 ---
 
 <div x-data="dataset">
@@ -38,7 +63,7 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       <button
         class="btn"
         :class="i === activeResonanceLevel?'btn-outline btn-primary':''"
-        @click="changeBoardSize(i)"
+        @click="changeResonanceLevel(i)"
         x-text="i"></button>
     </template>
   </div>
@@ -57,11 +82,11 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
 
     <template x-for="block in blocks" :key="block.id">
       <div
-        :data-block-id="block.id"
+        x-bind:data-block-id="block.id"
         x-data="{ x: block.pos.x, y: block.pos.y, size: block.size, isDragOver: false}"
         class="border absolute select-none"
-        :class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
-        :style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
+        x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
+        x-bind:style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
       >
       </div>
     </template>
@@ -108,6 +133,27 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
         ))
       }
     </div>
+
+    <label
+      x-show="recommendedOptions.length"
+      x-ref="recommendedSelect"
+      class="absolute"
+      for="recommendedResonanceSelect"
+    >
+      <p class="mb-1">Recommended</p>
+      <select
+        id="recommendedResonanceSelect"
+        class="select select-secondary select-bordered w-full"
+        @change="changeRecommended($event.target.value)"
+      >
+        <template x-for="resonance in recommendedOptions">
+          <option
+            x-text="resonance.label"
+            :value="resonance.value"
+            :selected="resonance.value === selectedRecommended"></option>
+        </template>
+      </select>
+    </label>
   </div>
   {
     isDev && (
@@ -124,20 +170,24 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
   define:vars={{
     resonancePieces,
     maxResonanceLevel,
+    initialActiveResonanceLevel,
     blockSize: BLOCK_SIZE,
     boardX: BOARD_X,
     boardY: BOARD_Y,
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
+    initResonanceList,
   }}
 >
   document.addEventListener("alpine:init", () => {
     window.Alpine.store("resonance", {
       resonancePieces,
       maxResonanceLevel,
+      initialActiveResonanceLevel,
       blockSize,
       boardX,
       boardY,
       defaultResonanceLevel,
+      initResonanceList,
     });
   });
 </script>
@@ -178,6 +228,9 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
     boardX: 0,
     boardY: 0,
     activeResonanceLevel: 0,
+
+    recommendedOptions: [],
+    selectedRecommended: "",
 
     initDragGeoJson: null,
     dragGeoJson: null,
@@ -221,11 +274,7 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       this.boardCanvas.style.left = `${this.boardX}px`;
 
       if (!this.boardRow || !this.boardCol) {
-        const { row, col } = getResonanceBoardRowCol(
-          this.$store.resonance.maxResonanceLevel > this.activeResonanceLevel
-            ? this.activeResonanceLevel
-            : this.$store.resonance.maxResonanceLevel
-        );
+        const { row, col } = getResonanceBoardRowCol(this.activeResonanceLevel);
 
         this.boardRow = row;
         this.boardCol = col;
@@ -235,7 +284,7 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       for (let row = 0; row < this.boardRow; row++) {
         for (let col = 0; col < this.boardCol; col++) {
           initBlocks.push({
-            id: `${col}-${row}`,
+            id: `${row}-${col}`,
             col: col,
             row: row,
             pos: {
@@ -263,8 +312,59 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       this.blockOffset = this.blockSize / 4;
       this.boardX = this.$store.resonance.boardX;
       this.boardY = this.$store.resonance.boardY;
-      this.activeResonanceLevel = this.$store.resonance.defaultResonanceLevel;
+      this.activeResonanceLevel =
+        this.$store.resonance.initialActiveResonanceLevel;
+
       this.initCanvas();
+
+      this.$nextTick(() => {
+        this.initializeData();
+      });
+    },
+
+    initializeData() {
+      if (this.$store.resonance.initResonanceList) {
+        const activeRecommendedResonanceList =
+          this.$store.resonance.initResonanceList[this.activeResonanceLevel];
+
+        if (!activeRecommendedResonanceList) {
+          this.recommendedOptions = [];
+          this.selectedRecommended = "";
+          return;
+        }
+
+        let defaultIndex = 0;
+        const preferredIndex = activeRecommendedResonanceList.findIndex(
+          (ele) => ele.isPreferred
+        );
+        if (preferredIndex !== -1) defaultIndex = preferredIndex;
+        const defaultResonanceData =
+          activeRecommendedResonanceList[defaultIndex];
+
+        if (!defaultResonanceData) {
+          this.recommendedOptions = [];
+          this.selectedRecommended = "";
+          return;
+        }
+
+        this.selectedRecommended = `${this.activeResonanceLevel}-${defaultIndex}`;
+
+        this.recommendedOptions = this.$store.resonance.initResonanceList[
+          this.activeResonanceLevel
+        ].map((item, idx) => ({
+          label: item.name,
+          value: `${this.activeResonanceLevel}-${idx}`,
+        }));
+
+        const select = this.$refs.recommendedSelect;
+
+        select.style.top =
+          this.boardY + this.boardRow * this.blockSize + 20 + "px";
+        select.style.left = this.boardX + "px";
+        select.style.width = this.boardCol * this.blockSize + "px";
+
+        this.initRecommendedResonanceData(defaultResonanceData);
+      }
     },
 
     drawPoly(coords: Position[], ctx, fill: string) {
@@ -347,8 +447,9 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
         const height = geoJson.properties.shapeDimension.row * this.blockSize;
         const orientation = geoJson.properties.orientation;
 
-        const { x: startBlockX, y: startBlockY } =
-          this.getStartBlockCoords(geoJson);
+        const { x: startBlockX, y: startBlockY } = this.getStartBlockCoords(
+          geoJson.properties.blocks
+        );
 
         const image = document.querySelector(
           "img[data-piece-img-id=" + geoJson.properties?.pieceId + "]"
@@ -376,14 +477,14 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       this.drawResonanceGeoJsonList();
     },
 
-    getStartBlockCoords(geoJson: Feature) {
-      if (!geoJson.properties) return;
+    getStartBlockCoords(blocks?: string[]) {
+      if (!blocks) return;
 
       let startBlockCol = this.boardCol;
       let startBlockRow = this.boardRow;
 
-      geoJson.properties.blocks.forEach((ele) => {
-        const [col, row] = ele.split("-");
+      blocks.forEach((ele) => {
+        const [row, col] = ele.split("-");
         if (+col < startBlockCol) {
           startBlockCol = +col;
         }
@@ -544,7 +645,7 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       };
     },
 
-    onInitDragGeoJson(blockId) {
+    onInitDragGeoJson() {
       const wrapper = document.querySelector(
         "div[data-piece-id=" + this.selectPieceId + "]"
       ) as HTMLDivElement;
@@ -555,7 +656,7 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
 
       pieceAlpineData.updateQuantity(-1);
 
-      const blockData = RESONANCE_PIECES[blockId];
+      const blockData = RESONANCE_PIECES[this.selectPieceId];
 
       if (!blockData) return;
 
@@ -628,7 +729,7 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
         }
 
         if (this.selectPieceId) {
-          this.onInitDragGeoJson(this.selectPieceId);
+          this.onInitDragGeoJson();
           return;
         }
 
@@ -928,10 +1029,10 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
           selectGeoJsonIdx,
         };
 
-      const [column, row] = blockId.split("-");
+      const [row, col] = blockId.split("-");
 
       this.resonanceGeoJsonList.some((geoJson, idx) => {
-        if (geoJson.properties.blocks.includes(`${column}-${row}`)) {
+        if (geoJson.properties.blocks.includes(`${row}-${col}`)) {
           selectGeoJson = geoJson;
           selectGeoJsonIdx = idx;
           return true;
@@ -963,8 +1064,9 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
         IMAGE_DEGREE_ORIENTATIONS["90deg"]
       );
 
-      const { x: startBlockX, y: startBlockY } =
-        this.getStartBlockCoords(selectGeoJson);
+      const { x: startBlockX, y: startBlockY } = this.getStartBlockCoords(
+        selectGeoJson.properties.blocks
+      );
 
       const { itemGeoJson, shape, shapeDimension } = this.initGeoJsonByShape(
         rotatedShape,
@@ -1147,17 +1249,164 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       return false; // No collision detected
     },
 
-    changeBoardSize(level: number) {
+    changeResonanceLevel(level: number) {
       const { row, col } = getResonanceBoardRowCol(level);
       this.activeResonanceLevel = level;
       this.boardCol = col;
       this.boardRow = row;
 
       this.initCanvas();
+      this.initializeData();
     },
 
     printResonanceGeoJsonList() {
-      return JSON.stringify(this.resonanceGeoJsonList);
+      const list = this.resonanceGeoJsonList.map((ele) => {
+        const { blocks, shape, orientation, pieceId } = ele.properties;
+        return {
+          blocks,
+          shape,
+          orientation,
+          pieceId,
+        };
+      });
+
+      return JSON.stringify(list);
+    },
+
+    initResonanceGeoJsonList(
+      list: {
+        blocks: string[];
+        shape: number[][];
+        orientation: number;
+        pieceId: string;
+      }[]
+    ) {
+      const geoJsonList = list.reduce((prev, item) => {
+        const { x: startBlockX, y: startBlockY } = this.getStartBlockCoords(
+          item.blocks
+        );
+
+        const { itemGeoJson, shapeDimension } = this.initGeoJsonByShape(
+          item.shape,
+          startBlockX + this.boardX,
+          startBlockY + this.boardY
+        );
+
+        const newItemGeoJson = {
+          ...itemGeoJson,
+          properties: {
+            ...item,
+            shapeDimension: {
+              row: shapeDimension[0],
+              col: shapeDimension[1],
+            },
+          },
+        };
+
+        return [...prev, newItemGeoJson];
+      }, []);
+
+      return geoJsonList;
+    },
+
+    initRecommendedResonanceData(resonanceData) {
+      //* Update resonanceGeoJson
+      this.resonanceGeoJsonList = this.initResonanceGeoJsonList(
+        resonanceData.resonance
+      );
+      this.updateBoardCanvas();
+
+      const { pieces, blocksList } = this.resonanceGeoJsonList.reduce(
+        (
+          prev: {
+            pieces: {
+              [pieceId: string]: {
+                quantity: number;
+              };
+            };
+            blocksList: string[];
+          },
+          geoJson
+        ) => {
+          const pieceId = geoJson.properties?.pieceId;
+          if (prev[pieceId]) {
+            return {
+              ...prev,
+              blocksList: prev.blocksList.concat(geoJson.properties?.blocks),
+              pieces: {
+                ...prev.pieces,
+                [pieceId]: {
+                  quantity: prev[pieceId].quantity + 1,
+                },
+              },
+            };
+          }
+
+          return {
+            ...prev,
+            blocksList: prev.blocksList.concat(geoJson.properties?.blocks),
+            pieces: {
+              ...prev.pieces,
+              [pieceId]: {
+                quantity: 1,
+              },
+            },
+          };
+        },
+        {
+          pieces: {},
+          blocksList: [],
+        }
+      );
+
+      //* Update piece quantities
+      Object.entries(pieces).forEach(
+        ([pieceId, piece]: [string, { quantity: number }]) => {
+          const pieceDiv = document.querySelector(
+            "div[data-piece-id=" + pieceId + "]"
+          ) as HTMLDivElement;
+
+          let pieceAlpineData: any = Alpine.$data(pieceDiv);
+
+          pieceAlpineData.updateQuantity(-(piece?.quantity || 0));
+        }
+      );
+
+      //* Update blocks
+      const blocksData = this.blocks.map((block) => {
+        if (blocksList.includes(block.id)) {
+          return {
+            ...block,
+            isCollided: true,
+          };
+        }
+        return { ...block, isCollided: false };
+      });
+
+      this.initBlocks = blocksData;
+      this.blocks = blocksData;
+    },
+
+    changeRecommended(value: string) {
+      const [resonanceLevel, index] = value.split("-");
+      const resonanceData =
+        this.$store.resonance.initResonanceList[resonanceLevel][index];
+
+      this.selectedRecommended = value;
+
+      this.resetPiecesQuantity();
+      this.initRecommendedResonanceData(resonanceData);
+    },
+
+    resetPiecesQuantity() {
+      const pieceDivs = document.querySelectorAll(
+        "div[data-piece-id]"
+      ) as NodeListOf<HTMLDivElement>;
+
+      pieceDivs.forEach((pieceDiv) => {
+        const pieceAlpineData: any = Alpine.$data(pieceDiv);
+        pieceAlpineData.resetQuantity();
+      });
     },
   }));
 
@@ -1175,9 +1424,17 @@ const pieces = resonancePieces[DEFAULT_RESONATE_LEVEL].reduce((prev, ele) => {
       ["data-piece-img-id"]: id,
     },
 
+    setQuantity(quantity: number) {
+      this.quantity = quantity;
+    },
+
     updateQuantity(updateQuantity: number) {
       const newQuantity = parseInt(this.quantity) + updateQuantity;
       this.quantity = newQuantity;
+    },
+
+    resetQuantity() {
+      this.quantity = this.total;
     },
 
     selectPieceRotation() {

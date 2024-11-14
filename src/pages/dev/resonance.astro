@@ -26,8 +26,74 @@ const PIECES = {
     },
   ],
 };
+
+const initResonanceList = {
+  10: [
+    {
+      name: "Attack",
+      resonance: [
+        {
+          blocks: ["3-6", "4-6", "5-6", "6-6"],
+          shape: [[1], [1], [1], [1]],
+          orientation: 1,
+          pieceId: "RP_I_01",
+        },
+        {
+          blocks: ["0-5", "0-6", "1-6", "2-6"],
+          shape: [
+            [1, 1],
+            [0, 1],
+            [0, 1],
+          ],
+          orientation: 3,
+          pieceId: "RP_L_01",
+        },
+      ],
+    },
+    {
+      name: "Active",
+      isPreferred: true,
+      resonance: [
+        {
+          blocks: ["1-1", "2-0", "2-1", "3-0"],
+          shape: [
+            [0, 1],
+            [1, 1],
+            [1, 0],
+          ],
+          orientation: 6,
+          pieceId: "RP_Z_01",
+        },
+        {
+          blocks: ["2-2", "3-1", "3-2", "3-3"],
+          shape: [
+            [0, 1, 0],
+            [1, 1, 1],
+          ],
+          orientation: 1,
+          pieceId: "RP_T_01",
+        },
+        {
+          blocks: ["1-4", "2-3", "2-4", "2-5", "3-4"],
+          shape: [
+            [0, 1, 0],
+            [1, 1, 1],
+            [0, 1, 0],
+          ],
+          orientation: 1,
+          pieceId: "RP_X_01",
+        },
+      ],
+    },
+  ],
+};
 ---
 
 <Layout title="Resonance">
-  <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES} isDev />
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES}
+    initResonanceList={initResonanceList}
+    isDev
+  />
 </Layout>
