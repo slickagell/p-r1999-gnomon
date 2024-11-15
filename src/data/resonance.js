@@ -106,7 +106,59 @@ export const RESONANCE_PIECES = {
     stats: {
       1: {
         HP: {
-          data: 1,
+          value: 1,
+        },
+      },
+      6: {
+        HP: {
+          value: 809,
+        },
+        ATTACK: {
+          value: 143,
+        },
+        REALITY_DEFENSE: {
+          value: 73,
+        },
+        MENTAL_DEFENSE: {
+          value: 84,
+        },
+        CRITICAL_RATE: {
+          value: 6,
+          unit: "%",
+        },
+        CRITICAL_DAMAGE: {
+          value: 2,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 8,
+          unit: "%",
+        },
+      },
+      7: {
+        HP: {
+          value: 992,
+        },
+        ATTACK: {
+          value: 176,
+        },
+        REALITY_DEFENSE: {
+          value: 90,
+        },
+        MENTAL_DEFENSE: {
+          value: 104,
+        },
+        CRITICAL_RATE: {
+          value: 6,
+          unit: "%",
+        },
+        CRITICAL_DAMAGE: {
+          value: 3,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 10,
+          unit: "%",
         },
       },
     },
@@ -122,7 +174,35 @@ export const RESONANCE_PIECES = {
     stats: {
       1: {
         HP: {
-          data: 1,
+          value: 1,
+        },
+      },
+      3: {
+        CRITICAL_RATE: {
+          value: 3.5,
+          unit: "%",
+        },
+        DMG_BONUS: {
+          value: 2.5,
+          unit: "%",
+        },
+        DMG_REDUCTION: {
+          value: 2,
+          unit: "%",
+        },
+      },
+      4: {
+        CRITICAL_RATE: {
+          value: 4,
+          unit: "%",
+        },
+        DMG_BONUS: {
+          value: 3,
+          unit: "%",
+        },
+        DMG_REDUCTION: {
+          value: 2.5,
+          unit: "%",
         },
       },
     },
@@ -134,7 +214,21 @@ export const RESONANCE_PIECES = {
     stats: {
       1: {
         HP: {
-          data: 1,
+          value: 1,
+        },
+      },
+      3: {
+        HP: {
+          value: 3,
+          unit: "%",
+        },
+        ATTACK: {
+          value: 3,
+          unit: "%",
+        },
+        MENTAL_DEFENSE: {
+          value: 3,
+          unit: "%",
         },
       },
     },
@@ -149,7 +243,21 @@ export const RESONANCE_PIECES = {
     stats: {
       1: {
         HP: {
-          data: 1,
+          value: 1,
+        },
+      },
+      3: {
+        CRITICAL_RATE: {
+          value: 5,
+          unit: "%",
+        },
+        CRITICAL_DEFENSE: {
+          value: 5,
+          unit: "%",
+        },
+        DMG_REDUCTION: {
+          value: 4.5,
+          unit: "%",
         },
       },
     },
@@ -164,7 +272,21 @@ export const RESONANCE_PIECES = {
     stats: {
       1: {
         HP: {
-          data: 1,
+          value: 1,
+        },
+      },
+      3: {
+        HP: {
+          value: 3,
+          unit: "%",
+        },
+        ATTACK: {
+          value: 3,
+          unit: "%",
+        },
+        REALITY_DEFENSE: {
+          value: 3,
+          unit: "%",
         },
       },
     },

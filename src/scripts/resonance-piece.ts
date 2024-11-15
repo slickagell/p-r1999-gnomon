@@ -1,3 +1,4 @@
+import { STATS } from "@data/character";
 import {
   IMAGE_ORIENTATION,
   RESONANCE_PIECES,
@@ -5,11 +6,41 @@ import {
 } from "@data/resonance";
 import matrix from "matrix-js";
 
-export default ({ id, total = 1, orientation = 1 }) => ({
+export default ({
+  id,
+  total = 1,
+  orientation = 1,
+  level = 1,
+  stats,
+}: {
+  id: string;
+  total?: number;
+  orientation?: number;
+  level: number;
+  stats: ResonancePieceStats;
+}) => ({
   id: id,
   quantity: total,
   total: total,
   orientation: orientation,
+  level: level,
+  stats,
+  currentStats: null,
+
+  initCurrentStats() {
+    this.currentStats = Object.entries(stats[this.level]).map(
+      ([statId, stat]) => {
+        const statData = STATS[statId];
+
+        return {
+          id: statId,
+          label: statData.label || "",
+          value: stat.value,
+          unit: stat.unit || "",
+        };
+      },
+    );
+  },
 
   setQuantity(quantity: number) {
     this.quantity = quantity;
@@ -60,5 +91,10 @@ export default ({ id, total = 1, orientation = 1 }) => ({
 
     wrapper.style.width = `${newDimension[1] * this.blockSize}px`;
     wrapper.style.height = `${newDimension[0] * this.blockSize}px`;
+  },
+
+  updateCurrentStats(level: number) {
+    this.level = level;
+    this.initCurrentStats();
   },
 });

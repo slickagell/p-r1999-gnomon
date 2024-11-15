@@ -4,31 +4,14 @@ const BOARD_X = 40;
 const BOARD_Y = 40;
 const DEFAULT_RESONATE_LEVEL = 10;
 
-interface InitResonanceDataType {
-  blocks: string[];
-  shape: number[][];
-  orientation: number;
-  pieceId: string;
-}
-
 interface Props {
   maxResonanceLevel: number;
-  resonancePieces: {
-    [resonateLevel: string]: {
-      id: string;
-      total: number;
-    }[];
-  };
-  initResonanceList?: {
-    [resonateLevel: string]: {
-      name: string;
-      resonance: InitResonanceDataType[];
-    }[];
-  };
+  resonancePieces: ResonanceInitPiecesType;
+  recommendedResonanceList?: ResonanceRecommendedListType;
   isDev?: boolean;
 }
 
-const { maxResonanceLevel, resonancePieces, initResonanceList, isDev } =
+const { maxResonanceLevel, resonancePieces, recommendedResonanceList, isDev } =
   Astro.props;
 
 const initialActiveResonanceLevel =
@@ -38,14 +21,95 @@ const initialActiveResonanceLevel =
 ---
 
 <div x-data="dataset">
-  <div class="flex">
-    <template x-for="i in $store.resonance.maxResonanceLevel">
-      <button
-        class="btn"
-        :class="i === activeResonanceLevel?'btn-outline btn-primary':''"
-        @click="changeResonanceLevel(i)"
-        x-text="i"></button>
-    </template>
+  <div class="flex gap-4 items-end mb-4">
+    <div>
+      <div
+        x-ref="attributes"
+        x-data="attributes"
+        class="p-6 border basis-1/2 flex gap-4"
+      >
+        <div class="basis-1/3">
+          <div class="flex gap-2">
+            <p class="text-base-content/70">Level:</p>
+            <p class="text-base-content" x-text="level"></p>
+          </div>
+          <div class="flex gap-2">
+            <p class="text-base-content/70">Insight:</p>
+            <p class="text-base-content" x-text="insight"></p>
+          </div>
+        </div>
+        <div class="basis-2/3">
+          <div class="flex gap-2 justify-between">
+            <p class="text-base-content/70" x-text="baseStats.HP.label"></p>
+            <p class="text-base-content" x-text="baseStats.HP.value"></p>
+          </div>
+          <div class="flex gap-2 justify-between">
+            <p class="text-base-content/70" x-text="baseStats.ATTACK.label"></p>
+            <p class="text-base-content" x-text="baseStats.ATTACK.value"></p>
+          </div>
+          <div class="flex gap-2 justify-between">
+            <p
+              class="text-base-content/70"
+              x-text="baseStats.REALITY_DEFENSE.label"
+            >
+            </p>
+            <p
+              class="text-base-content"
+              x-text="baseStats.REALITY_DEFENSE.value"
+            >
+            </p>
+          </div>
+          <div class="flex gap-2 justify-between">
+            <p
+              class="text-base-content/70"
+              x-text="baseStats.MENTAL_DEFENSE.label"
+            >
+            </p>
+            <p
+              class="text-base-content"
+              x-text="baseStats.MENTAL_DEFENSE.value"
+            >
+            </p>
+          </div>
+          <div class="flex gap-2 justify-between">
+            <p
+              class="text-base-content/70"
+              x-text="baseStats.CRITICAL_TECHNIQUE.label"
+            >
+            </p>
+            <p
+              class="text-base-content"
+              x-text="baseStats.CRITICAL_TECHNIQUE.value"
+            >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 flex basis-1/2 overflow-auto">
+        <template x-for="i in $store.resonance.maxResonanceLevel">
+          <button
+            class="btn btn-outline"
+            :class="i === activeResonanceLevel?'btn-outline btn-primary':''"
+            @click="changeResonanceLevel(i)"
+            x-text="i"></button>
+        </template>
+      </div>
+    </div>
+    <div
+      x-ref="generalStats"
+      x-data="generalStats"
+      class="p-6 border basis-1/2"
+    >
+      <template x-for="stat in stats">
+        <div
+          class="flex gap-2 items-center justify-between"
+          :class="stat.value > 0 ? 'text-base-content' : 'text-base-content/30'"
+        >
+          <p x-text="stat.label"></p>
+          <p x-text="'+'+stat.value+stat.unit"></p>
+        </div>
+      </template>
+    </div>
   </div>
   <div
     class="resonance relative z-10"
@@ -73,33 +137,53 @@ const initialActiveResonanceLevel =
 
     <div class="absolute top-0 right-0 h-full w-1/2 overflow-auto">
       <template x-for="item in activeResonancePieces">
-        <div class="flex my-4">
-          <div
-            x-data={`piece({ id: 'item.id', total: item.total, orientation: item.orientation})`}
-          >
-            <div class="relative">
-              <div
-                :data-piece-id="item.id"
-                x-bind:style={`{width: item.dimension[1] * ${BLOCK_SIZE} + 'px', height: item.dimension[0] * ${BLOCK_SIZE} + 'px'}`}
-              >
+        <div
+          x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
+        >
+          <div class="flex gap-4 my-4">
+            <div>
+              <div class="relative" style={{ minWidth: 4 * BLOCK_SIZE + "px" }}>
+                <div
+                  :data-piece-id="item.id"
+                  class="cursor-pointer"
+                  x-bind:style={`{width: item.dimension[1] * ${BLOCK_SIZE} + 'px', height: item.dimension[0] * ${BLOCK_SIZE} + 'px'}`}
+                >
+                </div>
+                <img
+                  :data-piece-img-id="item.id"
+                  x-bind:style={`{width: item.dimension[1] * ${BLOCK_SIZE} + 'px', height: item.dimension[0] * ${BLOCK_SIZE} + 'px', top: '0px',left: '0px'}`}
+                  :src="'/data/resonance/pieces/' + item.image"
+                  :alt="item.id"
+                  class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
+                />
               </div>
-              <img
-                :data-piece-img-id="item.id"
-                x-bind:style={`{width: item.dimension[1] * ${BLOCK_SIZE} + 'px', height: item.dimension[0] * ${BLOCK_SIZE} + 'px', top: '0px',left: '0px'}`}
-                :src="'/data/resonance/pieces/' + item.image"
-                :alt="item.id"
-                class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
-              />
+              <p
+                class="mt-1 flex gap-2 justify-end pointer-events-none select-none"
+              >
+                {isDev && <span class="badge select-text" x-text="item.id" />}
+                <span
+                  x-text="quantity"
+                  :class="quantity === 0 ? 'text-error' : ''"></span>
+                /
+                <span x-text="total"></span>
+              </p>
             </div>
-            <p class="mt-1 text-center pointer-events-none select-none">
-              <span
-                x-text="quantity"
-                :class="quantity === 0 ? 'text-error' : ''"></span>
-              /
-              <span x-text="total"></span>
-            </p>
+
+            <div class="flex-1 px-4">
+              <p
+                x-text="'Lv. ' + item.level"
+                x-effect="updateCurrentStats(item.level)"
+                class="text-primary text-xl"
+              >
+              </p>
+              <template x-for="stat in currentStats">
+                <div class="flex gap-2 items-center justify-between">
+                  <p x-text="stat.label"></p>
+                  <p x-text="'+'+stat.value+stat.unit"></p>
+                </div>
+              </template>
+            </div>
           </div>
-          <div></div>
         </div>
       </template>
     </div>
@@ -145,7 +229,7 @@ const initialActiveResonanceLevel =
     boardX: BOARD_X,
     boardY: BOARD_Y,
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
-    initResonanceList,
+    recommendedResonanceList,
   }}
 >
   document.addEventListener("alpine:init", () => {
@@ -157,12 +241,13 @@ const initialActiveResonanceLevel =
       boardX,
       boardY,
       defaultResonanceLevel,
-      initResonanceList,
+      recommendedResonanceList,
     });
   });
 </script>
 
 <script>
+  import { STATS } from "@data/character";
   import resonanceDataSet from "@scripts/resonance-data-set";
   import resonancePiece from "@scripts/resonance-piece";
   import Alpine from "alpinejs";
@@ -170,6 +255,40 @@ const initialActiveResonanceLevel =
   window.Alpine = Alpine;
 
   Alpine.data("dataset", resonanceDataSet);
-
   Alpine.data("piece", resonancePiece);
+  Alpine.data("attributes", () => ({
+    level: 60,
+    insight: 3,
+    baseStats: {
+      HP: {
+        label: STATS["HP"].label,
+        value: 5543,
+      },
+      ATTACK: {
+        label: STATS["ATTACK"].label,
+        value: 1199,
+      },
+      REALITY_DEFENSE: {
+        label: STATS["REALITY_DEFENSE"].label,
+        value: 505,
+      },
+      MENTAL_DEFENSE: {
+        label: STATS["MENTAL_DEFENSE"].label,
+        value: 582,
+      },
+      CRITICAL_TECHNIQUE: {
+        label: STATS["CRITICAL_TECHNIQUE"].label,
+        value: 436,
+      },
+    },
+  }));
+  Alpine.data("generalStats", () => ({
+    stats: Object.entries(STATS).map(([statId, stat]) => ({
+      label: stat.label,
+      code: statId,
+      keyVal: stat.keyVal,
+      value: 0,
+      unit: stat.unit || "",
+    })),
+  }));
 </script>

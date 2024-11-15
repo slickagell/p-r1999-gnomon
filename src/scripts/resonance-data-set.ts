@@ -12,24 +12,12 @@ import type { Feature, MultiPolygon, Polygon, Position } from "geojson";
 import { intersection, union } from "martinez-polygon-clipping";
 import matrix from "matrix-js";
 
-interface BlockType {
-  id: string;
-  col: number;
-  row: number;
-  pos: {
-    x: number;
-    y: number;
-  };
-  size: number;
-  isCollided?: boolean;
-  isNotValid?: boolean;
-}
-
 export default () => ({
   boardCol: 0,
   boardRow: 0,
   boardX: 0,
   boardY: 0,
+
   activeResonanceLevel: 0,
   activeResonancePieces: [],
 
@@ -84,7 +72,7 @@ export default () => ({
       this.boardCol = col;
     }
 
-    let initBlocks: BlockType[] = [];
+    let initBlocks: ResonanceBlockType[] = [];
     for (let row = 0; row < this.boardRow; row++) {
       for (let col = 0; col < this.boardCol; col++) {
         initBlocks.push({
@@ -135,18 +123,28 @@ export default () => ({
         const dimension = matrix(piece.shape).size();
         return [
           ...prev,
-          { ...piece, dimension, total: ele.total, orientation: 1 },
+          {
+            ...piece,
+            dimension,
+            total: ele.total,
+            level: ele.level,
+            orientation: 1,
+          },
         ];
       }
 
       return prev;
     }, []);
 
+    this.resetPiecesQuantity();
+
     this.$nextTick(() => {
       //* Init recommended
-      if (this.$store.resonance.initResonanceList) {
+      if (this.$store.resonance.recommendedResonanceList) {
         const activeRecommendedResonanceList =
-          this.$store.resonance.initResonanceList[this.activeResonanceLevel];
+          this.$store.resonance.recommendedResonanceList[
+            this.activeResonanceLevel
+          ];
 
         if (!activeRecommendedResonanceList) {
           this.recommendedOptions = [];
@@ -170,12 +168,13 @@ export default () => ({
 
         this.selectedRecommended = `${this.activeResonanceLevel}-${defaultIndex}`;
 
-        this.recommendedOptions = this.$store.resonance.initResonanceList[
-          this.activeResonanceLevel
-        ].map((item, idx) => ({
-          label: item.name,
-          value: `${this.activeResonanceLevel}-${idx}`,
-        }));
+        this.recommendedOptions =
+          this.$store.resonance.recommendedResonanceList[
+            this.activeResonanceLevel
+          ].map((item, idx) => ({
+            label: item.name,
+            value: `${this.activeResonanceLevel}-${idx}`,
+          }));
 
         const select = this.$refs.recommendedSelect;
 
@@ -798,7 +797,9 @@ export default () => ({
       return;
     }
 
-    const blocks = JSON.parse(JSON.stringify(this.blocks)) as BlockType[];
+    const blocks = JSON.parse(
+      JSON.stringify(this.blocks),
+    ) as ResonanceBlockType[];
 
     const invalidBlock = blocks.find((ele) => ele.isNotValid);
     if (!invalidBlock) {
@@ -827,10 +828,10 @@ export default () => ({
       this.resonanceGeoJsonList.push(this.itemOnBoardGeoJson);
     } else {
       this.blocks = this.initBlocks;
-      if (this.selectGeoJson)
+      if (this.selectGeoJson) {
         this.resonanceGeoJsonList.push(this.selectGeoJson);
-
-      pieceAlpineData.updateQuantity(1);
+        pieceAlpineData.updateQuantity(1);
+      }
     }
 
     this.resetInitialState();
@@ -938,7 +939,7 @@ export default () => ({
     return Math.sqrt(dx * dx + dy * dy);
   },
 
-  checkCollision(item: Feature<MultiPolygon>, block: BlockType) {
+  checkCollision(item: Feature<MultiPolygon>, block: ResonanceBlockType) {
     const blockStartPoint = [
       block.pos.x + this.blockOffset,
       block.pos.y + this.blockOffset,
@@ -980,7 +981,7 @@ export default () => ({
     return true; // Collision detected
   },
 
-  processCheckCollision(item: Feature, blocks: BlockType[]) {
+  processCheckCollision(item: Feature, blocks: ResonanceBlockType[]) {
     const bufferRadius =
       this.blockSize * (Math.max(...this.dragShapeDimension) / 2 + 1); // (slightly larger than the sweepRadius) is the maximum distance between the item's position and a block's position that is considered "far enough" to warrant pruning the block from the search space
 
@@ -1207,7 +1208,7 @@ export default () => ({
   changeRecommended(value: string) {
     const [resonanceLevel, index] = value.split("-");
     const resonanceData =
-      this.$store.resonance.initResonanceList[resonanceLevel][index];
+      this.$store.resonance.recommendedResonanceList[resonanceLevel][index];
 
     this.selectedRecommended = value;
 

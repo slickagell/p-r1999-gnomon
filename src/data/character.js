@@ -99,3 +99,86 @@ export const RARITY = {
     value: 3,
   },
 };
+
+export const STATS = {
+  HP: {
+    label: "HP",
+    keyVal: "hp",
+  },
+  ATTACK: {
+    label: "ATK",
+    keyVal: "attack",
+  },
+  REALITY_DEFENSE: {
+    label: "Reality Defense",
+    keyVal: "realityDefense",
+  },
+  MENTAL_DEFENSE: {
+    label: "Mental Defense",
+    keyVal: "mentalDefense",
+  },
+  CRITICAL_TECHNIQUE: {
+    label: "Critical Technique",
+    keyVal: "criticalTechnique",
+  },
+  CRITICAL_RATE: {
+    label: "Critical Rate",
+    keyVal: "criticalRate",
+    unit: "%",
+  },
+  CRITICAL_DAMAGE: {
+    label: "Critical Damage",
+    keyVal: "criticalDamage",
+    unit: "%",
+  },
+  CRITICAL_DEFENSE: {
+    label: "Critical Defense",
+    keyVal: "criticalDefense",
+    unit: "%",
+  },
+  CRITICAL_RESIST_RATE: {
+    label: "Critical Resist Rate",
+    keyVal: "criticalResistRate",
+    unit: "%",
+  },
+  DMG_BONUS: {
+    label: "DMG Bonus",
+    keyVal: "dmgBonus",
+    unit: "%",
+  },
+  DMG_REDUCTION: {
+    label: "DMG Taken Reduction",
+    keyVal: "dmgReduction",
+    unit: "%",
+  },
+  DMG_HEAL: {
+    label: "DMG Heal",
+    keyVal: "dmgHeal",
+    unit: "%",
+  },
+  LEECH_RATE: {
+    label: "Leech Rate",
+    keyVal: "leechRate",
+    unit: "%",
+  },
+  INCANTATION_MIGHT: {
+    label: "Incantation Might",
+    keyVal: "incantationMight",
+    unit: "%",
+  },
+  HEALING_DONE: {
+    label: "Healing Done",
+    keyVal: "healingDone",
+    unit: "%",
+  },
+  PENETRATION_RATE: {
+    label: "Penetration Rate",
+    keyVal: "penetrationRate",
+    unit: "%",
+  },
+  ULTIMATE_MIGHT: {
+    label: "Ultimate Might",
+    keyVal: "ultimateMight",
+    unit: "%",
+  },
+};

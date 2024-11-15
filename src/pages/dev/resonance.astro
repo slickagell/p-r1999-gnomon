@@ -2,32 +2,64 @@
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import Layout from "@layouts/Layout.astro";
 
-const PIECES = {
+const PIECES: ResonanceInitPiecesType = {
   10: [
     {
       id: "RP_X_01",
       total: 1,
+      level: 6,
     },
     {
       id: "RP_L_01",
       total: 2,
+      level: 3,
     },
     {
       id: "RP_I_01",
       total: 2,
+      level: 3,
     },
     {
       id: "RP_Z_01",
       total: 1,
+      level: 3,
     },
     {
       id: "RP_T_01",
       total: 1,
+      level: 3,
+    },
+  ],
+  11: [
+    {
+      id: "RP_X_01",
+      total: 1,
+      level: 7,
+    },
+    {
+      id: "RP_L_01",
+      total: 2,
+      level: 4,
+    },
+    {
+      id: "RP_I_01",
+      total: 2,
+      level: 3,
+    },
+    {
+      id: "RP_Z_01",
+      total: 1,
+      level: 3,
+    },
+    {
+      id: "RP_T_01",
+      total: 1,
+      level: 3,
     },
   ],
 };
 
-const initResonanceList = {
+const recommendedResonanceList = {
   10: [
     {
       name: "Attack",
@@ -93,7 +125,7 @@ const initResonanceList = {
   <ResonanceBoard
     maxResonanceLevel={15}
     resonancePieces={PIECES}
-    initResonanceList={initResonanceList}
+    recommendedResonanceList={recommendedResonanceList}
     isDev
   />
 </Layout>
