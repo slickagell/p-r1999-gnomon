@@ -1,9 +1,14 @@
-interface ResonancePieceStats {
+interface ResonancePieceStatsGeneralType {
   [level: number]: {
-    [statId: string]: {
-      value: number;
-      unit?: string;
-    };
+    [statId: string]: Omit<ResonancePieceStatsType, "label">;
+  };
+}
+
+interface ResonancePieceStatsType {
+  [statId: string]: {
+    label: string;
+    value: number;
+    unit?: string;
   };
 }
 
@@ -13,13 +18,8 @@ interface ResonancePieceType {
   total: number;
   orientation: number;
   level: number;
-  stats: ResonancePieceStats;
-  currentStats: {
-    id: string;
-    label: string;
-    value: number;
-    unit: string;
-  }[];
+  stats: ResonancePieceStatsGeneralType;
+  currentStats: ResonancePieceStatsType;
 }
 
 interface ResonanceInitPiecesType {

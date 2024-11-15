@@ -1,4 +1,6 @@
 ---
+import InsightImg from "./InsightImg.astro";
+
 const BLOCK_SIZE = 40;
 const BOARD_X = 40;
 const BOARD_Y = 40;
@@ -24,32 +26,32 @@ const initialActiveResonanceLevel =
   <div class="flex gap-4 items-end mb-4">
     <div>
       <div
-        x-ref="attributes"
+        id="attributes"
         x-data="attributes"
         class="p-6 border basis-1/2 flex gap-4"
       >
         <div class="basis-1/3">
-          <div class="flex gap-2">
-            <p class="text-base-content/70">Level:</p>
-            <p class="text-base-content" x-text="level"></p>
+          <div class="flex gap-2 items-center">
+            <p class="text-primary-content">Level:</p>
+            <p class="text-base-content text-xl" x-text="level"></p>
           </div>
-          <div class="flex gap-2">
-            <p class="text-base-content/70">Insight:</p>
-            <p class="text-base-content" x-text="insight"></p>
+          <div class="flex gap-2 items-center">
+            <p class="text-primary-content">Insight:</p>
+            <InsightImg classNames="w-10" insight="3" />
           </div>
         </div>
         <div class="basis-2/3">
-          <div class="flex gap-2 justify-between">
-            <p class="text-base-content/70" x-text="baseStats.HP.label"></p>
+          <div class="flex gap-2 items-center justify-between">
+            <p class="text-primary-content" x-text="baseStats.HP.label"></p>
             <p class="text-base-content" x-text="baseStats.HP.value"></p>
           </div>
-          <div class="flex gap-2 justify-between">
-            <p class="text-base-content/70" x-text="baseStats.ATTACK.label"></p>
+          <div class="flex gap-2 items-center justify-between">
+            <p class="text-primary-content" x-text="baseStats.ATTACK.label"></p>
             <p class="text-base-content" x-text="baseStats.ATTACK.value"></p>
           </div>
-          <div class="flex gap-2 justify-between">
+          <div class="flex gap-2 items-center justify-between">
             <p
-              class="text-base-content/70"
+              class="text-primary-content"
               x-text="baseStats.REALITY_DEFENSE.label"
             >
             </p>
@@ -59,9 +61,9 @@ const initialActiveResonanceLevel =
             >
             </p>
           </div>
-          <div class="flex gap-2 justify-between">
+          <div class="flex gap-2 items-center justify-between">
             <p
-              class="text-base-content/70"
+              class="text-primary-content"
               x-text="baseStats.MENTAL_DEFENSE.label"
             >
             </p>
@@ -71,9 +73,9 @@ const initialActiveResonanceLevel =
             >
             </p>
           </div>
-          <div class="flex gap-2 justify-between">
+          <div class="flex gap-2 items-center justify-between">
             <p
-              class="text-base-content/70"
+              class="text-primary-content"
               x-text="baseStats.CRITICAL_TECHNIQUE.label"
             >
             </p>
@@ -95,17 +97,13 @@ const initialActiveResonanceLevel =
         </template>
       </div>
     </div>
-    <div
-      x-ref="generalStats"
-      x-data="generalStats"
-      class="p-6 border basis-1/2"
-    >
-      <template x-for="stat in stats">
+    <div id="generalStats" x-data="generalStats" class="p-6 border basis-1/2">
+      <template x-for="[, stat] in Object.entries(stats)">
         <div
           class="flex gap-2 items-center justify-between"
-          :class="stat.value > 0 ? 'text-base-content' : 'text-base-content/30'"
+          :class="stat.value > 0 ? 'opacity-100' : 'opacity-30'"
         >
-          <p x-text="stat.label"></p>
+          <p x-text="stat.label" class="text-primary-content"></p>
           <p x-text="'+'+stat.value+stat.unit"></p>
         </div>
       </template>
@@ -176,9 +174,9 @@ const initialActiveResonanceLevel =
                 class="text-primary text-xl"
               >
               </p>
-              <template x-for="stat in currentStats">
+              <template x-for="[,stat] in Object.entries(currentStats)">
                 <div class="flex gap-2 items-center justify-between">
-                  <p x-text="stat.label"></p>
+                  <p x-text="stat.label" class="text-primary-content"></p>
                   <p x-text="'+'+stat.value+stat.unit"></p>
                 </div>
               </template>
@@ -250,6 +248,7 @@ const initialActiveResonanceLevel =
   import { STATS } from "@data/character";
   import resonanceDataSet from "@scripts/resonance-data-set";
   import resonancePiece from "@scripts/resonance-piece";
+  import resonanceGeneralStats from "@scripts/resonance-general-stats";
   import Alpine from "alpinejs";
 
   window.Alpine = Alpine;
@@ -282,13 +281,5 @@ const initialActiveResonanceLevel =
       },
     },
   }));
-  Alpine.data("generalStats", () => ({
-    stats: Object.entries(STATS).map(([statId, stat]) => ({
-      label: stat.label,
-      code: statId,
-      keyVal: stat.keyVal,
-      value: 0,
-      unit: stat.unit || "",
-    })),
-  }));
+  Alpine.data("generalStats", resonanceGeneralStats);
 </script>

@@ -782,12 +782,6 @@ export default () => ({
       if (!this.isDragging) {
         if (this.selectGeoJson)
           this.resonanceGeoJsonList.push(this.selectGeoJson);
-      } else {
-        if (this.selectGeoJson && this.selectGeoJsonIdx > -1) {
-          this.resonanceGeoJsonList = JSON.parse(
-            JSON.stringify(this.resonanceGeoJsonList),
-          ).filter((_, idx) => idx !== this.selectGeoJsonIdx);
-        }
       }
 
       this.resetInitialState();

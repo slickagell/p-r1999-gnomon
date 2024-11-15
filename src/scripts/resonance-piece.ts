@@ -4,6 +4,7 @@ import {
   RESONANCE_PIECES,
   changeImageOrientation,
 } from "@data/resonance";
+import Alpine from "alpinejs";
 import matrix from "matrix-js";
 
 export default ({
@@ -17,7 +18,7 @@ export default ({
   total?: number;
   orientation?: number;
   level: number;
-  stats: ResonancePieceStats;
+  stats: ResonancePieceStatsGeneralType;
 }) => ({
   id: id,
   quantity: total,
@@ -28,17 +29,21 @@ export default ({
   currentStats: null,
 
   initCurrentStats() {
-    this.currentStats = Object.entries(stats[this.level]).map(
-      ([statId, stat]) => {
+    this.currentStats = Object.entries(stats[this.level]).reduce(
+      (prev, stat) => {
+        const [statId, statVal] = stat;
         const statData = STATS[statId];
 
         return {
-          id: statId,
-          label: statData.label || "",
-          value: stat.value,
-          unit: stat.unit || "",
+          ...prev,
+          [statId]: {
+            label: statData.label || "",
+            value: statVal.value,
+            unit: statVal.unit || "",
+          },
         };
       },
+      {},
     );
   },
 
@@ -49,6 +54,16 @@ export default ({
   updateQuantity(updateQuantity: number) {
     const newQuantity = parseInt(this.quantity) + updateQuantity;
     this.quantity = newQuantity;
+
+    const generalStatsEl = document.querySelector(
+      "#generalStats",
+    ) as HTMLDivElement;
+    if (!generalStatsEl) return;
+    let generalStatsAlpineData: any = Alpine.$data(generalStatsEl);
+    generalStatsAlpineData.updateGeneralStats({
+      updateStats: this.currentStats,
+      updateQuantity: updateQuantity,
+    });
   },
 
   resetQuantity() {

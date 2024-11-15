@@ -161,11 +161,7 @@ export const STATS = {
     keyVal: "leechRate",
     unit: "%",
   },
-  INCANTATION_MIGHT: {
-    label: "Incantation Might",
-    keyVal: "incantationMight",
-    unit: "%",
-  },
+
   HEALING_DONE: {
     label: "Healing Done",
     keyVal: "healingDone",
@@ -174,6 +170,11 @@ export const STATS = {
   PENETRATION_RATE: {
     label: "Penetration Rate",
     keyVal: "penetrationRate",
+    unit: "%",
+  },
+  INCANTATION_MIGHT: {
+    label: "Incantation Might",
+    keyVal: "incantationMight",
     unit: "%",
   },
   ULTIMATE_MIGHT: {
