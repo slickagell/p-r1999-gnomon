@@ -95,9 +95,9 @@ export function changeImageOrientation(previousOrientation) {
 }
 
 export const RESONANCE_PIECES = {
-  RP_X_01: {
-    id: "RP_X_01",
-    image: "rp-x-01.png",
+  RP_X_5_01: {
+    id: "RP_X_5_01",
+    image: "rp-x-5-01.png",
     shape: [
       [0, 1, 0],
       [1, 1, 1],
@@ -163,9 +163,9 @@ export const RESONANCE_PIECES = {
       },
     },
   },
-  RP_L_01: {
-    id: "RP_L_01",
-    image: "rp-l-01.png",
+  RP_L_4_01: {
+    id: "RP_L_4_01",
+    image: "rp-l-4-01.png",
     shape: [
       [1, 0],
       [1, 0],
@@ -207,9 +207,9 @@ export const RESONANCE_PIECES = {
       },
     },
   },
-  RP_I_01: {
-    id: "RP_I_01",
-    image: "rp-i-01.png",
+  RP_I_4_01: {
+    id: "RP_I_4_01",
+    image: "rp-i-4-01.png",
     shape: [[1], [1], [1], [1]],
     stats: {
       1: {
@@ -233,9 +233,9 @@ export const RESONANCE_PIECES = {
       },
     },
   },
-  RP_Z_01: {
-    id: "RP_Z_01",
-    image: "rp-z-01.png",
+  RP_Z_4_01: {
+    id: "RP_Z_4_01",
+    image: "rp-z-4-01.png",
     shape: [
       [1, 1, 0],
       [0, 1, 1],
@@ -262,9 +262,9 @@ export const RESONANCE_PIECES = {
       },
     },
   },
-  RP_T_01: {
-    id: "RP_T_01",
-    image: "rp-t-01.png",
+  RP_T_4_01: {
+    id: "RP_T_4_01",
+    image: "rp-t-4-01.png",
     shape: [
       [0, 1, 0],
       [1, 1, 1],

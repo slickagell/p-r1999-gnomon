@@ -176,13 +176,6 @@ export default () => ({
             value: `${this.activeResonanceLevel}-${idx}`,
           }));
 
-        const select = this.$refs.recommendedSelect;
-
-        select.style.top =
-          this.boardY + this.boardRow * this.blockSize + 20 + "px";
-        select.style.left = this.boardX + "px";
-        select.style.width = this.boardCol * this.blockSize + "px";
-
         this.initRecommendedResonanceData(defaultResonanceData);
       }
     });

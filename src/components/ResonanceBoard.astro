@@ -23,12 +23,12 @@ const initialActiveResonanceLevel =
 ---
 
 <div x-data="dataset">
-  <div class="flex gap-4 items-end mb-4">
-    <div>
+  <div class="flex flex-col md:flex-row gap-4 items-end mb-4">
+    <div class="w-full">
       <div
         id="attributes"
         x-data="attributes"
-        class="p-6 border basis-1/2 flex gap-4"
+        class="p-4 md:p-6 border basis-1/2 flex gap-4"
       >
         <div class="basis-1/3">
           <div class="flex gap-2 items-center">
@@ -90,14 +90,18 @@ const initialActiveResonanceLevel =
       <div class="mt-4 flex basis-1/2 overflow-auto">
         <template x-for="i in $store.resonance.maxResonanceLevel">
           <button
-            class="btn btn-outline"
+            class="btn btn-outline shrink-0"
             :class="i === activeResonanceLevel?'btn-outline btn-primary':''"
             @click="changeResonanceLevel(i)"
             x-text="i"></button>
         </template>
       </div>
     </div>
-    <div id="generalStats" x-data="generalStats" class="p-6 border basis-1/2">
+    <div
+      id="generalStats"
+      x-data="generalStats"
+      class="p-4 md:p-6 border w-full md:basis-1/2"
+    >
       <template x-for="[, stat] in Object.entries(stats)">
         <div
           class="flex gap-2 items-center justify-between"
@@ -110,102 +114,114 @@ const initialActiveResonanceLevel =
     </div>
   </div>
   <div
-    class="resonance relative z-10"
+    class="resonance relative z-10 flex flex-col md:flex-row gap-4 md:h-[80vh] w-full"
     @mousemove="onMouseMove"
     @mousedown="onMouseDown"
     @mouseup="onMouseUp"
-    style={`min-width: 100%; min-height: 70vh`}
+    @touchmove="onMouseMove"
+    @touchstart="onMouseDown"
+    @touchend="onMouseUp"
   >
-    <canvas
-      x-ref="canvas"
-      class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
-    ></canvas>
-    <canvas x-ref="boardCanvas" class="absolute top-0 left-0 -z-20"></canvas>
+    <div class="flex-1">
+      <canvas
+        x-ref="canvas"
+        class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
+      ></canvas>
+      <canvas x-ref="boardCanvas" class="absolute top-0 left-0 -z-20"></canvas>
 
-    <template x-for="block in blocks" :key="block.id">
       <div
-        x-bind:data-block-id="block.id"
-        x-data="{ x: block.pos.x, y: block.pos.y, size: block.size, isDragOver: false}"
-        class="border absolute select-none"
-        x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
-        x-bind:style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
+        :style="{padding: boardY + 'px' + ' ' + boardX + 'px', width: (boardCol * blockSize + boardX * 2) + 'px', height: (boardRow * blockSize + boardY * 2) + 'px'}"
       >
       </div>
-    </template>
 
-    <div class="absolute top-0 right-0 h-full w-1/2 overflow-auto">
+      <template x-for="block in blocks" :key="block.id">
+        <div
+          x-bind:data-block-id="block.id"
+          x-data="{ x: block.pos.x, y: block.pos.y, size: block.size, isDragOver: false}"
+          class="border absolute select-none"
+          x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
+          x-bind:style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
+        >
+        </div>
+      </template>
+
+      <div class="mx-4">
+        <label
+          x-show="recommendedOptions.length"
+          x-ref="recommendedSelect"
+          id="recommendedSelect"
+        >
+          Recommended
+        </label>
+        <select
+          id="recommendedSelect"
+          class="select select-secondary select-bordered flex w-full"
+          @change="changeRecommended($event.target.value)"
+        >
+          <template x-for="resonance in recommendedOptions">
+            <option
+              x-text="resonance.label"
+              :value="resonance.value"
+              :selected="resonance.value === selectedRecommended"></option>
+          </template>
+        </select>
+      </div>
+    </div>
+
+    <div
+      class="p-4 h-full basis-1/2 overflow-auto flex flex-row md:flex-col gap-6"
+    >
       <template x-for="item in activeResonancePieces">
         <div
           x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
+          class="flex flex-col md:flex-row gap-4"
         >
-          <div class="flex gap-4 my-4">
-            <div>
-              <div class="relative" style={{ minWidth: 4 * BLOCK_SIZE + "px" }}>
-                <div
-                  :data-piece-id="item.id"
-                  class="cursor-pointer"
-                  x-bind:style={`{width: item.dimension[1] * ${BLOCK_SIZE} + 'px', height: item.dimension[0] * ${BLOCK_SIZE} + 'px'}`}
-                >
-                </div>
-                <img
-                  :data-piece-img-id="item.id"
-                  x-bind:style={`{width: item.dimension[1] * ${BLOCK_SIZE} + 'px', height: item.dimension[0] * ${BLOCK_SIZE} + 'px', top: '0px',left: '0px'}`}
-                  :src="'/data/resonance/pieces/' + item.image"
-                  :alt="item.id"
-                  class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
-                />
+          <div>
+            <div class="relative" :style="{ minWidth: 4 * blockSize + 'px' }">
+              <div
+                class="touch-none"
+                :data-piece-id="item.id"
+                :class="quantity>0?'cursor-pointer':''"
+                :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
+              >
               </div>
-              <p
-                class="mt-1 flex gap-2 justify-end pointer-events-none select-none"
-              >
-                {isDev && <span class="badge select-text" x-text="item.id" />}
-                <span
-                  x-text="quantity"
-                  :class="quantity === 0 ? 'text-error' : ''"></span>
-                /
-                <span x-text="total"></span>
-              </p>
+              <img
+                :data-piece-img-id="item.id"
+                :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px', top: '0px',left: '0px'}`}
+                :src="'/data/resonance/pieces/' + item.image"
+                :alt="item.id"
+                class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
+              />
             </div>
+            <p
+              class="mt-1 flex gap-2 justify-end pointer-events-none select-none"
+            >
+              {isDev && <span class="badge select-text" x-text="item.id" />}
+              <span
+                x-text="quantity"
+                :class="quantity === 0 ? 'text-error' : ''"></span>
+              /
+              <span x-text="total"></span>
+            </p>
+          </div>
 
-            <div class="flex-1 px-4">
-              <p
-                x-text="'Lv. ' + item.level"
-                x-effect="updateCurrentStats(item.level)"
-                class="text-primary text-xl"
-              >
-              </p>
-              <template x-for="[,stat] in Object.entries(currentStats)">
-                <div class="flex gap-2 items-center justify-between">
-                  <p x-text="stat.label" class="text-primary-content"></p>
-                  <p x-text="'+'+stat.value+stat.unit"></p>
-                </div>
-              </template>
-            </div>
+          <div class="md:flex-1">
+            <p
+              x-text="'Lv. ' + item.level"
+              x-effect="updateCurrentStats(item.level)"
+              class="text-primary text-xl"
+            >
+            </p>
+            <template x-for="[,stat] in Object.entries(currentStats)">
+              <div class="flex gap-2 items-center justify-between">
+                <p x-text="stat.label" class="text-primary-content"></p>
+                <p x-text="'+'+stat.value+stat.unit"></p>
+              </div>
+            </template>
           </div>
         </div>
       </template>
     </div>
-
-    <label
-      x-show="recommendedOptions.length"
-      x-ref="recommendedSelect"
-      class="absolute"
-      for="recommendedResonanceSelect"
-    >
-      <p class="mb-1">Recommended</p>
-      <select
-        id="recommendedResonanceSelect"
-        class="select select-secondary select-bordered w-full"
-        @change="changeRecommended($event.target.value)"
-      >
-        <template x-for="resonance in recommendedOptions">
-          <option
-            x-text="resonance.label"
-            :value="resonance.value"
-            :selected="resonance.value === selectedRecommended"></option>
-        </template>
-      </select>
-    </label>
   </div>
   {
     isDev && (
