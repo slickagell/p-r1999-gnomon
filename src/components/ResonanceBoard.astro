@@ -24,7 +24,7 @@ const initialActiveResonanceLevel =
 
 <div x-data="dataset">
   <div class="flex flex-col md:flex-row gap-4 items-end mb-4">
-    <div class="w-full">
+    <div class="basis-2/3 min-w-0 w-full">
       <div
         id="attributes"
         x-data="attributes"
@@ -100,7 +100,7 @@ const initialActiveResonanceLevel =
     <div
       id="generalStats"
       x-data="generalStats"
-      class="p-4 md:p-6 border w-full md:basis-1/2"
+      class="p-4 md:p-6 border w-full md:basis-1/3"
     >
       <template x-for="[, stat] in Object.entries(stats)">
         <div
@@ -114,15 +114,13 @@ const initialActiveResonanceLevel =
     </div>
   </div>
   <div
-    class="resonance relative z-10 flex flex-col md:flex-row gap-4 md:h-[80vh] w-full"
-    @mousemove="onMouseMove"
-    @mousedown="onMouseDown"
-    @mouseup="onMouseUp"
-    @touchmove="onMouseMove"
-    @touchstart="onMouseDown"
-    @touchend="onMouseUp"
+    class="resonance relative z-10 flex flex-col md:flex-row gap-4 w-full"
+    @pointerdown="onPointerDown"
+    @pointermove="onPointerMove"
+    @pointerup="onPointerUp"
+    x-resize="onResize({width: $width, height: $height})"
   >
-    <div class="flex-1">
+    <div class="flex-1 md:basis-1/2">
       <canvas
         x-ref="canvas"
         class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
@@ -137,19 +135,20 @@ const initialActiveResonanceLevel =
       <template x-for="block in blocks" :key="block.id">
         <div
           x-bind:data-block-id="block.id"
-          x-data="{ x: block.pos.x, y: block.pos.y, size: block.size, isDragOver: false}"
-          class="border absolute select-none"
-          x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '') || (isDragOver ? 'bg-primary' : '')"
+          x-data="{ x: block.pos.x, y: block.pos.y, size: block.size}"
+          class="border absolute select-none touch-none"
+          x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '')"
           x-bind:style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
         >
         </div>
       </template>
 
-      <div class="mx-4">
+      <div class="mx-4 md:mb-10">
         <label
           x-show="recommendedOptions.length"
           x-ref="recommendedSelect"
           id="recommendedSelect"
+          class="select-none"
         >
           Recommended
         </label>
@@ -167,60 +166,62 @@ const initialActiveResonanceLevel =
         </select>
       </div>
     </div>
-
-    <div
-      class="p-4 h-full basis-1/2 overflow-auto flex flex-row md:flex-col gap-6"
-    >
-      <template x-for="item in activeResonancePieces">
-        <div
-          x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
-          class="flex flex-col md:flex-row gap-4"
-        >
-          <div>
-            <div class="relative" :style="{ minWidth: 4 * blockSize + 'px' }">
+    <div class="flex-1 md:basis-1/2 relative">
+      <div
+        class="md:absolute md:top-0 md:left-0 w-full h-full overflow-auto p-4 flex flex-row md:flex-col gap-6"
+      >
+        <template x-for="item in activeResonancePieces">
+          <div
+            x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
+            class="flex flex-col md:flex-row gap-4 select-none"
+          >
+            <div>
               <div
-                class="touch-none"
-                :data-piece-id="item.id"
-                :class="quantity>0?'cursor-pointer':''"
-                :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
+                class="flex justify-center items-center"
+                @resize.window.debounce="pieceOnResizeWindow()"
+                :style="{width: maxPieceWidth, height: maxPieceHeight}"
               >
+                <div
+                  class="relative touch-none"
+                  :data-piece-id="item.id"
+                  :class="quantity>0?'cursor-pointer':''"
+                  :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
+                >
+                  <img
+                    :data-piece-img-id="item.id"
+                    :src="'/data/resonance/pieces/' + item.image"
+                    :alt="item.id"
+                    class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0 w-full h-full`}
+                  />
+                </div>
               </div>
-              <img
-                :data-piece-img-id="item.id"
-                :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px', top: '0px',left: '0px'}`}
-                :src="'/data/resonance/pieces/' + item.image"
-                :alt="item.id"
-                class={`absolute pointer-events-none select-none rotate-0 max-w-max`}
-              />
+              <p class="mt-2 flex gap-2 justify-center pointer-events-none">
+                {isDev && <span class="badge" x-text="item.id" />}
+                <span
+                  x-text="quantity"
+                  :class="quantity === 0 ? 'text-error' : ''"></span>
+                /
+                <span x-text="total"></span>
+              </p>
             </div>
-            <p
-              class="mt-1 flex gap-2 justify-end pointer-events-none select-none"
-            >
-              {isDev && <span class="badge select-text" x-text="item.id" />}
-              <span
-                x-text="quantity"
-                :class="quantity === 0 ? 'text-error' : ''"></span>
-              /
-              <span x-text="total"></span>
-            </p>
-          </div>
 
-          <div class="md:flex-1">
-            <p
-              x-text="'Lv. ' + item.level"
-              x-effect="updateCurrentStats(item.level)"
-              class="text-primary text-xl"
-            >
-            </p>
-            <template x-for="[,stat] in Object.entries(currentStats)">
-              <div class="flex gap-2 items-center justify-between">
-                <p x-text="stat.label" class="text-primary-content"></p>
-                <p x-text="'+'+stat.value+stat.unit"></p>
-              </div>
-            </template>
+            <div class="md:flex-1">
+              <p
+                x-text="'Lv. ' + item.level"
+                x-effect="updateCurrentStats(item.level)"
+                class="text-primary text-xl"
+              >
+              </p>
+              <template x-for="[,stat] in Object.entries(currentStats)">
+                <div class="flex gap-2 items-center justify-between">
+                  <p x-text="stat.label" class="text-primary-content"></p>
+                  <p x-text="'+'+stat.value+stat.unit"></p>
+                </div>
+              </template>
+            </div>
           </div>
-        </div>
-      </template>
+        </template>
+      </div>
     </div>
   </div>
   {
@@ -266,6 +267,9 @@ const initialActiveResonanceLevel =
   import resonancePiece from "@scripts/resonance-piece";
   import resonanceGeneralStats from "@scripts/resonance-general-stats";
   import Alpine from "alpinejs";
+  import resize from "@alpinejs/resize";
+
+  Alpine.plugin(resize);
 
   window.Alpine = Alpine;
 

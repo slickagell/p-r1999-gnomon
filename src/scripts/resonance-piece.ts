@@ -27,6 +27,18 @@ export default ({
   level: level,
   stats,
   currentStats: null,
+  maxPieceWidth: "auto",
+  maxPieceHeight: "auto",
+
+  init() {
+    if (window.innerWidth >= 768) {
+      this.maxPieceWidth = `${this.maxPieceSize * this.blockSize}px`;
+      this.maxPieceHeight = `auto`;
+    } else {
+      this.maxPieceHeight = `${this.maxPieceSize * this.blockSize}px`;
+      this.maxPieceWidth = `auto`;
+    }
+  },
 
   initCurrentStats() {
     this.currentStats = Object.entries(stats[this.level]).reduce(
@@ -111,5 +123,15 @@ export default ({
   updateCurrentStats(level: number) {
     this.level = level;
     this.initCurrentStats();
+  },
+
+  pieceOnResizeWindow() {
+    if (window.innerWidth >= 768) {
+      this.maxPieceWidth = `${this.maxPieceSize * this.blockSize}px`;
+      this.maxPieceHeight = `auto`;
+    } else {
+      this.maxPieceHeight = `${this.maxPieceSize * this.blockSize}px`;
+      this.maxPieceWidth = `auto`;
+    }
   },
 });

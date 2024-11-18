@@ -20,6 +20,7 @@ export default () => ({
 
   activeResonanceLevel: 0,
   activeResonancePieces: [],
+  maxPieceSize: 0,
 
   recommendedOptions: [],
   selectedRecommended: "",
@@ -121,6 +122,12 @@ export default () => ({
 
       if (piece) {
         const dimension = matrix(piece.shape).size();
+        this.maxPieceSize = Math.max(
+          this.maxPieceSize,
+          dimension[0],
+          dimension[1],
+        );
+
         return [
           ...prev,
           {
@@ -505,12 +512,35 @@ export default () => ({
     };
   },
 
-  onMouseDown(event) {
+  calculatePointerPosition(event) {
+    if (!this.canvas || !event) return { x: 0, y: 0 };
     let rect = this.canvas.getBoundingClientRect();
-    this.lastMouseX = event.clientX - rect.left;
-    this.lastMouseY = event.clientY - rect.top;
-    this.startMouseX = event.clientX - rect.left;
-    this.startMouseY = event.clientY - rect.top;
+
+    let clientX;
+    let clientY;
+
+    if (event.type.includes("touch")) {
+      clientX =
+        event.changedTouches?.[0]?.clientX ?? event.touches?.[0]?.clientX;
+      clientY =
+        event.changedTouches?.[0]?.clientY ?? event.touches?.[0]?.clientY;
+    } else {
+      clientX = event.clientX;
+      clientY = event.clientY;
+    }
+
+    return {
+      x: clientX - rect.left,
+      y: clientY - rect.top,
+    };
+  },
+
+  onPointerDown(event) {
+    const { x: clientX, y: clientY } = this.calculatePointerPosition(event);
+    this.lastMouseX = clientX;
+    this.lastMouseY = clientY;
+    this.startMouseX = clientX;
+    this.startMouseY = clientY;
     this.isMouseDown = true;
 
     if (!event.target.attributes["data-piece-id"]) {
@@ -528,13 +558,11 @@ export default () => ({
     this.selectPieceId = shapeId;
   },
 
-  onMouseMove(event) {
+  onPointerMove(event) {
     if (!this.isMouseDown) return;
 
     if (!this.isDragging) {
-      let rect = this.canvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
+      const { x, y } = this.calculatePointerPosition(event);
 
       const delta = this.blockSize;
       const diffX = Math.abs(x - this.startMouseX);
@@ -590,9 +618,9 @@ export default () => ({
       return;
     }
 
-    let rect = this.canvas.getBoundingClientRect();
-    this.lastMouseX = event.clientX - rect.left;
-    this.lastMouseY = event.clientY - rect.top;
+    const { x, y } = this.calculatePointerPosition(event);
+    this.lastMouseX = x;
+    this.lastMouseY = y;
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
@@ -617,16 +645,14 @@ export default () => ({
       },
     };
 
-    this.drawGeoJson(this.dragGeoJson, this.ctx, "rgba(233,220,205,0.5)");
+    this.drawGeoJson(this.dragGeoJson, this.ctx, "rgba(219, 111, 57,0.5)");
     this.blocks = JSON.parse(JSON.stringify(this.initBlocks));
     this.processCheckCollision(this.dragGeoJson, this.blocks);
   },
 
-  onMouseUp(event) {
+  onPointerUp(event) {
     this.isMouseDown = false;
-    let rect = this.canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const { x, y } = this.calculatePointerPosition(event);
 
     //* Check if we're out of the board
     if (
@@ -1031,7 +1057,7 @@ export default () => ({
       if (distance > bufferRadius) continue;
 
       //* Draw item on canvas
-      this.drawGeoJson(geoJson, this.ctx, "rgba(219, 111, 57, 0.1)");
+      //this.drawGeoJson(geoJson, this.ctx, "rgba(219, 111, 57, 0.1)");
 
       const collision = this.checkCollision(geoJson, block);
 
@@ -1212,5 +1238,10 @@ export default () => ({
       const pieceAlpineData: any = Alpine.$data(pieceDiv);
       pieceAlpineData.resetQuantity();
     });
+  },
+
+  onResize({ width, height }: { width: number; height: number }) {
+    this.canvas.width = width;
+    this.canvas.height = height;
   },
 });
