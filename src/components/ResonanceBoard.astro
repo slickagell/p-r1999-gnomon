@@ -1,9 +1,9 @@
 ---
 import InsightImg from "./InsightImg.astro";
 
-const BLOCK_SIZE = 40;
-const BOARD_X = 40;
-const BOARD_Y = 40;
+const BLOCK_SIZE = 30;
+const BOARD_MARGIN_HORIZONTAL = 40;
+const BOARD_MARGIN_VERTICAL = 40;
 const DEFAULT_RESONATE_LEVEL = 10;
 
 interface Props {
@@ -120,32 +120,41 @@ const initialActiveResonanceLevel =
     @pointerup="onPointerUp"
     x-resize="onResize({width: $width, height: $height})"
   >
-    <div class="flex-1 md:basis-1/2">
+    <div class="flex-1 md:basis-1/2 md:min-h-96">
       <canvas
         x-ref="canvas"
         class="border w-full h-full absolute top-0 left-0 bg-white/10 -z-10"
       ></canvas>
-      <canvas x-ref="boardCanvas" class="absolute top-0 left-0 -z-20"></canvas>
 
       <div
-        :style="{padding: boardY + 'px' + ' ' + boardX + 'px', width: (boardCol * blockSize + boardX * 2) + 'px', height: (boardRow * blockSize + boardY * 2) + 'px'}"
+        class="inline-block relative -z-20"
+        :style="{margin: boardMarginVertical + 'px' + ' ' + boardMarginHorizontal + 'px'}"
       >
+        <canvas
+          x-ref="boardCanvas"
+          class="absolute z-10"
+          :style="{top: boardY + 'px', left: boardX + 'px'}"></canvas>
+        <img
+          x-ref="boardImg"
+          loading="lazy"
+          src="/data/resonance/common/board.png"
+          alt="resonance-board"
+          :style="{width: (boardCol * blockSize + boardMarginHorizontal * 2) + 'px'}"
+        />
+        <template x-for="block in blocks" :key="block.id">
+          <div
+            x-bind:data-block-id="block.id"
+            x-data="{ x: block.pos.x, y: block.pos.y, size: block.size}"
+            class="border border-base-content/50 absolute select-none touch-none"
+            x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/30 cursor-grab' : '')"
+            x-bind:style="{ left: x + boardX + 'px', top: y + boardY + 'px', width: size + 'px', height: size + 'px' }"
+          >
+          </div>
+        </template>
       </div>
 
-      <template x-for="block in blocks" :key="block.id">
-        <div
-          x-bind:data-block-id="block.id"
-          x-data="{ x: block.pos.x, y: block.pos.y, size: block.size}"
-          class="border absolute select-none touch-none"
-          x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '')"
-          x-bind:style="{ left: x + 'px', top: y + 'px', width: size + 'px', height: size + 'px' }"
-        >
-        </div>
-      </template>
-
-      <div class="mx-4 md:mb-10">
+      <div class="mx-4 md:mb-10" x-show="recommendedOptions.length">
         <label
-          x-show="recommendedOptions.length"
           x-ref="recommendedSelect"
           id="recommendedSelect"
           class="select-none"
@@ -170,7 +179,10 @@ const initialActiveResonanceLevel =
       <div
         class="md:absolute md:top-0 md:left-0 w-full h-full overflow-auto p-4 flex flex-row md:flex-col gap-6"
       >
-        <template x-for="item in activeResonancePieces">
+        <template
+          x-for="item in activeResonancePieces"
+          :key="item.id+item.level+item.total"
+        >
           <div
             x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
             class="flex flex-col md:flex-row gap-4 select-none"
@@ -188,14 +200,16 @@ const initialActiveResonanceLevel =
                   :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
                 >
                   <img
+                    loading="lazy"
                     :data-piece-img-id="item.id"
                     :src="'/data/resonance/pieces/' + item.image"
                     :alt="item.id"
-                    class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0 w-full h-full`}
+                    class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0`}
+                    :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
                   />
                 </div>
               </div>
-              <p class="mt-2 flex gap-2 justify-center pointer-events-none">
+              <p class="mt-2 flex gap-2 justify-center select-none">
                 {isDev && <span class="badge" x-text="item.id" />}
                 <span
                   x-text="quantity"
@@ -241,8 +255,8 @@ const initialActiveResonanceLevel =
     maxResonanceLevel,
     initialActiveResonanceLevel,
     blockSize: BLOCK_SIZE,
-    boardX: BOARD_X,
-    boardY: BOARD_Y,
+    boardMarginHorizontal: BOARD_MARGIN_HORIZONTAL,
+    boardMarginVertical: BOARD_MARGIN_VERTICAL,
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
     recommendedResonanceList,
   }}
@@ -253,8 +267,8 @@ const initialActiveResonanceLevel =
       maxResonanceLevel,
       initialActiveResonanceLevel,
       blockSize,
-      boardX,
-      boardY,
+      boardMarginHorizontal,
+      boardMarginVertical,
       defaultResonanceLevel,
       recommendedResonanceList,
     });

@@ -15,6 +15,8 @@ import matrix from "matrix-js";
 export default () => ({
   boardCol: 0,
   boardRow: 0,
+  boardMarginHorizontal: 0,
+  boardMarginVertical: 0,
   boardX: 0,
   boardY: 0,
 
@@ -63,9 +65,6 @@ export default () => ({
     this.ctx = this.$refs.canvas.getContext("2d");
     this.boardCtx = this.$refs.boardCanvas.getContext("2d");
 
-    this.boardCanvas.style.top = `${this.boardY}px`;
-    this.boardCanvas.style.left = `${this.boardX}px`;
-
     if (!this.boardRow || !this.boardCol) {
       const { row, col } = getResonanceBoardRowCol(this.activeResonanceLevel);
 
@@ -81,8 +80,8 @@ export default () => ({
           col: col,
           row: row,
           pos: {
-            x: this.boardX + col * this.blockSize,
-            y: this.boardY + row * this.blockSize,
+            x: col * this.blockSize,
+            y: row * this.blockSize,
           },
           size: this.blockSize,
           isCollided: false,
@@ -98,13 +97,21 @@ export default () => ({
 
     this.boardCanvas.width = this.boardCol * this.blockSize;
     this.boardCanvas.height = this.boardRow * this.blockSize;
+
+    this.$nextTick(() => {
+      const boardImgWidth = this.$refs.boardImg.width;
+      const boardImgHeight = this.$refs.boardImg.height;
+
+      this.boardX = (boardImgWidth - this.boardCol * this.blockSize) / 2;
+      this.boardY = (boardImgHeight - this.boardRow * this.blockSize) / 2;
+    });
   },
 
   init() {
     this.blockSize = this.$store.resonance.blockSize;
     this.blockOffset = this.blockSize / 4;
-    this.boardX = this.$store.resonance.boardX;
-    this.boardY = this.$store.resonance.boardY;
+    this.boardMarginHorizontal = this.$store.resonance.boardMarginHorizontal;
+    this.boardMarginVertical = this.$store.resonance.boardMarginVertical;
     this.activeResonanceLevel =
       this.$store.resonance.initialActiveResonanceLevel;
 
@@ -156,6 +163,7 @@ export default () => ({
         if (!activeRecommendedResonanceList) {
           this.recommendedOptions = [];
           this.selectedRecommended = "";
+          this.resonanceGeoJsonList = [];
           return;
         }
 
@@ -230,6 +238,12 @@ export default () => ({
     height: number;
     orientation?: number;
   }) {
+    let img = new Image();
+    img.onload = function () {
+      drawHiddenCanvasToCanvas();
+    };
+    img.src = image.src;
+
     function drawHiddenCanvasToCanvas() {
       const hiddenCanvas = document.createElement("canvas");
       const hiddenCtx = hiddenCanvas.getContext("2d");
@@ -249,7 +263,7 @@ export default () => ({
       hiddenCtx.rotate((IMAGE_ORIENTATION[orientation].deg * Math.PI) / 180);
 
       hiddenCtx.drawImage(
-        image,
+        img,
         -originWidth / 2,
         -originHeight / 2,
         originWidth,
@@ -259,12 +273,6 @@ export default () => ({
       ctx.drawImage(hiddenCanvas, x, y, width, height);
 
       hiddenCanvas.remove();
-    }
-
-    if (!image.complete) {
-      image.onload = () => drawHiddenCanvasToCanvas();
-    } else {
-      drawHiddenCanvasToCanvas();
     }
   },
 
@@ -400,17 +408,14 @@ export default () => ({
     for (let row = 0; row < shapeRow; row++) {
       for (let col = 0; col < shapeCol; col++) {
         if (blockShapeMatrix(row, col)) {
-          const x = this.boardX + col * this.blockSize;
-          const y = this.boardY + row * this.blockSize;
+          const x = col * this.blockSize;
+          const y = row * this.blockSize;
 
           const itemBlock = [
             [x, y],
-            [this.boardX + (col + 1) * this.blockSize, y],
-            [
-              this.boardX + (col + 1) * this.blockSize,
-              this.boardY + (row + 1) * this.blockSize,
-            ],
-            [x, this.boardY + (row + 1) * this.blockSize],
+            [(col + 1) * this.blockSize, y],
+            [(col + 1) * this.blockSize, (row + 1) * this.blockSize],
+            [x, (row + 1) * this.blockSize],
           ];
 
           itemBlocks.push(itemBlock);
@@ -629,8 +634,8 @@ export default () => ({
     const centroidPoint = centroid(draggingGeoJson);
 
     const startPoint = {
-      x: this.lastMouseX + this.boardX - centroidPoint.geometry.coordinates[0],
-      y: this.lastMouseY + this.boardY - centroidPoint.geometry.coordinates[1],
+      x: this.lastMouseX - centroidPoint.geometry.coordinates[0],
+      y: this.lastMouseY - centroidPoint.geometry.coordinates[1],
     };
 
     const { transformGeoJson } = this.transformGeoJson(
@@ -656,8 +661,8 @@ export default () => ({
 
     //* Check if we're out of the board
     if (
-      x > this.boardX + this.blockSize * this.boardCol ||
-      y > this.boardY + this.blockSize * this.boardRow
+      x > this.blockSize * this.boardCol ||
+      y > this.blockSize * this.boardRow
     ) {
       //* If we're currently dragging a block
       if (this.isDragging) {
@@ -788,10 +793,10 @@ export default () => ({
       .flat(this.itemOnBoardGeoJson.geometry.type === "MultiPolygon" ? 2 : 1)
       .every((point: Position) => {
         return (
-          point[0] >= this.boardX &&
-          point[1] >= this.boardY &&
-          point[0] <= this.boardX + this.blockSize * this.boardCol &&
-          point[1] <= this.boardY + this.blockSize * this.boardRow
+          point[0] >= 0 &&
+          point[1] >= 0 &&
+          point[0] <= this.blockSize * this.boardCol &&
+          point[1] <= this.blockSize * this.boardRow
         );
       });
 
@@ -904,8 +909,8 @@ export default () => ({
 
     const { itemGeoJson, shape, shapeDimension } = this.initGeoJsonByShape(
       rotatedShape,
-      startBlockX + this.boardX,
-      startBlockY + this.boardY,
+      startBlockX,
+      startBlockY,
     );
 
     const newItemGeoJson = {
@@ -1003,12 +1008,18 @@ export default () => ({
     if (item.geometry.type === "Polygon") {
       const startPoint = item.geometry.coordinates[0][0];
 
-      const column = Math.floor((startPoint[0] - this.boardY) / this.blockSize);
-      const row = Math.floor((startPoint[1] - this.boardX) / this.blockSize);
+      const column = Math.floor(
+        (startPoint[0] - this.boardMarginHorizontal - this.boardX) /
+          this.blockSize,
+      );
+      const row = Math.floor(
+        (startPoint[1] - this.boardMarginVertical - this.boardY) /
+          this.blockSize,
+      );
 
       const { transformGeoJson } = this.transformGeoJson(item, {
-        x: this.boardX + column * this.blockSize,
-        y: this.boardY + row * this.blockSize,
+        x: column * this.blockSize,
+        y: row * this.blockSize,
       });
 
       geoJson = {
@@ -1021,12 +1032,18 @@ export default () => ({
     } else if (item.geometry.type === "MultiPolygon") {
       const startPoint = item.geometry.coordinates[0][0][0];
 
-      const column = Math.floor((startPoint[0] - this.boardY) / this.blockSize);
-      const row = Math.floor((startPoint[1] - this.boardX) / this.blockSize);
+      const column = Math.floor(
+        (startPoint[0] - this.boardMarginHorizontal - this.boardX) /
+          this.blockSize,
+      );
+      const row = Math.floor(
+        (startPoint[1] - this.boardMarginVertical - this.boardY) /
+          this.blockSize,
+      );
 
       const { transformGeoJson } = this.transformGeoJson(item, {
-        x: this.boardX + column * this.blockSize,
-        y: this.boardY + row * this.blockSize,
+        x: column * this.blockSize,
+        y: row * this.blockSize,
       });
 
       geoJson = {
@@ -1116,8 +1133,8 @@ export default () => ({
 
       const { itemGeoJson, shapeDimension } = this.initGeoJsonByShape(
         item.shape,
-        startBlockX + this.boardX,
-        startBlockY + this.boardY,
+        startBlockX,
+        startBlockY,
       );
 
       const newItemGeoJson = {
