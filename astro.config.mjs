@@ -10,9 +10,14 @@ import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), alpinejs(), mdx({
-    remarkPlugins: [effectPlugin, remarkDirective],
-  }), solidJs()],
+  integrations: [
+    tailwind(),
+    alpinejs(),
+    mdx({
+      remarkPlugins: [effectPlugin, remarkDirective],
+    }),
+    solidJs(),
+  ],
   devToolbar: {
     enabled: false,
   },

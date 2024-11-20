@@ -1,0 +1,323 @@
+---
+import InsightImg from "./InsightImg.astro";
+
+const DEFAULT_RESONATE_LEVEL = 10;
+
+interface Props {
+  maxResonanceLevel: number;
+  resonancePieces: ResonanceInitPiecesType;
+  recommendedResonanceList?: ResonanceRecommendedListType;
+  isDev?: boolean;
+}
+
+const { maxResonanceLevel, resonancePieces, recommendedResonanceList, isDev } =
+  Astro.props;
+
+const initialActiveResonanceLevel =
+  maxResonanceLevel > DEFAULT_RESONATE_LEVEL
+    ? DEFAULT_RESONATE_LEVEL
+    : maxResonanceLevel;
+---
+
+<div x-data="dataset">
+  <div class="flex flex-col md:flex-row gap-4 items-end mb-4">
+    <div class="basis-2/3 min-w-0 w-full">
+      <div
+        id="attributes"
+        x-data="attributes"
+        class="p-4 md:p-6 border basis-1/2 flex flex-wrap md:flex-nowrap justify-between gap-4"
+      >
+        <div class="w-full md:basis-1/3">
+          <div class="flex gap-2 items-center">
+            <p class="text-primary-content">Level:</p>
+            <p class="text-base-content text-xl" x-text="level"></p>
+          </div>
+          <div class="flex gap-2 items-center">
+            <p class="text-primary-content">Insight:</p>
+            <InsightImg classNames="w-10" insight="3" />
+          </div>
+        </div>
+        <div class="w-full md:basis-2/3">
+          <div class="flex gap-2 items-center justify-between">
+            <p class="text-primary-content" x-text="baseStats.HP.label"></p>
+            <p class="text-base-content" x-text="baseStats.HP.value"></p>
+          </div>
+          <div class="flex gap-2 items-center justify-between">
+            <p class="text-primary-content" x-text="baseStats.ATTACK.label"></p>
+            <p class="text-base-content" x-text="baseStats.ATTACK.value"></p>
+          </div>
+          <div class="flex gap-2 items-center justify-between">
+            <p
+              class="text-primary-content"
+              x-text="baseStats.REALITY_DEFENSE.label"
+            >
+            </p>
+            <p
+              class="text-base-content"
+              x-text="baseStats.REALITY_DEFENSE.value"
+            >
+            </p>
+          </div>
+          <div class="flex gap-2 items-center justify-between">
+            <p
+              class="text-primary-content"
+              x-text="baseStats.MENTAL_DEFENSE.label"
+            >
+            </p>
+            <p
+              class="text-base-content"
+              x-text="baseStats.MENTAL_DEFENSE.value"
+            >
+            </p>
+          </div>
+          <div class="flex gap-2 items-center justify-between">
+            <p
+              class="text-primary-content"
+              x-text="baseStats.CRITICAL_TECHNIQUE.label"
+            >
+            </p>
+            <p
+              class="text-base-content"
+              x-text="baseStats.CRITICAL_TECHNIQUE.value"
+            >
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 flex basis-1/2 overflow-auto">
+        <template x-for="i in $store.resonance.maxResonanceLevel">
+          <button
+            class="btn btn-outline shrink-0"
+            :class="i === activeResonanceLevel?'btn-outline btn-primary':''"
+            @click="changeResonanceLevel(i)"
+            x-text="i"></button>
+        </template>
+      </div>
+    </div>
+    <div
+      id="generalStats"
+      x-data="generalStats"
+      class="p-4 md:p-6 border w-full md:basis-1/3"
+    >
+      <template x-for="[, stat] in Object.entries(stats)">
+        <div
+          class="flex gap-2 items-center justify-between"
+          :class="stat.value > 0 ? 'opacity-100' : 'opacity-30'"
+        >
+          <p x-text="stat.label" class="text-primary-content"></p>
+          <p x-text="'+'+stat.value+stat.unit"></p>
+        </div>
+      </template>
+    </div>
+  </div>
+  <div
+    class="resonance relative flex flex-col md:flex-row gap-4 w-full"
+    @pointerdown="onPointerDown"
+    @pointermove="onPointerMove"
+    @pointerup="onPointerUp"
+    @resize.window.debounce="onResizeWindow()"
+    x-resize="onResize({width: $width, height: $height})"
+  >
+    <div class="flex-1 md:basis-1/2 md:min-h-96">
+      <canvas
+        x-ref="canvas"
+        class="border w-full h-full absolute top-0 left-0 bg-white/10 z-10"
+      ></canvas>
+
+      <div
+        class="inline-block relative"
+        :style="{margin: boardMarginVertical + 'px' + ' ' + boardMarginHorizontal + 'px'}"
+      >
+        <button
+          class="absolute top-0 left-0 btn btn-ghost p-0 border-0 z-20"
+          @click="clearBoard"
+        >
+          <img
+            class="w-12"
+            src="/data/resonance/common/clear.png"
+            alt="resonance-clear"
+          />
+        </button>
+        <canvas
+          x-ref="boardCanvas"
+          class="absolute pointer-events-auto z-20"
+          :style="{top: boardRelativeY + 'px', left: boardRelativeX + 'px'}"
+        ></canvas>
+        <img
+          class="w-64 md:w-72 select-none pointer-events-none -z-20"
+          x-ref="boardImg"
+          src="/data/resonance/common/board.png"
+          alt="resonance-board"
+        />
+        <template x-for="block in blocks" :key="block.id">
+          <div
+            x-bind:data-block-id="block.id"
+            class="border border-base-content/50 absolute select-none touch-none z-20"
+            x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/30 cursor-grab' : '')"
+            x-bind:style="{ left: block.pos.x + boardRelativeX + 'px', top: block.pos.y + boardRelativeY + 'px', width: block.size + 'px', height: block.size + 'px' }"
+          >
+          </div>
+        </template>
+      </div>
+
+      <div
+        class="mx-4 md:mb-10 z-20 relative"
+        x-show="recommendedOptions.length"
+      >
+        <label
+          x-ref="recommendedSelect"
+          id="recommendedSelect"
+          class="select-none"
+        >
+          Recommended
+        </label>
+        <select
+          id="recommendedSelect"
+          class="select select-secondary select-bordered flex w-full"
+          @change="changeRecommended($event.target.value)"
+        >
+          <template x-for="resonance in recommendedOptions">
+            <option
+              x-text="resonance.label"
+              :value="resonance.value"
+              :selected="resonance.value === selectedRecommended"></option>
+          </template>
+        </select>
+      </div>
+    </div>
+    <div class="flex-1 md:basis-1/2 relative z-10">
+      <div
+        class="md:absolute md:top-0 md:left-0 w-full h-full overflow-auto p-4 flex flex-row md:flex-col gap-6"
+      >
+        <template
+          x-for="item in activeResonancePieces"
+          :key="item.id+item.level+item.total"
+        >
+          <div
+            x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
+            class="flex flex-col md:flex-row gap-4 select-none"
+          >
+            <div>
+              <div
+                class="flex justify-center items-center"
+                @resize.window.debounce="pieceOnResizeWindow()"
+                :style="{width: maxPieceWidth, height: maxPieceHeight}"
+              >
+                <div
+                  class="relative touch-none"
+                  :data-piece-id="item.id"
+                  :class="quantity>0?'cursor-pointer':''"
+                  :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
+                >
+                  <img
+                    loading="lazy"
+                    :data-piece-img-id="item.id"
+                    :src="'/data/resonance/pieces/' + item.image"
+                    :alt="item.id"
+                    class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0`}
+                    :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
+                  />
+                </div>
+              </div>
+              <p class="mt-2 flex gap-2 justify-center select-none">
+                {isDev && <span class="badge" x-text="item.id" />}
+                <span
+                  x-text="quantity"
+                  :class="quantity === 0 ? 'text-error' : ''"></span>
+                /
+                <span x-text="total"></span>
+              </p>
+            </div>
+
+            <div class="md:flex-1">
+              <p
+                x-text="'Lv. ' + item.level"
+                x-effect="updateCurrentStats(item.level)"
+                class="text-primary text-xl"
+              >
+              </p>
+              <template x-for="[,stat] in Object.entries(currentStats)">
+                <div class="flex gap-2 items-center justify-between">
+                  <p x-text="stat.label" class="text-primary-content"></p>
+                  <p x-text="'+'+stat.value+stat.unit"></p>
+                </div>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+  {
+    isDev && (
+      <textarea
+        rows="10"
+        class="textarea textarea-secondary w-full"
+        x-model="printResonanceGeoJsonList()"
+      />
+    )
+  }
+</div>
+
+<script
+  define:vars={{
+    resonancePieces,
+    maxResonanceLevel,
+    initialActiveResonanceLevel,
+    defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
+    recommendedResonanceList,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("resonance", {
+      resonancePieces,
+      maxResonanceLevel,
+      initialActiveResonanceLevel,
+      defaultResonanceLevel,
+      recommendedResonanceList,
+    });
+  });
+</script>
+
+<script>
+  import { STATS } from "@data/character";
+  import resonanceDataSet from "@scripts/resonance-data-set";
+  import resonancePiece from "@scripts/resonance-piece";
+  import resonanceGeneralStats from "@scripts/resonance-general-stats";
+  import Alpine from "alpinejs";
+  import resize from "@alpinejs/resize";
+
+  Alpine.plugin(resize);
+
+  window.Alpine = Alpine;
+
+  Alpine.data("dataset", resonanceDataSet);
+  Alpine.data("piece", resonancePiece);
+  Alpine.data("attributes", () => ({
+    level: 60,
+    insight: 3,
+    baseStats: {
+      HP: {
+        label: STATS["HP"].label,
+        value: 5543,
+      },
+      ATTACK: {
+        label: STATS["ATTACK"].label,
+        value: 1199,
+      },
+      REALITY_DEFENSE: {
+        label: STATS["REALITY_DEFENSE"].label,
+        value: 505,
+      },
+      MENTAL_DEFENSE: {
+        label: STATS["MENTAL_DEFENSE"].label,
+        value: 582,
+      },
+      CRITICAL_TECHNIQUE: {
+        label: STATS["CRITICAL_TECHNIQUE"].label,
+        value: 436,
+      },
+    },
+  }));
+  Alpine.data("generalStats", resonanceGeneralStats);
+</script>
