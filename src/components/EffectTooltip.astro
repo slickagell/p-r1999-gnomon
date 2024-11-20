@@ -38,7 +38,7 @@ const { Content } = await effect.render();
     @mousedown.outside="isToggle = false"
     x-show="isShow || isToggle"
     x-anchor.top="$refs.content"
-    class="bg-base-100 w-60 text-base-content border-line-paper border p-2"
+    class="bg-base-100 w-60 text-base-content border-line-paper border p-2 z-10"
     x-transition:enter="ease duration-300 transition-opacity"
     x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100"

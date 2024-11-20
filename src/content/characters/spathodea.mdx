@@ -1,0 +1,220 @@
+---
+title: "Spathodea"
+id: "spathodea"
+code: "SPATHODEA"
+star: 6
+afflatus: "BEAST"
+dmgType: "REALITY"
+version: "1.5"
+specialties: ["DPS", "BURST_DMG", "BURN"]
+isLimited: false
+---
+
+import CharacterImg from "@components/CharacterImg.astro";
+import CharacterStar from "@components/CharacterStar.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@data/character";
+
+# Spathodea
+
+<div class="my-8">
+  <CharacterStar star={frontmatter.star} />
+</div>
+
+<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+  <div>
+    <div class="flex gap-8 items-center justify-center md:justify-start">
+      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+      <div class="flex gap-2 items-center">
+        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+        ##### {DMG_TYPE[frontmatter.dmgType].title}
+      </div>
+    </div>
+    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {
+        frontmatter.specialties.map((specialty) => (
+          <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
+      ))}
+    </div>
+    <div class="mt-4">
+      :TODO:
+
+      ###### Medium
+      :TODO:
+
+      ###### Afflatus
+      :TODO:
+
+      ###### Fragrance note
+      :TODO:
+
+      ###### Dimensions
+      :TODO:
+
+    </div>
+    <div class="mt-4 flex gap-4 justify-center">
+      <CharacterImg variant="signature" id={frontmatter.id} />
+    </div>
+
+  </div>
+  <div class="flex flex-col items-center shrink-0">
+    <CharacterImg variant="portrait" id={frontmatter.id} />
+    <div class="mt-5 flex gap-6 justify-center items-end">
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+        Udimo
+      </div>
+      <div class="text-center">
+        <CharacterImg variant="chibi" id={frontmatter.id} />
+        Chibi
+      </div>
+    </div>
+  </div>
+</div>
+
+## Arcane Skills
+
+### Little Boxer
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-1" id={frontmatter.id} />
+  </div>
+
+:::card-info{star='1' type="ATTACK" note="Don't take it personally."}
+
+1-target attack. Deals **200%** Reality DMG. When in :effect{code="PREIGNITION"} status, this attack gains Critical DMG **+40%**.
+
+:::
+
+:::card-info{star='2' type="ATTACK" note="Don't take it personally, kids can be a handful to deal with."}
+
+1-target attack. Deals **300%** Reality DMG. When in :effect{code="PREIGNITION"} status, this attack gains Critical DMG **+40%**.
+
+:::
+
+:::card-info{star='3' type="ATTACK" note="Don't take it personally. Kids can be a handful, especially for adults who are clueless."}
+
+1-target attack. Deals **500%** Reality DMG. When in :effect{code="PREIGNITION"} status, this attack gains Critical DMG **+40%**.
+
+:::
+
+</div>
+
+### Ignition Point
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-2" id={frontmatter.id} />
+  </div>
+
+:::card-info{star='1' type="BUFF" note="Clearly evident."}
+
+Self buff. Gains 3 stacks of :effect{code="PREIGNITION"}, 2 stacks of :effect{code="EXHILARATION"} and 1 stack of :effect{code="PREPARATION_SPATHODEA_I"}.
+
+:::
+
+:::card-info{star='2' type="BUFF" note="Clearly evident, she's ignited her fighting spirit."}
+
+Self buff. Grants 6 stacks of :effect{code="PREIGNITION"}, 3 stacks of :effect{code="EXHILARATION"} and 1 stack of :effect{code="PREPARATION_SPATHODEA_II"}.
+
+:::
+
+:::card-info{star='3' type="BUFF" note="Clearly, Spathodea is on FIRE!"}
+
+Self buff. Grants 9 stacks of :effect{code="PREIGNITION"}, 5 stacks of :effect{code="EXHILARATION"} and 1 stack of :effect{code="PREPARATION_SPATHODEA_III"}.
+
+:::
+
+</div>
+
+### Flame Within the Fire
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="unique" id={frontmatter.id} />
+  </div>
+
+:::card-info{type="ATTACK" note="The flames rise as she sets a heart ablaze, plunging into the fiery red land once more."}
+
+1 target attack. Deals **700%** Reality DMG. This attack gains Critical DMG **+40%**. If the target is afflicted with 15 or more stacks of :effect{code="BURN"}, this attack gains extra Critical DMG **+40%**.
+
+:::
+
+</div>
+
+## Inheritance
+
+### Flame Flower
+
+<div class="mt-4 flex items-center">
+  :insight-img{classNames="w-8 mr-2" insight='1'}
+  ##### Insight 1
+</div>
+
+When applying :effect{code="BURN"} status with an attack, the next attack gains Critical Rates **+25%**.
+
+<div class="mt-4 flex items-center">
+  :insight-img{classNames="w-8 mr-2" insight='2'}
+  ##### Insight 2
+</div>
+
+DMG Dealt **+8%** when the caster enters battle.
+
+<div class="mt-4 flex items-center">
+  :insight-img{classNames="w-8 mr-2" insight='3'}
+  ##### Insight 3
+</div>
+
+When a 1 -target attack scores a Critical Hit, inflicts 4 stacks of :effect{code="BURN"}.
+
+## Portray
+
+:span[Lv. 1:]{.text-2xl.mr-2}
+_Little Boxer_: Critical DMG increased to **70%** Reality DMG.
+
+:span[Lv. 2:]{.text-2xl.mr-2}
+_Flame Flower_: Critical Rate increased to **50%**.
+
+:span[Lv. 3:]{.text-2xl.mr-2}
+_Flame Within the Fire_: Critical DMG increased to **70%**. Extra Critical DMG increased to **70%**.
+
+:span[Lv. 4:]{.text-2xl.mr-2}
+_Little Boxer_: At Incantation rank **1/2/3**, Reality DMG increased to **220/330/550%**.
+
+:span[Lv. 5:]{.text-2xl.mr-2}
+_Flame Within the Fire_: Reality DMG increased to **750%**. Critical DMG increased to **100%**. Extra Critical DMG increased to **100%**.
+
+## Insight Materials
+
+<div class="flex flex-col md:flex-row flex-wrap  justify-center">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      :insight-img{classNames="w-6 mr-2" insight='1'}
+      ##### Insight 1
+    </div>
+    :material{code="SHARPODONTY" variant="small" require="18000"}
+    :material{code="PAGE_OF_BEASTLY_THIRST" variant="small" require="6"}
+    :material{code="ROUGH_SILVER_INGOT" variant="small" require="5"}
+    :material{code="TREMBLING_TOOTH" variant="small" require="5"}
+  </div>
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      :insight-img{classNames="w-6 mr-2" insight='2'}
+      ##### Insight 2
+    </div>
+    :material{code="SHARPODONTY" variant="small" require="40000"}
+    :material{code="SCROLL_OF_BEASTLY_THIRST" variant="small" require="10"}
+    :material{code="BIFURCATED_SKELETON" variant="small" require="6"}
+    :material{code="CICADA_WINGS" variant="small" require="6"}
+  </div>
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      :insight-img{classNames="w-6 mr-2" insight='3'}
+      ##### Insight 3
+    </div>
+    :material{code="SHARPODONTY" variant="small" require="200000"}
+    :material{code="TOME_OF_BEASTLY_THIRST" variant="small" require="16"}
+    :material{code="GOLDEN_FLEECE" variant="small" require="3"}
+    :material{code="INCORRUPT_MONKEYPAW" variant="small" require="7"}
+  </div>
+</div>

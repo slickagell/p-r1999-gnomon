@@ -63,7 +63,22 @@ export const SPECIALTY = {
   },
   CONTROL: {
     title: "Control",
-  }
+  },
+  BURN: {
+    title: "Burn",
+  },
+  BURST_DMG: {
+    title: "Burst DMG",
+  },
+  DEBUFF: {
+    title: "Debuff",
+  },
+  EXTRA_ACTION: {
+    title: "Extra Action",
+  },
+  SHIELD: {
+    title: "Shield",
+  },
 };
 
 export const RARITY = {
@@ -82,5 +97,5 @@ export const RARITY = {
   THREE_STAR: {
     title: "3 star",
     value: 3,
-  }
+  },
 };

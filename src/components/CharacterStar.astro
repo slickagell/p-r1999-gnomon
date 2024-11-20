@@ -1,15 +1,21 @@
 ---
 interface Props {
-	star: number;
+  star: number;
 }
 
 const { star } = Astro.props;
 ---
 
-<ul class="flex justify-center gap-1">
-    {Array.from({ length: star }).map((_, i) => (
-        <li>
-            <img class="w-10 h-10" src="/data/characters/common/star.png" alt="star icon" />
-        </li>
-    ))}
-</ul>
+<div class="flex justify-center gap-1">
+  {
+    Array.from({ length: star }).map((_, i) => (
+      <div>
+        <img
+          class="w-10 h-10"
+          src="/data/characters/common/star.png"
+          alt="star icon"
+        />
+      </div>
+    ))
+  }
+</div>

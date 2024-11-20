@@ -1,10 +1,14 @@
 import { useStore } from "@nanostores/solid";
 import {
-  nameFilter,
-  rarityFilter,
-  tagFilter,
-  typeFilter,
+  nameFilter as artefactNameFilter,
+  rarityFilter as artefactRarityFilter,
+  tagFilter as artefactTagFilter,
+  typeFilter as artefactTypeFilter,
 } from "@stores/artefactFilterStore";
+import {
+  nameFilter as effectNameFilter,
+  typeFilter as effectTypeFilter,
+} from "@stores/effectFilterStore";
 import { createMemo, createSignal } from "solid-js";
 import { WindowVirtualizer } from "virtua/solid";
 
@@ -15,10 +19,10 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
 
   const [frozenArtefacts] = createSignal([...artefacts.children]);
 
-  const $rarityFilter = useStore(rarityFilter);
-  const $typeFilter = useStore(typeFilter);
-  const $tagFilter = useStore(tagFilter);
-  const $nameFilter = useStore(nameFilter);
+  const $rarityFilter = useStore(artefactRarityFilter);
+  const $typeFilter = useStore(artefactTypeFilter);
+  const $tagFilter = useStore(artefactTagFilter);
+  const $nameFilter = useStore(artefactNameFilter);
 
   const list = createMemo(() => {
     const rarityFilter = $rarityFilter();
@@ -43,6 +47,41 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
     });
 
     return filteredArtefacts;
+  });
+
+  return (
+    <WindowVirtualizer data={list()}>
+      {(_, i) => <div data-index={i}>{list()[i]}</div>}
+    </WindowVirtualizer>
+  );
+};
+
+export const EffectVirtualList = ({ effects }: any) => {
+  if (!effects) {
+    return null;
+  }
+
+  const [frozenEffects] = createSignal([...effects.children]);
+
+  const $typeFilter = useStore(effectTypeFilter);
+  const $nameFilter = useStore(effectNameFilter);
+
+  const list = createMemo(() => {
+    const typeFilter = $typeFilter();
+    const nameFilter = $nameFilter();
+
+    const filteredEffects = frozenEffects().filter((ele) => {
+      const type = ele.getAttribute("data-effect-type");
+      const name = ele.getAttribute("data-effect-name");
+
+      const filters = typeFilter === "ALL" || type === typeFilter;
+
+      return !nameFilter
+        ? filters
+        : filters && name.toLowerCase().includes(nameFilter.toLowerCase());
+    });
+
+    return filteredEffects;
   });
 
   return (

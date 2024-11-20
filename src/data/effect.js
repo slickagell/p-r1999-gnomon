@@ -11,7 +11,16 @@ export const EFFECT_TYPE = {
   NEG_STATUS: {
     title: "Neg Status",
   },
+  SPECIAL: {
+    title: "Special",
+  },
   UNKNOWN: {
     title: "Unknown",
+  },
+  NONE: {
+    title: "None",
+  },
+  CHANNEL: {
+    title: "Channel",
   },
 };
