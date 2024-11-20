@@ -12,11 +12,22 @@ import type { Feature, MultiPolygon, Polygon, Position } from "geojson";
 import { intersection, union } from "martinez-polygon-clipping";
 import matrix from "matrix-js";
 
+const BLOCK_SIZE = 30;
+const BOARD_MARGIN_HORIZONTAL = 40;
+const BOARD_MARGIN_VERTICAL = 40;
+
+const MOBILE_BLOCK_SIZE = 28;
+const MOBILE_BOARD_MARGIN_HORIZONTAL = 16;
+const MOBILE_BOARD_MARGIN_VERTICAL = 16;
+
 export default () => ({
+  isOnMobile: false,
   boardCol: 0,
   boardRow: 0,
   boardMarginHorizontal: 0,
   boardMarginVertical: 0,
+  boardRelativeX: 0,
+  boardRelativeY: 0,
   boardX: 0,
   boardY: 0,
 
@@ -101,22 +112,32 @@ export default () => ({
     this.$nextTick(() => {
       const boardImgWidth = this.$refs.boardImg.width;
       const boardImgHeight = this.$refs.boardImg.height;
-
-      this.boardX = (boardImgWidth - this.boardCol * this.blockSize) / 2;
-      this.boardY = (boardImgHeight - this.boardRow * this.blockSize) / 2;
+      this.boardRelativeX =
+        (boardImgWidth - this.boardCol * this.blockSize) / 2;
+      this.boardRelativeY =
+        (boardImgHeight - this.boardRow * this.blockSize) / 2;
+      this.boardX = this.boardMarginHorizontal + this.boardRelativeX;
+      this.boardY = this.boardMarginVertical + this.boardRelativeY;
     });
   },
 
   init() {
-    this.blockSize = this.$store.resonance.blockSize;
-    this.blockOffset = this.blockSize / 4;
-    this.boardMarginHorizontal = this.$store.resonance.boardMarginHorizontal;
-    this.boardMarginVertical = this.$store.resonance.boardMarginVertical;
     this.activeResonanceLevel =
       this.$store.resonance.initialActiveResonanceLevel;
 
-    this.initCanvas();
+    if (window.innerWidth < 768) {
+      this.isOnMobile = true;
+      this.blockSize = MOBILE_BLOCK_SIZE;
+      this.boardMarginHorizontal = MOBILE_BOARD_MARGIN_HORIZONTAL;
+      this.boardMarginVertical = MOBILE_BOARD_MARGIN_VERTICAL;
+    } else {
+      this.blockSize = BLOCK_SIZE;
+      this.boardMarginHorizontal = BOARD_MARGIN_HORIZONTAL;
+      this.boardMarginVertical = BOARD_MARGIN_VERTICAL;
+    }
+    this.blockOffset = this.blockSize / 4;
 
+    this.initCanvas();
     this.initializeData();
   },
 
@@ -238,11 +259,16 @@ export default () => ({
     height: number;
     orientation?: number;
   }) {
-    let img = new Image();
-    img.onload = function () {
+    let img;
+
+    if (!image.complete || !image.naturalWidth || !image.naturalHeight) {
+      img = new Image();
+      img.onload = () => drawHiddenCanvasToCanvas();
+      img.src = image.src;
+    } else {
+      img = image;
       drawHiddenCanvasToCanvas();
-    };
-    img.src = image.src;
+    }
 
     function drawHiddenCanvasToCanvas() {
       const hiddenCanvas = document.createElement("canvas");
@@ -652,17 +678,24 @@ export default () => ({
 
     this.drawGeoJson(this.dragGeoJson, this.ctx, "rgba(219, 111, 57,0.5)");
     this.blocks = JSON.parse(JSON.stringify(this.initBlocks));
-    this.processCheckCollision(this.dragGeoJson, this.blocks);
+    this.processCheckCollision(this.dragGeoJson, this.blocks, {
+      x: this.boardX,
+      y: this.boardY,
+    });
   },
 
   onPointerUp(event) {
     this.isMouseDown = false;
     const { x, y } = this.calculatePointerPosition(event);
+    const boardWidth = this.boardCanvas.width;
+    const boardHeight = this.boardCanvas.height;
 
     //* Check if we're out of the board
     if (
-      x > this.blockSize * this.boardCol ||
-      y > this.blockSize * this.boardRow
+      x < this.boardX ||
+      x > this.boardX + boardWidth ||
+      y < this.boardY ||
+      y > this.boardY + boardHeight
     ) {
       //* If we're currently dragging a block
       if (this.isDragging) {
@@ -691,6 +724,8 @@ export default () => ({
 
       return;
     }
+
+    if (this.isDragging) return;
 
     //* User click on the board
     this.onBoardClick();
@@ -846,10 +881,10 @@ export default () => ({
       this.resonanceGeoJsonList.push(this.itemOnBoardGeoJson);
     } else {
       this.blocks = this.initBlocks;
-      if (this.selectGeoJson) {
-        this.resonanceGeoJsonList.push(this.selectGeoJson);
-        pieceAlpineData.updateQuantity(1);
-      }
+      // if (this.selectGeoJson) {
+      //   this.resonanceGeoJsonList.push(this.selectGeoJson);
+      // }
+      pieceAlpineData.updateQuantity(1);
     }
 
     this.resetInitialState();
@@ -999,7 +1034,11 @@ export default () => ({
     return true; // Collision detected
   },
 
-  processCheckCollision(item: Feature, blocks: ResonanceBlockType[]) {
+  processCheckCollision(
+    item: Feature,
+    blocks: ResonanceBlockType[],
+    offsetDraggingPoint = { x: 0, y: 0 },
+  ) {
     const bufferRadius =
       this.blockSize * (Math.max(...this.dragShapeDimension) / 2 + 1); // (slightly larger than the sweepRadius) is the maximum distance between the item's position and a block's position that is considered "far enough" to warrant pruning the block from the search space
 
@@ -1009,12 +1048,10 @@ export default () => ({
       const startPoint = item.geometry.coordinates[0][0];
 
       const column = Math.floor(
-        (startPoint[0] - this.boardMarginHorizontal - this.boardX) /
-          this.blockSize,
+        (startPoint[0] - offsetDraggingPoint.x) / this.blockSize,
       );
       const row = Math.floor(
-        (startPoint[1] - this.boardMarginVertical - this.boardY) /
-          this.blockSize,
+        (startPoint[1] - offsetDraggingPoint.y) / this.blockSize,
       );
 
       const { transformGeoJson } = this.transformGeoJson(item, {
@@ -1033,12 +1070,10 @@ export default () => ({
       const startPoint = item.geometry.coordinates[0][0][0];
 
       const column = Math.floor(
-        (startPoint[0] - this.boardMarginHorizontal - this.boardX) /
-          this.blockSize,
+        (startPoint[0] - offsetDraggingPoint.x) / this.blockSize,
       );
       const row = Math.floor(
-        (startPoint[1] - this.boardMarginVertical - this.boardY) /
-          this.blockSize,
+        (startPoint[1] - offsetDraggingPoint.y) / this.blockSize,
       );
 
       const { transformGeoJson } = this.transformGeoJson(item, {
@@ -1257,8 +1292,54 @@ export default () => ({
     });
   },
 
+  onResizeWindow() {
+    if (window.innerWidth < 768) {
+      if (this.isOnMobile) return;
+      this.isOnMobile = true;
+      this.blockSize = MOBILE_BLOCK_SIZE;
+      this.boardMarginHorizontal = MOBILE_BOARD_MARGIN_HORIZONTAL;
+      this.boardMarginVertical = MOBILE_BOARD_MARGIN_VERTICAL;
+    } else {
+      if (!this.isOnMobile) return;
+      this.isOnMobile = false;
+      this.blockSize = BLOCK_SIZE;
+      this.boardMarginHorizontal = BOARD_MARGIN_HORIZONTAL;
+      this.boardMarginVertical = BOARD_MARGIN_VERTICAL;
+    }
+    this.blockOffset = this.blockSize / 4;
+    this.reCalculateBoardSize();
+  },
+
   onResize({ width, height }: { width: number; height: number }) {
     this.canvas.width = width;
     this.canvas.height = height;
+  },
+
+  reCalculateBoardSize() {
+    this.ctx.clearRect(0, 0, this.ctx.width, this.ctx.height);
+    this.boardCtx.clearRect(0, 0, this.boardCtx.width, this.boardCtx.height);
+
+    this.resetInitialState();
+    this.initCanvas();
+    this.initializeData();
+  },
+
+  clearBoard() {
+    this.boardCtx.clearRect(
+      0,
+      0,
+      this.boardCanvas.width,
+      this.boardCanvas.height,
+    );
+    this.resonanceGeoJsonList = [];
+    const blocksData = this.blocks.map((block) => ({
+      ...block,
+      isCollided: false,
+    }));
+    this.initBlocks = blocksData;
+    this.blocks = blocksData;
+
+    this.resetInitialState();
+    this.resetPiecesQuantity();
   },
 });
