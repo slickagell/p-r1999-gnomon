@@ -2,15 +2,14 @@ import {
   IMAGE_DEGREE_ORIENTATIONS,
   IMAGE_ORIENTATION,
   RESONANCE_PIECES,
-  changeImageOrientation,
-  getResonanceBoardRowCol,
-} from "@data/resonance";
+} from "@constants/resonance";
 import { centroid } from "@turf/centroid";
 import { polygon } from "@turf/helpers";
 import Alpine from "alpinejs";
 import type { Feature, MultiPolygon, Polygon, Position } from "geojson";
 import { intersection, union } from "martinez-polygon-clipping";
 import matrix from "matrix-js";
+import { changeImageOrientation, getResonanceBoardRowCol } from "./common";
 
 const BLOCK_SIZE = 30;
 const BOARD_MARGIN_HORIZONTAL = 40;

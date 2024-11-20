@@ -1,22 +1,24 @@
 {
-  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "strictNullChecks": true,
     "allowJs": true,
     "baseUrl": ".",
-    "paths": {
-      "@components/*": ["src/components/*"],
-      "@content/*": ["src/content/*"],
-      "@assets/*": ["src/assets/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@config/*": ["src/config/*"],
-      "@data/*": ["src/data/*"],
-      "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/styles/*"],
-      "@scripts/*": ["src/scripts/*"],
-      "@stores/*": ["src/stores/*"]
-    },
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
-  }
+    "jsxImportSource": "solid-js",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@config/*": ["src/config/*"],
+      "@constants/*": ["src/constants/*"],
+      "@content/*": ["src/content/*"],
+      "@data/*": ["src/data/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@scripts/*": ["src/scripts/*"],
+      "@stores/*": ["src/stores/*"],
+      "@styles/*": ["src/styles/*"]
+    },
+    "strictNullChecks": true
+  },
+  "exclude": ["node_modules", "dist", "public"],
+  "extends": "astro/tsconfigs/base"
 }

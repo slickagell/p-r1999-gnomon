@@ -1,4 +1,4 @@
-import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "../src/data/character.js";
+import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "../src/constants/character.js";
 
 export default {
   description: "Create a character content mdx file",
@@ -37,7 +37,7 @@ export default {
       message: "Is character limited?",
     },
   ],
-  actions: (data) => {
+  actions: () => {
     let defaultFolderPath = "content/characters";
     return [
       {

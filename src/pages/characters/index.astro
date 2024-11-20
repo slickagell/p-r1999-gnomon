@@ -172,7 +172,7 @@ const characterEntries = await getCollection("characters");
 </Layout>
 
 <script>
-  import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "@data/character";
+  import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "@constants/character";
   import Alpine from "alpinejs";
 
   window.Alpine = Alpine;
@@ -217,15 +217,15 @@ const characterEntries = await getCollection("characters");
             title.toLowerCase().includes(this.searchText.toLowerCase());
     },
 
-    filterRarity(rarity) {
+    filterRarity(rarity: string) {
       this.rarityFilter = rarity;
     },
 
-    filterAfflatusType(afflatusType) {
+    filterAfflatusType(afflatusType: string) {
       this.afflatusTypeFilter = afflatusType;
     },
 
-    filterDmgType(dmgType) {
+    filterDmgType(dmgType: string) {
       this.dmgTypeFilter = dmgType;
     },
   }));

@@ -1,8 +1,8 @@
 ---
 import "@styles/markdown-layout.css";
+import MarkdownContent from "@components/MarkdownContent.astro";
 import Layout from "@layouts/Layout.astro";
 import { getEntry } from "astro:content";
-import MarkdownContent from "@components/MarkdownContent.astro";
 
 const mechanicEntry = await getEntry("a-series-of-dusks", "mechanic");
 

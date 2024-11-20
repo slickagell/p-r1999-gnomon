@@ -1,4 +1,4 @@
-import { STATS } from "@data/character";
+import { STATS } from "@constants/character";
 import Alpine from "alpinejs";
 
 export default () => ({

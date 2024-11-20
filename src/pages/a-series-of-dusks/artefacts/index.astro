@@ -167,7 +167,11 @@ function sortArtefact(a, b) {
 </Layout>
 
 <script>
-  import { ARTEFACT_RARITY, ARTEFACT_TAG, ARTEFACT_TYPE } from "@data/artefact";
+  import {
+    ARTEFACT_RARITY,
+    ARTEFACT_TAG,
+    ARTEFACT_TYPE,
+  } from "@constants/artefact";
   import Alpine from "alpinejs";
   import {
     rarityFilter,
@@ -205,22 +209,22 @@ function sortArtefact(a, b) {
       })),
     ],
 
-    filterRarity(rarity) {
+    filterRarity(rarity: string) {
       this.rarityFilter = rarity;
       rarityFilter.set(rarity);
     },
 
-    filterType(type) {
+    filterType(type: string) {
       this.typeFilter = type;
       typeFilter.set(type);
     },
 
-    filterTag(tag) {
+    filterTag(tag: string) {
       this.tagFilter = tag;
       tagFilter.set(tag);
     },
 
-    search(searchText) {
+    search(searchText: string) {
       nameFilter.set(searchText);
     },
   }));

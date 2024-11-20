@@ -1,4 +1,4 @@
-import { MATERIAL_RARITY } from "../src/data/material.js";
+import { MATERIAL_RARITY } from "../src/constants/material.js";
 
 export default {
   description: "Create a material content mdx file",
@@ -15,7 +15,7 @@ export default {
       choices: Object.values(MATERIAL_RARITY).map((ele) => ele.value),
     },
   ],
-  actions: (data) => {
+  actions: () => {
     let defaultFolderPath = "content/materials";
     return [
       {
