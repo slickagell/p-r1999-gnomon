@@ -14,17 +14,17 @@ const { type } = Astro.props;
       switch (type) {
         case "DEBUFF":
           return (
-            <img src="/data/card/attr-debuff.png" alt="attr-debuff icon" />
+            <img src="/images/card/attr-debuff.png" alt="attr-debuff icon" />
           );
         case "BUFF":
-          return <img src="/data/card/attr-buff.png" alt="attr-buff icon" />;
+          return <img src="/images/card/attr-buff.png" alt="attr-buff icon" />;
         case "CHANNEL":
           return (
-            <img src="/data/card/attr-channel.png" alt="attr-channel icon" />
+            <img src="/images/card/attr-channel.png" alt="attr-channel icon" />
           );
         default:
           return (
-            <img src="/data/card/attr-attack.png" alt="attr-attack icon" />
+            <img src="/images/card/attr-attack.png" alt="attr-attack icon" />
           );
       }
     })()

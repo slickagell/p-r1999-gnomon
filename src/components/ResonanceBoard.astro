@@ -134,7 +134,7 @@ const initialActiveResonanceLevel =
         >
           <img
             class="w-12"
-            src="/data/resonance/common/clear.png"
+            src="/images/resonance/common/clear.png"
             alt="resonance-clear"
           />
         </button>
@@ -146,7 +146,7 @@ const initialActiveResonanceLevel =
         <img
           class="w-64 md:w-72 select-none pointer-events-none -z-20"
           x-ref="boardImg"
-          src="/data/resonance/common/board.png"
+          src="/images/resonance/common/board.png"
           alt="resonance-board"
         />
         <template x-for="block in blocks" :key="block.id">
@@ -212,7 +212,7 @@ const initialActiveResonanceLevel =
                   <img
                     loading="lazy"
                     :data-piece-img-id="item.id"
-                    :src="'/data/resonance/pieces/' + item.image"
+                    :src="'/images/resonance/pieces/' + item.image"
                     :alt="item.id"
                     class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0`}
                     :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
