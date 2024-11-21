@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import alpinejs from "@astrojs/alpinejs";
 import mdx from "@astrojs/mdx";
 import remarkDirective from "remark-directive";
-import { effectPlugin } from "./src/scripts/effect-plugin.mjs";
+import { hastPlugin } from "./src/scripts/hast-plugin.mjs";
 
 import solidJs from "@astrojs/solid-js";
 
@@ -14,7 +14,7 @@ export default defineConfig({
     tailwind(),
     alpinejs(),
     mdx({
-      remarkPlugins: [effectPlugin, remarkDirective],
+      remarkPlugins: [hastPlugin, remarkDirective],
     }),
     solidJs(),
   ],

@@ -1,4 +1,6 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
+
 interface Props {
   star: number;
 }
@@ -8,11 +10,11 @@ const { star } = Astro.props;
 
 <div class="flex justify-center gap-1">
   {
-    Array.from({ length: star }).map((_, i) => (
+    Array.from({ length: star }).map(() => (
       <div>
-        <img
-          class="w-10 h-10"
-          src="/data/characters/common/star.png"
+        <CustomImage
+          presetWidth={40}
+          src="/images/characters/common/star.png"
           alt="star icon"
         />
       </div>

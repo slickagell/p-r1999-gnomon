@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import CustomImage from "@components/CustomImage.astro";
 
 interface Props {
   code: string;
@@ -33,10 +34,9 @@ const material = materials[code];
         ]}
       >
         <div>
-          <img
-            loading="lazy"
+          <CustomImage
             class="w-full h-full"
-            src={`/data/materials/bg-rare-${material.data.rarity}.png`}
+            src={`/images/materials/bg-rare-${material.data.rarity}.png`}
             alt={`material ${material.data.rare}`}
           />
         </div>
@@ -48,9 +48,8 @@ const material = materials[code];
             { "w-24": variant === "large" },
           ]}
         >
-          <img
-            loading="lazy"
-            src={`/data/materials/${material.data.image}`}
+          <CustomImage
+            src={`/images/materials/${material.data.image}`}
             alt={`material ${material.data.title}`}
           />
         </div>

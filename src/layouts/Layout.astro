@@ -1,4 +1,5 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
 import "../styles/layout.css";
 import Footer from "@layouts/Footer.astro";
 
@@ -76,7 +77,12 @@ const menu = [
           </div>
           <div class="flex-1 mx-2">
             <a href="/" class="flex items-center">
-              <img class="w-10 h-10 mr-2" src="/layout/logo.png" alt="logo" />
+              <CustomImage
+                presetWidth={40}
+                class="mr-2"
+                src="/layout/logo.png"
+                alt="logo"
+              />
               <span class="text-xl text-primary italic">
                 Reverse:1999 Gnomon
               </span>

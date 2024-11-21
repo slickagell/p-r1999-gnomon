@@ -1,10 +1,11 @@
 export const CARD_TYPE = {
   ATTACK: "attack",
   DEBUFF: "debuff",
-  HEAL: "heal",
+  HEALTH: "health",
   BUFF: "buff",
   CHANNEL: "channel",
   COUNTER: "counter",
+  VERSATILE: "versatile",
 };
 
 export const AFFLATUS_TYPE = {
@@ -127,8 +128,8 @@ export const STATS = {
     unit: "%",
   },
   CRITICAL_DMG: {
-    label: "Critical Damage",
-    keyVal: "criticalDamage",
+    label: "Critical DMG",
+    keyVal: "criticalDmg",
     unit: "%",
   },
   CRITICAL_DEFENSE: {
@@ -142,17 +143,17 @@ export const STATS = {
     unit: "%",
   },
   DMG_BONUS: {
-    label: "Damage Bonus",
+    label: "DMG Bonus",
     keyVal: "dmgBonus",
     unit: "%",
   },
   DMG_REDUCTION: {
-    label: "Damage Taken Reduction",
+    label: "DMG Taken Reduction",
     keyVal: "dmgReduction",
     unit: "%",
   },
   DMG_HEAL: {
-    label: "Damage Heal",
+    label: "DMG Heal",
     keyVal: "dmgHeal",
     unit: "%",
   },
@@ -183,60 +184,3 @@ export const STATS = {
     unit: "%",
   },
 };
-
-export const CHARACTER_RESONANCE = [
-  {
-    blocks: ["0-0", "0-1", "0-2", "1-1"],
-    shape: [
-      [1, 1, 1],
-      [0, 1, 0],
-    ],
-    orientation: 3,
-    pieceId: "RP_T_4_01",
-  },
-  { blocks: ["0-3"], shape: [[1]], orientation: 1, pieceId: "RP_O_1_02" },
-  { blocks: ["0-4"], shape: [[1]], orientation: 1, pieceId: "RP_O_1_02" },
-  {
-    blocks: ["1-3", "1-4", "2-4"],
-    shape: [
-      [1, 1],
-      [0, 1],
-    ],
-    orientation: 6,
-    pieceId: "RP_L_3_01",
-  },
-  {
-    blocks: ["1-2", "2-1", "2-2", "2-3", "3-2"],
-    shape: [
-      [0, 1, 0],
-      [1, 1, 1],
-      [0, 1, 0],
-    ],
-    orientation: 1,
-    pieceId: "RP_X_5_01",
-  },
-  {
-    blocks: ["1-0", "2-0", "3-0", "4-0"],
-    shape: [[1], [1], [1], [1]],
-    orientation: 1,
-    pieceId: "RP_I_4_01",
-  },
-  {
-    blocks: ["3-1", "4-1", "4-2"],
-    shape: [
-      [1, 0],
-      [1, 1],
-    ],
-    orientation: 8,
-    pieceId: "RP_L_3_01",
-  },
-  {
-    blocks: ["3-3", "3-4", "4-3", "4-4"],
-    shape: [
-      [1, 1],
-      [1, 1],
-    ],
-    orientation: 1,
-    pieceId: "RP_O_4_01",
-  },
-];

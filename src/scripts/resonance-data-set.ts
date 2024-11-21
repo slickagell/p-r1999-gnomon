@@ -2,15 +2,14 @@ import {
   IMAGE_DEGREE_ORIENTATIONS,
   IMAGE_ORIENTATION,
   RESONANCE_PIECES,
-  changeImageOrientation,
-  getResonanceBoardRowCol,
-} from "@data/resonance";
+} from "@constants/resonance";
 import { centroid } from "@turf/centroid";
 import { polygon } from "@turf/helpers";
 import Alpine from "alpinejs";
 import type { Feature, MultiPolygon, Polygon, Position } from "geojson";
 import { intersection, union } from "martinez-polygon-clipping";
 import matrix from "matrix-js";
+import { changeImageOrientation, getResonanceBoardRowCol } from "./common";
 
 const BLOCK_SIZE = 30;
 const BOARD_MARGIN_HORIZONTAL = 40;
@@ -170,8 +169,6 @@ export default () => ({
 
       return prev;
     }, []);
-
-    this.resetPiecesQuantity();
 
     this.$nextTick(() => {
       //* Init recommended
@@ -1136,6 +1133,8 @@ export default () => ({
     this.boardRow = row;
 
     this.initCanvas();
+    this.resetPiecesQuantity();
+    this.resetGeneralStats();
     this.initializeData();
   },
 
@@ -1278,6 +1277,7 @@ export default () => ({
     this.selectedRecommended = value;
 
     this.resetPiecesQuantity();
+    this.resetGeneralStats();
     this.initRecommendedResonanceData(resonanceData);
   },
 
@@ -1290,6 +1290,14 @@ export default () => ({
       const pieceAlpineData: any = Alpine.$data(pieceDiv);
       pieceAlpineData.resetQuantity();
     });
+  },
+
+  resetGeneralStats() {
+    const generalStatsDiv = document.querySelector(
+      "#generalStats",
+    ) as HTMLDivElement;
+    const generalStatsAlpineData: any = Alpine.$data(generalStatsDiv);
+    generalStatsAlpineData.resetGeneralStats();
   },
 
   onResizeWindow() {
@@ -1341,5 +1349,6 @@ export default () => ({
 
     this.resetInitialState();
     this.resetPiecesQuantity();
+    this.resetGeneralStats();
   },
 });

@@ -1,5 +1,6 @@
 ---
 import AfflatusIcon from "@components/AfflatusIcon.astro";
+import CustomImage from "@components/CustomImage.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -144,17 +145,18 @@ const characterEntries = await getCollection("characters");
               <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
                 <a class="h-full" href={`/characters/${characterEntry.slug}`}>
                   <div class="h-full relative ">
-                    <div class="absolute -top-1 left-2 w-7 md:w-6 group-hover:-top-2 transition-all">
+                    <div class="absolute -top-1 left-2 md:w-6 group-hover:-top-2 transition-all">
                       <AfflatusIcon type={characterEntry.data.afflatus} />
                     </div>
-
-                    <img
+                    <CustomImage
                       class="w-full"
-                      src={`/data/characters/${characterEntry.data.id}/card.png`}
+                      src={`/images/characters/${characterEntry.data.id}/card.png`}
+                      alt={`character-card-${characterEntry.data.id}`}
                     />
-                    <img
+                    <CustomImage
                       class="absolute bottom-0 left-0 w-full"
-                      src={`/data/characters/common/bg-rare-${characterEntry.data.star}.png`}
+                      src={`/images/characters/common/bg-rare-${characterEntry.data.star}.png`}
+                      alt={`character-bg-rare-${characterEntry.data.star}`}
                     />
 
                     <h5 class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white font-normal">
@@ -172,7 +174,7 @@ const characterEntries = await getCollection("characters");
 </Layout>
 
 <script>
-  import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "@data/character";
+  import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "@constants/character";
   import Alpine from "alpinejs";
 
   window.Alpine = Alpine;
@@ -217,15 +219,15 @@ const characterEntries = await getCollection("characters");
             title.toLowerCase().includes(this.searchText.toLowerCase());
     },
 
-    filterRarity(rarity) {
+    filterRarity(rarity: string) {
       this.rarityFilter = rarity;
     },
 
-    filterAfflatusType(afflatusType) {
+    filterAfflatusType(afflatusType: string) {
       this.afflatusTypeFilter = afflatusType;
     },
 
-    filterDmgType(dmgType) {
+    filterDmgType(dmgType: string) {
       this.dmgTypeFilter = dmgType;
     },
   }));

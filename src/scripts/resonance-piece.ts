@@ -1,11 +1,8 @@
-import { STATS } from "@data/character";
-import {
-  IMAGE_ORIENTATION,
-  RESONANCE_PIECES,
-  changeImageOrientation,
-} from "@data/resonance";
+import { STATS } from "@constants/character";
+import { IMAGE_ORIENTATION, RESONANCE_PIECES } from "@constants/resonance";
 import Alpine from "alpinejs";
 import matrix from "matrix-js";
+import { changeImageOrientation } from "./common";
 
 export default ({
   id,

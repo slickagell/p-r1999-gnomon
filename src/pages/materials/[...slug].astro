@@ -1,6 +1,7 @@
 ---
+import "@styles/markdown-layout.css";
+import CustomImage from "@components/CustomImage.astro";
 import MarkdownBadge from "@components/MarkdownBadge.astro";
-import "../../styles/markdown-layout.css";
 import MarkdownContent from "@components/MarkdownContent.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -35,10 +36,10 @@ const { Content } = await entry.render();
 >
   <h2>{entry.data.title}</h2>
   <div class="paper-texture md:!flex-row !max-w-full gap-4 md:gap-6">
-    <img
-      loading="lazy"
-      class="w-40 h-40 mx-auto shrink-0"
-      src={`/data/materials/${entry.data.image}`}
+    <CustomImage
+      presetWidth={160}
+      class="mx-auto shrink-0"
+      src={`/images/materials/${entry.data.image}`}
       alt={`material ${entry.data.title}`}
     />
     <div class="flex-1">

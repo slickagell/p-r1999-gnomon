@@ -1,4 +1,4 @@
-import { EFFECT_TYPE } from "../src/data/effect.js";
+import { EFFECT_TYPE } from "../src/constants/effect.js";
 
 export default {
   description: "Create a effect content mdx file",
@@ -15,7 +15,7 @@ export default {
       choices: Object.keys(EFFECT_TYPE),
     },
   ],
-  actions: (data) => {
+  actions: () => {
     let defaultFolderPath = "content/effects";
     return [
       {

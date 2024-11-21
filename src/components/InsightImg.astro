@@ -1,4 +1,6 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
+
 interface Props {
   insight?: "1" | "2" | "3";
   classNames?: string;
@@ -8,9 +10,9 @@ const { insight, classNames = "" } = Astro.props;
 ---
 
 <Fragment>
-  <img
+  <CustomImage
     class={classNames}
-    src={`/data/insight/insight-${insight}.png`}
+    src={`/images/insight/insight-${insight}.png`}
     alt={`insight-${insight} icon`}
   />
 </Fragment>

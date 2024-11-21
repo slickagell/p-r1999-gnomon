@@ -1,4 +1,5 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
 import InsightImg from "./InsightImg.astro";
 
 const DEFAULT_RESONATE_LEVEL = 10;
@@ -132,9 +133,9 @@ const initialActiveResonanceLevel =
           class="absolute top-0 left-0 btn btn-ghost p-0 border-0 z-20"
           @click="clearBoard"
         >
-          <img
-            class="w-12"
-            src="/data/resonance/common/clear.png"
+          <CustomImage
+            presetWidth={48}
+            src="/images/resonance/common/clear.png"
             alt="resonance-clear"
           />
         </button>
@@ -143,10 +144,11 @@ const initialActiveResonanceLevel =
           class="absolute pointer-events-auto z-20"
           :style="{top: boardRelativeY + 'px', left: boardRelativeX + 'px'}"
         ></canvas>
-        <img
+        <CustomImage
+          loading="eager"
           class="w-64 md:w-72 select-none pointer-events-none -z-20"
           x-ref="boardImg"
-          src="/data/resonance/common/board.png"
+          src="/images/resonance/common/board.png"
           alt="resonance-board"
         />
         <template x-for="block in blocks" :key="block.id">
@@ -212,7 +214,7 @@ const initialActiveResonanceLevel =
                   <img
                     loading="lazy"
                     :data-piece-img-id="item.id"
-                    :src="'/data/resonance/pieces/' + item.image"
+                    :src="'/images/resonance/pieces/' + item.image"
                     :alt="item.id"
                     class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0`}
                     :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
@@ -260,6 +262,7 @@ const initialActiveResonanceLevel =
 </div>
 
 <script
+  is:inline
   define:vars={{
     resonancePieces,
     maxResonanceLevel,
@@ -280,7 +283,7 @@ const initialActiveResonanceLevel =
 </script>
 
 <script>
-  import { STATS } from "@data/character";
+  import { STATS } from "@constants/character";
   import resonanceDataSet from "@scripts/resonance-data-set";
   import resonancePiece from "@scripts/resonance-piece";
   import resonanceGeneralStats from "@scripts/resonance-general-stats";

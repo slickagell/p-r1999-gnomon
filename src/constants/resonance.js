@@ -1,58 +1,3 @@
-export const getResonanceBoardRowCol = (level) => {
-  switch (level) {
-    case 1:
-    case 2: {
-      return {
-        row: 4,
-        col: 4,
-      };
-    }
-    case 3:
-    case 4: {
-      return {
-        row: 4,
-        col: 5,
-      };
-    }
-    case 5:
-    case 6: {
-      return {
-        row: 5,
-        col: 5,
-      };
-    }
-    case 7:
-    case 8: {
-      return {
-        row: 5,
-        col: 6,
-      };
-    }
-    case 9: {
-      return {
-        row: 6,
-        col: 6,
-      };
-    }
-    case 10:
-    case 11:
-    case 12:
-    case 13:
-    case 14:
-    case 15: {
-      return {
-        row: 7,
-        col: 7,
-      };
-    }
-    default:
-      return {
-        row: 7,
-        col: 7,
-      };
-  }
-};
-
 export const IMAGE_DEGREE_ORIENTATIONS = {
   "0deg": 1,
   "180deg": 3,
@@ -78,21 +23,6 @@ export const IMAGE_ORIENTATION = {
     style: "-rotate-90",
   }, // "rotate(270deg)",
 };
-
-export function changeImageOrientation(previousOrientation) {
-  switch (previousOrientation) {
-    case 1:
-      return 6;
-    case 3:
-      return 8;
-    case 6:
-      return 3;
-    case 8:
-      return 1;
-    default:
-      return 1;
-  }
-}
 
 export const RESONANCE_PIECES = {
   //* X pieces
@@ -156,6 +86,50 @@ export const RESONANCE_PIECES = {
         },
         CRITICAL_DMG: {
           value: 5,
+          unit: "%",
+        },
+      },
+      4: {
+        HP: {
+          value: 465,
+        },
+        ATTACK: {
+          value: 82,
+        },
+        REALITY_DEFENSE: {
+          value: 42,
+        },
+        MENTAL_DEFENSE: {
+          value: 48,
+        },
+        CRITICAL_RATE: {
+          value: 5,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 6,
+          unit: "%",
+        },
+      },
+      5: {
+        HP: {
+          value: 620,
+        },
+        ATTACK: {
+          value: 110,
+        },
+        REALITY_DEFENSE: {
+          value: 56,
+        },
+        MENTAL_DEFENSE: {
+          value: 65,
+        },
+        CRITICAL_RATE: {
+          value: 5,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 7,
           unit: "%",
         },
       },
@@ -232,6 +206,16 @@ export const RESONANCE_PIECES = {
           unit: "%",
         },
       },
+      2: {
+        ATTACK: {
+          value: 1,
+          unit: "%",
+        },
+        CRITICAL_RATE: {
+          value: 2,
+          unit: "%",
+        },
+      },
     },
   },
   RP_L_4_01: {
@@ -254,6 +238,20 @@ export const RESONANCE_PIECES = {
         },
         DMG_REDUCTION: {
           value: 1,
+          unit: "%",
+        },
+      },
+      2: {
+        CRITICAL_RATE: {
+          value: 3,
+          unit: "%",
+        },
+        DMG_BONUS: {
+          value: 2,
+          unit: "%",
+        },
+        DMG_REDUCTION: {
+          value: 1.5,
           unit: "%",
         },
       },
@@ -310,31 +308,31 @@ export const RESONANCE_PIECES = {
           unit: "%",
         },
       },
-      3: {
+      2: {
         CRITICAL_RATE: {
-          value: 3.5,
+          value: 5.5,
           unit: "%",
         },
-        DMG_BONUS: {
-          value: 2.5,
+        CRITICAL_RESIST_RATE: {
+          value: 1.5,
           unit: "%",
         },
-        DMG_REDUCTION: {
-          value: 2,
-          unit: "%",
-        },
-      },
-      4: {
-        CRITICAL_RATE: {
-          value: 4,
-          unit: "%",
-        },
-        DMG_BONUS: {
+        CRITICAL_DMG: {
           value: 3,
           unit: "%",
         },
-        DMG_REDUCTION: {
-          value: 2.5,
+      },
+      3: {
+        CRITICAL_RATE: {
+          value: 6,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 2,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 3.5,
           unit: "%",
         },
       },
@@ -430,17 +428,31 @@ export const RESONANCE_PIECES = {
           unit: "%",
         },
       },
-      3: {
+      2: {
         CRITICAL_RATE: {
-          value: 5,
+          value: 2,
           unit: "%",
         },
         CRITICAL_DEFENSE: {
-          value: 5,
+          value: 1.5,
           unit: "%",
         },
         DMG_REDUCTION: {
-          value: 4.5,
+          value: 2.5,
+          unit: "%",
+        },
+      },
+      3: {
+        CRITICAL_RATE: {
+          value: 2.5,
+          unit: "%",
+        },
+        CRITICAL_DEFENSE: {
+          value: 2,
+          unit: "%",
+        },
+        DMG_REDUCTION: {
+          value: 3,
           unit: "%",
         },
       },
@@ -465,6 +477,34 @@ export const RESONANCE_PIECES = {
         },
         DMG_BONUS: {
           value: 2,
+          unit: "%",
+        },
+      },
+      2: {
+        CRITICAL_RATE: {
+          value: 4,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 4,
+          unit: "%",
+        },
+        DMG_BONUS: {
+          value: 4,
+          unit: "%",
+        },
+      },
+      3: {
+        CRITICAL_RATE: {
+          value: 5,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 5,
+          unit: "%",
+        },
+        DMG_BONUS: {
+          value: 4.5,
           unit: "%",
         },
       },
@@ -591,6 +631,20 @@ export const RESONANCE_PIECES = {
         },
         MENTAL_DEFENSE: {
           value: 2.5,
+          unit: "%",
+        },
+      },
+      3: {
+        ATTACK: {
+          value: 3,
+          unit: "%",
+        },
+        REALITY_DEFENSE: {
+          value: 3,
+          unit: "%",
+        },
+        MENTAL_DEFENSE: {
+          value: 3,
           unit: "%",
         },
       },

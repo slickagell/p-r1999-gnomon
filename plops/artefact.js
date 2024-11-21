@@ -2,7 +2,7 @@ import {
   ARTEFACT_TYPE,
   ARTEFACT_TAG,
   ARTEFACT_RARITY,
-} from "../src/data/artefact.js";
+} from "../src/constants/artefact.js";
 
 export default {
   description: "Create a artefact content mdx file",
@@ -41,7 +41,7 @@ export default {
       message: "Artefact can be crafted by exchange?",
     },
   ],
-  actions: (data) => {
+  actions: () => {
     let defaultFolderPath = "content/artefacts";
     return [
       {

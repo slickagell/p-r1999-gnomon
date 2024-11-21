@@ -1,4 +1,7 @@
 export const EFFECT_TYPE = {
+  DEFINITION: {
+    title: "Definition",
+  },
   COUNTER: {
     title: "Counter",
   },
@@ -14,13 +17,13 @@ export const EFFECT_TYPE = {
   SPECIAL: {
     title: "Special",
   },
-  UNKNOWN: {
-    title: "Unknown",
-  },
-  NONE: {
-    title: "None",
-  },
   CHANNEL: {
     title: "Channel",
+  },
+  SHIELD: {
+    title: "Shield",
+  },
+  UNKNOWN: {
+    title: "Unknown",
   },
 };

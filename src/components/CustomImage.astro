@@ -1,0 +1,90 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { Image, inferRemoteSize } from "astro:assets";
+import imageSize from "image-size";
+import { resolve as resolvePath } from "node:path";
+
+type ImageSize = { width: number; height: number };
+
+type Props = Omit<HTMLAttributes<"img">, "width" | "height"> & {
+  src: string;
+  alt: string;
+  presetWidth?: number;
+  presetHeight?: number;
+  staticDimension?: ImageSize;
+};
+
+const {
+  src,
+  alt,
+  staticDimension = {
+    width: 0,
+    height: 0,
+  },
+  presetWidth,
+  presetHeight,
+  ...attrs
+} = Astro.props;
+
+let imgWidth = staticDimension.width;
+let imgHeight = staticDimension.height;
+
+const tryImageSize = async (src: string) => {
+  let dimensions: { width: number; height: number } = {
+    width: 0,
+    height: 0,
+  };
+  if (typeof src === "string" && src.startsWith("/")) {
+    try {
+      const localImgDimension = imageSize(
+        resolvePath(process.cwd(), `public${src}`)
+      );
+      dimensions = {
+        width: localImgDimension.width || 0,
+        height: localImgDimension.height || 0,
+      };
+    } catch (e) {
+      const { width: imgRemoteOriginWidth, height: imgRemoteOriginHeight } =
+        await inferRemoteSize(src);
+
+      dimensions = {
+        width: imgRemoteOriginWidth,
+        height: imgRemoteOriginHeight,
+      };
+    }
+  }
+  return dimensions;
+};
+
+if (
+  (!staticDimension.width || !staticDimension.height) &&
+  typeof src === "string"
+) {
+  const { width: imgOriginWidth, height: imgOriginHeight } =
+    await tryImageSize(src);
+
+  if (presetWidth && imgOriginWidth > presetWidth) {
+    imgWidth = presetWidth;
+    imgHeight = parseInt(
+      (imgOriginHeight * (imgWidth / imgOriginWidth)).toFixed(2)
+    );
+  } else if (presetHeight && imgOriginHeight > presetHeight) {
+    imgHeight = presetHeight;
+    imgWidth = parseInt(
+      (imgOriginWidth * (imgHeight / imgOriginHeight)).toFixed(2)
+    );
+  } else {
+    imgWidth = imgOriginWidth;
+    imgHeight = imgOriginHeight;
+  }
+}
+---
+
+<Image
+  loading="lazy"
+  {...attrs}
+  src={src}
+  alt={alt}
+  width={imgWidth}
+  height={imgHeight}
+/>

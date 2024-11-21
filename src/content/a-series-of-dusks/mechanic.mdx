@@ -1,3 +1,5 @@
+import CardType from "@components/CardType.astro";
+
 # Mechanic
 
 ## Incantation Syntony
@@ -6,47 +8,62 @@ To trigger Incantation Syntony you need to use at least 3 cards of the **same** 
 
 For example:
 
-<div class="flex gap-4 items-center">
-  <img src="/data/card/attr-attack.png" alt="attr-attack" />
+<div class="flex gap-4 items-center mb-4">
+  <CardType type="ATTACK" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-attack.png" alt="attr-attack" />
+  <CardType type="ATTACK" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-attack.png" alt="attr-attack" />
+  <CardType type="ATTACK" />
 </div>
 
 By playing 3 Attack cards, we will trigger Attack Syntony Lv.1
 
 #### Levels
 
-- <span class="text-2xl mr-2">Lv. 1:</span> **3** same types of Incantation
-- <span class="text-2xl mr-2">Lv. 2:</span> **4** same types of Incantation
-- <span class="text-2xl mr-2">Lv. 3:</span> **5** same types of Incantation
+- <span class="text-xl mr-2">Lv. 1:</span> **3** same types of Incantation
+- <span class="text-xl mr-2">Lv. 2:</span> **4** same types of Incantation
+- <span class="text-xl mr-2">Lv. 3:</span> **5** same types of Incantation
 
 #### Types of Syntony
 
 ##### Attack Syntony
 
 <div class="flex gap-4 items-center">
-  <img src="/data/card/attr-attack.png" alt="attr-attack" />
+  <CardType type="ATTACK" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-attack.png" alt="attr-attack" />
+  <CardType type="ATTACK" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-attack.png" alt="attr-attack" />
+  <CardType type="ATTACK" />
 </div>
 
 ##### Healing Syntony
+<div class="flex gap-4 items-center">
+  <CardType type="HEALTH" />
+  <span class="text-4xl">+</span>
+  <CardType type="HEALTH" />
+  <span class="text-4xl">+</span>
+  <CardType type="HEALTH" />
+</div>
 
 ##### Debuff Syntony
 
 <div class="flex gap-4 items-center">
-  <img src="/data/card/attr-debuff.png" alt="attr-debuff" />
+  <CardType type="DEBUFF" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-debuff.png" alt="attr-debuff" />
+  <CardType type="DEBUFF" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-debuff.png" alt="attr-debuff" />
+  <CardType type="DEBUFF" />
 </div>
 
 ##### Special Syntony
+
+<div class="flex gap-4 items-center">
+  <CardType type="VERSATILE" />
+  <span class="text-4xl">+</span>
+  <CardType type="VERSATILE" />
+  <span class="text-4xl">+</span>
+  <CardType type="VERSATILE" />
+</div>
 
 ## Incantation Resonance
 
@@ -55,11 +72,11 @@ To trigger Incantation Resonance you need to use at least 3 cards of the **diffe
 #### Example
 
 <div class="flex gap-4 items-center">
-  <img src="/data/card/attr-attack.png" alt="attr-attack" />
+  <CardType type="ATTACK" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-buff.png" alt="attr-buff" />
+  <CardType type="BUFF" />
   <span class="text-4xl">+</span>
-  <img src="/data/card/attr-debuff.png" alt="attr-debuff" />
+  <CardType type="DEBUFF" />
 </div>
 
 By playing 3 different types of cards, we will trigger Resonance Lv.1

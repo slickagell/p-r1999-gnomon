@@ -17,4 +17,4 @@ const visitor = (node) => {
   return CONTINUE;
 };
 
-export const effectPlugin = () => (ast) => visit(ast, visitor);
+export const hastPlugin = () => (ast) => visit(ast, visitor);

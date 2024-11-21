@@ -1,10 +1,6 @@
 ---
 import EffectItem from "@components/EffectItem.astro";
-import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
-import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import { EffectVirtualList } from "@components/VirtualList";
-import { EFFECT_TYPE } from "@data/effect";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -79,7 +75,7 @@ const effectEntries = await getCollection("effects");
   </div>
 
   <script>
-    import { EFFECT_TYPE } from "@data/effect";
+    import { EFFECT_TYPE } from "@constants/effect";
     import { nameFilter, typeFilter } from "@stores/effectFilterStore";
     import Alpine from "alpinejs";
 
