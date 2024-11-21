@@ -14,8 +14,7 @@ import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro"
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
-import resonancePieces from "@data/resonance-pieces/37.json";
-import resonanceRecommended from "@data/resonance-recommended/37.json";
+import data from "@data/characters/37.json";
 
 # 37
 
@@ -182,8 +181,8 @@ to **3** stacks; Eureka gained increased to **4**.
 ## Resonance
 <ResonanceBoard
   maxResonanceLevel={15}
-  resonancePieces={resonancePieces}
-  recommendedResonanceList={resonanceRecommended}
+  resonancePieces={data.resonance_pieces}
+  recommendedResonanceList={data.resonance_recommended}
 />
 
 ## Insight Materials

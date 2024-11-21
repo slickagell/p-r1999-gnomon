@@ -4,11 +4,10 @@ import CustomImage from "@components/CustomImage.astro";
 
 interface Props {
   type: keyof typeof AFFLATUS_TYPE;
-  size?: number;
   variant?: "tag";
 }
 
-const { type, size = 28, variant = "tag" } = Astro.props;
+const { type, variant = "tag" } = Astro.props;
 ---
 
 <div>
@@ -19,61 +18,55 @@ const { type, size = 28, variant = "tag" } = Astro.props;
         case "INTELLECT":
           return (
             <CustomImage
+              presetWidth={28}
               src={`/images/afflatus/${assetKey}-intellect.png`}
               alt="Intellect"
               class="aspect-[3/5]"
-              width={size}
-              height={size}
             />
           );
         case "SPIRIT":
           return (
             <CustomImage
+              presetWidth={28}
               src={`/images/afflatus/${assetKey}-spirit.png`}
               alt="Spirit"
               class="aspect-[3/5]"
-              width={size}
-              height={size}
             />
           );
         case "PLANT":
           return (
             <CustomImage
+              presetWidth={28}
               src={`/images/afflatus/${assetKey}-plant.png`}
               alt="Plant"
               class="aspect-[3/5]"
-              width={size}
-              height={size}
             />
           );
         case "BEAST":
           return (
             <CustomImage
+              presetWidth={28}
               src={`/images/afflatus/${assetKey}-beast.png`}
               alt="Beast"
               class="aspect-[3/5]"
-              width={size}
-              height={size}
             />
           );
         case "STAR":
           return (
             <CustomImage
+              presetWidth={28}
               src={`/images/afflatus/${assetKey}-star.png`}
               alt="Star"
               class="aspect-[3/5]"
-              width={size}
-              height={size}
             />
           );
         case "MINERAL":
           return (
             <CustomImage
+              presetWidth={28}
               src={`/images/afflatus/${assetKey}-mineral.png`}
               alt="Mineral"
               class="aspect-[3/5]"
-              width={size}
-              height={size}
             />
           );
         default:

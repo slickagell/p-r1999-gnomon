@@ -146,10 +146,7 @@ const characterEntries = await getCollection("characters");
                 <a class="h-full" href={`/characters/${characterEntry.slug}`}>
                   <div class="h-full relative ">
                     <div class="absolute -top-1 left-2 md:w-6 group-hover:-top-2 transition-all">
-                      <AfflatusIcon
-                        size={28}
-                        type={characterEntry.data.afflatus}
-                      />
+                      <AfflatusIcon type={characterEntry.data.afflatus} />
                     </div>
                     <CustomImage
                       class="w-full"

@@ -1,21 +1,23 @@
 import { STATS } from "@constants/character";
 import Alpine from "alpinejs";
 
-export default () => ({
-  stats: Object.entries(STATS).reduce((prev, stat) => {
-    const [statId, statVal] = stat;
+const initStats = Object.entries(STATS).reduce((prev, stat) => {
+  const [statId, statVal] = stat;
 
-    return {
-      ...prev,
-      [statId]: {
-        label: statVal.label,
-        code: statId,
-        keyVal: statVal.keyVal,
-        value: 0,
-        unit: statVal.unit || "",
-      },
-    };
-  }, {}),
+  return {
+    ...prev,
+    [statId]: {
+      label: statVal.label,
+      code: statId,
+      keyVal: statVal.keyVal,
+      value: 0,
+      unit: statVal.unit || "",
+    },
+  };
+}, {});
+
+export default () => ({
+  stats: JSON.parse(JSON.stringify(initStats)),
 
   updateGeneralStats({
     updateStats,
@@ -45,5 +47,9 @@ export default () => ({
         this.stats[statId].value += statVal.value * -updateQuantity;
       }
     });
+  },
+
+  resetGeneralStats() {
+    this.stats = JSON.parse(JSON.stringify(initStats));
   },
 });

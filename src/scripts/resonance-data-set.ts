@@ -170,8 +170,6 @@ export default () => ({
       return prev;
     }, []);
 
-    this.resetPiecesQuantity();
-
     this.$nextTick(() => {
       //* Init recommended
       if (this.$store.resonance.recommendedResonanceList) {
@@ -1135,6 +1133,8 @@ export default () => ({
     this.boardRow = row;
 
     this.initCanvas();
+    this.resetPiecesQuantity();
+    this.resetGeneralStats();
     this.initializeData();
   },
 
@@ -1277,6 +1277,7 @@ export default () => ({
     this.selectedRecommended = value;
 
     this.resetPiecesQuantity();
+    this.resetGeneralStats();
     this.initRecommendedResonanceData(resonanceData);
   },
 
@@ -1289,6 +1290,14 @@ export default () => ({
       const pieceAlpineData: any = Alpine.$data(pieceDiv);
       pieceAlpineData.resetQuantity();
     });
+  },
+
+  resetGeneralStats() {
+    const generalStatsDiv = document.querySelector(
+      "#generalStats",
+    ) as HTMLDivElement;
+    const generalStatsAlpineData: any = Alpine.$data(generalStatsDiv);
+    generalStatsAlpineData.resetGeneralStats();
   },
 
   onResizeWindow() {
@@ -1340,5 +1349,6 @@ export default () => ({
 
     this.resetInitialState();
     this.resetPiecesQuantity();
+    this.resetGeneralStats();
   },
 });
