@@ -1,4 +1,6 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
+
 interface Props {
   star: number;
 }
@@ -10,8 +12,8 @@ const { star } = Astro.props;
   {
     Array.from({ length: star }).map(() => (
       <div>
-        <img
-          class="w-10 h-10"
+        <CustomImage
+          presetWidth={40}
           src="/images/characters/common/star.png"
           alt="star icon"
         />

@@ -5,9 +5,10 @@ import {
   ARTEFACT_TYPE,
 } from "@constants/artefact";
 import matrix from "matrix-js";
-import EffectTooltip from "./EffectTooltip.astro";
-import MarkdownContent from "./MarkdownContent.astro";
-import MarkdownHighlight from "./MarkdownHighlight.astro";
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 
 interface Props {
   artefactEntry: any;
@@ -31,9 +32,8 @@ const shapeSize = shape.size();
   <div>
     <p class="w-48 text-lg font-bold">{artefactEntry.data.name}</p>
     <div class="flex gap-4">
-      <img
-        loading="lazy"
-        class="w-20 h-20"
+      <CustomImage
+        presetWidth={80}
         src={`/images/a-series-of-dusks/artefacts/${artefactEntry.data.image}`}
         alt={`artefact ${artefactEntry.slug}`}
       />

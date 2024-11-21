@@ -1,7 +1,11 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+---
+
 <footer class="border-t border-primary">
   <div class="footer container items-center p-4">
     <aside class="items-center grid-flow-col">
-      <img class="w-12 h-12" src="/layout/logo.png" alt="logo" />
+      <CustomImage presetWidth={48} src="/layout/logo.png" alt="logo" />
       <p class="text-xl text-primary italic">Reverse:1999 Gnomon</p>
     </aside>
     <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">

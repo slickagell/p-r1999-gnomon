@@ -1,30 +1,74 @@
 ---
 import type { CARD_TYPE } from "@constants/character";
+import CustomImage from "@components/CustomImage.astro";
 
 interface Props {
   type: keyof typeof CARD_TYPE;
+  presetWidth?: number;
 }
 
-const { type } = Astro.props;
+const { type, presetWidth } = Astro.props;
 ---
 
-<div class="pt-4 max-w-32 mx-auto">
+<div class="pt-4">
   {
     (() => {
       switch (type) {
+        case "HEALTH":
+          return (
+            <CustomImage
+              presetWidth={presetWidth ?? 256}
+              src="/images/card/attr-health.png"
+              alt="attr-health icon"
+            />
+          );
         case "DEBUFF":
           return (
-            <img src="/images/card/attr-debuff.png" alt="attr-debuff icon" />
+            <CustomImage
+              presetWidth={presetWidth ?? 256}
+              src="/images/card/attr-debuff.png"
+              alt="attr-debuff icon"
+            />
           );
         case "BUFF":
-          return <img src="/images/card/attr-buff.png" alt="attr-buff icon" />;
+          return (
+            <CustomImage
+              presetWidth={presetWidth ?? 256}
+              src="/images/card/attr-buff.png"
+              alt="attr-buff icon"
+            />
+          );
         case "CHANNEL":
           return (
-            <img src="/images/card/attr-channel.png" alt="attr-channel icon" />
+            <CustomImage
+              presetWidth={presetWidth ?? 256}
+              src="/images/card/attr-channel.png"
+              alt="attr-channel icon"
+            />
+          );
+        case "COUNTER":
+          return (
+            <CustomImage
+              presetWidth={presetWidth ?? 256}
+              src="/images/card/attr-counter.png"
+              alt="attr-counter icon"
+            />
+          );
+        case "VERSATILE":
+          return (
+            <CustomImage
+              presetWidth={presetWidth ?? 256}
+              src="/images/card/attr-versatile.png"
+              alt="attr-versatile icon"
+            />
           );
         default:
           return (
-            <img src="/images/card/attr-attack.png" alt="attr-attack icon" />
+            <CustomImage
+              presetWidth={presetWidth ?? 256}
+              src="/images/card/attr-attack.png"
+              alt="attr-attack icon"
+            />
           );
       }
     })()

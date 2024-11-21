@@ -1,10 +1,11 @@
 export const CARD_TYPE = {
   ATTACK: "attack",
   DEBUFF: "debuff",
-  HEAL: "heal",
+  HEALTH: "health",
   BUFF: "buff",
   CHANNEL: "channel",
   COUNTER: "counter",
+  VERSATILE: "versatile",
 };
 
 export const AFFLATUS_TYPE = {

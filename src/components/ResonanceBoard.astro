@@ -1,4 +1,5 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
 import InsightImg from "./InsightImg.astro";
 
 const DEFAULT_RESONATE_LEVEL = 10;
@@ -132,8 +133,8 @@ const initialActiveResonanceLevel =
           class="absolute top-0 left-0 btn btn-ghost p-0 border-0 z-20"
           @click="clearBoard"
         >
-          <img
-            class="w-12"
+          <CustomImage
+            presetWidth={48}
             src="/images/resonance/common/clear.png"
             alt="resonance-clear"
           />
@@ -143,7 +144,8 @@ const initialActiveResonanceLevel =
           class="absolute pointer-events-auto z-20"
           :style="{top: boardRelativeY + 'px', left: boardRelativeX + 'px'}"
         ></canvas>
-        <img
+        <CustomImage
+          loading="eager"
           class="w-64 md:w-72 select-none pointer-events-none -z-20"
           x-ref="boardImg"
           src="/images/resonance/common/board.png"

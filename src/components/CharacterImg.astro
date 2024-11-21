@@ -1,4 +1,6 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
+
 interface Props {
   variant:
     | "afflatus"
@@ -24,8 +26,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "afflatus": {
           if (!code) return null;
           return (
-            <img
-              class="w-32"
+            <CustomImage
+              presetWidth={128}
               src={`/images/afflatus/af-${code}.png`}
               alt={`afflatus ${code}`}
             />
@@ -34,8 +36,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "dmg-type": {
           if (!code) return null;
           return (
-            <img
-              class="w-14 h-14"
+            <CustomImage
+              presetWidth={56}
               src={`/images/dmg-type/${code}.png`}
               alt={`damage type ${code}`}
             />
@@ -44,8 +46,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "signature": {
           if (!id) return null;
           return (
-            <img
-              class="w-64"
+            <CustomImage
+              presetWidth={256}
               src={`/images/characters/${id}/signature.png`}
               alt="signature"
             />
@@ -54,8 +56,9 @@ const { variant, id = "", code = "" } = Astro.props;
         case "portrait": {
           if (!id) return null;
           return (
-            <img
-              class="w-80"
+            <CustomImage
+              presetWidth={320}
+              loading="eager"
               src={`/images/characters/${id}/portrait.png`}
               alt="portrait"
             />
@@ -64,8 +67,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "udimo": {
           if (!id) return null;
           return (
-            <img
-              class="w-40"
+            <CustomImage
+              presetWidth={160}
               src={`/images/characters/${id}/udimo.png`}
               alt="udimo"
             />
@@ -74,8 +77,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "chibi": {
           if (!id) return null;
           return (
-            <img
-              class="w-24"
+            <CustomImage
+              presetWidth={96}
               src={`/images/characters/${id}/chibi.png`}
               alt="chibi"
             />
@@ -84,8 +87,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "skill-1": {
           if (!id) return null;
           return (
-            <img
-              class="w-48"
+            <CustomImage
+              presetWidth={192}
               src={`/images/characters/${id}/skill-1.png`}
               alt="skill-1"
             />
@@ -94,8 +97,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "skill-2": {
           if (!id) return null;
           return (
-            <img
-              class="w-48"
+            <CustomImage
+              presetWidth={192}
               src={`/images/characters/${id}/skill-2.png`}
               alt="skill-2"
             />
@@ -104,8 +107,8 @@ const { variant, id = "", code = "" } = Astro.props;
         case "unique": {
           if (!id) return null;
           return (
-            <img
-              class="w-48"
+            <CustomImage
+              presetWidth={192}
               src={`/images/characters/${id}/unique.png`}
               alt="unique"
             />

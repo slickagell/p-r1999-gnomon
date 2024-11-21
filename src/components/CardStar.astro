@@ -1,4 +1,6 @@
 ---
+import CustomImage from '@components/CustomImage.astro';
+
 interface Props {
   star: string;
 }
@@ -12,37 +14,37 @@ const { star } = Astro.props;
             case '2':
                 return (
                     <div>
-                        <img class="w-8 h-8" src="/images/card/lv-star.png" alt="lv-star icon"/>
+                        <CustomImage presetWidth={32} src="/images/card/lv-star.png" alt="lv-star icon"/>
                     </div>
                     <div>
-                        <img class="w-8 h-8" src="/images/card/lv-star.png" alt="lv-star icon" />
+                        <CustomImage presetWidth={32} src="/images/card/lv-star.png" alt="lv-star icon" />
                     </div>
                     <div>
-                        <img class="w-8 h-8" src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
+                        <CustomImage presetWidth={32} src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
                     </div>
                 )
             case '3':
                 return (
                     <div>
-                        <img class="w-8 h-8" src="/images/card/lv-star.png" alt="lv-star icon"/>
+                        <CustomImage presetWidth={32} src="/images/card/lv-star.png" alt="lv-star icon"/>
                     </div>
                     <div>
-                        <img class="w-8 h-8" src="/images/card/lv-star.png" alt="lv-star icon" />
+                        <CustomImage presetWidth={32} src="/images/card/lv-star.png" alt="lv-star icon" />
                     </div>
                     <div>
-                        <img class="w-8 h-8" src="/images/card/lv-star.png" alt="lv-star icon" />
+                        <CustomImage presetWidth={32} src="/images/card/lv-star.png" alt="lv-star icon" />
                     </div>
                 )
             default:
                 return (
                         <div>
-                            <img class="w-8 h-8" src="/images/card/lv-star.png" alt="lv-star icon"/>
+                            <CustomImage presetWidth={32} src="/images/card/lv-star.png" alt="lv-star icon"/>
                         </div>
                         <div>
-                            <img class="w-8 h-8" src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
+                            <CustomImage presetWidth={32} src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
                         </div>
                         <div>
-                            <img class="w-8 h-8" src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
+                            <CustomImage presetWidth={32} src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
                         </div>
                     )
         }
