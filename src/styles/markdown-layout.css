@@ -63,3 +63,17 @@ strong {
 ul {
   @apply list-disc list-inside;
 }
+
+.table-of-contents {
+  li {
+    @apply ml-4;
+  }
+
+  div {
+    @apply font-bold inline-block;
+  }
+
+  a {
+    @apply hover:underline hover:text-primary;
+  }
+}
