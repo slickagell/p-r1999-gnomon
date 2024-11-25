@@ -2,6 +2,9 @@ export const EFFECT_TYPE = {
   DEFINITION: {
     title: "Definition",
   },
+  GENERAL: {
+    title: "General",
+  },
   COUNTER: {
     title: "Counter",
   },
