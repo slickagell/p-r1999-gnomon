@@ -37,7 +37,7 @@
       "---",
       "",
       "<Layout",
-      "title=\"${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/} | Reverse 1999 Gnomon\"",
+      "title=\"${TM_DIRECTORY/^.+[\\/\\\\]+(.*)$/${1:/capitalize}/}\"",
       "breadcrumbs={[",
       "{",
       "label: \"Home\",",

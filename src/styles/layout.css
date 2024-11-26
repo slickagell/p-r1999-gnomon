@@ -63,3 +63,41 @@ strong {
 .main-background {
   background-image: linear-gradient(to bottom, #434343, #070707 20rem);
 }
+
+.pagefind-ui {
+  --pagefind-ui-text: var(--bc);
+  --pagefind-ui-background: var(--b1);
+  --pagefind-ui-border-radius: 0;
+  --pagefind-ui-primary: var(--p);
+}
+
+.pagefind-ui-root {
+  min-height: 0;
+  flex: 1;
+}
+
+.pagefind-ui--reset {
+  height: 100%;
+}
+
+.pagefind-ui--reset .pagefind-ui__form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagefind-ui--reset .pagefind-ui__drawer {
+  flex: 1;
+  min-height: 0;
+}
+
+.pagefind-ui--reset .pagefind-ui__results-area {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pagefind-ui--reset .pagefind-ui__results {
+  flex: 1;
+  overflow: auto;
+}
