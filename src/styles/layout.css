@@ -48,6 +48,10 @@ h6 {
   @apply max-w-5xl mx-auto px-4;
 }
 
+.drawer-content {
+  @apply min-w-0 min-h-0;
+}
+
 .paper-texture {
   @apply min-w-40 lg:min-w-60 p-2 relative text-black flex flex-col max-w-80 flex-1 bg-paper border-2 border-line-paper;
 }
@@ -62,4 +66,39 @@ strong {
 
 .main-background {
   background-image: linear-gradient(to bottom, #434343, #070707 20rem);
+}
+
+.pagefind-ui {
+  --pagefind-ui-text: hsl(var(--bc));
+  --pagefind-ui-background: hsl(var(--b1));
+  --pagefind-ui-border-radius: 0;
+  --pagefind-ui-primary: hsl(var(--p));
+}
+
+.pagefind-ui-root {
+  @apply min-h-0 flex-1;
+}
+
+.pagefind-ui--reset {
+  @apply h-full;
+}
+
+.pagefind-ui--reset .pagefind-ui__form {
+  @apply h-full flex flex-col;
+}
+
+.pagefind-ui--reset .pagefind-ui__drawer {
+  @apply flex-1 min-h-0;
+}
+
+.pagefind-ui--reset .pagefind-ui__results-area {
+  @apply h-full flex flex-col;
+}
+
+.pagefind-ui--reset .pagefind-ui__results {
+  @apply flex-1 overflow-y-auto;
+}
+
+.pagefind-ui--reset .pagefind-ui__button {
+  @apply transition-all;
 }

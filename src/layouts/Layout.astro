@@ -1,7 +1,9 @@
 ---
-import CustomImage from "@components/CustomImage.astro";
 import "../styles/layout.css";
+import CustomImage from "@components/CustomImage.astro";
 import Footer from "@layouts/Footer.astro";
+import { processSearchResult } from "@scripts/common";
+import Search from "astro-pagefind/components/Search";
 
 interface Props {
   title: string;
@@ -46,7 +48,7 @@ const menu = [
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
+    <title data-pagefind-meta="title">{`${title} | Reverse:1999 Gnomon`}</title>
   </head>
   <body>
     <div class="drawer min-h-screen">
@@ -89,7 +91,7 @@ const menu = [
             </a>
           </div>
           <div class="flex-none hidden lg:block">
-            <ul class="menu menu-horizontal py-1">
+            <ul class="menu menu-horizontal py-1 items-center">
               <!-- Navbar menu content here -->
               {
                 menu.map((item) => (
@@ -98,10 +100,16 @@ const menu = [
                   </li>
                 ))
               }
+              <button
+                class="btn btn-outline btn-secondary btn-sm"
+                onclick="searchModal.showModal()"
+              >
+                Search
+              </button>
             </ul>
           </div>
         </div>
-        <main class="container w-screen flex-1 pt-6 pb-20">
+        <main class="container flex-1 pt-6 pb-20">
           <!-- Page content here -->
           {
             breadcrumbs && (
@@ -126,17 +134,45 @@ const menu = [
       <div class="drawer-side z-50">
         <label for="sidebar" aria-label="close sidebar" class="drawer-overlay"
         ></label>
-        <ul class="menu p-4 w-80 min-h-full bg-base-200">
-          <!-- Sidebar content here -->
-          {
-            menu.map((item) => (
-              <li>
-                <a href={item.href}>{item.title}</a>
-              </li>
-            ))
-          }
-        </ul>
+        <div class="menu p-4 w-80 min-h-full bg-base-200 justify-between">
+          <ul class="flex-1">
+            <!-- Sidebar content here -->
+            {
+              menu.map((item) => (
+                <li>
+                  <a href={item.href}>{item.title}</a>
+                </li>
+              ))
+            }
+          </ul>
+          <button
+            class="btn btn-outline btn-secondary btn-sm"
+            onclick="searchModal.showModal()"
+          >
+            Search
+          </button>
+        </div>
       </div>
     </div>
+    <dialog id="searchModal" class="modal">
+      <div
+        class="modal-box w-full h-full max-w-full max-h-screen bg-base-100/80 backdrop-blur-sm flex flex-col overflow-y-visible"
+      >
+        <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            >✕</button
+          >
+        </form>
+        <h3>Search</h3>
+        <Search
+          id="search"
+          className="pagefind-ui-root"
+          uiOptions={{
+            showImages: false,
+            processResult: (result) => processSearchResult(result),
+          }}
+        />
+      </div>
+    </dialog>
   </body>
 </html>
