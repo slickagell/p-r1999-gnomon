@@ -67,3 +67,8 @@ export function changeImageOrientation(previousOrientation) {
       return 1;
   }
 }
+
+export function processSearchResult(result) {
+  result.meta.title = result.meta.title.replace(" | Reverse:1999 Gnomon", "");
+  return result;
+}
