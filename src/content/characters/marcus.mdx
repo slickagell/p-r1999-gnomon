@@ -10,8 +10,11 @@ specialties: ["DPS", "BURST_DMG"]
 isLimited: false
 ---
 
+import CardInfo from "@components/CardInfo.astro";
 import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 
 # Marcus
@@ -33,10 +36,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     </div>
 
     <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {
-              frontmatter.specialties.map((specialty) => (
-                <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
-            ))}
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>))}
     </div>
 
     <div class="mt-4">
@@ -83,6 +83,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
   </div>
 </div>
 
+:::toc
 ## Arcane Skills
 
 ### Reading Class
@@ -92,18 +93,18 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-1" id={frontmatter.id} />
   </div>
 
-  :::card-info{star="1" type="ATTACK" note="Focus."}
-  1-target attack. Deals **200%** Mental DMG.
-  :::
+  <CardInfo star="1" type="ATTACK" note="Focus.">
+    1-target attack. Deals **200%** Mental DMG.
+  </CardInfo>
 
-  :::card-info{star="2" type="ATTACK" note="Focus. Mark the sentence."}
-  1-target attack. Deals **330%** Mental DMG.
-  :::
+  <CardInfo star="2" type="ATTACK" note="Focus. Mark the sentence.">
+    1-target attack. Deals **330%** Mental DMG.
+  </CardInfo>
 
-  :::card-info{star="3" type="ATTACK" note="Focus. Mark the sentence, and the next one."}
-  1-target attack. Deals **450%** Mental DMG
-  Penetration Rate **+30%** for this attack.
-  :::
+  <CardInfo star="3" type="ATTACK" note="Focus. Mark the sentence, and the next one.">
+    1-target attack. Deals **450%** Mental DMG
+    Penetration Rate **+30%** for this attack.
+  </CardInfo>
 </div>
 
 ### From the Lantern
@@ -113,17 +114,17 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-2" id={frontmatter.id} />
   </div>
 
-  :::card-info{star="1" type="ATTACK" note="She searches the waters."}
-  Mass attack. Deals **130%** Mental DMG to 2 enemies. Deals Mental DMG **+30%** to the target in the :effect{code="ANNOTATE"} status.
-  :::
+  <CardInfo star="1" type="ATTACK" note="She searches the waters.">
+    Mass attack. Deals **130%** Mental DMG to 2 enemies. Deals Mental DMG **+30%** to the target in the :effect{code="ANNOTATE"} status.
+  </CardInfo>
 
-  :::card-info{star="2" type="DEBUFF" note="She searches the waters, looking for shadows."}
-  Mass attack. Deals **200%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="WEAKNESS"} on the targets hit. Deals Mental DMG **+40%** to the target in the :effect{code="ANNOTATE"} status.
-  :::
+  <CardInfo star="2" type="DEBUFF" note="She searches the waters, looking for shadows.">
+    Mass attack. Deals **200%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="WEAKNESS"} on the targets hit. Deals Mental DMG **+40%** to the target in the :effect{code="ANNOTATE"} status.
+  </CardInfo>
 
-  :::card-info{star="3" type="DEBUFF" note="She searches the waters, looking for shadows to reveal with light."}
-  Mass attack. Deals **300%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="WEAKNESS"} on the targets hit. Deals Mental DMG **+75%** to the target in the :effect{code="ANNOTATE"} status.
-  :::
+  <CardInfo star="3" type="DEBUFF" note="She searches the waters, looking for shadows to reveal with light.">
+    Mass attack. Deals **300%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="WEAKNESS"} on the targets hit. Deals Mental DMG **+75%** to the target in the :effect{code="ANNOTATE"} status.
+  </CardInfo>
 </div>
 
 ### Next Chapter
@@ -133,9 +134,9 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="unique" id={frontmatter.id} />
   </div>
 
-  :::card-info{type="ATTACK" note="When she reads, even an eternity seems like an instant."}
-  Mass attack. Deals **250%** Mental DMG to all enemies and Mental DMG **+200%** to the target with :effect{code="ANNOTATE"} status. Gain 1 stack of :effect{code="PREPARATION_MARCUS"}, and grant Eureka +2 to self.
-  :::
+  <CardInfo type="ATTACK" note="When she reads, even an eternity seems like an instant.">
+    Mass attack. Deals **250%** Mental DMG to all enemies and Mental DMG **+200%** to the target with :effect{code="ANNOTATE"} status. Gain 1 stack of :effect{code="PREPARATION_MARCUS"}, and grant Eureka +2 to self.
+  </CardInfo>
 </div>
 
 ## Inheritance
@@ -143,7 +144,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 ### Read the Page
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="1"}
+  <InsightImg classNames="w-8 mr-2" insight="1" />
 
   ##### Insight 1
 </div>
@@ -155,7 +156,7 @@ At the start of the round, if no enemy has the :effect{code="ANNOTATE"} status, 
 At the start of the round, if holding 2 or more Eureka, spend as many Eureka as possible to randomly upgrade own incantations, using 2 Eureka to upgrade from rank 1 to 2, and 3 Eureka to upgrade from rank 2 to 3, prioritizing lower ranked incantations.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="2"}
+  <InsightImg classNames="w-8 mr-2" insight="2" />
 
   ##### Insight 2
 </div>
@@ -163,7 +164,7 @@ At the start of the round, if holding 2 or more Eureka, spend as many Eureka as 
 ATK **+5%** when the caster enters battle.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="3"}
+  <InsightImg classNames="w-8 mr-2" insight="3" />
 
   ##### Insight 3
 </div>
@@ -172,19 +173,19 @@ When entering battle, gain Eureka +1. At the start of the round, gain Eureka +1.
 
 ## Portray
 
-:span[Lv. 1:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 1:</span>
 *Read the Page*: When entering battle, the Eureka gained is increased to 3.
 
-:span[Lv. 2:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 2:</span>
 *Read the Page*: Now only costs 2 Eureka to upgrade incantations from rank 2 to rank 3.
 
-:span[Lv. 3:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 3:</span>
 *From the Lantern*: At incantation rank **1/2/3**, the Mental DMG is increased to **160/270/420%**.
 
-:span[Lv. 4:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 4:</span>
 *Read the Page*: At the start of the round, the Eureka gained is increased to 2
 
-:span[Lv. 5:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 5:</span>
 *Reading Class*: At incantation rank **1/2/3**, the Mental DMG is increased to **230/380/520%**.
 
 ## Insight Materials
@@ -192,40 +193,50 @@ When entering battle, gain Eureka +1. At the start of the round, gain Eureka +1.
 <div class="flex flex-col md:flex-row flex-wrap  justify-center">
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="1"}
+      <InsightImg classNames="w-6 mr-2" insight="1" />
 
       ##### Insight 1
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="18000"}
-    :material{code="PAGE_OF_PLANTAL_VIMEN" variant="small" require="6"}
-    :material{code="CICADA_WINGS" variant="small" require="6"}
-    :material{code="TREMBLING_TOOTH" variant="small" require="5"}
+    <Material code="SHARPODONTY" require="18000" />
+
+    <Material code="PAGE_OF_PLANTAL_VIMEN" require="6" />
+
+    <Material code="CICADA_WINGS" require="6" />
+
+    <Material code="TREMBLING_TOOTH" require="5" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="2"}
+      <InsightImg classNames="w-6 mr-2" insight="2" />
 
       ##### Insight 2
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="40000"}
-    :material{code="SCROLL_OF_PLANTAL_VIMEN" variant="small" require="10"}
-    :material{code="PROPHETIC_BIRD" variant="small" require="6"}
-    :material{code="SOLIDUS" variant="small" require="3"}
+    <Material code="SHARPODONTY" require="40000" />
+
+    <Material code="SCROLL_OF_PLANTAL_VIMEN" require="10" />
+
+    <Material code="PROPHETIC_BIRD" require="6" />
+
+    <Material code="SOLIDUS" require="3" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="3"}
+      <InsightImg classNames="w-6 mr-2" insight="3" />
 
       ##### Insight 3
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="200000"}
-    :material{code="TOME_OF_PLANTAL_VIMEN" variant="small" require="16"}
-    :material{code="FRUIT_OF_GOOD_AND_EVIL" variant="small" require="3"}
-    :material{code="GOLDEN_COMPASS" variant="small" require="5"}
+    <Material code="SHARPODONTY" require="200000" />
+
+    <Material code="TOME_OF_PLANTAL_VIMEN" require="16" />
+
+    <Material code="FRUIT_OF_GOOD_AND_EVIL" require="3" />
+
+    <Material code="GOLDEN_COMPASS" require="5" />
   </div>
 </div>
+:::

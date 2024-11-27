@@ -1,15 +1,12 @@
 ---
-import "@styles/markdown-layout.css";
-import CardInfo from "@components/CardInfo.astro";
 import EffectTooltip from "@components/EffectTooltip.astro";
-import InsightImg from "@components/InsightImg.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
-import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Tooltip from "@components/Tooltip.astro";
 import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -46,9 +43,6 @@ const { Content } = await entry.render();
       effect: EffectTooltip,
       strong: MarkdownHighlight,
       tooltip: Tooltip,
-      material: Material,
-      "card-info": CardInfo,
-      "insight-img": InsightImg,
       resonance: ResonanceBoard,
       toc: TableOfContents,
     }}

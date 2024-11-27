@@ -4,6 +4,6 @@
     "editor.defaultFormatter": "unifiedjs.vscode-remark"
   },
   "[mdx]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-remark"
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
   }
 }

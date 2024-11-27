@@ -13,6 +13,8 @@ isLimited: false
 import CardInfo from "@components/CardInfo.astro";
 import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 import resonance from "@data/resonance/characters/37.json";
@@ -36,10 +38,7 @@ import resonance from "@data/resonance/characters/37.json";
     </div>
 
     <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {
-              frontmatter.specialties.map((specialty) => (
-                <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
-            ))}
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>))}
     </div>
 
     <div class="mt-4">
@@ -140,10 +139,10 @@ import resonance from "@data/resonance/characters/37.json";
     <CharacterImg variant="unique" id={frontmatter.id} />
   </div>
 
-  :::card-info{type="BUFF" note="It is the omega, the final answer, the result of all calculations."}
-  Mass Buff. Grants 2 stacks of :effect{code="NUMERAL_PERCEPTION"} to all allies,
-  gains 2 stacks of :effect{code="ENLIGHTENMENT"}, and gains Eureka +2.
-  :::
+  <CardInfo type="BUFF" note="It is the omega, the final answer, the result of all calculations.">
+    Mass Buff. Grants 2 stacks of :effect{code="NUMERAL_PERCEPTION"} to all allies,
+    gains 2 stacks of :effect{code="ENLIGHTENMENT"}, and gains Eureka +2.
+  </CardInfo>
 </div>
 
 ## Inheritance
@@ -151,7 +150,7 @@ import resonance from "@data/resonance/characters/37.json";
 ### Calculation of Genesis
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="1"}
+  <InsightImg classNames="w-8 mr-2" insight="1" />
 
   ##### Insight 1
 </div>
@@ -159,7 +158,7 @@ import resonance from "@data/resonance/characters/37.json";
 After using an Incantation, gains Eureka +1. After another ally takes an extra action, gains Eureka +1. When at 5 Eureka, consumes 5 Eureka to cast :tooltip[Mass attack. Deals **120%** Mental DMG plus (ATK x**40%**) Genesis DMG to all enemies.]{title="[Supplementary Formula]"}. This attack is regarded as 1 follow-up attack and does not grant Eureka.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="2"}
+  <InsightImg classNames="w-8 mr-2" insight="2" />
 
   ##### Insight 2
 </div>
@@ -167,7 +166,7 @@ After using an Incantation, gains Eureka +1. After another ally takes an extra a
 Critical DMG **+15%** when the caster enters battle.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="3"}
+  <InsightImg classNames="w-8 mr-2" insight="3" />
 
   ##### Insight 3
 </div>
@@ -176,23 +175,23 @@ When entering battle, Critical Rate **+20%**. All Genesis DMG applied through In
 
 ## Portray
 
-:span[Lv. 1:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 1:</span>
 *Calculation of Genesis*: When entering battle, Critical Rate boost increased to **40%**.
 
-:span[Lv. 2:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 2:</span>
 *Calculation of Genesis*: :effect{code="NUMERAL_PERCEPTION"}
 's Mental DMG is increased to **180%**; additional Genesis DMG increased to (ATKx**60%**).
 
-:span[Lv. 3:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 3:</span>
 *Kingdom of Geometry*: :effect{code="ENLIGHTENMENT"} increased
 to **3** stacks; Eureka gained increased to **3**.
 
-:span[Lv. 4:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 4:</span>
 *Calculation of Genesis*: :tooltip[Mass attack. Deals **120%** Mental DMG plus (ATK x**40%**) Genesis DMG to all enemies.]{title="[Supplementary Formula]"}
 's Mental DMG is increased to **240%**; additional Genesis DMG increased to
 (ATKx**80%**).
 
-:span[Lv. 5:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 5:</span>
 *Kingdom of Geometry*: :effect{code="NUMERAL_PERCEPTION"} increased
 to **3** stacks; Eureka gained increased to **4**.
 
@@ -205,40 +204,49 @@ to **3** stacks; Eureka gained increased to **4**.
 <div class="flex flex-col md:flex-row flex-wrap  justify-center">
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="1"}
+      <InsightImg classNames="w-6 mr-2" insight="1" />
 
       ##### Insight 1
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="18000"}
-    :material{code="PAGE_OF_STARLIT_ASCENT" variant="small" require="6"}
-    :material{code="LIQUEFIED_TERROR" variant="small" require="5"}
-    :material{code="MAGNESIA_CRYSTAL" variant="small" require="6"}
+    <Material code="SHARPODONTY" require="18000" />
+
+    <Material code="PAGE_OF_STARLIT_ASCENT" require="6" />
+
+    <Material code="LIQUEFIED_TERROR" require="5" />
+
+    <Material code="MAGNESIA_CRYSTAL" require="6" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="2"}
+      <InsightImg classNames="w-6 mr-2" insight="2" />
 
       ##### Insight 2
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="40000"}
-    :material{code="SCROLL_OF_STARLIT_ASCENT" variant="small" require="10"}
-    :material{code="WINGED_KEY" variant="small" require="6"}
-    :material{code="ESOTERIC_BONES" variant="small" require="6"}
+    <Material code="SHARPODONTY" require="40000" />
+
+    <Material code="SCROLL_OF_STARLIT_ASCENT" require="10" />
+
+    <Material code="WINGED_KEY" require="6" />
+
+    <Material code="ESOTERIC_BONES" require="6" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="3"}
+      <InsightImg classNames="w-6 mr-2" insight="3" />
 
       ##### Insight 3
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="200000"}
-    :material{code="TOME_OF_STARLIT_ASCENT" variant="small" require="16"}
-    :material{code="SERPENT_SCEPTER" variant="small" require="3"}
-    :material{code="BOGEYMAN" variant="small" require="5"}
+    <Material code="SHARPODONTY" require="200000" />
+
+    <Material code="TOME_OF_STARLIT_ASCENT" require="16" />
+
+    <Material code="SERPENT_SCEPTER" require="3" />
+
+    <Material code="BOGEYMAN" require="5" />
   </div>
 </div>

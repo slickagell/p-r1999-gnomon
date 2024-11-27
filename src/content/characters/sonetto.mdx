@@ -10,8 +10,11 @@ specialties: ["DPS", "SUPPORT", "CONTROL"]
 isLimited: false
 ---
 
+import CardInfo from "@components/CardInfo.astro";
 import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 
 # Sonetto
@@ -33,10 +36,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     </div>
 
     <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {
-              frontmatter.specialties.map((specialty) => (
-                <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
-            ))}
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>))}
     </div>
 
     <div class="mt-4">
@@ -83,6 +83,8 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
   </div>
 </div>
 
+::toc
+
 ## Arcane Skills
 
 ### Commandment V
@@ -92,17 +94,17 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-1" id={frontmatter.id} />
   </div>
 
-  :::card-info{star="1" type="ATTACK" note="Sloth will lead to physical debilitation."}
-  1-target attack. Deals **200%** Reality DMG.
-  :::
+  <CardInfo star="1" type="ATTACK" note="Sloth will lead to physical debilitation.">
+    1-target attack. Deals **200%** Reality DMG.
+  </CardInfo>
 
-  :::card-info{star="2" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it."}
-  1-target attack. Deals **200%** Reality DMG and inflicts :effect{code="DISARM"} status for 1 round.
-  :::
+  <CardInfo star="2" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it.">
+    1-target attack. Deals **200%** Reality DMG and inflicts :effect{code="DISARM"} status for 1 round.
+  </CardInfo>
 
-  :::card-info{star="3" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it, but it doesn't seem to work."}
-  1-target attack. Deals **300%** Reality DMG and inflicts :effect{code="DISARM"} status for 2 rounds.
-  :::
+  <CardInfo star="3" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it, but it doesn't seem to work.">
+    1-target attack. Deals **300%** Reality DMG and inflicts :effect{code="DISARM"} status for 2 rounds.
+  </CardInfo>
 </div>
 
 ### Exhortations IX
@@ -112,17 +114,17 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-2" id={frontmatter.id} />
   </div>
 
-  :::card-info{star="1" type="BUFF" note="A merciful heart will foster loyalty."}
-  Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
-  :::
+  <CardInfo star="1" type="BUFF" note="A merciful heart will foster loyalty.">
+    Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
+  </CardInfo>
 
-  :::card-info{star="2" type="BUFF" note="A merciful heart will foster loyalty. It works all the time."}
-  Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
-  :::
+  <CardInfo star="2" type="BUFF" note="A merciful heart will foster loyalty. It works all the time.">
+    Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
+  </CardInfo>
 
-  :::card-info{star="3" type="BUFF" note="A merciful heart will foster loyalty. Of course, you won't have to do it all the time."}
-  Mass buff. DMG Dealt **+25%** and DMG Taken **-25%** for all allies and Penetration Rate **+10%** for the caster. Lasts 3 rounds.
-  :::
+  <CardInfo star="3" type="BUFF" note="A merciful heart will foster loyalty. Of course, you won't have to do it all the time.">
+    Mass buff. DMG Dealt **+25%** and DMG Taken **-25%** for all allies and Penetration Rate **+10%** for the caster. Lasts 3 rounds.
+  </CardInfo>
 </div>
 
 ### Unrestricted Chant
@@ -132,9 +134,9 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="unique" id={frontmatter.id} />
   </div>
 
-  :::card-info{star="1" type="ATTACK" note="It is the omega, the final answer, the result of all calculations."}
-  Mass attack. Deals **300%** Reality DMG to all enemies. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack enjoys Penetration Rate **+8%** and deals **100%** more Reality DMG.
-  :::
+  <CardInfo type="ATTACK" note="It is the omega, the final answer, the result of all calculations.">
+    Mass attack. Deals **300%** Reality DMG to all enemies. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack enjoys Penetration Rate **+8%** and deals **100%** more Reality DMG.
+  </CardInfo>
 </div>
 
 ## Inheritance
@@ -142,7 +144,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 ### Search the Poems
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="1"}
+  <InsightImg classNames="w-8 mr-2" insight="1" />
 
   ##### Insight 1
 </div>
@@ -150,7 +152,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Dealt **+15%**.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="2"}
+  <InsightImg classNames="w-8 mr-2" insight="2" />
 
   ##### Insight 2
 </div>
@@ -158,7 +160,7 @@ When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Dealt **+15
 Reality DEF and Mental DEF **+10%** when the caster enters battle.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight="3"}
+  <InsightImg classNames="w-8 mr-2" insight="3" />
 
   ##### Insight 3
 </div>
@@ -167,19 +169,19 @@ When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Resist
 
 ## Portray
 
-:span[Lv. 1:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 1:</span>
 *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+16%**.
 
-:span[Lv. 2:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 2:</span>
 *Commandment V*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Reality DMG.
 
-:span[Lv. 3:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 3:</span>
 *Exhortation IX*'s effect changes to: Penetration Rate **+15%**.
 
-:span[Lv. 4:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 4:</span>
 *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+24%**.
 
-:span[Lv. 5:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 5:</span>
 *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+32%**.
 
 ## Insight Materials
@@ -187,40 +189,51 @@ When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Resist
 <div class="flex flex-col md:flex-row flex-wrap  justify-center">
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="1"}
+      <InsightImg classNames="w-6 mr-2" insight="1" />
 
       ##### Insight 1
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="12000"}
-    :material{code="PAGE_OF_MINERAL_WEALTH" variant="small" require="6"}
-    :material{code="ESOTERIC_BONES" variant="small" require="3"}
-    :material{code="MAGNESIA_CRYSTAL" variant="small" require="4"}
+    <Material code="SHARPODONTY" require="12000" />
+
+    <Material code="PAGE_OF_MINERAL_WEALTH" require="6" />
+
+    <Material code="ESOTERIC_BONES" require="3" />
+
+    <Material code="MAGNESIA_CRYSTAL" require="4" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="2"}
+      <InsightImg classNames="w-6 mr-2" insight="2" />
 
       ##### Insight 2
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="30000"}
-    :material{code="SCROLL_OF_MINERAL_WEALTH" variant="small" require="8"}
-    :material{code="ROUGH_SILVER_INGOT" variant="small" require="4"}
-    :material{code="PROPHETIC_BIRD" variant="small" require="3"}
+    <Material code="SHARPODONTY" require="30000" />
+
+    <Material code="SCROLL_OF_MINERAL_WEALTH" require="8" />
+
+    <Material code="ROUGH_SILVER_INGOT" require="4" />
+
+    <Material code="PROPHETIC_BIRD" require="3" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight="3"}
+      <InsightImg classNames="w-6 mr-2" insight="3" />
 
       ##### Insight 3
     </div>
 
-    :material{code="SHARPODONTY" variant="small" require="120000"}
-    :material{code="TOME_OF_MINERAL_WEALTH" variant="small" require="12"}
-    :material{code="PLATINUM_OUIJA" variant="small" require="4"}
-    :material{code="MISTILTEINN" variant="small" require="2"}
+    <Material code="SHARPODONTY" require="120000" />
+
+    <Material code="TOME_OF_MINERAL_WEALTH" require="12" />
+
+    <Material code="PLATINUM_OUIJA" require="4" />
+
+    <Material code="MISTILTEINN" require="2" />
   </div>
 </div>
+
+\:::
