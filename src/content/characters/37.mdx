@@ -10,11 +10,12 @@ specialties: ["DPS", "SUPPORT", "FOLLOW_UP_ATTACK"]
 isLimited: false
 ---
 
+import CardInfo from "@components/CardInfo.astro";
 import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
-import ResonanceBoard from "@components/ResonanceBoard.astro"
+import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
-import data from "@data/characters/37.json";
+import resonance from "@data/resonance/characters/37.json";
 
 # 37
 
@@ -83,19 +84,23 @@ import data from "@data/characters/37.json";
   <div class="basis-full lg:basis-auto shrink-0">
     <CharacterImg variant="skill-1" id={frontmatter.id} />
   </div>
-
-:::card-info{cAttr="star='1' type='ATTACK' note='An obvious triangle.'"}
-1-target attack. Deals **140%** Mental DMG plus (ATK x**40%**) Genesis DMG.
-:::
-
-:::card-info{star='2' type="ATTACK" note="An obvious triangle, speaking out against overlooked injustices."}
-1-target attack. Deals **210%** Mental DMG plus (ATK x**60%**) Genesis DMG.
-:::
-
-:::card-info{star='3' type="ATTACK" note="An obvious triangle, speaking out against overlooked injustices, the evidence is as follows."}
-1-target attack. Deals **350%** Mental DMG plus (ATK x**100%**) Genesis DMG.
-:::
-
+  <CardInfo star="1" type="ATTACK" note="An obvious triangle.">
+    1-target attack. Deals **140%** Mental DMG plus (ATK x**40%**) Genesis DMG.
+  </CardInfo>
+  <CardInfo
+    star="2"
+    type="ATTACK"
+    note="An obvious triangle, speaking out against overlooked injustices."
+  >
+    1-target attack. Deals **210%** Mental DMG plus (ATK x**60%**) Genesis DMG.
+  </CardInfo>
+  <CardInfo
+    star="3"
+    type="ATTACK"
+    note="An obvious triangle, speaking out against overlooked injustices, the evidence is as follows."
+  >
+    1-target attack. Deals **350%** Mental DMG plus (ATK x**100%**) Genesis DMG.
+  </CardInfo>
 </div>
 
 ### Curve Mapping
@@ -104,21 +109,26 @@ import data from "@data/characters/37.json";
   <div class="basis-full lg:basis-auto shrink-0">
     <CharacterImg variant="skill-2" id={frontmatter.id} />
   </div>
-  :::card-info{star='1' type="ATTACK" note="Such beautiful form."}
+  <CardInfo star="1" type="ATTACK" note="Such beautiful form.">
     Mass Attack. Deals **70%** Mental DMG plus (ATK x**40**%) Genesis DMG to 2
     enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
-  :::
-
-:::card-info{star='2' type="ATTACK" note="Such beautiful form. Desirable in dimensions and fractals."}
-Mass Attack. Deals **105%** Mental DMG plus (ATK x**60**%) Genesis DMG to 2
-enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
-:::
-
-:::card-info{star='3' type="ATTACK" note="Such beautiful form. Desirable in dimensions and fractals — a truth agreed upon by all."}
-Mass Attack. Deals **175%** Mental DMG plus (ATK x**100**%) Genesis DMG to 2
-enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
-:::
-
+  </CardInfo>
+  <CardInfo
+    star="2"
+    type="ATTACK"
+    note="Such beautiful form. Desirable in dimensions and fractals."
+  >
+    Mass Attack. Deals **105%** Mental DMG plus (ATK x**60**%) Genesis DMG to 2
+    enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
+  </CardInfo>
+  <CardInfo
+    star="3"
+    type="ATTACK"
+    note="Such beautiful form. Desirable in dimensions and fractals — a truth agreed upon by all."
+  >
+    Mass Attack. Deals **175%** Mental DMG plus (ATK x**100**%) Genesis DMG to 2
+    enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
+  </CardInfo>
 </div>
 
 ### Kingdom of Geometry
@@ -181,10 +191,11 @@ _Kingdom of Geometry_: :effect{code="NUMERAL_PERCEPTION"} increased
 to **3** stacks; Eureka gained increased to **4**.
 
 ## Resonance
+
 <ResonanceBoard
   maxResonanceLevel={15}
-  resonancePieces={data.resonance_pieces}
-  recommendedResonanceList={data.resonance_recommended}
+  resonancePieces={resonance.resonance_pieces}
+  recommendedResonanceList={resonance.resonance_recommended}
 />
 
 ## Insight Materials
@@ -221,4 +232,3 @@ to **3** stacks; Eureka gained increased to **4**.
     :material{code="BOGEYMAN" variant="small" require="5"}
   </div>
 </div>
-
