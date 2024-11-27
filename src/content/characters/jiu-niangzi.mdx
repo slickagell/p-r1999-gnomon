@@ -24,47 +24,59 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
   <div>
     <div class="flex gap-8 items-center justify-center md:justify-start">
       <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
       <div class="flex gap-2 items-center">
         <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
         ##### {DMG_TYPE[frontmatter.dmgType].title}
       </div>
     </div>
+
     <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
       {
-        frontmatter.specialties.map((specialty) => (
-          <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
-      ))}
+              frontmatter.specialties.map((specialty) => (
+                <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
+            ))}
     </div>
+
     <div class="mt-4">
       The work of Mixed. Era unknown, time of exhibition unknown. Possibly created in early spring. Originally exhibited in Pei City, China, the exhibit later traveled to the steppes of Central Asia. Now in the St. Pavlov Foundation.
 
       ###### Medium
+
       The Tipsy Jade
 
       ###### Afflatus
-      The Unyielding Nature Of Rock [Mineral] Liquor Maker
+
+      The Unyielding Nature Of Rock \[Mineral] Liquor Maker
 
       ###### Fragrance note
+
       Oriental Spices Curcuma Aromatica, Sweet Fermented Rice, Sichuan Pepper
 
       ###### Dimensions
-      62 13/64 x 25 25/64 x7 3/32 in.
 
+      62 13/64 x 25 25/64 x7 3/32 in.
     </div>
+
     <div class="mt-4 flex gap-4 justify-center">
       <CharacterImg variant="signature" id={frontmatter.id} />
     </div>
-
   </div>
+
   <div class="flex flex-col items-center shrink-0">
     <CharacterImg variant="portrait" id={frontmatter.id} />
+
     <div class="mt-5 flex gap-6 justify-center items-end">
       <div class="text-center">
         <CharacterImg variant="udimo" id={frontmatter.id} />
+
         Udimo
       </div>
+
       <div class="text-center">
         <CharacterImg variant="chibi" id={frontmatter.id} />
+
         Chibi
       </div>
     </div>
@@ -80,24 +92,17 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-1" id={frontmatter.id} />
   </div>
 
-:::card-info{star='1' type="ATTACK" note="A tradition to show camaraderie."}
+  :::card-info{star="1" type="ATTACK" note="A tradition to show camaraderie."}
+  1-target attack. Deals **160%** Reality DMG. While in :effect{code="LIQUOR"} status, randomly consumes 1-3 stacks of :effect{code="LIQUOR"} for a follow-up attack. Deals Reality DMG **+60%** for every stack of :effect{code="LIQUOR"} consumed (Chance to consume **1/2/3** :effect{code="LIQUOR"}: **20%/40%/40%**).
+  :::
 
-1-target attack. Deals **160%** Reality DMG. While in :effect{code="LIQUOR"} status, randomly consumes 1-3 stacks of :effect{code="LIQUOR"} for a follow-up attack. Deals Reality DMG **+60%** for every stack of :effect{code="LIQUOR"} consumed (Chance to consume **1/2/3** :effect{code="LIQUOR"}: **20%/40%/40%**).
+  :::card-info{star="2" type="ATTACK" note="A tradition to show camaraderie, most of the time."}
+  1-target attack. Deals **240%** Reality DMG. While in :effect{code="LIQUOR"} status, randomly consumes 1-3 stacks of :effect{code="LIQUOR"} for a follow-up attack. Deals Reality DMG **+60%** for every stack of :effect{code="LIQUOR"} consumed (Chance to consume **1/2/3** :effect{code="LIQUOR"}: **20%/40%/40%**).
+  :::
 
-:::
-
-:::card-info{star='2' type="ATTACK" note="A tradition to show camaraderie, most of the time."}
-
-1-target attack. Deals **240%** Reality DMG. While in :effect{code="LIQUOR"} status, randomly consumes 1-3 stacks of :effect{code="LIQUOR"} for a follow-up attack. Deals Reality DMG **+60%** for every stack of :effect{code="LIQUOR"} consumed (Chance to consume **1/2/3** :effect{code="LIQUOR"}: **20%/40%/40%**).
-
-:::
-
-:::card-info{star='3' type="ATTACK" note="A tradition to show camaraderie, even if not so friendly."}
-
-1-target attack. Deals **400%** Reality DMG. While in :effect{code="LIQUOR"} status, randomly consumes 1-3 stacks of :effect{code="LIQUOR"} for a follow-up attack. Deals Reality DMG **+60%** for each stack of :effect{code="LIQUOR"} consumed (Chance to consume **1/2/3** :effect{code="LIQUOR"}: **20%/40%/40%**).
-
-:::
-
+  :::card-info{star="3" type="ATTACK" note="A tradition to show camaraderie, even if not so friendly."}
+  1-target attack. Deals **400%** Reality DMG. While in :effect{code="LIQUOR"} status, randomly consumes 1-3 stacks of :effect{code="LIQUOR"} for a follow-up attack. Deals Reality DMG **+60%** for each stack of :effect{code="LIQUOR"} consumed (Chance to consume **1/2/3** :effect{code="LIQUOR"}: **20%/40%/40%**).
+  :::
 </div>
 
 ### Baijiu Ladle
@@ -107,24 +112,17 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-2" id={frontmatter.id} />
   </div>
 
-:::card-info{star='1' type="CHANNEL" note="A fermented drink."}
+  :::card-info{star="1" type="CHANNEL" note="A fermented drink."}
+  Self channel. Gains 3 stacks of :effect{code="LIQUOR"} and 1 stack of :effect{code="CHEERS"}. Enters :effect{code="TIPSY"} for 1 round.
+  :::
 
-Self channel. Gains 3 stacks of :effect{code="LIQUOR"} and 1 stack of :effect{code="CHEERS"}. Enters :effect{code="TIPSY"} for 1 round.
+  :::card-info{star="2" type="CHANNEL" note="A fermented drink made from spring water and yeast."}
+  Self channel. Gains 6 stacks of :effect{code="LIQUOR"} and 1 stack of :effect{code="CHEERS"}. Enters :effect{code="TIPSY"} for 1 round.
+  :::
 
-:::
-
-:::card-info{star='2' type="CHANNEL" note="A fermented drink made from spring water and yeast."}
-
-Self channel. Gains 6 stacks of :effect{code="LIQUOR"} and 1 stack of :effect{code="CHEERS"}. Enters :effect{code="TIPSY"} for 1 round.
-
-:::
-
-:::card-info{star='3' type="CHANNEL" note="A fermented drink made from spring water and yeast, with a lingering taste of the past."}
-
-Self channel. Gains 9 stacks of :effect{code="LIQUOR"} and 2 stack of :effect{code="CHEERS"}. Enters :effect{code="TIPSY"} for 1 round.
-
-:::
-
+  :::card-info{star="3" type="CHANNEL" note="A fermented drink made from spring water and yeast, with a lingering taste of the past."}
+  Self channel. Gains 9 stacks of :effect{code="LIQUOR"} and 2 stack of :effect{code="CHEERS"}. Enters :effect{code="TIPSY"} for 1 round.
+  :::
 </div>
 
 ### Baijiu and Mayhem
@@ -134,12 +132,9 @@ Self channel. Gains 9 stacks of :effect{code="LIQUOR"} and 2 stack of :effect{co
     <CharacterImg variant="unique" id={frontmatter.id} />
   </div>
 
-:::card-info{type="ATTACK" note="Drink up! Three thousand more cups for you!"}
-
-Mass attack. Deals **350%** Reality DMG. If less than 3 enemies are present, adds Reality DMG **+100% **for each missing enemy (up to **+200%**). If holding 6 or more :effect{code="LIQUOR"} before casting, spend 6 stacks of :effect{code="LIQUOR"} to grant Penetration Rate **+100%** to this attack. If holding less than 6 stacks of :effect{code="LIQUOR"} before casting, gain 6 stacks of :effect{code="LIQUOR"} and 2 stacks of :effect{code="CHEERS"}.
-
-:::
-
+  :::card-info{type="ATTACK" note="Drink up! Three thousand more cups for you!"}
+  Mass attack. Deals **350%** Reality DMG. If less than 3 enemies are present, adds Reality DMG \*\*+100% \*\*for each missing enemy (up to **+200%**). If holding 6 or more :effect{code="LIQUOR"} before casting, spend 6 stacks of :effect{code="LIQUOR"} to grant Penetration Rate **+100%** to this attack. If holding less than 6 stacks of :effect{code="LIQUOR"} before casting, gain 6 stacks of :effect{code="LIQUOR"} and 2 stacks of :effect{code="CHEERS"}.
+  :::
 </div>
 
 ## Inheritance
@@ -147,21 +142,24 @@ Mass attack. Deals **350%** Reality DMG. If less than 3 enemies are present, add
 ### Contemplation
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='1'}
+  :insight-img{classNames="w-8 mr-2" insight="1"}
+
   ##### Insight 1
 </div>
 
-When entering battle, gain 3 stacks of :effect{code="LIQUOR"}. At the end of the round, gain :effect{code="LIQUOR"} based on the number of _[Stats Up]_, _[Pos Status]_, _[Counter]_, _[Shield]_, and _[Channel]_ statuses on all allies (gain 1 stack of :effect{code="LIQUOR"} for every 4 different types of these statuses, up to a maximum of 3 stacks; round down if there are not enough statuses present).
+When entering battle, gain 3 stacks of :effect{code="LIQUOR"}. At the end of the round, gain :effect{code="LIQUOR"} based on the number of *\[Stats Up]*, *\[Pos Status]*, *\[Counter]*, *\[Shield]*, and *\[Channel]* statuses on all allies (gain 1 stack of :effect{code="LIQUOR"} for every 4 different types of these statuses, up to a maximum of 3 stacks; round down if there are not enough statuses present).
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='2'}
+  :insight-img{classNames="w-8 mr-2" insight="2"}
+
   ##### Insight 2
 </div>
 
 ATK **+5%** when the caster enters battle.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='3'}
+  :insight-img{classNames="w-8 mr-2" insight="3"}
+
   ##### Insight 3
 </div>
 
@@ -170,48 +168,56 @@ At the start of the round, if in :effect{code="LIQUOR"} status, grant 1 effect f
 ## Portray
 
 :span[Lv. 1:]{.text-2xl.mr-2}
-_Baijiu and Mayham_: Reality DMG dealt is increased to **400%**. Extra Reality DMG dealt is increased to **+150%** for each missing enemy (up to **+300%**).
+*Baijiu and Mayham*: Reality DMG dealt is increased to **400%**. Extra Reality DMG dealt is increased to **+150%** for each missing enemy (up to **+300%**).
 
 :span[Lv. 2:]{.text-2xl.mr-2}
-_Bottoms Up_: For each stack of :effect{code="LIQUOR"} consumed, Reality DMG dealt is increased to **+90%**.
+*Bottoms Up*: For each stack of :effect{code="LIQUOR"} consumed, Reality DMG dealt is increased to **+90%**.
 
 :span[Lv. 3:]{.text-2xl.mr-2}
-_Contemplation_: Random :effect{code="COLLECTION_OF_BUFFS"} effect granted to self is increased to 2 types.
+*Contemplation*: Random :effect{code="COLLECTION_OF_BUFFS"} effect granted to self is increased to 2 types.
 
 :span[Lv. 4:]{.text-2xl.mr-2}
-_Bottoms Up_: Maximum stacks of :effect{code="LIQUOR"} consumed is increased to 4, and chance to consume **1/2/3/4** stacks of :effect{code="LIQUOR"} is increased to **5%/15%/40%/40%**.
+*Bottoms Up*: Maximum stacks of :effect{code="LIQUOR"} consumed is increased to 4, and chance to consume **1/2/3/4** stacks of :effect{code="LIQUOR"} is increased to **5%/15%/40%/40%**.
 
 :span[Lv. 5:]{.text-2xl.mr-2}
-_Contemplation_: :effect{code="COLLECTION_OF_BUFFS"}'s effect are now increased to **+25%** each. At the end of the round, now for for every 3 different types of statuses possessed, grant 1 stack of :effect{code="LIQUOR"} to self (now gain up to 5 stacks).
+*Contemplation*: :effect{code="COLLECTION_OF_BUFFS"}'s effect are now increased to **+25%** each. At the end of the round, now for for every 3 different types of statuses possessed, grant 1 stack of :effect{code="LIQUOR"} to self (now gain up to 5 stacks).
 
 ## Insight Materials
 
 <div class="flex flex-col md:flex-row flex-wrap  justify-center">
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='1'}
+      :insight-img{classNames="w-6 mr-2" insight="1"}
+
       ##### Insight 1
     </div>
+
     :material{code="SHARPODONTY" variant="small" require="18000"}
     :material{code="PAGE_OF_MINERAL_WEALTH" variant="small" require="6"}
     :material{code="MILLED_MAGNESIA" variant="small" require="5"}
     :material{code="SPELL_OF_BANISHING" variant="small" require="6"}
   </div>
+
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='2'}
+      :insight-img{classNames="w-6 mr-2" insight="2"}
+
       ##### Insight 2
     </div>
+
     :material{code="SHARPODONTY" variant="small" require="40000"}
     :material{code="SCROLL_OF_MINERAL_WEALTH" variant="small" require="10"}
     :material{code="BITING_BOX" variant="small" require="5"}
     :material{code="PERPETUAL_COG" variant="small" require="5"}
   </div>
+
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='3'}
+      :insight-img{classNames="w-6 mr-2" insight="3"}
+
       ##### Insight 3
     </div>
+
     :material{code="SHARPODONTY" variant="small" require="200000"}
     :material{code="TOME_OF_MINERAL_WEALTH" variant="small" require="16"}
     :material{code="MISTILTEINN" variant="small" require="3"}
