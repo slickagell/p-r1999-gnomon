@@ -8,7 +8,7 @@ interface Props {
   require?: number;
 }
 
-const { code, variant = "medium", require } = Astro.props;
+const { code, variant = "small", require } = Astro.props;
 
 const materialEntries = await getCollection("materials");
 

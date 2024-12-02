@@ -10,8 +10,11 @@ specialties: ["SUPPORT", "DEBUFF", "DPS"]
 isLimited: false
 ---
 
+import CardInfo from "@components/CardInfo.astro";
 import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 
 # Getian
@@ -24,52 +27,63 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
   <div>
     <div class="flex gap-8 items-center justify-center md:justify-start">
       <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
       <div class="flex gap-2 items-center">
         <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
         ##### {DMG_TYPE[frontmatter.dmgType].title}
       </div>
     </div>
+
     <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {
-        frontmatter.specialties.map((specialty) => (
-          <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
-      ))}
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>))}
     </div>
+
     <div class="mt-4">
-      :TODO:
+      \:TODO:
 
       ###### Medium
-      :TODO:
+
+      \:TODO:
 
       ###### Afflatus
-      :TODO:
+
+      \:TODO:
 
       ###### Fragrance note
-      :TODO:
+
+      \:TODO:
 
       ###### Dimensions
-      :TODO:
 
+      \:TODO:
     </div>
+
     <div class="mt-4 flex gap-4 justify-center">
       <CharacterImg variant="signature" id={frontmatter.id} />
     </div>
-
   </div>
+
   <div class="flex flex-col items-center shrink-0">
     <CharacterImg variant="portrait" id={frontmatter.id} />
+
     <div class="mt-5 flex gap-6 justify-center items-end">
       <div class="text-center">
         <CharacterImg variant="udimo" id={frontmatter.id} />
+
         Udimo
       </div>
+
       <div class="text-center">
         <CharacterImg variant="chibi" id={frontmatter.id} />
+
         Chibi
       </div>
     </div>
   </div>
 </div>
+
+::toc
 
 ## Arcane Skills
 
@@ -80,24 +94,17 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-1" id={frontmatter.id} />
   </div>
 
-:::card-info{star='1' type="DEBUFF" note="This is the result of natural ability."}
+  <CardInfo star="1" type="DEBUFF" note="This is the result of natural ability.">
+    1-target attack. Deals **100%** Reality DMG. Inflicts :effect{code="SHAPE_OF_BONES"} on the target for 2 rounds.
+  </CardInfo>
 
-1-target attack. Deals **100%** Reality DMG. Inflicts :effect{code="SHAPE_OF_BONES"} on the target for 2 rounds.
+  <CardInfo star="2" type="DEBUFF" note="This is the result of natural ability. Ask not the cause.">
+    1-target attack. Deals **200%** Reality DMG. Inflicts :effect{code="SHAPE_OF_BONES"} on the target for 2 rounds.
+  </CardInfo>
 
-:::
-
-:::card-info{star='2' type="DEBUFF" note="This is the result of natural ability. Ask not the cause."}
-
-1-target attack. Deals **200%** Reality DMG. Inflicts :effect{code="SHAPE_OF_BONES"} on the target for 2 rounds.
-
-:::
-
-:::card-info{star='3' type="DEBUFF" note="This is the result of natural ability. Ask not the cause, ask not the origin."}
-
-1-target attack. Deals **300%** Reality DMG. Inflicts :effect{code="SHAPE_OF_BONES"} on the target for 2 rounds.
-
-:::
-
+  <CardInfo star="3" type="DEBUFF" note="This is the result of natural ability. Ask not the cause, ask not the origin.">
+    1-target attack. Deals **300%** Reality DMG. Inflicts :effect{code="SHAPE_OF_BONES"} on the target for 2 rounds.
+  </CardInfo>
 </div>
 
 ### Unique Bearing
@@ -107,24 +114,17 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-2" id={frontmatter.id} />
   </div>
 
-:::card-info{star='1' type="CHANNEL" note="For centuries, this was the way of things."}
+  <CardInfo star="1" type="CHANNEL" note="For centuries, this was the way of things.">
+    Self channel. Enters :effect{code="BONE_READING"} status. Eureka +2.
+  </CardInfo>
 
-Self channel. Enters :effect{code="BONE_READING"} status. Eureka +2.
+  <CardInfo star="2" type="CHANNEL" note="For centuries, this was the way of things. The lone scholar tree stood tall.">
+    Self channel. Enters :effect{code="BONE_READING"} status. Eureka +3.
+  </CardInfo>
 
-:::
-
-:::card-info{star='2' type="CHANNEL" note="For centuries, this was the way of things. The lone scholar tree stood tall."}
-
-Self channel. Enters :effect{code="BONE_READING"} status. Eureka +3.
-
-:::
-
-:::card-info{star='3' type="CHANNEL" note="For centuries, this was the way of things. The lone scholar tree stood tall, with few to keep it company."}
-
-Self channel. Enters :effect{code="BONE_READING"} status. Eureka +5.
-
-:::
-
+  <CardInfo star="3" type="CHANNEL" note="For centuries, this was the way of things. The lone scholar tree stood tall, with few to keep it company.">
+    Self channel. Enters :effect{code="BONE_READING"} status. Eureka +5.
+  </CardInfo>
 </div>
 
 ### I Shall Walk, Exist, and Know
@@ -134,12 +134,9 @@ Self channel. Enters :effect{code="BONE_READING"} status. Eureka +5.
     <CharacterImg variant="unique" id={frontmatter.id} />
   </div>
 
-:::card-info{type="DEBUFF" note="A never-ending river that will inevitably consume all."}
-
-Mass debuff. Creates special array :effect{code="A_PROPHECY_TOLD"} for 3 rounds. Gains Eureka +3. Inflicts :effect{code="SHAPE_OF_BONES"} on all enemies for 3 rounds.
-
-:::
-
+  <CardInfo type="DEBUFF" note="A never-ending river that will inevitably consume all.">
+    Mass debuff. Creates special array :effect{code="A_PROPHECY_TOLD"} for 3 rounds. Gains Eureka +3. Inflicts :effect{code="SHAPE_OF_BONES"} on all enemies for 3 rounds.
+  </CardInfo>
 </div>
 
 ## Inheritance
@@ -147,7 +144,8 @@ Mass debuff. Creates special array :effect{code="A_PROPHECY_TOLD"} for 3 rounds.
 ### Bone Interpretor
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='1'}
+  <InsightImg classNames="w-8 mr-2" insight="1" />
+
   ##### Insight 1
 </div>
 
@@ -156,14 +154,16 @@ When entering battle with 3+ Reality DMG allies, grant Moxie +3 to self (trigger
 When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"} gains Critical Rate **+20%** and Critical DMG **+20%**.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='2'}
+  <InsightImg classNames="w-8 mr-2" insight="2" />
+
   ##### Insight 2
 </div>
 
 ATK **+5%** when the caster enters battle.
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='3'}
+  <InsightImg classNames="w-8 mr-2" insight="3" />
+
   ##### Insight 3
 </div>
 
@@ -171,52 +171,71 @@ At the start of the round, inflicts :effect{code="SHAPE_OF_BONES"} on a random e
 
 ## Portray
 
-:span[Lv. 1:]{.text-2xl.mr-2}
-_I Shall Walk, Exist, and Know_: +1 round duration to :effect{code="A_PROPHECY_TOLD"}.
+<span class="text-2xl mr-2">Lv. 1:</span>
+*I Shall Walk, Exist, and Know*: +1 round duration to :effect{code="A_PROPHECY_TOLD"}.
 
-:span[Lv. 2:]{.text-2xl.mr-2}
-_Bone Interpretor_: Now triggers with 2+ Reality DMG allies, and Moxie gained is increased to +4. When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"}'s Critical Rate and Critical DMG increase are now **+30%**.
+<span class="text-2xl mr-2">Lv. 2:</span>
+*Bone Interpretor*: Now triggers with 2+ Reality DMG allies, and Moxie gained is increased to +4. When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"}'s Critical Rate and Critical DMG increase are now **+30%**.
 
-:span[Lv. 3:]{.text-2xl.mr-2}
-_Unique Bearing_: :effect{code="ADMONITION"}'s Reality DMG dealt is increased to **150%**.
+<span class="text-2xl mr-2">Lv. 3:</span>
+*Unique Bearing*: :effect{code="ADMONITION"}'s Reality DMG dealt is increased to **150%**.
 
-:span[Lv. 4:]{.text-2xl.mr-2}
-_Old Bones_: At rank 1 incantation, Reality DMG dealt is increased to **160%**.
+<span class="text-2xl mr-2">Lv. 4:</span>
+*Old Bones*: At rank 1 incantation, Reality DMG dealt is increased to **160%**.
 
-:span[Lv. 5:]{.text-2xl.mr-2}
-_Bone Interpretor_: When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"}'s Critical Rate and Critical DMG increase are now **+50%**.
+<span class="text-2xl mr-2">Lv. 5:</span>
+*Bone Interpretor*: When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"}'s Critical Rate and Critical DMG increase are now **+50%**.
 
 ## Insight Materials
 
 <div class="flex flex-col md:flex-row flex-wrap  justify-center">
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='1'}
+      <InsightImg classNames="w-6 mr-2" insight="1" />
+
       ##### Insight 1
     </div>
-    :material{code="SHARPODONTY" variant="small" require="18000"}
-    :material{code="PAGE_OF_BEASTLY_THIRST" variant="small" require="6"}
-    :material{code="ROUGH_SILVER_INGOT" variant="small" require="5"}
-    :material{code="MAGNESIA_CRYSTAL" variant="small" require="6"}
+
+    <Material code="SHARPODONTY" require="18000" />
+
+    <Material code="PAGE_OF_BEASTLY_THIRST" require="6" />
+
+    <Material code="ROUGH_SILVER_INGOT" require="5" />
+
+    <Material code="MAGNESIA_CRYSTAL" require="6" />
   </div>
+
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='2'}
+      <InsightImg classNames="w-6 mr-2" insight="2" />
+
       ##### Insight 2
     </div>
-    :material{code="SHARPODONTY" variant="small" require="40000"}
-    :material{code="SCROLL_OF_BEASTLY_THIRST" variant="small" require="10"}
-    :material{code="GOOSE_NECK" variant="small" require="5"}
-    :material{code="ESOTERIC_BONES" variant="small" require="5"}
+
+    <Material code="SHARPODONTY" require="40000" />
+
+    <Material code="SCROLL_OF_BEASTLY_THIRST" require="10" />
+
+    <Material code="GOOSE_NECK" require="5" />
+
+    <Material code="ESOTERIC_BONES" require="5" />
   </div>
+
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='3'}
+      <InsightImg classNames="w-6 mr-2" insight="3" />
+
       ##### Insight 3
     </div>
-    :material{code="SHARPODONTY" variant="small" require="200000"}
-    :material{code="TOME_OF_BEASTLY_THIRST" variant="small" require="16"}
-    :material{code="SERPENT_SCEPTER" variant="small" require="3"}
-    :material{code="PLATINUM_OUIJA" variant="small" require="5"}
+
+    <Material code="SHARPODONTY" require="80000" />
+
+    <Material code="TOME_OF_BEASTLY_THIRST" require="16" />
+
+    <Material code="SERPENT_SCEPTER" require="3" />
+
+    <Material code="PLATINUM_OUIJA" require="5" />
   </div>
 </div>
+
+\:::

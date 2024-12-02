@@ -38,12 +38,20 @@ export default {
     },
   ],
   actions: () => {
-    let defaultFolderPath = "content/characters";
+    const defaultFolderPath = "content/characters";
+    const resonanceFolderPath = "data/resonance/characters";
     return [
       {
         type: "add",
         path: `src/${defaultFolderPath}/{{dashCase name}}.mdx`,
         templateFile: `plop-templates/${defaultFolderPath}/index.mdx.hbs`,
+        abortOnFail: true,
+        skipIfExists: true,
+      },
+      {
+        type: "add",
+        path: `src/${resonanceFolderPath}/{{dashCase name}}.mdx`,
+        templateFile: `plop-templates/${resonanceFolderPath}/index.mdx.hbs`,
         abortOnFail: true,
         skipIfExists: true,
       },
