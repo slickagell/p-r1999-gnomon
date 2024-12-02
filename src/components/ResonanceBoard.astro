@@ -157,13 +157,13 @@ const initialActiveResonanceLevel =
           <div
             x-bind:data-block-id="block.id"
             class="border border-base-content/50 absolute select-none touch-none z-20"
-            x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/30 cursor-grab' : '')"
+            x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '')"
             x-bind:style="{ left: block.pos.x + boardRelativeX + 'px', top: block.pos.y + boardRelativeY + 'px', width: block.size + 'px', height: block.size + 'px' }"
           >
           </div>
         </template>
       </div>
-
+      <!-- Recommended -->
       <div
         class="mx-4 md:mb-10 z-20 relative"
         x-show="recommendedOptions.length"
@@ -185,6 +185,24 @@ const initialActiveResonanceLevel =
               x-text="resonance.label"
               :value="resonance.value"
               :selected="resonance.value === selectedRecommended"></option>
+          </template>
+        </select>
+      </div>
+      <!-- Resonance Pattern -->
+      <div class="mx-4 md:mb-10 z-20 relative" x-show="patternOptions.length">
+        <label x-ref="patternSelect" id="patternSelect" class="select-none">
+          Pattern
+        </label>
+        <select
+          id="patternSelect"
+          class="select select-secondary select-bordered flex w-full"
+          @change="changePattern($event.target.value)"
+        >
+          <template x-for="pattern in patternOptions">
+            <option
+              x-text="pattern.label"
+              :value="pattern.value"
+              :selected="pattern.value === selectedPattern"></option>
           </template>
         </select>
       </div>
@@ -216,7 +234,7 @@ const initialActiveResonanceLevel =
                   <img
                     loading="lazy"
                     :data-piece-img-id="item.id"
-                    :src="'/images/resonance/pieces/' + item.image"
+                    :src="(item.withPattern ? '/images/resonance/pattern-pieces/' : '/images/resonance/pieces/') + item.image"
                     :alt="item.id"
                     class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0`}
                     :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}

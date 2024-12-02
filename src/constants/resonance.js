@@ -29,6 +29,7 @@ export const RESONANCE_PIECES = {
   RP_X_5_01: {
     id: "RP_X_5_01",
     image: "rp-x-5-01.png",
+    isMainBlock: true,
     shape: [
       [0, 1, 0],
       [1, 1, 1],
@@ -645,6 +646,153 @@ export const RESONANCE_PIECES = {
         },
         MENTAL_DEFENSE: {
           value: 3,
+          unit: "%",
+        },
+      },
+    },
+  },
+};
+
+export const RESONANCE_PATTERN = {
+  ASPIRATIONAL: {
+    id: "ASPIRATIONAL",
+    title: "Aspirational",
+    tags: ["CRIT_DMG", "ATK"],
+  },
+};
+
+export const RESONANCE_PATTERN_PIECES = {
+  RPP_X_5_01_ASPIRATIONAL: {
+    id: "RPP_X_5_01_ASPIRATIONAL",
+    image: "rpp-x-5-01-aspirational.png",
+    stats: {
+      6: {
+        ATTACK: {
+          value: 143,
+        },
+      },
+    },
+  },
+  RPP_X_5_01_ELUCIDATION: {
+    id: "RPP_X_5_01_ELUCIDATION",
+    image: "rpp-x-5-01-elucidation.png",
+    stats: {
+      6: {
+        ATTACK: {
+          value: 175,
+        },
+        REALITY_DEFENSE: {
+          value: 73,
+        },
+        MENTAL_DEFENSE: {
+          value: 84,
+        },
+        CRITICAL_RATE: {
+          value: 12,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 8,
+          unit: "%",
+        },
+        ULTIMATE_MIGHT: {
+          value: 10,
+          unit: "%",
+        },
+      },
+    },
+  },
+  RPP_X_5_01_GENUINITY: {
+    id: "RPP_X_5_01_GENUINITY",
+    image: "rpp-x-5-01-genuinity.png",
+    stats: {
+      6: {
+        HP: {
+          value: 809,
+        },
+        ATTACK: {
+          value: 143,
+        },
+        REALITY_DEFENSE: {
+          value: 73,
+        },
+        MENTAL_DEFENSE: {
+          value: 84,
+        },
+        CRITICAL_RATE: {
+          value: 6,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 2,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 8,
+          unit: "%",
+        },
+      },
+    },
+  },
+  RPP_X_5_01_STUPEFACTION: {
+    id: "RPP_X_5_01_STUPEFACTION",
+    image: "rpp-x-5-01-stupefaction.png",
+    stats: {
+      6: {
+        HP: {
+          value: 809,
+        },
+        ATTACK: {
+          value: 143,
+        },
+        REALITY_DEFENSE: {
+          value: 73,
+        },
+        MENTAL_DEFENSE: {
+          value: 84,
+        },
+        CRITICAL_RATE: {
+          value: 6,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 2,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 8,
+          unit: "%",
+        },
+      },
+    },
+  },
+  RPP_X_5_01_HYPERPHRENIA: {
+    id: "RPP_X_5_01_HYPERPHRENIA",
+    image: "rpp-x-5-01-hyperphrenia.png",
+    stats: {
+      6: {
+        HP: {
+          value: 809,
+        },
+        ATTACK: {
+          value: 143,
+        },
+        REALITY_DEFENSE: {
+          value: 73,
+        },
+        MENTAL_DEFENSE: {
+          value: 84,
+        },
+        CRITICAL_RATE: {
+          value: 6,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 2,
+          unit: "%",
+        },
+        CRITICAL_RESIST_RATE: {
+          value: 8,
           unit: "%",
         },
       },
