@@ -29,7 +29,7 @@ export const RESONANCE_PIECES = {
   RP_X_5_01: {
     id: "RP_X_5_01",
     image: "rp-x-5-01.png",
-    isMainBlock: true,
+    isMainPiece: true,
     shape: [
       [0, 1, 0],
       [1, 1, 1],

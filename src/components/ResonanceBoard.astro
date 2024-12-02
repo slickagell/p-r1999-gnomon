@@ -7,12 +7,18 @@ const DEFAULT_RESONATE_LEVEL = 10;
 interface Props {
   maxResonanceLevel: number;
   resonancePieces: ResonanceInitPiecesType;
+  recommendedResonancePattern?: string;
   recommendedResonanceList?: ResonanceRecommendedListType;
   isDev?: boolean;
 }
 
-const { maxResonanceLevel, resonancePieces, recommendedResonanceList, isDev } =
-  Astro.props;
+const {
+  maxResonanceLevel,
+  resonancePieces,
+  recommendedResonanceList,
+  recommendedResonancePattern,
+  isDev,
+} = Astro.props;
 
 const initialActiveResonanceLevel =
   maxResonanceLevel > DEFAULT_RESONATE_LEVEL
@@ -202,7 +208,7 @@ const initialActiveResonanceLevel =
             <option
               x-text="pattern.label"
               :value="pattern.value"
-              :selected="pattern.value === selectedPattern"></option>
+              :selected="pattern.value.includes(selectedPattern)"></option>
           </template>
         </select>
       </div>
@@ -213,7 +219,7 @@ const initialActiveResonanceLevel =
       >
         <template
           x-for="item in activeResonancePieces"
-          :key="item.id+item.level+item.total"
+          :key="item.id+item.level+item.total+item.pattern"
         >
           <div
             x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
@@ -234,7 +240,7 @@ const initialActiveResonanceLevel =
                   <img
                     loading="lazy"
                     :data-piece-img-id="item.id"
-                    :src="(item.withPattern ? '/images/resonance/pattern-pieces/' : '/images/resonance/pieces/') + item.image"
+                    :src="((item.pattern&&item.pattern!=='') ? '/images/resonance/pattern-pieces/' : '/images/resonance/pieces/') + item.image"
                     :alt="item.id"
                     class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0`}
                     :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
@@ -289,6 +295,7 @@ const initialActiveResonanceLevel =
     initialActiveResonanceLevel,
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
     recommendedResonanceList,
+    recommendedResonancePattern,
   }}
 >
   document.addEventListener("alpine:init", () => {
@@ -298,6 +305,7 @@ const initialActiveResonanceLevel =
       initialActiveResonanceLevel,
       defaultResonanceLevel,
       recommendedResonanceList,
+      recommendedResonancePattern,
     });
   });
 </script>

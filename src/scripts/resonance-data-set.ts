@@ -40,6 +40,7 @@ export default () => ({
   patternOptions: [],
   selectedRecommended: "",
   selectedPattern: "",
+  mainPiece: null,
   initialRecommendedData: [],
   initialActiveResonancePieces: [],
 
@@ -161,34 +162,8 @@ export default () => ({
           dimension[1]
         );
 
-        if (piece.isMainBlock && this.activeResonanceLevel >= 10) {
-          const pieceCode = ("" + piece.id).replace("RP_", "");
-          const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
-            (prev, patternPiece) => {
-              if (patternPiece[0].includes(pieceCode)) {
-                return [
-                  ...prev,
-                  {
-                    ...patternPiece[1],
-                  },
-                ];
-              }
-              return prev;
-            },
-            [
-              {
-                id: `RPP_${pieceCode}_PLACIDITY`,
-              },
-            ]
-          );
-          this.resonancePatternPieces = [...patternPieces];
-          this.patternOptions = patternPieces.map((ele) => {
-            return {
-              value: ele.id,
-              label: ele.id.replace(`RPP_${pieceCode}_`, ""),
-            };
-          });
-          this.selectedPattern = `RPP_${pieceCode}_PLACIDITY`;
+        if (piece.isMainPiece) {
+          this.mainPiece = piece;
         }
 
         return [
@@ -212,6 +187,60 @@ export default () => ({
     this.activeResonancePieces = JSON.parse(
       JSON.stringify(activeResonancePieces)
     );
+
+    const pieceCode = ("" + this.mainPiece.id).replace("RP_", "");
+
+    if (this.activeResonanceLevel >= 10) {
+      const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
+        (prev, patternPiece) => {
+          if (patternPiece[0].includes(pieceCode)) {
+            return [
+              ...prev,
+              {
+                ...patternPiece[1],
+              },
+            ];
+          }
+          return prev;
+        },
+        [
+          {
+            id: `RPP_${pieceCode}_PLACIDITY`,
+          },
+        ]
+      );
+      this.resonancePatternPieces = [...patternPieces];
+      this.patternOptions = patternPieces.map((ele) => {
+        const pattern = ele.id.replace(`RPP_${pieceCode}_`, "");
+        return {
+          value: pattern,
+          label: pattern,
+        };
+      });
+      this.selectedPattern = `PLACIDITY`;
+
+      //* Init recommended pattern
+      if (this.$store.resonance.recommendedResonancePattern) {
+        this.selectedPattern =
+          this.$store.resonance.recommendedResonancePattern;
+
+        this.patternOptions = this.patternOptions.map((ele) => {
+          if (ele.value === this.selectedPattern) {
+            return {
+              ...ele,
+              label: ele.label + " (Recommended)",
+            };
+          }
+          return ele;
+        });
+
+        this.updateActiveResonancePiecesWithPattern(this.selectedPattern);
+      }
+    } else {
+      this.resonancePatternPieces = [];
+      this.patternOptions = [];
+      this.selectedPattern = "";
+    }
 
     this.$nextTick(() => {
       //* Init recommended
@@ -1317,6 +1346,37 @@ export default () => ({
     this.initResonanceData(resonanceData);
   },
 
+  updateActiveResonancePiecesWithPattern(pattern) {
+    if (pattern === "PLACIDITY") {
+      this.activeResonancePieces = JSON.parse(
+        JSON.stringify(this.initialActiveResonancePieces)
+      );
+      return;
+    }
+
+    const pieceCode = this.mainPiece.id.replace("RP_", "");
+    const patternPiece = this.resonancePatternPieces.find((piece) =>
+      piece.id.includes(pattern)
+    );
+
+    const updatedActiveResonancePieces = this.initialActiveResonancePieces.map(
+      (piece) => {
+        if (piece.id.includes(pieceCode)) {
+          return {
+            ...piece,
+            image: patternPiece.image,
+            stats: patternPiece.stats,
+            pattern: pattern,
+          };
+        } else {
+          return piece;
+        }
+      }
+    );
+
+    this.activeResonancePieces = updatedActiveResonancePieces;
+  },
+
   changeRecommended(value: string) {
     const [resonanceLevel, index] = value.split("-");
     const resonanceData =
@@ -1332,11 +1392,9 @@ export default () => ({
   changePattern(value: string) {
     this.selectedPattern = value;
 
-    if (value.includes("PLACIDITY")) {
-      this.activeResonancePieces = JSON.parse(
-        JSON.stringify(this.initialActiveResonancePieces)
-      );
+    this.updateActiveResonancePiecesWithPattern(value);
 
+    if (value === "PLACIDITY") {
       this.$nextTick(() => {
         this.resetPiecesQuantity();
         this.resetGeneralStats();
@@ -1345,43 +1403,22 @@ export default () => ({
       return;
     }
 
-    const pieceCode = ("" + value).split("_").slice(1, -1).join("_");
-    const patternPiece = this.resonancePatternPieces.find(
-      (piece) => piece.id === value
-    );
-
-    const updatedActiveResonancePieces = this.initialActiveResonancePieces.map(
-      (piece) => {
-        if (piece.id.includes(pieceCode)) {
-          return {
-            ...piece,
-            id: patternPiece.id,
-            image: patternPiece.image,
-            stats: patternPiece.stats,
-            withPattern: true,
-          };
-        } else {
-          return piece;
-        }
-      }
-    );
-
-    this.activeResonancePieces = updatedActiveResonancePieces;
-
-    const newResonanceData = this.initialRecommendedData.resonance.map(
-      (item) => {
-        if (item.pieceId.includes(pieceCode)) {
-          return {
-            ...item,
-            pieceId: patternPiece.id,
-          };
-        } else {
-          return item;
-        }
-      }
-    );
+    const pieceCode = this.mainPiece.id.replace("RP_", "");
 
     this.$nextTick(() => {
+      const newResonanceData = this.initialRecommendedData.resonance.map(
+        (item) => {
+          if (item.pieceId.includes(pieceCode)) {
+            return {
+              ...item,
+              pattern: value,
+            };
+          } else {
+            return item;
+          }
+        }
+      );
+
       this.resetPiecesQuantity();
       this.resetGeneralStats();
       this.initResonanceData({ resonance: newResonanceData });
