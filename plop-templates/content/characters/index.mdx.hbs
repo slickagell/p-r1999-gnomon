@@ -11,9 +11,14 @@ specialties: []
 isLimited: {{isLimited}}
 ---
 
+import CardInfo from "@components/CardInfo.astro";
 import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
+import resonance from "@data/resonance/characters/{{dashCase name}}.json";
 
 # {{titleCase name}}
 
@@ -25,52 +30,63 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
   <div>
     <div class="flex gap-8 items-center justify-center md:justify-start">
       <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
       <div class="flex gap-2 items-center">
         <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
         ##### {DMG_TYPE[frontmatter.dmgType].title}
       </div>
     </div>
+
     <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {
-        frontmatter.specialties.map((specialty) => (
-          <div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>
-      ))}
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>))}
     </div>
+
     <div class="mt-4">
       <!-- TODO - Add character description -->
 
       ###### Medium
+
       <!-- TODO - Add character medium description -->
 
       ###### Afflatus
+
       <!-- TODO - Add character afflatus description -->
 
       ###### Fragrance note
+
       <!-- TODO - Add character fragrance description -->
 
       ###### Dimensions
-      <!-- TODO - Add character dimension description -->
 
+      <!-- TODO - Add character dimension description -->
     </div>
+
     <div class="mt-4 flex gap-4 justify-center">
       <CharacterImg variant="signature" id={frontmatter.id} />
     </div>
-
   </div>
+
   <div class="flex flex-col items-center shrink-0">
     <CharacterImg variant="portrait" id={frontmatter.id} />
+
     <div class="mt-5 flex gap-6 justify-center items-end">
       <div class="text-center">
         <CharacterImg variant="udimo" id={frontmatter.id} />
+
         Udimo
       </div>
+
       <div class="text-center">
         <CharacterImg variant="chibi" id={frontmatter.id} />
+
         Chibi
       </div>
     </div>
   </div>
 </div>
+
+::toc
 
 ## Arcane Skills
 
@@ -81,21 +97,20 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-1" id={frontmatter.id} />
   </div>
 
-<!-- TODO - Update character skill-1 star-1 type & note -->
-:::card-info{star='1' type="" note=""}
-<!-- TODO - Add character skill-1 star-1 description -->
-:::
+  <!-- TODO - Update character skill-1 star-1 type & note -->
+  <CardInfo star="1" type="" note="">
+    <!-- TODO - Add character skill-1 star-1 description -->
+  </CardInfo>
 
-<!-- TODO - Update character skill-1 star-2 type & note -->
-:::card-info{star='2' type="" note=""}
-<!-- TODO - Add character skill-1 star-2 description -->
-:::
+  <!-- TODO - Update character skill-2 star-2 type & note -->
+  <CardInfo star="2" type="" note="">
+    <!-- TODO - Add character skill-2 star-2 description -->
+  </CardInfo>
 
-<!-- TODO - Update character skill-1 star-3 type & note -->
-:::card-info{star='3' type="" note=""}
-<!-- TODO - Add character skill-1 star-3 description -->
-:::
-
+  <!-- TODO - Update character skill-3 star-3 type & note -->
+  <CardInfo star="3" type="" note="">
+    <!-- TODO - Add character skill-3 star-3 description -->
+  </CardInfo>
 </div>
 
 ### <!-- TODO - Update skill-2 name -->
@@ -105,35 +120,33 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
     <CharacterImg variant="skill-2" id={frontmatter.id} />
   </div>
 
-<!-- TODO - Update character skill-2 star-1 type & note -->
-:::card-info{star='1' type="" note=""}
-<!-- TODO - Add character skill-2 star-1 description -->
-:::
+  <!-- TODO - Update character skill-1 star-1 type & note -->
+  <CardInfo star="1" type="" note="">
+    <!-- TODO - Add character skill-1 star-1 description -->
+  </CardInfo>
 
-<!-- TODO - Update character skill-2 star-2 type & note -->
-:::card-info{star='2' type="" note=""}
-<!-- TODO - Add character skill-2 star-2 description -->
-:::
+  <!-- TODO - Update character skill-2 star-2 type & note -->
+  <CardInfo star="2" type="" note="">
+    <!-- TODO - Add character skill-2 star-2 description -->
+  </CardInfo>
 
-<!-- TODO - Update character skill-2 star-3 type & note -->
-:::card-info{star='3' type="" note=""}
-<!-- TODO - Add character skill-2 star-3 description -->
-:::
-
+  <!-- TODO - Update character skill-3 star-3 type & note -->
+  <CardInfo star="3" type="" note="">
+    <!-- TODO - Add character skill-3 star-3 description -->
+  </CardInfo>
 </div>
 
-### <!-- TODO - Update ultimate name -->
+### <!-- TODO - Update unique name -->
 
 <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
   <div class="basis-full lg:basis-auto shrink-0">
     <CharacterImg variant="unique" id={frontmatter.id} />
   </div>
 
-<!-- TODO - Update character ultimate type & note -->
-:::card-info{type="" note=""}
-<!-- TODO - Update character ultimate description -->
-:::
-
+  <!-- TODO - Update character unique type & note -->
+  <CardInfo type="BUFF" note="It is the omega, the final answer, the result of all calculations.">
+    <!-- TODO - Update character unique description -->
+  </CardInfo>
 </div>
 
 ## Inheritance
@@ -141,21 +154,24 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 ### <!-- TODO - Update inheritance title -->
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='1'}
+  <InsightImg classNames="w-8 mr-2" insight="1" />
+
   ##### Insight 1
 </div>
 
 <!-- TODO - Update inheritance insight-1 -->
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='2'}
+  <InsightImg classNames="w-8 mr-2" insight="2" />
+
   ##### Insight 2
 </div>
 
 <!-- TODO - Update inheritance insight-2 -->
 
 <div class="mt-4 flex items-center">
-  :insight-img{classNames="w-8 mr-2" insight='3'}
+  <InsightImg classNames="w-8 mr-2" insight="3" />
+
   ##### Insight 3
 </div>
 
@@ -163,46 +179,58 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 
 ## Portray
 
-:span[Lv. 1:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 1:</span>
 <!-- TODO - Update portray lv-1 content -->
 
-:span[Lv. 2:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 2:</span>
 <!-- TODO - Update portray lv-2 content -->
 
-:span[Lv. 3:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 3:</span>
 <!-- TODO - Update portray lv-3 content -->
 
-:span[Lv. 4:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 4:</span>
 <!-- TODO - Update portray lv-4 content -->
 
-:span[Lv. 5:]{.text-2xl.mr-2}
+<span class="text-2xl mr-2">Lv. 5:</span>
 <!-- TODO - Update portray lv-5 content -->
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={resonance.resonance_pieces} recommendedResonanceList={resonance.resonance_recommended} />
 
 ## Insight Materials
 
 <div class="flex flex-col md:flex-row flex-wrap  justify-center">
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='1'}
+      <InsightImg classNames="w-6 mr-2" insight="1" />
+
       ##### Insight 1
     </div>
+
     <!-- TODO - Update materials for insight-1 -->
-    :material{code="SHARPODONTY" variant="small" require="0"}
+    <Material code="SHARPODONTY" require="0" />
   </div>
+
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='2'}
+      <InsightImg classNames="w-6 mr-2" insight="2" />
+
       ##### Insight 2
     </div>
+
     <!-- TODO - Update materials for insight-2 -->
-    :material{code="SHARPODONTY" variant="small" require="0"}
+    <Material code="SHARPODONTY" require="0" />
   </div>
+
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
     <div class="flex items-center">
-      :insight-img{classNames="w-6 mr-2" insight='3'}
+      <InsightImg classNames="w-6 mr-2" insight="3" />
+
       ##### Insight 3
     </div>
+
     <!-- TODO - Update materials for insight-3 -->
-    :material{code="SHARPODONTY" variant="small" require="0"}
+    <Material code="SHARPODONTY" require="0" />
   </div>
 </div>
