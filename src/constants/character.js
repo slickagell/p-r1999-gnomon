@@ -162,7 +162,6 @@ export const STATS = {
     keyVal: "leechRate",
     unit: "%",
   },
-
   HEALING_DONE: {
     label: "Healing Done",
     keyVal: "healingDone",
