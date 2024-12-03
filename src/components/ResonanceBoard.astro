@@ -1,6 +1,13 @@
 ---
 import CustomImage from "@components/CustomImage.astro";
-import InsightImg from "./InsightImg.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
+import Tooltip from "@components/Tooltip.astro";
+import {
+  RESONANCE_PATTERN,
+  RESONANCE_PATTERN_PIECES,
+  RESONANCE_PIECES,
+} from "@constants/resonance";
 
 const DEFAULT_RESONATE_LEVEL = 10;
 
@@ -16,7 +23,7 @@ const {
   maxResonanceLevel,
   resonancePieces,
   recommendedResonanceList,
-  recommendedResonancePattern,
+  recommendedResonancePattern = "PLACIDITY",
   isDev,
 } = Astro.props;
 
@@ -24,13 +31,86 @@ const initialActiveResonanceLevel =
   maxResonanceLevel > DEFAULT_RESONATE_LEVEL
     ? DEFAULT_RESONATE_LEVEL
     : maxResonanceLevel;
+
+const mainPiece = resonancePieces[initialActiveResonanceLevel].find((item) => {
+  if (RESONANCE_PIECES[item.id].isMainPiece) {
+    return true;
+  }
+  return false;
+});
+
+if (!mainPiece) {
+  return;
+}
+const mainPieceCode = ("" + mainPiece.id).replace("RP_", "");
+
+const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
+  (
+    prev: [
+      {
+        id: string;
+        image?: string;
+        stats?: any;
+        materials?: { code: string; require?: number }[];
+      },
+    ],
+    patternPiece
+  ) => {
+    if (patternPiece[0].includes(mainPieceCode)) {
+      return [
+        ...prev,
+        {
+          ...patternPiece[1],
+        },
+      ];
+    }
+    return prev;
+  },
+  [
+    {
+      id: `RPP_${mainPieceCode}_PLACIDITY`,
+    },
+  ]
+);
+
+const patternOptions = patternPieces.map((ele) => {
+  const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
+
+  return {
+    value: pattern,
+    label:
+      RESONANCE_PATTERN[pattern].title +
+      (pattern === recommendedResonancePattern &&
+      recommendedResonancePattern !== "PLACIDITY"
+        ? " (Recommended)"
+        : ""),
+  };
+});
+
+const patternTagsList = patternPieces.map((ele) => {
+  const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
+
+  return {
+    id: pattern,
+    tags: RESONANCE_PATTERN[pattern].tags,
+  };
+});
+
+const patternMaterialsList = patternPieces.map((ele) => {
+  const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
+
+  return {
+    id: pattern,
+    materials: ele?.materials || [],
+  };
+});
 ---
 
 <div x-data="dataset">
   <div
     class="flex flex-col md:flex-row gap-4 items-end mb-4 [&_*]:min-w-0 [&_*]:min-h-0"
   >
-    <div class="flex-1 min-w-0">
+    <div class="flex-1 min-w-0 w-full">
       <div
         id="attributes"
         x-data="attributes"
@@ -132,7 +212,7 @@ const initialActiveResonanceLevel =
         x-ref="canvas"
         class="border w-full h-full absolute top-0 left-0 bg-white/10 z-10"
       ></canvas>
-
+      <!-- Board -->
       <div
         class="inline-block relative"
         :style="{margin: boardMarginVertical + 'px' + ' ' + boardMarginHorizontal + 'px'}"
@@ -169,48 +249,114 @@ const initialActiveResonanceLevel =
           </div>
         </template>
       </div>
-      <!-- Recommended -->
-      <div
-        class="mx-4 md:mb-10 z-20 relative"
-        x-show="recommendedOptions.length"
-      >
-        <label
-          x-ref="recommendedSelect"
-          id="recommendedSelect"
-          class="select-none"
-        >
-          Recommended
-        </label>
-        <select
-          id="recommendedSelect"
-          class="select select-secondary select-bordered flex w-full"
-          @change="changeRecommended($event.target.value)"
-        >
-          <template x-for="resonance in recommendedOptions">
-            <option
-              x-text="resonance.label"
-              :value="resonance.value"
-              :selected="resonance.value === selectedRecommended"></option>
-          </template>
-        </select>
-      </div>
-      <!-- Resonance Pattern -->
-      <div class="mx-4 md:mb-10 z-20 relative" x-show="patternOptions.length">
-        <label x-ref="patternSelect" id="patternSelect" class="select-none">
-          Pattern
-        </label>
-        <select
-          id="patternSelect"
-          class="select select-secondary select-bordered flex w-full"
-          @change="changePattern($event.target.value)"
-        >
-          <template x-for="pattern in patternOptions">
-            <option
-              x-text="pattern.label"
-              :value="pattern.value"
-              :selected="pattern.value.includes(selectedPattern)"></option>
-          </template>
-        </select>
+      <!-- End Board -->
+      <div class="md:mb-10">
+        <!-- Recommended -->
+        <div class="mx-4 z-20 relative" x-show="recommendedOptions.length">
+          <label
+            x-ref="recommendedSelect"
+            id="recommendedSelect"
+            class="select-none label"
+          >
+            Recommended
+          </label>
+          <select
+            id="recommendedSelect"
+            class="select select-secondary select-bordered flex w-full"
+            @change="changeRecommended($event.target.value)"
+          >
+            <template x-for="resonance in recommendedOptions">
+              <option
+                x-text="resonance.label"
+                :value="resonance.value"
+                :selected="resonance.value === selectedRecommended"></option>
+            </template>
+          </select>
+        </div>
+        <!-- End Recommended -->
+        <!-- Resonance Pattern -->
+        <div class="mx-4 z-20 relative" x-show="activeResonanceLevel>=10">
+          <label
+            x-ref="patternSelect"
+            id="patternSelect"
+            class="select-none label"
+          >
+            Pattern
+          </label>
+          <select
+            id="patternSelect"
+            class="select select-secondary select-bordered flex w-full"
+            @change="changePattern($event.target.value)"
+          >
+            {
+              patternOptions.map((pattern) => (
+                <option
+                  value={pattern.value}
+                  selected={pattern.value === recommendedResonancePattern}
+                >
+                  {pattern.label}
+                </option>
+              ))
+            }
+          </select>
+          <label class="label">
+            <div class="label-text">
+              {
+                patternTagsList.map((ele) => (
+                  <template x-if={`'${ele.id}' === selectedPattern`}>
+                    <div class="flex gap-1">
+                      {ele.tags.map((tag) => (
+                        <span class="badge badge-outline">{tag}</span>
+                      ))}
+                    </div>
+                  </template>
+                ))
+              }
+            </div>
+            <span class="label-text-alt">
+              <Tooltip>
+                <p
+                  slot="toggle"
+                  class="text-base-content flex items-center gap-1"
+                >
+                  Material
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    width="24"
+                    height="24"
+                    stroke-width="2"
+                  >
+                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                    <path d="M12 9h.01"></path>
+                    <path d="M11 12h1v4h1"></path>
+                  </svg>
+                </p>
+                <div slot="content">
+                  {
+                    patternMaterialsList.map((ele) => (
+                      <template x-if={`'${ele.id}' === selectedPattern`}>
+                        <div>
+                          {ele.materials.map((material) => (
+                            <Material
+                              code={material.code}
+                              require={material.require}
+                            />
+                          ))}
+                        </div>
+                      </template>
+                    ))
+                  }
+                </div>
+              </Tooltip>
+            </span>
+          </label>
+        </div>
+        <!-- End Resonance Pattern -->
       </div>
     </div>
     <div class="flex-1 md:basis-1/2 relative z-10">
@@ -296,6 +442,7 @@ const initialActiveResonanceLevel =
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
     recommendedResonanceList,
     recommendedResonancePattern,
+    mainPieceCode,
   }}
 >
   document.addEventListener("alpine:init", () => {
@@ -306,6 +453,7 @@ const initialActiveResonanceLevel =
       defaultResonanceLevel,
       recommendedResonanceList,
       recommendedResonancePattern,
+      mainPieceCode,
     });
   });
 </script>

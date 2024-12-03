@@ -1,6 +1,7 @@
 import {
   IMAGE_DEGREE_ORIENTATIONS,
   IMAGE_ORIENTATION,
+  RESONANCE_PATTERN,
   RESONANCE_PATTERN_PIECES,
   RESONANCE_PIECES,
 } from "@constants/resonance";
@@ -37,10 +38,9 @@ export default () => ({
   maxPieceSize: 0,
 
   recommendedOptions: [],
-  patternOptions: [],
   selectedRecommended: "",
   selectedPattern: "",
-  mainPiece: null,
+  patternPieces: [],
   initialRecommendedData: [],
   initialActiveResonancePieces: [],
 
@@ -143,6 +143,35 @@ export default () => ({
     }
     this.blockOffset = this.blockSize / 4;
 
+    this.patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
+      (
+        prev: [
+          {
+            id: string;
+            image?: string;
+            stats?: any;
+            materials?: { code: string; require?: number }[];
+          },
+        ],
+        patternPiece
+      ) => {
+        if (patternPiece[0].includes(this.$store.resonance.mainPieceCode)) {
+          return [
+            ...prev,
+            {
+              ...patternPiece[1],
+            },
+          ];
+        }
+        return prev;
+      },
+      [
+        {
+          id: `RPP_${this.$store.resonance.mainPieceCode}_PLACIDITY`,
+        },
+      ]
+    );
+
     this.initCanvas();
     this.initializeData();
   },
@@ -161,10 +190,6 @@ export default () => ({
           dimension[0],
           dimension[1]
         );
-
-        if (piece.isMainPiece) {
-          this.mainPiece = piece;
-        }
 
         return [
           ...prev,
@@ -188,58 +213,16 @@ export default () => ({
       JSON.stringify(activeResonancePieces)
     );
 
-    const pieceCode = ("" + this.mainPiece.id).replace("RP_", "");
+    this.selectedPattern = `PLACIDITY`;
 
     if (this.activeResonanceLevel >= 10) {
-      const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
-        (prev, patternPiece) => {
-          if (patternPiece[0].includes(pieceCode)) {
-            return [
-              ...prev,
-              {
-                ...patternPiece[1],
-              },
-            ];
-          }
-          return prev;
-        },
-        [
-          {
-            id: `RPP_${pieceCode}_PLACIDITY`,
-          },
-        ]
-      );
-      this.resonancePatternPieces = [...patternPieces];
-      this.patternOptions = patternPieces.map((ele) => {
-        const pattern = ele.id.replace(`RPP_${pieceCode}_`, "");
-        return {
-          value: pattern,
-          label: pattern,
-        };
-      });
-      this.selectedPattern = `PLACIDITY`;
-
       //* Init recommended pattern
       if (this.$store.resonance.recommendedResonancePattern) {
         this.selectedPattern =
           this.$store.resonance.recommendedResonancePattern;
 
-        this.patternOptions = this.patternOptions.map((ele) => {
-          if (ele.value === this.selectedPattern) {
-            return {
-              ...ele,
-              label: ele.label + " (Recommended)",
-            };
-          }
-          return ele;
-        });
-
         this.updateActiveResonancePiecesWithPattern(this.selectedPattern);
       }
-    } else {
-      this.resonancePatternPieces = [];
-      this.patternOptions = [];
-      this.selectedPattern = "";
     }
 
     this.$nextTick(() => {
@@ -1354,8 +1337,9 @@ export default () => ({
       return;
     }
 
-    const pieceCode = this.mainPiece.id.replace("RP_", "");
-    const patternPiece = this.resonancePatternPieces.find((piece) =>
+    const pieceCode = this.$store.resonance.mainPieceCode;
+
+    const patternPiece = this.patternPieces.find((piece) =>
       piece.id.includes(pattern)
     );
 
@@ -1364,8 +1348,8 @@ export default () => ({
         if (piece.id.includes(pieceCode)) {
           return {
             ...piece,
-            image: patternPiece.image,
-            stats: patternPiece.stats,
+            image: patternPiece?.image,
+            stats: patternPiece?.stats,
             pattern: pattern,
           };
         } else {
@@ -1403,7 +1387,7 @@ export default () => ({
       return;
     }
 
-    const pieceCode = this.mainPiece.id.replace("RP_", "");
+    const pieceCode = this.$store.resonance.mainPieceCode;
 
     this.$nextTick(() => {
       const newResonanceData = this.initialRecommendedData.resonance.map(
@@ -1472,6 +1456,8 @@ export default () => ({
     this.boardCtx.clearRect(0, 0, this.boardCtx.width, this.boardCtx.height);
 
     this.resetInitialState();
+    this.resetPiecesQuantity();
+    this.resetGeneralStats();
     this.initCanvas();
     this.initializeData();
   },

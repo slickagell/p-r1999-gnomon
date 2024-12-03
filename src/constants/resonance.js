@@ -654,10 +654,35 @@ export const RESONANCE_PIECES = {
 };
 
 export const RESONANCE_PATTERN = {
+  PLACIDITY: {
+    id: "PLACIDITY",
+    title: "Placidity",
+    tags: ["DEFAULT"],
+  },
   ASPIRATIONAL: {
     id: "ASPIRATIONAL",
     title: "Aspirational",
     tags: ["CRIT_DMG", "ATK"],
+  },
+  ELUCIDATION: {
+    id: "ELUCIDATION",
+    title: "Elucidation",
+    tags: ["ULTIMATE_MIGHT", "CRITICAL_RATE"],
+  },
+  GENUINITY: {
+    id: "GENUINITY",
+    title: "Genuinity",
+    tags: ["INCANTATION_MIGHT", "CRITICAL_RATE"],
+  },
+  HYPERPHRENIA: {
+    id: "HYPERPHRENIA",
+    title: "Hyperphrenia",
+    tags: ["HP", "CRITICAL_RATE", "ATK"],
+  },
+  STUPEFACTION: {
+    id: "STUPEFACTION",
+    title: "Stupefaction",
+    tags: ["GENERALIZED"],
   },
 };
 
@@ -668,10 +693,42 @@ export const RESONANCE_PATTERN_PIECES = {
     stats: {
       6: {
         ATTACK: {
-          value: 143,
+          value: 175,
+        },
+        REALITY_DEFENSE: {
+          value: 73,
+        },
+        MENTAL_DEFENSE: {
+          value: 84,
+        },
+        CRITICAL_RATE: {
+          value: 12,
+          unit: "%",
+        },
+        CRITICAL_DMG: {
+          value: 18,
+          unit: "%",
         },
       },
     },
+    materials: [
+      {
+        code: "SHARPODONTY",
+        require: 120000,
+      },
+      {
+        code: "SERPENT_SCEPTER",
+        require: 1,
+      },
+      {
+        code: "BOGEYMAN",
+        require: 2,
+      },
+      {
+        code: "GOOSE_NECK",
+        require: 3,
+      },
+    ],
   },
   RPP_X_5_01_ELUCIDATION: {
     id: "RPP_X_5_01_ELUCIDATION",
@@ -701,17 +758,32 @@ export const RESONANCE_PATTERN_PIECES = {
         },
       },
     },
+    materials: [
+      {
+        code: "SHARPODONTY",
+        require: 120000,
+      },
+      {
+        code: "SERPENT_SCEPTER",
+        require: 1,
+      },
+      {
+        code: "BOGEYMAN",
+        require: 2,
+      },
+      {
+        code: "GOOSE_NECK",
+        require: 3,
+      },
+    ],
   },
   RPP_X_5_01_GENUINITY: {
     id: "RPP_X_5_01_GENUINITY",
     image: "rpp-x-5-01-genuinity.png",
     stats: {
       6: {
-        HP: {
-          value: 809,
-        },
         ATTACK: {
-          value: 143,
+          value: 175,
         },
         REALITY_DEFENSE: {
           value: 73,
@@ -720,14 +792,14 @@ export const RESONANCE_PATTERN_PIECES = {
           value: 84,
         },
         CRITICAL_RATE: {
-          value: 6,
+          value: 12,
           unit: "%",
         },
         CRITICAL_DMG: {
-          value: 2,
+          value: 8,
           unit: "%",
         },
-        CRITICAL_RESIST_RATE: {
+        INCANTATION_MIGHT: {
           value: 8,
           unit: "%",
         },
@@ -740,31 +812,39 @@ export const RESONANCE_PATTERN_PIECES = {
     stats: {
       6: {
         HP: {
-          value: 809,
+          value: 1324,
         },
         ATTACK: {
-          value: 143,
-        },
-        REALITY_DEFENSE: {
-          value: 73,
-        },
-        MENTAL_DEFENSE: {
-          value: 84,
+          value: 230,
         },
         CRITICAL_RATE: {
-          value: 6,
-          unit: "%",
-        },
-        CRITICAL_DMG: {
-          value: 2,
+          value: 12,
           unit: "%",
         },
         CRITICAL_RESIST_RATE: {
-          value: 8,
+          value: 2,
           unit: "%",
         },
       },
     },
+    materials: [
+      {
+        code: "SHARPODONTY",
+        require: 120000,
+      },
+      {
+        code: "SERPENT_SCEPTER",
+        require: 1,
+      },
+      {
+        code: "GOLDEN_COMPASS",
+        require: 2,
+      },
+      {
+        code: "WINGED_KEY",
+        require: 3,
+      },
+    ],
   },
   RPP_X_5_01_HYPERPHRENIA: {
     id: "RPP_X_5_01_HYPERPHRENIA",
@@ -772,27 +852,23 @@ export const RESONANCE_PATTERN_PIECES = {
     stats: {
       6: {
         HP: {
-          value: 809,
+          value: 920,
         },
         ATTACK: {
-          value: 143,
+          value: 175,
         },
         REALITY_DEFENSE: {
-          value: 73,
+          value: 96,
         },
         MENTAL_DEFENSE: {
-          value: 84,
+          value: 111,
         },
         CRITICAL_RATE: {
-          value: 6,
+          value: 8,
           unit: "%",
         },
         CRITICAL_DMG: {
-          value: 2,
-          unit: "%",
-        },
-        CRITICAL_RESIST_RATE: {
-          value: 8,
+          value: 12,
           unit: "%",
         },
       },
