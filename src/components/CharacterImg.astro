@@ -11,7 +11,7 @@ interface Props {
     | "chibi"
     | "skill-1"
     | "skill-2"
-    | "unique";
+    | "ultimate";
   id?: string;
   code?: string;
 }
@@ -104,13 +104,13 @@ const { variant, id = "", code = "" } = Astro.props;
             />
           );
         }
-        case "unique": {
+        case "ultimate": {
           if (!id) return null;
           return (
             <CustomImage
               presetWidth={192}
-              src={`/images/characters/${id}/unique.png`}
-              alt="unique"
+              src={`/images/characters/${id}/ultimate.png`}
+              alt="ultimate"
             />
           );
         }

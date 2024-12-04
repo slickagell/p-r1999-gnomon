@@ -1,7 +1,6 @@
 import {
   IMAGE_DEGREE_ORIENTATIONS,
   IMAGE_ORIENTATION,
-  RESONANCE_PATTERN,
   RESONANCE_PATTERN_PIECES,
   RESONANCE_PIECES,
 } from "@constants/resonance";
@@ -43,6 +42,9 @@ export default () => ({
   patternPieces: [],
   initialRecommendedData: [],
   initialActiveResonancePieces: [],
+
+  pieceShapeFilter: "",
+  pieceBlocksFilter: "",
 
   initDragGeoJson: null,
   dragGeoJson: null,
@@ -1480,5 +1482,13 @@ export default () => ({
     this.resetInitialState();
     this.resetPiecesQuantity();
     this.resetGeneralStats();
+  },
+
+  filterShowPieces(id: string) {
+    const [pieceType, pieceShape, pieceBlocks, pieceId] = id.split("_");
+    return (
+      (this.pieceShapeFilter === pieceShape || !this.pieceShapeFilter) &&
+      (this.pieceBlocksFilter === pieceBlocks || !this.pieceBlocksFilter)
+    );
   },
 });

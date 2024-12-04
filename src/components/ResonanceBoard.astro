@@ -17,6 +17,8 @@ interface Props {
   recommendedResonancePattern?: string;
   recommendedResonanceList?: ResonanceRecommendedListType;
   isDev?: boolean;
+  pieceShapeFilterList?: string[];
+  pieceBlocksFilterList?: string[];
 }
 
 const {
@@ -25,6 +27,8 @@ const {
   recommendedResonanceList,
   recommendedResonancePattern = "PLACIDITY",
   isDev,
+  pieceShapeFilterList,
+  pieceBlocksFilterList,
 } = Astro.props;
 
 const initialActiveResonanceLevel =
@@ -199,6 +203,50 @@ const patternMaterialsList = patternPieces.map((ele) => {
       </template>
     </div>
   </div>
+  {
+    isDev && (
+      <div class="md:grid md:grid-rows-2 md:grid-flow-col gap-2 my-5">
+        <span class="text-2xl">Shape:</span>
+        <div class="flex-1 flex overflow-auto">
+          <button
+            class="btn btn-outline shrink-0"
+            x-bind:class="pieceShapeFilter === '' ? 'btn-primary' : ''"
+            x-on:click="pieceShapeFilter = ''"
+          >
+            All
+          </button>
+          {pieceShapeFilterList?.map((pieceShape) => (
+            <button
+              class="btn btn-outline shrink-0"
+              x-bind:class={`pieceShapeFilter === '${pieceShape}' ? 'btn-primary' : ''`}
+              x-on:click={`pieceShapeFilter = '${pieceShape}'`}
+            >
+              {pieceShape}
+            </button>
+          ))}
+        </div>
+        <span class="text-2xl">Number of blocks:</span>
+        <div class="flex-1 flex overflow-auto">
+          <button
+            class="btn btn-outline shrink-0"
+            x-bind:class="pieceBlocksFilter === '' ? 'btn-primary' : ''"
+            x-on:click="pieceBlocksFilter = ''"
+          >
+            All
+          </button>
+          {pieceBlocksFilterList?.map((pieceBlocks) => (
+            <button
+              class="btn btn-outline shrink-0"
+              x-bind:class={`pieceBlocksFilter === '${pieceBlocks}' ? 'btn-primary' : ''`}
+              x-on:click={`pieceBlocksFilter = '${pieceBlocks}'`}
+            >
+              {pieceBlocks}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
   <div
     class="resonance relative flex flex-col md:flex-row gap-4 w-full"
     @pointerdown="onPointerDown"
@@ -275,90 +323,89 @@ const patternMaterialsList = patternPieces.map((ele) => {
         </div>
         <!-- End Recommended -->
         <!-- Resonance Pattern -->
-        <div class="mx-4 z-20 relative" x-show="activeResonanceLevel>=10">
-          <label
-            x-ref="patternSelect"
-            id="patternSelect"
-            class="select-none label"
-          >
-            Pattern
-          </label>
-          <select
-            id="patternSelect"
-            class="select select-secondary select-bordered flex w-full"
-            @change="changePattern($event.target.value)"
-          >
-            {
-              patternOptions.map((pattern) => (
-                <option
-                  value={pattern.value}
-                  selected={pattern.value === recommendedResonancePattern}
-                >
-                  {pattern.label}
-                </option>
-              ))
-            }
-          </select>
-          <label class="label">
-            <div class="label-text">
-              {
-                patternTagsList.map((ele) => (
-                  <template x-if={`'${ele.id}' === selectedPattern`}>
-                    <div class="flex gap-1">
-                      {ele.tags.map((tag) => (
-                        <span class="badge badge-outline">{tag}</span>
+        {
+          !isDev && (
+            <div class="mx-4 z-20 relative" x-show="activeResonanceLevel>=10">
+              <label
+                x-ref="patternSelect"
+                id="patternSelect"
+                class="select-none label"
+              >
+                Pattern
+              </label>
+              <select
+                id="patternSelect"
+                class="select select-secondary select-bordered flex w-full"
+                @change="changePattern($event.target.value)"
+              >
+                {patternOptions.map((pattern) => (
+                  <option
+                    value={pattern.value}
+                    selected={pattern.value === recommendedResonancePattern}
+                  >
+                    {pattern.label}
+                  </option>
+                ))}
+              </select>
+              <label class="label">
+                <div class="label-text">
+                  {patternTagsList.map((ele) => (
+                    <template x-if={`'${ele.id}' === selectedPattern`}>
+                      <div class="flex gap-1">
+                        {ele.tags.map((tag) => (
+                          <span class="badge badge-outline">{tag}</span>
+                        ))}
+                      </div>
+                    </template>
+                  ))}
+                </div>
+                <span class="label-text-alt">
+                  <Tooltip>
+                    <p
+                      slot="toggle"
+                      class="text-base-content flex items-center gap-1"
+                    >
+                      Material
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="24"
+                        height="24"
+                        stroke-width="2"
+                      >
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+                        <path d="M12 9h.01" />
+                        <path d="M11 12h1v4h1" />
+                      </svg>
+                    </p>
+                    <div slot="content">
+                      {patternMaterialsList.map((ele) => (
+                        <template x-if={`'${ele.id}' === selectedPattern`}>
+                          <div>
+                            {ele.materials.map((material) => (
+                              <Material
+                                code={material.code}
+                                require={material.require}
+                              />
+                            ))}
+                          </div>
+                        </template>
                       ))}
                     </div>
-                  </template>
-                ))
-              }
+                  </Tooltip>
+                </span>
+              </label>
             </div>
-            <span class="label-text-alt">
-              <Tooltip>
-                <p
-                  slot="toggle"
-                  class="text-base-content flex items-center gap-1"
-                >
-                  Material
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    width="24"
-                    height="24"
-                    stroke-width="2"
-                  >
-                    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
-                    <path d="M12 9h.01"></path>
-                    <path d="M11 12h1v4h1"></path>
-                  </svg>
-                </p>
-                <div slot="content">
-                  {
-                    patternMaterialsList.map((ele) => (
-                      <template x-if={`'${ele.id}' === selectedPattern`}>
-                        <div>
-                          {ele.materials.map((material) => (
-                            <Material
-                              code={material.code}
-                              require={material.require}
-                            />
-                          ))}
-                        </div>
-                      </template>
-                    ))
-                  }
-                </div>
-              </Tooltip>
-            </span>
-          </label>
-        </div>
+          )
+        }
         <!-- End Resonance Pattern -->
       </div>
     </div>
+    {/* Pieces */}
     <div class="flex-1 md:basis-1/2 relative z-10">
       <div
         class="md:absolute md:top-0 md:left-0 w-full h-full overflow-auto p-4 flex flex-row md:flex-col gap-6"
@@ -370,6 +417,9 @@ const patternMaterialsList = patternPieces.map((ele) => {
           <div
             x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
             class="flex flex-col md:flex-row gap-4 select-none"
+            {...isDev && {
+              ["x-show"]: "filterShowPieces(item.id)",
+            }}
           >
             <div>
               <div
