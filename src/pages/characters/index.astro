@@ -5,6 +5,18 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const characterEntries = await getCollection("characters");
+
+function sortCharacters(a, b) {
+  if (a.data.version !== b.data.version) {
+    return -(a.data.version - b.data.version);
+  }
+
+  if (a.data.star !== b.data.star) {
+    return -(a.data.star - b.data.star);
+  }
+
+  return a.data.title - b.data.title;
+}
 ---
 
 <Layout
@@ -132,7 +144,7 @@ const characterEntries = await getCollection("characters");
 
     <ul class="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
       {
-        characterEntries.map((characterEntry) => {
+        characterEntries.sort(sortCharacters).map((characterEntry) => {
           return (
             <li
               x-show={`filterCharacter({ 
@@ -144,12 +156,17 @@ const characterEntries = await getCollection("characters");
             >
               <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
                 <a class="h-full" href={`/characters/${characterEntry.slug}`}>
-                  <div class="h-full relative ">
+                  <div class="h-full relative overflow-hidden">
                     <div class="absolute -top-1 left-2 md:w-6 group-hover:-top-2 transition-all">
                       <AfflatusIcon type={characterEntry.data.afflatus} />
                     </div>
                     <CustomImage
                       class="w-full"
+                      src={`/images/characters/common/bg-character.png`}
+                      alt={`bg-character`}
+                    />
+                    <CustomImage
+                      class="absolute top-0 left-0 w-full -z-1"
                       src={`/images/characters/${characterEntry.data.id}/card.png`}
                       alt={`character-card-${characterEntry.data.id}`}
                     />
