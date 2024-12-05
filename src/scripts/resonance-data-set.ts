@@ -1264,14 +1264,14 @@ export default () => ({
         geoJson
       ) => {
         const pieceId = geoJson.properties?.pieceId;
-        if (prev[pieceId]) {
+        if (prev.pieces?.[pieceId]) {
           return {
             ...prev,
             blocksList: prev.blocksList.concat(geoJson.properties?.blocks),
             pieces: {
               ...prev.pieces,
               [pieceId]: {
-                quantity: prev[pieceId].quantity + 1,
+                quantity: prev.pieces[pieceId].quantity + 1,
               },
             },
           };

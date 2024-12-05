@@ -55,4 +55,19 @@ export const RESONANCE_PATTERN = {
     title: "Stupefaction",
     tags: ["GENERALIZED"],
   },
+  MERCY: {
+    id: "MERCY",
+    title: "Mercy",
+    tags: ["DMG_HEAL", "DMG_REDUCTION"],
+  },
+  EQUANIMITY: {
+    id: "EQUANIMITY",
+    title: "Equanimity",
+    tags: ["HP", "MENTAL_DEFENSE", "REALITY_DEFENSE"],
+  },
+  EQUIBALANCE: {
+    id: "EQUIBALANCE",
+    title: "Equilance",
+    tags: ["GENERALIZED"],
+  },
 };

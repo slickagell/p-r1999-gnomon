@@ -315,6 +315,11 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 :selected="resonance.value === selectedRecommended"></option>
             </template>
           </select>
+          <label class="label">
+            <span class="label-text-alt text-sm opacity-50">
+              Source of recommended: CN (to be updated)
+            </span>
+          </label>
         </div>
         <!-- End Recommended -->
         <!-- Resonance Pattern -->
@@ -394,6 +399,9 @@ const patternMaterialsList = patternPieces.map((ele) => {
                   </Tooltip>
                 </span>
               </label>
+              <span class="text-sm opacity-50">
+                Source of recommended: CN (to be updated)
+              </span>
             </div>
           )
         }
