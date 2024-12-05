@@ -19,9 +19,13 @@ Any suggestions or reported issues are appreciated.
     ├── /materials (Material list)
     └── /a-series-of-dusks (A Series of Dusks)
         └── /artefacts (Artefact list)
+            └── /exchange (Artefact exchange)
         └── /mechanic (Mechanic)
 ```
 
 ## Thanks
 
-Big thanks to this repository [Reverse-1999-CN-Asset](https://github.com/myssal/Reverse-1999-CN-Asset) & [res1999.huijiwiki](https://res1999.huijiwiki.com) for assets and ideas
+Big thanks to these resources for assets, data and ideas:
+- [Reverse-1999-CN-Asset](https://github.com/myssal/Reverse-1999-CN-Asset) 
+- [res1999.huijiwiki](https://res1999.huijiwiki.com) 
+- [Resonance Guide](https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=1734357303#gid=1734357303)

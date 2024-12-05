@@ -72,3 +72,18 @@ export function processSearchResult(result) {
   result.meta.title = result.meta.title.replace(" | Reverse:1999 Gnomon", "");
   return result;
 }
+
+export function sortArtefact(a, b) {
+  const rarityOrder = ["COMMON", "RARE", "EPIC"];
+  const typeOrder = ["WEAPON", "CURIO", "ACCESSORY", "MEDICATION", "DISK"];
+  const rarityIndex = rarityOrder.indexOf(a.data.rarity);
+  const typeIndex = typeOrder.indexOf(a.data.type);
+  const bRarityIndex = rarityOrder.indexOf(b.data.rarity);
+  const bTypeIndex = typeOrder.indexOf(b.data.type);
+
+  if (typeIndex !== bTypeIndex) {
+    return typeIndex - bTypeIndex;
+  } else {
+    return rarityIndex - bRarityIndex;
+  }
+}

@@ -6,6 +6,10 @@
   @apply w-2 h-2 bg-transparent;
 }
 
+:target {
+  scroll-margin-top: 4rem;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
