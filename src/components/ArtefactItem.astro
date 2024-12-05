@@ -24,13 +24,16 @@ const shapeSize = shape.size();
 
 <div
   class="flex flex-col md:flex-row gap-4 py-2"
+  data-artefact-slug={artefactEntry.slug}
   data-artefact-name={artefactEntry.data.name}
   data-artefact-rarity={artefactEntry.data.rarity}
   data-artefact-type={artefactEntry.data.type}
   data-artefact-tags={artefactEntry.data.tags}
 >
   <div>
-    <p class="w-48 text-lg font-bold">{artefactEntry.data.name}</p>
+    <p id={artefactEntry.slug} class="w-48 text-lg font-bold">
+      <a href={`#${artefactEntry.slug}`}>{artefactEntry.data.name}</a>
+    </p>
     <div class="flex gap-4">
       <CustomImage
         presetWidth={80}

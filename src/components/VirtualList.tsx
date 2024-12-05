@@ -9,15 +9,20 @@ import {
   nameFilter as effectNameFilter,
   typeFilter as effectTypeFilter,
 } from "@stores/effectFilterStore";
-import { createMemo, createSignal } from "solid-js";
-import { WindowVirtualizer } from "virtua/solid";
+import { createEffect, createMemo, createSignal } from "solid-js";
+import { WindowVirtualizer, type WindowVirtualizerHandle } from "virtua/solid";
 
 export const ArtefactVirtualList = ({ artefacts }: any) => {
   if (!artefacts) {
     return null;
   }
 
+  const artefactSlug = window.location.hash?.substring(1);
+
   const [frozenArtefacts] = createSignal([...artefacts.children]);
+  const [virtualListElement, setVirtualListElement] = createSignal<
+    WindowVirtualizerHandle | undefined
+  >();
 
   const $rarityFilter = useStore(artefactRarityFilter);
   const $typeFilter = useStore(artefactTypeFilter);
@@ -49,8 +54,23 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
     return filteredArtefacts;
   });
 
+  createEffect(() => {
+    const virtualEl = virtualListElement();
+    if (virtualEl && artefactSlug) {
+      const searchArtefactIdx = frozenArtefacts().findIndex(
+        (ele) => ele.getAttribute("data-artefact-slug") === artefactSlug
+      );
+
+      if (searchArtefactIdx > -1) {
+        virtualEl.scrollToIndex(searchArtefactIdx, {
+          offset: -64,
+        });
+      }
+    }
+  });
+
   return (
-    <WindowVirtualizer data={list()}>
+    <WindowVirtualizer ref={setVirtualListElement} data={list()}>
       {(_, i) => <div data-index={i}>{list()[i]}</div>}
     </WindowVirtualizer>
   );
