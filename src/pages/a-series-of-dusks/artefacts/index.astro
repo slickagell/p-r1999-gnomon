@@ -2,24 +2,10 @@
 import ArtefactItem from "@components/ArtefactItem.astro";
 import { ArtefactVirtualList } from "@components/VirtualList";
 import Layout from "@layouts/Layout.astro";
+import { sortArtefact } from "@scripts/common";
 import { getCollection } from "astro:content";
 
 const artefactEntries = await getCollection("artefacts");
-
-function sortArtefact(a, b) {
-  const rarityOrder = ["COMMON", "RARE", "EPIC"];
-  const typeOrder = ["WEAPON", "CURIO", "ACCESSORY", "MEDICATION", "DISK"];
-  const rarityIndex = rarityOrder.indexOf(a.data.rarity);
-  const typeIndex = typeOrder.indexOf(a.data.type);
-  const bRarityIndex = rarityOrder.indexOf(b.data.rarity);
-  const bTypeIndex = typeOrder.indexOf(b.data.type);
-
-  if (typeIndex !== bTypeIndex) {
-    return typeIndex - bTypeIndex;
-  } else {
-    return rarityIndex - bRarityIndex;
-  }
-}
 ---
 
 <Layout

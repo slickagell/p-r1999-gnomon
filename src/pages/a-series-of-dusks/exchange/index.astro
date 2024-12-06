@@ -1,0 +1,194 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import { ARTEFACT_TAG } from "@constants/artefact";
+import Layout from "@layouts/Layout.astro";
+import { sortArtefact } from "@scripts/common";
+import { getCollection } from "astro:content";
+import matrix from "matrix-js";
+
+const artefactEntries = await getCollection("artefacts");
+
+const exchangeArtefacts = artefactEntries
+  .filter((artefactEntry) => artefactEntry.data.canExchange)
+  .sort(sortArtefact);
+---
+
+<Layout
+  title="Artefact Exchange"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "A Series of Dusks",
+      href: "/a-series-of-dusks",
+    },
+    {
+      label: "Artefact Exchange",
+    },
+  ]}
+>
+  <h1>Artefact Exchange</h1>
+  {
+    exchangeArtefacts.map((artefactEntry) => {
+      const shape = matrix(artefactEntry.data.shape);
+      const shapeSize = shape.size();
+
+      return (
+        <div class="mt-8">
+          <p class="font-bold text-xl mb-4">{artefactEntry.data.name}</p>
+          <div class="flex gap-8">
+            <div class="basis-1/4 flex flex-col gap-2 items-center">
+              {/* Artefact image */}
+              <div class="border border-2 inline-block">
+                <CustomImage
+                  presetWidth={80}
+                  src={`/images/artefacts/${artefactEntry.data.image}`}
+                  alt={`artefact ${artefactEntry.slug}`}
+                />
+              </div>
+              {/* Artefact name */}
+              <p>{artefactEntry.data.name}</p>
+              {/* Artefact tag */}
+              <div class="mt-1 flex gap-1 flex-wrap justify-center">
+                {artefactEntry.data.tags.map((tag) => (
+                  <span
+                    class:list={[
+                      "badge font-bold",
+                      {
+                        "border-support text-support": tag === "SUPPORT",
+                        "border-ritual text-ritual": tag === "RITUAL",
+                        "border-craft text-craft": tag === "CRAFT",
+                        "border-syntony text-syntony": tag === "SYNTONY",
+                        "border-resonance text-resonance": tag === "RESONANCE",
+                        "border-abundance text-abundance": tag === "ABUNDANCE",
+                        "border-extra-action text-extra-action":
+                          tag === "EXTRA_ACTION",
+                        "border-voltaic text-voltaic": tag === "VOLTAIC",
+                      },
+                    ]}
+                  >
+                    {ARTEFACT_TAG[tag].title}
+                  </span>
+                ))}
+              </div>
+              {/* Artefact shape */}
+              <div class="flex flex-col gap-1">
+                {Array.from({ length: shapeSize[0] }).map((_, rowIdx) => (
+                  <div class="flex gap-1">
+                    {Array.from({ length: shapeSize[1] }).map((_, colIdx) => (
+                      <div
+                        class:list={[
+                          "w-6 h-6",
+                          !shape(rowIdx, colIdx)
+                            ? "bg-transparent"
+                            : {
+                                "bg-common/30":
+                                  artefactEntry.data.rarity === "COMMON",
+                                "bg-rare/30":
+                                  artefactEntry.data.rarity === "RARE",
+                                "bg-epic/30":
+                                  artefactEntry.data.rarity === "EPIC",
+                              },
+                        ]}
+                      />
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p class="mt-5 text-4xl">=</p>
+            {artefactEntry.data.combination?.map(
+              (combineArtefactCode, combineIdx) => {
+                const combineArtefact = artefactEntries.find(
+                  (artefactEntry) =>
+                    artefactEntry.data.code === combineArtefactCode
+                );
+
+                if (!combineArtefact) return null;
+
+                return (
+                  <Fragment>
+                    {combineIdx !== 0 && <p class="mt-5 text-4xl">+</p>}
+                    <div class="flex flex-col gap-2 items-center">
+                      {/* Artefact image */}
+                      <div class="border border-2 inline-block">
+                        <CustomImage
+                          presetWidth={80}
+                          src={`/images/artefacts/${combineArtefact.data.image}`}
+                          alt={`artefact ${combineArtefact.slug}`}
+                        />
+                      </div>
+                      {/* Artefact name */}
+                      <p>{combineArtefact.data.name}</p>
+                      {/* Artefact tag */}
+                      <div class="mt-1 flex gap-1">
+                        {combineArtefact.data.tags.map((tag) => (
+                          <span
+                            class:list={[
+                              "badge font-bold",
+                              {
+                                "border-support text-support":
+                                  tag === "SUPPORT",
+                                "border-ritual text-ritual": tag === "RITUAL",
+                                "border-craft text-craft": tag === "CRAFT",
+                                "border-syntony text-syntony":
+                                  tag === "SYNTONY",
+                                "border-resonance text-resonance":
+                                  tag === "RESONANCE",
+                                "border-abundance text-abundance":
+                                  tag === "ABUNDANCE",
+                                "border-extra-action text-extra-action":
+                                  tag === "EXTRA_ACTION",
+                                "border-voltaic text-voltaic":
+                                  tag === "VOLTAIC",
+                              },
+                            ]}
+                          >
+                            {ARTEFACT_TAG[tag].title}
+                          </span>
+                        ))}
+                      </div>
+                      {/* Artefact shape */}
+                      <div class="flex flex-col gap-1">
+                        {Array.from({ length: shapeSize[0] }).map(
+                          (_, rowIdx) => (
+                            <div class="flex gap-1">
+                              {Array.from({ length: shapeSize[1] }).map(
+                                (_, colIdx) => (
+                                  <div
+                                    class:list={[
+                                      "w-6 h-6",
+                                      !shape(rowIdx, colIdx)
+                                        ? "bg-transparent"
+                                        : {
+                                            "bg-common/30":
+                                              combineArtefact.data.rarity ===
+                                              "COMMON",
+                                            "bg-rare/30":
+                                              combineArtefact.data.rarity ===
+                                              "RARE",
+                                            "bg-epic/30":
+                                              combineArtefact.data.rarity ===
+                                              "EPIC",
+                                          },
+                                    ]}
+                                  />
+                                )
+                              )}
+                            </div>
+                          )
+                        )}
+                      </div>
+                    </div>
+                  </Fragment>
+                );
+              }
+            )}
+          </div>
+        </div>
+      );
+    })
+  }
+</Layout>

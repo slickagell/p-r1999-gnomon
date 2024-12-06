@@ -1,14 +1,15 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import { ROUTES } from "@config/routes";
 import {
   ARTEFACT_RARITY,
   ARTEFACT_TAG,
   ARTEFACT_TYPE,
 } from "@constants/artefact";
 import matrix from "matrix-js";
-import CustomImage from "@components/CustomImage.astro";
-import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
-import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 
 interface Props {
   artefactEntry: any;
@@ -24,13 +25,16 @@ const shapeSize = shape.size();
 
 <div
   class="flex flex-col md:flex-row gap-4 py-2"
+  data-artefact-slug={artefactEntry.slug}
   data-artefact-name={artefactEntry.data.name}
   data-artefact-rarity={artefactEntry.data.rarity}
   data-artefact-type={artefactEntry.data.type}
   data-artefact-tags={artefactEntry.data.tags}
 >
   <div>
-    <p class="w-48 text-lg font-bold">{artefactEntry.data.name}</p>
+    <p id={artefactEntry.slug} class="w-48 text-lg font-bold">
+      <a href={`#${artefactEntry.slug}`}>{artefactEntry.data.name}</a>
+    </p>
     <div class="flex gap-4">
       <CustomImage
         presetWidth={80}
@@ -63,44 +67,63 @@ const shapeSize = shape.size();
     </div>
   </div>
   <div>
-    <div class="flex gap-1">
-      <span
-        class:list={[
-          "badge font-medium border-transparent",
-          {
-            "text-common bg-common/20": artefactEntry.data.rarity === "COMMON",
-            "text-rare bg-rare/20": artefactEntry.data.rarity === "RARE",
-            "text-epic bg-epic/20": artefactEntry.data.rarity === "EPIC",
-          },
-        ]}
-      >
-        {ARTEFACT_RARITY[artefactEntry.data.rarity].title}
-      </span>
-      <span class="badge font-medium border-transparent bg-base-content/20">
-        {ARTEFACT_TYPE[artefactEntry.data.type].title}
-      </span>
-    </div>
-    <div class="mt-1 flex gap-1">
-      {
-        artefactEntry.data.tags.map((tag) => (
+    <div class="flex justify-between items-start">
+      <div>
+        <div class="flex gap-1">
           <span
             class:list={[
-              "badge font-bold",
+              "badge font-medium border-transparent",
               {
-                "border-support text-support": tag === "SUPPORT",
-                "border-ritual text-ritual": tag === "RITUAL",
-                "border-craft text-craft": tag === "CRAFT",
-                "border-syntony text-syntony": tag === "SYNTONY",
-                "border-resonance text-resonance": tag === "RESONANCE",
-                "border-abundance text-abundance": tag === "ABUNDANCE",
-                "border-extra-action text-extra-action": tag === "EXTRA_ACTION",
-                "border-voltaic text-voltaic": tag === "VOLTAIC",
+                "text-common bg-common/20":
+                  artefactEntry.data.rarity === "COMMON",
+                "text-rare bg-rare/20": artefactEntry.data.rarity === "RARE",
+                "text-epic bg-epic/20": artefactEntry.data.rarity === "EPIC",
               },
             ]}
           >
-            {ARTEFACT_TAG[tag].title}
+            {ARTEFACT_RARITY[artefactEntry.data.rarity].title}
           </span>
-        ))
+          <span class="badge font-medium border-transparent bg-base-content/20">
+            {ARTEFACT_TYPE[artefactEntry.data.type].title}
+          </span>
+        </div>
+        <div class="mt-1 flex gap-1">
+          {
+            artefactEntry.data.tags.map((tag) => (
+              <span
+                class:list={[
+                  "badge font-bold",
+                  {
+                    "border-support text-support": tag === "SUPPORT",
+                    "border-ritual text-ritual": tag === "RITUAL",
+                    "border-craft text-craft": tag === "CRAFT",
+                    "border-syntony text-syntony": tag === "SYNTONY",
+                    "border-resonance text-resonance": tag === "RESONANCE",
+                    "border-abundance text-abundance": tag === "ABUNDANCE",
+                    "border-extra-action text-extra-action":
+                      tag === "EXTRA_ACTION",
+                    "border-voltaic text-voltaic": tag === "VOLTAIC",
+                  },
+                ]}
+              >
+                {ARTEFACT_TAG[tag].title}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+      {
+        artefactEntry.data.canExchange && (
+          <a
+            class="btn btn-sm btn-ghost text-primary"
+            href={
+              ROUTES.A_SERIES_OF_DUSKS_ARTEFACT_EXCHANGE +
+              `#${artefactEntry.slug}`
+            }
+          >
+            Exchange
+          </a>
+        )
       }
     </div>
     <div class="mt-2">
