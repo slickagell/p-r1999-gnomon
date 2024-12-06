@@ -1,14 +1,15 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import { ROUTES } from "@config/routes";
 import {
   ARTEFACT_RARITY,
   ARTEFACT_TAG,
   ARTEFACT_TYPE,
 } from "@constants/artefact";
 import matrix from "matrix-js";
-import CustomImage from "@components/CustomImage.astro";
-import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
-import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 
 interface Props {
   artefactEntry: any;
@@ -115,7 +116,10 @@ const shapeSize = shape.size();
         artefactEntry.data.canExchange && (
           <a
             class="btn btn-sm btn-ghost text-primary"
-            href={`/a-series-of-dusks/artefacts/exchange#${artefactEntry.slug}`}
+            href={
+              ROUTES.A_SERIES_OF_DUSKS_ARTEFACT_EXCHANGE +
+              `#${artefactEntry.slug}`
+            }
           >
             Exchange
           </a>

@@ -1,5 +1,6 @@
 ---
 import CustomImage from "@components/CustomImage.astro";
+import { ROUTES } from "@config/routes";
 import { ARTEFACT_TAG } from "@constants/artefact";
 import Layout from "@layouts/Layout.astro";
 import { sortArtefact } from "@scripts/common";
@@ -44,14 +45,28 @@ const exchangeArtefacts = artefactEntries
             <div class="basis-32 lg:basis-48 flex flex-col gap-2 items-center">
               {/* Artefact image */}
               <div class="border border-2 inline-block">
-                <CustomImage
-                  presetWidth={80}
-                  src={`/images/artefacts/${artefactEntry.data.image}`}
-                  alt={`artefact ${artefactEntry.slug}`}
-                />
+                <a
+                  href={
+                    ROUTES.A_SERIES_OF_DUSKS_ARTEFACT + `#${artefactEntry.slug}`
+                  }
+                >
+                  <CustomImage
+                    presetWidth={80}
+                    src={`/images/artefacts/${artefactEntry.data.image}`}
+                    alt={`artefact ${artefactEntry.slug}`}
+                  />
+                </a>
               </div>
               {/* Artefact name */}
-              <p class="text-center">{artefactEntry.data.name}</p>
+              <p id={artefactEntry.slug} class="text-center">
+                <a
+                  href={
+                    ROUTES.A_SERIES_OF_DUSKS_ARTEFACT + `#${artefactEntry.slug}`
+                  }
+                >
+                  {artefactEntry.data.name}
+                </a>
+              </p>
               {/* Artefact tag */}
               <div class="mt-1 flex gap-1 flex-wrap justify-center">
                 {artefactEntry.data.tags.map((tag) => (
@@ -122,14 +137,30 @@ const exchangeArtefacts = artefactEntries
                       <div class="basis-32 lg:basis-48 flex flex-col gap-2 items-center">
                         {/* Artefact image */}
                         <div class="border border-2 inline-block">
-                          <CustomImage
-                            presetWidth={80}
-                            src={`/images/artefacts/${combineArtefact.data.image}`}
-                            alt={`artefact ${combineArtefact.slug}`}
-                          />
+                          <a
+                            href={
+                              ROUTES.A_SERIES_OF_DUSKS_ARTEFACT +
+                              `#${combineArtefact.slug}`
+                            }
+                          >
+                            <CustomImage
+                              presetWidth={80}
+                              src={`/images/artefacts/${combineArtefact.data.image}`}
+                              alt={`artefact ${combineArtefact.slug}`}
+                            />
+                          </a>
                         </div>
                         {/* Artefact name */}
-                        <p class="text-center">{combineArtefact.data.name}</p>
+                        <p class="text-center">
+                          <a
+                            href={
+                              ROUTES.A_SERIES_OF_DUSKS_ARTEFACT +
+                              `#${combineArtefact.slug}`
+                            }
+                          >
+                            {combineArtefact.data.name}
+                          </a>
+                        </p>
                         {/* Artefact tag */}
                         <div class="mt-1 flex gap-1 flex-wrap">
                           {combineArtefact.data.tags.map((tag) => (

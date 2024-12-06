@@ -61,9 +61,12 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
         (ele) => ele.getAttribute("data-artefact-slug") === artefactSlug
       );
 
+      const header = document.getElementById("header");
+      const headerHeight = header?.offsetHeight || 0;
+
       if (searchArtefactIdx > -1) {
         virtualEl.scrollToIndex(searchArtefactIdx, {
-          offset: -64,
+          offset: -headerHeight,
         });
       }
     }
