@@ -3,11 +3,9 @@ import CustomImage from "@components/CustomImage.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
-import {
-  RESONANCE_PATTERN,
-  RESONANCE_PATTERN_PIECES,
-  RESONANCE_PIECES,
-} from "@constants/resonance";
+import { RESONANCE_PATTERN } from "@constants/resonance";
+import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
+import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
 
 const DEFAULT_RESONATE_LEVEL = 10;
 
@@ -43,10 +41,7 @@ const mainPiece = resonancePieces[initialActiveResonanceLevel].find((item) => {
   return false;
 });
 
-if (!mainPiece) {
-  return;
-}
-const mainPieceCode = ("" + mainPiece.id).replace("RP_", "");
+const mainPieceCode = ("" + mainPiece?.id).replace("RP_", "");
 
 const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
   (
@@ -320,6 +315,11 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 :selected="resonance.value === selectedRecommended"></option>
             </template>
           </select>
+          <label class="label">
+            <span class="label-text-alt text-sm opacity-50">
+              Source of recommended: CN (to be updated)
+            </span>
+          </label>
         </div>
         <!-- End Recommended -->
         <!-- Resonance Pattern -->
@@ -399,6 +399,9 @@ const patternMaterialsList = patternPieces.map((ele) => {
                   </Tooltip>
                 </span>
               </label>
+              <span class="text-sm opacity-50">
+                Source of recommended: CN (to be updated)
+              </span>
             </div>
           )
         }
@@ -444,7 +447,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 </div>
               </div>
               <p class="mt-2 flex gap-2 justify-center select-none">
-                {isDev && <span class="badge" x-text="item.id" />}
+                {isDev && <span class="badge select-text" x-text="item.id" />}
                 <span
                   x-text="quantity"
                   :class="quantity === 0 ? 'text-error' : ''"></span>

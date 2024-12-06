@@ -1,11 +1,11 @@
 ---
 import ResonanceBoard from "@components/ResonanceBoard.astro";
-import { RESONANCE_PIECES } from "@constants/resonance";
+import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
 import Layout from "@layouts/Layout.astro";
 
 const piecesData = Object.values(RESONANCE_PIECES).map((ele) => ({
   id: ele.id,
-  total: 1,
+  total: 4,
   level: 1,
 }));
 
@@ -22,9 +22,10 @@ piecesData.forEach((piece) => {
   }
 });
 
-const PIECES: ResonanceInitPiecesType = {
-  10: piecesData,
-};
+const PIECES: ResonanceInitPiecesType = Array.from(
+  Array(15),
+  (_, index) => index + 1
+).reduce((prev, curr) => ({ ...prev, [curr]: piecesData }), {});
 ---
 
 <Layout title="Resonance">
@@ -40,7 +41,7 @@ const PIECES: ResonanceInitPiecesType = {
     maxResonanceLevel={15}
     resonancePieces={PIECES}
     isDev
-    pieceShapeFilterList={pieceShapeFilterList}
-    pieceBlocksFilterList={pieceBlocksFilterList}
+    pieceShapeFilterList={pieceShapeFilterList.sort()}
+    pieceBlocksFilterList={pieceBlocksFilterList.sort()}
   />
 </Layout>

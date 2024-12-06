@@ -25,7 +25,7 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 
 <div class="flex justify-between flex-col-reverse md:flex-row gap-8">
   <div>
-    <div class="flex gap-8 items-center justify-center md:justify-start">
+    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
       <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
 
       <div class="flex gap-2 items-center">
@@ -33,10 +33,18 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
 
         ##### {DMG_TYPE[frontmatter.dmgType].title}
       </div>
+
+      <div class="flex gap-2">
+        <div class="badge bg-base-content/20">
+          {'Version ' + frontmatter.version}
+        </div>
+
+        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
+      </div>
     </div>
 
-    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>))}
+    <div class="mt-2 flex gap-x-2 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
     </div>
 
     <div class="mt-4">
@@ -83,7 +91,8 @@ import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
   </div>
 </div>
 
-:::toc
+::toc
+
 ## Arcane Skills
 
 ### Bottoms Up
@@ -234,4 +243,5 @@ At the start of the round, if in :effect{code="LIQUOR"} status, grant 1 effect f
     <Material code="WYRMLING_SKELETON" require="6" />
   </div>
 </div>
-:::
+
+\:::

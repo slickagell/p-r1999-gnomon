@@ -1,9 +1,9 @@
 import {
   IMAGE_DEGREE_ORIENTATIONS,
   IMAGE_ORIENTATION,
-  RESONANCE_PATTERN_PIECES,
-  RESONANCE_PIECES,
 } from "@constants/resonance";
+import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
+import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
 import { centroid } from "@turf/centroid";
 import { polygon } from "@turf/helpers";
 import Alpine from "alpinejs";
@@ -1264,14 +1264,14 @@ export default () => ({
         geoJson
       ) => {
         const pieceId = geoJson.properties?.pieceId;
-        if (prev[pieceId]) {
+        if (prev.pieces?.[pieceId]) {
           return {
             ...prev,
             blocksList: prev.blocksList.concat(geoJson.properties?.blocks),
             pieces: {
               ...prev.pieces,
               [pieceId]: {
-                quantity: prev[pieceId].quantity + 1,
+                quantity: prev.pieces[pieceId].quantity + 1,
               },
             },
           };

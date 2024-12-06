@@ -1,0 +1,1311 @@
+{
+  "RPP_X_5_01_ASPIRATIONAL": {
+    "id": "RPP_X_5_01_ASPIRATIONAL",
+    "image": "rpp-x-5-01-aspirational.png",
+    "materials": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 1
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 2
+      },
+      {
+        "code": "GOOSE_NECK",
+        "require": 3
+      }
+    ],
+    "stats": {
+      "6": {
+        "ATTACK": {
+          "value": 175
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 18
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "MENTAL_DEFENSE": {
+          "value": 84
+        },
+        "REALITY_DEFENSE": {
+          "value": 73
+        }
+      },
+      "7": {
+        "ATTACK": {
+          "value": 214
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 23
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 13
+        },
+        "MENTAL_DEFENSE": {
+          "value": 104
+        },
+        "REALITY_DEFENSE": {
+          "value": 90
+        }
+      },
+      "8": {
+        "ATTACK": {
+          "value": 255
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 28
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 14
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        },
+        "MENTAL_DEFENSE": {
+          "value": 123
+        },
+        "REALITY_DEFENSE": {
+          "value": 107
+        }
+      },
+      "9": {
+        "ATTACK": {
+          "value": 294
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 32
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        },
+        "MENTAL_DEFENSE": {
+          "value": 143
+        },
+        "REALITY_DEFENSE": {
+          "value": 124
+        }
+      },
+      "10": {
+        "ATTACK": {
+          "value": 335
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 36
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 16
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "MENTAL_DEFENSE": {
+          "value": 162
+        },
+        "REALITY_DEFENSE": {
+          "value": 141
+        }
+      }
+    }
+  },
+  "RPP_X_5_01_ELUCIDATION": {
+    "id": "RPP_X_5_01_ELUCIDATION",
+    "image": "rpp-x-5-01-elucidation.png",
+    "materials": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 1
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 2
+      },
+      {
+        "code": "GOOSE_NECK",
+        "require": 3
+      }
+    ],
+    "stats": {
+      "6": {
+        "ATTACK": {
+          "value": 175
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 8
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "MENTAL_DEFENSE": {
+          "value": 84
+        },
+        "REALITY_DEFENSE": {
+          "value": 73
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 10
+        }
+      },
+      "7": {
+        "ATTACK": {
+          "value": 214
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 10
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 13
+        },
+        "MENTAL_DEFENSE": {
+          "value": 104
+        },
+        "REALITY_DEFENSE": {
+          "value": 90
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 12
+        }
+      },
+      "8": {
+        "ATTACK": {
+          "value": 255
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 11
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 14
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        },
+        "MENTAL_DEFENSE": {
+          "value": 123
+        },
+        "REALITY_DEFENSE": {
+          "value": 107
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 14
+        }
+      },
+      "9": {
+        "ATTACK": {
+          "value": 294
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 13
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        },
+        "MENTAL_DEFENSE": {
+          "value": 143
+        },
+        "REALITY_DEFENSE": {
+          "value": 124
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 17
+        }
+      },
+      "10": {
+        "ATTACK": {
+          "value": 335
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 16
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "MENTAL_DEFENSE": {
+          "value": 162
+        },
+        "REALITY_DEFENSE": {
+          "value": 141
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 20
+        }
+      }
+    }
+  },
+  "RPP_X_5_01_GENUINITY": {
+    "id": "RPP_X_5_01_GENUINITY",
+    "image": "rpp-x-5-01-genuinity.png",
+    "stats": {
+      "6": {
+        "ATTACK": {
+          "value": 175
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 8
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 8
+        },
+        "MENTAL_DEFENSE": {
+          "value": 84
+        },
+        "REALITY_DEFENSE": {
+          "value": 73
+        }
+      },
+      "7": {
+        "ATTACK": {
+          "value": 214
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 10
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 13
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 10
+        },
+        "MENTAL_DEFENSE": {
+          "value": 104
+        },
+        "REALITY_DEFENSE": {
+          "value": 90
+        }
+      },
+      "8": {
+        "ATTACK": {
+          "value": 255
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 11
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 14
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 12
+        },
+        "MENTAL_DEFENSE": {
+          "value": 123
+        },
+        "REALITY_DEFENSE": {
+          "value": 107
+        }
+      },
+      "9": {
+        "ATTACK": {
+          "value": 294
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 13
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 14
+        },
+        "MENTAL_DEFENSE": {
+          "value": 143
+        },
+        "REALITY_DEFENSE": {
+          "value": 124
+        }
+      },
+      "10": {
+        "ATTACK": {
+          "value": 335
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 16
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 16
+        },
+        "MENTAL_DEFENSE": {
+          "value": 162
+        },
+        "REALITY_DEFENSE": {
+          "value": 141
+        }
+      }
+    }
+  },
+  "RPP_X_5_01_HYPERPHRENIA": {
+    "id": "RPP_X_5_01_HYPERPHRENIA",
+    "image": "rpp-x-5-01-hyperphrenia.png",
+    "stats": {
+      "6": {
+        "ATTACK": {
+          "value": 175
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 12
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 8
+        },
+        "HP": {
+          "value": 920
+        },
+        "MENTAL_DEFENSE": {
+          "value": 111
+        },
+        "REALITY_DEFENSE": {
+          "value": 96
+        }
+      },
+      "7": {
+        "ATTACK": {
+          "value": 214
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 14
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 8
+        },
+        "HP": {
+          "value": 1136
+        },
+        "MENTAL_DEFENSE": {
+          "value": 137
+        },
+        "REALITY_DEFENSE": {
+          "value": 119
+        }
+      },
+      "8": {
+        "ATTACK": {
+          "value": 255
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 16
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        },
+        "HP": {
+          "value": 1346
+        },
+        "MENTAL_DEFENSE": {
+          "value": 163
+        },
+        "REALITY_DEFENSE": {
+          "value": 141
+        }
+      },
+      "9": {
+        "ATTACK": {
+          "value": 294
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 18
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        },
+        "HP": {
+          "value": 1563
+        },
+        "MENTAL_DEFENSE": {
+          "value": 189
+        },
+        "REALITY_DEFENSE": {
+          "value": 164
+        }
+      },
+      "10": {
+        "ATTACK": {
+          "value": 335
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 20
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "value": 1773
+        },
+        "MENTAL_DEFENSE": {
+          "value": 215
+        },
+        "REALITY_DEFENSE": {
+          "value": 186
+        }
+      }
+    }
+  },
+  "RPP_X_5_01_STUPEFACTION": {
+    "id": "RPP_X_5_01_STUPEFACTION",
+    "image": "rpp-x-5-01-stupefaction.png",
+    "materials": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 1
+      },
+      {
+        "code": "GOLDEN_COMPASS",
+        "require": 2
+      },
+      {
+        "code": "WINGED_KEY",
+        "require": 3
+      }
+    ],
+    "stats": {
+      "6": {
+        "ATTACK": {
+          "value": 230
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        },
+        "HP": {
+          "value": 1324
+        }
+      },
+      "7": {
+        "ATTACK": {
+          "value": 284
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 14
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "value": 1629
+        }
+      },
+      "8": {
+        "ATTACK": {
+          "value": 336
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 17
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        },
+        "HP": {
+          "value": 1940
+        }
+      },
+      "9": {
+        "ATTACK": {
+          "value": 390
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 20
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        },
+        "HP": {
+          "value": 2244
+        }
+      },
+      "10": {
+        "ATTACK": {
+          "value": 443
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 23
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "value": 2549
+        }
+      }
+    }
+  },
+  "RPP_Z_5_01_ELUCIDATION": {
+    "id": "RPP_Z_5_01_ELUCIDATION",
+    "image": "rpp-z-5-01-elucidation.png",
+    "materials": [],
+    "stats": {
+      "6": {
+        "HP": {
+          "value": 685
+        },
+        "ATTACK": {
+          "value": 134
+        },
+        "REALITY_DEFENSE": {
+          "value": 55
+        },
+        "MENTAL_DEFENSE": {
+          "value": 51
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 6
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 10
+        }
+      },
+      "7": {
+        "HP": {
+          "value": 845
+        },
+        "ATTACK": {
+          "value": 164
+        },
+        "REALITY_DEFENSE": {
+          "value": 68
+        },
+        "MENTAL_DEFENSE": {
+          "value": 63
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 12
+        }
+      },
+      "8": {
+        "HP": {
+          "value": 997
+        },
+        "ATTACK": {
+          "value": 196
+        },
+        "REALITY_DEFENSE": {
+          "value": 80
+        },
+        "MENTAL_DEFENSE": {
+          "value": 74
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 14
+        }
+      },
+      "9": {
+        "HP": {
+          "value": 1156
+        },
+        "ATTACK": {
+          "value": 226
+        },
+        "REALITY_DEFENSE": {
+          "value": 93
+        },
+        "MENTAL_DEFENSE": {
+          "value": 86
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 17
+        }
+      },
+      "10": {
+        "HP": {
+          "value": 1316
+        },
+        "ATTACK": {
+          "value": 257
+        },
+        "REALITY_DEFENSE": {
+          "value": 106
+        },
+        "MENTAL_DEFENSE": {
+          "value": 98
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 18
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 12
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 20
+        }
+      }
+    }
+  },
+  "RPP_Z_5_01_GENUINITY": {
+    "id": "RPP_Z_5_01_GENUINITY",
+    "image": "rpp-z-5-01-genuinity.png",
+    "materials": [],
+    "stats": {
+      "6": {
+        "HP": {
+          "value": 685
+        },
+        "ATTACK": {
+          "value": 134
+        },
+        "REALITY_DEFENSE": {
+          "value": 55
+        },
+        "MENTAL_DEFENSE": {
+          "value": 51
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 6
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "7": {
+        "HP": {
+          "value": 845
+        },
+        "ATTACK": {
+          "value": 164
+        },
+        "REALITY_DEFENSE": {
+          "value": 68
+        },
+        "MENTAL_DEFENSE": {
+          "value": 63
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 10
+        }
+      },
+      "8": {
+        "HP": {
+          "value": 997
+        },
+        "ATTACK": {
+          "value": 196
+        },
+        "REALITY_DEFENSE": {
+          "value": 80
+        },
+        "MENTAL_DEFENSE": {
+          "value": 74
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 12
+        }
+      },
+      "9": {
+        "HP": {
+          "value": 1156
+        },
+        "ATTACK": {
+          "value": 226
+        },
+        "REALITY_DEFENSE": {
+          "value": 93
+        },
+        "MENTAL_DEFENSE": {
+          "value": 86
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 14
+        }
+      },
+      "10": {
+        "HP": {
+          "value": 1316
+        },
+        "ATTACK": {
+          "value": 257
+        },
+        "REALITY_DEFENSE": {
+          "value": 106
+        },
+        "MENTAL_DEFENSE": {
+          "value": 98
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 18
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 12
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 16
+        }
+      }
+    }
+  },
+  "RPP_Z_5_01_MERCY": {
+    "id": "RPP_Z_5_01_MERCY",
+    "image": "rpp-z-5-01-mercy.png",
+    "materials": [],
+    "stats": {
+      "6": {
+        "HP": {
+          "value": 1011
+        },
+        "ATTACK": {
+          "value": 92
+        },
+        "REALITY_DEFENSE": {
+          "value": 81
+        },
+        "MENTAL_DEFENSE": {
+          "value": 75
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 8
+        },
+        "DMG_HEAL": {
+          "unit": "%",
+          "value": 5
+        }
+      },
+      "7": {
+        "HP": {
+          "value": 1239
+        },
+        "ATTACK": {
+          "value": 114
+        },
+        "REALITY_DEFENSE": {
+          "value": 100
+        },
+        "MENTAL_DEFENSE": {
+          "value": 93
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_HEAL": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "8": {
+        "HP": {
+          "value": 1475
+        },
+        "ATTACK": {
+          "value": 136
+        },
+        "REALITY_DEFENSE": {
+          "value": 119
+        },
+        "MENTAL_DEFENSE": {
+          "value": 110
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_HEAL": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "9": {
+        "HP": {
+          "value": 1704
+        },
+        "ATTACK": {
+          "value": 157
+        },
+        "REALITY_DEFENSE": {
+          "value": 137
+        },
+        "MENTAL_DEFENSE": {
+          "value": 127
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 14
+        },
+        "DMG_HEAL": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "10": {
+        "HP": {
+          "value": 1939
+        },
+        "ATTACK": {
+          "value": 179
+        },
+        "REALITY_DEFENSE": {
+          "value": 156
+        },
+        "MENTAL_DEFENSE": {
+          "value": 145
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 16
+        },
+        "DMG_HEAL": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  },
+  "RPP_Z_5_01_EQUANIMITY": {
+    "id": "RPP_Z_5_01_EQUANIMITY",
+    "image": "rpp-z-5-01-equanimity.png",
+    "materials": [],
+    "stats": {
+      "6": {
+        "HP": {
+          "value": 1911
+        },
+        "REALITY_DEFENSE": {
+          "value": 154
+        },
+        "MENTAL_DEFENSE": {
+          "value": 143
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "7": {
+        "HP": {
+          "value": 2348
+        },
+        "REALITY_DEFENSE": {
+          "value": 189
+        },
+        "MENTAL_DEFENSE": {
+          "value": 176
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "8": {
+        "HP": {
+          "value": 2791
+        },
+        "REALITY_DEFENSE": {
+          "value": 225
+        },
+        "MENTAL_DEFENSE": {
+          "value": 209
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        }
+      },
+      "9": {
+        "HP": {
+          "value": 3227
+        },
+        "REALITY_DEFENSE": {
+          "value": 260
+        },
+        "MENTAL_DEFENSE": {
+          "value": 242
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 12
+        }
+      },
+      "10": {
+        "HP": {
+          "value": 3671
+        },
+        "REALITY_DEFENSE": {
+          "value": 296
+        },
+        "MENTAL_DEFENSE": {
+          "value": 275
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 18
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 14
+        }
+      }
+    }
+  },
+  "RPP_Z_5_01_EQUIBALANCE": {
+    "id": "RPP_Z_5_01_EQUIBALANCE",
+    "image": "rpp-z-5-01-equibalance.png",
+    "materials": [],
+    "stats": {
+      "6": {
+        "HP": {
+          "value": 1260
+        },
+        "ATTACK": {
+          "value": 169
+        },
+        "REALITY_DEFENSE": {
+          "value": 101
+        },
+        "MENTAL_DEFENSE": {
+          "value": 94
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "7": {
+        "HP": {
+          "value": 1551
+        },
+        "ATTACK": {
+          "value": 208
+        },
+        "REALITY_DEFENSE": {
+          "value": 125
+        },
+        "MENTAL_DEFENSE": {
+          "value": 116
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 5
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "8": {
+        "HP": {
+          "value": 1842
+        },
+        "ATTACK": {
+          "value": 246
+        },
+        "REALITY_DEFENSE": {
+          "value": 148
+        },
+        "MENTAL_DEFENSE": {
+          "value": 138
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 9
+        }
+      },
+      "9": {
+        "HP": {
+          "value": 2133
+        },
+        "ATTACK": {
+          "value": 285
+        },
+        "REALITY_DEFENSE": {
+          "value": 172
+        },
+        "MENTAL_DEFENSE": {
+          "value": 160
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 9
+        }
+      },
+      "10": {
+        "HP": {
+          "value": 2424
+        },
+        "ATTACK": {
+          "value": 324
+        },
+        "REALITY_DEFENSE": {
+          "value": 195
+        },
+        "MENTAL_DEFENSE": {
+          "value": 182
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 18
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  }
+}

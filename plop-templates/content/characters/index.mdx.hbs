@@ -18,7 +18,7 @@ import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
-import resonance from "@data/resonance/characters/{{dashCase name}}.json";
+import RESONANCE from "@data/resonance/characters/{{dashCase name}}.json";
 
 # {{titleCase name}}
 
@@ -28,7 +28,7 @@ import resonance from "@data/resonance/characters/{{dashCase name}}.json";
 
 <div class="flex justify-between flex-col-reverse md:flex-row gap-8">
   <div>
-    <div class="flex gap-8 items-center justify-center md:justify-start">
+    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
       <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
 
       <div class="flex gap-2 items-center">
@@ -36,10 +36,18 @@ import resonance from "@data/resonance/characters/{{dashCase name}}.json";
 
         ##### {DMG_TYPE[frontmatter.dmgType].title}
       </div>
+
+      <div class="flex gap-2">
+        <div class="badge bg-base-content/20">
+          {'Version ' + frontmatter.version}
+        </div>
+
+        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
+      </div>
     </div>
 
     <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg bg-base-content/10">{SPECIALTY[specialty].title}</div>))}
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
     </div>
 
     <div class="mt-4">
@@ -196,7 +204,7 @@ import resonance from "@data/resonance/characters/{{dashCase name}}.json";
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={resonance.resonance_pieces} recommendedResonanceList={resonance.resonance_recommended} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} />
 
 ## Insight Materials
 

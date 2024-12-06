@@ -1,0 +1,1084 @@
+{
+  "RP_I_2_01": {
+    "id": "RP_I_2_01",
+    "image": "rp-i-2-01.png",
+    "shape": [[1, 1]],
+    "stats": {
+      "1": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        }
+      },
+      "2": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        }
+      }
+    }
+  },
+  "RP_I_4_01": {
+    "id": "RP_I_4_01",
+    "image": "rp-i-4-01.png",
+    "shape": [[1], [1], [1], [1]],
+    "stats": {
+      "1": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 2
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 1.5
+        }
+      },
+      "2": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 2.5
+        }
+      },
+      "3": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "unit": "%",
+          "value": 3
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "4": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 3.5
+        }
+      }
+    }
+  },
+  "RP_L_3_01": {
+    "id": "RP_L_3_01",
+    "image": "rp-l-3-01.png",
+    "shape": [
+      [1, 1],
+      [1, 0]
+    ],
+    "stats": {
+      "1": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 1
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 1.5
+        }
+      },
+      "2": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 1
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "3": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 2.5
+        }
+      }
+    }
+  },
+  "RP_L_4_01": {
+    "id": "RP_L_4_01",
+    "image": "rp-l-4-01.png",
+    "shape": [
+      [1, 0],
+      [1, 0],
+      [1, 1]
+    ],
+    "stats": {
+      "1": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        }
+      },
+      "2": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1.5
+        }
+      },
+      "3": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "4": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2.5
+        }
+      }
+    }
+  },
+  "RP_L_4_02": {
+    "id": "RP_L_4_02",
+    "image": "rp-l-4-02.png",
+    "shape": [
+      [0, 1],
+      [0, 1],
+      [1, 1]
+    ],
+    "stats": {
+      "1": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 1
+        }
+      },
+      "2": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 5.5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 1.5
+        }
+      },
+      "3": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "4": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 7
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        }
+      }
+    }
+  },
+  "RP_O_1_01": {
+    "id": "RP_O_1_01",
+    "image": "rp-o-1-01.png",
+    "shape": [[1]],
+    "stats": {
+      "1": {
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 0.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 1
+        }
+      }
+    }
+  },
+  "RP_O_1_02": {
+    "id": "RP_O_1_02",
+    "image": "rp-o-1-02.png",
+    "shape": [[1]],
+    "stats": {
+      "1": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 0.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 1
+        }
+      }
+    }
+  },
+  "RP_O_4_01": {
+    "id": "RP_O_4_01",
+    "image": "rp-o-4-01.png",
+    "shape": [
+      [1, 1],
+      [1, 1]
+    ],
+    "stats": {
+      "1": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 1.5
+        }
+      },
+      "2": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 2.5
+        }
+      },
+      "3": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 3
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "4": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 3.5
+        }
+      }
+    }
+  },
+  "RP_T_4_01": {
+    "id": "RP_T_4_01",
+    "image": "rp-t-4-01.png",
+    "shape": [
+      [0, 1, 0],
+      [1, 1, 1]
+    ],
+    "stats": {
+      "1": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 2
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 1.5
+        }
+      },
+      "2": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 2.5
+        }
+      },
+      "3": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "unit": "%",
+          "value": 3
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "4": {
+        "ATTACK": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "HP": {
+          "unit": "%",
+          "value": 3.5
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 3.5
+        }
+      }
+    }
+  },
+  "RP_X_5_01": {
+    "id": "RP_X_5_01",
+    "image": "rp-x-5-01.png",
+    "isMainPiece": true,
+    "shape": [
+      [0, 1, 0],
+      [1, 1, 1],
+      [0, 1, 0]
+    ],
+    "stats": {
+      "1": {
+        "ATTACK": {
+          "value": 14
+        },
+        "HP": {
+          "value": 77
+        },
+        "MENTAL_DEFENSE": {
+          "value": 8
+        },
+        "REALITY_DEFENSE": {
+          "value": 7
+        }
+      },
+      "10": {
+        "ATTACK": {
+          "value": 275
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 8
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "value": 1552
+        },
+        "MENTAL_DEFENSE": {
+          "value": 162
+        },
+        "REALITY_DEFENSE": {
+          "value": 141
+        }
+      },
+      "2": {
+        "ATTACK": {
+          "value": 27
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "HP": {
+          "value": 155
+        },
+        "MENTAL_DEFENSE": {
+          "value": 16
+        },
+        "REALITY_DEFENSE": {
+          "value": 14
+        }
+      },
+      "3": {
+        "ATTACK": {
+          "value": 55
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 5
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "HP": {
+          "value": 310
+        },
+        "MENTAL_DEFENSE": {
+          "value": 32
+        },
+        "REALITY_DEFENSE": {
+          "value": 28
+        }
+      },
+      "4": {
+        "ATTACK": {
+          "value": 82
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 5
+        },
+        "HP": {
+          "value": 465
+        },
+        "MENTAL_DEFENSE": {
+          "value": 48
+        },
+        "REALITY_DEFENSE": {
+          "value": 42
+        }
+      },
+      "5": {
+        "ATTACK": {
+          "value": 110
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 7
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 5
+        },
+        "HP": {
+          "value": 620
+        },
+        "MENTAL_DEFENSE": {
+          "value": 65
+        },
+        "REALITY_DEFENSE": {
+          "value": 56
+        }
+      },
+      "6": {
+        "ATTACK": {
+          "value": 143
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 2
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        },
+        "HP": {
+          "value": 809
+        },
+        "MENTAL_DEFENSE": {
+          "value": 84
+        },
+        "REALITY_DEFENSE": {
+          "value": 73
+        }
+      },
+      "7": {
+        "ATTACK": {
+          "value": 176
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "HP": {
+          "value": 992
+        },
+        "MENTAL_DEFENSE": {
+          "value": 104
+        },
+        "REALITY_DEFENSE": {
+          "value": 90
+        }
+      },
+      "8": {
+        "ATTACK": {
+          "value": 209
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 11
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 7
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        },
+        "HP": {
+          "value": 1180
+        },
+        "MENTAL_DEFENSE": {
+          "value": 123
+        },
+        "REALITY_DEFENSE": {
+          "value": 107
+        }
+      },
+      "9": {
+        "ATTACK": {
+          "value": 242
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 13
+        },
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 7
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        },
+        "HP": {
+          "value": 1363
+        },
+        "MENTAL_DEFENSE": {
+          "value": 143
+        },
+        "REALITY_DEFENSE": {
+          "value": 124
+        }
+      }
+    }
+  },
+  "RP_Z_4_01": {
+    "id": "RP_Z_4_01",
+    "image": "rp-z-4-01.png",
+    "shape": [
+      [1, 1, 0],
+      [0, 1, 1]
+    ],
+    "stats": {
+      "1": {
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "2": {
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
+        }
+      },
+      "3": {
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 5
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4.5
+        }
+      },
+      "4": {
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 5
+        }
+      }
+    }
+  },
+  "RP_Z_4_02": {
+    "id": "RP_Z_4_02",
+    "image": "rp-z-4-02.png",
+    "shape": [
+      [0, 1, 1],
+      [1, 1, 0]
+    ],
+    "stats": {
+      "1": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 1
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "2": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 2
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 1.5
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2.5
+        }
+      },
+      "3": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 2.5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "4": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        }
+      }
+    }
+  },
+  "RP_Z_5_01": {
+    "id": "RP_Z_5_01",
+    "image": "rp-z-5-01.png",
+    "isMainPiece": true,
+    "shape": [
+      [1, 1, 0],
+      [0, 1, 0],
+      [0, 1, 1]
+    ],
+    "stats": {
+      "1": {
+        "ATTACK": {
+          "value": 13
+        },
+        "HP": {
+          "value": 96
+        },
+        "MENTAL_DEFENSE": {
+          "value": 7
+        },
+        "REALITY_DEFENSE": {
+          "value": 7
+        }
+      },
+      "2": {
+        "ATTACK": {
+          "value": 25
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "value": 193
+        },
+        "MENTAL_DEFENSE": {
+          "value": 14
+        },
+        "REALITY_DEFENSE": {
+          "value": 15
+        }
+      },
+      "3": {
+        "ATTACK": {
+          "value": 51
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 1
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        },
+        "HP": {
+          "value": 387
+        },
+        "MENTAL_DEFENSE": {
+          "value": 29
+        },
+        "REALITY_DEFENSE": {
+          "value": 31
+        }
+      },
+      "4": {
+        "ATTACK": {
+          "value": 77
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 1
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
+        },
+        "HP": {
+          "value": 581
+        },
+        "MENTAL_DEFENSE": {
+          "value": 43
+        },
+        "REALITY_DEFENSE": {
+          "value": 46
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "5": {
+        "ATTACK": {
+          "value": 103
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
+        },
+        "HP": {
+          "value": 775
+        },
+        "MENTAL_DEFENSE": {
+          "value": 58
+        },
+        "REALITY_DEFENSE": {
+          "value": 62
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "6": {
+        "ATTACK": {
+          "value": 134
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 5
+        },
+        "HP": {
+          "value": 1011
+        },
+        "MENTAL_DEFENSE": {
+          "value": 75
+        },
+        "REALITY_DEFENSE": {
+          "value": 81
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "7": {
+        "ATTACK": {
+          "value": 164
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 6
+        },
+        "HP": {
+          "value": 1239
+        },
+        "MENTAL_DEFENSE": {
+          "value": 93
+        },
+        "REALITY_DEFENSE": {
+          "value": 100
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "8": {
+        "ATTACK": {
+          "value": 196
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 7
+        },
+        "HP": {
+          "value": 1475
+        },
+        "MENTAL_DEFENSE": {
+          "value": 110
+        },
+        "REALITY_DEFENSE": {
+          "value": 119
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        }
+      },
+      "9": {
+        "ATTACK": {
+          "value": 226
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 7
+        },
+        "HP": {
+          "value": 1704
+        },
+        "MENTAL_DEFENSE": {
+          "value": 127
+        },
+        "REALITY_DEFENSE": {
+          "value": 137
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 15
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        }
+      },
+      "10": {
+        "ATTACK": {
+          "value": 257
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 8
+        },
+        "HP": {
+          "value": 1939
+        },
+        "MENTAL_DEFENSE": {
+          "value": 145
+        },
+        "REALITY_DEFENSE": {
+          "value": 156
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 18
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        }
+      }
+    }
+  }
+}
