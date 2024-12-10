@@ -1,0 +1,36 @@
+---
+import "@styles/markdown-layout.css";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import Layout from "@layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+const rhapsodyOfTheMoonEntry = await getEntry(
+  "a-series-of-dusks",
+  "rhapsody-of-the-moon"
+);
+
+const { Content } = await rhapsodyOfTheMoonEntry.render();
+---
+
+<Layout
+  title="Rhapsody of the Moon | A Series of Dusks"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "A Series of Dusks",
+      href: "/a-series-of-dusks",
+    },
+    {
+      label: "Rhapsody of the Moon",
+    },
+  ]}
+>
+  <Content
+    components={{
+      p: MarkdownContent,
+    }}
+  />
+</Layout>
