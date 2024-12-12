@@ -339,17 +339,13 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 Pattern
               </label>
               <select
+                x-model="selectedPattern"
                 id="patternSelect"
                 class="select select-secondary select-bordered flex w-full"
                 @change="changePattern($event.target.value)"
               >
                 {patternOptions.map((pattern) => (
-                  <option
-                    value={pattern.value}
-                    selected={pattern.value === recommendedResonancePattern}
-                  >
-                    {pattern.label}
-                  </option>
+                  <option value={pattern.value}>{pattern.label}</option>
                 ))}
               </select>
               <label class="label">

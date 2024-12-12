@@ -240,12 +240,13 @@ export default () => ({
             this.$store.resonance.recommendedResonancePattern;
         }
       }
-      this.updateActiveResonancePiecesWithPattern(this.selectedPattern);
     } else {
       if (this.activeResonanceLevel < 10) {
-        this.changePattern("PLACIDITY");
+        this.selectedPattern = `PLACIDITY`;
       }
     }
+
+    this.updateActiveResonancePiecesWithPattern(this.selectedPattern);
 
     this.$nextTick(() => {
       //* Init recommended
