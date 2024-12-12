@@ -175,10 +175,10 @@ export default () => ({
     );
 
     this.initCanvas();
-    this.initializeData();
+    this.initializeData(true);
   },
 
-  initializeData() {
+  initializeData(isFirstInit = false) {
     //* Init resonance pieces
     const activeResonancePieces = (
       this.$store.resonance.resonancePieces[this.activeResonanceLevel] || []
@@ -192,6 +192,21 @@ export default () => ({
           dimension[0],
           dimension[1],
         );
+
+        if (piece.id.includes(this.$store.resonance.mainPieceCode)) {
+          piece.stats = Object.entries(piece.stats).reduce(
+            (prev, [level, stats]: [string, object]) => {
+              return {
+                ...prev,
+                [level]: {
+                  ...stats,
+                  ...this.$store.resonance.resonanceMainPieceBaseStats[level],
+                },
+              };
+            },
+            {}
+          );
+        }
 
         return [
           ...prev,
@@ -215,15 +230,20 @@ export default () => ({
       JSON.stringify(activeResonancePieces),
     );
 
-    this.selectedPattern = `PLACIDITY`;
+    if (isFirstInit) {
+      this.selectedPattern = `PLACIDITY`;
 
-    if (this.activeResonanceLevel >= 10) {
-      //* Init recommended pattern
-      if (this.$store.resonance.recommendedResonancePattern) {
-        this.selectedPattern =
-          this.$store.resonance.recommendedResonancePattern;
-
-        this.updateActiveResonancePiecesWithPattern(this.selectedPattern);
+      if (this.activeResonanceLevel >= 10) {
+        //* Init recommended pattern
+        if (this.$store.resonance.recommendedResonancePattern) {
+          this.selectedPattern =
+            this.$store.resonance.recommendedResonancePattern;
+        }
+      }
+      this.updateActiveResonancePiecesWithPattern(this.selectedPattern);
+    } else {
+      if (this.activeResonanceLevel < 10) {
+        this.changePattern("PLACIDITY");
       }
     }
 

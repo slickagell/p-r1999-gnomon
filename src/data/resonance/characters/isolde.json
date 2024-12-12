@@ -2978,5 +2978,149 @@
         ]
       }
     ]
+  },
+  "mainPiece": "RP_Z_5_01",
+  "mainPieceBaseStats": {
+    "1": {
+      "ATTACK": {
+        "value": 13
+      },
+      "HP": {
+        "value": 96
+      },
+      "MENTAL_DEFENSE": {
+        "value": 7
+      },
+      "REALITY_DEFENSE": {
+        "value": 7
+      }
+    },
+    "2": {
+      "ATTACK": {
+        "value": 25
+      },
+      "HP": {
+        "value": 193
+      },
+      "MENTAL_DEFENSE": {
+        "value": 14
+      },
+      "REALITY_DEFENSE": {
+        "value": 15
+      }
+    },
+    "3": {
+      "ATTACK": {
+        "value": 51
+      },
+
+      "HP": {
+        "value": 387
+      },
+      "MENTAL_DEFENSE": {
+        "value": 29
+      },
+      "REALITY_DEFENSE": {
+        "value": 31
+      }
+    },
+    "4": {
+      "ATTACK": {
+        "value": 77
+      },
+      "HP": {
+        "value": 581
+      },
+      "MENTAL_DEFENSE": {
+        "value": 43
+      },
+      "REALITY_DEFENSE": {
+        "value": 46
+      }
+    },
+    "5": {
+      "ATTACK": {
+        "value": 103
+      },
+      "HP": {
+        "value": 775
+      },
+      "MENTAL_DEFENSE": {
+        "value": 58
+      },
+      "REALITY_DEFENSE": {
+        "value": 62
+      }
+    },
+    "6": {
+      "ATTACK": {
+        "value": 134
+      },
+      "HP": {
+        "value": 1011
+      },
+      "MENTAL_DEFENSE": {
+        "value": 75
+      },
+      "REALITY_DEFENSE": {
+        "value": 81
+      }
+    },
+    "7": {
+      "ATTACK": {
+        "value": 164
+      },
+      "HP": {
+        "value": 1239
+      },
+      "MENTAL_DEFENSE": {
+        "value": 93
+      },
+      "REALITY_DEFENSE": {
+        "value": 100
+      }
+    },
+    "8": {
+      "ATTACK": {
+        "value": 196
+      },
+      "HP": {
+        "value": 1475
+      },
+      "MENTAL_DEFENSE": {
+        "value": 110
+      },
+      "REALITY_DEFENSE": {
+        "value": 119
+      }
+    },
+    "9": {
+      "ATTACK": {
+        "value": 226
+      },
+      "HP": {
+        "value": 1704
+      },
+      "MENTAL_DEFENSE": {
+        "value": 127
+      },
+      "REALITY_DEFENSE": {
+        "value": 137
+      }
+    },
+    "10": {
+      "ATTACK": {
+        "value": 257
+      },
+      "HP": {
+        "value": 1939
+      },
+      "MENTAL_DEFENSE": {
+        "value": 145
+      },
+      "REALITY_DEFENSE": {
+        "value": 156
+      }
+    }
   }
 }

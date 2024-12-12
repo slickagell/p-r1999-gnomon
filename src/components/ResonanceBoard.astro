@@ -14,9 +14,18 @@ interface Props {
   resonancePieces: ResonanceInitPiecesType;
   recommendedResonancePattern?: string;
   recommendedResonanceList?: ResonanceRecommendedListType;
+  resonanceMainPiece: string;
+  resonanceMainPieceBaseStats: ResonancePieceStatsGeneralType;
   isDev?: boolean;
   pieceShapeFilterList?: string[];
   pieceBlocksFilterList?: string[];
+  baseStats: {
+    [insightLevel: string]: {
+      [stat: string]: {
+        value: number;
+      };
+    };
+  };
 }
 
 const {
@@ -24,9 +33,12 @@ const {
   resonancePieces,
   recommendedResonanceList,
   recommendedResonancePattern = "PLACIDITY",
+  resonanceMainPiece,
+  resonanceMainPieceBaseStats,
   isDev,
   pieceShapeFilterList,
   pieceBlocksFilterList,
+  baseStats,
 } = Astro.props;
 
 const initialActiveResonanceLevel =
@@ -34,14 +46,7 @@ const initialActiveResonanceLevel =
     ? DEFAULT_RESONATE_LEVEL
     : maxResonanceLevel;
 
-const mainPiece = resonancePieces[initialActiveResonanceLevel].find((item) => {
-  if (RESONANCE_PIECES[item.id].isMainPiece) {
-    return true;
-  }
-  return false;
-});
-
-const mainPieceCode = ("" + mainPiece?.id).replace("RP_", "");
+const mainPieceCode = resonanceMainPiece.replace("RP_", "");
 
 const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
   (
@@ -418,7 +423,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
           :key="item.id+item.level+item.total+item.pattern"
         >
           <div
-            x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
+            x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats, isMainPiece: item.isMainPiece })`}
             class="flex flex-col md:flex-row gap-4 select-none"
             {...isDev && {
               ["x-show"]: "filterShowPieces(item.id)",
@@ -463,10 +468,10 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 class="text-primary text-xl"
               >
               </p>
-              <template x-for="[,stat] in Object.entries(currentStats)">
+              <template x-for="[statKey,stats] in Object.entries(currentStats)">
                 <div class="flex gap-2 items-center justify-between">
-                  <p x-text="stat.label" class="text-primary-content"></p>
-                  <p x-text="'+'+stat.value+stat.unit"></p>
+                  <p x-text="stats.label" class="text-primary-content"></p>
+                  <p x-text="showPieceStat(statKey,stats)"></p>
                 </div>
               </template>
             </div>
@@ -495,7 +500,9 @@ const patternMaterialsList = patternPieces.map((ele) => {
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
     recommendedResonanceList,
     recommendedResonancePattern,
+    resonanceMainPieceBaseStats,
     mainPieceCode,
+    baseStats,
   }}
 >
   document.addEventListener("alpine:init", () => {
@@ -506,7 +513,9 @@ const patternMaterialsList = patternPieces.map((ele) => {
       defaultResonanceLevel,
       recommendedResonanceList,
       recommendedResonancePattern,
+      resonanceMainPieceBaseStats,
       mainPieceCode,
+      baseStats,
     });
   });
 </script>
@@ -531,24 +540,38 @@ const patternMaterialsList = patternPieces.map((ele) => {
     baseStats: {
       HP: {
         label: STATS["HP"].label,
-        value: 5543,
+        value: 0,
       },
       ATTACK: {
         label: STATS["ATTACK"].label,
-        value: 1199,
+        value: 0,
       },
       REALITY_DEFENSE: {
         label: STATS["REALITY_DEFENSE"].label,
-        value: 505,
+        value: 0,
       },
       MENTAL_DEFENSE: {
         label: STATS["MENTAL_DEFENSE"].label,
-        value: 582,
+        value: 0,
       },
       CRITICAL_TECHNIQUE: {
         label: STATS["CRITICAL_TECHNIQUE"].label,
-        value: 436,
+        value: 0,
       },
+    },
+
+    init() {
+      const baseStatsData = this.$store.resonance.baseStats;
+      const baseStats = baseStatsData[`i${this.insight}-${this.level}`];
+
+      Object.entries(baseStats).forEach(
+        ([statKey, stats]: [string, { value: number }]) => {
+          this.baseStats[statKey] = {
+            ...this.baseStats[statKey],
+            ...stats,
+          };
+        }
+      );
     },
   }));
   Alpine.data("generalStats", resonanceGeneralStats);
