@@ -15,6 +15,8 @@ export const ARTEFACT_TAG = {
   ABUNDANCE: { title: "Abundance" },
   EXTRA_ACTION: { title: "Extra Action" },
   VOLTAIC: { title: "Voltaic" },
+  STRESS: { title: "Stress" },
+  GUIDE: { title: "Guide" },
 };
 
 export const ARTEFACT_RARITY = {
