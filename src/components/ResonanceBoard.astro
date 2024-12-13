@@ -5,7 +5,6 @@ import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
 import { RESONANCE_PATTERN } from "@constants/resonance";
 import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
-import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
 
 const DEFAULT_RESONATE_LEVEL = 10;
 
@@ -16,6 +15,15 @@ interface Props {
   recommendedResonanceList?: ResonanceRecommendedListType;
   resonanceMainPiece: string;
   resonanceMainPieceBaseStats: ResonancePieceStatsGeneralType;
+  resonancePatternPieces: {
+    [pattern: string]: {
+      materials: {
+        code: string;
+        require: number;
+      }[];
+      baseStats: ResonancePieceStatsGeneralType;
+    };
+  };
   isDev?: boolean;
   pieceShapeFilterList?: string[];
   pieceBlocksFilterList?: string[];
@@ -35,6 +43,7 @@ const {
   recommendedResonancePattern = "PLACIDITY",
   resonanceMainPiece,
   resonanceMainPieceBaseStats,
+  resonancePatternPieces,
   isDev,
   pieceShapeFilterList,
   pieceBlocksFilterList,
@@ -497,6 +506,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
     recommendedResonanceList,
     recommendedResonancePattern,
     resonanceMainPieceBaseStats,
+    resonancePatternPieces,
     mainPieceCode,
     baseStats,
   }}
@@ -510,6 +520,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
       recommendedResonanceList,
       recommendedResonancePattern,
       resonanceMainPieceBaseStats,
+      resonancePatternPieces,
       mainPieceCode,
       baseStats,
     });

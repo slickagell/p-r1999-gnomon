@@ -1,4 +1,506 @@
 {
+  "mainPiece": "RP_Z_5_01",
+  "mainPieceBaseStats": {
+    "1": {
+      "HP": {
+        "value": 96
+      },
+      "ATTACK": {
+        "value": 13
+      },
+      "REALITY_DEFENSE": {
+        "value": 7
+      },
+      "MENTAL_DEFENSE": {
+        "value": 7
+      }
+    },
+    "2": {
+      "HP": {
+        "value": 193
+      },
+      "ATTACK": {
+        "value": 25
+      },
+      "REALITY_DEFENSE": {
+        "value": 15
+      },
+      "MENTAL_DEFENSE": {
+        "value": 14
+      }
+    },
+    "3": {
+      "HP": {
+        "value": 387
+      },
+      "ATTACK": {
+        "value": 51
+      },
+      "REALITY_DEFENSE": {
+        "value": 31
+      },
+      "MENTAL_DEFENSE": {
+        "value": 29
+      }
+    },
+    "4": {
+      "HP": {
+        "value": 581
+      },
+      "ATTACK": {
+        "value": 77
+      },
+      "REALITY_DEFENSE": {
+        "value": 46
+      },
+      "MENTAL_DEFENSE": {
+        "value": 43
+      }
+    },
+    "5": {
+      "HP": {
+        "value": 775
+      },
+      "ATTACK": {
+        "value": 103
+      },
+      "REALITY_DEFENSE": {
+        "value": 62
+      },
+      "MENTAL_DEFENSE": {
+        "value": 58
+      }
+    },
+    "6": {
+      "HP": {
+        "value": 1011
+      },
+      "ATTACK": {
+        "value": 134
+      },
+      "REALITY_DEFENSE": {
+        "value": 81
+      },
+      "MENTAL_DEFENSE": {
+        "value": 75
+      }
+    },
+    "7": {
+      "HP": {
+        "value": 1239
+      },
+      "ATTACK": {
+        "value": 164
+      },
+      "REALITY_DEFENSE": {
+        "value": 100
+      },
+      "MENTAL_DEFENSE": {
+        "value": 93
+      }
+    },
+    "8": {
+      "HP": {
+        "value": 1475
+      },
+      "ATTACK": {
+        "value": 196
+      },
+      "REALITY_DEFENSE": {
+        "value": 119
+      },
+      "MENTAL_DEFENSE": {
+        "value": 110
+      }
+    },
+    "9": {
+      "HP": {
+        "value": 1704
+      },
+      "ATTACK": {
+        "value": 226
+      },
+      "REALITY_DEFENSE": {
+        "value": 137
+      },
+      "MENTAL_DEFENSE": {
+        "value": 127
+      }
+    },
+    "10": {
+      "HP": {
+        "value": 1939
+      },
+      "ATTACK": {
+        "value": 257
+      },
+      "REALITY_DEFENSE": {
+        "value": 156
+      },
+      "MENTAL_DEFENSE": {
+        "value": 145
+      }
+    }
+  },
+  "patternPieces": {
+    "ELUCIDATION": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 685
+          },
+          "ATTACK": {
+            "value": 134
+          },
+          "REALITY_DEFENSE": {
+            "value": 55
+          },
+          "MENTAL_DEFENSE": {
+            "value": 51
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 845
+          },
+          "ATTACK": {
+            "value": 164
+          },
+          "REALITY_DEFENSE": {
+            "value": 68
+          },
+          "MENTAL_DEFENSE": {
+            "value": 63
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 997
+          },
+          "ATTACK": {
+            "value": 196
+          },
+          "REALITY_DEFENSE": {
+            "value": 80
+          },
+          "MENTAL_DEFENSE": {
+            "value": 74
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1156
+          },
+          "ATTACK": {
+            "value": 226
+          },
+          "REALITY_DEFENSE": {
+            "value": 93
+          },
+          "MENTAL_DEFENSE": {
+            "value": 86
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1316
+          },
+          "ATTACK": {
+            "value": 257
+          },
+          "REALITY_DEFENSE": {
+            "value": 106
+          },
+          "MENTAL_DEFENSE": {
+            "value": 98
+          }
+        }
+      },
+      "materials": []
+    },
+    "EQUANIMITY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1911
+          },
+          "REALITY_DEFENSE": {
+            "value": 154
+          },
+          "MENTAL_DEFENSE": {
+            "value": 143
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 2348
+          },
+          "REALITY_DEFENSE": {
+            "value": 189
+          },
+          "MENTAL_DEFENSE": {
+            "value": 176
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 2791
+          },
+          "REALITY_DEFENSE": {
+            "value": 225
+          },
+          "MENTAL_DEFENSE": {
+            "value": 209
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 3227
+          },
+          "REALITY_DEFENSE": {
+            "value": 260
+          },
+          "MENTAL_DEFENSE": {
+            "value": 242
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 3671
+          },
+          "REALITY_DEFENSE": {
+            "value": 296
+          },
+          "MENTAL_DEFENSE": {
+            "value": 275
+          }
+        }
+      }
+    },
+    "EQUIBALANCE": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1260
+          },
+          "ATTACK": {
+            "value": 169
+          },
+          "REALITY_DEFENSE": {
+            "value": 101
+          },
+          "MENTAL_DEFENSE": {
+            "value": 94
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1551
+          },
+          "ATTACK": {
+            "value": 208
+          },
+          "REALITY_DEFENSE": {
+            "value": 125
+          },
+          "MENTAL_DEFENSE": {
+            "value": 116
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1842
+          },
+          "ATTACK": {
+            "value": 246
+          },
+          "REALITY_DEFENSE": {
+            "value": 148
+          },
+          "MENTAL_DEFENSE": {
+            "value": 138
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 2133
+          },
+          "ATTACK": {
+            "value": 285
+          },
+          "REALITY_DEFENSE": {
+            "value": 172
+          },
+          "MENTAL_DEFENSE": {
+            "value": 160
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2424
+          },
+          "ATTACK": {
+            "value": 324
+          },
+          "REALITY_DEFENSE": {
+            "value": 195
+          },
+          "MENTAL_DEFENSE": {
+            "value": 182
+          }
+        }
+      }
+    },
+    "GENUINITY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 685
+          },
+          "ATTACK": {
+            "value": 134
+          },
+          "REALITY_DEFENSE": {
+            "value": 55
+          },
+          "MENTAL_DEFENSE": {
+            "value": 51
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 845
+          },
+          "ATTACK": {
+            "value": 164
+          },
+          "REALITY_DEFENSE": {
+            "value": 68
+          },
+          "MENTAL_DEFENSE": {
+            "value": 63
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 997
+          },
+          "ATTACK": {
+            "value": 196
+          },
+          "REALITY_DEFENSE": {
+            "value": 80
+          },
+          "MENTAL_DEFENSE": {
+            "value": 74
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1156
+          },
+          "ATTACK": {
+            "value": 226
+          },
+          "REALITY_DEFENSE": {
+            "value": 93
+          },
+          "MENTAL_DEFENSE": {
+            "value": 86
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1316
+          },
+          "ATTACK": {
+            "value": 257
+          },
+          "REALITY_DEFENSE": {
+            "value": 106
+          },
+          "MENTAL_DEFENSE": {
+            "value": 98
+          }
+        }
+      },
+      "materials": []
+    },
+    "MERCY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1011
+          },
+          "ATTACK": {
+            "value": 92
+          },
+          "REALITY_DEFENSE": {
+            "value": 81
+          },
+          "MENTAL_DEFENSE": {
+            "value": 75
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1239
+          },
+          "ATTACK": {
+            "value": 114
+          },
+          "REALITY_DEFENSE": {
+            "value": 100
+          },
+          "MENTAL_DEFENSE": {
+            "value": 93
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1475
+          },
+          "ATTACK": {
+            "value": 136
+          },
+          "REALITY_DEFENSE": {
+            "value": 119
+          },
+          "MENTAL_DEFENSE": {
+            "value": 110
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1704
+          },
+          "ATTACK": {
+            "value": 157
+          },
+          "REALITY_DEFENSE": {
+            "value": 137
+          },
+          "MENTAL_DEFENSE": {
+            "value": 127
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1939
+          },
+          "ATTACK": {
+            "value": 179
+          },
+          "REALITY_DEFENSE": {
+            "value": 156
+          },
+          "MENTAL_DEFENSE": {
+            "value": 145
+          }
+        }
+      }
+    }
+  },
   "patternRecommended": "GENUINITY",
   "pieces": {
     "1": [
@@ -858,62 +1360,151 @@
         "name": "Attack/DMG Build",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-0", "1-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-0",
+              "1-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
-          },
-          {
-            "blocks": ["0-2", "0-3", "1-3"],
+            "pieceId": "RP_O_4_01",
             "shape": [
-              [1, 1],
-              [0, 1]
-            ],
-            "orientation": 6,
-            "pieceId": "RP_L_3_01"
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "1-4", "2-4", "3-4"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["3-3", "4-2", "4-3", "4-4"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
-          },
-          {
-            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-1", "3-2", "4-0", "4-1"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
+            "blocks": [
+              "0-4",
+              "1-4",
+              "2-4",
+              "3-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3"],
-            "shape": [[1]],
+            "blocks": [
+              "3-3",
+              "4-2",
+              "4-3",
+              "4-4"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-2",
+              "2-0",
+              "2-1",
+              "2-2",
+              "3-0"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-1",
+              "3-2",
+              "4-0",
+              "4-1"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -921,65 +1512,158 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-0", "1-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-0",
+              "1-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "1-2",
+              "2-0",
+              "2-1",
+              "2-2",
+              "3-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
-          },
-          {
-            "blocks": ["0-4", "1-4", "2-4", "3-4"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["3-1", "4-0", "4-1", "4-2"],
+            "pieceId": "RP_Z_5_01",
             "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4",
+              "2-4",
+              "3-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-2", "3-3", "4-3", "4-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "3-1",
+              "4-0",
+              "4-1",
+              "4-2"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3"],
-            "shape": [[1, 1]],
+            "blocks": [
+              "3-2",
+              "3-3",
+              "4-3",
+              "4-4"
+            ],
             "orientation": 1,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-3"],
-            "shape": [[1]],
+            "blocks": [
+              "0-2",
+              "0-3"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3"],
-            "shape": [[1]],
+            "blocks": [
+              "1-3"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_01"
+            "pieceId": "RP_O_1_01",
+            "shape": [
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       }
@@ -989,62 +1673,151 @@
         "name": "Attack/DMG Build",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-0", "1-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-0",
+              "1-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
-          },
-          {
-            "blocks": ["0-2", "0-3", "1-3"],
+            "pieceId": "RP_O_4_01",
             "shape": [
-              [1, 1],
-              [0, 1]
-            ],
-            "orientation": 6,
-            "pieceId": "RP_L_3_01"
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "1-4", "2-4", "3-4"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["3-3", "4-2", "4-3", "4-4"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
-          },
-          {
-            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-1", "3-2", "4-0", "4-1"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
+            "blocks": [
+              "0-4",
+              "1-4",
+              "2-4",
+              "3-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3"],
-            "shape": [[1]],
+            "blocks": [
+              "3-3",
+              "4-2",
+              "4-3",
+              "4-4"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-2",
+              "2-0",
+              "2-1",
+              "2-2",
+              "3-0"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-1",
+              "3-2",
+              "4-0",
+              "4-1"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -1052,65 +1825,158 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-0", "1-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-0",
+              "1-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "1-2",
+              "2-0",
+              "2-1",
+              "2-2",
+              "3-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
-          },
-          {
-            "blocks": ["0-4", "1-4", "2-4", "3-4"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["3-1", "4-0", "4-1", "4-2"],
+            "pieceId": "RP_Z_5_01",
             "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4",
+              "2-4",
+              "3-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-2", "3-3", "4-3", "4-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "3-1",
+              "4-0",
+              "4-1",
+              "4-2"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3"],
-            "shape": [[1, 1]],
+            "blocks": [
+              "3-2",
+              "3-3",
+              "4-3",
+              "4-4"
+            ],
             "orientation": 1,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-3"],
-            "shape": [[1]],
+            "blocks": [
+              "0-2",
+              "0-3"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3"],
-            "shape": [[1]],
+            "blocks": [
+              "1-3"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_01"
+            "pieceId": "RP_O_1_01",
+            "shape": [
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       }
@@ -1120,71 +1986,170 @@
         "name": "Attack/DMG Build",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "0-2", "0-3"],
-            "shape": [[1, 1, 1, 1]],
-            "orientation": 6,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-4", "0-5", "1-3", "1-4"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_Z_4_02"
-          },
-          {
-            "blocks": ["1-0", "1-1", "1-2", "2-0"],
-            "shape": [
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "0-2",
+              "0-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "2-2", "3-0", "3-1"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-3",
+              "1-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["3-2", "4-1", "4-2", "4-3"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
-          },
-          {
-            "blocks": ["3-4", "3-5", "4-4", "4-5"],
-            "shape": [
-              [1, 1],
-              [1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_O_4_01"
-          },
-          {
-            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "1-0",
+              "1-1",
+              "1-2",
+              "2-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["4-0"],
-            "shape": [[1]],
+            "blocks": [
+              "2-1",
+              "2-2",
+              "3-0",
+              "3-1"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-2",
+              "4-1",
+              "4-2",
+              "4-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-4",
+              "3-5",
+              "4-4",
+              "4-5"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-5",
+              "2-3",
+              "2-4",
+              "2-5",
+              "3-3"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "4-0"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -1192,73 +2157,180 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-2", "0-3", "1-2", "1-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-2",
+              "1-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "0-5", "1-5", "2-5"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-0", "0-1", "1-1", "2-1"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1",
+              "2-1"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-4", "2-2", "2-3", "2-4", "3-2"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "1-4",
+              "2-2",
+              "2-3",
+              "2-4",
+              "3-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
-          },
-          {
-            "blocks": ["1-0", "2-0", "3-0", "4-0"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["3-1", "4-1", "4-2", "4-3"],
+            "pieceId": "RP_Z_5_01",
             "shape": [
-              [1, 0, 0],
-              [1, 1, 1]
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-0",
+              "2-0",
+              "3-0",
+              "4-0"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-1",
+              "4-1",
+              "4-2",
+              "4-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-3", "3-4", "3-5", "4-4"],
-            "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
+            "blocks": [
+              "3-3",
+              "3-4",
+              "3-5",
+              "4-4"
             ],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["4-5"],
-            "shape": [[1]],
+            "blocks": [
+              "4-5"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -1266,72 +2338,172 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "0-2", "0-3"],
-            "shape": [[1, 1, 1, 1]],
-            "orientation": 6,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-4", "0-5", "1-3", "1-4"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_Z_4_02"
-          },
-          {
-            "blocks": ["1-0", "1-1", "1-2", "2-0"],
-            "shape": [
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "0-2",
+              "0-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "3-0", "3-1", "4-0"],
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-3",
+              "1-4"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
             "shape": [
-              [0, 1],
-              [1, 1],
-              [1, 0]
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-0",
+              "1-1",
+              "1-2",
+              "2-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_01"
-          },
-          {
-            "blocks": ["3-2", "4-1", "4-2", "4-3"],
+            "pieceId": "RP_L_4_01",
             "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["2-2"],
-            "shape": [[1]],
-            "orientation": 1,
-            "pieceId": "RP_O_1_01"
-          },
-          {
-            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "2-1",
+              "3-0",
+              "3-1",
+              "4-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["3-4", "3-5", "4-4", "4-5"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "3-2",
+              "4-1",
+              "4-2",
+              "4-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-2"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01",
+            "shape": [
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-5",
+              "2-3",
+              "2-4",
+              "2-5",
+              "3-3"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-4",
+              "3-5",
+              "4-4",
+              "4-5"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           }
         ]
       }
@@ -1341,71 +2513,170 @@
         "name": "Attack/DMG Build",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "0-2", "0-3"],
-            "shape": [[1, 1, 1, 1]],
-            "orientation": 6,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-4", "0-5", "1-3", "1-4"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_Z_4_02"
-          },
-          {
-            "blocks": ["1-0", "1-1", "1-2", "2-0"],
-            "shape": [
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "0-2",
+              "0-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "2-2", "3-0", "3-1"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-3",
+              "1-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["3-2", "4-1", "4-2", "4-3"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
-          },
-          {
-            "blocks": ["3-4", "3-5", "4-4", "4-5"],
-            "shape": [
-              [1, 1],
-              [1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_O_4_01"
-          },
-          {
-            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "1-0",
+              "1-1",
+              "1-2",
+              "2-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["4-0"],
-            "shape": [[1]],
+            "blocks": [
+              "2-1",
+              "2-2",
+              "3-0",
+              "3-1"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-2",
+              "4-1",
+              "4-2",
+              "4-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-4",
+              "3-5",
+              "4-4",
+              "4-5"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-5",
+              "2-3",
+              "2-4",
+              "2-5",
+              "3-3"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "4-0"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -1413,73 +2684,180 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-2", "0-3", "1-2", "1-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-2",
+              "1-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "0-5", "1-5", "2-5"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-0", "0-1", "1-1", "2-1"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1",
+              "2-1"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-4", "2-2", "2-3", "2-4", "3-2"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "1-4",
+              "2-2",
+              "2-3",
+              "2-4",
+              "3-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
-          },
-          {
-            "blocks": ["1-0", "2-0", "3-0", "4-0"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["3-1", "4-1", "4-2", "4-3"],
+            "pieceId": "RP_Z_5_01",
             "shape": [
-              [1, 0, 0],
-              [1, 1, 1]
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-0",
+              "2-0",
+              "3-0",
+              "4-0"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-1",
+              "4-1",
+              "4-2",
+              "4-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-3", "3-4", "3-5", "4-4"],
-            "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
+            "blocks": [
+              "3-3",
+              "3-4",
+              "3-5",
+              "4-4"
             ],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["4-5"],
-            "shape": [[1]],
+            "blocks": [
+              "4-5"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -1487,72 +2865,172 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "0-2", "0-3"],
-            "shape": [[1, 1, 1, 1]],
-            "orientation": 6,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-4", "0-5", "1-3", "1-4"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_Z_4_02"
-          },
-          {
-            "blocks": ["1-0", "1-1", "1-2", "2-0"],
-            "shape": [
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "0-2",
+              "0-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "3-0", "3-1", "4-0"],
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-3",
+              "1-4"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
             "shape": [
-              [0, 1],
-              [1, 1],
-              [1, 0]
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-0",
+              "1-1",
+              "1-2",
+              "2-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_01"
-          },
-          {
-            "blocks": ["3-2", "4-1", "4-2", "4-3"],
+            "pieceId": "RP_L_4_01",
             "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["2-2"],
-            "shape": [[1]],
-            "orientation": 1,
-            "pieceId": "RP_O_1_01"
-          },
-          {
-            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "2-1",
+              "3-0",
+              "3-1",
+              "4-0"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["3-4", "3-5", "4-4", "4-5"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "3-2",
+              "4-1",
+              "4-2",
+              "4-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-2"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01",
+            "shape": [
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-5",
+              "2-3",
+              "2-4",
+              "2-5",
+              "3-3"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-4",
+              "3-5",
+              "4-4",
+              "4-5"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           }
         ]
       }
@@ -1562,87 +3040,216 @@
         "name": "Attack/DMG Build",
         "resonance": [
           {
-            "blocks": ["0-0", "1-0", "2-0", "3-0"],
-            "shape": [[1], [1], [1], [1]],
+            "blocks": [
+              "0-0",
+              "1-0",
+              "2-0",
+              "3-0"
+            ],
             "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-1", "1-1", "2-1", "3-1"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-2", "0-3", "0-4", "1-3"],
+            "pieceId": "RP_I_4_01",
             "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-1",
+              "1-1",
+              "2-1",
+              "3-1"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-2",
+              "0-3",
+              "0-4",
+              "1-3"
             ],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-2", "2-3", "3-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [1, 0]
+            "blocks": [
+              "1-2",
+              "2-2",
+              "2-3",
+              "3-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["0-5", "1-4", "1-5"],
-            "shape": [
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "0-5",
+              "1-4",
+              "1-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-4", "2-5", "3-5"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-4",
+              "2-5",
+              "3-5"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-3", "3-4", "4-4", "5-4", "5-5"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "3-3",
+              "3-4",
+              "4-4",
+              "5-4",
+              "5-5"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
-          },
-          {
-            "blocks": ["4-5"],
-            "shape": [[1]],
-            "orientation": 1,
-            "pieceId": "RP_O_1_02"
-          },
-          {
-            "blocks": ["4-0", "4-1", "5-0", "5-1"],
+            "pieceId": "RP_Z_5_01",
             "shape": [
-              [1, 1],
-              [1, 1]
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "4-5"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-2", "5-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "4-1",
+              "5-0",
+              "5-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-2",
+              "5-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           }
         ]
       },
@@ -1650,89 +3257,211 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-0", "2-0"],
-            "shape": [
-              [1, 1],
-              [1, 0],
-              [1, 0]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-0",
+              "2-0"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3", "1-1", "1-2"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-1",
+              "1-2"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "0-5", "1-3", "1-4"],
-            "shape": [
-              [0, 1, 1],
-              [1, 1, 0]
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-3",
+              "1-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                0,
+                1,
+                1
+              ],
+              [
+                1,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "2-2", "3-2"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-1",
+              "2-2",
+              "3-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-1", "4-1", "4-2", "4-3"],
-            "shape": [
-              [1, 0, 0],
-              [1, 1, 1]
+            "blocks": [
+              "3-1",
+              "4-1",
+              "4-2",
+              "4-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-0", "4-0", "5-0", "5-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "3-0",
+              "4-0",
+              "5-0",
+              "5-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "5-2", "5-3", "5-4"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1]
+            "blocks": [
+              "4-4",
+              "5-2",
+              "5-3",
+              "5-4"
             ],
             "orientation": 8,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-4", "3-5", "4-5", "5-5"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "3-4",
+              "3-5",
+              "4-5",
+              "5-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
-            "shape": [
-              [0, 0, 1],
-              [1, 1, 1],
-              [1, 0, 0]
+            "blocks": [
+              "1-5",
+              "2-3",
+              "2-4",
+              "2-5",
+              "3-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                0,
+                0,
+                1
+              ],
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                1,
+                0,
+                0
+              ]
+            ]
           }
         ]
       },
@@ -1740,85 +3469,210 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "0-2", "0-3"],
-            "shape": [[1, 1, 1, 1]],
-            "orientation": 6,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-4", "0-5", "1-4", "1-5"],
-            "shape": [
-              [1, 1],
-              [1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_O_4_01"
-          },
-          {
-            "blocks": ["1-1", "2-0", "2-1", "3-0"],
-            "shape": [
-              [0, 1],
-              [1, 1],
-              [1, 0]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "0-2",
+              "0-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_01"
-          },
-          {
-            "blocks": ["1-0"],
-            "shape": [[1]],
-            "orientation": 6,
-            "pieceId": "RP_O_1_01"
-          },
-          {
-            "blocks": ["1-2", "1-3"],
-            "shape": [[1, 1]],
-            "orientation": 1,
-            "pieceId": "RP_I_2_01"
-          },
-          {
-            "blocks": ["2-2", "2-3", "2-4", "3-3"],
+            "pieceId": "RP_I_4_01",
             "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "0-5",
+              "1-4",
+              "1-5"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-1",
+              "2-0",
+              "2-1",
+              "3-0"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-0"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_O_1_01",
+            "shape": [
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "1-2",
+              "1-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-2",
+              "2-3",
+              "2-4",
+              "3-3"
             ],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
-          },
-          {
-            "blocks": ["2-5", "3-5", "4-5", "5-5"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["3-4", "4-3", "4-4", "5-4"],
+            "pieceId": "RP_T_4_01",
             "shape": [
-              [0, 1],
-              [1, 1],
-              [0, 1]
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-5",
+              "3-5",
+              "4-5",
+              "5-5"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "3-4",
+              "4-3",
+              "4-4",
+              "5-4"
             ],
             "orientation": 8,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["3-1", "3-2", "4-2", "5-2", "5-3"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "3-1",
+              "3-2",
+              "4-2",
+              "5-2",
+              "5-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "4-1", "5-0", "5-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "4-1",
+              "5-0",
+              "5-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           }
         ]
       }
@@ -1828,132 +3682,305 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-1"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3", "1-3"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
-          },
-          {
-            "blocks": ["0-4", "1-4"],
-            "shape": [[1], [1]],
-            "orientation": 6,
-            "pieceId": "RP_I_2_01"
-          },
-          {
-            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "pieceId": "RP_L_3_01",
             "shape": [
-              [1, 1],
-              [1, 0],
-              [1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-5",
+              "0-6",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-2", "3-2", "3-3"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "1-2",
+              "2-2",
+              "3-2",
+              "3-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3", "2-4", "3-4"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-3",
+              "2-4",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-5", "4-6", "5-6", "6-6"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "4-5",
+              "4-6",
+              "5-6",
+              "6-6"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "5-4", "5-5", "6-5"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-4",
+              "5-4",
+              "5-5",
+              "6-5"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-0", "2-1", "3-0", "3-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "2-0",
+              "2-1",
+              "3-0",
+              "3-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-0"],
-            "shape": [[1]],
+            "blocks": [
+              "1-0"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -1961,111 +3988,282 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "1-0", "2-0", "3-0"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-1", "1-1", "2-1", "3-1"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-2", "0-3", "1-2", "1-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-0",
+              "1-0",
+              "2-0",
+              "3-0"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-2", "2-3", "3-2", "3-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-1",
+              "1-1",
+              "2-1",
+              "3-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "0-5", "0-6", "1-5"],
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-2",
+              "1-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
             "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-2",
+              "2-3",
+              "3-2",
+              "3-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "0-5",
+              "0-6",
+              "1-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-4", "2-4", "2-5", "3-4"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [1, 0]
+            "blocks": [
+              "1-4",
+              "2-4",
+              "2-5",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["5-4", "5-5", "6-5", "6-6"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "5-4",
+              "5-5",
+              "6-5",
+              "6-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_01"
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "4-5", "4-6", "5-6"],
-            "shape": [
-              [1, 1, 1],
-              [0, 0, 1]
+            "blocks": [
+              "4-4",
+              "4-5",
+              "4-6",
+              "5-6"
             ],
             "orientation": 8,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
           }
         ]
       }
@@ -2075,132 +4273,305 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-1"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3", "1-3"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
-          },
-          {
-            "blocks": ["0-4", "1-4"],
-            "shape": [[1], [1]],
-            "orientation": 6,
-            "pieceId": "RP_I_2_01"
-          },
-          {
-            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "pieceId": "RP_L_3_01",
             "shape": [
-              [1, 1],
-              [1, 0],
-              [1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-5",
+              "0-6",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-2", "3-2", "3-3"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "1-2",
+              "2-2",
+              "3-2",
+              "3-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3", "2-4", "3-4"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-3",
+              "2-4",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-5", "4-6", "5-6", "6-6"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "4-5",
+              "4-6",
+              "5-6",
+              "6-6"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "5-4", "5-5", "6-5"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-4",
+              "5-4",
+              "5-5",
+              "6-5"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-0", "2-1", "3-0", "3-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "2-0",
+              "2-1",
+              "3-0",
+              "3-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-0"],
-            "shape": [[1]],
+            "blocks": [
+              "1-0"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -2208,111 +4579,282 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "1-0", "2-0", "3-0"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-1", "1-1", "2-1", "3-1"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-2", "0-3", "1-2", "1-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-0",
+              "1-0",
+              "2-0",
+              "3-0"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-2", "2-3", "3-2", "3-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-1",
+              "1-1",
+              "2-1",
+              "3-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "0-5", "0-6", "1-5"],
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-2",
+              "1-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
             "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-2",
+              "2-3",
+              "3-2",
+              "3-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "0-5",
+              "0-6",
+              "1-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-4", "2-4", "2-5", "3-4"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [1, 0]
+            "blocks": [
+              "1-4",
+              "2-4",
+              "2-5",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["5-4", "5-5", "6-5", "6-6"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "5-4",
+              "5-5",
+              "6-5",
+              "6-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_01"
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "4-5", "4-6", "5-6"],
-            "shape": [
-              [1, 1, 1],
-              [0, 0, 1]
+            "blocks": [
+              "4-4",
+              "4-5",
+              "4-6",
+              "5-6"
             ],
             "orientation": 8,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
           }
         ]
       }
@@ -2322,132 +4864,305 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-1"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3", "1-3"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
-          },
-          {
-            "blocks": ["0-4", "1-4"],
-            "shape": [[1], [1]],
-            "orientation": 6,
-            "pieceId": "RP_I_2_01"
-          },
-          {
-            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "pieceId": "RP_L_3_01",
             "shape": [
-              [1, 1],
-              [1, 0],
-              [1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-5",
+              "0-6",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-2", "3-2", "3-3"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "1-2",
+              "2-2",
+              "3-2",
+              "3-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3", "2-4", "3-4"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-3",
+              "2-4",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-5", "4-6", "5-6", "6-6"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "4-5",
+              "4-6",
+              "5-6",
+              "6-6"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "5-4", "5-5", "6-5"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-4",
+              "5-4",
+              "5-5",
+              "6-5"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-0", "2-1", "3-0", "3-1"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "2-0",
+              "2-1",
+              "3-0",
+              "3-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-0"],
-            "shape": [[1]],
+            "blocks": [
+              "1-0"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       },
@@ -2455,111 +5170,282 @@
         "name": "Survivability",
         "resonance": [
           {
-            "blocks": ["0-0", "1-0", "2-0", "3-0"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-1", "1-1", "2-1", "3-1"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["0-2", "0-3", "1-2", "1-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-0",
+              "1-0",
+              "2-0",
+              "3-0"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-2", "2-3", "3-2", "3-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
+            "blocks": [
+              "0-1",
+              "1-1",
+              "2-1",
+              "3-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_O_4_01"
+            "pieceId": "RP_I_4_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-4", "0-5", "0-6", "1-5"],
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-2",
+              "1-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
             "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "2-2",
+              "2-3",
+              "3-2",
+              "3-3"
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "0-5",
+              "0-6",
+              "1-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-4", "2-4", "2-5", "3-4"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [1, 0]
+            "blocks": [
+              "1-4",
+              "2-4",
+              "2-5",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["5-4", "5-5", "6-5", "6-6"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "5-4",
+              "5-5",
+              "6-5",
+              "6-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_4_01"
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "4-5", "4-6", "5-6"],
-            "shape": [
-              [1, 1, 1],
-              [0, 0, 1]
+            "blocks": [
+              "4-4",
+              "4-5",
+              "4-6",
+              "5-6"
             ],
             "orientation": 8,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1,
+                1
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
           }
         ]
       }
@@ -2569,135 +5455,317 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-1"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3", "1-3"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
-          },
-          {
-            "blocks": ["0-4", "1-4"],
-            "shape": [[1], [1]],
-            "orientation": 6,
-            "pieceId": "RP_I_2_01"
-          },
-          {
-            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "pieceId": "RP_L_3_01",
             "shape": [
-              [1, 1],
-              [1, 0],
-              [1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-5",
+              "0-6",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-5", "4-6", "5-6", "6-6"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "4-5",
+              "4-6",
+              "5-6",
+              "6-6"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "5-4", "5-5", "6-5"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-4",
+              "5-4",
+              "5-5",
+              "6-5"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3", "2-4", "3-4"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-3",
+              "2-4",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-2", "3-2", "3-3"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "1-2",
+              "2-2",
+              "3-2",
+              "3-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-0", "3-0"],
-            "shape": [[1], [1]],
+            "blocks": [
+              "2-0",
+              "3-0"
+            ],
             "orientation": 6,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "3-1"],
-            "shape": [[1], [1]],
+            "blocks": [
+              "2-1",
+              "3-1"
+            ],
             "orientation": 6,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-0"],
-            "shape": [[1]],
+            "blocks": [
+              "1-0"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       }
@@ -2707,135 +5775,317 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-1"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3", "1-3"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
-          },
-          {
-            "blocks": ["0-4", "1-4"],
-            "shape": [[1], [1]],
-            "orientation": 6,
-            "pieceId": "RP_I_2_01"
-          },
-          {
-            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "pieceId": "RP_L_3_01",
             "shape": [
-              [1, 1],
-              [1, 0],
-              [1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-5",
+              "0-6",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-5", "4-6", "5-6", "6-6"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "4-5",
+              "4-6",
+              "5-6",
+              "6-6"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "5-4", "5-5", "6-5"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-4",
+              "5-4",
+              "5-5",
+              "6-5"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3", "2-4", "3-4"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-3",
+              "2-4",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-2", "3-2", "3-3"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "1-2",
+              "2-2",
+              "3-2",
+              "3-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-0", "3-0"],
-            "shape": [[1], [1]],
+            "blocks": [
+              "2-0",
+              "3-0"
+            ],
             "orientation": 6,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "3-1"],
-            "shape": [[1], [1]],
+            "blocks": [
+              "2-1",
+              "3-1"
+            ],
             "orientation": 6,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-0"],
-            "shape": [[1]],
+            "blocks": [
+              "1-0"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       }
@@ -2845,282 +6095,320 @@
         "name": "Critical Hit",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-1"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-0",
+              "0-1",
+              "1-1"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["0-2", "0-3", "1-3"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "0-2",
+              "0-3",
+              "1-3"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
-          },
-          {
-            "blocks": ["0-4", "1-4"],
-            "shape": [[1], [1]],
-            "orientation": 6,
-            "pieceId": "RP_I_2_01"
-          },
-          {
-            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "pieceId": "RP_L_3_01",
             "shape": [
-              [1, 1],
-              [1, 0],
-              [1, 0]
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-4",
+              "1-4"
+            ],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
+          },
+          {
+            "blocks": [
+              "0-5",
+              "0-6",
+              "1-5",
+              "2-5"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
           },
           {
-            "blocks": ["1-6", "2-6", "3-5", "3-6"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
+            "blocks": [
+              "1-6",
+              "2-6",
+              "3-5",
+              "3-6"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_02"
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-5", "4-6", "5-6", "6-6"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
+            "blocks": [
+              "4-5",
+              "4-6",
+              "5-6",
+              "6-6"
             ],
             "orientation": 3,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-0", "5-0", "6-0", "6-1"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "4-0",
+              "5-0",
+              "6-0",
+              "6-1"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-1", "5-1", "5-2", "6-2"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-1",
+              "5-1",
+              "5-2",
+              "6-2"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-4", "5-4", "5-5", "6-5"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "4-4",
+              "5-4",
+              "5-5",
+              "6-5"
             ],
             "orientation": 6,
-            "pieceId": "RP_Z_4_02"
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
-            "shape": [
-              [1, 1, 0],
-              [0, 1, 0],
-              [0, 1, 1]
+            "blocks": [
+              "4-2",
+              "4-3",
+              "5-3",
+              "6-3",
+              "6-4"
             ],
             "orientation": 1,
-            "pieceId": "RP_Z_5_01"
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-3", "2-4", "3-4"],
-            "shape": [
-              [1, 1],
-              [0, 1]
+            "blocks": [
+              "2-3",
+              "2-4",
+              "3-4"
             ],
             "orientation": 6,
-            "pieceId": "RP_L_3_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [
+                1,
+                1
+              ],
+              [
+                0,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-2", "2-2", "3-2", "3-3"],
-            "shape": [
-              [1, 0],
-              [1, 0],
-              [1, 1]
+            "blocks": [
+              "1-2",
+              "2-2",
+              "3-2",
+              "3-3"
             ],
             "orientation": 1,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-0", "3-0"],
-            "shape": [[1], [1]],
+            "blocks": [
+              "2-0",
+              "3-0"
+            ],
             "orientation": 6,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["2-1", "3-1"],
-            "shape": [[1], [1]],
+            "blocks": [
+              "2-1",
+              "3-1"
+            ],
             "orientation": 6,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_I_2_01",
+            "shape": [
+              [
+                1
+              ],
+              [
+                1
+              ]
+            ]
           },
           {
-            "blocks": ["1-0"],
-            "shape": [[1]],
+            "blocks": [
+              "1-0"
+            ],
             "orientation": 1,
-            "pieceId": "RP_O_1_02"
+            "pieceId": "RP_O_1_02",
+            "shape": [
+              [
+                1
+              ]
+            ]
           }
         ]
       }
     ]
-  },
-  "mainPiece": "RP_Z_5_01",
-  "mainPieceBaseStats": {
-    "1": {
-      "ATTACK": {
-        "value": 13
-      },
-      "HP": {
-        "value": 96
-      },
-      "MENTAL_DEFENSE": {
-        "value": 7
-      },
-      "REALITY_DEFENSE": {
-        "value": 7
-      }
-    },
-    "2": {
-      "ATTACK": {
-        "value": 25
-      },
-      "HP": {
-        "value": 193
-      },
-      "MENTAL_DEFENSE": {
-        "value": 14
-      },
-      "REALITY_DEFENSE": {
-        "value": 15
-      }
-    },
-    "3": {
-      "ATTACK": {
-        "value": 51
-      },
-
-      "HP": {
-        "value": 387
-      },
-      "MENTAL_DEFENSE": {
-        "value": 29
-      },
-      "REALITY_DEFENSE": {
-        "value": 31
-      }
-    },
-    "4": {
-      "ATTACK": {
-        "value": 77
-      },
-      "HP": {
-        "value": 581
-      },
-      "MENTAL_DEFENSE": {
-        "value": 43
-      },
-      "REALITY_DEFENSE": {
-        "value": 46
-      }
-    },
-    "5": {
-      "ATTACK": {
-        "value": 103
-      },
-      "HP": {
-        "value": 775
-      },
-      "MENTAL_DEFENSE": {
-        "value": 58
-      },
-      "REALITY_DEFENSE": {
-        "value": 62
-      }
-    },
-    "6": {
-      "ATTACK": {
-        "value": 134
-      },
-      "HP": {
-        "value": 1011
-      },
-      "MENTAL_DEFENSE": {
-        "value": 75
-      },
-      "REALITY_DEFENSE": {
-        "value": 81
-      }
-    },
-    "7": {
-      "ATTACK": {
-        "value": 164
-      },
-      "HP": {
-        "value": 1239
-      },
-      "MENTAL_DEFENSE": {
-        "value": 93
-      },
-      "REALITY_DEFENSE": {
-        "value": 100
-      }
-    },
-    "8": {
-      "ATTACK": {
-        "value": 196
-      },
-      "HP": {
-        "value": 1475
-      },
-      "MENTAL_DEFENSE": {
-        "value": 110
-      },
-      "REALITY_DEFENSE": {
-        "value": 119
-      }
-    },
-    "9": {
-      "ATTACK": {
-        "value": 226
-      },
-      "HP": {
-        "value": 1704
-      },
-      "MENTAL_DEFENSE": {
-        "value": 127
-      },
-      "REALITY_DEFENSE": {
-        "value": 137
-      }
-    },
-    "10": {
-      "ATTACK": {
-        "value": 257
-      },
-      "HP": {
-        "value": 1939
-      },
-      "MENTAL_DEFENSE": {
-        "value": 145
-      },
-      "REALITY_DEFENSE": {
-        "value": 156
-      }
-    }
   }
 }

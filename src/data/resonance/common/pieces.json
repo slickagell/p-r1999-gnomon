@@ -32,13 +32,13 @@
     "shape": [[1], [1], [1], [1]],
     "stats": {
       "1": {
-        "ATTACK": {
-          "unit": "%",
-          "value": 1.5
-        },
         "HP": {
           "unit": "%",
           "value": 2
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.5
         },
         "MENTAL_DEFENSE": {
           "unit": "%",
@@ -46,11 +46,11 @@
         }
       },
       "2": {
-        "ATTACK": {
+        "HP": {
           "unit": "%",
           "value": 2.5
         },
-        "HP": {
+        "ATTACK": {
           "unit": "%",
           "value": 2.5
         },
@@ -60,11 +60,11 @@
         }
       },
       "3": {
-        "ATTACK": {
+        "HP": {
           "unit": "%",
           "value": 3
         },
-        "HP": {
+        "ATTACK": {
           "unit": "%",
           "value": 3
         },
@@ -74,11 +74,11 @@
         }
       },
       "4": {
-        "ATTACK": {
+        "HP": {
           "unit": "%",
           "value": 3.5
         },
-        "HP": {
+        "ATTACK": {
           "unit": "%",
           "value": 3.5
         },
@@ -269,13 +269,13 @@
     "shape": [[1]],
     "stats": {
       "1": {
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 0.5
-        },
         "HP": {
           "unit": "%",
           "value": 1
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 0.5
         }
       }
     }
@@ -286,13 +286,13 @@
     "shape": [[1]],
     "stats": {
       "1": {
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 0.5
-        },
         "HP": {
           "unit": "%",
           "value": 1
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 0.5
         }
       }
     }
@@ -310,11 +310,11 @@
           "unit": "%",
           "value": 1.5
         },
-        "MENTAL_DEFENSE": {
+        "REALITY_DEFENSE": {
           "unit": "%",
           "value": 1.5
         },
-        "REALITY_DEFENSE": {
+        "MENTAL_DEFENSE": {
           "unit": "%",
           "value": 1.5
         }
@@ -324,11 +324,11 @@
           "unit": "%",
           "value": 2.5
         },
-        "MENTAL_DEFENSE": {
+        "REALITY_DEFENSE": {
           "unit": "%",
           "value": 2.5
         },
-        "REALITY_DEFENSE": {
+        "MENTAL_DEFENSE": {
           "unit": "%",
           "value": 2.5
         }
@@ -338,11 +338,11 @@
           "unit": "%",
           "value": 3
         },
-        "MENTAL_DEFENSE": {
+        "REALITY_DEFENSE": {
           "unit": "%",
           "value": 3
         },
-        "REALITY_DEFENSE": {
+        "MENTAL_DEFENSE": {
           "unit": "%",
           "value": 3
         }
@@ -352,11 +352,11 @@
           "unit": "%",
           "value": 3.5
         },
-        "MENTAL_DEFENSE": {
+        "REALITY_DEFENSE": {
           "unit": "%",
           "value": 3.5
         },
-        "REALITY_DEFENSE": {
+        "MENTAL_DEFENSE": {
           "unit": "%",
           "value": 3.5
         }
@@ -372,13 +372,13 @@
     ],
     "stats": {
       "1": {
-        "ATTACK": {
-          "unit": "%",
-          "value": 1.5
-        },
         "HP": {
           "unit": "%",
           "value": 2
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.5
         },
         "REALITY_DEFENSE": {
           "unit": "%",
@@ -386,11 +386,11 @@
         }
       },
       "2": {
-        "ATTACK": {
+        "HP": {
           "unit": "%",
           "value": 2.5
         },
-        "HP": {
+        "ATTACK": {
           "unit": "%",
           "value": 2.5
         },
@@ -400,11 +400,11 @@
         }
       },
       "3": {
-        "ATTACK": {
+        "HP": {
           "unit": "%",
           "value": 3
         },
-        "HP": {
+        "ATTACK": {
           "unit": "%",
           "value": 3
         },
@@ -414,11 +414,11 @@
         }
       },
       "4": {
-        "ATTACK": {
+        "HP": {
           "unit": "%",
           "value": 3.5
         },
-        "HP": {
+        "ATTACK": {
           "unit": "%",
           "value": 3.5
         },

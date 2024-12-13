@@ -1,4 +1,444 @@
 {
+  "mainPiece": "RP_X_5_01",
+  "mainPieceBaseStats": {
+    "1": {
+      "HP": {
+        "value": 77
+      },
+      "ATTACK": {
+        "value": 14
+      },
+      "REALITY_DEFENSE": {
+        "value": 7
+      },
+      "MENTAL_DEFENSE": {
+        "value": 8
+      }
+    },
+    "2": {
+      "HP": {
+        "value": 155
+      },
+      "ATTACK": {
+        "value": 27
+      },
+      "REALITY_DEFENSE": {
+        "value": 14
+      },
+      "MENTAL_DEFENSE": {
+        "value": 16
+      }
+    },
+    "3": {
+      "HP": {
+        "value": 310
+      },
+      "ATTACK": {
+        "value": 55
+      },
+      "REALITY_DEFENSE": {
+        "value": 28
+      },
+      "MENTAL_DEFENSE": {
+        "value": 32
+      }
+    },
+    "4": {
+      "HP": {
+        "value": 465
+      },
+      "ATTACK": {
+        "value": 82
+      },
+      "REALITY_DEFENSE": {
+        "value": 42
+      },
+      "MENTAL_DEFENSE": {
+        "value": 48
+      }
+    },
+    "5": {
+      "HP": {
+        "value": 620
+      },
+      "ATTACK": {
+        "value": 110
+      },
+      "REALITY_DEFENSE": {
+        "value": 56
+      },
+      "MENTAL_DEFENSE": {
+        "value": 65
+      }
+    },
+    "6": {
+      "HP": {
+        "value": 809
+      },
+      "ATTACK": {
+        "value": 143
+      },
+      "REALITY_DEFENSE": {
+        "value": 73
+      },
+      "MENTAL_DEFENSE": {
+        "value": 84
+      }
+    },
+    "7": {
+      "HP": {
+        "value": 992
+      },
+      "ATTACK": {
+        "value": 176
+      },
+      "REALITY_DEFENSE": {
+        "value": 90
+      },
+      "MENTAL_DEFENSE": {
+        "value": 104
+      }
+    },
+    "8": {
+      "HP": {
+        "value": 1180
+      },
+      "ATTACK": {
+        "value": 209
+      },
+      "REALITY_DEFENSE": {
+        "value": 107
+      },
+      "MENTAL_DEFENSE": {
+        "value": 123
+      }
+    },
+    "9": {
+      "HP": {
+        "value": 1363
+      },
+      "ATTACK": {
+        "value": 242
+      },
+      "REALITY_DEFENSE": {
+        "value": 124
+      },
+      "MENTAL_DEFENSE": {
+        "value": 143
+      }
+    },
+    "10": {
+      "HP": {
+        "value": 1552
+      },
+      "ATTACK": {
+        "value": 275
+      },
+      "REALITY_DEFENSE": {
+        "value": 141
+      },
+      "MENTAL_DEFENSE": {
+        "value": 162
+      }
+    }
+  },
+  "patternPieces": {
+    "ASPIRATIONAL": {
+      "baseStats": {
+        "6": {
+          "ATTACK": {
+            "value": 175
+          },
+          "REALITY_DEFENSE": {
+            "value": 73
+          },
+          "MENTAL_DEFENSE": {
+            "value": 84
+          }
+        },
+        "7": {
+          "ATTACK": {
+            "value": 214
+          },
+          "REALITY_DEFENSE": {
+            "value": 90
+          },
+          "MENTAL_DEFENSE": {
+            "value": 104
+          }
+        },
+        "8": {
+          "ATTACK": {
+            "value": 255
+          },
+          "REALITY_DEFENSE": {
+            "value": 107
+          },
+          "MENTAL_DEFENSE": {
+            "value": 123
+          }
+        },
+        "9": {
+          "ATTACK": {
+            "value": 294
+          },
+          "REALITY_DEFENSE": {
+            "value": 124
+          },
+          "MENTAL_DEFENSE": {
+            "value": 143
+          }
+        },
+        "10": {
+          "ATTACK": {
+            "value": 335
+          },
+          "REALITY_DEFENSE": {
+            "value": 141
+          },
+          "MENTAL_DEFENSE": {
+            "value": 162
+          }
+        }
+      }
+    },
+    "ELUCIDATION": {
+      "baseStats": {
+        "6": {
+          "ATTACK": {
+            "value": 175
+          },
+          "REALITY_DEFENSE": {
+            "value": 73
+          },
+          "MENTAL_DEFENSE": {
+            "value": 84
+          }
+        },
+        "7": {
+          "ATTACK": {
+            "value": 214
+          },
+          "REALITY_DEFENSE": {
+            "value": 90
+          },
+          "MENTAL_DEFENSE": {
+            "value": 104
+          }
+        },
+        "8": {
+          "ATTACK": {
+            "value": 255
+          },
+          "REALITY_DEFENSE": {
+            "value": 107
+          },
+          "MENTAL_DEFENSE": {
+            "value": 123
+          }
+        },
+        "9": {
+          "ATTACK": {
+            "value": 294
+          },
+          "REALITY_DEFENSE": {
+            "value": 124
+          },
+          "MENTAL_DEFENSE": {
+            "value": 143
+          }
+        },
+        "10": {
+          "ATTACK": {
+            "value": 335
+          },
+          "REALITY_DEFENSE": {
+            "value": 141
+          },
+          "MENTAL_DEFENSE": {
+            "value": 162
+          }
+        }
+      }
+    },
+    "GENUINITY": {
+      "baseStats": {
+        "6": {
+          "ATTACK": {
+            "value": 175
+          },
+          "REALITY_DEFENSE": {
+            "value": 73
+          },
+          "MENTAL_DEFENSE": {
+            "value": 84
+          }
+        },
+        "7": {
+          "ATTACK": {
+            "value": 214
+          },
+          "REALITY_DEFENSE": {
+            "value": 90
+          },
+          "MENTAL_DEFENSE": {
+            "value": 104
+          }
+        },
+        "8": {
+          "ATTACK": {
+            "value": 255
+          },
+          "REALITY_DEFENSE": {
+            "value": 107
+          },
+          "MENTAL_DEFENSE": {
+            "value": 123
+          }
+        },
+        "9": {
+          "ATTACK": {
+            "value": 294
+          },
+          "REALITY_DEFENSE": {
+            "value": 124
+          },
+          "MENTAL_DEFENSE": {
+            "value": 143
+          }
+        },
+        "10": {
+          "ATTACK": {
+            "value": 335
+          },
+          "REALITY_DEFENSE": {
+            "value": 141
+          },
+          "MENTAL_DEFENSE": {
+            "value": 162
+          }
+        }
+      }
+    },
+    "HYPERPHRENIA": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 920
+          },
+          "ATTACK": {
+            "value": 175
+          },
+          "REALITY_DEFENSE": {
+            "value": 96
+          },
+          "MENTAL_DEFENSE": {
+            "value": 111
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1136
+          },
+          "ATTACK": {
+            "value": 214
+          },
+          "REALITY_DEFENSE": {
+            "value": 119
+          },
+          "MENTAL_DEFENSE": {
+            "value": 137
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1346
+          },
+          "ATTACK": {
+            "value": 255
+          },
+          "REALITY_DEFENSE": {
+            "value": 141
+          },
+          "MENTAL_DEFENSE": {
+            "value": 163
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1563
+          },
+          "ATTACK": {
+            "value": 294
+          },
+          "REALITY_DEFENSE": {
+            "value": 164
+          },
+          "MENTAL_DEFENSE": {
+            "value": 189
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1773
+          },
+          "ATTACK": {
+            "value": 335
+          },
+          "REALITY_DEFENSE": {
+            "value": 186
+          },
+          "MENTAL_DEFENSE": {
+            "value": 215
+          }
+        }
+      }
+    },
+    "STUPEFACTION": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1324
+          },
+          "ATTACK": {
+            "value": 230
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1629
+          },
+          "ATTACK": {
+            "value": 284
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1940
+          },
+          "ATTACK": {
+            "value": 336
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 2244
+          },
+          "ATTACK": {
+            "value": 390
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2549
+          },
+          "ATTACK": {
+            "value": 443
+          }
+        }
+      }
+    }
+  },
   "patternRecommended": "ASPIRATIONAL",
   "pieces": {
     "1": [
@@ -4139,148 +4579,5 @@
         ]
       }
     ]
-  },
-  "mainPiece": "RP_X_5_01",
-  "mainPieceBaseStats": {
-    "1": {
-      "ATTACK": {
-        "value": 14
-      },
-      "HP": {
-        "value": 77
-      },
-      "MENTAL_DEFENSE": {
-        "value": 8
-      },
-      "REALITY_DEFENSE": {
-        "value": 7
-      }
-    },
-    "2": {
-      "ATTACK": {
-        "value": 27
-      },
-      "HP": {
-        "value": 155
-      },
-      "MENTAL_DEFENSE": {
-        "value": 16
-      },
-      "REALITY_DEFENSE": {
-        "value": 14
-      }
-    },
-    "3": {
-      "ATTACK": {
-        "value": 55
-      },
-      "HP": {
-        "value": 310
-      },
-      "MENTAL_DEFENSE": {
-        "value": 32
-      },
-      "REALITY_DEFENSE": {
-        "value": 28
-      }
-    },
-    "4": {
-      "ATTACK": {
-        "value": 82
-      },
-      "HP": {
-        "value": 465
-      },
-      "MENTAL_DEFENSE": {
-        "value": 48
-      },
-      "REALITY_DEFENSE": {
-        "value": 42
-      }
-    },
-    "5": {
-      "ATTACK": {
-        "value": 110
-      },
-      "HP": {
-        "value": 620
-      },
-      "MENTAL_DEFENSE": {
-        "value": 65
-      },
-      "REALITY_DEFENSE": {
-        "value": 56
-      }
-    },
-    "6": {
-      "ATTACK": {
-        "value": 143
-      },
-      "HP": {
-        "value": 809
-      },
-      "MENTAL_DEFENSE": {
-        "value": 84
-      },
-      "REALITY_DEFENSE": {
-        "value": 73
-      }
-    },
-    "7": {
-      "ATTACK": {
-        "value": 176
-      },
-      "HP": {
-        "value": 992
-      },
-      "MENTAL_DEFENSE": {
-        "value": 104
-      },
-      "REALITY_DEFENSE": {
-        "value": 90
-      }
-    },
-    "8": {
-      "ATTACK": {
-        "value": 209
-      },
-      "HP": {
-        "value": 1180
-      },
-      "MENTAL_DEFENSE": {
-        "value": 123
-      },
-      "REALITY_DEFENSE": {
-        "value": 107
-      }
-    },
-    "9": {
-      "ATTACK": {
-        "value": 242
-      },
-      "HP": {
-        "value": 1363
-      },
-      "MENTAL_DEFENSE": {
-        "value": 143
-      },
-      "REALITY_DEFENSE": {
-        "value": 124
-      }
-    },
-    "10": {
-      "ATTACK": {
-        "value": 275
-      },
-      "HP": {
-        "value": 1552
-      },
-      "MENTAL_DEFENSE": {
-        "value": 162
-      },
-      "REALITY_DEFENSE": {
-        "value": 141
-      }
-    }
   }
 }

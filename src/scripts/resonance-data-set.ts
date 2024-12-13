@@ -199,8 +199,8 @@ export default () => ({
               return {
                 ...prev,
                 [level]: {
-                  ...stats,
                   ...this.$store.resonance.resonanceMainPieceBaseStats[level],
+                  ...stats,
                 },
               };
             },
@@ -1366,13 +1366,28 @@ export default () => ({
       piece.id.includes(pattern),
     );
 
+    if (!patternPiece) return;
+
     const updatedActiveResonancePieces = this.initialActiveResonancePieces.map(
       (piece) => {
         if (piece.id.includes(pieceCode)) {
           return {
             ...piece,
-            image: patternPiece?.image,
-            stats: patternPiece?.stats,
+            image: patternPiece.image,
+            stats: Object.entries(patternPiece.stats).reduce(
+              (prev, [level, stats]: [string, object]) => {
+                return {
+                  ...prev,
+                  [level]: {
+                    ...this.$store.resonance.resonancePatternPieces[pattern][
+                      "baseStats"
+                    ][level],
+                    ...stats,
+                  },
+                };
+              },
+              {}
+            ),
             pattern: pattern,
           };
         } else {
