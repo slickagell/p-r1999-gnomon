@@ -4,6 +4,7 @@ export const ARTEFACT_TYPE = {
   ACCESSORY: { title: "Accessory" },
   MEDICATION: { title: "Medication" },
   DISK: { title: "Disk" },
+  SUPPLY: { title: "Supply" },
 };
 
 export const ARTEFACT_TAG = {

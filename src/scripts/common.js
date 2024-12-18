@@ -75,7 +75,14 @@ export function processSearchResult(result) {
 
 export function sortArtefact(a, b) {
   const rarityOrder = ["COMMON", "RARE", "EPIC"];
-  const typeOrder = ["WEAPON", "CURIO", "ACCESSORY", "MEDICATION", "DISK"];
+  const typeOrder = [
+    "WEAPON",
+    "CURIO",
+    "ACCESSORY",
+    "MEDICATION",
+    "DISK",
+    "SUPPLY",
+  ];
   const rarityIndex = rarityOrder.indexOf(a.data.rarity);
   const typeIndex = typeOrder.indexOf(a.data.type);
   const bRarityIndex = rarityOrder.indexOf(b.data.rarity);
