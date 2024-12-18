@@ -94,3 +94,7 @@ export function sortArtefact(a, b) {
     return rarityIndex - bRarityIndex;
   }
 }
+
+export function sortCatalyst(a, b) {
+  return a.data.displayOrder - b.data.displayOrder;
+}

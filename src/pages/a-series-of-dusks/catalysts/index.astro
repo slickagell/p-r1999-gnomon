@@ -1,0 +1,67 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
+import Layout from "@layouts/Layout.astro";
+import { sortCatalyst } from "@scripts/common";
+import { getCollection } from "astro:content";
+
+const catalystEntries = await getCollection("catalysts");
+---
+
+<Layout
+  title="Catalysts"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "A Series of Dusks",
+      href: "/a-series-of-dusks",
+    },
+    {
+      label: "Catalysts",
+    },
+  ]}
+>
+  <h1>Catalysts</h1>
+
+  <div class="mt-10">
+    {
+      catalystEntries.sort(sortCatalyst).map(async (catalystEntry) => {
+        const { Content } = await catalystEntry.render();
+        return (
+          <div class="mt-6">
+            <h2
+              id={catalystEntry.slug}
+              class="mt-6 mb-4 text-center md:text-left"
+            >
+              <a href={`#${catalystEntry.slug}`}>{catalystEntry.data.name}</a>
+            </h2>
+            <div class="flex flex-col md:flex-row gap-8 md:items-start">
+              <div class="md:basis-1/4 shrink-0">
+                <CustomImage
+                  class="w-40 mx-auto"
+                  src={`/images/catalysts/${catalystEntry.data.image}`}
+                  alt={`${catalystEntry.data.name} icon`}
+                />
+                <p class="text-center">{catalystEntry.data.description}</p>
+              </div>
+              <div>
+                <span>{catalystEntry.data.initialData?.goldfinchCoins}</span>
+                <Content
+                  components={{
+                    ul: MarkdownDiscList,
+                    img: CustomImage,
+                    effect: EffectTooltip,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+</Layout>
