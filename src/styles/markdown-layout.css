@@ -6,20 +6,6 @@
   @apply w-2 h-2 bg-transparent;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 0 auto;
-  overflow-x: auto;
-}
-
-table td,
-table th {
-  padding: 8px;
-  min-height: 1px;
-  height: 1px;
-}
-
 h1 {
   @apply text-6xl font-bold text-primary;
 }
@@ -42,6 +28,20 @@ h5 {
 
 h6 {
   @apply font-bold my-2;
+}
+
+table {
+  @apply table border-collapse;
+}
+
+table,
+th,
+td {
+  @apply border;
+}
+
+th {
+  @apply text-lg border-primary bg-primary/30 text-base-content;
 }
 
 .container {

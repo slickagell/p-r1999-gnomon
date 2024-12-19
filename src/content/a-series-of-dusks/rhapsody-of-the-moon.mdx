@@ -61,8 +61,74 @@ After activating Instincts and clearing the second area, some of the Instincts w
 
 After loading up the expansion, your characters will display a Stress meter while exploring. Actions taken during exploration will affect their Stress levels, which in turn will affect their behavior on the battlefield.
 
-* When a character's Stress is low, they have a chance to trigger Vigilant Behavior based on their Afflatus.
-* When a character's Stress is high, they have a chance to trigger Disorder Behavior based on their Afflatus.
-* When a character's Stress reaches 50, they have either a low chance of triggering Focus Behavior, or a high chance of triggering Meltdown Behavior.
+Enemies also have Stress levels. The higher an enemy's stress, the more dangerous they become.
 
-Enemies also have Stress levels. The higher an enemy's stress, the more dangerous they become, forcing you to stay vigilant at all times.
+### Changes in stress
+
+- When an enemy leaves the battlefield, get Stress 5 for self.
+- When defeating an enemy, get Stress -10 for self.
+- When another ally dies, get Stress +25 for self.
+
+### Vigilance and Disorder
+
+- When at low Stress, chance to trigger Vigilance Behaviors associated with the unit's Afflatus. 
+- When at low Stress, chance to trigger Disorder Behaviors associated with the unit's Afflatus.
+
+### Focus and Meltdown
+
+- When Stress reaches 50, trigger the unit's Focus Behaviors or Meltdown Behaviors.
+
+
+## Stress behaviors
+
+### Afflatus
+
+|Name|Behavior|
+|--|--|
+|Intellect|Will not trigger Vigilance or Disorder.|
+|Spirit|When Vigilance is triggered, decrease the Stress of a random enemy.<br/> When Disorder is triggered, increase Stress on self.|
+|Star|When Vigilance is triggered, inflict :effect{code="CONFUSION"} on the enemy.<br/> When Disorder is triggered, get :effect{code="CONFUSION"} and shift forward.|
+|Mineral|When Vigilance is triggered, grant the ally with the lowest HP a protective positive status.<br/> When Disorder is triggered, inflict Weakness on a random ally.|
+|Beast|When Vigilance is triggered, attack with own Skill 1.<br/> When Disorder is triggered, after attacking with own Skill 1, suffer the :effect{code="DAZE"} status.|
+|Plant|When Vigilance is triggered, grant allies a protective positive status.<br/> When Disorder is triggered, inflict Neg Status on allies.|
+
+### Race
+
+|Name|Behavior|
+|--|--|
+|Arcanist|In battle, when reaching a certain Stress threshold, there's a low chance to trigger Focus, and a high chance to trigger Meltdown.|
+|Awakened|At the start of the round, if HP is above 50%, get a massive increase to Focus Chance.<br/>At the start of the round, if HP is below 50%, get a massive increase to Meltdown Chance.|
+|Mixed|In battle, when reaching a certain Stress threshold, the chance of triggering either Focus or Meltdown become 50%/50%.<br/>In battle, when getting an increase in Stress, that Stress increase gets a Change in Value +50%.|
+|Infected|When taking a hit, if Focus is triggered, copy positive statuses to a random ally.<br/>When taking a hit, if Meltdown is triggered, copy negative statuses to a random ally.|
+|Beyond||
+|Human||
+
+### Characteristic
+
+|Name|Behavior|
+|--|--|
+|Burn|When Focus is triggered, inflict multiple stacks of :effect{code="BURN"} on all enemies.<br/> When Meltdown is triggered, inflict multiple stacks of :effect{code="BURN"} on all allies.|
+|Burst DMG|When Focus is triggered, significantly increase the next attack's damage.<br/> When Meltdown is triggered, significantly decrease the next attack's damage.|
+|Debuff|When Focus is triggered, inflict multiple negative statuses on all enemies.<br/> When Meltdown is triggered, inflict multiple negative statuses on all allies.|
+|DEF|When Focus is triggered, gain multiple stacks of :effect{code="STURDINESS"}.<br/> When Meltdown is triggered, suffer multiple stacks of [Fragility].|
+|Dispeller|When Focus is triggered, dispel all positive statuses on all enemies.<br/> When Meltdown is triggered, dispel all positive statuses on all allies.|
+|DPS|When Focus is triggered, gain multiple stacks of :effect{code="ROUSING_MORALE"}.<br/>When Meltdown is triggered, suffer multiple stacks of :effect{code="WEAKNESS"}.|
+|Extra Action|When Focus is triggered, attack with own Skill 1.<br/> When Meltdown is triggered, suffer the [Cognitive Meltdown] status.|
+|Heal|When Focus is triggered, heals the ally with lowest HP.<br/> When Meltdown is triggered, significantly decreases Healing Taken by the ally with the lowest HP.|
+|HP Sacrifice|When Focus is triggered, lose (Current HP x50%) HP and gain multiple stacks of [Moribund].<br/> When Meltdown is triggered, lose (Current HP x80%) HP.|
+|Follow-up Attack|When Focus is triggered, attack with own skill 1.<br/> When Meltdown is triggered, suffer the [Cognitive Meltdown] status.|
+|Purify|When Focus is triggered, dispel all negative statuses from allies.<br/> When Meltdown is triggered, dispel all negative statuses from enemies.|
+|Reaper|When Focus is triggered, gain [Perseverant].<br/> When Meltdown is triggered, suffer [Perplexed].|
+|Riposte|When Focus is triggered, attack with own Skill 2. When Meltdown is triggered, suffer the [Cognitive Meltdown] status.|
+|Shield|When Focus is triggered, all allies gain a :effect{code="SHIELD"} with massive HP.<br/> When Meltdown is triggered, all enemies gain a :effect{code="SHIELD"} with massive HP.|
+|Support|When Focus is triggered, grant multiple positive statuses to all allies.<br/> When Meltdown is triggered, grant multiple positive statuses to all enemies.|
+|Nasty Wound|When Focus is triggered, inflict [Nasty Wound] on enemies.<br/> When Meltdown is triggered, inflict [Nasty Wound] on allies.|
+
+### Character
+
+|Name|Behavior|
+|--|--|
+|Isolde|When Focus is triggered, gain :effect{code="HEAT"}.<br/> When Meltdown is triggered, cast an ultimate.<br/> When Focus or Meltdown is triggered, and if Kakania is on the field, decrease Stress on all allies,|
+|Kakania|When another ally triggers Meltdown, get a decrease in Stress on self; and if Isolde is present, get a further decrease in Stress.<br/> When Meltdown is triggered, remove all [Empathy].|
+|Lucy|When Focus is triggered, gain multiple stacks of :effect{code="DYNAMO"}; if an Awakened character is present, gain AP +1 on the next round.<br/> When Meltdown is triggered, lose all :effect{code="DYNAMO"} and cannot gain :effect{code="DYNAMO"} for 1 round.|
+|Semmelweis|After Focus or Meltdown is triggered, gain [Echoes of Life].|
