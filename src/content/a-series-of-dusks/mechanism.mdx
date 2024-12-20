@@ -1,0 +1,131 @@
+import CardType from "@components/CardType.astro";
+
+# Mechanism
+
+## Catalyst Incantations
+
+In A Series of Dusks, Tuning is replaced with Catalyst Incantations.
+
+* You can consume Stimulus to cast Catalyst incantations.
+* Note that Stimulus cannot be gained through normal battle actions.
+* After battle, your remaining Stimulus will be carried over to the next battle.
+
+## Incantation Rewrite
+
+Certain battlefield rules can rewrite incantations, giving them different effects.
+
+![incantation-rewrite](/images/guide/a-series-of-dusks/incantation-rewrite.png)
+
+From left to right:
+
+* **Scalding**: At the end of the round, characters lose 10% Current HP for each of their incantations with this effect.
+* **Icebound**: The incantation cannot be cast or moved.
+* **Variable**: At the end of the round, the incantation changes to a random incantation of a random rank.
+
+## Incantation Syntony
+
+To trigger Incantation Syntony you need to use at least 3 cards of the **same** types
+
+For example:
+
+![incantation-syntony](/images/guide/a-series-of-dusks/incantation-syntony.png)
+
+By playing 3 Attack cards, we will trigger Attack Syntony Lv.1
+
+#### Levels
+
+* <span class="text-xl mr-2">Lv. 1:</span> **3** same types of Incantation
+* <span class="text-xl mr-2">Lv. 2:</span> **4** same types of Incantation
+* <span class="text-xl mr-2">Lv. 3:</span> **5** same types of Incantation
+
+#### Types of Syntony
+
+##### Attack Syntony
+
+<div class="flex gap-4 items-center">
+  <CardType type="ATTACK" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="ATTACK" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="ATTACK" />
+</div>
+
+##### Healing Syntony
+
+<div class="flex gap-4 items-center">
+  <CardType type="HEALTH" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="HEALTH" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="HEALTH" />
+</div>
+
+##### Debuff Syntony
+
+<div class="flex gap-4 items-center">
+  <CardType type="DEBUFF" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="DEBUFF" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="DEBUFF" />
+</div>
+
+##### Special Syntony
+
+<div class="flex gap-4 items-center">
+  <CardType type="VERSATILE" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="VERSATILE" />
+
+  <span class="text-4xl">+</span>
+
+  <CardType type="VERSATILE" />
+</div>
+
+## Incantation Resonance
+
+To trigger Incantation Resonance you need to use at least 3 cards of the **different** types
+
+#### Example
+
+![incantation-resonance](/images/guide/a-series-of-dusks/incantation-resonance.png)
+
+By playing 3 different types of cards, we will trigger Resonance Lv.1
+
+#### Levels
+
+* <span class="text-2xl mr-2">Lv. 1:</span> **3** different types of Incantation
+* <span class="text-2xl mr-2">Lv. 2:</span> **4** different types of Incantation
+* <span class="text-2xl mr-2">Lv. 3:</span> **5** different types of Incantation
+
+## Devouring Artefacts
+
+Permanently lose the devoured artefacts. With each devour, the devouring artefact grows stronger in power.
+
+<img src="/images/guide/a-series-of-dusks/devouring-artefacts.png" alt="devouring-artefacts" class="w-80 mx-auto" />
+
+## Tempering Artefacts
+
+Upgrades the quality of temperable artefacts, strengthening their effects. Generally, artefacts can only be tempered once.
+
+<img src="/images/guide/a-series-of-dusks/tempering-artefacts.png" alt="tempering-artefacts" class="w-80 mx-auto" />
+
+## Voltaic Artefacts
+
+Some artefacts, when placed, provide energy to \[Voltaic] artefacts within range. When certain \[Voltaic] artefacts accumulate enough energy, they are activated and gain powerful
+
+<img src="/images/guide/a-series-of-dusks/voltaic-artefacts.png" alt="voltaic-artefacts" class="w-80 mx-auto" />
