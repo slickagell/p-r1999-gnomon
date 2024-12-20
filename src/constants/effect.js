@@ -11,6 +11,9 @@ export const EFFECT_TYPE = {
   CONTROL: {
     title: "Control",
   },
+  STATS_UP: {
+    title: "Stats Up",
+  },
   POS_STATUS: {
     title: "Pos Status",
   },

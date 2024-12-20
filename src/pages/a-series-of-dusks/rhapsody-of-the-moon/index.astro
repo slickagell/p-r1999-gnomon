@@ -1,0 +1,40 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getEntry } from "astro:content";
+
+const rhapsodyOfTheMoonEntry = await getEntry(
+  "a-series-of-dusks",
+  "rhapsody-of-the-moon"
+);
+
+const { Content } = await rhapsodyOfTheMoonEntry.render();
+---
+
+<Layout
+  title="Rhapsody of the Moon | A Series of Dusks"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "A Series of Dusks",
+      href: "/a-series-of-dusks",
+    },
+    {
+      label: "Rhapsody of the Moon",
+    },
+  ]}
+>
+  <Content
+    components={{
+      img: CustomImage,
+      p: MarkdownContent,
+      effect: EffectTooltip,
+    }}
+  />
+</Layout>

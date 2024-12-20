@@ -33,6 +33,8 @@ export default {
         resonance: "#5f7281",
         voltaic: "#838554",
         support: "#848887",
+        stress: "#7c8e0c",
+        guide: "#fdf2e5",
       },
       gridTemplateColumns: {
         filter: "auto 1fr",

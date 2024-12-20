@@ -1,10 +1,11 @@
 ---
-import "@styles/markdown-layout.css";
+import CustomImage from "@components/CustomImage.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
 import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
 import { getEntry } from "astro:content";
 
-const mechanicEntry = await getEntry("a-series-of-dusks", "mechanic");
+const mechanicEntry = await getEntry("a-series-of-dusks", "mechanism");
 
 const { Content } = await mechanicEntry.render();
 ---
@@ -28,6 +29,7 @@ const { Content } = await mechanicEntry.render();
   <Content
     components={{
       p: MarkdownContent,
+      img: CustomImage,
     }}
   />
 </Layout>

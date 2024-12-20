@@ -4,6 +4,7 @@ export const ARTEFACT_TYPE = {
   ACCESSORY: { title: "Accessory" },
   MEDICATION: { title: "Medication" },
   DISK: { title: "Disk" },
+  SUPPLY: { title: "Supply" },
 };
 
 export const ARTEFACT_TAG = {
@@ -15,6 +16,8 @@ export const ARTEFACT_TAG = {
   ABUNDANCE: { title: "Abundance" },
   EXTRA_ACTION: { title: "Extra Action" },
   VOLTAIC: { title: "Voltaic" },
+  STRESS: { title: "Stress" },
+  GUIDE: { title: "Guide" },
 };
 
 export const ARTEFACT_RARITY = {

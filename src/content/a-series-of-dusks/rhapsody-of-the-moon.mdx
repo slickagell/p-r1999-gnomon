@@ -1,0 +1,139 @@
+# Rhapsody of the Moon
+
+## Suite of the Moon
+
+Before embarking on your exploration, you can visit the Suite of the Moon panel and choose from a variety of "Omen" modifiers. These modifiers add challenges to your gameplay, with each one increasing the current "Indulgence" value. The "Indulgence" value serves as an indicator for the difficulty level of your playthrough. Depending on this value, you may see changes in the appearance of the moon, with each moon phase representing a different difficulty bracket that adds even more dangerous effects to your playthrough.
+
+![suite-of-the-moon-panel](/images/guide/a-series-of-dusks/suite-of-the-moon-panel.jpg)
+
+### Phases of the Moon
+
+There are five difficulty brackets, or phases of the moon, determined by the current Indulgence value:
+
+##### Misperception
+
+* Low chance of increasing Stress at the start of the round. Very low chance of triggering Sudden Disaster.
+* Clear Vision.
+* Shard of Shadow gain +20%.
+
+##### Illusory Sounds
+
+* Low chance of increasing Stress at the start of the round.
+* Low chance of triggering Sudden Disaster.
+* Limited Vision.
+* Shard of Shadow gain +20%.
+* Enemy Control Resilience +20%.
+
+##### Illusory Sight
+
+* Moderate chance of increasing Stress at the start of the round.
+* Moderate chance of triggering Sudden Disaster.
+* Reduced Vision.
+* Shard of Shadow gain +50%.
+* Enemy Control Resilience +30%.
+
+##### Illusory Touch
+
+* High chance of increasing Stress at the start of the round.
+* High chance of triggering Sudden Disaster.
+* Majorly obstructed Vision.
+* Shard of Shadow gain +100%.
+* Enemy Control Resilience +50%.
+
+##### Delirium
+
+* High chance of significantly increasing Stress at the start of the round.
+* Guaranteed to trigger Sudden Disaster.
+* Severely obstructed Vision.
+* Shard of Shadow gain +200%.
+* Enemy Control Resistance +100%.
+* Deployed characters get a decrease in Focus Chance.
+
+After completing an exploration, you will receive Shards of Shadow. These shards can be used to unlock new Catalyst incantations, Instinct buffs, or reset the cooldowns of certain Instinct buffs. If the Indulgence value is at 0, the Suite of the Moon will become inactive and no effects from Indulgence will impact you. You will also no longer be able to obtain Shards of Shadow.
+
+As the difficulty bracket of the Suite of the Moon increases, you'll be able to activate "Instinct" effects. By tapping on the broken mirror shards surrounding the image of the moon, a variety of Instincts can be chosen. The higher the difficulty bracket, the more Instincts can be activated, and the stronger their effects will be.
+
+![shard-of-shadow-use](/images/guide/a-series-of-dusks/shard-of-shadow-use.jpg)
+
+After activating Instincts and clearing the second area, some of the Instincts will go into cooldown. Each time you clear the second area, or each area after that, these cooldowns are reduced by one round. Alternatively, you can use Shards of Shadow to instantly refresh the cooldowns.
+
+## Stress in battle
+
+After loading up the expansion, your characters will display a Stress meter while exploring. Actions taken during exploration will affect their Stress levels, which in turn will affect their behavior on the battlefield.
+
+Enemies also have Stress levels. The higher an enemy's stress, the more dangerous they become.
+
+### Changes in stress
+
+* When an enemy leaves the battlefield, get Stress 5 for self.
+* When defeating an enemy, get Stress -10 for self.
+* When another ally dies, get Stress +25 for self.
+
+### Vigilance and Disorder
+
+* When at low Stress, chance to trigger Vigilance Behaviors associated with the unit's Afflatus.
+* When at low Stress, chance to trigger Disorder Behaviors associated with the unit's Afflatus.
+
+### Focus and Meltdown
+
+* When Stress reaches 50, trigger the unit's Focus Behaviors or Meltdown Behaviors.
+
+## Stress behaviors
+
+### Afflatus
+
+|Name|Behavior|
+|--|--|
+|Intellect|Will not trigger Vigilance or Disorder.|
+|Spirit|When Vigilance is triggered, decrease the Stress of a random enemy.<br /> When Disorder is triggered, increase Stress on self.|
+|Star|When Vigilance is triggered, inflict :effect{code="CONFUSION"} on the enemy.<br /> When Disorder is triggered, get :effect{code="CONFUSION"} and shift forward.|
+|Mineral|When Vigilance is triggered, grant the ally with the lowest HP a protective positive status.<br /> When Disorder is triggered, inflict Weakness on a random ally.|
+|Beast|When Vigilance is triggered, attack with own Skill 1.<br /> When Disorder is triggered, after attacking with own Skill 1, suffer the :effect{code="DAZE"} status.|
+|Plant|When Vigilance is triggered, grant allies a protective positive status.<br /> When Disorder is triggered, inflict Neg Status on allies.|
+
+### Race
+
+|Name|Behavior|
+|--|--|
+|Arcanist|In battle, when reaching a certain Stress threshold, there's a low chance to trigger Focus, and a high chance to trigger Meltdown.|
+|Awakened|At the start of the round, if HP is above 50%, get a massive increase to Focus Chance.<br />At the start of the round, if HP is below 50%, get a massive increase to Meltdown Chance.|
+|Mixed|In battle, when reaching a certain Stress threshold, the chance of triggering either Focus or Meltdown become 50%/50%.<br />In battle, when getting an increase in Stress, that Stress increase gets a Change in Value +50%.|
+|Infected|When taking a hit, if Focus is triggered, copy positive statuses to a random ally.<br />When taking a hit, if Meltdown is triggered, copy negative statuses to a random ally.|
+|Beyond|When Stress increases or decreases in battle, that Stress value gets a Change in Value -50%.|
+|Human||
+
+### Characteristic
+
+|Name|Behavior|
+|--|--|
+|Burn|When Focus is triggered, inflict multiple stacks of :effect{code="BURN"} on all enemies.<br /> When Meltdown is triggered, inflict multiple stacks of :effect{code="BURN"} on all allies.|
+|Burst DMG|When Focus is triggered, significantly increase the next attack's damage.<br /> When Meltdown is triggered, significantly decrease the next attack's damage.|
+|Control|When Focus is triggered, inflict :effect{code="DAZE"} on a random enemy.<br /> When Meltdown is triggered, suffer :effect{code="DAZE"}.|
+|Debuff|When Focus is triggered, inflict multiple negative statuses on all enemies.<br /> When Meltdown is triggered, inflict multiple negative statuses on all allies.|
+|DEF|When Focus is triggered, gain multiple stacks of :effect{code="STURDINESS"}.<br /> When Meltdown is triggered, suffer multiple stacks of \[Fragility].|
+|Dispeller|When Focus is triggered, dispel all positive statuses on all enemies.<br /> When Meltdown is triggered, dispel all positive statuses on all allies.|
+|DPS|When Focus is triggered, gain multiple stacks of :effect{code="ROUSING_MORALE"}.<br />When Meltdown is triggered, suffer multiple stacks of :effect{code="WEAKNESS"}.|
+|Extra Action|When Focus is triggered, attack with own Skill 1.<br /> When Meltdown is triggered, suffer the \[Cognitive Meltdown] status.|
+|Heal|When Focus is triggered, heals the ally with lowest HP.<br /> When Meltdown is triggered, significantly decreases Healing Taken by the ally with the lowest HP.|
+|HP Sacrifice|When Focus is triggered, lose (Current HP x50%) HP and gain multiple stacks of \[Moribund].<br /> When Meltdown is triggered, lose (Current HP x80%) HP.|
+|Follow-up Attack|When Focus is triggered, attack with own skill 1.<br /> When Meltdown is triggered, suffer the \[Cognitive Meltdown] status.|
+|Poison|When Focus is triggered, inflict multiple instances of :effect{code="POISON"} on enemies.<br /> When Meltdown is triggered, inflict multiple instances of :effect{code="POISON"} on allies.|
+|Purify|When Focus is triggered, dispel all negative statuses from allies.<br /> When Meltdown is triggered, dispel all negative statuses from enemies.|
+|Reaper|When Focus is triggered, gain \[Perseverant].<br /> When Meltdown is triggered, suffer \[Perplexed].|
+|Riposte|When Focus is triggered, attack with own Skill 2.<br /> When Meltdown is triggered, suffer the \[Cognitive Meltdown] status.|
+|Self-healing|When Focus is triggered, recover (Max HP x100%) HP.<br /> When Meltdown is triggered, lose (Current HP x50%) HP.|
+|Shield|When Focus is triggered, all allies gain a :effect{code="SHIELD"} with massive HP.<br /> When Meltdown is triggered, all enemies gain a :effect{code="SHIELD"} with massive HP.|
+|Shift|When Focus is triggered, gain immunity to control shift effects and dispel all negative statuses on all allies.<br /> When Meltdown is triggered, gain immunity to control shifts and dispel all positive statuses on all allies.|
+|Support|When Focus is triggered, grant multiple positive statuses to all allies.<br /> When Meltdown is triggered, grant multiple positive statuses to all enemies.|
+|Nasty Wound|When Focus is triggered, inflict \[Nasty Wound] on enemies.<br /> When Meltdown is triggered, inflict \[Nasty Wound] on allies.|
+
+### Character
+
+|Name|Behavior|
+|--|--|
+|Isolde|When Focus is triggered, gain :effect{code="HEAT"}.<br /> When Meltdown is triggered, cast an ultimate.<br /> When Focus or Meltdown is triggered, and if Kakania is on the field, decrease Stress on all allies,|
+|Kakania|When another ally triggers Meltdown, get a decrease in Stress on self; and if Isolde is present, get a further decrease in Stress.<br /> When Meltdown is triggered, remove all \[Empathy].|
+|Lucy|When Focus is triggered, gain multiple stacks of :effect{code="DYNAMO"}; if an Awakened character is present, gain AP +1 on the next round.<br /> When Meltdown is triggered, lose all :effect{code="DYNAMO"} and cannot gain :effect{code="DYNAMO"} for 1 round.|
+|Semmelweis|After Focus or Meltdown is triggered, gain \[Echoes of Life].|
+|Sotheby|When Focus is triggered, all allies get \[Poison Flask].<br /> When Meltdown is triggered, all enemies get \[Poison Flask].|
+|Tuesday| In battle, when an enemy gets an increase in Stress or when an ally gets a decrease in Stress, the effect is enhanced.<br /> When Focus is triggered, all characters gain multiple stacks of \[Composure]. ‘When Meltdown is triggered, all characters suffer multiple stacks of \[Agitation].|
