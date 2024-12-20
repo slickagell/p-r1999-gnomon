@@ -5,6 +5,7 @@ code: "37"
 star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
+race: "ARCANIST"
 version: "1.3"
 specialties: ["DPS", "SUPPORT", "FOLLOW_UP_ATTACK"]
 isLimited: false
@@ -16,7 +17,7 @@ import CharacterStar from "@components/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
-import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 import CHARACTER from "@data/characters/37.json";
 import RESONANCE from "@data/resonance/characters/37.json";
 
@@ -38,6 +39,10 @@ import RESONANCE from "@data/resonance/characters/37.json";
       </div>
 
       <div class="flex gap-2">
+        <div class="badge badge-outline badge-primary">
+          {RACE[frontmatter.race].title}
+        </div>
+
         <div class="badge bg-base-content/20">
           {'Version ' + frontmatter.version}
         </div>

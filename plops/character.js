@@ -1,4 +1,9 @@
-import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "../src/constants/character.js";
+import {
+  AFFLATUS_TYPE,
+  DMG_TYPE,
+  RACE,
+  RARITY,
+} from "../src/constants/character.js";
 
 export default {
   description: "Create a character content mdx file",
@@ -27,6 +32,12 @@ export default {
       choices: Object.keys(DMG_TYPE),
     },
     {
+      type: "list",
+      name: "race",
+      message: "Character race:",
+      choices: Object.keys(RACE),
+    },
+    {
       type: "input",
       name: "version",
       message: "Character in version:",
@@ -39,6 +50,7 @@ export default {
   ],
   actions: () => {
     const defaultFolderPath = "content/characters";
+    const characterDataFolderPath = "data/characters";
     const resonanceFolderPath = "data/resonance/characters";
     return [
       {
@@ -50,7 +62,14 @@ export default {
       },
       {
         type: "add",
-        path: `src/${resonanceFolderPath}/{{dashCase name}}.mdx`,
+        path: `src/${characterDataFolderPath}/{{dashCase name}}.json`,
+        templateFile: `plop-templates/${characterDataFolderPath}/index.mdx.hbs`,
+        abortOnFail: true,
+        skipIfExists: true,
+      },
+      {
+        type: "add",
+        path: `src/${resonanceFolderPath}/{{dashCase name}}.json`,
         templateFile: `plop-templates/${resonanceFolderPath}/index.mdx.hbs`,
         abortOnFail: true,
         skipIfExists: true,
