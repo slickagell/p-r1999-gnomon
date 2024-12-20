@@ -55,7 +55,7 @@ const initialActiveResonanceLevel =
     ? DEFAULT_RESONATE_LEVEL
     : maxResonanceLevel;
 
-const mainPieceCode = resonanceMainPiece.replace("RP_", "");
+const mainPieceCode = resonanceMainPiece?.replace("RP_", "");
 
 const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
   (
@@ -114,7 +114,9 @@ const patternMaterialsList = patternPieces.map((ele) => {
 
   return {
     id: pattern,
-    materials: ele?.materials || [],
+    image: ele.image,
+    stats: ele.stats,
+    materials: resonancePatternPieces?.[pattern]?.["materials"] ?? [],
   };
 });
 ---
@@ -369,7 +371,10 @@ const patternMaterialsList = patternPieces.map((ele) => {
                     </template>
                   ))}
                 </div>
-                <span class="label-text-alt">
+                <span
+                  class="label-text-alt"
+                  x-show="selectedPattern !== 'PLACIDITY'"
+                >
                   <Tooltip>
                     <p
                       slot="toggle"
@@ -509,6 +514,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
     resonancePatternPieces,
     mainPieceCode,
     baseStats,
+    patternPieces: patternMaterialsList,
   }}
 >
   document.addEventListener("alpine:init", () => {
@@ -523,6 +529,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
       resonancePatternPieces,
       mainPieceCode,
       baseStats,
+      patternPieces,
     });
   });
 </script>
