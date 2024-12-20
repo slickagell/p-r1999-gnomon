@@ -156,29 +156,31 @@ function sortCharacters(a, b) {
             >
               <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
                 <a class="h-full" href={`/characters/${characterEntry.slug}`}>
-                  <div class="h-full relative overflow-hidden">
+                  <div class="h-full relative">
                     <div class="absolute -top-1 left-2 md:w-6 group-hover:-top-2 transition-all">
                       <AfflatusIcon type={characterEntry.data.afflatus} />
                     </div>
-                    <CustomImage
-                      class="w-full"
-                      src={`/images/characters/common/bg-character.png`}
-                      alt={`bg-character`}
-                    />
-                    <CustomImage
-                      class="absolute top-0 left-0 w-full -z-1"
-                      src={`/images/characters/${characterEntry.data.id}/card.png`}
-                      alt={`character-card-${characterEntry.data.id}`}
-                    />
-                    <CustomImage
-                      class="absolute bottom-0 left-0 w-full"
-                      src={`/images/characters/common/bg-rare-${characterEntry.data.star}.png`}
-                      alt={`character-bg-rare-${characterEntry.data.star}`}
-                    />
+                    <div class="h-full relative overflow-hidden">
+                      <CustomImage
+                        class="w-full"
+                        src={`/images/characters/common/bg-character.png`}
+                        alt={`bg-character`}
+                      />
+                      <CustomImage
+                        class="absolute top-0 left-0 w-full -z-1"
+                        src={`/images/characters/${characterEntry.data.id}/card.png`}
+                        alt={`character-card-${characterEntry.data.id}`}
+                      />
+                      <CustomImage
+                        class="absolute bottom-0 left-0 w-full"
+                        src={`/images/characters/common/bg-rare-${characterEntry.data.star}.png`}
+                        alt={`character-bg-rare-${characterEntry.data.star}`}
+                      />
 
-                    <h5 class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white font-normal">
-                      {characterEntry.data.title}
-                    </h5>
+                      <h5 class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white font-normal">
+                        {characterEntry.data.title}
+                      </h5>
+                    </div>
                   </div>
                 </a>
               </div>

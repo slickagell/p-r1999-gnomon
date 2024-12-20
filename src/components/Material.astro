@@ -64,7 +64,8 @@ const material = materials[code];
 
       {require && (
         <span class="shrink-0 text-sm ml-2">
-          x {require > 1000 ? `${require / 1000}k` : `${require}`}
+          <span class="text-xs">x</span>{" "}
+          {require > 1000 ? `${require / 1000}k` : `${require}`}
         </span>
       )}
     </div>

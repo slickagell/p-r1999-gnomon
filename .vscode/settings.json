@@ -5,5 +5,11 @@
   },
   "[mdx]": {
     "editor.defaultFormatter": "unifiedjs.vscode-mdx"
-  }
+  },
+  "sortJSON.orderOverride": [
+    "HP",
+    "ATTACK",
+    "REALITY_DEFENSE",
+    "MENTAL_DEFENSE"
+  ]
 }

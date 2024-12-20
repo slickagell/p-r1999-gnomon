@@ -11,12 +11,14 @@ export default ({
   orientation = 1,
   level = 1,
   stats,
+  isMainPiece = false,
 }: {
   id: string;
   total?: number;
   orientation?: number;
   level: number;
   stats: ResonancePieceStatsGeneralType;
+  isMainPiece?: boolean;
 }) => ({
   id: id,
   quantity: total,
@@ -27,6 +29,7 @@ export default ({
   currentStats: null,
   maxPieceWidth: "auto",
   maxPieceHeight: "auto",
+  isMainPiece: isMainPiece,
 
   init() {
     if (window.innerWidth >= 768) {
@@ -48,7 +51,7 @@ export default ({
           ...prev,
           [statId]: {
             label: statData.label || "",
-            value: statVal.value,
+            ...statVal,
             unit: statVal.unit || "",
           },
         };
@@ -131,5 +134,25 @@ export default ({
       this.maxPieceHeight = `${this.maxPieceSize * this.blockSize}px`;
       this.maxPieceWidth = `auto`;
     }
+  },
+
+  showPieceStat(statKey: string, stats) {
+    // if (this.isMainPiece) {
+    //   const attributesEl = document.querySelector(
+    //     "#attributes"
+    //   ) as HTMLDivElement;
+    //   if (!attributesEl) return;
+
+    //   let attributesAlpineData: any = Alpine.$data(attributesEl);
+    //   let baseStats = attributesAlpineData.baseStats;
+
+    //   if (!baseStats[statKey]) {
+    //     return "+" + stats.value + stats.unit;
+    //   }
+
+    //   return "+" + Math.round((baseStats[statKey].value * stats.value) / 100);
+    // }
+
+    return "+" + stats.value + stats.unit;
   },
 });

@@ -1,0 +1,21 @@
+{
+  "baseStats": {
+    "i3-60": {
+      "ATTACK": {
+        "value": 1120
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 381
+      },
+      "HP": {
+        "value": 6927
+      },
+      "MENTAL_DEFENSE": {
+        "value": 520
+      },
+      "REALITY_DEFENSE": {
+        "value": 559
+      }
+    }
+  }
+}

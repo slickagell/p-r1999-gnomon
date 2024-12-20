@@ -5,7 +5,6 @@ import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
 import { RESONANCE_PATTERN } from "@constants/resonance";
 import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
-import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
 
 const DEFAULT_RESONATE_LEVEL = 10;
 
@@ -14,9 +13,27 @@ interface Props {
   resonancePieces: ResonanceInitPiecesType;
   recommendedResonancePattern?: string;
   recommendedResonanceList?: ResonanceRecommendedListType;
+  resonanceMainPiece: string;
+  resonanceMainPieceBaseStats: ResonancePieceStatsGeneralType;
+  resonancePatternPieces: {
+    [pattern: string]: {
+      materials: {
+        code: string;
+        require: number;
+      }[];
+      baseStats: ResonancePieceStatsGeneralType;
+    };
+  };
   isDev?: boolean;
   pieceShapeFilterList?: string[];
   pieceBlocksFilterList?: string[];
+  baseStats: {
+    [insightLevel: string]: {
+      [stat: string]: {
+        value: number;
+      };
+    };
+  };
 }
 
 const {
@@ -24,9 +41,13 @@ const {
   resonancePieces,
   recommendedResonanceList,
   recommendedResonancePattern = "PLACIDITY",
+  resonanceMainPiece,
+  resonanceMainPieceBaseStats,
+  resonancePatternPieces,
   isDev,
   pieceShapeFilterList,
   pieceBlocksFilterList,
+  baseStats,
 } = Astro.props;
 
 const initialActiveResonanceLevel =
@@ -34,14 +55,7 @@ const initialActiveResonanceLevel =
     ? DEFAULT_RESONATE_LEVEL
     : maxResonanceLevel;
 
-const mainPiece = resonancePieces[initialActiveResonanceLevel].find((item) => {
-  if (RESONANCE_PIECES[item.id].isMainPiece) {
-    return true;
-  }
-  return false;
-});
-
-const mainPieceCode = ("" + mainPiece?.id).replace("RP_", "");
+const mainPieceCode = resonanceMainPiece?.replace("RP_", "");
 
 const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
   (
@@ -100,7 +114,9 @@ const patternMaterialsList = patternPieces.map((ele) => {
 
   return {
     id: pattern,
-    materials: ele?.materials || [],
+    image: ele.image,
+    stats: ele.stats,
+    materials: resonancePatternPieces?.[pattern]?.["materials"] ?? [],
   };
 });
 ---
@@ -334,17 +350,13 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 Pattern
               </label>
               <select
+                x-model="selectedPattern"
                 id="patternSelect"
                 class="select select-secondary select-bordered flex w-full"
                 @change="changePattern($event.target.value)"
               >
                 {patternOptions.map((pattern) => (
-                  <option
-                    value={pattern.value}
-                    selected={pattern.value === recommendedResonancePattern}
-                  >
-                    {pattern.label}
-                  </option>
+                  <option value={pattern.value}>{pattern.label}</option>
                 ))}
               </select>
               <label class="label">
@@ -359,7 +371,10 @@ const patternMaterialsList = patternPieces.map((ele) => {
                     </template>
                   ))}
                 </div>
-                <span class="label-text-alt">
+                <span
+                  class="label-text-alt"
+                  x-show="selectedPattern !== 'PLACIDITY'"
+                >
                   <Tooltip>
                     <p
                       slot="toggle"
@@ -418,7 +433,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
           :key="item.id+item.level+item.total+item.pattern"
         >
           <div
-            x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats })`}
+            x-data={`piece({ id: item.id, total: item.total, orientation: item.orientation, level: item.level, stats: item.stats, isMainPiece: item.isMainPiece })`}
             class="flex flex-col md:flex-row gap-4 select-none"
             {...isDev && {
               ["x-show"]: "filterShowPieces(item.id)",
@@ -463,10 +478,10 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 class="text-primary text-xl"
               >
               </p>
-              <template x-for="[,stat] in Object.entries(currentStats)">
+              <template x-for="[statKey,stats] in Object.entries(currentStats)">
                 <div class="flex gap-2 items-center justify-between">
-                  <p x-text="stat.label" class="text-primary-content"></p>
-                  <p x-text="'+'+stat.value+stat.unit"></p>
+                  <p x-text="stats.label" class="text-primary-content"></p>
+                  <p x-text="showPieceStat(statKey,stats)"></p>
                 </div>
               </template>
             </div>
@@ -495,7 +510,11 @@ const patternMaterialsList = patternPieces.map((ele) => {
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
     recommendedResonanceList,
     recommendedResonancePattern,
+    resonanceMainPieceBaseStats,
+    resonancePatternPieces,
     mainPieceCode,
+    baseStats,
+    patternPieces: patternMaterialsList,
   }}
 >
   document.addEventListener("alpine:init", () => {
@@ -506,7 +525,11 @@ const patternMaterialsList = patternPieces.map((ele) => {
       defaultResonanceLevel,
       recommendedResonanceList,
       recommendedResonancePattern,
+      resonanceMainPieceBaseStats,
+      resonancePatternPieces,
       mainPieceCode,
+      baseStats,
+      patternPieces,
     });
   });
 </script>
@@ -531,24 +554,38 @@ const patternMaterialsList = patternPieces.map((ele) => {
     baseStats: {
       HP: {
         label: STATS["HP"].label,
-        value: 5543,
+        value: 0,
       },
       ATTACK: {
         label: STATS["ATTACK"].label,
-        value: 1199,
+        value: 0,
       },
       REALITY_DEFENSE: {
         label: STATS["REALITY_DEFENSE"].label,
-        value: 505,
+        value: 0,
       },
       MENTAL_DEFENSE: {
         label: STATS["MENTAL_DEFENSE"].label,
-        value: 582,
+        value: 0,
       },
       CRITICAL_TECHNIQUE: {
         label: STATS["CRITICAL_TECHNIQUE"].label,
-        value: 436,
+        value: 0,
       },
+    },
+
+    init() {
+      const baseStatsData = this.$store.resonance.baseStats;
+      const baseStats = baseStatsData[`i${this.insight}-${this.level}`];
+
+      Object.entries(baseStats).forEach(
+        ([statKey, stats]: [string, { value: number }]) => {
+          this.baseStats[statKey] = {
+            ...this.baseStats[statKey],
+            ...stats,
+          };
+        }
+      );
     },
   }));
   Alpine.data("generalStats", resonanceGeneralStats);

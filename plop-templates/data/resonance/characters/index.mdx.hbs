@@ -1,6 +1,53 @@
 {
+  <!-- Update main piece code -->
+  "mainPiece": "RP_X_5_01",
+  <!-- Update main piece base stats -->
+  "mainPieceBaseStats": {
+    "1": {
+      "HP": {
+        "value": 77
+      },
+      "ATTACK": {
+        "value": 14
+      },
+      "REALITY_DEFENSE": {
+        "value": 7
+      },
+      "MENTAL_DEFENSE": {
+        "value": 8
+      }
+    },
+  },
+  <!-- Update pattern pieces base stats & materials -->
+  "patternPieces": {
+    "ASPIRATIONAL": {
+      "baseStats": {
+        "6": {
+          "ATTACK": {
+            "value": 175
+          },
+          "REALITY_DEFENSE": {
+            "value": 73
+          },
+          "MENTAL_DEFENSE": {
+            "value": 84
+          }
+        },
+        ...
+      },
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        ...
+      ]
+    },
+  },
+  <!-- Update pattern recommended -->
+  "patternRecommended": "PLACIDITY",
+  <!-- Update resonance pieces -->
   "pieces": {
-    <!-- Update resonance pieces -->
     "1": [
       {
         "id": "RP_X_5_01",
@@ -9,8 +56,8 @@
       },
     ]
   },
+  <!-- Update resonance recommended (you can arrange pieces and copy this data from /dev/resonance page)-->
   "recommended": {
-    <!-- Update resonance recommended (you can arrange pieces and copy this data from /dev/resonance page)-->
     "5": [
       {
         "name": "Attack",

@@ -5,6 +5,7 @@ code: "ISOLDE"
 star: 6
 afflatus: "SPIRIT"
 dmgType: "REALITY"
+race: "ARCANIST"
 version: "1.7"
 specialties: ["SUPPORT", "DPS", "BURN"]
 isLimited: false
@@ -16,7 +17,8 @@ import CharacterStar from "@components/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
-import { AFFLATUS_TYPE, DMG_TYPE, SPECIALTY } from "@constants/character";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/isolde.json";
 import RESONANCE from "@data/resonance/characters/isolde.json";
 
 # Isolde
@@ -37,6 +39,10 @@ import RESONANCE from "@data/resonance/characters/isolde.json";
       </div>
 
       <div class="flex gap-2">
+        <div class="badge badge-outline badge-primary">
+          {RACE[frontmatter.race].title}
+        </div>
+
         <div class="badge bg-base-content/20">
           {'Version ' + frontmatter.version}
         </div>
@@ -199,7 +205,7 @@ When holding 40 :effect{code="HEAT"} stacks, the :effect{code="INTERLUDE"} statu
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonanceMainPieceBaseStats={RESONANCE.mainPieceBaseStats} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

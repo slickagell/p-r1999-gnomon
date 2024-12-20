@@ -183,3 +183,24 @@ export const STATS = {
     unit: "%",
   },
 };
+
+export const RACE = {
+  ARCANIST: {
+    title: "Arcanist",
+  },
+  AWAKENED: {
+    title: "Awakened",
+  },
+  MIXED: {
+    title: "Mixed",
+  },
+  INFECTED: {
+    title: "Infected",
+  },
+  BEYOND: {
+    title: "Beyond",
+  },
+  HUMAN: {
+    title: "Human",
+  },
+};
