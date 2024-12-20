@@ -1,0 +1,251 @@
+---
+title: "Tuesday"
+id: "tuesday"
+code: "TUESDAY"
+star: 6
+afflatus: "SPIRIT"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "2.1"
+specialties: ["DEBUFF", "POISON", "SUPPORT"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterImg from "@components/CharacterImg.astro";
+import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/tuesday.json";
+import RESONANCE from "@data/resonance/characters/tuesday.json";
+
+# Tuesday
+
+<div class="my-8">
+  <CharacterStar star={frontmatter.star} />
+</div>
+
+<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+  <div>
+    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
+      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
+      <div class="flex gap-2 items-center">
+        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
+        ##### {DMG_TYPE[frontmatter.dmgType].title}
+      </div>
+
+      <div class="flex gap-2">
+        <div class="badge badge-outline badge-primary">
+          {RACE[frontmatter.race].title}
+        </div>
+
+        <div class="badge bg-base-content/20">
+          {'Version ' + frontmatter.version}
+        </div>
+
+        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
+      </div>
+    </div>
+
+    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
+    </div>
+
+    <div class="mt-4">
+      An arcanist's work. Exhibited in the 1990s for 21 years. Completed in the fall, on October 30. Originally exhibited in Texas, USA, and later stored in the St. Pavlov Foundation.
+
+      ###### Medium
+
+      Fear
+
+      ###### Afflatus
+
+      Phantom Hospitality [Spirit] Motel Owner.
+
+      ###### Fragrance note
+
+      Floral - Narcissus, Honeysuckle, Ginger, Basil
+
+      ###### Dimensions
+
+      65 7/20x 19 3/10 x12 99/100 in.
+    </div>
+
+    <div class="mt-4 flex gap-4 justify-center">
+      <CharacterImg variant="signature" id={frontmatter.id} />
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center shrink-0">
+    <CharacterImg variant="portrait" id={frontmatter.id} />
+
+    <div class="mt-5 flex gap-6 justify-center items-end">
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="chibi" id={frontmatter.id} />
+
+        Chibi
+      </div>
+    </div>
+  </div>
+</div>
+
+::toc
+
+## Arcane Skills
+
+### The Horror's Delight
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-1" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="DEBUFF" note="A seed of fear.">
+    1-target attack. Deals **130%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, repeating up to 2 times.
+  </CardInfo>
+
+  <CardInfo star="2" type="DEBUFF" note="A seed of fear, deeply planted.">
+    1-target attack. Deals **250%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, repeating up to 3 times.
+  </CardInfo>
+
+  <CardInfo star="3" type="DEBUFF" note="A seed of fear, deeply planted and delightfully nurtured.">
+    1-target attack. Deals **455%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, repeating up to 4 times.
+  </CardInfo>
+</div>
+
+### In Mother's Arms
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-2" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="DEBUFF" note="Exactly what a baby needs.">
+    Mass debuff. Inflicts Genesis DMG Taken **+15%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{code="POISON"} status) on all enemies for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="2" type="DEBUFF" note="Exactly what a baby —and any adult— needs.">
+    Mass debuff. Inflicts Genesis DMG Taken **+25%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets. in the :effect{code="POISON"} status) on all enemies for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="3" type="DEBUFF" note="Exactly what a baby —and any adult— needs, and she makes sure all of those needs ase met.">
+    Mass debuff. Inflicts Genesis DMG Taken **+35%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{code="POISON"} status) on all enemies for 2 rounds.
+  </CardInfo>
+</div>
+
+### Please, Come On In
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="ultimate" id={frontmatter.id} />
+  </div>
+
+  <CardInfo type="DEBUFF" note="Relax, it's nothing but an empty room at the heart of terror.">
+    Mass attack. Deals 225% Mental DMG to all enemies, inflicts 1 instance of :effect{code="POISON"} for 2 rounds on the targets hit: at the end of each round, deals (the user's ATK x20%) Genesis DMG to the target, then deals an additional (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x30%) Genesis DMG that can critically hit to the target; and at the same time, deploys array :effect{code="HORROR_STORY_NIGHT"} for 3 rounds.
+  </CardInfo>
+</div>
+
+## Inheritance
+
+### At Your Service
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="1" />
+
+  ##### Insight 1
+</div>
+
+When entering battle, gain :effect{code="FEAR_CRADLE"}. When entering battle, grant Genesis DMG Dealt **+15%** to self.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="2" />
+
+  ##### Insight 2
+</div>
+
+ATK **+5%** when the caster enters battle.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="3" />
+
+  ##### Insight 3
+</div>
+
+When entering battle, gain :effect{code="ROOM_SERVICE"}. When entering battle, gain Moxie +2 for self (triggers only 1 time).
+
+## Portray
+
+<span class="text-2xl mr-2">Lv. 1:</span>
+_Please, Come On In_: The instances of :effect{code="POISON"} inflicted is increased to **2**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**50%**).
+
+<span class="text-2xl mr-2">Lv. 2:</span>
+_In Mother's Arms_: At incantation rank **1/2/3**, the Genesis DMG Taken is now **+30%/40%/50%**, and the Critical Resist Rate is now **-25%** (**-30%** to targets in the :effect{code="POISON"} status).
+
+<span class="text-2xl mr-2">Lv. 3:</span>
+_Please, Come On In_: The instances of :effect{code="POISON"} inflicted is increased to **3**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**70%**).
+
+<span class="text-2xl mr-2">Lv. 4:</span>
+_At Your Service_: The Genesis DMG Dealt granted to self is now **+35%**.
+
+<span class="text-2xl mr-2">Lv. 5:</span>
+_The Horror's Delight_: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **210%/310%/535%**, and inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, now repeating up to **3/4/5** times.
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonanceMainPieceBaseStats={RESONANCE.mainPieceBaseStats} resonancePatternPieces={RESONANCE.patternPieces} />
+
+## Insight Materials
+
+<div class="flex flex-col md:flex-row flex-wrap  justify-center">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="1" />
+
+      ##### Insight 1
+    </div>
+
+    <Material code="SHARPODONTY" require="18000" />
+    <Material code="PAGE_OF_PLANTAL_VIMEN" require="3" />
+    <Material code="PAGE_OF_BEASTLY_THIRST" require="3" />
+    <Material code="PERPETUAL_COG" require="5" />
+    <Material code="TREMBLING_TOOTH" require="5" />
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="2" />
+
+      ##### Insight 2
+    </div>
+
+    <Material code="SHARPODONTY" require="40000" />
+    <Material code="SCROLL_OF_PLANTAL_VIMEN" require="5" />
+    <Material code="SCROLL_OF_BEASTLY_THIRST" require="5" />
+    <Material code="PROPHETIC_BIRD" require="6" />
+    <Material code="ESOTERIC_BONES" require="6" />
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="3" />
+
+      ##### Insight 3
+    </div>
+
+    <Material code="SHARPODONTY" require="200000" />
+    <Material code="SERPENT_SCEPTER" require="3" />
+    <Material code="TOME_OF_PLANTAL_VIMEN" require="8" />
+    <Material code="TOME_OF_BEASTLY_THIRST" require="8" />
+    <Material code="SILVER_BULLET" require="6" />
+  </div>
+</div>

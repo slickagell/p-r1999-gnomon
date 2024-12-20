@@ -80,6 +80,9 @@ export const SPECIALTY = {
   SHIELD: {
     title: "Shield",
   },
+  POISON: {
+    title: "Poison",
+  },
 };
 
 export const RARITY = {
