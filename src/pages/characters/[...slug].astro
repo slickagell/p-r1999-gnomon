@@ -1,6 +1,7 @@
 ---
 import EffectTooltip from "@components/EffectTooltip.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import TableOfContents from "@components/TableOfContents.astro";
@@ -45,6 +46,7 @@ const { Content } = await entry.render();
       tooltip: Tooltip,
       resonance: ResonanceBoard,
       toc: TableOfContents,
+      em: MarkdownEmphasis,
     }}
   />
 </Layout>

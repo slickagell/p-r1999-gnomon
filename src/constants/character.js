@@ -86,6 +86,12 @@ export const SPECIALTY = {
   REAPER: {
     title: "Reaper",
   },
+  BURST_DMG: {
+    title: "Burst DMG",
+  },
+  DEF: {
+    title: "Def",
+  },
 };
 
 export const RARITY = {
