@@ -83,6 +83,9 @@ export const SPECIALTY = {
   POISON: {
     title: "Poison",
   },
+  REAPER: {
+    title: "Reaper",
+  },
 };
 
 export const RARITY = {
