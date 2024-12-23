@@ -429,6 +429,145 @@
       }
     }
   },
+  "RP_T_5_01": {
+    "id": "RP_T_5_01",
+    "image": "rp-t-5-01.png",
+    "isMainPiece": true,
+    "shape": [
+      [0, 1, 0],
+      [0, 1, 0],
+      [1, 1, 1]
+    ],
+    "stats": {
+      "1": {},
+      "2": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "3": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "4": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        },
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        }
+      },
+      "5": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
+        },
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 5
+        }
+      },
+      "6": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "7": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "8": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "9": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 5
+        },
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 9
+        }
+      },
+      "10": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_DEFENSE": {
+          "unit": "%",
+          "value": 5
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  },
   "RP_X_5_01": {
     "id": "RP_X_5_01",
     "image": "rp-x-5-01.png",
