@@ -2,24 +2,6 @@
   "RPP_X_5_01_ASPIRATIONAL": {
     "id": "RPP_X_5_01_ASPIRATIONAL",
     "image": "rpp-x-5-01-aspirational.png",
-    "materials": [
-      {
-        "code": "SHARPODONTY",
-        "require": 120000
-      },
-      {
-        "code": "SERPENT_SCEPTER",
-        "require": 1
-      },
-      {
-        "code": "BOGEYMAN",
-        "require": 2
-      },
-      {
-        "code": "GOOSE_NECK",
-        "require": 3
-      }
-    ],
     "stats": {
       "6": {
         "ATTACK": {
@@ -133,24 +115,6 @@
   "RPP_X_5_01_ELUCIDATION": {
     "id": "RPP_X_5_01_ELUCIDATION",
     "image": "rpp-x-5-01-elucidation.png",
-    "materials": [
-      {
-        "code": "SHARPODONTY",
-        "require": 120000
-      },
-      {
-        "code": "SERPENT_SCEPTER",
-        "require": 1
-      },
-      {
-        "code": "BOGEYMAN",
-        "require": 2
-      },
-      {
-        "code": "GOOSE_NECK",
-        "require": 3
-      }
-    ],
     "stats": {
       "6": {
         "CRITICAL_DMG": {
@@ -395,24 +359,6 @@
   "RPP_X_5_01_STUPEFACTION": {
     "id": "RPP_X_5_01_STUPEFACTION",
     "image": "rpp-x-5-01-stupefaction.png",
-    "materials": [
-      {
-        "code": "SHARPODONTY",
-        "require": 120000
-      },
-      {
-        "code": "SERPENT_SCEPTER",
-        "require": 1
-      },
-      {
-        "code": "GOLDEN_COMPASS",
-        "require": 2
-      },
-      {
-        "code": "WINGED_KEY",
-        "require": 3
-      }
-    ],
     "stats": {
       "6": {
         "CRITICAL_RATE": {
@@ -481,7 +427,6 @@
   "RPP_Z_5_01_ELUCIDATION": {
     "id": "RPP_Z_5_01_ELUCIDATION",
     "image": "rpp-z-5-01-elucidation.png",
-    "materials": [],
     "stats": {
       "6": {
         "CRITICAL_DMG": {
@@ -558,7 +503,6 @@
   "RPP_Z_5_01_EQUANIMITY": {
     "id": "RPP_Z_5_01_EQUANIMITY",
     "image": "rpp-z-5-01-equanimity.png",
-    "materials": [],
     "stats": {
       "6": {
         "CRITICAL_DMG": {
@@ -615,7 +559,6 @@
   "RPP_Z_5_01_EQUIBALANCE": {
     "id": "RPP_Z_5_01_EQUIBALANCE",
     "image": "rpp-z-5-01-equibalance.png",
-    "materials": [],
     "stats": {
       "6": {
         "CRITICAL_DMG": {
@@ -692,7 +635,6 @@
   "RPP_Z_5_01_GENUINITY": {
     "id": "RPP_Z_5_01_GENUINITY",
     "image": "rpp-z-5-01-genuinity.png",
-    "materials": [],
     "stats": {
       "6": {
         "CRITICAL_DMG": {
@@ -769,7 +711,6 @@
   "RPP_Z_5_01_MERCY": {
     "id": "RPP_Z_5_01_MERCY",
     "image": "rpp-z-5-01-mercy.png",
-    "materials": [],
     "stats": {
       "6": {
         "CRITICAL_RESIST_RATE": {
@@ -837,6 +778,290 @@
           "value": 10
         },
         "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 16
+        }
+      }
+    }
+  },
+  "RPP_T_5_01_ELUCIDATION": {
+    "id": "RPP_T_5_01_ELUCIDATION",
+    "image": "rpp-t-5-01-elucidation.png",
+    "stats": {
+      "6": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 6
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 10
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "7": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 12
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "8": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 14
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "9": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 9
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 17
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 10
+        }
+      },
+      "10": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        },
+        "ULTIMATE_MIGHT": {
+          "unit": "%",
+          "value": 20
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 12
+        }
+      }
+    }
+  },
+  "RPP_T_5_01_GENUINITY": {
+    "id": "RPP_T_5_01_GENUINITY",
+    "image": "rpp-t-5-01-genuity.png",
+    "stats": {
+      "6": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 6
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 6
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "7": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 7
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 10
+        }
+      },
+      "8": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 8
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 12
+        }
+      },
+      "9": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 9
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 14
+        }
+      },
+      "10": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        },
+        "PENETRATION_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "INCANTATION_MIGHT": {
+          "unit": "%",
+          "value": 16
+        }
+      }
+    }
+  },
+  "RPP_T_5_01_HYPER": {
+    "id": "RPP_T_5_01_HYPER",
+    "image": "rpp-t-5-01-hyper.png",
+    "stats": {
+      "6": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "7": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "8": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "9": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 5
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 9
+        }
+      },
+      "10": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  },
+  "RPP_T_5_01_INSPIRE": {
+    "id": "RPP_T_5_01_INSPIRE",
+    "image": "rpp-t-5-01-inspire.png",
+    "stats": {
+      "6": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 16
+        }
+      },
+      "7": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 20
+        }
+      },
+      "8": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 24
+        }
+      },
+      "9": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 5
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 28
+        }
+      },
+      "10": {
+        "CRITICAL_DMG": {
+          "unit": "%",
+          "value": 6
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 32
+        }
+      }
+    }
+  },
+  "RPP_T_5_01_DELIRAMENT": {
+    "id": "RPP_T_5_01_DELIRAMENT",
+    "image": "rpp-t-5-01-delirament.png",
+    "stats": {
+      "6": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "7": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 10
+        }
+      },
+      "8": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 12
+        }
+      },
+      "9": {
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 14
+        }
+      },
+      "10": {
+        "DMG_BONUS": {
           "unit": "%",
           "value": 16
         }

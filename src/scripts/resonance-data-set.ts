@@ -2,7 +2,6 @@ import {
   IMAGE_DEGREE_ORIENTATIONS,
   IMAGE_ORIENTATION,
 } from "@constants/resonance";
-import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
 import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
 import { centroid } from "@turf/centroid";
 import { polygon } from "@turf/helpers";

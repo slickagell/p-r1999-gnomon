@@ -143,21 +143,340 @@
     }
   },
   "patternPieces": {
-    "ASPIRATIONAL": {
+    "ELUCIDATION": {
       "baseStats": {
         "6": {
+          "HP": {
+            "value": 1040
+          },
           "ATTACK": {
-            "value": 175
+            "value": 122
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1275
           },
-          "REALITY_DEFENSE": {
-            "value": 73
+          "ATTACK": {
+            "value": 150
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1517
           },
-          "MENTAL_DEFENSE": {
-            "value": 84
+          "ATTACK": {
+            "value": 178
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1752
+          },
+          "ATTACK": {
+            "value": 206
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1995
+          },
+          "ATTACK": {
+            "value": 234
           }
         }
       },
       "materials": [
+        {
+          "code": "RHEINGOLD",
+          "require": 1
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 4
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "GENUINITY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1040
+          },
+          "ATTACK": {
+            "value": 122
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1275
+          },
+          "ATTACK": {
+            "value": 150
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1517
+          },
+          "ATTACK": {
+            "value": 178
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1752
+          },
+          "ATTACK": {
+            "value": 206
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1995
+          },
+          "ATTACK": {
+            "value": 234
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "HYPER": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1040
+          },
+          "ATTACK": {
+            "value": 222
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1275
+          },
+          "ATTACK": {
+            "value": 274
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1517
+          },
+          "ATTACK": {
+            "value": 325
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1752
+          },
+          "ATTACK": {
+            "value": 377
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1995
+          },
+          "ATTACK": {
+            "value": 428
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "RHEINGOLD",
+          "require": 1
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "INSPIRE": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1040
+          },
+          "ATTACK": {
+            "value": 122
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1275
+          },
+          "ATTACK": {
+            "value": 150
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1517
+          },
+          "ATTACK": {
+            "value": 178
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1752
+          },
+          "ATTACK": {
+            "value": 206
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1995
+          },
+          "ATTACK": {
+            "value": 234
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "require": 1
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "DELIRAMENT": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1040
+          },
+          "ATTACK": {
+            "value": 122
+          },
+          "REALITY_DEFENSE": {
+            "value": 95
+          },
+          "MENTAL_DEFENSE": {
+            "value": 124
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1688
+          },
+          "ATTACK": {
+            "value": 189
+          },
+          "REALITY_DEFENSE": {
+            "value": 117
+          },
+          "MENTAL_DEFENSE": {
+            "value": 153
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 2002
+          },
+          "ATTACK": {
+            "value": 224
+          },
+          "REALITY_DEFENSE": {
+            "value": 139
+          },
+          "MENTAL_DEFENSE": {
+            "value": 182
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 2322
+          },
+          "ATTACK": {
+            "value": 260
+          },
+          "REALITY_DEFENSE": {
+            "value": 161
+          },
+          "MENTAL_DEFENSE": {
+            "value": 211
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2636
+          },
+          "ATTACK": {
+            "value": 296
+          },
+          "REALITY_DEFENSE": {
+            "value": 183
+          },
+          "MENTAL_DEFENSE": {
+            "value": 240
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "GOLDEN_FLEECE",
+          "require": 1
+        },
+        {
+          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
+        },
         {
           "code": "SHARPODONTY",
           "require": 120000
@@ -165,7 +484,7 @@
       ]
     }
   },
-  "patternRecommended": "PLACIDITY",
+  "patternRecommended": "HYPER",
   "pieces": {
     "1": [
       {
