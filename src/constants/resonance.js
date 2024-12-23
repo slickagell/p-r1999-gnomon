@@ -105,4 +105,29 @@ export const RESONANCE_PATTERN = {
     title: "Delirament",
     tags: ["GENERALIZED"],
   },
+  U_5_01_HYPER: {
+    pattern: "HYPER",
+    title: "Hyper",
+    tags: ["ATK"],
+  },
+  U_5_01_OVERINDULGENCE: {
+    pattern: "OVERINDULGENCE",
+    title: "Overindulgence",
+    tags: ["HP"],
+  },
+  U_5_01_QUIESCENCE: {
+    pattern: "QUIESCENCE",
+    title: "Quiescence",
+    tags: ["REALITY_DEF"],
+  },
+  U_5_01_PRUDENTIALITY: {
+    pattern: "PRUDENTIALITY",
+    title: "Prudentiality",
+    tags: ["MENTAL_DEF"],
+  },
+  U_5_01_EQUANIMITY: {
+    pattern: "EQUANIMITY",
+    title: "Equanimity",
+    tags: ["GENERALIZED"],
+  },
 };

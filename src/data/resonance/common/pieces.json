@@ -977,5 +977,155 @@
         }
       }
     }
+  },
+  "RP_U_5_01": {
+    "id": "RP_U_5_01",
+    "image": "rp-u-5-01.png",
+    "isMainPiece": true,
+    "shape": [
+      [1, 0, 1],
+      [1, 1, 1]
+    ],
+    "stats": {
+      "1": {},
+      "2": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "3": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 7
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        }
+      },
+      "4": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 1
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        }
+      },
+      "5": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 1
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "6": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "7": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "8": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 13
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "9": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 14
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
+        }
+      },
+      "10": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 16
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
+        }
+      }
+    }
   }
 }
