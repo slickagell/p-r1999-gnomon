@@ -143,21 +143,430 @@
     }
   },
   "patternPieces": {
-    "ASPIRATIONAL": {
+    "HYPER": {
       "baseStats": {
         "6": {
+          "HP": {
+            "value": 1115
+          },
           "ATTACK": {
-            "value": 175
+            "value": 220
+          },
+          "REALITY_DEFENSE": {
+            "value": 60
+          },
+          "MENTAL_DEFENSE": {
+            "value": 72
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1372
+          },
+          "ATTACK": {
+            "value": 271
           },
           "REALITY_DEFENSE": {
             "value": 73
           },
           "MENTAL_DEFENSE": {
-            "value": 84
+            "value": 88
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1630
+          },
+          "ATTACK": {
+            "value": 322
+          },
+          "REALITY_DEFENSE": {
+            "value": 87
+          },
+          "MENTAL_DEFENSE": {
+            "value": 105
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1887
+          },
+          "ATTACK": {
+            "value": 374
+          },
+          "REALITY_DEFENSE": {
+            "value": 101
+          },
+          "MENTAL_DEFENSE": {
+            "value": 121
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2144
+          },
+          "ATTACK": {
+            "value": 424
+          },
+          "REALITY_DEFENSE": {
+            "value": 115
+          },
+          "MENTAL_DEFENSE": {
+            "value": 138
           }
         }
       },
       "materials": [
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 2496
+          },
+          "ATTACK": {
+            "value": 121
+          },
+          "REALITY_DEFENSE": {
+            "value": 60
+          },
+          "MENTAL_DEFENSE": {
+            "value": 72
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 3071
+          },
+          "ATTACK": {
+            "value": 148
+          },
+          "REALITY_DEFENSE": {
+            "value": 73
+          },
+          "MENTAL_DEFENSE": {
+            "value": 88
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 3654
+          },
+          "ATTACK": {
+            "value": 176
+          },
+          "REALITY_DEFENSE": {
+            "value": 87
+          },
+          "MENTAL_DEFENSE": {
+            "value": 105
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 4229
+          },
+          "ATTACK": {
+            "value": 204
+          },
+          "REALITY_DEFENSE": {
+            "value": 101
+          },
+          "MENTAL_DEFENSE": {
+            "value": 121
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 4804
+          },
+          "ATTACK": {
+            "value": 232
+          },
+          "REALITY_DEFENSE": {
+            "value": 115
+          },
+          "MENTAL_DEFENSE": {
+            "value": 138
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "require": 1
+        },
+        {
+          "code": "INCORRUPT_MONKEYPAW",
+          "require": 2
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 4
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1115
+          },
+          "ATTACK": {
+            "value": 121
+          },
+          "REALITY_DEFENSE": {
+            "value": 300
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1372
+          },
+          "ATTACK": {
+            "value": 148
+          },
+          "REALITY_DEFENSE": {
+            "value": 369
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1630
+          },
+          "ATTACK": {
+            "value": 176
+          },
+          "REALITY_DEFENSE": {
+            "value": 438
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1887
+          },
+          "ATTACK": {
+            "value": 204
+          },
+          "REALITY_DEFENSE": {
+            "value": 507
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2144
+          },
+          "ATTACK": {
+            "value": 232
+          },
+          "REALITY_DEFENSE": {
+            "value": 577
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "MURMUR_OF_INSANITY",
+          "require": 2
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 3
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "PRUDENTIALITY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1115
+          },
+          "ATTACK": {
+            "value": 121
+          },
+          "MENTAL_DEFENSE": {
+            "value": 300
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1372
+          },
+          "ATTACK": {
+            "value": 148
+          },
+          "MENTAL_DEFENSE": {
+            "value": 369
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1630
+          },
+          "ATTACK": {
+            "value": 176
+          },
+          "MENTAL_DEFENSE": {
+            "value": 438
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1887
+          },
+          "ATTACK": {
+            "value": 204
+          },
+          "MENTAL_DEFENSE": {
+            "value": 507
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2144
+          },
+          "ATTACK": {
+            "value": 232
+          },
+          "MENTAL_DEFENSE": {
+            "value": 577
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        },
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1424
+          },
+          "ATTACK": {
+            "value": 167
+          },
+          "REALITY_DEFENSE": {
+            "value": 92
+          },
+          "MENTAL_DEFENSE": {
+            "value": 92
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1758
+          },
+          "ATTACK": {
+            "value": 207
+          },
+          "REALITY_DEFENSE": {
+            "value": 114
+          },
+          "MENTAL_DEFENSE": {
+            "value": 114
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 2084
+          },
+          "ATTACK": {
+            "value": 245
+          },
+          "REALITY_DEFENSE": {
+            "value": 136
+          },
+          "MENTAL_DEFENSE": {
+            "value": 136
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 2419
+          },
+          "ATTACK": {
+            "value": 285
+          },
+          "REALITY_DEFENSE": {
+            "value": 157
+          },
+          "MENTAL_DEFENSE": {
+            "value": 157
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2745
+          },
+          "ATTACK": {
+            "value": 323
+          },
+          "REALITY_DEFENSE": {
+            "value": 178
+          },
+          "MENTAL_DEFENSE": {
+            "value": 178
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "WYRMLING_SKELETON",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        },
         {
           "code": "SHARPODONTY",
           "require": 120000
@@ -165,7 +574,7 @@
       ]
     }
   },
-  "patternRecommended": "PLACIDITY",
+  "patternRecommended": "OVERINDULGENCE",
   "pieces": {
     "1": [
       {

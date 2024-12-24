@@ -1067,5 +1067,205 @@
         }
       }
     }
+  },
+  "RPP_U_5_01_HYPER": {
+    "id": "RPP_U_5_01_HYPER",
+    "image": "rpp-u-5-01-hyper.png",
+    "stats": {
+      "6": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 5
+        }
+      },
+      "7": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "8": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "9": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "10": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  },
+  "RPP_U_5_01_OVERINDULGENCE": {
+    "id": "RPP_U_5_01_OVERINDULGENCE",
+    "image": "rpp-u-5-01-overindulgence.png",
+    "stats": {
+      "6": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 5
+        }
+      },
+      "7": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "8": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "9": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "10": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  },
+  "RPP_U_5_01_QUIESCENCE": {
+    "id": "RPP_U_5_01_QUIESCENCE",
+    "image": "rpp-u-5-01-quiescence.png",
+    "stats": {
+      "6": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 5
+        }
+      },
+      "7": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "8": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "9": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "10": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  },
+  "RPP_U_5_01_PRUDENTIALITY": {
+    "id": "RPP_U_5_01_PRUDENTIALITY",
+    "image": "rpp-u-5-01-prudentiality.png",
+    "stats": {
+      "6": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 5
+        }
+      },
+      "7": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "8": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "9": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        }
+      },
+      "10": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        }
+      }
+    }
+  },
+  "RPP_U_5_01_EQUANIMITY": {
+    "id": "RPP_U_5_01_EQUANIMITY",
+    "image": "rpp-u-5-01-equanimity.png",
+    "stats": {
+      "6": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
+        }
+      },
+      "7": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 5
+        }
+      },
+      "8": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 13
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "9": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 14
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 7
+        }
+      },
+      "10": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 16
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 8
+        }
+      }
+    }
   }
 }
