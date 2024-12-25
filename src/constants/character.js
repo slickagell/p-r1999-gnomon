@@ -90,7 +90,10 @@ export const SPECIALTY = {
     title: "Burst DMG",
   },
   DEF: {
-    title: "Def",
+    title: "DEF",
+  },
+  HP_SACRIFICE: {
+    title: "HP Sacrifice",
   },
 };
 

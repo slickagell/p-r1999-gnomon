@@ -1,0 +1,251 @@
+---
+title: "Semmelweis"
+id: "semmelweis"
+code: "SEMMELWEIS"
+star: 6
+afflatus: "MINERAL"
+dmgType: "REALITY"
+race: "INFECTED"
+version: "1.9"
+specialties: ["SUPPORT", 'DPS', 'HP_SACRIFICE']
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterImg from "@components/CharacterImg.astro";
+import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/semmelweis.json";
+import RESONANCE from "@data/resonance/characters/semmelweis.json";
+
+# Semmelweis
+
+<div class="my-8">
+  <CharacterStar star={frontmatter.star} />
+</div>
+
+<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+  <div>
+    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
+      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
+      <div class="flex gap-2 items-center">
+        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
+        ##### {DMG_TYPE[frontmatter.dmgType].title}
+      </div>
+
+      <div class="flex gap-2">
+        <div class="badge badge-outline badge-primary">
+          {RACE[frontmatter.race].title}
+        </div>
+
+        <div class="badge bg-base-content/20">
+          {'Version ' + frontmatter.version}
+        </div>
+
+        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
+      </div>
+    </div>
+
+    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
+    </div>
+
+    <div class="mt-4">
+      An infected's work. Exhibited in the 1990s for 19 years. Completed in summer, on the 19th of August. Initially exhibited in Szeged, Csongrád-Csanád County, within the Republic of Hungary, and later moved to the St. Pavlov Foundation.
+
+      ###### Medium
+
+      Blood Agate
+
+      ###### Afflatus
+
+      Beguiling Wiles [Mineral] Field Investigation
+
+      ###### Fragrance note
+
+      Woody - Pepper, Yew, Labdanum, Cedar, Leather
+
+      ###### Dimensions
+
+      65 3/4 x 19 5/16 x 10 1/4 in.
+    </div>
+
+    <div class="mt-4 flex gap-4 justify-center">
+      <CharacterImg variant="signature" id={frontmatter.id} />
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center shrink-0">
+    <CharacterImg variant="portrait" id={frontmatter.id} />
+
+    <div class="mt-5 flex gap-6 justify-center items-end">
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="chibi" id={frontmatter.id} />
+
+        Chibi
+      </div>
+    </div>
+  </div>
+</div>
+
+::toc
+
+## Arcane Skills
+
+### Signature Floppy
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-1" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="ATTACK" note="It watches her six.">
+    1-target attack. Loses (Current HP x**10%**) HP and deals **220%** Reality DMG.
+  </CardInfo>
+
+  <CardInfo star="2" type="ATTACK" note="It watches her six, though not the most reliable ally.">
+    1-target attack. Loses (Current HP x**10%**) HP and deals **330%** Reality DMG.
+  </CardInfo>
+
+  <CardInfo star="3" type="ATTACK" note="It watches her six. Not the most reliable ally, but better than having nothing at all,">
+    1-target attack. Loses (Current HP x**10%**) HP and deals **550%** Reality DMG.
+  </CardInfo>
+</div>
+
+### Effective Means
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-2" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="BUFF" note="Let the moon witness her transformation.">
+    1-target buff. Grants the :effect{code="FRESH_BLOOD"} status to an ally for 2 rounds, then grants DMG Dealt **+15%** to all allies and an additional DMG Dealt **+10%** to the ally in the :effect{code="FRESH_BLOOD"} status for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="2" type="BUFF" note="Let the moon witness her transformation and hypocrisy.">
+    1-target buff. Grants the :effect{code="FRESH_BLOOD"} status to an ally for 2 rounds, then grants DMG Dealt **+20%** to all allies and an additional DMG Dealt **+10%** to the ally in the :effect{code="FRESH_BLOOD"} status for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="3" type="BUFF" note="Let the moon witness her transformation, her hypocrisy, and the only hope that lies behind her madness.">
+    1-target buff. Grants the :effect{code="FRESH_BLOOD"} status to an ally for 2 rounds, then grants DMG Dealt **+30%** to all allies and an additional DMG Dealt **+10%** to the ally in the :effect{code="FRESH_BLOOD"} status for 2 rounds.
+  </CardInfo>
+</div>
+
+### And So It Rises Again
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="ultimate" id={frontmatter.id} />
+  </div>
+
+  <CardInfo type="BUFF" note="It was on this night that she turned. Tomorrow, and for the rest of her life, she will remain what she has become.">
+    Mass buff. All allies lose (Current HP **20%**) HP. Creates a special array :effect{code="BLOOD_DOMAIN"} for 3 rounds. Enters the :effect{code="FERAL_INSTINCT"} status for 3 rounds.
+  </CardInfo>
+</div>
+
+## Inheritance
+
+### Blood Thirst
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="1" />
+
+  ##### Insight 1
+</div>
+
+When entering battle, lose own (Current HP **20%**) HP and grant Moxie +3 to self.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="2" />
+
+  ##### Insight 2
+</div>
+
+DMG Dealt **+8%** when the caster enters battle.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="3" />
+
+  ##### Insight 3
+</div>
+
+Right after casting an Ultimate, lose an additional own (Current HP x**10%**) HP and gain Moxie +1. When in the :effect{code="FERAL_INSTINCT"} status, for each HP loss effect suffered by any ally when an ally takes an action, this :effect{code="TRUTH_REVEALED"} deals an additional Reality DMG **+30%**, stacking up to 20 times.
+
+## Portray
+
+<span class="text-2xl mr-2">Lv. 1:</span>
+_And So It Rises Again_: :effect{code="BLOOD_DOMAIN"}'s deployed effect is now: Whenever an ally attacks, for every **10%** of their Missing HP, gain an additional DMG Bonus **+7.5%** (up to **60%**).
+
+<span class="text-2xl mr-2">Lv. 2:</span>
+_Blood Thirst_: When in the :effect{code="FERAL_INSTINCT"} status, for each HP loss effect suffered by any ally when an ally takes an action, this :effect{code="TRUTH_REVEALED"} now deals an additional Reality DMG **+45%**.
+
+<span class="text-2xl mr-2">Lv. 3:</span>
+_And So It Rises Again_: When in the :effect{code="FERAL_INSTINCT"} status, :effect{code="TRUTH_REVEALED"}'s Reality DMG dealt to all enemies is increased to **120%**.
+
+<span class="text-2xl mr-2">Lv. 4:</span>
+_Signature Floppy_: Reality DMG is increased to **260/390/630%**.
+
+<span class="text-2xl mr-2">Lv. 5:</span>
+_Blood Thirst_: When in the :effect{code="FERAL_INSTINCT"} status, for each HP loss effect suffered by any ally when an ally takes an action, this :effect{code="TRUTH_REVEALED"} now deals an additional Reality DMG **+60%**.
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonanceMainPieceBaseStats={RESONANCE.mainPieceBaseStats} resonancePatternPieces={RESONANCE.patternPieces} />
+
+## Insight Materials
+
+<div class="flex flex-col md:flex-row flex-wrap  justify-center">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="1" />
+
+      ##### Insight 1
+    </div>
+
+    <Material code="SHARPODONTY" require="18000" />
+    <Material code="PAGE_OF_MINERAL_WEALTH" require="6" />
+    <Material code="ROUGH_SILVER_INGOT" require="5" />
+    <Material code="TREMBLING_TOOTH" require="5" />
+
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="2" />
+
+      ##### Insight 2
+    </div>
+
+    <Material code="SHARPODONTY" require="40000" />
+    <Material code="SCROLL_OF_MINERAL_WEALTH" require="10" />
+    <Material code="BIFURCATED_SKELETON" require="6" />
+    <Material code="CICADA_WINGS" require="6" />
+
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="3" />
+
+      ##### Insight 3
+    </div>
+
+    <Material code="SHARPODONTY" require="0" />
+    <Material code="TOME_OF_MINERAL_WEALTH" require="16" />
+    <Material code="FRUIT_OF_GOOD_AND_EVIL" require="3" />
+    <Material code="MURMUR_OF_INSANITY" require="6" />
+
+  </div>
+</div>

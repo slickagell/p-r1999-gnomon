@@ -1,0 +1,70 @@
+{
+  "mainPiece": "RP_X_5_01",
+  "mainPieceBaseStats": {
+    "1": {
+      "HP": {
+        "value": 77
+      },
+      "ATTACK": {
+        "value": 14
+      },
+      "REALITY_DEFENSE": {
+        "value": 7
+      },
+      "MENTAL_DEFENSE": {
+        "value": 8
+      }
+    }
+  },
+  "patternPieces": {
+    "ASPIRATIONAL": {
+      "baseStats": {
+        "6": {
+          "ATTACK": {
+            "value": 175
+          },
+          "REALITY_DEFENSE": {
+            "value": 73
+          },
+          "MENTAL_DEFENSE": {
+            "value": 84
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "pieces": {
+    "1": [
+      {
+        "id": "RP_X_5_01",
+        "total": 1,
+        "level": 1
+      }
+    ]
+  },
+  "recommended": {
+    "5": [
+      {
+        "name": "Attack",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-1"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01"
+          }
+        ]
+      }
+    ]
+  }
+}
