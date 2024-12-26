@@ -89,10 +89,17 @@ const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
 const patternOptions = patternPieces.map((ele) => {
   const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
 
+  if (pattern === "PLACIDITY") {
+    return {
+      value: pattern,
+      label: RESONANCE_PATTERN[pattern].title,
+    };
+  }
+
   return {
     value: pattern,
     label:
-      RESONANCE_PATTERN[pattern].title +
+      RESONANCE_PATTERN[`${mainPieceCode}_${pattern}`].title +
       (pattern === recommendedResonancePattern &&
       recommendedResonancePattern !== "PLACIDITY"
         ? " (Recommended)"
@@ -103,9 +110,16 @@ const patternOptions = patternPieces.map((ele) => {
 const patternTagsList = patternPieces.map((ele) => {
   const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
 
+  if (pattern === "PLACIDITY") {
+    return {
+      id: pattern,
+      tags: RESONANCE_PATTERN[pattern].tags,
+    };
+  }
+
   return {
     id: pattern,
-    tags: RESONANCE_PATTERN[pattern].tags,
+    tags: RESONANCE_PATTERN[`${mainPieceCode}_${pattern}`].tags,
   };
 });
 

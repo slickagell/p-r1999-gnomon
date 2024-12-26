@@ -10,21 +10,25 @@ interface Props {
   note: string;
 }
 
-const { star, type, note } = Astro.props;
+const { star, type, note, ...props } = Astro.props;
 ---
 
-<div class="paper-texture">
+<div class="paper-texture" {...props}>
   {star && <CardStar star={star} />}
   <slot />
-  <div class="mt-2 pt-2 flex items-start">
-    <CustomImage
-      presetWidth={12}
-      class="shrink-0 mt-1 mr-1"
-      src="/images/card/note.png"
-      alt="note icon"
-    />
-    <div class="text-gray">{note}</div>
-  </div>
+  {
+    note && (
+      <div class="mt-2 pt-2 flex items-start">
+        <CustomImage
+          presetWidth={12}
+          class="shrink-0 mt-1 mr-1"
+          src="/images/card/note.png"
+          alt="note icon"
+        />
+        <div class="text-gray">{note}</div>
+      </div>
+    )
+  }
   <div class="mt-auto mx-auto">
     <CardType presetWidth={128} type={type} />
   </div>

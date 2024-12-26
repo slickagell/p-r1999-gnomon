@@ -2,7 +2,6 @@ import {
   IMAGE_DEGREE_ORIENTATIONS,
   IMAGE_ORIENTATION,
 } from "@constants/resonance";
-import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
 import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
 import { centroid } from "@turf/centroid";
 import { polygon } from "@turf/helpers";
@@ -221,17 +220,23 @@ export default () => ({
     this.$nextTick(() => {
       //* Init recommended
       if (this.$store.resonance.recommendedResonanceList) {
-        const activeRecommendedResonanceList =
-          this.$store.resonance.recommendedResonanceList[
-            this.activeResonanceLevel
-          ];
+        const recommendedLevelKey = Object.keys(
+          this.$store.resonance.recommendedResonanceList
+        ).find((item) =>
+          item
+            .split("-")
+            .some((ele) => parseInt(ele) === this.activeResonanceLevel)
+        );
 
-        if (!activeRecommendedResonanceList) {
+        if (!recommendedLevelKey) {
           this.recommendedOptions = [];
           this.selectedRecommended = "";
           this.resonanceGeoJsonList = [];
           return;
         }
+
+        const activeRecommendedResonanceList =
+          this.$store.resonance.recommendedResonanceList[recommendedLevelKey];
 
         let defaultIndex = 0;
         const preferredIndex = activeRecommendedResonanceList.findIndex(
@@ -251,9 +256,9 @@ export default () => ({
 
         this.recommendedOptions =
           this.$store.resonance.recommendedResonanceList[
-            this.activeResonanceLevel
+            recommendedLevelKey
           ].map((item, idx) => ({
-            label: item.name,
+            label: item.name + (item.isPreferred ? " (Preferred)" : ""),
             value: `${this.activeResonanceLevel}-${idx}`,
           }));
 
@@ -1371,8 +1376,16 @@ export default () => ({
 
   changeRecommended(value: string) {
     const [resonanceLevel, index] = value.split("-");
+    const recommendedLevelKey = Object.keys(
+      this.$store.resonance.recommendedResonanceList
+    ).find((item) => item.split("-").some((ele) => ele === resonanceLevel));
+
+    if (!recommendedLevelKey) return;
+
     const resonanceData =
-      this.$store.resonance.recommendedResonanceList[resonanceLevel][index];
+      this.$store.resonance.recommendedResonanceList[recommendedLevelKey][
+        index
+      ];
 
     this.selectedRecommended = value;
 

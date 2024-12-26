@@ -80,6 +80,21 @@ export const SPECIALTY = {
   SHIELD: {
     title: "Shield",
   },
+  POISON: {
+    title: "Poison",
+  },
+  REAPER: {
+    title: "Reaper",
+  },
+  BURST_DMG: {
+    title: "Burst DMG",
+  },
+  DEF: {
+    title: "DEF",
+  },
+  HP_SACRIFICE: {
+    title: "HP Sacrifice",
+  },
 };
 
 export const RARITY = {

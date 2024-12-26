@@ -156,8 +156,8 @@ function sortCharacters(a, b) {
             >
               <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
                 <a class="h-full" href={`/characters/${characterEntry.slug}`}>
-                  <div class="h-full relative">
-                    <div class="absolute -top-1 left-2 md:w-6 group-hover:-top-2 transition-all">
+                  <div class="h-full relative ">
+                    <div class="absolute z-10 -top-1 left-2 md:w-6 group-hover:-top-2 transition-all">
                       <AfflatusIcon type={characterEntry.data.afflatus} />
                     </div>
                     <div class="h-full relative overflow-hidden">
