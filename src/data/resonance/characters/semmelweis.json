@@ -1,33 +1,218 @@
 {
-  "mainPiece": "RP_X_5_01",
+  "mainPiece": "RP_Z_5_01",
   "mainPieceBaseStats": {
     "1": {
       "HP": {
-        "value": 77
+        "value": 85
       },
       "ATTACK": {
-        "value": 14
+        "value": 13
       },
       "REALITY_DEFENSE": {
-        "value": 7
+        "value": 8
       },
       "MENTAL_DEFENSE": {
         "value": 8
       }
+    },
+    "2": {
+      "HP": {
+        "value": 170
+      },
+      "ATTACK": {
+        "value": 26
+      },
+      "REALITY_DEFENSE": {
+        "value": 16
+      },
+      "MENTAL_DEFENSE": {
+        "value": 16
+      }
+    },
+    "3": {
+      "HP": {
+        "value": 340
+      },
+      "ATTACK": {
+        "value": 52
+      },
+      "REALITY_DEFENSE": {
+        "value": 32
+      },
+      "MENTAL_DEFENSE": {
+        "value": 32
+      }
+    },
+    "4": {
+      "HP": {
+        "value": 510
+      },
+      "ATTACK": {
+        "value": 78
+      },
+      "REALITY_DEFENSE": {
+        "value": 48
+      },
+      "MENTAL_DEFENSE": {
+        "value": 48
+      }
+    },
+    "5": {
+      "HP": {
+        "value": 680
+      },
+      "ATTACK": {
+        "value": 104
+      },
+      "REALITY_DEFENSE": {
+        "value": 64
+      },
+      "MENTAL_DEFENSE": {
+        "value": 64
+      }
+    },
+    "6": {
+      "HP": {
+        "value": 886
+      },
+      "ATTACK": {
+        "value": 135
+      },
+      "REALITY_DEFENSE": {
+        "value": 83
+      },
+      "MENTAL_DEFENSE": {
+        "value": 83
+      }
+    },
+    "7": {
+      "HP": {
+        "value": 1086
+      },
+      "ATTACK": {
+        "value": 166
+      },
+      "REALITY_DEFENSE": {
+        "value": 102
+      },
+      "MENTAL_DEFENSE": {
+        "value": 102
+      }
+    },
+    "8": {
+      "HP": {
+        "value": 1293
+      },
+      "ATTACK": {
+        "value": 198
+      },
+      "REALITY_DEFENSE": {
+        "value": 121
+      },
+      "MENTAL_DEFENSE": {
+        "value": 121
+      }
+    },
+    "9": {
+      "HP": {
+        "value": 1493
+      },
+      "ATTACK": {
+        "value": 228
+      },
+      "REALITY_DEFENSE": {
+        "value": 140
+      },
+      "MENTAL_DEFENSE": {
+        "value": 140
+      }
+    },
+    "10": {
+      "HP": {
+        "value": 1700
+      },
+      "ATTACK": {
+        "value": 260
+      },
+      "REALITY_DEFENSE": {
+        "value": 160
+      },
+      "MENTAL_DEFENSE": {
+        "value": 160
+      }
     }
   },
   "patternPieces": {
-    "ASPIRATIONAL": {
+    "ELUCIDATION": {
       "baseStats": {
         "6": {
+          "HP": {
+            "value": 601
+          },
           "ATTACK": {
-            "value": 175
+            "value": 135
           },
           "REALITY_DEFENSE": {
-            "value": 73
+            "value": 56
           },
           "MENTAL_DEFENSE": {
-            "value": 84
+            "value": 56
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 740
+          },
+          "ATTACK": {
+            "value": 166
+          },
+          "REALITY_DEFENSE": {
+            "value": 69
+          },
+          "MENTAL_DEFENSE": {
+            "value": 69
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 874
+          },
+          "ATTACK": {
+            "value": 198
+          },
+          "REALITY_DEFENSE": {
+            "value": 82
+          },
+          "MENTAL_DEFENSE": {
+            "value": 82
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1014
+          },
+          "ATTACK": {
+            "value": 228
+          },
+          "REALITY_DEFENSE": {
+            "value": 95
+          },
+          "MENTAL_DEFENSE": {
+            "value": 95
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1153
+          },
+          "ATTACK": {
+            "value": 260
+          },
+          "REALITY_DEFENSE": {
+            "value": 108
+          },
+          "MENTAL_DEFENSE": {
+            "value": 108
           }
         }
       },
@@ -35,33 +220,2199 @@
         {
           "code": "SHARPODONTY",
           "require": 120000
+        },
+        {
+          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "require": 1
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
         }
       ]
+    },
+    "GENUINITY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 601
+          },
+          "ATTACK": {
+            "value": 135
+          },
+          "REALITY_DEFENSE": {
+            "value": 56
+          },
+          "MENTAL_DEFENSE": {
+            "value": 56
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 740
+          },
+          "ATTACK": {
+            "value": 166
+          },
+          "REALITY_DEFENSE": {
+            "value": 69
+          },
+          "MENTAL_DEFENSE": {
+            "value": 69
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 874
+          },
+          "ATTACK": {
+            "value": 198
+          },
+          "REALITY_DEFENSE": {
+            "value": 82
+          },
+          "MENTAL_DEFENSE": {
+            "value": 82
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1014
+          },
+          "ATTACK": {
+            "value": 228
+          },
+          "REALITY_DEFENSE": {
+            "value": 95
+          },
+          "MENTAL_DEFENSE": {
+            "value": 95
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1153
+          },
+          "ATTACK": {
+            "value": 260
+          },
+          "REALITY_DEFENSE": {
+            "value": 108
+          },
+          "MENTAL_DEFENSE": {
+            "value": 108
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "RHEINGOLD",
+          "require": 1
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 3
+        }
+      ]
+    },
+    "MERCY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 886
+          },
+          "ATTACK": {
+            "value": 94
+          },
+          "REALITY_DEFENSE": {
+            "value": 83
+          },
+          "MENTAL_DEFENSE": {
+            "value": 83
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1086
+          },
+          "ATTACK": {
+            "value": 115
+          },
+          "REALITY_DEFENSE": {
+            "value": 102
+          },
+          "MENTAL_DEFENSE": {
+            "value": 102
+          }
+        },
+
+        "8": {
+          "HP": {
+            "value": 1293
+          },
+          "ATTACK": {
+            "value": 138
+          },
+          "REALITY_DEFENSE": {
+            "value": 121
+          },
+          "MENTAL_DEFENSE": {
+            "value": 121
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1493
+          },
+          "ATTACK": {
+            "value": 159
+          },
+          "REALITY_DEFENSE": {
+            "value": 140
+          },
+          "MENTAL_DEFENSE": {
+            "value": 140
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 1700
+          },
+          "ATTACK": {
+            "value": 181
+          },
+          "REALITY_DEFENSE": {
+            "value": 160
+          },
+          "MENTAL_DEFENSE": {
+            "value": 160
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "WYRMLING_SKELETON",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1675
+          },
+          "REALITY_DEFENSE": {
+            "value": 157
+          },
+          "MENTAL_DEFENSE": {
+            "value": 157
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 2058
+          },
+          "REALITY_DEFENSE": {
+            "value": 193
+          },
+          "MENTAL_DEFENSE": {
+            "value": 193
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 2447
+          },
+          "REALITY_DEFENSE": {
+            "value": 230
+          },
+          "MENTAL_DEFENSE": {
+            "value": 230
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 2829
+          },
+          "REALITY_DEFENSE": {
+            "value": 266
+          },
+          "MENTAL_DEFENSE": {
+            "value": 266
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 3218
+          },
+          "REALITY_DEFENSE": {
+            "value": 303
+          },
+          "MENTAL_DEFENSE": {
+            "value": 303
+          }
+        }
+      },
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 3
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "baseStats": {
+        "6": {
+          "HP": {
+            "value": 1105
+          },
+          "ATTACK": {
+            "value": 171
+          },
+          "REALITY_DEFENSE": {
+            "value": 104
+          },
+          "MENTAL_DEFENSE": {
+            "value": 104
+          }
+        },
+        "7": {
+          "HP": {
+            "value": 1360
+          },
+          "ATTACK": {
+            "value": 210
+          },
+          "REALITY_DEFENSE": {
+            "value": 128
+          },
+          "MENTAL_DEFENSE": {
+            "value": 128
+          }
+        },
+        "8": {
+          "HP": {
+            "value": 1615
+          },
+          "ATTACK": {
+            "value": 249
+          },
+          "REALITY_DEFENSE": {
+            "value": 152
+          },
+          "MENTAL_DEFENSE": {
+            "value": 152
+          }
+        },
+        "9": {
+          "HP": {
+            "value": 1870
+          },
+          "ATTACK": {
+            "value": 288
+          },
+          "REALITY_DEFENSE": {
+            "value": 176
+          },
+          "MENTAL_DEFENSE": {
+            "value": 176
+          }
+        },
+        "10": {
+          "HP": {
+            "value": 2125
+          },
+          "ATTACK": {
+            "value": 328
+          },
+          "REALITY_DEFENSE": {
+            "value": 200
+          },
+          "MENTAL_DEFENSE": {
+            "value": 200
+          }
+        },
+        "materials": [
+          {
+            "code": "SHARPODONTY",
+            "require": 120000
+          },
+          {
+            "code": "RHEINGOLD",
+            "require": 1
+          },
+          {
+            "code": "SILVER_BULLET",
+            "require": 2
+          },
+          {
+            "code": "BIFURCATED_SKELETON",
+            "require": 4
+          }
+        ]
+      }
     }
   },
-  "patternRecommended": "PLACIDITY",
+  "patternRecommended": "GENUINITY",
   "pieces": {
     "1": [
       {
-        "id": "RP_X_5_01",
-        "total": 1,
-        "level": 1
+        "id": "RP_Z_5_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 1
+      }
+    ],
+    "2": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "3": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "4": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "5": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "6": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "7": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "8": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 5,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "9": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 5,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 3,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "10": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 6,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 3,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 3
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "11": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 7,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "12": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 7,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "13": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 8,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "14": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 9,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "15": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 10,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
       }
     ]
   },
   "recommended": {
-    "5": [
+    "5-6": [
       {
-        "name": "Attack",
+        "name": "ATK/DMG Build",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "0-2", "1-1"],
+            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["3-1", "3-2", "4-0", "4-1"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["3-3", "4-2", "4-3", "4-4"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4", "2-4", "3-4"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-3"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-3"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["0-0", "0-1", "1-0", "1-1"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          }
+        ]
+      },
+      {
+        "name": "Survivability",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "1-0", "1-1"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-3", "2-3"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4", "2-4", "3-4"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["3-1", "4-0", "4-1", "4-2"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["3-2", "3-3", "4-3", "4-4"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_01"
+          }
+        ]
+      }
+    ],
+    "7-8": [
+      {
+        "name": "ATK/DMG Build",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "0-3"],
+            "shape": [[1, 1, 1, 1]],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-3", "1-4"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["2-1", "2-2", "3-0", "3-1"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["1-0", "1-1", "1-2", "2-0"],
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["3-4", "3-5", "4-4", "4-5"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["3-2", "4-1", "4-2", "4-3"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["4-0"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          }
+        ]
+      },
+      {
+        "name": "Crit/DMG Build",
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "1-1", "1-2"],
+            "shape": [
+              [1, 0, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["0-1"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["0-2"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["0-3", "1-3", "1-4"],
+            "shape": [
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-5", "2-5"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["2-0", "3-0", "4-0", "4-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["2-1", "3-1", "3-2", "4-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["2-2", "2-3", "3-3", "4-3", "4-4"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["2-4", "3-4", "3-5", "4-5"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          }
+        ]
+      }
+    ],
+    "9": [
+      {
+        "name": "ATK Build",
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-1", "1-1", "2-1", "3-1"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "0-4", "1-3"],
             "shape": [
               [1, 1, 1],
               [0, 1, 0]
             ],
             "orientation": 3,
             "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["1-2", "2-2", "2-3", "3-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-5", "1-4", "1-5"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-4", "2-5", "3-5", "4-5"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-0", "4-1", "5-0", "5-1"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-2", "5-3"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["3-3", "3-4", "4-4", "5-4", "5-5"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          }
+        ]
+      },
+      {
+        "name": "Crit Build",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "1-0", "2-0"],
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-1", "1-2"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-3", "1-4"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["2-1", "2-2", "3-2"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["3-0", "4-0", "5-0", "5-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["3-1", "4-1", "4-2", "4-3"],
+            "shape": [
+              [1, 0, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["4-4", "5-2", "5-3", "5-4"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["3-4", "3-5", "4-5", "5-5"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01"
+          }
+        ]
+      }
+    ],
+    "10-11": [
+      {
+        "name": "ATK Build",
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-1", "1-1", "2-1", "3-1"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-2", "1-3"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["2-2", "2-3", "3-2", "3-3"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4", "1-5", "2-4"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["2-5", "3-4", "3-5", "3-6"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-6", "2-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-5", "4-6", "5-6", "6-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5", "6-5"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          }
+        ]
+      },
+      {
+        "name": "Crit Build",
+        "resonance": [
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-5", "4-6", "5-6", "6-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5", "6-5"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["0-0", "0-1", "1-1"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-3"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-2", "2-2", "3-2", "3-3"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["1-0"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["2-0", "2-1", "3-0", "3-1"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["2-3", "2-4", "3-4"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-4", "1-4"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02"
+          }
+        ]
+      }
+    ],
+    "12-13-14-15": [
+      {
+        "name": "ATK Build",
+        "resonance": [
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-5", "4-6", "5-6", "6-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5", "6-5"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["2-0", "3-0"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["2-1", "3-1"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["0-0", "0-1", "1-1"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-0"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-3"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-3", "2-4", "3-4"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-2", "2-2", "3-2", "3-3"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          }
+        ]
+      },
+      {
+        "name": "Crit Build",
+        "resonance": [
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-5", "4-6", "5-6", "6-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5", "6-5"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["2-0", "3-0"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["2-1", "3-1"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["0-0", "0-1", "1-0", "1-1"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-2"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-3", "2-2", "2-3"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-4", "3-2", "3-3", "3-4"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
           }
         ]
       }
