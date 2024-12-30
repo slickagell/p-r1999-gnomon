@@ -168,7 +168,6 @@ export default () => ({
               return {
                 ...prev,
                 [level]: {
-                  ...this.$store.resonance.resonanceMainPieceBaseStats[level],
                   ...stats,
                 },
               };
@@ -1354,9 +1353,6 @@ export default () => ({
                 return {
                   ...prev,
                   [level]: {
-                    ...this.$store.resonance.resonancePatternPieces[pattern][
-                      "baseStats"
-                    ][level],
                     ...stats,
                   },
                 };
