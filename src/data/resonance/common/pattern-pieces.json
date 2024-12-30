@@ -288,6 +288,22 @@
     "image": "rpp-u-5-01-equanimity.png",
     "stats": {
       "6": {
+        "HP": {
+          "value": 16.6,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 16.1,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 16.6,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 16.1,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 10
@@ -298,6 +314,22 @@
         }
       },
       "7": {
+        "HP": {
+          "value": 20.5,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 19.8,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 20.5,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 19.8,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 12
@@ -308,6 +340,22 @@
         }
       },
       "8": {
+        "HP": {
+          "value": 24.3,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 23.6,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 24.3,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 23.6,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 13
@@ -318,6 +366,22 @@
         }
       },
       "9": {
+        "HP": {
+          "value": 28.2,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 27.3,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 28.2,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 27.3,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 14
@@ -328,6 +392,22 @@
         }
       },
       "10": {
+        "HP": {
+          "value": 32,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 31,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 32,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 31,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 16
@@ -344,30 +424,110 @@
     "image": "rpp-u-5-01-hyper.png",
     "stats": {
       "6": {
+        "HP": {
+          "value": 13,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 12.5,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 21.8,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 10.4,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 5
         }
       },
       "7": {
+        "HP": {
+          "value": 16,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 15.4,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 26.9,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 12.8,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 6
         }
       },
       "8": {
+        "HP": {
+          "value": 19,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 18.2,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 31.9,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 15.2,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 7
         }
       },
       "9": {
+        "HP": {
+          "value": 22,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 21.1,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 37,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 17.6,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 8
         }
       },
       "10": {
+        "HP": {
+          "value": 25,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 24,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 42,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 20,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 10
@@ -380,30 +540,110 @@
     "image": "rpp-u-5-01-overindulgence.png",
     "stats": {
       "6": {
+        "HP": {
+          "value": 29.1,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 12.5,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 12,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 10.4,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 5
         }
       },
       "7": {
+        "HP": {
+          "value": 35.8,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 15.4,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 14.7,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 12.8,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 6
         }
       },
       "8": {
+        "HP": {
+          "value": 42.6,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 18.2,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 17.5,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 15.2,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 7
         }
       },
       "9": {
+        "HP": {
+          "value": 49.3,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 21.1,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 20.2,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 17.6,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 8
         }
       },
       "10": {
+        "HP": {
+          "value": 56,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 24,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 23,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 20,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 10
@@ -416,30 +656,90 @@
     "image": "rpp-u-5-01-prudentiality.png",
     "stats": {
       "6": {
+        "HP": {
+          "value": 13,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 52,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 12,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 5
         }
       },
       "7": {
+        "HP": {
+          "value": 16,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 64,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 14.7,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 6
         }
       },
       "8": {
+        "HP": {
+          "value": 19,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 76,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 17.5,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 7
         }
       },
       "9": {
+        "HP": {
+          "value": 22,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 88,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 20.2,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 8
         }
       },
       "10": {
+        "HP": {
+          "value": 25,
+          "unit": "%"
+        },
+        "MENTAL_DEFENSE": {
+          "value": 100,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 23,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 10
@@ -452,30 +752,90 @@
     "image": "rpp-u-5-01-quiescence.png",
     "stats": {
       "6": {
+        "HP": {
+          "value": 13,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 12,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 52,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 5
         }
       },
       "7": {
+        "HP": {
+          "value": 16,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 14.7,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 64,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 6
         }
       },
       "8": {
+        "HP": {
+          "value": 19,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 17.5,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 76,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 7
         }
       },
       "9": {
+        "HP": {
+          "value": 22,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 20.2,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 88,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 8
         }
       },
       "10": {
+        "HP": {
+          "value": 25,
+          "unit": "%"
+        },
+        "ATTACK": {
+          "value": 23,
+          "unit": "%"
+        },
+        "REALITY_DEFENSE": {
+          "value": 100,
+          "unit": "%"
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 10
@@ -1350,6 +1710,9 @@
           "unit": "%",
           "value": 33.9
         },
+        "ATTACK": {
+          "value": 0
+        },
         "REALITY_DEFENSE": {
           "unit": "%",
           "value": 33.9
@@ -1371,6 +1734,9 @@
         "HP": {
           "unit": "%",
           "value": 40.3
+        },
+        "ATTACK": {
+          "value": 0
         },
         "REALITY_DEFENSE": {
           "unit": "%",
@@ -1394,6 +1760,9 @@
           "unit": "%",
           "value": 46.6
         },
+        "ATTACK": {
+          "value": 0
+        },
         "REALITY_DEFENSE": {
           "unit": "%",
           "value": 46.6
@@ -1415,6 +1784,9 @@
         "HP": {
           "unit": "%",
           "value": 53
+        },
+        "ATTACK": {
+          "value": 0
         },
         "REALITY_DEFENSE": {
           "unit": "%",
