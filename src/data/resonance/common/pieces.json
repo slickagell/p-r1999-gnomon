@@ -457,13 +457,13 @@
         }
       },
       "4": {
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 2
-        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
         },
         "DMG_BONUS": {
           "unit": "%",
@@ -471,13 +471,13 @@
         }
       },
       "5": {
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 2
-        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 2
         },
         "DMG_BONUS": {
           "unit": "%",
@@ -485,11 +485,11 @@
         }
       },
       "6": {
-        "CRITICAL_RESIST_RATE": {
+        "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 3
         },
-        "CRITICAL_DEFENSE": {
+        "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 3
         },
@@ -499,11 +499,11 @@
         }
       },
       "7": {
-        "CRITICAL_RESIST_RATE": {
+        "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 4
         },
-        "CRITICAL_DEFENSE": {
+        "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 4
         },
@@ -513,7 +513,7 @@
         }
       },
       "8": {
-        "CRITICAL_RESIST_RATE": {
+        "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 4
         },
@@ -521,7 +521,7 @@
           "unit": "%",
           "value": 4
         },
-        "CRITICAL_DEFENSE": {
+        "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 4
         },
@@ -531,7 +531,7 @@
         }
       },
       "9": {
-        "CRITICAL_RESIST_RATE": {
+        "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 4
         },
@@ -539,7 +539,7 @@
           "unit": "%",
           "value": 5
         },
-        "CRITICAL_DEFENSE": {
+        "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 4
         },
@@ -549,21 +549,171 @@
         }
       },
       "10": {
-        "CRITICAL_RESIST_RATE": {
+        "CRITICAL_DEFENSE": {
           "unit": "%",
-          "value": 4
+          "value": 5
         },
         "CRITICAL_DMG": {
           "unit": "%",
           "value": 6
         },
-        "CRITICAL_DEFENSE": {
+        "CRITICAL_RESIST_RATE": {
           "unit": "%",
-          "value": 5
+          "value": 4
         },
         "DMG_BONUS": {
           "unit": "%",
           "value": 10
+        }
+      }
+    }
+  },
+  "RP_U_5_01": {
+    "id": "RP_U_5_01",
+    "image": "rp-u-5-01.png",
+    "isMainPiece": true,
+    "shape": [
+      [1, 0, 1],
+      [1, 1, 1]
+    ],
+    "stats": {
+      "1": {},
+      "2": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 6
+        }
+      },
+      "3": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 7
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        }
+      },
+      "4": {
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 8
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 1
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 1
+        }
+      },
+      "5": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 9
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 1
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "6": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 3
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 10
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "7": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 4
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 12
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 2
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 2
+        }
+      },
+      "8": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 13
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 3
+        }
+      },
+      "9": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 5
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 14
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 3
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
+        }
+      },
+      "10": {
+        "CRITICAL_RATE": {
+          "unit": "%",
+          "value": 6
+        },
+        "CRITICAL_RESIST_RATE": {
+          "unit": "%",
+          "value": 16
+        },
+        "DMG_BONUS": {
+          "unit": "%",
+          "value": 4
+        },
+        "DMG_REDUCTION": {
+          "unit": "%",
+          "value": 4
         }
       }
     }
@@ -841,14 +991,63 @@
       [0, 1, 1]
     ],
     "stats": {
-      "1": {},
+      "1": {
+        "HP": {
+          "unit": "%",
+          "value": 1.4
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.2
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 1.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 1.4
+        }
+      },
       "2": {
+        "HP": {
+          "unit": "%",
+          "value": 2.8
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 2.3
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 2.8
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 2.8
+        },
         "DMG_REDUCTION": {
           "unit": "%",
           "value": 3
         }
       },
       "3": {
+        "HP": {
+          "unit": "%",
+          "value": 5.6
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 4.6
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 5.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 5.6
+        },
         "DMG_BONUS": {
           "unit": "%",
           "value": 1
@@ -859,6 +1058,22 @@
         }
       },
       "4": {
+        "HP": {
+          "unit": "%",
+          "value": 8.4
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 6.9
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 8.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 8.4
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 6
@@ -873,6 +1088,22 @@
         }
       },
       "5": {
+        "HP": {
+          "unit": "%",
+          "value": 11.2
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 9.2
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 11.2
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 11.2
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 8
@@ -887,6 +1118,22 @@
         }
       },
       "6": {
+        "HP": {
+          "unit": "%",
+          "value": 14.6
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 12
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 14.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 14.6
+        },
         "CRITICAL_DMG": {
           "unit": "%",
           "value": 6
@@ -905,6 +1152,22 @@
         }
       },
       "7": {
+        "HP": {
+          "unit": "%",
+          "value": 17.9
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 14.7
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 17.9
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 17.9
+        },
         "CRITICAL_DMG": {
           "unit": "%",
           "value": 9
@@ -923,6 +1186,22 @@
         }
       },
       "8": {
+        "HP": {
+          "unit": "%",
+          "value": 21.3
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 17.5
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 21.3
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 21.3
+        },
         "CRITICAL_DMG": {
           "unit": "%",
           "value": 12
@@ -941,6 +1220,22 @@
         }
       },
       "9": {
+        "HP": {
+          "unit": "%",
+          "value": 24.6
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 20.2
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 24.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 24.6
+        },
         "CRITICAL_DMG": {
           "unit": "%",
           "value": 15
@@ -959,6 +1254,22 @@
         }
       },
       "10": {
+        "HP": {
+          "unit": "%",
+          "value": 28
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 23
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 28
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 28
+        },
         "CRITICAL_DMG": {
           "unit": "%",
           "value": 18
@@ -974,156 +1285,6 @@
         "DMG_REDUCTION": {
           "unit": "%",
           "value": 8
-        }
-      }
-    }
-  },
-  "RP_U_5_01": {
-    "id": "RP_U_5_01",
-    "image": "rp-u-5-01.png",
-    "isMainPiece": true,
-    "shape": [
-      [1, 0, 1],
-      [1, 1, 1]
-    ],
-    "stats": {
-      "1": {},
-      "2": {
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 6
-        }
-      },
-      "3": {
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 7
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 1
-        }
-      },
-      "4": {
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 8
-        },
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 1
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 1
-        }
-      },
-      "5": {
-        "CRITICAL_RATE": {
-          "unit": "%",
-          "value": 3
-        },
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 9
-        },
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 1
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 2
-        }
-      },
-      "6": {
-        "CRITICAL_RATE": {
-          "unit": "%",
-          "value": 3
-        },
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 10
-        },
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 2
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 2
-        }
-      },
-      "7": {
-        "CRITICAL_RATE": {
-          "unit": "%",
-          "value": 4
-        },
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 12
-        },
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 2
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 2
-        }
-      },
-      "8": {
-        "CRITICAL_RATE": {
-          "unit": "%",
-          "value": 5
-        },
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 13
-        },
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 3
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 3
-        }
-      },
-      "9": {
-        "CRITICAL_RATE": {
-          "unit": "%",
-          "value": 5
-        },
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 14
-        },
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 3
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 4
-        }
-      },
-      "10": {
-        "CRITICAL_RATE": {
-          "unit": "%",
-          "value": 6
-        },
-        "CRITICAL_RESIST_RATE": {
-          "unit": "%",
-          "value": 16
-        },
-        "DMG_BONUS": {
-          "unit": "%",
-          "value": 4
-        },
-        "DMG_REDUCTION": {
-          "unit": "%",
-          "value": 4
         }
       }
     }

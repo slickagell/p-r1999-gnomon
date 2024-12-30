@@ -14,7 +14,6 @@ interface Props {
   recommendedResonancePattern?: string;
   recommendedResonanceList?: ResonanceRecommendedListType;
   resonanceMainPiece: string;
-  resonanceMainPieceBaseStats: ResonancePieceStatsGeneralType;
   resonancePatternPieces: {
     [pattern: string]: {
       materials: {
@@ -42,7 +41,6 @@ const {
   recommendedResonanceList,
   recommendedResonancePattern = "PLACIDITY",
   resonanceMainPiece,
-  resonanceMainPieceBaseStats,
   resonancePatternPieces,
   isDev,
   pieceShapeFilterList,
@@ -524,7 +522,6 @@ const patternMaterialsList = patternPieces.map((ele) => {
     defaultResonanceLevel: DEFAULT_RESONATE_LEVEL,
     recommendedResonanceList,
     recommendedResonancePattern,
-    resonanceMainPieceBaseStats,
     resonancePatternPieces,
     mainPieceCode,
     baseStats,
@@ -539,7 +536,6 @@ const patternMaterialsList = patternPieces.map((ele) => {
       defaultResonanceLevel,
       recommendedResonanceList,
       recommendedResonancePattern,
-      resonanceMainPieceBaseStats,
       resonancePatternPieces,
       mainPieceCode,
       baseStats,
