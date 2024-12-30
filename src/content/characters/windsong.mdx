@@ -1,0 +1,251 @@
+---
+title: "Windsong"
+id: "windsong"
+code: "WINDSONG"
+star: 6
+afflatus: "STAR"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.8"
+specialties: ["DPS", "BURST_DMG", "EXTRA_ACTION"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterImg from "@components/CharacterImg.astro";
+import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/windsong.json";
+import RESONANCE from "@data/resonance/characters/windsong.json";
+
+# Windsong
+
+<div class="my-8">
+  <CharacterStar star={frontmatter.star} />
+</div>
+
+<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+  <div>
+    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
+      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
+      <div class="flex gap-2 items-center">
+        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
+        ##### {DMG_TYPE[frontmatter.dmgType].title}
+      </div>
+
+      <div class="flex gap-2">
+        <div class="badge badge-outline badge-primary">
+          {RACE[frontmatter.race].title}
+        </div>
+
+        <div class="badge bg-base-content/20">
+          {'Version ' + frontmatter.version}
+        </div>
+
+        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
+      </div>
+    </div>
+
+    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
+    </div>
+
+    <div class="mt-4">
+      An Arcanist's work exhibited in the 1990s for a total of 22 years, created in autumn on October 13th. Originally exhibited in the Transnistria, it was later toured worldwide.
+
+      ###### Medium
+
+      Blueprint
+
+      ###### Afflatus
+
+      The longing of the Lone Star [Star], Geology Research
+
+      ###### Fragrance note
+
+      Aromatic, Musk, Vodka, Soil, Moscow Rose
+
+      ###### Dimensions
+
+      70 18/64 x 40 40/64 x 14 61/64 in.
+    </div>
+
+    <div class="mt-4 flex gap-4 justify-center">
+      <CharacterImg variant="signature" id={frontmatter.id} />
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center shrink-0">
+    <CharacterImg variant="portrait" id={frontmatter.id} />
+
+    <div class="mt-5 flex gap-6 justify-center items-end">
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="chibi" id={frontmatter.id} />
+
+        Chibi
+      </div>
+    </div>
+  </div>
+</div>
+
+::toc
+
+## Arcane Skills
+
+### Rehabilitation
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-1" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="ATTACK" note="Repeated measurements and calculations.">
+    1-target attack. Gains Eureka +1 and deals **180%** Mental DMG. Spend 2 Eureka to deal Mental DMG **+60%** and convert excess Critical Rate to Critical DMG for this attack.
+  </CardInfo>
+
+  <CardInfo star="2" type="ATTACK" note="Repeated measurements and calculations. All in pursuit of her dream.">
+    1-target attack. Gains Eureka +1 and deals **270%** Mental DMG. Spend 2 Eureka to deal Mental DMG **+90%** and convert excess Critical Rate to Critical DMG for this attack.
+  </CardInfo>
+
+  <CardInfo star="3" type="ATTACK" note="Repeated measurements and calculations. All in pursuit of her dream and the ultimate truth.">
+    1-target attack. Gains Eureka +1 and deals **450%** Mental DMG. Spend 2 Eureka to deal Mental DMG **+150%** and convert excess Critical Rate to Critical DMG for this attack.
+  </CardInfo>
+</div>
+
+### Practicability
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-2" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="ATTACK" note="To depict a mountain.">
+    Mass attack. Gains Eureka +1 and deals **110%** Mental DMG to 2 enemies; gains 1 stack of :effect{code="PREPARATION_WINDSONG"}.
+  </CardInfo>
+
+  <CardInfo star="2" type="ATTACK" note="To depict a mountain with dirt, foliage, sky, and music...">
+    Mass attack. Gains Eureka +1 and deals **165%** Mental DMG to 2 enemies; gains 2 stacks of :effect{code="PREPARATION_WINDSONG"}.
+  </CardInfo>
+
+  <CardInfo star="3" type="ATTACK" note="To depict a mountain with dirt, foliage, sky, and music... that requires a different cost, my friend.">
+    Mass attack. Gains Eureka +1 and deals **285%** Mental DMG to 2 enemies; gains 3 stacks of :effect{code="PREPARATION_WINDSONG"}.
+  </CardInfo>
+</div>
+
+### Long Long Journey
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="ultimate" id={frontmatter.id} />
+  </div>
+
+  <CardInfo type="BUFF" note="She traveled across the valley, through the rainforest, and over the snowfield. It's been a lonely journey.">
+    1-target debuff. Inflicts 1 stack of :effect{code="CONFUSION"} on the target for 1 round; then enters the :effect{code="MAPPING"} status for the round, gains Eureka +2, converts all own incantations to _[Rehabilitation]_ of their matching rank, and casts them all if able.
+  </CardInfo>
+</div>
+
+## Inheritance
+
+### Interdisciplinary Research
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="1" />
+
+  ##### Insight 1
+</div>
+
+Whenever an ally scores a critical hit with an incantation or an enemy gets a stack of :effect{code="CONFUSION"}, grant 1 stack of :effect{code="MEASURE"} to self.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="2" />
+
+  ##### Insight 2
+</div>
+
+Critical Rate **+10%** when the caster enters battle.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="3" />
+
+  ##### Insight 3
+</div>
+
+When entering battle, gain Critical Rate **+10%** and Critical DMG **+10%**. After casting an Ultimate, gain 1 stack of :effect{code="PREPARATION_WINDSONG"}.
+
+## Portray
+
+<span class="text-2xl mr-2">Lv. 1:</span>
+_Rehabilitation_: at rank 1/2/3 incantation, Mental DMG dealt is increased to **200/290/480%**, and the additional Mental DMG dealt by spending Eureka is increased to **90/130/200%**.
+
+<span class="text-2xl mr-2">Lv. 2:</span>
+_Interdisciplinary Research_: When entering battle, the Critical Rate and Critical DMG increase is now **+25%**.
+
+<span class="text-2xl mr-2">Lv. 3:</span>
+_Long Long Journey_: The Eureka gained is increased to **5**.
+
+<span class="text-2xl mr-2">Lv. 4:</span>
+_Practicability_: At rank 1/2 incantation, the Mental DMG is increased to **180/230%**.
+
+<span class="text-2xl mr-2">Lv. 5:</span>
+_Rehabilitation_: At rank 1/2/3 incantation, the Mental DMG dealt is increased to **220/320/520%**, and the additional Mental DMG dealt by spending Eureka is increased to **110/160/240%**.
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonanceMainPieceBaseStats={RESONANCE.mainPieceBaseStats} resonancePatternPieces={RESONANCE.patternPieces} />
+
+## Insight Materials
+
+<div class="flex flex-col md:flex-row flex-wrap  justify-center">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="1" />
+
+      ##### Insight 1
+    </div>
+
+    <Material code="SHARPODONTY" require="18000" />
+    <Material code="PAGE_OF_STARLIT_ASCENT" require="6" />
+    <Material code="PERPETUAL_COG" require="5" />
+    <Material code="SPELL_OF_BANISHING" require="6" />
+
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="2" />
+
+      ##### Insight 2
+    </div>
+
+    <Material code="SHARPODONTY" require="40000" />
+    <Material code="SCROLL_OF_STARLIT_ASCENT" require="10" />
+    <Material code="HOLY_SILVER" require="5" />
+    <Material code="LIQUEFIED_TERROR" require="5" />
+
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="3" />
+
+      ##### Insight 3
+    </div>
+
+    <Material code="SHARPODONTY" require="200000" />
+    <Material code="TOME_OF_STARLIT_ASCENT" require="16" />
+    <Material code="MISTILTEINN" require="3" />
+    <Material code="GLOWING_MOTHWING" require="6" />
+
+  </div>
+</div>
