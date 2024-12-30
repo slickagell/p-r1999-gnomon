@@ -439,14 +439,63 @@
       [1, 1, 1]
     ],
     "stats": {
-      "1": {},
+      "1": {
+        "HP": {
+          "unit": "%",
+          "value": 1.4
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 1.2
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 1.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 1.4
+        }
+      },
       "2": {
+        "HP": {
+          "unit": "%",
+          "value": 2.8
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 2.3
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 2.8
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 2.8
+        },
         "DMG_BONUS": {
           "unit": "%",
           "value": 3
         }
       },
       "3": {
+        "HP": {
+          "unit": "%",
+          "value": 5.6
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 4.6
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 5.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 5.6
+        },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
           "value": 2
@@ -457,6 +506,22 @@
         }
       },
       "4": {
+        "HP": {
+          "unit": "%",
+          "value": 8.4
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 6.9
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 8.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 8.4
+        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 3
@@ -471,6 +536,22 @@
         }
       },
       "5": {
+        "HP": {
+          "unit": "%",
+          "value": 11.2
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 9.2
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 11.2
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 11.2
+        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 3
@@ -485,6 +566,22 @@
         }
       },
       "6": {
+        "HP": {
+          "unit": "%",
+          "value": 14.6
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 12
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 14.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 14.6
+        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 3
@@ -499,6 +596,22 @@
         }
       },
       "7": {
+        "HP": {
+          "unit": "%",
+          "value": 17.9
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 14.7
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 17.9
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 17.9
+        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 4
@@ -513,6 +626,22 @@
         }
       },
       "8": {
+        "HP": {
+          "unit": "%",
+          "value": 21.3
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 17.5
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 21.3
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 21.3
+        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 4
@@ -531,6 +660,22 @@
         }
       },
       "9": {
+        "HP": {
+          "unit": "%",
+          "value": 24.6
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 20.2
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 24.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 24.6
+        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 4
@@ -549,6 +694,22 @@
         }
       },
       "10": {
+        "HP": {
+          "unit": "%",
+          "value": 28
+        },
+        "ATTACK": {
+          "unit": "%",
+          "value": 23
+        },
+        "REALITY_DEFENSE": {
+          "unit": "%",
+          "value": 28
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 28
+        },
         "CRITICAL_DEFENSE": {
           "unit": "%",
           "value": 5
@@ -579,38 +740,38 @@
     "stats": {
       "1": {
         "HP": {
-          "value": 1.3,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 1.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 1.3
         },
         "ATTACK": {
-          "value": 1.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 1.2
         },
         "REALITY_DEFENSE": {
-          "value": 1.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 1.2
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 1.2
         }
       },
       "2": {
         "HP": {
-          "value": 2.5,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 2.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 2.5
         },
         "ATTACK": {
-          "value": 2.3,
-          "unit": "%"
+          "unit": "%",
+          "value": 2.3
         },
         "REALITY_DEFENSE": {
-          "value": 2.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 2.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 2.4
         },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
@@ -619,20 +780,20 @@
       },
       "3": {
         "HP": {
-          "value": 5,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 4.8,
-          "unit": "%"
+          "unit": "%",
+          "value": 5
         },
         "ATTACK": {
-          "value": 4.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 4.6
         },
         "REALITY_DEFENSE": {
-          "value": 4.8,
-          "unit": "%"
+          "unit": "%",
+          "value": 4.8
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 4.8
         },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
@@ -645,20 +806,20 @@
       },
       "4": {
         "HP": {
-          "value": 7.5,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 7.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 7.5
         },
         "ATTACK": {
-          "value": 6.9,
-          "unit": "%"
+          "unit": "%",
+          "value": 6.9
         },
         "REALITY_DEFENSE": {
-          "value": 7.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 7.2
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 7.2
         },
         "CRITICAL_RESIST_RATE": {
           "unit": "%",
@@ -675,20 +836,20 @@
       },
       "5": {
         "HP": {
-          "value": 10,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 9.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 10
         },
         "ATTACK": {
-          "value": 9.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 9.2
         },
         "REALITY_DEFENSE": {
-          "value": 9.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 9.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 9.6
         },
         "CRITICAL_RATE": {
           "unit": "%",
@@ -709,20 +870,20 @@
       },
       "6": {
         "HP": {
-          "value": 13,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 12.5,
-          "unit": "%"
+          "unit": "%",
+          "value": 13
         },
         "ATTACK": {
-          "value": 12,
-          "unit": "%"
+          "unit": "%",
+          "value": 12
         },
         "REALITY_DEFENSE": {
-          "value": 12.5,
-          "unit": "%"
+          "unit": "%",
+          "value": 12.5
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 12.5
         },
         "CRITICAL_RATE": {
           "unit": "%",
@@ -743,20 +904,20 @@
       },
       "7": {
         "HP": {
-          "value": 16,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 15.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 16
         },
         "ATTACK": {
-          "value": 14.7,
-          "unit": "%"
+          "unit": "%",
+          "value": 14.7
         },
         "REALITY_DEFENSE": {
-          "value": 15.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 15.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 15.4
         },
         "CRITICAL_RATE": {
           "unit": "%",
@@ -777,20 +938,20 @@
       },
       "8": {
         "HP": {
-          "value": 19,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 18.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 19
         },
         "ATTACK": {
-          "value": 17.5,
-          "unit": "%"
+          "unit": "%",
+          "value": 17.5
         },
         "REALITY_DEFENSE": {
-          "value": 18.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 18.2
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 18.2
         },
         "CRITICAL_RATE": {
           "unit": "%",
@@ -811,20 +972,20 @@
       },
       "9": {
         "HP": {
-          "value": 22,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 21.1,
-          "unit": "%"
+          "unit": "%",
+          "value": 22
         },
         "ATTACK": {
-          "value": 20.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 20.2
         },
         "REALITY_DEFENSE": {
-          "value": 21.1,
-          "unit": "%"
+          "unit": "%",
+          "value": 21.1
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 21.1
         },
         "CRITICAL_RATE": {
           "unit": "%",
@@ -845,20 +1006,20 @@
       },
       "10": {
         "HP": {
-          "value": 25,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 24,
-          "unit": "%"
+          "unit": "%",
+          "value": 25
         },
         "ATTACK": {
-          "value": 23,
-          "unit": "%"
+          "unit": "%",
+          "value": 23
         },
         "REALITY_DEFENSE": {
-          "value": 24,
-          "unit": "%"
+          "unit": "%",
+          "value": 24
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 24
         },
         "CRITICAL_RATE": {
           "unit": "%",
@@ -891,38 +1052,38 @@
     "stats": {
       "1": {
         "HP": {
-          "value": 1.4,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 1.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 1.4
         },
         "ATTACK": {
-          "value": 1.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 1.2
         },
         "REALITY_DEFENSE": {
-          "value": 1.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 1.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 1.4
         }
       },
       "2": {
         "HP": {
-          "value": 2.8,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 2.8,
-          "unit": "%"
+          "unit": "%",
+          "value": 2.8
         },
         "ATTACK": {
-          "value": 2.3,
-          "unit": "%"
+          "unit": "%",
+          "value": 2.3
         },
         "REALITY_DEFENSE": {
-          "value": 2.8,
-          "unit": "%"
+          "unit": "%",
+          "value": 2.8
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 2.8
         },
         "CRITICAL_RATE": {
           "unit": "%",
@@ -931,20 +1092,20 @@
       },
       "3": {
         "HP": {
-          "value": 5.6,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 5.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 5.6
         },
         "ATTACK": {
-          "value": 4.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 4.6
         },
         "REALITY_DEFENSE": {
-          "value": 5.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 5.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 5.6
         },
         "CRITICAL_DMG": {
           "unit": "%",
@@ -957,20 +1118,20 @@
       },
       "4": {
         "HP": {
-          "value": 8.4,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 8.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 8.4
         },
         "ATTACK": {
-          "value": 6.9,
-          "unit": "%"
+          "unit": "%",
+          "value": 6.9
         },
         "REALITY_DEFENSE": {
-          "value": 8.4,
-          "unit": "%"
+          "unit": "%",
+          "value": 8.4
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 8.4
         },
         "CRITICAL_DMG": {
           "unit": "%",
@@ -983,20 +1144,20 @@
       },
       "5": {
         "HP": {
-          "value": 11.2,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 11.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 11.2
         },
         "ATTACK": {
-          "value": 9.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 9.2
         },
         "REALITY_DEFENSE": {
-          "value": 11.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 11.2
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 11.2
         },
         "CRITICAL_DMG": {
           "unit": "%",
@@ -1009,20 +1170,20 @@
       },
       "6": {
         "HP": {
-          "value": 14.6,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 14.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 14.6
         },
         "ATTACK": {
-          "value": 12.0,
-          "unit": "%"
+          "unit": "%",
+          "value": 12
         },
         "REALITY_DEFENSE": {
-          "value": 14.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 14.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 14.6
         },
         "CRITICAL_DMG": {
           "unit": "%",
@@ -1039,20 +1200,20 @@
       },
       "7": {
         "HP": {
-          "value": 17.9,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 17.9,
-          "unit": "%"
+          "unit": "%",
+          "value": 17.9
         },
         "ATTACK": {
-          "value": 14.7,
-          "unit": "%"
+          "unit": "%",
+          "value": 14.7
         },
         "REALITY_DEFENSE": {
-          "value": 17.9,
-          "unit": "%"
+          "unit": "%",
+          "value": 17.9
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 17.9
         },
         "CRITICAL_DMG": {
           "unit": "%",
@@ -1069,20 +1230,20 @@
       },
       "8": {
         "HP": {
-          "value": 21.3,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 21.3,
-          "unit": "%"
+          "unit": "%",
+          "value": 21.3
         },
         "ATTACK": {
-          "value": 17.5,
-          "unit": "%"
+          "unit": "%",
+          "value": 17.5
         },
         "REALITY_DEFENSE": {
-          "value": 21.3,
-          "unit": "%"
+          "unit": "%",
+          "value": 21.3
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 21.3
         },
         "CRITICAL_DMG": {
           "unit": "%",
@@ -1103,20 +1264,20 @@
       },
       "9": {
         "HP": {
-          "value": 24.6,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 24.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 24.6
         },
         "ATTACK": {
-          "value": 20.2,
-          "unit": "%"
+          "unit": "%",
+          "value": 20.2
         },
         "REALITY_DEFENSE": {
-          "value": 24.6,
-          "unit": "%"
+          "unit": "%",
+          "value": 24.6
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 24.6
         },
         "CRITICAL_DMG": {
           "unit": "%",
@@ -1137,20 +1298,20 @@
       },
       "10": {
         "HP": {
-          "value": 28.0,
-          "unit": "%"
-        },
-        "MENTAL_DEFENSE": {
-          "value": 28.0,
-          "unit": "%"
+          "unit": "%",
+          "value": 28
         },
         "ATTACK": {
-          "value": 23.0,
-          "unit": "%"
+          "unit": "%",
+          "value": 23
         },
         "REALITY_DEFENSE": {
-          "value": 28.0,
-          "unit": "%"
+          "unit": "%",
+          "value": 28
+        },
+        "MENTAL_DEFENSE": {
+          "unit": "%",
+          "value": 28
         },
         "CRITICAL_DMG": {
           "unit": "%",
