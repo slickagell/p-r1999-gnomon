@@ -56,7 +56,7 @@ export default ({
           },
         };
       },
-      {},
+      {}
     );
   },
 
@@ -69,7 +69,7 @@ export default ({
     this.quantity = newQuantity;
 
     const generalStatsEl = document.querySelector(
-      "#generalStats",
+      "#generalStats"
     ) as HTMLDivElement;
     if (!generalStatsEl) return;
     let generalStatsAlpineData: any = Alpine.$data(generalStatsEl);
@@ -87,7 +87,7 @@ export default ({
     const container = this.$el;
     const wrapper = container.querySelector("div[data-piece-id=" + id + "]");
     const image = container.querySelector(
-      "img[data-piece-img-id=" + id + "]",
+      "img[data-piece-img-id=" + id + "]"
     ) as HTMLImageElement;
 
     if (!image || !wrapper) return;
@@ -137,21 +137,21 @@ export default ({
   },
 
   showPieceStat(statKey: string, stats) {
-    // if (this.isMainPiece) {
-    //   const attributesEl = document.querySelector(
-    //     "#attributes"
-    //   ) as HTMLDivElement;
-    //   if (!attributesEl) return;
+    if (this.isMainPiece) {
+      const attributesEl = document.querySelector(
+        "#attributes"
+      ) as HTMLDivElement;
+      if (!attributesEl) return;
 
-    //   let attributesAlpineData: any = Alpine.$data(attributesEl);
-    //   let baseStats = attributesAlpineData.baseStats;
+      let attributesAlpineData: any = Alpine.$data(attributesEl);
+      let baseStats = attributesAlpineData.baseStats;
 
-    //   if (!baseStats[statKey]) {
-    //     return "+" + stats.value + stats.unit;
-    //   }
+      if (!baseStats[statKey]) {
+        return "+" + stats.value + stats.unit;
+      }
 
-    //   return "+" + Math.round((baseStats[statKey].value * stats.value) / 100);
-    // }
+      return "+" + Math.floor((baseStats[statKey].value * stats.value) / 100);
+    }
 
     return "+" + stats.value + stats.unit;
   },
