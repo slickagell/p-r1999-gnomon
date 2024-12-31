@@ -104,6 +104,9 @@ export const SPECIALTY = {
   RANK_UP: {
     title: "Rank Up",
   },
+  RIPOSTE: {
+    title: "Riposte",
+  },
 };
 
 export const RARITY = {

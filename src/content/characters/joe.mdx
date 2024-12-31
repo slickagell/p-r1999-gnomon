@@ -1,0 +1,243 @@
+---
+title: "Joe"
+id: "joe"
+code: "JOE"
+star: 6
+afflatus: "BEAST"
+dmgType: "REALITY"
+race: "MIXED"
+version: "2.0"
+specialties: ["DPS", "SHIELD", "RIPOSTE"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterImg from "@components/CharacterImg.astro";
+import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/joe.json";
+import RESONANCE from "@data/resonance/characters/joe.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Joe
+
+<div class="my-8">
+  <CharacterStar star={frontmatter.star} />
+</div>
+
+<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+  <div>
+    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
+      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
+      <div class="flex gap-2 items-center">
+        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
+        ##### {DMG_TYPE[frontmatter.dmgType].title}
+      </div>
+
+      <div class="flex gap-2">
+        <div class="badge badge-outline badge-primary">
+          {RACE[frontmatter.race].title}
+        </div>
+
+        <div class="badge bg-base-content/20">
+          {'Version ' + frontmatter.version}
+        </div>
+
+        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
+      </div>
+    </div>
+
+    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
+    </div>
+
+    <div class="mt-4">
+      :TODO:
+
+      ###### Medium
+
+      :TODO:
+
+      ###### Afflatus
+
+      :TODO:
+
+      ###### Fragrance note
+
+      :TODO:
+
+      ###### Dimensions
+
+      :TODO:
+    </div>
+
+    <div class="mt-4 flex gap-4 justify-center">
+      <CharacterImg variant="signature" id={frontmatter.id} />
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center shrink-0">
+    <CharacterImg variant="portrait" id={frontmatter.id} />
+
+    <div class="mt-5 flex gap-6 justify-center items-end">
+      <div class="text-center">
+        <CharacterImg variant="chibi" id={frontmatter.id} />
+
+        Chibi
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
+      </div>
+    </div>
+  </div>
+</div>
+
+::toc
+
+## Arcane Skills
+
+### Hardness Testing
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-1" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="DEBUFF" note="A chance to test it in a real fight.">
+    1-target attack. Deals **180%** Reality DMG. Inflicts 2 stacks of [Burn] on the target hit; for every stack of [Burn] on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="2" type="DEBUFF" note="A chance to test it in a real fight is hard to come by.">
+    1-target attack. Deals **270%** Reality DMG. Inflicts 2 stacks of [Burn] on the target hit; for every stack of [Burn] on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="3" type="DEBUFF" note="A chance to test it in a real fight is hard to come by. So, who wants to go first?">
+    1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of [Burn] on the target hit; for every stack of [Burn] on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+  </CardInfo>
+</div>
+
+### Heat Treating
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-2" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="COUNTER" note="He was thrown into the fiery furnace of life.">
+    Mass counter. Grants all allies a [Shield] with (J's ATK x**100%**) HP for 2 rounds, with each stack of [Burn] on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with [Tempering].
+  </CardInfo>
+
+  <CardInfo star="2" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age.">
+    Mass counter. Grants all allies a [Shield] with (J's ATK x**150%**) HP for 2 rounds, with each stack of [Burn] on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with [Tempering].
+  </CardInfo>
+
+  <CardInfo star="3" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age, and to this day, he still feels little fear.">
+    Mass counter. Grants all allies a [Shield] with (J's ATK x**250%**) HP for 2 rounds, with each stack of [Burn] on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with [Tempering].
+  </CardInfo>
+</div>
+
+### Over the Haight Street!
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="ultimate" id={frontmatter.id} />
+  </div>
+
+  <CardInfo type="ATTACK" note="This isn't an action film, and there are no heroes.">
+    Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict [Burn] on the targets equal to the number of [Burn] stacks on self. J does not gain [Burn] stacks from this attack, and for every excess [Burn] stack on the main target, this attack deals an additional **10%** Reality DMG.
+  </CardInfo>
+</div>
+
+## Inheritance
+
+### <!-- TODO - Update inheritance title -->
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="1" />
+
+  ##### Insight 1
+</div>
+
+<!-- TODO - Update inheritance insight-1 -->
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="2" />
+
+  ##### Insight 2
+</div>
+
+<!-- TODO - Update inheritance insight-2 -->
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="3" />
+
+  ##### Insight 3
+</div>
+
+<!-- TODO - Update inheritance insight-3 -->
+
+## Portray
+
+<span class="text-2xl mr-2">Lv. 1:</span>
+<!-- TODO - Update portray lv-1 content -->
+
+<span class="text-2xl mr-2">Lv. 2:</span>
+<!-- TODO - Update portray lv-2 content -->
+
+<span class="text-2xl mr-2">Lv. 3:</span>
+<!-- TODO - Update portray lv-3 content -->
+
+<span class="text-2xl mr-2">Lv. 4:</span>
+<!-- TODO - Update portray lv-4 content -->
+
+<span class="text-2xl mr-2">Lv. 5:</span>
+<!-- TODO - Update portray lv-5 content -->
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
+
+## Insight Materials
+
+<div class="flex flex-col md:flex-row flex-wrap  justify-center">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="1" />
+
+      ##### Insight 1
+    </div>
+
+    <!-- TODO - Update materials for insight-1 -->
+    <Material code="SHARPODONTY" require="0" />
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="2" />
+
+      ##### Insight 2
+    </div>
+
+    <!-- TODO - Update materials for insight-2 -->
+    <Material code="SHARPODONTY" require="0" />
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="3" />
+
+      ##### Insight 3
+    </div>
+
+    <!-- TODO - Update materials for insight-3 -->
+    <Material code="SHARPODONTY" require="0" />
+  </div>
+</div>
