@@ -66,9 +66,9 @@ const effectEntries = await getCollection("effects");
       </div>
       <Fragment slot="effects">
         {
-          effectEntries.map((effectEntry) => (
-            <EffectItem effectEntry={effectEntry} />
-          ))
+          effectEntries
+            .filter((effectEntry) => !effectEntry.data.isSpecific)
+            .map((effectEntry) => <EffectItem effectEntry={effectEntry} />)
         }
       </Fragment>
     </EffectVirtualList>

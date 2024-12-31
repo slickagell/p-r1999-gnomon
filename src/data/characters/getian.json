@@ -1,0 +1,21 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6864
+      },
+      "ATTACK": {
+        "value": 1097
+      },
+      "REALITY_DEFENSE": {
+        "value": 554
+      },
+      "MENTAL_DEFENSE": {
+        "value": 554
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 305
+      }
+    }
+  }
+}

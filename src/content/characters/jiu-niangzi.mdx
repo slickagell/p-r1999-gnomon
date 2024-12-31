@@ -16,7 +16,10 @@ import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/jiu-niangzi.json";
+import RESONANCE from "@data/resonance/characters/jiu-niangzi.json";
 
 # Jiu Niangzi
 
@@ -178,7 +181,7 @@ ATK **+5%** when the caster enters battle.
   ##### Insight 3
 </div>
 
-At the start of the round, if in :effect{code="LIQUOR"} status, grant 1 effect from :effect{code="COLLECTION_OF_BUFFS"} to self for two rounds.
+At the start of the round, if in :effect{code="LIQUOR"} status, grant 1 effect from :effect{code="COLLECTION_OF_BUFFS_JIU_NIANGZI"} to self for two rounds.
 
 ## Portray
 
@@ -189,13 +192,17 @@ At the start of the round, if in :effect{code="LIQUOR"} status, grant 1 effect f
 *Bottoms Up*: For each stack of :effect{code="LIQUOR"} consumed, Reality DMG dealt is increased to **+90%**.
 
 <span class="text-2xl mr-2">Lv. 3:</span>
-*Contemplation*: Random :effect{code="COLLECTION_OF_BUFFS"} effect granted to self is increased to 2 types.
+*Contemplation*: Random :effect{code="COLLECTION_OF_BUFFS_JIU_NIANGZI"} effect granted to self is increased to 2 types.
 
 <span class="text-2xl mr-2">Lv. 4:</span>
 *Bottoms Up*: Maximum stacks of :effect{code="LIQUOR"} consumed is increased to 4, and chance to consume **1/2/3/4** stacks of :effect{code="LIQUOR"} is increased to **5%/15%/40%/40%**.
 
 <span class="text-2xl mr-2">Lv. 5:</span>
-*Contemplation*: :effect{code="COLLECTION_OF_BUFFS"}'s effect are now increased to **+25%** each. At the end of the round, now for for every 3 different types of statuses possessed, grant 1 stack of :effect{code="LIQUOR"} to self (now gain up to 5 stacks).
+*Contemplation*: :effect{code="COLLECTION_OF_BUFFS_JIU_NIANGZI"}'s effect are now increased to **+25%** each. At the end of the round, now for for every 3 different types of statuses possessed, grant 1 stack of :effect{code="LIQUOR"} to self (now gain up to 5 stacks).
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

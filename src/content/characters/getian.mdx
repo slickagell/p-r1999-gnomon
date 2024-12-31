@@ -16,7 +16,10 @@ import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/getian.json";
+import RESONANCE from "@data/resonance/characters/getian.json";
 
 # Getian
 
@@ -53,23 +56,23 @@ import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
     </div>
 
     <div class="mt-4">
-      \:TODO:
+      An arcanist's work first exhibited around the year 220 in the Gregorian calendar. Completed in the summer of an unknown year. Originally exhibited in the East, now preserved in the St. Pavlov Foundation.
 
       ###### Medium
 
-      \:TODO:
+      A Journey Between Sky and Earth
 
       ###### Afflatus
 
-      \:TODO:
+      A Lone Song in Mountains [Beast] Dance for Amusement
 
       ###### Fragrance note
 
-      \:TODO:
+      Oriental Woods, Oud Wood, Rosemary, Mahogany
 
       ###### Dimensions
 
-      \:TODO:
+      78 47/64 x 33 5/64 x 19 11/16 in.
     </div>
 
     <div class="mt-4 flex gap-4 justify-center">
@@ -199,6 +202,10 @@ At the start of the round, inflicts :effect{code="SHAPE_OF_BONES"} on a random e
 <span class="text-2xl mr-2">Lv. 5:</span>
 *Bone Interpretor*: When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"}'s Critical Rate and Critical DMG increase are now **+50%**.
 
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+
 ## Insight Materials
 
 <div class="flex flex-col md:flex-row flex-wrap  justify-center">
@@ -250,5 +257,3 @@ At the start of the round, inflicts :effect{code="SHAPE_OF_BONES"} on a random e
     <Material code="PLATINUM_OUIJA" require="5" />
   </div>
 </div>
-
-\:::

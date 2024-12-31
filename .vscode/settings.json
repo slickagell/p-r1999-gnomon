@@ -10,6 +10,17 @@
     "HP",
     "ATTACK",
     "REALITY_DEFENSE",
-    "MENTAL_DEFENSE"
+    "MENTAL_DEFENSE",
+    "ELUCIDATION",
+    "GENUINITY",
+    "MERCY",
+    "HYPER",
+    "INSPIRE",
+    "DELIRAMENT",
+    "OVERINDULGENCE",
+    "QUIESCENCE",
+    "PRUDENTIALITY",
+    "EQUANIMITY",
+    "EQUIBALANCE"
   ]
 }
