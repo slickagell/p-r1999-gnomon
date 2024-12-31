@@ -586,7 +586,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
 
     init() {
       const baseStatsData = this.$store.resonance.baseStats;
-      const baseStats = baseStatsData[`i${this.insight}-${this.level}`];
+      const baseStats = baseStatsData[`maxBaseStats`];
 
       Object.entries(baseStats).forEach(
         ([statKey, stats]: [string, { value: number }]) => {

@@ -47,6 +47,12 @@ export default {
       name: "isLimited",
       message: "Is character limited?",
     },
+    {
+      type: "list",
+      name: "mainResonancePieceType",
+      message: "Main resonance piece type:",
+      choices: ["U", "T", "X", "Z"],
+    },
   ],
   actions: () => {
     const defaultFolderPath = "content/characters";
