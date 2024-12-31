@@ -15,6 +15,14 @@
       },
       "CRITICAL_TECHNIQUE": {
         "value": 535
+      },
+      "CRITICAL_RATE": {
+        "value": 17.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 26.7,
+        "unit": "%"
       }
     }
   }

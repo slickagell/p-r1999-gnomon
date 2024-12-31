@@ -101,6 +101,9 @@ export const SPECIALTY = {
   HEAL: {
     title: "Heal",
   },
+  RANK_UP: {
+    title: "Rank Up",
+  },
 };
 
 export const RARITY = {
