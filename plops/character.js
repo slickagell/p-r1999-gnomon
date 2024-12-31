@@ -43,6 +43,11 @@ export default {
       message: "Character in version:",
     },
     {
+      type: "input",
+      name: "releaseDate",
+      message: "Character release date (YYYY-MM-DD):",
+    },
+    {
       type: "confirm",
       name: "isLimited",
       message: "Is character limited?",

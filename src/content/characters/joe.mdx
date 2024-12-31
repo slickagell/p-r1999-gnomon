@@ -7,6 +7,7 @@ afflatus: "BEAST"
 dmgType: "REALITY"
 race: "MIXED"
 version: "2.0"
+releaseDate: "2024-11-21"
 specialties: ["DPS", "SHIELD", "RIPOSTE"]
 isLimited: false
 ---
@@ -112,15 +113,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </div>
 
   <CardInfo star="1" type="DEBUFF" note="A chance to test it in a real fight.">
-    1-target attack. Deals **180%** Reality DMG. Inflicts 2 stacks of [Burn] on the target hit; for every stack of [Burn] on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+    1-target attack. Deals **180%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
   </CardInfo>
 
   <CardInfo star="2" type="DEBUFF" note="A chance to test it in a real fight is hard to come by.">
-    1-target attack. Deals **270%** Reality DMG. Inflicts 2 stacks of [Burn] on the target hit; for every stack of [Burn] on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+    1-target attack. Deals **270%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
   </CardInfo>
 
   <CardInfo star="3" type="DEBUFF" note="A chance to test it in a real fight is hard to come by. So, who wants to go first?">
-    1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of [Burn] on the target hit; for every stack of [Burn] on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+    1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
   </CardInfo>
 </div>
 
@@ -132,15 +133,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </div>
 
   <CardInfo star="1" type="COUNTER" note="He was thrown into the fiery furnace of life.">
-    Mass counter. Grants all allies a [Shield] with (J's ATK x**100%**) HP for 2 rounds, with each stack of [Burn] on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with [Tempering].
+    Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**100%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
   </CardInfo>
 
   <CardInfo star="2" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age.">
-    Mass counter. Grants all allies a [Shield] with (J's ATK x**150%**) HP for 2 rounds, with each stack of [Burn] on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with [Tempering].
+    Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**150%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
   </CardInfo>
 
   <CardInfo star="3" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age, and to this day, he still feels little fear.">
-    Mass counter. Grants all allies a [Shield] with (J's ATK x**250%**) HP for 2 rounds, with each stack of [Burn] on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with [Tempering].
+    Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**250%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
   </CardInfo>
 </div>
 
@@ -152,13 +153,13 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </div>
 
   <CardInfo type="ATTACK" note="This isn't an action film, and there are no heroes.">
-    Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict [Burn] on the targets equal to the number of [Burn] stacks on self. J does not gain [Burn] stacks from this attack, and for every excess [Burn] stack on the main target, this attack deals an additional **10%** Reality DMG.
+    Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict :effect{code="BURN"} on the targets equal to the number of :effect{code="BURN"} stacks on self. J does not gain :effect{code="BURN"} stacks from this attack, and for every excess :effect{code="BURN"} stack on the main target, this attack deals an additional **10%** Reality DMG.
   </CardInfo>
 </div>
 
 ## Inheritance
 
-### <!-- TODO - Update inheritance title -->
+### Bodily Furnace
 
 <div class="mt-4 flex items-center">
   <InsightImg classNames="w-8 mr-2" insight="1" />
@@ -166,7 +167,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   ##### Insight 1
 </div>
 
-<!-- TODO - Update inheritance insight-1 -->
+When attacking, gain an ATK percentage equal to **0.5**x the number of :effect{code="BURN"} stacks on self, and resolve own :effect{code="BURN"} to deal damage to self while retaining the number of stacks. Every time after J's attack successfully inflicts :effect{code="BURN"}, J grants the same number of :effect{code="BURN"} stacks to self. Take **50%** less damage from resolving own :effect{code="BURN"} stacks, and never fall below **15%** HP this way.
 
 <div class="mt-4 flex items-center">
   <InsightImg classNames="w-8 mr-2" insight="2" />
@@ -174,7 +175,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   ##### Insight 2
 </div>
 
-<!-- TODO - Update inheritance insight-2 -->
+DMG Dealt **+8%** when the caster enters battle.
 
 <div class="mt-4 flex items-center">
   <InsightImg classNames="w-8 mr-2" insight="3" />
@@ -182,24 +183,24 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   ##### Insight 3
 </div>
 
-<!-- TODO - Update inheritance insight-3 -->
+J's :effect{code="BURN"} stack limit is increased to **35**, and becomes immune to :effect{code="FREEZE"} and :effect{code="COLD"} while in the :effect{code="BURN"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn _[Stats Down]_ and _[Neg Status]_ from self, then grant Critical Rate **+20%** to self for 1 round.
 
 ## Portray
 
 <span class="text-2xl mr-2">Lv. 1:</span>
-<!-- TODO - Update portray lv-1 content -->
+_Heat Treating_: :effect{code="TEMPERING"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
 
 <span class="text-2xl mr-2">Lv. 2:</span>
-<!-- TODO - Update portray lv-2 content -->
+_Bodily Furnace_: Now gain an ATK percentage equal to **1.0**x the number of :effect{code="BURN"} stacks on self.
 
 <span class="text-2xl mr-2">Lv. 3:</span>
-<!-- TODO - Update portray lv-3 content -->
+_Bodily Furnace_: The :effect{code="BURN"} stack limit on self is increased to 45 stacks.
 
 <span class="text-2xl mr-2">Lv. 4:</span>
-<!-- TODO - Update portray lv-4 content -->
+_Over the Haight Street_!: Reality DMG is increased **450%**. For every excess :effect{code="BURN"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
 
 <span class="text-2xl mr-2">Lv. 5:</span>
-<!-- TODO - Update portray lv-5 content -->
+_Bodily Furnace_: Now gain an ATK percentage equal to **1.5**x the number of :effect{code="BURN"} stacks on self.
 
 ## Resonance
 
@@ -215,8 +216,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
       ##### Insight 1
     </div>
 
-    <!-- TODO - Update materials for insight-1 -->
-    <Material code="SHARPODONTY" require="0" />
+    <Material code="SHARPODONTY" require="18000" />
+    <Material code="PAGE_OF_BEASTLY_THIRST" require="6" />
+    <Material code="ESOTERIC_BONES" require="5" />
+    <Material code="MAGNESIA_CRYSTAL" require="6" />
+
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -226,8 +230,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
       ##### Insight 2
     </div>
 
-    <!-- TODO - Update materials for insight-2 -->
-    <Material code="SHARPODONTY" require="0" />
+    <Material code="SHARPODONTY" require="40000" />
+    <Material code="SCROLL_OF_BEASTLY_THIRST" require="10" />
+    <Material code="GOOSE_NECK" require="5" />
+    <Material code="FOX_TAIL" require="5" />
+
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -237,7 +244,10 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
       ##### Insight 3
     </div>
 
-    <!-- TODO - Update materials for insight-3 -->
-    <Material code="SHARPODONTY" require="0" />
+    <Material code="SHARPODONTY" require="200000" />
+    <Material code="TOME_OF_BEASTLY_THIRST" require="16" />
+    <Material code="MISTILTEINN" require="3" />
+    <Material code="PLATINUM_OUIJA" require="5" />
+
   </div>
 </div>

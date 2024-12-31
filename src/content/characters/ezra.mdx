@@ -7,6 +7,7 @@ afflatus: "STAR"
 dmgType: "MENTAL"
 race: "HUMAN"
 version: "1.5"
+releaseDate: "2024-05-09"
 specialties: ["SUPPORT", "SHIELD", "DEBUFF"]
 isLimited: false
 ---
@@ -16,7 +17,11 @@ import CharacterImg from "@components/CharacterImg.astro";
 import CharacterStar from "@components/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/ezra.json";
+import RESONANCE from "@data/resonance/characters/ezra.json";
+import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 # Ezra
 
@@ -196,6 +201,10 @@ At the end of the round, for every 1 mushroom on the field, recover (own Missing
 
 <span class="text-2xl mr-2">Lv. 5:</span>
 *Stimulus to the Mind*: At Incantation rank 1/2, the HP loss is reduced to 10% of current HP. The :effect{code="DISCERNMENT"} granted by :effect{code="GHOST_FUNGUS"} increases to 3 stacks.
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

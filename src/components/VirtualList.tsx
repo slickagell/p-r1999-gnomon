@@ -58,7 +58,7 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
     const virtualEl = virtualListElement();
     if (virtualEl && artefactSlug) {
       const searchArtefactIdx = frozenArtefacts().findIndex(
-        (ele) => ele.getAttribute("data-artefact-slug") === artefactSlug,
+        (ele) => ele.getAttribute("data-artefact-slug") === artefactSlug
       );
 
       const header = document.getElementById("header");
