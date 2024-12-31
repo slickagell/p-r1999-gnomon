@@ -20,6 +20,7 @@ import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 import CHARACTER from "@data/characters/windsong.json";
 import RESONANCE from "@data/resonance/characters/windsong.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 # Windsong
 
@@ -202,7 +203,7 @@ When entering battle, gain Critical Rate **+10%** and Critical DMG **+10%**. Aft
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

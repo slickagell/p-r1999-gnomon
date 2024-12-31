@@ -20,6 +20,7 @@ import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 import CHARACTER from "@data/characters/marcus.json";
 import RESONANCE from "@data/resonance/characters/marcus.json";
+import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
 # Marcus
 
@@ -207,7 +208,7 @@ When entering battle, gain Eureka +1. At the start of the round, gain Eureka +1.
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

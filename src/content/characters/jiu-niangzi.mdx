@@ -20,6 +20,7 @@ import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 import CHARACTER from "@data/characters/jiu-niangzi.json";
 import RESONANCE from "@data/resonance/characters/jiu-niangzi.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 # Jiu Niangzi
 
@@ -202,7 +203,7 @@ At the start of the round, if in :effect{code="LIQUOR"} status, grant 1 effect f
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

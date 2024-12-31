@@ -1,0 +1,852 @@
+{
+  "1": [
+    {
+      "id": "RP_X_5_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 1
+    }
+  ],
+  "2": [
+    {
+      "id": "RP_X_5_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "3": [
+    {
+      "id": "RP_X_5_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "4": [
+    {
+      "id": "RP_X_5_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "5": [
+    {
+      "id": "RP_X_5_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "6": [
+    {
+      "id": "RP_X_5_01",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 2,
+      "total": 2
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 1
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "7": [
+    {
+      "id": "RP_X_5_01",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 2,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 2,
+      "total": 2
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "8": [
+    {
+      "id": "RP_X_5_01",
+      "level": 5,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 2,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 2,
+      "total": 3
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 2,
+      "total": 2
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "9": [
+    {
+      "id": "RP_X_5_01",
+      "level": 5,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 2,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 3,
+      "total": 3
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 2,
+      "total": 3
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 2,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "10": [
+    {
+      "id": "RP_X_5_01",
+      "level": 6,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 3,
+      "total": 4
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 3,
+      "total": 3
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "11": [
+    {
+      "id": "RP_X_5_01",
+      "level": 7,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 4,
+      "total": 4
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 3,
+      "total": 4
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 3,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "12": [
+    {
+      "id": "RP_X_5_01",
+      "level": 7,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 4,
+      "total": 4
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 3,
+      "total": 4
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 3,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 2,
+      "total": 3
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "13": [
+    {
+      "id": "RP_X_5_01",
+      "level": 8,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 4,
+      "total": 4
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 3,
+      "total": 4
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 2,
+      "total": 3
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "14": [
+    {
+      "id": "RP_X_5_01",
+      "level": 9,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 4,
+      "total": 4
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 3,
+      "total": 4
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 2,
+      "total": 3
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ],
+  "15": [
+    {
+      "id": "RP_X_5_01",
+      "level": 10,
+      "total": 1
+    },
+    {
+      "id": "RP_L_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_L_4_02",
+      "level": 4,
+      "total": 4
+    },
+    {
+      "id": "RP_L_3_01",
+      "level": 3,
+      "total": 4
+    },
+    {
+      "id": "RP_Z_4_01",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_Z_4_02",
+      "level": 4,
+      "total": 1
+    },
+    {
+      "id": "RP_T_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_I_2_01",
+      "level": 2,
+      "total": 3
+    },
+    {
+      "id": "RP_O_4_01",
+      "level": 4,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_01",
+      "level": 1,
+      "total": 2
+    },
+    {
+      "id": "RP_O_1_02",
+      "level": 1,
+      "total": 2
+    }
+  ]
+}
