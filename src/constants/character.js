@@ -95,6 +95,12 @@ export const SPECIALTY = {
   HP_SACRIFICE: {
     title: "HP Sacrifice",
   },
+  PURIFY: {
+    title: "Purify",
+  },
+  HEAL: {
+    title: "Heal",
+  },
 };
 
 export const RARITY = {

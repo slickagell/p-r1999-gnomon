@@ -1,67 +1,1960 @@
 {
-  "mainPiece": "RP_X_5_01",
-  "mainPieceBaseStats": {
-    "1": {
-      "HP": {
-        "value": 77
-      },
-      "ATTACK": {
-        "value": 14
-      },
-      "REALITY_DEFENSE": {
-        "value": 7
-      },
-      "MENTAL_DEFENSE": {
-        "value": 8
-      }
-    }
-  },
+  "mainPiece": "RP_Z_5_01",
   "patternPieces": {
-    "ASPIRATIONAL": {
-      "baseStats": {
-        "6": {
-          "ATTACK": {
-            "value": 175
-          },
-          "REALITY_DEFENSE": {
-            "value": 73
-          },
-          "MENTAL_DEFENSE": {
-            "value": 84
-          }
-        }
-      },
+    "ELUCIDATION": {
       "materials": [
         {
           "code": "SHARPODONTY",
           "require": 120000
+        },
+        {
+          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "require": 1
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "RHEINGOLD",
+          "require": 1
+        },
+        {
+          "code": "WYRMLING_SKELETON",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "require": 1
+        },
+        {
+          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "require": 2
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 3
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "WINGED_KEY",
+          "require": 3
+        }
+      ]
+    },
+    "MERCY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 3
         }
       ]
     }
   },
-  "patternRecommended": "PLACIDITY",
+  "patternRecommended": "GENUINITY",
   "pieces": {
     "1": [
       {
-        "id": "RP_X_5_01",
-        "total": 1,
-        "level": 1
+        "id": "RP_Z_5_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 1
+      }
+    ],
+    "2": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "3": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "4": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "5": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "6": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 1
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "7": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "8": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 5,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "9": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 5,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 2,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 3,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 2,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "10": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 6,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 3,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 3
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "11": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 7,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "12": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 7,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 3,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 3,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "13": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 8,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "14": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 9,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
+      }
+    ],
+    "15": [
+      {
+        "id": "RP_Z_5_01",
+        "level": 10,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_01",
+        "level": 4,
+        "total": 1
+      },
+      {
+        "id": "RP_Z_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_4_01",
+        "level": 4,
+        "total": 3
+      },
+      {
+        "id": "RP_L_4_02",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_L_3_01",
+        "level": 3,
+        "total": 4
+      },
+      {
+        "id": "RP_O_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_T_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_4_01",
+        "level": 4,
+        "total": 2
+      },
+      {
+        "id": "RP_I_2_01",
+        "level": 2,
+        "total": 3
+      },
+      {
+        "id": "RP_O_1_01",
+        "level": 1,
+        "total": 2
+      },
+      {
+        "id": "RP_O_1_02",
+        "level": 1,
+        "total": 2
       }
     ]
   },
   "recommended": {
-    "5": [
+    "9": [
       {
-        "name": "Attack",
+        "name": "Attack/DMG Build",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "0-2", "1-1"],
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["0-1", "1-1", "2-1", "3-1"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["0-2", "0-3", "0-4", "1-3"],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01",
             "shape": [
               [1, 1, 1],
               [0, 1, 0]
-            ],
+            ]
+          },
+          {
+            "blocks": ["1-2", "2-2", "2-3", "3-2"],
+            "orientation": 6,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [1, 0]
+            ]
+          },
+          {
+            "blocks": ["0-5", "1-4", "1-5"],
             "orientation": 3,
-            "pieceId": "RP_T_4_01"
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["2-4", "2-5", "3-5"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["3-3", "3-4", "4-4", "5-4", "5-5"],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-5"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [[1]]
+          },
+          {
+            "blocks": ["4-0", "4-1", "5-0", "5-1"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-2", "5-3"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Critical Hit",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "1-0", "2-0"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ]
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-1", "1-2"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-3", "1-4"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["2-1", "2-2", "3-2"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["3-1", "4-1", "4-2", "4-3"],
+            "orientation": 6,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [1, 0, 0],
+              [1, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["3-0", "4-0", "5-0", "5-1"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-4", "5-2", "5-3", "5-4"],
+            "orientation": 8,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["3-4", "3-5", "4-5", "5-5"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Survivability",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "0-3"],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1, 1, 1, 1]]
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-4", "1-5"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["1-1", "2-0", "2-1", "3-0"],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [0, 1],
+              [1, 1],
+              [1, 0]
+            ]
+          },
+          {
+            "blocks": ["1-0"],
+            "orientation": 6,
+            "pieceId": "RP_O_1_01",
+            "shape": [[1]]
+          },
+          {
+            "blocks": ["1-2", "1-3"],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01",
+            "shape": [[1, 1]]
+          },
+          {
+            "blocks": ["2-2", "2-3", "2-4", "3-3"],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["2-5", "3-5", "4-5", "5-5"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["3-4", "4-3", "4-4", "5-4"],
+            "orientation": 8,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [0, 1],
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["3-1", "3-2", "4-2", "5-2", "5-3"],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-0", "4-1", "5-0", "5-1"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          }
+        ]
+      }
+    ],
+    "10-11-12": [
+      {
+        "name": "Critical Hit",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "1-1"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-3"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["0-4", "1-4"],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [[1], [1]]
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ]
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["1-2", "2-2", "3-2", "3-3"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["2-3", "2-4", "3-4"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["4-5", "4-6", "5-6", "6-6"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5", "6-5"],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["2-0", "2-1", "3-0", "3-1"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["1-0"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [[1]]
+          }
+        ]
+      },
+      {
+        "name": "Survivability",
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["0-1", "1-1", "2-1", "3-1"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-2", "1-3"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["2-2", "2-3", "3-2", "3-3"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["0-4", "0-5", "0-6", "1-5"],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["1-4", "2-4", "2-5", "3-4"],
+            "orientation": 6,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [1, 0]
+            ]
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["5-4", "5-5", "6-5", "6-6"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-4", "4-5", "4-6", "5-6"],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ]
+          }
+        ]
+      }
+    ],
+    "13-14-15": [
+      {
+        "name": "Critical Hit",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "1-1"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-3"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["0-4", "1-4"],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [[1], [1]]
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ]
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-5", "4-6", "5-6", "6-6"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5", "6-5"],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["2-3", "2-4", "3-4"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["1-2", "2-2", "3-2", "3-3"],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["2-0", "3-0"],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [[1], [1]]
+          },
+          {
+            "blocks": ["2-1", "3-1"],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01",
+            "shape": [[1], [1]]
+          },
+          {
+            "blocks": ["1-0"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [[1]]
+          }
+        ]
+      }
+    ],
+    "5-6": [
+      {
+        "name": "Attack/DMG Build",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "1-0", "1-1"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-3"],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01",
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["0-4", "1-4", "2-4", "3-4"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["3-3", "4-2", "4-3", "4-4"],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          },
+          {
+            "blocks": ["3-1", "3-2", "4-0", "4-1"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["2-3"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [[1]]
+          }
+        ]
+      },
+      {
+        "name": "Survivability",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "1-0", "1-1"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["1-2", "2-0", "2-1", "2-2", "3-0"],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          },
+          {
+            "blocks": ["0-4", "1-4", "2-4", "3-4"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["3-1", "4-0", "4-1", "4-2"],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["3-2", "3-3", "4-3", "4-4"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["0-2", "0-3"],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01",
+            "shape": [[1, 1]]
+          },
+          {
+            "blocks": ["1-3"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01",
+            "shape": [[1]]
+          },
+          {
+            "blocks": ["2-3"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01",
+            "shape": [[1]]
+          }
+        ]
+      }
+    ],
+    "7-8": [
+      {
+        "name": "Attack/DMG Build",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "0-3"],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1, 1, 1, 1]]
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-3", "1-4"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["1-0", "1-1", "1-2", "2-0"],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          },
+          {
+            "blocks": ["2-1", "2-2", "3-0", "3-1"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["3-2", "4-1", "4-2", "4-3"],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["3-4", "3-5", "4-4", "4-5"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          },
+          {
+            "blocks": ["4-0"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [[1]]
+          }
+        ]
+      },
+      {
+        "name": "Critical Hit",
+        "resonance": [
+          {
+            "blocks": ["0-2", "0-3", "1-2", "1-3"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-5", "2-5"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["0-0", "0-1", "1-1", "2-1"],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ]
+          },
+          {
+            "blocks": ["1-4", "2-2", "2-3", "2-4", "3-2"],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          },
+          {
+            "blocks": ["1-0", "2-0", "3-0", "4-0"],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1], [1], [1], [1]]
+          },
+          {
+            "blocks": ["3-1", "4-1", "4-2", "4-3"],
+            "orientation": 6,
+            "pieceId": "RP_L_4_02",
+            "shape": [
+              [1, 0, 0],
+              [1, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["3-3", "3-4", "3-5", "4-4"],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["4-5"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02",
+            "shape": [[1]]
+          }
+        ]
+      },
+      {
+        "name": "Survivability",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "0-3"],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01",
+            "shape": [[1, 1, 1, 1]]
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-3", "1-4"],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02",
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ]
+          },
+          {
+            "blocks": ["1-0", "1-1", "1-2", "2-0"],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01",
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          },
+          {
+            "blocks": ["2-1", "3-0", "3-1", "4-0"],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_01",
+            "shape": [
+              [0, 1],
+              [1, 1],
+              [1, 0]
+            ]
+          },
+          {
+            "blocks": ["3-2", "4-1", "4-2", "4-3"],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ]
+          },
+          {
+            "blocks": ["2-2"],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01",
+            "shape": [[1]]
+          },
+          {
+            "blocks": ["1-5", "2-3", "2-4", "2-5", "3-3"],
+            "orientation": 6,
+            "pieceId": "RP_Z_5_01",
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [1, 0, 0]
+            ]
+          },
+          {
+            "blocks": ["3-4", "3-5", "4-4", "4-5"],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01",
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ]
           }
         ]
       }

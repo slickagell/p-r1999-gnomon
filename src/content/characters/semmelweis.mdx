@@ -85,15 +85,15 @@ import RESONANCE from "@data/resonance/characters/semmelweis.json";
 
     <div class="mt-5 flex gap-6 justify-center items-end">
       <div class="text-center">
-        <CharacterImg variant="udimo" id={frontmatter.id} />
-
-        Udimo
-      </div>
-
-      <div class="text-center">
         <CharacterImg variant="chibi" id={frontmatter.id} />
 
         Chibi
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
       </div>
     </div>
   </div>
@@ -202,7 +202,7 @@ Right after casting an Ultimate, lose an additional own (Current HP x**10%**) HP
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

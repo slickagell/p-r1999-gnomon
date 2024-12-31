@@ -5,7 +5,7 @@
         "value": 6270
       },
       "ATTACK": {
-        "value": 1143
+        "value": 1133
       },
       "REALITY_DEFENSE": {
         "value": 492
@@ -14,7 +14,7 @@
         "value": 492
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 535
+        "value": 381
       }
     }
   }

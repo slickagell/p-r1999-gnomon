@@ -86,15 +86,15 @@ import RESONANCE from "@data/resonance/characters/lucy.json";
 
     <div class="mt-5 flex gap-6 justify-center items-end">
       <div class="text-center">
-        <CharacterImg variant="udimo" id={frontmatter.id} />
-
-        Udimo
-      </div>
-
-      <div class="text-center">
         <CharacterImg variant="chibi" id={frontmatter.id} />
 
         Chibi
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
       </div>
     </div>
   </div>
@@ -200,7 +200,7 @@ import RESONANCE from "@data/resonance/characters/lucy.json";
 
 <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
   <div class="basis-full lg:basis-auto shrink-0">
-    <CustomImage presetWidth={192} src={`/images/characters/${frontmatter.id}/conservation-of-energy.png`} alt="ultimate" />
+    <CustomImage presetWidth={192} src={`/images/characters/${frontmatter.id}/conservation-of-energy.png`} alt="conservation-of-energy" />
   </div>
 
   <CardInfo type="ATTACK" note="">
@@ -255,7 +255,7 @@ Right after casting an Ultimate, gain :effect{code="LEADERSHIP"} for 2 rounds an
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 

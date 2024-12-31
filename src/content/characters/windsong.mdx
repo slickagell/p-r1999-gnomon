@@ -64,7 +64,7 @@ import RESONANCE from "@data/resonance/characters/windsong.json";
 
       ###### Afflatus
 
-      The longing of the Lone Star [Star], Geology Research
+      The longing of the Lone Star \[Star], Geology Research
 
       ###### Fragrance note
 
@@ -85,15 +85,15 @@ import RESONANCE from "@data/resonance/characters/windsong.json";
 
     <div class="mt-5 flex gap-6 justify-center items-end">
       <div class="text-center">
-        <CharacterImg variant="udimo" id={frontmatter.id} />
-
-        Udimo
-      </div>
-
-      <div class="text-center">
         <CharacterImg variant="chibi" id={frontmatter.id} />
 
         Chibi
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
       </div>
     </div>
   </div>
@@ -151,7 +151,7 @@ import RESONANCE from "@data/resonance/characters/windsong.json";
   </div>
 
   <CardInfo type="BUFF" note="She traveled across the valley, through the rainforest, and over the snowfield. It's been a lonely journey.">
-    1-target debuff. Inflicts 1 stack of :effect{code="CONFUSION"} on the target for 1 round; then enters the :effect{code="MAPPING"} status for the round, gains Eureka +2, converts all own incantations to _[Rehabilitation]_ of their matching rank, and casts them all if able.
+    1-target debuff. Inflicts 1 stack of :effect{code="CONFUSION"} on the target for 1 round; then enters the :effect{code="MAPPING"} status for the round, gains Eureka +2, converts all own incantations to *\[Rehabilitation]* of their matching rank, and casts them all if able.
   </CardInfo>
 </div>
 
@@ -186,23 +186,23 @@ When entering battle, gain Critical Rate **+10%** and Critical DMG **+10%**. Aft
 ## Portray
 
 <span class="text-2xl mr-2">Lv. 1:</span>
-_Rehabilitation_: at rank 1/2/3 incantation, Mental DMG dealt is increased to **200/290/480%**, and the additional Mental DMG dealt by spending Eureka is increased to **90/130/200%**.
+*Rehabilitation*: at rank 1/2/3 incantation, Mental DMG dealt is increased to **200/290/480%**, and the additional Mental DMG dealt by spending Eureka is increased to **90/130/200%**.
 
 <span class="text-2xl mr-2">Lv. 2:</span>
-_Interdisciplinary Research_: When entering battle, the Critical Rate and Critical DMG increase is now **+25%**.
+*Interdisciplinary Research*: When entering battle, the Critical Rate and Critical DMG increase is now **+25%**.
 
 <span class="text-2xl mr-2">Lv. 3:</span>
-_Long Long Journey_: The Eureka gained is increased to **5**.
+*Long Long Journey*: The Eureka gained is increased to **5**.
 
 <span class="text-2xl mr-2">Lv. 4:</span>
-_Practicability_: At rank 1/2 incantation, the Mental DMG is increased to **180/230%**.
+*Practicability*: At rank 1/2 incantation, the Mental DMG is increased to **180/230%**.
 
 <span class="text-2xl mr-2">Lv. 5:</span>
-_Rehabilitation_: At rank 1/2/3 incantation, the Mental DMG dealt is increased to **220/320/520%**, and the additional Mental DMG dealt by spending Eureka is increased to **110/160/240%**.
+*Rehabilitation*: At rank 1/2/3 incantation, the Mental DMG dealt is increased to **220/320/520%**, and the additional Mental DMG dealt by spending Eureka is increased to **110/160/240%**.
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonanceMainPieceBaseStats={RESONANCE.mainPieceBaseStats} resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 
@@ -215,10 +215,12 @@ _Rehabilitation_: At rank 1/2/3 incantation, the Mental DMG dealt is increased t
     </div>
 
     <Material code="SHARPODONTY" require="18000" />
-    <Material code="PAGE_OF_STARLIT_ASCENT" require="6" />
-    <Material code="PERPETUAL_COG" require="5" />
-    <Material code="SPELL_OF_BANISHING" require="6" />
 
+    <Material code="PAGE_OF_STARLIT_ASCENT" require="6" />
+
+    <Material code="PERPETUAL_COG" require="5" />
+
+    <Material code="SPELL_OF_BANISHING" require="6" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -229,10 +231,12 @@ _Rehabilitation_: At rank 1/2/3 incantation, the Mental DMG dealt is increased t
     </div>
 
     <Material code="SHARPODONTY" require="40000" />
-    <Material code="SCROLL_OF_STARLIT_ASCENT" require="10" />
-    <Material code="HOLY_SILVER" require="5" />
-    <Material code="LIQUEFIED_TERROR" require="5" />
 
+    <Material code="SCROLL_OF_STARLIT_ASCENT" require="10" />
+
+    <Material code="HOLY_SILVER" require="5" />
+
+    <Material code="LIQUEFIED_TERROR" require="5" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -243,9 +247,11 @@ _Rehabilitation_: At rank 1/2/3 incantation, the Mental DMG dealt is increased t
     </div>
 
     <Material code="SHARPODONTY" require="200000" />
-    <Material code="TOME_OF_STARLIT_ASCENT" require="16" />
-    <Material code="MISTILTEINN" require="3" />
-    <Material code="GLOWING_MOTHWING" require="6" />
 
+    <Material code="TOME_OF_STARLIT_ASCENT" require="16" />
+
+    <Material code="MISTILTEINN" require="3" />
+
+    <Material code="GLOWING_MOTHWING" require="6" />
   </div>
 </div>
