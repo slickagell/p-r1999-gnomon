@@ -1,0 +1,256 @@
+---
+title: "6"
+id: "6"
+code: "6"
+star: 6
+afflatus: "INTELLECT"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.4"
+releaseDate: "2024-03-28"
+specialties: ["SUPPORT", "DEBUFF", "PURIFY"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterImg from "@components/CharacterImg.astro";
+import CharacterStar from "@components/CharacterStar.astro";
+import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/6.json";
+import RESONANCE from "@data/resonance/characters/6.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# 6
+
+<div class="my-8">
+  <CharacterStar star={frontmatter.star} />
+</div>
+
+<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+  <div>
+    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
+      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+
+      <div class="flex gap-2 items-center">
+        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+
+        ##### {DMG_TYPE[frontmatter.dmgType].title}
+      </div>
+
+      <div class="flex gap-2">
+        <div class="badge badge-outline badge-primary">
+          {RACE[frontmatter.race].title}
+        </div>
+
+        <div class="badge bg-base-content/20">
+          {'Version ' + frontmatter.version}
+        </div>
+
+        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
+      </div>
+    </div>
+
+    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
+      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
+    </div>
+
+    <div class="mt-4">
+      :TODO:
+
+      ###### Medium
+
+      :TODO:
+
+      ###### Afflatus
+
+      :TODO:
+
+      ###### Fragrance note
+
+      :TODO:
+
+      ###### Dimensions
+
+      :TODO:
+    </div>
+
+    <div class="mt-4 flex gap-4 justify-center">
+      <CharacterImg variant="signature" id={frontmatter.id} />
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center shrink-0">
+    <CharacterImg variant="portrait" id={frontmatter.id} />
+
+    <div class="mt-5 flex gap-6 justify-center items-end">
+      <div class="text-center">
+        <CharacterImg variant="chibi" id={frontmatter.id} />
+
+        Chibi
+      </div>
+
+      <div class="text-center">
+        <CharacterImg variant="udimo" id={frontmatter.id} />
+
+        Udimo
+      </div>
+    </div>
+  </div>
+</div>
+
+::toc
+
+## Arcane Skills
+
+### Disciple
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-1" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="DEBUFF" note="The tenets of the scripture are so.">
+    Mass attack. Deals **120%** Mental DMG to 2 enemies and applies 2 random :effect{code="COLLECTION_OF_DEBUFFS_6"} effects on the target for 2 rounds. Gains Eureka +1 when at 4 Eureka or less.
+  </CardInfo>
+
+  <CardInfo star="2" type="DEBUFF" note="The tenets of the scripture have always been perplexing.">
+    Mass attack. Deals **175%** Mental DMG to 2 enemies and applies 2 random :effect{code="COLLECTION_OF_DEBUFFS_6"} effects on the target for 2 rounds. Gains Eureka +2 when at 4 Eureka or less.
+  </CardInfo>
+
+  <CardInfo star="3" type="DEBUFF" note="The tenets of the scripture have always been perplexing. No matter, at least the punishments are clear.">
+    Mass attack. Deals **305%** Mental DMG to 2 enemies and applies 2 random :effect{code="COLLECTION_OF_DEBUFFS_6"} effects on the target for 2 rounds. Gains Eureka +3 when at 4 Eureka or less.
+  </CardInfo>
+</div>
+
+### Duty
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="skill-2" id={frontmatter.id} />
+  </div>
+
+  <CardInfo star="1" type="" note="He often clarifies doubts for others.">
+    1-target buff. Purifies 2 random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="2" type="" note="He often clarifies doubt for others, out of duty.">
+    1-target buff. Purifies 4 random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
+  </CardInfo>
+
+  <CardInfo star="3" type="" note="He often clarifies doubt for others, out of duty and truth.">
+    1-target buff. Purifies 6 random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 3 rounds.
+  </CardInfo>
+</div>
+
+### The Revelation
+
+<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+  <div class="basis-full lg:basis-auto shrink-0">
+    <CharacterImg variant="ultimate" id={frontmatter.id} />
+  </div>
+
+  <CardInfo type="ATTACK" note="I see, I think, I understand.">
+    1-target attack. Deals **700%** Mental DMG. If at 6 or more Eureka, spend 6 Eureka to deal **75%** increased Mental DMG to the target for every 1 type of _[Stats Down]_, _[Neg Status]_ and _[Control]_ status they have. Increases up to 4 times.
+  </CardInfo>
+</div>
+
+## Inheritance
+
+### Advocator of Knowledge
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="1" />
+
+  ##### Insight 1
+</div>
+
+Max Eureka +1. At the end of the round, if any 1 ally has 4 or more _[Stats Up]_, _[Pos Status]_, or _[Counter]_ statuses, gains Eureka +1. When attacking a target with _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses, DMG Dealt **+16%**.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="2" />
+
+  ##### Insight 2
+</div>
+
+DMG Dealt **+8%** when the caster enters battle.
+
+<div class="mt-4 flex items-center">
+  <InsightImg classNames="w-8 mr-2" insight="3" />
+
+  ##### Insight 3
+</div>
+
+Before the Ultimate takes effect, applies 2 random :effect{code="COLLECTION_OF_DEBUFFS_6"} effects to all enemies for 2 rounds. At the start of the round, applies 1 random :effect{code="COLLECTION_OF_BUFFS_6"} effect to all allies for 2 rounds.
+
+## Portray
+
+<span class="text-2xl mr-2">Lv. 1:</span>
+_The Revelation_: If at **5** or more Eureka, spend **5** Eureka to deal **100%** increased Mental DMG to the target for every 1 type of _[Stats Down]_, _[Neg Status]_, or _[Control]_ status they have.
+
+<span class="text-2xl mr-2">Lv. 2:</span>
+_Advocator of Knowledge_: Gain 1 additional Eureka. When attacking a target with _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses, the DMG Dealt increases to **24%**.
+
+<span class="text-2xl mr-2">Lv. 3:</span>
+_Duty_: At Incantation rank **1/2/3**, becomes purify **3/5/7** random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses for a single ally.
+
+<span class="text-2xl mr-2">Lv. 4:</span>
+_The Revelation_: Increased Mental DMG Dealt now at **125%**.
+
+<span class="text-2xl mr-2">Lv. 5:</span>
+_The Revelation_: If at **4** or more Eureka, spend **4** Eureka to deal increased Mental DMG to the target for every 1 type of _[Stats Down]_, _[Neg Status]_, or _[Control]_ status they have. Increases up to **6** times.
+
+## Resonance
+
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
+
+## Insight Materials
+
+<div class="flex flex-col md:flex-row flex-wrap  justify-center">
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="1" />
+
+      ##### Insight 1
+    </div>
+
+    <Material code="SHARPODONTY" require="18000" />
+    <Material code="PAGE_OF_MINERAL_WEALTH" require="3" />
+    <Material code="PAGE_OF_STARLIT_ASCENT" require="3" />
+    <Material code="PERPETUAL_COG" require="5" />
+    <Material code="SHATTERED_BONES" require="6" />
+
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="2" />
+
+      ##### Insight 2
+    </div>
+
+    <Material code="SHARPODONTY" require="40000" />
+    <Material code="SCROLL_OF_MINERAL_WEALTH" require="5" />
+    <Material code="SCROLL_OF_STARLIT_ASCENT" require="5" />
+    <Material code="BITING_BOX" require="5" />
+    <Material code="MILLED_MAGNESIA" require="5" />
+
+  </div>
+
+  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+    <div class="flex items-center">
+      <InsightImg classNames="w-6 mr-2" insight="3" />
+
+      ##### Insight 3
+    </div>
+
+    <Material code="SHARPODONTY" require="200000" />
+    <Material code="TOME_OF_MINERAL_WEALTH" require="8" />
+    <Material code="TOME_OF_STARLIT_ASCENT" require="8" />
+    <Material code="GOLDEN_FLEECE" require="3" />
+    <Material code="WATCH_CORE" require="6" />
+
+  </div>
+</div>
