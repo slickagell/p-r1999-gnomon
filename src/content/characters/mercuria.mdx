@@ -13,8 +13,8 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterImg from "@components/CharacterImg.astro";
-import CharacterStar from "@components/CharacterStar.astro";
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
+import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -58,23 +58,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     </div>
 
     <div class="mt-4">
-      :TODO:
+      \:TODO:
 
       ###### Medium
 
-      :TODO:
+      \:TODO:
 
       ###### Afflatus
 
-      :TODO:
+      \:TODO:
 
       ###### Fragrance note
 
-      :TODO:
+      \:TODO:
 
       ###### Dimensions
 
-      :TODO:
+      \:TODO:
     </div>
 
     <div class="mt-4 flex gap-4 justify-center">
@@ -153,7 +153,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </div>
 
   <CardInfo type="ATTACK" note="On this night, I trade gifts with the world.">
-    Mass attack. Dispels 2 random _[Stats Up]_ and _[Pos Status]_ effects on all enemies, then deals 400% Mental DMG to the targets. Grants :effect{code="RANK_UP"} to all allies for 2 rounds.
+    Mass attack. Dispels 2 random *\[Stats Up]* and *\[Pos Status]* effects on all enemies, then deals 400% Mental DMG to the targets. Grants :effect{code="RANK_UP"} to all allies for 2 rounds.
   </CardInfo>
 </div>
 
@@ -190,23 +190,23 @@ At the end of the round, if allies have casted two or more rank 3 incantations f
 ## Portray
 
 <span class="text-2xl mr-2">Lv. 1:</span>
-_Lengthy Journey_: At the end of the round, now if allies have casted two or more rank 2 incantations for that round, gain Moxie +1 for self.
+*Lengthy Journey*: At the end of the round, now if allies have casted two or more rank 2 incantations for that round, gain Moxie +1 for self.
 
 <span class="text-2xl mr-2">Lv. 2:</span>
-_Lengthy Journey_: Critical DMG increase is now **+50%** and Incantation Might increase is now **+30%**.
+*Lengthy Journey*: Critical DMG increase is now **+50%** and Incantation Might increase is now **+30%**.
 
 <span class="text-2xl mr-2">Lv. 3:</span>
-_Lengthy Journey_: :effect{code="COSMIC_ENERGY"}'s stack limit is increased to **30**. The DMG Dealt granted by each stack is increased to **+2.5%**.
+*Lengthy Journey*: :effect{code="COSMIC_ENERGY"}'s stack limit is increased to **30**. The DMG Dealt granted by each stack is increased to **+2.5%**.
 
 <span class="text-2xl mr-2">Lv. 4:</span>
-_Morning Star for the Night_: Mental DMG is increased to **475%**, and extends :effect{code="RANK_UP"} by +1 round.
+*Morning Star for the Night*: Mental DMG is increased to **475%**, and extends :effect{code="RANK_UP"} by +1 round.
 
 <span class="text-2xl mr-2">Lv. 5:</span>
-_Lengthy Journey_: Extends :effect{code="COSMIC_ENERGY"} by +1 round. The DMG Dealt granted by each stack is increased to **+3%**.
+*Lengthy Journey*: Extends :effect{code="COSMIC_ENERGY"} by +1 round. The DMG Dealt granted by each stack is increased to **+3%**.
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 
@@ -219,11 +219,14 @@ _Lengthy Journey_: Extends :effect{code="COSMIC_ENERGY"} by +1 round. The DMG De
     </div>
 
     <Material code="SHARPODONTY" require="18000" />
-    <Material code="PAGE_OF_PLANTAL_VIMEN" require="3" />
-    <Material code="PAGE_OF_BEASTLY_THIRST" require="3" />
-    <Material code="CICADA_WINGS" require="6" />
-    <Material code="SILVER_ORE" require="6" />
 
+    <Material code="PAGE_OF_PLANTAL_VIMEN" require="3" />
+
+    <Material code="PAGE_OF_BEASTLY_THIRST" require="3" />
+
+    <Material code="CICADA_WINGS" require="6" />
+
+    <Material code="SILVER_ORE" require="6" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -234,11 +237,14 @@ _Lengthy Journey_: Extends :effect{code="COSMIC_ENERGY"} by +1 round. The DMG De
     </div>
 
     <Material code="SHARPODONTY" require="40000" />
-    <Material code="SCROLL_OF_PLANTAL_VIMEN" require="5" />
-    <Material code="SCROLL_OF_BEASTLY_THIRST" require="5" />
-    <Material code="GOLDEN_GRASS_INCENSE" require="5" />
-    <Material code="LIQUEFIED_TERROR" require="5" />
 
+    <Material code="SCROLL_OF_PLANTAL_VIMEN" require="5" />
+
+    <Material code="SCROLL_OF_BEASTLY_THIRST" require="5" />
+
+    <Material code="GOLDEN_GRASS_INCENSE" require="5" />
+
+    <Material code="LIQUEFIED_TERROR" require="5" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -249,10 +255,13 @@ _Lengthy Journey_: Extends :effect{code="COSMIC_ENERGY"} by +1 round. The DMG De
     </div>
 
     <Material code="SHARPODONTY" require="200000" />
-    <Material code="TOME_OF_PLANTAL_VIMEN" require="8" />
-    <Material code="TOME_OF_BEASTLY_THIRST" require="8" />
-    <Material code="SERPENT_SCEPTER" require="3" />
-    <Material code="WYRMLING_SKELETON" require="6" />
 
+    <Material code="TOME_OF_PLANTAL_VIMEN" require="8" />
+
+    <Material code="TOME_OF_BEASTLY_THIRST" require="8" />
+
+    <Material code="SERPENT_SCEPTER" require="3" />
+
+    <Material code="WYRMLING_SKELETON" require="6" />
   </div>
 </div>

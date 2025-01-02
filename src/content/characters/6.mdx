@@ -13,8 +13,8 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterImg from "@components/CharacterImg.astro";
-import CharacterStar from "@components/CharacterStar.astro";
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
+import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -58,23 +58,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     </div>
 
     <div class="mt-4">
-      :TODO:
+      \:TODO:
 
       ###### Medium
 
-      :TODO:
+      \:TODO:
 
       ###### Afflatus
 
-      :TODO:
+      \:TODO:
 
       ###### Fragrance note
 
-      :TODO:
+      \:TODO:
 
       ###### Dimensions
 
-      :TODO:
+      \:TODO:
     </div>
 
     <div class="mt-4 flex gap-4 justify-center">
@@ -133,15 +133,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </div>
 
   <CardInfo star="1" type="" note="He often clarifies doubts for others.">
-    1-target buff. Purifies 2 random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
+    1-target buff. Purifies 2 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
   </CardInfo>
 
   <CardInfo star="2" type="" note="He often clarifies doubt for others, out of duty.">
-    1-target buff. Purifies 4 random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
+    1-target buff. Purifies 4 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
   </CardInfo>
 
   <CardInfo star="3" type="" note="He often clarifies doubt for others, out of duty and truth.">
-    1-target buff. Purifies 6 random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 3 rounds.
+    1-target buff. Purifies 6 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 3 rounds.
   </CardInfo>
 </div>
 
@@ -153,7 +153,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </div>
 
   <CardInfo type="ATTACK" note="I see, I think, I understand.">
-    1-target attack. Deals **700%** Mental DMG. If at 6 or more Eureka, spend 6 Eureka to deal **75%** increased Mental DMG to the target for every 1 type of _[Stats Down]_, _[Neg Status]_ and _[Control]_ status they have. Increases up to 4 times.
+    1-target attack. Deals **700%** Mental DMG. If at 6 or more Eureka, spend 6 Eureka to deal **75%** increased Mental DMG to the target for every 1 type of *\[Stats Down]*, *\[Neg Status]* and *\[Control]* status they have. Increases up to 4 times.
   </CardInfo>
 </div>
 
@@ -167,7 +167,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   ##### Insight 1
 </div>
 
-Max Eureka +1. At the end of the round, if any 1 ally has 4 or more _[Stats Up]_, _[Pos Status]_, or _[Counter]_ statuses, gains Eureka +1. When attacking a target with _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses, DMG Dealt **+16%**.
+Max Eureka +1. At the end of the round, if any 1 ally has 4 or more *\[Stats Up]*, *\[Pos Status]*, or *\[Counter]* statuses, gains Eureka +1. When attacking a target with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, DMG Dealt **+16%**.
 
 <div class="mt-4 flex items-center">
   <InsightImg classNames="w-8 mr-2" insight="2" />
@@ -188,23 +188,23 @@ Before the Ultimate takes effect, applies 2 random :effect{code="COLLECTION_OF_D
 ## Portray
 
 <span class="text-2xl mr-2">Lv. 1:</span>
-_The Revelation_: If at **5** or more Eureka, spend **5** Eureka to deal **100%** increased Mental DMG to the target for every 1 type of _[Stats Down]_, _[Neg Status]_, or _[Control]_ status they have.
+*The Revelation*: If at **5** or more Eureka, spend **5** Eureka to deal **100%** increased Mental DMG to the target for every 1 type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status they have.
 
 <span class="text-2xl mr-2">Lv. 2:</span>
-_Advocator of Knowledge_: Gain 1 additional Eureka. When attacking a target with _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses, the DMG Dealt increases to **24%**.
+*Advocator of Knowledge*: Gain 1 additional Eureka. When attacking a target with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, the DMG Dealt increases to **24%**.
 
 <span class="text-2xl mr-2">Lv. 3:</span>
-_Duty_: At Incantation rank **1/2/3**, becomes purify **3/5/7** random types of _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses for a single ally.
+*Duty*: At Incantation rank **1/2/3**, becomes purify **3/5/7** random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses for a single ally.
 
 <span class="text-2xl mr-2">Lv. 4:</span>
-_The Revelation_: Increased Mental DMG Dealt now at **125%**.
+*The Revelation*: Increased Mental DMG Dealt now at **125%**.
 
 <span class="text-2xl mr-2">Lv. 5:</span>
-_The Revelation_: If at **4** or more Eureka, spend **4** Eureka to deal increased Mental DMG to the target for every 1 type of _[Stats Down]_, _[Neg Status]_, or _[Control]_ status they have. Increases up to **6** times.
+*The Revelation*: If at **4** or more Eureka, spend **4** Eureka to deal increased Mental DMG to the target for every 1 type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status they have. Increases up to **6** times.
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 
@@ -217,11 +217,14 @@ _The Revelation_: If at **4** or more Eureka, spend **4** Eureka to deal increas
     </div>
 
     <Material code="SHARPODONTY" require="18000" />
-    <Material code="PAGE_OF_MINERAL_WEALTH" require="3" />
-    <Material code="PAGE_OF_STARLIT_ASCENT" require="3" />
-    <Material code="PERPETUAL_COG" require="5" />
-    <Material code="SHATTERED_BONES" require="6" />
 
+    <Material code="PAGE_OF_MINERAL_WEALTH" require="3" />
+
+    <Material code="PAGE_OF_STARLIT_ASCENT" require="3" />
+
+    <Material code="PERPETUAL_COG" require="5" />
+
+    <Material code="SHATTERED_BONES" require="6" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -232,11 +235,14 @@ _The Revelation_: If at **4** or more Eureka, spend **4** Eureka to deal increas
     </div>
 
     <Material code="SHARPODONTY" require="40000" />
-    <Material code="SCROLL_OF_MINERAL_WEALTH" require="5" />
-    <Material code="SCROLL_OF_STARLIT_ASCENT" require="5" />
-    <Material code="BITING_BOX" require="5" />
-    <Material code="MILLED_MAGNESIA" require="5" />
 
+    <Material code="SCROLL_OF_MINERAL_WEALTH" require="5" />
+
+    <Material code="SCROLL_OF_STARLIT_ASCENT" require="5" />
+
+    <Material code="BITING_BOX" require="5" />
+
+    <Material code="MILLED_MAGNESIA" require="5" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -247,10 +253,13 @@ _The Revelation_: If at **4** or more Eureka, spend **4** Eureka to deal increas
     </div>
 
     <Material code="SHARPODONTY" require="200000" />
-    <Material code="TOME_OF_MINERAL_WEALTH" require="8" />
-    <Material code="TOME_OF_STARLIT_ASCENT" require="8" />
-    <Material code="GOLDEN_FLEECE" require="3" />
-    <Material code="WATCH_CORE" require="6" />
 
+    <Material code="TOME_OF_MINERAL_WEALTH" require="8" />
+
+    <Material code="TOME_OF_STARLIT_ASCENT" require="8" />
+
+    <Material code="GOLDEN_FLEECE" require="3" />
+
+    <Material code="WATCH_CORE" require="6" />
   </div>
 </div>

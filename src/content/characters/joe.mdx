@@ -13,8 +13,8 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterImg from "@components/CharacterImg.astro";
-import CharacterStar from "@components/CharacterStar.astro";
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
+import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -58,23 +58,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     </div>
 
     <div class="mt-4">
-      :TODO:
+      \:TODO:
 
       ###### Medium
 
-      :TODO:
+      \:TODO:
 
       ###### Afflatus
 
-      :TODO:
+      \:TODO:
 
       ###### Fragrance note
 
-      :TODO:
+      \:TODO:
 
       ###### Dimensions
 
-      :TODO:
+      \:TODO:
     </div>
 
     <div class="mt-4 flex gap-4 justify-center">
@@ -183,28 +183,28 @@ DMG Dealt **+8%** when the caster enters battle.
   ##### Insight 3
 </div>
 
-J's :effect{code="BURN"} stack limit is increased to **35**, and becomes immune to :effect{code="FREEZE"} and :effect{code="COLD"} while in the :effect{code="BURN"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn _[Stats Down]_ and _[Neg Status]_ from self, then grant Critical Rate **+20%** to self for 1 round.
+J's :effect{code="BURN"} stack limit is increased to **35**, and becomes immune to :effect{code="FREEZE"} and :effect{code="COLD"} while in the :effect{code="BURN"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for 1 round.
 
 ## Portray
 
 <span class="text-2xl mr-2">Lv. 1:</span>
-_Heat Treating_: :effect{code="TEMPERING"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
+*Heat Treating*: :effect{code="TEMPERING"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
 
 <span class="text-2xl mr-2">Lv. 2:</span>
-_Bodily Furnace_: Now gain an ATK percentage equal to **1.0**x the number of :effect{code="BURN"} stacks on self.
+*Bodily Furnace*: Now gain an ATK percentage equal to **1.0**x the number of :effect{code="BURN"} stacks on self.
 
 <span class="text-2xl mr-2">Lv. 3:</span>
-_Bodily Furnace_: The :effect{code="BURN"} stack limit on self is increased to 45 stacks.
+*Bodily Furnace*: The :effect{code="BURN"} stack limit on self is increased to 45 stacks.
 
 <span class="text-2xl mr-2">Lv. 4:</span>
-_Over the Haight Street_!: Reality DMG is increased **450%**. For every excess :effect{code="BURN"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
+*Over the Haight Street*!: Reality DMG is increased **450%**. For every excess :effect{code="BURN"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
 
 <span class="text-2xl mr-2">Lv. 5:</span>
-_Bodily Furnace_: Now gain an ATK percentage equal to **1.5**x the number of :effect{code="BURN"} stacks on self.
+*Bodily Furnace*: Now gain an ATK percentage equal to **1.5**x the number of :effect{code="BURN"} stacks on self.
 
 ## Resonance
 
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
+<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
 
 ## Insight Materials
 
@@ -217,10 +217,12 @@ _Bodily Furnace_: Now gain an ATK percentage equal to **1.5**x the number of :ef
     </div>
 
     <Material code="SHARPODONTY" require="18000" />
-    <Material code="PAGE_OF_BEASTLY_THIRST" require="6" />
-    <Material code="ESOTERIC_BONES" require="5" />
-    <Material code="MAGNESIA_CRYSTAL" require="6" />
 
+    <Material code="PAGE_OF_BEASTLY_THIRST" require="6" />
+
+    <Material code="ESOTERIC_BONES" require="5" />
+
+    <Material code="MAGNESIA_CRYSTAL" require="6" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -231,10 +233,12 @@ _Bodily Furnace_: Now gain an ATK percentage equal to **1.5**x the number of :ef
     </div>
 
     <Material code="SHARPODONTY" require="40000" />
-    <Material code="SCROLL_OF_BEASTLY_THIRST" require="10" />
-    <Material code="GOOSE_NECK" require="5" />
-    <Material code="FOX_TAIL" require="5" />
 
+    <Material code="SCROLL_OF_BEASTLY_THIRST" require="10" />
+
+    <Material code="GOOSE_NECK" require="5" />
+
+    <Material code="FOX_TAIL" require="5" />
   </div>
 
   <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
@@ -245,9 +249,11 @@ _Bodily Furnace_: Now gain an ATK percentage equal to **1.5**x the number of :ef
     </div>
 
     <Material code="SHARPODONTY" require="200000" />
-    <Material code="TOME_OF_BEASTLY_THIRST" require="16" />
-    <Material code="MISTILTEINN" require="3" />
-    <Material code="PLATINUM_OUIJA" require="5" />
 
+    <Material code="TOME_OF_BEASTLY_THIRST" require="16" />
+
+    <Material code="MISTILTEINN" require="3" />
+
+    <Material code="PLATINUM_OUIJA" require="5" />
   </div>
 </div>

@@ -6,7 +6,11 @@ let table;
 
 const visitor = (node) => {
   if (node.type === "root") {
-    table = toc(node, { minDepth: 2, maxDepth: 3 });
+    table = toc(node, {
+      minDepth: 2,
+      maxDepth: 3,
+      parents: "mdxJsxFlowElement",
+    });
   }
 
   if (table) {

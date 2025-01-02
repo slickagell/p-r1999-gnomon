@@ -4,7 +4,7 @@
     "editor.defaultFormatter": "unifiedjs.vscode-remark"
   },
   "[mdx]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "sortJSON.orderOverride": [
     "HP",

@@ -27,7 +27,7 @@ export default () => ({
     updateQuantity: number;
   }) {
     const attributesEl = document.querySelector(
-      "#attributes"
+      "#attributes",
     ) as HTMLDivElement;
     if (!attributesEl) return;
 
@@ -40,7 +40,7 @@ export default () => ({
 
       if (!this.stats[statId].unit && statVal.unit === "%") {
         this.stats[statId].value += Math.floor(
-          statVal.value * -((updateQuantity * baseStats[statId].value) / 100)
+          statVal.value * -((updateQuantity * baseStats[statId].value) / 100),
         );
         return;
       } else {
