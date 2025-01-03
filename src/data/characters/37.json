@@ -25,5 +25,61 @@
         "unit": "%"
       }
     }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 5
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 10
+      },
+      {
+        "code": "WINGED_KEY",
+        "require": 6
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 16
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 3
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 5
+      }
+    ]
   }
 }

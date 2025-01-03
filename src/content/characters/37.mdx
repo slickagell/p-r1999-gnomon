@@ -13,10 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
-import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
-import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -32,26 +29,18 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-medium">
-    ###### Medium
-
     Numbers
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    ###### Afflatus
-
     The Brilliant Morning Star \[Star], Mathematical Calculations
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    ###### Fragrance note
-
     Aquatic, Sea Water, Salt Flower, Coastal Pine, Driftwood
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    ###### Dimensions
-
     64 29/64x32 3/16x7 9/32 inches.
   </Fragment>
 
@@ -175,32 +164,37 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-materials">
-    <Material code="SHARPODONTY" require="18000" />
-
-    <Material code="PAGE_OF_STARLIT_ASCENT" require="6" />
-
-    <Material code="LIQUEFIED_TERROR" require="5" />
-
-    <Material code="MAGNESIA_CRYSTAL" require="6" />
+    {CHARACTER.insightMaterials['1'].map((material) => (
+          <Material code={material.code} require={material.require} />
+        ))}
   </Fragment>
 
   <Fragment slot="insight-2-materials">
-    <Material code="SHARPODONTY" require="40000" />
-
-    <Material code="SCROLL_OF_STARLIT_ASCENT" require="10" />
-
-    <Material code="WINGED_KEY" require="6" />
-
-    <Material code="ESOTERIC_BONES" require="6" />
+    {CHARACTER.insightMaterials['2'].map((material) => (
+          <Material code={material.code} require={material.require} />
+        ))}
   </Fragment>
 
   <Fragment slot="insight-3-materials">
-    <Material code="SHARPODONTY" require="200000" />
+    {CHARACTER.insightMaterials['3'].map((material) => (
+          <Material code={material.code} require={material.require} />
+        ))}
+  </Fragment>
 
-    <Material code="TOME_OF_STARLIT_ASCENT" require="16" />
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {
+          currentValue.forEach((material) => {
+            if (accumulator.some((m) => m.code === material.code)) {
+              const index = accumulator.findIndex((m) => m.code === material.code);
+              accumulator[index].require += material.require;
+            } else {
+              accumulator.push(material);
+            }
+          })
 
-    <Material code="SERPENT_SCEPTER" require="3" />
-
-    <Material code="BOGEYMAN" require="5" />
+          return accumulator
+        }, []).map((material) => (
+          <Material code={material.code} require={material.require} />
+        ))}
   </Fragment>
 </CharacterContent>

@@ -25,5 +25,61 @@
         "unit": "%"
       }
     }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 6
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 10
+      },
+      {
+        "code": "GOOSE_NECK",
+        "require": 5
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 16
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 3
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 5
+      }
+    ]
   }
 }
