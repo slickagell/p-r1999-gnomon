@@ -25,5 +25,73 @@
         "unit": "%"
       }
     }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 3
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 3
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 5
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 5
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 5
+      },
+      {
+        "code": "GOLDEN_BEETLE",
+        "require": 3
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_PLANTAL_VIMEN",
+        "require": 8
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 8
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 3
+      },
+      {
+        "code": "MURMUR_OF_INSANITY",
+        "require": 6
+      }
+    ]
   }
 }

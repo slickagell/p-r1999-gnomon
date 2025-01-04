@@ -13,9 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
-import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
-import InsightImg from "@components/InsightImg.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -25,235 +23,150 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 # Joe
 
-<div class="my-8">
-  <CharacterStar star={frontmatter.star} />
-</div>
-
-<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
-  <div>
-    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
-      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
-
-      <div class="flex gap-2 items-center">
-        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
-
-        ##### {DMG_TYPE[frontmatter.dmgType].title}
-      </div>
-
-      <div class="flex gap-2">
-        <div class="badge badge-outline badge-primary">
-          {RACE[frontmatter.race].title}
-        </div>
-
-        <div class="badge bg-base-content/20">
-          {'Version ' + frontmatter.version}
-        </div>
-
-        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
-      </div>
-    </div>
-
-    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
-    </div>
-
-    <div class="mt-4">
-      \:TODO:
-
-      ###### Medium
-
-      \:TODO:
-
-      ###### Afflatus
-
-      \:TODO:
-
-      ###### Fragrance note
-
-      \:TODO:
-
-      ###### Dimensions
-
-      \:TODO:
-    </div>
-
-    <div class="mt-4 flex gap-4 justify-center">
-      <CharacterImg variant="signature" id={frontmatter.id} />
-    </div>
-  </div>
-
-  <div class="flex flex-col items-center shrink-0">
-    <CharacterImg variant="portrait" id={frontmatter.id} />
-
-    <div class="mt-5 flex gap-6 justify-center items-end">
-      <div class="text-center">
-        <CharacterImg variant="chibi" id={frontmatter.id} />
-
-        Chibi
-      </div>
-
-      <div class="text-center">
-        <CharacterImg variant="udimo" id={frontmatter.id} />
-
-        Udimo
-      </div>
-    </div>
-  </div>
-</div>
-
-::toc
-
-## Arcane Skills
-
-### Hardness Testing
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-1" id={frontmatter.id} />
-  </div>
-
-  <CardInfo star="1" type="DEBUFF" note="A chance to test it in a real fight.">
-    1-target attack. Deals **180%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
-  </CardInfo>
-
-  <CardInfo star="2" type="DEBUFF" note="A chance to test it in a real fight is hard to come by.">
-    1-target attack. Deals **270%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
-  </CardInfo>
-
-  <CardInfo star="3" type="DEBUFF" note="A chance to test it in a real fight is hard to come by. So, who wants to go first?">
-    1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
-  </CardInfo>
-</div>
-
-### Heat Treating
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-2" id={frontmatter.id} />
-  </div>
-
-  <CardInfo star="1" type="COUNTER" note="He was thrown into the fiery furnace of life.">
-    Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**100%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
-  </CardInfo>
-
-  <CardInfo star="2" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age.">
-    Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**150%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
-  </CardInfo>
-
-  <CardInfo star="3" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age, and to this day, he still feels little fear.">
-    Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**250%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
-  </CardInfo>
-</div>
-
-### Over the Haight Street!
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="ultimate" id={frontmatter.id} />
-  </div>
-
-  <CardInfo type="ATTACK" note="This isn't an action film, and there are no heroes.">
-    Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict :effect{code="BURN"} on the targets equal to the number of :effect{code="BURN"} stacks on self. J does not gain :effect{code="BURN"} stacks from this attack, and for every excess :effect{code="BURN"} stack on the main target, this attack deals an additional **10%** Reality DMG.
-  </CardInfo>
-</div>
-
-## Inheritance
-
-### Bodily Furnace
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="1" />
-
-  ##### Insight 1
-</div>
-
-When attacking, gain an ATK percentage equal to **0.5**x the number of :effect{code="BURN"} stacks on self, and resolve own :effect{code="BURN"} to deal damage to self while retaining the number of stacks. Every time after J's attack successfully inflicts :effect{code="BURN"}, J grants the same number of :effect{code="BURN"} stacks to self. Take **50%** less damage from resolving own :effect{code="BURN"} stacks, and never fall below **15%** HP this way.
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="2" />
-
-  ##### Insight 2
-</div>
-
-DMG Dealt **+8%** when the caster enters battle.
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="3" />
-
-  ##### Insight 3
-</div>
-
-J's :effect{code="BURN"} stack limit is increased to **35**, and becomes immune to :effect{code="FREEZE"} and :effect{code="COLD"} while in the :effect{code="BURN"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for 1 round.
-
-## Portray
-
-<span class="text-2xl mr-2">Lv. 1:</span>
-*Heat Treating*: :effect{code="TEMPERING"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
-
-<span class="text-2xl mr-2">Lv. 2:</span>
-*Bodily Furnace*: Now gain an ATK percentage equal to **1.0**x the number of :effect{code="BURN"} stacks on self.
-
-<span class="text-2xl mr-2">Lv. 3:</span>
-*Bodily Furnace*: The :effect{code="BURN"} stack limit on self is increased to 45 stacks.
-
-<span class="text-2xl mr-2">Lv. 4:</span>
-*Over the Haight Street*!: Reality DMG is increased **450%**. For every excess :effect{code="BURN"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
-
-<span class="text-2xl mr-2">Lv. 5:</span>
-*Bodily Furnace*: Now gain an ATK percentage equal to **1.5**x the number of :effect{code="BURN"} stacks on self.
-
-## Resonance
-
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-
-## Insight Materials
-
-<div class="flex flex-col md:flex-row flex-wrap  justify-center">
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="1" />
-
-      ##### Insight 1
-    </div>
-
-    <Material code="SHARPODONTY" require="18000" />
-
-    <Material code="PAGE_OF_BEASTLY_THIRST" require="6" />
-
-    <Material code="ESOTERIC_BONES" require="5" />
-
-    <Material code="MAGNESIA_CRYSTAL" require="6" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="2" />
-
-      ##### Insight 2
-    </div>
-
-    <Material code="SHARPODONTY" require="40000" />
-
-    <Material code="SCROLL_OF_BEASTLY_THIRST" require="10" />
-
-    <Material code="GOOSE_NECK" require="5" />
-
-    <Material code="FOX_TAIL" require="5" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="3" />
-
-      ##### Insight 3
-    </div>
-
-    <Material code="SHARPODONTY" require="200000" />
-
-    <Material code="TOME_OF_BEASTLY_THIRST" require="16" />
-
-    <Material code="MISTILTEINN" require="3" />
-
-    <Material code="PLATINUM_OUIJA" require="5" />
-  </div>
-</div>
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Hardness Testing
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="DEBUFF" note="A chance to test it in a real fight.">
+      1-target attack. Deals **180%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="A chance to test it in a real fight is hard to come by.">
+      1-target attack. Deals **270%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="A chance to test it in a real fight is hard to come by. So, who wants to go first?">
+      1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Heat Treating
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="COUNTER" note="He was thrown into the fiery furnace of life.">
+      Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**100%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
+    </CardInfo>
+
+    <CardInfo star="2" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age.">
+      Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**150%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
+    </CardInfo>
+
+    <CardInfo star="3" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age, and to this day, he still feels little fear.">
+      Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**250%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Over the Haight Street!
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="This isn't an action film, and there are no heroes.">
+      Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict :effect{code="BURN"} on the targets equal to the number of :effect{code="BURN"} stacks on self. J does not gain :effect{code="BURN"} stacks from this attack, and for every excess :effect{code="BURN"} stack on the main target, this attack deals an additional **10%** Reality DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Bodily Furnace
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When attacking, gain an ATK percentage equal to **0.5**x the number of :effect{code="BURN"} stacks on self, and resolve own :effect{code="BURN"} to deal damage to self while retaining the number of stacks. Every time after J's attack successfully inflicts :effect{code="BURN"}, J grants the same number of :effect{code="BURN"} stacks to self. Take **50%** less damage from resolving own :effect{code="BURN"} stacks, and never fall below **15%** HP this way.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    J's :effect{code="BURN"} stack limit is increased to **35**, and becomes immune to :effect{code="FREEZE"} and :effect{code="COLD"} while in the :effect{code="BURN"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for 1 round.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Heat Treating*: :effect{code="TEMPERING"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Bodily Furnace*: Now gain an ATK percentage equal to **1.0**x the number of :effect{code="BURN"} stacks on self.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Bodily Furnace*: The :effect{code="BURN"} stack limit on self is increased to 45 stacks.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Over the Haight Street*!: Reality DMG is increased **450%**. For every excess :effect{code="BURN"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Bodily Furnace*: Now gain an ATK percentage equal to **1.5**x the number of :effect{code="BURN"} stacks on self.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

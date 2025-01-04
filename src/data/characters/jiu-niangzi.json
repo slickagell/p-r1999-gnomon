@@ -25,5 +25,61 @@
         "unit": "%"
       }
     }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 6
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 5
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 10
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 5
+      },
+      {
+        "code": "PERPETUAL_COG",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 16
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 3
+      },
+      {
+        "code": "WYRMLING_SKELETON",
+        "require": 6
+      }
+    ]
   }
 }

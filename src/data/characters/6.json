@@ -34,11 +34,11 @@
       },
       {
         "code": "PAGE_OF_MINERAL_WEALTH",
-        "require": 6
+        "require": 3
       },
       {
         "code": "PAGE_OF_STARLIT_ASCENT",
-        "require": 6
+        "require": 3
       },
       {
         "code": "PERPETUAL_COG",
