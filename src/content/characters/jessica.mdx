@@ -1,0 +1,172 @@
+---
+title: "Jessica"
+id: "jessica"
+code: "JESSICA"
+star: 6
+afflatus: "PLANT"
+dmgType: "REALITY"
+race: "BEYOND"
+version: "1.2"
+releaseDate: "2023-12-28"
+specialties: ["POISON", "DPS"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/jessica.json";
+import RESONANCE from "@data/resonance/characters/jessica.json";
+import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+
+# Jessica
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### White Blankie
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Delicate and fragrant.">
+      1-target attack. Deals **180%** Reality DMG. If the target is afflicted with :effect{code="POISON"}, deals an additional **40%** Reality DMG. For each additional stack of :effect{code="POISON"} afterwards, deals **20%** more Reality DMG, up to a max of Reality DMG **+40%**.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="Delicate and fragrant, and as pure as virgin snow.">
+      1-target attack. Deals **270%** Reality DMG. If the target is afflicted with :effect{code="POISON"}, deals an additional **60%** Reality DMG. For each additional stack of :effect{code="POISON"} afterwards, deals **30%** more Reality DMG, up to a max of Reality DMG **+60%**.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="Delicate and fragrant, it covers the captive completely.">
+      1-target attack. Deals **450%** Reality DMG. If the target is afflicted with :effect{code="POISON"}, deals an additional **100%** Reality DMG. For each additional stack of :effect{code="POISON"} afterwards, deals **50%** more Reality DMG, up to a max of Reality DMG **+100%**.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Good Friends
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="She plays along with them.">
+      Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses, this attack deals **30%** more Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="She plays along with them, rehearsing a marvelous story.">
+      Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses, this attack deals **45%** more Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="She plays along with them. The other lead has been gone for such a long time.">
+      Mass attack. Deals **335%** Reality DMG to 2 enemies. If the target is in _[Stats Down]_, _[Neg Status]_, or _[Control]_ statuses, this attack deals **75%** more Reality DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Gaze From the Forest
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="I've missed you so much.">
+      Mass attack. Deals **350%** to all enemies. Inflicts :effect{code="POISON"} on all enemies for 2 rounds: at the end of the round, deals (Jessica's ATK x**30%**) Genesis DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Changeling
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When attacking an enemy afflicted with :effect{code="POISON"}, damage dealt increases by **20%**. At the start of the battle and once every 3 rounds (rounds 1, 3, 6, 9... after the battle begins), inflicts :effect{code="POISON"} on all enemies for 2 rounds, inflicting Genesis DMG equal to **30%** of the caster's ATK at the end of each round.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    After attacking enemies not afflicted with :effect{code="POISON"}, inflicts :effect{code="POISON"} for 2 rounds, inflicting Genesis DMG equal to **30%** of Jessica's ATK at the end of each round.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    _Gaze From the Forest_: Reality DMG increased to **425%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    _Changeling_: When entering battle and at the start of every 3rd round, :effect{code="POISON"} inflicted on enemies +1 round.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    _White Blankie_: At Incantation rank **1/2/3**, Reality DMG increased to **200/300/500%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    _Good Friends_: At Incantation Rank **1/2/3**, if the target is afflicted with _[Stats Down]_, _[Neg Stats]_, or _[Control]_, Reality DMG increased to **50/75/125%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    _Gaze From the Forest_: Reality DMG increased to **500%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

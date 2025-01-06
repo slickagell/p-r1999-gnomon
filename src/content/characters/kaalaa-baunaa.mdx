@@ -1,0 +1,179 @@
+---
+title: "Kaalaa Baunaa"
+id: "kaalaa-baunaa"
+code: "KAALAA_BAUNAA"
+star: 6
+afflatus: "MINERAL"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.3"
+releaseDate: "2024-01-18"
+specialties: ["DPS", "BURST_DMG", "FOLLOW_UP_ATTACK"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/kaalaa-baunaa.json";
+import RESONANCE from "@data/resonance/characters/kaalaa-baunaa.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Kaalaa Baunaa
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Enchanted Strike
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="A technique known to very few scholars.">
+      1-target attack. Deals **180%** Mental DMG. After active casting, gains 1 :effect{code="SATURN"} that grants Penetration Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="A technique known to very few scholars. It hardly benefits academic research.">
+      1-target attack. Deals **270%** Mental DMG. After active casting, gains 2 :effect{code="SATURN"} that grants Penetration Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="A technique known to very few scholars. It hardly benefits academic research, but is extremely useful for debates.">
+      1-target attack. Deals **450%** Mental DMG. After active casting, gains 3 :effect{code="SATURN"} that grants Penetration Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Mythical Meteors
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="It accompanied me for quite a while.">
+      Mass attack. Deals **135%** Mental DMG to 2 enemies. After active casting, gains 1 :effect{code="MARS"} that grants Leech Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="It accompanied me for quite a while, from Banner to London.">
+      Mass attack. Deals **200%** Mental DMG to 2 enemies. After active casting, gains 2 :effect{code="MARS"} that grants Leech Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="It accompanied me for quite a while, from night to day.">
+      Mass attack. Deals **335%** Mental DMG to 2 enemies. After active casting, gains 3 :effect{code="MARS"} that grants Leech Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Ultimate Perfection
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="And so the planet rose, passed beyond the orbital plane, and sank into the intact sky.">
+      1-target attack. After removing all :effect{code="PLANET"}, deals **600%** Mental DMG and gains 2 :effect{code="FULL_MOON"} that grant Incantation Might **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Starbending
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the :effect{code="PLANET"} is removed, gains 1 of the following effects based on the type of planet removed: :effect{code="SATURN"}, :effect{code="MARS"}, or :effect{code="FULL_MOON"}.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Critical Rate **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    After casting the Ultimate, gains 1 effect based on the :effect{code="PLANET"} with the largest number removed.
+
+    When removing 1/2/3 :effect{code="SATURN"}: immediately casts 1/2/3-star _[Enchanted Strike]_ for a follow-up attack on the target.
+    
+    When removing 1/2/3 :effect{code="MARS"}: immediately casts 1/2/3-star _[Mythical Meteors]_ for a follow-up attack on the target.
+    
+    When removing 1/2 :effect{code="FULL_MOON"}: the caster enters :effect{code="EMPOWER_INCANTATION_II"} status for 1/2 rounds.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    _Starbending_'s effect changes to: Up to 4 :effect{code="PLANET"} can be carried.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    _Ultimate Perfection_'s effect changes to: gains 3 :effect{code="FULL_MOON"}. After casting the Ultimate, if at least 3 :effect{code="FULL_MOON"} are removed, gains :effect{code="EMPOWER_INCANTATION_II"} status for 3 rounds.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    _Enchanted Strike_'s effect changes to: each :effect{code="SATURN"} grants Penetration Rate **+9%**. At 1/2/3 stars, deals **195/295/490%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    _Mythical Meteors_'s effect changes to: each :effect{code="MARS"} grants Leech Rate **+9%**. At 1/2/3 stars, deals **145/215/360%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    _Ultimate Perfection_'s effect changes to: gains 4 :effect{code="FULL_MOON"} that grants Incantation Might **+9%**.
+  </Fragment>
+
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

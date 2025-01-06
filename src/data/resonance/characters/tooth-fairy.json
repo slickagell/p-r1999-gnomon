@@ -1,0 +1,107 @@
+{
+  "mainPiece": "RP_X_5_01",
+  "patternPieces": {
+    "ASPIRATIONAL": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 3
+        }
+      ]
+    },
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "INCORRUPT_MONKEYPAW",
+          "require": 2
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "WYRMLING_SKELETON",
+          "require": 2
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 3
+        }
+      ]
+    },
+    "HYPERPHRENIA": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "HOLY_SILVER",
+          "require": 4
+        }
+      ]
+    },
+    "STUPEFACTION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "RHEINGOLD",
+          "require": 1
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}
