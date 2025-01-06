@@ -250,4 +250,152 @@ When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Resist
   </div>
 </div>
 
-\:::
+**:::**
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited in the 20th century for 16 years. Completed in Winter, on January 10. Exhibited at the St. Pavlov Foundation's External Inspection Unit.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Curiosity
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Trained Loyal Dog \[Mineral] Foreign Affairs
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Woody - Vetiver, Arborvitae, Poivre Rose, Spice
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    62 63/64 x29 13/16 x 8 17/64 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Commandment V
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Sloth will lead to physical debilitation.">
+      1-target attack. Deals **200%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it.">
+      1-target attack. Deals **200%** Reality DMG and inflicts :effect{code="DISARM"} status for 1 round.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it, but it doesn't seem to work.">
+      1-target attack. Deals **300%** Reality DMG and inflicts :effect{code="DISARM"} status for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Exhortations IX
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="BUFF" note="A merciful heart will foster loyalty.">
+      Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="BUFF" note="A merciful heart will foster loyalty. It works all the time.">
+      Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="BUFF" note="A merciful heart will foster loyalty. Of course, you won't have to do it all the time.">
+      Mass buff. DMG Dealt **+25%** and DMG Taken **-25%** for all allies and Penetration Rate **+10%** for the caster. Lasts 3 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Unrestricted Chant
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="It is the omega, the final answer, the result of all calculations.">
+      Mass attack. Deals **300%** Reality DMG to all enemies. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack enjoys Penetration Rate **+8%** and deals **100%** more Reality DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Search the Poems
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Dealt **+15%**.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Reality DEF and Mental DEF **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Resist and Critical DEF **+15%**.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+16%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Commandment V*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Exhortation IX*'s effect changes to: Penetration Rate **+15%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+24%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+32%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

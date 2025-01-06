@@ -68,6 +68,7 @@ const material = materials[code];
           {require > 1000 ? `${require / 1000}k` : `${require}`}
         </span>
       )}
+      <p class="badge">{material.data.code}</p>
     </div>
   )
 }

@@ -3,16 +3,21 @@ import AfflatusIcon from "@components/AfflatusIcon.astro";
 import CustomImage from "@components/CustomImage.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import dayjs from "dayjs";
 
 const characterEntries = await getCollection("characters");
 
 function sortCharacters(a, b) {
+  if (a.data.star !== b.data.star) {
+    return -(a.data.star - b.data.star);
+  }
+
   if (a.data.version !== b.data.version) {
     return -(a.data.version - b.data.version);
   }
 
-  if (a.data.star !== b.data.star) {
-    return -(a.data.star - b.data.star);
+  if (dayjs(a.data.releaseDate).diff(dayjs(b.data.releaseDate), "day") > 0) {
+    return -1;
   }
 
   return a.data.title - b.data.title;
