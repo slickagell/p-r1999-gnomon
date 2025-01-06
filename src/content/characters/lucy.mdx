@@ -13,10 +13,8 @@ isLimited: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
-import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import CustomImage from "@components/CustomImage.astro";
-import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -26,293 +24,192 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 # Lucy
 
-<div class="my-8">
-  <CharacterStar star={frontmatter.star} />
-</div>
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An awakened's work. Exhibited at the end of the 1820s, on display to this day — 181 years in total. Completed in winter, on the 30th of December. Initially exhibited in the Greater London area of the United Kingdom of Great Britain and Northern Ireland, and later moved to the Laplace Scientific Computing Center.
+  </Fragment>
 
-<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
-  <div>
-    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
-      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
+  <Fragment slot="info-medium">
+    Steel
+  </Fragment>
 
-      <div class="flex gap-2 items-center">
-        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+  <Fragment slot="info-afflatus">
+    Metallic Wisdom \[Intelligence] Scientific Progress
+  </Fragment>
 
-        ##### {DMG_TYPE[frontmatter.dmgType].title}
+  <Fragment slot="info-fragrance-note">
+    Leather, Patchouli, Aluminum Alloy, Rust, Hay, Liurel Leaves
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    74x 42 15/16 x 22 13/16 inches.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Power of Speed
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="It all started with a sling.">
+      1-target attack. Deals **200%** Reality DMG. Consume 10 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+60%** for this attack.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="It all started with a sling. Then we shot bullets.">
+      1-target attack. Deals **300%** Reality DMG. Consume 10 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+90%** for this attack.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="It all started with a sling. Then we shot bullets. Now, we re blasting off into space.">
+      1-target attack. Deals **500%** Reality DMG. Consume 10 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+150%** for this attack.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info-reinforced">
+    <CardInfo star="1" type="ATTACK" note="It all started with a sling.">
+      Mass attack. Deals Reality DMG to 2 enemies: **220%** to the main target and **110%** to the secondary target. Consume 5 stacks of :effect{code="DYNAMO"} to deal Reality DMG. **+60%** for this attack,
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="It all started with a sling. Then we shot bullets.">
+      Mass attack. Deals Reality DMG to 2 enemies: **530%** to the main target and **165%** to the secondary target. Consume 5 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+90%** for this attack.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="It all started with a sling. Then we shot bullets. Now, we re blasting off into space.">
+      Mass attack. Deals Reality DMG to 2 enemies: **550%** to the main target and **275%** to the secondary target. Consume 5 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+150%** for this attack.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Electric Surge
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="It runs through our veins.">
+      Mass attack. Deals **150%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+40%** if less than 3 enemies are present.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="It runs through our veins. It flows among gears.">
+      Mass attack. Deals **225%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+60%** if less than 3 enemies are present.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="It runs through our veins. It flows between the gears. It never ceases to advance.">
+      Mass attack. Deals **575%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+100%** if less than 3 enemies are present.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info-reinforced">
+    <CardInfo star="1" type="ATTACK" note="It runs through our veins.">
+      Mass attack. Deals **150%** Reality DMG plus (own ATK x**80%**) Genesis DMG to 2 enemies. Consume 5 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+40%** if less than 5 enemies are present.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="It runs through our veins. It flows among gears.">
+      Mass attack. Deals **225%** Reality DMG plus (own ATK x**120%**) Genesis DMG to 2 enemies. Consume 5 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+60%** if less than 3 enemies are present.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="It runs through our veins. It flows between the gears. It never ceases to advance.">
+      Mass attack. Deals **375%** Reality DMG plus (own ATK x**200%**) Genesis DMG to 2 enemies. Consume 5 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+100%** if less than 5 enemies are present.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### A Step Forward
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note="By changing ourselves, we have the power to change the world.">
+      Self buff. Enters :effect{code="PRAGMATIST"} for 2 rounds. Gains 1 stack of :effect{code="DATA_ITERATION"}. Loads 2 :effect{code="CHARGED_AMMUNITION"}.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="extra-cards">
+    ### Conservation of Energy
+
+    <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+      <div class="basis-full lg:basis-auto shrink-0">
+        <CustomImage presetWidth={192} src={`/images/characters/${frontmatter.id}/conservation-of-energy.png`} alt="conservation-of-energy" />
       </div>
 
-      <div class="flex gap-2">
-        <div class="badge badge-outline badge-primary">
-          {RACE[frontmatter.race].title}
-        </div>
-
-        <div class="badge bg-base-content/20">
-          {'Version ' + frontmatter.version}
-        </div>
-
-        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
-      </div>
+      <CardInfo type="ATTACK" note="">
+        Mass attack. Deals **100%** Reality DMG to all enemies. Consume 10 stacks of :effect{code="DYNAMO"} to grant Penetration Rate **+50%** to this attack. If reinforced, this attack deals an **50%** additional Reality DMG to targets below **50%** HP, ignores Dodge and does not trigger Reflect or Riposte.
+      </CardInfo>
     </div>
-
-    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
-    </div>
-
-    <div class="mt-4">
-      An awakened's work. Exhibited at the end of the 1820s, on display to this day — 181 years in total. Completed in winter, on the 30th of December. Initially exhibited in the Greater London area of the United Kingdom of Great Britain and Northern Ireland, and later moved to the Laplace Scientific Computing Center.
-
-      ###### Medium
-
-      Steel
-
-      ###### Afflatus
-
-      Metallic Wisdom \[Intelligence] Scientific Progress
-
-      ###### Fragrance note
-
-      Leather, Patchouli, Aluminum Alloy, Rust, Hay, Liurel Leaves
-
-      ###### Dimensions
-
-      74x 42 15/16 x 22 13/16 inches.
-    </div>
-
-    <div class="mt-4 flex gap-4 justify-center">
-      <CharacterImg variant="signature" id={frontmatter.id} />
-    </div>
-  </div>
-
-  <div class="flex flex-col items-center shrink-0">
-    <CharacterImg variant="portrait" id={frontmatter.id} />
-
-    <div class="mt-5 flex gap-6 justify-center items-end">
-      <div class="text-center">
-        <CharacterImg variant="chibi" id={frontmatter.id} />
-
-        Chibi
-      </div>
-
-      <div class="text-center">
-        <CharacterImg variant="udimo" id={frontmatter.id} />
-
-        Udimo
-      </div>
-    </div>
-  </div>
-</div>
-
-::toc
-
-## Arcane Skills
-
-### Power of Speed
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap" x-data="{ reinforced: false }">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-1" id={frontmatter.id} />
-
-    <div class="form-control">
-      <label class="label cursor-pointer">
-        <span class="label-text">Reinforce</span>
-
-        <input type="checkbox" class="checkbox checkbox-secondary" x-model="reinforced" />
-      </label>
-    </div>
-  </div>
-
-  <CardInfo star="1" type="ATTACK" note="It all started with a sling." x-show="!reinforced">
-    1-target attack. Deals **200%** Reality DMG. Consume 10 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+60%** for this attack.
-  </CardInfo>
-
-  <CardInfo star="2" type="ATTACK" note="It all started with a sling. Then we shot bullets." x-show="!reinforced">
-    1-target attack. Deals **300%** Reality DMG. Consume 10 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+90%** for this attack.
-  </CardInfo>
-
-  <CardInfo star="3" type="ATTACK" note="It all started with a sling. Then we shot bullets. Now, we re blasting off into space." x-show="!reinforced">
-    1-target attack. Deals **500%** Reality DMG. Consume 10 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+150%** for this attack.
-  </CardInfo>
-
-  <CardInfo star="1" type="ATTACK" note="It all started with a sling." x-show="reinforced">
-    Mass attack. Deals Reality DMG to 2 enemies: **220%** to the main target and **110%** to the secondary target. Consume 5 stacks of :effect{code="DYNAMO"} to deal Reality DMG. **+60%** for this attack,
-  </CardInfo>
-
-  <CardInfo star="2" type="ATTACK" note="It all started with a sling. Then we shot bullets." x-show="reinforced">
-    Mass attack. Deals Reality DMG to 2 enemies: **530%** to the main target and **165%** to the secondary target. Consume 5 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+90%** for this attack.
-  </CardInfo>
-
-  <CardInfo star="3" type="ATTACK" note="It all started with a sling. Then we shot bullets. Now, we re blasting off into space." x-show="reinforced">
-    Mass attack. Deals Reality DMG to 2 enemies: **550%** to the main target and **275%** to the secondary target. Consume 5 stacks of :effect{code="DYNAMO"} to deal Reality DMG **+150%** for this attack.
-  </CardInfo>
-</div>
-
-### Electric Surge
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap" x-data="{ reinforced: false }">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-2" id={frontmatter.id} />
-
-    <div class="form-control">
-      <label class="label cursor-pointer">
-        <span class="label-text">Reinforce</span>
-
-        <input type="checkbox" class="checkbox checkbox-secondary" x-model="reinforced" />
-      </label>
-    </div>
-  </div>
-
-  <CardInfo star="1" type="ATTACK" note="It runs through our veins." x-show="!reinforced">
-    Mass attack. Deals **150%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+40%** if less than 3 enemies are present.
-  </CardInfo>
-
-  <CardInfo star="2" type="ATTACK" note="It runs through our veins. It flows among gears." x-show="!reinforced">
-    Mass attack. Deals **225%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+60%** if less than 3 enemies are present.
-  </CardInfo>
-
-  <CardInfo star="3" type="ATTACK" note="It runs through our veins. It flows between the gears. It never ceases to advance." x-show="!reinforced">
-    Mass attack. Deals **575%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+100%** if less than 3 enemies are present.
-  </CardInfo>
-
-  <CardInfo star="1" type="ATTACK" note="It runs through our veins." x-show="reinforced">
-    Mass attack. Deals **150%** Reality DMG plus (own ATK x**80%**) Genesis DMG to 2 enemies. Consume 5 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+40%** if less than 5 enemies are present.
-  </CardInfo>
-
-  <CardInfo star="2" type="ATTACK" note="It runs through our veins. It flows among gears." x-show="reinforced">
-    Mass attack. Deals **225%** Reality DMG plus (own ATK x**120%**) Genesis DMG to 2 enemies. Consume 5 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+60%** if less than 3 enemies are present.
-  </CardInfo>
-
-  <CardInfo star="3" type="ATTACK" note="It runs through our veins. It flows between the gears. It never ceases to advance." x-show="reinforced">
-    Mass attack. Deals **375%** Reality DMG plus (own ATK x**200%**) Genesis DMG to 2 enemies. Consume 5 stacks of :effect{code="DYNAMO"} to either attack 1 additional target, or deal Reality DMG **+100%** if less than 5 enemies are present.
-  </CardInfo>
-</div>
-
-### A Step Forward
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="ultimate" id={frontmatter.id} />
-  </div>
-
-  <CardInfo type="BUFF" note="By changing ourselves, we have the power to change the world.">
-    Self buff. Enters :effect{code="PRAGMATIST"} for 2 rounds. Gains 1 stack of :effect{code="DATA_ITERATION"}. Loads 2 :effect{code="CHARGED_AMMUNITION"}.
-  </CardInfo>
-</div>
-
-### Conservation of Energy
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CustomImage presetWidth={192} src={`/images/characters/${frontmatter.id}/conservation-of-energy.png`} alt="conservation-of-energy" />
-  </div>
-
-  <CardInfo type="ATTACK" note="">
-    Mass attack. Deals **100%** Reality DMG to all enemies. Consume 10 stacks of :effect{code="DYNAMO"} to grant Penetration Rate **+50%** to this attack. If reinforced, this attack deals an **50%** additional Reality DMG to targets below **50%** HP, ignores Dodge and does not trigger Reflect or Riposte.
-  </CardInfo>
-</div>
-
-## Inheritance
-
-### The First Push
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="1" />
-
-  ##### Insight 1
-</div>
-
-For every Moxie gained by sell, gain 2 stacks of :effect{code="DYNAMO"} for self. For every Moxie or Eureka gained by another ally, gain 1 stack of :effect{code="DYNAMO"} for self. Whenever a total of 20 stacks of :effect{code="DYNAMO"} is gained among all allies, gain :effect{code="ADVANCEMENT"} for self.
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="2" />
-
-  ##### Insight 2
-</div>
-
-Critical Rate **+10%** when the caster enters battle.
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="3" />
-
-  ##### Insight 3
-</div>
-
-Right after casting an Ultimate, gain :effect{code="LEADERSHIP"} for 2 rounds and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation. Whenever an enemy is defeated, gain 10 stacks of Dynamo, 1 stack of :effect{code="DATA_ITERATION"}, and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation (triggers up to 2 times per round).
-
-## Portray
-
-<span class="text-2xl mr-2">Lv. 1:</span>
-*The First Push*: *\[Conservation of Energy]*'s Reality DMG is increased to **150%**; now. deals additional damage when the target's current HP is below **75%**, and the additional DMG is increased to **100%**.
-
-<span class="text-2xl mr-2">Lv. 2:</span>
-*A Step Forward*: :effect{code="PRAGMATIST"} and :effect{code="LEADERSHIP"}'s durations are increased to 3 rounds, and the Stronger Afflatus Damage Factor increase is now **20%**.
-
-<span class="text-2xl mr-2">Lv. 3:</span>
-*The First Push*: :effect{code="DATA_ITERATION"}'s ATK bonus is increased to **6%**; and whenever an enemy dies, the stacks of :effect{code="DATA_ITERATION"} gained is increased to **2**.
-
-<span class="text-2xl mr-2">Lv. 4:</span>
-*The First Push*: *\[Conservation of Energy]*'s Reality DMG is increased to **200%**; the maximum number of times *\[Conservation of Energy]* can trigger when enemies die is increased to **4** times per round.
-
-<span class="text-2xl mr-2">Lv. 5:</span>
-*The First Push*: :effect{code="DATA_ITERATION"}'s ATK bonus is increased to **8%**, and maximum stacks is increased to **6**; and whenever an ally gains 1 Moxie or Eureka, the stacks of :effect{code="DYNAMO"} gained is increased to **2**.
-
-## Resonance
-
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-
-## Insight Materials
-
-<div class="flex flex-col md:flex-row flex-wrap  justify-center">
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="1" />
-
-      ##### Insight 1
-    </div>
-
-    <Material code="SHARPODONTY" require="18000" />
-
-    <Material code="PAGE_OF_MINERAL_WEALTH" require="3" />
-
-    <Material code="PAGE_OF_STARLIT_ASCENT" require="3" />
-
-    <Material code="ESOTERIC_BONES" require="5" />
-
-    <Material code="SILVER_ORE" require="6" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="2" />
-
-      ##### Insight 2
-    </div>
-
-    <Material code="SHARPODONTY" require="40000" />
-
-    <Material code="SCROLL_OF_MINERAL_WEALTH" require="5" />
-
-    <Material code="SCROLL_OF_STARLIT_ASCENT" require="5" />
-
-    <Material code="SALTED_MANDRAKE" require="6" />
-
-    <Material code="SOLIDUS" require="3" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="3" />
-
-      ##### Insight 3
-    </div>
-
-    <Material code="SHARPODONTY" require="200000" />
-
-    <Material code="TOME_OF_MINERAL_WEALTH" require="8" />
-
-    <Material code="TOME_OF_STARLIT_ASCENT" require="8" />
-
-    <Material code="GOLDEN_FLEECE" require="3" />
-
-    <Material code="GLOWING_MOTHWING" require="6" />
-  </div>
-</div>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### The First Push
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    For every Moxie gained by sell, gain 2 stacks of :effect{code="DYNAMO"} for self. For every Moxie or Eureka gained by another ally, gain 1 stack of :effect{code="DYNAMO"} for self. Whenever a total of 20 stacks of :effect{code="DYNAMO"} is gained among all allies, gain :effect{code="ADVANCEMENT"} for self.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Critical Rate **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    Right after casting an Ultimate, gain :effect{code="LEADERSHIP"} for 2 rounds and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation. Whenever an enemy is defeated, gain 10 stacks of Dynamo, 1 stack of :effect{code="DATA_ITERATION"}, and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation (triggers up to 2 times per round).
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *The First Push*: *\[Conservation of Energy]*'s Reality DMG is increased to **150%**; now. deals additional damage when the target's current HP is below **75%**, and the additional DMG is increased to **100%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *A Step Forward*: :effect{code="PRAGMATIST"} and :effect{code="LEADERSHIP"}'s durations are increased to 3 rounds, and the Stronger Afflatus Damage Factor increase is now **20%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *The First Push*: :effect{code="DATA_ITERATION"}'s ATK bonus is increased to **6%**; and whenever an enemy dies, the stacks of :effect{code="DATA_ITERATION"} gained is increased to **2**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *The First Push*: *\[Conservation of Energy]*'s Reality DMG is increased to **200%**; the maximum number of times *\[Conservation of Energy]* can trigger when enemies die is increased to **4** times per round.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *The First Push*: :effect{code="DATA_ITERATION"}'s ATK bonus is increased to **8%**, and maximum stacks is increased to **6**; and whenever an ally gains 1 Moxie or Eureka, the stacks of :effect{code="DYNAMO"} gained is increased to **2**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

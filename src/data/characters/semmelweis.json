@@ -25,5 +25,61 @@
         "unit": "%"
       }
     }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 6
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
+      },
+      {
+        "code": "TREMBLING_TOOTH",
+        "require": 5
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 10
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 6
+      },
+      {
+        "code": "CICADA_WINGS",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 16
+      },
+      {
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 3
+      },
+      {
+        "code": "MURMUR_OF_INSANITY",
+        "require": 5
+      }
+    ]
   }
 }

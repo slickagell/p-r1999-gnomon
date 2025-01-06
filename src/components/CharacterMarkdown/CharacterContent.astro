@@ -17,6 +17,9 @@ type Props = {
 
 const { id, star, afflatus, dmgType, race, version, specialties, isLimited } =
   Astro.props;
+
+const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
+const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
 ---
 
 <div class="my-8">
@@ -109,25 +112,93 @@ const { id, star, afflatus, dmgType, race, version, specialties, isLimited } =
 {/* Skill 1 */}
 <slot name="skill-1-title" />
 <div
-  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap"
+  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap lg:flex-nowrap"
+  {...hasSkill1Reinforced && { ["x-data"]: "{ reinforced: false }" }}
 >
   <div class="basis-full lg:basis-auto shrink-0">
     <CharacterImg variant="skill-1" id={id} />
+
+    {
+      hasSkill1Reinforced && (
+        <div class="form-control">
+          <label class="label w-fit gap-2 cursor-pointer">
+            <span class="label-text">Reinforce</span>
+
+            <input
+              type="checkbox"
+              class="checkbox checkbox-secondary"
+              x-model="reinforced"
+            />
+          </label>
+        </div>
+      )
+    }
   </div>
 
-  <slot name="skill-1-cards-info" />
+  {
+    hasSkill1Reinforced ? (
+      <Fragment>
+        <template x-if="!reinforced">
+          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+            <slot name="skill-1-cards-info" />
+          </div>
+        </template>
+        <template x-if="reinforced">
+          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+            <slot name="skill-1-cards-info-reinforced" />
+          </div>
+        </template>
+      </Fragment>
+    ) : (
+      <slot name="skill-1-cards-info" />
+    )
+  }
 </div>
 
 {/* Skill 2 */}
 <slot name="skill-2-title" />
 <div
-  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap"
+  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap lg:flex-nowrap"
+  {...hasSkill2Reinforced && { ["x-data"]: "{ reinforced: false }" }}
 >
   <div class="basis-full lg:basis-auto shrink-0">
     <CharacterImg variant="skill-2" id={id} />
+
+    {
+      hasSkill2Reinforced && (
+        <div class="form-control">
+          <label class="label w-fit gap-2 cursor-pointer">
+            <span class="label-text">Reinforce</span>
+
+            <input
+              type="checkbox"
+              class="checkbox checkbox-secondary"
+              x-model="reinforced"
+            />
+          </label>
+        </div>
+      )
+    }
   </div>
 
-  <slot name="skill-2-cards-info" />
+  {
+    hasSkill2Reinforced ? (
+      <Fragment>
+        <template x-if="!reinforced">
+          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+            <slot name="skill-2-cards-info" />
+          </div>
+        </template>
+        <template x-if="reinforced">
+          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+            <slot name="skill-2-cards-info-reinforced" />
+          </div>
+        </template>
+      </Fragment>
+    ) : (
+      <slot name="skill-2-cards-info" />
+    )
+  }
 </div>
 
 {/* Ultimate */}
@@ -142,6 +213,9 @@ const { id, star, afflatus, dmgType, race, version, specialties, isLimited } =
 
   <slot name="ultimate-card-info" />
 </div>
+
+<!-- Extra Cards -->
+<slot name="extra-cards" />
 
 {/* Inheritance */}
 <slot name="inheritance-section-title" />
