@@ -1,8 +1,8 @@
 ---
 import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
 import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import TableOfContents from "@components/TableOfContents.astro";
 import Tooltip from "@components/Tooltip.astro";
@@ -40,7 +40,7 @@ const { Content } = await entry.render();
 >
   <Content
     components={{
-      p: MarkdownContent,
+      p: MarkdownParagraphContent,
       effect: EffectTooltip,
       strong: MarkdownHighlight,
       tooltip: Tooltip,

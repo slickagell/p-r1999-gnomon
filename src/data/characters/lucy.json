@@ -1,6 +1,6 @@
 {
   "baseStats": {
-    "i3-60": {
+    "maxBaseStats": {
       "HP": {
         "value": 6666
       },
@@ -15,7 +15,83 @@
       },
       "CRITICAL_TECHNIQUE": {
         "value": 882
+      },
+      "CRITICAL_RATE": {
+        "value": 29.4,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 44.1,
+        "unit": "%"
       }
     }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 3
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 3
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 5
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 5
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 5
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 6
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 3
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 8
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 3
+      },
+      {
+        "code": "GLOWING_MOTHWING",
+        "require": 6
+      }
+    ]
   }
 }

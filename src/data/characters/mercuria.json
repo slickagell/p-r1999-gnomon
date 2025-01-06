@@ -1,0 +1,97 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6336
+      },
+      "ATTACK": {
+        "value": 1143
+      },
+      "REALITY_DEFENSE": {
+        "value": 510
+      },
+      "MENTAL_DEFENSE": {
+        "value": 533
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 571
+      },
+      "CRITICAL_RATE": {
+        "value": 19,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 28.5,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 3
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 3
+      },
+      {
+        "code": "CICADA_WINGS",
+        "require": 6
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 5
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 5
+      },
+      {
+        "code": "GOLDEN_GRASS_INCENSE",
+        "require": 5
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_PLANTAL_VIMEN",
+        "require": 8
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 8
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 3
+      },
+      {
+        "code": "WYRMLING_SKELETON",
+        "require": 6
+      }
+    ]
+  }
+}

@@ -14,6 +14,11 @@ export default {
       message: "Effect type:",
       choices: Object.keys(EFFECT_TYPE),
     },
+    {
+      type: "confirm",
+      name: "isSpecific",
+      message: "Is specific to character or mode?",
+    },
   ],
   actions: () => {
     let defaultFolderPath = "content/effects";

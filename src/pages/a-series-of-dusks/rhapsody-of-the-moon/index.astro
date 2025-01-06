@@ -1,7 +1,7 @@
 ---
 import CustomImage from "@components/CustomImage.astro";
 import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
 import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
 import { getEntry } from "astro:content";
@@ -33,7 +33,7 @@ const { Content } = await rhapsodyOfTheMoonEntry.render();
   <Content
     components={{
       img: CustomImage,
-      p: MarkdownContent,
+      p: MarkdownParagraphContent,
       effect: EffectTooltip,
     }}
   />

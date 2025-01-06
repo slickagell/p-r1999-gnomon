@@ -1,66 +1,426 @@
 {
-  <!-- Update main piece code -->
-  "mainPiece": "RP_X_5_01",
-  <!-- Update main piece base stats -->
-  "mainPieceBaseStats": {
-    "1": {
-      "HP": {
-        "value": 77
-      },
-      "ATTACK": {
-        "value": 14
-      },
-      "REALITY_DEFENSE": {
-        "value": 7
-      },
-      "MENTAL_DEFENSE": {
-        "value": 8
-      }
-    },
-  },
-  <!-- Update pattern pieces base stats & materials -->
+  "mainPiece": "RP_{{ mainResonancePieceType }}_5_01",
   "patternPieces": {
-    "ASPIRATIONAL": {
-      "baseStats": {
-        "6": {
-          "ATTACK": {
-            "value": 175
-          },
-          "REALITY_DEFENSE": {
-            "value": 73
-          },
-          "MENTAL_DEFENSE": {
-            "value": 84
-          }
-        },
-        ...
-      },
+  {{#switch mainResonancePieceType}} 
+    {{#case 'U'}}
+    "HYPER": {
       "materials": [
         {
           "code": "SHARPODONTY",
           "require": 120000
         },
-        ...
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
       ]
     },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "PRUDENTIALITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    }
+    {{/case}}
+    {{#case 'T'}}
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "INSPIRE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "DELIRAMENT": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    }
+    {{/case}}
+    {{#case 'X'}}
+    "ASPIRATIONAL": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "HYPERPHRENIA": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "STUPEFACTION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    }
+    {{/case}} 
+    {{#case 'Z'}}
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "MERCY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "",
+          "require": 1
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    }
+    {{/case}}
+  {{/switch}}
   },
-  <!-- Update pattern recommended -->
   "patternRecommended": "PLACIDITY",
-  <!-- Update resonance pieces -->
-  "pieces": {
-    "1": [
-      {
-        "id": "RP_X_5_01",
-        "total": 1,
-        "level": 1
-      },
-    ]
-  },
-  <!-- Update resonance recommended (you can arrange pieces and copy this data from /dev/resonance page)-->
   "recommended": {
     "5": [
       {
         "name": "Attack",
+        "source": {
+          "label": "To be updated",
+          "link": "#"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "0-2", "1-1"],

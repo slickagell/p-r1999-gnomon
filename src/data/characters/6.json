@@ -1,0 +1,97 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 7192
+      },
+      "ATTACK": {
+        "value": 1120
+      },
+      "REALITY_DEFENSE": {
+        "value": 587
+      },
+      "MENTAL_DEFENSE": {
+        "value": 625
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 420
+      },
+      "CRITICAL_RATE": {
+        "value": 14,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 21,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 3
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 3
+      },
+      {
+        "code": "PERPETUAL_COG",
+        "require": 5
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 10
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 10
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 5
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 8
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 3
+      },
+      {
+        "code": "WATCH_CORE",
+        "require": 6
+      }
+    ]
+  }
+}

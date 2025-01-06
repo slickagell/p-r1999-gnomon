@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6783
+      },
+      "ATTACK": {
+        "value": 975
+      },
+      "REALITY_DEFENSE": {
+        "value": 579
+      },
+      "MENTAL_DEFENSE": {
+        "value": 512
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 247
+      },
+      "CRITICAL_RATE": {
+        "value": 8.2,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 12.3,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 6
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 3
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 8
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 3
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 12
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 2
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 4
+      }
+    ]
+  }
+}

@@ -7,251 +7,166 @@ afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
 version: "1.9"
+releaseDate: "2024-10-10"
 specialties: ["DEF", "SUPPORT", "BURST_DMG"]
 isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterImg from "@components/CharacterImg.astro";
-import CharacterStar from "@components/CharacterStar.astro";
-import InsightImg from "@components/InsightImg.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 import CHARACTER from "@data/characters/kakania.json";
 import RESONANCE from "@data/resonance/characters/kakania.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
 # Kakania
 
-<div class="my-8">
-  <CharacterStar star={frontmatter.star} />
-</div>
-
-<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
-  <div>
-    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
-      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
-
-      <div class="flex gap-2 items-center">
-        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
-
-        ##### {DMG_TYPE[frontmatter.dmgType].title}
-      </div>
-
-      <div class="flex gap-2">
-        <div class="badge badge-outline badge-primary">
-          {RACE[frontmatter.race].title}
-        </div>
-
-        <div class="badge bg-base-content/20">
-          {'Version ' + frontmatter.version}
-        </div>
-
-        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
-      </div>
-    </div>
-
-    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
-    </div>
-
-    <div class="mt-4">
-      An arcanist's work. Exhibited at the dawn of the 20th century and showcased for 19 years. Completed in winter, on the 7th of December. Initially exhibited in Vienna, Cisleithania, within the Austro-Hungarian Empire, and later acquired by the St. Pavlov Foundation to be refurbished and extensively exhibited around the world.
-
-      ###### Medium
-
-      Lens
-
-      ###### Afflatus
-
-      Spirit Perch \[Plant], Psychoanalysis
-
-      ###### Fragrance note
-
-      Woody, Vetiver, Nutmeg, Eucalyptus, Mint
-
-      ###### Dimensions
-
-      64 61/64 x 15 2/5 x 24 4/5 inches.
-    </div>
-
-    <div class="mt-4 flex gap-4 justify-center">
-      <CharacterImg variant="signature" id={frontmatter.id} />
-    </div>
-  </div>
-
-  <div class="flex flex-col items-center shrink-0">
-    <CharacterImg variant="portrait" id={frontmatter.id} />
-
-    <div class="mt-5 flex gap-6 justify-center items-end">
-      <div class="text-center">
-        <CharacterImg variant="udimo" id={frontmatter.id} />
-
-        Udimo
-      </div>
-
-      <div class="text-center">
-        <CharacterImg variant="chibi" id={frontmatter.id} />
-
-        Chibi
-      </div>
-    </div>
-  </div>
-</div>
-
-::toc
-
-## Arcane Skills
-
-### Subconscious
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-1" id={frontmatter.id} />
-  </div>
-
-  <CardInfo star="1" type="ATTACK" note="Please look into my eyes.">
-    1-target attack. Deals **180%** Mental DMG plus (Current :effect{code="EMPATHY"} x**180%**) Genesis DMG.
-  </CardInfo>
-
-  <CardInfo star="2" type="ATTACK" note="Please look into my eyes and show yourself.">
-    1-target attack. Deals **270%** Mental DMG plus (Current :effect{code="EMPATHY"} x**220%**) Genesis DMG.
-  </CardInfo>
-
-  <CardInfo star="3" type="ATTACK" note="Please look into my eyes and show yourself, yes, your true “self.”">
-    1-target attack. Deals **450%** Mental DMG plus (Current :effect{code="EMPATHY"} x**260%**) Genesis DMG.
-  </CardInfo>
-</div>
-
-### Association
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-2" id={frontmatter.id} />
-  </div>
-
-  <CardInfo star="1" type="BUFF" note="The endoscope ...">
-    1-target buff. When cast on self, recovers (the user's Max HP x**20%**) HP. When cast on other allies, loses own (Max HP x**10%**) HP and grants :effect{code="SOLACE"} to the target for 2 rounds.
-  </CardInfo>
-
-  <CardInfo star="2" type="BUFF" note="The endoscope, the dust ...">
-    1-target buff. When cast on self, recovers (the user's Max HP x**30%**) HP. When cast on other allies, loses own (Max HP x**15%**) HP and grants :effect{code="SOLACE"} to the target for 2 rounds.
-  </CardInfo>
-
-  <CardInfo star="3" type="BUFF" note="The endoscope, the dust, the stars ...">
-    1-target buff. When cast on self, recovers (the user's Max HP x**40%**) HP. When cast on other allies, loses own (Max HP x**20%**) HP and grants :effect{code="SOLACE"} to the target for 2 rounds.
-  </CardInfo>
-</div>
-
-### Id, Ego, and Superego
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="ultimate" id={frontmatter.id} />
-  </div>
-
-  <CardInfo type="ATTACK" note="The tale of an unconventional psychiatrist with an obedient patient.">
-    1-target attack. Deals **400%** Mental DMG plus (Current :effect{code="EMPATHY"} x**1000%**) Genesis DMG to the target, resets :effect{code="EMPATHY"} to zero, and then starts recording the damage the target takes for the round. At the end of the round, deals (recorded damage taken x**30%**) Genesis DMG to the target.
-  </CardInfo>
-</div>
-
-## Inheritance
-
-### Psychoanalysis
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="1" />
-
-  ##### Insight 1
-</div>
-
-When attacked, directs **50%** of the damage taken by other allies to Kakania instead. Whenever Kakania takes damage, **10%** of that damage is stored as :effect{code="EMPATHY"}, which can store up to **20%** of Kakania's Max HP. Once :effect{code="EMPATHY"} is full, Kakania can no longer take damage on behalf of other allies.
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="2" />
-
-  ##### Insight 2
-</div>
-
-When entering battle, Max HP **+5%**.
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="3" />
-
-  ##### Insight 3
-</div>
-
-Whenever :effect{code="EMPATHY"} stores (Kakania's Max HP x**3%**) damage, recovers own (Max HP x**10%**) HP for all allies. When being healed, deals (current :effect{code="EMPATHY"} x**100%**) Genesis DMG to all enemies.
-
-## Portray
-
-<span class="text-2xl mr-2">Lv. 1:</span>
-*Association*: :effect{code="SOLACE"}'s ATK bonus is increased to **400**, and the additional ATK bonus based on :effect{code="EMPATHY"} value is increased to **15%**.
-
-<span class="text-2xl mr-2">Lv. 2:</span>
-*Psychoanalysis*: The threshold for :effect{code="EMPATHY"} to trigger healing is decreased from **5%** HP to **2%** HP. When healed, the Genesis DMG dealt is increased to (Current :effect{code="EMPATHY"} value x**120%**).
-
-<span class="text-2xl mr-2">Lv. 3:</span>
-*Psychoanalysis*: :effect{code="EMPATHY"}'s maximum value is increased to **30%** of Max HP. The percentage of damage taken that's converted to :effect{code="EMPATHY"} is changed to **15%**.
-
-<span class="text-2xl mr-2">Lv. 4:</span>
-*Subconscious*: At rank **1/2/3**, the Genesis DMG dealt is increased to (current :effect{code="EMPATHY"} value x**270/310/350%**).
-
-<span class="text-2xl mr-2">Lv. 5:</span>
-*Id, Ego, and Superego*: The additional Genesis DMG dealt is increased to (current :effect{code="EMPATHY"} value x**1300%**); the Genesis DMG dealt at the end of the round is increased to (recorded value x**45%**).
-
-## Resonance
-
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={RESONANCE.pieces} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
-
-## Insight Materials
-
-<div class="flex flex-col md:flex-row flex-wrap  justify-center">
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="1" />
-
-      ##### Insight 1
-    </div>
-
-    <Material code="SHARPODONTY" require="18000" />
-
-    <Material code="PAGE_OF_PLANTAL_VIMEN" require="6" />
-
-    <Material code="PERPETUAL_COG" require="5" />
-
-    <Material code="SPELL_OF_BANISHING" require="6" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="2" />
-
-      ##### Insight 2
-    </div>
-
-    <Material code="SHARPODONTY" require="40000" />
-
-    <Material code="SCROLL_OF_PLANTAL_VIMEN" require="10" />
-
-    <Material code="BITING_BOX" require="5" />
-
-    <Material code="ROUGH_SILVER_INGOT" require="4" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="3" />
-
-      ##### Insight 3
-    </div>
-
-    <Material code="SHARPODONTY" require="200000" />
-
-    <Material code="TOME_OF_PLANTAL_VIMEN" require="16" />
-
-    <Material code="RHEINGOLD" require="3" />
-
-    <Material code="GLOWING_MOTHWING" require="6" />
-  </div>
-</div>
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited at the dawn of the 20th century and showcased for 19 years. Completed in winter, on the 7th of December. Initially exhibited in Vienna, Cisleithania, within the Austro-Hungarian Empire, and later acquired by the St. Pavlov Foundation to be refurbished and extensively exhibited around the world.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Lens
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Spirit Perch \[Plant], Psychoanalysis
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Woody, Vetiver, Nutmeg, Eucalyptus, Mint
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    64 61/64 x 15 2/5 x 24 4/5 inches.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Subconscious
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Please look into my eyes.">
+      1-target attack. Deals **180%** Mental DMG plus (Current :effect{code="EMPATHY"} x**180%**) Genesis DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="Please look into my eyes and show yourself.">
+      1-target attack. Deals **270%** Mental DMG plus (Current :effect{code="EMPATHY"} x**220%**) Genesis DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="Please look into my eyes and show yourself, yes, your true “self.”">
+      1-target attack. Deals **450%** Mental DMG plus (Current :effect{code="EMPATHY"} x**260%**) Genesis DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Association
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="BUFF" note="The endoscope ...">
+      1-target buff. When cast on self, recovers (the user's Max HP x**20%**) HP. When cast on other allies, loses own (Max HP x**10%**) HP and grants :effect{code="SOLACE"} to the target for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="BUFF" note="The endoscope, the dust ...">
+      1-target buff. When cast on self, recovers (the user's Max HP x**30%**) HP. When cast on other allies, loses own (Max HP x**15%**) HP and grants :effect{code="SOLACE"} to the target for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="BUFF" note="The endoscope, the dust, the stars ...">
+      1-target buff. When cast on self, recovers (the user's Max HP x**40%**) HP. When cast on other allies, loses own (Max HP x**20%**) HP and grants :effect{code="SOLACE"} to the target for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Id, Ego, and Superego
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="The tale of an unconventional psychiatrist with an obedient patient.">
+      1-target attack. Deals **400%** Mental DMG plus (Current :effect{code="EMPATHY"} x**1000%**) Genesis DMG to the target, resets :effect{code="EMPATHY"} to zero, and then starts recording the damage the target takes for the round. At the end of the round, deals (recorded damage taken x**30%**) Genesis DMG to the target.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Psychoanalysis
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When attacked, directs **50%** of the damage taken by other allies to Kakania instead. Whenever Kakania takes damage, **10%** of that damage is stored as :effect{code="EMPATHY"}, which can store up to **20%** of Kakania's Max HP. Once :effect{code="EMPATHY"} is full, Kakania can no longer take damage on behalf of other allies.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    When entering battle, Max HP **+5%**.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    Whenever :effect{code="EMPATHY"} stores (Kakania's Max HP x**3%**) damage, recovers own (Max HP x**10%**) HP for all allies. When being healed, deals (current :effect{code="EMPATHY"} x**100%**) Genesis DMG to all enemies.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Association*: :effect{code="SOLACE"}'s ATK bonus is increased to **400**, and the additional ATK bonus based on :effect{code="EMPATHY"} value is increased to **15%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Psychoanalysis*: The threshold for :effect{code="EMPATHY"} to trigger healing is decreased from **5%** HP to **2%** HP. When healed, the Genesis DMG dealt is increased to (Current :effect{code="EMPATHY"} value x**120%**).
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Psychoanalysis*: :effect{code="EMPATHY"}'s maximum value is increased to **30%** of Max HP. The percentage of damage taken that's converted to :effect{code="EMPATHY"} is changed to **15%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Subconscious*: At rank **1/2/3**, the Genesis DMG dealt is increased to (current :effect{code="EMPATHY"} value x**270/310/350%**).
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Id, Ego, and Superego*: The additional Genesis DMG dealt is increased to (current :effect{code="EMPATHY"} value x**1300%**); the Genesis DMG dealt at the end of the round is increased to (recorded value x**45%**).
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

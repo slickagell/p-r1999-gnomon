@@ -43,9 +43,20 @@ export default {
       message: "Character in version:",
     },
     {
+      type: "input",
+      name: "releaseDate",
+      message: "Character release date (YYYY-MM-DD):",
+    },
+    {
       type: "confirm",
       name: "isLimited",
       message: "Is character limited?",
+    },
+    {
+      type: "list",
+      name: "mainResonancePieceType",
+      message: "Main resonance piece type:",
+      choices: ["U", "T", "X", "Z"],
     },
   ],
   actions: () => {

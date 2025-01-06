@@ -371,11 +371,11 @@ const patternMaterialsList = patternPieces.map((ele) => {
                   <option value={pattern.value}>{pattern.label}</option>
                 ))}
               </select>
-              <label class="label">
+              <label class="label gap-2 items-start">
                 <div class="label-text">
                   {patternTagsList.map((ele) => (
                     <template x-if={`'${ele.id}' === selectedPattern`}>
-                      <div class="flex gap-1">
+                      <div class="flex gap-1 flex-wrap">
                         {ele.tags.map((tag) => (
                           <span class="badge badge-outline">{tag}</span>
                         ))}
@@ -586,7 +586,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
 
     init() {
       const baseStatsData = this.$store.resonance.baseStats;
-      const baseStats = baseStatsData[`i${this.insight}-${this.level}`];
+      const baseStats = baseStatsData[`maxBaseStats`];
 
       Object.entries(baseStats).forEach(
         ([statKey, stats]: [string, { value: number }]) => {

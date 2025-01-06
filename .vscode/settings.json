@@ -4,12 +4,26 @@
     "editor.defaultFormatter": "unifiedjs.vscode-remark"
   },
   "[mdx]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "sortJSON.orderOverride": [
     "HP",
     "ATTACK",
     "REALITY_DEFENSE",
-    "MENTAL_DEFENSE"
+    "MENTAL_DEFENSE",
+    "ELUCIDATION",
+    "GENUINITY",
+    "MERCY",
+    "HYPER",
+    "INSPIRE",
+    "DELIRAMENT",
+    "OVERINDULGENCE",
+    "QUIESCENCE",
+    "PRUDENTIALITY",
+    "EQUANIMITY",
+    "EQUIBALANCE",
+    "STUPEFACTION",
+    "ASPIRATIONAL",
+    "HYPERPHRENIA"
   ]
 }
