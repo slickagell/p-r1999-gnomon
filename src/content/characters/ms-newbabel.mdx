@@ -1,14 +1,14 @@
 ---
-title: "Sonetto"
-id: "sonetto"
-code: "SONETTO"
-star: 5
+title: "Ms Newbabel"
+id: "ms-newbabel"
+code: "MS_NEWBABEL"
+star: 6
 afflatus: "MINERAL"
 dmgType: "REALITY"
 race: "ARCANIST"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "SUPPORT", "CONTROL"]
+specialties: ["DEF", "SHIELD", "RIPOSTE"]
 isLimited: false
 ---
 
@@ -17,31 +17,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/sonetto.json";
-import RESONANCE from "@data/resonance/characters/sonetto.json";
-import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+import CHARACTER from "@data/characters/ms-newbabel.json";
+import RESONANCE from "@data/resonance/characters/ms-newbabel.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Sonetto
+# Ms. Newbabel
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    An arcanist's work. Exhibited in the 20th century for 16 years. Completed in Winter, on January 10. Exhibited at the St. Pavlov Foundation's External Inspection Unit.
+    :TODO - Add character description:
   </Fragment>
 
   <Fragment slot="info-medium">
-    Curiosity
+    :TODO - Add character medium description:
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Trained Loyal Dog \[Mineral] Foreign Affairs
+    :TODO - Add character afflatus description:
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Woody - Vetiver, Arborvitae, Poivre Rose, Spice
+    :TODO - Add character fragrance description:
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    62 63/64 x29 13/16 x 8 17/64 in.
+    :TODO - Add character dimension description:
   </Fragment>
 
   <Fragment slot="toc">
@@ -53,48 +53,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Commandment V
+    ### Old Idea
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Sloth will lead to physical debilitation.">
-      1-target attack. Deals **200%** Reality DMG.
+    <CardInfo star="1" type="ATTACK" note="We see each other as enemy.">
+      1-target attack. Deals **120%** Reality DMG plus (the caster's Reality DEF x**80%**) Genesis DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it.">
-      1-target attack. Deals **200%** Reality DMG and inflicts :effect{code="DISARM"} status for 1 round.
+    <CardInfo star="2" type="ATTACK" note="We see each other as enemy, even to this day.">
+      1-target attack. Deals **180%** Reality DMG plus (the caster's Reality DEF x**120%**) Genesis DMG. If the caster has an active :effect{code="SHIELD"} after the attack, Moxie +1 to the caster.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it, but it doesn't seem to work.">
-      1-target attack. Deals **300%** Reality DMG and inflicts :effect{code="DISARM"} status for 2 rounds.
+    <CardInfo star="3" type="ATTACK" note="We see each other as enemy, and everything gets to be reformed now.">
+      1-target attack. Deals **300%** Reality DMG plus (the caster's Reality DEF x**200%**) Genesis DMG. If the caster has an active :effect{code="SHIELD"} after the attack, Moxie +1 to the caster.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Exhortations IX
+    ### A New Wave
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="A merciful heart will foster loyalty.">
-      Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
+    <CardInfo star="1" type="BUFF" note="Use the right method.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's Reality DEF x**150%**) HP for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="A merciful heart will foster loyalty. It works all the time.">
-      Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
+    <CardInfo star="2" type="BUFF" note="Use the right method, and be gentle.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's Reality DEF x**225%**) HP for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="A merciful heart will foster loyalty. Of course, you won't have to do it all the time.">
-      Mass buff. DMG Dealt **+25%** and DMG Taken **-25%** for all allies and Penetration Rate **+10%** for the caster. Lasts 3 rounds.
+    <CardInfo star="3" type="BUFF" note="Use the right method, and be gentle, and they will become a help.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's Reality DEF x**375%**) HP for 2 rounds.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Unrestricted Chant
+    ### The Future Is Near
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="It is the omega, the final answer, the result of all calculations.">
-      Mass attack. Deals **300%** Reality DMG to all enemies. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack enjoys Penetration Rate **+8%** and deals **100%** more Reality DMG.
+    <CardInfo type="BUFF" note="This place is already full of tall buildings, but it still needs the most special one.">
+      Self counter. Enters :effect{code="TAUNT"} and :effect{code="FANGED_PARTNER"} statuses and gains Control Immunity and Riposte: when attacked, deals **100%** Reality DMG and (Reality DEF x**100%**) Genesis DMG. Lasts 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +103,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Search the Poems
+    ### Visionary
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Dealt **+15%**.
+    When the caster is attacked, gives the caster 1 stack of :effect{code="GUARDING_INSTINCT"} for 2 rounds.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    Reality DEF and Mental DEF **+10%** when the caster enters battle.
+    DMG Taken **-8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Resist and Critical DEF **+15%**.
+    After gaining a total of 15 :effect{code="GUARDING_INSTINCT"} stacks, enters :effect{code="LOYAL_PARTNER"} status and the caster no longer gains :effect{code="GUARDING_INSTINCT"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +123,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+16%**.
+    *The Future Is Near*'s effect changes to: when :effect{code="FANGED_PARTNER"} ripostes, deals **110%** Reality DMG plus (Reality DEF x**110%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Commandment V*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Reality DMG.
+    *Old Idea*'s effect changes to: at **1/2/3** stars, deals (the caster's Reality DEF x**100/150/250%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Exhortation IX*'s effect changes to: Penetration Rate **+15%**.
+    *The Future Is Near*'s effect changes to: when :effect{code="FANGED_PARTNER"} ripostes, deals **120%** Reality DMG plus (Reality DEF x**120%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+24%**.
+    *The Future Is Near*'s effect changes to: when :effect{code="FANGED_PARTNER"} ripostes, deals **130%** Reality DMG plus (Reality DEF x**130%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Unrestricted Chant*'s effect changes to: if the caster is in *\[Stats Up]* or *\[Pos Status]*, Penetration Rate **+32%**.
+    *A New Wave*'s effect changes to: at **1/2/3** stars, grants a :effect{code="SHIELD"} with (Ms. NewBabel's Reality DEF x**170/250/410%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

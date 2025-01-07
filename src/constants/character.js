@@ -107,6 +107,15 @@ export const SPECIALTY = {
   RIPOSTE: {
     title: "Riposte",
   },
+  DISPELLER: {
+    title: "Dispeller",
+  },
+  SHIELD: {
+    title: "Shield",
+  },
+  NASTY_WOUND: {
+    title: "Nasty Wound",
+  },
 };
 
 export const RARITY = {

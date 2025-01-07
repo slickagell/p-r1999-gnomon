@@ -1,14 +1,14 @@
 ---
-title: "Tooth Fairy"
-id: "tooth-fairy"
-code: "TOOTH_FAIRY"
+title: "Pickles"
+id: "pickles"
+code: "PICKLES"
 star: 6
-afflatus: "STAR"
+afflatus: "MINERAL"
 dmgType: "MENTAL"
 race: "ARCANIST"
-version: "1.2"
-releaseDate: "2023-12-07"
-specialties: ["HEAL", "DEBUFF", "PURIFY"]
+version: "1.1"
+releaseDate: "2023-11-23"
+specialties: ["DPS", "SUPPORT", "DISPELLER"]
 isLimited: false
 ---
 
@@ -17,11 +17,11 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/tooth-fairy.json";
-import RESONANCE from "@data/resonance/characters/tooth-fairy.json";
-import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+import CHARACTER from "@data/characters/pickles.json";
+import RESONANCE from "@data/resonance/characters/pickles.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Tooth Fairy
+# Pickles
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
@@ -53,48 +53,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Empty Gums
+    ### Nihilism Abuse
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="The taste of rust.">
-      1-target attack. Deals **150%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="1" type="ATTACK" note="Nihilism ends here.">
+      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, deals **50%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="The taste of rust creeps down your throat.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="ATTACK" note="Nihilism ends here. No one is running away from the ultimate question this time.">
+      1-target attack. Deals **300%** Mental DMG. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, deals **75%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="The taste of rust creeps down your throat. They shriek and flee from sight.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="ATTACK" note="Nihilism ends here. Get your bag packed, even though we own nothing but countless questions.">
+      1-target attack. Deals **500%** Mental DMG. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, deals **125%** more Mental DMG.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Lullaby
+    ### Hedonism Implement
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround.">
-      Mass healing. HP +(the caster's ATK x**80%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="1" type="ATTACK" note="A smooth, spherical thing.">
+      Mass attack. Deals **150%** Mental DMG to 2 enemies. If the caster is in :effect{code="CLARIFIED_TOPIC"} state, this attack has **+25%** Penetration Rate.
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The obedient children fall into a deep sleep.">
-      Mass healing. HP +(the caster's ATK x**120%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="2" type="ATTACK" note="A smooth, spherical thing. He once questioned himself.">
+      Mass attack. Deals **150%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*. If the caster is in :effect{code="CLARIFIED_TOPIC"} state, this attack has **+25%** Penetration Rate.
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The little tooth thief is ready to make her move.">
-      Mass healing. HP +(the caster's ATK x**200%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="3" type="ATTACK" note="A smooth, spherical thing. He struggled his way out of the swamp of tricky thoughts and let his five senses lead his way.">
+      Mass attack. Deals **300%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*. If the caster is in :effect{code="CLARIFIED_TOPIC"} state, this attack has **+25%** Penetration Rate.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Song for the Bad Tooth
+    ### Thus Spoke Pickles
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="This was never their choice. They still harbor resentment.">
-      1-target attack. Deals **500%** Mental DMG. This attack has a **+30%** Critical Rate. After the attack scores a critical hit, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from all allies.
+    <CardInfo type="ATTACK" note="At least I have never wasted one day in this life.">
+      1-target attack. Deals **500%** Mental DMG. After that, DMG Dealt **+30%** for all allies for 2 rounds. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, the duration of this DMG Dealt buff +1 round.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +103,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Baby Tooth Collector
+    ### Proposition
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, instantly gains 3 :effect{code="BABY_TOOTH"}. When any team member actively uses a character incantation, collects 1 :effect{code="BABY_TOOTH"}. At the start of the round, consumes 5 :effect{code="BABY_TOOTH"} to reduce the enemy team's Critical Resist and Critical DEF by **15%**. Lasts 1 round. (Cannot trigger if :effect{code="BABY_TOOTH"} are insufficient.)
+    At the end of the round, if having not actively casted an incantation for the round, gain 1 stack of :effect{code="CLARIFIED_TOPIC"}. For every :effect{code="CLARIFIED_TOPIC"} triggered, gain Moxie +1.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    When entering battle, Healing Done **+10%**.
+    DMG Dealt **+8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When triggering the :effect{code="BABY_TOOTH"} Stats Down effect, all allies recover **10%** of missing HP. When entering battle, gains an additional 2 :effect{code="BABY_TOOTH"}.
+    Gains 2 stacks of :effect{code="CLARIFIED_TOPIC"} immediately upon entering battle.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +123,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Song for the Bad Tooth*: Mental DMG increased to **600%**.
+    *Thus Spoke Pickles*: Mental DMG is raised to **575%**
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Baby Tooth Collector*: Critical Resist and Critical DEF decrease +1 round for target.
+    *Thus Spoke Pickles*'s effect changes to: DMG Dealt **+40%** for all allies.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Empty Gums*: At Incantation rank **1/2/3**, Mental DMG increased to **170/280/500%**.
+    *Nihilism Abuse*'s effect changes to: at **1/2/3** stars, if the caster is in :effect{code="CLARIFIED_TOPIC"} status, additional Mental DMG dealt is increased to **80/120/200%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Lullaby*: At Incantation rank **1/2/3**, HP +(the caster's ATK x**90/135/225%**) for all allies.
+    *Hedonism Implement*'s effect changes to: at **1/2/3** stars, Mental DMG dealt is increased to **165/170/325%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Baby Tooth Collector*: Critical Resist and Critical DEF **-25%** for target.
+    *Thus Spoke Pickles*'s effect changes to: deals **650%** Mental DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

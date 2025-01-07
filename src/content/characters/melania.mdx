@@ -1,14 +1,14 @@
 ---
-title: "Tooth Fairy"
-id: "tooth-fairy"
-code: "TOOTH_FAIRY"
+title: "Melania"
+id: "melania"
+code: "MELANIA"
 star: 6
-afflatus: "STAR"
+afflatus: "BEAST"
 dmgType: "MENTAL"
 race: "ARCANIST"
-version: "1.2"
-releaseDate: "2023-12-07"
-specialties: ["HEAL", "DEBUFF", "PURIFY"]
+version: "1.1"
+releaseDate: "2023-11-09"
+specialties: ["DPS", "BURST_DMG"]
 isLimited: false
 ---
 
@@ -17,31 +17,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/tooth-fairy.json";
-import RESONANCE from "@data/resonance/characters/tooth-fairy.json";
-import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+import CHARACTER from "@data/characters/melania.json";
+import RESONANCE from "@data/resonance/characters/melania.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Tooth Fairy
+# Melania
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    \:TODO:
+    :TODO - Add character description:
   </Fragment>
 
   <Fragment slot="info-medium">
-    \:TODO:
+    :TODO - Add character medium description:
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    \:TODO:
+    :TODO - Add character afflatus description:
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    \:TODO:
+    :TODO - Add character fragrance description:
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    \:TODO:
+    :TODO - Add character dimension description:
   </Fragment>
 
   <Fragment slot="toc">
@@ -53,48 +53,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Empty Gums
+    ### Silent Takedown
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="The taste of rust.">
-      1-target attack. Deals **150%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="1" type="ATTACK" note="Keep an eye on her.">
+      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{code="THIEF_MASTER"} status, this attack steals 1 Moxie from the target.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="The taste of rust creeps down your throat.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="ATTACK" note="Keep an eye on her. She is right here.">
+      1-target attack. Deals **250%** Mental DMG and Moxie -1 for the target. If the caster is in :effect{code="THIEF_MASTER"}, this attack steals 1 additional Moxie from the target.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="The taste of rust creeps down your throat. They shriek and flee from sight.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="ATTACK" note="Keep an eye on her. She is right here. At least she was a moment ago.">
+      1-target attack. Deals **400%** Mental DMG, Moxie -1 for the target, and Moxie +1 for the caster. If the caster is in :effect{code="THIEF_MASTER"}, this attack steals 1 additional Moxie from the target.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Lullaby
+    ### Clockwork Rats
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround.">
-      Mass healing. HP +(the caster's ATK x**80%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="1" type="ATTACK" note="A group of frantic stalkers are gathering.">
+      Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The obedient children fall into a deep sleep.">
-      Mass healing. HP +(the caster's ATK x**120%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="2" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic.">
+      Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The little tooth thief is ready to make her move.">
-      Mass healing. HP +(the caster's ATK x**200%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="3" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic. The rodenticide didn't work.">
+      Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Song for the Bad Tooth
+    ### Ridiculous Eyewitness Testimony
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="This was never their choice. They still harbor resentment.">
-      1-target attack. Deals **500%** Mental DMG. This attack has a **+30%** Critical Rate. After the attack scores a critical hit, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from all allies.
+    <CardInfo type="ATTACK" note="Take off, exchange positions, and retreat.">
+      1-target attack. Deals **600%** Mental DMG. Inflicts 1 stack of :effect{code="THIEF_MASTER"} on the caster.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +103,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Baby Tooth Collector
+    ### Top Student
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, instantly gains 3 :effect{code="BABY_TOOTH"}. When any team member actively uses a character incantation, collects 1 :effect{code="BABY_TOOTH"}. At the start of the round, consumes 5 :effect{code="BABY_TOOTH"} to reduce the enemy team's Critical Resist and Critical DEF by **15%**. Lasts 1 round. (Cannot trigger if :effect{code="BABY_TOOTH"} are insufficient.)
+    After the caster casts an Ultimate, gains 1 stack of :effect{code="FIXED_PLAN"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    When entering battle, Healing Done **+10%**.
+    DMG Dealt **+8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When triggering the :effect{code="BABY_TOOTH"} Stats Down effect, all allies recover **10%** of missing HP. When entering battle, gains an additional 2 :effect{code="BABY_TOOTH"}.
+    After the caster casts an Ultimate, gains an additional stack of :effect{code="FIXED_PLAN"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +123,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Song for the Bad Tooth*: Mental DMG increased to **600%**.
+    *Ridiculous Eyewitness Testimony* deals **725%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Baby Tooth Collector*: Critical Resist and Critical DEF decrease +1 round for target.
+    *Ridiculous Eyewitness Testimony* additionally gains 1 stack of :effect{code="THIEF_MASTER"}.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Empty Gums*: At Incantation rank **1/2/3**, Mental DMG increased to **170/280/500%**.
+    *Silent Takedown*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Lullaby*: At Incantation rank **1/2/3**, HP +(the caster's ATK x**90/135/225%**) for all allies.
+    *Clockwork Rats*'s effect changes to: at **1/2/3** stars, deals **135/200/325%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Baby Tooth Collector*: Critical Resist and Critical DEF **-25%** for target.
+    *Ridiculous Eyewitness Testimony* deals **800%** Mental DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -1,14 +1,14 @@
 ---
-title: "Tooth Fairy"
-id: "tooth-fairy"
-code: "TOOTH_FAIRY"
+title: "Eternity"
+id: "eternity"
+code: "ETERNITY"
 star: 6
-afflatus: "STAR"
-dmgType: "MENTAL"
+afflatus: "MINERAL"
+dmgType: "REALITY"
 race: "ARCANIST"
-version: "1.2"
-releaseDate: "2023-12-07"
-specialties: ["HEAL", "DEBUFF", "PURIFY"]
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DPS", "NASTY_WOUND"]
 isLimited: false
 ---
 
@@ -17,31 +17,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/tooth-fairy.json";
-import RESONANCE from "@data/resonance/characters/tooth-fairy.json";
-import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+import CHARACTER from "@data/characters/eternity.json";
+import RESONANCE from "@data/resonance/characters/eternity.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Tooth Fairy
+# Eternity
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    \:TODO:
+    :TODO - Add character description:
   </Fragment>
 
   <Fragment slot="info-medium">
-    \:TODO:
+    :TODO - Add character medium description:
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    \:TODO:
+    :TODO - Add character afflatus description:
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    \:TODO:
+    :TODO - Add character fragrance description:
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    \:TODO:
+    :TODO - Add character dimension description:
   </Fragment>
 
   <Fragment slot="toc">
@@ -53,48 +53,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Empty Gums
+    ### Vigor Handbag
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="The taste of rust.">
-      1-target attack. Deals **150%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="1" type="DEBUFF" note="She has seen too much.">
+      1-target attack. The caster suffers Current HP **-10%** and deals **200%** Reality DMG. Inflicts 1 round of :effect{code="NASTY_WOUND"} on the target.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="The taste of rust creeps down your throat.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="DEBUFF" note="She has seen too much, even more than what you can understand.">
+      1-target attack. The caster suffers Current HP **-10%** and deals **300%** Reality DMG. Inflicts 1 round of :effect{code="NASTY_WOUND"} on the target.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="The taste of rust creeps down your throat. They shriek and flee from sight.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="DEBUFF" note="She has seen too much, including, of course, the history of purses.">
+      1-target attack. The caster suffers Current HP **-10%** and deals **500%** Reality DMG. Inflicts 1 round of :effect{code="NASTY_WOUND"} on the target.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Lullaby
+    ### Vintage Handfan
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround.">
-      Mass healing. HP +(the caster's ATK x**80%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="1" type="ATTACK" note="Experience is our teacher.">
+      Mass attack. HP -(current HP x**10%**) and deals **160%** Reality DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The obedient children fall into a deep sleep.">
-      Mass healing. HP +(the caster's ATK x**120%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="2" type="ATTACK" note="Experience is our teacher. Listen, read, and learn.">
+      Mass attack. HP -(current HP x**10%**) and deals **240%** Reality DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The little tooth thief is ready to make her move.">
-      Mass healing. HP +(the caster's ATK x**200%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
+    <CardInfo star="3" type="ATTACK" note="Experience is our teacher, and the best self-defense.">
+      Mass attack. HP -(current HP x**10%**) and deals **400%** Reality DMG to 2 enemies.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Song for the Bad Tooth
+    ### Anecdotes in Exeter
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="This was never their choice. They still harbor resentment.">
-      1-target attack. Deals **500%** Mental DMG. This attack has a **+30%** Critical Rate. After the attack scores a critical hit, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from all allies.
+    <CardInfo type="ATTACK" note="People tried every means to find clues about her, for some cocktail made with blue blood, and immortality.">
+      Mass attack. Deals **300%** Reality DMG to all enemies. This attack enjoys Leech Rate **+50%**.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +103,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Baby Tooth Collector
+    ### Solitude for 100 years
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, instantly gains 3 :effect{code="BABY_TOOTH"}. When any team member actively uses a character incantation, collects 1 :effect{code="BABY_TOOTH"}. At the start of the round, consumes 5 :effect{code="BABY_TOOTH"} to reduce the enemy team's Critical Resist and Critical DEF by **15%**. Lasts 1 round. (Cannot trigger if :effect{code="BABY_TOOTH"} are insufficient.)
+    Immune to :effect{code="BLEED"}, :effect{code="CORRODE"}, and :effect{code="POISON"}. At the start of each round, gains 1 stack of :effect{code="BLOOD_OF_LONGEVITY"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    When entering battle, Healing Done **+10%**.
+    DMG Dealt **+8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When triggering the :effect{code="BABY_TOOTH"} Stats Down effect, all allies recover **10%** of missing HP. When entering battle, gains an additional 2 :effect{code="BABY_TOOTH"}.
+    Enhanced :effect{code="BLOOD_OF_LONGEVITY"} effect: DMG Dealt **+5%** and DMG Heal **+5%**. At 5 stacks of Blood of Longevity, this effect transforms to :effect{code="BLOOD_OF_IMMORTALITY"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +123,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Song for the Bad Tooth*: Mental DMG increased to **600%**.
+    *Anecdotes in Exeter*'s effect changes to: deals **350%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Baby Tooth Collector*: Critical Resist and Critical DEF decrease +1 round for target.
+    *Vigor Handbag*'s effect changes to: at **1/2/3** stars, deals **220/330/550%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Empty Gums*: At Incantation rank **1/2/3**, Mental DMG increased to **170/280/500%**.
+    *Vintage Handfan*'s effect changes to: at **1/2/3** stars, deals **180/270/450%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Lullaby*: At Incantation rank **1/2/3**, HP +(the caster's ATK x**90/135/225%**) for all allies.
+    *Anecdotes in Exeter*'s effect changes to: Leech Rate **+60%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Baby Tooth Collector*: Critical Resist and Critical DEF **-25%** for target.
+    *Anecdotes in Exeter*'s effect changes to: deals **400%** Reality DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

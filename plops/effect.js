@@ -15,9 +15,10 @@ export default {
       choices: Object.keys(EFFECT_TYPE),
     },
     {
-      type: "confirm",
+      type: "list",
       name: "isSpecific",
       message: "Is specific to character or mode?",
+      choices: ["CHARACTER", "MODE", "NONE"],
     },
   ],
   actions: () => {
