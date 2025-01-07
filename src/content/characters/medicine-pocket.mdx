@@ -1,0 +1,172 @@
+---
+title: "Medicine Pocket"
+id: "medicine-pocket"
+code: "MEDICINE_POCKET"
+star: 6
+afflatus: "BEAST"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["HEAL", "DEBUFF", "CONTROL"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/medicine-pocket.json";
+import RESONANCE from "@data/resonance/characters/medicine-pocket.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
+
+# Medicine Pocket
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Inherent Habit
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="DEBUFF" note="Sometimes people call them 'mad kid'.">
+      1-target attack. Deals **150%** Mental DMG. DMG Taken **+20%** for the target for 1 round.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="Sometimes people call them 'mad kid' or other similar nicknames.">
+      1-target attack. Deals **250%** Mental DMG. DMG Taken **+20%** for the target for 1 round.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="Sometimes people call them 'mad kid' and, of course, it still doesn't sound as mad as they are.">
+      1-target attack. Deals **450%** Mental DMG. DMG Taken **+20%** for the target for 1 round.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Alchemy Ware
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="HEALTH" note="This thing can only be stored in a special ware.">
+      Mass healing. Grants HP +(the caster's ATK x**80%**) and 1 stack of :effect{code="STURDINESS"} to all allies.
+    </CardInfo>
+
+    <CardInfo star="2" type="HEALTH" note="This thing can only be stored in a special ware, like a Mars ampoule.">
+      Mass healing. Grants HP +(the caster's ATK x**120%**) and 1 stack of :effect{code="STURDINESS"} to all allies.
+    </CardInfo>
+
+    <CardInfo star="3" type="HEALTH" note="This thing can only be stored in a special ware, like a Mars ampoule, or a living body.">
+      Mass healing. Grants HP +(the caster's ATK x**200%**) and 1 stack of :effect{code="STURDINESS"} to all allies.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### 26 Secondary Reactions
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="DEBUFF" note="A generic ceramide receptor antagonist of complicated composition. The effect is unclear so human experiment is strictly prohibited.">
+      1-target attack. Deals **450%** Mental DMG and inflicts :effect{code="DAZE"} on the target for 1 round. Moxie +1 for the caster.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Bell of the Forest
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    After the caster casts an Ultimate, HP +(Medicine Pocket's ATK x**80%**) for all allies.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    If the caster's HP is below **50%**, Healing Done **+10%**.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Bell of the Forest*: HP +(Medicine Pocket's ATK x**120%**) for all allies.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Alchemy Ware*: At Incantation rank **1/2/3**, HP +(the caster's ATK x**90/135/220%**) for all allies.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Inherent Habit*: At Incantation rank **1/2/3**, Mental DMG increased to **170/280/500%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *26 Secondary Reactions*: Mental DMG increased to **500%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Inherent Habit*: DMG Taken increased to **+30%** for the target.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>
