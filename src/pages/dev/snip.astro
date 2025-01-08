@@ -90,103 +90,116 @@ import Layout from "@layouts/Layout.astro";
     </div>
     <h2 class="mt-4 mb-2">Options</h2>
     <div class="p-2 border border-primary-content grid grid-cols-3 gap-2">
-      <label for="automode">
+      <label class="label justify-start gap-2" for="automode">
         <input
           type="checkbox"
+          class="toggle toggle-primary"
           id="automode"
           name="automode"
-          checked="isAutoMode"
+          :checked="isAutoMode"
           @click="toggleAutoMode"
         />
         Auto Mode
       </label>
-      <label for="showArea">
+      <label class="label justify-start gap-2" for="showArea">
         <input
           type="checkbox"
+          class="toggle toggle-primary"
           id="showArea"
           name="showArea"
-          checked="isShowArea"
+          :checked="isShowArea"
           @click="toggleShowArea"
         />
         Show Area
       </label>
-      <label for="preprocess">
+      <label class="label justify-start gap-2" for="preprocess">
         <input
           type="checkbox"
+          class="toggle toggle-primary"
           id="preprocess"
           name="preprocess"
-          checked="isPreprocess"
+          :checked="isPreprocess"
           @click="togglePreprocess"
         />
         Preprocess Image
       </label>
-      <label for="showImage">
+      <label class="label justify-start gap-2" for="showImage">
         <input
           type="checkbox"
+          class="toggle toggle-primary"
           id="showImage"
           name="showImage"
-          checked="isShowImage"
+          :checked="isShowImage"
           @click="toggleShowImage"
         />
         Show Image
       </label>
-      <label for="dilate">
+      <label class="label justify-start gap-2" for="dilate">
         <input
           type="checkbox"
+          class="toggle toggle-primary"
           id="dilate"
           name="dilate"
-          checked="isDilate"
+          :checked="isDilate"
           @click="toggleDilate"
         />
         Dilate
       </label>
-      <label for="invertColor">
+      <label class="label justify-start gap-2" for="invertColor">
         <input
           type="checkbox"
+          class="toggle toggle-primary"
           id="invertColor"
           name="invertColor"
-          checked="isInvertColor"
+          :checked="isInvertColor"
           @click="toggleInvertColor"
         />
         Invert color
       </label>
-      <label for="binarize">
+      <label class="label justify-start gap-2" for="binarize">
         <input
           type="checkbox"
+          class="toggle toggle-primary"
           id="binarize"
           name="binarize"
-          checked="isBinarize"
+          :checked="isBinarize"
           @click="toggleBinarize"
         />
         Binarize
       </label>
-      <label for="blurImageRadius">
-        <span class="blurSliderLabel"
-          >Gaussian Blur <span x-text="blurImageRadius / 100"></span>
-        </span>
+      <label
+        class="label justify-start gap-2 flex-wrap gap-2"
+        for="blurImageRadius"
+      >
+        <span>Gaussian Blur</span>
         <input
           id="blurImageRadius"
           type="range"
+          class="range range-primary"
           min="0"
           max="100"
           :value="blurImageRadius"
           @change="updateBlurImageRadius"
           @input="onChangeBlurImageRadius"
         />
+        <span x-text="blurImageRadius / 100"></span>
       </label>
-      <label for="binarizeThreshold">
-        <span class="blurSliderLabel"
-          >Binarize Threshold <span x-text="binarizeThreshold / 100"></span>
-        </span>
+      <label
+        class="label justify-start gap-2 flex-wrap gap-2"
+        for="binarizeThreshold"
+      >
+        <span>Binarize Threshold</span>
         <input
           id="binarizeThreshold"
           type="range"
+          class="range range-primary"
           min="0"
           max="100"
           :value="binarizeThreshold"
           @change="updateBinarizeThreshold"
           @input="onChangeBinarizeThreshold"
         />
+        <span x-text="binarizeThreshold / 100"></span>
       </label>
     </div>
   </div>
