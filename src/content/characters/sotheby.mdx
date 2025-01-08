@@ -1,0 +1,172 @@
+---
+title: "Sotheby"
+id: "sotheby"
+code: "SOTHEBY"
+star: 6
+afflatus: "PLANT"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["POISON", "HEAL", "DPS"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/sotheby.json";
+import RESONANCE from "@data/resonance/characters/sotheby.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Sotheby
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Triple the Dose!
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin.">
+      Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} status for 2 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin, but there are always exceptions.">
+      Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} status for 3 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin, but there are always exceptions. In fact, what's bottled up is far more dangerous.">
+      Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} status for 5 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Concentrated Essence!
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="HEALTH" note="Efficacy is not determined by the dose.">
+      Mass healing. Gives all allies 2 rounds of :effect{code="CURE"} when a round starts, HP +(the caster's ATK x**50%**).
+    </CardInfo>
+
+    <CardInfo star="2" type="HEALTH" note="Efficacy is not determined by the dose. The original formula still has room for improvement.">
+      Mass healing. Gives all allies 2 rounds of :effect{code="CURE"} when a round starts, HP +(the caster's ATK x**75%**).
+    </CardInfo>
+
+    <CardInfo star="3" type="HEALTH" note="Efficacy is not determined by the dose. The original formula still has room for improvement. Just use 1 drop.">
+      Mass healing. Gives all allies 2 rounds of :effect{code="CURE"} when a round starts, HP +(the caster's ATK x**125%**).
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Mix Them All Up!
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="1 bottle, 1 bottle, 1 bottle, 1 bottle, 1 bottle...">
+      Mass attack. Deals **350%** Reality DMG to all enemies and all active :effect{code="POISON"} and :effect{code="CURE"} statuses on every character take effect immediately.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Genius Lady
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    The duration of :effect{code="POISON"} inflicted by *Triple the Dose!* +1 round.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    When entering battle, Healing Done **+10%**.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    Before *Concentrated Essence!* inflicts :effect{code="CURE"} status, the :effect{code="CURE"} statuses on all allies take effect immediately.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Mix Them All Up!*'s effect changes to: deals **450%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Triple the Dose!*'s effect changes to: :effect{code="POISON"} status inflicted by the skill deals (the caster's ATK x**40%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Concentrated Essence!*'s effect changes to: HP +(the caster's ATK x**60/90/150%**)
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Mix Them All Up!*: Reality DMG increased to **500%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Triple the Dose!*'s effect changes to: :effect{code="POISON"} status inflicted by the skill deals (the caster's ATK x**50%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

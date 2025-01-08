@@ -1,0 +1,172 @@
+---
+title: "Lilya"
+id: "lilya"
+code: "LILYA"
+star: 6
+afflatus: "STAR"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DPS", "BURST_DMG"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/lilya.json";
+import RESONANCE from "@data/resonance/characters/lilya.json";
+import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+
+# Lilya
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Crosswind Takeoff
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Speed is not everything.">
+      1-target attack. Deals **160%** Reality DMG. When scoring a critical hit, performs 1 follow-up attack that deals **80%** Reality DMG. This follow-up attack is regarded as 1 follow-up action.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="Speed is not everything. They're right.">
+      1-target attack. Deals **240%** Reality DMG. When scoring a critical hit, performs 1 follow-up attack that deals **120%** Reality DMG. This follow-up attack is regarded as 1 follow-up action.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="Speed is not everything. They're right, so say something else.">
+      1-target attack. Deals **400%** Reality DMG. When scoring a critical hit, performs 1 follow-up attack that deals **200%** Reality DMG. This follow-up attack is regarded as 1 follow-up action.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Aerial Maneuvers
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="The sea is calm.">
+      Mass attack. Deals **150%** Reality DMG to 2 enemies.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="The sea is calm on the eve of the storm.">
+      Mass attack. Deals **225%** Reality DMG to 2 enemies.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="The sea is calm on the eve of the storm, and she will always come.">
+      Mass attack. Deals **375%** Reality DMG to 2 enemies.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### A Small Trick
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="These extreme numbers are listed in the manual. They have nothing to do with me.">
+      1-target attack. Deals **700%** Reality DMG. When this attack scores a critical hit, it enjoys Leech Rate **+15%**.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Vehicle Control
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the caster casts an Ultimate, Critical Rate **+20%**.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Critical Rate **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    Psychube's basic Critical Rate Bonus **+100%**.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *A Small Trick*'s effect changes to: deals **775%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Aerial Maneuvers*'s effect changes to: at **1/2/3** stars, deals **165/245/400%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Crosswind Takeoff*'s effect changes to: at **1/2/3** stars, deals **180/270/450%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *A Small Trick*'s effect changes to: **25%** Leech Rate on a critical hit.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *A Small Trick*'s effect changes to: deals **850%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

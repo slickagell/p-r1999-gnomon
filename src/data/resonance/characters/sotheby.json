@@ -1,0 +1,107 @@
+{
+  "mainPiece": "RP_Z_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "MURMUR_OF_INSANITY",
+          "require": 2
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    },
+    "MERCY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "GOLDEN_FLEECE",
+          "require": 1
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "RHEINGOLD",
+          "require": 1
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "HOLY_SILVER",
+          "require": 4
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}
