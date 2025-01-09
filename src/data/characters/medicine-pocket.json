@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6732
+      },
+      "ATTACK": {
+        "value": 1077
+      },
+      "REALITY_DEFENSE": {
+        "value": 559
+      },
+      "MENTAL_DEFENSE": {
+        "value": 559
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 381
+      },
+      "CRITICAL_RATE": {
+        "value": 12.7,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 19,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 6
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 10
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 3
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 16
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 3
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 5
+      }
+    ]
+  }
+}

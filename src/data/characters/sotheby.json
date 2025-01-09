@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 7390
+      },
+      "ATTACK": {
+        "value": 1097
+      },
+      "REALITY_DEFENSE": {
+        "value": 515
+      },
+      "MENTAL_DEFENSE": {
+        "value": 515
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 285
+      },
+      "CRITICAL_RATE": {
+        "value": 9.5,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 14.2,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 6
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 5
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 10
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 5
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_PLANTAL_VIMEN",
+        "require": 16
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 3
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 5
+      }
+    ]
+  }
+}

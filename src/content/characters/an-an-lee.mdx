@@ -1,0 +1,172 @@
+---
+title: "An-an Lee"
+id: "an-an-lee"
+code: "AN_AN_LEE"
+star: 6
+afflatus: "PLANT"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: []
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/an-an-lee.json";
+import RESONANCE from "@data/resonance/characters/an-an-lee.json";
+import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+
+# An an Lee
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Taoist Rune
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Obey my order with every haste and speed.">
+      1-target attack. Deals **200%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="Obey my order with every haste and speed. Be careful with runes, and be sincere with seals.">
+      1-target attack. Deals **300%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="Obey my order with every haste and speed. Pull the trigger and it's all done.">
+      1-target attack. Deals **350%** Reality DMG and inflicts :effect{code="DAZE"} status for 1 round.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Lily Nectar
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="BUFF" note="It's just a flower to humans.">
+      Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies. Lasts 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="BUFF" note="It's just a flower to humans, but a mountain to demons.">
+      Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies. Lasts 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="BUFF" note="It's just a flower to humans, but a mountain to demons. All evils be gone!">
+      Mass buff. DMG Dealt **+30%** and DMG Taken **-30%** for all allies. Lasts 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Scientific Ghost Buster
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="Here's some tough advice for you: Have faith in science, and be wary of ghosts!">
+      Mass attack. Deals **400%** Reality DMG to all enemies. The caster enters :effect{code="EMPOWER_INCANTATION_I"} status for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Time to Work
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When a round starts, switches between :effect{code="BREAK_TIME"} and :effect{code="EXORCISM_TIME"} statuses. When the caster enters :effect{code="EXORCISM_TIME"} status, the caster's right-most Incantation +1 star.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    Enhance :effect{code="BREAK_TIME"} effect: DMG Taken Reduction **+15%**. Enhances :effect{code="EXORCISM_TIME"} effect: DMG Bonus **+15%**, Penetration Rate **+15%**.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *\[Scientific Ghost Buster]*'s effect changes to: deals **450%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *\[Taoist Rune]*'s effect changes to: at **1/2/3** stars, deals **220/330/400%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *\[Scientific Ghost Buster]*: Reality DMG increased to **500%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *\[Taoist Rune]*'s effect changes to: at **1/2/3** stars, deals **240/360/450%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *\[Scientific Ghost Buster]*: Reality DMG increased to **550%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

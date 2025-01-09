@@ -1,0 +1,172 @@
+---
+title: "Shamane"
+id: "shamane"
+code: "SHAMANE"
+star: 6
+afflatus: "BEAST"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.3"
+releaseDate: "2024-02-08"
+specialties: ["DPS", "BURST_DMG", "DEBUFF"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/shamane.json";
+import RESONANCE from "@data/resonance/characters/shamane.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Shamane
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    \:TODO:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Apprentice's Dance
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="He learned this dance where the snow melted.">
+      1-target attack. Deals **200%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="He learned this dance where the snow melted, and is determined to teach it to you.">
+      1-target attack. Deals **250%** Reality DMG and grants the caster 1 stack of :effect{code="NATURE_BLESSING"}.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="He learned this dance where the snow melted, and is determined to teach it to you without reservation.">
+      1-target attack. Deals **450%** Reality DMG and grants the caster 1 stack of :effect{code="NATURE_BLESSING"}.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Spirit Medium
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="DEBUFF" note="He uses his drum to call the spirits.">
+      Mass debuff. DMG Taken **+10%** and Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="He uses his drum to call the spirits.">
+      Mass debuff. DMG Taken **+20%** and Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="He uses his drum as a medium to call the spi-ahem, his friends.">
+      Mass debuff. DMG Taken **+30%** and Reality DEF and Mental DEF **-15%** for all enemies for 3 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Edict of Atman
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="Training, my friend. Training is still in progress.">
+      Mass attack. Deals **250%** Reality DMG to all enemies. This attack enjoys Critical Rate **+20%** (excess Critical Rate is converted to Critical DMG) and deals an additional **250%** Reality DMG to the main target.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Inheritance of Wisdom
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    For each *\[Stats Down]* status on the target, the attack enjoys DMG Dealt **+8%** (Max: **24%**). When the caster enters battle, gains 2 stacks of :effect{code="NATURE_BLESSING"}.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    At the start of every 2 rounds, gains 1 stack of :effect{code="NATURE_BLESSING"}.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Inheritance of Wisdom*'s effect changes to: when the caster enters battle, gains 3 additional stacks of :effect{code="NATURE_BLESSING"}.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Edict of Atman*'s effect changes to: Critical Rate to main target **+60%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Apprentice's Dance*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Edict of Atman*'s effect changes to: deals **300%** Reality DMG to all enemies.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Edict of Atman*'s effect changes to: Critical Rate to main target **+100%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

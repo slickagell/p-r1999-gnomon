@@ -8,7 +8,7 @@ dmgType: "{{dmgType}}"
 race: "{{race}}"
 version: "{{version}}"
 releaseDate: "{{releaseDate}}"
-<!-- TODO - Update specialties, if there's a new specialty, please add it to SPECIALTY in data/characters.ts file -->
+:TODO - Update specialties, if there's a new specialty, please add it to SPECIALTY in data/characters.ts file:
 specialties: []
 isLimited: {{isLimited}}
 ---
@@ -24,251 +24,25 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
 
 # {{titleCase name}}
 
-<div class="my-8">
-  <CharacterStar star={frontmatter.star} />
-</div>
-
-<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
-  <div>
-    <div class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap">
-      <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode} />
-
-      <div class="flex gap-2 items-center">
-        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
-
-        ##### {DMG_TYPE[frontmatter.dmgType].title}
-      </div>
-
-      <div class="flex gap-2">
-        <div class="badge badge-outline badge-primary">
-          {RACE[frontmatter.race].title}
-        </div>
-
-        <div class="badge bg-base-content/20">
-          {'Version ' + frontmatter.version}
-        </div>
-
-        {frontmatter.isLimited && (<div class="badge badge-primary text-white">Limited</div>)}
-      </div>
-    </div>
-
-    <div class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap">
-      {frontmatter.specialties.map((specialty) => (<div class="badge badge-lg badge-outline opacity-80">{SPECIALTY[specialty].title}</div>))}
-    </div>
-
-    <div class="mt-4">
-      <!-- TODO - Add character description -->
-
-      ###### Medium
-
-      <!-- TODO - Add character medium description -->
-
-      ###### Afflatus
-
-      <!-- TODO - Add character afflatus description -->
-
-      ###### Fragrance note
-
-      <!-- TODO - Add character fragrance description -->
-
-      ###### Dimensions
-
-      <!-- TODO - Add character dimension description -->
-    </div>
-
-    <div class="mt-4 flex gap-4 justify-center">
-      <CharacterImg variant="signature" id={frontmatter.id} />
-    </div>
-  </div>
-
-  <div class="flex flex-col items-center shrink-0">
-    <CharacterImg variant="portrait" id={frontmatter.id} />
-
-    <div class="mt-5 flex gap-6 justify-center items-end">
-      <div class="text-center">
-        <CharacterImg variant="chibi" id={frontmatter.id} />
-
-        Chibi
-      </div>
-
-      <div class="text-center">
-        <CharacterImg variant="udimo" id={frontmatter.id} />
-
-        Udimo
-      </div>
-    </div>
-  </div>
-</div>
-
-::toc
-
-## Arcane Skills
-
-### <!-- TODO - Update skill-1 name -->
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-1" id={frontmatter.id} />
-  </div>
-
-  <!-- TODO - Update character skill-1 star-1 type & note -->
-  <CardInfo star="1" type="" note="">
-    <!-- TODO - Add character skill-1 star-1 description -->
-  </CardInfo>
-
-  <!-- TODO - Update character skill-2 star-2 type & note -->
-  <CardInfo star="2" type="" note="">
-    <!-- TODO - Add character skill-2 star-2 description -->
-  </CardInfo>
-
-  <!-- TODO - Update character skill-3 star-3 type & note -->
-  <CardInfo star="3" type="" note="">
-    <!-- TODO - Add character skill-3 star-3 description -->
-  </CardInfo>
-</div>
-
-### <!-- TODO - Update skill-2 name -->
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-2" id={frontmatter.id} />
-  </div>
-
-  <!-- TODO - Update character skill-1 star-1 type & note -->
-  <CardInfo star="1" type="" note="">
-    <!-- TODO - Add character skill-1 star-1 description -->
-  </CardInfo>
-
-  <!-- TODO - Update character skill-2 star-2 type & note -->
-  <CardInfo star="2" type="" note="">
-    <!-- TODO - Add character skill-2 star-2 description -->
-  </CardInfo>
-
-  <!-- TODO - Update character skill-3 star-3 type & note -->
-  <CardInfo star="3" type="" note="">
-    <!-- TODO - Add character skill-3 star-3 description -->
-  </CardInfo>
-</div>
-
-### <!-- TODO - Update ultimate name -->
-
-<div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="ultimate" id={frontmatter.id} />
-  </div>
-
-  <!-- TODO - Update character ultimate type & note -->
-  <CardInfo type="" note="">
-    <!-- TODO - Update character ultimate description -->
-  </CardInfo>
-</div>
-
-## Inheritance
-
-### <!-- TODO - Update inheritance title -->
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="1" />
-
-  ##### Insight 1
-</div>
-
-<!-- TODO - Update inheritance insight-1 -->
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="2" />
-
-  ##### Insight 2
-</div>
-
-<!-- TODO - Update inheritance insight-2 -->
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="3" />
-
-  ##### Insight 3
-</div>
-
-<!-- TODO - Update inheritance insight-3 -->
-
-## Portray
-
-<span class="text-2xl mr-2">Lv. 1:</span>
-<!-- TODO - Update portray lv-1 content -->
-
-<span class="text-2xl mr-2">Lv. 2:</span>
-<!-- TODO - Update portray lv-2 content -->
-
-<span class="text-2xl mr-2">Lv. 3:</span>
-<!-- TODO - Update portray lv-3 content -->
-
-<span class="text-2xl mr-2">Lv. 4:</span>
-<!-- TODO - Update portray lv-4 content -->
-
-<span class="text-2xl mr-2">Lv. 5:</span>
-<!-- TODO - Update portray lv-5 content -->
-
-## Resonance
-
-<ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece}  resonancePatternPieces={RESONANCE.patternPieces} />
-
-## Insight Materials
-
-<div class="flex flex-col md:flex-row flex-wrap  justify-center">
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="1" />
-
-      ##### Insight 1
-    </div>
-
-    <!-- TODO - Update materials for insight-1 -->
-    <Material code="SHARPODONTY" require="0" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="2" />
-
-      ##### Insight 2
-    </div>
-
-    <!-- TODO - Update materials for insight-2 -->
-    <Material code="SHARPODONTY" require="0" />
-  </div>
-
-  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-    <div class="flex items-center">
-      <InsightImg classNames="w-6 mr-2" insight="3" />
-
-      ##### Insight 3
-    </div>
-
-    <!-- TODO - Update materials for insight-3 -->
-    <Material code="SHARPODONTY" require="0" />
-  </div>
-</div>
-
-
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    <!-- TODO - Add character description -->
+    :TODO - Add character description:
   </Fragment>
 
   <Fragment slot="info-medium">
-    <!-- TODO - Add character medium description -->
+    :TODO - Add character medium description:
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    <!-- TODO - Add character afflatus description -->
+    :TODO - Add character afflatus description:
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    <!-- TODO - Add character fragrance description -->
+    :TODO - Add character fragrance description:
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    <!-- TODO - Add character dimension description -->
+    :TODO - Add character dimension description:
   </Fragment>
 
   <Fragment slot="toc">
@@ -280,55 +54,55 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### <!-- TODO - Update skill-1 name -->
+    ### :TODO - Update skill-1 name:
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <!-- TODO - Update character skill-1 star-1 type & note -->
+    :TODO - Update character skill-1 star-1 type & note:
     <CardInfo star="1" type="" note="">
-      <!-- TODO - Add character skill-1 star-1 description -->
+      :TODO - Add character skill-1 star-1 description:
     </CardInfo>
 
-    <!-- TODO - Update character skill-2 star-2 type & note -->
+    :TODO - Update character skill-2 star-2 type & note:
     <CardInfo star="2" type="" note="">
-      <!-- TODO - Add character skill-2 star-2 description -->
+      :TODO - Add character skill-2 star-2 description:
     </CardInfo>
 
-    <!-- TODO - Update character skill-3 star-3 type & note -->
+    :TODO - Update character skill-3 star-3 type & note:
     <CardInfo star="3" type="" note="">
-      <!-- TODO - Add character skill-3 star-3 description -->
+      :TODO - Add character skill-3 star-3 description:
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### <!-- TODO - Update skill-2 name -->
+    ### :TODO - Update skill-2 name:
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <!-- TODO - Update character skill-1 star-1 type & note -->
+    :TODO - Update character skill-1 star-1 type & note:
     <CardInfo star="1" type="" note="">
-      <!-- TODO - Add character skill-1 star-1 description -->
+      :TODO - Add character skill-1 star-1 description:
     </CardInfo>
 
-    <!-- TODO - Update character skill-2 star-2 type & note -->
+    :TODO - Update character skill-2 star-2 type & note:
     <CardInfo star="2" type="" note="">
-      <!-- TODO - Add character skill-2 star-2 description -->
+      :TODO - Add character skill-2 star-2 description:
     </CardInfo>
 
-    <!-- TODO - Update character skill-3 star-3 type & note -->
+    :TODO - Update character skill-3 star-3 type & note:
     <CardInfo star="3" type="" note="">
-      <!-- TODO - Add character skill-3 star-3 description -->
+      :TODO - Add character skill-3 star-3 description:
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### <!-- TODO - Update ultimate name -->
+    ### :TODO - Update ultimate name:
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <!-- TODO - Update character ultimate type & note -->
+    :TODO - Update character ultimate type & note:
     <CardInfo type="" note="">
-      <!-- TODO - Update character ultimate description -->
+      :TODO - Update character ultimate description:
     </CardInfo>
   </Fragment>
 
@@ -337,19 +111,19 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### <!-- TODO - Update inheritance title -->
+    ### :TODO - Update inheritance title:
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    <!-- TODO - Update inheritance insight-1 -->
+    :TODO - Update inheritance insight-1:
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    <!-- TODO - Update inheritance insight-2 -->
+    :TODO - Update inheritance insight-2:
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    <!-- TODO - Update inheritance insight-3 -->
+    :TODO - Update inheritance insight-3:
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -357,23 +131,23 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    <!-- TODO - Update portray lv-1 content -->
+    :TODO - Update portray lv-1 content:
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    <!-- TODO - Update portray lv-2 content -->
+    :TODO - Update portray lv-2 content:
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    <!-- TODO - Update portray lv-3 content -->
+    :TODO - Update portray lv-3 content:
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    <!-- TODO - Update portray lv-4 content -->
+    :TODO - Update portray lv-4 content:
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    <!-- TODO - Update portray lv-5 content -->
+    :TODO - Update portray lv-5 content:
   </Fragment>
 
   <Fragment slot="resonance-section-title">

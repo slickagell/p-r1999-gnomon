@@ -1,0 +1,192 @@
+---
+title: "Argus"
+id: "argus"
+code: "ARGUS"
+star: 6
+afflatus: "PLANT"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "2.1"
+releaseDate: "2024-12-26"
+specialties: ["DPS", "DEBUFF", "SUPPORT"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/argus.json";
+import RESONANCE from "@data/resonance/characters/argus.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Argus
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Shotgun Shower
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="She seldom cares about the size of the commission.">
+      1-target attack. Deals **160%** Reality DMG, then grants :effect{code="EMPOWER_INCANTATION_I"} to self for 1 round.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="She seldom cares about the size of the commission, and her pricing is always fair.">
+      1-target attack. Deals **280%** Reality DMG, then grants :effect{code="EMPOWER_INCANTATION_II"} to self for 1 round.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="She seldom cares about the size of the commission, and her pricing is always fair—however, the rewards she seeks are not limited to that.">
+      1-target attack. Deals **450%** Reality DMG, then grants :effect{code="EMPOWER_INCANTATION_II"} to self for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Penetrating Eye
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="DEBUFF" note="Covered by dust.">
+      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts :effect{code="PINPOINTED"} on the target for 3 rounds. Only 1 :effect{code="PINPOINTED"} debuff can exist on the field at a time.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="Covered by dust, undiscovered by anyone.">
+      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts 5 stacks of :effect{code="PINPOINTED"} on the target for 3 rounds. Only 1 :effect{code="PINPOINTED"} debuff can exist on the field at a time.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="Covered by dust, waiting for her arrival.">
+      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts 10 stacks of :effect{code="PINPOINTED"} on the target for 3 rounds. Only 1 :effect{code="PINPOINTED"} debuff can exist on the field at a time.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### No Mark Unstruck
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="Your fear confirms it: you are fully aware of what you've done.">
+      1-target attack. Deals **500%** Reality DMG to the target. Right before attacking, if the target is in the :effect{code="PINPOINTED"} status, increase the :effect{code="PINPOINTED"} status by 5 stacks, refresh the duration of the entire stack, and grant Penetration Rate **+30%** and Critical Rate **+30%** to this attack.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="extra-cards">
+    ### Grave Digger
+
+    <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+      <div class="basis-full lg:basis-auto shrink-0">
+        <CustomImage presetWidth={192} src={`/images/characters/${frontmatter.id}/grave-digger.png`} alt="grave-digger" />
+      </div>
+
+      <CardInfo type="ATTACK" note="">
+        1-target attack. At rank **1/2/3**, deals **100%/150%/300%** Reality DMG. At rank 2 and higher, gain Moxie +1 for self. At rank 3, this attack is always a critical hit.
+      </CardInfo>
+    </div>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Miracle of a Hundred Eyes
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    After Argus casts a rank **1/2/3** incantation, grant DMG Dealt **+10%/15%/25%** to all allies for 2 rounds.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Critical Rate **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    Right before the incantations in the AP Area resolve, add a ranked incantation *\[Grave Digger]* to the spell queue based on the total ranks of the incantations played this round. This attack is considered an extra action and prioritizes targets with :effect{code="PINPOINTED"}.
+
+    3-4 Ranks: Adds a rank 1 incantation. 1-target attack, deals **100%** Reality DMG.
+
+    5-6 Ranks: Adds a rank 2 incantation. 1-target attack, deals **150%** Reality DMG and gains Moxie +1 for self.
+
+    7+ Ranks: Adds a rank 3 incantation. 1-target attack, deals **300%** Reality DMG and gains Moxie +1 for self. This attack is always a critical hit.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Miracle of a Hundred Eyes*: At incantation rank **1/2/3**, the Reality DMG of *\[Grave Digger]* is increased to **150%/250%/400%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Penetrating Eye*: The base effect of :effect{code="PINPOINTED"} is increased to **20%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-2.5%** and Critical DEF **-2.5%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Miracle of a Hundred Eyes*: At incantation rank **1/2/3**, the Reality DMG of *\[Grave Digger]* is increased to **200%/350%/500%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Penetrating Eye*: The base effect of :effect{code="PINPOINTED"} is increased to **25%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-3%** and Critical DEF **-3%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *No Mark Unstruck*'s effect changes to: deals **700%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

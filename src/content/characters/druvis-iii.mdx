@@ -1,0 +1,172 @@
+---
+title: "Druvis III"
+id: "druvis-iii"
+code: "DRUVIS_III"
+star: 6
+afflatus: "PLANT"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DPS", "CONTROL", "SUPPORT"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/druvis-iii.json";
+import RESONANCE from "@data/resonance/characters/druvis-iii.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Druvis Iii
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Wind into the Woods
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="The wind chases away visitors of the forest.">
+      1-target attack. Deals **200%** Mental DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="The wind chases away visitors of the forest, but sometimes, it keeps them around.">
+      1-target attack. Deals **200%** Mental DMG. Inflicts :effect{code="PETRIFY"} status for 1 round on the target hit.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="The wind chases away visitors of the forest, but sometimes, it keeps them around for long.">
+      1-target attack. Deals **300%** Mental DMG. Inflicts :effect{code="PETRIFY"} status for 2 rounds on the target hit.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Early Dawn
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="The dew and wet moss reside here.">
+      Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="The dew and wet moss reside here. They shouldn't have hurt you.">
+      Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="The dew and wet moss reside here. They shouldn't have hurt you in the forest.">
+      Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Silence in the Woods
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="DEBUFF" note="It grows in the lushest area of the forest.">
+      Mass attack. Deals **400%** Mental DMG to all enemies. On hitting the main target, inflicts :effect{code="PETRIFY"} on the main target for 1 round.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Among the Woods
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Dealt **+20%**.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    When the caster enters battle, all *\[Plant]* allies enter :effect{code="CIRCLE_OF_LIFE"} status (triggers 1 time).
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Wind into the Woods*'s effect changes to: at **2/3** stars, deals **300/400%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Silence in the Woods*: Mental DMG increased to **450%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Early Dawn*'s effect changes to: at **1/2/3** stars, deals **135/200/325%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Silence in the Woods*: Mental DMG increased to **500%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Early Dawn*'s effect changes to: Penetration Rate **+40%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

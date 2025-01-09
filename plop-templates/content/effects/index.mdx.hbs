@@ -2,8 +2,14 @@
 title: "{{titleCase name}}"
 code: "{{constantCase name}}"
 type: "{{type}}"
-isSpecific: {{isSpecific}}
+{{#switch isSpecific}} 
+    {{#case 'CHARACTER'}}
+isSpecific: "character"
+    {{/case}}
+    {{#case 'MODE'}}
+isSpecific: "mode"
+    {{/case}}
+{{/switch}}
 ---
 
-<!-- TODO - Add content -->
-Content
+:TODO - Content:

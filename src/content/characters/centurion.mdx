@@ -1,0 +1,172 @@
+---
+title: "Centurion"
+id: "centurion"
+code: "CENTURION"
+star: 6
+afflatus: "BEAST"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DPS", "BURST_DMG"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/centurion.json";
+import RESONANCE from "@data/resonance/characters/centurion.json";
+import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+
+# Centurion
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Victorious General
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="She made a killing at the card table.">
+      1-target attack. Deals **180%** Reality DMG plus (the caster's Moxie x**8%**) Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="She made a killing at the card table and left.">
+      1-target attack. Deals **270%** Reality DMG plus (the caster's Moxie x**12%**) Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="She made a killing at the card table and left. It takes quite a skill to pull that off.">
+      1-target attack. Deals **450%** Reality DMG plus (the caster's Moxie x**20%**) Reality DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Outdoor Superstar
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Her ads appear in many places.">
+      Mass attack. Deals **150%** Reality DMG to 2 enemies.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="Her ads appear in many places such as cliff faces, deep valleys, and...">
+      Mass attack. Deals **150%** Reality DMG to 2 enemies. Moxie +1 for self.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="Her ads appear in many places, and they all happen to be very dangerous.">
+      Mass attack. Deals **225%** Reality DMG to 2 enemies. Moxie +2 for self.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Reality Show Premiere
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="DEBUFF" note="She never met danger before, but she must have wished for it.">
+      Mass attack. Deals 300% Reality DMG and inflicts 1 stack of :effect{code="WEAKNESS"} on all enemies.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Hot Sauce Expert
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    For every 1 Moxie owned, DMG Dealt **+6%**.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Critical Rate **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    When the caster loses Moxie, HP +(Max HP x**20%**).
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Victorious General*: Additional Reality DMG increased to the caster's Moxie x**14/21/35%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Reality Show Premiere*: Reality DMG increased to **350%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Outdoor Superstar*: At Incantation rank **1/2/3**, Reality DMG increased to **165/170/250%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Reality Show Premiere*: Reality DMG increased to **400%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Victorious General*: Additional Reality DMG increased to the caster's Moxie x**18/27/45%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

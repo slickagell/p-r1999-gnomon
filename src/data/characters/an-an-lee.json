@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5609
+      },
+      "ATTACK": {
+        "value": 1163
+      },
+      "REALITY_DEFENSE": {
+        "value": 572
+      },
+      "MENTAL_DEFENSE": {
+        "value": 572
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 381
+      },
+      "CRITICAL_RATE": {
+        "value": 12.7,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 19,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 6
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 4
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 10
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 4
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_PLANTAL_VIMEN",
+        "require": 16
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 3
+      },
+      {
+        "code": "WYRMLING_SKELETON",
+        "require": 5
+      }
+    ]
+  }
+}

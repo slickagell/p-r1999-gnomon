@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6138
+      },
+      "ATTACK": {
+        "value": 1120
+      },
+      "REALITY_DEFENSE": {
+        "value": 515
+      },
+      "MENTAL_DEFENSE": {
+        "value": 582
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 436
+      },
+      "CRITICAL_RATE": {
+        "value": 14.5,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 21.8,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 4
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 10
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 4
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 16
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 3
+      },
+      {
+        "code": "WYRMLING_SKELETON",
+        "require": 6
+      }
+    ]
+  }
+}

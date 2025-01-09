@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5873
+      },
+      "ATTACK": {
+        "value": 1163
+      },
+      "REALITY_DEFENSE": {
+        "value": 549
+      },
+      "MENTAL_DEFENSE": {
+        "value": 492
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 495
+      },
+      "CRITICAL_RATE": {
+        "value": 16.5,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 24.7,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 6
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 10
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 6
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 16
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 3
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 5
+      }
+    ]
+  }
+}

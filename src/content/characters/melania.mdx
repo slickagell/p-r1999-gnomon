@@ -1,0 +1,172 @@
+---
+title: "Melania"
+id: "melania"
+code: "MELANIA"
+star: 6
+afflatus: "BEAST"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.1"
+releaseDate: "2023-11-09"
+specialties: ["DPS", "BURST_DMG"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/melania.json";
+import RESONANCE from "@data/resonance/characters/melania.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Melania
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Silent Takedown
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Keep an eye on her.">
+      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{code="THIEF_MASTER"} status, this attack steals 1 Moxie from the target.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="Keep an eye on her. She is right here.">
+      1-target attack. Deals **250%** Mental DMG and Moxie -1 for the target. If the caster is in :effect{code="THIEF_MASTER"}, this attack steals 1 additional Moxie from the target.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="Keep an eye on her. She is right here. At least she was a moment ago.">
+      1-target attack. Deals **400%** Mental DMG, Moxie -1 for the target, and Moxie +1 for the caster. If the caster is in :effect{code="THIEF_MASTER"}, this attack steals 1 additional Moxie from the target.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Clockwork Rats
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="A group of frantic stalkers are gathering.">
+      Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic.">
+      Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic. The rodenticide didn't work.">
+      Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Ridiculous Eyewitness Testimony
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="Take off, exchange positions, and retreat.">
+      1-target attack. Deals **600%** Mental DMG. Inflicts 1 stack of :effect{code="THIEF_MASTER"} on the caster.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Top Student
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    After the caster casts an Ultimate, gains 1 stack of :effect{code="FIXED_PLAN"}.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    After the caster casts an Ultimate, gains an additional stack of :effect{code="FIXED_PLAN"}.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Ridiculous Eyewitness Testimony* deals **725%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Ridiculous Eyewitness Testimony* additionally gains 1 stack of :effect{code="THIEF_MASTER"}.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Silent Takedown*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Clockwork Rats*'s effect changes to: at **1/2/3** stars, deals **135/200/325%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Ridiculous Eyewitness Testimony* deals **800%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>
