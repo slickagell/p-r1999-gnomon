@@ -1,0 +1,128 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout
+  title="Timeline"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Timeline",
+    },
+  ]}
+>
+  <h1>Timeline</h1>
+  <div class="mt-8" x-data="timelineChart">
+    <div id="timeline" class="relative bg-base-content/10"></div>
+    <span x-text="'Zoom: ' + scale"></span>
+  </div>
+</Layout>
+<!-- 
+<script>
+  import * as d3 from "d3";
+
+  const MARGIN = { TOP: 10, RIGHT: 30, BOTTOM: 30, LEFT: 30 };
+  const CHART_WIDTH = 992 - MARGIN.LEFT - MARGIN.RIGHT;
+  const CHART_HEIGHT = 400 - MARGIN.TOP - MARGIN.BOTTOM;
+  const TOTAL_WIDTH = CHART_WIDTH * 6;
+
+  let k = 1;
+
+  // Add X axis
+  let x = d3
+    .scaleLinear()
+    .domain([1900, 1999])
+    .range([MARGIN.LEFT, TOTAL_WIDTH - MARGIN.RIGHT]);
+
+  // create svg element
+  d3.select("#timeline")
+    .append("svg")
+    .attr("width", CHART_WIDTH + MARGIN.LEFT + MARGIN.RIGHT)
+    .attr("height", CHART_HEIGHT + MARGIN.TOP + MARGIN.BOTTOM)
+    .style("position", "absolute")
+    .style("pointer-events", "none")
+    .style("z-index", 1)
+    .append("g")
+    .attr("transform", "translate(" + MARGIN.LEFT + "," + 0 + ")");
+
+  // Create a scrolling div containing the area shape and the horizontal axis.
+  const body = d3
+    .select("#timeline")
+    .append("div")
+    .style("overflow-x", "scroll")
+    .style("-webkit-overflow-scrolling", "touch");
+
+  const svg = body
+    .append("svg")
+    .attr("width", TOTAL_WIDTH)
+    .attr("height", CHART_HEIGHT)
+    .style("display", "block");
+
+  let xAxis = svg
+    .append("g")
+    .attr("transform", "translate(0," + (CHART_HEIGHT - MARGIN.BOTTOM) + ")")
+    .call(d3.axisBottom(x));
+
+  // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
+  let zoom = d3
+    .zoom()
+    .scaleExtent([1, 10]) // This control how much you can unzoom (x0.5) and zoom (x20)
+    .extent([
+      [0, 0],
+      [CHART_WIDTH, CHART_HEIGHT],
+    ])
+    .filter(filterZoom)
+    .on("zoom", updateChart);
+
+  // This add an invisible rect on top of the chart area. This rect can recover pointer events: necessary to understand when the user zoom
+  svg
+    .append("rect")
+    .attr("width", TOTAL_WIDTH)
+    .attr("height", CHART_HEIGHT)
+    .style("fill", "none")
+    .style("pointer-events", "all")
+    .attr("transform", "translate(" + 0 + "," + MARGIN.TOP + ")")
+    .call(zoom);
+
+  // A function that updates the chart when the user zoom and thus new boundaries are available
+  function updateChart(event) {
+    // recover the new scale
+    var newX = event.transform.rescaleX(x);
+
+    // update axes with these new boundaries
+    xAxis.call(d3.axisBottom(newX).ticks(5).tickFormat(d3.format(".0f")));
+
+    k = event.transform.k;
+  }
+
+  function filterZoom(event) {
+    return event.ctrlKey && event.type === "wheel" && !event.button;
+  }
+</script> -->
+
+<style>
+  .node {
+    fill: green;
+    stroke: steelblue;
+  }
+
+  .arrow {
+    stroke: black;
+    fill: none;
+  }
+</style>
+
+<script>
+  import timelineChart from "@scripts/timeline-chart";
+  import Alpine from "alpinejs";
+  import resize from "@alpinejs/resize";
+
+  Alpine.plugin(resize);
+
+  window.Alpine = Alpine;
+
+  Alpine.data("timelineChart", timelineChart);
+</script>
