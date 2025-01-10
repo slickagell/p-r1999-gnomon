@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6927
+      },
+      "ATTACK": {
+        "value": 1143
+      },
+      "REALITY_DEFENSE": {
+        "value": 482
+      },
+      "MENTAL_DEFENSE": {
+        "value": 505
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 456
+      },
+      "CRITICAL_RATE": {
+        "value": 15.2,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 22.8,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 6
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 10
+      },
+      {
+        "code": "GOLDEN_GRASS_INCENSE",
+        "require": 5
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 16
+      },
+      {
+        "code": "RHEINGOLD",
+        "require": 3
+      },
+      {
+        "code": "WATCH_CORE",
+        "require": 6
+      }
+    ]
+  }
+}
