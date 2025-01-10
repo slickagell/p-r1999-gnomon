@@ -61,6 +61,10 @@ export default () => ({
   xLine: null,
   xAxis: null,
 
+  nodes: null,
+  periods: null,
+  arrows: null,
+
   svg: null,
 
   init() {
@@ -86,7 +90,7 @@ export default () => ({
       .select("#timeline")
       .append("div")
       .attr("class", "relative")
-      .style("overflow-x", "scroll")
+      .style("overflow-x", "auto")
       .style("-webkit-overflow-scrolling", "touch");
 
     this.svg = body
@@ -136,21 +140,6 @@ export default () => ({
       .attr("stroke", STORM_COLOR)
       .attr("fill", STORM_COLOR);
 
-    const drawLinkCurve = (source: { x; y }, target: { x; y }, index = 0) => {
-      const context = d3.path();
-      context.moveTo(source.x, source.y);
-      context.lineTo(
-        source.x,
-        target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
-      );
-      context.lineTo(
-        target.x,
-        target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
-      );
-      context.lineTo(target.x, target.y);
-      return context + "";
-    };
-
     let stormNodesY = STORM_EVENT_Y_COORDINATE;
 
     const stormNodes = STORM_EVENT_DATA.map((event, idx) => {
@@ -191,10 +180,12 @@ export default () => ({
         {
           title: `Storm ` + (idx + 1),
           source: {
+            year: time[0].year,
             x: sourceX,
             y: sourceY,
           },
           target: {
+            year: stormNodes[idx + 1][0].year,
             x: targetX,
             y: targetY,
           },
@@ -207,14 +198,18 @@ export default () => ({
       .append("div")
       .attr("class", "tooltip")
       .style("opacity", 0)
-      .attr("class", "absolute border p-2 ");
+      .attr("class", "absolute border p-2")
+      .style("left", 0)
+      .style("top", 0);
 
-    const periods = this.svg
+    this.periods = this.svg
       .selectAll(".period")
       .data(stormNodes.filter((d) => d.length > 1))
       .enter()
       .append("rect")
-      .attr("class", "period cursor-pointer")
+      .attr("class", "period cursor-pointer");
+
+    this.periods
       .attr("x", (d) => d[0].x)
       .attr("y", (d) => d[0].y - CIRCLE_RADIUS / 2)
       .attr("width", (d) => d[d.length - 1].x - d[0].x)
@@ -249,12 +244,14 @@ export default () => ({
         tooltip.style("left", 0).style("top", 0);
       });
 
-    const circles = this.svg
+    this.nodes = this.svg
       .selectAll(".node")
       .data(stormNodes.flat())
       .enter()
       .append("circle")
-      .attr("class", "node cursor-pointer")
+      .attr("class", "node cursor-pointer");
+
+    this.nodes
       .attr("cx", (d, i) => d.x)
       .attr("cy", (d, i) => d.y)
       .attr("r", (d) => d.r)
@@ -287,17 +284,19 @@ export default () => ({
         tooltip.style("left", 0).style("top", 0);
       });
 
-    const arrows = this.svg
+    this.arrows = this.svg
       .selectAll(".arrow")
       .data(stormLinks)
       .enter()
       .append("path")
-      .attr("class", "arrow")
+      .attr("class", "arrow");
+
+    this.arrows
       .attr("id", (d, i) => `storm-link-${i + 1}`)
       .style("stroke", STORM_COLOR)
       .style("fill", "none")
       .style("stroke-dasharray", "4 4")
-      .attr("d", function (d, i) {
+      .attr("d", (d, i) => {
         // const reversedX = d.source.x < d.target.x ? 1 : -1;
         // d.source.x += CIRCLE_RADIUS * reversedX;
         // d.target.x -= (CIRCLE_RADIUS + MARKER_WIDTH) * reversedX;
@@ -306,16 +305,18 @@ export default () => ({
         d.source.y += CIRCLE_RADIUS * reversedY * reversedIndex;
         d.target.y +=
           (CIRCLE_RADIUS + MARKER_WIDTH) * reversedY * reversedIndex;
-        return drawLinkCurve(d.source, d.target, i);
+        return this.drawLinkCurve(d.source, d.target, i);
       })
       .attr("marker-end", "url(#arrow)");
 
-    this.svg.selectAll(".arrow").each((d, i, nodes) => {
+    this.arrows.each((d, i, nodes) => {
       const bbox = d3.select(nodes[i]).node().getBBox();
       const centreX = bbox.x + bbox.width / 2; // <-- get x centre
       const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
       this.svg
-        .append("text") // <-- now add the text element
+        .append("text")
+        .attr("class", "arrow-label")
+        .attr("id", `arrow-label-${i + 1}`)
         .text(d.title)
         .attr("x", centreX)
         .attr("y", centreY)
@@ -323,6 +324,21 @@ export default () => ({
         .attr("fill", STORM_COLOR)
         .style("font-size", "12px");
     });
+  },
+
+  drawLinkCurve(source: { x; y }, target: { x; y }, index = 0) {
+    const context = d3.path();
+    context.moveTo(source.x, source.y);
+    context.lineTo(
+      source.x,
+      target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
+    );
+    context.lineTo(
+      target.x,
+      target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
+    );
+    context.lineTo(target.x, target.y);
+    return context + "";
   },
 
   filterZoom(event) {
@@ -334,7 +350,37 @@ export default () => ({
     let newX = event.transform.rescaleX(this.xLine);
 
     // update axes with these new boundaries
-    this.xAxis.call(d3.axisBottom(newX).ticks(5).tickFormat(d3.format(".0f")));
+    this.xAxis.call(d3.axisBottom(newX).tickFormat(d3.format(".0f")));
+
+    this.nodes.attr("cx", function (d) {
+      d.x = newX(d.year);
+      return d.x;
+    });
+
+    this.periods
+      .attr("x", function (d) {
+        d.x = newX(d[0].year);
+        return d.x;
+      })
+      .attr("width", function (d) {
+        return newX(d[d.length - 1].year) - newX(d[0].year);
+      });
+
+    this.arrows.attr("d", (d, i) => {
+      d.source.x = newX(d.source.year);
+      d.target.x = newX(d.target.year);
+      return this.drawLinkCurve(d.source, d.target, i);
+    });
+
+    this.arrows.each((d, i, nodes) => {
+      const bbox = d3.select(nodes[i]).node().getBBox();
+      const centreX = bbox.x + bbox.width / 2; // <-- get x centre
+      const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
+      this.svg
+        .select(`#arrow-label-${i + 1}`)
+        .attr("x", centreX)
+        .attr("y", centreY);
+    });
 
     this.scale = event.transform.k;
   },
