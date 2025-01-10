@@ -17,6 +17,7 @@ const ARROW_POINTS: [number, number][] = [
   [8, 4],
 ];
 const CIRCLE_RADIUS = 4;
+const TRANSITION_DURATION_TIME = 300;
 
 const STORM_COLOR = "#db6f39";
 const STORM_EVENT_DATA = [
@@ -43,6 +44,12 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1929],
+  },
+  {
+    period: [1913, 1914],
+  },
+  {
+    period: [1990],
   },
 ];
 
@@ -78,6 +85,7 @@ export default () => ({
     const body = d3
       .select("#timeline")
       .append("div")
+      .attr("class", "relative")
       .style("overflow-x", "scroll")
       .style("-webkit-overflow-scrolling", "touch");
 
@@ -90,7 +98,7 @@ export default () => ({
     this.xAxis = this.svg
       .append("g")
       .attr("transform", "translate(0," + (CHART_HEIGHT - MARGIN.BOTTOM) + ")")
-      .call(d3.axisBottom(this.xLine));
+      .call(d3.axisBottom(this.xLine).tickFormat(d3.format(".0f")));
 
     // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
     let zoom = d3
@@ -128,35 +136,18 @@ export default () => ({
       .attr("stroke", STORM_COLOR)
       .attr("fill", STORM_COLOR);
 
-    // horizontal link
-    const linkH = d3
-      .linkHorizontal()
-      .x((d) => d.x)
-      .y((d) => d.y);
-
-    // vertical link
-    const linkV = d3
-      .linkVertical()
-      .x((d) => d.x)
-      .y((d) => d.y);
-
-    const drawLinkCurve = (source: { x; y }, target: { x; y }) => {
+    const drawLinkCurve = (source: { x; y }, target: { x; y }, index = 0) => {
       const context = d3.path();
       context.moveTo(source.x, source.y);
-      context.quadraticCurveTo(
-        (source.x + target.x) / 2,
-        STORM_EVENT_Y_COORDINATE - Math.abs(source.x - target.x) / 4,
-        target.x,
-        target.y
+      context.lineTo(
+        source.x,
+        target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
       );
-      //   context.bezierCurveTo(
-      //     source.x - MARGIN.LEFT,
-      //     source.y - MARGIN.BOTTOM,
-      //     target.x + MARGIN.LEFT,
-      //     target.y + MARGIN.BOTTOM,
-      //     target.x,
-      //     target.y
-      //   );
+      context.lineTo(
+        target.x,
+        target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
+      );
+      context.lineTo(target.x, target.y);
       return context + "";
     };
 
@@ -172,10 +163,6 @@ export default () => ({
             r: CIRCLE_RADIUS,
           };
         });
-      }
-
-      if (event.period.length === 1) {
-        stormNodesY += 20;
       }
 
       return event.period.map((year) => {
@@ -202,6 +189,7 @@ export default () => ({
       return [
         ...prev,
         {
+          title: `Storm ` + (idx + 1),
           source: {
             x: sourceX,
             y: sourceY,
@@ -215,18 +203,89 @@ export default () => ({
       ];
     }, []);
 
+    let tooltip = body
+      .append("div")
+      .attr("class", "tooltip")
+      .style("opacity", 0)
+      .attr("class", "absolute border p-2 ");
+
+    const periods = this.svg
+      .selectAll(".period")
+      .data(stormNodes.filter((d) => d.length > 1))
+      .enter()
+      .append("rect")
+      .attr("class", "period cursor-pointer")
+      .attr("x", (d) => d[0].x)
+      .attr("y", (d) => d[0].y - CIRCLE_RADIUS / 2)
+      .attr("width", (d) => d[d.length - 1].x - d[0].x)
+      .attr("height", CIRCLE_RADIUS)
+      .style("fill", "#bba893")
+      .on("mouseover", function (event, d, i) {
+        d3.select(this)
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .attr("height", CIRCLE_RADIUS * 1.5);
+        tooltip
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .style("opacity", 1);
+        tooltip
+          .html(
+            `<p class="whitespace-nowrap">Period: ${d[0].year} - ${d[d.length - 1].year}</p>`
+          )
+          .style("left", d[0].x + "px")
+          .style("top", d[0].y + "px")
+          .style("transform", "translate(-50%, calc(-100% - 16px))");
+      })
+      .on("mouseout", function (d) {
+        d3.select(this)
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .attr("height", CIRCLE_RADIUS);
+        tooltip
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .style("opacity", 0);
+        tooltip.style("left", 0).style("top", 0);
+      });
+
     const circles = this.svg
       .selectAll(".node")
       .data(stormNodes.flat())
       .enter()
       .append("circle")
-      .attr("class", "node");
-
-    circles
+      .attr("class", "node cursor-pointer")
       .attr("cx", (d, i) => d.x)
       .attr("cy", (d, i) => d.y)
       .attr("r", (d) => d.r)
-      .style("fill", STORM_COLOR);
+      .style("fill", STORM_COLOR)
+      .on("mouseover", function (event, d, i) {
+        d3.select(this)
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .attr("r", CIRCLE_RADIUS * 1.5);
+
+        tooltip
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .style("opacity", 1);
+        tooltip
+          .html(`<p class="whitespace-nowrap">Year: ${d.year}</p>`)
+          .style("left", d.x + "px")
+          .style("top", d.y + "px")
+          .style("transform", "translate(-50%, calc(-100% - 16px))");
+      })
+      .on("mouseout", function (d) {
+        d3.select(this)
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .attr("r", CIRCLE_RADIUS);
+        tooltip
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .style("opacity", 0);
+        tooltip.style("left", 0).style("top", 0);
+      });
 
     const arrows = this.svg
       .selectAll(".arrow")
@@ -234,35 +293,36 @@ export default () => ({
       .enter()
       .append("path")
       .attr("class", "arrow")
+      .attr("id", (d, i) => `storm-link-${i + 1}`)
       .style("stroke", STORM_COLOR)
-      .style("fill", "none");
-
-    arrows
-      .attr("d", (d, i) => {
-        let reversed;
-        // if (d.arrowDirection === "H") {
-        //   reversed = d.source.x < d.target.x ? 1 : -1;
-        //   d.source.x += CIRCLE_RADIUS * reversed;
-        //   d.target.x -= (CIRCLE_RADIUS + MARKER_WIDTH) * reversed;
-        //   //return linkH(d);
-        //   return drawLinkCurve(d.source, d.target);
-        // } else {
-        //   reversed = d.source.y > d.target.y ? 1 : -1;
-        //   d.source.y -= CIRCLE_RADIUS * reversed;
-        //   d.target.y += (CIRCLE_RADIUS + MARKER_WIDTH) * reversed;
-        //   //return linkV(d);
-        //   return drawLinkCurve(d.source, d.target);
-        // }
-
-        const reversedX = d.source.x < d.target.x ? 1 : -1;
-        d.source.x += CIRCLE_RADIUS * reversedX;
-        d.target.x -= (CIRCLE_RADIUS + MARKER_WIDTH) * reversedX;
+      .style("fill", "none")
+      .style("stroke-dasharray", "4 4")
+      .attr("d", function (d, i) {
+        // const reversedX = d.source.x < d.target.x ? 1 : -1;
+        // d.source.x += CIRCLE_RADIUS * reversedX;
+        // d.target.x -= (CIRCLE_RADIUS + MARKER_WIDTH) * reversedX;
         const reversedY = d.source.y > d.target.y ? 1 : -1;
-        d.source.y += CIRCLE_RADIUS * reversedY;
-        d.target.y += (CIRCLE_RADIUS + MARKER_WIDTH) * reversedY;
-        return drawLinkCurve(d.source, d.target);
+        const reversedIndex = i % 2 === 0 ? -1 : 1;
+        d.source.y += CIRCLE_RADIUS * reversedY * reversedIndex;
+        d.target.y +=
+          (CIRCLE_RADIUS + MARKER_WIDTH) * reversedY * reversedIndex;
+        return drawLinkCurve(d.source, d.target, i);
       })
       .attr("marker-end", "url(#arrow)");
+
+    this.svg.selectAll(".arrow").each((d, i, nodes) => {
+      const bbox = d3.select(nodes[i]).node().getBBox();
+      const centreX = bbox.x + bbox.width / 2; // <-- get x centre
+      const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
+      this.svg
+        .append("text") // <-- now add the text element
+        .text(d.title)
+        .attr("x", centreX)
+        .attr("y", centreY)
+        .attr("text-anchor", "middle")
+        .attr("fill", STORM_COLOR)
+        .style("font-size", "12px");
+    });
   },
 
   filterZoom(event) {
