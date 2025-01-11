@@ -8,8 +8,7 @@ dmgType: "REALITY"
 race: "HUMAN"
 version: "2.2"
 releaseDate: "2025-01-09"
-:TODO - Update specialties, if there's a new specialty, please add it to SPECIALTY in data/characters.ts file:
-specialties: []
+specialties: ["DPS", "RIPOSTE", "REAPER"]
 isLimited: false
 ---
 
@@ -34,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Sentimental Beast [Beast] Veteran 
+    Sentimental Beast \[Beast] Veteran
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -81,7 +80,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     </CardInfo>
 
     <CardInfo star="2" type="COUNTER" note="Improvised materials and a dash of inspiration.">
-     1-target counter. Gains 3 bullets from :effect{code="VETERAN_CARTRIDGE"} and enters the :effect{code="QUICK_DRAW"} status for 2 rounds.
+      1-target counter. Gains 3 bullets from :effect{code="VETERAN_CARTRIDGE"} and enters the :effect{code="QUICK_DRAW"} status for 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="COUNTER" note="Improvised materials, a dash of inspiration, and fifty years of living experience.">
@@ -95,7 +94,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="An adrenaline rush that far surpasses the finest wines.">
-      1-target attack. Deals **500%** Reality DMG to an enemy. For each type of _[Bullet]_ held on self, this attack gains an additional Critical Rate **+10%**.
+      1-target attack. Deals **500%** Reality DMG to an enemy. For each type of *\[Bullet]* held on self, this attack gains an additional Critical Rate **+10%**.
     </CardInfo>
   </Fragment>
 
@@ -108,7 +107,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    Whenever an ally triggers _[Bullet]_ 2 times, gain 1 stack of :effect{code="CEREMONIOUS"} for self.
+    Whenever an ally triggers *\[Bullet]* 2 times, gain 1 stack of :effect{code="CEREMONIOUS"} for self.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,23 +123,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    _Lethal Melody_: At incantation rank **1/2/3**, the Genesis DMG fs increased to **100/150/250%**.
+    *Lethal Melody*: At incantation rank **1/2/3**, the Genesis DMG fs increased to **100/150/250%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-   _A Veteran's Regards_: For each type of _[Bullet]_ held, the Critical Rate gained is increased to **20%**.
+    *A Veteran's Regards*: For each type of *\[Bullet]* held, the Critical Rate gained is increased to **20%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    _Lethal Melody_: At incantation rank **1/2/3**, the Reality DMG is increased to **120/180/300%**.
+    *Lethal Melody*: At incantation rank **1/2/3**, the Reality DMG is increased to **120/180/300%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    _Makeshift Inventions_: [Swift Riposte]'s Reality DMG dealt is increased to **500%**.
+    *Makeshift Inventions*: \[Swift Riposte]'s Reality DMG dealt is increased to **500%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    _Military Experience_: After defeating an enemy, the types of bullets gained from :effect{code="VETERAN_CARTRIDGE"} by all allies is increased to **2**.
+    *Military Experience*: After defeating an enemy, the types of bullets gained from :effect{code="VETERAN_CARTRIDGE"} by all allies is increased to **2**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -171,5 +170,3 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
   </Fragment>
 </CharacterContent>
- 
-
