@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5857
+      },
+      "ATTACK": {
+        "value": 1024
+      },
+      "REALITY_DEFENSE": {
+        "value": 481
+      },
+      "MENTAL_DEFENSE": {
+        "value": 481
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 593
+      },
+      "CRITICAL_RATE": {
+        "value": 19.7,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 29.6,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "PERPETUAL_COG",
+        "require": 4
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 3
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 12
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 2
+      },
+      {
+        "code": "WATCH_CORE",
+        "require": 4
+      }
+    ]
+  }
+}
