@@ -116,6 +116,12 @@ export const SPECIALTY = {
   NASTY_WOUND: {
     title: "Nasty Wound",
   },
+  DISPELL: {
+    title: "Dispell",
+  },
+  IMMUNITY: {
+    title: "Immunity",
+  },
 };
 
 export const RARITY = {

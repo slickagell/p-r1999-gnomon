@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 7031
+      },
+      "ATTACK": {
+        "value": 922
+      },
+      "REALITY_DEFENSE": {
+        "value": 534
+      },
+      "MENTAL_DEFENSE": {
+        "value": 534
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 383
+      },
+      "CRITICAL_RATE": {
+        "value": 12.7,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 19.1,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 4
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 12
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 2
+      },
+      {
+        "code": "SILVER_BULLET",
+        "require": 4
+      }
+    ]
+  }
+}
