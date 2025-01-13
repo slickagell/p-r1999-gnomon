@@ -141,6 +141,10 @@ export const RARITY = {
     title: "3 star",
     value: 3,
   },
+  TWO_STAR: {
+    title: "2 star",
+    value: 2,
+  },
 };
 
 export const STATS = {
