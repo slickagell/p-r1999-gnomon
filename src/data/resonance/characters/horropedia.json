@@ -1,0 +1,87 @@
+{
+  "mainPiece": "RP_Z_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "WATCH_CORE",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 4
+        }
+      ]
+    },
+    "MERCY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 4
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "MURMUR_OF_INSANITY",
+          "require": 2
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 3
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "GLOWING_MOTHWING",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}
