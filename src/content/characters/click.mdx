@@ -1,9 +1,10 @@
 ---
-title: "Matilda"
-id: "matilda"
-code: "MATILDA"
+title: "Click"
+id: "click"
+gameId: "3049"
+code: "CLICK"
 star: 5
-afflatus: "STAR"
+afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "ARCANIST"
 version: "1.0"
@@ -17,11 +18,11 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/matilda.json";
-import RESONANCE from "@data/resonance/characters/matilda.json";
-import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+import CHARACTER from "@data/characters/click.json";
+import RESONANCE from "@data/resonance/characters/click.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Matilda
+# Click
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
@@ -53,48 +54,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Work of Genius
+    ### The Onlooker
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An outstanding piece of work">
+    <CardInfo star="1" type="ATTACK" note="He witnessed the bombardment.">
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="An outstanding piece of work, as praised by the people.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="DEBUFF" note="He witnessed the bombardment, before the chaos arrived.">
+      1-target attack. Deals **250%** Mental DMG and inflicts :effect{code="BLIND"} on the target for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="An outstanding piece of work. Yet she showed no sign of joy as there was something better out there.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="DEBUFF" note="He witnessed the bombardment, before the chaos arrived. That's all.">
+      1-target attack. Deals **400%** Mental DMG and inflicts 2 rounds of :effect{code="BLIND"}.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Attention Everyone
+    ### The Witness
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A rising star.">
-      Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="1" type="ATTACK" note="Now the word Manna has a new meaning.">
+      1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A rising star, but it was something that she grew used to.">
-      Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="2" type="ATTACK" note="Now the word Manna has a new meaning. It could mean pancake with honey.">
+      1-target attack. Deals **250%** Mental DMG. Moxie -1 for the target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A rising star, but she never slowed down, and she laid her sights far and wide.">
-      Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="3" type="ATTACK" note="Now the word Manna has a new meaning. It could mean a pancake with honey, or a critter that falls from above.">
+      1-target attack. Deals **400%** Mental DMG. Moxie -2 for the target.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Instant of Prediction
+    ### A Picture at a Price
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Her talent was second to none in this particular test of spheres.">
-      1-target attack. Deals **500%** Mental DMG. This attack enjoys Critical Rate **+15%**.
+    <CardInfo type="ATTACK" note="That's how people learned about wars and the tragedies behind. They have to admit the price is high.">
+      Mass attack. Deals **300%** Mental DMG to all enemies. Other allies enter :effect{code="LENS_CAP"} status for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +104,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### The Proud Star
+    ### New Photography Theory
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Rate **+15%**.
+    At the beginning of every 2 rounds, enters :effect{code="LENS_CAP"} status for 1 round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
+    DMG Taken **-8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Taken **-15%**.
+    When the caster is in :effect{code="LENS_CAP"} status, Penetration Rate **+30%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +124,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+23%**.
+    *Valuable Good Photo*'s effect changes to: deals **350%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Work of Genius*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Mental DMG.
+    *Spectator*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+31%**.
+    *Valuable Good Photo*'s effect changes to: deals **400%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Attention Everyone*'s effect changes to: this attack enjoys Penetration Rate **+40%**.
+    *Witness*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+39%**.
+    *Valuable Good Photo*'s effect changes to: deals **450%** Mental DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

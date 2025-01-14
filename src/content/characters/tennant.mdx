@@ -1,14 +1,15 @@
 ---
-title: "Matilda"
-id: "matilda"
-code: "MATILDA"
+title: "Tennant"
+id: "tennant"
+gameId: "3043"
+code: "TENNANT"
 star: 5
-afflatus: "STAR"
-dmgType: "MENTAL"
+afflatus: "BEAST"
+dmgType: "REALITY"
 race: "ARCANIST"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "DEBUFF"]
+specialties: ["DPS", "DEBUFF", "SHIELD"]
 isLimited: false
 ---
 
@@ -17,11 +18,11 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/matilda.json";
-import RESONANCE from "@data/resonance/characters/matilda.json";
+import CHARACTER from "@data/characters/tennant.json";
+import RESONANCE from "@data/resonance/characters/tennant.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Matilda
+# Tennant
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
@@ -53,48 +54,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Work of Genius
+    ### A Shiny Diamond
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An outstanding piece of work">
-      1-target attack. Deals **200%** Mental DMG.
+    <CardInfo star="1" type="ATTACK" note="It's glamorous.">
+      1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="An outstanding piece of work, as praised by the people.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="ATTACK" note="It used to be sand, or charcoal.">
+      1-target attack. Deals **300%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="An outstanding piece of work. Yet she showed no sign of joy as there was something better out there.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="ATTACK" note="It's just a lie known to everyone.">
+      1-target attack. Deals **500%** Reality DMG.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Attention Everyone
+    ### A Bouquet of Galaxy
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A rising star.">
-      Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="1" type="BUFF" note="People have always dreamed of such thing.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**80%**) HP for 1 round. DMG Taken **-20%** while the :effect{code="SHIELD"} is active.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A rising star, but it was something that she grew used to.">
-      Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="2" type="BUFF" note="People have always dreamed of such thing, but they can only gaze at it from the ground.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**120%**) HP for 1 round. DMG Taken **-20%** while the :effect{code="SHIELD"} is active.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A rising star, but she never slowed down, and she laid her sights far and wide.">
-      Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="3" type="BUFF" note="People have always dreamed of such thing, no matter it's in the distant universe, or right in front of them.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**200%**) HP for 1 round. DMG Taken **-20%** while the :effect{code="SHIELD"} is active.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Instant of Prediction
+    ### A Sincere Heart
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Her talent was second to none in this particular test of spheres.">
-      1-target attack. Deals **500%** Mental DMG. This attack enjoys Critical Rate **+15%**.
+    <CardInfo type="" note="Her heart is sincere. It's just split into many pieces. Don't blame her.">
+      1-target attack. Deals **550%** Reality DMG to the target and loads 2 rounds of :effect{code="DIAMOND_BULLET"}.
     </CardInfo>
   </Fragment>
 
@@ -103,11 +104,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### The Proud Star
+    ### Beautiful Lie
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Rate **+15%**.
+    After the caster enters battle, immediately casts 1-star *A Bouquet of Galaxy* and gains 1 stack of :effect{code="DIAMOND_BULLET"} (only triggers 1 time).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -115,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Taken **-15%**.
+    If the caster starts a round with HP below **50%**, immediately casts 1-star *A Bouquet of Galaxy* (only triggers 1 time).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +124,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+23%**.
+    *A Sincere Heart*'s effect changes to: deals **600%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Work of Genius*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Mental DMG.
+    *A Shiny Diamond*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+31%**.
+    *A Sincere Heart*'s effect changes to: deals **650%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Attention Everyone*'s effect changes to: this attack enjoys Penetration Rate **+40%**.
+    *A Bouquet of Galaxy*'s effect changes to: at **1/2/3** stars, grants a :effect{code="SHIELD"} with (the caster's ATK x**90/135/225%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+39%**.
+    *A Sincere Heart*'s effect changes to: deals **700%** Reality DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

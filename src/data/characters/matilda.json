@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5981
+      },
+      "ATTACK": {
+        "value": 1046
+      },
+      "REALITY_DEFENSE": {
+        "value": 481
+      },
+      "MENTAL_DEFENSE": {
+        "value": 538
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 356
+      },
+      "CRITICAL_RATE": {
+        "value": 11.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 17.8,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 3
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 3
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 12
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 2
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 4
+      }
+    ]
+  }
+}

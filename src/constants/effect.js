@@ -1,33 +1,33 @@
 export const EFFECT_TYPE = {
+  CHANNEL: {
+    title: "Channel",
+  },
+  CONTROL: {
+    title: "Control",
+  },
+  COUNTER: {
+    title: "Counter",
+  },
   DEFINITION: {
     title: "Definition",
   },
   GENERAL: {
     title: "General",
   },
-  COUNTER: {
-    title: "Counter",
-  },
-  CONTROL: {
-    title: "Control",
-  },
-  STATS_UP: {
-    title: "Stats Up",
+  NEG_STATUS: {
+    title: "Neg Status",
   },
   POS_STATUS: {
     title: "Pos Status",
   },
-  NEG_STATUS: {
-    title: "Neg Status",
+  SHIELD: {
+    title: "Shield",
   },
   SPECIAL: {
     title: "Special",
   },
-  CHANNEL: {
-    title: "Channel",
-  },
-  SHIELD: {
-    title: "Shield",
+  STATS_UP: {
+    title: "Stats Up",
   },
   UNKNOWN: {
     title: "Unknown",

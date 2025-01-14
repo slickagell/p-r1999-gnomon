@@ -1,14 +1,14 @@
 ---
-title: "Matilda"
-id: "matilda"
-code: "MATILDA"
+title: "Satsuki"
+id: "satsuki"
+code: "SATSUKI"
 star: 5
-afflatus: "STAR"
+afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "DEBUFF"]
+specialties: ["DPS", "CONTROL"]
 isLimited: false
 ---
 
@@ -17,11 +17,11 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/matilda.json";
-import RESONANCE from "@data/resonance/characters/matilda.json";
+import CHARACTER from "@data/characters/satsuki.json";
+import RESONANCE from "@data/resonance/characters/satsuki.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Matilda
+# Satsuki
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
@@ -53,48 +53,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Work of Genius
+    ### Handcuffed Thief
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An outstanding piece of work">
+    <CardInfo star="1" type="ATTACK" note="The thief has been captured.">
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="An outstanding piece of work, as praised by the people.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="DEBUFF" note="The thief has been captured and would never steal again.">
+      1-target attack. Deals **220%** Mental DMG and inflicts 1 stack of :effect{code="RIGIDITY"} on the target.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="An outstanding piece of work. Yet she showed no sign of joy as there was something better out there.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{code="CONFUSION"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="DEBUFF" note="The thief has been captured, but why are we still losing money?">
+      1-target attack. Deals **330%** Mental DMG and inflicts 2 stacks of :effect{code="RIGIDITY"} on the target.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Attention Everyone
+    ### Dancer of Izu
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A rising star.">
+    <CardInfo star="1" type="ATTACK" note="The lady dances with chains.">
       Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A rising star, but it was something that she grew used to.">
+    <CardInfo star="2" type="ATTACK" note="The lady dances with chains yet feels free and unshackled.">
       Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A rising star, but she never slowed down, and she laid her sights far and wide.">
+    <CardInfo star="3" type="ATTACK" note="The lady dances with chains. Time has passed yet she is as graceful as ever.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Instant of Prediction
+    ### Walk Down the Sakura
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Her talent was second to none in this particular test of spheres.">
-      1-target attack. Deals **500%** Mental DMG. This attack enjoys Critical Rate **+15%**.
+    <CardInfo type="DEBUFF" note="Fragrance spreads in moonlit nights of spring, yet her enrapturing beauty remains unseen.">
+      1-target attack. Deals **550%** Mental DMG and inflicts 2 stacks of :effect{code="RIGIDITY"} to the target.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +103,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### The Proud Star
+    ### Taisho Maid
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, Critical Rate **+15%**.
+    When the caster enters battle, inflicts 1 stack of :effect{code="RIGIDITY"} on all enemies (only triggers 1 time). When the caster dies, inflicts :effect{code="PETRIFY"} status on the enemy with the highest ATK for 2 rounds.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
+    When the caster enters battle, Penetration Rate **+10%**.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, DMG Taken **-15%**.
+    Attacks against enemies with :effect{code="RIGIDITY"} or :effect{code="PETRIFY"} statuses enjoy Penetration Rate **+15%**. When the caster is attacked by enemies with :effect{code="RIGIDITY"} status, DMG Taken **-15%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +123,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+23%**.
+    *Walk Down the Sakura*'s effect changes to: deals **600%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Work of Genius*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Mental DMG.
+    *Handcuffed Thief*'s effect changes to: at **1/2/3** stars, deals **220/250/380%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+31%**.
+    *Walk Down the Sakura*'s effect changes to: deals **650%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Attention Everyone*'s effect changes to: this attack enjoys Penetration Rate **+40%**.
+    *Dancer of Izu*'s effect changes to: Penetration Rate **+40%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Instant of Prediction*'s effect changes to: this attack enjoys Critical Rate **+39%**.
+    *Walk Down the Sakura*'s effect changes to: deals **750%** Mental DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

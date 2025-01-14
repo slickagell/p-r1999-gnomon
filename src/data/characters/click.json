@@ -1,0 +1,97 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6783
+      },
+      "ATTACK": {
+        "value": 1108
+      },
+      "REALITY_DEFENSE": {
+        "value": 562
+      },
+      "MENTAL_DEFENSE": {
+        "value": 450
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 284
+      },
+      "CRITICAL_RATE": {
+        "value": 9.4,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 14.2,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 3
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 3
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 4
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 4
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_PLANTAL_VIMEN",
+        "require": 6
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 6
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 2
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 4
+      }
+    ]
+  }
+}

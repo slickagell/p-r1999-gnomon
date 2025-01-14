@@ -1,0 +1,87 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 0
+      },
+      "ATTACK": {
+        "value": 0
+      },
+      "REALITY_DEFENSE": {
+        "value": 0
+      },
+      "MENTAL_DEFENSE": {
+        "value": 0
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 0
+      },
+      "CRITICAL_RATE": {
+        "value": 0,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 0,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 6
+      },
+      {
+        "code": "",
+        "require": 5
+      },
+      {
+        "code": "",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 8
+        
+      },
+      {
+        "code": "",
+        "require": 6
+      },
+      {
+        "code": "",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 12
+        
+      },
+      {
+        "code": "",
+        "require": 3
+      },
+      {
+        "code": "",
+        "require": 5
+      }
+    ]
+  }
+}
