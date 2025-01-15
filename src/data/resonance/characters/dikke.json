@@ -1,0 +1,108 @@
+{
+  "mainPiece": "RP_Z_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "MERCY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "",
+          "require": 2
+        },
+        {
+          "code": "",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {
+    "5": [
+      {
+        "name": "Attack",
+        "source": {
+          "label": "To be updated",
+          "link": "#"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-1"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01"
+          }
+        ]
+      }
+    ]
+  }
+}

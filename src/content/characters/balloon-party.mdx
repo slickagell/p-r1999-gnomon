@@ -1,14 +1,15 @@
 ---
-title: "Necrologist"
-id: "necrologist"
-code: "NECROLOGIST"
+title: "Balloon Party"
+id: "balloon-party"
+gameId: "3024"
+code: "BALLOON_PARTY"
 star: 5
 afflatus: "MINERAL"
-dmgType: "MENTAL"
+dmgType: "REALITY"
 race: "ARCANIST"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "SUPPORT"]
+specialties: ["DEF", "HEAL"]
 isLimited: false
 ---
 
@@ -17,31 +18,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/necrologist.json";
-import RESONANCE from "@data/resonance/characters/necrologist.json";
-import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+import CHARACTER from "@data/characters/balloon-party.json";
+import RESONANCE from "@data/resonance/characters/balloon-party.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Necrologist
+# Balloon Party
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    An arcanist's work exhibited in the 1940s for 17 years. Completed in autumn, on November 2nd. First exhibited in Vaduz, Liechtenstein, and later toured all over the world.
+    An arcanist's work. Exhibited in the 1960s for 17 years. Completed in Spring, on April 14. Exhibited in Wuppertal, Nordrhein-Westfalen, Germany, and later throughout Europe.
   </Fragment>
 
   <Fragment slot="info-medium">
-    Last Wishes
+    Hydrogen
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    The Tombstone in Peace \[Mineral] Entrustment of Legacy
+    Remains of a Rock Formation \[Mineral] Bone Balloon
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Woody - Chamomile, Lavender, Vetiver, White Chrysanthemum
+    Old-school Chypre - Vetiver, Seaweed, Lime, Amber
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    66 17/32 x 120 7/16 x 9 1/16 in.
+    78 11/32 x 42 1/8 x 5 29/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -53,48 +54,48 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Timely Farewell
+    ### :TODO - Update skill-1 name:
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="People are afraid of her arrival.">
-      1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="1" type="ATTACK" note="The pinata is the best party present.">
+      1-target attack. Deals **160%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="People are afraid of her arrival, as they dislike death.">
-      1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="2" type="ATTACK" note="The pinata is the best party present. Our next step is to...">
+      1-target attack. Deals **240%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="People are afraid of her arrival, until death arrives first.">
-      1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="3" type="ATTACK" note="The pinata is the best party present. Smash it open!">
+      1-target attack. Deals **400%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### By the Coffin
+    ### Coughing Weirdo
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Something inside the coffin murmured.">
-      1-target attack. Deals **220%** Mental DMG.
+    <CardInfo star="1" type="HEALTH" note="*Cough*...">
+      Mass healing. Recovers (Missing HP x50%) HP for all allies,
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Something inside the coffin murmured. Could it be a ghost? Or...">
-      1-target attack. Deals **280%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
+    <CardInfo star="2" type="COUNTER" note="*Cough hard*...">
+      Mass counter. Recovers (Missing HP x55%) HP for all allies, Gains 1 :effect{code="PARTY_BALLOON"}.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Something inside the coffin murmured. It's the praise from the tomestone.">
-      1-target attack. Deals **500%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
+    <CardInfo star="3" type="COUNTER" note="*Cough hard*... BURRRP—">
+      Mass counter. Recovers (Missing HP x45%) HP for all allies, Gains 2 :effect{code="PARTY_BALLOON"}s.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Whispers of the Deceased
+    ### Good Kids, Bad Adults
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="She only listened to the murmuring tombstones and recorded the incomplete dialogs.">
-      Mass buff. Grants 1 stack of :effect{code="PRAYER"} and DMG Dealt **+50%** to other alles. Lasts 3 rounds. If the target already is in :effect{code="PRAYER"} status, HP +(the caster's ATK x**150%**).
+    <CardInfo type="ATTACK" note="There're balloons for rewarding well-behaved children, and balloons for punishing bad adults.">
+      Mass attack. Deals **300%** Reality DMG to all enemies. Grants 1 :effect{code="BALLOON_OF_INNOCENCE"} and 1 :effect{code="PARTY_BALLOON"} to all allies. Recovers (Missing HP x**30%**) HP for the ally with the lowest HP percentage.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +104,19 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Black Iris
+    ### Bang Bang Balloons
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{code="PRAYER"} status (only triggers 1 time).
+    When a round starts, gets 1 :effect{code="PARTY_BALLOON"} (triggers up to 3 times).
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    DMG Dealt +8% when the caster enters battle.
+    When entering battle, Healing Done +10%.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When a :effect{code="PRAYER"} status on your side is dispelled, HP +(the caster's ATK x**50%**).
+    The :effect{code="PARTY_BALLOON"} acquired when a round begins becomes permanent.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +124,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Whispers of the Deceased*'s effect changes to: DMG Dealt **+40%** for other allies.
+    *Good Kids, Bad Adults*'s effect changes to: After casting, recovers (the target's Missing HP x**20%**) HP for the ally with the lowest HP percentage.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Timely Farewells* effect changes to: Penetration Rate **40%**.
+    *Pinata*'s effect changes to: when the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, Penetration Rate **+70%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Whispers of the Deceased*'s effect changes to: if target already has active :effect{code="PRAYER"}, HP +(the casters ATK x**150%**).
+    *Coughing Weirdo*'s effect changes to: at rank **1/2/3**, recovers (the target's Missing HP x**30/35/45%**) HP for all allies.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *By the Coffin*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Mental DMG.
+    *Good Kids, Bad Adults*'s effect changes to: deals **500%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Whispers of the Deceased*'s effect changes to: DMG Dealt **+50%** for other allies.
+    *Good Kids, Bad Adults*'s effect changes to: After casting, recovers (the target's Missing HP x**30%**) HP for the ally with the lowest HP percentage.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

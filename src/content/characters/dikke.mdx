@@ -1,14 +1,15 @@
 ---
-title: "Necrologist"
-id: "necrologist"
-code: "NECROLOGIST"
+title: "Dikke"
+id: "dikke"
+code: "DIKKE"
+gameId: "3022"
 star: 5
-afflatus: "MINERAL"
+afflatus: "BEAST"
 dmgType: "MENTAL"
 race: "ARCANIST"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "SUPPORT"]
+specialties: ["DPS", "HEAL"]
 isLimited: false
 ---
 
@@ -17,31 +18,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/necrologist.json";
-import RESONANCE from "@data/resonance/characters/necrologist.json";
-import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+import CHARACTER from "@data/characters/dikke.json";
+import RESONANCE from "@data/resonance/characters/dikke.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Necrologist
+# Dikke
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    An arcanist's work exhibited in the 1940s for 17 years. Completed in autumn, on November 2nd. First exhibited in Vaduz, Liechtenstein, and later toured all over the world.
+    An arcanist's work. Exhibited in the Middle Ages for 19 years. Completed in autumn, on October 10. Exhibited throughout Europe and later kept in the Roman Catholic Diocese of Pamiers.
   </Fragment>
 
   <Fragment slot="info-medium">
-    Last Wishes
+    Law
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    The Tombstone in Peace \[Mineral] Entrustment of Legacy
+    Wild Justice \[Beast] Judgment on the Court
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Woody - Chamomile, Lavender, Vetiver, White Chrysanthemum
+    Oriental - Frankincense, Incense, Pepper, Ash
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    66 17/32 x 120 7/16 x 9 1/16 in.
+    68 1/2 x 43 25/32 x 8 21/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -53,48 +54,48 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Timely Farewell
+    ### Power
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="People are afraid of her arrival.">
-      1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="1" type="ATTACK" note="An act against the rules.">
+      1-target attack. Deals **220%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="People are afraid of her arrival, as they dislike death.">
-      1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="2" type="ATTACK" note="This act is beyond the power and duty of a judge.">
+      1-target attack. Deals **230%** Mental DMG plus (the caster's ATK x**50%**) Genesis DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="People are afraid of her arrival, until death arrives first.">
-      1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="3" type="ATTACK" note="This act is beyond the power and duty of a judge, but it is allowed by “justice.”">
+      1-target attack. Deals **350%** Mental DMG plus (ATK x**100%**) Genesis DMG.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### By the Coffin
+    ### Justice
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Something inside the coffin murmured.">
-      1-target attack. Deals **220%** Mental DMG.
+    <CardInfo star="1" type="HEALTH" note="An act within the rules.">
+      Mass healing. HP +(the casters ATK x**60%**) for all allies; if a target's HP is below **50%**, additionally HP +(the caster's ATK x**30%**) for the target.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Something inside the coffin murmured. Could it be a ghost? Or...">
-      1-target attack. Deals **280%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
+    <CardInfo star="2" type="HEALTH" note="A rare act within the rules.">
+      Mass healing. HP +(the caster's ATK x**90%**) for all allies; if a target's HP is below **50%**, additionally HP +(the caster's ATK x**45%**) for the target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Something inside the coffin murmured. It's the praise from the tomestone.">
-      1-target attack. Deals **500%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
+    <CardInfo star="3" type="HEALTH" note="A rare act within the rules, for the sake of the weak.">
+      Mass healing. HP +(the caster's ATK x**150%**) for all allies; if a target's HP is below **50%**, additionally HP +(the casters ATK x**75%**) for the target.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Whispers of the Deceased
+    ### Maverick Judge
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="She only listened to the murmuring tombstones and recorded the incomplete dialogs.">
-      Mass buff. Grants 1 stack of :effect{code="PRAYER"} and DMG Dealt **+50%** to other alles. Lasts 3 rounds. If the target already is in :effect{code="PRAYER"} status, HP +(the caster's ATK x**150%**).
+    <CardInfo type="" note="Her heart is as clear as mirror, her sword is as fierce as fire.">
+      1-target attack. Purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster and enters :effect{code="IMMUNITY"} for 1 round to the caster. Deals **400%** Mental DMG plus (the caster's ATK x**170%**) Genesis DMG.
     </CardInfo>
   </Fragment>
 
@@ -103,19 +104,19 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Black Iris
+    ### Fairness
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{code="PRAYER"} status (only triggers 1 time).
+    When the caster attacks, if the caster's HP percentage is higher than the target's, ATK **+15%**.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    DMG Dealt +8% when the caster enters battle.
+    ATK **+5%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When a :effect{code="PRAYER"} status on your side is dispelled, HP +(the caster's ATK x**50%**).
+    When the caster attacks, if the caster's HP percentage is lower than the target, Leech Rate **+15%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -123,23 +124,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Whispers of the Deceased*'s effect changes to: DMG Dealt **+40%** for other allies.
+    *Maverick Judge*'s effect changes to: deals (the caster's ATK x**130%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Timely Farewells* effect changes to: Penetration Rate **40%**.
+    *Power*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Whispers of the Deceased*'s effect changes to: if target already has active :effect{code="PRAYER"}, HP +(the casters ATK x**150%**).
+    *Maverick Judge*'s effect changes to: deals (the caster's ATK x**170%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *By the Coffin*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Mental DMG.
+    *Justice*'s effect changes to: at **1/2/3** stars, HP +(the caster's ATK x**70/105/175%**).
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Whispers of the Deceased*'s effect changes to: DMG Dealt **+50%** for other allies.
+    *Maverick Judge*'s effect changes to: deals (the caster's ATK x**210%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
