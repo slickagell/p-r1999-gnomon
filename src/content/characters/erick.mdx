@@ -1,0 +1,176 @@
+---
+title: "Erick"
+id: "erick"
+gameId: "3058"
+code: "ERICK"
+star: 4
+afflatus: "STAR"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DPS", "DISPELLER"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/erick.json";
+import RESONANCE from "@data/resonance/characters/erick.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Erick
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited in the 1980s for 12 years. Completed in spring, on May 14th. First exhibited in Bergen, Norway, the exhibit then attempted a world tour.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Storybook
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Little Mast [Star] Discretionary Plunder
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Woody - Musk, Vetiver
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    61 15/64 x 44 31/64 x 18 57/64 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### :TODO - Update skill-1 name:
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    :TODO - Update character skill-1 star-1 type & note:
+    <CardInfo star="1" type="" note="">
+      :TODO - Add character skill-1 star-1 description:
+    </CardInfo>
+
+    :TODO - Update character skill-2 star-2 type & note:
+    <CardInfo star="2" type="" note="">
+      :TODO - Add character skill-2 star-2 description:
+    </CardInfo>
+
+    :TODO - Update character skill-3 star-3 type & note:
+    <CardInfo star="3" type="" note="">
+      :TODO - Add character skill-3 star-3 description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### :TODO - Update skill-2 name:
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    :TODO - Update character skill-1 star-1 type & note:
+    <CardInfo star="1" type="" note="">
+      :TODO - Add character skill-1 star-1 description:
+    </CardInfo>
+
+    :TODO - Update character skill-2 star-2 type & note:
+    <CardInfo star="2" type="" note="">
+      :TODO - Add character skill-2 star-2 description:
+    </CardInfo>
+
+    :TODO - Update character skill-3 star-3 type & note:
+    <CardInfo star="3" type="" note="">
+      :TODO - Add character skill-3 star-3 description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### :TODO - Update ultimate name:
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    :TODO - Update character ultimate type & note:
+    <CardInfo type="" note="">
+      :TODO - Update character ultimate description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### :TODO - Update inheritance title:
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    :TODO - Update inheritance insight-1:
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    :TODO - Update inheritance insight-2:
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    :TODO - Update inheritance insight-3:
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    :TODO - Update portray lv-1 content:
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    :TODO - Update portray lv-2 content:
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    :TODO - Update portray lv-3 content:
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    :TODO - Update portray lv-4 content:
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    :TODO - Update portray lv-5 content:
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>
