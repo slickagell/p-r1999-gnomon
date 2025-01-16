@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 7152
       },
       "ATTACK": {
-        "value": 0
+        "value": 953
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 498
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 615
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 178
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 5.9,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 8.9,
         "unit": "%"
       }
     }
@@ -37,12 +37,12 @@
         "require": 6
       },
       {
-        "code": "",
-        "require": 5
+        "code": "SPELL_OF_FORTUNE",
+        "require": 4
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SILVER_ORE",
+        "require": 5
       }
     ],
     "2": [
@@ -55,12 +55,12 @@
         "require": 8
       },
       {
-        "code": "",
-        "require": 6
+        "code": "BITING_BOX",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SOLIDUS",
+        "require": 3
       }
     ],
     "3": [
@@ -73,11 +73,11 @@
         "require": 12
       },
       {
-        "code": "",
-        "require": 3
+        "code": "MISTILTEINN",
+        "require": 2
       },
       {
-        "code": "",
+        "code": "INCORRUPT_MONKEYPAW",
         "require": 5
       }
     ]

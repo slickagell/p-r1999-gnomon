@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 6783
       },
       "ATTACK": {
-        "value": 0
+        "value": 1077
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 538
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 538
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 284
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 9.4,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 14.2,
         "unit": "%"
       }
     }
@@ -41,12 +41,12 @@
         "require": 3
       },
       {
-        "code": "",
-        "require": 5
+        "code": "ESOTERIC_BONES",
+        "require": 3
       },
       {
-        "code": "",
-        "require": 6
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 4
       }
     ],
     "2": [
@@ -63,12 +63,12 @@
         "require": 4
       },
       {
-        "code": "",
-        "require": 6
+        "code": "PROPHETIC_BIRD",
+        "require": 3
       },
       {
-        "code": "",
-        "require": 6
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
       }
     ],
     "3": [
@@ -85,12 +85,12 @@
         "require": 6
       },
       {
-        "code": "",
-        "require": 3
+        "code": "MISTILTEINN",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 5
+        "code": "PLATINUM_OUIJA",
+        "require": 4
       }
     ]
   }

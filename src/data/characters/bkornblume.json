@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 5919
       },
       "ATTACK": {
-        "value": 0
+        "value": 1139
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 445
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 512
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 194
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 6.4,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 9.7,
         "unit": "%"
       }
     }
@@ -37,12 +37,12 @@
         "require": 6
       },
       {
-        "code": "",
-        "require": 5
+        "code": "ESOTERIC_BONES",
+        "require": 3
       },
       {
-        "code": "",
-        "require": 6
+        "code": "TREMBLING_TOOTH",
+        "require": 4
       }
     ],
     "2": [
@@ -55,12 +55,12 @@
         "require": 8
       },
       {
-        "code": "",
-        "require": 6
+        "code": "HOLY_SILVER",
+        "require": 3
       },
       {
-        "code": "",
-        "require": 6
+        "code": "MILLED_MAGNESIA",
+        "require": 4
       }
     ],
     "3": [
@@ -73,12 +73,12 @@
         "require": 12
       },
       {
-        "code": "",
-        "require": 3
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 5
+        "code": "MURMUR_OF_INSANITY",
+        "require": 6
       }
     ]
   }

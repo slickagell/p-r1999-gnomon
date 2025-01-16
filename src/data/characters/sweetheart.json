@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 5857
       },
       "ATTACK": {
-        "value": 0
+        "value": 1077
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 512
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 410
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 497
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 16.5,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 24.8,
         "unit": "%"
       }
     }
@@ -37,12 +37,12 @@
         "require": 6
       },
       {
-        "code": "",
-        "require": 5
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SHATTERED_BONES",
+        "require": 4
       }
     ],
     "2": [
@@ -55,11 +55,11 @@
         "require": 8
       },
       {
-        "code": "",
-        "require": 6
+        "code": "CLAWED_PENDULUM",
+        "require": 2
       },
       {
-        "code": "",
+        "code": "SPELL_OF_FORTUNE",
         "require": 6
       }
     ],
@@ -73,12 +73,12 @@
         "require": 12
       },
       {
-        "code": "",
-        "require": 3
+        "code": "GOLDEN_FLEECE",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 5
+        "code": "BOGEYMAN",
+        "require": 4
       }
     ]
   }

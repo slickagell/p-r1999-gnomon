@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 5919
       },
       "ATTACK": {
-        "value": 0
+        "value": 1086
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 410
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 574
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 356
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 11.8,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 17.8,
         "unit": "%"
       }
     }
@@ -37,12 +37,12 @@
         "require": 6
       },
       {
-        "code": "",
-        "require": 5
+        "code": "SPELL_OF_FORTUNE",
+        "require": 4
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SILVER_ORE",
+        "require": 5
       }
     ],
     "2": [
@@ -53,15 +53,14 @@
       {
         "code": "SCROLL_OF_MINERAL_WEALTH",
         "require": 8
-        
       },
       {
-        "code": "",
-        "require": 6
+        "code": "BITING_BOX",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SOLIDUS",
+        "require": 3
       }
     ],
     "3": [
@@ -72,14 +71,13 @@
       {
         "code": "TOME_OF_MINERAL_WEALTH",
         "require": 12
-        
       },
       {
-        "code": "",
-        "require": 3
+        "code": "MISTILTEINN",
+        "require": 2
       },
       {
-        "code": "",
+        "code": "INCORRUPT_MONKEYPAW",
         "require": 5
       }
     ]

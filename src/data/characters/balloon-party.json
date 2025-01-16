@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 6783
       },
       "ATTACK": {
-        "value": 0
+        "value": 975
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 641
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 472
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 236
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 7.8,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 11.8,
         "unit": "%"
       }
     }
@@ -37,12 +37,12 @@
         "require": 6
       },
       {
-        "code": "",
-        "require": 5
+        "code": "LIQUEFIED_TERROR",
+        "require": 3
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SILVER_ORE",
+        "require": 5
       }
     ],
     "2": [
@@ -53,15 +53,14 @@
       {
         "code": "SCROLL_OF_MINERAL_WEALTH",
         "require": 8
-        
       },
       {
-        "code": "",
-        "require": 6
+        "code": "BIFURCATED_SKELETON",
+        "require": 3
       },
       {
-        "code": "",
-        "require": 6
+        "code": "MILLED_MAGNESIA",
+        "require": 4
       }
     ],
     "3": [
@@ -72,14 +71,13 @@
       {
         "code": "TOME_OF_MINERAL_WEALTH",
         "require": 12
-        
       },
       {
-        "code": "",
-        "require": 3
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 2
       },
       {
-        "code": "",
+        "code": "SILVER_BULLET",
         "require": 5
       }
     ]
