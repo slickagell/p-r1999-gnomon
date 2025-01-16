@@ -1,7 +1,7 @@
 import { character, artefact, effect, material } from "./plops/index.js";
 
 export default function (plop) {
-  plop.addHelper("ifCond", function (v1, operator, v2, options) {
+  plop.addHelper("if", function (v1, operator, v2, options) {
     switch (operator) {
       case "==":
         return v1 == v2 ? options.fn(this) : options.inverse(this);

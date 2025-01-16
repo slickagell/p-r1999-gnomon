@@ -1,0 +1,87 @@
+{
+  "mainPiece": "RP_U_5_01",
+  "patternPieces": {
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "WINGED_KEY",
+          "require": 3
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "WATCH_CORE",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    },
+    "PRUDENTIALITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "HOLY_SILVER",
+          "require": 4
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "MURMUR_OF_INSANITY",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

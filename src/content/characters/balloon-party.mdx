@@ -1,0 +1,173 @@
+---
+title: "Balloon Party"
+id: "balloon-party"
+gameId: "3024"
+code: "BALLOON_PARTY"
+star: 5
+afflatus: "MINERAL"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DEF", "HEAL"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/balloon-party.json";
+import RESONANCE from "@data/resonance/characters/balloon-party.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
+
+# Balloon Party
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited in the 1960s for 17 years. Completed in Spring, on April 14. Exhibited in Wuppertal, Nordrhein-Westfalen, Germany, and later throughout Europe.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Hydrogen
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Remains of a Rock Formation \[Mineral] Bone Balloon
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Old-school Chypre - Vetiver, Seaweed, Lime, Amber
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    78 11/32 x 42 1/8 x 5 29/32 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### :TODO - Update skill-1 name:
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="The pinata is the best party present.">
+      1-target attack. Deals **160%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="The pinata is the best party present. Our next step is to...">
+      1-target attack. Deals **240%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="The pinata is the best party present. Smash it open!">
+      1-target attack. Deals **400%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Coughing Weirdo
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="HEALTH" note="*Cough*...">
+      Mass healing. Recovers (Missing HP x**30%**) HP for all allies,
+    </CardInfo>
+
+    <CardInfo star="2" type="COUNTER" note="*Cough hard*...">
+      Mass counter. Recovers (Missing HP x**35%**) HP for all allies, Gains 1 :effect{code="PARTY_BALLOON"}.
+    </CardInfo>
+
+    <CardInfo star="3" type="COUNTER" note="*Cough hard*... BURRRP—">
+      Mass counter. Recovers (Missing HP x**45%**) HP for all allies, Gains 2 :effect{code="PARTY_BALLOON"}s.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Good Kids, Bad Adults
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="There're balloons for rewarding well-behaved children, and balloons for punishing bad adults.">
+      Mass attack. Deals **300%** Reality DMG to all enemies. Grants 1 :effect{code="BALLOON_OF_INNOCENCE"} and 1 :effect{code="PARTY_BALLOON"} to all allies. Recovers (Missing HP x**30%**) HP for the ally with the lowest HP percentage.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Bang Bang Balloons
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When a round starts, gets 1 :effect{code="PARTY_BALLOON"} (triggers up to 3 times).
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    When entering battle, Healing Done **+10%**.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    The :effect{code="PARTY_BALLOON"} acquired when a round begins becomes permanent.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Good Kids, Bad Adults*'s effect changes to: After casting, recovers (the target's Missing HP x**20%**) HP for the ally with the lowest HP percentage.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Pinata*'s effect changes to: when the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, Penetration Rate **+70%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Coughing Weirdo*'s effect changes to: at rank **1/2/3**, recovers (the target's Missing HP x**30/35/45%**) HP for all allies.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Good Kids, Bad Adults*'s effect changes to: deals **500%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Good Kids, Bad Adults*'s effect changes to: After casting, recovers (the target's Missing HP x**30%**) HP for the ally with the lowest HP percentage.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

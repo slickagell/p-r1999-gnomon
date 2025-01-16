@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6167
+      },
+      "ATTACK": {
+        "value": 1046
+      },
+      "REALITY_DEFENSE": {
+        "value": 472
+      },
+      "MENTAL_DEFENSE": {
+        "value": 553
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 300
+      },
+      "CRITICAL_RATE": {
+        "value": 10,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 15,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 6
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 8
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 3
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 12
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 2
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 4
+      }
+    ]
+  }
+}

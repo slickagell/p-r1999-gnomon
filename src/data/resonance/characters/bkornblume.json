@@ -1,0 +1,87 @@
+{
+  "mainPiece": "RP_Z_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "INCORRUPT_MONKEYPAW",
+          "require": 2
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "HOLY_SILVER",
+          "require": 4
+        }
+      ]
+    },
+    "MERCY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "INCORRUPT_MONKEYPAW",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "BOGEYMAN",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "MURMUR_OF_INSANITY",
+          "require": 2
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 4
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

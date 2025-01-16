@@ -1,0 +1,172 @@
+---
+title: "Mr Duncan"
+id: "mr-duncan"
+code: "MR_DUNCAN"
+star: 5
+afflatus: "BEAST"
+dmgType: "REALITY"
+race: "HUMAN"
+version: "2.2"
+releaseDate: "2025-01-09"
+specialties: ["DPS", "RIPOSTE", "REAPER"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/mr-duncan.json";
+import RESONANCE from "@data/resonance/characters/mr-duncan.json";
+import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+
+# Mr Duncan
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    A human's artwork. Exhibited in the 1990s for 61 years. Completed in winter, on June 30th. The exhibition took place in Brazil, with plans to relocate it to Zeno Arms Academy.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Sense of Honor
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Sentimental Beast \[Beast] Veteran
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Leather, Pink Pepper, Vetiver, Clary Sage, Benzoin
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    70 43/50 x 24 4/7 x 12 1/5 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Lethal Melody
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="This is a simple musical instrument.">
+      Mass attack. Deals **70%** Reality DMG to 2 enemies and an additional (own ATK x**60%**) Genesis DMG to the enemy if it is below **50%** HP.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="This is a simple musical instrument, and also a weapon.">
+      Mass attack. Deals **105%** Reality DMG to 2 enemies and an additional (own ATK x**90%**) Genesis DMG to the enemy if it is below **50%** HP.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="This is a simple musical instrument, and also a weapon that protects him from danger and loneliness.">
+      Mass attack. Deals **175%** Reality DMG to 2 enemies and an additional (own ATK x**150%**) Genesis DMG to the enemy if it is below **50%** HP.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Makeshift Inventions
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="COUNTER" note="Improvised materials.">
+      1-target counter. Gains 2 bullets from :effect{code="VETERAN_CARTRIDGE"} and enters the :effect{code="QUICK_DRAW"} status for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="COUNTER" note="Improvised materials and a dash of inspiration.">
+      1-target counter. Gains 3 bullets from :effect{code="VETERAN_CARTRIDGE"} and enters the :effect{code="QUICK_DRAW"} status for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="COUNTER" note="Improvised materials, a dash of inspiration, and fifty years of living experience.">
+      1-target counter. Gains 5 bullets from :effect{code="VETERAN_CARTRIDGE"} and enters the :effect{code="QUICK_DRAW"} status for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### A Veteran's Regards
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="An adrenaline rush that far surpasses the finest wines.">
+      1-target attack. Deals **500%** Reality DMG to an enemy. For each type of *\[Bullet]* held on self, this attack gains an additional Critical Rate **+10%**.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Military Experience
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    Whenever an ally triggers *\[Bullet]* 2 times, gain 1 stack of :effect{code="CEREMONIOUS"} for self.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    When entering battle, gain Critical Rate **+10%**.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    After scoring a critical hit or defeating an enemy, all allies gain 1 type of Bullet from :effect{code="VETERAN_CARTRIDGE"}. Whenever this unit scores 3 critical hits, this unit gains Moxie +1.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Lethal Melody*: At incantation rank **1/2/3**, the Genesis DMG fs increased to **100/150/250%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *A Veteran's Regards*: For each type of *\[Bullet]* held, the Critical Rate gained is increased to **20%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Lethal Melody*: At incantation rank **1/2/3**, the Reality DMG is increased to **120/180/300%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Makeshift Inventions*: \[Swift Riposte]'s Reality DMG dealt is increased to **500%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Military Experience*: After defeating an enemy, the types of bullets gained from :effect{code="VETERAN_CARTRIDGE"} by all allies is increased to **2**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

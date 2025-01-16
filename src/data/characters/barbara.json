@@ -1,0 +1,97 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5919
+      },
+      "ATTACK": {
+        "value": 1024
+      },
+      "REALITY_DEFENSE": {
+        "value": 507
+      },
+      "MENTAL_DEFENSE": {
+        "value": 615
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 284
+      },
+      "CRITICAL_RATE": {
+        "value": 9.4,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 14.2,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 3
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 3
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 5
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 3
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 4
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 4
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 2
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 3
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 6
+      },
+      {
+        "code": "TOME_OF_PLANTAL_VIMEN",
+        "require": 6
+      },
+      {
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 2
+      },
+      {
+        "code": "GLOWING_MOTHWING",
+        "require": 4
+      }
+    ]
+  }
+}

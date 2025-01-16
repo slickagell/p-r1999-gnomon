@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6167
+      },
+      "ATTACK": {
+        "value": 1024
+      },
+      "REALITY_DEFENSE": {
+        "value": 543
+      },
+      "MENTAL_DEFENSE": {
+        "value": 534
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 321
+      },
+      "CRITICAL_RATE": {
+        "value": 10.7,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 16,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 6
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 4
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 8
+      },
+      {
+        "code": "WINGED_KEY",
+        "require": 4
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_BEASTLY_THIRST",
+        "require": 12
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 2
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 4
+      }
+    ]
+  }
+}

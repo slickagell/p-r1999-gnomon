@@ -1,0 +1,173 @@
+---
+title: "Tennant"
+id: "tennant"
+gameId: "3043"
+code: "TENNANT"
+star: 5
+afflatus: "BEAST"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DPS", "DEBUFF", "SHIELD"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/tennant.json";
+import RESONANCE from "@data/resonance/characters/tennant.json";
+import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+
+# Tennant
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### A Shiny Diamond
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="It's glamorous.">
+      1-target attack. Deals **200%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="It used to be sand, or charcoal.">
+      1-target attack. Deals **300%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="It's just a lie known to everyone.">
+      1-target attack. Deals **500%** Reality DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### A Bouquet of Galaxy
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="BUFF" note="People have always dreamed of such thing.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**80%**) HP for 1 round. DMG Taken **-20%** while the :effect{code="SHIELD"} is active.
+    </CardInfo>
+
+    <CardInfo star="2" type="BUFF" note="People have always dreamed of such thing, but they can only gaze at it from the ground.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**120%**) HP for 1 round. DMG Taken **-20%** while the :effect{code="SHIELD"} is active.
+    </CardInfo>
+
+    <CardInfo star="3" type="BUFF" note="People have always dreamed of such thing, no matter it's in the distant universe, or right in front of them.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**200%**) HP for 1 round. DMG Taken **-20%** while the :effect{code="SHIELD"} is active.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### A Sincere Heart
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="" note="Her heart is sincere. It's just split into many pieces. Don't blame her.">
+      1-target attack. Deals **550%** Reality DMG to the target and loads 2 rounds of :effect{code="DIAMOND_BULLET"}.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Beautiful Lie
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    After the caster enters battle, immediately casts 1-star *A Bouquet of Galaxy* and gains 1 stack of :effect{code="DIAMOND_BULLET"} (only triggers 1 time).
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    If the caster starts a round with HP below **50%**, immediately casts 1-star *A Bouquet of Galaxy* (only triggers 1 time).
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *A Sincere Heart*'s effect changes to: deals **600%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *A Shiny Diamond*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *A Sincere Heart*'s effect changes to: deals **650%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *A Bouquet of Galaxy*'s effect changes to: at **1/2/3** stars, grants a :effect{code="SHIELD"} with (the caster's ATK x**90/135/225%**) HP on all allies.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *A Sincere Heart*'s effect changes to: deals **700%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

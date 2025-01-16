@@ -1,0 +1,87 @@
+{
+  "mainPiece": "RP_T_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "HOLY_SILVER",
+          "require": 4
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        }
+      ]
+    },
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 3
+        }
+      ]
+    },
+    "INSPIRE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "WINGED_KEY",
+          "require": 3
+        }
+      ]
+    },
+    "DELIRAMENT": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "SILVER_BULLET",
+          "require": 2
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

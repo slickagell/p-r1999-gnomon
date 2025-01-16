@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5857
+      },
+      "ATTACK": {
+        "value": 1006
+      },
+      "REALITY_DEFENSE": {
+        "value": 486
+      },
+      "MENTAL_DEFENSE": {
+        "value": 538
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 356
+      },
+      "CRITICAL_RATE": {
+        "value": 11.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 17.8,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 6
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 8
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_PLANTAL_VIMEN",
+        "require": 12
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 2
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 4
+      }
+    ]
+  }
+}

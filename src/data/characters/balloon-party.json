@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6783
+      },
+      "ATTACK": {
+        "value": 975
+      },
+      "REALITY_DEFENSE": {
+        "value": 641
+      },
+      "MENTAL_DEFENSE": {
+        "value": 472
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 236
+      },
+      "CRITICAL_RATE": {
+        "value": 7.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 11.8,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 6
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 3
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 5
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 8
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 3
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 12
+      },
+      {
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 2
+      },
+      {
+        "code": "SILVER_BULLET",
+        "require": 5
+      }
+    ]
+  }
+}

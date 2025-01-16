@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import MarkdownHighlight from "./MarkdownHighlight.astro";
 import MarkdownContent from "./MarkdownContent.astro";
+import MarkdownEmphasis from "./MarkdownEmphasis.astro";
+import MarkdownHighlight from "./MarkdownHighlight.astro";
+import { EFFECT_TYPE } from "@constants/effect";
 interface Props {
   code: string;
 }
@@ -46,10 +48,21 @@ const { Content } = await effect.render();
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
   >
+    <div class="flex justify-between items-center gap-1">
+      <p class="font-bold">{effect.data.title}</p>
+      {
+        !["UNKNOWN", "DEFINITION", "GENERAL"].includes(effect.data.type) && (
+          <p class="badge badge-neutral">
+            {EFFECT_TYPE[effect.data.type].title}
+          </p>
+        )
+      }
+    </div>
     <Content
       components={{
         p: MarkdownContent,
         strong: MarkdownHighlight,
+        em: MarkdownEmphasis,
         effect: Astro.self,
       }}
     />

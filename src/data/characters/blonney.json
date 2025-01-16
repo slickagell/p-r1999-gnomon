@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6043
+      },
+      "ATTACK": {
+        "value": 1046
+      },
+      "REALITY_DEFENSE": {
+        "value": 486
+      },
+      "MENTAL_DEFENSE": {
+        "value": 459
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 463
+      },
+      "CRITICAL_RATE": {
+        "value": 15.4,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 23.1,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 3
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 5
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 3
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 12
+      },
+      {
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 2
+      },
+      {
+        "code": "SILVER_BULLET",
+        "require": 5
+      }
+    ]
+  }
+}

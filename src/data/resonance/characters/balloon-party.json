@@ -1,0 +1,87 @@
+{
+  "mainPiece": "RP_U_5_01",
+  "patternPieces": {
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "GLOWING_MOTHWING",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 3
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "WATCH_CORE",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 3
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 4
+        }
+      ]
+    },
+    "PRUDENTIALITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "GLOWING_MOTHWING",
+          "require": 2
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 100000
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

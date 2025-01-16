@@ -1,0 +1,173 @@
+---
+title: "Charlie"
+id: "charlie"
+gameId: "3017"
+code: "CHARLIE"
+star: 5
+afflatus: "STAR"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DPS", "DISPELLER"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/charlie.json";
+import RESONANCE from "@data/resonance/characters/charlie.json";
+import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+
+# Charlie
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited in the 1650s for 16 years. Completed in Spring, on April 23. Exhibited in the countryside and towns of the Commonwealth of England, exact location unknown.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Play
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Interpretation of the Stars \[Star] Shade Creation
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Woody - Rose, Guaiac Wood, Honey
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    66 17/32x36 1/2x17 9/16 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Thunder To Thee!
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="I'm prepared to change.">
+      1-target attack. Deals **180%** Mental DMG. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack deals **40%** more Mental DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="I'm prepared to change. Wait, hold on.">
+      1-target attack. Deals **270%** Mental DMG. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack deals **60%** more Mental DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="I'm prepared to change. Wait, hold on. This is just the preparation, right?">
+      1-target attack. Deals **450%** Mental DMG. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack deals **100%** more Mental DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Tempest To Thee!
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="I decided to toss them away.">
+      1-target attack. Deals **180%** Mental DMG. If the caster's HP is below **50%**, then deals **60%** more Mental DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="I decided to toss these cowardly things away.">
+      1-target attack. Deals **270%** Mental DMG. If the caster's HP is below **50%**, then deals **90%** more Mental DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="I decided to toss these cowardly things away... Whoa!">
+      1-target attack. Deals **450%** Mental DMG. If the caster's HP is below **50%**, then deals **150%** more Mental DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### I Stand Alone On The Stage
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="More serious, more dazzling, more breathtaking, more...">
+      Mass attack. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]* statuses from all enemies and then deals **300%** Mental DMG to them.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Troupe Owner
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the caster starts the round with HP below **50%**, DMG Taken **-20%** and Critical DEF **+20%** for 1 round.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    ATK **+5%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    When the caster starts the round with HP above **50%**, then DMG Dealt **+20%** for 1 round.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *I Stand Alone on the Stage*'s effect changes to: deals **350%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Thunder to Thee!*'s effect changes to: at **1/2/3** stars, additionally deals **60/90/150%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Tempest to Thee!*'s effect changes to: additionally deals Mental DMG when the caster's HP is below **80%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *I Stand Alone on the Stage*'s effect changes to: deals **425%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *I Stand Alone on the Stage*: Mental DMG increased to **500%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-3-materials">
+    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

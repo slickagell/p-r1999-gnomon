@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5919
+      },
+      "ATTACK": {
+        "value": 1086
+      },
+      "REALITY_DEFENSE": {
+        "value": 410
+      },
+      "MENTAL_DEFENSE": {
+        "value": 574
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 356
+      },
+      "CRITICAL_RATE": {
+        "value": 11.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 17.8,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 6
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 4
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 5
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 8
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 2
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 3
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_MINERAL_WEALTH",
+        "require": 12
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 2
+      },
+      {
+        "code": "INCORRUPT_MONKEYPAW",
+        "require": 5
+      }
+    ]
+  }
+}

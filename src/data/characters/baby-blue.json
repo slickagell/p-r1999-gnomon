@@ -1,0 +1,85 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 7152
+      },
+      "ATTACK": {
+        "value": 953
+      },
+      "REALITY_DEFENSE": {
+        "value": 498
+      },
+      "MENTAL_DEFENSE": {
+        "value": 615
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 178
+      },
+      "CRITICAL_RATE": {
+        "value": 5.9,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 8.9,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 12000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 4
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 5
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 2
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 3
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 12
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 2
+      },
+      {
+        "code": "INCORRUPT_MONKEYPAW",
+        "require": 5
+      }
+    ]
+  }
+}
