@@ -122,6 +122,9 @@ export const SPECIALTY = {
   IMMUNITY: {
     title: "Immunity",
   },
+  SELF_HEALING: {
+    title: "Self Healing",
+  },
 };
 
 export const RARITY = {

@@ -1,0 +1,67 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6305
+      },
+      "ATTACK": {
+        "value": 876
+      },
+      "REALITY_DEFENSE": {
+        "value": 292
+      },
+      "MENTAL_DEFENSE": {
+        "value": 292
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 190
+      },
+      "CRITICAL_RATE": {
+        "value": 6.3,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 9.5,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 8000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 4
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 2
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 2
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 25000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 8
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 2
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
+      }
+    ]
+  }
+}
