@@ -2,13 +2,13 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 4793
+        "value": 5801
       },
       "ATTACK": {
-        "value": 919
+        "value": 835
       },
       "REALITY_DEFENSE": {
-        "value": 438
+        "value": 376
       },
       "MENTAL_DEFENSE": {
         "value": 376
@@ -33,15 +33,15 @@
         "require": 8000
       },
       {
-        "code": "PAGE_OF_STARLIT_ASCENT",
+        "code": "PAGE_OF_PLANTAL_VIMEN",
         "require": 4
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "code": "MILLED_MAGNESIA",
         "require": 2
       },
       {
-        "code": "TREMBLING_TOOTH",
+        "code": "SILVER_ORE",
         "require": 4
       }
     ],
@@ -51,16 +51,16 @@
         "require": 25000
       },
       {
-        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
         "require": 8
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "code": "BIFURCATED_SKELETON",
         "require": 2
       },
       {
-        "code": "MILLED_MAGNESIA",
-        "require": 4
+        "code": "SPELL_OF_FORTUNE",
+        "require": 5
       }
     ]
   }

@@ -1,6 +1,7 @@
 ---
 title: "{{titleCase name}}"
 id: "{{dashCase name}}"
+gameId: ""
 code: "{{constantCase name}}"
 star: {{star}}
 afflatus: "{{afflatus}}"
@@ -58,18 +59,15 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    :TODO - Update character skill-1 star-1 type & note:
-    <CardInfo star="1" type="" note="">
+    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
       :TODO - Add character skill-1 star-1 description:
     </CardInfo>
 
-    :TODO - Update character skill-2 star-2 type & note:
-    <CardInfo star="2" type="" note="">
+    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
       :TODO - Add character skill-2 star-2 description:
     </CardInfo>
 
-    :TODO - Update character skill-3 star-3 type & note:
-    <CardInfo star="3" type="" note="">
+    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
       :TODO - Add character skill-3 star-3 description:
     </CardInfo>
   </Fragment>
@@ -79,18 +77,15 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    :TODO - Update character skill-1 star-1 type & note:
-    <CardInfo star="1" type="" note="">
+    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
       :TODO - Add character skill-1 star-1 description:
     </CardInfo>
 
-    :TODO - Update character skill-2 star-2 type & note:
-    <CardInfo star="2" type="" note="">
+    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
       :TODO - Add character skill-2 star-2 description:
     </CardInfo>
 
-    :TODO - Update character skill-3 star-3 type & note:
-    <CardInfo star="3" type="" note="">
+    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
       :TODO - Add character skill-3 star-3 description:
     </CardInfo>
   </Fragment>
@@ -100,8 +95,7 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    :TODO - Update character ultimate type & note:
-    <CardInfo type="" note="">
+    <CardInfo type="" note=":TODO - Add character ultimate note:">
       :TODO - Update character ultimate description:
     </CardInfo>
   </Fragment>
@@ -122,10 +116,12 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     :TODO - Update inheritance insight-2:
   </Fragment>
 
+  {{#if star '>=' '5'}}      
   <Fragment slot="insight-3-info">
     :TODO - Update inheritance insight-3:
   </Fragment>
-
+  {{/if}}
+  
   <Fragment slot="portray-section-title">
     ## Portray
   </Fragment>
@@ -154,9 +150,15 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     ## Resonance
   </Fragment>
 
+  {{#if star '>=' '5'}}      
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
   </Fragment>
+  {{else}}
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+  {{/if}}
 
   <Fragment slot="insight-materials-section-title">
     ## Insight Materials
@@ -170,9 +172,11 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
   </Fragment>
 
+  {{#if star '>=' '5'}}      
   <Fragment slot="insight-3-materials">
     {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
   </Fragment>
+  {{/if}}
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

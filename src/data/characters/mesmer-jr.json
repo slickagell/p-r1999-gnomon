@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 4540
       },
       "ATTACK": {
-        "value": 0
+        "value": 926
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 416
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 500
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 348
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 11.6,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 17.4,
         "unit": "%"
       }
     }
@@ -41,12 +41,12 @@
         "require": 2
       },
       {
-        "code": "",
-        "require": 5
+        "code": "LIQUEFIED_TERROR",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SHATTERED_BONES",
+        "require": 2
       }
     ],
     "2": [
@@ -63,12 +63,12 @@
         "require": 4
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SALTED_MANDRAKE",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
       }
     ]
   }

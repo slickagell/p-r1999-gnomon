@@ -1,15 +1,15 @@
 ---
-title: "APPLe"
-id: "apple"
-gameId: "3028"
-code: "APPLE"
+title: "Ms. Moissan"
+id: "ms-moissan"
+gameId: "3044"
+code: "MS_MOISSAN"
 star: 4
-afflatus: "STAR"
-dmgType: "MENTAL"
-race: "AWAKENED"
+afflatus: "MINERAL"
+dmgType: "REALITY"
+race: "ARCANIST"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "HEAL"]
+specialties: ["CONTROL", "SHIELD"]
 isLimited: false
 ---
 
@@ -18,31 +18,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/apple.json";
-import RESONANCE from "@data/resonance/characters/apple.json";
-import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+import CHARACTER from "@data/characters/ms-moissan.json";
+import RESONANCE from "@data/resonance/characters/ms-moissan.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# APPLe
+# Ms. Moissan
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    An awakened's work. Exhibited in the 1960s for an unknown period. Completed in winter, on January 4. Exhibited in Lincolnshire, United Kingdom of Great Britain and Northern Ireland.
+    :TODO - Add character description:
   </Fragment>
 
   <Fragment slot="info-medium">
-    Apple
+    :TODO - Add character medium description:
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Thoughts of the Universe \[Star] Academic Research
+    :TODO - Add character afflatus description:
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Floral, Fruity - Apple (Rose variety), Coumarin (C9H6O2)
+    :TODO - Add character fragrance description:
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    15 9/32 x 7 1/8 x 4 23/32 in.
+    :TODO - Add character dimension description:
   </Fragment>
 
   <Fragment slot="toc">
@@ -54,48 +54,48 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Iridescent White
+    ### Potter
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Others see white.">
-      1-target attack. Deals **200%** Mental DMG.
+    <CardInfo star="1" type="ATTACK" note="They have a wide range of uses.">
+      1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This APPLe sees color while others see white.">
-      1-target attack. Deals **300%** Mental DMG.
+    <CardInfo star="2" type="ATTACK" note="They have a wide range of uses, as daily supply and collection.">
+      1-target attack. Deals **250%** Reality DMG and dispels all *\[Counter]* from the target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This APPLe sees color while others see white. I'm the one who's definitely right.">
-      1-target attack. Deals **500%** Mental DMG.
+    <CardInfo star="3" type="ATTACK" note="They have a wide range of uses, even wider than your imagination.">
+      1-target attack. Deals **450%** Reality DMG and dispels all *\[Counter]* from the target.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Equal Amount of Light
+    ### Mentor
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Some people resist knowledge.">
-      1-target attack. Deals **150%** Mental DMG. HP +(the caster's ATK x**40%**) for the ally with the lowest HP.
+    <CardInfo star="1" type="BUFF" note="The pottery hammer, or the books?">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**80%**) HP for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Some people resist higher knowledge.">
-      1-target attack. Deals **225%** Mental DMG. HP +(the caster's ATK x**60%**) for the ally with the lowest HP.
+    <CardInfo star="2" type="BUFF" note="The pottery hammer and the books aren't in conflict with one another.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**120%**) HP for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Some people resist higher knowledge, but not everyone does that.">
-      1-target attack. Deals **375%** Mental DMG. HP +(the caster's ATK x**100%**) for the ally with the lowest HP.
+    <CardInfo star="3" type="BUFF" note="The pottery hammer and the books aren't in conflict with one another, but she prefers the latter.">
+      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**200%**) HP for 2 rounds.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Insignificant Achievements
+    ### Unique Tools
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="My conclusion will let people know how small they are.">
-      Mass attack. Deals **300%** Mental DMG to all enemies. HP +(the caster's ATK x**100%**) for the ally with the lowest HP percentage.
+    <CardInfo type="DEBUFF" note="Don't overthink it. It's just required by her job.">
+      1-target attack. Deals **400%** Reality DMG and inflicts :effect{code="FREEZE"} on the target for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -104,15 +104,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Wine
+    ### Duty
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When a round starts, HP +(Lost HP x**8%**) for all allies.
+    After the caster takes action, HP +(the caster's ATK x**40%**).
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    When entering battle, Healing Done **+10%**.
+    When the caster enters battle, Penetration Rate **+10%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -120,23 +120,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Insignificant Achievement*'s effect changes to: HP +(the caster's ATK x**150%**) for the ally with the lowest HP percentage.
+    *Unique Tools*'s effect changes to: deals **450%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Iridescent White*: At Incantation rank **1/2/3**, Mental DMG increased to **220/330/550%**.
+    *Potter*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Equal Amount of Light*'s effect changes to: at **1/2/3** stars, HP +(the caster's ATK x**56/84/140%**).
+    *Unique Tools*'s effect changes to: deals **500%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Insignificant Achievement*'s effect changes to: HP +(the caster's ATK x**200%**) for the ally with the lowest HP percentage.
+    *Mentor*'s effect changes to: at **1/2/3** stars, grants a :effect{code="SHIELD"} with (the caster's ATK x**90/135/225%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Insignificant Achievement*'s effect changes to: HP +(the caster's ATK x**250%**) for the ally with the lowest HP percentage.
+    *Unique Tools*'s effect changes to: deals **550%** Reality DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

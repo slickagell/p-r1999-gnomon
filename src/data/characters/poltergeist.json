@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 4793
+        "value": 4540
       },
       "ATTACK": {
-        "value": 919
+        "value": 926
       },
       "REALITY_DEFENSE": {
-        "value": 438
+        "value": 543
       },
       "MENTAL_DEFENSE": {
-        "value": 376
+        "value": 416
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 252
+        "value": 221
       },
       "CRITICAL_RATE": {
-        "value": 8.4,
+        "value": 7.3,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 12.6,
+        "value": 11,
         "unit": "%"
       }
     }
@@ -33,15 +33,19 @@
         "require": 8000
       },
       {
-        "code": "PAGE_OF_STARLIT_ASCENT",
-        "require": 4
-      },
-      {
-        "code": "ROUGH_SILVER_INGOT",
+        "code": "PAGE_OF_PLANTAL_VIMEN",
         "require": 2
       },
       {
-        "code": "TREMBLING_TOOTH",
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 2
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
         "require": 4
       }
     ],
@@ -51,16 +55,20 @@
         "require": 25000
       },
       {
-        "code": "SCROLL_OF_STARLIT_ASCENT",
-        "require": 8
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 4
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 4
+      },
+      {
+        "code": "HOLY_SILVER",
         "require": 2
       },
       {
-        "code": "MILLED_MAGNESIA",
-        "require": 4
+        "code": "LIQUEFIED_TERROR",
+        "require": 3
       }
     ]
   }

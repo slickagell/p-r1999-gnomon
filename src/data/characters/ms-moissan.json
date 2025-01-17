@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 4793
+        "value": 4994
       },
       "ATTACK": {
-        "value": 919
+        "value": 876
       },
       "REALITY_DEFENSE": {
-        "value": 438
+        "value": 416
       },
       "MENTAL_DEFENSE": {
-        "value": 376
+        "value": 459
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 252
+        "value": 157
       },
       "CRITICAL_RATE": {
-        "value": 8.4,
+        "value": 5.2,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 12.6,
+        "value": 7.8,
         "unit": "%"
       }
     }
@@ -33,16 +33,16 @@
         "require": 8000
       },
       {
-        "code": "PAGE_OF_STARLIT_ASCENT",
+        "code": "PAGE_OF_MINERAL_WEALTH",
         "require": 4
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "code": "LIQUEFIED_TERROR",
         "require": 2
       },
       {
-        "code": "TREMBLING_TOOTH",
-        "require": 4
+        "code": "SHATTERED_BONES",
+        "require": 2
       }
     ],
     "2": [
@@ -51,16 +51,16 @@
         "require": 25000
       },
       {
-        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "code": "SCROLL_OF_MINERAL_WEALTH",
         "require": 8
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "code": "SALTED_MANDRAKE",
         "require": 2
       },
       {
-        "code": "MILLED_MAGNESIA",
-        "require": 4
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 5
       }
     ]
   }
