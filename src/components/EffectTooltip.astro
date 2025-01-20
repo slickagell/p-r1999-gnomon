@@ -52,7 +52,7 @@ const { Content } = await effect.render();
       <p class="font-bold">{effect.data.title}</p>
       {
         !["UNKNOWN", "DEFINITION", "GENERAL"].includes(effect.data.type) && (
-          <p class="badge badge-neutral">
+          <p class="badge badge-neutral shrink-0">
             {EFFECT_TYPE[effect.data.type].title}
           </p>
         )

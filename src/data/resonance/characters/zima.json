@@ -1,0 +1,67 @@
+{
+  "mainPiece": "RP_T_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 50000
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 50000
+        },
+        {
+          "code": "WINGED_KEY",
+          "require": 3
+        }
+      ]
+    },
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 50000
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    },
+    "INSPIRE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 50000
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        }
+      ]
+    },
+    "DELIRAMENT": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 50000
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}
