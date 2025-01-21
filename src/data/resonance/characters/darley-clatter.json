@@ -1,0 +1,67 @@
+{
+  "mainPiece": "RP_U_5_01",
+  "patternPieces": {
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 3
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 2
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 2
+        }
+      ]
+    },
+    "PRUDENTIALITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 2
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 2
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

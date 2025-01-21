@@ -1,15 +1,15 @@
 ---
-title: "Poltergeist"
-id: "poltergeist"
-gameId: "3046"
-code: "POLTERGEIST"
-star: 4
-afflatus: "SPIRIT"
+title: "Darley Clatter"
+id: "darley-clatter"
+gameId: "3050"
+code: "DARLEY_CLATTER"
+star: 3
+afflatus: "BEAST"
 dmgType: "MENTAL"
-race: "ARCANIST"
+race: "AWAKENED"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DEF", "DEBUFF"]
+specialties: ["SUPPORT"]
 isLimited: false
 ---
 
@@ -18,31 +18,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/poltergeist.json";
-import RESONANCE from "@data/resonance/characters/poltergeist.json";
+import CHARACTER from "@data/characters/darley-clatter.json";
+import RESONANCE from "@data/resonance/characters/darley-clatter.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Poltergeist
+# Darley Clatter
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    An arcanist's work exhibited in the 1960s for 15 years. Completed in summer, on July 12th. First exhibited in Florida, USA, the exhibit later went on an exhibition tour along the east coast of Florida.
+    An arcanist's work exhibited in the 1970s for an unknown period of time. Completed in winter, on January 19th. Exhibited in Kentucky, USA for a long time.
   </Fragment>
 
   <Fragment slot="info-medium">
-    Timidity
+    Horse Mane
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Drowned Ghost \[Spirit] Poltergeist's Harassment
+    Creaking Foal \[Beast] Gallop & Slew
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Aquatic - Sea Water, Strawberry, Neroli Oil, Sage
+    Fruity - Apple, Caramel, Carrot, Gold
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    64 11/64 x 25 43/64 x 12 19/32 in.
+    26 49/64 x 26 3/8 x 9 29/64 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -54,48 +54,48 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### Prank
+    ### Clatter Trample
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="It's 'untrodden' here.">
-      1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="1" type="ATTACK" note="Clatter snorted.">
+      1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="It's 'untrodden' here.">
-      1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="2" type="ATTACK" note="Clatter snorted loudly. Something seems to be troubling it.">
+      1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="It's 'untrodden' here, and it rains heavily sometimes.">
-      1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+    <CardInfo star="3" type="ATTACK" note="Clatter snorted with fury. It hates being forgotten and has set its gaze upon Little Carrot.">
+      1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### Whispering Words
+    ### Commanding Aura
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A piece of advice.">
-      1-target attack. Deals **200%** Mental DMG.
+    <CardInfo star="1" type="ATTACK" note="The horse stands tall.">
+      1-target attack. Deals **150%** Mental DMG. HP +(the caster's ATK x**56%**) for the ally with the lowest HP.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="A piece of advice: don't ignore her.">
-      1-target attack. Deals **200%** Mental DMG. Mental DEF **-25%** for the target for 2 rounds.
+    <CardInfo star="2" type="ATTACK" note="The horse stands tall and awaits its coronation.">
+      1-target attack. Deals **225%** Mental DMG. HP +(the caster's ATK x**84%**) for the ally with the lowest HP.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="A piece of advice: don't ignore her nor look at her.">
-      1-target attack. Deals **350%** Mental DMG. Mental DEF **-35%** for the target for 3 rounds.
+    <CardInfo star="3" type="ATTACK" note="The horse stands tall and commands you to brush its magnificent mane.">
+      1-target attack. Deals **375%** Mental DMG. HP +(the caster's ATK x**140%**) for the ally with the lowest HP.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### The Sun Is Not Gentle
+    ### Great Inspirer
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="No, NOOOO!">
-      Self counter. Enters :effect{code="TAUNT"}: DMG Taken **-20%** and DMG Heal **+35%** for 3 rounds. Also enters :effect{code="CONCEALMENT"} for 1 round.
+    <CardInfo type="BUFF" note="Darley Arabian was an inspirational figure, Its neighs have spurred the jockeys on.">
+      Mass buff. Grants Moxie +2 for other allies; grants DMG Bonus **+35%** for other allies for 3 rounds. Recovers (Missing HP x**25%**) HP for self.
     </CardInfo>
   </Fragment>
 
@@ -104,11 +104,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Good Girl
+    ### Glory Restored
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{code="CONCEALMENT"} status for 2 rounds (only triggers 1 time).
+    If the caster's HP goes below **50%** after being. attacked, Moxie +3 (only triggers 1 time).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -120,23 +120,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *The Sun Is Not Gentle*'s effect changes to: DMG Heal Rate **+35%**.
+    *Great Inspirer*'s effect changes to: Moxie **+2** for other allies.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Prank*'s effect changes to: Penetration Rate **+40%**.
+    *Clatter Trample*'s effect changes to: Penetration Rate **+40%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *The Sun Is Not Gentle*'s effect changes to: DMG Taken **-30%**.
+    *Great Inspirer*'s effect changes to: DMG: Dealt **+35%** for all allies.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Whispering Words*'s effect changes to: at **1/2/3** stars, deals **220/230/400%** Mental DMG.
+    *Commanding Aura*'s effect changes to: at **1/2/3** stars, HP +(the caster's ATK x**56/84/140%**) for the ally with the lowest HP percentage.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *The Sun Is Not Gentle*'s effect changes to: DMG Heal Rate **+50%**.
+    *Great Inspirer*'s effect changes to: After casting, recovers (Missing HP x**25%**) HP for self.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
