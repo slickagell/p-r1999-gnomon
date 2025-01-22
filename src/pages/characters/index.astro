@@ -139,6 +139,38 @@ function sortCharacters(a, b) {
         </select>
       </label>
       <!-- End Dmg -->
+      <!-- Race -->
+      <div class="hidden md:flex py-2 px-4 items-center">
+        Race
+        <ul class="flex py-2 px-4 gap-1 flex-wrap">
+          <template x-for="raceType in raceTypes">
+            <li>
+              <button
+                class="btn btn-outline btn-xs"
+                :class="raceType.code === raceTypeFilter ? 'btn-active' : ''"
+                @click="filterRaceType(raceType.code)"
+                x-text="raceType.title"
+              >
+              </button>
+            </li>
+          </template>
+        </ul>
+      </div>
+      <label for="raceTypeFilter" class="py-2 block md:hidden">
+        Race
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterRaceType($event.target.value)"
+        >
+          <template x-for="raceType in raceTypes">
+            <option
+              :value="raceType.code"
+              :selected="raceType.code === raceTypeFilter"
+              x-text="raceType.title"></option>
+          </template>
+        </select>
+      </label>
+      <!-- End Race -->
       <input
         type="text"
         placeholder="Search"
@@ -156,7 +188,8 @@ function sortCharacters(a, b) {
                 rarity:'${characterEntry.data.star}',
                 afflatus:'${characterEntry.data.afflatus}',
                 dmgType:'${characterEntry.data.dmgType}',
-                title:'${characterEntry.data.title}'
+                title:'${characterEntry.data.title}',
+                race:'${characterEntry.data.race}',
               })`}
             >
               <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
@@ -198,7 +231,7 @@ function sortCharacters(a, b) {
 </Layout>
 
 <script>
-  import { AFFLATUS_TYPE, DMG_TYPE, RARITY } from "@constants/character";
+  import { AFFLATUS_TYPE, DMG_TYPE, RACE, RARITY } from "@constants/character";
   import Alpine from "alpinejs";
 
   window.Alpine = Alpine;
@@ -229,13 +262,22 @@ function sortCharacters(a, b) {
         code,
       })),
     ],
+    raceTypeFilter: "ALL",
+    raceTypes: [
+      { title: "All", code: "ALL" },
+      ...Object.keys(RACE).map((code) => ({
+        title: RACE[code].title,
+        code,
+      })),
+    ],
 
-    filterCharacter({ rarity, afflatus, dmgType, title }) {
+    filterCharacter({ rarity, afflatus, dmgType, title, race }) {
       const filters =
         (this.afflatusTypeFilter === "ALL" ||
           this.afflatusTypeFilter === afflatus) &&
         (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
-        (this.dmgTypeFilter === "ALL" || this.dmgTypeFilter === dmgType);
+        (this.dmgTypeFilter === "ALL" || this.dmgTypeFilter === dmgType) &&
+        (this.raceTypeFilter === "ALL" || this.raceTypeFilter === race);
 
       return !this.searchText
         ? filters
@@ -253,6 +295,10 @@ function sortCharacters(a, b) {
 
     filterDmgType(dmgType: string) {
       this.dmgTypeFilter = dmgType;
+    },
+
+    filterRaceType(raceType: string) {
+      this.raceTypeFilter = raceType;
     },
   }));
 </script>

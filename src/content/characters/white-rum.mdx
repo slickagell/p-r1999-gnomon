@@ -1,15 +1,15 @@
 ---
-title: "AliEn T"
-id: "alien-t"
-gameId: "3034"
-code: "ALIEN_T"
-star: 3
-afflatus: "STAR"
+title: "White Rum"
+id: "white-rum"
+gameId: "3101"
+code: "WHITE_RUM"
+star: 4
+afflatus: "INTELLECT"
 dmgType: "REALITY"
-race: "BEYOND"
-version: "1.0"
-releaseDate: "2023-10-26"
-specialties: ["DEF", "CONTROL"]
+race: "AWAKENED"
+version: "2.2"
+releaseDate: "2025-01-09"
+specialties: ["DPS", "CONTROL", "SHIFT"]
 isLimited: false
 ---
 
@@ -18,31 +18,31 @@ import CharacterContent from '@components/CharacterMarkdown/CharacterContent.ast
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
-import CHARACTER from "@data/characters/alien-t.json";
-import RESONANCE from "@data/resonance/characters/alien-t.json";
+import CHARACTER from "@data/characters/white-rum.json";
+import RESONANCE from "@data/resonance/characters/white-rum.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# AliEn T
+# White Rum
 
 <CharacterContent {...frontmatter}>
   <Fragment slot="info-description">
-    A supernatural work exhibited in the mid-20th century for ??? years. Completed in summer, on July 10th. First exhibition location unknown. This exhibit had been displayed all over the world and was last found in New Mexico, USA before being controlled by the Foundation.
+    An Awakened's work. Exhibited in the mid-17th century for approximately 300 years. Completed in winter, on January 15th. Originally exhibited in the United Kingdom and Northern Ireland, and active in the Caribbean region. After a long hiatus, it later drifted to São Paulo, Brazil.
   </Fragment>
 
   <Fragment slot="info-medium">
-    Light Beam
+    Bottle
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Kindness from a Distant Star [Star] Inspection of the Blue Planet
+    Amind adrift, [Intelligence], drifting in a bottle
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Chypre - Oakmoss, Grass, Leather, Industrial Glue, Brown Scotch Tape
+    Fougère aquatic, seawater, water lily, rum, patchouli
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    8 21/32 x 6 19/64 x 6 19/64 in.
+    27 3/11x 14 9/25 x5 7/10 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -54,48 +54,48 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### The Spotted
+    ### Port Side Barrage
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="This act might attract the authority's attention.">
-      1-target attack. Deals **160%** Reality DMG. If the target's current HP is above **50%**, then deals **60%** more Reality DMG.
+    <CardInfo star="1" type="ATTACK" note="Take aim—and fire!">
+      Deals 80% Reality DMG to all enemies, the shifts self 1 position backward.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This act attracted the authority's attention.">
-      1-target attack. Deals **240%** Reality DMG. If the target's current HP is above **50%**, then deals **90%** more Reality DMG.
+    <CardInfo star="2" type="ATTACK" note="Take aim—and fire! Make sure to cover your ears!">
+      Deals 120% Reality DMG to all enemies, the shifts self 1 position backward.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This act attracted the authority's attention, but it's beyond the jurisdiction of Distant Stars Act.">
-      1-target attack. Deals **400%** Reality DMG. If the target's current HP is above **50%**, then deals **150%** more Reality DMG.
+    <CardInfo star="3" type="ATTACK" note="Take aim—and fire! Make sure to cover your ears! Too late, oops!">
+      Deals 200% Reality DMG to all enemies, the shifts self 1 position backward.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### No Ill Intent
+    ### Prepare to Board!
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="It claims to harbor no ill intent.">
-      Self counter. Enter :effect{code="TAUNT"} and DMG Taken **-40%** for 1 round.
+    <CardInfo star="1" type="CHANNEL" note="Ahoy!">
+      Self channel. Enters [Boarding Assault] status. If already in the [Boarding Assault] status, gains an additional Moxie +1.
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="It claims to harbor no ill intent, it just...">
-      Self counter. Enter :effect{code="TAUNT"} and DMG Taken **-40%** for 2 round.
+    <CardInfo star="2" type="CHANNEL" note="Ahoy! Board that ship!">
+      Self channel. Enters [Boarding Assault] status. If already in the [Boarding Assault] status, gains an additional Moxie +1.
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="It claims to harbor no ill intent, it just finds it hard to control itself.">
-      Self counter. Enter :effect{code="TAUNT"} and DMG Taken **-60%** for 3 round.
+    <CardInfo star="3" type="CHANNEL" note="Ahoy! Board that ship and raise our flag!">
+      Self channel. Enters [Boarding Assault] status. If already in the [Boarding Assault] status, gains an additional Moxie +1.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### Future Interstellar War: Prelude
+    ### Boundless Sea, Limitless Sky
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Those hiding secrets tend to talk in their sleep or think that they're still in a dream.">
-      Mass attack. Deals **200%** Reality DMG and inflicts 1 round of :effect{code="DISARM"} and :effect{code="SILENCE"} statuses on all enemies.
+    <CardInfo type="ATTACK" note="The spirit of exploration lives on!">
+      Mass attack. Can only be cast in the [Boarding Assault] status. Shifts to the front-most position, deals 200% Reality DMG to all enemies and inflicts [Daze] on the targets for 1 round; for every position shifted, this attack gains DMG Dealt +15%; If at least 3 positions were shifted, this attack ignores 50% Daze Resistance.
     </CardInfo>
   </Fragment>
 
@@ -104,15 +104,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### Do Not Respond!
+    ### Privateering License
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{code="TAUNT"} status and gains a :effect{code="SHIELD"} with (aliEn T's Reality DEF x**300%**) HP for 2 rounds (only triggers 1 time).
+    When receiving a shift effect, for every position shifted backward, gain 1 stack of [Rousing Morale], for every position shifted forward, gain 1 stack of [Sturdiness].
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
+    DMG Taken -8% when the caster enters battle.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -120,23 +120,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **230%** Reality DMG.
+    Privateering License: Gain 2 stacks of [Rousing Morale] for each position shifted backward, and gain 2 stacks of [Sturdiness] for each position shifted forward.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **40%**
+    Boundless Sea, Limitless Sky: For every position shifted, the DMG Dealt is increased to +25%.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **270%** Reality DMG.
+    Boundless Sea, Limitless Sky: Reality DMG is increased to 300%.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **30%**
+    Boundless Sea, Limitless Sky: If at least 3 positions were shifted, this attack now ignores 100% Daze resistance.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **300%** Reality DMG.
+    Port Side Barrage: At incantation rank 1/2/3, the Reality DMG is increased to 100/150/250%.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -158,6 +158,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="insight-2-materials">
     {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
   </Fragment>
+
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

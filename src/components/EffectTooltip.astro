@@ -40,7 +40,7 @@ const { Content } = await effect.render();
     @mousedown.outside="isToggle = false"
     x-show="isShow || isToggle"
     x-anchor.top="$refs.content"
-    class="bg-base-100 w-60 text-base-content border-line-paper border p-2 z-10"
+    class="bg-base-100 w-80 text-base-content border-line-paper border p-2 z-10"
     x-transition:enter="ease duration-300 transition-opacity"
     x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100"
@@ -48,7 +48,7 @@ const { Content } = await effect.render();
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
   >
-    <div class="flex justify-between items-center gap-1">
+    <div class="flex justify-between items-center gap-1 mb-1">
       <p class="font-bold">{effect.data.title}</p>
       {
         !["UNKNOWN", "DEFINITION", "GENERAL"].includes(effect.data.type) && (
