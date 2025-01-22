@@ -1,0 +1,63 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5926
+      },
+      "ATTACK": {
+        "value": 719
+      },
+      "REALITY_DEFENSE": {
+        "value": 474
+      },
+      "MENTAL_DEFENSE": {
+        "value": 355
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 220
+      },
+      "CRITICAL_RATE": {
+        "value": 7.3,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 11,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 5000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
+        "require": 2
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 20000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 4
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 2
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 5540
+      },
+      "ATTACK": {
+        "value": 750
+      },
+      "REALITY_DEFENSE": {
+        "value": 424
+      },
+      "MENTAL_DEFENSE": {
+        "value": 474
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 191
+      },
+      "CRITICAL_RATE": {
+        "value": 6.3,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 9.5,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 5000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 2
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 2
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 20000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 4
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 2
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 2
+      }
+    ]
+  }
+}

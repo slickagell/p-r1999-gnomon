@@ -1,0 +1,67 @@
+{
+  "mainPiece": "RP_Z_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 2
+        }
+      ]
+    },
+    "MERCY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 2
+        }
+      ]
+    },
+    "EQUIBALANCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

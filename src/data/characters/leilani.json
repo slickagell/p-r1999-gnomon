@@ -1,0 +1,63 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 4192
+      },
+      "ATTACK": {
+        "value": 887
+      },
+      "REALITY_DEFENSE": {
+        "value": 414
+      },
+      "MENTAL_DEFENSE": {
+        "value": 376
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 222
+      },
+      "CRITICAL_RATE": {
+        "value": 7.4,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 11.1,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 5000
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 2
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 2
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 20000
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 4
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 2
+      }
+    ]
+  }
+}

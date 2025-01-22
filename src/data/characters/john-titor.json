@@ -1,0 +1,71 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 4769
+      },
+      "ATTACK": {
+        "value": 879
+      },
+      "REALITY_DEFENSE": {
+        "value": 376
+      },
+      "MENTAL_DEFENSE": {
+        "value": 435
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 233
+      },
+      "CRITICAL_RATE": {
+        "value": 7.7,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 11.6,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 5000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 1
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 1
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 2
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 20000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 2
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 2
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 2
+      }
+    ]
+  }
+}
