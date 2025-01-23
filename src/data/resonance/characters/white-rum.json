@@ -8,8 +8,8 @@
           "require": 50000
         },
         {
-          "code": "",
-          "require": 3
+          "code": "BIFURCATED_SKELETON",
+          "require": 4
         }
       ]
     },
@@ -20,7 +20,7 @@
           "require": 50000
         },
         {
-          "code": "",
+          "code": "GOLDEN_BEETLE",
           "require": 3
         }
       ]
@@ -32,8 +32,8 @@
           "require": 50000
         },
         {
-          "code": "",
-          "require": 3
+          "code": "PROPHETIC_BIRD",
+          "require": 5
         }
       ]
     },
@@ -44,7 +44,7 @@
           "require": 50000
         },
         {
-          "code": "",
+          "code": "CLAWED_PENDULUM",
           "require": 3
         }
       ]
@@ -56,33 +56,12 @@
           "require": 50000
         },
         {
-          "code": "",
-          "require": 3
+          "code": "PROPHETIC_BIRD",
+          "require": 5
         }
       ]
     }
   },
   "patternRecommended": "PLACIDITY",
-  "recommended": {
-    "5": [
-      {
-        "name": "Attack",
-        "source": {
-          "label": "To be updated",
-          "link": "#"
-        },
-        "resonance": [
-          {
-            "blocks": ["0-0", "0-1", "0-2", "1-1"],
-            "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
-            ],
-            "orientation": 3,
-            "pieceId": "RP_T_4_01"
-          }
-        ]
-      }
-    ]
-  }
+  "recommended": {}
 }

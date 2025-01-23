@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 6053
       },
       "ATTACK": {
-        "value": 0
+        "value": 794
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 438
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 438
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 252
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 8.4,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 12.6,
         "unit": "%"
       }
     }
@@ -41,12 +41,8 @@
         "require": 1
       },
       {
-        "code": "",
-        "require": 5
-      },
-      {
-        "code": "",
-        "require": 6
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 2
       }
     ],
     "2": [
@@ -63,12 +59,12 @@
         "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "PROPHETIC_BIRD",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "ESOTERIC_BONES",
+        "require": 2
       }
     ]
   }

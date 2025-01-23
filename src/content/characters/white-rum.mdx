@@ -34,7 +34,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Amind adrift, [Intelligence], drifting in a bottle
+    Amind adrift, \[Intelligence], drifting in a bottle
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -59,15 +59,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Take aim—and fire!">
-      Deals 80% Reality DMG to all enemies, the shifts self 1 position backward.
+      Deals **80%** Reality DMG to all enemies, the shifts self 1 position backward.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="Take aim—and fire! Make sure to cover your ears!">
-      Deals 120% Reality DMG to all enemies, the shifts self 1 position backward.
+      Deals **120%** Reality DMG to all enemies, the shifts self 1 position backward.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="Take aim—and fire! Make sure to cover your ears! Too late, oops!">
-      Deals 200% Reality DMG to all enemies, the shifts self 1 position backward.
+      Deals **200%** Reality DMG to all enemies, the shifts self 1 position backward.
     </CardInfo>
   </Fragment>
 
@@ -77,15 +77,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="Ahoy!">
-      Self channel. Enters [Boarding Assault] status. If already in the [Boarding Assault] status, gains an additional Moxie +1.
+      Self channel. Enters :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
     </CardInfo>
 
     <CardInfo star="2" type="CHANNEL" note="Ahoy! Board that ship!">
-      Self channel. Enters [Boarding Assault] status. If already in the [Boarding Assault] status, gains an additional Moxie +1.
+      Self channel. Enters :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
     </CardInfo>
 
     <CardInfo star="3" type="CHANNEL" note="Ahoy! Board that ship and raise our flag!">
-      Self channel. Enters [Boarding Assault] status. If already in the [Boarding Assault] status, gains an additional Moxie +1.
+      Self channel. Enters :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
     </CardInfo>
   </Fragment>
 
@@ -95,7 +95,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="The spirit of exploration lives on!">
-      Mass attack. Can only be cast in the [Boarding Assault] status. Shifts to the front-most position, deals 200% Reality DMG to all enemies and inflicts [Daze] on the targets for 1 round; for every position shifted, this attack gains DMG Dealt +15%; If at least 3 positions were shifted, this attack ignores 50% Daze Resistance.
+      Mass attack. Can only be cast in the :effect{code="BOARDING_ASSAULT"} status. Shifts to the front-most position, deals **200%** Reality DMG to all enemies and inflicts :effect{code="DAZE"} on the targets for 1 round; for every position shifted, this attack gains DMG Dealt **+15%**; If at least 3 positions were shifted, this attack ignores **50%** Daze Resistance.
     </CardInfo>
   </Fragment>
 
@@ -108,11 +108,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When receiving a shift effect, for every position shifted backward, gain 1 stack of [Rousing Morale], for every position shifted forward, gain 1 stack of [Sturdiness].
+    When receiving a shift effect, for every position shifted backward, gain 1 stack of :effect{code="ROUSING_MORALE"}, for every position shifted forward, gain 1 stack of :effect{code="STURDINESS"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    DMG Taken -8% when the caster enters battle.
+    DMG Taken **-8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -120,23 +120,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    Privateering License: Gain 2 stacks of [Rousing Morale] for each position shifted backward, and gain 2 stacks of [Sturdiness] for each position shifted forward.
+    *Privateering License*: Gain **2** stacks of :effect{code="ROUSING_MORALE"} for each position shifted backward, and gain **2** stacks of :effect{code="STURDINESS"} for each position shifted forward.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    Boundless Sea, Limitless Sky: For every position shifted, the DMG Dealt is increased to +25%.
+    *Boundless Sea, Limitless Sky*: For every position shifted, the DMG Dealt is increased to **+25%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    Boundless Sea, Limitless Sky: Reality DMG is increased to 300%.
+    *Boundless Sea, Limitless Sky*: Reality DMG is increased to **300%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    Boundless Sea, Limitless Sky: If at least 3 positions were shifted, this attack now ignores 100% Daze resistance.
+    *Boundless Sea, Limitless Sky*: If at least 3 positions were shifted, this attack now ignores **100%** Daze resistance.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    Port Side Barrage: At incantation rank 1/2/3, the Reality DMG is increased to 100/150/250%.
+    *Port Side Barrage*: At incantation rank **1/2/3**, the Reality DMG is increased to **100/150/250%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -158,7 +158,6 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="insight-2-materials">
     {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
   </Fragment>
-
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

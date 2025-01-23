@@ -2,26 +2,26 @@
   "baseStats": {
     "maxBaseStats": {
       "HP": {
-        "value": 0
+        "value": 5045
       },
       "ATTACK": {
-        "value": 0
+        "value": 794
       },
       "REALITY_DEFENSE": {
-        "value": 0
+        "value": 485
       },
       "MENTAL_DEFENSE": {
-        "value": 0
+        "value": 459
       },
       "CRITICAL_TECHNIQUE": {
-        "value": 0
+        "value": 252
       },
       "CRITICAL_RATE": {
-        "value": 0,
+        "value": 8.4,
         "unit": "%"
       },
       "CRITICAL_DMG": {
-        "value": 0,
+        "value": 12.6,
         "unit": "%"
       }
     }
@@ -41,12 +41,12 @@
         "require": 2
       },
       {
-        "code": "",
-        "require": 5
+        "code": "LIQUEFIED_TERROR",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "SILVER_ORE",
+        "require": 4
       }
     ],
     "2": [
@@ -63,12 +63,12 @@
         "require": 4
       },
       {
-        "code": "",
-        "require": 6
+        "code": "BIFURCATED_SKELETON",
+        "require": 2
       },
       {
-        "code": "",
-        "require": 6
+        "code": "MILLED_MAGNESIA",
+        "require": 3
       }
     ]
   }

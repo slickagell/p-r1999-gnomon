@@ -34,7 +34,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    The soul of mannequins [Spirit] Social interactions
+    The soul of mannequins \[Spirit] Social interactions
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -95,7 +95,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="BUFF" note="This desire to be the 'bridge' is sparked by the immense divide he percieves.">
-      1-target buff. Grants an ally a Shield with (Pioneer's Max HP x**50%**) HP for 2 rounds. Pioneer swaps positions with the target and grants the target a _[Roving Salesman]_ buff that matches their new position, with the duration of the buff extended by 1.
+      1-target buff. Grants an ally a Shield with (Pioneer's Max HP x**50%**) HP for 2 rounds. Pioneer swaps positions with the target and grants the target a *\[Roving Salesman]* buff that matches their new position, with the duration of the buff extended by 1.
     </CardInfo>
   </Fragment>
 
@@ -108,14 +108,14 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    At the start of the round and after being shifted, gain a buff that matches the position: 
-    
-    Position #1: :effect{code="HOT_DEAL"}; 
-    
-    Position #2: :effect{code="PROMOTIONAL_PACKAGE"}; 
-    
-    Position #3: :effect{code="RISK_MANAGEMENT"}; 
-    
+    At the start of the round and after being shifted, gain a buff that matches the position:
+
+    Position #1: :effect{code="HOT_DEAL"};
+
+    Position #2: :effect{code="PROMOTIONAL_PACKAGE"};
+
+    Position #3: :effect{code="RISK_MANAGEMENT"};
+
     Position #4: :effect{code="AFTER_SALES_SERVICE"}.
   </Fragment>
 
@@ -123,29 +123,28 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     DMG Taken **-8%** when the caster enters battle.
   </Fragment>
 
-  
   <Fragment slot="portray-section-title">
     ## Portray
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    _Competitive Differentiation_: Mental DMG is increased to **230/350/570%**.
+    *Competitive Differentiation*: Mental DMG is increased to **230/350/570%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    _To Future Business_: The Reality DEF and Mental DEF are increased to **30%/35%/40%**.
+    *To Future Business*: The Reality DEF and Mental DEF are increased to **30%/35%/40%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    _Bridge the Gap_: The Shield granted is increased to (Max HP x**70%**) HP.
+    *Bridge the Gap*: The Shield granted is increased to (Max HP x**70%**) HP.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    _Roving Salesman_: :effect{code="PROMOTIONAL_PACKAGE"}'s DMG Bonus and DMG Reduction are increased to **25%**.
+    *Roving Salesman*: :effect{code="PROMOTIONAL_PACKAGE"}'s DMG Bonus and DMG Reduction are increased to **25%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    _Roving Salesman_: :effect{code="HOT_DEAL"}'s Critical Rate and Critical DMG are increased to **30%**.
+    *Roving Salesman*: :effect{code="HOT_DEAL"}'s Critical Rate and Critical DMG are increased to **30%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -167,7 +166,6 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="insight-2-materials">
     {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
   </Fragment>
-
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

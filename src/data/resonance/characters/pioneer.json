@@ -8,7 +8,7 @@
           "require": 20000
         },
         {
-          "code": "",
+          "code": "PROPHETIC_BIRD",
           "require": 3
         }
       ]
@@ -20,8 +20,8 @@
           "require": 20000
         },
         {
-          "code": "",
-          "require": 3
+          "code": "BITING_BOX",
+          "require": 2
         }
       ]
     },
@@ -32,7 +32,7 @@
           "require": 20000
         },
         {
-          "code": "",
+          "code": "PROPHETIC_BIRD",
           "require": 3
         }
       ]
@@ -44,7 +44,7 @@
           "require": 20000
         },
         {
-          "code": "",
+          "code": "BIFURCATED_SKELETON",
           "require": 3
         }
       ]
@@ -56,33 +56,12 @@
           "require": 20000
         },
         {
-          "code": "",
-          "require": 3
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 2
         }
       ]
     }
   },
   "patternRecommended": "PLACIDITY",
-  "recommended": {
-    "5": [
-      {
-        "name": "Attack",
-        "source": {
-          "label": "To be updated",
-          "link": "#"
-        },
-        "resonance": [
-          {
-            "blocks": ["0-0", "0-1", "0-2", "1-1"],
-            "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
-            ],
-            "orientation": 3,
-            "pieceId": "RP_T_4_01"
-          }
-        ]
-      }
-    ]
-  }
+  "recommended": {}
 }
