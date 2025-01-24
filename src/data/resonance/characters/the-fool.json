@@ -1,0 +1,67 @@
+{
+  "mainPiece": "RP_U_5_01",
+  "patternPieces": {
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 2
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "HOLY_SILVER",
+          "require": 3
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 2
+        }
+      ]
+    },
+    "PRUDENTIALITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 3
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOLDEN_GRASS_INCENSE",
+          "require": 2
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

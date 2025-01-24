@@ -1,0 +1,63 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 4576
+      },
+      "ATTACK": {
+        "value": 879
+      },
+      "REALITY_DEFENSE": {
+        "value": 376
+      },
+      "MENTAL_DEFENSE": {
+        "value": 394
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 175
+      },
+      "CRITICAL_RATE": {
+        "value": 5.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 8.7,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 5000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 2
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 2
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 20000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 4
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 2
+      }
+    ]
+  }
+}

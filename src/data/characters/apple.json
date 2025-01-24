@@ -1,0 +1,67 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 4742
+      },
+      "ATTACK": {
+        "value": 876
+      },
+      "REALITY_DEFENSE": {
+        "value": 358
+      },
+      "MENTAL_DEFENSE": {
+        "value": 475
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 252
+      },
+      "CRITICAL_RATE": {
+        "value": 8.4,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 12.6,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 8000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 4
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 2
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 25000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 8
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 5
+      }
+    ]
+  }
+}

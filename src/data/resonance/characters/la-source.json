@@ -1,0 +1,67 @@
+{
+  "mainPiece": "RP_T_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 2
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 2
+        }
+      ]
+    },
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 2
+        }
+      ]
+    },
+    "INSPIRE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 2
+        }
+      ]
+    },
+    "DELIRAMENT": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "BIFURCATED_SKELETON",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

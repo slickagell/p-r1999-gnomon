@@ -1,0 +1,165 @@
+---
+title: "Door"
+id: "door"
+gameId: "3059"
+code: "DOOR"
+star: 2
+afflatus: "INTELLECT"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["SUPPORT"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/door.json";
+import RESONANCE from "@data/resonance/characters/door.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Door
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work exhibited in ??? for ??? years. Completed in summer, on August 2nd. First exhibition location unknown, the exhibit later went all over the world.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Others
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Mirror within the Mirror \[Intelligence] Self Reflection
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Fem- Papyrus, Anise
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    6 19/64 x 4 23/32 x 25/64 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Deep Vortex
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="He was once swallowed by the Abyss.">
+      1-target attack. Deals **200%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="He was once swallowed by the Abyss and became silenced by it.">
+      1-target attack. Deals **300%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="He was once swallowed by the Abyss. He now missed their company.">
+      1-target attack. Deals **500%** Reality DMG.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Converging Mirror
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note="Resplendent.">
+      Mass attack. Deals **150%** Reality DMG to 2 enemies.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="Resplendent, but the shadows might be even more so.">
+      Mass attack. Deals **225%** Reality DMG to 2 enemies.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="Resplendent, but the shadows might be even more so. Perhaps this is another form of contrast.">
+      Mass attack. Deals **375%** Reality DMG to 2 enemies.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### To the Universe in the Alley
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note="Reflect, illuminate, and then break. This is the life of a mirror.">
+      Mass buff. HP -(current HP x**100%**) for the caster. Moxie +2 for other allies, inflicts a :effect{code="SHIELD"} with (the target's ATK x**100%**) HP on every ally, and they enter :effect{code="INSPIRE"} status for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Modesty
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the caster dies, Moxie +1 for other allies.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Taken **-8%** when caster enters battle.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *To the Universe in the Alley*'s effect changes to: inflicts a :effect{code="SHIELD"} with (the caster's ATK x**150%**) HP on all allies.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Deep Vortex*'s effect changes to: at **1/2/3** stars, deals **220/330/550%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *To the Universe in the Alley*'s effect changes to: inflicts a :effect{code="SHIELD"} with (the caster's ATK x**200%**) HP on all allies.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Converging Mirror*'s effect changes to: **1/2/3** stars, deals **160/245/400%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *To the Universe in the Alley*'s effect changes to: inflicts a :effect{code="SHIELD"} with (the caster's ATK x**250%**) HP on all allies.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

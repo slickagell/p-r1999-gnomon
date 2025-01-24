@@ -1,0 +1,67 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 4540
+      },
+      "ATTACK": {
+        "value": 919
+      },
+      "REALITY_DEFENSE": {
+        "value": 416
+      },
+      "MENTAL_DEFENSE": {
+        "value": 292
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 445
+      },
+      "CRITICAL_RATE": {
+        "value": 14.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 22.2,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 8000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 4
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 2
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 3
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 25000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 8
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 2
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 2
+      }
+    ]
+  }
+}

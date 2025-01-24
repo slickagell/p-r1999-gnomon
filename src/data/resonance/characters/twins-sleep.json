@@ -1,0 +1,88 @@
+{
+  "mainPiece": "RP_U_5_01",
+  "patternPieces": {
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 2
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 2
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 2
+        }
+      ]
+    },
+    "PRUDENTIALITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 2
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 20000
+        },
+        {
+          "code": "GOOSE_NECK",
+          "require": 2
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {
+    "5": [
+      {
+        "name": "Attack",
+        "source": {
+          "label": "To be updated",
+          "link": "#"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-1"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01"
+          }
+        ]
+      }
+    ]
+  }
+}

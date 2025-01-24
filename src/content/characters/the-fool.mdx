@@ -1,0 +1,165 @@
+---
+title: "The Fool"
+id: "the-fool"
+gameId: "3012"
+code: "THE_FOOL"
+star: 3
+afflatus: "STAR"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DEF"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/the-fool.json";
+import RESONANCE from "@data/resonance/characters/the-fool.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
+
+# The Fool
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Seen in the 1650s. Length of the exhibition is unknown. Exhibited in the countryside and towns of the Commonwealth of England, exact location unknown.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Mask
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Foolish Stars Behind the Scenes \[Star] Theatrical Performance
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Oriental Fougere - Bergamot Orange, Pine, Tonka Bean, Vetiver
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    66 59/64x26 31/32x19 11/16in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### The Sage
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="" note="He wears many faces.">
+      1-target attack. Deals **200%** Mental DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="" note="He wears many faces. He can be a messenger, or a deserter.">
+      1-target attack. Deals **250%** Mental DMG. Moxie -1 for the target.
+    </CardInfo>
+
+    <CardInfo star="3" type="" note="He wears many faces. Perhaps he's just an actor.">
+      1-target attack. Deals **400%** Mental DMG. Moxie -2 for the target.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### The Fool
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="COUNTER" note="He controls your emotions.">
+      Self counter. Enters :effect{code="TAUNT"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{code="CORRODE"}:when a round ends, takes (Target's Current HP x**15%**) Genesis DMG, capped at **15%** of Caster's Max HP.
+    </CardInfo>
+
+    <CardInfo star="2" type="COUNTER" note="He is the Fool on the stage and he controls your emotions.">
+      Self counter. Enters :effect{code="TAUNT"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{code="CORRODE"}: when a round ends, takes (Target's Current HP x**25%**) Genesis DMG, capped at **25%** of Caster's Max HP.
+    </CardInfo>
+
+    <CardInfo star="3" type="COUNTER" note="He is the Fool on the stage and he controls your emotions. And there's more than one of them.">
+      Self counter. Enters :effect{code="TAUNT"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{code="CORRODE"}: when a round ends, takes (Target's Current HP x**35%**) Genesis DMG, capped at **35%** of Caster's Max HP.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Unexpected and Improvised
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="He hates it when people barge on to the stage.">
+      Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in :effect{code="CORRODE"} status, extends the status duration for 1 round.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Before Curtains Are Drawn
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the caster enters battle, enters :effect{code="FOOL_IN_THE_PLAY"} status for 2 rounds (only triggers 1 time).
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Reality DEF and Mental DEF **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Unexpected and Improvised*'s effect changes to: deals **280%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *The Sage*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *The Fool*'s effect changes to: at **1/2** stars, :effect{code="CORRODE"} deals (current HP x**20/30%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Unexpected and Improvised*'s effect changes to: deals **310%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Unexpected and Improvised*'s effect changes to: deals **350%** Mental DMG.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

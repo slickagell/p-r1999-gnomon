@@ -1,0 +1,71 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 4818
+      },
+      "ATTACK": {
+        "value": 799
+      },
+      "REALITY_DEFENSE": {
+        "value": 414
+      },
+      "MENTAL_DEFENSE": {
+        "value": 414
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 224
+      },
+      "CRITICAL_RATE": {
+        "value": 7.4,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 11.2,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 5000
+      },
+      {
+        "code": "PAGE_OF_MINERAL_WEALTH",
+        "require": 1
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 1
+      },
+      {
+        "code": "TREMBLING_TOOTH",
+        "require": 2
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 20000
+      },
+      {
+        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "require": 2
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 2
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 1
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+---
+title: "Oliver Fog"
+id: "oliver-fog"
+gameId: "3018"
+code: "OLIVER_FOG"
+star: 4
+afflatus: "STAR"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["DEF", "SUPPORT"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/oliver-fog.json";
+import RESONANCE from "@data/resonance/characters/oliver-fog.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Oliver Fog
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited in the mid-20th century for 15 years. Completed in Winter, on December 26. Exhibited in Greater London, United Kingdom of Great Britain and Northern Ireland.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Fog
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Planets by the Fog \[Star] Fog Purification
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Woody - Leather, Ebony, Wormwood
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    68 57/64x29 17/32x16 59/64in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Working Hours
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="This is the family's calling.">
+      1-target attack. Deals **160%** Reality DMG. This attack enjoys Leech Rate **+30%**.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="This is the family's calling? No.">
+      1-target attack. Deals **240%** Reality DMG. This attack enjoys Leech Rate **+30%**.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="This is the family's calling? No. This is just a job.">
+      1-target attack. Deals **400%** Reality DMG. This attack enjoys Leech Rate **+30%**.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Ten Minutes Later
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="BUFF" note="One will hear the bell of the campanile.">
+      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+10%** for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="BUFF" note="One will hear the bell of the campanile. I shall uphold my duty.">
+      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+15%** for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="BUFF" note="One will hear the bell of the campanile. I will fulfill my duty till then.">
+      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+20%** for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Meaningless as Expected
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="The fog used to cover this place. It still does.">
+      1-target attack. Deals **450%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Home of the Fog
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When a round ends, loses (Current HP x**15%**) HP and Gains a shield with (HP Lost this time x**150%**) HP which lasts until the start of the next round. While Shield is active, DMG Taken **-20%**.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Reality DEF and Mental DEF **+10%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Meaningless as Expected*'s effect changes to: deals **500%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Working Hours*'s effect changes to: this attack enjoys Leech Rate **+50%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Meaningless as Expected*'s effect changes to: Penetration Rate **+40%**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Home of the Fog* :effect{code="SHIELD"} effect changes to: shield DMG of lost HPx**200%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Meaningless as Expected*'s effect changes to: Penetration Rate **+50%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

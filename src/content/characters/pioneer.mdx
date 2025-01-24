@@ -1,0 +1,173 @@
+---
+title: "Pioneer"
+id: "pioneer"
+gameId: "3059"
+code: "PIONEER"
+star: 3
+afflatus: "SPIRIT"
+dmgType: "MENTAL"
+race: "AWAKENED"
+version: "2.0"
+releaseDate: "2024-10-31"
+specialties: ["SUPPORT", "SHIELD", "SHIFT"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/pioneer.json";
+import RESONANCE from "@data/resonance/characters/pioneer.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
+
+# Pioneer
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An Awakened's artwork. Exhibited in the 1990s for 4 years. Completed in the summer on July 9th. Exhibition location in San Francisco, United States.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Commodity
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    The soul of mannequins \[Spirit] Social interactions
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Chypre Woody, Leather, Gakmoss, Patchouli, Aldehydes
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    74 51/64 x 25 19/32 x 13 25/32 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Competitive Differentiation
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="A foundational conecept.">
+      1-target attack. Deals **200%** Mental DMG, then shifts self 1 position forward.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note="A foundational conecept in the world of commerce.">
+      1-target attack. Deals **300%** Mental DMG, then shifts self 2 position forward.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note="A foundational conecept in the world of commerce, relevant to both shopping malls aand streets.">
+      1-target attack. Deals **500%** Mental DMG, then shifts self 3 position forward.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### To Future Business
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave.">
+      Self counter. Grants :effect{code="TAUNT"}, Reality DEF **+25%**, and Mental DEF **+25%** to self for 2 rounds, then shifts 1 position backwards.
+    </CardInfo>
+
+    <CardInfo star="2" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave, even if no deal is made.">
+      Self counter. Grants :effect{code="TAUNT"}, Reality DEF **+30%**, and Mental DEF **+30%** to self for 2 rounds, then shifts 2 position backwards.
+    </CardInfo>
+
+    <CardInfo star="3" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave; 'no deal' simply means that a deal has not yet been made.">
+      Self counter. Grants :effect{code="TAUNT"}, Reality DEF **+35%**, and Mental DEF **+35%** to self for 3 rounds, then shifts 3 position backwards.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Bridge the Gap
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note="This desire to be the 'bridge' is sparked by the immense divide he percieves.">
+      1-target buff. Grants an ally a Shield with (Pioneer's Max HP x**50%**) HP for 2 rounds. Pioneer swaps positions with the target and grants the target a *\[Roving Salesman]* buff that matches their new position, with the duration of the buff extended by 1.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Roving Salesman
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    At the start of the round and after being shifted, gain a buff that matches the position:
+
+    Position #1: :effect{code="HOT_DEAL"};
+
+    Position #2: :effect{code="PROMOTIONAL_PACKAGE"};
+
+    Position #3: :effect{code="RISK_MANAGEMENT"};
+
+    Position #4: :effect{code="AFTER_SALES_SERVICE"}.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    DMG Taken **-8%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Competitive Differentiation*: Mental DMG is increased to **230/350/570%**.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *To Future Business*: The Reality DEF and Mental DEF are increased to **30%/35%/40%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Bridge the Gap*: The Shield granted is increased to (Max HP x**70%**) HP.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Roving Salesman*: :effect{code="PROMOTIONAL_PACKAGE"}'s DMG Bonus and DMG Reduction are increased to **25%**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Roving Salesman*: :effect{code="HOT_DEAL"}'s Critical Rate and Critical DMG are increased to **30%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

@@ -1,0 +1,165 @@
+---
+title: "Cristallo"
+id: "cristallo"
+gameId: "3031"
+code: "CRISTALLO"
+star: 4
+afflatus: "MINERAL"
+dmgType: "REALITY"
+race: "ARCANIST"
+version: "1.0"
+releaseDate: "2023-10-26"
+specialties: ["NASTY_WOUND", "SUPPORT"]
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/cristallo.json";
+import RESONANCE from "@data/resonance/characters/cristallo.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
+
+# Cristallo
+
+<CharacterContent {...frontmatter}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited in the 1940s for 16 years. Completed in winter, on December 30th. First exhibited in Smaland, Sweden, but the exhibit was soon transferred to Lund, Malmohus County due to its special condition.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Saline
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Transparent Lead Glass \[Mineral] Self Cure
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Woody, Fruity, Floral - Incense, Oakmoss, Pear, Freesia
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    52 3/4 x 25 63/64 x21 21/32 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Caged Bird
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note="She's used to this.">
+      1-target attack. Deals **200%** Reality DMG.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="She's used to such great pain.">
+      1-target attack. Deals **200%** Reality DMG. Reality DEF **-25%** for the target for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="She's used to such great pain that feels like glass cutting through the flesh.">
+      1-target attack. Deals **350%** Reality DMG. Reality DEF **-35%** for the target for 3 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Dustless Blossom
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="BUFF" note="She closed the book.">
+      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+10%** for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="BUFF" note="She closed the book and mended the wound.">
+      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+15%** for them for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="BUFF" note="She closed the book and mended the wound. She knew how fragile life could be.">
+      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+20%** for them for 2 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### This Is Radiotherapy
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="DEBUFF" note="The therapeutic machine is quite lethal to those tiny and ignorant cells.">
+      Mass debuff. Inflicts :effect{code="NASTY_WOUND"} and :effect{code="RADIATION_THERAPY"} statuses on all enemies for 2 rounds. When the round ends, deals (the caster's ATK x**100%**) Genesis DMG to them.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Page of Prayers
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When the caster is attacked, HP +(the caster's ATK x**40%**) for another ally with the lowest HP percentage.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    When entering battle, DMG Heal **+10%**.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *This Is Radiotherapy*'s effect changes to: deals (the caster's ATK x**110%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Caged Bird*'s effect changes to: at **2/3** stars, Reality DEF **-30/40%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *This Is Radiotherapy*'s effect changes to: deals (the caster's ATK x**120%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *This Is Radiotherapy*'s effect changes to: deals (the caster's ATK x**130%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *This Is Radiotherapy*'s effect changes to: deals (the caster's ATK x**140%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+
+  <Fragment slot="insight-total-materials">
+    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
+</CharacterContent>

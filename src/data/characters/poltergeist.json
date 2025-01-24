@@ -1,0 +1,75 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 4540
+      },
+      "ATTACK": {
+        "value": 926
+      },
+      "REALITY_DEFENSE": {
+        "value": 543
+      },
+      "MENTAL_DEFENSE": {
+        "value": 416
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 221
+      },
+      "CRITICAL_RATE": {
+        "value": 7.3,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 11,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 8000
+      },
+      {
+        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "require": 2
+      },
+      {
+        "code": "PAGE_OF_BEASTLY_THIRST",
+        "require": 2
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 2
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
+        "require": 4
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 25000
+      },
+      {
+        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "require": 4
+      },
+      {
+        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "require": 4
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 2
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 3
+      }
+    ]
+  }
+}
