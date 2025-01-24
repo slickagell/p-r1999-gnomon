@@ -71,7 +71,7 @@ export default () => ({
     // Add X axis
     this.xLine = d3
       .scaleLinear()
-      .domain([1900, 2010])
+      .domain([1910, 2010])
       .range([MARGIN.LEFT, TOTAL_WIDTH - MARGIN.RIGHT]);
 
     // create svg element
