@@ -35,6 +35,11 @@ export default {
         support: "#848887",
         stress: "#7c8e0c",
         guide: "#fdf2e5",
+
+        vigilance: "#5f7281",
+        disorder: "#95745d",
+        focus: "#597463",
+        meltdown: "#873a4b",
       },
       gridTemplateColumns: {
         filter: "auto 1fr",
