@@ -53,80 +53,71 @@ export const DMG_TYPE = {
 };
 
 export const SPECIALTY = {
-  DPS: {
-    title: "DPS",
-  },
-  SUPPORT: {
-    title: "Support",
-  },
-  FOLLOW_UP_ATTACK: {
-    title: "Follow-up Attack",
-  },
-  CONTROL: {
-    title: "Control",
-  },
   BURN: {
     title: "Burn",
   },
   BURST_DMG: {
     title: "Burst DMG",
   },
+  CONTROL: {
+    title: "Control",
+  },
   DEBUFF: {
     title: "Debuff",
-  },
-  EXTRA_ACTION: {
-    title: "Extra Action",
-  },
-  SHIELD: {
-    title: "Shield",
-  },
-  POISON: {
-    title: "Poison",
-  },
-  REAPER: {
-    title: "Reaper",
-  },
-  BURST_DMG: {
-    title: "Burst DMG",
   },
   DEF: {
     title: "DEF",
   },
-  HP_SACRIFICE: {
-    title: "HP Sacrifice",
+  DISPELLER: {
+    title: "Dispeller",
   },
-  PURIFY: {
-    title: "Purify",
+  DPS: {
+    title: "DPS",
+  },
+  EXTRA_ACTION: {
+    title: "Extra Action",
+  },
+  FOLLOW_UP_ATTACK: {
+    title: "Follow-up Attack",
   },
   HEAL: {
     title: "Heal",
   },
-  RANK_UP: {
-    title: "Rank Up",
-  },
-  RIPOSTE: {
-    title: "Riposte",
-  },
-  DISPELLER: {
-    title: "Dispeller",
-  },
-  SHIELD: {
-    title: "Shield",
-  },
-  NASTY_WOUND: {
-    title: "Nasty Wound",
-  },
-  DISPELL: {
-    title: "Dispell",
+  HP_SACRIFICE: {
+    title: "HP Sacrifice",
   },
   IMMUNITY: {
     title: "Immunity",
   },
+  NASTY_WOUND: {
+    title: "Nasty Wound",
+  },
+  POISON: {
+    title: "Poison",
+  },
+  PURIFY: {
+    title: "Purify",
+  },
+  RANK_UP: {
+    title: "Rank Up",
+  },
+  REAPER: {
+    title: "Reaper",
+  },
+  RIPOSTE: {
+    title: "Riposte",
+  },
   SELF_HEALING: {
     title: "Self Healing",
   },
+  SHIELD: {
+    title: "Shield",
+  },
   SHIFT: {
     title: "Shift",
+  },
+  SUPPORT: {
+    title: "Support",
   },
 };
 
