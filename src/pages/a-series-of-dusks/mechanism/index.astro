@@ -3,11 +3,11 @@ import CustomImage from "@components/CustomImage.astro";
 import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
 import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
-const mechanicEntry = await getEntry("a-series-of-dusks", "mechanism");
+const mechanismEntry = await getEntry("a-series-of-dusks", "mechanism")!;
 
-const { Content } = await mechanicEntry.render();
+const { Content } = await render(mechanismEntry);
 ---
 
 <Layout

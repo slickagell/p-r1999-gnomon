@@ -15,6 +15,7 @@ const materialEntries = await getCollection("materials");
 const materials = materialEntries.reduce((prev, curr) => {
   return {
     ...prev,
+    slug: curr.id,
     [curr.data.code]: curr,
   };
 }, {});
@@ -26,7 +27,7 @@ const material = materials[code];
   material && (
     <div class="flex justify-between items-center">
       <div class="flex items-center">
-        <a href={`/materials/${material.slug}`}>
+        <a href={`/materials/${material.id}`}>
           <div
             class:list={[
               "relative shrink-0",
@@ -57,7 +58,7 @@ const material = materials[code];
             </div>
           </div>
         </a>
-        <a class="text-sm font-medium" href={`/materials/${material.slug}`}>
+        <a class="text-sm font-medium" href={`/materials/${material.id}`}>
           {material.data.title}
         </a>
       </div>

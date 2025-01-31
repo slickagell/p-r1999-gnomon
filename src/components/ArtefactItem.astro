@@ -9,6 +9,7 @@ import {
   ARTEFACT_TAG,
   ARTEFACT_TYPE,
 } from "@constants/artefact";
+import { render } from "astro:content";
 import matrix from "matrix-js";
 
 interface Props {
@@ -17,7 +18,7 @@ interface Props {
 
 const { artefactEntry } = Astro.props;
 
-const { Content } = await artefactEntry.render();
+const { Content } = await render(artefactEntry);
 
 const shape = matrix(artefactEntry.data.shape);
 const shapeSize = shape.size();

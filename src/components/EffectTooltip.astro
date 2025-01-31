@@ -1,5 +1,5 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownEmphasis from "./MarkdownEmphasis.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
@@ -21,7 +21,7 @@ const effects = effectEntries.reduce((prev, curr) => {
 
 const effect = effects[code];
 
-const { Content } = await effect.render();
+const { Content } = await render(effect);
 ---
 
 <span
@@ -40,7 +40,7 @@ const { Content } = await effect.render();
     @mousedown.outside="isToggle = false"
     x-show="isShow || isToggle"
     x-anchor.top="$refs.content"
-    class="bg-base-100 w-80 text-base-content border-line-paper border p-2 z-10"
+    class="bg-base-100 w-80 text-base-content border-line-paper border p-2 z-10 absolute"
     x-transition:enter="ease duration-300 transition-opacity"
     x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100"
@@ -72,6 +72,8 @@ const { Content } = await effect.render();
 <script>
   import Alpine from "alpinejs";
   import anchor from "@alpinejs/anchor";
+
+  window.Alpine = Alpine;
 
   Alpine.plugin(anchor);
 </script>

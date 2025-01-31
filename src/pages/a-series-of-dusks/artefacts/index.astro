@@ -165,8 +165,11 @@ const artefactEntries = await getCollection("artefacts");
     tagFilter,
     nameFilter,
   } from "@stores/artefactFilterStore";
+  import anchor from "@alpinejs/anchor";
 
   window.Alpine = Alpine;
+
+  Alpine.plugin(anchor);
 
   Alpine.data("dataset", () => ({
     searchText: "",

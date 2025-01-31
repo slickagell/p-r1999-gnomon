@@ -5,14 +5,14 @@ import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro
 import MarkdownText from "@components/MarkdownText.astro";
 import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 const rhapsodyOfTheMoonEntry = await getEntry(
   "a-series-of-dusks",
   "rhapsody-of-the-moon"
-);
+)!;
 
-const { Content } = await rhapsodyOfTheMoonEntry.render();
+const { Content } = await render(rhapsodyOfTheMoonEntry);
 ---
 
 <Layout

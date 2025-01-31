@@ -8,18 +8,18 @@ import TableOfContents from "@components/TableOfContents.astro";
 import Tooltip from "@components/Tooltip.astro";
 import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const characterEntries = await getCollection("characters");
   return characterEntries.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <Layout
