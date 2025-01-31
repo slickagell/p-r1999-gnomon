@@ -1,5 +1,6 @@
 ---
 import { EFFECT_TYPE } from "@constants/effect";
+import { render } from "astro:content";
 import EffectTooltip from "./EffectTooltip.astro";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
@@ -9,7 +10,7 @@ interface Props {
 }
 
 const { effectEntry } = Astro.props;
-const { Content } = await effectEntry.render();
+const { Content } = await render(effectEntry);
 ---
 
 <div

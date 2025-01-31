@@ -38,8 +38,8 @@ const exchangeArtefacts = artefactEntries
 
       return (
         <div class="mt-8">
-          <p id={artefactEntry.slug} class="font-bold text-xl mb-4">
-            <a href={`#${artefactEntry.slug}`}>{artefactEntry.data.name}</a>
+          <p id={artefactEntry.id} class="font-bold text-xl mb-4">
+            <a href={`#${artefactEntry.id}`}>{artefactEntry.data.name}</a>
           </p>
           <div class="flex flex-col md:flex-row gap-2 md:gap-4">
             <div class="basis-32 lg:basis-48 flex flex-col gap-2 items-center">
@@ -47,21 +47,21 @@ const exchangeArtefacts = artefactEntries
               <div class="border border-2 inline-block">
                 <a
                   href={
-                    ROUTES.A_SERIES_OF_DUSKS_ARTEFACT + `#${artefactEntry.slug}`
+                    ROUTES.A_SERIES_OF_DUSKS_ARTEFACT + `#${artefactEntry.id}`
                   }
                 >
                   <CustomImage
                     presetWidth={80}
                     src={`/images/artefacts/${artefactEntry.data.image}`}
-                    alt={`artefact ${artefactEntry.slug}`}
+                    alt={`artefact ${artefactEntry.id}`}
                   />
                 </a>
               </div>
               {/* Artefact name */}
-              <p id={artefactEntry.slug} class="text-center">
+              <p id={artefactEntry.id} class="text-center">
                 <a
                   href={
-                    ROUTES.A_SERIES_OF_DUSKS_ARTEFACT + `#${artefactEntry.slug}`
+                    ROUTES.A_SERIES_OF_DUSKS_ARTEFACT + `#${artefactEntry.id}`
                   }
                 >
                   {artefactEntry.data.name}
@@ -140,13 +140,13 @@ const exchangeArtefacts = artefactEntries
                           <a
                             href={
                               ROUTES.A_SERIES_OF_DUSKS_ARTEFACT +
-                              `#${combineArtefact.slug}`
+                              `#${combineArtefact.id}`
                             }
                           >
                             <CustomImage
                               presetWidth={80}
                               src={`/images/artefacts/${combineArtefact.data.image}`}
-                              alt={`artefact ${combineArtefact.slug}`}
+                              alt={`artefact ${combineArtefact.id}`}
                             />
                           </a>
                         </div>
@@ -155,7 +155,7 @@ const exchangeArtefacts = artefactEntries
                           <a
                             href={
                               ROUTES.A_SERIES_OF_DUSKS_ARTEFACT +
-                              `#${combineArtefact.slug}`
+                              `#${combineArtefact.id}`
                             }
                           >
                             {combineArtefact.data.name}

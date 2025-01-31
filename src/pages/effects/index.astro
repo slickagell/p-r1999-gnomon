@@ -78,8 +78,9 @@ const effectEntries = await getCollection("effects");
     import { EFFECT_TYPE } from "@constants/effect";
     import { nameFilter, typeFilter } from "@stores/effectFilterStore";
     import Alpine from "alpinejs";
+    import anchor from "@alpinejs/anchor";
 
-    window.Alpine = Alpine;
+    Alpine.plugin(anchor);
 
     Alpine.data("dataset", () => ({
       searchText: "",
