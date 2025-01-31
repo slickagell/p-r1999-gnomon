@@ -16,7 +16,7 @@ export default {
     },
   ],
   actions: () => {
-    let defaultFolderPath = "content/materials";
+    let defaultFolderPath = "markdown/materials";
     return [
       {
         type: "add",
