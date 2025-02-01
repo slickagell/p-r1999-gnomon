@@ -29,6 +29,9 @@ export const EFFECT_TYPE = {
   STATS_UP: {
     title: "Stats Up",
   },
+  FORCE_FIELD: {
+    title: "Force Field",
+  },
   UNKNOWN: {
     title: "Unknown",
   },

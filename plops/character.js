@@ -60,7 +60,7 @@ export default {
     },
   ],
   actions: () => {
-    const defaultFolderPath = "content/characters";
+    const defaultFolderPath = "markdown/characters";
     const characterDataFolderPath = "data/characters";
     const resonanceFolderPath = "data/resonance/characters";
     return [

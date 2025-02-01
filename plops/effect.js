@@ -17,12 +17,12 @@ export default {
     {
       type: "list",
       name: "isSpecific",
-      message: "Is specific to character or mode?",
-      choices: ["CHARACTER", "MODE", "NONE"],
+      message: "Is specific to character, bullet, or mode?",
+      choices: ["CHARACTER", "BULLET", "MODE", "NONE"],
     },
   ],
   actions: () => {
-    let defaultFolderPath = "content/effects";
+    let defaultFolderPath = "markdown/effects";
     return [
       {
         type: "add",

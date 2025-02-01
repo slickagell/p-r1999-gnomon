@@ -42,7 +42,7 @@ export default {
     },
   ],
   actions: () => {
-    let defaultFolderPath = "content/artefacts";
+    let defaultFolderPath = "markdown/artefacts";
     return [
       {
         type: "add",
