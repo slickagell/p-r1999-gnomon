@@ -341,8 +341,63 @@ const hasInsight3Materials = Astro.slots.has("insight-3-materials");
   </template>
 
   <template x-if="isShowTotal">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+      x-data="sortMaterials"
+    >
       <slot name="insight-total-materials" />
     </div>
   </template>
 </div>
+
+{/* Resonance Materials */}
+<div x-data="{isShowTotal: false}">
+  <slot name="resonance-materials-section-title" />
+
+  <div class="flex items-center justify-end">
+    <label class="cursor-pointer label gap-2">
+      <span class="label-text">Total</span>
+      <input
+        type="checkbox"
+        class="toggle toggle-primary"
+        x-model="isShowTotal"
+      />
+    </label>
+  </div>
+
+  <template x-if="!isShowTotal">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-5"
+    >
+      <slot name="resonance-materials" />
+    </div>
+  </template>
+
+  <template x-if="isShowTotal">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+      x-data="sortMaterials"
+    >
+      <slot name="resonance-total-materials" />
+    </div>
+  </template>
+</div>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("sortMaterials", () => ({
+    init() {
+      const sorted = Array.from(this.$el.children as HTMLCollection).sort(
+        (a, b) => {
+          return (a.getAttribute("data-rarity") ?? 0) >
+            (b.getAttribute("data-rarity") ?? 0)
+            ? 1
+            : -1;
+        }
+      );
+
+      this.$el.replaceChildren(...sorted);
+    },
+  }));
+</script>
