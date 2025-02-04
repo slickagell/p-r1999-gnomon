@@ -81,5 +81,211 @@
         "require": 5
       }
     ]
+  },
+  "resonanceMaterials": {
+    "2": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 5
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 4
+      }
+    ],
+    "4": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 5
+      },
+      {
+        "code": "TREMBLING_TOOTH",
+        "require": 4
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 3
+      }
+    ],
+    "5": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 5
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 3
+      },
+      {
+        "code": "PERPETUAL_COG",
+        "require": 3
+      }
+    ],
+    "6": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 5
+      },
+      {
+        "code": "GOLDEN_BEETLE",
+        "require": 3
+      }
+    ],
+    "7": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 6
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 5
+      }
+    ],
+    "8": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 6
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 4
+      },
+      {
+        "code": "CICADA_WINGS",
+        "require": 5
+      }
+    ],
+    "9": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 8
+      },
+      {
+        "code": "GOOSE_NECK",
+        "require": 5
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 5
+      }
+    ],
+    "10": [
+      {
+        "code": "HOARSE_ECHO",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 5
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 8
+      },
+      {
+        "code": "WINGED_KEY",
+        "require": 6
+      }
+    ],
+    "11": [
+      {
+        "code": "HOARSE_ECHO",
+        "require": 1
+      },
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 5
+      },
+      {
+        "code": "GOLDEN_COMPASS",
+        "require": 4
+      }
+    ],
+    "12": [
+      {
+        "code": "HOARSE_ECHO",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 6
+      },
+      {
+        "code": "GLOWING_MOTHWING",
+        "require": 4
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 5
+      }
+    ],
+    "13": [
+      {
+        "code": "HOARSE_ECHO",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 6
+      },
+      {
+        "code": "SILVER_BULLET",
+        "require": 5
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 8
+      }
+    ],
+    "14": [
+      {
+        "code": "HOARSE_ECHO",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 8
+      },
+      {
+        "code": "SERPENT_SCEPTER",
+        "require": 2
+      },
+      {
+        "code": "WATCH_CORE",
+        "require": 4
+      }
+    ],
+    "15": [
+      {
+        "code": "HOARSE_ECHO",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 8
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 3
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 4
+      }
+    ]
   }
 }

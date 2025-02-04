@@ -81,5 +81,211 @@
         "require": 6
       }
     ]
+  },
+  "resonanceMaterials": {
+    "2": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 5
+      }
+    ],
+    "3": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 5
+      },
+      {
+        "code": "SPELL_OF_BANISHING",
+        "require": 6
+      }
+    ],
+    "4": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 5
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 4
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 3
+      }
+    ],
+    "5": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 5
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 3
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 3
+      }
+    ],
+    "6": [
+      {
+        "code": "SHARPODONTY",
+        "require": 30000
+      },
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 5
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 3
+      }
+    ],
+    "7": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 6
+      },
+      {
+        "code": "WINGED_KEY",
+        "require": 5
+      }
+    ],
+    "8": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 6
+      },
+      {
+        "code": "GOOSE_NECK",
+        "require": 4
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 6
+      }
+    ],
+    "9": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 8
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 4
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 6
+      }
+    ],
+    "10": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 5
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 6
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 8
+      }
+    ],
+    "11": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SHARPODONTY",
+        "require": 120000
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 5
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 4
+      }
+    ],
+    "12": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 6
+      },
+      {
+        "code": "WATCH_CORE",
+        "require": 4
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 5
+      }
+    ],
+    "13": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 6
+      },
+      {
+        "code": "MURMUR_OF_INSANITY",
+        "require": 5
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 5
+      }
+    ],
+    "14": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 8
+      },
+      {
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 2
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 4
+      }
+    ],
+    "15": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 8
+      },
+      {
+        "code": "GOLDEN_FLEECE",
+        "require": 3
+      },
+      {
+        "code": "WYRMLING_SKELETON",
+        "require": 4
+      }
+    ]
   }
 }
