@@ -1,5 +1,5 @@
 ---
-title: "Ms Radio"
+title: "Ms. Radio"
 id: "ms-radio"
 gameId: "3027"
 code: "MS_RADIO"
@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -22,40 +22,37 @@ import CHARACTER from "@data/characters/ms-radio.json";
 import RESONANCE from "@data/resonance/characters/ms-radio.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Ms Radio
+# Ms. Radio
 
 <CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
   <Fragment slot="info-description">
     An awakened's work. Exhibited in the 20th century for an unknown period. Completed in the spring, on April 1st. No fixed place of exhibition. Active on the radio channels in different parts of the world.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    EM Waves
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">EM Waves</Fragment>
 
-  <Fragment slot="info-afflatus">
-    The Spreading of the EM Spirit \[Spirit] Data Transmission
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  The Spreading of the EM Spirit \[Spirit] Data Transmission
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Floral - Leaf, Zinnia, Jasmine, Water
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Floral - Leaf, Zinnia, Jasmine, Water
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    13 45/64 x 13 5/64 x 2 1/16 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">13 45/64 x 13 5/64 x 2 1/16 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### BupDese
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### BupDese</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="This appears to be some ancient language.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="This appears to be a ancient language from a time before the sun rose to the sea of clouds.">
       1-target attack. Deals **500%** Mental DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### LeEe Frequency
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### LeEe Frequency</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="You do not understand.">
@@ -87,77 +84,101 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="You do not understand how insignificant you are. I have the same problem as well.">
       Mass attack. Deals **375%** Mental Damage to 2 enemies.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### A Bit of Truth Unveiled
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### A Bit of Truth Unveiled</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Wait... I seemed to have forgotten the reason of that heroic martyrdom...">
-      Mass attack. Loses all HP and deals **100%** Mental DMG, Moxie -4, and inflicts 2 rounds of :effect{code="DISCONCERT"} to all enemies.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="Wait... I seemed to have forgotten the reason of that heroic martyrdom..."
+  >
+    Mass attack. Loses all HP and deals **100%** Mental DMG, Moxie -4, and
+    inflicts 2 rounds of :effect{(code = "DISCONCERT")} to all enemies.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Darkest Hour
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Darkest Hour</Fragment>
 
-  <Fragment slot="insight-1-info">
-    Moxie -1 for all enemies when the caster dies.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  Moxie -1 for all enemies when the caster dies.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    Reality DEF and Mental DEF **+10%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  Reality DEF and Mental DEF **+10%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *A Bit of Truth Unveiled*'s effect changes to: deals **120%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *A Bit of Truth Unveiled*'s effect changes to: deals **120%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *BupDese*: At Incantation rank **1/2/3**, Mental DMG increased to **220/330/550%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *BupDese*: At Incantation rank **1/2/3**, Mental DMG increased to
+  **220/330/550%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *A Bit of Truth Unveiled*'s effect changes to: deals **140%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *A Bit of Truth Unveiled*'s effect changes to: deals **140%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *LeEe Frequency*'s effect changes to: at **1/2/3** stars, deals **165/245/400%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *LeEe Frequency*'s effect changes to: at **1/2/3** stars, deals
+  **165/245/400%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *A Bit of Truth Unveiled*'s effect changes to: deals **160%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *A Bit of Truth Unveiled*'s effect changes to: deals **160%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

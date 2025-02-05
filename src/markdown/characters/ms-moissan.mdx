@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work exhibited in the early 20th century for 26 years. Completed in winter, on November 25th. Completed in Bavaria, German Empire, the exhibit was presented throughout Europe and America.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Kaolinite
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Kaolinite</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Shaped White Rock \[Mineral] Ceramic Making
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Shaped White Rock \[Mineral] Ceramic Making
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Citrus - Tangerine, Bitter Orange, Lily, Lemon
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Citrus - Tangerine, Bitter Orange, Lily, Lemon
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    64 9/16 x 31 x 27 9/16 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">64 9/16 x 31 x 27 9/16 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Potter
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Potter</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="They have a wide range of uses.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="They have a wide range of uses, even wider than your imagination.">
       1-target attack. Deals **450%** Reality DMG and dispels all *\[Counter]* from the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Mentor
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Mentor</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="The pottery hammer, or the books?">
@@ -87,77 +84,101 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="The pottery hammer and the books aren't in conflict with one another, but she prefers the latter.">
       Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's ATK x**200%**) HP for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Unique Tools
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Unique Tools</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Don't overthink it. It's just required by her job.">
-      1-target attack. Deals **400%** Reality DMG and inflicts :effect{code="FREEZE"} on the target for 1 round.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="DEBUFF"
+    note="Don't overthink it. It's just required by her job."
+  >
+    1-target attack. Deals **400%** Reality DMG and inflicts :effect
+    {(code = "FREEZE")} on the target for 1 round.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Duty
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Duty</Fragment>
 
-  <Fragment slot="insight-1-info">
-    After the caster takes action, HP +(the caster's ATK x**40%**).
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  After the caster takes action, HP +(the caster's ATK x**40%**).
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    When the caster enters battle, Penetration Rate **+10%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  When the caster enters battle, Penetration Rate **+10%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Unique Tools*'s effect changes to: deals **450%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Unique Tools*'s effect changes to: deals **450%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Potter*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Potter*'s effect changes to: at **1/2/3** stars, deals **220/280/500%**
+  Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Unique Tools*'s effect changes to: deals **500%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Unique Tools*'s effect changes to: deals **500%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Mentor*'s effect changes to: at **1/2/3** stars, grants a :effect{code="SHIELD"} with (the caster's ATK x**90/135/225%**) HP on all allies.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Mentor*'s effect changes to: at **1/2/3** stars, grants a :effect
+  {(code = "SHIELD")} with (the caster's ATK x**90/135/225%**) HP on all allies.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Unique Tools*'s effect changes to: deals **550%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Unique Tools*'s effect changes to: deals **550%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

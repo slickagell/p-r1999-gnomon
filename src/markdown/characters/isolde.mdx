@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited at the dawn of the 20th century and showcased for 18 years. Completed in autumn, on the 23rd of November. Initially exhibited in Vienna, Cisleithania, within the Austro-Hungarian Empire, and later archived at the St. Pavlov Foundation.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Manifestation
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Manifestation</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Spirit Vessel \[Spirit], Opera Singer
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">Spirit Vessel \[Spirit], Opera Singer</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Rich Bouquet, Laurel Leaves, Frankincense, Red Myrrh, Indole
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Rich Bouquet, Laurel Leaves, Frankincense, Red Myrrh, Indole
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    62 63/64x37 1/64x27 9/16 inches.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">62 63/64x37 1/64x27 9/16 inches.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Twirling Melody
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Twirling Melody</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="I sing and twirl.">
@@ -68,11 +63,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="I sing and twirl on stage, for there is no place for me other than the stage.">
       Mass Attack. Deals **300%** Reality DMG to 2 enemies. Inflicts 2 stacks of :effect{code="BURN"} on the targets hit. When in the :effect{code="INTERMEZZO"} status, gain Penetration Rate **+30%** for this attack. When in the :effect{code="FINALE"} status, gain Penetration Rate **+30%** for this attack.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Desired Freedom
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Desired Freedom</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="I dance.">
@@ -86,76 +81,106 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="I dance to recount my story, so that others may hear me.">
       Mass debuff. Inflicts Critical DEF **-50%** and Reality DEF **-15%** (**-20%** to targets in the :effect{code="BURN"} status) on all enemies for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Choking on Blood
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Choking on Blood</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="I hereby relieve you!">
-      Mass debuff. Inflicts 5 stacks of :effect{code="BURN"} on all enemies, and additional 5 stacks of :effect{code="BURN"} on the main target, at the same time, grants 1 stack of :effect{code="ROUSING_MORALE"} to all allies, and then casts :effect{code="INTERMEZZO"} as a follow-up attack on the targets. For every excess stack of :effect{code="BURN"} on the main target, this :effect{code="INTERMEZZO"} gains Incantation Might **+15%**.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo type="DEBUFF" note="I hereby relieve you!">
+    Mass debuff. Inflicts 5 stacks of :effect{(code = "BURN")} on all enemies,
+    and additional 5 stacks of :effect{(code = "BURN")} on the main target, at
+    the same time, grants 1 stack of :effect{(code = "ROUSING_MORALE")} to all
+    allies, and then casts :effect{(code = "INTERMEZZO")} as a follow-up attack
+    on the targets. For every excess stack of :effect{(code = "BURN")} on the
+    main target, this :effect{(code = "INTERMEZZO")} gains Incantation Might
+    **+15%**.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Seven Veils
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Seven Veils</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When entering battle, enter the :effect{code="PRELUDE"} status and inflict 3 stacks of :effect{code="BURN"} on all enemies.
-    At the end of the round, when the highest enemy :effect{code="BURN"} stack resolves and loses stacks, gain an equal number of :effect{code="HEAT"} stacks in turn.
-    When holding 15 stacks of :effect{code="HEAT"}, the :effect{code="PRELUDE"} status changes to the :effect{code="INTERLUDE"} status.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When entering battle, enter the :effect{(code = "PRELUDE")} status and inflict
+  3 stacks of :effect{(code = "BURN")} on all enemies. At the end of the round,
+  when the highest enemy :effect{(code = "BURN")} stack resolves and loses
+  stacks, gain an equal number of :effect{(code = "HEAT")} stacks in turn. When
+  holding 15 stacks of :effect{(code = "HEAT")}, the :effect{(code = "PRELUDE")}{" "}
+  status changes to the :effect{(code = "INTERLUDE")} status.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    ATK **+5%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  ATK **+5%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When holding 40 :effect{code="HEAT"} stacks, the :effect{code="INTERLUDE"} status changes to the :effect{code="FINALE"} status.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When holding 40 :effect{(code = "HEAT")} stacks, the :effect
+  {(code = "INTERLUDE")} status changes to the :effect{(code = "FINALE")}{" "}
+  status.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Seven Veils*: For every stack of :effect{code="BURN"} a target has, :effect{code="INTERMEZZO"} now deals Reality DMG **+13%** to that target.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Seven Veils*: For every stack of :effect{(code = "BURN")} a target has,
+  :effect{(code = "INTERMEZZO")} now deals Reality DMG **+13%** to that target.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Seven Veils*: :effect{code="PRELUDE"} now advances to :effect{code="INTERLUDE"} at 10 stacks of :effect{code="HEAT"}.
-    :effect{code="INTERLUDE"} now advances to :effect{code="FINALE"} at 30 stacks of Heat.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Seven Veils*: :effect{(code = "PRELUDE")} now advances to :effect
+  {(code = "INTERLUDE")} at 10 stacks of :effect{(code = "HEAT")}. :effect
+  {(code = "INTERLUDE")} now advances to :effect{(code = "FINALE")} at 30 stacks
+  of Heat.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Seven Veils*: For every stack of :effect{code="BURN"} a target has, :effect{code="INTERMEZZO"} now deals Reality DMG **+16%** to that target.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Seven Veils*: For every stack of :effect{(code = "BURN")} a target has,
+  :effect{(code = "INTERMEZZO")} now deals Reality DMG **+16%** to that target.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Twirling Melody*: At incantation rank **1/2/3**, the Reality DMG is increased to **200/300/400%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Twirling Melody*: At incantation rank **1/2/3**, the Reality DMG is increased
+  to **200/300/400%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Seven Veils*: For every stack of :effect{code="BURN"} a target has, :effect{code="INTERMEZZO"} now deals Reality DMG **+20%** to that target.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Seven Veils*: For every stack of :effect{(code = "BURN")} a target has,
+  :effect{(code = "INTERMEZZO")} now deals Reality DMG **+20%** to that target.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

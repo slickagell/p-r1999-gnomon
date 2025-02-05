@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     Anarcanist's work. Exhibited in the 1930s for 17 years. Completed in Summer, on June 1. First exhibited in Los Angeles, California, USA, and later in many different places, though it primarily remained in the States.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Adoration
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Adoration</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Soft Feathers of the Odd Pelican \[Beast] Eye-catcher
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Soft Feathers of the Odd Pelican \[Beast] Eye-catcher
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Floral - Aldehyde, Wet Grass, Iris, Patchouli
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Floral - Aldehyde, Wet Grass, Iris, Patchouli
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    67 23/32x26 49/64x9 29/64in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">67 23/32x26 49/64x9 29/64in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Dud
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Dud</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Bullets always hurt people.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Bullets always hurt people, no matter their type. But some people still love them.">
       1-target attack. Deals **500%** Reality DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Slight Breeze
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Slight Breeze</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="They're in the eye of the storm.">
@@ -87,73 +84,99 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="They're in the eye of the storm, but they never tried to leave. Perhaps everyone has a reason to be obsessed.">
       Mass attack. Deals **335%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **75%** more Reality DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### A Good Dream Tonight
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### A Good Dream Tonight</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Spent a night having a dream, then spent a lifetime trying to escape from it.">
-      1-target attack. Deals **400%** Reality DMG, the target's Reality DEF and Mental DEF **-20%** for 3 rounds, and inflicts :effect{code="DAZE"} for 1 round.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="Spent a night having a dream, then spent a lifetime trying to escape from it."
+  >
+    1-target attack. Deals **400%** Reality DMG, the target's Reality DEF and
+    Mental DEF **-20%** for 3 rounds, and inflicts :effect{(code = "DAZE")} for
+    1 round.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### A Low Whisper
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### A Low Whisper</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When the caster is attacked, inflicts the attacker 1 stack of :effect{code="ENCHANTED"} for 2 rounds. If the attacker is of the opposite gender, inflicts 1 stack of :effect{code="ENCHANTED"} for 2 rounds.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When the caster is attacked, inflicts the attacker 1 stack of :effect
+  {(code = "ENCHANTED")} for 2 rounds. If the attacker is of the opposite
+  gender, inflicts 1 stack of :effect{(code = "ENCHANTED")} for 2 rounds.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    Critical Rate **+10%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  Critical Rate **+10%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When the caster attacks, inflicts 1 stack of :effect{code="ENCHANTED"} on the target for 2 rounds. If the target is of the opposite sex, inflicts 1 additional stack of :effect{code="ENCHANTED"}.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When the caster attacks, inflicts 1 stack of :effect{(code = "ENCHANTED")} on
+  the target for 2 rounds. If the target is of the opposite sex, inflicts 1
+  additional stack of :effect{(code = "ENCHANTED")}.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *A Good Dream Tonight*'s effect changes to: deals **450%** Reality DMG. Reality DEF and Mental DEF **-30%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *A Good Dream Tonight*'s effect changes to: deals **450%** Reality DMG.
+  Reality DEF and Mental DEF **-30%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Dud*: At Incantation rank **1/2/3**, Reality DMG increased to **220/330/550%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Dud*: At Incantation rank **1/2/3**, Reality DMG increased to
+  **220/330/550%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Slight Breeze*'s effect changes to: at **1/2/3** stars, additionally deals **50/75/125%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]* or *\[Control]*.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Slight Breeze*'s effect changes to: at **1/2/3** stars, additionally deals
+  **50/75/125%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]* or
+  *\[Control]*.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *A Good Dream Tonight*: Reality DMG increased to **500%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *A Good Dream Tonight*: Reality DMG increased to **500%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *A Good Dream Tonight*'s effect changes to: deals **600%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *A Good Dream Tonight*'s effect changes to: deals **600%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

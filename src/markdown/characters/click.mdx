@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work exhibited in the 1940s for 19 years. Completed in summer, on June 28. First exhibition location unknown, the exhibit later went all over the world.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Smoke of Gunpowder
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Smoke of Gunpowder</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Determined Soul \[Spirit] War Photography.
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Determined Soul \[Spirit] War Photography.
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Woody, Fougere - Arborvitae, Gunpowder, Olive Leaf, Daisy
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Woody, Fougere - Arborvitae, Gunpowder, Olive Leaf, Daisy
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    70 5/64x27 61/64x17 23/32in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">70 5/64x27 61/64x17 23/32in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### The Onlooker
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### The Onlooker</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="He witnessed the bombardment.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="He witnessed the bombardment, before the chaos arrived. That's all.">
       1-target attack. Deals **400%** Mental DMG and inflicts 2 rounds of :effect{code="BLIND"}.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### The Witness
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### The Witness</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="Now the word Manna has a new meaning.">
@@ -87,73 +84,94 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Now the word Manna has a new meaning. It could mean a pancake with honey, or a critter that falls from above.">
       1-target attack. Deals **400%** Mental DMG. Moxie -2 for the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### A Picture at a Price
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### A Picture at a Price</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="That's how people learned about wars and the tragedies behind. They have to admit the price is high.">
-      Mass attack. Deals **300%** Mental DMG to all enemies. Other allies enter :effect{code="LENS_CAP"} status for 1 round.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="That's how people learned about wars and the tragedies behind. They have to admit the price is high."
+  >
+    Mass attack. Deals **300%** Mental DMG to all enemies. Other allies enter
+    :effect{(code = "LENS_CAP")} status for 1 round.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### New Photography Theory
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### New Photography Theory</Fragment>
 
-  <Fragment slot="insight-1-info">
-    At the beginning of every 2 rounds, enters :effect{code="LENS_CAP"} status for 1 round.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  At the beginning of every 2 rounds, enters :effect{(code = "LENS_CAP")} status
+  for 1 round.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Taken **-8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When the caster is in :effect{code="LENS_CAP"} status, Penetration Rate **+30%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When the caster is in :effect{(code = "LENS_CAP")} status, Penetration Rate
+  **+30%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Valuable Good Photo*'s effect changes to: deals **350%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Valuable Good Photo*'s effect changes to: deals **350%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Spectator*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Spectator*'s effect changes to: at **1/2/3** stars, deals **220/280/450%**
+  Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Valuable Good Photo*'s effect changes to: deals **400%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Valuable Good Photo*'s effect changes to: deals **400%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Witness*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Witness*'s effect changes to: at **1/2/3** stars, deals **220/280/450%**
+  Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Valuable Good Photo*'s effect changes to: deals **450%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Valuable Good Photo*'s effect changes to: deals **450%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     Arcanist work. Exhibited in the 1990s for 8 years. Completed on August 7th in the summer. Exhibition location: An island within the Arctic Circle.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Sunlight
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Sunlight</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Sunflower Seed \[Plant], Natural-born Perception
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Sunflower Seed \[Plant], Natural-born Perception
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Flowery Gourmand, Sunflower, Chocolate, Beeswax, Coal Ash
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Flowery Gourmand, Sunflower, Chocolate, Beeswax, Coal Ash
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    47 16/64 x 28 17/64 x 10 40/64 in
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">47 16/64 x 28 17/64 x 10 40/64 in</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Greetings!
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Greetings!</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="The people here are full of passion.">
@@ -68,11 +65,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="The people here are full of passion and tenacity, and they have a bright future ahead of them.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]* and *\[Pos Status]* from the targets hit, then grants DMG Dealt **+10%** to self and allies in front for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Wish You Good Health
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Wish You Good Health</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="A seed.">
@@ -86,73 +83,97 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="A seed planted in soil, with the nourishment of hope.">
       Mass buff. Grants the :effect{code="CURE"} status to all allies for 3 rounds: at the start of each round, recovers (the user's ATK x**50%**) HP; then grants DMG Heal **+10%** to self and allies behind for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### One Stroke After Another
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### One Stroke After Another</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="Every child is a blank canvas, waiting to be filled with vibrant colors.">
-      Mass attack. Deals **300%** Mental DMG to all enemies; then grants 1 stack of :effect{code="ROUSING_MORALE"} to self and allies in front, and 1 stack of :effect{code="STURDINESS"} to self and allies behind.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type=""
+    note="Every child is a blank canvas, waiting to be filled with vibrant colors."
+  >
+    Mass attack. Deals **300%** Mental DMG to all enemies; then grants 1 stack
+    of :effect{(code = "ROUSING_MORALE")} to self and allies in front, and 1
+    stack of :effect{(code = "STURDINESS")} to self and allies behind.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Sunflower Bodyguards
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Sunflower Bodyguards</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When entering battle, grant DMG Dealt **+10%** to allies in front, and grant DMG Taken **-10%** to allies behind.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When entering battle, grant DMG Dealt **+10%** to allies in front, and grant
+  DMG Taken **-10%** to allies behind.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Dealt **+8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When entering battle, allies in front grant themselves ATK **+5%**, and allies behind grant themselves DMG Taken **-8%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When entering battle, allies in front grant themselves ATK **+5%**, and allies
+  behind grant themselves DMG Taken **-8%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Greetings!*: At Incantation rank **1/2/3**, Mental DMG is increased to **140/230/350%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Greetings!*: At Incantation rank **1/2/3**, Mental DMG is increased to
+  **140/230/350%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Wish You Good Health*: At Incantation rank **1/2/3**, \[Cure] duration is increased to **2/3/4** rounds.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Wish You Good Health*: At Incantation rank **1/2/3**, \[Cure] duration is
+  increased to **2/3/4** rounds.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *One Stroke After Another*'s effect changes to: deals **350%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *One Stroke After Another*'s effect changes to: deals **350%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Wish You Good Health*: The DMG Heal increase is now **15%** to self and allies behind.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Wish You Good Health*: The DMG Heal increase is now **15%** to self and
+  allies behind.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Greetings!*: The DMG Dealt increase is now **15%** to self and allies in front.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Greetings!*: The DMG Dealt increase is now **15%** to self and allies in
+  front.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

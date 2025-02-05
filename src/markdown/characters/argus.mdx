@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -29,33 +29,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the 1990s for 26 years. Completed in winter on December 11. Exhibited in Texas, United States.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Shotgun
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Shotgun</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Unyielding Hard Oak \[Plant] Wild Hunt
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">Unyielding Hard Oak \[Plant] Wild Hunt</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Leather - Hide, Tolu Balsam, Patchouli, Gunpowder
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Leather - Hide, Tolu Balsam, Patchouli, Gunpowder
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    69 3/10 x 30 7/10 x 16 9/10 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">69 3/10 x 30 7/10 x 16 9/10 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Shotgun Shower
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Shotgun Shower</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="She seldom cares about the size of the commission.">
@@ -69,11 +64,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="She seldom cares about the size of the commission, and her pricing is always fair—however, the rewards she seeks are not limited to that.">
       1-target attack. Deals **450%** Reality DMG, then grants :effect{code="EMPOWER_INCANTATION_II"} to self for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Penetrating Eye
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Penetrating Eye</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Covered by dust.">
@@ -87,17 +82,25 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Covered by dust, waiting for her arrival.">
       1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts 10 stacks of :effect{code="PINPOINTED"} on the target for 3 rounds. Only 1 :effect{code="PINPOINTED"} debuff can exist on the field at a time.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### No Mark Unstruck
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### No Mark Unstruck</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Your fear confirms it: you are fully aware of what you've done.">
-      1-target attack. Deals **500%** Reality DMG to the target. Right before attacking, if the target is in the :effect{code="PINPOINTED"} status, increase the :effect{code="PINPOINTED"} status by 5 stacks, refresh the duration of the entire stack, and grant Penetration Rate **+30%** and Critical Rate **+30%** to this attack.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="Your fear confirms it: you are fully aware of what you've done."
+  >
+    1-target attack. Deals **500%** Reality DMG to the target. Right before
+    attacking, if the target is in the :effect{(code = "PINPOINTED")} status,
+    increase the :effect{(code = "PINPOINTED")} status by 5 stacks, refresh the
+    duration of the entire stack, and grant Penetration Rate **+30%** and
+    Critical Rate **+30%** to this attack.
+  </CardInfo>
+</Fragment>
 
   <Fragment slot="extra-cards">
     ### Grave Digger
@@ -111,23 +114,25 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
         1-target attack. At rank **1/2/3**, deals **100%/150%/300%** Reality DMG. At rank 2 and higher, gain Moxie +1 for self. At rank 3, this attack is always a critical hit.
       </CardInfo>
     </div>
+
   </Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Miracle of a Hundred Eyes
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Miracle of a Hundred Eyes</Fragment>
 
-  <Fragment slot="insight-1-info">
-    After Argus casts a rank **1/2/3** incantation, grant DMG Dealt **+10%/15%/25%** to all allies for 2 rounds.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  After Argus casts a rank **1/2/3** incantation, grant DMG Dealt
+  **+10%/15%/25%** to all allies for 2 rounds.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    Critical Rate **+10%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  Critical Rate **+10%** when the caster enters battle.
+</Fragment>
 
   <Fragment slot="insight-3-info">
     Right before the incantations in the AP Area resolve, add a ranked incantation *\[Grave Digger]* to the spell queue based on the total ranks of the incantations played this round. This attack is considered an extra action and prioritizes targets with :effect{code="PINPOINTED"}.
@@ -137,43 +142,61 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     5-6 Ranks: Adds a rank 2 incantation. 1-target attack, deals **150%** Reality DMG and gains Moxie +1 for self.
 
     7+ Ranks: Adds a rank 3 incantation. 1-target attack, deals **300%** Reality DMG and gains Moxie +1 for self. This attack is always a critical hit.
+
   </Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Miracle of a Hundred Eyes*: At incantation rank **1/2/3**, the Reality DMG of *\[Grave Digger]* is increased to **150%/250%/400%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Miracle of a Hundred Eyes*: At incantation rank **1/2/3**, the Reality DMG of
+  *\[Grave Digger]* is increased to **150%/250%/400%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Penetrating Eye*: The base effect of :effect{code="PINPOINTED"} is increased to **20%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-2.5%** and Critical DEF **-2.5%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Penetrating Eye*: The base effect of :effect{(code = "PINPOINTED")} is
+  increased to **20%**, and each stack beyond the first now inflicts an
+  additional DMG Taken Reduction **-2.5%** and Critical DEF **-2.5%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Miracle of a Hundred Eyes*: At incantation rank **1/2/3**, the Reality DMG of *\[Grave Digger]* is increased to **200%/350%/500%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Miracle of a Hundred Eyes*: At incantation rank **1/2/3**, the Reality DMG of
+  *\[Grave Digger]* is increased to **200%/350%/500%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Penetrating Eye*: The base effect of :effect{code="PINPOINTED"} is increased to **25%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-3%** and Critical DEF **-3%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Penetrating Eye*: The base effect of :effect{(code = "PINPOINTED")} is
+  increased to **25%**, and each stack beyond the first now inflicts an
+  additional DMG Taken Reduction **-3%** and Critical DEF **-3%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *No Mark Unstruck*'s effect changes to: deals **700%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *No Mark Unstruck*'s effect changes to: deals **700%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

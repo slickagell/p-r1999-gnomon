@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the Middle Ages for 19 years. Completed in autumn, on October 10. Exhibited throughout Europe and later kept in the Roman Catholic Diocese of Pamiers.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Law
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Law</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Wild Justice \[Beast] Judgment on the Court
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Wild Justice \[Beast] Judgment on the Court
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Oriental - Frankincense, Incense, Pepper, Ash
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Oriental - Frankincense, Incense, Pepper, Ash
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    68 1/2 x 43 25/32 x 8 21/32 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">68 1/2 x 43 25/32 x 8 21/32 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Power
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Power</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="An act against the rules.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="This act is beyond the power and duty of a judge, but it is allowed by “justice.”">
       1-target attack. Deals **350%** Mental DMG plus (ATK x**100%**) Genesis DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Justice
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Justice</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="HEALTH" note="An act within the rules.">
@@ -87,73 +84,99 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="HEALTH" note="A rare act within the rules, for the sake of the weak.">
       Mass healing. HP +(the caster's ATK x**150%**) for all allies; if a target's HP is below **50%**, additionally HP +(the casters ATK x**75%**) for the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Maverick Judge
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Maverick Judge</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="Her heart is as clear as mirror, her sword is as fierce as fire.">
-      1-target attack. Purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster and enters :effect{code="IMMUNITY"} for 1 round to the caster. Deals **400%** Mental DMG plus (the caster's ATK x**170%**) Genesis DMG.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type=""
+    note="Her heart is as clear as mirror, her sword is as fierce as fire."
+  >
+    1-target attack. Purifies all *\[Stats Down]*, *\[Neg Status]*, and
+    *\[Control]* statuses from the caster and enters :effect
+    {(code = "IMMUNITY")} for 1 round to the caster. Deals **400%** Mental DMG
+    plus (the caster's ATK x**170%**) Genesis DMG.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Fairness
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Fairness</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When the caster attacks, if the caster's HP percentage is higher than the target's, ATK **+15%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When the caster attacks, if the caster's HP percentage is higher than the
+  target's, ATK **+15%**.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    ATK **+5%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  ATK **+5%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When the caster attacks, if the caster's HP percentage is lower than the target, Leech Rate **+15%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When the caster attacks, if the caster's HP percentage is lower than the
+  target, Leech Rate **+15%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Maverick Judge*'s effect changes to: deals (the caster's ATK x**130%**) Genesis DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Maverick Judge*'s effect changes to: deals (the caster's ATK x**130%**)
+  Genesis DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Power*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Power*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Mental
+  DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Maverick Judge*'s effect changes to: deals (the caster's ATK x**170%**) Genesis DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Maverick Judge*'s effect changes to: deals (the caster's ATK x**170%**)
+  Genesis DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Justice*'s effect changes to: at **1/2/3** stars, HP +(the caster's ATK x**70/105/175%**).
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Justice*'s effect changes to: at **1/2/3** stars, HP +(the caster's ATK
+  x**70/105/175%**).
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Maverick Judge*'s effect changes to: deals (the caster's ATK x**210%**) Genesis DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Maverick Judge*'s effect changes to: deals (the caster's ATK x**210%**)
+  Genesis DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

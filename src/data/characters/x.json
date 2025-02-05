@@ -93,5 +93,211 @@
         "require": 4
       }
     ]
+  },
+  "resonanceMaterials": {
+    "2": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 4
+      }
+    ],
+    "3": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 4
+      },
+      {
+        "code": "TREMBLING_TOOTH",
+        "require": 4
+      }
+    ],
+    "4": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 4
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 4
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 3
+      }
+    ],
+    "5": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 4
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 3
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 4
+      }
+    ],
+    "6": [
+      {
+        "code": "SHARPODONTY",
+        "require": 25000
+      },
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 4
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 3
+      }
+    ],
+    "7": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 5
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 4
+      }
+    ],
+    "8": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 5
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 4
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 4
+      }
+    ],
+    "9": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 6
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 5
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 6
+      }
+    ],
+    "10": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 4
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 6
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 6
+      }
+    ],
+    "11": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SHARPODONTY",
+        "require": 100000
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 4
+      },
+      {
+        "code": "PLATINUM_OUIJA",
+        "require": 3
+      }
+    ],
+    "12": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 5
+      },
+      {
+        "code": "BOGEYMAN",
+        "require": 3
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 5
+      }
+    ],
+    "13": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 5
+      },
+      {
+        "code": "INCORRUPT_MONKEYPAW",
+        "require": 4
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 5
+      }
+    ],
+    "14": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 6
+      },
+      {
+        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "require": 1
+      },
+      {
+        "code": "WYRMLING_SKELETON",
+        "require": 4
+      }
+    ],
+    "15": [
+      {
+        "code": "SINUOUS_HOWL",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 6
+      },
+      {
+        "code": "MISTILTEINN",
+        "require": 2
+      },
+      {
+        "code": "INCORRUPT_MONKEYPAW",
+        "require": 4
+      }
+    ]
   }
 }

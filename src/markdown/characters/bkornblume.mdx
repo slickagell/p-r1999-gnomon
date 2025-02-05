@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the 1980s for 18 years. Completed in Winter, on February 9. Exhibited in Berlin, German Democratic Republic.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Cornflower
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Cornflower</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Whispers of the Wild Chrysanthemum \[Plant] Voice Capture
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Whispers of the Wild Chrysanthemum \[Plant] Voice Capture
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Leafy - Oud, Linden, Arborvitae
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">Leafy - Oud, Linden, Arborvitae</Fragment>
 
-  <Fragment slot="info-dimensions">
-    67 21/64x40 35/64x8 21/32 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">67 21/64x40 35/64x8 21/32 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Watch Her Sleeves
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Watch Her Sleeves</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="It seems she's not very skilled at this.">
@@ -69,11 +64,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Hurting people is not her intention, but protecting herself is.">
       Mass attack. Deals **335%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **75%** more Reality DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Prying Ear
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Prying Ear</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="They're whispering secrets to each other.">
@@ -87,73 +82,95 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="They're whispering secrets to each other as if no one's around, but there's always a prying ear.">
       Mass debuff. All enemies suffer Reality DEF **-25%** and DMG Taken **+25%**. Lasts 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Uninvited Reviewer
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Uninvited Reviewer</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="She heard numerous details of the neighborhood's story and has plenty of ideas about them.">
-      1-target attack. Deals **550%** Reality DMG and inflicts :effect{code="SEAL"} for 3 rounds. If the target is immune to :effect{code="SEAL"}, Moxie -2 to the target instead.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="She heard numerous details of the neighborhood's story and has plenty of ideas about them."
+  >
+    1-target attack. Deals **550%** Reality DMG and inflicts :effect
+    {(code = "SEAL")} for 3 rounds. If the target is immune to :effect
+    {(code = "SEAL")}, Moxie -2 to the target instead.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Reverse Flow
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Reverse Flow</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When the enemy is in *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses, DMG Dealt **+20%** to the enemy.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When the enemy is in *\[Stats Down]*, *\[Neg Status]* or *\[Control]*
+  statuses, DMG Dealt **+20%** to the enemy.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    ATK **+5%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  ATK **+5%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When the caster is attacked by an enemy in *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses, DMG Taken **-20%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When the caster is attacked by an enemy in *\[Stats Down]*, *\[Neg Status]* or
+  *\[Control]* statuses, DMG Taken **-20%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Uninvited Reviewer*'s effect changes to: deals **625%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Uninvited Reviewer*'s effect changes to: deals **625%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Watch Your Sleeves*'s effect changes to: at **1/2/3** stars, additionally deals **45/65/100%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Watch Your Sleeves*'s effect changes to: at **1/2/3** stars, additionally
+  deals **45/65/100%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg
+  Status]* or *\[Control]* statuses.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Uninvited Reviewer*'s effect changes to: deals **675%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Uninvited Reviewer*'s effect changes to: deals **675%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Uninvited Reviewer*'s effect changes to: deals **750%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Uninvited Reviewer*'s effect changes to: deals **750%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Uninvited Reviewer*'s effect changes to: deals **800%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Uninvited Reviewer*'s effect changes to: deals **800%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

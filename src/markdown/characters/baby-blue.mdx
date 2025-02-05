@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     An arcanist's work. Exhibited in the early 20th century for 17 years. Completed in Spring, on March 14. Exhibited somewhere secret in Manchester, British Isles. Only a few knew of it, so it might be a private collection.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Sugar Cube
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Sugar Cube</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Sleep-talking in the Star Night \[Star] Adventures in Wonderland
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Sleep-talking in the Star Night \[Star] Adventures in Wonderland
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Floral, Fruity - Raspberry, English Pear, Black Tea
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Floral, Fruity - Raspberry, English Pear, Black Tea
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    74 51/64x54 21/64x5 29/32 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">74 51/64x54 21/64x5 29/32 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Tea Party
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Tea Party</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Ding dong. Ding dong. There's no doorbell here.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Ding dong. Ding dong. They're all waiting for you, waiting for you.">
       1-target attack. Deals **350%** Mental DMG. Mental DEF **-35%** for the target for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Cough Syrup
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Cough Syrup</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Aromas of fungi and dew.">
@@ -87,73 +84,94 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Aromas of fungi and dew. A new world upside down. A party it is.">
       Mass debuff. All enemies suffer DMG Dealt -25% and DMG Taken **+25%**. Lasts 3 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Tea with Friends
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Tea with Friends</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Click. You can smell the fragrance, dear friends.">
-      Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, inflicts :effect{code="NIGHTMARE"} status for 1 round on the target.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="DEBUFF"
+    note="Click. You can smell the fragrance, dear friends."
+  >
+    Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in
+    *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, inflicts :effect
+    {(code = "NIGHTMARE")} status for 1 round on the target.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Don't Touch Her
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Don't Touch Her</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When the caster takes Mental DMG, DMG Taken **-20%** and Critical DEF **+20%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When the caster takes Mental DMG, DMG Taken **-20%** and Critical DEF
+  **+20%**.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    Critical Resist Rate **+10%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  Critical Resist Rate **+10%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When the caster takes Mental DMG, gives the attacker 1 stack of :effect{code="WONDERLAND_VISITOR"} for 2 rounds.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When the caster takes Mental DMG, gives the attacker 1 stack of :effect
+  {(code = "WONDERLAND_VISITOR")} for 2 rounds.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Tea with Friends* effect changes to: deals **350%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Tea with Friends* effect changes to: deals **350%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Tea Party*'s effect changes to: at **1/2/3** stars, deals **220/230/400%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Tea Party*'s effect changes to: at **1/2/3** stars, deals **220/230/400%**
+  Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Tea with Friends*: Mental DMG increased to **400%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Tea with Friends*: Mental DMG increased to **400%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Tea with Friends*: Mental DMG increased to **450%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Tea with Friends*: Mental DMG increased to **450%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Cough Syrup*'s effect changes to: at **2/3** stars, DMG Taken **+25/30%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Cough Syrup*'s effect changes to: at **2/3** stars, DMG Taken **+25/30%**.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,28 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     An arcanist's work. Exhibited in the early 20th century for 29 years. Completed in Spring, on April 28. Exhibited in some exile land which belonged to the Russian Empire.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Poem
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Poem</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Solitude of the Chinese Fir \[Plant] Poem Composition
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Solitude of the Chinese Fir \[Plant] Poem Composition
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Woody - Vetiver, Patchouli, Soil
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">Woody - Vetiver, Patchouli, Soil</Fragment>
 
-  <Fragment slot="info-dimensions">
-    71 21/32x38 47/64x10 5/8in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">71 21/32x38 47/64x10 5/8in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Sparrow
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Sparrow</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Nature's gift to humanity.">
@@ -69,11 +64,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Nature's gift to humanity. Examples include the wind from frost-covered isles.">
       1-target attack. Deals **300%** Mental DMG and inflicts :effect{code="SILENCE"} status for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Paper
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Paper</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Text written on parchment.">
@@ -87,77 +82,103 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="Text written on torn and charred parchment, but epics will endure forever.">
       Mass buff. DMG Dealt **+25%** and DMG Heal **+25%** for all allies for 3 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Poem, Island, Breeze
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Poem, Island, Breeze</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Many things have been written on paper. We have praises, histories, and orders of exile.">
-      Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{code="SEAL"} status on the main target for 2 rounds.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="DEBUFF"
+    note="Many things have been written on paper. We have praises, histories, and orders of exile."
+  >
+    Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main
+    target, inflicts the :effect{(code = "SEAL")} status on the main target for
+    2 rounds.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Island
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Island</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When the caster attacks, if the caster's HP is above **50%**, Penetration Rate **+10%**. When the caster is attacked, if the caster's HP is below **50%**, DMG Taken **-10%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When the caster attacks, if the caster's HP is above **50%**, Penetration Rate
+  **+10%**. When the caster is attacked, if the caster's HP is below **50%**,
+  DMG Taken **-10%**.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Dealt **+8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Poem, Island, Breeze*'s effect changes to: deals **280%**, Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Poem, Island, Breeze*'s effect changes to: deals **280%**, Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Sparrow*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Sparrow*'s effect changes to: at **1/2/3** stars, deals **220/230/350%**
+  Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Paper*'s effect changes to: at **1/2/3** stars, DMG Heal **+20/25/30%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Paper*'s effect changes to: at **1/2/3** stars, DMG Heal **+20/25/30%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Poem, Island, Breeze*'s effect changes to: deals **310%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Poem, Island, Breeze*'s effect changes to: deals **310%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Poem, Island, Breeze*'s effect changes to: deals **350%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Poem, Island, Breeze*'s effect changes to: deals **350%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

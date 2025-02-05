@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work exhibited in the 1960s for 18 years. Completed in spring, on March 20. Location unsettled, the exhibit is now going on a tour in Greater London, United Kingdom of Great Britain and Northern Ireland.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Plan
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Plan</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Cunning Beast \[Beast] Security Check
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">Cunning Beast \[Beast] Security Check</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Floral - Bergamot, Mandarin, Pink Pepper, Elemi
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Floral - Bergamot, Mandarin, Pink Pepper, Elemi
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    69 11/16x32 21/64x16 17/32in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">69 11/16x32 21/64x16 17/32in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Silent Takedown
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Silent Takedown</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Keep an eye on her.">
@@ -68,11 +63,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Keep an eye on her. She is right here. At least she was a moment ago.">
       1-target attack. Deals **400%** Mental DMG, Moxie -1 for the target, and Moxie +1 for the caster. If the caster is in :effect{code="THIEF_MASTER"}, this attack steals 1 additional Moxie from the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Clockwork Rats
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Clockwork Rats</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="A group of frantic stalkers are gathering.">
@@ -86,73 +81,92 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic. The rodenticide didn't work.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Ridiculous Eyewitness Testimony
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Ridiculous Eyewitness Testimony</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Take off, exchange positions, and retreat.">
-      1-target attack. Deals **600%** Mental DMG. Inflicts 1 stack of :effect{code="THIEF_MASTER"} on the caster.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo type="ATTACK" note="Take off, exchange positions, and retreat.">
+    1-target attack. Deals **600%** Mental DMG. Inflicts 1 stack of :effect
+    {(code = "THIEF_MASTER")} on the caster.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Top Student
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Top Student</Fragment>
 
-  <Fragment slot="insight-1-info">
-    After the caster casts an Ultimate, gains 1 stack of :effect{code="FIXED_PLAN"}.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  After the caster casts an Ultimate, gains 1 stack of :effect
+  {(code = "FIXED_PLAN")}.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Dealt **+8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    After the caster casts an Ultimate, gains an additional stack of :effect{code="FIXED_PLAN"}.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  After the caster casts an Ultimate, gains an additional stack of :effect
+  {(code = "FIXED_PLAN")}.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Ridiculous Eyewitness Testimony* deals **725%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Ridiculous Eyewitness Testimony* deals **725%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Ridiculous Eyewitness Testimony* additionally gains 1 stack of :effect{code="THIEF_MASTER"}.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Ridiculous Eyewitness Testimony* additionally gains 1 stack of :effect
+  {(code = "THIEF_MASTER")}.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Silent Takedown*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Silent Takedown*'s effect changes to: at **1/2/3** stars, deals
+  **220/280/450%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Clockwork Rats*'s effect changes to: at **1/2/3** stars, deals **135/200/325%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Clockwork Rats*'s effect changes to: at **1/2/3** stars, deals
+  **135/200/325%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Ridiculous Eyewitness Testimony* deals **800%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Ridiculous Eyewitness Testimony* deals **800%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

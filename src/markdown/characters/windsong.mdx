@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An Arcanist's work exhibited in the 1990s for a total of 22 years, created in autumn on October 13th. Originally exhibited in the Transnistria, it was later toured worldwide.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Blueprint
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Blueprint</Fragment>
 
-  <Fragment slot="info-afflatus">
-    The longing of the Lone Star \[Star], Geology Research
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  The longing of the Lone Star \[Star], Geology Research
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Aromatic, Musk, Vodka, Soil, Moscow Rose
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Aromatic, Musk, Vodka, Soil, Moscow Rose
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    70 18/64 x 40 40/64 x 14 61/64 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">70 18/64 x 40 40/64 x 14 61/64 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Rehabilitation
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Rehabilitation</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Repeated measurements and calculations.">
@@ -68,11 +65,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Repeated measurements and calculations. All in pursuit of her dream and the ultimate truth.">
       1-target attack. Gains Eureka +1 and deals **450%** Mental DMG. Spend 2 Eureka to deal Mental DMG **+150%** and convert excess Critical Rate to Critical DMG for this attack.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Practicability
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Practicability</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="To depict a mountain.">
@@ -86,73 +83,102 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="To depict a mountain with dirt, foliage, sky, and music... that requires a different cost, my friend.">
       Mass attack. Gains Eureka +1 and deals **285%** Mental DMG to 2 enemies; gains 3 stacks of :effect{code="PREPARATION_WINDSONG"}.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Long Long Journey
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Long Long Journey</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="She traveled across the valley, through the rainforest, and over the snowfield. It's been a lonely journey.">
-      1-target debuff. Inflicts 1 stack of :effect{code="CONFUSION"} on the target for 1 round; then enters the :effect{code="MAPPING"} status for the round, gains Eureka +2, converts all own incantations to *\[Rehabilitation]* of their matching rank, and casts them all if able.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="BUFF"
+    note="She traveled across the valley, through the rainforest, and over the snowfield. It's been a lonely journey."
+  >
+    1-target debuff. Inflicts 1 stack of :effect{(code = "CONFUSION")} on the
+    target for 1 round; then enters the :effect{(code = "MAPPING")} status for
+    the round, gains Eureka +2, converts all own incantations to
+    *\[Rehabilitation]* of their matching rank, and casts them all if able.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Interdisciplinary Research
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Interdisciplinary Research</Fragment>
 
-  <Fragment slot="insight-1-info">
-    Whenever an ally scores a critical hit with an incantation or an enemy gets a stack of :effect{code="CONFUSION"}, grant 1 stack of :effect{code="MEASURE"} to self.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  Whenever an ally scores a critical hit with an incantation or an enemy gets a
+  stack of :effect{(code = "CONFUSION")}, grant 1 stack of :effect
+  {(code = "MEASURE")} to self.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    Critical Rate **+10%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  Critical Rate **+10%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When entering battle, gain Critical Rate **+10%** and Critical DMG **+10%**. After casting an Ultimate, gain 1 stack of :effect{code="PREPARATION_WINDSONG"}.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When entering battle, gain Critical Rate **+10%** and Critical DMG **+10%**.
+  After casting an Ultimate, gain 1 stack of :effect
+  {(code = "PREPARATION_WINDSONG")}.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Rehabilitation*: at rank 1/2/3 incantation, Mental DMG dealt is increased to **200/290/480%**, and the additional Mental DMG dealt by spending Eureka is increased to **90/130/200%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Rehabilitation*: at rank 1/2/3 incantation, Mental DMG dealt is increased to
+  **200/290/480%**, and the additional Mental DMG dealt by spending Eureka is
+  increased to **90/130/200%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Interdisciplinary Research*: When entering battle, the Critical Rate and Critical DMG increase is now **+25%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Interdisciplinary Research*: When entering battle, the Critical Rate and
+  Critical DMG increase is now **+25%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Long Long Journey*: The Eureka gained is increased to **5**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Long Long Journey*: The Eureka gained is increased to **5**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Practicability*: At rank 1/2 incantation, the Mental DMG is increased to **180/230%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Practicability*: At rank 1/2 incantation, the Mental DMG is increased to
+  **180/230%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Rehabilitation*: At rank 1/2/3 incantation, the Mental DMG dealt is increased to **220/320/520%**, and the additional Mental DMG dealt by spending Eureka is increased to **110/160/240%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Rehabilitation*: At rank 1/2/3 incantation, the Mental DMG dealt is increased
+  to **220/320/520%**, and the additional Mental DMG dealt by spending Eureka is
+  increased to **110/160/240%**.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     Arcanist work. Exhibition date and duration unknown. Completed on January 12th in the summer. Exhibited on nameless red soil, in the hands of someone youthful.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Obsidian
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Obsidian</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Heart of the Red Rock \[Mineral], The Original Sacred Flame
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Heart of the Red Rock \[Mineral], The Original Sacred Flame
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Woody, Guaiacum, Redcurrant, Chestnut, Amber
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Woody, Guaiacum, Redcurrant, Chestnut, Amber
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    86 7/32x42 33/64x7 3/32 inches
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">86 7/32x42 33/64x7 3/32 inches</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Opening Ceremony
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Opening Ceremony</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Thousands of ceremonies.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Thousands of ceremonies, some of the dangerous elements still remain.">
       1-target attack. Deals **400%** Mental DMG. This attack gains Penetration Rate **+35%** against targets afflicted with :effect{code="BURN"}.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Beating Heart
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Beating Heart</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="The telling of the blazing fire.">
@@ -87,73 +84,98 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="The telling of the blazing fire, forever etched into memory-the birth of the first spark.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies and inflicts 3 stacks of :effect{code="BURN"}.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Indomitable Fire, Scorching Heart
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Indomitable Fire, Scorching Heart</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="I was once a torch worshipped by thousands. Now, I am rekindled on the same land to burn forever.">
-      Mass buff. All allies gain DMG Dealt **+15%** and DMG Taken **-15%** for 3 rounds. If enemies have 15 or more stacks of :effect{code="BURN"} in total, the DMG Dealt effect is doubled.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="BUFF"
+    note="I was once a torch worshipped by thousands. Now, I am rekindled on the same land to burn forever."
+  >
+    Mass buff. All allies gain DMG Dealt **+15%** and DMG Taken **-15%** for 3
+    rounds. If enemies have 15 or more stacks of :effect{(code = "BURN")} in
+    total, the DMG Dealt effect is doubled.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Fire Worship
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Fire Worship</Fragment>
 
-  <Fragment slot="insight-1-info">
-    After attacking an enemy that's in the :effect{code="BURN"} status, recover (Missing HP x**8%**) HP for all allies. Triggers only 1 time per round.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  After attacking an enemy that's in the :effect{(code = "BURN")} status,
+  recover (Missing HP x**8%**) HP for all allies. Triggers only 1 time per
+  round.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Taken **-8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    At the start of the round, inflicts 3 stacks of :effect{code="BURN"} on all enemies.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  At the start of the round, inflicts 3 stacks of :effect{(code = "BURN")} on
+  all enemies.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Opening Ceremony*: At Incantation rank **1/2/3**, Mental DMG increased to **180/270/450%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Opening Ceremony*: At Incantation rank **1/2/3**, Mental DMG increased to
+  **180/270/450%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Opening Ceremony*: At Incantation rank **1/2/3**, Penetration Rate increased to **30/35/40%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Opening Ceremony*: At Incantation rank **1/2/3**, Penetration Rate increased
+  to **30/35/40%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Beating Heart*: At Incantation rank **1/2/3**, Mental DMG increased to **140/210/350%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Beating Heart*: At Incantation rank **1/2/3**, Mental DMG increased to
+  **140/210/350%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Fire Worship*: HP recovery increased to **10%** Lost HP for all allies.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Fire Worship*: HP recovery increased to **10%** Lost HP for all allies.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Indomitable Fire, Scorching Heart*: DMG Dealt increased to **+20%** for all allies.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Indomitable Fire, Scorching Heart*: DMG Dealt increased to **+20%** for all
+  allies.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

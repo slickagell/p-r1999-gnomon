@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     A mixed's work. Exhibited in the 1990s for 25 years. Completed in Summer, on July 24. Born in Rome, Italian Republic, and after three months, the exhibit was sent to Piedmont and stayed there for more than ten years before moving to Sicily.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Beast Teeth
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Beast Teeth</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Mourning of the Feral Pack \[Beast] Night View
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Mourning of the Feral Pack \[Beast] Night View
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Spicy, Woody - Mandarin, Musk, Leather, Carrot Seed
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Spicy, Woody - Mandarin, Musk, Leather, Carrot Seed
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    62 19/32 x 21 17/64 x 14 11/64 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">62 19/32 x 21 17/64 x 14 11/64 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Dirty Thing
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Dirty Thing</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Sometimes, people can find iron-nickel bullets.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Sometimes, people can find iron-nickel bullets with stick sugar at places splattered with fresh blood.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. If the caster's HP is above **50%**, this attack deals **125%** more Mental DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Poor Sod
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Poor Sod</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="A crude art.">
@@ -87,77 +84,105 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="A crude art that could be the handiwork of an inept vet. That's what we're guessing.">
       Mass attack. Deals **330%** Mental DMG to 2 enemies. If the caster's HP is below **50%**, then deals **100%** more Mental DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Nosier Than Me
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Nosier Than Me</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Split the shadow to reveal the offspring nurtured within. They'll be feared as a pack of wolves by the mortals.">
-      1-target attack. Deals **400%** Mental DMG. Enters :effect{code="SELF_HEALING"} status for 3 rounds: At the start of the round, recovers (Missing HP x**25%**) to the caster.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="Split the shadow to reveal the offspring nurtured within. They'll be feared as a pack of wolves by the mortals."
+  >
+    1-target attack. Deals **400%** Mental DMG. Enters :effect
+    {(code = "SELF_HEALING")} status for 3 rounds: At the start of the round,
+    recovers (Missing HP x**25%**) to the caster.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### A Great Thing
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### A Great Thing</Fragment>
 
-  <Fragment slot="insight-1-info">
-    Every time an ally dies, DMG Dealt, Critical Rate and Critical Resist Rate **+10%**, and DMG Taken **-10%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  Every time an ally dies, DMG Dealt, Critical Rate and Critical Resist Rate
+  **+10%**, and DMG Taken **-10%**.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Taken **-8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Nosier Than Me*'s effect changes to: deals **475%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Nosier Than Me*'s effect changes to: deals **475%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Dirty Thing*'s effect changes to: at **1/2/3** stars, additionally deals **65/95/155%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Dirty Thing*'s effect changes to: at **1/2/3** stars, additionally deals
+  **65/95/155%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Poor Sod*'s effect changes to: at **1/2/3** stars, additionally deals **55/80/130%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Poor Sod*'s effect changes to: at **1/2/3** stars, additionally deals
+  **55/80/130%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Nosier Than Me*'s effect changes to: deals **550%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Nosier Than Me*'s effect changes to: deals **550%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Nosier Than Me*'s effect changes to: Deals **600%** Mental DMG. The :effect{code="SELF_HEALING"} status now recovers (the user's Missing HP x**35%**) HP.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Nosier Than Me*'s effect changes to: Deals **600%** Mental DMG. The :effect
+  {(code = "SELF_HEALING")} status now recovers (the user's Missing HP x**35%**)
+  HP.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

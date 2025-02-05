@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,30 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     An arcanist's work. Exhibited in the mid-20th century for 15 years. Completed in summer, on August 15. Exhibited in Greater London, United Kingdom of Great Britain and Northern Ireland, and later all over the world.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Regulus
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Regulus</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Blazing of the Faraway Stars \[Star] Disc Jockey
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Blazing of the Faraway Stars \[Star] Disc Jockey
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Fruity - Blackcurrant, Cardamom, Kumquat
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Fruity - Blackcurrant, Cardamom, Kumquat
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    62 13/64x35 15/64x17 23/32 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">62 13/64x35 15/64x17 23/32 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Treat for the Ears
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Treat for the Ears</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="They tried hard to guess the deeper meaning behind it.">
@@ -68,11 +65,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="They tried hard to guess the deeper meaning behind it, but I was just mashing the keys!">
       1-target attack. Deals **500%** Mental DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Challenge for the Eyes
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Challenge for the Eyes</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="They attempted to stare at the sun.">
@@ -86,73 +83,93 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="They attempted to stare at the sun, but it was in vain. Better cover your eyes!">
       Mass attack. Deals **275%** Mental DMG to 2 enemies. When the caster scores a critical hit, Moxie -2 for the targets.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Sleepless Rave
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Sleepless Rave</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Let the starlight and musical notes party tonight, I am their king!">
-      Mass attack. Deals **300%** Mental DMG to all enemies and grants :effect{code="RIOT_AND_ROLL"} status on all allies for 1 round.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="Let the starlight and musical notes party tonight, I am their king!"
+  >
+    Mass attack. Deals **300%** Mental DMG to all enemies and grants :effect
+    {(code = "RIOT_AND_ROLL")} status on all allies for 1 round.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Listen to New Stuff
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Listen to New Stuff</Fragment>
 
-  <Fragment slot="insight-1-info">
-    If having not actively casted an incantation for the round, enter the :effect{code="RESTLESS_HEART"} status at the end of the round.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  If having not actively casted an incantation for the round, enter the :effect
+  {(code = "RESTLESS_HEART")} status at the end of the round.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    Critical Rate **+15%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  Critical Rate **+15%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When :effect{code="RESTLESS_HEART"} status is dispelled, Moxie +1.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When :effect{(code = "RESTLESS_HEART")} status is dispelled, Moxie +1.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Sleepless Rave*: Mental DMG increased to **400%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Sleepless Rave*: Mental DMG increased to **400%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Treat for the Ears*: At Incantation rank **1/2/3**, Mental DMG increased to **220/280/450%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Treat for the Ears*: At Incantation rank **1/2/3**, Mental DMG increased to
+  **220/280/450%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Challenge for the Eyes*: At Incantation rank **1/2/3**, Mental DMG increased to **165/195/300%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Challenge for the Eyes*: At Incantation rank **1/2/3**, Mental DMG increased
+  to **165/195/300%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Sleepless Rave*: Mental DMG increased to **450%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Sleepless Rave*: Mental DMG increased to **450%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Sleepless Rave*: :effect{code="RIOT_AND_ROLL"} +1 round for all allies.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Sleepless Rave*: :effect{(code = "RIOT_AND_ROLL")} +1 round for all allies.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

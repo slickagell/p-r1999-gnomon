@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,30 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     A mixed's work exhibited in the 1910s and the 1920s for 16 years. Completed in spring, on May 1st. First exhibited in Hokkaido, Japan, the exhibit was later moved to Tokyo.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Tattoo
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Tattoo</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Host of the Hares \[Plant] Teahouse Service
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Host of the Hares \[Plant] Teahouse Service
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Floral - Amber, Lily of the Valley, Cape Jasmine, Bellflower
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Floral - Amber, Lily of the Valley, Cape Jasmine, Bellflower
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    61 1/25 x 15 4/25 x 14 11/63 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">61 1/25 x 15 4/25 x 14 11/63 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Handcuffed Thief
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Handcuffed Thief</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="The thief has been captured.">
@@ -68,11 +65,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="The thief has been captured, but why are we still losing money?">
       1-target attack. Deals **330%** Mental DMG and inflicts 2 stacks of :effect{code="RIGIDITY"} on the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Dancer of Izu
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Dancer of Izu</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="The lady dances with chains.">
@@ -86,73 +83,97 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="The lady dances with chains. Time has passed yet she is as graceful as ever.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Walk Down the Sakura
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Walk Down the Sakura</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Fragrance spreads in moonlit nights of spring, yet her enrapturing beauty remains unseen.">
-      1-target attack. Deals **550%** Mental DMG and inflicts 2 stacks of :effect{code="RIGIDITY"} to the target.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="DEBUFF"
+    note="Fragrance spreads in moonlit nights of spring, yet her enrapturing beauty remains unseen."
+  >
+    1-target attack. Deals **550%** Mental DMG and inflicts 2 stacks of :effect
+    {(code = "RIGIDITY")} to the target.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Taisho Maid
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Taisho Maid</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When the caster enters battle, inflicts 1 stack of :effect{code="RIGIDITY"} on all enemies (only triggers 1 time). When the caster dies, inflicts :effect{code="PETRIFY"} status on the enemy with the highest ATK for 2 rounds.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When the caster enters battle, inflicts 1 stack of :effect
+  {(code = "RIGIDITY")} on all enemies (only triggers 1 time). When the caster
+  dies, inflicts :effect{(code = "PETRIFY")} status on the enemy with the
+  highest ATK for 2 rounds.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    When the caster enters battle, Penetration Rate **+10%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  When the caster enters battle, Penetration Rate **+10%**.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    Attacks against enemies with :effect{code="RIGIDITY"} or :effect{code="PETRIFY"} statuses enjoy Penetration Rate **+15%**. When the caster is attacked by enemies with :effect{code="RIGIDITY"} status, DMG Taken **-15%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  Attacks against enemies with :effect{(code = "RIGIDITY")} or :effect
+  {(code = "PETRIFY")} statuses enjoy Penetration Rate **+15%**. When the caster
+  is attacked by enemies with :effect{(code = "RIGIDITY")} status, DMG Taken
+  **-15%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Walk Down the Sakura*'s effect changes to: deals **600%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Walk Down the Sakura*'s effect changes to: deals **600%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Handcuffed Thief*'s effect changes to: at **1/2/3** stars, deals **220/250/380%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Handcuffed Thief*'s effect changes to: at **1/2/3** stars, deals
+  **220/250/380%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Walk Down the Sakura*'s effect changes to: deals **650%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Walk Down the Sakura*'s effect changes to: deals **650%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Dancer of Izu*'s effect changes to: Penetration Rate **+40%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Dancer of Izu*'s effect changes to: Penetration Rate **+40%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Walk Down the Sakura*'s effect changes to: deals **750%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Walk Down the Sakura*'s effect changes to: deals **750%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

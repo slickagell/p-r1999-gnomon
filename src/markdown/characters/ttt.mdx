@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the 1990s for 18 years. Completion date unknown. First exhibition location unknown, the exhibit was later exhibited all over the world.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Hyperlink
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Hyperlink</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Peek of the Star \[Star] Radio Jamming
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">Peek of the Star \[Star] Radio Jamming</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Fruity - Vetiver, Plum, Poivre Rose, Hyacinth
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Fruity - Vetiver, Plum, Poivre Rose, Hyacinth
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    75 19/32x29 17/32x21 17/64in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">75 19/32x29 17/32x21 17/64in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Cyber Defense
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Cyber Defense</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Hackers have many tricks.">
@@ -69,11 +64,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Hackers hack into devices through the internet and many other channels.">
       1-target attack. Deals **440%** Mental DMG and dispels all *\[Counter]* from the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Electricity Security
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Electricity Security</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="Leaks happen a lot.">
@@ -87,77 +82,102 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Leaks happen a lot, no matter it's electricity, or a secret.">
       1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Unplug It, Now!
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Unplug It, Now!</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="This is probably the most exciting TV show ever.">
-      Mass attack. Deals **200%** Mental DMG to all enemies and inflicts :effect{code="DISCONNECT"} on them for 2 rounds.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="This is probably the most exciting TV show ever."
+  >
+    Mass attack. Deals **200%** Mental DMG to all enemies and inflicts :effect
+    {(code = "DISCONNECT")} on them for 2 rounds.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Privacy Policy
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Privacy Policy</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When a round starts, if the caster's HP is below **50%**, enters :effect{code="CONCEALMENT"} status for 2 rounds (only triggers 1 time).
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When a round starts, if the caster's HP is below **50%**, enters :effect
+  {(code = "CONCEALMENT")} status for 2 rounds (only triggers 1 time).
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    ATK **+5%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  ATK **+5%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Unplug It, Now!*'s effect changes to: deals **225%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Unplug It, Now!*'s effect changes to: deals **225%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Cyber Defense*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Cyber Defense*'s effect changes to: at **1/2/3** stars, deals
+  **220/280/500%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Unplug It, Now!*'s effect changes to: deals **275%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Unplug It, Now!*'s effect changes to: deals **275%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Electricity Security*'s effect changes to: this attack enjoys Penetration Rate **40%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Electricity Security*'s effect changes to: this attack enjoys Penetration
+  Rate **40%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Unplug It, Now!*'s effect changes to: deals **300%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Unplug It, Now!*'s effect changes to: deals **300%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

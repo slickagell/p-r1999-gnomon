@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work exhibited in the 1960s for 20 years. Completed in winter, on February 15. Exhibited in Greater London, United Kingdom of Great Britain and Northern Ireland.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Fantasize
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Fantasize</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Flexible Building Blocks \[Plant] Art Promotion
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Flexible Building Blocks \[Plant] Art Promotion
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Citrus Aromatic - Lime, Pepper, Pine, Lavender
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Citrus Aromatic - Lime, Pepper, Pine, Lavender
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    70 5/64x28 15/32x18 1/2 inches
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">70 5/64x28 15/32x18 1/2 inches</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Long Live Peace
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Long Live Peace</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="A loaded pistol.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="A loaded pistol. This is the metaphor of peace, my friend.">
       1-target attack. Deals **400%** Mental DMG and inflicts 1 stack of :effect{code="WEAKNESS"} on the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Bubblism
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Bubblism</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Bubbles. Light and fragile.">
@@ -87,73 +84,95 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Bubbles. Light and fragile, like wishes. One day they will come true.">
       Mass debuff. Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds. Also inflicts :effect{code="TERROR"} on the main target for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Sweet Dreams for You
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Sweet Dreams for You</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Close your eyes, but open the window of your soul. A dream is weaved for you.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 round of :effect{code="NIGHTMARE"}. If the enemy is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this effect lasts 2 rounds instead.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="Close your eyes, but open the window of your soul. A dream is weaved for you."
+  >
+    1-target attack. Deals **450%** Mental DMG and inflicts 1 round of :effect
+    {(code = "NIGHTMARE")}. If the enemy is in *\[Stats Down]*, *\[Neg Status]*,
+    or *\[Control]* statuses, this effect lasts 2 rounds instead.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Bubble Parade
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Bubble Parade</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When entering battle, gives (the caster's Max HP x**33%**) Shield to Diggers for 3 rounds (only triggers 1 time).
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When entering battle, gives (the caster's Max HP x**33%**) Shield to Diggers
+  for 3 rounds (only triggers 1 time).
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Dealt **+8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When entering battle, gives (Digger's Max HP x**33%**) Shield to other allies for 3 rounds (only triggers 1 time).
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When entering battle, gives (Digger's Max HP x**33%**) Shield to other allies
+  for 3 rounds (only triggers 1 time).
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Sweet Dreams for You*: Mental DMG increased to **500%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Sweet Dreams for You*: Mental DMG increased to **500%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Long Live Peace*'s effect changes to: **1/2/3** stars, Mental DMG increased to **220%/230%/450%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Long Live Peace*'s effect changes to: **1/2/3** stars, Mental DMG increased
+  to **220%/230%/450%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Sweet Dreams for You*'s effect changes to: deals **550%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Sweet Dreams for You*'s effect changes to: deals **550%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Long Live Peace*'s effect changes to: at **2/3** stars, inflicts 1 more stack of :effect{code="WEAKNESS"} on the target.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Long Live Peace*'s effect changes to: at **2/3** stars, inflicts 1 more stack
+  of :effect{(code = "WEAKNESS")} on the target.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Sweet Dreams for You*: Mental DMG increased to **600%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Sweet Dreams for You*: Mental DMG increased to **600%**.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

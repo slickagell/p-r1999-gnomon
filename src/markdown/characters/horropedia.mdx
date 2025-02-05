@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist artwork completed on January 3rd. First put on display in the 1990s, it remained on display for 21 years. It was displayed at the St. Pavlov Foundation's External Inspection Unit.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Logic
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Logic</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Will of the Bedrock \[Mineral] Logical Deduction
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Will of the Bedrock \[Mineral] Logical Deduction
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Aromatic woody notes, juniper, labdanum, dried rosin
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Aromatic woody notes, juniper, labdanum, dried rosin
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    69 17/64 in x29 15/64 in x13 5/32 in
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">69 17/64 in x29 15/64 in x13 5/32 in</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Logic Dictates
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Logic Dictates</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="This is all perfectly logical.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="This is all perfectly logical, my friend logic said.">
       1-target attack. Deals **450%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Sideshow
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Sideshow</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="It dazzles the eyes.">
@@ -87,73 +84,91 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="It dazzles the eyes, too quick to be captured in this moment.">
       1-target attack. Deals **400%** Mental DMG, and if the target is not affected by *\[Stats Up]* or a *\[Pos Status]*, deals an additional **150%** Mental DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Twins' Play
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Twins' Play</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="It's a little cliché, but always so effective.">
-      Mass attack. Deals **300%** Mental DMG to all enemies and inflicts 1 stack of :effect{code="SCARED"} on all targets.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo type="ATTACK" note="It's a little cliché, but always so effective.">
+    Mass attack. Deals **300%** Mental DMG to all enemies and inflicts 1 stack
+    of :effect{(code = "SCARED")} on all targets.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Jump Scare
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Jump Scare</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When casting Rank 2 *\[Logic Dictates]* or above, additionally dispels *\[Counter]* from all targets.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When casting Rank 2 *\[Logic Dictates]* or above, additionally dispels
+  *\[Counter]* from all targets.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Taken **-8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    When casting a Rank 2 incantation or above, increases damage dealt by **20%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  When casting a Rank 2 incantation or above, increases damage dealt by **20%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Twins' Play*'s effect changes to: deals **350%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Twins' Play*'s effect changes to: deals **350%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Logic Dictates*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Logic Dictates*'s effect changes to: at **1/2/3** stars, deals
+  **220/280/500%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Twins' Play*'s effect changes to: deals **400%** Mental DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Twins' Play*'s effect changes to: deals **400%** Mental DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Sideshow*: When at Incantation Rank **1/2/3**, Mental DMG dealt increases to **180/270/450%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Sideshow*: When at Incantation Rank **1/2/3**, Mental DMG dealt increases to
+  **180/270/450%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Twins' Play* Additionally inflicts 1 stack of :effect{code="SCARED"} on the target.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Twins' Play* Additionally inflicts 1 stack of :effect{(code = "SCARED")} on
+  the target.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

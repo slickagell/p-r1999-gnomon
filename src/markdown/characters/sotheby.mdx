@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the early 20th century for 13 years. Completed in spring, on April 4. Exhibited in the City of Westminster, London, United Kingdom of Great Britain and Northern Ireland.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Emerald
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Emerald</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Concerto of the Woods \[Plant] Potion Production
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Concerto of the Woods \[Plant] Potion Production
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Floral - Cananga Tree, Daisy, Vanilla
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Floral - Cananga Tree, Daisy, Vanilla
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    64 9/16x28 7/10x27 9/16in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">64 9/16x28 7/10x27 9/16in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Triple the Dose!
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Triple the Dose!</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin.">
@@ -68,11 +65,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin, but there are always exceptions. In fact, what's bottled up is far more dangerous.">
       Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} status for 5 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Concentrated Essence!
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Concentrated Essence!</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="HEALTH" note="Efficacy is not determined by the dose.">
@@ -86,73 +83,96 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="HEALTH" note="Efficacy is not determined by the dose. The original formula still has room for improvement. Just use 1 drop.">
       Mass healing. Gives all allies 2 rounds of :effect{code="CURE"} when a round starts, HP +(the caster's ATK x**125%**).
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Mix Them All Up!
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Mix Them All Up!</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="1 bottle, 1 bottle, 1 bottle, 1 bottle, 1 bottle...">
-      Mass attack. Deals **350%** Reality DMG to all enemies and all active :effect{code="POISON"} and :effect{code="CURE"} statuses on every character take effect immediately.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="1 bottle, 1 bottle, 1 bottle, 1 bottle, 1 bottle..."
+  >
+    Mass attack. Deals **350%** Reality DMG to all enemies and all active
+    :effect{(code = "POISON")} and :effect{(code = "CURE")} statuses on every
+    character take effect immediately.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Genius Lady
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Genius Lady</Fragment>
 
-  <Fragment slot="insight-1-info">
-    The duration of :effect{code="POISON"} inflicted by *Triple the Dose!* +1 round.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  The duration of :effect{(code = "POISON")} inflicted by *Triple the Dose!* +1
+  round.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    When entering battle, Healing Done **+10%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  When entering battle, Healing Done **+10%**.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    Before *Concentrated Essence!* inflicts :effect{code="CURE"} status, the :effect{code="CURE"} statuses on all allies take effect immediately.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  Before *Concentrated Essence!* inflicts :effect{(code = "CURE")} status, the
+  :effect{(code = "CURE")} statuses on all allies take effect immediately.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Mix Them All Up!*'s effect changes to: deals **450%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Mix Them All Up!*'s effect changes to: deals **450%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Triple the Dose!*'s effect changes to: :effect{code="POISON"} status inflicted by the skill deals (the caster's ATK x**40%**) Genesis DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Triple the Dose!*'s effect changes to: :effect{(code = "POISON")} status
+  inflicted by the skill deals (the caster's ATK x**40%**) Genesis DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Concentrated Essence!*'s effect changes to: HP +(the caster's ATK x**60/90/150%**)
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Concentrated Essence!*'s effect changes to: HP +(the caster's ATK
+  x**60/90/150%**)
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Mix Them All Up!*: Reality DMG increased to **500%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Mix Them All Up!*: Reality DMG increased to **500%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Triple the Dose!*'s effect changes to: :effect{code="POISON"} status inflicted by the skill deals (the caster's ATK x**50%**) Genesis DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Triple the Dose!*'s effect changes to: :effect{(code = "POISON")} status
+  inflicted by the skill deals (the caster's ATK x**50%**) Genesis DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

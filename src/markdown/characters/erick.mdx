@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the 1980s for 12 years. Completed in spring, on May 14th. First exhibited in Bergen, Norway, the exhibit then attempted a world tour.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Storybook
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Storybook</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Little Mast \[Star] Discretionary Plunder
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Little Mast \[Star] Discretionary Plunder
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Woody - Musk, Vetiver
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">Woody - Musk, Vetiver</Fragment>
 
-  <Fragment slot="info-dimensions">
-    61 15/64 x 44 31/64 x 18 57/64 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">61 15/64 x 44 31/64 x 18 57/64 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Heavy Axe
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Heavy Axe</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="An aged axe.">
@@ -69,11 +64,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="An aged axe serving the hands of some rebellious child in most of the time. Sometimes it weighs more than a thousand pounds.">
       1-target attack. Deals **300%** Reality DMG. Critical Resist Rate and Critical DEF **-30%** for the target for 1 round.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Wooden Warship
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Wooden Warship</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="A plundered boat.">
@@ -87,77 +82,101 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="A plundered boat which now has a nobler purpose.">
       Mass attack. Deals **300%** Reality DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Glory to the Jarl
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Glory to the Jarl</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The battlefield is a place of iron and blood, but of course you can also see a duck boat and a plastic helmet.">
-      1-target attack. Dispels *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]* statuses from the target and deals **450%** Reality DMG. Also inflicts :effect{code="DISARM"} status on the target for 1 round.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="ATTACK"
+    note="The battlefield is a place of iron and blood, but of course you can also see a duck boat and a plastic helmet."
+  >
+    1-target attack. Dispels *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*
+    statuses from the target and deals **450%** Reality DMG. Also inflicts
+    :effect{(code = "DISARM")} status on the target for 1 round.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Rhyme of Victory
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Rhyme of Victory</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When an enemy dies, DMG Dealt **+10%** for all allies for 2 rounds.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When an enemy dies, DMG Dealt **+10%** for all allies for 2 rounds.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Dealt **+8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Glory to the Jarl*'s effect changes to: deals **500%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Glory to the Jarl*'s effect changes to: deals **500%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Heavy Axe*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Heavy Axe*'s effect changes to: at **1/2/3** stars, deals **220/230/350%**
+  Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Glory to the Jarl*'s effect changes to: deals **550%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Glory to the Jarl*'s effect changes to: deals **550%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Wooden Warship*'s effect changes to: Penetration Rate **+40%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Wooden Warship*'s effect changes to: Penetration Rate **+40%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Glory to the Jarl*'s effect changes to: deals **600%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Glory to the Jarl*'s effect changes to: deals **600%** Reality DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

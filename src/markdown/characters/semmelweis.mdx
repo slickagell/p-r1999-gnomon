@@ -8,12 +8,12 @@ dmgType: "REALITY"
 race: "INFECTED"
 version: "1.9"
 releaseDate: "2024-09-19"
-specialties: ["SUPPORT", 'DPS', 'HP_SACRIFICE']
+specialties: ["SUPPORT", "DPS", "HP_SACRIFICE"]
 isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An infected's work. Exhibited in the 1990s for 19 years. Completed in summer, on the 19th of August. Initially exhibited in Szeged, Csongrád-Csanád County, within the Republic of Hungary, and later moved to the St. Pavlov Foundation.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Blood Agate
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Blood Agate</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Beguiling Wiles \[Mineral] Field Investigation
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Beguiling Wiles \[Mineral] Field Investigation
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Woody - Pepper, Yew, Labdanum, Cedar, Leather
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Woody - Pepper, Yew, Labdanum, Cedar, Leather
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    65 3/4 x 19 5/16 x 10 1/4 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">65 3/4 x 19 5/16 x 10 1/4 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Signature Floppy
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Signature Floppy</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="It watches her six.">
@@ -68,11 +65,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="It watches her six. Not the most reliable ally, but better than having nothing at all,">
       1-target attack. Loses (Current HP x**10%**) HP and deals **550%** Reality DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Effective Means
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Effective Means</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Let the moon witness her transformation.">
@@ -86,73 +83,106 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="Let the moon witness her transformation, her hypocrisy, and the only hope that lies behind her madness.">
       1-target buff. Grants the :effect{code="FRESH_BLOOD"} status to an ally for 2 rounds, then grants DMG Dealt **+30%** to all allies and an additional DMG Dealt **+10%** to the ally in the :effect{code="FRESH_BLOOD"} status for 2 rounds.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### And So It Rises Again
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### And So It Rises Again</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="It was on this night that she turned. Tomorrow, and for the rest of her life, she will remain what she has become.">
-      Mass buff. All allies lose (Current HP **20%**) HP. Creates a special array :effect{code="BLOOD_DOMAIN"} for 3 rounds. Enters the :effect{code="FERAL_INSTINCT"} status for 3 rounds.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="BUFF"
+    note="It was on this night that she turned. Tomorrow, and for the rest of her life, she will remain what she has become."
+  >
+    Mass buff. All allies lose (Current HP **20%**) HP. Creates a special array
+    :effect{(code = "BLOOD_DOMAIN")} for 3 rounds. Enters the :effect
+    {(code = "FERAL_INSTINCT")} status for 3 rounds.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Blood Thirst
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Blood Thirst</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When entering battle, lose own (Current HP **20%**) HP and grant Moxie +3 to self.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When entering battle, lose own (Current HP **20%**) HP and grant Moxie +3 to
+  self.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Dealt **+8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Dealt **+8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    Right after casting an Ultimate, lose an additional own (Current HP x**10%**) HP and gain Moxie +1. When in the :effect{code="FERAL_INSTINCT"} status, for each HP loss effect suffered by any ally when an ally takes an action, this :effect{code="TRUTH_REVEALED"} deals an additional Reality DMG **+30%**, stacking up to 20 times.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  Right after casting an Ultimate, lose an additional own (Current HP x**10%**)
+  HP and gain Moxie +1. When in the :effect{(code = "FERAL_INSTINCT")} status,
+  for each HP loss effect suffered by any ally when an ally takes an action,
+  this :effect{(code = "TRUTH_REVEALED")} deals an additional Reality DMG
+  **+30%**, stacking up to 20 times.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *And So It Rises Again*: :effect{code="BLOOD_DOMAIN"}'s deployed effect is now: Whenever an ally attacks, for every **10%** of their Missing HP, gain an additional DMG Bonus **+7.5%** (up to **60%**).
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *And So It Rises Again*: :effect{(code = "BLOOD_DOMAIN")}'s deployed effect is
+  now: Whenever an ally attacks, for every **10%** of their Missing HP, gain an
+  additional DMG Bonus **+7.5%** (up to **60%**).
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Blood Thirst*: When in the :effect{code="FERAL_INSTINCT"} status, for each HP loss effect suffered by any ally when an ally takes an action, this :effect{code="TRUTH_REVEALED"} now deals an additional Reality DMG **+45%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Blood Thirst*: When in the :effect{(code = "FERAL_INSTINCT")} status, for
+  each HP loss effect suffered by any ally when an ally takes an action, this
+  :effect{(code = "TRUTH_REVEALED")} now deals an additional Reality DMG
+  **+45%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *And So It Rises Again*: When in the :effect{code="FERAL_INSTINCT"} status, :effect{code="TRUTH_REVEALED"}'s Reality DMG dealt to all enemies is increased to **120%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *And So It Rises Again*: When in the :effect{(code = "FERAL_INSTINCT")}{" "}
+  status, :effect{(code = "TRUTH_REVEALED")}'s Reality DMG dealt to all enemies
+  is increased to **120%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Signature Floppy*: Reality DMG is increased to **260/390/630%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Signature Floppy*: Reality DMG is increased to **260/390/630%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Blood Thirst*: When in the :effect{code="FERAL_INSTINCT"} status, for each HP loss effect suffered by any ally when an ally takes an action, this :effect{code="TRUTH_REVEALED"} now deals an additional Reality DMG **+60%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Blood Thirst*: When in the :effect{(code = "FERAL_INSTINCT")} status, for
+  each HP loss effect suffered by any ally when an ally takes an action, this
+  :effect{(code = "TRUTH_REVEALED")} now deals an additional Reality DMG
+  **+60%**.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

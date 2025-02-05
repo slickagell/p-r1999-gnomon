@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,33 +28,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Might be exhibited during the Middle Ages. Not much else is known about it. Exhibited in the Frankish Kingdom and the surrounding regions.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Unnamed Blood
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Unnamed Blood</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Knight's Spirit \[Spirit] Knight Art
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">Knight's Spirit \[Spirit] Knight Art</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Leather - Amber, Oakmoss, Premium Ointment
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Leather - Amber, Oakmoss, Premium Ointment
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    59 3/50x31 6/25x5 3/25in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">59 3/50x31 6/25x5 3/25in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Justice
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Justice</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="A thousand swings, just like before.">
@@ -68,11 +63,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="A thousand swings throughout the night that never ends, just like before.">
       1-target attack. Deals **450%** Reality DMG. If the target is defeated, Moxie +3 for self.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Glory
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Glory</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="Someone witnessed the sun.">
@@ -86,73 +81,94 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Someone witnessed the sun. Its light shone upon the soil and gave rise to the mighty mountains.">
       Mass attack. Deals **225%** Reality DMG to 2 enemies. Moxie +2 for self.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### After AD 778
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### After AD 778</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="Heroic souls returned to their homes as the ancient horn of war gave its call.">
-      Mass attack. Deals **400%** Reality DMG to all enemies. If any target is defeated, grants 1 stack of :effect{code="ROUSING_MORALE"} to all allies.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type=""
+    note="Heroic souls returned to their homes as the ancient horn of war gave its call."
+  >
+    Mass attack. Deals **400%** Reality DMG to all enemies. If any target is
+    defeated, grants 1 stack of :effect{(code = "ROUSING_MORALE")} to all
+    allies.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Mercy
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Mercy</Fragment>
 
-  <Fragment slot="insight-1-info">
-    For every **20%** Max HP lost on the target, DMG Dealt **+10%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  For every **20%** Max HP lost on the target, DMG Dealt **+10%**.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Taken **-8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="insight-3-info">
-    For every **20%** Max HP lost on the enemy, Penetration Rate **+10%**.
-  </Fragment>
+{" "}
+<Fragment slot="insight-3-info">
+  For every **20%** Max HP lost on the enemy, Penetration Rate **+10%**.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *After AD 778*: Reality DMG increased to **500%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *After AD 778*: Reality DMG increased to **500%**.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Justice*: At Incantation rank **1/2/3**, Reality DMG increased to **200/275/480%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Justice*: At Incantation rank **1/2/3**, Reality DMG increased to
+  **200/275/480%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *After AD 778*: Reality DMG increased to **550%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *After AD 778*: Reality DMG increased to **550%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Glory*: At Incantation rank **1/2/3**, Reality DMG increased to **165/170/250%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Glory*: At Incantation rank **1/2/3**, Reality DMG increased to
+  **165/170/250%**.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *After AD 778*: If this attack defeats an enemy, gains 1 additional stack of :effect{code="ROUSING_MORALE"}.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *After AD 778*: If this attack defeats an enemy, gains 1 additional stack of
+  :effect{(code = "ROUSING_MORALE")}.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={15}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

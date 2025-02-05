@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     A supernatural work exhibited in the mid-20th century for ??? years. Completed in summer, on July 10th. First exhibition location unknown. This exhibit had been displayed all over the world and was last found in New Mexico, USA before being controlled by the Foundation.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Light Beam
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Light Beam</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Kindness from a Distant Star \[Star] Inspection of the Blue Planet
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Kindness from a Distant Star \[Star] Inspection of the Blue Planet
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Chypre - Oakmoss, Grass, Leather, Industrial Glue, Brown Scotch Tape
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Chypre - Oakmoss, Grass, Leather, Industrial Glue, Brown Scotch Tape
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    8 21/32 x 6 19/64 x 6 19/64 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">8 21/32 x 6 19/64 x 6 19/64 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### The Spotted
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### The Spotted</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="This act might attract the authority's attention.">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="This act attracted the authority's attention, but it's beyond the jurisdiction of Distant Stars Act.">
       1-target attack. Deals **400%** Reality DMG. If the target's current HP is above **50%**, then deals **150%** more Reality DMG.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### No Ill Intent
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### No Ill Intent</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="COUNTER" note="It claims to harbor no ill intent.">
@@ -87,77 +84,106 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="COUNTER" note="It claims to harbor no ill intent, it just finds it hard to control itself.">
       Self counter. Enter :effect{code="TAUNT"} and DMG Taken **-60%** for 3 round.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Future Interstellar War: Prelude
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Future Interstellar War: Prelude</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Those hiding secrets tend to talk in their sleep or think that they're still in a dream.">
-      Mass attack. Deals **200%** Reality DMG and inflicts 1 round of :effect{code="DISARM"} and :effect{code="SILENCE"} statuses on all enemies.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo
+    type="DEBUFF"
+    note="Those hiding secrets tend to talk in their sleep or think that they're still in a dream."
+  >
+    Mass attack. Deals **200%** Reality DMG and inflicts 1 round of :effect
+    {(code = "DISARM")} and :effect{(code = "SILENCE")} statuses on all enemies.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Do Not Respond!
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Do Not Respond!</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{code="TAUNT"} status and gains a :effect{code="SHIELD"} with (aliEn T's Reality DEF x**300%**) HP for 2 rounds (only triggers 1 time).
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When the caster enters battle, enters :effect{(code = "TAUNT")} status and
+  gains a :effect{(code = "SHIELD")} with (aliEn T's Reality DEF x**300%**) HP
+  for 2 rounds (only triggers 1 time).
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Taken **-8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **230%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Future Interstellar War*: Prelude's effect changes to: deals **230%** Reality
+  DMG.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **40%**
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *The Spotted*'s effect changes to: additionally deals Reality DMG when the
+  target's HP is above **40%**
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **270%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Future Interstellar War*: Prelude's effect changes to: deals **270%** Reality
+  DMG.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **30%**
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *The Spotted*'s effect changes to: additionally deals Reality DMG when the
+  target's HP is above **30%**
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **300%** Reality DMG.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Future Interstellar War*: Prelude's effect changes to: deals **300%** Reality
+  DMG.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

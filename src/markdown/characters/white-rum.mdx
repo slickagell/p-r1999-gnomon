@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,33 +29,30 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     An Awakened's work. Exhibited in the mid-17th century for approximately 300 years. Completed in winter, on January 15th. Originally exhibited in the United Kingdom and Northern Ireland, and active in the Caribbean region. After a long hiatus, it later drifted to São Paulo, Brazil.
   </Fragment>
 
-  <Fragment slot="info-medium">
-    Bottle
-  </Fragment>
+{" "}
+<Fragment slot="info-medium">Bottle</Fragment>
 
-  <Fragment slot="info-afflatus">
-    Amind adrift, \[Intelligence], drifting in a bottle
-  </Fragment>
+{" "}
+<Fragment slot="info-afflatus">
+  Amind adrift, \[Intelligence], drifting in a bottle
+</Fragment>
 
-  <Fragment slot="info-fragrance-note">
-    Fougère aquatic, seawater, water lily, rum, patchouli
-  </Fragment>
+{" "}
+<Fragment slot="info-fragrance-note">
+  Fougère aquatic, seawater, water lily, rum, patchouli
+</Fragment>
 
-  <Fragment slot="info-dimensions">
-    27 3/11x 14 9/25 x5 7/10 in.
-  </Fragment>
+{" "}
+<Fragment slot="info-dimensions">27 3/11x 14 9/25 x5 7/10 in.</Fragment>
 
-  <Fragment slot="toc">
-    ::toc
-  </Fragment>
+{" "}
+<Fragment slot="toc">::toc</Fragment>
 
-  <Fragment slot="arcane-skills-section-title">
-    ## Arcane Skills
-  </Fragment>
+{" "}
+<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
 
-  <Fragment slot="skill-1-title">
-    ### Port Side Barrage
-  </Fragment>
+{" "}
+<Fragment slot="skill-1-title">### Port Side Barrage</Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Take aim—and fire!">
@@ -69,11 +66,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Take aim—and fire! Make sure to cover your ears! Too late, oops!">
       Deals **200%** Reality DMG to all enemies, the shifts self 1 position backward.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="skill-2-title">
-    ### Prepare to Board!
-  </Fragment>
+{" "}
+<Fragment slot="skill-2-title">### Prepare to Board!</Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="Ahoy!">
@@ -87,77 +84,106 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="CHANNEL" note="Ahoy! Board that ship and raise our flag!">
       Self channel. Enters :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
     </CardInfo>
+
   </Fragment>
 
-  <Fragment slot="ultimate-title">
-    ### Boundless Sea, Limitless Sky
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-title">### Boundless Sea, Limitless Sky</Fragment>
 
-  <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The spirit of exploration lives on!">
-      Mass attack. Can only be cast in the :effect{code="BOARDING_ASSAULT"} status. Shifts to the front-most position, deals **200%** Reality DMG to all enemies and inflicts :effect{code="DAZE"} on the targets for 1 round; for every position shifted, this attack gains DMG Dealt **+15%**; If at least 3 positions were shifted, this attack ignores **50%** Daze Resistance.
-    </CardInfo>
-  </Fragment>
+{" "}
+<Fragment slot="ultimate-card-info">
+  <CardInfo type="ATTACK" note="The spirit of exploration lives on!">
+    Mass attack. Can only be cast in the :effect{(code = "BOARDING_ASSAULT")}{" "}
+    status. Shifts to the front-most position, deals **200%** Reality DMG to all
+    enemies and inflicts :effect{(code = "DAZE")} on the targets for 1 round;
+    for every position shifted, this attack gains DMG Dealt **+15%**; If at
+    least 3 positions were shifted, this attack ignores **50%** Daze Resistance.
+  </CardInfo>
+</Fragment>
 
-  <Fragment slot="inheritance-section-title">
-    ## Inheritance
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
 
-  <Fragment slot="inheritance-title">
-    ### Privateering License
-  </Fragment>
+{" "}
+<Fragment slot="inheritance-title">### Privateering License</Fragment>
 
-  <Fragment slot="insight-1-info">
-    When receiving a shift effect, for every position shifted backward, gain 1 stack of :effect{code="ROUSING_MORALE"}, for every position shifted forward, gain 1 stack of :effect{code="STURDINESS"}.
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-info">
+  When receiving a shift effect, for every position shifted backward, gain 1
+  stack of :effect{(code = "ROUSING_MORALE")}, for every position shifted
+  forward, gain 1 stack of :effect{(code = "STURDINESS")}.
+</Fragment>
 
-  <Fragment slot="insight-2-info">
-    DMG Taken **-8%** when the caster enters battle.
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-info">
+  DMG Taken **-8%** when the caster enters battle.
+</Fragment>
 
-  <Fragment slot="portray-section-title">
-    ## Portray
-  </Fragment>
+{" "}
+<Fragment slot="portray-section-title">## Portray</Fragment>
 
-  <Fragment slot="portray-1-info">
-    *Privateering License*: Gain **2** stacks of :effect{code="ROUSING_MORALE"} for each position shifted backward, and gain **2** stacks of :effect{code="STURDINESS"} for each position shifted forward.
-  </Fragment>
+{" "}
+<Fragment slot="portray-1-info">
+  *Privateering License*: Gain **2** stacks of :effect
+  {(code = "ROUSING_MORALE")} for each position shifted backward, and gain **2**
+  stacks of :effect{(code = "STURDINESS")} for each position shifted forward.
+</Fragment>
 
-  <Fragment slot="portray-2-info">
-    *Boundless Sea, Limitless Sky*: For every position shifted, the DMG Dealt is increased to **+25%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-2-info">
+  *Boundless Sea, Limitless Sky*: For every position shifted, the DMG Dealt is
+  increased to **+25%**.
+</Fragment>
 
-  <Fragment slot="portray-3-info">
-    *Boundless Sea, Limitless Sky*: Reality DMG is increased to **300%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-3-info">
+  *Boundless Sea, Limitless Sky*: Reality DMG is increased to **300%**.
+</Fragment>
 
-  <Fragment slot="portray-4-info">
-    *Boundless Sea, Limitless Sky*: If at least 3 positions were shifted, this attack now ignores **100%** Daze resistance.
-  </Fragment>
+{" "}
+<Fragment slot="portray-4-info">
+  *Boundless Sea, Limitless Sky*: If at least 3 positions were shifted, this
+  attack now ignores **100%** Daze resistance.
+</Fragment>
 
-  <Fragment slot="portray-5-info">
-    *Port Side Barrage*: At incantation rank **1/2/3**, the Reality DMG is increased to **100/150/250%**.
-  </Fragment>
+{" "}
+<Fragment slot="portray-5-info">
+  *Port Side Barrage*: At incantation rank **1/2/3**, the Reality DMG is
+  increased to **100/150/250%**.
+</Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
+{" "}
+<Fragment slot="resonance-section-title">## Resonance</Fragment>
 
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
+{" "}
+<Fragment slot="resonance-board">
+  <ResonanceBoard
+    maxResonanceLevel={10}
+    resonancePieces={PIECES_LIST}
+    recommendedResonanceList={RESONANCE.recommended}
+    recommendedResonancePattern={RESONANCE.patternRecommended}
+    baseStats={CHARACTER.baseStats}
+    resonanceMainPiece={RESONANCE.mainPiece}
+    resonancePatternPieces={RESONANCE.patternPieces}
+  />
+</Fragment>
 
-  <Fragment slot="insight-materials-section-title">
-    ## Insight Materials
-  </Fragment>
+{" "}
+<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-1-materials">
+  {CHARACTER.insightMaterials["1"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
+{" "}
+<Fragment slot="insight-2-materials">
+  {CHARACTER.insightMaterials["2"].map((material) => (
+    <Material code={material.code} require={material.require} />
+  ))}
+</Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
