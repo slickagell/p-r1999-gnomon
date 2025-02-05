@@ -2,6 +2,7 @@
 import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
 import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
 import InsightImg from "@components/InsightImg.astro";
+import Material from "@components/Material.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 
 type Props = {
@@ -13,16 +14,38 @@ type Props = {
   version: string;
   specialties: string[];
   isLimited: string;
+  insightMaterials?: {
+    [insightLevel: string]: {
+      code: string;
+      require: number;
+    }[];
+  };
+  resonanceMaterials?: {
+    [resonanceLevel: string]: {
+      code: string;
+      require: number;
+    }[];
+  };
 };
 
-const { id, star, afflatus, dmgType, race, version, specialties, isLimited } =
-  Astro.props;
+const {
+  id,
+  star,
+  afflatus,
+  dmgType,
+  race,
+  version,
+  specialties,
+  isLimited,
+  insightMaterials,
+  resonanceMaterials,
+} = Astro.props;
 
 const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
 
 const hasInsight3Info = Astro.slots.has("insight-3-info");
-const hasInsight3Materials = Astro.slots.has("insight-3-materials");
+const hasInsight3Materials = insightMaterials?.["3"];
 ---
 
 <div class="my-8">
@@ -279,109 +302,183 @@ const hasInsight3Materials = Astro.slots.has("insight-3-materials");
 <slot name="resonance-board" />
 
 {/* Insight Materials */}
-<div x-data="{isShowTotal: false}">
-  <slot name="insight-materials-section-title" />
+{
+  insightMaterials && (
+    <div x-data="{isShowTotal: false}">
+      <slot name="insight-materials-section-title" />
 
-  <div class="flex items-center justify-end">
-    <label class="cursor-pointer label gap-2">
-      <span class="label-text">Total</span>
-      <input
-        type="checkbox"
-        class="toggle toggle-primary"
-        x-model="isShowTotal"
-      />
-    </label>
-  </div>
-
-  <template x-if="!isShowTotal">
-    <div class="flex flex-col md:flex-row flex-wrap justify-center">
-      <div
-        class:list={[
-          "md:basis-1/2  md:px-2",
-          { "lg:basis-1/3": hasInsight3Materials },
-        ]}
-      >
-        <div class="flex items-center">
-          <InsightImg classNames="w-6 mr-2" insight="1" />
-
-          <h5 id="insight-1">Insight 1</h5>
-        </div>
-
-        <slot name="insight-1-materials" />
+      <div class="flex items-center justify-end">
+        <label class="cursor-pointer label gap-2">
+          <span class="label-text">Total</span>
+          <input
+            type="checkbox"
+            class="toggle toggle-primary"
+            x-model="isShowTotal"
+          />
+        </label>
       </div>
 
-      <div
-        class:list={[
-          "md:basis-1/2  md:px-2",
-          { "lg:basis-1/3": hasInsight3Materials },
-        ]}
-      >
-        <div class="flex items-center">
-          <InsightImg classNames="w-6 mr-2" insight="2" />
-
-          <h5 id="insight-2">Insight 2</h5>
-        </div>
-        <slot name="insight-2-materials" />
-      </div>
-
-      {
-        hasInsight3Materials && (
-          <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+      <template x-if="!isShowTotal">
+        <div class="flex flex-col md:flex-row flex-wrap justify-center">
+          <div
+            class:list={[
+              "md:basis-1/2  md:px-2",
+              { "lg:basis-1/3": hasInsight3Materials },
+            ]}
+          >
             <div class="flex items-center">
-              <InsightImg classNames="w-6 mr-2" insight="3" />
+              <InsightImg classNames="w-6 mr-2" insight="1" />
 
-              <h5 id="insight-3">Insight 3</h5>
+              <h5 id="insight-1">Insight 1</h5>
             </div>
 
-            <slot name="insight-3-materials" />
+            {insightMaterials["1"].map((material) => (
+              <Material code={material.code} require={material.require} />
+            ))}
           </div>
-        )
-      }
-    </div>
-  </template>
 
-  <template x-if="isShowTotal">
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-      x-data="sortMaterials"
-    >
-      <slot name="insight-total-materials" />
+          <div
+            class:list={[
+              "md:basis-1/2  md:px-2",
+              { "lg:basis-1/3": hasInsight3Materials },
+            ]}
+          >
+            <div class="flex items-center">
+              <InsightImg classNames="w-6 mr-2" insight="2" />
+
+              <h5 id="insight-2">Insight 2</h5>
+            </div>
+            {insightMaterials["2"].map((material) => (
+              <Material code={material.code} require={material.require} />
+            ))}
+          </div>
+
+          {hasInsight3Materials && (
+            <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+              <div class="flex items-center">
+                <InsightImg classNames="w-6 mr-2" insight="3" />
+
+                <h5 id="insight-3">Insight 3</h5>
+              </div>
+
+              {insightMaterials["3"].map((material) => (
+                <Material code={material.code} require={material.require} />
+              ))}
+            </div>
+          )}
+        </div>
+      </template>
+
+      <template x-if="isShowTotal">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+          x-data="sortMaterials"
+        >
+          {insightMaterials &&
+            Object.values(
+              JSON.parse(JSON.stringify(insightMaterials)) as {
+                [insightLevel: string]: {
+                  code: string;
+                  require: number;
+                }[];
+              }
+            )
+              .reduce((accumulator, currentValue) => {
+                currentValue.forEach((material) => {
+                  if (accumulator.some((m) => m.code === material.code)) {
+                    const index = accumulator.findIndex(
+                      (m) => m.code === material.code
+                    );
+                    accumulator[index].require += material.require;
+                  } else {
+                    accumulator.push(material);
+                  }
+                });
+                return accumulator;
+              }, [])
+              .map((material) => (
+                <Material
+                  code={material.code}
+                  require={material.require}
+                  withMetadata
+                />
+              ))}
+        </div>
+      </template>
     </div>
-  </template>
-</div>
+  )
+}
 
 {/* Resonance Materials */}
-<div x-data="{isShowTotal: false}">
-  <slot name="resonance-materials-section-title" />
+{
+  resonanceMaterials && (
+    <div x-data="{isShowTotal: false}">
+      <slot name="resonance-materials-section-title" />
 
-  <div class="flex items-center justify-end">
-    <label class="cursor-pointer label gap-2">
-      <span class="label-text">Total</span>
-      <input
-        type="checkbox"
-        class="toggle toggle-primary"
-        x-model="isShowTotal"
-      />
-    </label>
-  </div>
+      <div class="flex items-center justify-end">
+        <label class="cursor-pointer label gap-2">
+          <span class="label-text">Total</span>
+          <input
+            type="checkbox"
+            class="toggle toggle-primary"
+            x-model="isShowTotal"
+          />
+        </label>
+      </div>
 
-  <template x-if="!isShowTotal">
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-5"
-    >
-      <slot name="resonance-materials" />
+      <template x-if="!isShowTotal">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-5">
+          {Object.entries(resonanceMaterials).map(
+            ([resonanceLevel, materials]) => (
+              <div>
+                <h5>Lv. {resonanceLevel}</h5>
+                {materials.map((material) => (
+                  <Material code={material.code} require={material.require} />
+                ))}
+              </div>
+            )
+          )}
+        </div>
+      </template>
+
+      <template x-if="isShowTotal">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+          x-data="sortMaterials"
+        >
+          {Object.values(
+            JSON.parse(JSON.stringify(resonanceMaterials)) as {
+              [resonanceLevel: string]: {
+                code: string;
+                require: number;
+              }[];
+            }
+          )
+            .reduce((accumulator, currentValue) => {
+              currentValue.forEach((material) => {
+                if (accumulator.some((m) => m.code === material.code)) {
+                  const index = accumulator.findIndex(
+                    (m) => m.code === material.code
+                  );
+                  accumulator[index].require += material.require;
+                } else {
+                  accumulator.push(material);
+                }
+              });
+              return accumulator;
+            }, [])
+            .map((material) => (
+              <Material
+                code={material.code}
+                require={material.require}
+                withMetadata
+              />
+            ))}
+        </div>
+      </template>
     </div>
-  </template>
-
-  <template x-if="isShowTotal">
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-      x-data="sortMaterials"
-    >
-      <slot name="resonance-total-materials" />
-    </div>
-  </template>
-</div>
+  )
+}
 
 <script>
   import Alpine from "alpinejs";
