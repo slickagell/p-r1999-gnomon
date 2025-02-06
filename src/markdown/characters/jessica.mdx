@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     A spirits artwork completed on April 11, was first exhibited in the 1990s and has been on display for 27 years. Originally exhibited in the Republic of Ireland, it was later moved to the state of Florida in the southeastern part of the United States of America.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Mushroom blanket</Fragment>
+  <Fragment slot="info-medium">
+    Mushroom blanket
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Lakebed Branch (Plant) - Green Lake Fairy
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Lakebed Branch (Plant) - Green Lake Fairy
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Chypre, Narcissus, Moss, Aldehydes, Soil, Musk
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Chypre, Narcissus, Moss, Aldehydes, Soil, Musk
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">68 7/64 in x 27 9/16 in x 23 5/8 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    68 7/64 in x 27 9/16 in x 23 5/8 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### White Blankie</Fragment>
+  <Fragment slot="skill-1-title">
+    ### White Blankie
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Delicate and fragrant.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Delicate and fragrant, it covers the captive completely.">
       1-target attack. Deals **450%** Reality DMG. If the target is afflicted with :effect{code="POISON"}, deals an additional **100%** Reality DMG. For each additional stack of :effect{code="POISON"} afterwards, deals **50%** more Reality DMG, up to a max of Reality DMG **+100%**.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Good Friends</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Good Friends
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="She plays along with them.">
@@ -83,98 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="She plays along with them. The other lead has been gone for such a long time.">
       Mass attack. Deals **335%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **75%** more Reality DMG.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Gaze From the Forest</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Gaze From the Forest
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo type="ATTACK" note="I've missed you so much.">
-    Mass attack. Deals **350%** to all enemies. Inflicts :effect
-    {(code = "POISON")} on all enemies for 2 rounds: at the end of the round,
-    deals (Jessica's ATK x**30%**) Genesis DMG.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="I've missed you so much.">
+      Mass attack. Deals **350%** to all enemies. Inflicts :effect{code="POISON"} on all enemies for 2 rounds: at the end of the round, deals (Jessica's ATK x**30%**) Genesis DMG.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Changeling</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Changeling
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When attacking an enemy afflicted with :effect{(code = "POISON")}, damage
-  dealt increases by **20%**. At the start of the battle and once every 3 rounds
-  (rounds 1, 3, 6, 9... after the battle begins), inflicts :effect
-  {(code = "POISON")} on all enemies for 2 rounds, inflicting Genesis DMG equal
-  to **30%** of the caster's ATK at the end of each round.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When attacking an enemy afflicted with :effect{code="POISON"}, damage dealt increases by **20%**. At the start of the battle and once every 3 rounds (rounds 1, 3, 6, 9... after the battle begins), inflicts :effect{code="POISON"} on all enemies for 2 rounds, inflicting Genesis DMG equal to **30%** of the caster's ATK at the end of each round.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  DMG Dealt **+8%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  After attacking enemies not afflicted with :effect{(code = "POISON")},
-  inflicts :effect{(code = "POISON")} for 2 rounds, inflicting Genesis DMG equal
-  to **30%** of Jessica's ATK at the end of each round.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    After attacking enemies not afflicted with :effect{code="POISON"}, inflicts :effect{code="POISON"} for 2 rounds, inflicting Genesis DMG equal to **30%** of Jessica's ATK at the end of each round.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Gaze From the Forest*: Reality DMG increased to **425%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Gaze From the Forest*: Reality DMG increased to **425%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Changeling*: When entering battle and at the start of every 3rd round,
-  :effect{(code = "POISON")} inflicted on enemies +1 round.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Changeling*: When entering battle and at the start of every 3rd round, :effect{code="POISON"} inflicted on enemies +1 round.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *White Blankie*: At Incantation rank **1/2/3**, Reality DMG increased to
-  **200/300/500%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *White Blankie*: At Incantation rank **1/2/3**, Reality DMG increased to **200/300/500%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Good Friends*: At Incantation Rank **1/2/3**, if the target is afflicted with
-  *\[Stats Down]*, *\[Neg Stats]*, or *\[Control]*, Reality DMG increased to
-  **50/75/125%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Good Friends*: At Incantation Rank **1/2/3**, if the target is afflicted with *\[Stats Down]*, *\[Neg Stats]*, or *\[Control]*, Reality DMG increased to **50/75/125%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Gaze From the Forest*: Reality DMG increased to **500%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Gaze From the Forest*: Reality DMG increased to **500%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

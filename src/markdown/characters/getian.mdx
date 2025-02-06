@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     An arcanist's work first exhibited around the year 220 in the Gregorian calendar. Completed in the summer of an unknown year. Originally exhibited in the East, now preserved in the St. Pavlov Foundation.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">A Journey Between Sky and Earth</Fragment>
+  <Fragment slot="info-medium">
+    A Journey Between Sky and Earth
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  A Lone Song in Mountains \[Beast] Dance for Amusement
-</Fragment>
+  <Fragment slot="info-afflatus">
+    A Lone Song in Mountains \[Beast] Dance for Amusement
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Oriental Woods, Oud Wood, Rosemary, Mahogany
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Oriental Woods, Oud Wood, Rosemary, Mahogany
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">78 47/64 x 33 5/64 x 19 11/16 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    78 47/64 x 33 5/64 x 19 11/16 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Old Bones</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Old Bones
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="This is the result of natural ability.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="This is the result of natural ability. Ask not the cause, ask not the origin.">
       1-target attack. Deals **300%** Reality DMG. Inflicts :effect{code="SHAPE_OF_BONES"} on the target for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Unique Bearing</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Unique Bearing
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="For centuries, this was the way of things.">
@@ -83,103 +86,75 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="CHANNEL" note="For centuries, this was the way of things. The lone scholar tree stood tall, with few to keep it company.">
       Self channel. Enters :effect{code="BONE_READING"} status. Eureka +5.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### I Shall Walk, Exist, and Know</Fragment>
+  <Fragment slot="ultimate-title">
+    ### I Shall Walk, Exist, and Know
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="DEBUFF"
-    note="A never-ending river that will inevitably consume all."
-  >
-    Mass debuff. Creates special array :effect{(code = "A_PROPHECY_TOLD")} for 3
-    rounds. Gains Eureka +3. Inflicts :effect{(code = "SHAPE_OF_BONES")} on all
-    enemies for 3 rounds.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="DEBUFF" note="A never-ending river that will inevitably consume all.">
+      Mass debuff. Creates special array :effect{code="A_PROPHECY_TOLD"} for 3 rounds. Gains Eureka +3. Inflicts :effect{code="SHAPE_OF_BONES"} on all enemies for 3 rounds.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Bone Interpretor</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Bone Interpretor
+  </Fragment>
 
   <Fragment slot="insight-1-info">
     When entering battle with 3+ Reality DMG allies, grant Moxie +3 to self (triggers only 1 time).
 
     When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"} gains Critical Rate **+20%** and Critical DMG **+20%**.
-
   </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  ATK **+5%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    ATK **+5%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  At the start of the round, inflicts :effect{(code = "SHAPE_OF_BONES")} on a
-  random enemy for 2 rounds. At the end of the round, if in :effect
-  {(code = "A_PROPHECY_TOLD")}, gain Eureka +1.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    At the start of the round, inflicts :effect{code="SHAPE_OF_BONES"} on a random enemy for 2 rounds. At the end of the round, if in :effect{code="A_PROPHECY_TOLD"}, gain Eureka +1.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *I Shall Walk, Exist, and Know*: +1 round duration to :effect
-  {(code = "A_PROPHECY_TOLD")}.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *I Shall Walk, Exist, and Know*: +1 round duration to :effect{code="A_PROPHECY_TOLD"}.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Bone Interpretor*: Now triggers with 2+ Reality DMG allies, and Moxie gained
-  is increased to +4. When in :effect{(code = "A_PROPHECY_TOLD")}, :effect
-  {(code = "ADMONITION")}'s Critical Rate and Critical DMG increase are now
-  **+30%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Bone Interpretor*: Now triggers with 2+ Reality DMG allies, and Moxie gained is increased to +4. When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"}'s Critical Rate and Critical DMG increase are now **+30%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Unique Bearing*: :effect{(code = "ADMONITION")}'s Reality DMG dealt is
-  increased to **150%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Unique Bearing*: :effect{code="ADMONITION"}'s Reality DMG dealt is increased to **150%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Old Bones*: At rank 1 incantation, Reality DMG dealt is increased to
-  **160%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Old Bones*: At rank 1 incantation, Reality DMG dealt is increased to **160%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Bone Interpretor*: When in :effect{(code = "A_PROPHECY_TOLD")}, :effect
-  {(code = "ADMONITION")}'s Critical Rate and Critical DMG increase are now
-  **+50%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Bone Interpretor*: When in :effect{code="A_PROPHECY_TOLD"}, :effect{code="ADMONITION"}'s Critical Rate and Critical DMG increase are now **+50%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

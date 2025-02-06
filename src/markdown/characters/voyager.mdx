@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     A supernatural work exhibited in the middle of the 20th century. Completed in autumn, on November 12th. First place of exhibition unknown. This exhibit had been displayed all over the world and was last found in the Union of Soviet Socialist Republics before being controlled by the Foundation.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Entrophy</Fragment>
+  <Fragment slot="info-medium">
+    Entrophy
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Interstellar Traveler \[Star] Instrumental Performance
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Interstellar Traveler \[Star] Instrumental Performance
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Floral - Lavender, Violet, Lily of the Valley, Amber
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Floral - Lavender, Violet, Lily of the Valley, Amber
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">64 11/64 x 34 7/8 x22 53/64 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    64 11/64 x 34 7/8 x22 53/64 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Starlight Sonata</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Starlight Sonata
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="A traveler roaming the universe.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="A traveler roaming the universe in search of harmony that entwines the start with its rhythms.">
       Mass attack. Deals **200%** Mental DMG to 2 enemies and inflicts 2 stacks of :effect{code="CONFUSION"} for 1 round.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Concerto in D-fense</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Concerto in D-fense
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="COUNTER" note="A sonata played for the others.">
@@ -83,98 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="COUNTER" note="A sonata played for the audience. No need to distinguish one another, as everyone is immersed in it.">
       Mass counter. Gives all allies 1 stack of \[Interstellar Blessing] and \[Sturdiness] statuses. The caster gains 2 additional stacks of \[Interstellar Blessing].
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Galaxy on the Strings</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Galaxy on the Strings
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="Brilliance served as her notes, while darkness acted as the lute by which she played the music of the Universe."
-  >
-    1-target attack. Deals **500%** Mental DMG and inflicts Moxie -2 on the
-    target. If the target is in :effect{(code = "CONFUSION")} status, this
-    attack deals **100%** more Mental DMG.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="Brilliance served as her notes, while darkness acted as the lute by which she played the music of the Universe.">
+      1-target attack. Deals **500%** Mental DMG and inflicts Moxie -2 on the target. If the target is in :effect{code="CONFUSION"} status, this attack deals **100%** more Mental DMG.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Refrain</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Refrain
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  After performing 3 actions, enters :effect{(code = "REFRAIN")}.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    After performing 3 actions, enters :effect{code="REFRAIN"}.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  DMG Dealt **+8%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  Enhanced :effect{(code = "REFRAIN")}. effect: If there are enemies after the
-  caster takes action, also inflicts 1 round of :effect{(code = "SEAL")} on all
-  enemies.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    Enhanced :effect{code="REFRAIN"}. effect: If there are enemies after the caster takes action, also inflicts 1 round of :effect{code="SEAL"} on all enemies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Galactic on Strings*: If the target is in :effect{(code = "CONFUSION")}{" "}
-  status, additional Mental DMG increased to **+175%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Galactic on Strings*: If the target is in :effect{code="CONFUSION"} status, additional Mental DMG increased to **+175%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Starlight Sonata*: At Incantation rank **1/2/3**, Mental DMG increased to
-  **165/170/250%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Starlight Sonata*: At Incantation rank **1/2/3**, Mental DMG increased to **165/170/250%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Galactic on Strings*: If the target is in :effect{(code = "CONFUSION")}{" "}
-  status, additional Mental DMG increased to **+250%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Galactic on Strings*: If the target is in :effect{code="CONFUSION"} status, additional Mental DMG increased to **+250%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Galactic on Strings*: If the target is in :effect{(code = "CONFUSION")}{" "}
-  status, additional Mental DMG increased to **+325%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Galactic on Strings*: If the target is in :effect{code="CONFUSION"} status, additional Mental DMG increased to **+325%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Galactic on Strings*: If the target is in :effect{(code = "CONFUSION")}{" "}
-  status, additional Mental DMG increased to **+400%** Mental DMG.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Galactic on Strings*: If the target is in :effect{code="CONFUSION"} status, additional Mental DMG increased to **+400%** Mental DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

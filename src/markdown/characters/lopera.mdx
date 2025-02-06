@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,30 +29,33 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     An arcanist's work. Exhibited in the 1990s for 15 years. Completed in spring, on May 6. Originating in the Republic of Colombia, it later became known across Latin America.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Determination</Fragment>
+  <Fragment slot="info-medium">
+    Determination
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  The Innocence of a Cunning. Beast \[Beast] Plainclothes Agent
-</Fragment>
+  <Fragment slot="info-afflatus">
+    The Innocence of a Cunning. Beast \[Beast] Plainclothes Agent
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Citrus, Bitter Orange Leaf, Blood Orange, Geranium, Tonka Bean
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Citrus, Bitter Orange Leaf, Blood Orange, Geranium, Tonka Bean
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">62 2/3x 26 9/20 x 13 4/5 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    62 2/3x 26 9/20 x 13 4/5 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Double Backups</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Double Backups
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="She hedges her bets.">
@@ -66,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="She hedges her bets, never puts all her eggs in one basket. You'd be a fool to wager against her!">
       1-target attack, Deals **500%** Reality DMG to the target; Lopera converts her own :effect{code="FLAMING_BULLET"} into :effect{code="INCANTATION_BULLET"}/:effect{code="RITUAL_BULLET"} and distributes them to allies in front/behind, respectively; each ally can gain 1 bullet at most this way.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Winning Chips</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Winning Chips
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="A curious creation from her crucible.">
@@ -84,99 +87,73 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="CHANNEL" note="A curious creation from her crucible—scorching hot and ready to blast!">
       Self channel. Grants 12 stacks of :effect{code="FLAMING_BULLET"} to self and enters the :effect{code="READY_TO_SHOOT"} status.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### More Than Alchemy</Fragment>
+  <Fragment slot="ultimate-title">
+    ### More Than Alchemy
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="BUFF"
-    note="A perfect balance of chance and quick thinking, Both are essential."
-  >
-    Self buff. Creates array :effect{(code = "CRUCIBLE_ARSENAL")} for 3 rounds.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note="A perfect balance of chance and quick thinking, Both are essential.">
+      Self buff. Creates array :effect{code="CRUCIBLE_ARSENAL"} for 3 rounds.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Diverse Expertise</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Diverse Expertise
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When an attack triggers a Bullet effect, gain Moxie +1 and recover (Missing HP
-  x**50%**) HP to the ally with the lowest HP percentage.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When an attack triggers a Bullet effect, gain Moxie +1 and recover (Missing HP x**50%**) HP to the ally with the lowest HP percentage.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  When entering battle, Critical DMG **+15%**.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    When entering battle, Critical DMG **+15%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  When entering battle, gain Moxie +1. For every other Beast, Spirit, or
-  Intelligence ally present, gain Moxie +1, up to Moxie +2.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    When entering battle, gain Moxie +1. For every other Beast, Spirit, or Intelligence ally present, gain Moxie +1, up to Moxie +2.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *More Than Alchemy*: :effect{(code = "CRUCIBLE_ARSENAL")}'s Critical Rate is
-  increased to **50%**; when converting excess Critical Rate into Critical DMG,
-  the base conversion rate is increased to **65%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *More Than Alchemy*: :effect{code="CRUCIBLE_ARSENAL"}'s Critical Rate is increased to **50%**; when converting excess Critical Rate into Critical DMG, the base conversion rate is increased to **65%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Winning Chips*: The number of :effect{(code = "FLAMING_BULLET")} granted is
-  increased to **6/10/15**. :effect{(code = "RIGHT_ON_TARGET")}'s Critical DMG
-  multiplier is increased to **15%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Winning Chips*: The number of :effect{code="FLAMING_BULLET"} granted is increased to **6/10/15**. :effect{code="RIGHT_ON_TARGET"}'s Critical DMG multiplier is increased to **15%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *More Than Alchemy*: :effect{(code = "CRUCIBLE_ARSENAL")}'s duration is
-  increased to **4** rounds.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *More Than Alchemy*: :effect{code="CRUCIBLE_ARSENAL"}'s duration is increased to **4** rounds.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Winning Chips*: :effect{(code = "BULL_EYE")}'s Reality DMG is increased to
-  **250%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Winning Chips*: :effect{code="BULL_EYE"}'s Reality DMG is increased to **250%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Double Backups*: Reality DMG is increased to **230/345/575%**, and :effect
-  {(code = "INCANTATION_BULLET")}'s and :effect{(code = "RITUAL_BULLET")}'s
-  Incantation Might/Ultimate Might are increased to **35/35%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Double Backups*: Reality DMG is increased to **230/345/575%**, and :effect{code="INCANTATION_BULLET"}'s and :effect{code="RITUAL_BULLET"}'s Incantation Might/Ultimate Might are increased to **35/35%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

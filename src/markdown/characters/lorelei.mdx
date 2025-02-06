@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,28 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     An arcanist's work. Exhibited in the early 20th century for 16 years. Completed in spring, on the 16th of April. Initially exhibited on the southeastern Mediterranean coast of the French Third Republic, then transferred to the Kingdom of Saxony in the German Empire several years later.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Drifting</Fragment>
+  <Fragment slot="info-medium">
+    Drifting
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">Stagnant Starlight \[Star], Anchorage</Fragment>
+  <Fragment slot="info-afflatus">
+    Stagnant Starlight \[Star], Anchorage
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  White Flower, Bitter Orange, Honeysuckle, Agarwood, Leather
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    White Flower, Bitter Orange, Honeysuckle, Agarwood, Leather
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">63 25/32 x 28 2/5 x 20 4/5 inches.</Fragment>
+  <Fragment slot="info-dimensions">
+    63 25/32 x 28 2/5 x 20 4/5 inches.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### On the Shore</Fragment>
+  <Fragment slot="skill-1-title">
+    ### On the Shore
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Who is singing?">
@@ -63,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Who is singing? Who is watching me? Shh...">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="WEAKNESS"} on the targets hit.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### The Call of the Sea</Fragment>
+  <Fragment slot="skill-2-title">
+    ### The Call of the Sea
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Beep, bop, gurgle.">
@@ -81,11 +86,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="Beep, bop, gurgle, greetings from the river, plop, plop.">
       Mass buff. Grants Critical DMG **+45%** and DMG Taken Reduction **+25%** to all allies for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### A Drifting Song</Fragment>
+  <Fragment slot="ultimate-title">
+    ### A Drifting Song
+  </Fragment>
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="Oh, the ears. They break free. They hold the foam.">
@@ -97,14 +102,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
       Each debuff incantation grants Penetration Rate **30%**.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Melody of Hearts</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Melody of Hearts
+  </Fragment>
 
   <Fragment slot="insight-1-info">
     At the start of the round, triggers one effect for 1 round based on the most common type of incantation in the Spelldock:
@@ -114,69 +120,51 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     Buff incantation: all allies gain Critical Rate **+20%**
 
     Debuff incantation: all enemies suffer DMG Dealt **-15%**
-
   </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  Critical Rate **+10%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    Critical Rate **+10%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  Right after casting an Ultimate, gain Moxie +1 if the attack scored a critical
-  hit.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    Right after casting an Ultimate, gain Moxie +1 if the attack scored a critical hit.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *A Drifting Song*: The additional Mental DMG dealt from each attack-type
-  incantation is increased to **40%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *A Drifting Song*: The additional Mental DMG dealt from each attack-type incantation is increased to **40%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *A Drifting Song*: The Critical Rate gained from each buff-type incantation is
-  increased to **20%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *A Drifting Song*: The Critical Rate gained from each buff-type incantation is increased to **20%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Melody of Hearts*: The damage increase effect is increased to **20%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Melody of Hearts*: The damage increase effect is increased to **20%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *A Drifting Song*: The Penetration Rate gained from each debuff-type
-  incantation is increased to **30%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *A Drifting Song*: The Penetration Rate gained from each debuff-type incantation is increased to **30%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Melody of Hearts*: The Critical Rate increase effect is increased to **20%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Melody of Hearts*: The Critical Rate increase effect is increased to **20%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

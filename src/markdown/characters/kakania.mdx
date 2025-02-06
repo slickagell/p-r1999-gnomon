@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,28 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     An arcanist's work. Exhibited at the dawn of the 20th century and showcased for 19 years. Completed in winter, on the 7th of December. Initially exhibited in Vienna, Cisleithania, within the Austro-Hungarian Empire, and later acquired by the St. Pavlov Foundation to be refurbished and extensively exhibited around the world.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Lens</Fragment>
+  <Fragment slot="info-medium">
+    Lens
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">Spirit Perch \[Plant], Psychoanalysis</Fragment>
+  <Fragment slot="info-afflatus">
+    Spirit Perch \[Plant], Psychoanalysis
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Woody, Vetiver, Nutmeg, Eucalyptus, Mint
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Woody, Vetiver, Nutmeg, Eucalyptus, Mint
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">64 61/64 x 15 2/5 x 24 4/5 inches.</Fragment>
+  <Fragment slot="info-dimensions">
+    64 61/64 x 15 2/5 x 24 4/5 inches.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Subconscious</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Subconscious
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Please look into my eyes.">
@@ -63,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Please look into my eyes and show yourself, yes, your true “self.”">
       1-target attack. Deals **450%** Mental DMG plus (Current :effect{code="EMPATHY"} x**260%**) Genesis DMG.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Association</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Association
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="The endoscope ...">
@@ -81,106 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="The endoscope, the dust, the stars ...">
       1-target buff. When cast on self, recovers (the user's Max HP x**40%**) HP. When cast on other allies, loses own (Max HP x**20%**) HP and grants :effect{code="SOLACE"} to the target for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Id, Ego, and Superego</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Id, Ego, and Superego
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="The tale of an unconventional psychiatrist with an obedient patient."
-  >
-    1-target attack. Deals **400%** Mental DMG plus (Current :effect
-    {(code = "EMPATHY")} x**1000%**) Genesis DMG to the target, resets :effect
-    {(code = "EMPATHY")} to zero, and then starts recording the damage the
-    target takes for the round. At the end of the round, deals (recorded damage
-    taken x**30%**) Genesis DMG to the target.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="The tale of an unconventional psychiatrist with an obedient patient.">
+      1-target attack. Deals **400%** Mental DMG plus (Current :effect{code="EMPATHY"} x**1000%**) Genesis DMG to the target, resets :effect{code="EMPATHY"} to zero, and then starts recording the damage the target takes for the round. At the end of the round, deals (recorded damage taken x**30%**) Genesis DMG to the target.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Psychoanalysis</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Psychoanalysis
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When attacked, directs **50%** of the damage taken by other allies to Kakania
-  instead. Whenever Kakania takes damage, **10%** of that damage is stored as
-  :effect{(code = "EMPATHY")}, which can store up to **20%** of Kakania's Max
-  HP. Once :effect{(code = "EMPATHY")} is full, Kakania can no longer take
-  damage on behalf of other allies.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When attacked, directs **50%** of the damage taken by other allies to Kakania instead. Whenever Kakania takes damage, **10%** of that damage is stored as :effect{code="EMPATHY"}, which can store up to **20%** of Kakania's Max HP. Once :effect{code="EMPATHY"} is full, Kakania can no longer take damage on behalf of other allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">When entering battle, Max HP **+5%**.</Fragment>
+  <Fragment slot="insight-2-info">
+    When entering battle, Max HP **+5%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  Whenever :effect{(code = "EMPATHY")} stores (Kakania's Max HP x**3%**) damage,
-  recovers own (Max HP x**10%**) HP for all allies. When being healed, deals
-  (current :effect{(code = "EMPATHY")} x**100%**) Genesis DMG to all enemies.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    Whenever :effect{code="EMPATHY"} stores (Kakania's Max HP x**3%**) damage, recovers own (Max HP x**10%**) HP for all allies. When being healed, deals (current :effect{code="EMPATHY"} x**100%**) Genesis DMG to all enemies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Association*: :effect{(code = "SOLACE")}'s ATK bonus is increased to **400**,
-  and the additional ATK bonus based on :effect{(code = "EMPATHY")} value is
-  increased to **15%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Association*: :effect{code="SOLACE"}'s ATK bonus is increased to **400**, and the additional ATK bonus based on :effect{code="EMPATHY"} value is increased to **15%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Psychoanalysis*: The threshold for :effect{(code = "EMPATHY")} to trigger
-  healing is decreased from **5%** HP to **2%** HP. When healed, the Genesis DMG
-  dealt is increased to (Current :effect{(code = "EMPATHY")} value x**120%**).
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Psychoanalysis*: The threshold for :effect{code="EMPATHY"} to trigger healing is decreased from **5%** HP to **2%** HP. When healed, the Genesis DMG dealt is increased to (Current :effect{code="EMPATHY"} value x**120%**).
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Psychoanalysis*: :effect{(code = "EMPATHY")}'s maximum value is increased to
-  **30%** of Max HP. The percentage of damage taken that's converted to :effect
-  {(code = "EMPATHY")} is changed to **15%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Psychoanalysis*: :effect{code="EMPATHY"}'s maximum value is increased to **30%** of Max HP. The percentage of damage taken that's converted to :effect{code="EMPATHY"} is changed to **15%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Subconscious*: At rank **1/2/3**, the Genesis DMG dealt is increased to
-  (current :effect{(code = "EMPATHY")} value x**270/310/350%**).
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Subconscious*: At rank **1/2/3**, the Genesis DMG dealt is increased to (current :effect{code="EMPATHY"} value x**270/310/350%**).
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Id, Ego, and Superego*: The additional Genesis DMG dealt is increased to
-  (current :effect{(code = "EMPATHY")} value x**1300%**); the Genesis DMG dealt
-  at the end of the round is increased to (recorded value x**45%**).
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Id, Ego, and Superego*: The additional Genesis DMG dealt is increased to (current :effect{code="EMPATHY"} value x**1300%**); the Genesis DMG dealt at the end of the round is increased to (recorded value x**45%**).
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     An arcanist's work exhibited in the early 20th century for a total of 17 years. Completed in winter, on the 12th of January. The original exhibition location is unknown. Circulated through Romania, then to the Flannan Isles. Now housed in the St. Pavlov Foundation.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Avid Reader</Fragment>
+  <Fragment slot="info-medium">
+    Avid Reader
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Watchful Pod \[Plant], Watchtower Guardian
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Watchful Pod \[Plant], Watchtower Guardian
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Aqua, Sage, Seawater, Cardamom, Aleppo Oak
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Aqua, Sage, Seawater, Cardamom, Aleppo Oak
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">61 1/32 x 24 13/32 x 13 25/64 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    61 1/32 x 24 13/32 x 13 25/64 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Reading Class</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Reading Class
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Focus.">
@@ -66,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
       1-target attack. Deals **450%** Mental DMG
       Penetration Rate **+30%** for this attack.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### From the Lantern</Fragment>
+  <Fragment slot="skill-2-title">
+    ### From the Lantern
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="She searches the waters.">
@@ -84,30 +87,25 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="She searches the waters, looking for shadows to reveal with light.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="WEAKNESS"} on the targets hit. Deals Mental DMG **+75%** to the target in the :effect{code="ANNOTATE"} status.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Next Chapter</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Next Chapter
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="When she reads, even an eternity seems like an instant."
-  >
-    Mass attack. Deals **250%** Mental DMG to all enemies and Mental DMG
-    **+200%** to the target with :effect{(code = "ANNOTATE")} status. Gain 1
-    stack of :effect{(code = "PREPARATION_MARCUS")}, and grant Eureka +2 to
-    self.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="When she reads, even an eternity seems like an instant.">
+      Mass attack. Deals **250%** Mental DMG to all enemies and Mental DMG **+200%** to the target with :effect{code="ANNOTATE"} status. Gain 1 stack of :effect{code="PREPARATION_MARCUS"}, and grant Eureka +2 to self.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Read the Page</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Read the Page
+  </Fragment>
 
   <Fragment slot="insight-1-info">
     Max Eureka +1.
@@ -115,72 +113,51 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     At the start of the round, if no enemy has the :effect{code="ANNOTATE"} status, inflict :effect{code="ANNOTATE"} on an enemy, prioritizing bosses.
 
     At the start of the round, if holding 2 or more Eureka, spend as many Eureka as possible to randomly upgrade own incantations, using 2 Eureka to upgrade from rank 1 to 2, and 3 Eureka to upgrade from rank 2 to 3, prioritizing lower ranked incantations.
-
   </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  ATK **+5%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    ATK **+5%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  When entering battle, gain Eureka +1. At the start of the round, gain Eureka
-  +1. When entering battle, if there are 3 or more Plant, Spirit, and/or
-  Intelligence allies, gain the :effect{(code = "PERUSAL")} status. Whenever the
-  requirements are not met, the :effect{(code = "PERUSAL")} status is removed.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    When entering battle, gain Eureka +1. At the start of the round, gain Eureka +1. When entering battle, if there are 3 or more Plant, Spirit, and/or Intelligence allies, gain the :effect{code="PERUSAL"} status. Whenever the requirements are not met, the :effect{code="PERUSAL"} status is removed.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Read the Page*: When entering battle, the Eureka gained is increased to 3.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Read the Page*: When entering battle, the Eureka gained is increased to 3.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Read the Page*: Now only costs 2 Eureka to upgrade incantations from rank 2
-  to rank 3.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Read the Page*: Now only costs 2 Eureka to upgrade incantations from rank 2 to rank 3.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *From the Lantern*: At incantation rank **1/2/3**, the Mental DMG is increased
-  to **160/270/420%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *From the Lantern*: At incantation rank **1/2/3**, the Mental DMG is increased to **160/270/420%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Read the Page*: At the start of the round, the Eureka gained is increased to
-  2
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Read the Page*: At the start of the round, the Eureka gained is increased to 2
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Reading Class*: At incantation rank **1/2/3**, the Mental DMG is increased to
-  **230/380/520%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Reading Class*: At incantation rank **1/2/3**, the Mental DMG is increased to **230/380/520%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

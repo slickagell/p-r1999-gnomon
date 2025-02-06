@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     Arcanist work. Exhibited in the 1990s for 14 years. Completed on January 10th in the summer. Exhibited in Melbourne, Victoria, Australia.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Uppercut</Fragment>
+  <Fragment slot="info-medium">
+    Uppercut
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  The fluttering of a clever sparrow \[Beast], The Reincarnator
-</Fragment>
+  <Fragment slot="info-afflatus">
+    The fluttering of a clever sparrow \[Beast], The Reincarnator
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Gourmet Food, Milk, Caramel, Sweet Pepper, Cardamom
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Gourmet Food, Milk, Caramel, Sweet Pepper, Cardamom
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">61 27/64x27 53/64x10 15/64 inches</Fragment>
+  <Fragment slot="info-dimensions">
+    61 27/64x27 53/64x10 15/64 inches
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Little Boxer</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Little Boxer
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Don't take it personally.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Don't take it personally. Kids can be a handful, especially for adults who are clueless.">
       1-target attack. Deals **500%** Reality DMG. When in :effect{code="PREIGNITION"} status, this attack gains Critical DMG **+40%**.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Ignition Point</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Ignition Point
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Clearly evident.">
@@ -83,96 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="Clearly, Spathodea is on FIRE!">
       Self buff. Grants 9 stacks of :effect{code="PREIGNITION"}, 5 stacks of :effect{code="EXHILARATION"} and 1 stack of :effect{code="PREPARATION_SPATHODEA_III"}.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Flame Within the Fire</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Flame Within the Fire
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="The flames rise as she sets a heart ablaze, plunging into the fiery red land once more."
-  >
-    1 target attack. Deals **700%** Reality DMG. This attack gains Critical DMG
-    **+40%**. If the target is afflicted with 15 or more stacks of :effect
-    {(code = "BURN")}, this attack gains extra Critical DMG **+40%**.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="The flames rise as she sets a heart ablaze, plunging into the fiery red land once more.">
+      1 target attack. Deals **700%** Reality DMG. This attack gains Critical DMG **+40%**. If the target is afflicted with 15 or more stacks of :effect{code="BURN"}, this attack gains extra Critical DMG **+40%**.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Flame Flower</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Flame Flower
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When applying :effect{(code = "BURN")} status with an attack, the next attack
-  gains Critical Rates **+25%**.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When applying :effect{code="BURN"} status with an attack, the next attack gains Critical Rates **+25%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  DMG Dealt **+8%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  When a 1-target attack scores a Critical Hit, inflicts 4 stacks of :effect
-  {(code = "BURN")}.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    When a 1-target attack scores a Critical Hit, inflicts 4 stacks of :effect{code="BURN"}.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Little Boxer*: Critical DMG increased to **70%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Little Boxer*: Critical DMG increased to **70%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Flame Flower*: Critical Rate increased to **50%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Flame Flower*: Critical Rate increased to **50%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Flame Within the Fire*: Critical DMG increased to **70%**. Extra Critical DMG
-  increased to **70%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Flame Within the Fire*: Critical DMG increased to **70%**. Extra Critical DMG increased to **70%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Little Boxer*: At Incantation rank **1/2/3**, Reality DMG increased to
-  **220/330/550%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Little Boxer*: At Incantation rank **1/2/3**, Reality DMG increased to **220/330/550%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Flame Within the Fire*: Reality DMG increased to **750%**. Critical DMG
-  increased to **100%**. Extra Critical DMG increased to **100%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Flame Within the Fire*: Reality DMG increased to **750%**. Critical DMG increased to **100%**. Extra Critical DMG increased to **100%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

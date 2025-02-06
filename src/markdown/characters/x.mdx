@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,30 +29,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the 1930s for 16 years. Completed in Spring, on May 30. Exhibited in the State of New York, USA, and later the exhibit was kept in the Institutum Lorentz.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Machine</Fragment>
+  <Fragment slot="info-medium">
+    Machine
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Ingenuity of the Sage \[Intelligence] Enchanted Item
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Ingenuity of the Sage \[Intelligence] Enchanted Item
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Floral, Fruity, Spicy - Bergamot Orange, Sage, Incense
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Floral, Fruity, Spicy - Bergamot Orange, Sage, Incense
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">68 1/2x32 1/4x7 7/8 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    68 1/2x32 1/4x7 7/8 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Anode and Cathode</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Anode and Cathode
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="They seek balance in separation.">
@@ -66,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="They found balance in separation, just like the poles of a magnet.">
       1-target attack. Deals **450%** Reality DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Coffee or Tea</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Coffee or Tea
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="We need some Afflatus in this boring stuff.">
@@ -84,95 +87,73 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Don't worry about this. We need some Afflatus in this boring stuff. Boiling water can also be very inspiring.">
       1-target attack. Deals **450%** Reality DMG and dispels all *\[Counter]* from the target.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Minimalism and Maximalism</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Minimalism and Maximalism
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="I pushed a tiny ball with the hope of creating an avalanche."
-  >
-    Mass attack. Deals **250%** Reality DMG and Moxie -2 to all enemies
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="I pushed a tiny ball with the hope of creating an avalanche.">
+      Mass attack. Deals **250%** Reality DMG and Moxie -2 to all enemies
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Effective Side Effects</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Effective Side Effects
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When the caster dispels *\[Stats Up]* or *\[Pos Status]* statuses from the
-  enemy, inflicts :effect{(code = "SILENCE")} status on them for 1 round. When
-  the caster dispels *\[Counter]* status from the enemy, inflicts :effect
-  {(code = "SILENCE")} status on them for 2 rounds
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When the caster dispels *\[Stats Up]* or *\[Pos Status]* statuses from the enemy, inflicts :effect{code="SILENCE"} status on them for 1 round. When the caster dispels *\[Counter]* status from the enemy, inflicts :effect{code="SILENCE"} status on them for 2 rounds
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  DMG Dealt **+8%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  After casting the Ultimate, inflicts :effect{(code = "DISCONCERT")} status on
-  the target(s) for 1 round.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    After casting the Ultimate, inflicts :effect{code="DISCONCERT"} status on the target(s) for 1 round.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Minimalism and Maximalism*'s effect changes to: deals **300%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Minimalism and Maximalism*'s effect changes to: deals **300%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Anode and Cathode*'s effect changes to: at **1/2/3** stars, deals
-  **220/280/500%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Anode and Cathode*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Minimalism and Maximalism*: Reality DMG increased to **350%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Minimalism and Maximalism*: Reality DMG increased to **350%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Coffee or Tea*'s effect changes to: at **1/2/3** stars, deals
-  **220/280/500%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Coffee or Tea*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Minimalism and Maximalism*: Reality DMG increased to **400%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Minimalism and Maximalism*: Reality DMG increased to **400%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

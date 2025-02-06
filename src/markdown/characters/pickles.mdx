@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work exhibited in the 1960s for 4 years. Completed in autumn, on October 27. Exhibited in Greater London, United Kingdom of Great Britain and Northern Ireland.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Philosophical Thinking</Fragment>
+  <Fragment slot="info-medium">
+    Philosophical Thinking
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Indigo Dog Statue \[Mineral] Dog Philosophy
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Indigo Dog Statue \[Mineral] Dog Philosophy
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Woody - Birch, Cedar, Patchouli, Amber Wood
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Woody - Birch, Cedar, Patchouli, Amber Wood
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">27 61/64x23 25/32x20 15/32in.</Fragment>
+  <Fragment slot="info-dimensions">
+    27 61/64x23 25/32x20 15/32in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Nihilism Abuse</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Nihilism Abuse
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Nihilism ends here.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Nihilism ends here. Get your bag packed, even though we own nothing but countless questions.">
       1-target attack. Deals **500%** Mental DMG. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, deals **125%** more Mental DMG.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Hedonism Implement</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Hedonism Implement
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="A smooth, spherical thing.">
@@ -83,98 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="A smooth, spherical thing. He struggled his way out of the swamp of tricky thoughts and let his five senses lead his way.">
       Mass attack. Deals **300%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*. If the caster is in :effect{code="CLARIFIED_TOPIC"} state, this attack has **+25%** Penetration Rate.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Thus Spoke Pickles</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Thus Spoke Pickles
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="At least I have never wasted one day in this life."
-  >
-    1-target attack. Deals **500%** Mental DMG. After that, DMG Dealt **+30%**
-    for all allies for 2 rounds. If the caster is in :effect
-    {(code = "CLARIFIED_TOPIC")} status, the duration of this DMG Dealt buff +1
-    round.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="At least I have never wasted one day in this life.">
+      1-target attack. Deals **500%** Mental DMG. After that, DMG Dealt **+30%** for all allies for 2 rounds. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, the duration of this DMG Dealt buff +1 round.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Proposition</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Proposition
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  At the end of the round, if having not actively casted an incantation for the
-  round, gain 1 stack of :effect{(code = "CLARIFIED_TOPIC")}. For every :effect
-  {(code = "CLARIFIED_TOPIC")} triggered, gain Moxie +1.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    At the end of the round, if having not actively casted an incantation for the round, gain 1 stack of :effect{code="CLARIFIED_TOPIC"}. For every :effect{code="CLARIFIED_TOPIC"} triggered, gain Moxie +1.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  DMG Dealt **+8%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  Gains 2 stacks of :effect{(code = "CLARIFIED_TOPIC")} immediately upon
-  entering battle.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    Gains 2 stacks of :effect{code="CLARIFIED_TOPIC"} immediately upon entering battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Thus Spoke Pickles*: Mental DMG is raised to **575%**
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Thus Spoke Pickles*: Mental DMG is raised to **575%**
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Thus Spoke Pickles*'s effect changes to: DMG Dealt **+40%** for all allies.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Thus Spoke Pickles*'s effect changes to: DMG Dealt **+40%** for all allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Nihilism Abuse*'s effect changes to: at **1/2/3** stars, if the caster is in
-  :effect{(code = "CLARIFIED_TOPIC")} status, additional Mental DMG dealt is
-  increased to **80/120/200%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Nihilism Abuse*'s effect changes to: at **1/2/3** stars, if the caster is in :effect{code="CLARIFIED_TOPIC"} status, additional Mental DMG dealt is increased to **80/120/200%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Hedonism Implement*'s effect changes to: at **1/2/3** stars, Mental DMG dealt
-  is increased to **165/170/325%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Hedonism Implement*'s effect changes to: at **1/2/3** stars, Mental DMG dealt is increased to **165/170/325%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Thus Spoke Pickles*'s effect changes to: deals **650%** Mental DMG.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Thus Spoke Pickles*'s effect changes to: deals **650%** Mental DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

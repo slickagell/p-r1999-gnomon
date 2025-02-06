@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,30 +29,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     An arcanist's work. Exhibited in the 1960s for 21 years. Completed in Autumn, on November 6. First exhibited in Mississippi, USA, and then in Chicago.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Wheatgrass</Fragment>
+  <Fragment slot="info-medium">
+    Wheatgrass
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Beast Going After Dreams \[Beast] Great Strength
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Beast Going After Dreams \[Beast] Great Strength
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Woody - Chestnut, Guaiac Wood, Caramel, Clove
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Woody - Chestnut, Guaiac Wood, Caramel, Clove
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">64 61/64 x37 21/64 x 11 13/16 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    64 61/64 x37 21/64 x 11 13/16 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Custom Bottle</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Custom Bottle
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="The customer is always right.">
@@ -66,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="No matter what happens, the customer is always right till the bill is paid.">
       1-target attack. Deals **400%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Sweet Gloves</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Sweet Gloves
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="This is the scheduled meal time.">
@@ -84,101 +87,77 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="This is the scheduled meal time, but some children may need more.">
       1-target attack. Deals **400%** Reality DMG and inflicts 3 rounds of :effect{code="NASTY_WOUND"}.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Bunny Medal Cert</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Bunny Medal Cert
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo type="HEALTH" note="Who can change the pre-destined fate?">
-    Mass healing. Purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]*
-    statuses for all allies and HP +(the caster's ATK x**200%**) for them.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="HEALTH" note="Who can change the pre-destined fate?">
+      Mass healing. Purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses for all allies and HP +(the caster's ATK x**200%**) for them.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Best Employee</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Best Employee
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  Inflicts :effect{(code = "GRACIOUS_HOST")} on all enemies for 2 rounds when
-  the caster enters battle (only triggers 1 time).
-</Fragment>
+  <Fragment slot="insight-1-info">
+    Inflicts :effect{code="GRACIOUS_HOST"} on all enemies for 2 rounds when the caster enters battle (only triggers 1 time).
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  Critical DMG **+15%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    Critical DMG **+15%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Bunny Medal Cert*'s effect changes to: HP +(the caster's ATK x**220%**) for
-  all allies.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Bunny Medal Cert*'s effect changes to: HP +(the caster's ATK x**220%**) for all allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Custom Bottle*'s effect changes to: this attack enjoys Critical Rate
-  **+30%**, Critical DMG **+30%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Custom Bottle*'s effect changes to: this attack enjoys Critical Rate **+30%**, Critical DMG **+30%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Sweet Gloves*'s effect changes to: deals **220/280/450%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Sweet Gloves*'s effect changes to: deals **220/280/450%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Bunny Medal Cert*'s effect changes to: HP +(the caster's ATK x**240%**) for
-  all allies.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Bunny Medal Cert*'s effect changes to: HP +(the caster's ATK x**240%**) for all allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Bunny Medal Cert*'s effect changes to: HP +(the caster's ATK x**260%**) for
-  all allies.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Bunny Medal Cert*'s effect changes to: HP +(the caster's ATK x**260%**) for all allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={10}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-materials">
-  {CHARACTER.insightMaterials["1"].map((material) => (
-    <Material code={material.code} require={material.require} />
-  ))}
-</Fragment>
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-materials">
-  {CHARACTER.insightMaterials["2"].map((material) => (
-    <Material code={material.code} require={material.require} />
-  ))}
-</Fragment>
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

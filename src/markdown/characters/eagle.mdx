@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,28 +29,33 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     An arcanist's work. Exhibited in the 1910s for 13 years. Completed in Summer, on July 21. Exhibited in Washington, D.C., USA and later the exhibit was kept in the Institutum Lorentz.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Insignia</Fragment>
+  <Fragment slot="info-medium">
+    Insignia
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Innocence of the Buds \[Plant] Environmental Perception
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Innocence of the Buds \[Plant] Environmental Perception
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">Chypre - Mint, Freesia, Papyrus</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Chypre - Mint, Freesia, Papyrus
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">56 19/64x16 3/8x7 5/32 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    56 19/64x16 3/8x7 5/32 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Old Pocket Watch</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Old Pocket Watch
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Ancestral powers are handed down through the relic.">
@@ -64,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Ancestral powers are handed down through the relic that always appears at key moments, always.">
       1-target attack. Deals **450%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Leech Rate **+10%** and deals **50%** more Reality DMG.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Finger Lens</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Finger Lens
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="Her fingers hide an even more distinct world.">
@@ -82,108 +87,77 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Her fingers hide an even more distinct world and offer a silent guide that others can hardly find.">
       Mass attack. Deals **300%** Reality DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">
-  ### Between Superficiality and Reality
-</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Between Superficiality and Reality
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="The superficial facade cannot hide the fragility from the child."
-  >
-    1-target attack. Deals **400%** Reality DMG. This attack enjoys Critical
-    Rate **+40%**. Excess Critical Rate is converted to Critical DMG.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="The superficial facade cannot hide the fragility from the child.">
+      1-target attack. Deals **400%** Reality DMG. This attack enjoys Critical Rate **+40%**. Excess Critical Rate is converted to Critical DMG.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Trainee</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Trainee
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  Inflicts :effect{(code = "SENSE_WEAKNESS")} status on the enemy with the
-  highest ATK when the caster enters battle. When the caster dies, dispels
-  :effect{(code = "SENSE_WEAKNESS")} status.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    Inflicts :effect{code="SENSE_WEAKNESS"} status on the enemy with the highest ATK when the caster enters battle. When the caster dies, dispels :effect{code="SENSE_WEAKNESS"} status.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  Critical DMG **+15%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    Critical DMG **+15%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Between Superficiality and Reality*'s effect changes to: Critical Rate
-  **+70%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Between Superficiality and Reality*'s effect changes to: Critical Rate **+70%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Old Pocket Watch*'s effect changes to: at **1/2/3** stars, additionally deals
-  **40/60/100%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]*, or
-  *\[Control]*.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Old Pocket Watch*'s effect changes to: at **1/2/3** stars, additionally deals **40/60/100%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Finger Lens*'s effect changes to: Penetration Rate **+40%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Finger Lens*'s effect changes to: Penetration Rate **+40%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Between Superficiality and Reality*'s effect changes to: Critical Rate
-  **100%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Between Superficiality and Reality*'s effect changes to: Critical Rate **100%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Old Pocket Watch*'s effect changes to: this attack enjoys **+20%** Leech Rate
-  against enemies in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Old Pocket Watch*'s effect changes to: this attack enjoys **+20%** Leech Rate against enemies in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={10}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-materials">
-  {CHARACTER.insightMaterials["1"].map((material) => (
-    <Material code={material.code} require={material.require} />
-  ))}
-</Fragment>
+  <Fragment slot="insight-1-materials">
+    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-materials">
-  {CHARACTER.insightMaterials["2"].map((material) => (
-    <Material code={material.code} require={material.require} />
-  ))}
-</Fragment>
+  <Fragment slot="insight-2-materials">
+    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
+  </Fragment>
 
   <Fragment slot="insight-total-materials">
     {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}

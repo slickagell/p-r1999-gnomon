@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -29,30 +29,33 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     Arcanist work. Exhibited in the 1990s for 26 years. Completed on April 6th in the spring. Exhibition location: An island within the Arctic Circle.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Water</Fragment>
+  <Fragment slot="info-medium">
+    Water
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Branch of Lake Willow \[Plant], Transmission of Knowledge
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Branch of Lake Willow \[Plant], Transmission of Knowledge
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Aquatic, Sea Water, Linseed Seaweed, White Birch
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Aquatic, Sea Water, Linseed Seaweed, White Birch
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">65 48/64 x 35 45/64 x 14 11/64 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    65 48/64 x 35 45/64 x 14 11/64 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Beating Heart</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Beating Heart
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="BUFF" note="In the midst of the pristine white snow.">
@@ -66,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="In the midst of the pristine white snow, the thorny brambles thrive, reaching ever higher into the sky.">
       1-target buff. Grants :effect{code="SONG_OF_GENEROSITY"} to the target for 2 rounds and 2 stacks of :effect{code="POWER_BURST"}. The :effect{code="RUSALKA"} status changes the :effect{code="SONG_OF_GENEROSITY"} to :effect{code="SONG_OF_PASSION"}, and only 1 :effect{code="SONG_OF_GENEROSITY"} or :effect{code="SONG_OF_PASSION"} can exist on the allied side at a time.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Wordless Song</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Wordless Song
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="HEALTH" note="What can be used to paint on the canvas that is our world?">
@@ -84,26 +87,17 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="HEALTH" note="What can be used to paint on the canvas that is our world? Perhaps not a tangible tool, but the warmth generated between our hands.">
       1-target heal. Recovers (the user's ATK x**250%**) HP to an ally and grants 1 stack of :effect{code="STURDINESS"} to that target; and if in the :effect{code="RUSALKA"} status, then additionally recovers (the user's ATK x**180%**) HP to the ally with the lowest HP percentage, twice.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Bright Prospect</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Bright Prospect
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="BUFF"
-    note="We all firmly believe that it is not just an unattainable aspiration."
-  >
-    Mass buff. Dispels all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]*
-    statuses from all allies, then grants the :effect{(code = "RUSALKA")} status
-    to self for 3 rounds, changes the ally's existing :effect
-    {(code = "SONG_OF_GENEROSITY")} to :effect{(code = "SONG_OF_PASSION")}, and
-    resets its duration. Cannot gain Ultimate while in the :effect
-    {(code = "RUSALKA")} status.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note="We all firmly believe that it is not just an unattainable aspiration.">
+      Mass buff. Dispels all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from all allies, then grants the :effect{code="RUSALKA"} status to self for 3 rounds, changes the ally's existing :effect{code="SONG_OF_GENEROSITY"} to :effect{code="SONG_OF_PASSION"}, and resets its duration. Cannot gain Ultimate while in the :effect{code="RUSALKA"} status.
+    </CardInfo>
+  </Fragment>
 
   <Fragment slot="extra-cards">
     ### Song of Inspiration
@@ -117,90 +111,65 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
         Grants Moxie +1 and Eureka +1 to a target ally at no AP cost.
       </CardInfo>
     </div>
-
   </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Us</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Us
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When entering battle, gain Moxie +1. For every other Mental DMG ally on the
-  team, gain additional Moxie +1, up to a maximum of Moxie +2. If in the :effect
-  {(code = "RUSALKA")} status at the start of the round, gain 1 Precast
-  Incantation \[Song of Inspiration]: grants Moxie +1 and Eureka +1 to a target
-  ally at no AP cost.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When entering battle, gain Moxie +1. For every other Mental DMG ally on the team, gain additional Moxie +1, up to a maximum of Moxie +2.
+    If in the :effect{code="RUSALKA"} status at the start of the round, gain 1 Precast Incantation \[Song of Inspiration]: grants Moxie +1 and Eureka +1 to a target ally at no AP cost.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  DMG Taken **-8%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    DMG Taken **-8%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  At the end of the round, if having not actively casted an incantation for the
-  round, recover (own ATK x**50%**) HP for all allies. If in the :effect
-  {(code = "RUSALKA")} status at the end of the round, recover (own ATK
-  x**60%**) HP for all allies.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    At the end of the round, if having not actively casted an incantation for the round, recover (own ATK x**50%**) HP for all allies.
+    If in the :effect{code="RUSALKA"} status at the end of the round, recover (own ATK x**60%**) HP for all allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Beating Heart*: The Critical Rate and Critical DMG bonuses from *:effect
-  {(code = "SONG_OF_GENEROSITY")}/:effect{(code = "SONG_OF_PASSION")}* are
-  increased to **30/30%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Beating Heart*: The Critical Rate and Critical DMG bonuses from *:effect{code="SONG_OF_GENEROSITY"}/:effect{code="SONG_OF_PASSION"}* are increased to **30/30%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Beating Heart*: :effect{(code = "SONG_OF_PASSION")}'s additional DMG Dealt is
-  increased to **80/150/230%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Beating Heart*: :effect{code="SONG_OF_PASSION"}'s additional DMG Dealt is increased to **80/150/230%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Beating Heart*: The Critical Rate and Critical DMG bonuses from *:effect
-  {(code = "SONG_OF_GENEROSITY")}/:effect{(code = "SONG_OF_PASSION")}* are
-  increased to **40/40%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Beating Heart*: The Critical Rate and Critical DMG bonuses from *:effect{code="SONG_OF_GENEROSITY"}/:effect{code="SONG_OF_PASSION"}* are increased to **40/40%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Beating Heart*: :effect{(code = "SONG_OF_PASSION")}'s additional DMG Dealt is
-  increased to **110/180/260%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Beating Heart*: :effect{code="SONG_OF_PASSION"}'s additional DMG Dealt is increased to **110/180/260%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Bright Prospect*: :effect{(code = "RUSALKA")}'s duration is increased to
-  **4** rounds.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Bright Prospect*: :effect{code="RUSALKA"}'s duration is increased to **4** rounds.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     A mixed-blood's artwork, exhibited in the 1990s for 18 years. Completed in the spring on April 18th. Exhibition location: San Francisco, United States.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Leather scabbard</Fragment>
+  <Fragment slot="info-medium">
+    Leather scabbard
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Roaring elements \[Beast] metal forging
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Roaring elements \[Beast] metal forging
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Aromatic woody notes of labdanum, nard, birch tar, juniper
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Aromatic woody notes of labdanum, nard, birch tar, juniper
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">70 55/64 x 22 53/64 x 20 15/32 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    70 55/64 x 22 53/64 x 20 15/32 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Hardness Testing</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Hardness Testing
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="A chance to test it in a real fight.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="A chance to test it in a real fight is hard to come by. So, who wants to go first?">
       1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Heat Treating</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Heat Treating
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="COUNTER" note="He was thrown into the fiery furnace of life.">
@@ -83,111 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age, and to this day, he still feels little fear.">
       Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**250%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Over the Haight Street!</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Over the Haight Street!
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="ATTACK"
-    note="This isn't an action film, and there are no heroes."
-  >
-    Mass attack. Deals **350%** Reality DMG to all enemies. Right before
-    attacking, inflict :effect{(code = "BURN")} on the targets equal to the
-    number of :effect{(code = "BURN")} stacks on self. J does not gain :effect
-    {(code = "BURN")} stacks from this attack, and for every excess :effect
-    {(code = "BURN")} stack on the main target, this attack deals an additional
-    **10%** Reality DMG.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="This isn't an action film, and there are no heroes.">
+      Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict :effect{code="BURN"} on the targets equal to the number of :effect{code="BURN"} stacks on self. J does not gain :effect{code="BURN"} stacks from this attack, and for every excess :effect{code="BURN"} stack on the main target, this attack deals an additional **10%** Reality DMG.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Bodily Furnace</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Bodily Furnace
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When attacking, gain an ATK percentage equal to **0.5**x the number of :effect
-  {(code = "BURN")} stacks on self, and resolve own :effect{(code = "BURN")} to
-  deal damage to self while retaining the number of stacks. Every time after J's
-  attack successfully inflicts :effect{(code = "BURN")}, J grants the same
-  number of :effect{(code = "BURN")} stacks to self. Take **50%** less damage
-  from resolving own :effect{(code = "BURN")} stacks, and never fall below
-  **15%** HP this way.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When attacking, gain an ATK percentage equal to **0.5**x the number of :effect{code="BURN"} stacks on self, and resolve own :effect{code="BURN"} to deal damage to self while retaining the number of stacks. Every time after J's attack successfully inflicts :effect{code="BURN"}, J grants the same number of :effect{code="BURN"} stacks to self. Take **50%** less damage from resolving own :effect{code="BURN"} stacks, and never fall below **15%** HP this way.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  DMG Dealt **+8%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    DMG Dealt **+8%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  J's :effect{(code = "BURN")} stack limit is increased to **35**, and becomes
-  immune to :effect{(code = "FREEZE")} and :effect{(code = "COLD")} while in the
-  :effect{(code = "BURN")} status. At the start of the round, if J is below
-  **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self,
-  then grant Critical Rate **+20%** to self for 1 round.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    J's :effect{code="BURN"} stack limit is increased to **35**, and becomes immune to :effect{code="FREEZE"} and :effect{code="COLD"} while in the :effect{code="BURN"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for 1 round.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Heat Treating*: :effect{(code = "TEMPERING")} now deals **40%** Reality DMG.
-  For every **10%** Missing HP on self, now deals an additional **15%** Reality
-  DMG.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Heat Treating*: :effect{code="TEMPERING"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Bodily Furnace*: Now gain an ATK percentage equal to **1.0**x the number of
-  :effect{(code = "BURN")} stacks on self.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Bodily Furnace*: Now gain an ATK percentage equal to **1.0**x the number of :effect{code="BURN"} stacks on self.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Bodily Furnace*: The :effect{(code = "BURN")} stack limit on self is
-  increased to 45 stacks.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Bodily Furnace*: The :effect{code="BURN"} stack limit on self is increased to 45 stacks.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Over the Haight Street*!: Reality DMG is increased **450%**. For every excess
-  :effect{(code = "BURN")} stack on the main target, this attack now deals an
-  additional **15%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Over the Haight Street*!: Reality DMG is increased **450%**. For every excess :effect{code="BURN"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Bodily Furnace*: Now gain an ATK percentage equal to **1.5**x the number of
-  :effect{(code = "BURN")} stacks on self.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Bodily Furnace*: Now gain an ATK percentage equal to **1.5**x the number of :effect{code="BURN"} stacks on self.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

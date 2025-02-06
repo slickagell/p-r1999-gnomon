@@ -13,7 +13,7 @@ isLimited: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     A Supernatural's work. Exhibition time unknown, reportedly on display for over a century. Completed in spring, on April 5th. Originally exhibited in the Kingdom of the Netherlands, later transferred to São Patlo, Brazil, and has since circulated back and forth through the United States, São Paulo, and the Foundation.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Succubus lineage</Fragment>
+  <Fragment slot="info-medium">
+    Succubus lineage
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  A Yearning Nature, \[Beast], An Angel of Music
-</Fragment>
+  <Fragment slot="info-afflatus">
+    A Yearning Nature, \[Beast], An Angel of Music
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Floral cypress, rose, patchouli, musk, ambergris
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Floral cypress, rose, patchouli, musk, ambergris
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">64 19/25 x 26 18/25 x 12 3/5 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    64 19/25 x 26 18/25 x 12 3/5 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Feast of Lust</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Feast of Lust
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="She doesn't know what restraint is.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="She knows no restraint, devouring passion and love without reservation, fully indulged in her feast.">
       1-target attack. Deals **450%** Mental DMG, inflicts :effect{code="TITILLATED"} for 2 rounds on the target hit; if Anjo Nala is in the :effect{code="HYMN"} status, reduce :effect{code="HYMN"} 's remaining duration by 1 round; when attacking, for every type of *\[Neg Status]* the target has, this attack deals an additional **100%** Mental DMG.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Twin Phantoms</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Twin Phantoms
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="Irreplaceable love.">
@@ -83,33 +86,25 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <CardInfo star="3" type="CHANNEL" note="Irreplaceable love, acceptance, and compassion—gone forever.">
       Self channel. Enters the :effect{code="HYMN"} status for 7 rounds; when the channel ends, casts :effect{code="ANGEL_TEMPTATION"}. When casting this incantation, if Anjo Nala is already in the :effect{code="HYMN"} status, then reduce the duration of :effect{code="HYMN"} by 3 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Interwoven Dreams</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Interwoven Dreams
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="CHANNEL"
-    note="The comfort and happiness she once basked in... A beautiful dream she never thought would end."
-  >
-    Self channel. Both Anjo Nala and her bound ally enter a channeling status
-    and cannot act for 1 round; at the start of the next round, the bound ally
-    loses (Current HP x**50%**) HP and casts their ultimate, then Anjo Nala
-    casts her own ultimate: Mass attack. Inflicts 2 random effects from :effect
-    {(code = "COLLECTION_OF_DEBUFFS_ANJO_NALA")} on all enemies, then deals
-    **500%** Mental DMG to all enemies; for every type of *\[Neg Status]* held
-    among all enemies, this attack deals an additional **60%** Mental DMG.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="CHANNEL" note="The comfort and happiness she once basked in... A beautiful dream she never thought would end.">
+      Self channel. Both Anjo Nala and her bound ally enter a channeling status and cannot act for 1 round; at the start of the next round, the bound ally loses (Current HP x**50%**) HP and casts their ultimate, then Anjo Nala casts her own ultimate: Mass attack. Inflicts 2 random effects from :effect{code="COLLECTION_OF_DEBUFFS_ANJO_NALA"} on all enemies, then deals **500%** Mental DMG to all enemies; for every type of *\[Neg Status]* held among all enemies, this attack deals an additional **60%** Mental DMG.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Alliance Oath</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Alliance Oath
+  </Fragment>
 
   <Fragment slot="insight-1-info">
     When entering battle, Anjo Nala chooses another ally to bind with. The type of binding is determined by the Afflatus of the bound character, and provides enhancements to both characters:
@@ -123,13 +118,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     Anjo Nala's Max Moxie is changed to 12 while Ultimate Moxie Cost or Consumption is changed to 8.
 
     The bound ally cannot gain or cast ultimates All Moxie gained by the bound ally will be transferred to Anjo Nala instead.
-
   </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  Critical DMG **+15%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    Critical DMG **+15%** when the caster enters battle.
+  </Fragment>
 
   <Fragment slot="insight-3-info">
     After the bound ally actively casts an incantation, if Anjo Nala is in the :effect{code="HYMN"} status, reduce the duration of the :effect{code="HYMN"} status by 1 round, and trigger additional effects based on the binding's type:
@@ -139,69 +132,43 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     :effect{code="BONE_AND_BLOOD"}: Anjo Nala gains 1 additional Moxie.
 
     :effect{code="FORM_AND_PHANTOM"}: Anjo Nala casts 1 :effect{code="ANGEL_TEMPTATION"}, up to 2 times per round.
-
   </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Oath Bound*: :effect{(code = "FORM_AND_PHANTOM")}'s follow-up attack can now
-  be casted up to **3** times per round, and :effect
-  {(code = "ANGEL_TEMPTATION")}'s Mental DMG dealt is increased to **250%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Oath Bound*: :effect{code="FORM_AND_PHANTOM"}'s follow-up attack can now be casted up to **3** times per round, and :effect{code="ANGEL_TEMPTATION"}'s Mental DMG dealt is increased to **250%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Twin Phantoms*: When :effect{(code = "ANGEL_TEMPTATION")} is casted from a
-  completed channel, the Mental DMG dealt is increased to **375%**, and the ATK
-  reduction from \[Captivated] is boosted to **15%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Twin Phantoms*: When :effect{code="ANGEL_TEMPTATION"} is casted from a completed channel, the Mental DMG dealt is increased to **375%**, and the ATK reduction from \[Captivated] is boosted to **15%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Interwoven Dreams*: The Mental DMG dealt is increased to **600%**; and for
-  every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to
-  **100%**. :effect{(code = "BONE_AND_BLOOD")}'s additional Moxie gained is
-  increased to **2**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Interwoven Dreams*: The Mental DMG dealt is increased to **600%**; and for every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to **100%**. :effect{code="BONE_AND_BLOOD"}'s additional Moxie gained is increased to **2**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Oath Bound*: :effect{(code = "MIND_AND_FLESH")}'s stat bonus is increased to
-  **8%**; :effect{(code = "BONE_AND_BLOOD")} stat bonus is increased to **18%**;
-  :effect{(code = "FORM_AND_PHANTOM")}'s stat bonus is increased to **18%**; The
-  stack requirement for :effect{(code = "TITILLATED")} to become \[Captivated]
-  is reduced to **2**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Oath Bound*: :effect{code="MIND_AND_FLESH"}'s stat bonus is increased to **8%**; :effect{code="BONE_AND_BLOOD"} stat bonus is increased to **18%**; :effect{code="FORM_AND_PHANTOM"}'s stat bonus is increased to **18%**; The stack requirement for :effect{code="TITILLATED"} to become \[Captivated] is reduced to **2**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Interwoven Dreams*: The number of random debuffs inflicted by :effect
-  {(code = "COLLECTION_OF_DEBUFFS_ANJO_NALA")} is increased to **4**; and for
-  every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to
-  **140%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Interwoven Dreams*: The number of random debuffs inflicted by :effect{code="COLLECTION_OF_DEBUFFS_ANJO_NALA"} is increased to **4**; and for every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to **140%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

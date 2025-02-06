@@ -14,7 +14,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -29,30 +29,33 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     An arcanist artwork completed on July 22nd. First put on exhibit in the 1990s and has remained on display for 20 years. It was originally displayed in the southeastern United States before being moved to the northeast.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Design drawing</Fragment>
+  <Fragment slot="info-medium">
+    Design drawing
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Relatives from Venus \[Star] - Monster Designer
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Relatives from Venus \[Star] - Monster Designer
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Flora, rose, pink pepper, raspberry flower, papyrus
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Flora, rose, pink pepper, raspberry flower, papyrus
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">65 9/64 in x30 13/64 in x15 9/64 in</Fragment>
+  <Fragment slot="info-dimensions">
+    65 9/64 in x30 13/64 in x15 9/64 in
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Killer Bunny</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Killer Bunny
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Just an ordinary rabbit doll.">
@@ -66,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="Just an ordinary rabbit doll, before the spiked stick is unleashed.">
       1-target attack. Deals **400%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Chainsaw Massacre</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Chainsaw Massacre
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="This party needs a surprise.">
@@ -84,94 +87,73 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="This party needs a surprise, like a live chainsaw show.">
       1-target attack. Deals **450%** Reality DMG and inflicts the target with 1 stack of :effect{code="CONFUSION"}. Lasts 1 round.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Bloody Movie</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Bloody Movie
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type=""
-    note="There is always a more suitable color to replace bright red."
-  >
-    Mass attack. Deals **250%** Reality DMG to all enemies and increases the
-    Critical Rate of this attack by **20%**.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="" note="There is always a more suitable color to replace bright red.">
+      Mass attack. Deals **250%** Reality DMG to all enemies and increases the Critical Rate of this attack by **20%**.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Monster Designer</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Monster Designer
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  After casting an Ultimate, Critical Rate and Critical DMG increase by
-  **+20%**. Lasts 2 rounds.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    After casting an Ultimate, Critical Rate and Critical DMG increase by **+20%**. Lasts 2 rounds.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  Critical DMG **+15%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    Critical DMG **+15%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  After casting an Ultimate, Critical Rate and Critical DMG increase by an
-  additional **+10%**.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    After casting an Ultimate, Critical Rate and Critical DMG increase by an additional **+10%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Bloody Movie* Changes Critical Rate increase effect to **30%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Bloody Movie* Changes Critical Rate increase effect to **30%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Killer Bunny* When at Incantation Rank **1/2/3**, this attack's Critical Rate
-  and Critical DMG increase effect changes to **30%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Killer Bunny* When at Incantation Rank **1/2/3**, this attack's Critical Rate and Critical DMG increase effect changes to **30%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Bloody Movie*'s effect changes to: deals **300%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Bloody Movie*'s effect changes to: deals **300%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Chainsaw Massacre*'s effect changes to: at **1/2/3** stars, deals
-  **220/280/500%** Reality DMG.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Chainsaw Massacre*'s effect changes to: at **1/2/3** stars, deals **220/280/500%** Reality DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Bloody Movie* Increases Critical Rate effect to **40%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Bloody Movie* Increases Critical Rate effect to **40%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -29,30 +29,33 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     A mixed's work, exhibited in the 1990s for an unknown length of time. Completed in summer on July 5. Originally exhibited at a research institute in Scotland and later toured worldwide.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Observation</Fragment>
+  <Fragment slot="info-medium">
+    Observation
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Lamb's Long Dream \[Spirit] Editor on the Road
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Lamb's Long Dream \[Spirit] Editor on the Road
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Gourmand - Vanilla, Salt, Cream, Cardamom,
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Gourmand - Vanilla, Salt, Cream, Cardamom,
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">59 9/20 21 13/20 x10 59/250 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    59 9/20 21 13/20 x10 59/250 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Troubled Sleep</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Troubled Sleep
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Unhealed scars haunt you every moment.">
@@ -66,11 +69,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Unhealed scars haunt you every moment, even in your dreams, as if constantly being gnawed by unseen teeth.">
       Mass attack. Deals **400%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Chat on the Lawn</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Chat on the Lawn
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Doing an interview is easier than you think.">
@@ -84,22 +87,17 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="Doing an interview is easier than you think—just open your heart and share your voice with the readers.">
       Mass buff. Grants a Shield with (own ATK x**300%**) HP to all allies for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Another Jump This Way</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Another Jump This Way
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="BUFF"
-    note="Dream serves as a boundary, separating reality from imagination."
-  >
-    Self buff. Enter the :effect{(code = "DREAM_VISIT")} status, grant a :effect
-    {(code = "SHIELD")} with (own ATK x**250%**) HP to all allies for 3 rounds.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note="Dream serves as a boundary, separating reality from imagination.">
+      Self buff. Enter the :effect{code="DREAM_VISIT"} status, grant a :effect{code="SHIELD"} with (own ATK x**250%**) HP to all allies for 3 rounds.
+    </CardInfo>
+  </Fragment>
 
   <Fragment slot="extra-cards">
     ### Counting Sheep
@@ -113,82 +111,63 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
         After incantations are cast and queued, grant rank +1 to the incantation ahead of this incantation, and rank -1 to the incantation behind of this incantation.
       </CardInfo>
     </div>
-
   </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Germ-free Bedroom</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Germ-free Bedroom
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  At the end of the round, if no action was taken this round, grant DMG Taken
-  Reduction **+10%** to all allies for 1 round.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    At the end of the round, if no action was taken this round, grant DMG Taken Reduction **+10%** to all allies for 1 round.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  When entering battle, DMG Heal **+8%**.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    When entering battle, DMG Heal **+8%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  At the start of the round, if in the :effect{(code = "DREAM_VISIT")} status,
-  recover (Max HP x**20%**) HP for self; then if own HP is above **90%**,
-  recover (own Max HP x**15%**) HP for adjacent allies.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    At the start of the round, if in the :effect{code="DREAM_VISIT"} status, recover (Max HP x**20%**) HP for self; then if own HP is above **90%**, recover (own Max HP x**15%**) HP for adjacent allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Troubled Sleep*: Mental DMG is increased to **180%/270%/450%**.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Troubled Sleep*: Mental DMG is increased to **180%/270%/450%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Chat on the Lay*: The Shield granted is increased to (own ATK
-  x**140%/210%/350%**) HP.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Chat on the Lay*: The Shield granted is increased to (own ATK x**140%/210%/350%**) HP.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Germ-free Bedroom*: Now recovers (Max HP x**25%**) HP for self and (Max HP
-  x**20%**) HP for adjacent allies.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Germ-free Bedroom*: Now recovers (Max HP x**25%**) HP for self and (Max HP x**20%**) HP for adjacent allies.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Germ-free Bedroom*: The DMG Taken Reduction is increased to **+15%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Germ-free Bedroom*: The DMG Taken Reduction is increased to **+15%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Another Jump This Way*: The duration of :effect{(code = "DREAM_VISIT")} is
-  increased by 1 round.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Another Jump This Way*: The duration of :effect{code="DREAM_VISIT"} is increased by 1 round.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

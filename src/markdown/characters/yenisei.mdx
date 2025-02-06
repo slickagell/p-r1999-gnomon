@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     An arcanist's work, exhibited for 16 years since the early 19th century and completed in Spring, on March 4. First exhibited in the Tula Governorate of the Russian Empire before being moved to St. Petersburg. After spending a few years in St. Petersburg, the exhibit traveled to various locations, both within and outside the Empire.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Source of Life</Fragment>
+  <Fragment slot="info-medium">
+    Source of Life
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  The Glistening Ripples \[Star] Keeper of Water
-</Fragment>
+  <Fragment slot="info-afflatus">
+    The Glistening Ripples \[Star] Keeper of Water
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Ginger, Icy Water, Geranium, Oakmoss
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Ginger, Icy Water, Geranium, Oakmoss
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">63 25/32 x 20 63/64 x 11 1/32 in</Fragment>
+  <Fragment slot="info-dimensions">
+    63 25/32 x 20 63/64 x 11 1/32 in
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Action Taker</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Action Taker
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Prepare your glass bottles before heading out.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Prepare your glass bottles before heading out. Used for storing water and other purposes.">
       1-target attack. Deals **350%** Mental DMG. Inflicts DMG Dealt **-25%** for the target for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Words of Water</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Words of Water
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="HEALTH" note="She doesn't like to express herself.">
@@ -83,96 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     <CardInfo star="3" type="HEALTH" note="She doesn't like to express herself. It's not because of her personality, but because of water.">
       1-target heal. Recovers (the user's Max HP x**40%**) HP to an ally and grants 1 stack of :effect{code="STURDINESS"} to the target. Then, recovers (the user's Max HP x**25%**) HP to the ally with the lowest HP percentage and grants 1 stack of :effect{code="STURDINESS"} to the target.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### The Rapids Know All</Fragment>
+  <Fragment slot="ultimate-title">
+    ### The Rapids Know All
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo type="BUFF" note="From where one comes, to where one returns.">
-    Mass buff. Grants a Shield with (the user's Max HP x**25%**) HP to all
-    allies for 2 rounds. Grants :effect{(code = "IMMUNITY")} to the targets for
-    1 round. Grants 2 additional stacks of :effect{(code = "FLOW")} to self.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note="From where one comes, to where one returns.">
+      Mass buff. Grants a Shield with (the user's Max HP x**25%**) HP to all allies for 2 rounds. Grants :effect{code="IMMUNITY"} to the targets for 1 round. Grants 2 additional stacks of :effect{code="FLOW"} to self.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Overprotective</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Overprotective
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When casting a rank 2 or rank 3 Debuff-type basic incantation, consume 1 stack
-  of :effect{(code = "FLOW")} and grants Moxie +1 to self. When entering battle,
-  instantly gain 3 stacks of :effect{(code = "FLOW")}.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When casting a rank 2 or rank 3 Debuff-type basic incantation, consume 1 stack of :effect{code="FLOW"} and grants Moxie +1 to self. When entering battle, instantly gain 3 stacks of :effect{code="FLOW"}.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  When entering battle, Healing Done **+10%**.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    When entering battle, Healing Done **+10%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  When casting a Heal-type basic incantation, consume 1 stack of :effect
-  {(code = "FLOW")} and enter :effect{(code = "EMPOWER_INCANTATION_I")} status
-  for 1 round (only effective when not in the :effect
-  {(code = "EMPOWER_INCANTATION_I")} status).
-</Fragment>
+  <Fragment slot="insight-3-info">
+    When casting a Heal-type basic incantation, consume 1 stack of :effect{code="FLOW"} and enter :effect{code="EMPOWER_INCANTATION_I"} status for 1 round (only effective when not in the :effect{code="EMPOWER_INCANTATION_I"} status).
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Action Taker*: at rank **1/2/3**, deals **220/230/400%** Mental DMG.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Action Taker*: at rank **1/2/3**, deals **220/230/400%** Mental DMG.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Overprotective* When entering battle, gain 1 extra stack of :effect
-  {(code = "FLOW")}.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Overprotective* When entering battle, gain 1 extra stack of :effect{code="FLOW"}.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *The Rapids Know All*: The :effect{(code = "SHIELD")} granted to allies is
-  increased to (Yenisei's Max HP x**30%**) HP.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *The Rapids Know All*: The :effect{code="SHIELD"} granted to allies is increased to (Yenisei's Max HP x**30%**) HP.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Overprotective*: When entering battle, additional Healing Done **+8%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Overprotective*: When entering battle, additional Healing Done **+8%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *The Rapids Know All*: The :effect{(code = "SHIELD")} granted to allies is
-  increased to (Yenisei's Max HP x**35%**) HP.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *The Rapids Know All*: The :effect{code="SHIELD"} granted to allies is increased to (Yenisei's Max HP x**35%**) HP.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

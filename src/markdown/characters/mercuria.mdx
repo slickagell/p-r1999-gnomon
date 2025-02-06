@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     An arcanist's artwork, exhibited at the end of the 20th century for 16 years. Completed in winter on February 18th. Originally exhibited in an orphanage in New Mexico, later acquired by the St. Pavlov Foundation, and now on a tour across the American continent.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Trace</Fragment>
+  <Fragment slot="info-medium">
+    Trace
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  The Echo of Celestial Bodies \[Spirit] Energy Perception
-</Fragment>
+  <Fragment slot="info-afflatus">
+    The Echo of Celestial Bodies \[Spirit] Energy Perception
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Oriental Fougere, Clary Sage, Citrus, Violet, Benzoin, Tobacco
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Oriental Fougere, Clary Sage, Citrus, Violet, Benzoin, Tobacco
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">65 3/4 x 17 23/32 x 10 15/64 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    65 3/4 x 17 23/32 x 10 15/64 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### Restless Souls</Fragment>
+  <Fragment slot="skill-1-title">
+    ### Restless Souls
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="The spotlight is a restless tide.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="ATTACK" note="The spotlight is a restless tide, constantly ebbing and flowing, searching for stillness amidst its chaos.">
       1-target attack. Deals **400%** Mental DMG to an enemy and recovers (the user's ATK x**50%**) HP for the ally with the lowest HP. For each rank 2/3 incantation in the AP Area, deals an additional **30%/50%** Mental DMG, up to a maximum of **250%**.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### Self-Focusing</Fragment>
+  <Fragment slot="skill-2-title">
+    ### Self-Focusing
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="She shines like the morning star.">
@@ -83,101 +86,75 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo star="3" type="BUFF" note="She shines like the morning star, capturing the attention of those around her as she guides them through their inner journeys.">
       Mass buff. Grants Critical Rate **+30%** to all allies for 2 rounds. Gain 6 additional stacks of :effect{code="COSMIC_ENERGY"} for self for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Morning Star for the Night</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Morning Star for the Night
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo type="ATTACK" note="On this night, I trade gifts with the world.">
-    Mass attack. Dispels 2 random *\[Stats Up]* and *\[Pos Status]* effects on
-    all enemies, then deals 400% Mental DMG to the targets. Grants :effect
-    {(code = "RANK_UP")} to all allies for 2 rounds.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note="On this night, I trade gifts with the world.">
+      Mass attack. Dispels 2 random *\[Stats Up]* and *\[Pos Status]* effects on all enemies, then deals 400% Mental DMG to the targets. Grants :effect{code="RANK_UP"} to all allies for 2 rounds.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### Lengthy Journey</Fragment>
+  <Fragment slot="inheritance-title">
+    ### Lengthy Journey
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When entering battle, gain 8 stacks of :effect{(code = "COSMIC_ENERGY")} for 2
-  rounds; after an ally casts a rank 1/2/3 incantation, gain 2/3/4 stacks of
-  Cosmic Energy for self, to a maximum of 25 stacks. When entering battle, for
-  each ally of the Natural Afflatus, gain Moxie +1 for self, up to a maximum of
-  Moxie +3.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When entering battle, gain 8 stacks of :effect{code="COSMIC_ENERGY"} for 2 rounds; after an ally casts a rank 1/2/3 incantation, gain 2/3/4 stacks of Cosmic Energy for self, to a maximum of 25 stacks.
+    When entering battle, for each ally of the Natural Afflatus, gain Moxie +1 for self, up to a maximum of Moxie +3.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">When entering battle, ATK **+5%**.</Fragment>
+  <Fragment slot="insight-2-info">
+    When entering battle, ATK **+5%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  At the start of the round, if holding 9 or more stacks of :effect
-  {(code = "COSMIC_ENERGY")}, grant Critical DMG **+30%** to all allies for 1
-  round; if holding 16 or more stacks of Cosmic Energy, grant an additional
-  Incantation Might **+20%** to all allies for 2 rounds. At the end of the
-  round, if allies have casted two or more rank 3 incantations for that round,
-  gain Moxie +1 for self.
-</Fragment>
+  <Fragment slot="insight-3-info">
+    At the start of the round, if holding 9 or more stacks of :effect{code="COSMIC_ENERGY"}, grant Critical DMG **+30%** to all allies for 1 round; if holding 16 or more stacks of Cosmic Energy, grant an additional Incantation Might **+20%** to all allies for 2 rounds.
+    At the end of the round, if allies have casted two or more rank 3 incantations for that round, gain Moxie +1 for self.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Lengthy Journey*: At the end of the round, now if allies have casted two or
-  more rank 2 incantations for that round, gain Moxie +1 for self.
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Lengthy Journey*: At the end of the round, now if allies have casted two or more rank 2 incantations for that round, gain Moxie +1 for self.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *Lengthy Journey*: Critical DMG increase is now **+50%** and Incantation Might
-  increase is now **+30%**.
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *Lengthy Journey*: Critical DMG increase is now **+50%** and Incantation Might increase is now **+30%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Lengthy Journey*: :effect{(code = "COSMIC_ENERGY")}'s stack limit is
-  increased to **30**. The DMG Dealt granted by each stack is increased to
-  **+2.5%**.
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Lengthy Journey*: :effect{code="COSMIC_ENERGY"}'s stack limit is increased to **30**. The DMG Dealt granted by each stack is increased to **+2.5%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *Morning Star for the Night*: Mental DMG is increased to **475%**, and extends
-  :effect{(code = "RANK_UP")} by +1 round.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *Morning Star for the Night*: Mental DMG is increased to **475%**, and extends :effect{code="RANK_UP"} by +1 round.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *Lengthy Journey*: Extends :effect{(code = "COSMIC_ENERGY")} by +1 round. The
-  DMG Dealt granted by each stack is increased to **+3%**.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *Lengthy Journey*: Extends :effect{code="COSMIC_ENERGY"} by +1 round. The DMG Dealt granted by each stack is increased to **+3%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials

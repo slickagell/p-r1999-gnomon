@@ -13,7 +13,7 @@ isLimited: false
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterContent from "@components/CharacterMarkdown/CharacterContent.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -28,30 +28,33 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     An arcanist's work. Exhibited in the 1990s for 21 years. Completed in the fall, on October 30. Originally exhibited in Texas, USA, and later stored in the St. Pavlov Foundation.
   </Fragment>
 
-{" "}
-<Fragment slot="info-medium">Fear</Fragment>
+  <Fragment slot="info-medium">
+    Fear
+  </Fragment>
 
-{" "}
-<Fragment slot="info-afflatus">
-  Phantom Hospitality \[Spirit] Motel Owner.
-</Fragment>
+  <Fragment slot="info-afflatus">
+    Phantom Hospitality \[Spirit] Motel Owner.
+  </Fragment>
 
-{" "}
-<Fragment slot="info-fragrance-note">
-  Floral - Narcissus, Honeysuckle, Ginger, Basil
-</Fragment>
+  <Fragment slot="info-fragrance-note">
+    Floral - Narcissus, Honeysuckle, Ginger, Basil
+  </Fragment>
 
-{" "}
-<Fragment slot="info-dimensions">65 7/20x 19 3/10 x12 99/100 in.</Fragment>
+  <Fragment slot="info-dimensions">
+    65 7/20x 19 3/10 x12 99/100 in.
+  </Fragment>
 
-{" "}
-<Fragment slot="toc">::toc</Fragment>
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
 
-{" "}
-<Fragment slot="arcane-skills-section-title">## Arcane Skills</Fragment>
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
 
-{" "}
-<Fragment slot="skill-1-title">### The Horror's Delight</Fragment>
+  <Fragment slot="skill-1-title">
+    ### The Horror's Delight
+  </Fragment>
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="A seed of fear.">
@@ -65,11 +68,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="A seed of fear, deeply planted and delightfully nurtured.">
       1-target attack. Deals **455%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, repeating up to 4 times.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="skill-2-title">### In Mother's Arms</Fragment>
+  <Fragment slot="skill-2-title">
+    ### In Mother's Arms
+  </Fragment>
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Exactly what a baby needs.">
@@ -83,106 +86,73 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <CardInfo star="3" type="DEBUFF" note="Exactly what a baby —and any adult— needs, and she makes sure all of those needs ase met.">
       Mass debuff. Inflicts Genesis DMG Taken **+35%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{code="POISON"} status) on all enemies for 2 rounds.
     </CardInfo>
-
   </Fragment>
 
-{" "}
-<Fragment slot="ultimate-title">### Please, Come On In</Fragment>
+  <Fragment slot="ultimate-title">
+    ### Please, Come On In
+  </Fragment>
 
-{" "}
-<Fragment slot="ultimate-card-info">
-  <CardInfo
-    type="DEBUFF"
-    note="Relax, it's nothing but an empty room at the heart of terror."
-  >
-    Mass attack. Deals **225%** Mental DMG to all enemies, inflicts 1 instance
-    of :effect{(code = "POISON")} for 2 rounds on the targets hit: at the end of
-    each round, deals (the user's ATK x**20%**) Genesis DMG to the target, then
-    deals an additional (Tuesday's ATK x number of instances of :effect
-    {(code = "POISON")} on the target x**30%**) Genesis DMG that can critically
-    hit to the target; and at the same time, deploys array :effect
-    {(code = "HORROR_STORY_NIGHT")} for 3 rounds.
-  </CardInfo>
-</Fragment>
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="DEBUFF" note="Relax, it's nothing but an empty room at the heart of terror.">
+      Mass attack. Deals **225%** Mental DMG to all enemies, inflicts 1 instance of :effect{code="POISON"} for 2 rounds on the targets hit: at the end of each round, deals (the user's ATK x**20%**) Genesis DMG to the target, then deals an additional (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**30%**) Genesis DMG that can critically hit to the target; and at the same time, deploys array :effect{code="HORROR_STORY_NIGHT"} for 3 rounds.
+    </CardInfo>
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-section-title">## Inheritance</Fragment>
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
 
-{" "}
-<Fragment slot="inheritance-title">### At Your Service</Fragment>
+  <Fragment slot="inheritance-title">
+    ### At Your Service
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-1-info">
-  When entering battle, gain :effect{(code = "FEAR_CRADLE")}. When entering
-  battle, grant Genesis DMG Dealt **+15%** to self.
-</Fragment>
+  <Fragment slot="insight-1-info">
+    When entering battle, gain :effect{code="FEAR_CRADLE"}. When entering battle, grant Genesis DMG Dealt **+15%** to self.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-2-info">
-  ATK **+5%** when the caster enters battle.
-</Fragment>
+  <Fragment slot="insight-2-info">
+    ATK **+5%** when the caster enters battle.
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-3-info">
-  When entering battle, gain :effect{(code = "ROOM_SERVICE")}. When entering
-  battle, gain Moxie +2 for self (triggers only 1 time).
-</Fragment>
+  <Fragment slot="insight-3-info">
+    When entering battle, gain :effect{code="ROOM_SERVICE"}. When entering battle, gain Moxie +2 for self (triggers only 1 time).
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-section-title">## Portray</Fragment>
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-1-info">
-  *Please, Come On In*: The instances of :effect{(code = "POISON")} inflicted is
-  increased to **2**. The additional Genesis DMG is increased to (Tuesday's ATK
-  x number of instances of :effect{(code = "POISON")} on the target x**50%**).
-</Fragment>
+  <Fragment slot="portray-1-info">
+    *Please, Come On In*: The instances of :effect{code="POISON"} inflicted is increased to **2**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**50%**).
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-2-info">
-  *In Mother's Arms*: At incantation rank **1/2/3**, the Genesis DMG Taken is
-  now **+30%/40%/50%**, and the Critical Resist Rate is now **-25%** (**-30%**
-  to targets in the :effect{(code = "POISON")} status).
-</Fragment>
+  <Fragment slot="portray-2-info">
+    *In Mother's Arms*: At incantation rank **1/2/3**, the Genesis DMG Taken is now **+30%/40%/50%**, and the Critical Resist Rate is now **-25%** (**-30%** to targets in the :effect{code="POISON"} status).
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-3-info">
-  *Please, Come On In*: The instances of :effect{(code = "POISON")} inflicted is
-  increased to **3**. The additional Genesis DMG is increased to (Tuesday's ATK
-  x number of instances of :effect{(code = "POISON")} on the target x**70%**).
-</Fragment>
+  <Fragment slot="portray-3-info">
+    *Please, Come On In*: The instances of :effect{code="POISON"} inflicted is increased to **3**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**70%**).
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-4-info">
-  *At Your Service*: The Genesis DMG Dealt granted to self is now **+35%**.
-</Fragment>
+  <Fragment slot="portray-4-info">
+    *At Your Service*: The Genesis DMG Dealt granted to self is now **+35%**.
+  </Fragment>
 
-{" "}
-<Fragment slot="portray-5-info">
-  *The Horror's Delight*: At incantation rank **1/2/3**, the Mental DMG dealt is
-  increased to **210%/310%/535%**, and inflicts 1 instance of the same :effect
-  {(code = "POISON")} on another random, legal enemy target if able, now
-  repeating up to **3/4/5** times.
-</Fragment>
+  <Fragment slot="portray-5-info">
+    *The Horror's Delight*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **210%/310%/535%**, and inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, now repeating up to **3/4/5** times.
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-section-title">## Resonance</Fragment>
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
 
-{" "}
-<Fragment slot="resonance-board">
-  <ResonanceBoard
-    maxResonanceLevel={15}
-    resonancePieces={PIECES_LIST}
-    recommendedResonanceList={RESONANCE.recommended}
-    recommendedResonancePattern={RESONANCE.patternRecommended}
-    baseStats={CHARACTER.baseStats}
-    resonanceMainPiece={RESONANCE.mainPiece}
-    resonancePatternPieces={RESONANCE.patternPieces}
-  />
-</Fragment>
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
 
-{" "}
-<Fragment slot="insight-materials-section-title">## Insight Materials</Fragment>
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
 
   <Fragment slot="resonance-materials-section-title">
     ## Resonance Materials
