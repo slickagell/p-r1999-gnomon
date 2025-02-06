@@ -63,5 +63,121 @@
         "require": 5
       }
     ]
+  },
+  "resonanceMaterials": {
+    "2": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 3
+      }
+    ],
+    "3": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 3
+      },
+      {
+        "code": "SILVER_ORE",
+        "require": 3
+      }
+    ],
+    "4": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 3
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 2
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 1
+      }
+    ],
+    "5": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 3
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 1
+      },
+      {
+        "code": "MILLED_MAGNESIA",
+        "require": 1
+      }
+    ],
+    "6": [
+      {
+        "code": "SHARPODONTY",
+        "require": 20000
+      },
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 3
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 1
+      }
+    ],
+    "7": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 4
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 3
+      }
+    ],
+    "8": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 4
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 2
+      },
+      {
+        "code": "ESOTERIC_BONES",
+        "require": 4
+      }
+    ],
+    "9": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 5
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 2
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 3
+      }
+    ],
+    "10": [
+      {
+        "code": "HYPOCRITICAL_MURMUR",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 3
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 4
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 6
+      }
+    ]
   }
 }

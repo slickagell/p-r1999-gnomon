@@ -59,5 +59,121 @@
         "require": 2
       }
     ]
+  },
+  "resonanceMaterials": {
+    "2": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 2
+      }
+    ],
+    "3": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 2
+      },
+      {
+        "code": "MAGNESIA_CRYSTAL",
+        "require": 2
+      }
+    ],
+    "4": [
+      {
+        "code": "MOMENT_OF_DISSONANCE",
+        "require": 2
+      },
+      {
+        "code": "SHATTERED_BONES",
+        "require": 2
+      },
+      {
+        "code": "SOLIDUS",
+        "require": 1
+      }
+    ],
+    "5": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 2
+      },
+      {
+        "code": "LIQUEFIED_TERROR",
+        "require": 1
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 2
+      }
+    ],
+    "6": [
+      {
+        "code": "SHARPODONTY",
+        "require": 10000
+      },
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 2
+      },
+      {
+        "code": "CLAWED_PENDULUM",
+        "require": 1
+      }
+    ],
+    "7": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 3
+      },
+      {
+        "code": "SALTED_MANDRAKE",
+        "require": 2
+      }
+    ],
+    "8": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 3
+      },
+      {
+        "code": "BIFURCATED_SKELETON",
+        "require": 2
+      },
+      {
+        "code": "ROUGH_SILVER_INGOT",
+        "require": 3
+      }
+    ],
+    "9": [
+      {
+        "code": "BRIEF_CACOPHONY",
+        "require": 4
+      },
+      {
+        "code": "HOLY_SILVER",
+        "require": 4
+      },
+      {
+        "code": "SPELL_OF_FORTUNE",
+        "require": 4
+      }
+    ],
+    "10": [
+      {
+        "code": "HOARSE_ECHO",
+        "require": 1
+      },
+      {
+        "code": "SONOROUS_KNELL",
+        "require": 2
+      },
+      {
+        "code": "PROPHETIC_BIRD",
+        "require": 4
+      },
+      {
+        "code": "BITING_BOX",
+        "require": 6
+      }
+    ]
   }
 }
