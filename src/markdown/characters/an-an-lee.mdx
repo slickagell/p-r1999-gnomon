@@ -23,7 +23,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
 # An an Lee
 
-<CharacterContent {...frontmatter}>
+<CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
   <Fragment slot="info-description">
     An arcanist's work exhibited in the 1990s for 16 years. Completed in summer, on July 27th. Mainly exhibited in Hong Kong, PRC. The exhibit was once on a short tour in Italy.
   </Fragment>
@@ -154,19 +154,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     ## Insight Materials
   </Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-3-materials">
-    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-total-materials">
-    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  <Fragment slot="resonance-materials-section-title">
+    ## Resonance Materials
   </Fragment>
 </CharacterContent>

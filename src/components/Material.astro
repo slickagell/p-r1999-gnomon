@@ -6,9 +6,10 @@ interface Props {
   code: string;
   variant?: "small" | "medium" | "large";
   require?: number;
+  withMetadata?: boolean;
 }
 
-const { code, variant = "small", require } = Astro.props;
+const { code, variant = "small", require, withMetadata } = Astro.props;
 
 const materialEntries = await getCollection("materials");
 
@@ -25,7 +26,10 @@ const material = materials[code];
 
 {
   material && (
-    <div class="flex justify-between items-center">
+    <div
+      class="flex justify-between items-center"
+      {...(withMetadata && { ["data-rarity"]: material.data.rarity })}
+    >
       <div class="flex items-center">
         <a href={`/materials/${material.id}`}>
           <div

@@ -24,7 +24,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
 # White Rum
 
-<CharacterContent {...frontmatter}>
+<CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
   <Fragment slot="info-description">
     An Awakened's work. Exhibited in the mid-17th century for approximately 300 years. Completed in winter, on January 15th. Originally exhibited in the United Kingdom and Northern Ireland, and active in the Caribbean region. After a long hiatus, it later drifted to São Paulo, Brazil.
   </Fragment>
@@ -151,15 +151,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     ## Insight Materials
   </Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-total-materials">
-    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  <Fragment slot="resonance-materials-section-title">
+    ## Resonance Materials
   </Fragment>
 </CharacterContent>

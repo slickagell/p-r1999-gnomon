@@ -24,7 +24,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 # Lucy
 
-<CharacterContent {...frontmatter}>
+<CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
   <Fragment slot="info-description">
     An awakened's work. Exhibited at the end of the 1820s, on display to this day — 181 years in total. Completed in winter, on the 30th of December. Initially exhibited in the Greater London area of the United Kingdom of Great Britain and Northern Ireland, and later moved to the Laplace Scientific Computing Center.
   </Fragment>
@@ -197,19 +197,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     ## Insight Materials
   </Fragment>
 
-  <Fragment slot="insight-1-materials">
-    {CHARACTER.insightMaterials['1'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-2-materials">
-    {CHARACTER.insightMaterials['2'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-3-materials">
-    {CHARACTER.insightMaterials['3'].map((material) => (<Material code={material.code} require={material.require} />))}
-  </Fragment>
-
-  <Fragment slot="insight-total-materials">
-    {Object.values(JSON.parse(JSON.stringify(CHARACTER.insightMaterials))).reduce((accumulator, currentValue) => {currentValue.forEach((material) => {if (accumulator.some((m) => m.code === material.code)) {const index = accumulator.findIndex((m) => m.code === material.code);accumulator[index].require += material.require;} else {accumulator.push(material);}});return accumulator}, []).map((material) => (<Material code={material.code} require={material.require} />))}
+  <Fragment slot="resonance-materials-section-title">
+    ## Resonance Materials
   </Fragment>
 </CharacterContent>
