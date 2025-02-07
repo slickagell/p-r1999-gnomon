@@ -1,0 +1,18 @@
+---
+title: "Hypothesis of Exhibition"
+id: "hypothesis-of-exhibition"
+---
+import CustomImage from "@components/CustomImage.astro";
+
+# Hypothesis of Exhibition
+
+<div class="mx-auto w-1/2 aspect-square overflow-hidden">
+<CustomImage
+    presetWidth={800}
+    src={`/images/monster/${frontmatter.id}.png`}
+    alt={frontmatter.title}
+    class="w-full [transform:rotateY(180deg)]"
+/>
+</div>
+
+

@@ -1,0 +1,16 @@
+---
+title: "Gold in the Cave"
+id: "gold-in-the-cave"
+---
+import CustomImage from "@components/CustomImage.astro";
+
+# Gold in the Cave
+
+<div class="mx-auto w-1/2 aspect-square overflow-hidden">
+<CustomImage
+    presetWidth={800}
+    src={`/images/monster/${frontmatter.id}.png`}
+    alt={frontmatter.title}
+    class="w-full [transform:rotateY(180deg)]"
+/>
+</div>

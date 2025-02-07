@@ -1,0 +1,52 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
+import MarkdownText from "@components/MarkdownText.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getCollection, getEntry, render } from "astro:content";
+
+const maneBulletinEntry = await getEntry("mane-bulletin", "general")!;
+const bossEntries = await getCollection("mane-bulletin", ({ id }) => {
+  return id !== "general";
+});
+
+const { Content } = await render(maneBulletinEntry);
+---
+
+<Layout
+  title="Mane's Bulletin"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Mane's Bulletin",
+    },
+  ]}
+>
+  <Content
+    components={{
+      img: CustomImage,
+      p: MarkdownParagraphContent,
+      effect: EffectTooltip,
+      text: MarkdownText,
+    }}
+  />
+
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+    {
+      bossEntries.map((bossEntry) => (
+        <a href={`/mane-bulletin/${bossEntry.id}`}>
+          <div class="card card-compact border border-primary">
+            <div class="card-body">
+              <p class="card-title">{bossEntry.data.title}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Layout>

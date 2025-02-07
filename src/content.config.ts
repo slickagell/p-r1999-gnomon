@@ -1,6 +1,5 @@
-import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
-import { AFFLATUS_TYPE } from "@constants/character";
+import { defineCollection, z } from "astro:content";
 
 const characters = defineCollection({
   loader: glob({
@@ -90,6 +89,13 @@ const catalysts = defineCollection({
   }),
 });
 
+const maneBulletin = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/markdown/mane-bulletin",
+  }),
+});
+
 export const collections = {
   characters,
   effects,
@@ -97,4 +103,5 @@ export const collections = {
   "a-series-of-dusks": aSeriesOfDusks,
   artefacts,
   catalysts,
+  "mane-bulletin": maneBulletin,
 };

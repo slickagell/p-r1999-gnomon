@@ -1,0 +1,93 @@
+---
+title: "Darkness of the Abyss"
+id: "darkness-of-the-abyss"
+---
+import CustomImage from "@components/CustomImage.astro";
+
+# Darkness of the Abyss
+
+<div class="mx-auto w-1/2 aspect-square overflow-hidden">
+<CustomImage
+    presetWidth={800}
+    src={`/images/monster/${frontmatter.id}.png`}
+    alt={frontmatter.title}
+    class="w-full [transform:rotateY(180deg)]"
+/>
+</div>
+
+## Boss mechanics
+
+- **Star** afflatus units gain **20%** stats increase in ATK, DEF and HP
+
+- The boss takes **75%** more **Genesis** DMG. 
+
+- It self-cleanses all *[Neg Status]* at end of turn.
+
+- If it didn't take damage in one turn, it will gain 2 layers of :effect{code="STURDINESS"}.
+
+- Every **2** rounds, the boss will aim at **2** units with the highest HP percentages left and inflict **4** layers of :effect{code="FROSTBITE"}.
+
+- Its ultimate will inflict **5** stacks of :effect{code="FROSTBITE"} immediately, cause whole team to be :effect{code="FREEZE"}.
+
+- The tentacles will attack the unit with the highest HP percentage left at turn end, and give 1 stack of :effect{code="STURDINESS"} to self and the boss. If at 4 moxie, they will cast Ultimate and inflict :effect{code="FREEZE"} on the target instead. 
+
+- When a tentacle is killed by your attacks, the boss will take genesis dmg equal to **15%** Max HP.
+
+- When DotA's Eureka is full, it activates a **shield phase**, where failing to destroy the shield within 3 rounds leads to the removal of all buffs from your team and a powerful AoE attack followed by :effect{code="FREEZE"}.
+
+#### Endless mode
+
+- After casting their Ultimates, DotA and its Tentacles gain **a buff, which cannot be dispelled**, that reduces incoming damage.
+
+- **4** stacks of :effect{code="FROSTBITE"} will be applied per attack instead of **2**.
+
+## Strategy and tips
+
+- Prioritize Genesis DMG & Star units since they deal more damage.
+
+- Avoid relying on debuff application due to DotA's end-round cleanse.
+
+- Attack the boss every turn to prevent it from gaining :effect{code="STURDINESS"}.
+
+- :effect{code="FROSTBITE"} is a debuff that can be cleansed and immunity to it.
+
+- :effect{code="FROSTBITE"} stacks can be removed by taking active actions twice per turn.
+
+- When DotA in shield phase, focus on breaking its shield with all your attacks instead of trying to survive.
+
+- In Endless mode, preventing the execution of most ultimates is key by using character with :effect{code="SILENCE"} or Moxie reduction skills.
+
+## Team composition suggestions
+
+<div class="md:grid md:grid-cols-3">
+
+<div>
+#### DPS/Sup DPS
+
+- 37
+- Lucy
+- Windsong
+- Lilya
+- Regulus
+- Charlie
+</div>
+
+<div>
+#### Support
+
+- 6
+- Necrologist
+- Pickles
+</div>
+
+<div>
+#### Sustain/Healer
+
+- Voyager
+- Ms. Newbabel
+- Tooth Fairy
+- Vila
+- Yenisei
+</div>
+
+</div>
