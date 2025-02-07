@@ -4,15 +4,15 @@ id: "echoes-of-opera"
 ---
 import CustomImage from "@components/CustomImage.astro";
 
-# Echoes of Opera
-
-<div class="mx-auto w-1/2 aspect-square overflow-hidden">
+<div class="flex items-center">
 <CustomImage
-    presetWidth={800}
-    src={`/images/monster/${frontmatter.id}.png`}
+    src={`/images/mane-bulletin/${frontmatter.id}-skew.png`}
     alt={frontmatter.title}
-    class="w-full [transform:rotateY(180deg)]"
+    class="w-[30rem]"
 />
+<div class="-ml-20">
+# Echoes of Opera
+</div>
 </div>
 
 
