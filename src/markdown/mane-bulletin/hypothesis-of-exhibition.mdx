@@ -1,18 +1,92 @@
 ---
 title: "Hypothesis of Exhibition"
 id: "hypothesis-of-exhibition"
+dmgType: "REALITY"
+afflatus: "PLANT"
 ---
-import CustomImage from "@components/CustomImage.astro";
 
-<div class="flex items-center">
-<CustomImage
-    src={`/images/mane-bulletin/${frontmatter.id}-skew.png`}
-    alt={frontmatter.title}
-    class="w-[30rem]"
-/>
-<div class="-ml-20">
-# Hypothesis of Exhibition
-</div>
-</div>
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
 
+  <Fragment slot="stage-mechanism-content">
+    * The main boss is *Strange Doctor*, score is earned by attacking it.
+
+    * **Beast** and **Plant** afflatus units gain **20%** stats increase in ATK, DEF and HP
+
+    * Our allies after cast a non-attack skill will gain **1** :effect{code="ROUSING_MORALE"} stack and Ultimate will gain **2** :effect{code="ROUSING_MORALE"} stacks.
+
+    * At the start of each round, *Strange Doctor* will enter :effect{code="MASTERMIND"} status.
+      * If *Futurism* is in *\[Control]* status, exit that status, gain *Futurism* **3** :effect{code="DYNAMO"} stack and suffer :effect{code="TRUE_FORM_EXPOSED"} for **1** round.
+
+    * If all robots are dead, *Strange Doctor* will suffer :effect{code="TRUE_FORM_EXPOSED"} for **3** rounds.
+
+    * *Strange Doctor* rotation:
+      * First, it will buff DMG bonus to all enemies and gain *Futurism* **1** :effect{code="DYNAMO"} stack and **+1** Moxie.
+      * Second, it will attack **2** units with the highest HP percentages, inflict Ultimate Might **-15%** for **1** round, if there's no Test robot **2** on the field, summon it (up to 4 enemies on field).
+      * Repeat the above two steps.
+      * Ultimate will gain a Shield for **2** rounds, enter prepare status for **2** rounds then dispel all *\[Neg Status]* on self, gain *Futurism* with **2** :effect{code="DYNAMO"} stack, DMG bonus **+50%** and **+5** Moxie to all enemies.
+
+    * *Futurism* mechanism:
+      * Enters battle, gain **4** :effect{code="DYNAMO"} stacks.
+      * At the end of each turn or being attacked, lose **1** :effect{code="DYNAMO"} stack.
+      * If lose all :effect{code="DYNAMO"} stacks, enter :effect{code="STAGGERED"} status.
+      * When in :effect{code="BURN"}, :effect{code="POISON"} and :effect{code="CORRODE"} status, DMG Dealt **-25%**.
+      * Every turn, it attacks **2** units with the highest HP percentages.
+
+    * Test robots **1** and **2** have DMG taken fixed at **1**, and has total HP of **8** and **3**.
+
+    #### Crisis Column mode
+
+    * If any enemies use Ultimates, gain **2** :effect{code="STURDINESS"} stacks to all enemies.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize **Beast** & **Plant** units since they deal more damage.
+
+    * Focus on dealing with *Futurism* and *Strange Doctor*.
+
+    * When *Futurism* is not in :effect{code="STAGGERED"} status, the *Strange Doctor* will takes masively reduce Reality DMG, so focus on dealing with *Futurism* until he is in :effect{code="STAGGERED"}, then focus on dealing with the *Strange Doctor*.
+
+    * Inflict DoT effects like :effect{code="BURN"}, :effect{code="POISON"} and :effect{code="CORRODE"} will reduce the DMG dealt by *Futurism* and deals DMG to other test robots.
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+
+    * Anjo Nala
+    * Spathodea
+    * Jessica
+    * Lucy
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+
+    * Isolde
+    * Lopera
+    * Getian
+    * Shamane
+    * An-an Lee
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+
+    * Sotheby
+    * Kakania
+    * Tooth Fairy
+    * Medicine Pocket
+  </Fragment>
+</ManeBulletinContent>

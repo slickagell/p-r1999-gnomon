@@ -4,96 +4,78 @@ id: "marsh-creation"
 dmgType: "REALITY"
 afflatus: "BEAST"
 ---
-import CustomImage from "@components/CustomImage.astro";
-import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
-import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 
-<div class="flex items-center">
-<CustomImage
-    src={`/images/mane-bulletin/${frontmatter.id}-skew.png`}
-    alt={frontmatter.title}
-    class="w-[30rem]"
-/>
-<div class="-ml-20">
-# Marsh Creation
-</div>
-</div>
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
-<div class="flex gap-5">
-<CharacterImg
-        variant="afflatus"
-        code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode}
-      />
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
 
-      <div class="flex gap-2 items-center">
-        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+  <Fragment slot="stage-mechanism-content">
+    * **Mineral** and **Beast** afflatus units gain **20%** stats increase in ATK, DEF and HP
 
-        <h5>{DMG_TYPE[frontmatter.dmgType].title}</h5>
-      </div>
-</div>
+    * Dispel enemy *\[Stats Up]* and *\[Pos Status]* by using a tier 2/3 Buff/Counter/Health/Channel skill.
 
-## Boss mechanics
+    * MC enters *\[Counter]* state every **2** rounds, attack it in this state will inflict :effect{code="CORRODE"} on the attacker, a DoT effect that cause losing **15%** Max HP at the end of each turn.
 
-- **Mineral** and **Beast** afflatus units gain **20%** stats increase in ATK, DEF and HP
+    * When MC is not in *\[Counter]* state, it will suffer **+40%** DMG Taken
 
-- Dispel enemy *[Stats Up]* and *[Pos Status]* by using a tier 2/3 Buff/Counter/Health/Channel skill.
+    * At the end of each turn, MC will also apply **2** random buffs, including *\[Stats Up]*, *\[Pos Status]*, *\[Counter]*, on itself. For each type of buff applied, it will increase **10%** DMG.
 
-- MC enters *[Counter]* state every **2** rounds, attack it in this state will inflict :effect{code="CORRODE"} on the attacker, a DoT effect that cause losing **15%** Max HP at the end of each turn.
+    * One of its skill allow it to enhance its DEF, increase its Reality DEF first then its Mental DEF if the Reality DEF buff already exist.
 
-- When MC is not in *[Counter]* state, it will suffer **+40%** DMG Taken
+    * Its Ultimate will dispel all *\[Stats Up]*, *\[Pos Status]*, *\[Counter]* statuses of all allies and reduce all allies' skills to tier 1.
 
-- At the end of each turn, MC will also apply **2** random buffs, including *[Stats Up]*, *[Pos Status]*, *[Counter]*, on itself. For each type of buff applied, it will increase **10%** DMG.
+    #### Crisis Column mode
 
-- One of its skill allow it to enhance its DEF, increase its Reality DEF first then its Mental DEF if the Reality DEF buff already exist.
+    * When MC is in *\[Counter]* state, it will deal **+20%** DMG to units without :effect{code="SHIELD"} or *\[Counter]*.
+  </Fragment>
 
-- Its Ultimate will dispel all *[Stats Up]*, *[Pos Status]*, *[Counter]* statuses of all allies and reduce all allies' skills to tier 1.
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
 
-#### Endless mode
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize **Mineral** and **Beast** units since they deal more damage.
 
-- When MC is in *[Counter]* state, it will deal **+20%** DMG to units without :effect{code="SHIELD"} or *[Counter]*.
+    * 2 ways to dispel MC buffs:
+      * use a tier 2/3 Buff/Counter/Health/Channel skill.
+      * use units with dispel skills.
 
-## Strategy and tips
+    * Use the turn when it is in *\[Counter]* state to merge skills and prepare for its burst DMG skill next turn.
 
-- Prioritize **Mineral** and **Beast** units since they deal more damage.
+    * Aware which buffs MC is applying and dispel them when possible.
+  </Fragment>
 
-- 2 ways to dispel MC buffs: 
-    - use a tier 2/3 Buff/Counter/Health/Channel skill.
-    - use units with dispel skills.
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
 
-- Use the turn when it is in *[Counter]* state to merge skills and prepare for its burst DMG skill next turn.
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
 
-- Aware which buffs MC is applying and dispel them when possible.
+    * Jiu Niangzi
+    * Melania
+    * Kaalaa Baunna
+  </Fragment>
 
+  <Fragment slot="team-suggestions-support">
+    #### Support
 
-## Team suggestions
+    * Pickles
+    * 6
+    * X
+    * Horropedia
+    * Sonetto
+  </Fragment>
 
-<div class="md:grid md:grid-cols-3">
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
 
-<div>
-#### DPS/Sup DPS
-
-- Jiu Niangzi
-- Melania
-- Kaalaa Baunna
-</div>
-
-<div>
-#### Support
-
-- Pickles
-- 6
-- X
-- Horropedia
-- Sonetto
-</div>
-
-<div>
-#### Sustain/Healer
-
-- Voyager
-- Ms. Newbabel
-- Ballon Party
-- Tooth Fairy
-</div>
-
-</div>
+    * Voyager
+    * Ms. Newbabel
+    * Ballon Party
+    * Tooth Fairy
+  </Fragment>
+</ManeBulletinContent>

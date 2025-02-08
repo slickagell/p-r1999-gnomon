@@ -2,15 +2,13 @@
 title: "Isle Cryptid"
 id: "isle-cryptid"
 ---
+
 import CustomImage from "@components/CustomImage.astro";
 
 <div class="flex items-center">
-<CustomImage
-    src={`/images/mane-bulletin/${frontmatter.id}-skew.png`}
-    alt={frontmatter.title}
-    class="w-[30rem]"
-/>
-<div class="-ml-20">
-# Isle Cryptid
-</div>
+  <CustomImage src={`/images/mane-bulletin/${frontmatter.id}-skew.png`} alt={frontmatter.title} class="w-[30rem]" />
+
+  <div class="-ml-20">
+    # Isle Cryptid
+  </div>
 </div>

@@ -4,107 +4,90 @@ id: "darkness-of-the-abyss"
 dmgType: "REALITY"
 afflatus: "MINERAL"
 ---
-import CustomImage from "@components/CustomImage.astro";
-import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
-import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 
-<div class="flex items-center">
-<CustomImage
-    src={`/images/mane-bulletin/${frontmatter.id}-skew.png`}
-    alt={frontmatter.title}
-    class="w-[30rem]"
-/>
-<div class="-ml-20">
-# Darkness of the Abyss
-</div>
-</div>
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
-<div class="flex gap-5">
-<CharacterImg
-        variant="afflatus"
-        code={AFFLATUS_TYPE[frontmatter.afflatus].assetCode}
-      />
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
 
-      <div class="flex gap-2 items-center">
-        <CharacterImg variant="dmg-type" code={DMG_TYPE[frontmatter.dmgType].assetCode} />
+  <Fragment slot="stage-mechanism-content">
+    * **Star** afflatus units gain **20%** stats increase in ATK, DEF and HP
 
-        <h5>{DMG_TYPE[frontmatter.dmgType].title}</h5>
-      </div>
-</div>
+    * The boss takes **75%** more **Genesis** DMG.
 
-## Boss mechanics
+    * It self-cleanses all *\[Neg Status]* at end of turn.
 
-- **Star** afflatus units gain **20%** stats increase in ATK, DEF and HP
+    * If it didn't take damage in one turn, it will gain 2 layers of :effect{code="STURDINESS"}.
 
-- The boss takes **75%** more **Genesis** DMG. 
+    * Every **2** rounds, the boss will aim at **2** units with the highest HP percentages left and inflict **4** layers of :effect{code="FROSTBITE"}.
 
-- It self-cleanses all *[Neg Status]* at end of turn.
+    * Its ultimate will inflict **5** stacks of :effect{code="FROSTBITE"} immediately, cause whole team to be :effect{code="FREEZE"}.
 
-- If it didn't take damage in one turn, it will gain 2 layers of :effect{code="STURDINESS"}.
+    * The tentacles will attack the unit with the highest HP percentage left at turn end, and give 1 stack of :effect{code="STURDINESS"} to self and the boss. If at 4 moxie, they will cast Ultimate and inflict :effect{code="FREEZE"} on the target instead.
 
-- Every **2** rounds, the boss will aim at **2** units with the highest HP percentages left and inflict **4** layers of :effect{code="FROSTBITE"}.
+    * When a tentacle is killed by your attacks, the boss will take Genesis DMG equal to **15%** Max HP.
 
-- Its ultimate will inflict **5** stacks of :effect{code="FROSTBITE"} immediately, cause whole team to be :effect{code="FREEZE"}.
+    * When DotA's Eureka is full, it activates a **shield phase**, where failing to destroy the shield within 3 rounds leads to the removal of all buffs from your team and a powerful AoE attack followed by :effect{code="FREEZE"}.
 
-- The tentacles will attack the unit with the highest HP percentage left at turn end, and give 1 stack of :effect{code="STURDINESS"} to self and the boss. If at 4 moxie, they will cast Ultimate and inflict :effect{code="FREEZE"} on the target instead. 
+    #### Crisis Column mode
 
-- When a tentacle is killed by your attacks, the boss will take Genesis DMG equal to **15%** Max HP.
+    * After casting their Ultimates, DotA and its Tentacles gain **a buff, which cannot be dispelled**, that reduces incoming damage.
 
-- When DotA's Eureka is full, it activates a **shield phase**, where failing to destroy the shield within 3 rounds leads to the removal of all buffs from your team and a powerful AoE attack followed by :effect{code="FREEZE"}.
+    * **4** stacks of :effect{code="FROSTBITE"} will be applied per attack instead of **2**.
+  </Fragment>
 
-#### Endless mode
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
 
-- After casting their Ultimates, DotA and its Tentacles gain **a buff, which cannot be dispelled**, that reduces incoming damage.
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize Genesis DMG & **Star** units since they deal more damage.
 
-- **4** stacks of :effect{code="FROSTBITE"} will be applied per attack instead of **2**.
+    * Avoid relying on debuff application due to DotA's end-round cleanse.
 
-## Strategy and tips
+    * Attack the boss every turn to prevent it from gaining :effect{code="STURDINESS"}.
 
-- Prioritize Genesis DMG & **Star** units since they deal more damage.
+    * :effect{code="FROSTBITE"} is a debuff that can be cleansed and immunity to it.
 
-- Avoid relying on debuff application due to DotA's end-round cleanse.
+    * :effect{code="FROSTBITE"} stacks can be removed by taking active actions twice per turn.
 
-- Attack the boss every turn to prevent it from gaining :effect{code="STURDINESS"}.
+    * When DotA in shield phase, focus on breaking its shield with all your attacks instead of trying to survive.
 
-- :effect{code="FROSTBITE"} is a debuff that can be cleansed and immunity to it.
+    * In Crisis Column mode, preventing the execution of most ultimates is key by using character with :effect{code="SILENCE"} or Moxie reduction skills.
+  </Fragment>
 
-- :effect{code="FROSTBITE"} stacks can be removed by taking active actions twice per turn.
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
 
-- When DotA in shield phase, focus on breaking its shield with all your attacks instead of trying to survive.
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
 
-- In Endless mode, preventing the execution of most ultimates is key by using character with :effect{code="SILENCE"} or Moxie reduction skills.
+    * 37
+    * Lucy
+    * Windsong
+    * Lilya
+    * Regulus
+    * Charlie
+  </Fragment>
 
-## Team suggestions
+  <Fragment slot="team-suggestions-support">
+    #### Support
 
-<div class="md:grid md:grid-cols-3">
+    * 6
+    * Necrologist
+    * Pickles
+  </Fragment>
 
-<div>
-#### DPS/Sup DPS
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
 
-- 37
-- Lucy
-- Windsong
-- Lilya
-- Regulus
-- Charlie
-</div>
-
-<div>
-#### Support
-
-- 6
-- Necrologist
-- Pickles
-</div>
-
-<div>
-#### Sustain/Healer
-
-- Voyager
-- Ms. Newbabel
-- Tooth Fairy
-- Vila
-- Yenisei
-</div>
-
-</div>
+    * Voyager
+    * Ms. Newbabel
+    * Tooth Fairy
+    * Vila
+    * Yenisei
+  </Fragment>
+</ManeBulletinContent>

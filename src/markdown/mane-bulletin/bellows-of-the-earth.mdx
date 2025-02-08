@@ -2,15 +2,13 @@
 title: "Bellows of the Earth"
 id: "bellows-of-the-earth"
 ---
+
 import CustomImage from "@components/CustomImage.astro";
 
 <div class="flex items-center">
-<CustomImage
-    src={`/images/mane-bulletin/${frontmatter.id}-skew.png`}
-    alt={frontmatter.title}
-    class="w-[30rem]"
-/>
-<div class="-ml-20">
-# Bellows of the Earth
-</div>
+  <CustomImage src={`/images/mane-bulletin/${frontmatter.id}-skew.png`} alt={frontmatter.title} class="w-[30rem]" />
+
+  <div class="-ml-20">
+    # Bellows of the Earth
+  </div>
 </div>
