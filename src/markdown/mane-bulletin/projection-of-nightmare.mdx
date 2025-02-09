@@ -1,14 +1,42 @@
 ---
 title: "Projection of Nightmare"
 id: "projection-of-nightmare"
+dmgType: "REALITY"
+afflatus: "INTELLECT"
 ---
 
-import CustomImage from "@components/CustomImage.astro";
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
-<div class="flex items-center">
-  <CustomImage src={`/images/mane-bulletin/${frontmatter.id}-skew.png`} alt={frontmatter.title} class="w-[30rem]" />
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
 
-  <div class="-ml-20">
-    # Projection of Nightmare
-  </div>
-</div>
+  <Fragment slot="stage-mechanism-content">
+    #### Crisis Column mode
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    *
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+  </Fragment>
+</ManeBulletinContent>

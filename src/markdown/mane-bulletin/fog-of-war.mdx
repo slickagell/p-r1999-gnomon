@@ -1,14 +1,80 @@
 ---
 title: "Fog of War"
 id: "fog-of-war"
+dmgType: "REALITY"
+afflatus: "PLANT"
 ---
 
-import CustomImage from "@components/CustomImage.astro";
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
-<div class="flex items-center">
-  <CustomImage src={`/images/mane-bulletin/${frontmatter.id}-skew.png`} alt={frontmatter.title} class="w-[30rem]" />
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
 
-  <div class="-ml-20">
-    # Fog of War
-  </div>
-</div>
+  <Fragment slot="stage-mechanism-content">
+    * For both allies and enemies, after taking action, gain **5** stacks of :effect{code="SCHEMED"} and :effect{code="FADING_SCHEMED"}.
+
+    * **Mental DMG** units gain **20%** stats increase in ATK, DEF and HP
+
+    * After casting a **Counter** or **Channel** incantation, gain Moxie **+1** for self (only once per round for each character).
+
+    * When another enemy takes action, FoW gain **1** stack of :effect{code="CHARGED_MUNITIONS"}.
+
+    * When another enemy get a *\[Control]* status, FoW gain **2** stacks of :effect{code="CHARGED_MUNITIONS"}.
+
+    * At the end of the round, for every **2** stacks of :effect{code="CHARGED_MUNITIONS"}, FoW will cast skill *\[Collateral Impact]* **1** time that deals Reality DMG, if there is no *\[Neg Status]* on self, deals **+30%** Reality DMG.
+
+    * When FoW use Ultimate, for every stacks of :effect{code="CHARGED_MUNITIONS"}, increase Reality DMG Dealt by **100%**.
+
+    * At the end of the round, if FoW has more than **10** stacks of :effect{code="CHARGED_MUNITIONS"}, remove all stacks of :effect{code="CHARGED_MUNITIONS"} and gain **4** stacks of :effect{code="BROKEN"}.
+
+    * Everytime FoW attack, it gains **1** stack of buff that increases DMG Taken Reduction by **50%** (stackable).
+
+    * There are 2 believer that buff :effect{code="FORCE_FIELD"} effects that increase DMG Taken Reduction by **50%** to all enemies when not in *\[Control]* status.
+      * *Zealous Believer* (male) will buff DMG Taken Reduction by **Mental** DMG.
+      * *Devout Believer* (female) will buff DMG Taken Reduction by **Reality** DMG.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize **Mental DMG** units since they deal more damage.
+
+    * Use units with *\[Control]* skills to inflict *\[Control]* on Believers.
+
+    * Focus on dealing with *Zealous Believer* first to dispel Mental Barrier then attack FoW.
+
+    * Use Follow-up attacks to deal with Believers and :effect{code="CHARGED_MUNITIONS"} stacks of FoW.
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+
+    * Anjo Nala
+    * Windsong
+    * 37
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+
+    * 6
+    * Mercuria
+    * Voyager
+    * An-an Lee
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+
+    * Kakania
+    * Vila
+  </Fragment>
+</ManeBulletinContent>
