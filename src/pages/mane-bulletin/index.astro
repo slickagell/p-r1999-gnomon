@@ -36,22 +36,21 @@ const { Content } = await render(maneBulletinEntry);
     }}
   />
 
-  <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
     {
       bossEntries.map((bossEntry) => (
         <a href={`/mane-bulletin/${bossEntry.id}`}>
-          <div class="card card-compact transition group">
-            <div class="">
-              <CustomImage
-                presetWidth={800}
-                src={`/images/mane-bulletin/${bossEntry.data.id}.png`}
-                alt={bossEntry.data.title}
-                class="w-full group-hover:scale-105 transition"
-              />
-            </div>
-            <p class="text-lg text-primary-content font-bold text-center transition group-hover:text-primary">
+          <div class="card card-compact transition group bg-paper hover:-translate-y-1 hover:shadow-md hover:shadow-primary">
+            <p class="bg-neutral py-2 text-lg text-primary-content font-bold text-center transition group-hover:text-primary">
               {bossEntry.data.title}
             </p>
+            <div class="py-4 -mx-6 md:-mx-4 overflow-hidden">
+              <CustomImage
+                src={`/images/mane-bulletin/${bossEntry.data.id}.png`}
+                alt={bossEntry.data.title}
+                class="w-full transition"
+              />
+            </div>
           </div>
         </a>
       ))

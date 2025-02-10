@@ -13,18 +13,18 @@ interface Props {
 const { id, title, afflatus, dmgType } = Astro.props;
 ---
 
-<div class="flex items-center">
+<div class="flex flex-col md:flex-row items-center">
   <CustomImage
     src={`/images/mane-bulletin/${id}-skew.png`}
     alt={title}
-    class="w-[30rem]"
+    class="w-80 md:w-[30rem]"
   />
-  <div class="-ml-20">
+  <div class="-mt-10 md:mt-0 md:-ml-20">
     <h1>{title}</h1>
   </div>
 </div>
 
-<div class="flex gap-5">
+<div class="flex justify-center md:justify-start gap-5">
   <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[afflatus].assetCode} />
 
   <div class="flex gap-2 items-center">
