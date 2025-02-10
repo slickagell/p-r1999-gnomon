@@ -1,11 +1,3 @@
-::-webkit-scrollbar-thumb {
-  @apply rounded bg-transparent shadow-sm bg-primary;
-}
-
-::-webkit-scrollbar {
-  @apply w-2 h-2 bg-transparent;
-}
-
 h1 {
   @apply text-6xl font-bold text-primary;
 }
@@ -50,14 +42,6 @@ th {
 
 .paper-texture {
   @apply min-w-40 lg:min-w-60 p-2 relative text-black flex flex-col max-w-80 flex-1 bg-paper border-2 border-line-paper;
-}
-
-.highlight {
-  @apply text-primary font-bold;
-}
-
-strong {
-  @apply text-primary font-bold;
 }
 
 ul {

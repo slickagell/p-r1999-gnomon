@@ -1,0 +1,54 @@
+---
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<div x-data="goToTop" @scroll.window="handleScroll">
+  <button
+    x-show="isShow"
+    x-transition
+    @click="handleScrollToTop"
+    x-ref="goToTop"
+    class="fixed bottom-4 right-4 btn btn-primary rounded-full text-white p-0 z-50 w-10 h-10 min-h-min"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-4 h-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M4.5 15.75l7.5-7.5 7.5 7.5"></path>
+    </svg>
+  </button>
+</div>
+
+<script>
+  import Alpine from "alpinejs";
+  Alpine.data("goToTop", () => ({
+    isShow: false,
+
+    handleScroll() {
+      this.isShow = window.scrollY > 200;
+
+      const footStartPos =
+        this.$store.layout.footer?.getBoundingClientRect().y ?? 0;
+
+      if (window.innerHeight >= footStartPos) {
+        this.$refs.goToTop.style.bottom = `${(window.innerHeight - footStartPos + 16) / 16}rem`;
+      } else {
+        this.$refs.goToTop.style.removeProperty("bottom");
+      }
+    },
+
+    handleScrollToTop() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      this.isShow = false;
+    },
+  }));
+</script>
