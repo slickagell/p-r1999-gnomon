@@ -4,11 +4,12 @@ import MarkdownDiscList from "@components/MarkdownDiscList.astro";
 import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
 import Layout from "@layouts/Layout.astro";
+import { render } from "astro:content";
 import { getEntry } from "astro:content";
 
-const timelineContentEntry = await getEntry("timeline", "content");
+const timelineContentEntry = await getEntry("timeline", "general");
 
-const { Content } = await timelineContentEntry.render();
+const { Content } = await render(timelineContentEntry);
 ---
 
 <Layout
@@ -45,8 +46,6 @@ const { Content } = await timelineContentEntry.render();
   import resize from "@alpinejs/resize";
 
   Alpine.plugin(resize);
-
-  window.Alpine = Alpine;
 
   Alpine.data("timelineChart", timelineChart);
 </script>

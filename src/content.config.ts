@@ -164,6 +164,13 @@ const archetypes = defineCollection({
   }),
 });
 
+const timeline = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/markdown/timeline",
+  }),
+});
+
 export const collections = {
   characters,
   effects,
@@ -176,4 +183,5 @@ export const collections = {
   psychubes,
   general,
   archetypes,
+  timeline,
 };

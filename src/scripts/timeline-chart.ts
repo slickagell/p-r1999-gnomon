@@ -1,9 +1,8 @@
 import * as d3 from "d3";
 
-const MARGIN = { TOP: 10, RIGHT: 30, BOTTOM: 30, LEFT: 30 };
-const CHART_WIDTH = 992 - MARGIN.LEFT - MARGIN.RIGHT;
-const CHART_HEIGHT = 600 - MARGIN.TOP - MARGIN.BOTTOM;
-const TOTAL_WIDTH = CHART_WIDTH * 3;
+const MARGIN = { TOP: 16, RIGHT: 32, BOTTOM: 32, LEFT: 32 };
+const CHART_WIDTH = window.innerWidth - MARGIN.LEFT - MARGIN.RIGHT;
+const CHART_HEIGHT = window.innerHeight / 1.5 - MARGIN.TOP - MARGIN.BOTTOM;
 
 const MARKER_BOX_WIDTH = 8;
 const MARKER_BOX_HEIGHT = 8;
@@ -23,39 +22,65 @@ const STORM_COLOR = "#db6f39";
 const STORM_EVENT_DATA = [
   {
     period: [1999],
+    href: "#year-1999",
   },
   {
     period: [1996, 1997],
+    href: "#period-1996---1997",
   },
   {
     period: [1985, 1987],
+    href: "#period-1985---1987",
   },
   {
     period: [1977, 1978],
+    href: "#period-1977---1978",
   },
   {
     period: [1939, 1941],
+    href: "#period-193x---194x-assumed-to-be-1939---1941-ww2",
   },
   {
     period: [1912, 1913],
+    href: "#period-1912---1913",
   },
   {
     period: [1966],
+    href: "#year-1966",
   },
   {
     period: [1929],
+    href: "#year-1929",
   },
   {
     period: [1913, 1914],
+    href: "#period-1913---1914",
   },
   {
     period: [1990],
+    href: "#year-1990",
   },
 ];
 
-const STORM_EVENT_Y_COORDINATE = 300;
+const STORM_EVENT_Y_COORDINATE = CHART_HEIGHT / 2;
 
 export default () => ({
+  chartMargin: MARGIN,
+  chartWidth: CHART_WIDTH,
+  chartHeight: CHART_HEIGHT,
+  totalWidth: CHART_WIDTH * 3,
+
+  markerBoxWidth: MARKER_BOX_WIDTH,
+  markerBoxHeight: MARKER_BOX_HEIGHT,
+  refX: REF_X,
+  refY: REF_Y,
+  markerWidth: MARKER_WIDTH,
+  markerHeight: MARKER_HEIGHT,
+  arrowPoints: ARROW_POINTS,
+  circleRadius: CIRCLE_RADIUS,
+
+  chart: null,
+
   scale: 1,
 
   xLine: null,
@@ -72,18 +97,21 @@ export default () => ({
     this.xLine = d3
       .scaleLinear()
       .domain([1910, 2010])
-      .range([MARGIN.LEFT, TOTAL_WIDTH - MARGIN.RIGHT]);
+      .range([this.chartMargin.LEFT, this.totalWidth - this.chartMargin.RIGHT]);
 
     // create svg element
     d3.select("#timeline")
       .append("svg")
-      .attr("width", CHART_WIDTH + MARGIN.LEFT + MARGIN.RIGHT)
-      .attr("height", CHART_HEIGHT + MARGIN.TOP + MARGIN.BOTTOM)
+      .attr("width", "100%")
+      .attr(
+        "height",
+        this.chartHeight + this.chartMargin.TOP + this.chartMargin.BOTTOM
+      )
       .style("position", "absolute")
       .style("pointer-events", "none")
       .style("z-index", 1)
       .append("g")
-      .attr("transform", "translate(" + MARGIN.LEFT + "," + 0 + ")");
+      .attr("transform", "translate(" + this.chartMargin.LEFT + "," + 0 + ")");
 
     // Create a scrolling div containing the area shape and the horizontal axis.
     const body = d3
@@ -95,13 +123,16 @@ export default () => ({
 
     this.svg = body
       .append("svg")
-      .attr("width", TOTAL_WIDTH)
-      .attr("height", CHART_HEIGHT)
+      .attr("width", this.totalWidth)
+      .attr("height", this.chartHeight)
       .style("display", "block");
 
     this.xAxis = this.svg
       .append("g")
-      .attr("transform", "translate(0," + (CHART_HEIGHT - MARGIN.BOTTOM) + ")")
+      .attr(
+        "transform",
+        "translate(0," + (this.chartHeight - this.chartMargin.BOTTOM) + ")"
+      )
       .call(d3.axisBottom(this.xLine).tickFormat(d3.format(".0f")));
 
     // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
@@ -110,30 +141,30 @@ export default () => ({
       .scaleExtent([1, 10]) // This control how much you can unzoom (x0.5) and zoom (x20)
       .extent([
         [0, 0],
-        [CHART_WIDTH, CHART_HEIGHT],
+        [this.chartWidth, this.chartHeight],
       ])
       .filter((event) => this.filterZoom(event))
       .on("zoom", (event) => this.updateChart(event));
 
     // This add an invisible rect on top of the chart area. This rect can recover pointer events: necessary to understand when the user zoom
-    this.svg
+    this.chart = this.svg
       .append("rect")
-      .attr("width", TOTAL_WIDTH)
-      .attr("height", CHART_HEIGHT)
+      .attr("width", this.totalWidth)
+      .attr("height", this.chartHeight)
       .style("fill", "none")
       .style("pointer-events", "all")
-      .attr("transform", "translate(" + 0 + "," + MARGIN.TOP + ")")
+      .attr("transform", "translate(" + 0 + "," + this.chartMargin.TOP + ")")
       .call(zoom);
 
     this.svg
       .append("defs")
       .append("marker")
       .attr("id", "arrow")
-      .attr("viewBox", [0, 0, MARKER_BOX_WIDTH, MARKER_BOX_HEIGHT])
+      .attr("viewBox", [0, 0, this.markerBoxWidth, this.markerBoxHeight])
       .attr("refX", REF_X)
       .attr("refY", REF_Y)
-      .attr("markerWidth", MARKER_BOX_WIDTH)
-      .attr("markerHeight", MARKER_BOX_HEIGHT)
+      .attr("markerWidth", this.markerBoxWidth)
+      .attr("markerHeight", this.markerBoxHeight)
       .attr("orient", "auto-start-reverse")
       .append("path")
       .attr("d", d3.line()(ARROW_POINTS))
@@ -150,6 +181,7 @@ export default () => ({
             x: this.xLine(year),
             y: stormNodesY,
             r: CIRCLE_RADIUS,
+            href: event.href,
           };
         });
       }
@@ -160,6 +192,7 @@ export default () => ({
           x: this.xLine(year),
           y: stormNodesY,
           r: CIRCLE_RADIUS,
+          href: event.href,
         };
       });
     });
@@ -206,6 +239,8 @@ export default () => ({
       .selectAll(".period")
       .data(stormNodes.filter((d) => d.length > 1))
       .enter()
+      .append("a")
+      .attr("href", (d) => d[0].href)
       .append("rect")
       .attr("class", "period cursor-pointer");
 
@@ -322,7 +357,8 @@ export default () => ({
         .attr("y", centreY)
         .attr("text-anchor", "middle")
         .attr("fill", STORM_COLOR)
-        .style("font-size", "12px");
+        .style("font-size", "12px")
+        .style("font-weight", "bold");
     });
   },
 
