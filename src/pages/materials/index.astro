@@ -3,7 +3,9 @@ import Material from "@components/Material.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const materialEntries = await getCollection("materials");
+const materialEntries = await getCollection("materials", ({ id }) => {
+  return id !== "docs/cheatsheet";
+});
 ---
 
 <Layout

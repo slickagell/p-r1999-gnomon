@@ -1,0 +1,97 @@
+---
+import Material from "@components/Material.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+  code: string;
+  recommendAction?: string;
+  stages?: {
+    stage: string;
+    stamina: number;
+    otherMaterials: {
+      code: string;
+    }[];
+  }[];
+}
+
+const { code, recommendAction, stages } = Astro.props;
+
+const materialEntries = await getCollection("materials", ({ id, data }) => {
+  return id !== "docs/cheatsheet" && data.code === code;
+})!;
+
+const materialEntry = materialEntries[0];
+---
+
+<div class="flex flex-col items-center my-4">
+  <Material code={code} size={"large"} variant={["vertical"]} />
+  <div
+    class:list={[
+      "badge  rounded-full mt-2",
+      {
+        "badge-success": !recommendAction || recommendAction === "farm-craft",
+        "badge-info": recommendAction === "farm",
+        "badge-warning": recommendAction === "craft",
+      },
+    ]}
+  >
+    {
+      (() => {
+        switch (recommendAction) {
+          case "farm":
+            return "Farm";
+          case "craft":
+            return "Craft";
+          default:
+            return "Farm/Craft";
+        }
+      })()
+    }
+  </div>
+</div>
+
+{
+  stages && (
+    <div class="collapse collapse-plus bg-primary-content/10">
+      <input type="checkbox" checked={recommendAction !== "craft"} />
+      <div class="collapse-title text-xl font-medium">Farming stages</div>
+      <div class="collapse-content">
+        <table class="table">
+          <thead>
+            <tr>
+              {stages.map((item) => (
+                <th>
+                  <p class="text-lg text-center">Stage {item.stage}</p>
+                  <p class="text-center font-normal">
+                    <b>{item.stamina}</b> stamina
+                  </p>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {stages.map((item) => (
+                <td>
+                  <div class="flex justify-center flex-wrap gap-2">
+                    {item.otherMaterials.map((material) => (
+                      <Material code={material.code} variant={["vertical"]} />
+                    ))}
+                  </div>
+                </td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  )
+}
+
+<div class="mt-4 collapse collapse-plus bg-primary-content/10">
+  <input type="checkbox" checked={recommendAction !== "farm"} />
+  <div class="collapse-title text-xl font-medium">Craft</div>
+  <div class="collapse-content">
+    <p>:TODO:</p>
+  </div>
+</div>

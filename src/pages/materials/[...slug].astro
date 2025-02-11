@@ -7,7 +7,9 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  const materialEntries = await getCollection("materials");
+  const materialEntries = await getCollection("materials", ({ id }) => {
+    return id !== "docs/cheatsheet";
+  });
   return materialEntries.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },

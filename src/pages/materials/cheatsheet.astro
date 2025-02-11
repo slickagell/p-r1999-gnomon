@@ -1,0 +1,43 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
+import MarkdownText from "@components/MarkdownText.astro";
+import Material from "@components/Material.astro";
+import TableOfContents from "@components/TableOfContents.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getEntry, render } from "astro:content";
+
+const materialCheatsheetEntry = await getEntry("materials", "docs/cheatsheet")!;
+
+const { Content } = await render(materialCheatsheetEntry);
+---
+
+<Layout
+  title="Materials"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Materials",
+      href: "/materials",
+    },
+    {
+      label: "Cheatsheet",
+    },
+  ]}
+>
+  <Content
+    components={{
+      toc: TableOfContents,
+      img: CustomImage,
+      p: MarkdownParagraphContent,
+      effect: EffectTooltip,
+      text: MarkdownText,
+      material: Material,
+    }}
+  />
+</Layout>
