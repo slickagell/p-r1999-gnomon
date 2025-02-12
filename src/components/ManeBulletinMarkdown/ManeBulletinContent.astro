@@ -34,6 +34,27 @@ const { id, title, afflatus, dmgType } = Astro.props;
   </div>
 </div>
 
+<div class="mt-4 alert border-primary-content gap-y-2">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="stroke-current shrink-0 w-6 h-6"
+    ><path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+  >
+  <div>
+    <h3 class="font-bold my-2">Notice!</h3>
+    <div class="text-xs">
+      The data is continuously updated, and the following content may not be
+      final.
+    </div>
+  </div>
+</div>
+
 <slot name="stage-mechanism-title" />
 
 <slot name="stage-mechanism-content" />

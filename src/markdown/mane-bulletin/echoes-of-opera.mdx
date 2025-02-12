@@ -1,14 +1,55 @@
 ---
 title: "Echoes of Opera"
 id: "echoes-of-opera"
+dmgType: "MENTAL"
+afflatus: "SPIRIT"
 ---
 
-import CustomImage from "@components/CustomImage.astro";
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
-<div class="flex items-center">
-  <CustomImage src={`/images/mane-bulletin/${frontmatter.id}-skew.png`} alt={frontmatter.title} class="w-[30rem]" />
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
 
-  <div class="-ml-20">
-    # Echoes of Opera
-  </div>
-</div>
+  <Fragment slot="stage-mechanism-content">
+    * All units gain **20%** stats increase in ATK, DEF and HP.
+
+    * After each action, gain **10%** DMG Bonus and Leech Rate **5%**.
+
+    * At the start of each round, enemies gain a buff that increases DMG Dealt by **10%**, when they're defeated, dispel all stacks from their other allies.
+
+    * Upon entering battle, mark character at the leftmost position a *[Special Guest]* status, allow to deal more DMG to EoO and gain **10** stack of [Heightened Standards].
+
+    * When an enemy is defeated, dispel 2 [Heightened Standards] stacks from the *[Special Guest]*.
+
+    * When the *[Special Guest]* is received **Health** or **Buff** incantation, dispel **1** [Heightened Standards] stack.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Select 1 character that Carry and position them at the leftmost position.
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+
+  </Fragment>
+</ManeBulletinContent>

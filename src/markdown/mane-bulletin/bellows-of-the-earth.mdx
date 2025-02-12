@@ -1,14 +1,72 @@
 ---
 title: "Bellows of the Earth"
 id: "bellows-of-the-earth"
+dmgType: "REALITY"
+afflatus: "INTELLECT"
 ---
 
-import CustomImage from "@components/CustomImage.astro";
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
-<div class="flex items-center">
-  <CustomImage src={`/images/mane-bulletin/${frontmatter.id}-skew.png`} alt={frontmatter.title} class="w-[30rem]" />
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
 
-  <div class="-ml-20">
-    # Bellows of the Earth
-  </div>
-</div>
+  <Fragment slot="stage-mechanism-content">
+    * For both allies and enemies, whenever is attacked, reduces the DMG taken by **5%** for that turn (stackable up to **5** times).
+
+    * When allies defeat an enemy, DMG Bonus **+1%** (stackable up to 20 times). After **10** stacks, allies also gain **10%** Penetration Rate.
+
+    * When allies use a mass attack skill, gains DMG Bonus **+30%** and Leech Rate **+10%**.
+
+    * When a minion is defeated, gains all enemies 2 *[Build Up]* stacks, and BotE will trigger :tooltip[Mass attack. Deals **50%** Reality DMG to all its allies and and additional DMG equal to **10%** Max HP.]{title="[Energy Explosion]"}.
+
+    * For each minions alive, BotE gains Penetration Rate **+10%**.
+
+    * At the end of the round, BotE gains a buff that increases DMG Bonus **5%** (stacks up to **10** times), remove **1** stack when being attacked.
+
+    * At the end of the round, if there are less than **3** minions alive, BotE will consume **6%** of HP left and summon a new minion.
+
+    * Both BotE and minions when being attacked, will gain **1** *[Build Up]* stack, if it's a active action, it will gain additional **2** stacks. Upon reaching **9** stacks, BotE will trigger :tooltip[Mass attack. Deals **50%** Reality DMG to all its allies and and additional DMG equal to **10%** Max HP.]{title="[Energy Explosion]"}.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize units **with mass attack skills** since they deal more damage.
+
+    * Kill minions to deal DMG to BotE.
+
+    * Attack as many times as possible, since it will help enemies stack up *[Build Up]* and trigger :tooltip[Mass attack. Deals **50%** Reality DMG to all its allies and and additional DMG equal to **10%** Max HP.]{title="[Energy Explosion]"}.
+      * Favor Follow-up attacks units.
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+
+    * Anjo Nala
+    * Lucy
+    * 37
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+
+    * Isolde
+    * 6
+    * Mercuria
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+
+    * Kakania
+    * Tooth Fairy
+  </Fragment>
+</ManeBulletinContent>
