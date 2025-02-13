@@ -13,17 +13,28 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   </Fragment>
 
   <Fragment slot="stage-mechanism-content">
+    * The main boss is *Misplaced Artist*.
+
     * All units gain **20%** stats increase in ATK, DEF and HP.
 
     * After each action, gain **10%** DMG Bonus and Leech Rate **5%**.
 
+    * Upon entering battle, mark character at the leftmost position a *[Special Guest]* status, allow to deal more DMG to *Misplaced Artist* and gain **10** stack of :effect{code="HEIGHTENED_STANDARDS"}.
+
+    * When an enemy is defeated, dispel **2** :effect{code="HEIGHTENED_STANDARDS"} stacks from the *[Special Guest]*.
+
+    * When the *[Special Guest]* is received **Health** or **Buff** incantation
+      * If it's a **1-target** incantation, dispel **2** :effect{code="HEIGHTENED_STANDARDS"} stacks.
+      * If it's **AoE** incantation, dispel **1** :effect{code="HEIGHTENED_STANDARDS"} stack.
+
+    * At the end of the round, *Misplaced Artist* deal Mental DMG to all our allies and addition Generis DMG to the *[Special Guest]*, if the *[Special Guest]* attacked it this round, it will also inflict **4** stacks of :effect{code="HEIGHTENED_STANDARDS"}. 
+
+    * If :effect{code="HEIGHTENED_STANDARDS"} stacks less than **5** stacks, *[Special Guest]* will gain DMG Dealt **+50%**, Crit DMG **+50%** and Penetration Rate **+50%**.
+
+    #### Crisis Column mode
+
     * At the start of each round, enemies gain a buff that increases DMG Dealt by **10%**, when they're defeated, dispel all stacks from their other allies.
 
-    * Upon entering battle, mark character at the leftmost position a *[Special Guest]* status, allow to deal more DMG to EoO and gain **10** stack of [Heightened Standards].
-
-    * When an enemy is defeated, dispel 2 [Heightened Standards] stacks from the *[Special Guest]*.
-
-    * When the *[Special Guest]* is received **Health** or **Buff** incantation, dispel **1** [Heightened Standards] stack.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
@@ -31,7 +42,11 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   </Fragment>
 
   <Fragment slot="strategy-and-tips-content">
-    * Select 1 character that Carry and position them at the leftmost position.
+    * Select 1 character **with Burst DMG** skills and position them at the leftmost position.
+
+    * With other positions, favor buffers and healers since they dealt **30%** less DMG.
+
+    * Try to deacrease :effect{code="HEIGHTENED_STANDARDS"} stacks below **5** to deal more DMG to *Misplaced Artist*.
   </Fragment>
 
   <Fragment slot="team-suggestions-title">
@@ -41,15 +56,26 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
+    * Anjo Nala
+    * Lucy
+    * Windsong
+    * Kaalaa Baunna
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
+    * 6
+    * Isolde
+    * Pickles
+    * Mercuria
+    * An-an Lee
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
+    * Tooth Fairy
+    * Vila
   </Fragment>
 </ManeBulletinContent>

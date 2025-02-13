@@ -40,11 +40,16 @@ const { Content } = await render(maneBulletinEntry);
     {
       bossEntries.map((bossEntry) => (
         <a href={`/mane-bulletin/${bossEntry.id}`}>
-          <div class="card card-compact transition group bg-paper hover:-translate-y-1 hover:shadow-md hover:shadow-primary">
-            <p class="bg-neutral py-2 text-lg text-primary-content font-bold text-center transition group-hover:text-primary">
+          <div class="relative transition group max-w-80 mx-auto hover:-translate-y-2">
+            <CustomImage
+              src={`/images/mane-bulletin/bg_card.png`}
+              alt={bossEntry.data.title}
+              class="w-full transition"
+            />
+            <p class="absolute z-10 top-0 h-[17%] left-0 right-0 px-6 flex justify-center items-center text-2xl text-primary-content font-bold text-center transition group-hover:text-primary">
               {bossEntry.data.title}
             </p>
-            <div class="py-4 -mx-6 md:-mx-4 overflow-hidden">
+            <div class="absolute z-10 top-[22%] -m-6 left-0 overflow-hidden">
               <CustomImage
                 src={`/images/mane-bulletin/${bossEntry.data.id}.png`}
                 alt={bossEntry.data.title}
