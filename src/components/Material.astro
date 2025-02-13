@@ -5,9 +5,11 @@ import CustomImage from "@components/CustomImage.astro";
 interface Props {
   code: string;
   size?: "small" | "medium" | "large";
-  variant?: ("horizontal" | "vertical")[];
+  variant?: ("horizontal" | "vertical" | "tag-link")[];
   require?: number;
   withMetadata?: boolean;
+  customClass?: string;
+  id?: string;
 }
 
 const {
@@ -16,6 +18,8 @@ const {
   variant = ["horizontal"],
   require,
   withMetadata,
+  customClass,
+  id,
 } = Astro.props;
 
 const materialEntries = await getCollection("materials");
@@ -34,8 +38,16 @@ const material = materials[code];
 {
   material && (
     <div
-      class="flex justify-between items-center"
+      class:list={[
+        "flex justify-between items-center",
+        {
+          "flex-row": variant.includes("horizontal"),
+          "flex-col": variant.includes("vertical"),
+        },
+        customClass,
+      ]}
       {...(withMetadata && { ["data-rarity"]: material.data.rarity })}
+      {...(id && { id })}
     >
       <div
         class:list={[
@@ -46,7 +58,13 @@ const material = materials[code];
           },
         ]}
       >
-        <a href={`/materials/${material.id}`}>
+        <a
+          href={
+            variant.includes("tag-link")
+              ? `#${material.id}`
+              : `/materials/${material.id}`
+          }
+        >
           <div
             class:list={[
               "relative shrink-0",
@@ -79,19 +97,30 @@ const material = materials[code];
         </a>
         <a
           class:list={[
-            "font-medium",
+            "font-medium text-center",
             { "text-sm": size === "small" },
             { "text-base": size === "medium" },
             { "text-lg": size === "large" },
           ]}
-          href={`/materials/${material.id}`}
+          href={
+            variant.includes("tag-link")
+              ? `#${material.id}`
+              : `/materials/${material.id}`
+          }
         >
           {material.data.title}
         </a>
       </div>
 
       {require && (
-        <span class="shrink-0 text-sm ml-2">
+        <span
+          class:list={[
+            "shrink-0 text-sm",
+            {
+              "ml-2": variant.includes("horizontal"),
+            },
+          ]}
+        >
           <span class="text-xs">x</span>{" "}
           {require > 1000 ? `${require / 1000}k` : `${require}`}
         </span>

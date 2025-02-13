@@ -17,7 +17,7 @@ interface Props {
 const { code, recommendAction, stages } = Astro.props;
 
 const materialEntries = await getCollection("materials", ({ id, data }) => {
-  return id !== "docs/cheatsheet" && data.code === code;
+  return !id.includes("docs/") && data.code === code;
 })!;
 
 const materialEntry = materialEntries[0];
@@ -92,6 +92,18 @@ const materialEntry = materialEntries[0];
   <input type="checkbox" checked={recommendAction !== "farm"} />
   <div class="collapse-title text-xl font-medium">Craft</div>
   <div class="collapse-content">
-    <p>:TODO:</p>
+    <div class="flex flex-wrap">
+      {
+        materialEntry.data.craftMaterials.map((material) => (
+          <div class="basis-1/3 md:basis-1/5 flex justify-center">
+            <Material
+              code={material.code}
+              variant={["vertical", "tag-link"]}
+              require={material.require}
+            />
+          </div>
+        ))
+      }
+    </div>
   </div>
 </div>

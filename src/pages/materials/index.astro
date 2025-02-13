@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const materialEntries = await getCollection("materials", ({ id }) => {
-  return id !== "docs/cheatsheet";
+  return !id.includes("docs/");
 });
 ---
 
@@ -21,6 +21,15 @@ const materialEntries = await getCollection("materials", ({ id }) => {
   ]}
 >
   <h1 class="text-center">Material List</h1>
+
+  <div class="flex flex-wrap justify-end gap-2">
+    <a href="/materials/craft">
+      <div class="btn btn-sm btn-outline">Craft</div>
+    </a>
+    <a href="/materials/cheatsheet">
+      <div class="btn btn-sm btn-outline">Cheatsheet</div>
+    </a>
+  </div>
 
   <div x-data={"dataset"}>
     <div class="filters">

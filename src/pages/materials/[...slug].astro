@@ -8,7 +8,7 @@ import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const materialEntries = await getCollection("materials", ({ id }) => {
-    return id !== "docs/cheatsheet";
+    return !id.includes("docs/");
   });
   return materialEntries.map((entry) => ({
     params: { slug: entry.id },
