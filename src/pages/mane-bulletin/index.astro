@@ -1,8 +1,11 @@
 ---
+import AfflatusIcon from "@components/AfflatusIcon.astro";
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
 import CustomImage from "@components/CustomImage.astro";
 import EffectTooltip from "@components/EffectTooltip.astro";
 import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
 import MarkdownText from "@components/MarkdownText.astro";
+import { DMG_TYPE, type AFFLATUS_TYPE } from "@constants/character";
 import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
 import { getCollection, getEntry, render } from "astro:content";
@@ -41,12 +44,23 @@ const { Content } = await render(maneBulletinEntry);
       bossEntries.map((bossEntry) => (
         <a href={`/mane-bulletin/${bossEntry.id}`}>
           <div class="relative transition group max-w-80 mx-auto hover:-translate-y-2">
+            <div class="absolute z-10 -top-2 left-2 w-8">
+              <AfflatusIcon
+                type={bossEntry.data.afflatus as keyof typeof AFFLATUS_TYPE}
+              />
+            </div>
+            <div class="absolute z-10 -top-2 left-12 w-10 bg-neutral p-1">
+              <CharacterImg
+                variant="dmg-type"
+                code={DMG_TYPE[bossEntry.data.dmgType].assetCode}
+              />
+            </div>
             <CustomImage
               src={`/images/mane-bulletin/bg_card.png`}
               alt={bossEntry.data.title}
               class="w-full transition"
             />
-            <p class="absolute z-10 top-0 h-[17%] left-0 right-0 px-6 flex justify-center items-center text-2xl text-primary-content font-bold text-center transition group-hover:text-primary">
+            <p class="absolute z-10 top-0 h-[17%] left-0 right-0 px-4 flex justify-center items-center text-2xl text-primary-content font-bold text-center transition group-hover:text-primary">
               {bossEntry.data.title}
             </p>
             <div class="absolute z-10 top-[22%] -m-6 left-0 overflow-hidden">
@@ -56,6 +70,7 @@ const { Content } = await render(maneBulletinEntry);
                 class="w-full transition"
               />
             </div>
+            <div class="absolute z-10 bottom-0 left-0 right-0" />
           </div>
         </a>
       ))
