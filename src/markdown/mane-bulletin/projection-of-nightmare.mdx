@@ -13,11 +13,49 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   </Fragment>
 
   <Fragment slot="stage-mechanism-content">
-    #### Crisis Column mode
+    * The main boss is *Symbol of Nightmare* (humanoid)
+
+    * There is other parts of the boss:
+      * The *Root of Nightmare* (pyramid)
+      * The *End of Nightmare* (left-arm)
+      * The *Beginning of Nightmare* (right-arm)
+
+    * At the end of each round, if our allies have 3 types of *\[Stats Up]*, *\[Pos Status]* or :effect{code="SHIELD"} buffs, gain Moxie **+1** and DMG Heal **+20%** for **2** rounds. If they have **5** or more buffs, also purify *\[Neg Status]* debuffs from themselves.
+
+    * Allies after taking **2** actions in 1 turn will gain ATK **+30%** for **3** rounds. Taking **3** actions in 1 turn will increase DMG by **30%** for **3** rounds.
+
+    * If any parts of the *Symbol* are destroyed by our allies, enter :effect{code="BEFOULED"} status.
+
+    * If the *Root* is destroyed, deals DMG to the *Symbol* equal to its **30%** Max HP
+
+    * At the beginning of new HP bar, it will inflict debuff that increase DMG Taken by **10%**.
+
+    * It has a buff card that increases **10%** Reality and Mental DEF for **2** rounds.
+      * If any of its arms is present, attack our allies and inflict **1** *\[Spite]* stack, then destroy both arms and resummon them.
+      * If there's no arm left, resummon it immediately.
+
+    * When *\[Spite]* reaches **6** stacks, it will turn into *\[Spite Entwined]* which prevents allies from casting **Buff/Debuff/Health/Counter** incantations.
+
+    * Each arm will move twice per turn,
+      * One uses 1-target attack skill and another uses AoE attack skill.
+      * Each attack will also inflict **1** *\[Spite]* stack on 1 unit.
+      * When being destroyed by our attacks, grants Moxie +1 to one of our allies with the lowest Moxie count.
+
+    * The *Root* will grant **1** *\[Stability]* stack every turn for **4** turns. At the start of the round, if this unit has **4** Eureka, consume all Eureka and cleanse all *\[Stats Down]* from all allies. Its Ultimate will deal DMG to the unit with the highest ATK and inflict **2** *\[Spite]* stacks.
+
+      #### Crisis Column mode
+
+    * Enemies at the end of every **2** rounds will gain **1** :effect{code="STURDINESS"} stack.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
     ## Strategy and tips
+
+    * Prioritize units with **Follow-up Attack** and **Buff** incantations.
+    * Try to let units take multiple moves each turn to receive DMG buff
+    * Use multiple Buff incantation to gain Moxie
+    * Take down one of its arms to inflict :effect{code="BEFOULED"} stack to deal more DMG to the *Symbol*.
+    * Take down the *Root* to deal massive DMG to the *Symbol*
   </Fragment>
 
   <Fragment slot="strategy-and-tips-content">
@@ -30,13 +68,26 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
 
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
+
+    * Lucy
+    * Jiu Niangzi
+    * 37
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
+
+    * 6
+    * Getian
+    * Ezra
+    * Lorelei
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
+
+    * Kakania
+    * Vila
+    * Tooth Fairy
   </Fragment>
 </ManeBulletinContent>
