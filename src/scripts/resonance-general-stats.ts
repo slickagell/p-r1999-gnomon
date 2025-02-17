@@ -27,7 +27,7 @@ export default () => ({
     updateQuantity: number;
   }) {
     const attributesEl = document.querySelector(
-      "#attributes"
+      "#attributes",
     ) as HTMLDivElement;
     if (!attributesEl) return;
 
