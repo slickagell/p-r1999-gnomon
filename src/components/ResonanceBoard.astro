@@ -304,7 +304,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
           @click="clearBoard"
         >
           <CustomImage
-            presetWidth={48}
+            class="w-12"
             src="/images/resonance/common/clear.png"
             alt="resonance-clear"
           />
@@ -420,7 +420,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
                         <path d="M11 12h1v4h1" />
                       </svg>
                     </p>
-                    <div slot="content">
+                    <div>
                       {patternMaterialsList.map((ele) => (
                         <template x-if={`'${ele.id}' === selectedPattern`}>
                           <div>

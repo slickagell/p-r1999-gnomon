@@ -1,0 +1,82 @@
+---
+title: "Marsh Creation"
+id: "marsh-creation"
+dmgType: "REALITY"
+afflatus: "BEAST"
+keyUnitFeature: "Units with Mineral or Beast afflatus"
+---
+
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
+
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
+
+  <Fragment slot="stage-mechanism-content">
+    * **Mineral** and **Beast** afflatus units gain **20%** stats increase in ATK, DEF and HP
+
+    * Dispel enemy *\[Stats Up]* and *\[Pos Status]* by using a tier 2/3 Buff/Counter/Health/Channel skill.
+
+    * MC enters *\[Counter]* state every **2** rounds, attack it in this state will inflict :effect{code="CORRODE"} on the attacker, a DoT effect that cause losing **15%** Max HP at the end of each turn.
+
+    * When MC is not in *\[Counter]* state, it will suffer **+40%** DMG Taken
+
+    * At the end of each turn, MC will also apply **2** random buffs, including *\[Stats Up]*, *\[Pos Status]*, *\[Counter]*, on itself. For each type of buff applied, it will increase **10%** DMG.
+
+    * One of its skill allow it to enhance its DEF, increase its Reality DEF first then its Mental DEF if the Reality DEF buff already exist.
+
+    * Its Ultimate will dispel all *\[Stats Up]*, *\[Pos Status]*, *\[Counter]* statuses of all allies and reduce all allies' skills to tier 1.
+
+    #### Crisis Column mode
+
+    * When MC is in *\[Counter]* state, it will deal **+20%** DMG to units without :effect{code="SHIELD"} or *\[Counter]*.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize **Mineral** and **Beast** units since they deal more damage.
+
+    * 2 ways to dispel MC buffs:
+      * use a tier 2/3 Buff/Counter/Health/Channel skill.
+      * use units with dispel skills.
+
+    * Use the turn when it is in *\[Counter]* state to merge skills and prepare for its burst DMG skill next turn.
+
+    * Aware which buffs MC is applying and dispel them when possible.
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+
+    * Jiu Niangzi
+    * Melania
+    * Kaalaa Baunna
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+
+    * Pickles
+    * 6
+    * X
+    * Horropedia
+    * Sonetto
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+
+    * Voyager
+    * Ms. Newbabel
+    * Ballon Party
+    * Tooth Fairy
+  </Fragment>
+</ManeBulletinContent>

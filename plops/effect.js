@@ -17,8 +17,8 @@ export default {
     {
       type: "list",
       name: "isSpecific",
-      message: "Is specific to character, bullet, or mode?",
-      choices: ["CHARACTER", "BULLET", "MODE", "NONE"],
+      message: "Is specific to?",
+      choices: ["CHARACTER", "BULLET", "MODE", "MONSTER", "NONE"],
     },
   ],
   actions: () => {

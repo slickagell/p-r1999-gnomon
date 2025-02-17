@@ -1,0 +1,87 @@
+---
+title: "Isle Cryptid"
+id: "isle-cryptid"
+dmgType: "MENTAL"
+afflatus: "STAR"
+keyUnitFeature: "Units with Plant afflatus or deal Mental DMG"
+---
+
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
+
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
+
+  <Fragment slot="stage-mechanism-content">
+    * The main boss is *Isle Master*
+
+    * The minions: *Shepherd* and *Cupbearer*
+
+    * **Plant** afflatus units gain **20%** stats increase in ATK, DEF and HP
+
+    * Mental DMG units increase their DMG by **15%**, after cast a rank 2/3 incantation, gain **1** :effect{code="ROUSING_MORALE"} stack.
+
+    * When in *\[Shield]* status, *Isle Master* gains Penetration Rate **+30%**. When attacking, if it is under 2 or more *\[Stats Down]* or *\[Neg Status]* status, decrease DMG Dealt by **25%**.
+
+    * When the boss is attacked or any of minions is defeated, gain *\[Thunderous Movement]* stack
+      * 1-star incantation: **1** stack
+      * 2-star incantation: **3** stacks
+      * 3-star incantation: **5** stacks
+      * Follow-up Attack: **1** stack
+      * Minion is defeated: **3** stacks
+
+    * At the end of the round, after trigger *Isle Master* any of these following effect, dispel its *\[Thunderous Movement]* stacks
+      * If it has **8-13** stacks, deals a Mental DMG follow up attack to 2 units. If it is in *\[Shield]* status, this will also have Penetration Rate increase by **50%**.
+      * If it has **14 or more** stacks, it will cause DMG on itself equal to **20%** Max HP.
+
+    * The *Shepherd* (minion on the right), at the end of the round, if it hasn't taken any DMG in the round, enters :effect{code="TAUNT"} for **1** round, which can be dispelled by rank 2/3 incantation.
+
+    * The *Cupbearer* (minion on the left), has a attack skill that inflict a status that increases DMG Bonus by **10%**, but also increases DMG Taken by **30%**, this status can be dispelled by rank 2/3 incantation.
+
+    #### Crisis Column mode
+
+    * While *Isle Master* is in *\[Shield]* status, reduces DMG Taken by **20%**. When the *\[Shield]* is broken, increases DMG Taken by **60%** for **1** round.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize **Plant** & **Mental DMG** units since they deal more damage.
+
+    * Using units that can cast multiple ranked incantation or has mechanics to rank up incantations to continuously attacking *Isle Master* with rank 2/3 incantations.
+
+    * Prevent *Shepherd* from entering :effect{code="TAUNT"} status.
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+
+    * Lucy
+    * Marcus
+    * 37
+    * Windsong
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+
+    * Mercuria
+    * An-an Lee
+    * 6
+    * Isolde
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+
+    * Kakania
+    * Vila
+  </Fragment>
+</ManeBulletinContent>

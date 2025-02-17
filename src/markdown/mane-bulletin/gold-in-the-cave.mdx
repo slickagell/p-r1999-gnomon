@@ -1,0 +1,77 @@
+---
+title: "Gold in the Cave"
+id: "gold-in-the-cave"
+dmgType: "MENTAL"
+afflatus: "SPIRIT"
+keyUnitFeature: "Units can use Ultimate frequently"
+---
+
+import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
+
+<ManeBulletinContent {...frontmatter}>
+  <Fragment slot="stage-mechanism-title">
+    ## Stage mechanism
+  </Fragment>
+
+  <Fragment slot="stage-mechanism-content">
+    * After using Ultimate, all allies will increase their DMG Dealt **30%** for **1** round, and heal the ally with the lowest HP with **10%** of Max HP.
+
+    * At the end of the round, if any enemy is under *\[Control]* or has at least **2** *\[Stats Down]* or *\[Neg Status]* effects, gain **+1** Moxie and increase DMG Heal **30%** for **2** rounds.
+
+    * When GitC is not inflicted with *\[Stats Down]* or *\[Neg Status]*, DMG Dealt **+15%**, and if it has 3 or less *\[Stats Down]* or *\[Neg Status]* effects, Penetration Rate **+15%**.
+
+    * Before being hit by Ultimate, GitC will lose all its unique buffs. When it is hit by Ultimate, DMG Taken **+30%**.
+
+    * Every **2** rounds, it will inflict :effect{code="DISARM"} on the unit with the highest ATK for **1** round.
+
+    * If any of GitC's unique reaches **5** stack, the duration of :effect{code="DISARM"} effect will be doubled, last for **2** rounds.
+
+    * Its ultimate will dispel all *\[Stats Up]* on our team and inflict :effect{code="DISARM"} and :effect{code="SILENCE"} for **2** rounds.
+
+    #### Crisis Column mode
+
+    * GitC applies a debuff to our allies at the end of the round that reduces Incantation Might by **10%**.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize units that can use Ultimate frequently.
+
+    * Try to keep **4** debuff effects on the boss at all times.
+
+    * Use AoE skills to deal with minions, since they buff GitC and gain Ultimate fast, which will cause our allies to lose lots of HP.
+  </Fragment>
+
+  <Fragment slot="team-suggestions-title">
+    ## Team suggestions
+  </Fragment>
+
+  <Fragment slot="team-suggestions-dps">
+    #### DPS/Sup DPS
+
+    * Lucy
+    * Melania
+    * Kaalaa Baunna
+  </Fragment>
+
+  <Fragment slot="team-suggestions-support">
+    #### Support
+
+    * 6
+    * Mercuria
+    * Isolde
+    * Pickles
+    * Necrologist
+  </Fragment>
+
+  <Fragment slot="team-suggestions-sustain">
+    #### Sustain/Healer
+
+    * Kakania
+    * Vila
+    * Tooth Fairy
+  </Fragment>
+</ManeBulletinContent>

@@ -27,7 +27,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!code) return null;
           return (
             <CustomImage
-              presetWidth={128}
+              class="w-32"
               src={`/images/afflatus/af-${code}.png`}
               alt={`afflatus ${code}`}
             />
@@ -37,7 +37,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!code) return null;
           return (
             <CustomImage
-              presetWidth={56}
+              class="w-14"
               src={`/images/dmg-type/${code}.png`}
               alt={`damage type ${code}`}
             />
@@ -47,7 +47,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              presetWidth={256}
+              class="w-64"
               src={`/images/characters/${id}/signature.png`}
               alt="signature"
             />
@@ -57,7 +57,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              presetWidth={320}
+              class="w-80"
               loading="eager"
               src={`/images/characters/${id}/portrait.png`}
               alt="portrait"
@@ -68,7 +68,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              presetWidth={160}
+              class="w-40"
               src={`/images/characters/${id}/udimo.png`}
               alt="udimo"
             />
@@ -78,7 +78,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              presetWidth={96}
+              class="w-24"
               src={`/images/characters/${id}/chibi.png`}
               alt="chibi"
             />
@@ -88,7 +88,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              presetWidth={192}
+              class="w-48"
               src={`/images/characters/${id}/skill-1.png`}
               alt="skill-1"
             />
@@ -98,7 +98,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              presetWidth={192}
+              class="w-48"
               src={`/images/characters/${id}/skill-2.png`}
               alt="skill-2"
             />
@@ -108,7 +108,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              presetWidth={192}
+              class="w-48"
               src={`/images/characters/${id}/ultimate.png`}
               alt="ultimate"
             />

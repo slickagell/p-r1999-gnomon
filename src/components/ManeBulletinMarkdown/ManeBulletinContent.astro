@@ -1,0 +1,80 @@
+---
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
+import CustomImage from "@components/CustomImage.astro";
+import { AFFLATUS_TYPE, DMG_TYPE } from "@constants/character";
+
+interface Props {
+  id: string;
+  title: string;
+  afflatus: string;
+  dmgType: string;
+}
+
+const { id, title, afflatus, dmgType } = Astro.props;
+---
+
+<div class="flex flex-col md:flex-row items-center">
+  <CustomImage
+    src={`/images/mane-bulletin/${id}-skew.png`}
+    alt={title}
+    class="w-80 md:w-[30rem]"
+  />
+  <div class="-mt-10 md:mt-0 md:-ml-20">
+    <h1>{title}</h1>
+  </div>
+</div>
+
+<div class="flex justify-center md:justify-start gap-5">
+  <CharacterImg variant="afflatus" code={AFFLATUS_TYPE[afflatus].assetCode} />
+
+  <div class="flex gap-2 items-center">
+    <CharacterImg variant="dmg-type" code={DMG_TYPE[dmgType].assetCode} />
+
+    <h5>{DMG_TYPE[dmgType].title}</h5>
+  </div>
+</div>
+
+<div class="mt-4 alert border-primary-content gap-y-2">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    class="stroke-current shrink-0 w-6 h-6"
+    ><path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
+  >
+  <div>
+    <p class="font-bold">Notice!</p>
+    <div class="text-xs">
+      The data is continuously updated, and the following content may not be
+      final.
+    </div>
+  </div>
+</div>
+
+<slot name="stage-mechanism-title" />
+
+<slot name="stage-mechanism-content" />
+
+<slot name="strategy-and-tips-title" />
+
+<slot name="strategy-and-tips-content" />
+
+<slot name="team-suggestions-title" />
+
+<div class="md:grid md:grid-cols-3">
+  <div>
+    <slot name="team-suggestions-dps" />
+  </div>
+
+  <div>
+    <slot name="team-suggestions-support" />
+  </div>
+
+  <div>
+    <slot name="team-suggestions-sustain" />
+  </div>
+</div>
