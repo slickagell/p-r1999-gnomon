@@ -70,7 +70,10 @@ const { Content } = await render(maneBulletinEntry);
                 class="w-full transition"
               />
             </div>
-            <div class="absolute z-10 bottom-0 left-0 right-0" />
+            <p class="absolute z-10 bottom-0 left-0 right-0 h-1/5 p-4 text-black">
+              <span class="font-bold">Key unit feature:</span>{" "}
+              {bossEntry.data.keyUnitFeature}
+            </p>
           </div>
         </a>
       ))

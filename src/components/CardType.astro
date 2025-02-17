@@ -1,13 +1,14 @@
 ---
 import type { CARD_TYPE } from "@constants/character";
 import CustomImage from "@components/CustomImage.astro";
+import { twMerge } from "@scripts/utils";
 
 interface Props {
   type: keyof typeof CARD_TYPE;
-  presetWidth?: number;
+  class?: string;
 }
 
-const { type, presetWidth } = Astro.props;
+const { type, class: customClass } = Astro.props;
 ---
 
 <div>
@@ -17,7 +18,7 @@ const { type, presetWidth } = Astro.props;
         case "HEALTH":
           return (
             <CustomImage
-              presetWidth={presetWidth ?? 256}
+              class:list={twMerge(["w-64", customClass])}
               src="/images/card/attr-health.png"
               alt="attr-health icon"
             />
@@ -25,7 +26,7 @@ const { type, presetWidth } = Astro.props;
         case "DEBUFF":
           return (
             <CustomImage
-              presetWidth={presetWidth ?? 256}
+              class:list={twMerge(["w-64", customClass])}
               src="/images/card/attr-debuff.png"
               alt="attr-debuff icon"
             />
@@ -33,7 +34,7 @@ const { type, presetWidth } = Astro.props;
         case "BUFF":
           return (
             <CustomImage
-              presetWidth={presetWidth ?? 256}
+              class:list={twMerge(["w-64", customClass])}
               src="/images/card/attr-buff.png"
               alt="attr-buff icon"
             />
@@ -41,7 +42,7 @@ const { type, presetWidth } = Astro.props;
         case "CHANNEL":
           return (
             <CustomImage
-              presetWidth={presetWidth ?? 256}
+              class:list={twMerge(["w-64", customClass])}
               src="/images/card/attr-channel.png"
               alt="attr-channel icon"
             />
@@ -49,7 +50,7 @@ const { type, presetWidth } = Astro.props;
         case "COUNTER":
           return (
             <CustomImage
-              presetWidth={presetWidth ?? 256}
+              class:list={twMerge(["w-64", customClass])}
               src="/images/card/attr-counter.png"
               alt="attr-counter icon"
             />
@@ -57,7 +58,7 @@ const { type, presetWidth } = Astro.props;
         case "VERSATILE":
           return (
             <CustomImage
-              presetWidth={presetWidth ?? 256}
+              class:list={twMerge(["w-64", customClass])}
               src="/images/card/attr-versatile.png"
               alt="attr-versatile icon"
             />
@@ -65,7 +66,7 @@ const { type, presetWidth } = Astro.props;
         default:
           return (
             <CustomImage
-              presetWidth={presetWidth ?? 256}
+              class:list={twMerge(["w-64", customClass])}
               src="/images/card/attr-attack.png"
               alt="attr-attack icon"
             />
