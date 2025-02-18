@@ -10,6 +10,7 @@ interface Props {
     stamina: number;
     otherMaterials: {
       code: string;
+      dropRate: string;
     }[];
   }[];
 }
@@ -56,7 +57,59 @@ const materialEntry = materialEntries[0];
       <input type="checkbox" checked={recommendAction !== "craft"} />
       <div class="collapse-title text-xl font-medium">Farming stages</div>
       <div class="collapse-content">
-        <table class="table table-fixed">
+        <div class="flex flex-wrap">
+          {stages.map((item) => (
+            <div class="flex-1 basis-full md:basis-1/2 flex flex-col">
+              <div class="border border-primary bg-primary/30 text-base-content p-2">
+                <p class="text-lg text-center">Stage {item.stage}</p>
+                <p class="text-center font-normal">
+                  <b>{item.stamina}</b> stamina
+                </p>
+              </div>
+              <div class="flex-1 border p-2">
+                <p class="pb-2 font-bold text-primary-content text-center">
+                  Other materials
+                </p>
+                <div class="flex justify-center flex-wrap gap-4 md:gap-6">
+                  {item.otherMaterials
+                    .filter((material) => material.dropRate !== "possible")
+                    .map((material) => (
+                      <div class="relative text-center">
+                        <Material code={material.code} variant={["vertical"]} />
+                        <p class="capitalize badge badge-sm text-[0.5rem]  bg-neutral">
+                          {material.dropRate}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+                <div class="mt-2 collapse collapse-plus">
+                  <input type="checkbox" />
+                  <div class="collapse-title text-center font-medium text-primary-content">
+                    Other possible materials
+                  </div>
+                  <div class="collapse-content">
+                    <div class="flex justify-center flex-wrap gap-4 md:gap-6">
+                      {item.otherMaterials
+                        .filter((material) => material.dropRate === "possible")
+                        .map((material) => (
+                          <div class="relative text-center">
+                            <Material
+                              code={material.code}
+                              variant={["vertical"]}
+                            />
+                            <p class="capitalize badge badge-sm text-[0.5rem] bg-neutral">
+                              {material.dropRate}
+                            </p>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* <table class="table table-fixed">
           <thead>
             <tr>
               {stages.map((item) => (
@@ -87,7 +140,7 @@ const materialEntry = materialEntries[0];
               ))}
             </tr>
           </tbody>
-        </table>
+        </table> */}
       </div>
     </div>
   )
@@ -97,7 +150,7 @@ const materialEntry = materialEntries[0];
   <input type="checkbox" checked={recommendAction !== "farm"} />
   <div class="collapse-title text-xl font-medium">Craft</div>
   <div class="collapse-content">
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap justify-center">
       {
         materialEntry.data.craftMaterials.map((material) => (
           <div class="basis-1/3 md:basis-1/5 flex justify-center">
