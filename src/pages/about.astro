@@ -1,0 +1,62 @@
+---
+import "@styles/markdown-layout.css";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout
+  title="About"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "About",
+    },
+  ]}
+>
+  <h1>About</h1>
+
+  <h2>Developer</h2>
+  <p>
+    Hi, I'm <b class="text-primary">Remagi</b>, the developer of Reverse: 1999
+    Gnomon.
+  </p>
+  <p class="mt-4">
+    Reverse: 1999 Gnomon was created for viewing information about the game
+    <a href="https://re1999.bluepoch.com/" target="_blank" class="custom-link"
+      >Reverse: 1999</a
+    >, a game created by Bluepoch.
+  </p>
+  <p>
+    This website is not intended to replace wiki; instead, it will be more
+    focused on gameplay information.
+  </p>
+  <p class="mt-4">
+    Please use
+    <a
+      href="https://bsky.app/profile/xremagix.bsky.social"
+      target="_blank"
+      class="custom-link"
+    >
+      Bluesky
+    </a>
+    or
+    <a
+      href="https://discordapp.com/users/1161314161842720798"
+      target="_blank"
+      class="custom-link"
+    >
+      Discord
+    </a>
+    to contact me with any questions or comments regarding the website.
+  </p>
+
+  <h2>Game Content Attribution</h2>
+  <p>
+    All artwork and assets related to the game are owned by Bluepoch. Reverse:
+    1999 Gnomon is a fan-made project that is not officially affiliated with or
+    endorsed by Bluepoch. As such, all rights to the game and its associated
+    content remain with Bluepoch.
+  </p>
+</Layout>
