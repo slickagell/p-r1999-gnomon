@@ -6,6 +6,7 @@ interface Props {
   code: string;
   size?: "small" | "medium" | "large";
   variant?: ("horizontal" | "vertical" | "tag-link")[];
+  tagHref?: string;
   require?: number;
   withMetadata?: boolean;
   customClass?: string;
@@ -16,6 +17,7 @@ const {
   code,
   size = "small",
   variant = ["horizontal"],
+  tagHref,
   require,
   withMetadata,
   customClass,
@@ -61,7 +63,7 @@ const material = materials[code];
         <a
           href={
             variant.includes("tag-link")
-              ? `#${material.id}`
+              ? `${tagHref ?? ""}#${material.id}`
               : `/materials/${material.id}`
           }
         >
@@ -104,7 +106,7 @@ const material = materials[code];
           ]}
           href={
             variant.includes("tag-link")
-              ? `#${material.id}`
+              ? `${tagHref ?? ""}#${material.id}`
               : `/materials/${material.id}`
           }
         >
