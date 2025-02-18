@@ -297,7 +297,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
       <!-- Board -->
       <div
         class="inline-block relative"
-        :style="{margin: boardMarginVertical + 'px' + ' ' + boardMarginHorizontal + 'px'}"
+        :style="{margin: boardMarginVertical/16 + 'rem' + ' ' + boardMarginHorizontal/16 + 'rem'}"
       >
         <button
           class="absolute top-0 left-0 btn btn-ghost p-0 border-0 z-20"
@@ -312,7 +312,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
         <canvas
           x-ref="boardCanvas"
           class="absolute pointer-events-auto z-20"
-          :style="{top: boardRelativeY + 'px', left: boardRelativeX + 'px'}"
+          :style="{top: boardRelativeY/16 + 'rem', left: boardRelativeX/16 + 'rem'}"
         ></canvas>
         <CustomImage
           loading="eager"
@@ -326,7 +326,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
             x-bind:data-block-id="block.id"
             class="border border-base-content/50 absolute select-none touch-none z-20"
             x-bind:class="(block.isNotValid ? 'bg-error' : '') || (block.isCollided ? 'bg-secondary/20 cursor-grab' : '')"
-            x-bind:style="{ left: block.pos.x + boardRelativeX + 'px', top: block.pos.y + boardRelativeY + 'px', width: block.size + 'px', height: block.size + 'px' }"
+            x-bind:style="{ left: (block.pos.x + boardRelativeX)/16 + 'rem', top: (block.pos.y + boardRelativeY)/16 + 'rem', width: block.size/16 + 'rem', height: block.size/16 + 'rem' }"
           >
           </div>
         </template>
@@ -472,7 +472,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
                   class="relative touch-none"
                   :data-piece-id="item.id"
                   :class="quantity>0?'cursor-pointer':''"
-                  :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
+                  :style={`{width: item.dimension[1] * (blockSize/16) + 'rem', height: item.dimension[0] * (blockSize/16) + 'rem'}`}
                 >
                   <img
                     loading="lazy"
@@ -480,7 +480,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
                     :src="((item.pattern&&item.pattern!=='') ? '/images/resonance/pattern-pieces/' : '/images/resonance/pieces/') + item.image"
                     :alt="item.id"
                     class={`absolute pointer-events-none rotate-0 max-w-max top-0 left-0`}
-                    :style={`{width: item.dimension[1] * blockSize + 'px', height: item.dimension[0] * blockSize + 'px'}`}
+                    :style={`{width: item.dimension[1] * (blockSize/16) + 'rem', height: item.dimension[0] * (blockSize/16) + 'rem'}`}
                   />
                 </div>
               </div>

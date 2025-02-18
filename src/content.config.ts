@@ -40,12 +40,6 @@ const materials = defineCollection({
     pattern: "**/[^_]*.{md,mdx}",
     base: "./src/markdown/materials",
   }),
-  schema: z.object({
-    title: z.string(),
-    code: z.string(),
-    image: z.string(),
-    rarity: z.number(),
-  }),
 });
 
 const aSeriesOfDusks = defineCollection({

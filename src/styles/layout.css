@@ -24,7 +24,7 @@ table {
 
 table td,
 table th {
-  padding: 8px;
+  padding: 0.5rem;
   min-height: 1px;
   height: 1px;
 }
@@ -63,6 +63,10 @@ h6 {
 
 .highlight {
   @apply text-primary font-bold;
+}
+
+.custom-link {
+  @apply text-primary transition hover:underline hover:opacity-75;
 }
 
 strong {

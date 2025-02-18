@@ -4,12 +4,25 @@ import CustomImage from "@components/CustomImage.astro";
 
 interface Props {
   code: string;
-  variant?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
+  variant?: ("horizontal" | "vertical" | "tag-link")[];
+  tagHref?: string;
   require?: number;
   withMetadata?: boolean;
+  customClass?: string;
+  id?: string;
 }
 
-const { code, variant = "small", require, withMetadata } = Astro.props;
+const {
+  code,
+  size = "small",
+  variant = ["horizontal"],
+  tagHref,
+  require,
+  withMetadata,
+  customClass,
+  id,
+} = Astro.props;
 
 const materialEntries = await getCollection("materials");
 
@@ -27,17 +40,39 @@ const material = materials[code];
 {
   material && (
     <div
-      class="flex justify-between items-center"
+      class:list={[
+        "flex justify-between items-center",
+        {
+          "flex-row": variant.includes("horizontal"),
+          "flex-col": variant.includes("vertical"),
+        },
+        customClass,
+      ]}
       {...(withMetadata && { ["data-rarity"]: material.data.rarity })}
+      {...(id && { id })}
     >
-      <div class="flex items-center">
-        <a href={`/materials/${material.id}`}>
+      <div
+        class:list={[
+          "flex items-center",
+          {
+            "flex-row": variant.includes("horizontal"),
+            "flex-col": variant.includes("vertical"),
+          },
+        ]}
+      >
+        <a
+          href={
+            variant.includes("tag-link")
+              ? `${tagHref ?? ""}#${material.id}`
+              : `/materials/${material.id}`
+          }
+        >
           <div
             class:list={[
               "relative shrink-0",
-              { "w-14 h-14": variant === "small" },
-              { "w-20 h-20": variant === "medium" },
-              { "w-32 h-32": variant === "large" },
+              { "w-14 h-14": size === "small" },
+              { "w-20 h-20": size === "medium" },
+              { "w-32 h-32": size === "large" },
             ]}
           >
             <div>
@@ -50,9 +85,9 @@ const material = materials[code];
             <div
               class:list={[
                 "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-                { "w-12": variant === "small" },
-                { "w-16": variant === "medium" },
-                { "w-24": variant === "large" },
+                { "w-12": size === "small" },
+                { "w-16": size === "medium" },
+                { "w-24": size === "large" },
               ]}
             >
               <CustomImage
@@ -62,13 +97,32 @@ const material = materials[code];
             </div>
           </div>
         </a>
-        <a class="text-sm font-medium" href={`/materials/${material.id}`}>
+        <a
+          class:list={[
+            "font-medium text-center",
+            { "text-sm": size === "small" },
+            { "text-base": size === "medium" },
+            { "text-lg": size === "large" },
+          ]}
+          href={
+            variant.includes("tag-link")
+              ? `${tagHref ?? ""}#${material.id}`
+              : `/materials/${material.id}`
+          }
+        >
           {material.data.title}
         </a>
       </div>
 
       {require && (
-        <span class="shrink-0 text-sm ml-2">
+        <span
+          class:list={[
+            "shrink-0 text-sm",
+            {
+              "ml-2": variant.includes("horizontal"),
+            },
+          ]}
+        >
           <span class="text-xs">x</span>{" "}
           {require > 1000 ? `${require / 1000}k` : `${require}`}
         </span>
