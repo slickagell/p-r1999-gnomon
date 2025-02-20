@@ -40,6 +40,10 @@ export default {
         disorder: "#95745d",
         focus: "#597463",
         meltdown: "#873a4b",
+
+        all: "#9f844d",
+        ally: "#5f7281",
+        enemy: "#873a4b",
       },
       gridTemplateColumns: {
         filter: "auto 1fr",

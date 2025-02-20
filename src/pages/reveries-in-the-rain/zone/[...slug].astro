@@ -1,0 +1,46 @@
+---
+import "@styles/markdown-layout.css";
+import MarkdownBadge from "@components/MarkdownBadge.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const zoneEntries = await getCollection("reveries-in-the-rain", ({ id }) => {
+    return id.includes("zone/");
+  });
+  return zoneEntries.map((entry) => ({
+    params: { slug: entry.id.replace("zone/", "/") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${entry.data.title} | Depths of Myth`}
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Reveries in the Rain",
+      href: "/reveries-in-the-rain",
+    },
+    {
+      label: `${entry.data.title}`,
+    },
+  ]}
+>
+  <div class="flex-1">
+    <Content
+      components={{
+        p: MarkdownContent,
+        badge: MarkdownBadge,
+      }}
+    />
+  </div>
+</Layout>
