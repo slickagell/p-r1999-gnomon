@@ -4,6 +4,7 @@ import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
 import CustomImage from "@components/CustomImage.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
+import Tooltip from "@components/Tooltip.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 
 type Props = {
@@ -18,6 +19,12 @@ type Props = {
   euphorias?: {
     code: string;
     name: string;
+    materials: {
+      [level: string]: {
+        code: string;
+        require: number;
+      }[];
+    }
   }[];
   insightMaterials?: {
     [insightLevel: string]: {
@@ -326,12 +333,48 @@ const hasInsight3Materials = insightMaterials?.["3"];
         <div class="mt-4 flex flex-col md:flex-row gap-4 md:gap-10">
           <div class="shrink-0 md:basis-1/3" >
             {euphorias?.map((euphoria, idx) => (
-              <div x-show={`active === '${euphoria.code}'`} class="border rounded border-primary flex justify-center">
+              <div x-show={`active === '${euphoria.code}'`} >
+                <div class="border rounded border-primary/25 relative mb-4">
                 <CustomImage
-                  class="w-full"
-                  src={`/images/characters/${id}/${euphoria.code}.png`}
-                  alt="udimo"
-                />
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                    src={`/images/euphoria/bg.png`}
+                    alt="euphoria bg"
+                  />
+                  <CustomImage
+                    class="relative w-full z-10"
+                    src={`/images/euphoria/${euphoria.code}.png`}
+                    alt="udimo"
+                  />
+                </div>
+                <span class="label-text-alt">
+                  <Tooltip>
+                    <p slot="toggle" class="text-base-content flex items-center gap-1">
+                      Unlock Material
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        width="24"
+                        height="24"
+                        stroke-width="2"
+                      >
+                        <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                        <path d="M12 9h.01"></path>
+                        <path d="M11 12h1v4h1"></path>
+                      </svg>
+                    </p>
+                    <div>
+                      {
+                        euphoria.materials[0].map((material) => (
+                          <Material code={material.code} require={material.require} />
+                        ))
+                      }
+                    </div>
+                  </Tooltip>
+                </span>
               </div>
             ))}
           </div>

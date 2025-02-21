@@ -26,6 +26,96 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "code": "the-many-whispers-heard-from-a-room",
+      "name": "The Many Whispers Heard from a Room",
+      "materials": {
+        "0": [
+          {
+            "code": "KEY_OF_THOUGHT",
+            "require": 6
+          },
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 20
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 100
+          },
+          {
+            "code": "GOLDEN_FLEECE",
+            "require": 2
+          }
+        ],
+        "1": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 10
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 40
+          },
+          {
+            "code": "MURMUR_OF_INSANITY",
+            "require": 2
+          }
+        ],
+        "2": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 15
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 60
+          },
+          {
+            "code": "GOLDEN_FLEECE",
+            "require": 1
+          }
+        ],
+        "3": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 18
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 70
+          },
+          {
+            "code": "SERPENT_SCEPTER",
+            "require": 1
+          },
+          {
+            "code": "MURMUR_OF_INSANITY",
+            "require": 1
+          }
+        ],
+        "4": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 20
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 80
+          },
+          {
+            "code": "RHEINGOLD",
+            "require": 1
+          },
+          {
+            "code": "GLOWING_MOTHWING",
+            "require": 1
+          }
+        ]
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

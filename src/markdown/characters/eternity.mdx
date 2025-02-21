@@ -14,6 +14,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -21,9 +22,11 @@ import CHARACTER from "@data/characters/eternity.json";
 import RESONANCE from "@data/resonance/characters/eternity.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
+export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='drink-deep-cerulean-waves-so-blue')
+
 # Eternity
 
-<CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
+<CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
     An arcanist's work exhibited in the 1990s for over a century. Completed in winter, on December 25. First exhibited in Exeter, USA, the exhibit was later displayed all over America.
   </Fragment>
@@ -148,6 +151,26 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${euphoria1.code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
+      After attacking, consume (their own Max HP x**10%**) HP from all allies to deal an additional (the team's combined Max HP x**7%**) Genesis DMG to the target; if an ally's HP is already below **50%**, that ally does not lose HP this way.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
+      When entering battle, grant (Eternity's Max HP x**5%**) Max HP to other allies.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} />
+      At the start of the round, for every **10%** missing Max HP on an ally, grant DMG Taken **-5%** to that ally, stacking up to **25%**.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} />
+      When an ally attacks, for every **10%** Missing Max HP the ally has, the ally gains Critical Rate **+4%** and Critical DMG **+6%** (stacks up to 5 times); if the ally's HP is below **50%**, then the ally's excess Critical Rate is converted to Critical DMG."
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

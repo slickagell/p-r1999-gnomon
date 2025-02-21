@@ -14,6 +14,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -21,6 +22,8 @@ import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 import CHARACTER from "@data/characters/druvis-iii.json";
 import RESONANCE from "@data/resonance/characters/druvis-iii.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='the-verdance-among-stones')
 
 # Druvis III
 
@@ -156,18 +159,18 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="euphoria-content">
-    <div x-show="active==='the-verdance-among-stones'">
-      #### I
-      Enhances *[Circle of Life]* with extra effects: gain DMG Bonus **+15%**, Penetration Rate **+15%**, and the effect becomes undispellable. 
+    <div x-show={`active==='${euphoria1.code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
+      Enhances :effect{code="CIRCLE_OF_LIFE"} with extra effects: gain DMG Bonus **+15%**, Penetration Rate **+15%**, and the effect becomes undispellable. 
 
-      #### II
-      Enhances *[Circle of Life]* with an extra effect: Druvis III gains DMG Bonus **+1%** for every 200 ATK she has. 
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
+      Enhances :effect{code="CIRCLE_OF_LIFE"} with an extra effect: Druvis III gains DMG Bonus **+1%** for every 200 ATK she has. 
 
-      #### III
-      Enhances *[Circle of Life]* with extra effects: attacking enemies in the *[Petrify]* status does not remove the *[Petrify]* status, and gain an additional Penetration Rate **+25%** against targets in the *[Petrify]* status. 
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} />
+      Enhances :effect{code="CIRCLE_OF_LIFE"} with extra effects: attacking enemies in the :effect{code="PETRIFY"} status does not remove the :effect{code="PETRIFY"} status, and gain an additional Penetration Rate **+25%** against targets in the :effect{code="PETRIFY"} status. 
 
-      #### IV
-      Enhances *[Circle of Life]* with an extra effect: Gain ATK equal to **7.5%** of Druvis III's Mental DEF.
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} />
+      Enhances :effect{code="CIRCLE_OF_LIFE"} with an extra effect: Gain ATK equal to **7.5%** of Druvis III's Mental DEF.
     </div>
   </Fragment>
 
