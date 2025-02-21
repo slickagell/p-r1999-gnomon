@@ -1,0 +1,67 @@
+---
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
+import CustomImage from "@components/CustomImage.astro";
+import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import SPECIALTY from "@data/common/character/specialty.json";
+
+interface Props {
+  id: string;
+  title: number;
+  afflatus: string;
+  specialties: string[];
+}
+
+const { id, title, afflatus, specialties } = Astro.props;
+---
+
+<h1>{title}</h1>
+
+<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+  <div>
+    <div
+      class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap"
+    >
+      <CharacterImg
+        variant="afflatus"
+        code={AFFLATUS_TYPE[afflatus].assetCode}
+      />
+    </div>
+
+    <div
+      class="mt-2 flex gap-x-1 gap-y-2 justify-center md:justify-start items-center flex-wrap"
+    >
+      {
+        specialties.map((specialty) => (
+          <div class="badge badge-lg badge-outline opacity-80">
+            {SPECIALTY[specialty].title}
+          </div>
+        ))
+      }
+    </div>
+
+    <slot name="manifest-skill-section-title" />
+
+    <slot name="manifest-skill-title" />
+
+    <slot name="manifest-skill-content" />
+  </div>
+
+  <div class="flex flex-col items-center shrink-0 md:basis-[30rem]">
+    <CustomImage
+      class="w-full"
+      src={`/images/reveries-in-the-rain/${id}.png`}
+      alt={`Myth manifest ${title}`}
+    />
+  </div>
+</div>
+
+<slot name="passive-section-title" />
+
+<h5>Passive I</h5>
+<slot name="passive-1-content" />
+
+<h5>Passive II (unlocks at Lv. 5)</h5>
+<slot name="passive-2-content" />
+
+<h5>Passive III (unlocks at Lv. 8)</h5>
+<slot name="passive-3-content" />

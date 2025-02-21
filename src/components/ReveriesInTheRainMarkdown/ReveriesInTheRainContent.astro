@@ -1,0 +1,193 @@
+---
+import AfflatusIcon from "@components/AfflatusIcon.astro";
+import CustomImage from "@components/CustomImage.astro";
+import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import { getCollection } from "astro:content";
+
+interface Props {}
+
+const {} = Astro.props;
+
+const mythManifestEntries = await getCollection(
+  "reveries-in-the-rain",
+  ({ id }) => {
+    return id.includes("myth-manifest/");
+  }
+);
+---
+
+<slot name="toc" />
+
+<slot name="depths-of-myth-title" />
+
+<slot name="depths-of-myth-content" />
+
+<slot name="trance-title" />
+
+<slot name="trance-content" />
+
+<slot name="zone-info-title" />
+
+<h4>Euphotic Zone</h4>
+
+<div class="flex flex-wrap gap-5">
+  {
+    ["10m", "20m", "30m", "40m", "50m", "60m", "70m", "80m", "90m", "100m"].map(
+      (depth) => (
+        <div>
+          <a
+            class="uppercase custom-link"
+            href={`/reveries-in-the-rain/zone/${depth}`}
+          >
+            {depth}
+          </a>
+        </div>
+      )
+    )
+  }
+</div>
+
+<h4>Mesophotic Zone</h4>
+
+<div class="flex flex-wrap gap-5">
+  {
+    [
+      "110m",
+      "120m",
+      "130m",
+      "140m",
+      "150m",
+      "160m",
+      "170m",
+      "180m",
+      "190m",
+      "200m",
+    ].map((depth) => (
+      <div>
+        <a
+          class="uppercase custom-link"
+          href={`/reveries-in-the-rain/zone/${depth}`}
+        >
+          {depth}
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<h4>Mesophotic Zone</h4>
+
+<div class="flex flex-wrap gap-5">
+  {
+    [
+      "110m",
+      "120m",
+      "130m",
+      "140m",
+      "150m",
+      "160m",
+      "170m",
+      "180m",
+      "190m",
+      "200m",
+    ].map((depth) => (
+      <div>
+        <a
+          class="uppercase custom-link"
+          href={`/reveries-in-the-rain/zone/${depth}`}
+        >
+          {depth}
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<h4>Bathyal Zone</h4>
+
+<div class="flex flex-wrap gap-5">
+  {
+    [
+      "210m",
+      "220m",
+      "230m",
+      "240m",
+      "250m",
+      "260m",
+      "270m",
+      "280m",
+      "290m",
+      "300m",
+    ].map((depth) => (
+      <div>
+        <a
+          class="uppercase custom-link"
+          href={`/reveries-in-the-rain/zone/${depth}`}
+        >
+          {depth}
+        </a>
+      </div>
+    ))
+  }
+</div>
+
+<h4>Abyssal Zone</h4>
+
+<p>Not yet unlocked</p>
+
+<h4>Hadal Zone</h4>
+
+<p>Not yet unlocked</p>
+
+<slot name="isle-of-echoes-title" />
+
+<slot name="isle-of-echoes-content" />
+
+<slot name="myth-manifests-title" />
+
+<slot name="myth-manifests-content" />
+
+<h4>Myth Manifest</h4>
+
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+  {
+    mythManifestEntries.map((mythManifest) => (
+      <a href={`/reveries-in-the-rain/${mythManifest.id}`}>
+        <div class="relative transition group max-w-80 mx-auto hover:-translate-y-2 aspect-[2/3]">
+          <div class="absolute z-20 -top-2 left-2 w-8">
+            <AfflatusIcon
+              type={mythManifest.data.afflatus as keyof typeof AFFLATUS_TYPE}
+            />
+          </div>
+          <div class="relative w-full h-full overflow-hidden">
+            <CustomImage
+              src={`/images/reveries-in-the-rain/card-bg.png`}
+              alt={mythManifest.data.title}
+              class="absolute top-0 left-0 w-full h-full object-cover opacity-75"
+            />
+            <div class="absolute top-0 left-0 w-full h-full bg-white/50 z-10" />
+            <CustomImage
+              src={`/images/reveries-in-the-rain/card-circle.png`}
+              alt={mythManifest.data.title}
+              class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[120%] z-10 max-w-max"
+            />
+            <p class="absolute z-20 top-0 h-[20%] left-0 right-0 px-4 flex justify-center items-center text-2xl font-medium text-center transition group-hover:text-primary text-black text-shadow shadow-white">
+              {mythManifest.data.title}
+            </p>
+            <div class="absolute z-20 top-[20%] -m-6 left-0 overflow-hidden">
+              <CustomImage
+                src={`/images/reveries-in-the-rain/${mythManifest.data.id}.png`}
+                alt={mythManifest.data.title}
+                class="w-full transition"
+              />
+            </div>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>
+
+<slot name="vibrations-of-volatility-title" />
+
+<slot name="vibrations-of-volatility-content" />

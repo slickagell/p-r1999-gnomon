@@ -1,84 +1,83 @@
+import ReveriesInTheRainContent from '@components/ReveriesInTheRainMarkdown/ReveriesInTheRainContent.astro';
+
 # Reveries in the Rain
 
-<Fragment>
+<ReveriesInTheRainContent>
+    <Fragment slot="toc">
+        ::toc
+    </Fragment>
 
-    ::toc
+    <Fragment slot="depths-of-myth-title">
+        ## Depths of Myth
+    </Fragment>
 
-    ## Depths of Myth
+    <Fragment slot="depths-of-myth-content">
+        In *[Reveries in the Rain]*, the *[Depths of Myth]* is the most complete and expansive part of the consciousness remnants and serves as our primary exploration target. Each small section within the remnants is a stage full of the unknown and challenges.
 
-    In *[Reveries in the Rain]*, the *[Depths of Myth]* is the most complete and expansive part of the consciousness remnants and serves as our primary exploration target. Each small section within the remnants is a stage full of the unknown and challenges.
+        *[Depths of Myth]* is divided into **multiple Zones, each with 10 stages** that must be cleared sequentially.
 
-    *[Depths of Myth]* is divided into **multiple Zones, each with 10 stages** that must be cleared sequentially.
+        The **10th** stage in each Zone is a special one, containing several sub-stages.
 
-    The **10th** stage in each Zone is a special one, containing several sub-stages.
+        Clearing each stage yields Euphoria materials; clearing each **10th** special stage yields Clear Drops besides the Euphoria materials.
+    </Fragment>
 
-    Clearing each stage yields Euphoria materials; clearing each **10th** special stage yields Clear Drops besides the Euphoria materials.
+    <Fragment slot="trance-title">
+        ### Trance
+    </Fragment>
 
-    ### Trance
+    <Fragment slot="trance-content">
+        Clearing the **5th** stage of the *[Euphotic Zone]* unlocks the *[Trance]* feature, allowing you to raid Euphoria materials. Clearing deeper in the *[Depths of Myth]* increases material rewards from *[Trance]*.
 
-    Clearing the **5th** stage of the *[Euphotic Zone]* unlocks the *[Trance]* feature, allowing you to raid Euphoria materials. Clearing deeper in the *[Depths of Myth]* increases material rewards from *[Trance]*.
+        **4** *[Trance]* chances are restored **at 5:00 AM every Monday**, with a maximum storage of **8** *[Trance]* chances 
+    </Fragment>
 
-    **4** *[Trance]* chances are restored **at 5:00 AM every Monday**, with a maximum storage of **8** *[Trance]* chances 
+    <Fragment slot="zone-info-title">
+        ### Zones information
+    </Fragment>
 
-    ### Zones information
+    <Fragment slot="isle-of-echoes-title">
+        ## Isle of Echoes
+    </Fragment>
 
-    #### Euphotic Zone
+    <Fragment slot="isle-of-echoes-content">
+        Clearing the **5th** stage of *[Euphotic Zone]* in <a href="#depths-of-myth">*[Depths of Myth]*</a> unlocks the Myth Manifest trial mode, *[Isle of Echoes]*, where you can unlock and enhance *[Myth Manifests]* to gain powerful abilities.
 
-    <div class="flex flex-wrap gap-5">
-        {['10m', '20m', '30m', '40m', '50m', '60m', '70m', '80m', '90m', '100m'].map((depth) => (<div><a class="uppercase custom-link" href={`/reveries-in-the-rain/zone/${depth}`}>{depth}</a></div>))}
-    </div>
+        In *[Isle of Echoes]*, each stage requires **4** characters and the *[Myth Manifest]* specified for the challenge. 
+        
+        Clearing first layer of any stage in *[Isle of Echoes]* unlocks the corresponding *[Myth Manifest]* to assist your team. 
+        
+        Clearing *[Myth Manifest]* stages increases its level and grants 1st Clearance rewards. *[Myth Manifests]* in *[Isle of Echoes]* are **available for limited periods and in turn**, allowing players to unlock and experience various *[Myth Manifests]*.
+    </Fragment>
 
-    #### Mesophotic Zone
+    <Fragment slot="myth-manifests-title">
+        ### Myth Manifests
+    </Fragment>
 
-    <div class="flex flex-wrap gap-5">
-        {['110m', '120m', '130m', '140m', '150m', '160m', '170m', '180m', '190m', '200m'].map((depth) => (<div><a class="uppercase custom-link" href={`/reveries-in-the-rain/zone/${depth}`}>{depth}</a></div>))}
-    </div>
+    <Fragment slot="myth-manifests-content">
+        As manifestations of consciousness and condensations of arcane powers, the *[Myth Manifests]* guard the remnants they are bound to. In intense battles, they assist your team with active skills and passive effects.
 
-    #### Bathyal Zone
+        During battles, when conditions are met, you **can use** a *[Myth Manifest]*'s **incantations**, which do **not consume your team's AP**. The incantation takes effect with your other incantations during your turn of action.
 
-    <div class="flex flex-wrap gap-5">
-        {['210m', '220m', '230m', '240m', '250m', '260m', '270m', '280m', '290m', '300m'].map((depth) => (<div><a class="uppercase custom-link" href={`/reveries-in-the-rain/zone/${depth}`}>{depth}</a></div>))}
-    </div>
+        *[Myth Manifests]* also possess unique passive effects. Once activated, these effects **grant significant buffs to your team**. As the *[Myth Manifests]* level up, their passive effects become more potent, providing a strategic advantage that can turn the tide of battle.
 
-    #### Abyssal Zone
+        *[Myth Manifests]* can also grow, enhancing their stats and skill effects. Clear corresponding *[Myth Manifest]* stages in *[Isle of Echoes]* to level up *[Myth Manifests]* and gain map fragments to light up the Mind Map.
+    </Fragment>
 
-    Not yet unlocked
+    <Fragment slot="vibrations-of-volatility-title">
+        ## Vibrations of Volatility
+    </Fragment>
 
-    #### Hadal Zone
-
-    Not yet unlocked
-
-    ## Isle of Echoes
-
-    Clearing the **5th** stage of *[Euphotic Zone]* in <a href="#depths-of-myth">*[Depths of Myth]*</a> unlocks the Myth Manifest trial mode, *[Isle of Echoes]*, where you can unlock and enhance *[Myth Manifests]* to gain powerful abilities.
-
-    In *[Isle of Echoes]*, each stage requires **4** characters and the *[Myth Manifest]* specified for the challenge. 
+    <Fragment slot="vibrations-of-volatility-content">
+        *[Voyages of Volatility]* consists of **3 stages**, each recording independent challenge results. 
     
-    Clearing first layer of any stage in *[Isle of Echoes]* unlocks the corresponding *[Myth Manifest]* to assist your team. 
-    
-    Clearing *[Myth Manifest]* stages increases its level and grants 1st Clearance rewards. *[Myth Manifests]* in *[Isle of Echoes]* are **available for limited periods and in turn**, allowing players to unlock and experience various *[Myth Manifests]*.
-
-    ### Myth Manifests
-
-    As manifestations of consciousness and condensations of arcane powers, the *[Myth Manifests]* guard the remnants they are bound to. In intense battles, they assist your team with active skills and passive effects.
-
-    During battles, when conditions are met, you **can use** a *[Myth Manifest]*'s **incantations**, which do **not consume your team's AP**. The incantation takes effect with your other incantations during your turn of action.
-
-    *[Myth Manifests]* also possess unique passive effects. Once activated, these effects **grant significant buffs to your team**. As the *[Myth Manifests]* level up, their passive effects become more potent, providing a strategic advantage that can turn the tide of battle.
-
-    *[Myth Manifests]* can also grow, enhancing their stats and skill effects. Clear corresponding *[Myth Manifest]* stages in *[Isle of Echoes]* to level up *[Myth Manifests]* and gain map fragments to light up the Mind Map.
-
-    ## Vibrations of Volatility
-
-    *[Voyages of Volatility]* consists of **3 stages**, each recording independent challenge results. 
-    
-    Characters and Myth Manifests who **clear one stage are locked and cannot participate in other stages**. 
-    
-    Clear the stages to earn points. If you fail to defeat your enemies within the required rounds or if all allied characters die, the stage is ended and points are calculated. 
-    
-    Each stage has **3 difficulty levels** to choose from before starting. Higher difficulty yields more points. 
-    
-    *[Voyages of Volatility]* stages **refresh periodically**, featuring **3** *[Myth Manifests]* for selection. 
-    
-    Achieving the required total points across all 3 stages completes the challenge and unlocks rewards.
-</Fragment>
+        Characters and Myth Manifests who **clear one stage are locked and cannot participate in other stages**. 
+        
+        Clear the stages to earn points. If you fail to defeat your enemies within the required rounds or if all allied characters die, the stage is ended and points are calculated. 
+        
+        Each stage has **3 difficulty levels** to choose from before starting. Higher difficulty yields more points. 
+        
+        *[Voyages of Volatility]* stages **refresh periodically**, featuring **3** *[Myth Manifests]* for selection. 
+        
+        Achieving the required total points across all 3 stages completes the challenge and unlocks rewards.
+    </Fragment>
+</ReveriesInTheRainContent>

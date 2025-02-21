@@ -1,16 +1,18 @@
 ---
 title: "Euphotic Zone 40M"
 ---
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
-# Euphotic Zone 40M
+<ZoneContent {...frontmatter}>
+    <Fragment slot="recommended-content">
+        - Beast and Mineral units
+        - Insight II Level 44
+    </Fragment>
 
-### Recommended
+    <Fragment slot="stage-mechanism-content">
+        :text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-- Beast and Mineral units
-- Insight II Level 44
+        :text[[Enemy]]{className="font-medium text-enemy"} When entering battle and at the start of every 3 rounds, grant Moxie +1 to self.
+    </Fragment>
+</ZoneContent>
 
-### Stage mechanism
-
-:text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
-
-:text[[Enemy]]{className="font-medium text-enemy"} When entering battle and at the start of every 3 rounds, grant Moxie +1 to self.

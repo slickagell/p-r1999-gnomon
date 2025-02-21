@@ -1,15 +1,18 @@
 ---
+id: "10m"
 title: "Euphotic Zone 10M"
 ---
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
-# Euphotic Zone 10M
+<ZoneContent {...frontmatter}>
+    <Fragment slot="recommended-content">
+        - Insight II Level 41
+    </Fragment>
 
-### Recommended
+    <Fragment slot="stage-mechanism-content">
+        :text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-- Insight II Level 41
+        :text[[Enemy]]{className="font-medium text-enemy"} ATK **+5%**, Reality DEF **+5%**, and Mental DEF **+5%**.
+    </Fragment>
+</ZoneContent>
 
-### Stage mechanism
-
-:text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
-
-:text[[Enemy]]{className="font-medium text-enemy"} ATK **+5%**, Reality DEF **+5%**, and Mental DEF **+5%**.

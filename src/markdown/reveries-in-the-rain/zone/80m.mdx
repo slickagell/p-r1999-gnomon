@@ -1,16 +1,17 @@
 ---
 title: "Euphotic Zone 80M"
 ---
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
-# Euphotic Zone 80M
+<ZoneContent {...frontmatter}>
+    <Fragment slot="recommended-content">
+        - Star units
+        - Insight II Level 48
+    </Fragment>
 
-### Recommended
+    <Fragment slot="stage-mechanism-content">
+        :text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-- Star units
-- Insight II Level 48
-
-### Stage mechanism
-
-:text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
-
-:text[[Ally]]{className="font-medium text-ally"} Healing Taken **-15%**.
+        :text[[Ally]]{className="font-medium text-ally"} Healing Taken **-15%**.
+    </Fragment>
+</ZoneContent>

@@ -1,17 +1,17 @@
 ---
 title: "Euphotic Zone 30M"
 ---
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
-# Euphotic Zone 30M
+<ZoneContent {...frontmatter}>
+    <Fragment slot="recommended-content">
+        - Beast units
+        - Insight II Level 43
+    </Fragment>
 
-### Recommended
+    <Fragment slot="stage-mechanism-content">
+        :text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-- Beast units
-- Insight II Level 43
-
-### Stage mechanism
-
-:text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
-
-:text[[Enemy]]{className="font-medium text-enemy"} DMG Heal **+5%**.
-
+        :text[[Enemy]]{className="font-medium text-enemy"} DMG Heal **+5%**.
+    </Fragment>
+</ZoneContent>

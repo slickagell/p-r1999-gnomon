@@ -1,13 +1,37 @@
 ---
+id: "star-of-misfortune"
 title: "Star of Misfortune"
 afflatus: "STAR"
 specialties: ["CRITICAL", "EUREKA", "GENESIS_DMG", "EXTRA_ACTION"]
 ---
+import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManifestContent.astro';
 
-# {frontmatter.title}
+<MythManifestContent {...frontmatter}>
+    <Fragment slot="manifest-skill-section-title">
+        ## Manifest skill
+    </Fragment>
 
-## Manifest skill
+    <Fragment slot="manifest-skill-title">
+        ### Stellar Compression
+    </Fragment>
 
-### Stellar Compression
+    <Fragment slot="manifest-skill-content">
+        Can only be cast while not in the Gather Energy status. Enter the Gather Energy status and cast :effect{code="STELLAR_COLLAPSE"} at the end of the next round; entering the Gather Energy status costs no Energon, and casting :effect{code="STELLAR_COLLAPSE"} consumes all Energon and enhances its effects based on the amount of Energon consumed.
+    </Fragment>
 
-Costs 25 Heat to cast. 1-target attack, deals **200%** Mental DMG; enhances to :effect{code="BUTTERFLY_DREAM_I"} at 50 Heat.
+    <Fragment slot="passive-section-title">
+        ## Passive
+    </Fragment>
+
+    <Fragment slot="passive-1-content">
+        When entering battle and at the start of every 2 rounds, Energon +1.
+    </Fragment>
+
+    <Fragment slot="passive-2-content">
+        After casting an ultimate, gain 1 stack of :effect{code="DISCERNMENT"} for self.
+    </Fragment>
+    
+    <Fragment slot="passive-3-content">
+        This unit's attacks are always critical hits.
+    </Fragment>
+</MythManifestContent>
