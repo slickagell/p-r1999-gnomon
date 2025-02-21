@@ -26,6 +26,12 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "code": "the-verdance-among-stones",
+      "name": "The Verdance Among Stones"
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

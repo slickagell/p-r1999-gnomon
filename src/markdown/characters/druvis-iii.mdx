@@ -15,6 +15,7 @@ isLimited: false
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
+import Tooltip from "@components/Tooltip.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
 import CHARACTER from "@data/characters/druvis-iii.json";
@@ -23,7 +24,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 # Druvis III
 
-<CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
+<CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
     An arcanist's work. Exhibited for 20 years since the beginning of the 20th century. Born in autumn, on October 23. Originally exhibited in Washington, D.C., USA, the exhibit was later kept in Europe.
   </Fragment>
@@ -148,6 +149,26 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show="active==='the-verdance-among-stones'">
+      #### I
+      Enhances *[Circle of Life]* with extra effects: gain DMG Bonus **+15%**, Penetration Rate **+15%**, and the effect becomes undispellable. 
+
+      #### II
+      Enhances *[Circle of Life]* with an extra effect: Druvis III gains DMG Bonus **+1%** for every 200 ATK she has. 
+
+      #### III
+      Enhances *[Circle of Life]* with extra effects: attacking enemies in the *[Petrify]* status does not remove the *[Petrify]* status, and gain an additional Penetration Rate **+25%** against targets in the *[Petrify]* status. 
+
+      #### IV
+      Enhances *[Circle of Life]* with an extra effect: Gain ATK equal to **7.5%** of Druvis III's Mental DEF.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
