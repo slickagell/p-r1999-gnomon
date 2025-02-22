@@ -14,6 +14,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -21,9 +22,11 @@ import CHARACTER from "@data/characters/sotheby.json";
 import RESONANCE from "@data/resonance/characters/sotheby.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
+export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='a-drop-of-creativity-an-ocean-of-naivety')
+
 # Sotheby
 
-<CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
+<CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
     An arcanist's work. Exhibited in the early 20th century for 13 years. Completed in spring, on April 4. Exhibited in the City of Westminster, London, United Kingdom of Great Britain and Northern Ireland.
   </Fragment>
@@ -148,6 +151,28 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${euphoria1.code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
+      :effect{code="CURE"} Enhancement: After being attacked, if own current HP is below **40%**, this effect is triggered immediately and the duration iS reduced by **1** round. This effect also becomes stackable. 
+      
+      *[Genius Lady]* Insight III upgrade: The :effect{code="CURE"} that is granted by *[Concentrated Essence!]* gains **+1** round duration.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
+      When entering battle, Sotheby gains Healing Done **+7%** for every **1000** Max HP she has. 
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} />
+      When entering battle, Sotheby gains Poison DMG **+2%** for every **100** ATK she has. 
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} />
+      At the start of the round, grant **1** stack of :effect{code="DUALITY_POTION"} to self.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

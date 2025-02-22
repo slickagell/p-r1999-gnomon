@@ -12,7 +12,7 @@
 
 html {
   @apply text-[calc(16/375*100vw)] md:text-[calc(16/1320*100vw)] lg:text-[16px];
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 table {

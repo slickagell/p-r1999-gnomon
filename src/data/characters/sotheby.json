@@ -26,6 +26,104 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "code": "a-drop-of-creativity-an-ocean-of-naivety",
+      "name": "A Drop of Creativity, an Ocean of Naivety",
+      "materials": {
+        "0": [
+          {
+            "code": "KEY_OF_THOUGHT",
+            "require": 12
+          },
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 40
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 200
+          },
+          {
+            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "require": 3
+          }
+        ],
+        "1": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 20
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 80
+          },
+          {
+            "code": "RHEINGOLD",
+            "require": 1
+          },
+          {
+            "code": "WYRMLING_SKELETON",
+            "require": 1
+          }
+        ],
+        "2": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 30
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 120
+          },
+          {
+            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "require": 1
+          },
+          {
+            "code": "SILVER_BULLET",
+            "require": 2
+          }
+        ],
+        "3": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 35
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 140
+          },
+          {
+            "code": "MISTILTEINN",
+            "require": 2
+          },
+          {
+            "code": "MURMUR_OF_INSANITY",
+            "require": 2
+          }
+        ],
+        "4": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 40
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 160
+          },
+          {
+            "code": "GOLDEN_FLEECE",
+            "require": 2
+          },
+          {
+            "code": "GLOWING_MOTHWING",
+            "require": 2
+          }
+        ]
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

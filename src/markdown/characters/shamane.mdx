@@ -14,6 +14,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
@@ -21,9 +22,11 @@ import CHARACTER from "@data/characters/shamane.json";
 import RESONANCE from "@data/resonance/characters/shamane.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
+export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='a-pilgrims-duty')
+
 # Shamane
 
-<CharacterContent {...frontmatter} insightMaterials={CHARACTER.insightMaterials} resonanceMaterials={CHARACTER.resonanceMaterials}>
+<CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
     An arcanist's work exhibited in the 1960s for 45 years. Completed in spring, on March 22nd. Originally exhibited in Punjab, the Republic of India, the exhibit was later moved to the vicinity of Mount Sadobanht, and is now kept in the St. Pavlov Foundation.
   </Fragment>
@@ -148,6 +151,26 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${euphoria1.code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
+      After another ally casts an ultimate, gain **2** stacks of *[Rippling Energy]* for self.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
+      After casting an ultimate, consume all stacks of *[Rippling Energy]* if able; for every **2** stacks consumed, grant Moxie **+1** to a random ally.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} />
+      Whenever consuming *[Rippling Energy]* to restore Moxie **+1** for an ally, grant **5** additional stacks of :effect{code="CEREMONIOUS"} to the target.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} />
+      After another ally casts an ultimate, gain an additional stack of *[Rippling Energy]* for self; right before casting an ultimate, gain **2** stacks of *[Rippling Energy]* for self. 
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

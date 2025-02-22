@@ -26,6 +26,104 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "code": "a-lofty-spire-risen-to-aspire",
+      "name": "A Lofty Spire, Risen to Aspire",
+      "materials": {
+        "0": [
+          {
+            "code": "KEY_OF_THOUGHT",
+            "require": 12
+          },
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 40
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 200
+          },
+          {
+            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "require": 3
+          }
+        ],
+        "1": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 20
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 80
+          },
+          {
+            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "require": 1
+          },
+          {
+            "code": "BOGEYMAN",
+            "require": 1
+          }
+        ],
+        "2": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 30
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 120
+          },
+          {
+            "code": "MISTILTEINN",
+            "require": 1
+          },
+          {
+            "code": "INCORRUPT_MONKEYPAW",
+            "require": 2
+          }
+        ],
+        "3": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 35
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 140
+          },
+          {
+            "code": "GOLDEN_FLEECE",
+            "require": 2
+          },
+          {
+            "code": "WYRMLING_SKELETON",
+            "require": 2
+          }
+        ],
+        "4": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 40
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 160
+          },
+          {
+            "code": "SERPENT_SCEPTER",
+            "require": 2
+          },
+          {
+            "code": "SILVER_BULLET",
+            "require": 2
+          }
+        ]
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {
