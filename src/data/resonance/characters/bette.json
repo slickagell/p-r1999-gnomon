@@ -63,26 +63,5 @@
     }
   },
   "patternRecommended": "PLACIDITY",
-  "recommended": {
-    "5": [
-      {
-        "name": "Attack",
-        "source": {
-          "label": "To be updated",
-          "link": "#"
-        },
-        "resonance": [
-          {
-            "blocks": ["0-0", "0-1", "0-2", "1-1"],
-            "shape": [
-              [1, 1, 1],
-              [0, 1, 0]
-            ],
-            "orientation": 3,
-            "pieceId": "RP_T_4_01"
-          }
-        ]
-      }
-    ]
-  }
+  "recommended": {}
 }

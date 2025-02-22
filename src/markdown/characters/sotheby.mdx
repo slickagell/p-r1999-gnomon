@@ -160,17 +160,21 @@ export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='a-drop-of-cre
   <Fragment slot="euphoria-content">
     <div x-show={`active==='${euphoria1.code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
-      :effect{code="CURE"} Enhancement: After being attacked, if own current HP is below **40%**, this effect is triggered immediately and the duration iS reduced by **1** round. This effect also becomes stackable. 
-      
-      *[Genius Lady]* Insight III upgrade: The :effect{code="CURE"} that is granted by *[Concentrated Essence!]* gains **+1** round duration.
+
+      :effect{code="CURE"} Enhancement: After being attacked, if own current HP is below **40%**, this effect is triggered immediately and the duration iS reduced by **1** round. This effect also becomes stackable.
+
+      *\[Genius Lady]* Insight III upgrade: The :effect{code="CURE"} that is granted by *\[Concentrated Essence!]* gains **+1** round duration.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
-      When entering battle, Sotheby gains Healing Done **+7%** for every **1000** Max HP she has. 
+
+      When entering battle, Sotheby gains Healing Done **+7%** for every **1000** Max HP she has.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} />
-      When entering battle, Sotheby gains Poison DMG **+2%** for every **100** ATK she has. 
+
+      When entering battle, Sotheby gains Poison DMG **+2%** for every **100** ATK she has.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} />
+
       At the start of the round, grant **1** stack of :effect{code="DUALITY_POTION"} to self.
     </div>
   </Fragment>

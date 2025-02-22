@@ -107,6 +107,10 @@
     "5-6": [
       {
         "name": "Attack/Crit Hybrid",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["1-2", "2-1", "2-2", "2-3", "3-2"],
@@ -171,6 +175,10 @@
       },
       {
         "name": "Critical Hit",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["2-2", "3-1", "3-2", "3-3", "4-2"],
@@ -240,6 +248,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["1-2", "2-1", "2-2", "2-3", "3-2"],
@@ -309,6 +321,10 @@
     "7-8": [
       {
         "name": "Attack/Crit Hybrid",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["1-2", "2-1", "2-2", "2-3", "3-2"],
@@ -383,6 +399,10 @@
       },
       {
         "name": "Critical Hit",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["2-2", "3-1", "3-2", "3-3", "4-2"],
@@ -466,6 +486,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["1-3", "2-2", "2-3", "2-4", "3-3"],
@@ -542,6 +566,10 @@
     "9": [
       {
         "name": "Attack/Crit Hybrid",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -634,6 +662,10 @@
       },
       {
         "name": "Critical Hit",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["3-0", "4-0", "5-0", "5-1"],
@@ -730,6 +762,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["2-2", "3-1", "3-2", "3-3", "4-2"],
@@ -817,6 +853,10 @@
     "10-11-12": [
       {
         "name": "Critical Hit (with Vila/Tooth Fairy)",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
@@ -938,6 +978,10 @@
       },
       {
         "name": "Critical Hit (without Vila/Tooth Fairy)",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
@@ -1068,6 +1112,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
@@ -1180,6 +1228,10 @@
     "13-14-15": [
       {
         "name": "Critical Hit (with Vila/Tooth Fairy)",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
@@ -1309,6 +1361,10 @@
       },
       {
         "name": "Critical Hit (without Vila/Tooth Fairy)",
+        "source": {
+          "label": "Vingler's Mirror - Lucy",
+          "link": "https://sites.google.com/view/vinglersmirror/lucy"
+        },
         "resonance": [
           {
             "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
