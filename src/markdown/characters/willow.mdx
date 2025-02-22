@@ -1,0 +1,161 @@
+---
+title: "Willow"
+id: "willow"
+gameId: "3104"
+code: "WILLOW"
+star: 6
+afflatus: "PLANT"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "2.3"
+releaseDate: "2025-02-20"
+specialties: []
+isLimited: false
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import { AFFLATUS_TYPE, DMG_TYPE, RACE, SPECIALTY } from "@constants/character";
+import CHARACTER from "@data/characters/willow.json";
+import RESONANCE from "@data/resonance/characters/willow.json";
+import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
+
+# Willow
+
+<CharacterContent {...frontmatter} {...CHARACTER}>
+  <Fragment slot="info-description">
+    An arcanist's work. Exhibited in the 1930s for 25 years. Completed in fall on November 1. Initially exhibited in County Down, United Kingdom of Great Britain and Northern Ireland, and later relocated to Greater London.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Wizened Willow Branch
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    Budding Wizened Tree [Plant] Ritual Witch
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Amber Notes, Spirit Cat Essence, Musk, Myrrh, Ashen Amber
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    74 11/64 x 31 57/64 x 13 25/32 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Hag's Advice
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="DEBUFF" note="May you be the embodiment of elegance and beauty.">
+      1-target attack. Deals **100%** Mental DMG; if the target hit already has an instance of :effect{code="POISON"}, convert 1 instance of :effect{code="POISON"} into 1 stack of :effect{code="HAGS_BANE"} that lasts 2 rounds; up to 3 instances of Poison can be converted by this effect.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="May you be the embodiment of elegance and beauty. May you be cherished by the stars.">
+      1-target attack. Deals **125%** Mental DMG; if the target hit already has an instance of :effect{code="POISON"}, convert 1 instance of :effect{code="POISON"} into 1 stack of :effect{code="HAGS_BANE"} that lasts 2 rounds; up to 4 instances of Poison can be converted by this effect.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note="May you be the embodiment of elegance and beauty. May you be cherished by the stars. May you avoid a fate like mine.">
+      1-target attack. Deals **175%** Mental DMG; if the target hit already has an instance of :effect{code="POISON"}, convert 1 instance of :effect{code="POISON"} into 1 stack of :effect{code="HAGS_BANE"} that lasts 2 rounds; up to 5 instances of Poison can be converted by this effect.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Hag's Gratitude
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="DEBUFF" note="It's just a little cold.">
+      1-target attack. Deals **100%** Mental DMG; if the target hit already has both an instance of :effect{code="POISON"} and the :effect{code="HAGS_BANE"} status, consume up to 2 instances of :effect{code="POISON"}, each instance of :effect{code="POISON"} resolves the :effect{code="HAGS_BANE"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note="It's just a little cold, bestowed by the witch.">
+      1-target attack. Deals **125%** Mental DMG; if the target hit already has both an instance of :effect{code="POISON"} and the :effect{code="HAGS_BANE"} status, consume up to 3 instances of :effect{code="POISON"}, each instance of :effect{code="POISON"} resolves the :effect{code="HAGS_BANE"} status on the target once, and the remaining rounds of Hags Bane do not decrease when resolved this way.
+    </CardInfo>
+
+    <CardInfo star="3" type="DEBUFF" note=":TODO - Add character skill-2 star-3 note:">
+      1-target attack. Deals **175%** Mental DMG; if the target hit already has both an instance of :effect{code="POISON"} and the :effect{code="HAGS_BANE"} status, consume up to 4 instances of :effect{code="POISON"}, each instance of :effect{code="POISON"} resolves the :effect{code="HAGS_BANE"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### In the Fire, In the Shadow
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="CHANNEL" note="She now has the one spectator that truly matters; no other witness is necessary.">
+      Self channel. Enters the :effect{code="ANCIENT_RITUAL"} status.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Hag's Steps
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    At the start of the round, inflict 2 instances of :effect{code="POISON"} on 2 enemy targets for 2 rounds, prioritizing targets with the most instances of :effect{code="POISON"}. When another ally actively casts and attacks an enemy with an incantation, Willow inflicts 2 additional instances of :effect{code="POISON"} on the main target for 2 rounds, this effect can trigger up to 2 times per round.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    ATK **+5%** when the caster enters battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    Enhances :effect{code="ANCIENT_RITUAL"}: Grants an additional Max Moxie +5; gains an additional Moxie +1 from casting or moving incantations.
+  </Fragment>
+  
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *Hag's Advice*: All :effect{code="HAGS_BANE"} inflicted by Willow is increased to (the user's ATK X**24%**) Genesis DMG.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    *Hag's Steps*: The damage of all :effect{code="POISON"} effects inflicted by this passive is increased to (the user's ATK x**40%**) Genesis DMG. In addition, each time Willow's :effect{code="HAGS_BANE"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **45%**.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *Hag's Advice*: At incantation rank **1/2/3**, the instances of Poisons that can be converted is increased to **4/5/6**.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *Hag's Steps*: When another ally actively casts and attacks an enemy with an incantation, the instances of :effect{code="POISON"} Willow inflicts on the main target is inereased to **3**.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    *Hag's Advice*: Each time Willow's :effect{code="HAGS_BANE"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **50%**.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="resonance-materials-section-title">
+    ## Resonance Materials
+  </Fragment>
+</CharacterContent>
