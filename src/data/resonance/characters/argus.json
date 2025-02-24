@@ -176,7 +176,7 @@
     "7-8": [
       {
         "name": "Attack",
-        "isPreffered": true,
+        "isPreferred": true,
         "source": {
           "label": "To be updated",
           "link": "#"
@@ -344,7 +344,7 @@
     "9": [
       {
         "name": "Critical Hit",
-        "isPreffered": true,
+        "isPreferred": true,
         "source": {
           "label": "To be updated",
           "link": "#"

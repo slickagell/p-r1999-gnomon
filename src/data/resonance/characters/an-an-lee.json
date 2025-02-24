@@ -102,6 +102,760 @@
       ]
     }
   },
-  "patternRecommended": "PLACIDITY",
-  "recommended": {}
+  "patternRecommended": "GENUINITY",
+  "recommended": {
+    "5-6": [
+      {
+        "name": "Attack",
+        "source": {
+          "label": "Community Guide - An An Lee",
+          "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-1", "0-2", "1-1"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-3", "0-4"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["1-2", "2-2", "2-3", "3-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["1-3", "1-4", "2-4"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-1", "3-1", "4-0", "4-1", "4-2"],
+            "shape": [
+              [0, 1, 0],
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["3-3", "3-4", "4-3", "4-4"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          }
+        ]
+      }
+    ],
+    "7-8": [
+      {
+        "name": "Attack",
+        "source": {
+          "label": "Community Guide - An An Lee",
+          "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "1-1"],
+            "shape": [
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-1", "0-2", "0-3", "1-2"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["1-4", "2-4", "3-4", "3-5"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-5", "2-5"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["1-3", "2-1", "2-2", "2-3", "3-3"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["2-0"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["3-0", "3-1", "4-0", "4-1"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["4-2", "4-3", "4-4", "4-5"],
+            "shape": [[1, 1, 1, 1]],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["3-2"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          }
+        ]
+      }
+    ],
+    "9": [
+      {
+        "name": "Attack",
+        "source": {
+          "label": "Community Guide - An An Lee",
+          "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "0-3"],
+            "shape": [[1, 1, 1, 1]],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-4", "0-5", "1-4", "1-5"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["1-0", "1-1", "1-2", "2-1", "3-1"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["1-3", "2-2", "2-3", "2-4"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["2-0", "3-0", "4-0", "5-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["4-1", "4-2", "5-1", "5-2"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["3-2", "3-3", "4-3"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-5", "3-4", "3-5", "4-5"],
+            "shape": [
+              [0, 1],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5"],
+            "shape": [
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["5-3"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          }
+        ]
+      }
+    ],
+    "10-11-12-13-14-15": [
+      {
+        "name": "Attack",
+        "source": {
+          "label": "Community Guide - An An Lee",
+          "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-1", "1-1", "2-1", "3-1"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-2", "1-3"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "1-6"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4", "2-3", "2-4", "2-5"],
+            "shape": [
+              [0, 1, 0],
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["2-2", "3-2", "3-3"],
+            "shape": [
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-6", "3-5", "3-6", "4-6"],
+            "shape": [
+              [0, 1],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["3-4", "4-4", "4-5", "5-5"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-3", "5-3", "5-4", "6-4"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["5-6", "6-5", "6-6"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["4-0", "4-1", "4-2", "5-1"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["5-2"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["6-2"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["6-3"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01"
+          }
+        ]
+      },
+      {
+        "name": "DMG Reduction",
+        "source": {
+          "label": "Community Guide - An An Lee",
+          "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-1", "1-1", "2-1", "3-1"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "1-2", "1-3"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "1-6"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4", "2-3", "2-4", "2-5"],
+            "shape": [
+              [0, 1, 0],
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["2-6", "3-5", "3-6", "4-6"],
+            "shape": [
+              [0, 1],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["2-2", "3-2", "4-1", "4-2"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["4-0", "5-0", "5-1", "6-0"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["5-2"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01"
+          },
+          {
+            "blocks": ["4-3"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_01"
+          },
+          {
+            "blocks": ["3-3", "3-4", "4-4", "4-5"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_01"
+          },
+          {
+            "blocks": ["5-3", "5-4", "5-5", "6-3"],
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["5-6", "6-4", "6-5", "6-6"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["6-1", "6-2"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          }
+        ]
+      },
+      {
+        "name": "Critical Chance",
+        "source": {
+          "label": "Community Guide - An An Lee",
+          "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-0"],
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["0-3", "0-4", "0-5", "0-6"],
+            "shape": [[1, 1, 1, 1]],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["1-1", "1-2", "2-0", "2-1"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["1-3", "1-4", "2-2", "2-3"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["1-5", "1-6", "2-4", "2-5"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["3-0", "3-1", "4-1"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["3-2", "3-3", "4-2"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-6", "3-4", "3-5", "3-6", "4-6"],
+            "shape": [
+              [0, 0, 1],
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["4-3", "4-4", "4-5", "5-5"],
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["5-1", "5-2"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["5-3", "6-2", "6-3", "6-4"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["5-6", "6-5", "6-6"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["5-4"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          }
+        ]
+      },
+      {
+        "name": "Attack (by sinister114)",
+        "isPreferred": true,
+        "source": {
+          "label": "Community Guide - An An Lee",
+          "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
+        },
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "1-1", "2-1"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["0-1", "0-2", "0-3", "1-2"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-3", "1-4", "1-5"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-6", "2-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["2-2", "2-3", "2-4", "2-5"],
+            "shape": [[1, 1, 1, 1]],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["2-0", "3-0", "4-0", "5-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["3-1", "3-2", "4-1", "4-2"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["3-3", "3-4", "4-3", "4-4"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["3-5", "3-6", "4-6", "5-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-5", "5-5", "6-4", "6-5", "6-6"],
+            "shape": [
+              [0, 1, 0],
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["5-3", "5-4", "6-2", "6-3"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["5-1", "5-2", "6-0", "6-1"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          }
+        ]
+      }
+    ]
+  }
 }

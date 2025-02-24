@@ -107,7 +107,7 @@
     "5-6": [
       {
         "name": "ATK",
-        "isPreffered": true,
+        "isPreferred": true,
         "source": {
           "label": "Vingler's Mirror - Anjo Nala",
           "link": "https://sites.google.com/view/vinglersmirror/anjo-nala"
@@ -247,7 +247,7 @@
     "7-8": [
       {
         "name": "ATK",
-        "isPreffered": true,
+        "isPreferred": true,
         "source": {
           "label": "Vingler's Mirror - Anjo Nala",
           "link": "https://sites.google.com/view/vinglersmirror/anjo-nala"
@@ -403,7 +403,7 @@
     "9": [
       {
         "name": "Critical Hit",
-        "isPreffered": true,
+        "isPreferred": true,
         "source": {
           "label": "Vingler's Mirror - Anjo Nala",
           "link": "https://sites.google.com/view/vinglersmirror/anjo-nala"
