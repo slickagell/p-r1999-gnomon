@@ -342,21 +342,25 @@ const patternMaterialsList = patternPieces.map((ele) => {
           >
             Recommended
           </label>
-          <select
-            id="recommendedSelect"
-            class="select select-secondary select-bordered flex w-full"
-            @change="changeRecommended($event.target.value)"
-          >
+          <div class="flex flex-wrap gap-2">
             <template x-for="resonance in recommendedOptions">
-              <option
+              <button
+                class="btn btn-outline btn-sm"
+                :class="resonance.value === selectedRecommended && 'btn-active'"
                 x-text="resonance.label"
-                :value="resonance.value"
-                :selected="resonance.value === selectedRecommended"></option>
+                @click="changeRecommended(resonance.value)"
+              >
+              </button>
             </template>
-          </select>
+          </div>
           <label class="label">
-            <span class="label-text-alt text-sm opacity-50">
-              Source of recommended: To be updated
+            <span class="label-text-alt text-sm">
+              Source:
+              <a
+                class="custom-link"
+                :href="selectedRecommendedSource.link"
+                target="_blank"
+                x-text="selectedRecommendedSource.label"></a>
             </span>
           </label>
         </div>
@@ -437,9 +441,6 @@ const patternMaterialsList = patternPieces.map((ele) => {
                   </Tooltip>
                 </span>
               </label>
-              <span class="text-sm opacity-50">
-                Source of recommended: CN (to be updated)
-              </span>
             </div>
           )
         }
