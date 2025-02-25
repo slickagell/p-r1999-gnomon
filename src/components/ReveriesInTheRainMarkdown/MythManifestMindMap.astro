@@ -1,0 +1,16 @@
+---
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<div x-data="mindmap">
+  <div id="mindmap-graph"></div>
+</div>
+
+<script>
+  import mythManifestMindMap from "@scripts/mythmanifest-mindmap";
+  import Alpine from "alpinejs";
+
+  Alpine.data("mindmap", mythManifestMindMap);
+</script>
