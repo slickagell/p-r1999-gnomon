@@ -1,5 +1,12 @@
 ---
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import { getCollection, render } from "astro:content";
+
 interface Props {
+  id: string;
   mindmap: { nodes: { id: string }[]; links: { id: string }[] };
 }
 
@@ -8,36 +15,87 @@ export interface MythManifestMindMapType {
   links: { id: string }[];
 }
 
-const { mindmap } = Astro.props;
+const { mindmap, id } = Astro.props;
+
+const mindMapNodeEntries = await getCollection(
+  "reveries-in-the-rain",
+  ({ id: entryId }) => {
+    return entryId.includes(`myth-manifest/mind-map/${id}`);
+  }
+);
+
+const entries = await Promise.all(
+  mindMapNodeEntries.map(async (entry) => {
+    const { Content } = await render(entry);
+
+    return {
+      entry: entry,
+      Content,
+    };
+  })
+);
 ---
 
 <div x-data="mindmap">
   <div id="mindmap-graph" class="relative max-w-full md:max-w-3xl mx-auto">
+    <div id="tooltip" class="tooltip">
+      {
+        entries.map(({ entry: nodeEntry }) => {
+          return (
+            <div x-show={`hoveredNode?.code === '${nodeEntry.data.code}'`}>
+              {nodeEntry.data.title}
+            </div>
+          );
+        })
+      }
+    </div>
   </div>
-  <p class="text-xs">* Click on a node to see its content</p>
+  <p class="text-xs text-right">* Click on a node to see its content</p>
   <template x-if="selectedNode">
     <div class="mt-4 card card-compact bg-primary-content/10">
       <div class="card-body">
-        <div class="flex gap-10">
-          <p class="card-title" x-text="selectedNode.title"></p>
-          <div class="card-actions">
-            <button class="btn btn-square btn-sm" @click="selectedNode = null">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                ><path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"></path></svg
-              >
-            </button>
-          </div>
+        <div class="card-content">
+          {
+            entries.map(({ entry: nodeEntry, Content }) => {
+              return (
+                <div x-show={`selectedNode?.code === '${nodeEntry.data.code}'`}>
+                  <div class="flex gap-10">
+                    <p class="card-title">{nodeEntry.data.title}</p>
+                    <div class="card-actions">
+                      <button
+                        class="btn btn-square btn-sm"
+                        @click="selectedNode = null"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-6 w-6"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <Content
+                    components={{
+                      p: MarkdownContent,
+                      strong: MarkdownHighlight,
+                      em: MarkdownEmphasis,
+                      effect: EffectTooltip,
+                    }}
+                  />
+                </div>
+              );
+            })
+          }
         </div>
-        <p class="card-content" x-html="selectedNode.description"></p>
       </div>
     </div>
   </template>

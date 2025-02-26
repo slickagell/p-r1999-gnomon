@@ -18,6 +18,7 @@ export default () => ({
   links: null,
   nodes: null,
   selectedNode: null,
+  hoveredNode: null,
 
   init() {
     const data = this.$store.mythManifest.mindmap;
@@ -48,10 +49,7 @@ export default () => ({
       .attr("viewBox", [0, 0, WIDTH, HEIGHT])
       .attr("style", "max-width: 100%; height: auto;");
 
-    let tooltip = d3
-      .select("#mindmap-graph")
-      .append("div")
-      .attr("class", "tooltip");
+    let tooltip = d3.select("#mindmap-graph").select("#tooltip");
 
     // Add a line for each link, and a circle for each node.
     const link = svg
@@ -72,26 +70,26 @@ export default () => ({
       .attr("id", (d) => d.id)
       .attr("r", (d) => d.r ?? DEFAULT_NODE_R)
       .attr("fill", NODE_COLOR)
-      .on("mouseover", function (event, d, i) {
-        d3.select(this)
+      .on("mouseover", (event, d, i) => {
+        d3.select(event.target)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
           .attr("r", (d) => (d.r ?? DEFAULT_NODE_R) * 1.5);
 
-        if (d.title) {
+        if (d.code) {
+          this.hoveredNode = {
+            id: d.id,
+            code: d.code,
+          };
           const svgDim = svg.node().getBoundingClientRect();
 
           const tooltipX = (d.x * svgDim.width) / WIDTH;
           const tooltipY = (d.y * svgDim.height) / HEIGHT;
 
           tooltip
-            .html(`<span>${d.title}</span>`)
             .style("left", tooltipX + "px")
             .style("top", tooltipY + "px")
-            .style(
-              "transform",
-              `translate(-50%, calc(-100% - ${((d.r * 1.5 + 8) * svgDim.height) / HEIGHT}px))`
-            );
+            .style("transform", `translate(-50%, calc(-100% - 1rem))`);
 
           tooltip
             .transition()
@@ -99,11 +97,13 @@ export default () => ({
             .style("opacity", 1);
         }
       })
-      .on("mouseout", function (e, d) {
-        d3.select(this)
+      .on("mouseout", (e, d) => {
+        d3.select(e.target)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
           .attr("r", (d) => d.r ?? DEFAULT_NODE_R);
+
+        this.hoveredNode = null;
 
         tooltip
           .transition()
@@ -113,8 +113,7 @@ export default () => ({
       .on("click", async (e, d) => {
         this.selectedNode = {
           id: d.id,
-          title: d.title,
-          description: await mdToHtml(d.description ?? ""),
+          code: d.code,
         };
       });
 

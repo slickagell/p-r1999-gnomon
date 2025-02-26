@@ -4,28 +4,31 @@
       {
         "id": "1",
         "r": 10,
-        "title": "",
-        "description": ""
+        "code": "RISING_MASS"
       },
       {
         "id": "2",
         "offsetX": 0,
-        "offsetY": -1
+        "offsetY": -1.5,
+        "code": "DENSE_OVERGROWTH_I"
       },
       {
         "id": "3",
         "offsetX": -1,
-        "offsetY": -1
+        "offsetY": -1.25,
+        "code": "DMG_BONUS"
       },
       {
         "id": "4",
         "offsetX": 1,
-        "offsetY": -1
+        "offsetY": -1.25,
+        "code": "DMG_TAKEN_REDUCTION"
       },
       {
         "id": "5",
         "offsetX": -1,
-        "offsetY": 0
+        "offsetY": 0,
+        "code": "STRINGENT_REGULATIONS_I"
       },
       {
         "id": "6",
@@ -35,7 +38,8 @@
       {
         "id": "7",
         "offsetX": -2,
-        "offsetY": -1
+        "offsetY": -1,
+        "code": "SUNNY_WITH_SHOWERS"
       },
       {
         "id": "8",
@@ -54,12 +58,12 @@
       },
       {
         "id": "11",
-        "offsetX": -0.5,
+        "offsetX": -0.75,
         "offsetY": -2
       },
       {
         "id": "12",
-        "offsetX": 0.5,
+        "offsetX": 0.75,
         "offsetY": -2
       },
       {
@@ -74,22 +78,22 @@
       },
       {
         "id": "15",
-        "offsetX": -2,
+        "offsetX": -2.75,
         "offsetY": -2.5
       },
       {
         "id": "16",
-        "offsetX": 2,
+        "offsetX": 2.75,
         "offsetY": -2.5
       },
       {
         "id": "17",
-        "offsetX": -3,
+        "offsetX": -3.25,
         "offsetY": -3
       },
       {
         "id": "18",
-        "offsetX": 3,
+        "offsetX": 3.25,
         "offsetY": -3
       },
       {
@@ -151,11 +155,13 @@
       { "source": "15", "target": "17" },
       { "source": "16", "target": "18" },
       { "source": "13", "target": "19" },
-      { "source": "13", "target": "22" },
+      { "source": "15", "target": "22" },
       { "source": "14", "target": "19" },
-      { "source": "14", "target": "23" },
+      { "source": "16", "target": "23" },
       { "source": "17", "target": "20" },
       { "source": "18", "target": "21" },
+      { "source": "19", "target": "22" },
+      { "source": "19", "target": "23" },
       { "source": "19", "target": "24" },
       { "source": "20", "target": "22" },
       { "source": "21", "target": "23" },
