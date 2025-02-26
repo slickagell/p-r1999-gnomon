@@ -5,8 +5,9 @@ afflatus: "STAR"
 specialties: ["CRITICAL", "EUREKA", "GENESIS_DMG", "EXTRA_ACTION"]
 ---
 import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManifestContent.astro';
+import data from '@data/myth-manifest/star-of-misfortune.json';
 
-<MythManifestContent {...frontmatter}>
+<MythManifestContent {...frontmatter} {...data}>
     <Fragment slot="manifest-skill-section-title">
         ## Manifest skill
     </Fragment>

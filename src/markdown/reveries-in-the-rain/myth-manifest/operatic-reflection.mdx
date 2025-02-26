@@ -5,8 +5,9 @@ afflatus: "BEAST"
 specialties: ["BURN", "EXTRA_ACTION", "MOXIE"]
 ---
 import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManifestContent.astro';
+import data from '@data/myth-manifest/operatic-reflection.json';
 
-<MythManifestContent {...frontmatter}>
+<MythManifestContent {...frontmatter} {...data}>
     <Fragment slot="manifest-skill-section-title">
         ## Manifest skill
     </Fragment>

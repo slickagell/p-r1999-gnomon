@@ -1,0 +1,7 @@
+#mindmap-graph .node {
+  @apply cursor-pointer;
+}
+
+#mindmap-graph .tooltip {
+  @apply absolute pointer-events-none top-0 left-0 opacity-0 badge max-w-40 p-1;
+}

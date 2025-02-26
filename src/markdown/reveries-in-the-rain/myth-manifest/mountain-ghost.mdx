@@ -5,8 +5,9 @@ afflatus: "PLANT"
 specialties: ["RANK_UP", "GENESIS_DMG", "PETRIFY"]
 ---
 import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManifestContent.astro';
+import data from '@data/myth-manifest/mountain-ghost.json';
 
-<MythManifestContent {...frontmatter}>
+<MythManifestContent {...frontmatter} {...data}>
     <Fragment slot="manifest-skill-section-title">
         ## Manifest skill
     </Fragment>

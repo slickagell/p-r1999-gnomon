@@ -1,18 +1,22 @@
 ---
+import "@styles/myth-manifest.css";
 import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
 import CustomImage from "@components/CustomImage.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import SPECIALTY from "@data/common/character/specialty.json";
-import MythManifestMindMap from "./MythManifestMindMap.astro";
+import MythManifestMindMap, {
+  type MythManifestMindMapType,
+} from "./MythManifestMindMap.astro";
 
 interface Props {
   id: string;
   title: number;
   afflatus: string;
   specialties: string[];
+  mindmap: MythManifestMindMapType;
 }
 
-const { id, title, afflatus, specialties } = Astro.props;
+const { id, title, afflatus, specialties, mindmap } = Astro.props;
 ---
 
 <h1>{title}</h1>
@@ -68,4 +72,5 @@ const { id, title, afflatus, specialties } = Astro.props;
 <slot name="passive-3-content" />
 
 <slot name="mindmap-section-title" />
-<MythManifestMindMap />
+
+<MythManifestMindMap mindmap={mindmap} />
