@@ -108,6 +108,10 @@
       {
         "name": "Maximum Healing",
         "isPreferred": true,
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "1-0", "1-1"],
@@ -176,6 +180,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "0-2", "0-3"],
@@ -242,6 +250,10 @@
       {
         "name": "Maximum Healing",
         "isPreferred": true,
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "1-1"],
@@ -326,6 +338,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "1-0", "1-1"],
@@ -404,6 +420,10 @@
       {
         "name": "Maximum Healing",
         "isPreferred": true,
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -485,6 +505,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -580,6 +604,10 @@
       {
         "name": "Maximum Healing",
         "isPreferred": true,
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "1-1", "2-0"],
@@ -703,6 +731,10 @@
       },
       {
         "name": "Survivability",
+        "source": {
+          "label": "Vingler's Mirror - Vila",
+          "link": "https://sites.google.com/view/vinglersmirror/vila"
+        },
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "1-1", "2-0"],

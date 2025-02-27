@@ -160,15 +160,19 @@ export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='drink-deep-ce
   <Fragment slot="euphoria-content">
     <div x-show={`active==='${euphoria1.code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
+
       After attacking, consume (their own Max HP x**10%**) HP from all allies to deal an additional (the team's combined Max HP x**7%**) Genesis DMG to the target; if an ally's HP is already below **50%**, that ally does not lose HP this way.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
+
       When entering battle, grant (Eternity's Max HP x**5%**) Max HP to other allies.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} />
+
       At the start of the round, for every **10%** missing Max HP on an ally, grant DMG Taken **-5%** to that ally, stacking up to **25%**.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} />
+
       When an ally attacks, for every **10%** Missing Max HP the ally has, the ally gains Critical Rate **+4%** and Critical DMG **+6%** (stacks up to 5 times); if the ally's HP is below **50%**, then the ally's excess Critical Rate is converted to Critical DMG."
     </div>
   </Fragment>
