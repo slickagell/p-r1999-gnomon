@@ -2,7 +2,9 @@
 const props = Astro.props;
 ---
 
-<div {...props} class="table-of-contents">
+<div {...props} class="table-of-contents" x-data>
   <h2>Table of Contents</h2>
-  <slot />
+  <div id="toc">
+    <slot />
+  </div>
 </div>

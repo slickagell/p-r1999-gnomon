@@ -17,7 +17,7 @@ export default defineConfig({
   },
   integrations: [
     tailwind(),
-    alpinejs(),
+    alpinejs({ entrypoint: "/src/entrypoint" }),
     mdx({
       remarkPlugins: [remarkDirective, directivePlugin],
       rehypePlugins: [

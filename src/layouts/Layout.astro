@@ -4,7 +4,7 @@ import Footer from "@layouts/Footer.astro";
 import GoToTop from "@layouts/GoToTop.astro";
 import { processSearchResult } from "@scripts/common";
 import Search from "astro-pagefind/components/Search";
-import "../styles/layout.css";
+import "@styles/layout.css";
 
 interface Props {
   title: string;
@@ -44,7 +44,10 @@ const menu = [
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta
+      name="description"
+      content="Reverse:1999 Gnomon is a fanmade website for turn-based RPG, Reverse:1999, a game developed by Bluepoch"
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -179,5 +182,8 @@ const menu = [
       </div>
     </dialog>
     <GoToTop />
+    <div x-data>
+      <div x-node.clone="toc"></div>
+    </div>
   </body>
 </html>
