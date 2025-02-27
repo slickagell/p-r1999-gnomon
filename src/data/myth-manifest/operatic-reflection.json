@@ -1,42 +1,117 @@
 {
   "mindmap": {
     "nodes": [
-      { "id": "1", "r": 10 },
-      { "id": "2", "offsetX": -0.5, "offsetY": -1.5 },
-      { "id": "3", "offsetX": 0.5, "offsetY": -1.5 },
-      { "id": "4", "offsetX": -1, "offsetY": -1 },
-      { "id": "5", "offsetX": 1, "offsetY": -1 },
-      { "id": "6", "offsetX": -1, "offsetY": -2 },
-      { "id": "7", "offsetX": 1, "offsetY": -2 },
-      { "id": "8", "offsetX": -2, "offsetY": -2.5 },
-      { "id": "9", "offsetX": 2, "offsetY": -2.5 },
-      { "id": "10", "offsetX": -1, "offsetY": -3 },
-      { "id": "11", "offsetX": 1, "offsetY": -3 },
-      { "id": "12", "offsetX": -2, "offsetY": -3.5 },
-      { "id": "13", "offsetX": 2, "offsetY": -3.5 },
-      { "id": "14", "offsetX": -2.5, "offsetY": -4 },
-      { "id": "15", "offsetX": 2.5, "offsetY": -4 },
-      { "id": "16", "offsetX": -4, "offsetY": -3.5, "r": 8 },
-      { "id": "17", "offsetX": 4, "offsetY": -3.5, "r": 8 },
-      { "id": "18", "offsetX": -4, "offsetY": -2 },
-      { "id": "19", "offsetX": 4, "offsetY": -2 },
-      { "id": "20", "offsetX": -3, "offsetY": -1.5 },
-      { "id": "21", "offsetX": 3, "offsetY": -1.5 },
-      { "id": "22", "offsetX": -4, "offsetY": -0.5 },
-      { "id": "23", "offsetX": 4, "offsetY": -0.5 },
-      { "id": "24", "offsetX": -3, "offsetY": -0.5 },
-      { "id": "25", "offsetX": 3, "offsetY": -0.5 },
-      { "id": "26", "offsetX": -2, "offsetY": -1 },
-      { "id": "27", "offsetX": 2, "offsetY": -1 },
-      { "id": "28", "offsetX": -2.5, "offsetY": 0.5 },
-      { "id": "29", "offsetX": 2.5, "offsetY": 0.5 },
-      { "id": "30", "offsetX": -1.5, "offsetY": 0 },
-      { "id": "31", "offsetX": 1.5, "offsetY": 0 },
-      { "id": "32", "offsetX": -2, "offsetY": -5 },
-      { "id": "33", "offsetX": 2, "offsetY": -5 },
-      { "id": "34", "offsetX": -3.5, "offsetY": -5.5, "r": 8 },
-      { "id": "35", "offsetX": 3.5, "offsetY": -5.5, "r": 8 },
-      { "id": "36", "offsetX": 0, "offsetY": -5.5, "r": 8 }
+      { "id": "1", "code": "DMG_BONUS", "r": 10 },
+      {
+        "id": "2",
+        "offsetX": -0.5,
+        "offsetY": -1.5,
+        "code": "SPONTANEOUS_SHIFT"
+      },
+      {
+        "id": "3",
+        "offsetX": 0.5,
+        "offsetY": -1.5,
+        "code": "RONDO_COMPOSITION"
+      },
+      {
+        "id": "4",
+        "offsetX": -1,
+        "offsetY": -1,
+        "code": "CONDUCTING_MAESTRA_I"
+      },
+      { "id": "5", "offsetX": 1, "offsetY": -1, "code": "PENETRATION_RATE" },
+      { "id": "6", "offsetX": -1, "offsetY": -2, "code": "INTENSE_FERVOR" },
+      { "id": "7", "offsetX": 1, "offsetY": -2, "code": "ACCOMPANYIST_I" },
+      {
+        "id": "8",
+        "offsetX": -2,
+        "offsetY": -2.5,
+        "code": "MELODIC_VARIATION"
+      },
+      {
+        "id": "9",
+        "offsetX": 2,
+        "offsetY": -2.5,
+        "code": "DMG_TAKEN_REDUCTION"
+      },
+      { "id": "10", "offsetX": -1, "offsetY": -3, "code": "DMG_BONUS" },
+      { "id": "11", "offsetX": 1, "offsetY": -3, "code": "ACCOMPANYIST_II" },
+      {
+        "id": "12",
+        "offsetX": -2,
+        "offsetY": -3.5,
+        "code": "CONDUCTING_MAESTRA_II"
+      },
+      {
+        "id": "13",
+        "offsetX": 2,
+        "offsetY": -3.5,
+        "code": "MUSICAL_COLLABORATION"
+      },
+      { "id": "14", "offsetX": -2.5, "offsetY": -4, "code": "RESIDUAL_HEAT" },
+      { "id": "15", "offsetX": 2.5, "offsetY": -4, "code": "ECHO" },
+      {
+        "id": "16",
+        "offsetX": -4,
+        "offsetY": -3.5,
+        "code": "SINGER_IN_LEAD_III",
+        "r": 8
+      },
+      {
+        "id": "17",
+        "offsetX": 4,
+        "offsetY": -3.5,
+        "code": "VIRTUOSITY_III",
+        "r": 8
+      },
+      { "id": "18", "offsetX": -4, "offsetY": -2, "code": "SINGER_IN_LEAD_II" },
+      { "id": "19", "offsetX": 4, "offsetY": -2, "code": "ROUSING_SYMPHONY" },
+      { "id": "20", "offsetX": -3, "offsetY": -1.5, "code": "CRITICAL_RATE" },
+      { "id": "21", "offsetX": 3, "offsetY": -1.5, "code": "SONATA_FORM" },
+      {
+        "id": "22",
+        "offsetX": -4,
+        "offsetY": -0.5,
+        "code": "ENERGIZING_TUNES"
+      },
+      { "id": "23", "offsetX": 4, "offsetY": -0.5, "code": "PENETRATION_RATE" },
+      {
+        "id": "24",
+        "offsetX": -3,
+        "offsetY": -0.5,
+        "code": "SCORCHING_RESERVES"
+      },
+      { "id": "25", "offsetX": 3, "offsetY": -0.5, "code": "LONE_PERFORMANCE" },
+      { "id": "26", "offsetX": -2, "offsetY": -1, "code": "ATK" },
+      { "id": "27", "offsetX": 2, "offsetY": -1, "code": "VIRTUOSITY_II" },
+      { "id": "28", "offsetX": -2.5, "offsetY": 0.5, "code": "FORCEFUL_NOTES" },
+      { "id": "29", "offsetX": 2.5, "offsetY": 0.5, "code": "CRITICAL_RATE" },
+      { "id": "30", "offsetX": -1.5, "offsetY": 0, "code": "SINGER_IN_LEAD_I" },
+      { "id": "31", "offsetX": 1.5, "offsetY": 0, "code": "VIRTUOSITY_I" },
+      { "id": "32", "offsetX": -2, "offsetY": -5, "code": "ULTIMATE_MIGHT" },
+      { "id": "33", "offsetX": 2, "offsetY": -5, "code": "INCANTATION_MIGHT" },
+      {
+        "id": "34",
+        "offsetX": -3.5,
+        "offsetY": -5.5,
+        "code": "CONDUCTING_MAESTRA_III",
+        "r": 8
+      },
+      {
+        "id": "35",
+        "offsetX": 3.5,
+        "offsetY": -5.5,
+        "code": "ACCOMPANYIST_III",
+        "r": 8
+      },
+      {
+        "id": "36",
+        "offsetX": 0,
+        "offsetY": -5.5,
+        "code": "HARMONIC_NOTES",
+        "r": 8
+      }
     ],
     "links": [
       { "source": "2", "target": "6" },

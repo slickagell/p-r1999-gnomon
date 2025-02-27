@@ -3,5 +3,5 @@
 }
 
 #mindmap-graph .tooltip {
-  @apply absolute pointer-events-none top-0 left-0 opacity-0 bg-neutral max-w-40 p-1 text-sm md:text-lg;
+  @apply absolute pointer-events-none top-0 left-0 opacity-0 bg-neutral max-w-60 p-1 text-sm md:text-lg;
 }

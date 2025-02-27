@@ -1,5 +1,4 @@
 import * as d3 from "d3";
-import { mdToHtml } from "./markdown-html";
 
 const WIDTH = 400;
 const HEIGHT = 300;

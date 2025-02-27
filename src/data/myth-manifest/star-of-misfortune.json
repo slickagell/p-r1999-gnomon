@@ -1,43 +1,125 @@
 {
   "mindmap": {
     "nodes": [
-      { "id": "1", "r": 10 },
+      { "id": "1", "code": "INTRO_TO_ASTRONOMY", "r": 10 },
       {
         "id": "2",
         "offsetX": -0.5,
-        "offsetY": -1
+        "offsetY": -1,
+        "code": "EXPANDED_THINKING"
       },
       {
         "id": "3",
         "offsetX": 0.5,
-        "offsetY": -1
+        "offsetY": -1,
+        "code": "RAPID_IDEATION"
       },
-      { "id": "4", "offsetX": -1.25, "offsetY": 0 },
+      {
+        "id": "4",
+        "offsetX": -1.25,
+        "offsetY": 0,
+        "code": "MINDSET_CORRECTION"
+      },
       {
         "id": "5",
         "offsetX": 1.25,
-        "offsetY": 0
+        "offsetY": 0,
+        "code": "REFLECTIVE_RUMINATION"
       },
-      { "id": "6", "offsetX": -1, "offsetY": -1.75 },
-      { "id": "7", "offsetX": 1, "offsetY": -1.75 },
-      { "id": "8", "offsetX": -2, "offsetY": -0.5 },
-      { "id": "9", "offsetX": 2, "offsetY": -0.5 },
-      { "id": "10", "offsetX": -1.75, "offsetY": -2 },
-      { "id": "11", "offsetX": -0.75, "offsetY": -2.5 },
-      { "id": "12", "offsetX": 1.75, "offsetY": -2 },
-      { "id": "13", "offsetX": 0.75, "offsetY": -2.5 },
-      { "id": "14", "offsetX": -3, "offsetY": -0.25 },
-      { "id": "15", "offsetX": -2.5, "offsetY": -1.25 },
-      { "id": "16", "offsetX": 3, "offsetY": -0.25 },
-      { "id": "17", "offsetX": 2.5, "offsetY": -1.25 },
-      { "id": "18", "offsetX": -1.5, "offsetY": -3 },
-      { "id": "19", "offsetX": 1.5, "offsetY": -3 },
-      { "id": "20", "offsetX": -3.5, "offsetY": -1.25 },
-      { "id": "21", "offsetX": 3.5, "offsetY": -1.25 },
-      { "id": "22", "offsetX": -1.75, "offsetY": -4, "r": 8 },
-      { "id": "23", "offsetX": 1.75, "offsetY": -4, "r": 8 },
-      { "id": "24", "offsetX": -4.25, "offsetY": -2, "r": 8 },
-      { "id": "25", "offsetX": 4.25, "offsetY": -2, "r": 8 }
+      {
+        "id": "6",
+        "offsetX": -1,
+        "offsetY": -1.75,
+        "code": "FLASH_OF_EUREKA_I"
+      },
+      { "id": "7", "offsetX": 1, "offsetY": -1.75, "code": "GENESIS_BOUND_I" },
+      {
+        "id": "8",
+        "offsetX": -2,
+        "offsetY": -0.5,
+        "code": "PRACTICAL_STUDIES_I"
+      },
+      {
+        "id": "9",
+        "offsetX": 2,
+        "offsetY": -0.5,
+        "code": "SUDDEN_CREATIVITY_I"
+      },
+      { "id": "10", "offsetX": -1.75, "offsetY": -2, "code": "ATK" },
+      { "id": "11", "offsetX": -0.75, "offsetY": -2.5, "code": "DMG_BONUS" },
+      {
+        "id": "12",
+        "offsetX": 1.75,
+        "offsetY": -2,
+        "code": "INCANTATION_MIGHT"
+      },
+      {
+        "id": "13",
+        "offsetX": 0.75,
+        "offsetY": -2.5,
+        "code": "ULTIMATE_MIGHT"
+      },
+      {
+        "id": "14",
+        "offsetX": -3,
+        "offsetY": -0.25,
+        "code": "PENETRATION_RATE"
+      },
+      {
+        "id": "15",
+        "offsetX": -2.5,
+        "offsetY": -1.25,
+        "code": "GENESIS_BONUS"
+      },
+      { "id": "16", "offsetX": 3, "offsetY": -0.25, "code": "CRITICAL_DMG" },
+      { "id": "17", "offsetX": 2.5, "offsetY": -1.25, "code": "CRITICAL_RATE" },
+      {
+        "id": "18",
+        "offsetX": -1.5,
+        "offsetY": -3,
+        "code": "FLASH_OF_EUREKA_II"
+      },
+      { "id": "19", "offsetX": 1.5, "offsetY": -3, "code": "GENESIS_BOUND_II" },
+      {
+        "id": "20",
+        "offsetX": -3.5,
+        "offsetY": -1.25,
+        "code": "PRACTICAL_STUDIES_II"
+      },
+      {
+        "id": "21",
+        "offsetX": 3.5,
+        "offsetY": -1.25,
+        "code": "SUDDEN_CREATIVITY_II"
+      },
+      {
+        "id": "22",
+        "offsetX": -1.75,
+        "offsetY": -4,
+        "code": "FLASH_OF_EUREKA_III",
+        "r": 8
+      },
+      {
+        "id": "23",
+        "offsetX": 1.75,
+        "offsetY": -4,
+        "code": "GENESIS_BOUND_III",
+        "r": 8
+      },
+      {
+        "id": "24",
+        "offsetX": -4.25,
+        "offsetY": -2,
+        "code": "PRACTICAL_STUDIES_III",
+        "r": 8
+      },
+      {
+        "id": "25",
+        "offsetX": 4.25,
+        "offsetY": -2,
+        "code": "SUDDEN_CREATIVITY_III",
+        "r": 8
+      }
     ],
     "links": [
       { "source": "2", "target": "6", "value": 1 },
