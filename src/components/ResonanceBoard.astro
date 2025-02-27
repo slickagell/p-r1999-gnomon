@@ -133,7 +133,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
 });
 ---
 
-<div x-data="dataset">
+<div x-data="dataset" class="text-[16px]">
   <div
     class="flex flex-col md:flex-row gap-4 items-end mb-4 [&_*]:min-w-0 [&_*]:min-h-0"
   >
@@ -312,7 +312,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
         <canvas
           x-ref="boardCanvas"
           class="absolute pointer-events-auto z-20"
-          :style="{top: boardRelativeY/16 + 'rem', left: boardRelativeX/16 + 'rem'}"
+          :style="{top: boardRelativeY/16 + 'rem', left: boardRelativeX/16 + 'rem', width: boardCol * blockSize/16 + 'rem', height: boardRow * blockSize/16 + 'rem'}"
         ></canvas>
         <CustomImage
           loading="eager"

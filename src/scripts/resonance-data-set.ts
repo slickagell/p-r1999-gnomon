@@ -11,13 +11,17 @@ import { intersection, union } from "martinez-polygon-clipping";
 import matrix from "matrix-js";
 import { changeImageOrientation, getResonanceBoardRowCol } from "./common";
 
+const BOARD_IMG_RATIO = 300 / 337;
+
 const BLOCK_SIZE = 30;
 const BOARD_MARGIN_HORIZONTAL = 40;
 const BOARD_MARGIN_VERTICAL = 40;
+const BOARD_IMG_WIDTH = 288; //based on css
 
 const MOBILE_BLOCK_SIZE = 28;
 const MOBILE_BOARD_MARGIN_HORIZONTAL = 16;
 const MOBILE_BOARD_MARGIN_VERTICAL = 16;
+const MOBILE_BOARD_IMG_WIDTH = 256;
 
 export default () => ({
   isOnMobile: false,
@@ -29,6 +33,7 @@ export default () => ({
   boardRelativeY: 0,
   boardX: 0,
   boardY: 0,
+  boardImgWidth: BOARD_IMG_WIDTH,
 
   activeResonanceLevel: 0,
   activeResonancePieces: [],
@@ -120,12 +125,13 @@ export default () => ({
     this.boardCanvas.height = this.boardRow * this.blockSize;
 
     this.$nextTick(() => {
-      const boardImgWidth = this.$refs.boardImg.width;
-      const boardImgHeight = this.$refs.boardImg.height;
+      const boardImgWidth = this.boardImgWidth;
+      const boardImgHeight = this.boardImgWidth / BOARD_IMG_RATIO;
       this.boardRelativeX =
         (boardImgWidth - this.boardCol * this.blockSize) / 2;
       this.boardRelativeY =
         (boardImgHeight - this.boardRow * this.blockSize) / 2;
+
       this.boardX = this.boardMarginHorizontal + this.boardRelativeX;
       this.boardY = this.boardMarginVertical + this.boardRelativeY;
     });
@@ -138,10 +144,12 @@ export default () => ({
     if (window.innerWidth < 768) {
       this.isOnMobile = true;
       this.blockSize = MOBILE_BLOCK_SIZE;
+      this.boardImgWidth = MOBILE_BOARD_IMG_WIDTH;
       this.boardMarginHorizontal = MOBILE_BOARD_MARGIN_HORIZONTAL;
       this.boardMarginVertical = MOBILE_BOARD_MARGIN_VERTICAL;
     } else {
       this.blockSize = BLOCK_SIZE;
+      this.boardImgWidth = BOARD_IMG_WIDTH;
       this.boardMarginHorizontal = BOARD_MARGIN_HORIZONTAL;
       this.boardMarginVertical = BOARD_MARGIN_VERTICAL;
     }
@@ -1464,12 +1472,14 @@ export default () => ({
       if (this.isOnMobile) return;
       this.isOnMobile = true;
       this.blockSize = MOBILE_BLOCK_SIZE;
+      this.boardImgWidth = MOBILE_BOARD_IMG_WIDTH;
       this.boardMarginHorizontal = MOBILE_BOARD_MARGIN_HORIZONTAL;
       this.boardMarginVertical = MOBILE_BOARD_MARGIN_VERTICAL;
     } else {
       if (!this.isOnMobile) return;
       this.isOnMobile = false;
       this.blockSize = BLOCK_SIZE;
+      this.boardImgWidth = BOARD_IMG_WIDTH;
       this.boardMarginHorizontal = BOARD_MARGIN_HORIZONTAL;
       this.boardMarginVertical = BOARD_MARGIN_VERTICAL;
     }
