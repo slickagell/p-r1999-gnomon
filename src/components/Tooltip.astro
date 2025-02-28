@@ -10,12 +10,12 @@ const { title, ...props } = Astro.props;
   {...props}
   x-data="{isShow: false, isToggle: false}"
   class="inline-block relative"
+  @mouseleave="isShow = false"
 >
   <div
     x-ref="content"
     @click="isToggle = !isToggle"
     @mouseenter="isShow = true"
-    @mouseleave="isShow = false"
     class="text-effect cursor-pointer"
   >
     <slot name="toggle" />

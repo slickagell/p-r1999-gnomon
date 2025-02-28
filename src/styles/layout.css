@@ -7,7 +7,7 @@
 }
 
 :target {
-  scroll-margin-top: 2.5rem;
+  scroll-margin-top: 4.5rem;
 }
 
 html {
@@ -51,6 +51,10 @@ h5 {
 
 h6 {
   @apply font-bold;
+}
+
+[x-cloak] {
+  display: none !important;
 }
 
 .container {

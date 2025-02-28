@@ -1,0 +1,63 @@
+---
+import Tooltip from "@components/Tooltip.astro";
+
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<div
+  x-data="tocFloating"
+  class="fixed bottom-16 right-4 z-50"
+  x-show="isShowToc"
+  x-cloak
+>
+  <Tooltip>
+    <button
+      slot="toggle"
+      x-transition
+      class="btn btn-primary rounded-full text-white p-0 w-10 h-10 min-h-min"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        class="w-6 h-6"
+      >
+        <path
+          d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+        ></path>
+        <path
+          d="M4 14m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+        ></path>
+      </svg>
+    </button>
+    <div
+      x-ref="toc"
+      x-effect="handleShow"
+      x-node.clone-children="toc"
+      class="table-of-contents list-disc list-inside"
+    >
+    </div>
+  </Tooltip>
+</div>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("tocFloating", () => ({
+    isShowToc: false,
+
+    handleShow() {
+      this.$nextTick(() => {
+        if (this.$refs.toc.hasChildNodes()) {
+          this.isShowToc = true;
+        }
+      });
+    },
+  }));
+</script>

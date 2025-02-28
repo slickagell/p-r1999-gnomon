@@ -7,6 +7,7 @@ const {} = Astro.props;
 <div x-data="goToTop" @scroll.window="handleScroll">
   <button
     x-show="isShow"
+    x-cloak
     x-transition
     @click="handleScrollToTop"
     x-ref="goToTop"

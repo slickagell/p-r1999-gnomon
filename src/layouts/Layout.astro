@@ -5,6 +5,7 @@ import GoToTop from "@layouts/GoToTop.astro";
 import { processSearchResult } from "@scripts/common";
 import Search from "astro-pagefind/components/Search";
 import "@styles/layout.css";
+import FloatingButtons from "@components/FloatingButtons.astro";
 
 interface Props {
   title: string;
@@ -181,9 +182,7 @@ const menu = [
         />
       </div>
     </dialog>
+    <FloatingButtons />
     <GoToTop />
-    <div x-data>
-      <div x-node.clone="toc"></div>
-    </div>
   </body>
 </html>
