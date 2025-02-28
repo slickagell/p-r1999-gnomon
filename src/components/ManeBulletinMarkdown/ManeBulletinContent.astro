@@ -1,6 +1,7 @@
 ---
 import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
 import CustomImage from "@components/CustomImage.astro";
+import Icon from "@components/Icon.astro";
 import { AFFLATUS_TYPE, DMG_TYPE } from "@constants/character";
 
 interface Props {
@@ -35,17 +36,7 @@ const { id, title, afflatus, dmgType } = Astro.props;
 </div>
 
 <div class="mt-4 alert border-primary-content gap-y-2">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    class="stroke-current shrink-0 w-6 h-6"
-    ><path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg
-  >
+  <Icon icon="info-circle" />
   <div>
     <p class="font-bold">Notice!</p>
     <div class="text-xs">
