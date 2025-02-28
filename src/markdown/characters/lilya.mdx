@@ -161,7 +161,7 @@ export const euphoria2 = CHARACTER.euphorias.find(ele=>ele.code==='the-kamchatka
     <div x-show={`active==='${euphoria1.code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
 
-      When attacking, excess Critical Rate is converted into Critical DMG; after scoring a critical hit, gain **1** stack of *\[Intense Fervor]* for self; when casting an ultimate, consume all stacks of *\[Intense Fervor]* to gain an equal number of Moxie.
+      When attacking, excess Critical Rate is converted into Critical DMG; after scoring a critical hit, gain **1** stack of :effect{code="INTENSE_FERVOR"} for self; when casting an ultimate, consume all stacks of :effect{code="INTENSE_FERVOR"} to gain an equal number of Moxie.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
 
@@ -183,7 +183,7 @@ export const euphoria2 = CHARACTER.euphorias.find(ele=>ele.code==='the-kamchatka
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria2.materials[2]} />
 
-      At the start of the round, gain **1** *\[Pointed Bullet]*. When scoring critical hit, there's a **50%** chance to gain **1** *\[Pointed Bullet]*.
+      At the start of the round, gain **1** :effect{code="POINTED_BULLET"}. When scoring critical hit, there's a **50%** chance to gain **1** :effect{code="POINTED_BULLET"}.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria2.materials[3]} />
 
@@ -191,7 +191,7 @@ export const euphoria2 = CHARACTER.euphorias.find(ele=>ele.code==='the-kamchatka
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria2.materials[4]} />
 
-      After *\[Pointed Bullet]* is triggered at least twice in one round, get Incantation Might **+20%** when attacking for the rest of the round.
+      After :effect{code="POINTED_BULLET"} is triggered at least twice in one round, get Incantation Might **+20%** when attacking for the rest of the round.
     </div>
   </Fragment>
 
