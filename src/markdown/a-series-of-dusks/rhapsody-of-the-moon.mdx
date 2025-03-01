@@ -1,4 +1,10 @@
+import Icon from "@components/Icon.astro";
+
 # Rhapsody of the Moon
+
+<Fragment>
+
+::toc
 
 ## Suite of the Moon
 
@@ -80,6 +86,17 @@ Enemies also have Stress levels. The higher an enemy's stress, the more dangerou
 
 ## Stress behaviors
 
+<div class="mt-4 alert border-primary-content gap-y-2">
+  <Icon icon="info-circle" />
+  <div>
+    <p class="font-bold">Notice!</p>
+    <div class="text-xs">
+      The data is continuously updated, and the following content may not be
+      final.
+    </div>
+  </div>
+</div>
+
 ### Afflatus
 
 |Name|Behavior|
@@ -148,3 +165,5 @@ Enemies also have Stress levels. The higher an enemy's stress, the more dangerou
 |Lilya|When :text[Focus]{className="font-medium text-focus"} is triggered, attack all enemies with a follow-up.<br /> When :text[Meltdown]{className="font-medium text-meltdown"} is triggered, suffer \[Mind Meltdown].|
 |Medicine Pocket|When :text[Focus]{className="font-medium text-focus"} is triggered, a random enemy suffers :effect{code="DAZE"}.<br /> When :text[Meltdown]{className="font-medium text-meltdown"} is triggered, a random ally suffers :effect{code="DAZE"}.|
 |Mesmer Jr.|When an ally triggers a :text[Meltdown]{className="font-medium text-meltdown"}, the ally gains \[Composure].<br /> At the start of the round, if an Awakened ally is present, get an increase in chance of Stress for self.<br /> When :text[Focus]{className="font-medium text-focus"} is triggered, inflict :effect{code="PARALYZE"} on all enemies.<br /> When :text[Meltdown]{className="font-medium text-meltdown"} is triggered, all allies suffer \[Fear].|
+
+</Fragment>
