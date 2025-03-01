@@ -1,12 +1,10 @@
 ---
+import "@styles/layout.css";
 import CustomImage from "@components/CustomImage.astro";
+import Icon from "@components/Icon.astro";
 import Footer from "@layouts/Footer.astro";
 import GoToTop from "@layouts/GoToTop.astro";
-import { processSearchResult } from "@scripts/common";
-import Search from "astro-pagefind/components/Search";
-import "@styles/layout.css";
-import FloatingButtons from "@components/FloatingButtons.astro";
-import Icon from "@components/Icon.astro";
+import Search from "@components/Search.astro";
 
 interface Props {
   title: string;
@@ -99,12 +97,7 @@ const menu = [
                   </li>
                 ))
               }
-              <button
-                class="btn btn-outline btn-secondary btn-sm"
-                onclick="searchModal.showModal()"
-              >
-                Search
-              </button>
+              <Search />
             </ul>
           </div>
         </div>
@@ -144,37 +137,10 @@ const menu = [
               ))
             }
           </ul>
-          <button
-            class="btn btn-outline btn-secondary btn-sm"
-            onclick="searchModal.showModal()"
-          >
-            Search
-          </button>
         </div>
       </div>
     </div>
-    <dialog id="searchModal" class="modal">
-      <div
-        class="modal-box w-full h-full max-w-full max-h-screen bg-base-100/80 backdrop-blur-sm flex flex-col overflow-y-visible"
-      >
-        <form method="dialog">
-          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-            >✕</button
-          >
-        </form>
-        <h3>Search</h3>
-        <Search
-          id="search"
-          className="pagefind-ui-root"
-          uiOptions={{
-            autofocus: true,
-            showImages: false,
-            processResult: (result) => processSearchResult(result),
-          }}
-        />
-      </div>
-    </dialog>
-    <FloatingButtons />
+
     <GoToTop />
   </body>
 </html>
