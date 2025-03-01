@@ -1,0 +1,8 @@
+{
+  "WEAPON": { "title": "Weapon" },
+  "CURIO": { "title": "Curio" },
+  "ACCESSORY": { "title": "Accessory" },
+  "MEDICATION": { "title": "Medication" },
+  "DISK": { "title": "Disk" },
+  "SUPPLY": { "title": "Supply" }
+}

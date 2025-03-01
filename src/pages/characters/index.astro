@@ -1,7 +1,7 @@
 ---
 import AfflatusIcon from "@components/AfflatusIcon.astro";
 import CustomImage from "@components/CustomImage.astro";
-import type { AFFLATUS_TYPE } from "@constants/character";
+import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import dayjs from "dayjs";
@@ -180,7 +180,7 @@ function sortCharacters(a, b) {
       />
     </div>
 
-    <ul class="mt-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+    <ul class="mt-8 grid grid-cols-2 md:grid-cols-6 gap-4">
       {
         characterEntries.sort(sortCharacters).map((characterEntry) => {
           return (
@@ -237,10 +237,11 @@ function sortCharacters(a, b) {
 </Layout>
 
 <script>
-  import { AFFLATUS_TYPE, DMG_TYPE, RACE, RARITY } from "@constants/character";
+  import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+  import DMG_TYPE from "@data/common/character/dmg-type.json";
+  import RACE from "@data/common/character/race.json";
+  import RARITY from "@data/common/character/rarity.json";
   import Alpine from "alpinejs";
-
-  window.Alpine = Alpine;
 
   Alpine.data("dataset", () => ({
     searchText: "",

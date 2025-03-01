@@ -1,8 +1,6 @@
-import {
-  ARTEFACT_TYPE,
-  ARTEFACT_TAG,
-  ARTEFACT_RARITY,
-} from "../src/constants/artefact.js";
+import ARTEFACT_RARITY from "../src/data/common/artefact/rarity.json" assert { type: "json" };
+import ARTEFACT_TAG from "../src/data/common/artefact/tag.json" assert { type: "json" };
+import ARTEFACT_TYPE from "../src/data/common/artefact/type.json" assert { type: "json" };
 
 export default {
   description: "Create a artefact content mdx file",

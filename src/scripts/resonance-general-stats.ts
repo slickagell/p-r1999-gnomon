@@ -1,8 +1,11 @@
-import { STATS } from "@constants/character";
+import STATS from "@data/common/character/stats.json";
 import Alpine from "alpinejs";
 
 const initStats = Object.entries(STATS).reduce((prev, stat) => {
-  const [statId, statVal] = stat;
+  const [statId, statVal] = stat as [
+    string,
+    { label: string; unit?: string; keyVal: string },
+  ];
 
   return {
     ...prev,
@@ -27,7 +30,7 @@ export default () => ({
     updateQuantity: number;
   }) {
     const attributesEl = document.querySelector(
-      "#attributes",
+      "#attributes"
     ) as HTMLDivElement;
     if (!attributesEl) return;
 

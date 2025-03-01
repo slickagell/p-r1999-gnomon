@@ -54,7 +54,7 @@ ul {
   }
 
   div {
-    @apply font-bold inline-block;
+    @apply font-bold inline-block my-1;
   }
 
   a {

@@ -1,8 +1,57 @@
 ---
+import Tooltip from "@components/Tooltip.astro";
+import Icon from "@components/Icon.astro";
+
 const props = Astro.props;
 ---
 
 <div {...props} class="table-of-contents">
   <h2>Table of Contents</h2>
-  <slot />
+  <div id="toc">
+    <slot />
+  </div>
 </div>
+
+<div x-data>
+  <template x-teleport="body">
+    <div
+      x-data="tocFloating"
+      class="fixed bottom-20 right-0 z-50"
+      x-show="isShowToc"
+      x-cloak
+    >
+      <Tooltip>
+        <button
+          slot="toggle"
+          x-transition
+          class="btn btn-secondary rounded-l p-0 w-10 h-10 min-h-min"
+        >
+          <Icon icon="layout-list" />
+        </button>
+        <div
+          x-ref="toc"
+          x-effect="handleShow"
+          x-node.clone-children="toc"
+          class="table-of-contents list-disc list-inside"
+        >
+        </div>
+      </Tooltip>
+    </div>
+  </template>
+</div>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("tocFloating", () => ({
+    isShowToc: false,
+
+    handleShow() {
+      this.$nextTick(() => {
+        if (this.$refs.toc.hasChildNodes()) {
+          this.isShowToc = true;
+        }
+      });
+    },
+  }));
+</script>

@@ -1,0 +1,43 @@
+---
+import { twMerge } from "@scripts/utils";
+import { parse } from "node-html-parser";
+
+export interface Props {
+  icon: string;
+  customClass?: string;
+}
+
+function getSVG(name: string) {
+  const filepath = `/public/icons/${name}.svg`;
+  const files = import.meta.glob<string>("/public/icons/*.svg", {
+    eager: true,
+    query: "?raw",
+    import: "default",
+  });
+
+  if (!(filepath in files)) {
+    throw new Error(`${filepath} not found`);
+  }
+
+  const root = parse(files[filepath]);
+
+  const svg = root.querySelector("svg")!;
+  const { attributes, innerHTML } = svg;
+
+  return {
+    attributes,
+    innerHTML,
+  };
+}
+
+const { icon, customClass, ...attributes } = Astro.props;
+const { attributes: baseAttributes, innerHTML } = getSVG(icon);
+
+const svgAttributes = {
+  ...baseAttributes,
+  ...attributes,
+  class: twMerge("w-6 h-6", customClass),
+};
+---
+
+<svg {...svgAttributes} set:html={innerHTML} />

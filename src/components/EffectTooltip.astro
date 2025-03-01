@@ -1,9 +1,9 @@
 ---
+import EFFECT_TYPE from "@data/common/effect/type.json";
 import { getCollection, render } from "astro:content";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownEmphasis from "./MarkdownEmphasis.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
-import { EFFECT_TYPE } from "@constants/effect";
 interface Props {
   code: string;
 }
@@ -39,6 +39,7 @@ const { Content } = await render(effect);
   <div
     @mousedown.outside="isToggle = false"
     x-show="isShow || isToggle"
+    x-cloak
     x-anchor.top="$refs.content"
     class="bg-base-100 w-80 text-base-content border-line-paper border p-2 z-10 absolute"
     x-transition:enter="ease duration-300 transition-opacity"

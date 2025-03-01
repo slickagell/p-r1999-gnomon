@@ -1,9 +1,7 @@
-import {
-  AFFLATUS_TYPE,
-  DMG_TYPE,
-  RACE,
-  RARITY,
-} from "../src/constants/character.js";
+import AFFLATUS_TYPE from "../src/data/common/character/afflatus-type.json" assert { type: "json" };
+import DMG_TYPE from "../src/data/common/character/dmg-type.json" assert { type: "json" };
+import RACE from "../src/data/common/character/race.json" assert { type: "json" };
+import RARITY from "../src/data/common/character/rarity.json" assert { type: "json" };
 
 export default {
   description: "Create a character content mdx file",

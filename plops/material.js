@@ -1,4 +1,4 @@
-import { MATERIAL_RARITY } from "../src/constants/material.js";
+import MATERIAL_RARITY from "../src/data/common/material/rarity.json" assert { type: "json" };
 
 export default {
   description: "Create a material content mdx file",

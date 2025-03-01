@@ -1,0 +1,32 @@
+{
+  "MINERAL": {
+    "title": "Mineral",
+    "assetCode": "mineral",
+    "styleCode": "mineral"
+  },
+  "STAR": {
+    "title": "Star",
+    "assetCode": "star",
+    "styleCode": "star"
+  },
+  "PLANT": {
+    "title": "Plant",
+    "assetCode": "plant",
+    "styleCode": "plant"
+  },
+  "BEAST": {
+    "title": "Beast",
+    "assetCode": "beast",
+    "styleCode": "beast"
+  },
+  "SPIRIT": {
+    "title": "Spirit",
+    "assetCode": "spirit",
+    "styleCode": "spirit"
+  },
+  "INTELLECT": {
+    "title": "Intellect",
+    "assetCode": "intellect",
+    "styleCode": "intellect"
+  }
+}
