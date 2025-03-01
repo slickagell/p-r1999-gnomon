@@ -153,11 +153,9 @@ const artefactEntries = await getCollection("artefacts");
 </Layout>
 
 <script>
-  import {
-    ARTEFACT_RARITY,
-    ARTEFACT_TAG,
-    ARTEFACT_TYPE,
-  } from "@constants/artefact";
+  import ARTEFACT_RARITY from "@data/common/artefact/rarity.json";
+  import ARTEFACT_TAG from "@data/common/artefact/tag.json";
+  import ARTEFACT_TYPE from "@data/common/artefact/type.json";
   import Alpine from "alpinejs";
   import {
     rarityFilter,

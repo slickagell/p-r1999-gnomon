@@ -4,11 +4,9 @@ import EffectTooltip from "@components/EffectTooltip.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import { ROUTES } from "@config/routes";
-import {
-  ARTEFACT_RARITY,
-  ARTEFACT_TAG,
-  ARTEFACT_TYPE,
-} from "@constants/artefact";
+import ARTEFACT_RARITY from "@data/common/artefact/rarity.json";
+import ARTEFACT_TAG from "@data/common/artefact/tag.json";
+import ARTEFACT_TYPE from "@data/common/artefact/type.json";
 import { render } from "astro:content";
 import matrix from "matrix-js";
 

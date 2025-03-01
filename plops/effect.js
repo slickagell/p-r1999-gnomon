@@ -1,4 +1,4 @@
-import { EFFECT_TYPE } from "../src/constants/effect.js";
+import EFFECT_TYPE from "../src/data/common/effect/type.json" assert { type: "json" };
 
 export default {
   description: "Create a effect content mdx file",

@@ -1,0 +1,9 @@
+{
+  "ATTACK": "attack",
+  "DEBUFF": "debuff",
+  "HEALTH": "health",
+  "BUFF": "buff",
+  "CHANNEL": "channel",
+  "COUNTER": "counter",
+  "VERSATILE": "versatile"
+}

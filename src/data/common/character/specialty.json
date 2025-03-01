@@ -1,0 +1,68 @@
+{
+  "BURN": {
+    "title": "Burn"
+  },
+  "BURST_DMG": {
+    "title": "Burst DMG"
+  },
+  "CONTROL": {
+    "title": "Control"
+  },
+  "DEBUFF": {
+    "title": "Debuff"
+  },
+  "DEF": {
+    "title": "DEF"
+  },
+  "DISPELLER": {
+    "title": "Dispeller"
+  },
+  "DPS": {
+    "title": "DPS"
+  },
+  "EXTRA_ACTION": {
+    "title": "Extra Action"
+  },
+  "FOLLOW_UP_ATTACK": {
+    "title": "Follow-up Attack"
+  },
+  "HEAL": {
+    "title": "Heal"
+  },
+  "HP_SACRIFICE": {
+    "title": "HP Sacrifice"
+  },
+  "IMMUNITY": {
+    "title": "Immunity"
+  },
+  "NASTY_WOUND": {
+    "title": "Nasty Wound"
+  },
+  "POISON": {
+    "title": "Poison"
+  },
+  "PURIFY": {
+    "title": "Purify"
+  },
+  "RANK_UP": {
+    "title": "Rank Up"
+  },
+  "REAPER": {
+    "title": "Reaper"
+  },
+  "RIPOSTE": {
+    "title": "Riposte"
+  },
+  "SELF_HEALING": {
+    "title": "Self Healing"
+  },
+  "SHIELD": {
+    "title": "Shield"
+  },
+  "SHIFT": {
+    "title": "Shift"
+  },
+  "SUPPORT": {
+    "title": "Support"
+  }
+}

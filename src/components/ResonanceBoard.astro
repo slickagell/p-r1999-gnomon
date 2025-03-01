@@ -4,7 +4,7 @@ import Icon from "@components/Icon.astro";
 import InsightImg from "@components/InsightImg.astro";
 import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
-import { RESONANCE_PATTERN } from "@constants/resonance";
+import RESONANCE_PATTERN from "@data/resonance/common/pattern.json";
 import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
 
 const DEFAULT_RESONATE_LEVEL = 10;
@@ -544,7 +544,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
 </script>
 
 <script>
-  import { STATS } from "@constants/character";
+  import STATS from "@data/common/character/stats.json";
   import resonanceDataSet from "@scripts/resonance-data-set";
   import resonancePiece from "@scripts/resonance-piece";
   import resonanceGeneralStats from "@scripts/resonance-general-stats";
