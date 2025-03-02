@@ -8,11 +8,11 @@
     "keyVal": "attack"
   },
   "REALITY_DEFENSE": {
-    "label": "Reality Defense",
+    "label": "Reality DEF",
     "keyVal": "realityDefense"
   },
   "MENTAL_DEFENSE": {
-    "label": "Mental Defense",
+    "label": "Mental DEF",
     "keyVal": "mentalDefense"
   },
   "CRITICAL_TECHNIQUE": {
@@ -30,7 +30,7 @@
     "unit": "%"
   },
   "CRITICAL_DEFENSE": {
-    "label": "Critical Defense",
+    "label": "Critical DEF",
     "keyVal": "criticalDefense",
     "unit": "%"
   },
@@ -77,6 +77,21 @@
   "ULTIMATE_MIGHT": {
     "label": "Ultimate Might",
     "keyVal": "ultimateMight",
+    "unit": "%"
+  },
+  "POISON_DMG": {
+    "label": "Poison DMG",
+    "keyVal": "poisonDmg",
+    "unit": "%"
+  },
+  "RIPOSTE_DMG_BONUS": {
+    "label": "Riposte DMG Bonus",
+    "keyVal": "riposteDmgBonus",
+    "unit": "%"
+  },
+  "GENESIS_DMG_BONUS": {
+    "label": "Genesis DMG Bonus",
+    "keyVal": "genesisDmgBonus",
     "unit": "%"
   }
 }

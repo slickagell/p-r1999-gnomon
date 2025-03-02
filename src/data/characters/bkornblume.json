@@ -113,6 +113,112 @@
             "require": 1
           }
         ]
+      },
+      "stats": {
+        "1": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 98
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 125
+            },
+            "ATTACK": {
+              "value": 30
+            },
+            "REALITY_DEFENSE": {
+              "value": 11
+            },
+            "MENTAL_DEFENSE": {
+              "value": 9
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 10,
+              "unit": "%"
+            }
+          }
+        },
+        "2": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 222
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 220
+            },
+            "ATTACK": {
+              "value": 53
+            },
+            "REALITY_DEFENSE": {
+              "value": 14
+            },
+            "MENTAL_DEFENSE": {
+              "value": 20
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 15,
+              "unit": "%"
+            }
+          }
+        },
+        "3": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 387
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 345
+            },
+            "ATTACK": {
+              "value": 71
+            },
+            "REALITY_DEFENSE": {
+              "value": 22
+            },
+            "MENTAL_DEFENSE": {
+              "value": 26
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 20,
+              "unit": "%"
+            }
+          }
+        },
+        "4": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 936
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 555
+            },
+            "ATTACK": {
+              "value": 106
+            },
+            "REALITY_DEFENSE": {
+              "value": 40
+            },
+            "MENTAL_DEFENSE": {
+              "value": 48
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 20,
+              "unit": "%"
+            }
+          }
+        }
       }
     }
   ],

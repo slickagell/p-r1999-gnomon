@@ -121,6 +121,112 @@
             "require": 2
           }
         ]
+      },
+      "stats": {
+        "1": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 195
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 130
+            },
+            "ATTACK": {
+              "value": 30
+            },
+            "REALITY_DEFENSE": {
+              "value": 15
+            },
+            "MENTAL_DEFENSE": {
+              "value": 8
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 10,
+              "unit": "%"
+            }
+          }
+        },
+        "2": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 446
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 230
+            },
+            "ATTACK": {
+              "value": 53
+            },
+            "REALITY_DEFENSE": {
+              "value": 22
+            },
+            "MENTAL_DEFENSE": {
+              "value": 18
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 15,
+              "unit": "%"
+            }
+          }
+        },
+        "3": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 776
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 360
+            },
+            "ATTACK": {
+              "value": 71
+            },
+            "REALITY_DEFENSE": {
+              "value": 34
+            },
+            "MENTAL_DEFENSE": {
+              "value": 23
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 20,
+              "unit": "%"
+            }
+          }
+        },
+        "4": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 1811
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 575
+            },
+            "ATTACK": {
+              "value": 106
+            },
+            "REALITY_DEFENSE": {
+              "value": 57
+            },
+            "MENTAL_DEFENSE": {
+              "value": 43
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 20,
+              "unit": "%"
+            }
+          }
+        }
       }
     },
     {
@@ -217,6 +323,112 @@
             "require": 2
           }
         ]
+      },
+      "stats": {
+        "1": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 195
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 130
+            },
+            "ATTACK": {
+              "value": 30
+            },
+            "REALITY_DEFENSE": {
+              "value": 15
+            },
+            "MENTAL_DEFENSE": {
+              "value": 8
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 10,
+              "unit": "%"
+            }
+          }
+        },
+        "2": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 446
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 230
+            },
+            "ATTACK": {
+              "value": 53
+            },
+            "REALITY_DEFENSE": {
+              "value": 22
+            },
+            "MENTAL_DEFENSE": {
+              "value": 18
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 15,
+              "unit": "%"
+            }
+          }
+        },
+        "3": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 776
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 360
+            },
+            "ATTACK": {
+              "value": 71
+            },
+            "REALITY_DEFENSE": {
+              "value": 34
+            },
+            "MENTAL_DEFENSE": {
+              "value": 23
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 20,
+              "unit": "%"
+            }
+          }
+        },
+        "4": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 1811
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 575
+            },
+            "ATTACK": {
+              "value": 106
+            },
+            "REALITY_DEFENSE": {
+              "value": 57
+            },
+            "MENTAL_DEFENSE": {
+              "value": 43
+            },
+            "ULTIMATE_MIGHT": {
+              "value": 20,
+              "unit": "%"
+            }
+          }
+        }
       }
     }
   ],
