@@ -2,6 +2,7 @@
 import Icon from "@components/Icon.astro";
 import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
+import STATS from "@data/common/character/stats.json";
 
 interface Props {
   epiphanyLevel: number;
@@ -9,26 +10,71 @@ interface Props {
     code: string;
     require: number;
   }[];
+  stats: {
+    data: {
+      [code: string]: {
+        value: number;
+        unit?: string;
+      };
+    };
+    materials: {
+      code: string;
+      require: number;
+    }[];
+  };
 }
 
-const { epiphanyLevel, materials } = Astro.props;
+const { epiphanyLevel, materials, stats } = Astro.props;
 ---
 
 <div class="flex items-center justify-between gap">
   <h4>Epiphany {Array(epiphanyLevel).fill("I").join("")}</h4>
-  <span class="label-text-alt">
-    <Tooltip>
-      <p slot="toggle" class="text-base-content flex items-center gap-1">
-        Material
-        <Icon icon="info-circle" />
-      </p>
-      <div>
-        {
-          materials.map((material) => (
-            <Material code={material.code} require={material.require} />
-          ))
-        }
-      </div>
-    </Tooltip>
-  </span>
+  <div class="flex flex-wrap gap-4">
+    <span class="label-text-alt">
+      <Tooltip>
+        <p slot="toggle" class="text-base-content flex items-center gap-1">
+          Stats
+          <Icon icon="chart-bar" />
+        </p>
+        <div class="p-1">
+          {
+            Object.entries(stats.data).map(([code, stat], idx) => (
+              <>
+                {idx !== 0 && <div class="divider my-1 h-2" />}
+                <div class="flex gap-2 items-center justify-between">
+                  <p class="text-primary-content">{STATS[code].label}</p>
+                  <p>+{stat.value + (stat.unit ?? "")}</p>
+                </div>
+              </>
+            ))
+          }
+          <div
+            class="divider before:bg-primary-content after:bg-primary-content my-1"
+          >
+          </div>
+          <p>Level up require:</p>
+          {
+            stats.materials.map((material) => (
+              <Material code={material.code} require={material.require} />
+            ))
+          }
+        </div>
+      </Tooltip>
+    </span>
+    <span class="label-text-alt">
+      <Tooltip>
+        <p slot="toggle" class="text-base-content flex items-center gap-1">
+          Material
+          <Icon icon="info-circle" />
+        </p>
+        <div>
+          {
+            materials.map((material) => (
+              <Material code={material.code} require={material.require} />
+            ))
+          }
+        </div>
+      </Tooltip>
+    </span>
+  </div>
 </div>

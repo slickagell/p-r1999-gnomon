@@ -121,6 +121,112 @@
             "require": 2
           }
         ]
+      },
+      "stats": {
+        "1": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 195
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 180
+            },
+            "ATTACK": {
+              "value": 30
+            },
+            "REALITY_DEFENSE": {
+              "value": 9
+            },
+            "MENTAL_DEFENSE": {
+              "value": 6
+            },
+            "RIPOSTE_DMG_BONUS": {
+              "value": 5,
+              "unit": "%"
+            }
+          }
+        },
+        "2": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 446
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 310
+            },
+            "ATTACK": {
+              "value": 50
+            },
+            "REALITY_DEFENSE": {
+              "value": 15
+            },
+            "MENTAL_DEFENSE": {
+              "value": 15
+            },
+            "RIPOSTE_DMG_BONUS": {
+              "value": 7.5,
+              "unit": "%"
+            }
+          }
+        },
+        "3": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 776
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 470
+            },
+            "ATTACK": {
+              "value": 65
+            },
+            "REALITY_DEFENSE": {
+              "value": 26
+            },
+            "MENTAL_DEFENSE": {
+              "value": 19
+            },
+            "RIPOSTE_DMG_BONUS": {
+              "value": 10,
+              "unit": "%"
+            }
+          }
+        },
+        "4": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 1811
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 680
+            },
+            "ATTACK": {
+              "value": 95
+            },
+            "REALITY_DEFENSE": {
+              "value": 52
+            },
+            "MENTAL_DEFENSE": {
+              "value": 43
+            },
+            "RIPOSTE_DMG_BONUS": {
+              "value": 10,
+              "unit": "%"
+            }
+          }
+        }
       }
     }
   ],

@@ -159,37 +159,37 @@ export const euphoria2 = CHARACTER.euphorias.find(ele=>ele.code==='the-kamchatka
 
   <Fragment slot="euphoria-content">
     <div x-show={`active==='${euphoria1.code}'`}>
-      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} />
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} stats={euphoria1.stats[1]} />
 
       When attacking, excess Critical Rate is converted into Critical DMG; after scoring a critical hit, gain **1** stack of :effect{code="INTENSE_FERVOR"} for self; when casting an ultimate, consume all stacks of :effect{code="INTENSE_FERVOR"} to gain an equal number of Moxie.
 
-      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} />
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} stats={euphoria1.stats[2]} />
 
       When an extra action scores a critical hit, gain **2** stacks of :effect{code="CEREMONIOUS"}.
 
-      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} />
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} stats={euphoria1.stats[3]} />
 
       When *\[Aerial Maneuvers]* scores a critical hit at incantation rank **1/2/3**, performs **1** extra attack that deals **80%/120%/200%** Reality DMG. This extra attack is regarded as **1** extra action.
 
-      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} />
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} stats={euphoria1.stats[4]} />
 
       When casting an ultimate, deal an additional **30%** Reality DMG for each stack of :effect{code="CEREMONIOUS"} held; up to **15** stacks can be used to count toward this bonus.
     </div>
 
     <div x-show={`active==='${euphoria2.code}'`}>
-      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria2.materials[1]} />
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria2.materials[1]} stats={euphoria2.stats[1]} />
 
       Incantation Might **+5%**; when attacking, excess Critical Rate is converted to Critical DMG.
 
-      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria2.materials[2]} />
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria2.materials[2]} stats={euphoria2.stats[2]} />
 
       At the start of the round, gain **1** :effect{code="POINTED_BULLET"}. When scoring critical hit, there's a **50%** chance to gain **1** :effect{code="POINTED_BULLET"}.
 
-      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria2.materials[3]} />
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria2.materials[3]} stats={euphoria2.stats[3]} />
 
       When *\[Aerial Maneuvers]* scores a critical hit at incantation rank **1/2/3**, performs **1** extra attack that deals **80%/120%/200%** Reality DMG. This extra attack is regarded as **1** extra action.
 
-      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria2.materials[4]} />
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria2.materials[4]} stats={euphoria2.stats[4]} />
 
       After :effect{code="POINTED_BULLET"} is triggered at least twice in one round, get Incantation Might **+20%** when attacking for the rest of the round.
     </div>
