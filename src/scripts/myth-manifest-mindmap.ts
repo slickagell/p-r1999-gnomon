@@ -9,7 +9,9 @@ const OFFSET = 40;
 
 const DEFAULT_NODE_R = 5;
 const TRANSITION_DURATION_TIME = 300;
-const NODE_COLOR = "#fff";
+const NODE_COLOR = "#999";
+const NODE_COLOR_SELECTED = "#fff";
+const NODE_COLOR_ACTIVE = "#db6f39";
 const LINK_COLOR = "#999";
 
 export default () => ({
@@ -18,9 +20,12 @@ export default () => ({
   nodes: null,
   selectedNode: null,
   hoveredNode: null,
+  activeNodes: [],
+  activeCodes: [],
 
   init() {
     const data = this.$store.mythManifest.mindmap;
+
     // The force simulation mutates links and nodes, so create a copy
     // so that re-evaluating this cell produces the same result.
     const links = data.links.map((d) => ({ ...d }));
@@ -29,6 +34,9 @@ export default () => ({
       fx: ROOT_X + OFFSET * (d.offsetX ?? 0),
       fy: ROOT_Y + OFFSET * (d.offsetY ?? 0),
     }));
+
+    this.links = links;
+    this.nodes = nodes;
 
     // Create a simulation with several forces.
     const simulation = d3
@@ -68,12 +76,12 @@ export default () => ({
       .attr("class", "node")
       .attr("id", (d) => d.id)
       .attr("r", (d) => d.r ?? DEFAULT_NODE_R)
-      .attr("fill", NODE_COLOR)
+      .attr("fill", (d) => (d.active ? NODE_COLOR_ACTIVE : NODE_COLOR))
       .on("mouseover", (event, d, i) => {
-        d3.select(event.target)
-          .transition()
-          .duration(TRANSITION_DURATION_TIME)
-          .attr("r", (d) => (d.r ?? DEFAULT_NODE_R) * 1.5);
+        // d3.select(event.target)
+        //   .transition()
+        //   .duration(TRANSITION_DURATION_TIME)
+        //   .attr("r", (d) => (d.r ?? DEFAULT_NODE_R) * 1.5);
 
         if (d.code) {
           this.hoveredNode = {
@@ -83,12 +91,13 @@ export default () => ({
           const svgDim = svg.node().getBoundingClientRect();
 
           const tooltipX = (d.x * svgDim.width) / WIDTH;
-          const tooltipY = (d.y * svgDim.height) / HEIGHT;
+          const tooltipY =
+            ((d.y - (d.r ?? DEFAULT_NODE_R + 4)) * svgDim.height) / HEIGHT;
 
           tooltip
             .style("left", tooltipX + "px")
             .style("top", tooltipY + "px")
-            .style("transform", `translate(-50%, calc(-100% - 1rem))`);
+            .style("transform", `translate(-50%, -100%)`);
 
           tooltip
             .transition()
@@ -97,10 +106,7 @@ export default () => ({
         }
       })
       .on("mouseout", (e, d) => {
-        d3.select(e.target)
-          .transition()
-          .duration(TRANSITION_DURATION_TIME)
-          .attr("r", (d) => d.r ?? DEFAULT_NODE_R);
+        d3.select(e.target).attr("r", (d) => d.r ?? DEFAULT_NODE_R);
 
         this.hoveredNode = null;
 
@@ -110,10 +116,21 @@ export default () => ({
           .style("opacity", 0);
       })
       .on("click", async (e, d) => {
+        console.log(d);
+        d3.select("circle[id='" + this.selectedNode?.id + "']").attr(
+          "fill",
+          () =>
+            !!this.activeCodes.includes(this.selectedNode?.code)
+              ? NODE_COLOR_ACTIVE
+              : NODE_COLOR
+        );
+
         this.selectedNode = {
           id: d.id,
           code: d.code,
         };
+
+        d3.select(e.target).attr("fill", NODE_COLOR_SELECTED);
       });
 
     // Add a drag behavior.
@@ -161,5 +178,38 @@ export default () => ({
     // really matter since the target alpha is zero and the simulation will
     // stop naturally, but it’s a good practice.)
     // invalidation.then(() => simulation.stop());
+  },
+
+  clearSelectedNode() {
+    d3.select("circle[id='" + this.selectedNode?.id + "']").attr("fill", () =>
+      !!this.activeCodes.includes(this.selectedNode?.code)
+        ? NODE_COLOR_ACTIVE
+        : NODE_COLOR
+    );
+
+    this.selectedNode = null;
+  },
+
+  clear() {
+    this.activeNodes.forEach((node) => {
+      d3.select('circle[id="' + node.id + '"]').attr("fill", NODE_COLOR);
+    });
+
+    this.selectedNode = null;
+    this.hoveredNode = null;
+    this.activeNodes = [];
+    this.activeCodes = [];
+  },
+
+  setRecommended(name) {
+    const data = this.$store.mythManifest.mindmap;
+    const recommended = data.recommended.find((ele) => ele.name === name);
+    this.activeNodes = data.nodes.filter((ele) => {
+      return recommended.activeNodes.includes(ele.id);
+    });
+    this.activeCodes = this.activeNodes.map((ele) => ele.code);
+    this.activeNodes.forEach((node) => {
+      d3.select('circle[id="' + node.id + '"]').attr("fill", NODE_COLOR_ACTIVE);
+    });
   },
 });
