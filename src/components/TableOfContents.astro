@@ -12,14 +12,9 @@ const props = Astro.props;
   </div>
 </div>
 
-<div x-data>
+<div x-data="tocFloating">
   <template x-teleport="body">
-    <div
-      x-data="tocFloating"
-      class="fixed bottom-20 right-0 z-50"
-      x-show="isShowToc"
-      x-cloak
-    >
+    <div class="fixed bottom-20 right-0 z-50" x-show="isShowToc" x-cloak>
       <Tooltip>
         <button
           slot="toggle"
@@ -42,6 +37,9 @@ const props = Astro.props;
 
 <script>
   import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
 
   Alpine.data("tocFloating", () => ({
     isShowToc: false,
