@@ -76,6 +76,7 @@ export default ({
     generalStatsAlpineData.updateGeneralStats({
       updateStats: this.currentStats,
       updateQuantity: updateQuantity,
+      isMainPiece: this.isMainPiece,
     });
   },
 
