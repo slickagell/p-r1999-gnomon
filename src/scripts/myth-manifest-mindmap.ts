@@ -6,13 +6,15 @@ const HEIGHT = 300;
 const ROOT_X = WIDTH / 2;
 const ROOT_Y = HEIGHT - 40;
 const OFFSET = 40;
-
+const TRANSITION_DURATION_TIME = 250;
 const DEFAULT_NODE_R = 5;
-const TRANSITION_DURATION_TIME = 300;
 const NODE_COLOR = "#999";
-const NODE_COLOR_SELECTED = "#fff";
-const NODE_COLOR_ACTIVE = "#db6f39";
+const NODE_SELECTED_COLOR = "#fff";
+const NODE_STROKE_SELECTED_COLOR = "#bba893";
+const NODE_ACTIVE_COLOR = "#fff";
+const NODE_STROKE_ACTIVE_COLOR = "#db6f39";
 const LINK_COLOR = "#999";
+const LINK_ACTIVE_COLOR = "#db6f39";
 
 export default () => ({
   svg: null,
@@ -22,6 +24,10 @@ export default () => ({
   hoveredNode: null,
   activeNodes: [],
   activeCodes: [],
+  activeLinks: [],
+
+  openTooltip: false,
+  anchorTooltip: "",
 
   init() {
     const data = this.$store.mythManifest.mindmap;
@@ -56,16 +62,16 @@ export default () => ({
       .attr("viewBox", [0, 0, WIDTH, HEIGHT])
       .attr("style", "max-width: 100%; height: auto;");
 
-    let tooltip = d3.select("#mindmap-graph").select("#tooltip");
-
     // Add a line for each link, and a circle for each node.
     const link = svg
       .append("g")
-      .attr("stroke", LINK_COLOR)
-      .attr("stroke-opacity", 0.6)
       .selectAll()
       .data(links)
       .join("line")
+      .attr("data-source", (d) => d.source.id)
+      .attr("data-target", (d) => d.target.id)
+      .attr("stroke", LINK_COLOR)
+      .attr("stroke-opacity", 0.6)
       .attr("stroke-width", 1);
 
     const node = svg
@@ -75,62 +81,58 @@ export default () => ({
       .join("circle")
       .attr("class", "node")
       .attr("id", (d) => d.id)
+      .attr("x-ref", (d) => `node-${d.id}`)
       .attr("r", (d) => d.r ?? DEFAULT_NODE_R)
-      .attr("fill", (d) => (d.active ? NODE_COLOR_ACTIVE : NODE_COLOR))
+      .attr("fill", (d) => (d.active ? NODE_ACTIVE_COLOR : NODE_COLOR))
+      .attr("stroke-width", 2)
       .on("mouseover", (event, d, i) => {
-        // d3.select(event.target)
-        //   .transition()
-        //   .duration(TRANSITION_DURATION_TIME)
-        //   .attr("r", (d) => (d.r ?? DEFAULT_NODE_R) * 1.5);
+        d3.select(event.target)
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .attr("fill", NODE_SELECTED_COLOR);
 
         if (d.code) {
           this.hoveredNode = {
             id: d.id,
             code: d.code,
           };
-          const svgDim = svg.node().getBoundingClientRect();
 
-          const tooltipX = (d.x * svgDim.width) / WIDTH;
-          const tooltipY =
-            ((d.y - (d.r ?? DEFAULT_NODE_R + 4)) * svgDim.height) / HEIGHT;
-
-          tooltip
-            .style("left", tooltipX + "px")
-            .style("top", tooltipY + "px")
-            .style("transform", `translate(-50%, -100%)`);
-
-          tooltip
-            .transition()
-            .duration(TRANSITION_DURATION_TIME)
-            .style("opacity", 1);
+          this.anchorTooltip = `node-${d.id}`;
+          this.openTooltip = true;
         }
       })
       .on("mouseout", (e, d) => {
-        d3.select(e.target).attr("r", (d) => d.r ?? DEFAULT_NODE_R);
-
         this.hoveredNode = null;
 
-        tooltip
+        this.openTooltip = false;
+        this.anchorTooltip = "";
+
+        if (this.selectedNode?.id === d.id) return;
+        d3.select(e.target)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
-          .style("opacity", 0);
+          .attr("fill", NODE_COLOR);
       })
       .on("click", async (e, d) => {
-        console.log(d);
-        d3.select("circle[id='" + this.selectedNode?.id + "']").attr(
-          "fill",
-          () =>
-            !!this.activeCodes.includes(this.selectedNode?.code)
-              ? NODE_COLOR_ACTIVE
-              : NODE_COLOR
+        const isSelectedNodeActive = !!this.activeCodes.includes(
+          this.selectedNode?.code
         );
+        d3.select("circle[id='" + this.selectedNode?.id + "']")
+          .attr("fill", () =>
+            isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+          )
+          .attr("stroke", () =>
+            isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : null
+          );
 
         this.selectedNode = {
           id: d.id,
           code: d.code,
         };
 
-        d3.select(e.target).attr("fill", NODE_COLOR_SELECTED);
+        d3.select(e.target)
+          .attr("fill", NODE_SELECTED_COLOR)
+          .attr("stroke", NODE_STROKE_SELECTED_COLOR);
       });
 
     // Add a drag behavior.
@@ -181,27 +183,45 @@ export default () => ({
   },
 
   clearSelectedNode() {
-    d3.select("circle[id='" + this.selectedNode?.id + "']").attr("fill", () =>
-      !!this.activeCodes.includes(this.selectedNode?.code)
-        ? NODE_COLOR_ACTIVE
-        : NODE_COLOR
+    const isSelectedNodeActive = !!this.activeCodes.includes(
+      this.selectedNode?.code
     );
+    d3.select("circle[id='" + this.selectedNode?.id + "']")
+      .attr("fill", () =>
+        isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+      )
+      .attr("stroke", () =>
+        isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : null
+      );
 
     this.selectedNode = null;
   },
 
   clear() {
     this.activeNodes.forEach((node) => {
-      d3.select('circle[id="' + node.id + '"]').attr("fill", NODE_COLOR);
+      d3.select('circle[id="' + node.id + '"]')
+        .attr("fill", NODE_COLOR)
+        .attr("stroke", null);
+    });
+    this.activeLinks.forEach((link) => {
+      d3.select(
+        'line[data-source="' +
+          link.source +
+          '"][data-target="' +
+          link.target +
+          '"]'
+      ).attr("stroke", LINK_COLOR);
     });
 
-    this.selectedNode = null;
+    this.clearSelectedNode();
     this.hoveredNode = null;
     this.activeNodes = [];
     this.activeCodes = [];
+    this.activeLinks = [];
   },
 
   setRecommended(name) {
+    this.clear();
     const data = this.$store.mythManifest.mindmap;
     const recommended = data.recommended.find((ele) => ele.name === name);
     this.activeNodes = data.nodes.filter((ele) => {
@@ -209,7 +229,26 @@ export default () => ({
     });
     this.activeCodes = this.activeNodes.map((ele) => ele.code);
     this.activeNodes.forEach((node) => {
-      d3.select('circle[id="' + node.id + '"]').attr("fill", NODE_COLOR_ACTIVE);
+      d3.select('circle[id="' + node.id + '"]')
+        .attr("fill", NODE_ACTIVE_COLOR)
+        .attr("stroke", NODE_STROKE_ACTIVE_COLOR);
+    });
+
+    const activeLinks = data.links.filter((ele) => {
+      return (
+        this.activeNodes.some((node) => node.id === ele.source) &&
+        this.activeNodes.some((node) => node.id === ele.target)
+      );
+    });
+    this.activeLinks = activeLinks;
+    activeLinks.forEach((link) => {
+      d3.select(
+        'line[data-source="' +
+          link.source +
+          '"][data-target="' +
+          link.target +
+          '"]'
+      ).attr("stroke", LINK_ACTIVE_COLOR);
     });
   },
 });

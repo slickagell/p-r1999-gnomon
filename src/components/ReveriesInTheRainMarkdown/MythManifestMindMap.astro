@@ -47,20 +47,22 @@ const entries = await Promise.all(
 
 <div x-data="mindmap">
   <div id="mindmap-graph" class="relative max-w-full md:max-w-3xl mx-auto">
-    <div id="tooltip" class="tooltip">
-      {
-        entries.map(({ entry: nodeEntry }) => {
-          return (
-            <div
-              class="py-1 px-2"
-              x-show={`hoveredNode?.code === '${nodeEntry.data.code}'`}
-            >
-              {nodeEntry.data.title}
-            </div>
-          );
-        })
-      }
-    </div>
+    <template x-if="openTooltip">
+      <div class="tooltip" x-anchor.offset.8.top="$refs[anchorTooltip]">
+        {
+          entries.map(({ entry: nodeEntry }) => {
+            return (
+              <div
+                class="py-1 px-2"
+                x-show={`hoveredNode?.code === '${nodeEntry.data.code}'`}
+              >
+                {nodeEntry.data.title}
+              </div>
+            );
+          })
+        }
+      </div>
+    </template>
   </div>
   <div class="flex justify-between items-center">
     <button class="btn btn-sm" @click="clear"> Clear </button>
@@ -102,30 +104,37 @@ const entries = await Promise.all(
       </div>
     </div>
   </div>
-  <p class="mt-4">Recommended:</p>
-  <div class="mt-1 flex flex-wrap gap-2">
-    {
-      mindmap.recommended.map((ele) => (
-        <button
-          class="btn btn-outline btn-sm"
-          @click={`setRecommended('${ele.name}')`}
-        >
-          {ele.name}
-        </button>
-      ))
-    }
+  <div x-show={`${!!mindmap.recommended?.length}`}>
+    <p class="mt-4">Recommended:</p>
+    <div class="mt-1 flex flex-wrap gap-2">
+      {
+        mindmap.recommended?.map((ele) => (
+          <button
+            class="btn btn-outline btn-sm"
+            @click={`setRecommended('${ele.name}')`}
+          >
+            {ele.name}
+          </button>
+        ))
+      }
+    </div>
   </div>
   <template x-if="activeCodes.length">
-    <div class="collapse collapse-open collapse-arrow bg-base-200">
-      <input type="checkbox" />
+    <div class="mt-4 collapse collapse-arrow bg-base-200">
+      <input type="checkbox" checked />
       <div class="collapse-title text-xl font-medium">Active</div>
       <div class="collapse-content">
-        <div class="flex flex-col gap-4">
+        <div class="divide-y divide-base-content/50">
           {
             entries.map(({ entry: nodeEntry, Content }) => {
               return (
-                <div x-show={`activeCodes.includes('${nodeEntry.data.code}')`}>
-                  <p class="font-bold">{nodeEntry.data.title}</p>
+                <div
+                  class="py-4"
+                  x-show={`activeCodes.includes('${nodeEntry.data.code}')`}
+                >
+                  <p class="font-medium text-primary-content">
+                    {nodeEntry.data.title}
+                  </p>
                   <Content
                     components={{
                       p: MarkdownContent,
@@ -147,6 +156,9 @@ const entries = await Promise.all(
 <script>
   import mythManifestMindMap from "@scripts/myth-manifest-mindmap";
   import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
 
   Alpine.data("mindmap", mythManifestMindMap);
 </script>
