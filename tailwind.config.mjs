@@ -48,6 +48,12 @@ export default {
         all: "#9f844d",
         ally: "#5f7281",
         enemy: "#873a4b",
+
+        ["euphotic-zone"]: "#96c9e0",
+        ["mesophotic-zone"]: "#7ebdd9",
+        ["bathyal-zone"]: "#66b1d2",
+        ["abyssal-zone"]: "#4ea5cb",
+        ["hadal-zone"]: "#3998c2",
       },
       gridTemplateColumns: {
         filter: "auto 1fr",

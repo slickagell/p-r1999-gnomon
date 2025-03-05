@@ -1,21 +1,21 @@
 ---
-title: "Euphotic Zone 100M"
+title: "Euphotic Zone 100M-III"
 ---
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
     <Fragment slot="recommended-content">
-        - Star units
+        - Plant units
         - Insight III Level 1
     </Fragment>
 
     <Fragment slot="stage-mechanism-content">
         :text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-        :text[[Enemy]]{className="font-medium text-enemy"} On death, grant Moxie +1 to other allies and recover (their Max HP x**5%**) HP to other allies.
+        :text[[Enemy]]{className="font-medium text-enemy"} On death, recover (Missing HP x**25%**) HP for all allies.
 
-        :text[[Enemy]]{className="font-medium text-enemy"} Reality DEF **+20%**.
+        :text[[Enemy]]{className="font-medium text-enemy"} Mental DEF **+20%**.
 
-        :text[[Enemy]]{className="font-medium text-enemy"} At the start of every 3 rounds, purify *[Stats Down]* and *[Control]* statuses from all allies.
+        :text[[Ally]]{className="font-medium text-ally"} At the first round and at the start of every 3 rounds, rewrite all incantations with :effect{code="SCALDING"}.
     </Fragment>
 </ZoneContent>

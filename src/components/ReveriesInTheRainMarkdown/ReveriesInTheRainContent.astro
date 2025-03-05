@@ -28,88 +28,128 @@ const mythManifestEntries = await getCollection(
 
 <slot name="zone-info-title" />
 
-<h4>Euphotic Zone</h4>
+<ul class="timeline">
+  <li
+    class="bg-euphotic-zone/20 before:!bg-euphotic-zone after:!bg-gradient-to-b after:!from-euphotic-zone after:!to-mesophotic-zone"
+  >
+    <p class="text-xl font-bold italic text-euphotic-zone">Euphotic Zone</p>
 
-<div class="flex flex-wrap gap-5">
-  {
-    ["10m", "20m", "30m", "40m", "50m", "60m", "70m", "80m", "90m", "100m"].map(
-      (depth) => (
-        <div>
-          <a
-            class="uppercase custom-link"
-            href={`/reveries-in-the-rain/zone/${depth}`}
-          >
-            {depth}
-          </a>
-        </div>
-      )
-    )
-  }
-</div>
+    <div class="mt-2 flex flex-wrap gap-5">
+      {
+        [
+          "10m",
+          "20m",
+          "30m",
+          "40m",
+          "50m",
+          "60m",
+          "70m",
+          "80m",
+          "90m",
+          "100m-i",
+          "100m-ii",
+          "100m-iii",
+        ].map((depth) => (
+          <div>
+            <a
+              class="uppercase custom-link !text-base-content text-shadow shadow-euphotic-zone"
+              href={`/reveries-in-the-rain/zone/${depth}`}
+            >
+              {depth}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </li>
 
-<h4>Mesophotic Zone</h4>
+  <li
+    class="bg-mesophotic-zone/20 before:!bg-mesophotic-zone after:!bg-gradient-to-b after:!from-mesophotic-zone after:!to-bathyal-zone"
+  >
+    <p class="text-xl font-bold italic text-mesophotic-zone">Mesophotic Zone</p>
 
-<div class="flex flex-wrap gap-5">
-  {
-    [
-      "110m",
-      "120m",
-      "130m",
-      "140m",
-      "150m",
-      "160m",
-      "170m",
-      "180m",
-      "190m",
-      "200m",
-    ].map((depth) => (
-      <div>
-        <a
-          class="uppercase custom-link"
-          href={`/reveries-in-the-rain/zone/${depth}`}
-        >
-          {depth}
-        </a>
-      </div>
-    ))
-  }
-</div>
+    <div class="mt-2 flex flex-wrap gap-5">
+      {
+        [
+          "110m",
+          "120m",
+          "130m",
+          "140m",
+          "150m",
+          "160m",
+          "170m",
+          "180m",
+          "190m",
+          "200m-i",
+          "200m-ii",
+          "200m-iii",
+        ].map((depth) => (
+          <div>
+            <a
+              class="uppercase custom-link !text-base-content text-shadow shadow-mesophotic-zone"
+              href={`/reveries-in-the-rain/zone/${depth}`}
+            >
+              {depth}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </li>
 
-<h4>Bathyal Zone</h4>
+  <li
+    class="bg-bathyal-zone/20 before:!bg-bathyal-zone after:!bg-gradient-to-b after:!from-bathyal-zone after:!to-abyssal-zone"
+  >
+    <p class="text-xl font-bold italic text-bathyal-zone">Bathyal Zone</p>
 
-<div class="flex flex-wrap gap-5">
-  {
-    [
-      "210m",
-      "220m",
-      "230m",
-      "240m",
-      "250m",
-      "260m",
-      "270m",
-      "280m",
-      "290m",
-      "300m",
-    ].map((depth) => (
-      <div>
-        <a
-          class="uppercase custom-link"
-          href={`/reveries-in-the-rain/zone/${depth}`}
-        >
-          {depth}
-        </a>
-      </div>
-    ))
-  }
-</div>
+    <div class="mt-2 flex flex-wrap gap-5">
+      {
+        [
+          "210m",
+          "220m",
+          "230m",
+          "240m",
+          "250m-i",
+          "250m-ii",
+          "260m",
+          "270m",
+          "280m",
+          "290m",
+          "300m-i",
+          "300m-ii",
+          "300m-iii",
+        ].map((depth) => (
+          <div>
+            <a
+              class="uppercase custom-link !text-base-content text-shadow shadow-bathyal-zone"
+              href={`/reveries-in-the-rain/zone/${depth}`}
+            >
+              {depth}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </li>
 
-<h4>Abyssal Zone</h4>
+  <li
+    class="bg-abyssal-zone/20 before:!bg-abyssal-zone after:!bg-gradient-to-b after:!from-abyssal-zone after:!to-hadal-zone"
+  >
+    <p class="text-xl font-bold italic text-abyssal-zone">Abyssal Zone</p>
 
-<p>Not yet unlocked</p>
+    <p class="mt-2 text-base-content text-shadow shadow-abyssal-zone">
+      Not yet unlocked
+    </p>
+  </li>
 
-<h4>Hadal Zone</h4>
+  <li class="bg-hadal-zone/20 before:!bg-hadal-zone">
+    <p class="text-xl font-bold italic text-hadal-zone">Hadal Zone</p>
 
-<p>Not yet unlocked</p>
+    <p class="mt-2 text-base-content text-shadow shadow-hadal-zone">
+      Not yet unlocked
+    </p>
+  </li>
+</ul>
 
 <slot name="isle-of-echoes-title" />
 
