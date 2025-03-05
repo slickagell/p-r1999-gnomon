@@ -226,6 +226,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
       id="generalStats"
       x-data="generalStats"
       class="p-4 md:p-6 border w-full md:basis-1/3"
+      x-effect="updateTotalStats()"
     >
       <template x-for="[, stat] in Object.entries(stats)">
         <div
