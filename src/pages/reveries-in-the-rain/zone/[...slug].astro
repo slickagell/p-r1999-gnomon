@@ -1,0 +1,52 @@
+---
+import "@styles/markdown-layout.css";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const zoneEntries = await getCollection("reveries-in-the-rain", ({ id }) => {
+    return id.includes("zone/");
+  });
+  return zoneEntries.map((entry) => ({
+    params: { slug: entry.id.replace("zone/", "/") },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${entry.data.title} | Depths of Myth | Reveries in the Rain`}
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Reveries in the Rain",
+      href: "/reveries-in-the-rain",
+    },
+    {
+      label: `${entry.data.title}`,
+    },
+  ]}
+>
+  <div class="flex-1">
+    <Content
+      components={{
+        ul: MarkdownDiscList,
+        p: MarkdownParagraphContent,
+        effect: EffectTooltip,
+        strong: MarkdownHighlight,
+        em: MarkdownEmphasis,
+      }}
+    />
+  </div>
+</Layout>

@@ -1,0 +1,42 @@
+---
+id: "mountain-ghost"
+title: "Mountain Ghost"
+afflatus: "PLANT"
+specialties: ["RANK_UP", "GENESIS_DMG", "PETRIFY"]
+---
+import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManifestContent.astro';
+import data from '@data/myth-manifest/mountain-ghost.json';
+
+<MythManifestContent {...frontmatter} {...data}>
+    <Fragment slot="manifest-skill-section-title">
+        ## Manifest skill
+    </Fragment>
+
+    <Fragment slot="manifest-skill-title">
+        ### Thunderous Skies
+    </Fragment>
+
+    <Fragment slot="manifest-skill-content">
+        Costs 100 Energon to cast. Mass attack. Deals **300%** Mental DMG to all enemies; gain Incantation Draw Limit +2 on the next round, and the top incantation of the Spellbox gets rank +1.
+    </Fragment>
+
+    <Fragment slot="passive-section-title">
+        ## Passive
+    </Fragment>
+
+    <Fragment slot="passive-1-content">
+        When entering battle, recover 50 Energon. Right before the incantations in the AP Area resolve, add a rank 3 incantation :effect{code="COMING_STORM"} to the spell queue, and recover Energon equal to the total ranks of the incantations played, multiplied by 3.
+    </Fragment>
+
+    <Fragment slot="passive-2-content">
+        When a unit with *[Neg Status]* dies, copy 1 random *[Neg Status]* onto another random enemy.
+    </Fragment>
+    
+    <Fragment slot="passive-3-content">
+        After casting an ultimate, the 2nd and 3rd incantations from the top of the Spellbox get rank +1. 
+    </Fragment>
+
+    <Fragment slot="mindmap-section-title">
+        ## Mindmap
+    </Fragment>
+</MythManifestContent>

@@ -1,0 +1,44 @@
+---
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import TableOfContents from "@components/TableOfContents.astro";
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
+import MarkdownText from "@components/MarkdownText.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getEntry, render } from "astro:content";
+
+const reveriesInTheRainEntry = await getEntry(
+  "reveries-in-the-rain",
+  "general"
+)!;
+
+const { Content } = await render(reveriesInTheRainEntry);
+---
+
+<Layout
+  title="Reveries in the Rain"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Reveries in the Rain",
+    },
+  ]}
+>
+  <Content
+    components={{
+      img: CustomImage,
+      p: MarkdownParagraphContent,
+      effect: EffectTooltip,
+      text: MarkdownText,
+      strong: MarkdownHighlight,
+      toc: TableOfContents,
+      em: MarkdownEmphasis,
+    }}
+  />
+</Layout>

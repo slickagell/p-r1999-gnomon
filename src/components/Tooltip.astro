@@ -13,7 +13,7 @@ const { title, ...props } = Astro.props;
   @mouseleave="isShow = false"
 >
   <div
-    x-ref="content"
+    x-ref="tooltip"
     @click="isToggle = !isToggle"
     @mouseenter="isShow = true"
     class="text-effect cursor-pointer"
@@ -25,7 +25,7 @@ const { title, ...props } = Astro.props;
     @mousedown.outside="isToggle = false"
     x-show="isShow || isToggle"
     x-cloak
-    x-anchor.top="$refs.content"
+    x-anchor.top="$refs.tooltip"
     class="bg-base-100 max-w-80 min-w-60 text-base-content border-line-paper border p-2 z-10"
     x-transition:enter="ease duration-300 transition-opacity"
     x-transition:enter-start="opacity-0"

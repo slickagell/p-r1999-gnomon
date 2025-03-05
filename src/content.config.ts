@@ -90,6 +90,13 @@ const maneBulletin = defineCollection({
   }),
 });
 
+const reveriesInTheRain = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/markdown/reveries-in-the-rain",
+  }),
+});
+
 export const collections = {
   characters,
   effects,
@@ -98,4 +105,5 @@ export const collections = {
   artefacts,
   catalysts,
   "mane-bulletin": maneBulletin,
+  "reveries-in-the-rain": reveriesInTheRain,
 };

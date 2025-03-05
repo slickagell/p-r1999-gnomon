@@ -1,0 +1,21 @@
+---
+title: "Bathyal Zone 250M-II"
+---
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+
+<ZoneContent {...frontmatter}>
+    <Fragment slot="recommended-content">
+        - Star units
+        - Insight III Level 30
+    </Fragment>
+
+    <Fragment slot="stage-mechanism-content">
+        :text[[Enemy]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+        :text[[Ally]]{className="font-medium text-ally"} At the start of the round, if under a *[Control]* status, get Moxie -1.
+        
+        :text[[Enemy]]{className="font-medium text-enemy"} DMG Heal **+20%**.
+
+        :text[[Ally]]{className="font-medium text-ally"} After casting an ultimate, suffer :effect{code="DISCONCERT"} for 2 rounds.
+    </Fragment>
+</ZoneContent>

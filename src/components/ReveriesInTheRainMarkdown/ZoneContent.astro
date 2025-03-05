@@ -1,0 +1,30 @@
+---
+interface Props {
+  id: string;
+  title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<h1>{title}</h1>
+
+<div class="collapse collapse-plus bg-base-200">
+  <input type="checkbox" checked />
+  <div class="collapse-title text-xl font-medium">
+    <p>Recommended</p>
+  </div>
+  <div class="collapse-content">
+    <slot name="recommended-content" />
+  </div>
+</div>
+
+<div class="collapse collapse-plus bg-base-200">
+  <input type="checkbox" checked />
+  <div class="collapse-title text-xl font-medium">
+    <p>Stage mechanism</p>
+  </div>
+  <div class="collapse-content">
+    <slot name="stage-mechanism-content" />
+  </div>
+</div>

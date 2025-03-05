@@ -1,0 +1,20 @@
+---
+title: "Mesophotic Zone 200M-III"
+---
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+
+<ZoneContent {...frontmatter}>
+    <Fragment slot="recommended-content">
+        - Insight III Level 20
+    </Fragment>
+
+    <Fragment slot="stage-mechanism-content">
+        :text[[Enemy]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+        :text[[Ally]]{className="font-medium text-ally"} At the start of the round, rewrite 3 random incantations with :effect{code="SCALDING"}.
+
+        :text[[Ally]]{className="font-medium text-ally"} At the start of the round, **50%** chance to change all allied incantations to *[Precast Incantation]*.
+
+        :text[[Ally]]{className="font-medium text-ally"} At the end of the round, if HP is below **50%**, gain :effect{code="DISCONCERT"} for 1 round.
+    </Fragment>
+</ZoneContent>

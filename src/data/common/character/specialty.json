@@ -64,5 +64,20 @@
   },
   "SUPPORT": {
     "title": "Support"
+  },
+  "GENESIS_DMG": {
+    "title": "Genesis DMG"
+  },
+  "PETRIFY": {
+    "title": "Petrify"
+  },
+  "MOXIE": {
+    "title": "Moxie"
+  },
+  "CRITICAL": {
+    "title": "Critical"
+  },
+  "EUREKA": {
+    "title": "Eureka"
   }
 }

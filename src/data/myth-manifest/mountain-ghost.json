@@ -1,0 +1,242 @@
+{
+  "mindmap": {
+    "nodes": [
+      {
+        "id": "1",
+        "code": "RISING_MASS",
+        "r": 10
+      },
+      {
+        "id": "2",
+        "offsetX": 0,
+        "offsetY": -1.5,
+        "code": "DENSE_OVERGROWTH_I"
+      },
+      {
+        "id": "3",
+        "offsetX": -1,
+        "offsetY": -1.25,
+        "code": "DMG_BONUS"
+      },
+      {
+        "id": "4",
+        "offsetX": 1,
+        "offsetY": -1.25,
+        "code": "DMG_TAKEN_REDUCTION"
+      },
+      {
+        "id": "5",
+        "offsetX": -1,
+        "offsetY": 0,
+        "code": "STRINGENT_REGULATIONS_I"
+      },
+      {
+        "id": "6",
+        "offsetX": 1,
+        "offsetY": 0,
+        "code": "TOXICOLOGY_RESEARCH_I"
+      },
+      {
+        "id": "7",
+        "offsetX": -2,
+        "offsetY": -1,
+        "code": "SUNNY_WITH_SHOWERS"
+      },
+      {
+        "id": "8",
+        "offsetX": 2,
+        "offsetY": -1,
+        "code": "ACIDIC_HAZE"
+      },
+      {
+        "id": "9",
+        "offsetX": -3,
+        "offsetY": -1.5,
+        "code": "DOMINATE_FOE"
+      },
+      {
+        "id": "10",
+        "offsetX": 3,
+        "offsetY": -1.5,
+        "code": "HOTBED_CULTIVATION_I"
+      },
+      {
+        "id": "11",
+        "offsetX": -0.75,
+        "offsetY": -2,
+        "code": "HIGH_VOLTAGE_FIELD"
+      },
+      {
+        "id": "12",
+        "offsetX": 0.75,
+        "offsetY": -2,
+        "code": "100_CHANCE_OF_RAIN"
+      },
+      {
+        "id": "13",
+        "offsetX": -1,
+        "offsetY": -3,
+        "code": "REPEL_FOE"
+      },
+      {
+        "id": "14",
+        "offsetX": 1,
+        "offsetY": -3,
+        "code": "INTENSE_TREATMENT_I"
+      },
+      {
+        "id": "15",
+        "offsetX": -2.75,
+        "offsetY": -2.5,
+        "code": "STRINGENT_REGULATIONS_II"
+      },
+      {
+        "id": "16",
+        "offsetX": 2.75,
+        "offsetY": -2.5,
+        "code": "TOXICOLOGY_RESEARCH_II"
+      },
+      {
+        "id": "17",
+        "offsetX": -3.25,
+        "offsetY": -3,
+        "code": "INDUCE_CRISIS"
+      },
+      {
+        "id": "18",
+        "offsetX": 3.25,
+        "offsetY": -3,
+        "code": "HOTBED_CULTIVATION_II"
+      },
+      {
+        "id": "19",
+        "offsetX": 0,
+        "offsetY": -3.5,
+        "code": "DENSE_OVERGROWTH_II"
+      },
+      {
+        "id": "20",
+        "offsetX": -4,
+        "offsetY": -3.75,
+        "code": "CONVERTING_EXCESS",
+        "r": 8
+      },
+      {
+        "id": "21",
+        "offsetX": 4,
+        "offsetY": -3.75,
+        "code": "INTENSE_TREATMENT_II",
+        "r": 8
+      },
+      {
+        "id": "22",
+        "offsetX": -1.75,
+        "offsetY": -4,
+        "code": "STRINGENT_REGULATIONS_III"
+      },
+      {
+        "id": "23",
+        "offsetX": 1.75,
+        "offsetY": -4,
+        "code": "TOXICOLOGY_RESEARCH_III"
+      },
+      {
+        "id": "24",
+        "offsetX": 0,
+        "offsetY": -4.5,
+        "code": "ATK"
+      },
+      {
+        "id": "25",
+        "offsetX": 0,
+        "offsetY": -5.5,
+        "code": "DENSE_OVERGROWTH_III",
+        "r": 8
+      }
+    ],
+    "links": [
+      { "source": "2", "target": "3" },
+      { "source": "2", "target": "4" },
+      { "source": "3", "target": "5" },
+      { "source": "4", "target": "6" },
+      { "source": "3", "target": "7" },
+      { "source": "4", "target": "8" },
+      { "source": "7", "target": "9" },
+      { "source": "8", "target": "10" },
+      { "source": "3", "target": "11" },
+      { "source": "4", "target": "12" },
+      { "source": "11", "target": "13" },
+      { "source": "12", "target": "14" },
+      { "source": "13", "target": "15" },
+      { "source": "14", "target": "16" },
+      { "source": "9", "target": "15" },
+      { "source": "10", "target": "16" },
+      { "source": "15", "target": "17" },
+      { "source": "16", "target": "18" },
+      { "source": "13", "target": "19" },
+      { "source": "15", "target": "22" },
+      { "source": "14", "target": "19" },
+      { "source": "16", "target": "23" },
+      { "source": "17", "target": "20" },
+      { "source": "18", "target": "21" },
+      { "source": "19", "target": "22" },
+      { "source": "19", "target": "23" },
+      { "source": "19", "target": "24" },
+      { "source": "20", "target": "22" },
+      { "source": "21", "target": "23" },
+      { "source": "22", "target": "25" },
+      { "source": "23", "target": "25" },
+      { "source": "24", "target": "25" }
+    ],
+    "recommended": [
+      {
+        "name": "Poison",
+        "source": {
+          "label": "",
+          "link": ""
+        },
+        "activeNodes": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "6",
+          "8",
+          "10",
+          "11",
+          "13",
+          "16",
+          "18",
+          "19",
+          "21",
+          "23",
+          "24"
+        ]
+      },
+      {
+        "name": "Rank up",
+        "source": {
+          "label": "",
+          "link": ""
+        },
+        "activeNodes": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "7",
+          "8",
+          "9",
+          "11",
+          "13",
+          "15",
+          "19",
+          "22",
+          "23",
+          "24",
+          "25"
+        ]
+      }
+    ]
+  }
+}

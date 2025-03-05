@@ -1,4 +1,10 @@
-import { character, artefact, effect, material } from "./plops/index.js";
+import {
+  character,
+  artefact,
+  effect,
+  material,
+  mindmap,
+} from "./plops/index.js";
 
 export default function (plop) {
   plop.addHelper("if", function (v1, operator, v2, options) {
@@ -51,4 +57,5 @@ export default function (plop) {
   plop.setGenerator("Artefact content", artefact);
   plop.setGenerator("Effect content", effect);
   plop.setGenerator("Material content", material);
+  plop.setGenerator("Myth manifest node content", mindmap);
 }

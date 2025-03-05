@@ -1,0 +1,177 @@
+---
+import EffectTooltip from "@components/EffectTooltip.astro";
+import Icon from "@components/Icon.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import { getCollection, render } from "astro:content";
+
+interface Props {
+  id: string;
+  mindmap: MythManifestMindMapType;
+}
+
+export interface MythManifestMindMapType {
+  nodes: { id: string }[];
+  links: { id: string }[];
+  recommended: {
+    name: string;
+    source: {
+      label: string;
+      link: string;
+    };
+    activeNodes: string[];
+  }[];
+}
+
+const { mindmap, id } = Astro.props;
+
+const mindMapNodeEntries = await getCollection(
+  "reveries-in-the-rain",
+  ({ id: entryId }) => {
+    return entryId.includes(`myth-manifest/mind-map/${id}`);
+  }
+);
+
+const entries = await Promise.all(
+  mindMapNodeEntries.map(async (entry) => {
+    const { Content } = await render(entry);
+
+    return {
+      entry: entry,
+      Content,
+    };
+  })
+);
+---
+
+<div x-data="mindmap">
+  <div id="mindmap-graph" class="relative max-w-full md:max-w-3xl mx-auto">
+    <template x-if="openTooltip">
+      <div class="tooltip" x-anchor.offset.8.top="$refs[anchorTooltip]">
+        {
+          entries.map(({ entry: nodeEntry }) => {
+            return (
+              <div
+                class="py-1 px-2"
+                x-show={`hoveredNode?.code === '${nodeEntry.data.code}'`}
+              >
+                {nodeEntry.data.title}
+              </div>
+            );
+          })
+        }
+      </div>
+    </template>
+  </div>
+  <div class="flex justify-between items-center">
+    <button class="btn btn-sm" @click="clear"> Clear </button>
+    <p class="text-xs">* Click on a node to see its content</p>
+  </div>
+  <div
+    x-show="selectedNode"
+    class="mt-4 card card-compact bg-primary-content/10"
+  >
+    <div class="card-body">
+      <div class="card-content">
+        {
+          entries.map(({ entry: nodeEntry, Content }) => {
+            return (
+              <div x-show={`selectedNode?.code === '${nodeEntry.data.code}'`}>
+                <div class="flex gap-10">
+                  <p class="card-title">{nodeEntry.data.title}</p>
+                  <div class="card-actions">
+                    <button
+                      class="btn btn-square btn-sm"
+                      @click="clearSelectedNode"
+                    >
+                      <Icon icon="x" />
+                    </button>
+                  </div>
+                </div>
+                <Content
+                  components={{
+                    p: MarkdownContent,
+                    strong: MarkdownHighlight,
+                    em: MarkdownEmphasis,
+                    effect: EffectTooltip,
+                  }}
+                />
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+  <div x-show={`${!!mindmap.recommended?.length}`}>
+    <p class="mt-4">Recommended:</p>
+    <div class="mt-1 flex flex-wrap gap-2">
+      {
+        mindmap.recommended?.map((ele) => (
+          <button
+            class="btn btn-outline btn-sm"
+            @click={`setRecommended('${ele.name}')`}
+          >
+            {ele.name}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+  <template x-if="activeCodes.length">
+    <div class="mt-4 collapse collapse-arrow bg-base-200">
+      <input type="checkbox" checked />
+      <div class="collapse-title text-xl font-medium">Active</div>
+      <div class="collapse-content">
+        <div class="divide-y divide-base-content/50">
+          {
+            entries.map(({ entry: nodeEntry, Content }) => {
+              return (
+                <div
+                  class="py-4"
+                  x-show={`activeCodes.includes('${nodeEntry.data.code}')`}
+                >
+                  <p class="font-medium text-primary-content">
+                    {nodeEntry.data.title}
+                  </p>
+                  <Content
+                    components={{
+                      p: MarkdownContent,
+                      strong: MarkdownHighlight,
+                      em: MarkdownEmphasis,
+                      effect: EffectTooltip,
+                    }}
+                  />
+                </div>
+              );
+            })
+          }
+        </div>
+      </div>
+    </div>
+  </template>
+</div>
+
+<script>
+  import mythManifestMindMap from "@scripts/myth-manifest-mindmap";
+  import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
+
+  Alpine.data("mindmap", mythManifestMindMap);
+</script>
+
+<script
+  is:inline
+  define:vars={{
+    mindmap,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("mythManifest", {
+      mindmap,
+    });
+  });
+</script>

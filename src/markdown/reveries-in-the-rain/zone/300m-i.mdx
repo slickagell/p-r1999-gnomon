@@ -1,0 +1,20 @@
+---
+title: "Bathyal Zone 300M-I"
+---
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+
+<ZoneContent {...frontmatter}>
+    <Fragment slot="recommended-content">
+        - Insight III Level 40
+    </Fragment>
+
+    <Fragment slot="stage-mechanism-content">
+        :text[[Enemy]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+        :text[[Ally]]{className="font-medium text-ally"} After casting an ultimate, enter the :effect{code="DREAM_VISIT"} status for 1 round.
+        
+        :text[[Ally]]{className="font-medium text-ally"} After casting a rank 1 attack or debuff incantation, gain 1 stack of :effect{code="ENERVATE"}.
+
+        :text[[Enemy]]{className="font-medium text-enemy"} At the end of each round, ATK **+5%** (stackable).
+    </Fragment>
+</ZoneContent>

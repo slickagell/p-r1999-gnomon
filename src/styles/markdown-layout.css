@@ -61,3 +61,11 @@ ul {
     @apply hover:underline hover:text-primary;
   }
 }
+
+.timeline {
+  @apply list-none;
+
+  li {
+    @apply pl-6 py-4 relative before:rounded-full before:bg-base-content before:w-2 before:h-2 before:absolute before:left-2 before:top-[1.625rem] [&:not(:last-child)]:after:h-full [&:not(:last-child)]:after:w-px [&:not(:last-child)]:after:bg-line-paper [&:not(:last-child)]:after:absolute [&:not(:last-child)]:after:bg-base-content [&:not(:last-child)]:after:left-3 [&:not(:last-child)]:after:top-[1.625rem];
+  }
+}
