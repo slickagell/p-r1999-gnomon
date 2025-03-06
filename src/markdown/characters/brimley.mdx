@@ -9,7 +9,7 @@ dmgType: "MENTAL"
 race: "AWAKENED"
 version: "2.3"
 releaseDate: "2025-03-06"
-specialties: []
+specialties: ["SUPPORT", "DISPELLER", "EXTRA_ACTION"]
 isLimited: false
 ---
 
@@ -29,23 +29,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An Awakened's artwork. Exhibited in the 1930s for an unknown period. Completed in the fall, on October 31. Exhibited first in Greater London, United Kingdom of Great Britain and Northern Ireland, and later on in Australia.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Merino Wool
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Hoofmarks on Rock [Mineral] Roaming Ranger
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Tobacco Notes, Coffee, Tobacco, Oud, Whisky
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    22 5/32 x 20 43/64 x 7 7/8 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -57,48 +57,48 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### :TODO - Update skill-1 name:
+    ### Keep Up the Pace!
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="Move, shoot, move.">
+      Mass DMG. Deals **120%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="HORSEMANSHIP"}; if this unit has 3 stacks of :effect{code="HORSEMANSHIP"}, spend all stacks of :effect{code="HORSEMANSHIP"} to make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill \#2, this effect can trigger up to once per round.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="Move, shoot, move. Speed is a ranger's lifeline.">
+      Mass DMG. Deals **180%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="HORSEMANSHIP"}; if this unit has 3 stacks of :effect{code="HORSEMANSHIP"}, spend all stacks of :effect{code="HORSEMANSHIP"} to make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill \#2, this effect can trigger up to once per round.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="Move, shoot, move. Speed is a ranger's lifeline, Never stop moving!">
+      Mass DMG. Deals **300%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="HORSEMANSHIP"}; if this unit has 3 stacks of :effect{code="HORSEMANSHIP"}, spend all stacks of :effect{code="HORSEMANSHIP"} to make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill \#2, this effect can trigger up to once per round.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### :TODO - Update skill-2 name:
+    ### Hop On!
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note="Generosity is the rangers virtue.">
+      1-target buff. Grants the :effect{code="RIDING_DOUBLE"} status to the target for 2 rounds; only one :effect{code="RIDING_DOUBLE"} status can exist on the field at a time.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note="Generosity is the ranger's virtue, and my loyal horse will carry you.">
+      1-target buff. Grants the :effect{code="RIDING_DOUBLE"} status to the target for 2 rounds and 1 stack of :effect{code="HORSEMANSHIP"} to self; only one :effect{code="RIDING_DOUBLE"} status can exist on the field at a time.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note="Generosity is the rangers virtue. My loyal horse will carry you, while your head will carry me.">
+      1-target buff. Grants the :effect{code="RIDING_DOUBLE"} status to the target for 2 rounds and 2 stacks of :effect{code="HORSEMANSHIP"} to self; only one :effect{code="RIDING_DOUBLE"} status can exist on the field at a time.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### :TODO - Update ultimate name:
+    ### Giddy Up, Mate!
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note="With this, the real battle begins!">
+      Mass DMG. Deals **300%** Mental DMG to all enemies; after attacking, inflict Reality DEF **-20%** on the target for 3 rounds, then make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill \#1.
     </CardInfo>
   </Fragment>
 
@@ -107,19 +107,19 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### :TODO - Update inheritance title:
+    ### Hat-First Into Action
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    When casting *[Hop On!]*, dispel an additional 2 random types of *[Stats Down]*, *[Neg Status]*, or *[Control]* statuses from the target.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    DMG Dealt **+8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    After another ally performs an extra action, grant 1 stack of :effect{code="HORSEMANSHIP"} to self (triggers up to once per round); whenever the unit with the :effect{code="RIDING_DOUBLE"} status takes 3 actions, Brimley gets Moxie +1 (triggers up to once per round).
   </Fragment>
   
   <Fragment slot="portray-section-title">
@@ -127,23 +127,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Keep Up the Pace!*: At incantation rank **1/2/3**, Mental DMG is increased to **140%/210%/350%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Giddy Up, Mate!*'s effect changes to: deals **350%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *Hat-First Into Action*: When casting *[Hop On!]*, the additional types of *[Stats Down]*, *[Neg Status]*, and *[Control]* statuses dispelled are increased to **3**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Giddy Up, Mate!*: Mental DMG increased to **400%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Hop On!*: :effect{code="RIDING_DOUBLE"}'s bonus ATK multiplier is increased to **8%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

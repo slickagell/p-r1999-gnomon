@@ -6,10 +6,10 @@ code: "FLUTTERPAGE"
 star: 6
 afflatus: "STAR"
 dmgType: "REALITY"
-race: "ARCANIST"
+race: "MIXED"
 version: "2.3"
 releaseDate: "2025-03-06"
-specialties: []
+specialties: ["DPS", "SUPPORT", "EXTRA_ACTION"]
 isLimited: false
 ---
 
@@ -29,23 +29,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    A Mixed's work. Exhibited in the 1930s for 11 years. Completed in summer, on July 14. Exhibited in Greater London, United Kingdom of reat Britain and Northern Ireland.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Old Paper Scraps
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Starry Night Breeze [Star] Wind Rider
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Wood Notes, Sandalwood, Aromatic Wood, Eucalyptus Leaves, Pine Needles
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    59 1/16 x 55 1/8 x 13 5/8 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -57,48 +57,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### :TODO - Update skill-1 name:
+    ### Knock, Knock
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="Your messenger at the window.">
+      Mass attack. Deals **150%** Reality DMG to 2 enemies; grants 2 stacks of :effect{code="GUST"} to self for 3 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="Your messenger at the window, greeting you in the morning breeze.">
+      Mass attack. Deals **225%** Reality DMG to 2 enemies; grants 2 stacks of :effect{code="GUST"} to self for 3 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="Your messenger at the window, greeting you in the morning breeze. Wake up, or you'll be late!">
+      Mass attack. Deals **575%** Reality DMG to 2 enemies; grants 2 stacks of :effect{code="GUST"} to self for 3 rounds.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### :TODO - Update skill-2 name:
+    ### Cotton Kite
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="An excellent tool for landing.">
+      1-target attack. Deals **100%** Reality DMG and grants :effect{code="CONTINUOUS_ACTION_I"} to self for 1 round.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="An excellent tool for landing; the larger it is, the slower the descent.">
+      1-target attack. Deals **150%** Reality DMG and grants :effect{code="CONTINUOUS_ACTION_I"} to self for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="An excellent tool for landing, it catches the wind and is freshly cleaned and ready for flight.">
+      1-target attack. Deals **250%** Reality DMG and grants :effect{code="CONTINUOUS_ACTION_I"} to self for 1 round.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### :TODO - Update ultimate name:
+    ### A Dream That Never Grows Old
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="CHANNEL" note="Why don't any of you want to fly?">
+      Self channel. Recovers all Eureka, converts all own incantations into :effect{code="REGARDS_FROM_THE_SKY"}, and casts them all if able; enters the :effect{code="A_DREAM_THAT_NEVER_GROWS_OLD"} status for 3 rounds, cannot gain Moxie during channeling.
     </CardInfo>
   </Fragment>
 
@@ -107,19 +107,25 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### :TODO - Update inheritance title:
+    ### "I Can Fly"
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    After any ally takes an action, Flutterpage gains 1 stack of :effect{code="GUST"} for 3 rounds. At the start of the round, Flutterpage gains a Force Field based on the stacks of :effect{code="GUST"} she has, while removing other Force Fields: 
+    
+    At 5 or more stacks, gain :effect{code="PAPER_PARADE"}. 
+    
+    At 15 or more stacks, gain :effect{code="WAVE_OF_SHEETS"}. 
+    
+    At 25 or more stacks, gain :effect{code="ADIEU_MOTHER_EARTH"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    ATK **+5%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    Max Eureka +2. After attacking, grant Eureka +2 to self. When entering battle, grant Moxie +2 to self, and gain 10 stacks of :effect{code="GUST"} for 2 rounds.
   </Fragment>
   
   <Fragment slot="portray-section-title">
@@ -127,23 +133,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Cotton Kite*: At incantation rank **1/2/3**, Reality DMG is increased to **150%/225%/575%**. The duration of :effect{code="CONTINUOUS_ACTION_I"} is increased to **2** rounds.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *"I Can Fly"*: :effect{code="PAPER_PARADE"}, :effect{code="WAVE_OF_SHEETS"}, and :effect{code="ADIEU_MOTHER_EARTH"}'s added damage is increased to **18%/18%** when attacking and to **18/18%** when performing an extra action.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *"I Can Fly"*: When entering battle, the Moxie granted to self is increased to **3**, and the stacks of :effect{code="GUST"} gained is increased to **20**. For each stack of :effect{code="GUST"} Flutterpage has, the DMG Dealt and Genesis DMG. granted by :effect{code="WAVE_OF_SHEETS"} and :effect{code="ADIEU_MOTHER_EARTH"} are increased to **2.5%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *"I Can Fly"*: :effect{code="PAPER_PARADE"}, :effect{code="WAVE_OF_SHEETS"}, and :effect{code="ADIEU_MOTHER_EARTH"}'s added damage is increased to **23%/23%** when attacking and to **23/23%** when performing an extra action.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *A Dream That Never Grows Old*: :effect{code="REGARDS_FROM_THE_SKY"}'s Reality DMG is increased to **60%/60%**. When :effect{code="A_DREAM_THAT_NEVER_GROWS_OLD"}'s channel status ends, the Moxie granted to self is increased to **2/3/4**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
