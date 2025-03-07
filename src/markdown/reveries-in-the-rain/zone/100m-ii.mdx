@@ -1,21 +1,22 @@
 ---
 title: "Euphotic Zone 100M-II"
 ---
+
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
-    <Fragment slot="recommended-content">
-        - Beast units
-        - Insight III Level 1
-    </Fragment>
+  <Fragment slot="recommended-content">
+    * Beast units
+    * Insight III Level 1
+  </Fragment>
 
-    <Fragment slot="stage-mechanism-content">
-        :text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
+  <Fragment slot="stage-mechanism-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-        :text[[Enemy]]{className="font-medium text-enemy"} On death, grant :effect{code="DESPERATE_FIGHT"} to a random ally for 1 round.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} On death, grant :effect{code="DESPERATE_FIGHT"} to a random ally for 1 round.
 
-        :text[[Enemy]]{className="font-medium text-enemy"} Reality DEF **+10%**, Mental DEF **+10%**.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Reality DEF **+10%**, Mental DEF **+10%**.
 
-        :text[[Enemy]]{className="font-medium text-enemy"} Any single instance of damage taken will not exceed (own Max HP x**30%**) HP.
-    </Fragment>
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Any single instance of damage taken will not exceed (own Max HP x**30%**) HP.
+  </Fragment>
 </ZoneContent>

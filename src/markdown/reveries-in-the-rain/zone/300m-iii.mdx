@@ -1,21 +1,22 @@
 ---
 title: "Bathyal Zone 300M-II"
 ---
+
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
-    <Fragment slot="recommended-content">
-        - Mineral units
-        - Insight III Level 40
-    </Fragment>
+  <Fragment slot="recommended-content">
+    * Mineral units
+    * Insight III Level 40
+  </Fragment>
 
-    <Fragment slot="stage-mechanism-content">
-        :text[[Enemy]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+  <Fragment slot="stage-mechanism-content">
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-        :text[[Ally]]{className="font-medium text-ally"} At the end of the round, characters who haven't taken action this round get 1 stack of :effect{code="CRIPPLING_WEAKNESS"} and 3 stacks of :effect{code="FLINCH"}.
-        
-        :text[[Ally]]{className="font-medium text-ally"} After casting an ultimate, all enemies gain Moxie +1.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, characters who haven't taken action this round get 1 stack of :effect{code="CRIPPLING_WEAKNESS"} and 3 stacks of :effect{code="FLINCH"}.
 
-        :text[[Enemy]]{className="font-medium text-enemy"} Whenever being attacked, the attacker gets non-Stronger Afflatus Damage **-60%** for that attack.
-    </Fragment>
+    :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, all enemies gain Moxie +1.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Whenever being attacked, the attacker gets non-Stronger Afflatus Damage **-60%** for that attack.
+  </Fragment>
 </ZoneContent>

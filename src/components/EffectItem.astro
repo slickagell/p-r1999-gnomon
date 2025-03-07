@@ -3,6 +3,7 @@ import EFFECT_TYPE from "@data/common/effect/type.json";
 import { render } from "astro:content";
 import EffectTooltip from "./EffectTooltip.astro";
 import MarkdownContent from "./MarkdownContent.astro";
+import MarkdownEmphasis from "./MarkdownEmphasis.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
 
 interface Props {
@@ -28,6 +29,7 @@ const { Content } = await render(effectEntry);
         p: MarkdownContent,
         strong: MarkdownHighlight,
         effect: EffectTooltip,
+        em: MarkdownEmphasis,
       }}
     />
   </div>

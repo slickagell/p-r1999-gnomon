@@ -108,6 +108,10 @@ export default () => ({
         this.anchorTooltip = "";
 
         if (this.selectedNode?.id === d.id) return;
+
+        const isHoveredNodeActive = !!this.activeCodes.includes(d.code);
+        if (isHoveredNodeActive) return;
+
         d3.select(e.target)
           .transition()
           .duration(TRANSITION_DURATION_TIME)

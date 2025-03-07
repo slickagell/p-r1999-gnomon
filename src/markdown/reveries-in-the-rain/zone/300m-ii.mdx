@@ -1,21 +1,22 @@
 ---
 title: "Bathyal Zone 300M-II"
 ---
+
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
-    <Fragment slot="recommended-content">
-        - Beast units
-        - Insight III Level 40
-    </Fragment>
+  <Fragment slot="recommended-content">
+    * Beast units
+    * Insight III Level 40
+  </Fragment>
 
-    <Fragment slot="stage-mechanism-content">
-        :text[[Enemy]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+  <Fragment slot="stage-mechanism-content">
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-        :text[[Ally]]{className="font-medium text-ally"} After casting an ultimate, get permanent Ultimate Might **-10%** (stackable).
-        
-        :text[[Enemy]]{className="font-medium text-enemy"} When entering battle, gains a Shield with (Max HP x**50%**) for 2 rounds.
+    :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, get permanent Ultimate Might **-10%** (stackable).
 
-        :text[[Enemy]]{className="font-medium text-enemy"} After taking a 1-target attack, gain 1 stack of :effect{code="STURDINESS"}.
-    </Fragment>
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gains a Shield with (Max HP x**50%**) for 2 rounds.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} After taking a 1-target attack, gain 1 stack of :effect{code="STURDINESS"}.
+  </Fragment>
 </ZoneContent>

@@ -4,41 +4,40 @@ title: "Operatic Reflection"
 afflatus: "BEAST"
 specialties: ["BURN", "EXTRA_ACTION", "MOXIE"]
 ---
+
 import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManifestContent.astro';
 import data from '@data/myth-manifest/operatic-reflection.json';
 
 <MythManifestContent {...frontmatter} {...data}>
-    <Fragment slot="manifest-skill-section-title">
-        ## Manifest skill
-    </Fragment>
+  <Fragment slot="manifest-skill-section-title">
+    ## Manifest skill
+  </Fragment>
 
-    <Fragment slot="manifest-skill-title">
-        ### Wonders Incoming I
-    </Fragment>
+  <Fragment slot="manifest-skill-title">
+    ### Wonders Incoming I
+  </Fragment>
 
-    <Fragment slot="manifest-skill-content">
-        Costs 25 Heat to cast. 1-target attack, deals **200%** Mental DMG; enhances to :effect{code="BUTTERFLY_DREAM_I"} at 50 Heat.
-    </Fragment>
+  <Fragment slot="manifest-skill-content">
+    Costs 25 Heat to cast. 1-target attack, deals **200%** Mental DMG; enhances to :effect{code="BUTTERFLY_DREAM_I"} at 50 Heat.
+  </Fragment>
 
-    <Fragment slot="passive-section-title">
-        ## Passive
-    </Fragment>
+  <Fragment slot="passive-section-title">
+    ## Passive
+  </Fragment>
 
-    <Fragment slot="passive-1-content">
-        At the end of the round, gain 20 Heat. At the start of the round, if a cumulative total of 100 Heat has been consumed, evolve into the next form with active skills :effect{code="WONDERS_INCOMING_II"}, :effect{code="BUTTERFLY_DREAM_II"}, and :effect{code="WITHERED_GARDEN_II"}.
-    </Fragment>
+  <Fragment slot="passive-1-content">
+    At the end of the round, gain 20 Heat. At the start of the round, if a cumulative total of 100 Heat has been consumed, evolve into the next form with active skills :effect{code="WONDERS_INCOMING_II"}, :effect{code="BUTTERFLY_DREAM_II"}, and :effect{code="WITHERED_GARDEN_II"}.
+  </Fragment>
 
-    <Fragment slot="passive-2-content">
-        At the start of the round, casts :effect{code="HARMONIC_ACCOMPANIMENT"}.
-    </Fragment>
-    
-    <Fragment slot="passive-3-content">
-        For every 1 Heat consumed in forms 1/2/3, allies recover **0.3%/0.4%/0.5%** of Missing HP.
-    </Fragment>
+  <Fragment slot="passive-2-content">
+    At the start of the round, casts :effect{code="HARMONIC_ACCOMPANIMENT"}.
+  </Fragment>
 
-    <Fragment slot="mindmap-section-title">
-        ## Mindmap
-    </Fragment>
+  <Fragment slot="passive-3-content">
+    For every 1 Heat consumed in forms 1/2/3, allies recover **0.3%/0.4%/0.5%** of Missing HP.
+  </Fragment>
+
+  <Fragment slot="mindmap-section-title">
+    ## Mindmap
+  </Fragment>
 </MythManifestContent>
-
-
