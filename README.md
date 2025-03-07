@@ -12,15 +12,26 @@ Any suggestions or reported issues are appreciated.
 
 ```
 .
-└── / (Home)
-    ├── /characters (Character list)
-    │   └── /:character-detail (Character detail)
-    ├── /effects (Effect list)
-    ├── /materials (Material list)
-    └── /a-series-of-dusks (A Series of Dusks)
-        └── /artefacts (Artefact list)
-            └── /exchange (Artefact exchange)
-        └── /mechanic (Mechanic)
+└── / 
+    ├── /about 
+    ├── /characters 
+    │   └── /:character-detail
+    ├── /effects 
+    └── /materials
+        └── /:material-detail
+        └── /craft
+        └── /cheatsheet
+    └── /a-series-of-dusks
+        └── /artefacts 
+            └── /exchange 
+        └── /catalysts 
+        └── /mechanism 
+        └── /rhapsody-of-the-moon
+    └── /mane-bulletin
+        └── /:boss
+    └── /reveries-in-the-rain
+        └── /myth-manifest/:detail
+        └── /zone/:detail
 ```
 
 ## Thanks

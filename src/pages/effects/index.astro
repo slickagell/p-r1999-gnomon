@@ -4,7 +4,21 @@ import { EffectVirtualList } from "@components/VirtualList";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
-const effectEntries = await getCollection("effects");
+const typesTotal = {};
+
+const effectEntries = await getCollection("effects", ({ data }) => {
+  return !data.isSpecific;
+}).then((entries) => {
+  return entries.map((effectEntry) => {
+    if (effectEntry.data.type in typesTotal) {
+      typesTotal[effectEntry.data.type] += 1;
+    } else {
+      typesTotal[effectEntry.data.type] = 1;
+    }
+
+    return effectEntry;
+  });
+});
 ---
 
 <Layout
@@ -66,13 +80,26 @@ const effectEntries = await getCollection("effects");
       </div>
       <Fragment slot="effects">
         {
-          effectEntries
-            .filter((effectEntry) => !effectEntry.data.isSpecific)
-            .map((effectEntry) => <EffectItem effectEntry={effectEntry} />)
+          effectEntries.map((effectEntry) => (
+            <EffectItem effectEntry={effectEntry} />
+          ))
         }
       </Fragment>
     </EffectVirtualList>
   </div>
+
+  <script
+    is:inline
+    define:vars={{
+      typesTotal,
+    }}
+  >
+    document.addEventListener("alpine:init", () => {
+      window.Alpine.store("effects", {
+        typesTotal,
+      });
+    });
+  </script>
 
   <script>
     import EFFECT_TYPE from "@data/common/effect/type.json";
@@ -85,13 +112,23 @@ const effectEntries = await getCollection("effects");
     Alpine.data("dataset", () => ({
       searchText: "",
       typeFilter: "ALL",
-      types: [
-        { title: "All", code: "ALL" },
-        ...Object.keys(EFFECT_TYPE).map((code) => ({
-          title: EFFECT_TYPE[code].title,
-          code,
-        })),
-      ],
+      types: [],
+
+      init() {
+        this.types = [
+          { title: "All", code: "ALL" },
+          ...Object.keys(EFFECT_TYPE)
+            .filter(
+              (code) =>
+                !!this.$store.effects.typesTotal[code] &&
+                this.$store.effects.typesTotal[code] > 0
+            )
+            .map((code) => ({
+              title: EFFECT_TYPE[code].title,
+              code,
+            })),
+        ];
+      },
 
       filterType(type) {
         this.typeFilter = type;

@@ -1,17 +1,18 @@
 ---
 title: "Bathyal Zone 260M"
 ---
+
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
-    <Fragment slot="recommended-content">
-        - Plant units
-        - Insight III Level 32
-    </Fragment>
+  <Fragment slot="recommended-content">
+    * Plant units
+    * Insight III Level 32
+  </Fragment>
 
-    <Fragment slot="stage-mechanism-content">
-        :text[[All]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
+  <Fragment slot="stage-mechanism-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-        :text[[Ally]]{className="font-medium text-ally"} At the start of the round, all allies get 2 stacks of :effect{code="SLUGGISH"}.
-    </Fragment>
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, all allies get 2 stacks of :effect{code="SLUGGISH"}.
+  </Fragment>
 </ZoneContent>
