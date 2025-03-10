@@ -95,7 +95,7 @@
         "require": 5
       },
       {
-        "code": "破碎骨片",
+        "code": "SHATTERED_BONES",
         "require": 4
       }
     ],
@@ -105,7 +105,7 @@
         "require": 5
       },
       {
-        "code": "颤颤之齿",
+        "code": "TREMBLING_TOOTH",
         "require": 4
       },
       {

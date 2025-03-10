@@ -1,6 +1,7 @@
 ---
-import { getCollection } from "astro:content";
 import CustomImage from "@components/CustomImage.astro";
+import { getEntry } from "astro:content";
+import * as changeCase from "change-case";
 
 interface Props {
   code: string;
@@ -24,17 +25,7 @@ const {
   id,
 } = Astro.props;
 
-const materialEntries = await getCollection("materials");
-
-const materials = materialEntries.reduce((prev, curr) => {
-  return {
-    ...prev,
-    slug: curr.id,
-    [curr.data.code]: curr,
-  };
-}, {});
-
-const material = materials[code];
+const material = await getEntry("materials", changeCase.kebabCase(code));
 ---
 
 {
