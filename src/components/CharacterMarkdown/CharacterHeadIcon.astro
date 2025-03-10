@@ -1,0 +1,20 @@
+---
+import { capitalCase, kebabCase } from "change-case";
+import CharacterImg from "./CharacterImg.astro";
+
+interface Props {
+  code: string;
+}
+
+const { code } = Astro.props;
+---
+
+<div class="my-2">
+  <a
+    href={`/characters/${kebabCase(code)}`}
+    class="transition hover:opacity-75"
+  >
+    <CharacterImg variant="headicon" id={kebabCase(code)} class="mr-2" />
+    <span>{capitalCase(code)}</span>
+  </a>
+</div>

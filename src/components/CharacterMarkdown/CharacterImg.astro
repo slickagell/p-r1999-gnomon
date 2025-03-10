@@ -12,7 +12,8 @@ interface Props {
     | "chibi"
     | "skill-1"
     | "skill-2"
-    | "ultimate";
+    | "ultimate"
+    | "headicon";
   id?: string;
   code?: string;
   class?: string;
@@ -113,6 +114,16 @@ const { variant, id = "", code = "", class: customClass } = Astro.props;
               class={twMerge("w-48", customClass)}
               src={`/images/characters/${id}/ultimate.png`}
               alt="ultimate"
+            />
+          );
+        }
+        case "headicon": {
+          if (!id) return null;
+          return (
+            <CustomImage
+              class={twMerge("w-16 inline-block", customClass)}
+              src={`/images/characters/${id}/headicon.png`}
+              alt="headicon"
             />
           );
         }

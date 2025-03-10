@@ -1,7 +1,7 @@
 ---
 import Material from "@components/Material.astro";
 import { getEntry } from "astro:content";
-import * as changeCase from "change-case";
+import { kebabCase } from "change-case";
 
 interface Props {
   code: string;
@@ -18,7 +18,7 @@ interface Props {
 
 const { code, recommendAction, stages } = Astro.props;
 
-const materialEntry = await getEntry("materials", changeCase.kebabCase(code))!;
+const materialEntry = await getEntry("materials", kebabCase(code))!;
 ---
 
 <div class="flex flex-col items-center my-4">

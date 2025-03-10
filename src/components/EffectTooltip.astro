@@ -1,7 +1,7 @@
 ---
 import EFFECT_TYPE from "@data/common/effect/type.json";
 import { getEntry, render } from "astro:content";
-import * as changeCase from "change-case";
+import { kebabCase } from "change-case";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownEmphasis from "./MarkdownEmphasis.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
@@ -12,7 +12,7 @@ interface Props {
 
 const { code, ...props } = Astro.props;
 
-const effectEntry = await getEntry("effects", changeCase.kebabCase(code))!;
+const effectEntry = await getEntry("effects", kebabCase(code))!;
 
 const { Content } = await render(effectEntry);
 ---

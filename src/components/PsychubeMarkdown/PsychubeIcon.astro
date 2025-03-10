@@ -4,7 +4,8 @@ import MarkdownContent from "@components/MarkdownContent.astro";
 import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import Tooltip from "@components/Tooltip.astro";
-import { getCollection, render } from "astro:content";
+import { getEntry, render } from "astro:content";
+import { kebabCase } from "change-case";
 
 interface Props {
   code: string;
@@ -12,11 +13,8 @@ interface Props {
 
 const { code } = Astro.props;
 
-const psychubeEntries = await getCollection("psychubes", ({ data }) => {
-  return data.code === code;
-});
+const psychubeEntry = await getEntry("psychubes", kebabCase(code))!;
 
-const psychubeEntry = psychubeEntries[0];
 const { Content } = await render(psychubeEntry);
 ---
 

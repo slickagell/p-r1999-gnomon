@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
 import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
@@ -171,6 +172,12 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     #### Best in Slot
     <PsychubeIcon code="ON_THE_HAND_OF_TIME" />
     #### Other alternative
+
+    <div class="flex flex-wrap gap-4">
+      <PsychubeIcon code="SAME_OLD_STORY" />
+      <PsychubeIcon code="TRANSCENDENT_LOVE" />
+      <PsychubeIcon code="KNOCK_ON_THE_DOOR" />
+    </div>
   </Fragment>
 
   <Fragment slot="how-to-play-section-title">
@@ -248,6 +255,33 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
         <div class="mt-1 text-center">When channeling status end, cast these skill to gain Moxie to Ultimate again.</div>
       </div>
     </div>
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+    <CharacterHeadIcon code="37" />
+    <CharacterHeadIcon code="WINDSONG" />
+    <CharacterHeadIcon code="JOE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="MERCURIA" />
+    <CharacterHeadIcon code="LOPERA" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+    <CharacterHeadIcon code="VILA" />
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
