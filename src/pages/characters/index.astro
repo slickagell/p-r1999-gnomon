@@ -1,6 +1,8 @@
 ---
 import AfflatusIcon from "@components/AfflatusIcon.astro";
 import CustomImage from "@components/CustomImage.astro";
+import Icon from "@components/Icon.astro";
+import Tooltip from "@components/Tooltip.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
@@ -23,6 +25,14 @@ function sortCharacters(a, b) {
 
   return a.data.title - b.data.title;
 }
+
+const versions = [
+  ...new Set(
+    characterEntries.map((entry) => {
+      if (entry.data.version) return entry.data.version;
+    })
+  ),
+].sort((a, b) => parseFloat(b ?? "") - parseFloat(a ?? ""));
 ---
 
 <Layout
@@ -172,6 +182,52 @@ function sortCharacters(a, b) {
         </select>
       </label>
       <!-- End Race -->
+      <!-- Version -->
+      <div class="mt-2 md:mt-0 py-2 md:py-4 ">
+          <Tooltip>
+            <button slot="toggle" x-transition class="btn btn-outline btn-sm">
+              <Icon icon="version" />
+              Version Filter
+            </button>
+            <div>
+              <p class="text-center font-medium">Version</p>
+              <div class="max-h-[30vh] overflow-auto">
+                {
+                  versions.map((version) => {
+                    return (
+                      <div class="form-control">
+                        <label class="label gap-2 justify-start cursor-pointer">
+                          <input
+                            type="checkbox"
+                            :checked={`versionFilter.includes('${version}')`}
+                            class="checkbox checkbox-sm checkbox-secondary"
+                            @change={`toggleVersion('${version}')`}
+                          />
+                          <span class="label-text">{version}</span>
+                        </label>
+                      </div>
+                    );
+                  })
+                }
+              </div>
+              <div class="pt-2 mt-2 flex justify-between gap-2">
+                <button
+                  class="btn btn-outline btn-sm"
+                  @click="selectAllVersions"
+                >
+                  Select all
+                </button>
+                <button
+                  class="btn btn-outline btn-sm"
+                  @click="clearAllVersions"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
+          </Tooltip>
+      </div>
+      <!-- End Version -->
       <input
         type="text"
         placeholder="Search"
@@ -191,6 +247,7 @@ function sortCharacters(a, b) {
                 dmgType:'${characterEntry.data.dmgType}',
                 title:'${characterEntry.data.title}',
                 race:'${characterEntry.data.race}',
+                version: '${characterEntry.data.version}'
               })`}
             >
               <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
@@ -236,6 +293,19 @@ function sortCharacters(a, b) {
   </div>
 </Layout>
 
+<script
+  is:inline
+  define:vars={{
+    versions,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("characterList", {
+      versions,
+    });
+  });
+</script>
+
 <script>
   import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
   import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -277,14 +347,20 @@ function sortCharacters(a, b) {
         code,
       })),
     ],
+    versionFilter: [],
 
-    filterCharacter({ rarity, afflatus, dmgType, title, race }) {
+    init() {
+      this.versionFilter = this.$store.characterList.versions;
+    },
+
+    filterCharacter({ rarity, afflatus, dmgType, title, race, version }) {
       const filters =
         (this.afflatusTypeFilter === "ALL" ||
           this.afflatusTypeFilter === afflatus) &&
         (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
         (this.dmgTypeFilter === "ALL" || this.dmgTypeFilter === dmgType) &&
-        (this.raceTypeFilter === "ALL" || this.raceTypeFilter === race);
+        (this.raceTypeFilter === "ALL" || this.raceTypeFilter === race) &&
+        this.versionFilter.includes(version);
 
       return !this.searchText
         ? filters
@@ -306,6 +382,22 @@ function sortCharacters(a, b) {
 
     filterRaceType(raceType: string) {
       this.raceTypeFilter = raceType;
+    },
+
+    toggleVersion(version: string) {
+      if (this.versionFilter.includes(version)) {
+        this.versionFilter = this.versionFilter.filter((v) => v !== version);
+      } else {
+        this.versionFilter.push(version);
+      }
+    },
+
+    selectAllVersions() {
+      this.versionFilter = this.$store.characterList.versions;
+    },
+
+    clearAllVersions() {
+      this.versionFilter = [];
     },
   }));
 </script>
