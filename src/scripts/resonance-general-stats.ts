@@ -47,15 +47,25 @@ export default () => ({
 
       if (isMainPiece) {
         if (baseStats[statId]) {
-          const value = Math.floor(
-            (statVal.value * baseStats[statId].value) / 100
-          );
+          let value = statVal.value;
+          if (baseStats[statId].unit !== "%") {
+            value = Math.floor((statVal.value * baseStats[statId].value) / 100);
+          }
 
-          this.staticStats[statId] = {
+          if (!this.staticStats[statId]) {
+            this.staticStats[statId] = {
+              label: statVal.label,
+              value: value * -updateQuantity,
+              unit: statVal.unit,
+            };
+            return;
+          }
+          const updated = {
             label: statVal.label,
-            value: value * -updateQuantity,
+            value: this.staticStats[statId].value + value * -updateQuantity,
             unit: statVal.unit,
           };
+          this.staticStats[statId] = updated;
           return;
         }
       }

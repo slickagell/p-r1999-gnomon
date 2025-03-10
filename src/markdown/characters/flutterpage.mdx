@@ -15,6 +15,8 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
 import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -153,6 +155,83 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     *A Dream That Never Grows Old*: :effect{code="REGARDS_FROM_THE_SKY"}'s Reality DMG is increased to **60%/60%**. When :effect{code="A_DREAM_THAT_NEVER_GROWS_OLD"}'s channel status ends, the Moxie granted to self is increased to **2/3/4**.
   </Fragment>
 
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Flutterpage is a character that buff Follow-up attack (FuA) characters through the :effect{code="GUST"} effect.
+
+    :effect{code="GUST"} can be gained by:
+
+    - Other allies actions (active or FuA) will grant **1** stack last **3** rounds.
+    - Casting <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*[Knock, Knock]*</CharacterSkillTooltip> will grant **2** stacks last **3** rounds.
+    - **10** stacks of :effect{code="GUST"} last **2** rounds when entering battle when updated to Insight 3
+
+    <br/>
+
+    At the beginning of each round, based on the stacks of :effect{code="GUST"} Flutterpage has, she will grant a :effect{code="FORCE_FIELD"} that benefits all allies and the added Reality DMG is considered dealt by Flutterpage herself:
+
+    - Up to **5** stacks or more: gain :effect{code="PAPER_PARADE"}.
+    - Up to **15** stacks or more: gain :effect{code="WAVE_OF_SHEETS"}.
+    - Up to **25** stacks or more: gain :effect{code="ADIEU_MOTHER_EARTH"}.
+
+    To maintain :effect{code="FORCE_FIELD"} level 3, it is recommended to make allies **do extra actions 2-3 times per round**.
+    <br/>
+    Flutterpage has **8** Eureka in total.
+
+    :effect{code="FORCE_FIELD"} at level 2 and above doesn't need to consume Eureka and still benefits all allies but will lose some DMG.
+
+    With Insight 3, when Flutterpage attacks will grant 2 Eureka to self.
+
+    When in Ultimate channeling, Flutterpage will recover all Eureka at the start of each round.
+
+    <br/>
+    <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip> is a skill that grant a :effect{code="CONTINUOUS_ACTION_I"} effect for **1** round, which takes effect in the following round.
+
+    So prioritize to use this skill to gain Moxie and :effect{code="GUST"} stacks for Flutterpage.
+
+    :effect{code="CONTINUOUS_ACTION_I"} effect is not stackable so **don't use it twice in a round** and **don't combine them** to 2 or 3 stars as it only increases Reality DMG.
+
+    <br/>
+    Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*[A Dream That Never Grows Old]*</CharacterSkillTooltip> will recover all Eureka and **convert all incantations** into :effect{code="REGARDS_FROM_THE_SKY"} as a Follow-up Attack at the start of each round. 
+
+    At the end of each round, Flutterpage will cast **1** :effect{code="REGARDS_FROM_THE_SKY"} additionally.
+
+    Since this will convert all incantations into :effect{code="REGARDS_FROM_THE_SKY"}, despite 1/2/3 stars, so it **not recommended to combine incantations** of Flutterpage.
+
+    Moxie will not be gained during the Ultimate channeling. At the end of channeling, Moxie will be recovered based on the current level of :effect{code="FORCE_FIELD"}
+
+    <br/>
+    ### Operate / Rotation
+
+    - Always use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip> when it is in Spelldock, but **only 1 per round**.
+    - Use <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*[A Dream That Never Grows Old]*</CharacterSkillTooltip> ultimate  to enter channeling status.
+    - <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*[Knock, Knock]*</CharacterSkillTooltip> is not prioritized, only use when you need to gain Moxie to Ultimate.
+
+    <br/>
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center"> 
+      <div class="flex-1 step-arrow">
+        <div class="flex gap-2 justify-center">
+          <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id}/>
+          <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id}/>
+        </div>
+        <div>Cast to gain Moxie enough to Ultimate. Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip></div>
+      </div>
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id}/>
+        <div>Cast Ultimate to enter channeling status for 3 rounds, can cast <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip> in between to gain AP in next round</div>
+      </div>
+      <div class="flex-1">
+         <div class="flex gap-2 justify-center">
+          <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id}/>
+          <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id}/>
+        </div>
+        <div>When channeling status end, cast these skill to gain Moxie to Ultimate again.</div>
+      </div>
+    </div>
+  </Fragment>
+
   <Fragment slot="resonance-section-title">
     ## Resonance
   </Fragment>
@@ -166,10 +245,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="psychube-content">
-    <div class="flex gap-4 items-center">
+    #### Best in Slot
     <PsychubeIcon code="ON_THE_HAND_OF_TIME" />
-    <span>Best for maximizing DMG output and buff for allies</span>
-    </div>
+    #### Other alternative
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

@@ -1,9 +1,12 @@
 ---
+import { twMerge } from "@scripts/utils";
+
 interface Props {
   title?: string;
+  contentCustomClass?: string;
 }
 
-const { title, ...props } = Astro.props;
+const { title, contentCustomClass, ...props } = Astro.props;
 ---
 
 <div
@@ -26,7 +29,10 @@ const { title, ...props } = Astro.props;
     x-show="isShow || isToggle"
     x-cloak
     x-anchor.top="$refs.tooltip"
-    class="bg-base-100 max-w-80 min-w-60 text-base-content border-line-paper border p-2 z-50 absolute"
+    class={twMerge(
+      "bg-base-100 w-80 text-base-content border-line-paper border p-2 z-50 absolute",
+      contentCustomClass
+    )}
     x-transition:enter="ease duration-300 transition-opacity"
     x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100"

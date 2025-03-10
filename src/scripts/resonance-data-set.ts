@@ -41,6 +41,7 @@ export default () => ({
   maxPieceSize: 0,
 
   recommendedOptions: [],
+  recommendedResonancePattern: "",
   selectedRecommended: "",
   selectedRecommendedSource: {
     label: "To be updated",
@@ -216,6 +217,8 @@ export default () => ({
       if (this.activeResonanceLevel >= 10) {
         //* Init recommended pattern
         if (this.$store.resonance.recommendedResonancePattern) {
+          this.recommendedResonancePattern =
+            this.$store.resonance.recommendedResonancePattern;
           this.selectedPattern =
             this.$store.resonance.recommendedResonancePattern;
         }
@@ -1344,6 +1347,11 @@ export default () => ({
 
   initRecommendedResonanceData(resonanceData) {
     this.initialRecommendedData = resonanceData;
+    if (resonanceData.patternRecommended) {
+      this.recommendedResonancePattern = resonanceData.patternRecommended;
+      this.changePattern(resonanceData.patternRecommended);
+      return;
+    }
     this.initResonanceData(resonanceData);
   },
 
