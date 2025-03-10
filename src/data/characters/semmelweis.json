@@ -105,7 +105,7 @@
         "require": 5
       },
       {
-        "code": "颤颤之齿",
+        "code": "TREMBLING_TOOTH",
         "require": 4
       },
       {
@@ -123,7 +123,7 @@
         "require": 4
       },
       {
-        "code": "精磨苦盐",
+        "code": "MILLED_MAGNESIA",
         "require": 3
       }
     ],

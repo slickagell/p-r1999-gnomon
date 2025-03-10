@@ -1,6 +1,7 @@
 ---
 import Material from "@components/Material.astro";
-import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
+import * as changeCase from "change-case";
 
 interface Props {
   code: string;
@@ -17,11 +18,7 @@ interface Props {
 
 const { code, recommendAction, stages } = Astro.props;
 
-const materialEntries = await getCollection("materials", ({ id, data }) => {
-  return !id.includes("docs/") && data.code === code;
-})!;
-
-const materialEntry = materialEntries[0];
+const materialEntry = await getEntry("materials", changeCase.kebabCase(code))!;
 ---
 
 <div class="flex flex-col items-center my-4">

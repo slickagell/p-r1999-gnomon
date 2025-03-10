@@ -1,4 +1,5 @@
 ---
+import Icon from "@components/Icon.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
@@ -8,6 +9,49 @@ import Layout from "@layouts/Layout.astro";
     <h5 class="font-medium text-center">
       A fanmade website about game Reverse:1999
     </h5>
+    <div
+      class="mt-8 alert gap-2 md:gap-4 border border-primary bg-primary/20 shadow-lg"
+      x-data
+    >
+      <Icon icon="star" />
+      <div>
+        <h4 class="my-0 text-primary">What's new</h4>
+        <div class="text-xs">Updated on 2025-03-10</div>
+      </div>
+      <button class="btn btn-sm" @click="whatsNewModal.showModal()">See</button>
+
+      <template x-teleport="body">
+        <dialog id="whatsNewModal" class="modal">
+          <div
+            class="modal-box w-full h-full max-w-xs md:max-w-screen-md max-h-[80%] md:max-h-[60%] border border-primary-content bg-base-100/90 backdrop-blur-sm flex flex-col"
+          >
+            <form method="dialog">
+              <button
+                class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              >
+                <Icon icon="x" />
+              </button>
+            </form>
+            <h3 class="my-2 md:mt-4">What's new</h3>
+            <div class="flex-1 overflow-y-auto h-full">
+              <p class="text-primary font-medium">2025-03-10</p>
+              <ul class="list-disc list-inside">
+                <li>Add What's new in homepage</li>
+                <li>Add version filter in character list</li>
+                <li>Fix resonance stats calculation bug</li>
+                <li>
+                  Fix material bugs in these character pages: Joe, Kakania,
+                  Semmelweis, Tuesday
+                </li>
+              </ul>
+            </div>
+            <p class="pt-2 text-xs text-right">
+              * Only show 5 latest updated dates
+            </p>
+          </div>
+        </dialog>
+      </template>
+    </div>
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
       <a href="/characters">
         <div class="card card-compact border border-primary">
@@ -57,14 +101,6 @@ import Layout from "@layouts/Layout.astro";
           </div>
         </div>
       </a>
-      <!-- <a href="/dev">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">For Developer</h2>
-            <p>For ones need tools to build</p>
-          </div>
-        </div>
-      </a> -->
     </div>
   </main>
 </Layout>

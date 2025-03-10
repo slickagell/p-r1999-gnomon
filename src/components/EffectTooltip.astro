@@ -1,25 +1,18 @@
 ---
 import EFFECT_TYPE from "@data/common/effect/type.json";
-import { getCollection, render } from "astro:content";
+import { getEntry, render } from "astro:content";
+import * as changeCase from "change-case";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownEmphasis from "./MarkdownEmphasis.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
+
 interface Props {
   code: string;
 }
 
 const { code, ...props } = Astro.props;
 
-const effectEntries = await getCollection("effects");
-
-const effects = effectEntries.reduce((prev, curr) => {
-  return {
-    ...prev,
-    [curr.data.code]: curr,
-  };
-}, {});
-
-const effect = effects[code];
+const effect = await getEntry("effects", changeCase.kebabCase(code))!;
 
 const { Content } = await render(effect);
 ---
