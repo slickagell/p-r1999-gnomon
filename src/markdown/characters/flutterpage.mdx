@@ -155,6 +155,24 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     *A Dream That Never Grows Old*: :effect{code="REGARDS_FROM_THE_SKY"}'s Reality DMG is increased to **60%/60%**. When :effect{code="A_DREAM_THAT_NEVER_GROWS_OLD"}'s channel status ends, the Moxie granted to self is increased to **2/3/4**.
   </Fragment>
 
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+    <PsychubeIcon code="ON_THE_HAND_OF_TIME" />
+    #### Other alternative
+  </Fragment>
+
   <Fragment slot="how-to-play-section-title">
     ## How to Play
   </Fragment>
@@ -216,38 +234,20 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id}/>
           <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id}/>
         </div>
-        <div>Cast to gain Moxie enough to Ultimate. Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip></div>
+        <div class="mt-1 text-center">Cast to gain Moxie enough to Ultimate. Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip></div>
       </div>
       <div class="flex-1 step-arrow">
         <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id}/>
-        <div>Cast Ultimate to enter channeling status for 3 rounds, can cast <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip> in between to gain AP in next round</div>
+        <div class="mt-1 text-center">Cast Ultimate to enter channeling status for 3 rounds, can cast <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Cotton Kite]*</CharacterSkillTooltip> in between to gain AP in next round</div>
       </div>
       <div class="flex-1">
-         <div class="flex gap-2 justify-center">
+        <div class="flex gap-2 justify-center">
           <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id}/>
           <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id}/>
         </div>
-        <div>When channeling status end, cast these skill to gain Moxie to Ultimate again.</div>
+        <div class="mt-1 text-center">When channeling status end, cast these skill to gain Moxie to Ultimate again.</div>
       </div>
     </div>
-  </Fragment>
-
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
-
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
-
-  <Fragment slot="psychube-section-title">
-    ## Psychube Recommendation
-  </Fragment>
-
-  <Fragment slot="psychube-content">
-    #### Best in Slot
-    <PsychubeIcon code="ON_THE_HAND_OF_TIME" />
-    #### Other alternative
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

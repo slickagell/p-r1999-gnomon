@@ -71,5 +71,5 @@ ul {
 }
 
 .step-arrow {
-  @apply pb-6 md:pb-0 md:pr-4 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 md:after:bottom-auto md:after:top-1/2 md:after:left-auto md:after:right-0 md:after:-translate-y-1/2 md:after:-translate-x-0 after:border-t-[1rem] after:border-r-[0.625rem] after:border-l-[0.625rem] after:border-l-transparent after:border-b-transparent after:border-r-transparent md:after:-rotate-90;
+  @apply pb-6 md:pb-0 md:pr-6 relative after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 md:after:bottom-auto md:after:top-1/2 md:after:left-auto md:after:right-0 md:after:-translate-y-1/2 md:after:-translate-x-0 after:border-t-[1rem] after:border-r-[0.625rem] after:border-l-[0.625rem] after:border-l-transparent after:border-b-transparent after:border-r-transparent md:after:-rotate-90;
 }

@@ -59,6 +59,7 @@ const {
 
 const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
+const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 
 const hasInsight3Info = Astro.slots.has("insight-3-info");
 const hasInsight3Materials = insightMaterials?.["3"];
@@ -311,11 +312,6 @@ const hasInsight3Materials = insightMaterials?.["3"];
 <span class="text-2xl mr-2">Lv. 5:</span>
 <slot name="portray-5-info" />
 
-{/* How to play */}
-<slot name="how-to-play-section-title" />
-
-<slot name="how-to-play-content" />
-
 {/* Resonance */}
 <slot name="resonance-section-title" />
 
@@ -385,6 +381,30 @@ const hasInsight3Materials = insightMaterials?.["3"];
     </>
   )
 }
+
+{/* How to play */}
+<slot name="how-to-play-section-title" />
+
+<slot name="how-to-play-content" />
+
+{/* Team suggestion */}
+<slot name="team-suggestion-section-title" />
+
+{hasTeamSuggestion && (
+  <div class="md:grid md:grid-cols-3">
+    <div>
+      <slot name="team-suggestions-dps" />
+    </div>
+
+    <div>
+      <slot name="team-suggestions-support" />
+    </div>
+
+    <div>
+      <slot name="team-suggestions-sustain" />
+    </div>
+  </div>
+)}
 
 {/* Insight Materials */}
 {
