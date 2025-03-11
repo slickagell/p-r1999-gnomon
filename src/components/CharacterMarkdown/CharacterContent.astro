@@ -59,6 +59,7 @@ const {
 
 const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
+const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 
 const hasInsight3Info = Astro.slots.has("insight-3-info");
 const hasInsight3Materials = insightMaterials?.["3"];
@@ -316,6 +317,11 @@ const hasInsight3Materials = insightMaterials?.["3"];
 
 <slot name="resonance-board" />
 
+{/* Psychube */}
+<slot name="psychube-section-title" />
+
+<slot name="psychube-content" />
+
 {/* Euphoria */}
 {
   euphorias && euphorias.length > 0 && (
@@ -375,6 +381,30 @@ const hasInsight3Materials = insightMaterials?.["3"];
     </>
   )
 }
+
+{/* How to play */}
+<slot name="how-to-play-section-title" />
+
+<slot name="how-to-play-content" />
+
+{/* Team suggestion */}
+<slot name="team-suggestion-section-title" />
+
+{hasTeamSuggestion && (
+  <div class="md:grid md:grid-cols-3">
+    <div>
+      <slot name="team-suggestion-dps" />
+    </div>
+
+    <div>
+      <slot name="team-suggestion-support" />
+    </div>
+
+    <div>
+      <slot name="team-suggestion-sustain" />
+    </div>
+  </div>
+)}
 
 {/* Insight Materials */}
 {

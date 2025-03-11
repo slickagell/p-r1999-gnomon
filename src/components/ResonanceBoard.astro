@@ -97,12 +97,7 @@ const patternOptions = patternPieces.map((ele) => {
 
   return {
     value: pattern,
-    label:
-      RESONANCE_PATTERN[`${mainPieceCode}_${pattern}`].title +
-      (pattern === recommendedResonancePattern &&
-      recommendedResonancePattern !== "PLACIDITY"
-        ? " (Recommended)"
-        : ""),
+    label: RESONANCE_PATTERN[`${mainPieceCode}_${pattern}`].title,
   };
 });
 
@@ -385,7 +380,10 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 @change="changePattern($event.target.value)"
               >
                 {patternOptions.map((pattern) => (
-                  <option value={pattern.value}>{pattern.label}</option>
+                  <option
+                    value={pattern.value}
+                    x-text={`'${pattern.label}' + (recommendedResonancePattern === '${pattern.value}' ? ' (Recommended)' : '')`}
+                  />
                 ))}
               </select>
               <label class="label gap-2 items-start">

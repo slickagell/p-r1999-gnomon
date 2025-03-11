@@ -97,6 +97,13 @@ const reveriesInTheRain = defineCollection({
   }),
 });
 
+const psychubes = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/markdown/psychubes",
+  }),
+});
+
 export const collections = {
   characters,
   effects,
@@ -106,4 +113,5 @@ export const collections = {
   catalysts,
   "mane-bulletin": maneBulletin,
   "reveries-in-the-rain": reveriesInTheRain,
+  psychubes,
 };

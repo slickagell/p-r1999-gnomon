@@ -1,0 +1,53 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import Tooltip from "@components/Tooltip.astro";
+
+interface Props {
+  id?: string;
+  variant: "skill-1" | "skill-2" | "ultimate";
+}
+
+const { id, variant } = Astro.props;
+---
+
+<Tooltip contentCustomClass="w-24">
+  <slot slot="toggle" />
+  {
+    (() => {
+      switch (variant) {
+        case "skill-1": {
+          if (!id) return null;
+          return (
+            <CustomImage
+              class={"w-24"}
+              src={`/images/characters/${id}/skill-1.png`}
+              alt="skill-1"
+            />
+          );
+        }
+        case "skill-2": {
+          if (!id) return null;
+          return (
+            <CustomImage
+              class="w-24"
+              src={`/images/characters/${id}/skill-2.png`}
+              alt="skill-2"
+            />
+          );
+        }
+        case "ultimate": {
+          if (!id) return null;
+          return (
+            <CustomImage
+              class="w-24"
+              src={`/images/characters/${id}/ultimate.png`}
+              alt="ultimate"
+            />
+          );
+        }
+        default:
+          return null;
+      }
+    })()
+  }
+</Tooltip>

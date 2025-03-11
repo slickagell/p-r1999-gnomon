@@ -1,7 +1,7 @@
 ---
 import EFFECT_TYPE from "@data/common/effect/type.json";
 import { getEntry, render } from "astro:content";
-import * as changeCase from "change-case";
+import { kebabCase } from "change-case";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownEmphasis from "./MarkdownEmphasis.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
@@ -12,9 +12,9 @@ interface Props {
 
 const { code, ...props } = Astro.props;
 
-const effect = await getEntry("effects", changeCase.kebabCase(code))!;
+const effectEntry = await getEntry("effects", kebabCase(code))!;
 
-const { Content } = await render(effect);
+const { Content } = await render(effectEntry);
 ---
 
 <span
@@ -27,7 +27,7 @@ const { Content } = await render(effect);
     @click="isToggle = !isToggle"
     @mouseenter="isShow = true"
     @mouseleave="isShow = false"
-    class="text-effect cursor-pointer">[{effect.data.title}]</span
+    class="text-effect cursor-pointer">[{effectEntry.data.title}]</span
   >
   <div
     @mousedown.outside="isToggle = false"
@@ -43,11 +43,13 @@ const { Content } = await render(effect);
     x-transition:leave-end="opacity-0"
   >
     <div class="flex justify-between items-center gap-1 mb-1">
-      <p class="font-bold">{effect.data.title}</p>
+      <p class="font-bold">{effectEntry.data.title}</p>
       {
-        !["UNKNOWN", "DEFINITION", "GENERAL"].includes(effect.data.type) && (
+        !["UNKNOWN", "DEFINITION", "GENERAL"].includes(
+          effectEntry.data.type
+        ) && (
           <p class="badge badge-neutral shrink-0">
-            {EFFECT_TYPE[effect.data.type].title}
+            {EFFECT_TYPE[effectEntry.data.type].title}
           </p>
         )
       }

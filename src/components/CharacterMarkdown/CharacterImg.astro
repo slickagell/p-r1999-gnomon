@@ -1,5 +1,6 @@
 ---
 import CustomImage from "@components/CustomImage.astro";
+import { twMerge } from "@scripts/utils";
 
 interface Props {
   variant:
@@ -11,12 +12,14 @@ interface Props {
     | "chibi"
     | "skill-1"
     | "skill-2"
-    | "ultimate";
+    | "ultimate"
+    | "headicon";
   id?: string;
   code?: string;
+  class?: string;
 }
 
-const { variant, id = "", code = "" } = Astro.props;
+const { variant, id = "", code = "", class: customClass } = Astro.props;
 ---
 
 <Fragment>
@@ -27,7 +30,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!code) return null;
           return (
             <CustomImage
-              class="w-32"
+              class={twMerge("w-32", customClass)}
               src={`/images/afflatus/af-${code}.png`}
               alt={`afflatus ${code}`}
             />
@@ -88,7 +91,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              class="w-48"
+              class={twMerge("w-48", customClass)}
               src={`/images/characters/${id}/skill-1.png`}
               alt="skill-1"
             />
@@ -98,7 +101,7 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              class="w-48"
+              class={twMerge("w-48", customClass)}
               src={`/images/characters/${id}/skill-2.png`}
               alt="skill-2"
             />
@@ -108,9 +111,19 @@ const { variant, id = "", code = "" } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              class="w-48"
+              class={twMerge("w-48", customClass)}
               src={`/images/characters/${id}/ultimate.png`}
               alt="ultimate"
+            />
+          );
+        }
+        case "headicon": {
+          if (!id) return null;
+          return (
+            <CustomImage
+              class={twMerge("w-12 inline-block", customClass)}
+              src={`/images/characters/${id}/headicon.png`}
+              alt="headicon"
             />
           );
         }

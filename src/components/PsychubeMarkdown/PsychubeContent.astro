@@ -1,0 +1,36 @@
+---
+interface Props {}
+
+const {} = Astro.props;
+
+const psychubeLevel = ['I', 'II', 'III', 'IV', 'V']
+---
+
+<div x-data={`{active: 'I'}`}>
+    <div class="tabs tabs-boxed">
+      {psychubeLevel?.map((level, idx) => (
+        <button
+          @click={`active = '${level}'`}
+          class="tab"
+          :class={`(active === '${level}') && 'tab-active !text-white'`}
+        >
+          {level}
+        </button>
+      ))}
+    </div>
+    <div x-show={`active === 'I'`} x-cloak>
+        <slot name="amplification-1-content" />
+    </div>
+    <div x-show={`active === 'II'`} x-cloak>
+        <slot name="amplification-2-content" />
+    </div>
+    <div x-show={`active === 'III'`} x-cloak>
+        <slot name="amplification-3-content" />
+    </div>
+    <div x-show={`active === 'IV'`} x-cloak>
+        <slot name="amplification-4-content" />
+    </div>
+    <div x-show={`active === 'V'`} x-cloak>
+        <slot name="amplification-5-content" />
+    </div>
+</div>

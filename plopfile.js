@@ -4,6 +4,7 @@ import {
   effect,
   material,
   mindmap,
+  psychube,
 } from "./plops/index.js";
 
 export default function (plop) {
@@ -58,4 +59,5 @@ export default function (plop) {
   plop.setGenerator("Effect content", effect);
   plop.setGenerator("Material content", material);
   plop.setGenerator("Myth manifest node content", mindmap);
+  plop.setGenerator("Psychube content", psychube);
 }

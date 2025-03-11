@@ -1,0 +1,39 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import Tooltip from "@components/Tooltip.astro";
+import { getEntry, render } from "astro:content";
+import { kebabCase } from "change-case";
+
+interface Props {
+  code: string;
+}
+
+const { code } = Astro.props;
+
+const psychubeEntry = await getEntry("psychubes", kebabCase(code))!;
+
+const { Content } = await render(psychubeEntry);
+---
+
+<Tooltip>
+  <div class="inline-block text-center" slot="toggle">
+    <CustomImage
+      class="w-28 mx-auto"
+      src={"/images/psychubes/icons/" + psychubeEntry.data.image}
+      alt={psychubeEntry.data.title}
+    />
+    <span class="text-base-content">
+      {psychubeEntry.data.title}
+    </span>
+  </div>
+  <Content
+    components={{
+      p: MarkdownContent,
+      strong: MarkdownHighlight,
+      em: MarkdownEmphasis,
+    }}
+  />
+</Tooltip>

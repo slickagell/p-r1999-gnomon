@@ -16,14 +16,14 @@ import Layout from "@layouts/Layout.astro";
       <Icon icon="star" />
       <div>
         <h4 class="my-0 text-primary">What's new</h4>
-        <div class="text-xs">Updated on 2025-03-10</div>
+        <div class="text-xs">Updated on 2025-03-11</div>
       </div>
       <button class="btn btn-sm" @click="whatsNewModal.showModal()">See</button>
 
       <template x-teleport="body">
-        <dialog id="whatsNewModal" class="modal">
+        <dialog id="whatsNewModal" class="modal p-4 md:p-8">
           <div
-            class="modal-box w-full h-full max-w-xs md:max-w-screen-md max-h-[80%] md:max-h-[60%] border border-primary-content bg-base-100/90 backdrop-blur-sm flex flex-col"
+            class="modal-box w-full h-full max-w-screen-md max-h-[75%] border border-primary-content bg-base-100/80 backdrop-blur-sm flex flex-col p-4 md:p-6"
           >
             <form method="dialog">
               <button
@@ -34,8 +34,12 @@ import Layout from "@layouts/Layout.astro";
             </form>
             <h3 class="my-2 md:mt-4">What's new</h3>
             <div class="flex-1 overflow-y-auto h-full">
-              <p class="text-primary font-medium">2025-03-10</p>
+              <p class="text-primary font-medium">2025-03-11</p>
               <ul class="list-disc list-inside">
+                <li>
+                  Add How to Play, Team Suggestion and Psychube recommendations
+                  for: Flutterpage, Willow
+                </li>
                 <li>Add What's new in homepage</li>
                 <li>Add version filter in character list</li>
                 <li>Fix resonance stats calculation bug</li>
@@ -46,7 +50,7 @@ import Layout from "@layouts/Layout.astro";
               </ul>
             </div>
             <p class="pt-2 text-xs text-right">
-              * Only show 5 latest updated dates
+              * Only show 10 latest updated dates
             </p>
           </div>
         </dialog>
