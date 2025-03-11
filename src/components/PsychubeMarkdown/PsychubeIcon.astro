@@ -19,13 +19,13 @@ const { Content } = await render(psychubeEntry);
 ---
 
 <Tooltip>
-  <div class="inline-block" slot="toggle">
+  <div class="inline-block text-center" slot="toggle">
     <CustomImage
       class="w-28 mx-auto"
       src={"/images/psychubes/icons/" + psychubeEntry.data.image}
       alt={psychubeEntry.data.title}
     />
-    <span class="text-center text-base-content">
+    <span class="text-base-content">
       {psychubeEntry.data.title}
     </span>
   </div>

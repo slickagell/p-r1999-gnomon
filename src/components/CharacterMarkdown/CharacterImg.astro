@@ -121,7 +121,7 @@ const { variant, id = "", code = "", class: customClass } = Astro.props;
           if (!id) return null;
           return (
             <CustomImage
-              class={twMerge("w-16 inline-block", customClass)}
+              class={twMerge("w-12 inline-block", customClass)}
               src={`/images/characters/${id}/headicon.png`}
               alt="headicon"
             />

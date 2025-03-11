@@ -15,9 +15,11 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
 import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -162,8 +164,20 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="psychube-content">
     #### Best in Slot
-    
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="OFFBEAT_STRIDES" />
+    </div>
+
     #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="HER_MOURNFUL_FACE" />
+
+      <PsychubeIcon code="FALLING_FOR_A_SWEET_PHENOMENON" />
+
+      <PsychubeIcon code="TRANSCENDENT_LOVE" />
+    </div>
   </Fragment>
 
   <Fragment slot="how-to-play-section-title">
@@ -173,32 +187,40 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   <Fragment slot="how-to-play-content">
     Willow is the one of the key character in the poison quad with the ability to convert :effect{code="POISON"} to :effect{code="HAGS_BANE"}.
 
-    <br/>
+    <br />
+
     :effect{code="HAGS_BANE"} can stack up to **10** times, and last for **2** rounds:
-    - If we stack in the same round, there will be add up in **1** instance of :effect{code="HAGS_BANE"} and lasts 2 rounds.
-    - If we stack in the different round, there will be **2** instances of :effect{code="HAGS_BANE"}, one last 2 rounds (new applied) and the other last 1 round, and total stacks of all instances still **can not exceed 10**.
 
-    When :effect{code="HAGS_BANE"} is activated (and it **will activated in 1 round only**), enemies will be increased DMG Taken by :effect{code="POISON"} by **40%**, up to **4** times, and it will be calculated in multiplier progression. 
+    * If we stack in the same round, there will be add up in **1** instance of :effect{code="HAGS_BANE"} and lasts 2 rounds.
+    * If we stack in the different round, there will be **2** instances of :effect{code="HAGS_BANE"}, one last 2 rounds (new applied) and the other last 1 round, and total stacks of all instances still **can not exceed 10**.
 
-    Since :effect{code="HAGS_BANE"} count as a :effect{code="POISON"} type, so it still takes effect in Tuesday [Array]: :effect{code="HORROR_STORY_NIGHT"}, but :effect{code="POISON"} will be converted to :effect{code="HAGS_BANE"}.
+    When :effect{code="HAGS_BANE"} is activated (and it **will activated in 1 round only**), enemies will be increased DMG Taken by :effect{code="POISON"} by **40%**, up to **4** times, and it will be calculated in multiplier progression.
 
-    <br/>
-    If enemy doesn't have :effect{code="POISON"}, the :effect{code="HAGS_BANE"} will not be applied, so only use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*[Hag's Advice]*</CharacterSkillTooltip> skill when enemy has :effect{code="POISON"}.
+    Since :effect{code="HAGS_BANE"} count as a :effect{code="POISON"} type, so it still takes effect in Tuesday \[Array]: :effect{code="HORROR_STORY_NIGHT"}, but :effect{code="POISON"} will be converted to :effect{code="HAGS_BANE"}.
 
-    <br/>
-    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Hag's Gratitude]*</CharacterSkillTooltip> skill, if enemy has both :effect{code="POISON"} and :effect{code="HAGS_BANE"}, consume 2-4 stacks of :effect{code="POISON"} to resolve :effect{code="HAGS_BANE"}:
-    - If there is 1 stack of :effect{code="POISON"} only, resolve :effect{code="HAGS_BANE"} once, 2 stacks of will resolve twice and so on.
-    - Stacks and duration of :effect{code="HAGS_BANE"} **will not decrease** when resolved this way.
-    - If the amount of :effect{code="POISON"} and :effect{code="HAGS_BANE"} is guaranteed, it is recommended to **use this skill many times in a round**, since it will become much more effective.
+    <br />
 
-    <br/>
-    When using <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[In the Fire, In the Shadow]*</CharacterSkillTooltip> ultimate, enter channeling status:
-    - Increase Moxie capacity by **5**. When **using or move** incantations will **+2** Moxie instead of 1.
-    - At the end of each round, **consume Moxie** to maintain channeling status. The longer channeling, the more Moxie consumed, and greater effect.
-    - Enemy will be considered to have activated :effect{code="HAGS_BANE"} multiple times (which is number of rounds in channeling status, up to **4** times).
-    - When there is no more Moxie, end channeling status with Follow-up Attack.
+    If enemy doesn't have :effect{code="POISON"}, the :effect{code="HAGS_BANE"} will not be applied, so only use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hag's Advice]*</CharacterSkillTooltip> skill when enemy has :effect{code="POISON"}.
+
+    <br />
+
+    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Hag's Gratitude]*</CharacterSkillTooltip> skill, if enemy has both :effect{code="POISON"} and :effect{code="HAGS_BANE"}, consume 2-4 stacks of :effect{code="POISON"} to resolve :effect{code="HAGS_BANE"}:
+
+    * If there is 1 stack of :effect{code="POISON"} only, resolve :effect{code="HAGS_BANE"} once, 2 stacks of will resolve twice and so on.
+    * Stacks and duration of :effect{code="HAGS_BANE"} **will not decrease** when resolved this way.
+    * If the amount of :effect{code="POISON"} and :effect{code="HAGS_BANE"} is guaranteed, it is recommended to **use this skill many times in a round**, since it will become much more effective.
+
+    <br />
+
+    When using <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[In the Fire, In the Shadow]*</CharacterSkillTooltip> ultimate, enter channeling status:
+
+    * Increase Moxie capacity by **5**. When **using or move** incantations will **+2** Moxie instead of 1.
+    * At the end of each round, **consume Moxie** to maintain channeling status. The longer channeling, the more Moxie consumed, and greater effect.
+    * Enemy will be considered to have activated :effect{code="HAGS_BANE"} multiple times (which is number of rounds in channeling status, up to **4** times).
+    * When there is no more Moxie, end channeling status with Follow-up Attack.
 
     You can see the effect table below:
+
     <div class="mt-2 overflow-x-auto">
       |                                | After use ultimate | Round 1 | Round 2 | Round 3 | Round 4 | Round5 |
       |--------------------------------|--------------------|---------|---------|---------|---------|--------|
@@ -206,33 +228,70 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
       | *\[Hag's Bane]* activate times | 1                  | 2       | 3       | 4       | 4       | 4      |
     </div>
 
-    <br/>
-    ### Operate / Rotation
-    
-    - Enemy should have at least **4** :effect{code="POISON"} before casting Willow skills
-    - Use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*[Hag's Advice]*</CharacterSkillTooltip> for stack up :effect{code="HAGS_BANE"}, if you have Tuesday, use Tuesday Ultimate to secure :effect{code="HAGS_BANE"} stacks, after that use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*[Hag's Gratitude]*</CharacterSkillTooltip> to deal DMG.
+    <br />
 
-    <br/>
-    <div class="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center items-center"> 
+    ### Operate / Rotation
+
+    * Enemy should have at least **4** :effect{code="POISON"} before casting Willow skills
+    * Use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hag's Advice]*</CharacterSkillTooltip> for stack up :effect{code="HAGS_BANE"}, if you have Tuesday, use Tuesday Ultimate to secure :effect{code="HAGS_BANE"} stacks, after that use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Hag's Gratitude]*</CharacterSkillTooltip> to deal DMG.
+
+    <br />
+
+    <div class="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center items-center">
       <div class="flex-1 step-arrow">
         <div class="mt-1 text-center">Stacking up :effect{code="POISON"} by other allies</div>
       </div>
+
       <div class="flex-1 step-arrow">
-        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id}/>
+        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
+
         <div class="mt-1 text-center">Cast this incantation to build up :effect{code="HAGS_BANE"} up to 10.</div>
       </div>
+
       <div class="flex-1 step-arrow">
         <div class="mt-1 text-center">If you have Tuesday, use Tuesday Ultimate to maintain :effect{code="HAGS_BANE"} stacks</div>
       </div>
+
       <div class="flex-1">
-        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id}/>
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
         <div class="mt-1 text-center">When has 10 :effect{code="HAGS_BANE"}, use this to deal DMG</div>
       </div>
+
       <div class="flex-1">
-        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id}/>
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
         <div class="mt-1 text-center">Use ultimate when available, try to keep channeling status for 3 rounds.</div>
       </div>
     </div>
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="TUESDAY" />
+
+    <CharacterHeadIcon code="JESSICA" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="SOTHEBY" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
