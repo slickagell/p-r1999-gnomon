@@ -15,7 +15,11 @@ isLimited: true
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -168,6 +172,141 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="TRANSCENDENT_LOVE" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="SAME_OLD_STORY" />
+
+      <PsychubeIcon code="ON_THE_HAND_OF_TIME" />
+
+    </div>
+  </Fragment>
+
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Anjo Nala is a character with ability to deal powerful damage through the binding mechanism with other ally.
+
+    At the start of battle, Anjo Nala will **choose** 1 ally to bind with, depending on the afflatus of the ally, she will have different buff for her self and binded ally.
+
+    If the ally dies, Anjo Nala will bind with another ally in the next round.
+
+    If only Anjo Nala left, this mechanism will not show up.
+
+    Ally will **not** received Moxie and will not be able to cast ultimates, instead Anjo Nala will gain Moxie.
+
+    Anjo Nala total Moxie will be changed to **12** while Ultimate Moxie cost will be changed to **8**.
+
+    Ultimate of Anjo Nala will trigger Ultimate of binded ally. Both ultimates will be casted at the start of the next round.
+        
+    <br/ >
+    With <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Feast of Lust]*</CharacterSkillTooltip> skill, deal Mental DMG, scale with number of *[Neg Status]* types on the target, and inflict 1 :effect{code="TITILLATED"}
+    
+    - DMG Bonus will **not** add up even if there are 2 or more :effect{code="TITILLATED"} stacks on the target.
+    - :effect{code="TITILLATED"} duration will be calculated **independently**, so you will need to inflict 3 stacks within 2 rounds to be able to trigger :effect{code="CAPTIVATED"}
+
+    <br/ >
+    When use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Twin Phantoms]*</CharacterSkillTooltip>, Anjo Nala will enter *\[Hymn]* status
+    
+    - When casting incantation of Anjo Nala in *\[Hymn]* status, it will reduce the duration of *\[Hymn]*.
+    - With Insight 3, when binded ally cast active incantations, it will also reduce the duration of *\[Hymn]*.
+    - *\[Hymn]* will also reduce by 1 when pass a round.
+    - When *\[Hymn]* status end, cast :effect{code="ANGEL_TEMPTATION"}
+
+    <br/ >
+    Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Interwoven Dreams]*</CharacterSkillTooltip> will make both Anjo Nala and binded ally go to *[Channel]* status and can not act during this round.
+    
+    - At the start of next round, the binded ally will lose **50%** of current HP.
+    - Ultimate of binded ally will be casted first, then Anjo Nala.
+    - If binded ally is in *[Control]* status, **only** Anjo Nala Ultimate will be casted.
+    - If Anjo Nala is in *[Control]* status, **both** will lose Ultimate.
+    - Both Ultimate will be considered as **Follow up Attack**.
+
+    <br/ >
+    ##### Binding effect table
+
+    | Binding             | Buff for Anjo Nala & ally                        | Anjo Nala action when in *\[Hymn]* status (Insight 3)                                              |
+    |---------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------|
+    | Spirit/Intelligence | ATK and Max HP increased by **4%**               | Casts a rank 1 *\[Feast of Lust]* as a follow-up attack on the enemy with the lowest HP percentage |
+    | Beast/Plant         | Critical DMG and Reality DEF increased by **8%** | Gains 1 additional Moxie                                                                           |
+    | Mineral/Star        | Critical Rate and Mental DEF increased by **8%** | Casts 1 :effect{code="ANGEL_TEMPTATION"}                                                           |
+
+    ### Operate / Rotation
+
+    - If Anjo Nala not in *\[Hymn]* status, try to play <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Twin Phantoms]*</CharacterSkillTooltip> first.
+    - When Anjo Nala already in *\[Hymn]* status, use the binded ally's incantations.
+
+    <br />
+
+     <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">When not in *\[Hymn]* status, use this incantation as soon as possible</div>
+      </div>
+
+      <div class="flex-1 step-arrow">
+        <div class="mt-1 text-center">Cast the binded ally's incantations</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use this as soon as possible. Beware of *[Control]* status from enemy</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Only need to use this skill when there's not any binded ally's incations left</div>
+      </div>
+    </div>
+
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="JOE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="LOPERA" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="VILA" />
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
