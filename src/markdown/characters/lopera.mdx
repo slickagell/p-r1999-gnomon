@@ -15,7 +15,11 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -152,6 +156,147 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="THE_THIRD_COMMITMENT" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="OUTSIDE_THE_CITY" />
+    </div>
+  </Fragment>
+
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Lopera is a character that can buff DMG and healing allies with her mechanism.
+
+    <br />
+
+    With Insight 1, Lopera will gain Moxie +1 and recover (Missing HP x**50%**) HP to the ally with the lowest HP percentage when an attack triggers a *\[Bullet]* effect.
+
+    * This effect will trigger even when Lopera use her first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip> or do the Follow up Attack: :effect{code="BULL_EYE"} when in channeling status.
+
+    In Insight 3, Lopera gain Moxie +1 and will gain +1 extra Moxie for every other **Beast**, **Spirit**, or **Intellect** ally present up to Moxie +2.
+
+    <br />
+
+    With her first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip>, deals Reality DMG and convert :effect{code="FLAMING_BULLET"} into 2 other types of *\[Bullet]*:
+
+    * 1 :effect{code="INCANTATION_BULLET"} for allies at the **front** of Lopera.
+    * 1 :effect{code="RITUAL_BULLET"} for allies **behind** Lopera.
+    * *\[Bullet]* will be given to allies from **left to right**, so if Lopera does not have enough :effect{code="FLAMING_BULLET"}, only the front allies will receive *\[Bullet]*.
+    * When activate, Lopera will use 1 :effect{code="FLAMING_BULLET"} first, then convert *\[Bullet]* for allies later. You will need **4** *\[Bullet]* in total, so consider team position.
+
+    <br />
+
+    Using <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Winning Chips]*</CharacterSkillTooltip> grants herself stacks of :effect{code="FLAMING_BULLET"} which can inflict :effect{code="BURN"} and enter channeling status:
+
+    * When in channeling status, at the end of each round, if Lopera has at least 1 *\[Bullet]*, she will cast :effect{code="BULL_EYE"} that deals Reality DMG and **increases Critical DMG for allies** in 2 rounds.
+    * If enemy has more than **20** stacks of :effect{code="BURN"}, the buff effect will be **doubled**.
+    * :effect{code="BULL_EYE"} will prioritize targets with the highest :effect{code="BURN"}.
+    * Channeling status is **permanent** and will end only if Lopera does not have any *\[Bullet]*.
+    * If binding with Anjo Nala, Anjo Nala's Ultimate will prevent Lopera from casting :effect{code="BULL_EYE"} at the end of round.
+
+    <br />
+
+    Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[More Than Alchemy]*</CharacterSkillTooltip> will initialize an *\[Array]*: :effect{code="CRUCIBLE_ARSENAL"}
+
+    * *\[Bullet]* status of Lopera and allies will be retained at **1** until the end of *\[Array]*.
+    * Even only 1 :effect{code="FLAMING_BULLET"} remained, it still can be converted to :effect{code="INCANTATION_BULLET"}/:effect{code="RITUAL_BULLET"} for allies.
+    * Exceed Critical Rate will be converted to Critical DMG, calculated as follow, for example:
+
+    80% <sup>(from character)</sup>  + 40% <sup>(from *\[Crucible Arsenal]*)</sup> = 120% - 100% = 20% <sup>(excess)</sup> \* (40% + 10% \* 2<sup> *\[Bullet]* stacks</sup>) = 12%
+
+    * Characters with **60%** Critical Rate or higher can be exceed when team up with Lopera.
+
+    <br />
+
+    ### Operate / Rotation
+
+    * Use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Winning Chips]*</CharacterSkillTooltip> first to gain :effect{code="FLAMING_BULLET"} stacks and enter channeling status.
+    * Use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip> to convert :effect{code="FLAMING_BULLET"} into others *\[Bullet]*, heal allies, and gain Moxie.
+    * Cast <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[More Than Alchemy]*</CharacterSkillTooltip> as much as possible.
+
+    <br />
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Cast to gain :effect{code="FLAMING_BULLET"} and enter channeling status</div>
+      </div>
+
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use to gain Moxie</div>
+      </div>
+
+      <div class="flex-1 step-arrow-two-ways">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Cast as much as possible (3 rounds ideally)</div>
+      </div>
+
+      <div class="flex-1">
+        <div class="flex gap-2 justify-center">
+          <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id} />
+
+          <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id} />
+        </div>
+
+        <div class="mt-1 text-center">If the channeling status end, cast <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Winning Chips]*</CharacterSkillTooltip>. Otherwise, cast <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip> to gain Moxie to Ultimate again</div>
+      </div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="JIU_NIANGZI" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="JOE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="KAKANIA" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-exception">
+    **Exception**: Lopera should not team up with other characters who have :effect{code="ARRAY"}, since only one :effect{code="ARRAY"} can be active in the battle field.
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

@@ -391,7 +391,7 @@ const hasInsight3Materials = insightMaterials?.["3"];
 <slot name="team-suggestion-section-title" />
 
 {hasTeamSuggestion && (
-  <div class="md:grid md:grid-cols-3">
+  <div class="mb-6 md:grid md:grid-cols-3">
     <div>
       <slot name="team-suggestion-dps" />
     </div>
@@ -404,6 +404,8 @@ const hasInsight3Materials = insightMaterials?.["3"];
       <slot name="team-suggestion-sustain" />
     </div>
   </div>
+
+  <slot name="team-suggestion-exception" />
 )}
 
 {/* Insight Materials */}
