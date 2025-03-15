@@ -15,8 +15,12 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -173,6 +177,147 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="STRAY_OFF_THE_PATH" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="OUTSIDE_THE_CITY" />
+
+      <PsychubeIcon code="BLASPHEMER_OF_NIGHT" />
+
+      <PsychubeIcon code="LUXURIOUS_LEISURE" />
+    </div>
+  </Fragment>
+
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Argus is a support character has ability to  increase DMG strongly through the :effect{code="PINPOINTED"} effect.
+
+    <br />
+
+    :effect{code="PINPOINTED"} is a *\[Neg Status]* which can be cleansed
+
+    After attack with **1/2/3/rankless** incantation, **2/3/4/1** stacks are added to this status, and the existing stacks do **not** refresh in duration by this way.
+
+    Duration of this status can be refreshed only by:
+
+    * using <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Penetrating Eye]*</CharacterSkillTooltip> skill
+    * using <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[No Mark Unstruck]*</CharacterSkillTooltip> ultimate
+
+    <br />
+
+    At Insight 3, Argus add a ranked incantation *\[Grave Digger]* to the spell queue.
+
+    * *\[Grave Digger]* is considered an **extra action** and prioritizes targets with :effect{code="PINPOINTED"}.
+    * If there are no targets with :effect{code="PINPOINTED"}, it will target randomly.
+
+    When the total of stars of the incantations played this round is:
+
+    * **3-4**: Adds rank **1** *\[Grave Digger]* incantation. 1-target attack, deals Reality DMG.
+    * **5-6**: Adds rank **2** *\[Grave Digger]* incantation. 1-target attack, deals Reality DMG and gains Moxie +1 for self.
+    * **7+**: Adds rank **3** *\[Grave Digger]* incantation. 1-target attack, deals Reality DMG and gains Moxie +1 for self. This attack is always a critical hit.
+    * This will **not** count *Versatile* incantation.
+
+    <br />
+
+    <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Shotgun Shower]*</CharacterSkillTooltip> skill is a single target attack.
+
+    * Grant :effect{code="EMPOWER_INCANTATION_I"}/:effect{code="EMPOWER_INCANTATION_II"} to self,
+    * These effect can not coexist, so it is **not recommended** to use this skill 2 or more times in a row.
+
+    <br />
+
+    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Penetrating Eye]*</CharacterSkillTooltip> skill, inflict :effect{code="PINPOINTED"} and **dispel** all *\[Stats Up]* and *\[Pos Status]* effects on the target.
+
+    * Apply **1/5/10** stacks of :effect{code="PINPOINTED"} last 3 rounds to the target.
+    * Only 1 instance of :effect{code="PINPOINTED"} can be existed at a time.
+
+    <br />
+
+    Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[No Mark Unstruck]*</CharacterSkillTooltip>, deals DMG to single target, if the target has :effect{code="PINPOINTED"}:
+
+    * Add 5 more stacks to the target and refresh the duration of the entire stack.
+    * Increase Penetration Rate and Critical Rate
+
+    ### Operate / Rotation
+
+    * Use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Penetrating Eye]*</CharacterSkillTooltip> incantation every 2 rounds to maintain the :effect{code="PINPOINTED"} status.
+    * Use <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[No Mark Unstruck]*</CharacterSkillTooltip> when available.
+
+    <br />
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use this skill when there's no incantations left, only need to use 1 per round</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use this Debuff incantation every 2 rounds to maintain the :effect{code="PINPOINTED"} status</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use ultimate when available</div>
+      </div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="JIU_NIANGZI" />
+
+    <CharacterHeadIcon code="MARCUS" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+
+    <CharacterHeadIcon code="LOPERA" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

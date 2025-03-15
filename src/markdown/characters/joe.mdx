@@ -15,7 +15,11 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -152,6 +156,154 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="THE_UNBEARABLE_LIGHTNESS" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="KNOCK_ON_THE_DOOR" />
+
+      <PsychubeIcon code="BLASPHEMER_OF_NIGHT" />
+    </div>
+  </Fragment>
+
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    J is a Shield, DPS and :effect{code="BURN"} effect oriented character.
+
+    Not only applying *\[Burn]* to enemies, he also apply them to himself to boost DMG and reduce his own HP.
+
+    <br />
+
+    All of J's attacks can apply *\[Burn]* to enemies, from basic incatations to Ultimate, or counterattacks.
+
+    If J has :effect{code="PREIGNITION"} buff, the amount of *\[Burn]* from this can also be converted to J's *\[Burn]*.
+
+    In Insight 1
+
+    * Every times J inflicts *\[Burn]* on an enemy, he grants one stack of *\[Burn]* to self.
+    * Everytime J attacks, the amount of *\[Burn]* he has will be triggered **immediately** without waiting till the end of the round.
+    * If J counterattacks continuously, each attack activate *\[Burn]* will cause J to lose HP continuously.
+    * For each stack of *\[Burn]* on self, J will also gain ATK percentage equal to **half** the number of stacks of *\[Burn]* on self.
+    * Take **50%** DMG from *\[Burn]* and never fall below **15%** HP.
+
+    With Insight 3
+
+    * J will **immune** to :effect{code="FREEZE"} and :effect{code="COLD"} while in the *\[Burn]* status.
+    * The *\[Burn]* effect applied to himself can be up to **35** stacks (common *\[Burn]* only have maximum 30 stacks).
+    * At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for **1** round.
+
+    <br />
+
+    First skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hardness Testing]*</CharacterSkillTooltip> is a single target Debuff.
+
+    * Deals DMG to target and inflict 2 stacks of *\[Burn]*.
+    * For each stack of *\[Burn]* on self, grant all allies DMG Dealt **+1%** for **2** rounds.
+    * The amount of DMG Bonus will be fixed at the time of skill casted.
+
+    <br />
+
+    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Heat Treating]*</CharacterSkillTooltip> incantation
+
+    * Provide allies with a :effect{code="SHIELD"}, scales with J's ATK for **2** rounds.
+    * For each stack of *\[Burn]* on self, grants an additional **3%** Shield Factor.
+    * If *\[Burn]* is triggered during J's attacks, from the effect of Insight 1, it will reduce his HP.
+    * Otherwise, the *\[Burn]* activated at the end of the round will have its DMG reduced by the *\[Shield]*.
+    * When the shielded allies are attacked, J ripostes with :effect{code="TEMPERING"}.
+    * The number of ripostes is **equal** to the amount of allies who have J's *\[Shield]* and being **attacked** by enemies.
+    * The ripostes is considered as a **Follow up Attack**.
+    * If J's *\[Shield]* is present and another *\[Shield]* is applied, that *\[Shield]* will **replace** J's *\[Shield]* if it has more HP than the previous one (with Ms. NewBabel's Euphoria, she has the ability to increase the HP of old *\[Shield]*, which can work around this).
+
+    <br />
+
+    For the Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Over the Haight Street!]*</CharacterSkillTooltip>
+
+    * Deals DMG and apply the amount of *\[Burn]* on self to all enemies.
+    * After applying *\[Burn]*, for each stacks exceeds 30, the DMG will be increased by **10%**.
+    * The exceed *\[Burn]* stacks will **only** be calculated based on the chosen target, so choose the enemy with the **highest** *\[Burn]* stacks to maximize the DMG Bonus.
+    * J does **not** gain *\[Burn]* in this attack.
+
+    ### Operate / Rotation
+
+    * Maintaining the *\[Shield]* and ripostes by using <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Heat Treating]*</CharacterSkillTooltip> incantation.
+    * To increase DMG Bonus, use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hardness Testing]*</CharacterSkillTooltip> when J have high *\[Burn]* stacks.
+    * Wait for J and enemies to have high the *\[Burn]* stacks, then use <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Over the Haight Street!]*</CharacterSkillTooltip>, we do not to use it right away.
+
+    <br />
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">This skill should be used only when J has high *\[Burn]* stacks</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Priority to use this incantation to maintain the :effect{code="SHIELD"} and riposte</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Wait for J and enemies to have high the *\[Burn]* stacks to use to do Burst DMG, don't use it right away</div>
+      </div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="SPATHODEA" />
+
+    <CharacterHeadIcon code="SEMMELWEIS" />
+
+    <CharacterHeadIcon code="ETERNITY" />
+
+    <CharacterHeadIcon code="37" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="LOPERA" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-exception">
+    **Note**: Debuff dispel effect from Vila and Tooth Fairy can dispel J's :effect{code="BURN"}
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

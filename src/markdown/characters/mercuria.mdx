@@ -15,7 +15,11 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -154,6 +158,165 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="STARLIGHT_WELLSPRING" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="BALANCE_PLEASE" />
+
+      <PsychubeIcon code="LONG_NIGHT_TALK" />
+
+      <PsychubeIcon code="BLASPHEMER_OF_NIGHT" />
+    </div>
+  </Fragment>
+
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Mercuria is a support character, her special feature come from her :effect{code="COSMIC_ENERGY"}, bringing an extra DMG boost to the team.
+
+    :effect{code="COSMIC_ENERGY"} is a :effect{code="FORCE_FIELD"} type buff that cannot be dispelled.
+
+    * Can add up to **25** stacks by using incantations in battle or use Mercuria's Buff incatations.
+    * With each incantation rank 1/2/3 used, gain **2/3/4** stacks of *\[Cosmic Energy]* for herself.
+    * Using Mercuria's Buff incantations will gain **4/5/6** stacks of *\[Cosmic Energy]*.
+    * Some Follow up Attacks are **not** counted as a skill card (from 37, Joe) will not increase the stacks of *\[Cosmic Energy]*.
+    * **Only** ranked Follow up Attack will increase *\[Cosmic Energy]* stack, for example, Follow up Attack from Lucy, Jiu Niangi, etc.
+    * For each stack of *\[Cosmic Energy]*, increase the DMG Dealt of all allies.
+    * The stacks will be calculated **independently**.
+
+    With Insight 1
+
+    * When entering battle, gain **8** stacks of *\[Cosmic Energy]* for 2 rounds.
+    * For each ally with **Natural** Afflatus: Mineral, Star, Beast, Plant, receive +1 Moxie, up to 3 times.
+
+    In Insight 3, at the start of the round, if the stacks of *\[Cosmic Energy]*
+
+    * is **\< 9**, grant DMG Bonus.
+    * is **>= 9**, grant Critical DMG **+30%** to all allies for **1** round.
+    * is **>= 16**, grant an additional Incantation Might **+20%** to all allies for **2** rounds.
+    * Also grant **1** Moxie if allies have casted **2** or more rank **3** incantations for that round.
+
+    <br />
+
+    First skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Restless Souls]*</CharacterSkillTooltip> is a single target attack incatation
+
+    * For each rank **2/3** incantation in the AP Area, deals an additional DMG.
+    * Above effect will be calculated all incatations in the AP Area, **regardless** of order, which means this skill can be used in any order, first or later.
+    * Restores **50%** of Mercuria's ATK as HP to the ally with the lowest HP.
+
+    <br />
+
+    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Self-Focusing]*</CharacterSkillTooltip>
+
+    * Increase Critical Rate of all allies for **2** rounds.
+    * Mercuria receive **4/5/6** stacks of *\[Cosmic Energy]*.
+
+    <br />
+
+    For the Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Morning Star for the Night]*</CharacterSkillTooltip>, a mass attack skill.
+
+    * Dispels **2** random *\[Stats Up]* and *\[Pos Status]* effects on all enemies.
+    * Grants :effect{code="RANK_UP"} to all allies for **2** rounds, this does not directly increase the strength of allies's incantations, instead it will help increase the stacking of *\[Cosmic Energy]* by counting the stars of casting incantations.
+    * The effect *\[Rank Up]* starts immediately after casting the skill, so use Mercuria's Ultimate **first**, then use other incantations.
+
+    ### Operate / Rotation
+
+    DMG Bonus from *\[Cosmic Energy]* will be calculated **differently** than other stats: Crit DMG and Incantation Might.
+
+    * DMG Bonus will be calculated based on the amount of *\[Cosmic Energy]* that Mercuria currently has.
+    * Crit DMG and Incantation Might will be calculated based on the amount of stacks of *\[Cosmic Energy]* at the start of the round.
+
+    To get **9** stacks of *\[Cosmic Energy]* in a round, you just need to cast Mercuria's Buff incantation or use 1 rank 2 incantation to activate Critical DMG buff in the next round.
+
+    To get **16** stacks of *\[Cosmic Energy]* in a round, quite difficult, you can try to cast one of the following options:
+
+    * 1 rank 1 Buff incantation + 2 rank 2 incantations + 1 rank 3 incantation
+    * 1 rank 2 Buff incantation + 2 rank 2 incantations
+    * 1 rank 2 Buff incantation + 1 rank 3 incantation
+    * 1 rank 3 Buff incantation + 3 rank 1 incantations
+
+    Critical DMG buff can be activated quite often, but Incantation Might buff should **only** be activated after using Ultimate to reduce the conditions.
+
+    <br />
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Priority to use this incantation to buff Critical Rate and stack up *\[Cosmic Energy]*</div>
+      </div>
+
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use ultimate when available.</div>
+      </div>
+
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">This skill can be used after Ultimate to deals DMG and gain Moxie</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Cast this again after Ultimate to buff allies to deals Burst DMG, then use every 2 rounds to sustain the effect</div>
+      </div>
+    </div>
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="JIU_NIANGZI" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="MARCUS" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="ARGUS" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
