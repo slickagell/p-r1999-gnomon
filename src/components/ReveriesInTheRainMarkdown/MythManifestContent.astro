@@ -7,6 +7,7 @@ import SPECIALTY from "@data/common/character/specialty.json";
 import MythManifestMindMap, {
   type MythManifestMindMapType,
 } from "./MythManifestMindMap.astro";
+import Icon from "@components/Icon.astro";
 
 interface Props {
   id: string;
@@ -14,12 +15,28 @@ interface Props {
   afflatus: string;
   specialties: string[];
   mindmap: MythManifestMindMapType;
+  isDev?: boolean;
 }
 
-const { id, title, afflatus, specialties, mindmap } = Astro.props;
+const { id, title, afflatus, specialties, mindmap, isDev } = Astro.props;
 ---
 
 <h1>{title}</h1>
+
+{
+  isDev && (
+    <div class="my-6 alert border-primary-content gap-y-2">
+      <Icon icon="info-circle" />
+      <div>
+        <p class="font-bold">Notice!</p>
+        <div class="text-xs">
+          This is a development version, and the following content may not be
+          final.
+        </div>
+      </div>
+    </div>
+  )
+}
 
 <div class="flex justify-between flex-col-reverse md:flex-row gap-8">
   <div>

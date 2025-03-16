@@ -10,6 +10,7 @@ import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
+
 type Props = {
   id: string;
   star: number;
@@ -41,6 +42,7 @@ type Props = {
       require: number;
     }[];
   };
+  isDev?: boolean;
 };
 
 const {
@@ -55,6 +57,7 @@ const {
   euphorias,
   insightMaterials,
   resonanceMaterials,
+  isDev,
 } = Astro.props;
 
 const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
@@ -68,6 +71,19 @@ const hasInsight3Materials = insightMaterials?.["3"];
 <div class="my-8">
   <CharacterStar star={star} />
 </div>
+
+{isDev && (
+  <div class="my-6 alert border-primary-content gap-y-2">
+    <Icon icon="info-circle" />
+    <div>
+      <p class="font-bold">Notice!</p>
+      <div class="text-xs">
+        This is a development version, and the following content may not be
+        final.
+      </div>
+    </div>
+  </div>
+)}
 
 <div class="flex justify-between flex-col-reverse md:flex-row gap-8">
   <div>
