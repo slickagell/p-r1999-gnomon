@@ -6,6 +6,7 @@ afflatus: "PLANT"
 keyUnitFeature: "Units deal Mental DMG"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -30,7 +31,7 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
 
     * At the end of the round, if FoW has more than **10** stacks of :effect{code="CHARGED_MUNITIONS"}, remove all stacks of :effect{code="CHARGED_MUNITIONS"} and gain **4** stacks of :effect{code="BROKEN"}.
 
-    * Everytime FoW attack, it gains **1** stack of buff that increases DMG Taken Reduction by **50%** (stackable).
+    * Every time FoW attack, it gains **1** stack of buff that increases DMG Taken Reduction by **50%** (stackable).
 
     * There are 2 believer that buff :effect{code="FORCE_FIELD"} effects that increase DMG Taken Reduction by **50%** to all enemies when not in *\[Control]* status.
       * *Zealous Believer* (male) will buff DMG Taken Reduction by **Mental** DMG.
@@ -58,24 +59,30 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Anjo Nala
-    * Windsong
-    * 37
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="37" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * 6
-    * Mercuria
-    * Voyager
-    * An-an Lee
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Kakania
-    * Vila
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
   </Fragment>
 </ManeBulletinContent>

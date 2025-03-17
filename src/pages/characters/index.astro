@@ -23,7 +23,7 @@ function sortCharacters(a, b) {
     return -1;
   }
 
-  return a.data.title - b.data.title;
+  return ("" + a.data.title).localeCompare(b.data.title);
 }
 
 const versions = [

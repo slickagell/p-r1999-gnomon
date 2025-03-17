@@ -6,6 +6,7 @@ afflatus: "SPIRIT"
 keyUnitFeature: "Units can use Ultimate frequently"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -52,7 +53,8 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Lucy
+    <CharacterHeadIcon code="LUCY" />
+
     * Melania
     * Kaalaa Baunna
   </Fragment>
