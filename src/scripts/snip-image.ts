@@ -49,7 +49,7 @@ export default () => ({
 
   initWorker() {
     (async () => {
-      const worker = await createWorker("eng");
+      const worker = await createWorker("eng"); //eng/chi_sim/jpn
 
       await worker.setParameters({ preserve_interword_spaces: "1" });
 
@@ -78,7 +78,7 @@ export default () => ({
           0,
           0,
           this.$refs.imgCanvas.width,
-          this.$refs.imgCanvas.height,
+          this.$refs.imgCanvas.height
         );
     }
   },
@@ -203,7 +203,7 @@ export default () => ({
       0,
       0,
       cv2.width,
-      cv2.height,
+      cv2.height
     );
 
     if (this.isPreprocess) {
@@ -315,7 +315,7 @@ export default () => ({
         this.rect.x,
         this.rect.y,
         this.rect.width,
-        this.rect.height,
+        this.rect.height
       );
       this.ctx.strokeStyle = "red";
       this.ctx.lineWidth = 2;

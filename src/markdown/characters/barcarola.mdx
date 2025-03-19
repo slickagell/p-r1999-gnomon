@@ -1,8 +1,8 @@
 ---
-title: "Barcalora"
-id: "barcalora"
+title: "Barcarola"
+id: "barcarola"
 gameId: "3108"
-code: "BARCALORA"
+code: "BARCAROLA"
 star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
@@ -16,17 +16,21 @@ isDev: true
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
-import CHARACTER from "@data/characters/barcalora.json";
-import RESONANCE from "@data/resonance/characters/barcalora.json";
+import CHARACTER from "@data/characters/barcarola.json";
+import RESONANCE from "@data/resonance/characters/barcarola.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Barcalora
+# Barcarola
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -161,6 +165,26 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="ADDIO_CODA" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="BELT_IT_OUT" />
+
+      <PsychubeIcon code="LONG_NIGHT_TALK" />
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
