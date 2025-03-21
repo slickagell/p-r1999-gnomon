@@ -2,6 +2,7 @@
 title: "Bathyal Zone 300M-I"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -17,5 +18,79 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} After casting a rank 1 attack or debuff incantation, gain 1 stack of :effect{code="ENERVATE"}.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} At the end of each round, ATK **+5%** (stackable).
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * Whenever ally use Ultimate, enter :effect{code="DREAM_VISIT"} status for **1** round so use normal skills first before using Ultimate to avoid wasting skills.
+    * Our team will have 1 more character: <CharacterHeadIcon code="BARBARA" isInline />
+    * Every time a teammate use a rank 1/2/3 skills, *Barbara* will receive 1/2/3 stacks of *\[Trouble Sleep]*.
+      * When *Barbara* has **20** stacks of *\[Trouble Sleep]*, she will cast Ultimate and receive **3** Precast Incantations deal Genesis DMG that can deal significant DMG to enemies, **1** Precast Incantation for rank up incantation.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Some character does **not** fit in this zone.  For example:
+      * <CharacterHeadIcon code="WINDSONG" isInline /> after using Ultimate will be immobile immediately and can not perform Follow-up attacks.
+    * **Can** just need to bring sustain units to withstand, use *Barbara* Precast Incantations to deal DMG to enemies to pass this zone.
+    * You can choose **any** Myth Manifests based on your team.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="CHARLIE" />
+
+    <CharacterHeadIcon code="LEILANI" />
+
+    <CharacterHeadIcon code="WHITE_RUM" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="ARGUS" />
+
+    <CharacterHeadIcon code="BABY_BLUE" />
+
+    <CharacterHeadIcon code="ALIEN_T" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="AVGUST" />
+
+    <CharacterHeadIcon code="YENISEI" />
+
+    <CharacterHeadIcon code="MS_MOISSAN" />
   </Fragment>
 </ZoneContent>

@@ -1,6 +1,8 @@
 ---
 import AfflatusIcon from "@components/AfflatusIcon.astro";
 import CustomImage from "@components/CustomImage.astro";
+import Icon from "@components/Icon.astro";
+import Tooltip from "@components/Tooltip.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import { getCollection } from "astro:content";
 
@@ -37,25 +39,24 @@ const mythManifestEntries = await getCollection(
     <div class="mt-2 flex flex-wrap gap-5">
       {
         [
-          "10m",
-          "20m",
-          "30m",
-          "40m",
-          "50m",
-          "60m",
-          "70m",
-          "80m",
-          "90m",
-          "100m-i",
-          "100m-ii",
-          "100m-iii",
+          { level: "10m" },
+          { level: "20m" },
+          { level: "30m" },
+          { level: "40m" },
+          { level: "50m" },
+          { level: "60m" },
+          { level: "70m" },
+          { level: "80m" },
+          { level: "90m" },
+          { level: "100m-i" },
+          { level: "100m-ii" },
+          { level: "100m-iii" },
         ].map((depth) => (
           <div>
-            <a
-              class="uppercase custom-link !text-base-content text-shadow shadow-euphotic-zone"
-              href={`/reveries-in-the-rain/zone/${depth}`}
-            >
-              {depth}
+            <a href={`/reveries-in-the-rain/zone/${depth.level}`}>
+              <span class="uppercase custom-link !text-base-content text-shadow shadow-euphotic-zone">
+                {depth.level}
+              </span>
             </a>
           </div>
         ))
@@ -71,25 +72,34 @@ const mythManifestEntries = await getCollection(
     <div class="mt-2 flex flex-wrap gap-5">
       {
         [
-          "110m",
-          "120m",
-          "130m",
-          "140m",
-          "150m",
-          "160m",
-          "170m",
-          "180m",
-          "190m",
-          "200m-i",
-          "200m-ii",
-          "200m-iii",
+          { level: "110m" },
+          { level: "120m" },
+          { level: "130m" },
+          { level: "140m" },
+          { level: "150m" },
+          { level: "160m" },
+          { level: "170m" },
+          { level: "180m" },
+          { level: "190m", hasGuide: true },
+          { level: "200m-i", hasGuide: true },
+          { level: "200m-ii", hasGuide: true },
+          { level: "200m-iii", hasGuide: true },
         ].map((depth) => (
           <div>
-            <a
-              class="uppercase custom-link !text-base-content text-shadow shadow-mesophotic-zone"
-              href={`/reveries-in-the-rain/zone/${depth}`}
-            >
-              {depth}
+            <a href={`/reveries-in-the-rain/zone/${depth.level}`}>
+              <span class="uppercase custom-link !text-base-content text-shadow shadow-mesophotic-zone inline-flex gap-1 items-center">
+                {depth.level}
+              </span>
+              {depth.hasGuide && (
+                <Tooltip contentCustomClass="p-1 bg-neutral/80 w-auto">
+                  <Icon
+                    slot="toggle"
+                    icon="flag-spark"
+                    customClass="w-4 h-4 !text-primary"
+                  />
+                  <span class="text-sm">Has info & suggestions</span>
+                </Tooltip>
+              )}
             </a>
           </div>
         ))
@@ -105,26 +115,35 @@ const mythManifestEntries = await getCollection(
     <div class="mt-2 flex flex-wrap gap-5">
       {
         [
-          "210m",
-          "220m",
-          "230m",
-          "240m",
-          "250m-i",
-          "250m-ii",
-          "260m",
-          "270m",
-          "280m",
-          "290m",
-          "300m-i",
-          "300m-ii",
-          "300m-iii",
+          { level: "210m" },
+          { level: "220m" },
+          { level: "230m", hasGuide: true },
+          { level: "240m" },
+          { level: "250m-i", hasGuide: true },
+          { level: "250m-ii", hasGuide: true },
+          { level: "260m" },
+          { level: "270m" },
+          { level: "280m", hasGuide: true },
+          { level: "290m", hasGuide: true },
+          { level: "300m-i", hasGuide: true },
+          { level: "300m-ii", hasGuide: true },
+          { level: "300m-iii", hasGuide: true },
         ].map((depth) => (
           <div>
-            <a
-              class="uppercase custom-link !text-base-content text-shadow shadow-bathyal-zone"
-              href={`/reveries-in-the-rain/zone/${depth}`}
-            >
-              {depth}
+            <a href={`/reveries-in-the-rain/zone/${depth.level}`}>
+              <span class="uppercase custom-link !text-base-content text-shadow shadow-bathyal-zone">
+                {depth.level}
+              </span>
+              {depth.hasGuide && (
+                <Tooltip contentCustomClass="p-1 bg-neutral/80 w-auto">
+                  <Icon
+                    slot="toggle"
+                    icon="flag-spark"
+                    customClass="w-4 h-4 !text-primary"
+                  />
+                  <span class="text-sm">Has info & suggestions</span>
+                </Tooltip>
+              )}
             </a>
           </div>
         ))

@@ -9,6 +9,14 @@ import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManif
 import data from '@data/myth-manifest/mountain-ghost.json';
 
 <MythManifestContent {...frontmatter} {...data}>
+  <Fragment slot="information-section-title">
+    ## Information
+  </Fragment>
+
+  <Fragment slot="information-content">
+    Mountain Ghost will be suitable for **Plant** character, with specialize in :effect{code="POISON"}, :effect{code="PETRIFY"} and **Rank up** incantation.
+  </Fragment>
+
   <Fragment slot="manifest-skill-section-title">
     ## Manifest skill
   </Fragment>

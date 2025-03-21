@@ -21,17 +21,15 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} On death, grants Moxie +5 and :effect{code="DODGE"} to other allies for 1 round.
   </Fragment>
 
-
   <Fragment slot="stage-info-title">
     ## Stage info
   </Fragment>
 
   <Fragment slot="stage-info-content">
-    - There are *Moldir* and enemies, you just need to defeat *Moldir* to pass the stage.
-    - At the end of each round, *Moldir* will perform an additional attack to the highest ATK ally and make that ally fall into :effect{code="DISARM"} status.
-    - When being attacked in *[Counter]* status, *Moldir* will riposte and also inflict :effect{code="DISARM"} on the attacker.
-    - There are enemies call *Shieldbearer* that will be in :effect{code="TAUNT"} status to protect *Moldir* from being attacked.
-
+    * There are *Moldir* and enemies, you just need to defeat *Moldir* to pass the stage.
+    * At the end of each round, *Moldir* will perform an additional attack to the highest ATK ally and make that ally fall into :effect{code="DISARM"} status.
+    * When being attacked in *\[Counter]* status, *Moldir* will riposte and also inflict :effect{code="DISARM"} on the attacker.
+    * There are enemies call *Shieldbearer* that will be in :effect{code="TAUNT"} status to protect *Moldir* from being attacked.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
@@ -39,12 +37,12 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
   </Fragment>
 
   <Fragment slot="strategy-and-tips-content">
-    - Focus on dealing with *Moldir*.
-    - You can deal with *Shieldbearer* first to remove them from protecting *Moldir*.
-    - Prioritize **Beast** or **single-target** units.
-    - You can choose units have skills that are **not** *[Attack]* type skills and let them have the highest ATK to not be affected by :effect{code="DISARM"}.
-    - Characters like *Lopera* or *Joe* should not be used to deal with *Moldir* since they are affected by :effect{code="DISARM"}, which will cause them to lose ability to perform their Follow-up attacks.
-    - The **best** Myth Manifest to use is *Operatic Reflection* since it has stronger Afflatus, provides effects to *Beast* units and at the beginning of each round, perform an attack that can reduce enemies's :effect{code="DODGE"} stacks.
+    * Focus on dealing with *Moldir*.
+    * You can deal with *Shieldbearer* first to remove them from protecting *Moldir*.
+    * Prioritize **Beast** or **single-target** units.
+    * You can choose units have skills that are **not** *\[Attack]* type skills and let them have the highest ATK to not be affected by :effect{code="DISARM"}.
+    * Characters like *Lopera* or *Joe* should not be used to deal with *Moldir* since they are affected by :effect{code="DISARM"}, which will cause them to lose ability to perform their Follow-up attacks.
+    * The **best** Myth Manifest to use is *Operatic Reflection* since it has stronger Afflatus, provides effects to *Beast* units and at the beginning of each round, perform an attack that can reduce enemies's :effect{code="DODGE"} stacks.
   </Fragment>
 
   <Fragment slot="team-suggestion-section-title">
@@ -53,6 +51,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
 
   <Fragment slot="team-suggestion-dps">
     #### DPS/Sup DPS
+
     <CharacterHeadIcon code="ANJO_NALA" />
 
     <CharacterHeadIcon code="LUCY" />
@@ -62,7 +61,6 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     <CharacterHeadIcon code="SPATHODEA" />
 
     <CharacterHeadIcon code="DIKKE" />
-
   </Fragment>
 
   <Fragment slot="team-suggestion-support">
@@ -77,7 +75,6 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     <CharacterHeadIcon code="GETIAN" />
 
     <CharacterHeadIcon code="NECROLOGIST" />
-
   </Fragment>
 
   <Fragment slot="team-suggestion-sustain">
@@ -92,6 +89,5 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     <CharacterHeadIcon code="YENISEI" />
 
     <CharacterHeadIcon code="BARBARA" />
-    
   </Fragment>
 </ZoneContent>

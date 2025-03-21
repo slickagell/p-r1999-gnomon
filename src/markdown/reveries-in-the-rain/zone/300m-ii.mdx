@@ -2,6 +2,7 @@
 title: "Bathyal Zone 300M-II"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -18,5 +19,78 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gains a Shield with (Max HP x**50%**) for 2 rounds.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} After taking a 1-target attack, gain 1 stack of :effect{code="STURDINESS"}.
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * Enemies are the main boss *Hopeless Drifter* and other critters, you just need to defeat *Hopeless Drifter* to pass the stage.
+    * At the end of each round, *Hopeless Drifter* will inflict :effect{code="PETRIFY"} on random ally.
+      * They also have skills that can inflict :effect{code="PETRIFY"}.
+    * The main boss can also summon other critters
+      * With Beast critter, be careful when this unit attack, since it can deal a lot of DMG.
+      * With Green Lake critter, it will inflict :effect{code="POLLUTION"} on our allies when attacks or being defeated.
+      * With Cactus critter, it will have :effect{code="TAUNT"} effect.
+    * When go to phase 2, the critters will be strengthened and become much stronger
+      * When entering battle, they will receive a large amount of *\[Shield]* for **2** rounds.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Units whose DMG depend on Ultimate will **not** be ideal for this zone, since after casting Ultimate, they will get permanent Ultimate Might **-10%**.
+    * Bring units with dispel skills to dispel :effect{code="PETRIFY"}.
+    * When entering phase 2, in the first **2** rounds, we can skip not to attack enemies, instead focus on buff, enhance skills then deal Burst DMG in the third round.
+    * You can choose **any** Myth Manifests based on your team.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="TUESDAY" />
+
+    <CharacterHeadIcon code="JOE" />
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="NECROLOGIST" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="YENISEI" />
   </Fragment>
 </ZoneContent>

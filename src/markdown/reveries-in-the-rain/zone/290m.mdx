@@ -2,6 +2,7 @@
 title: "Bathyal Zone 290M"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -14,5 +15,66 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 2 rounds, all allies get :effect{code="SILENCE"} for 1 round.
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * The enemies are *Necrologist* and ghosts.
+    * Every **2** rounds, enemies will receive **1** stack of :effect{code="INCORPOREAL"}.
+      * If *Necrologist* lose all :effect{code="INCORPOREAL"} stacks, she will gain **2** more :effect{code="MORIBUND"} stacks.
+    * At the first round and at the start of every **2** rounds, all allies get :effect{code="SILENCE"} for **1** round.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * **Only** focus on dealing DMG to *Necrologist*, use **single-target** skills instead of multi-target skills.
+    * **Attack** and **Channel** incantation will operate more efficiently, since they are not affected by :effect{code="SILENCE"}.
+    * You can choose **any** Myth Manifests other than *Operatic Reflection* based on your team, but do **not** use Ultimate.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="LILYA" />
+
+    <CharacterHeadIcon code="JIU_NIANGZI" />
+
+    <CharacterHeadIcon code="BKORNBLUME" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="LORELEI" />
+
+    <CharacterHeadIcon code="NECROLOGIST" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="YENISEI" />
+
+    <CharacterHeadIcon code="BARBARA" />
   </Fragment>
 </ZoneContent>

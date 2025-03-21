@@ -61,11 +61,9 @@ const { id, title, afflatus, specialties, mindmap, isDev } = Astro.props;
       }
     </div>
 
-    <slot name="manifest-skill-section-title" />
+    <slot name="information-section-title" />
 
-    <slot name="manifest-skill-title" />
-
-    <slot name="manifest-skill-content" />
+    <slot name="information-content" />
   </div>
 
   <div class="flex flex-col items-center shrink-0 md:basis-[30rem]">
@@ -76,6 +74,12 @@ const { id, title, afflatus, specialties, mindmap, isDev } = Astro.props;
     />
   </div>
 </div>
+
+<slot name="manifest-skill-section-title" />
+
+<slot name="manifest-skill-title" />
+
+<slot name="manifest-skill-content" />
 
 <slot name="passive-section-title" />
 

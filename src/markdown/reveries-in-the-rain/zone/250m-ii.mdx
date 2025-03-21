@@ -2,6 +2,7 @@
 title: "Bathyal Zone 250M-II"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -18,5 +19,80 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} DMG Heal **+20%**.
 
     :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, suffer :effect{code="DISCONCERT"} for 2 rounds.
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * There are main boss: *Mysterious Medical Kit* and other *Sturdy Stone Knight*s, you just need to defeat *Mysterious Medical Kit* to pass the stage.
+    * *Sturdy Stone Knight* can deal significant DMG to our allies, and it has a unique effect: *\[Stone Skin]*.
+      * At the start of the round, if it does not have the *\[Stone Skin]* status, it will gain **3** *\[Stone Skin]* stacks and go into :effect{code="PETRIFY"} status.
+      * Each time it **acts** or **takes** DMG, it will lose **1** *\[Stone Skin]* stack.
+    * In the first **3** rounds, *Mysterious Medical Kit* will **not** act, after that it will recover all HP and **turn into** *Carbuncle*.
+      * If we reduce *Carbuncle*'s HP to **50%**, it will become *Mysterious Medical Kit* again.
+      * In the next **2** rounds, if we do not defeat *Mysterious Medical Kit*, it will become *Carbuncle* again.
+    * If the main boss is being attacked or any of *Sturdy Stone Knight*s are defeated, it will be inflicted 1 :effect{code="FLINCH"} stack.
+    * When our character casts Ultimate, they can **not** gain Moxie for **2** rounds
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * We can control *Sturdy Stone Knight* by attacking it multiple times, make it unable to act, so any units with **multi-target** attacks or **high attack frequency** is preferable.
+    * When the boss HP is below **50%**, in the next 2 round, we need to try to deal DMG to **finish off** *Carbuncle*
+    * Try to attack *Carbuncle* and defeat multiple *Sturdy Stone Knight*s to stack up :effect{code="FLINCH"}, up to 30-50 stacks and then you can focus on dealing DMG to *Carbuncle* to finish it.
+    * Myth Manifest *Star of Misfortune* will be ideal for this stage since it helps reduce *\[Stone Skin]* stacks, but other Myth Manifests can also be used.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="LILYA" />
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="MATILDA" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="LORELEI" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="YENISEI" />
+
+    <CharacterHeadIcon code="AVGUST" />
   </Fragment>
 </ZoneContent>

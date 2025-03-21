@@ -1,15 +1,18 @@
 ---
 import { capitalCase, kebabCase } from "change-case";
 import CharacterImg from "./CharacterImg.astro";
+import { twMerge } from "@scripts/utils";
 
 interface Props {
   code: string;
+  isInline?: boolean;
+  customClass?: string;
 }
 
-const { code } = Astro.props;
+const { code, isInline, customClass } = Astro.props;
 ---
 
-<div class="my-2">
+<div class={twMerge("my-2", isInline && "my-0 inline-block", customClass)}>
   <a
     href={`/characters/${kebabCase(code)}`}
     class="transition hover:opacity-75"

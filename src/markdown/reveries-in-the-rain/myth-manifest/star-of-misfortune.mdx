@@ -9,6 +9,14 @@ import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManif
 import data from '@data/myth-manifest/star-of-misfortune.json';
 
 <MythManifestContent {...frontmatter} {...data}>
+  <Fragment slot="information-section-title">
+    ## Information
+  </Fragment>
+
+  <Fragment slot="information-content">
+    Star of Misfortune will be suitable for **Star** character, with specialize in increasing **Critical**, **Eureka** and **Genesis DMG**.
+  </Fragment>
+
   <Fragment slot="manifest-skill-section-title">
     ## Manifest skill
   </Fragment>
