@@ -6,6 +6,7 @@ afflatus: "PLANT"
 keyUnitFeature: "Units with Beast or Plant afflatus"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -66,28 +67,38 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Anjo Nala
-    * Spathodea
-    * Jessica
-    * Lucy
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="SPATHODEA" />
+
+    <CharacterHeadIcon code="JESSICA" />
+
+    <CharacterHeadIcon code="LUCY" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * Isolde
-    * Lopera
-    * Getian
-    * Shamane
-    * An-an Lee
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="GETIAN" />
+
+    <CharacterHeadIcon code="SHAMANE" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Sotheby
-    * Kakania
-    * Tooth Fairy
-    * Medicine Pocket
+    <CharacterHeadIcon code="SOTHEBY" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="MEDICINE_POCKET" />
   </Fragment>
 </ManeBulletinContent>

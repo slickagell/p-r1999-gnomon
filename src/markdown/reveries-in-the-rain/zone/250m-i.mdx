@@ -2,6 +2,7 @@
 title: "Bathyal Zone 250M-I"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -9,7 +10,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     * Insight III Level 30
   </Fragment>
 
-  <Fragment slot="stage-mechanism-content">
+  <Fragment slot="stage-environment-content">
     :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, if HP is above 90%, gain 1 stack of :effect{code="ENERVATE"} and 1 stack of :effect{code="BLOOD_SIPHON"}.
@@ -17,5 +18,83 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} Healing Taken **30%**.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When attacking, if this unit is holding 2 or fewer types of negative statuses, inflict 1 stack of :effect{code="DREAD"} to the target.
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * There are *Semmelweis* and other enemies.
+    * During the battle, enemies will receive an effect called :effect{code="MORIBUND"}.
+    * Our team will have 1 more character: <CharacterHeadIcon code="MONDLICHT" isInline />
+    * Ultimate of *Mondlicht* will **dispel** :effect{code="MORIBUND"} on all enemies.
+    * In the first round, *Semmelweis*, in Ultimate status, has ability to deals large DMG to all allies.
+    * Phase 2 will have almost the same mechanism as Phase 1.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Bring units with these **traits** to withstand first attacks of *Semmelweis* or prevent her from Ultimate in the first round:
+      * Who can sustain or create :effect{code="SHIELD"}.
+      * Who has *\[Control]*, reduce Moxie skills.
+      * Who can create :effect{code="ARRAY"} to override *Semmelweis*'s :effect{code="ARRAY"}.
+    * In the round that *Mondlicht* can cast Ultimate, use *Mondlicht*'s Ultimate to dispel :effect{code="MORIBUND"} on all enemies **first**, then use attacks skills to deal DMG and finish off enemies.
+    * You can choose **any** Myth Manifests based on your team.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="JOE" />
+
+    <CharacterHeadIcon code="TUESDAY" />
+
+    <CharacterHeadIcon code="WILLOW" />
+
+    <CharacterHeadIcon code="BKORNBLUME" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="GETIAN" />
+
+    <CharacterHeadIcon code="SOTHEBY" />
+
+    <CharacterHeadIcon code="X" />
+
+    <CharacterHeadIcon code="NECROLOGIST" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="AVGUST" />
+
+    <CharacterHeadIcon code="BARBARA" />
+
+    <CharacterHeadIcon code="YENISEI" />
   </Fragment>
 </ZoneContent>

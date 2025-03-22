@@ -2,6 +2,7 @@
 title: "Mesophotic Zone 200M-III"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -9,7 +10,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     * Insight III Level 20
   </Fragment>
 
-  <Fragment slot="stage-mechanism-content">
+  <Fragment slot="stage-environment-content">
     :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, rewrite 3 random incantations with :effect{code="SCALDING"}.
@@ -17,5 +18,93 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, **50%** chance to change all allied incantations to *\[Precast Incantation]*.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, if HP is below **50%**, gain :effect{code="DISCONCERT"} for 1 round.
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * There is only **1** enemy, *Spathodea*.
+    * At the beginning of each round, there will be **50%** probability of converting all your incantations to *\[Precast Incantation]*, this also make *\[Tuning: First Melody]* become unsusable.
+    * At the end of each round, if ally's HP is below **50%**, fall into :effect{code="DISCONCERT"} status for **1** round.
+    * *Spathodea*'s Ultimate deals **extremely** high DMG to all allies, also gains **3** :effect{code="UNSPARING"} stacks, **3** :effect{code="WEAL"} stacks and inflict effects to reduce our allies DMG.
+    * If *Spathodea*'s HP is below **75%/50%/25%**, she will cast Ultimate **without** consume Moxie for **1** time.
+    * One of *Spathodea* skills will grant her ability to *\[Dodge]* non-Ultimate Reality or Mental DMG, so pay attention to these effects, use normal attacks skills to remove *\[Dodge]* effects first, then use important skills to deal Burst DMG.
+    * With *Spathodea*'s passive, whenever our ally using:
+      * **Buff** or **Counter** skills, she gains **2** :effect{code="UNSPARING"} stacks.
+      * **Heal** or **Debuff** skills, she gains **1** :effect{code="WEAL"} stack.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Make sure HP of all allies in team is around **70-80%** to be able to withstand the boss's attacks
+
+    * **Attack** and **Channel** incantations are recommended to use more often, since it will not grant *Spathodea* :effect{code="UNSPARING"} or :effect{code="WEAL"} stacks.
+
+    * Bring units with :effect{code="SEAL"} or :effect{code="NIGHTMARE"} skills to prevent *Spathodea* from casting Ultimate.
+      * Especially, try to use it at **75%/50%/25%** *Spathodea*'s HP
+      * Do **not** use these effect skills twice in a row, since *Spathodea* has *\[Control Resilience]* 100%, which means she will not be affected by these effects for upcoming rounds, for example: :effect{code="SEAL"} take effect for 3 rounds, means *Spathodea* will not be affected by :effect{code="SEAL"} for the next 3 rounds after :effect{code="SEAL"} ends.
+      * **Caution** for :effect{code="NIGHTMARE"} effect: since this effect will be dispelled when taking any attack, it is recommended to use it at the **end** of Spell queue and do **not** team up with characters or Myth Manifest that has Follow-up attacks at the end of round.
+
+    * Another way to prevent Ultimate is choosing characters have **reduce Moxie** skills
+
+    * With Myth Manifest:
+      * Choose *Mountain Ghost* to go with *\[Poison]* or *\[Rank Up]* team
+      * *Star of Misfortune* can be use to go with *\[Star]* unit team, but **limit** the use of Ultimate because it is a *Buff* skill, which can grant boss :effect{code="UNSPARING"} stacks.
+      * *Operatic Reflection* is **not** recommended since it will cast a Debuff skill each round, which will grant *Spathodea* lots of :effect{code="WEAL"} stacks.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="LILYA" />
+
+    <CharacterHeadIcon code="TUESDAY" />
+
+    <CharacterHeadIcon code="WILLOW" />
+
+    <CharacterHeadIcon code="BKORNBLUME" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="SOTHEBY" />
+
+    <CharacterHeadIcon code="BABY_BLUE" />
+
+    <CharacterHeadIcon code="X" />
+
+    <CharacterHeadIcon code="NECROLOGIST" />
+
+    <CharacterHeadIcon code="TWINS_SLEEP" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="YENISEI" />
+
+    <CharacterHeadIcon code="BARBARA" />
+
+    <CharacterHeadIcon code="LA_SOURCE" />
   </Fragment>
 </ZoneContent>

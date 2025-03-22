@@ -5,6 +5,8 @@ interface Props {
 }
 
 const { id, title } = Astro.props;
+
+const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 ---
 
 <h1>{title}</h1>
@@ -22,9 +24,38 @@ const { id, title } = Astro.props;
 <div class="collapse collapse-plus bg-base-200">
   <input type="checkbox" checked />
   <div class="collapse-title text-xl font-medium">
-    <p>Stage mechanism</p>
+    <p>Stage environment</p>
   </div>
   <div class="collapse-content">
-    <slot name="stage-mechanism-content" />
+    <slot name="stage-environment-content" />
   </div>
 </div>
+
+<slot name="stage-info-title" />
+
+<slot name="stage-info-content" />
+
+<slot name="strategy-and-tips-title" />
+
+<slot name="strategy-and-tips-content" />
+
+{/* Team suggestion */}
+<slot name="team-suggestion-section-title" />
+
+{hasTeamSuggestion && (
+  <div class="mb-6 md:grid md:grid-cols-3">
+    <div>
+      <slot name="team-suggestion-dps" />
+    </div>
+
+    <div>
+      <slot name="team-suggestion-support" />
+    </div>
+
+    <div>
+      <slot name="team-suggestion-sustain" />
+    </div>
+  </div>
+
+  <slot name="team-suggestion-exception" />
+)}

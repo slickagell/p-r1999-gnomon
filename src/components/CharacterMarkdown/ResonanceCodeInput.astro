@@ -1,0 +1,62 @@
+---
+import Icon from "@components/Icon.astro";
+
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<div class="relative bg-base-content/10" x-data="clipboard">
+  <input
+    type="text"
+    x-model="resonanceCode"
+    placeholder="Resonance code"
+    class="input input-ghost w-[calc(100%-2rem)] border-0 !bg-transparent"
+    disabled
+  />
+
+  <button
+    x-ref="copy"
+    class="absolute right-2 top-1/2 -translate-y-1/2 p-2"
+    type="button"
+    @click="$clipboard(resonanceCode).then(()=>handleCopied())"
+  >
+    <Icon icon="copy" />
+  </button>
+  <div
+    x-show="isShowTooltip"
+    x-cloak
+    x-anchor.top="$refs.copy"
+    class={"bg-base-100 text-base-content border-line-paper border p-2 z-50 absolute"}
+    x-transition:enter="ease duration-300 transition-opacity"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="ease duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+  >
+    Copied!
+  </div>
+</div>
+
+<script>
+  import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+  import { Clipboard } from "@scripts/plugin";
+
+  Alpine.plugin(anchor);
+  Alpine.plugin(Clipboard);
+
+  Alpine.data("clipboard", () => ({
+    isCopied: false,
+    isShowTooltip: false,
+
+    handleCopied() {
+      this.isCopied = true;
+      this.isShowTooltip = true;
+      setTimeout(() => {
+        this.isShowTooltip = false;
+      }, 1000);
+    },
+  }));
+</script>

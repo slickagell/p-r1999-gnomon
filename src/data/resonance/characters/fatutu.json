@@ -1,0 +1,237 @@
+{
+  "mainPiece": "RP_T_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "GOLDEN_FLEECE",
+          "require": 1
+        },
+        {
+          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "require": 2
+        },
+        {
+          "code": "CLAWED_PENDULUM",
+          "require": 3
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "RHEINGOLD",
+          "require": 1
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "SALTED_MANDRAKE",
+          "require": 3
+        }
+      ]
+    },
+    "HYPER": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "GOLDEN_COMPASS",
+          "require": 2
+        },
+        {
+          "code": "PROPHETIC_BIRD",
+          "require": 5
+        }
+      ]
+    },
+    "INSPIRE": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "SERPENT_SCEPTER",
+          "require": 1
+        },
+        {
+          "code": "INCORRUPT_MONKEYPAW",
+          "require": 2
+        },
+        {
+          "code": "BITING_BOX",
+          "require": 3
+        }
+      ]
+    },
+    "DELIRAMENT": {
+      "materials": [
+        {
+          "code": "SHARPODONTY",
+          "require": 120000
+        },
+        {
+          "code": "MISTILTEINN",
+          "require": 1
+        },
+        {
+          "code": "PLATINUM_OUIJA",
+          "require": 2
+        },
+        {
+          "code": "GOLDEN_BEETLE",
+          "require": 3
+        }
+      ]
+    }
+  },
+  "patternRecommended": "HYPER",
+  "recommended": {
+    "10-11-12-13-14-15": [
+      {
+        "name": "Healing",
+        "source": {
+          "label": "Bilibili - 春风满马",
+          "link": "https://www.bilibili.com/video/BV1PhCqY8EwV/"
+        },
+        "patternRecommended": "HYPER",
+        "resonance": [
+          {
+            "blocks": ["4-3", "5-3", "6-2", "6-3", "6-4"],
+            "shape": [
+              [0, 1, 0],
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_5_01"
+          },
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-6", "5-6", "6-5", "6-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["4-1", "4-2", "5-1", "5-2"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["4-4", "4-5", "5-4", "5-5"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["2-3", "3-2", "3-3", "3-4"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-2", "0-3", "0-4", "1-3"],
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-0", "1-0", "2-0", "3-0"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-6", "1-6", "2-6", "3-6"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["2-1", "2-2", "3-1"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-4", "2-5", "3-5"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-5", "1-4", "1-5"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-1"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["1-1", "1-2"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          }
+        ]
+      }
+    ]
+  }
+}

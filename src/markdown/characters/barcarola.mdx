@@ -1,0 +1,235 @@
+---
+title: "Barcarola"
+id: "barcarola"
+gameId: "3108"
+code: "BARCAROLA"
+star: 6
+afflatus: "STAR"
+dmgType: "MENTAL"
+race: "ARCANIST"
+version: "2.4"
+releaseDate: "2025-03-27"
+specialties: ["DPS", "SUPPORT", "INSPIRATION"]
+isLimited: false
+isDev: true
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
+import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import DMG_TYPE from "@data/common/character/dmg-type.json";
+import RACE from "@data/common/character/race.json";
+import SPECIALTY from "@data/common/character/specialty.json";
+import CHARACTER from "@data/characters/barcarola.json";
+import RESONANCE from "@data/resonance/characters/barcarola.json";
+import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+
+# Barcarola
+
+<CharacterContent {...frontmatter} {...CHARACTER}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    ## Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    ### Cascading Arpeggios
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-1 star-1 note:">
+      1-target attack. Deals Mental DMG. After attacking, consumes Eureka to increase \[Impromptu Incantation]s number of attacks in this round. When the allies with \[Quartet] reach a certain number, additionally increases \[Impromptu Incantation]'s number of attacks.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-1 star-2 note:">
+      :TODO - Add character skill-2 star-2 description:
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-1 star-3 note:">
+      :TODO - Add character skill-3 star-3 description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    ### Music of the Heart
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-2 star-1 note:">
+      1-target attack. Deals Mental DMG. After attacking, consumes Eureka to increase \[Impromptu Incantation]'s DMG Dealt in this round. When the allies with \[Quartet] reach a certain number, additionally increases \[Impromptu Incantation]'s DMG Dealt.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-2 star-2 note:">
+      :TODO - Add character skill-2 star-2 description:
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-2 star-3 note:">
+      :TODO - Add character skill-3 star-3 description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    ### Sea Breeze Serenade
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="BUFF" note=":TODO - Add character ultimate note:">
+      1-target buff. Barcarola and a selected ally enter the \[Quartet] status.
+
+      If they are already in this status, their status duration gets extended.
+
+      This also slightly extends unselected allies \[Quartet] duration, if they are already in this status. Then, Barcarola restores Eureka for allies in the \[Quartet] status. She gains Moxie and adds additional \[Inspiration] points to \[Impromptu Incantation] of this round.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    ## Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    ### Solo Symphony
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When your team consumes Eureka, it gains \[Inspiration] points. Barcarola will give these \[Inspiration] points primarily to attack-type incantations.
+
+    When Barcarola enters battle, your team gains \[Inspiration] points.
+
+    Barcarola's Max Eureka increases. At the start of each round, Barcarola gains Eureka. Whenever an ally actively casts an attack-type incantation, Barcarola gains Eureka.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    When entering battle, Barcarola's ATK increases.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    At the start of each round, Barcarola increases DMG Dealt based on the total \[Inspiration] points distributed to the incantations. \[Impromptu Incantation] transforms to Star Afflatus, with its Critical Rate and Critical DMG increasing each time it's cast.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    ## Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    :TODO - Update portray lv-1 content:
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    :TODO - Update portray lv-2 content:
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    :TODO - Update portray lv-3 content:
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    :TODO - Update portray lv-4 content:
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    :TODO - Update portray lv-5 content:
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="ADDIO_CODA" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="BELT_IT_OUT" />
+
+      <PsychubeIcon code="LONG_NIGHT_TALK" />
+    </div>
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="MARCUS" />
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="MATILDA" note={"(with Euphoria)"} />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="ARGUS" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="VOYAGER" note={"(with Euphoria)"} />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    ## Insight Materials
+  </Fragment>
+
+  <Fragment slot="resonance-materials-section-title">
+    ## Resonance Materials
+  </Fragment>
+</CharacterContent>

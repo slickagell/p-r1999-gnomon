@@ -2,6 +2,7 @@
 title: "Mesophotic Zone 200M-II"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -10,7 +11,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     * Insight III Level 20
   </Fragment>
 
-  <Fragment slot="stage-mechanism-content">
+  <Fragment slot="stage-environment-content">
     :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} At the start of the round, gain a shield equal to **5%** of Max HP. While this shield is active, DMG Taken **-50%**, lasts 1 round.
@@ -18,5 +19,63 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} On death, grant Moxie +2 to other allies and recover (their Max HP x**10%**) HP to other allies.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When dying, recover (Max HP x**50%**) HP and gain Moxie +5 (triggers only 1 time).
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * There are *Legers* and enemies, you just need to defeat *Legers* to pass the stage.
+    * *Legers* has a Debuff skill that reduce our allies DMG.
+    * At the beginning of each round, enemies will receive a :effect{code="SHIELD"}.
+    * When defeated, enemies will revive **1** time and recover **50%** HP and 5 Moxie.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Focus on dealing with *Legers*.
+    * Destroy :effect{code="SHIELD"} layer first, then cast other important Burst attack skills to optimize DMG.
+    * Prioritize **Star** or **single-target** units.
+    * The **best** Myth Manifest to use is *Star of Misfortune* since it has stronger Afflatus, provides significant amount DMG to enemies.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="LILYA" />
+
+    <CharacterHeadIcon code="CHARLIE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+
+    <CharacterHeadIcon code="LORELEI" />
+
+    <CharacterHeadIcon code="BABY_BLUE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="YENISEI" />
   </Fragment>
 </ZoneContent>

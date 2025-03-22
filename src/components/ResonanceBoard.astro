@@ -6,6 +6,7 @@ import Material from "@components/Material.astro";
 import Tooltip from "@components/Tooltip.astro";
 import RESONANCE_PATTERN from "@data/resonance/common/pattern.json";
 import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
+import ResonanceCodeInput from "./CharacterMarkdown/ResonanceCodeInput.astro";
 
 const DEFAULT_RESONATE_LEVEL = 10;
 
@@ -360,6 +361,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
                 x-text="selectedRecommendedSource.label"></a>
             </span>
           </label>
+          <ResonanceCodeInput />
         </div>
         <!-- End Recommended -->
         <!-- Resonance Pattern -->

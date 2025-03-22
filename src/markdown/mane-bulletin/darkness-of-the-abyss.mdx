@@ -6,6 +6,7 @@ afflatus: "MINERAL"
 keyUnitFeature: "Units with Star afflatus or Genesis DMG skills"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -68,29 +69,40 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * 37
-    * Lucy
-    * Windsong
-    * Lilya
-    * Regulus
-    * Charlie
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="LILYA" />
+
+    <CharacterHeadIcon code="REGULUS" />
+
+    <CharacterHeadIcon code="CHARLIE" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * 6
-    * Necrologist
-    * Pickles
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="NECROLOGIST" />
+
+    <CharacterHeadIcon code="PICKLES" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Voyager
-    * Ms. Newbabel
-    * Tooth Fairy
-    * Vila
-    * Yenisei
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="YENISEI" />
   </Fragment>
 </ManeBulletinContent>

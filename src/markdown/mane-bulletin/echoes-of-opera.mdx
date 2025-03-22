@@ -6,6 +6,7 @@ afflatus: "SPIRIT"
 keyUnitFeature: "Units with Burst DMG skills"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -46,7 +47,7 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
 
     * With other positions, favor buffers and healers since they dealt **30%** less DMG.
 
-    * Try to deacrease :effect{code="HEIGHTENED_STANDARDS"} stacks below **5** to deal more DMG to *Misplaced Artist*.
+    * Try to decrease :effect{code="HEIGHTENED_STANDARDS"} stacks below **5** to deal more DMG to *Misplaced Artist*.
   </Fragment>
 
   <Fragment slot="team-suggestions-title">
@@ -56,26 +57,34 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Anjo Nala
-    * Lucy
-    * Windsong
-    * Kaalaa Baunna
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="KAALAA_BAUNAA" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * 6
-    * Isolde
-    * Pickles
-    * Mercuria
-    * An-an Lee
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="PICKLES" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Tooth Fairy
-    * Vila
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="VILA" />
   </Fragment>
 </ManeBulletinContent>

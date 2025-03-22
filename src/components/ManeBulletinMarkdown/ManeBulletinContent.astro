@@ -10,9 +10,10 @@ interface Props {
   title: string;
   afflatus: string;
   dmgType: string;
+  isDev?: boolean;
 }
 
-const { id, title, afflatus, dmgType } = Astro.props;
+const { id, title, afflatus, dmgType, isDev } = Astro.props;
 ---
 
 <div class="flex flex-col md:flex-row items-center">
@@ -36,16 +37,20 @@ const { id, title, afflatus, dmgType } = Astro.props;
   </div>
 </div>
 
-<div class="mt-4 alert border-primary-content gap-y-2">
-  <Icon icon="info-circle" />
-  <div>
-    <p class="font-bold">Notice!</p>
-    <div class="text-xs">
-      The data is continuously updated, and the following content may not be
-      final.
+{
+  isDev && (
+    <div class="my-4 alert border-primary-content gap-y-2">
+      <Icon icon="info-circle" />
+      <div>
+        <p class="font-bold">Notice!</p>
+        <div class="text-xs">
+          This is a development version, and the following content may not be
+          final.
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  )
+}
 
 <slot name="stage-mechanism-title" />
 

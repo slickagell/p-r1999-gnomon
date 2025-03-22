@@ -48,6 +48,7 @@ export default () => ({
     link: "#",
   },
   selectedPattern: "",
+  resonanceCode: "",
   initialRecommendedData: [],
   initialActiveResonancePieces: [],
 
@@ -249,6 +250,7 @@ export default () => ({
             label: "To be updated",
             link: "#",
           };
+          this.resonanceCode = "";
           this.resonanceGeoJsonList = [];
           return;
         }
@@ -271,6 +273,7 @@ export default () => ({
             label: "To be updated",
             link: "#",
           };
+          this.resonanceCode = "";
           return;
         }
 
@@ -284,6 +287,7 @@ export default () => ({
 
         this.selectedRecommended = `${this.activeResonanceLevel}-${defaultIndex}`;
         this.selectedRecommendedSource = defaultResonanceData.source;
+        this.resonanceCode = defaultResonanceData.code ?? "";
 
         this.initRecommendedResonanceData(defaultResonanceData);
       }
@@ -1414,6 +1418,7 @@ export default () => ({
 
     this.selectedRecommended = value;
     this.selectedRecommendedSource = resonanceData.source;
+    this.resonanceCode = resonanceData.code;
 
     this.resetPiecesQuantity();
     this.resetGeneralStats();

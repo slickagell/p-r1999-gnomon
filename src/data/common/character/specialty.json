@@ -79,5 +79,11 @@
   },
   "EUREKA": {
     "title": "Eureka"
+  },
+  "INSPIRATION": {
+    "title": "Inspiration"
+  },
+  "BUFF": {
+    "title": "Buff"
   }
 }

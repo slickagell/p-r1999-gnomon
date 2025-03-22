@@ -6,6 +6,7 @@ afflatus: "SPIRIT"
 keyUnitFeature: "Units can use Ultimate frequently"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -52,26 +53,34 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Lucy
-    * Melania
-    * Kaalaa Baunna
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="MELANIA" />
+
+    <CharacterHeadIcon code="KAALAA_BAUNAA" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * 6
-    * Mercuria
-    * Isolde
-    * Pickles
-    * Necrologist
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="PICKLES" />
+
+    <CharacterHeadIcon code="NECROLOGIST" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Kakania
-    * Vila
-    * Tooth Fairy
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
   </Fragment>
 </ManeBulletinContent>

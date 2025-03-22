@@ -6,6 +6,7 @@ afflatus: "INTELLECT"
 keyUnitFeature: "Units with mass attack skills"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -51,23 +52,28 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Anjo Nala
-    * Lucy
-    * 37
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="37" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * Isolde
-    * 6
-    * Mercuria
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="MERCURIA" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Kakania
-    * Tooth Fairy
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
   </Fragment>
 </ManeBulletinContent>

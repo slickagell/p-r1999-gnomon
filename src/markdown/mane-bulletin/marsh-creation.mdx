@@ -6,6 +6,7 @@ afflatus: "BEAST"
 keyUnitFeature: "Units with Mineral or Beast afflatus"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -56,27 +57,36 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Jiu Niangzi
-    * Melania
-    * Kaalaa Baunna
+    <CharacterHeadIcon code="JIU_NIANGZI" />
+
+    <CharacterHeadIcon code="MELANIA" />
+
+    <CharacterHeadIcon code="KAALAA_BAUNAA" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * Pickles
-    * 6
-    * X
-    * Horropedia
-    * Sonetto
+    <CharacterHeadIcon code="PICKLES" />
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="X" />
+
+    <CharacterHeadIcon code="HORROPEDIA" />
+
+    <CharacterHeadIcon code="SONETTO" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Voyager
-    * Ms. Newbabel
-    * Ballon Party
-    * Tooth Fairy
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="BALLOON_PARTY" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
   </Fragment>
 </ManeBulletinContent>

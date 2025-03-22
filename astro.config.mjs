@@ -10,8 +10,11 @@ import rehypeSlug from "rehype-slug";
 import remarkDirective from "remark-directive";
 import { directivePlugin } from "./src/scripts/directive-plugin.mjs";
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
+  site: "https://reverse1999-gnomon.pages.dev",
   build: {
     format: "file",
   },
@@ -27,6 +30,9 @@ export default defineConfig({
     }),
     pagefind(),
     solidJs(),
+    sitemap({
+      filter: (page) => !page.includes("/dev/"),
+    }),
   ],
   devToolbar: {
     enabled: false,

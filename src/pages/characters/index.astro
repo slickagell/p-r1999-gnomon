@@ -19,11 +19,14 @@ function sortCharacters(a, b) {
     return -(a.data.version - b.data.version);
   }
 
-  if (dayjs(a.data.releaseDate).diff(dayjs(b.data.releaseDate), "day") > 0) {
+  const diffDay = dayjs(a.data.releaseDate).diff(dayjs(b.data.releaseDate));
+  if (diffDay > 0) {
     return -1;
+  } else if (diffDay < 0) {
+    return 1;
   }
 
-  return a.data.title - b.data.title;
+  return ("" + a.data.title).localeCompare(b.data.title);
 }
 
 const versions = [
@@ -37,6 +40,7 @@ const versions = [
 
 <Layout
   title="Characters"
+  description="Character list in Reverse: 1999."
   breadcrumbs={[
     {
       label: "Home",

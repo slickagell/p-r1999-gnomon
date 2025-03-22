@@ -6,6 +6,7 @@ afflatus: "STAR"
 keyUnitFeature: "Units with Plant afflatus or deal Mental DMG"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinContent.astro";
 
 <ManeBulletinContent {...frontmatter}>
@@ -63,25 +64,32 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
 
-    * Lucy
-    * Marcus
-    * 37
-    * Windsong
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="MARCUS" />
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="WINDSONG" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
 
-    * Mercuria
-    * An-an Lee
-    * 6
-    * Isolde
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="ISOLDE" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
 
-    * Kakania
-    * Vila
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
   </Fragment>
 </ManeBulletinContent>

@@ -14,13 +14,16 @@ import { getCollection, getEntry, render } from "astro:content";
 const maneBulletinEntry = await getEntry("mane-bulletin", "general")!;
 const bossEntries = await getCollection("mane-bulletin", ({ id }) => {
   return id !== "general";
-});
+}).then((entries) =>
+  entries.sort((a, b) => ("" + a.data.title).localeCompare(b.data.title))
+);
 
 const { Content } = await render(maneBulletinEntry);
 ---
 
 <Layout
   title="Mane's Bulletin"
+  description="Mane's Bulletin is a raid event that makes you battle against a series of bosses in Reverse: 1999."
   breadcrumbs={[
     {
       label: "Home",

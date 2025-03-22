@@ -2,6 +2,7 @@
 title: "Bathyal Zone 300M-II"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -10,7 +11,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     * Insight III Level 40
   </Fragment>
 
-  <Fragment slot="stage-mechanism-content">
+  <Fragment slot="stage-environment-content">
     :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, characters who haven't taken action this round get 1 stack of :effect{code="CRIPPLING_WEAKNESS"} and 3 stacks of :effect{code="FLINCH"}.
@@ -18,5 +19,93 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, all enemies gain Moxie +1.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Whenever being attacked, the attacker gets non-Stronger Afflatus Damage **-60%** for that attack.
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * There is only 1 enemy: *Anjo Nala*.
+    * In the beginning of the battle, *Anjo Nala* already have **5** Moxie to cast Ultimate.
+      * When casting Ultimate, she will **summon** another enemy.
+      * New enemy combine with *Anjo Nala* will make the amount of DMG our allies receive is extremely large.
+      * When in channeling status of Ultimate, she will consume Moxie and deal Mass attack to our team.
+    * When our ally use Ultimate, all enemies will gain **1** Moxie.
+    * When *Anjo Nala* is in channeling status, if she receive **single-target** attack, she will lose **1** Moxie.
+    * If the summoned enemy is defeated, *Anjo Nala* will lose **5** Moxie.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * If there are *Anjo Nala* and the summoned enemy, focus on attacking the summoned enemy first.
+    * Bring sustain units to withstand attacks from *Anjo Nala* and the summoned enemy.
+    * Can bring units with ability to **reduce Moxie** or with :effect{code="SEAL"}, :effect{code="NIGHTMARE"} effect to prevent *Anjo Nala* from casting Ultimate. Focus on using these reduce Moxie skills on the round that *Anjo Nala* prepares to cast Ultimate.
+    * **Ideally**, bring 1 DPS unit, 1 sustain unit and 2 units who can prevent Ultimate.
+    * Try to make every ally perform at least 1 action in the round to limit receiving :effect{code="CRIPPLING_WEAKNESS"}, :effect{code="FLINCH"} effects.
+    * You can choose **any** Myth Manifests based on your team
+      * Using *Operatic Reflection* will gain more Moxie that helps prevent Ultimate.
+      * With *Mountain Ghost*, it helps rank up incantations, useful for allies who can reduce Moxie with rank 2/3 incantations.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="JIU_NIANGZI" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="WILLOW" />
+
+    <CharacterHeadIcon code="MELANIA" />
+
+    <CharacterHeadIcon code="REGULUS" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="6" />
+
+    <CharacterHeadIcon code="X" />
+
+    <CharacterHeadIcon code="NICK_BOTTOM" />
+
+    <CharacterHeadIcon code="SPUTNIK" />
+
+    <CharacterHeadIcon code="THE_FOOL" />
+
+    <CharacterHeadIcon code="DIGGERS" />
+
+    <CharacterHeadIcon code="CLICK" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="BALLOON_PARTY" />
+
+    <CharacterHeadIcon code="YENISEI" />
+
+    <CharacterHeadIcon code="BARBARA" />
   </Fragment>
 </ZoneContent>

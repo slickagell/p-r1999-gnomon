@@ -2,6 +2,7 @@
 title: "Mesophotic Zone 190M"
 ---
 
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 
 <ZoneContent {...frontmatter}>
@@ -9,9 +10,87 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     * Insight III Level 18
   </Fragment>
 
-  <Fragment slot="stage-mechanism-content">
+  <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 2 rounds, a random character gets :effect{code="DISARM"} for 1 round.
+  </Fragment>
+
+  <Fragment slot="stage-info-title">
+    ## Stage info
+  </Fragment>
+
+  <Fragment slot="stage-info-content">
+    * There is only **1** enemy, *Dikke*, with high HP, DMG and *\[Control]* immunity.
+    * Every attacks of *Dikke* will increases her ATK or Leech Rate based on the difference between *Dikke*'s HP and target's, higher or lower.
+    * Every **4** rounds, *Dikke* will create an :effect{code="ARRAY"} that increases her ATK and Leech Rate, also reduce DMG Taken.
+    * When in :effect{code="ARRAY"}, *Dikke* will also deals DMG to the far **left** ally at the end of the round.
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-title">
+    ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Bring 1 ally who **can create** :effect{code="ARRAY"} to override *Dikke*'s :effect{code="ARRAY"}. For example, some allies below:
+      * <CharacterHeadIcon code="LOPERA" />
+      * <CharacterHeadIcon code="TUESDAY" />
+      * <CharacterHeadIcon code="GETIAN" />
+      * <CharacterHeadIcon code="SEMMELWEIS" />
+
+    * If you don't have a character who can create :effect{code="ARRAY"}, bring sustain ally and try to keep HP higher than *Dikke*, prevent her from increasing her ATK.
+      * When *Dikke* is in :effect{code="ARRAY"}, she will attack the farthest left ally, so place your best resistance ally in the **first slot** to optimize sustain.
+
+    - Pick DPS characters who can deals high DMG to **single target**.
+
+    - You can choose **any** Myth Manifests based on your team.
+  </Fragment>
+
+  <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="TUESDAY" />
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="SEMMELWEIS" />
+
+    <CharacterHeadIcon code="BKORNBLUME" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="GETIAN" />
+
+    <CharacterHeadIcon code="SOTHEBY" />
+
+    <CharacterHeadIcon code="LORELEI" />
+
+    <CharacterHeadIcon code="NECROLOGIST" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="BALLOON_PARTY" />
+
+    <CharacterHeadIcon code="YENISEI" />
+
+    <CharacterHeadIcon code="BARBARA" />
   </Fragment>
 </ZoneContent>

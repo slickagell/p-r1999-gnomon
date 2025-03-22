@@ -27,6 +27,10 @@ const { Content } = await render(entry);
 
 <Layout
   title={`${entry.data.title} | Myth Manifest | Reveries in the Rain`}
+  description={`${entry.data.title} is a myth manifest in Reveries in the Rain in Reverse: 1999.`}
+  og={{
+    imageUrl: `/images/reveries-in-the-rain/${entry.id}.png`,
+  }}
   breadcrumbs={[
     {
       label: "Home",
