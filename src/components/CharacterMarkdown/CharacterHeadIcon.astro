@@ -7,9 +7,10 @@ interface Props {
   code: string;
   isInline?: boolean;
   customClass?: string;
+  note?: string;
 }
 
-const { code, isInline, customClass } = Astro.props;
+const { code, isInline, customClass, note } = Astro.props;
 ---
 
 <div class={twMerge("my-2", isInline && "my-0 inline-block", customClass)}>
@@ -18,6 +19,6 @@ const { code, isInline, customClass } = Astro.props;
     class="transition hover:opacity-75"
   >
     <CharacterImg variant="headicon" id={kebabCase(code)} class="mr-2" />
-    <span>{capitalCase(code)}</span>
+    <span>{capitalCase(code)}{note && ` ${note}`}</span>
   </a>
 </div>

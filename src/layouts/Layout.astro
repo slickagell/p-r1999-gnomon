@@ -8,13 +8,17 @@ import Search from "@components/Search.astro";
 
 interface Props {
   title: string;
+  description?: string;
   breadcrumbs?: {
     href?: string;
     label: string;
   }[];
+  og?: {
+    imageUrl?: string;
+  };
 }
 
-const { title, breadcrumbs } = Astro.props;
+const { title, breadcrumbs, description, og } = Astro.props;
 
 const menu = [
   {
@@ -46,7 +50,12 @@ const menu = [
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Reverse:1999 Gnomon is a fanmade website for turn-based RPG, Reverse:1999, a game developed by Bluepoch"
+      content={description ??
+        "Reverse:1999 Gnomon is a fanmade website for turn-based RPG, Reverse:1999, a game developed by Bluepoch"}
+    />
+    <meta
+      name="google-site-verification"
+      content="F-Yl6UFkUJ2m2cIfk5_h-isNb0egAnBanjRIN47iWb0"
     />
     <meta name="viewport" content="width=device-width" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -55,6 +64,25 @@ const menu = [
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={`${title} | Reverse:1999 Gnomon`} />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:description"
+      content={description ??
+        "Reverse:1999 Gnomon is a fanmade website for turn-based RPG, Reverse:1999, a game developed by Bluepoch"}
+    />
+    <meta
+      property="og:image"
+      content={(Astro.site?.origin ?? "") +
+        (og?.imageUrl ?? `/layout/logo.png`)}
+    />
+    <meta
+      property="og:image:alt"
+      content={`${title} | Reverse:1999 Gnomon logo`}
+    />
+    <meta property="og:url" content={Astro.site ?? ""} />
+    <meta property="og:site_name" content="Reverse:1999 Gnomon" />
     <title data-pagefind-meta="title">{`${title} | Reverse:1999 Gnomon`}</title>
   </head>
   <body>

@@ -9,6 +9,7 @@ import Tooltip from "@components/Tooltip.astro";
 import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
 import { getCollection, render } from "astro:content";
+import { capitalCase } from "change-case";
 
 export async function getStaticPaths() {
   const characterEntries = await getCollection("characters");
@@ -24,6 +25,10 @@ const { Content } = await render(entry);
 
 <Layout
   title={`${entry.data.title} | Character`}
+  description={`${entry.data.title} is a ${capitalCase(entry.data.afflatus)} character released in version ${entry.data.version} in Reverse: 1999.`}
+  og={{
+    imageUrl: `/images/characters/${entry.id}/headicon.png`,
+  }}
   breadcrumbs={[
     {
       label: "Home",
