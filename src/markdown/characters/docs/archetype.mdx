@@ -5,6 +5,16 @@ import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.a
 <Fragment>
 ::toc
 
+## Array
+<div class='mb-6'>
+Have :effect{code="ARRAY"} skill effect.
+</div>
+
+- <CharacterHeadIcon code="GETIAN" />
+- <CharacterHeadIcon code="LOPERA" />
+- <CharacterHeadIcon code="SEMMELWEIS" />
+- <CharacterHeadIcon code="TUESDAY" />
+
 ## Bullet
 <div class='mb-6'>
 Using *[Bullet]* type
@@ -23,7 +33,7 @@ Using *[Bullet]* type
 With :effect{code="CAPTIVATED"} effect.
 </div>
 
-- <CharacterHeadIcon code="ANJO_NALA" note='(skill 1, skill 2)' />
+- <CharacterHeadIcon code="ANJO_NALA" ><span slot='note'>(skill 1, skill 2, through *[Titillated]* effect)</span></CharacterHeadIcon>
 
 ### Daze
 <div class='mb-6'>
@@ -32,7 +42,7 @@ With :effect{code="DAZE"} effect.
 
 - <CharacterHeadIcon code="AN_AN_LEE" note='(skill 1)' />
 - <CharacterHeadIcon code="MEDICINE_POCKET" note='(ultimate)' />
-- <CharacterHeadIcon code="MESMER_JR" note='(skill 2, ultimate)' />
+- <CharacterHeadIcon code="MESMER_JR" ><span slot='note'>(skill 2, ultimate, through *[Paralyze]* effect)</span></CharacterHeadIcon>
 - <CharacterHeadIcon code="SWEETHEART" note='(ultimate)' />
 - <CharacterHeadIcon code="WHITE_RUM" note='(ultimate)' />
 
@@ -69,7 +79,7 @@ With :effect{code="PETRIFY"} effect.
 
 - <CharacterHeadIcon code="DRUVIS_III" note='(skill-1, ultimate)' />
 - <CharacterHeadIcon code="JESSICA" note='(euphoria 1)' />
-- <CharacterHeadIcon code="SATSUKI" note='(skill-1, ultimate)' />
+- <CharacterHeadIcon code="SATSUKI" ><span slot='note'>(skill-1, ultimate, through *[Rigidity]* effect)</span></CharacterHeadIcon>
 
 ### Seal
 <div class='mb-6'>
@@ -118,6 +128,81 @@ With :effect{code="CONCEALMENT"} effect.
 ### Non-Ultimate
 - <CharacterHeadIcon code="REGULUS" note='(ultimate)' />
 
+## Empower Incantation
+<div class='mb-6'>
+With :effect{code="EMPOWER_INCANTATION_I"}/:effect{code="EMPOWER_INCANTATION_II"} effect.
+</div>
+
+- <CharacterHeadIcon code="6" note='(skill 2)' />
+- <CharacterHeadIcon code="AN_AN_LEE" note='(ultimate)' />
+- <CharacterHeadIcon code="ARGUS" note='(skill 1)' />
+- <CharacterHeadIcon code="BARBARA" ><span slot='note'>(ultimate, through *[Counting Sheep]* card)</span></CharacterHeadIcon>
+- <CharacterHeadIcon code="BETTE" note='(ultimate)' />
+- <CharacterHeadIcon code="KAALAA_BAUNAA" note='(insight 3)' />
+- <CharacterHeadIcon code="MARCUS" note='(insight 1)' />
+- <CharacterHeadIcon code="YENISEI" note='(insight 3)' />
+
+## Force Field
+<div class='mb-6'>
+Have :effect{code="FORCE_FIELD"} skill effect.
+</div>
+
+- <CharacterHeadIcon code="FLUTTERPAGE" />
+- <CharacterHeadIcon code="LUCY" />
+- <CharacterHeadIcon code="MERCURIA" />
+
+## Moxie
+
+### Gain
+<div class='mb-6'>
+Grant Moxie to self or allies.
+</div>
+
+- <CharacterHeadIcon code="A_KNIGHT" note='(skill 1, skill 2)' />
+- <CharacterHeadIcon code="BARBARA" ><span slot='note'>(ultimate, through *[Counting Sheep]* card)</span></CharacterHeadIcon>
+- <CharacterHeadIcon code="CENTURION" note='(skill 2)' />
+- <CharacterHeadIcon code="DARLEY_CLATTER" note='(ultimate)' />
+- <CharacterHeadIcon code="DOOR" note='(ultimate)' />
+- <CharacterHeadIcon code="EZRA" note='(ultimate)' />
+- <CharacterHeadIcon code="LEILANI" note='(ultimate, insight 1)' />
+- <CharacterHeadIcon code="LOPERA" note='(insight 1)'/>
+- <CharacterHeadIcon code="MARCUS" ><span slot='note'>(insight 3, through *[Perusal]* effect)</span></CharacterHeadIcon>
+- <CharacterHeadIcon code="MELANIA" note='(skill 2)' />
+- <CharacterHeadIcon code="MERCURIA" note='(insight 3)'/>
+- <CharacterHeadIcon code="PICKLES" note='(insight 1)' />
+- <CharacterHeadIcon code="SHAMANE" ><span slot='note'>(skill 1, through *[Nature Blessing]* effect, euphoria 1)</span></CharacterHeadIcon>
+- <CharacterHeadIcon code="VILA" ><span slot='note'>(ultimate, through *[Song of Inspiration]* card)</span></CharacterHeadIcon>
+
+### Drain
+<div class='mb-6'>
+Reduce Moxie of enemies.
+</div>
+
+- <CharacterHeadIcon code="CLICK" note='(skill 2)' />
+- <CharacterHeadIcon code="LA_SOURCE" note='(ultimate)' />
+- <CharacterHeadIcon code="MS_RADIO" note='(insight 1)' />
+- <CharacterHeadIcon code="NICK_BOTTOM" note='(skill 1)' />
+- <CharacterHeadIcon code="REGULUS" note='(skill 2)' />
+- <CharacterHeadIcon code="THE_FOOL" note='(skill 1)' />
+- <CharacterHeadIcon code="X" note='(ultimate)' />
+
+### Lock (Disconcert)
+<div class='mb-6'>
+With :effect{code="DISCONCERT"} effect.
+</div>
+
+- <CharacterHeadIcon code="MS_RADIO" note='(ultimate)' />
+- <CharacterHeadIcon code="TTT" ><span slot='note'>(ultimate, through *[Disconnect]* effect)</span></CharacterHeadIcon>
+
+- <CharacterHeadIcon code="X" note='(insight 3)' />
+
+### Store
+<div class='mb-6'>
+Store overflow Moxie.
+</div>
+
+- <CharacterHeadIcon code="TUESDAY" note='(ultimate)' />
+
 ## Position
 <div class='mb-6'>
 Buff allies based on their position.
@@ -125,6 +210,20 @@ Buff allies based on their position.
 
 - <CharacterHeadIcon code="AVGUST" note='(ultimate)' />
 - <CharacterHeadIcon code="LOPERA" note='(skill 1)' />
+
+## Precast Incantation
+<div class='mb-6'>
+With :effect{code="PRECAST_INCANTATION"} card.
+</div>
+
+- <CharacterHeadIcon code="MARCUS" note='(ultimate)' />
+
+## Rank up
+<div class='mb-6'>
+With :effect{code="RANK_UP"} effect.
+</div>
+
+- <CharacterHeadIcon code="MERCURIA" note='(ultimate)' />
 
 ## Shifting
 <div class='mb-6'>
