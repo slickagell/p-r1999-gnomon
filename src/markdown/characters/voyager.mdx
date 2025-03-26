@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -152,6 +153,33 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      Increases Max Eureka. At the start of the round, gain Eureka. Whenever an ally consumes Eureka, accumulate points of [Inspiration]. When entering battle, accumulate some points of [Inspiration]. [Impromptu Incantation] splits on odd-numbered attacks.
+      • [Inspiration]: For every Eureka consumed, accumulate [Inspiration]. At the start of each round, randomly distribute Inspiration points onto basic incantations.
+      • [Impromptu Incantation]:When actively casting an incantation with [Inspiration] points on it, add an [Impromptu Incantation] to the end of the spell queue, and all Inspiration points on these casted incantations will be granted to the [Impromptu Incantation].
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      After casting [Starlight Sonata] or [Concerto in D-fense], consume some Eureka to grant more attack instance to [Impromptu Incantation] for the round. and [Impromptu Incantation]'s split attack will select additional enemy target.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      After entering battle, gain Moxie. After casting [Galaxy on the Strings], gain more Moxie. If the target is in the [Confusion] status, inflict [Where the Stars Lead] on the target for some rounds.
+      • Where the Stars Lead: Impromptu Incantations target this unit with priority. When being attacked by an Impromptu Incantation, takes more Genesis DMG.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      [Galaxy on the Strings]: Trigger [Where the Stars Lead] and deal additional DMG even if the target is not in the [Confusion] status, and grants some points of [Inspiration] to [Impromptu Incantation] for the round.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

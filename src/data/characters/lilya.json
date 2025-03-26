@@ -28,7 +28,7 @@
   },
   "euphorias": [
     {
-      "code": "what-roars-like-a-victory-song",
+      "code": "WHAT_ROARS_LIKE_A_VICTORY_SONG",
       "name": "What Roars Like a Victory Song?",
       "materials": {
         "0": [
@@ -230,7 +230,7 @@
       }
     },
     {
-      "code": "the-kamchatka-hunt",
+      "code": "THE_KAMCHATKA_HUNT",
       "name": "The Kamchatka Hunt",
       "materials": {
         "0": [

@@ -26,7 +26,6 @@ import CHARACTER from "@data/characters/shamane.json";
 import RESONANCE from "@data/resonance/characters/shamane.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='a-pilgrims-duty')
 
 # Shamane
 
@@ -162,20 +161,20 @@ export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='a-pilgrims-du
   </Fragment>
 
   <Fragment slot="euphoria-content">
-    <div x-show={`active==='${euphoria1.code}'`}>
-      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} stats={euphoria1.stats[1]} />
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
       After another ally casts an ultimate, gain **2** stacks of :effect{code="RIPPLING_ENERGY"} for self.
 
-      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} stats={euphoria1.stats[2]} />
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
       After casting an ultimate, consume all stacks of :effect{code="RIPPLING_ENERGY"} if able; for every **2** stacks consumed, grant Moxie **+1** to a random ally.
 
-      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} stats={euphoria1.stats[3]} />
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
       Whenever consuming :effect{code="RIPPLING_ENERGY"} to restore Moxie **+1** for an ally, grant **5** additional stacks of :effect{code="CEREMONIOUS"} to the target.
 
-      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} stats={euphoria1.stats[4]} />
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
       After another ally casts an ultimate, gain an additional stack of :effect{code="RIPPLING_ENERGY"} for self; right before casting an ultimate, gain **2** stacks of :effect{code="RIPPLING_ENERGY"} for self.
     </div>

@@ -26,8 +26,6 @@ import CHARACTER from "@data/characters/bkornblume.json";
 import RESONANCE from "@data/resonance/characters/bkornblume.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='the-many-whispers-heard-from-a-room')
-
 # Bkornblume
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
@@ -162,20 +160,20 @@ export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='the-many-whis
   </Fragment>
 
   <Fragment slot="euphoria-content">
-    <div x-show={`active==='${euphoria1.code}'`}>
-      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} stats={euphoria1.stats[1]} />
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
       At the end of the round, if this unit was not attacked for the round, gain Moxie **+1**.
 
-      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} stats={euphoria1.stats[2]} />
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
       At the end of the round, inflict **1** stack of :effect{code="WEAKNESS"} on enemy units that did not attack this unit during the round.
 
-      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} stats={euphoria1.stats[3]} />
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
       Gain an additional DMG Dealt **+10%** against enemies holding a *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status.
 
-      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} stats={euphoria1.stats[4]} />
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
       When casting *\[Uninvited Reviewer]*, Penetration Rate **+30%** for self. Right before casting *\[Uninvited Reviewer]*, inflict Critical DEF **-20%** on the target for 2 rounds.
     </div>

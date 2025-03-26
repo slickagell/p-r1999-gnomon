@@ -10,6 +10,7 @@ import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
+import { kebabCase } from "change-case";
 
 type Props = {
   id: string;
@@ -367,7 +368,7 @@ const hasInsight3Materials = insightMaterials?.["3"];
                   />
                   <CustomImage
                     class="relative w-full z-10"
-                    src={`/images/euphoria/${euphoria.code}.png`}
+                    src={`/images/euphoria/${kebabCase(euphoria.code)}.png`}
                     alt="udimo"
                   />
                 </div>
