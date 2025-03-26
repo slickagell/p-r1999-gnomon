@@ -34,22 +34,68 @@
         "0": [
           {
             "code": "KEY_OF_THOUGHT",
-            "require": 12
+            "require": 6
           },
           {
             "code": "SPROUT_OF_FANTASY",
-            "require": 40
+            "require": 20
           },
           {
             "code": "SEED_OF_INSPIRATION",
-            "require": 200
+            "require": 100
           },
           {
-            "code": "FRUIT_OF_GOOD_AND_EVIL",
-            "require": 3
+            "code": "SERPENT_SCEPTER",
+            "require": 2
           }
         ],
         "1": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 10
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 40
+          },
+          {
+            "code": "WYRMLING_SKELETON",
+            "require": 2
+          }
+        ],
+        "2": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 15
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 60
+          },
+          {
+            "code": "SERPENT_SCEPTER",
+            "require": 1
+          }
+        ],
+        "3": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 18
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 70
+          },
+          {
+            "code": "RHEINGOLD",
+            "require": 1
+          },
+          {
+            "code": "SILVER_BULLET",
+            "require": 1
+          }
+        ],
+        "4": [
           {
             "code": "SPROUT_OF_FANTASY",
             "require": 20
@@ -59,66 +105,12 @@
             "require": 80
           },
           {
-            "code": "RHEINGOLD",
-            "require": 1
-          },
-          {
-            "code": "WYRMLING_SKELETON",
-            "require": 1
-          }
-        ],
-        "2": [
-          {
-            "code": "SPROUT_OF_FANTASY",
-            "require": 30
-          },
-          {
-            "code": "SEED_OF_INSPIRATION",
-            "require": 120
-          },
-          {
             "code": "FRUIT_OF_GOOD_AND_EVIL",
             "require": 1
           },
           {
-            "code": "SILVER_BULLET",
-            "require": 2
-          }
-        ],
-        "3": [
-          {
-            "code": "SPROUT_OF_FANTASY",
-            "require": 35
-          },
-          {
-            "code": "SEED_OF_INSPIRATION",
-            "require": 140
-          },
-          {
-            "code": "MISTILTEINN",
-            "require": 2
-          },
-          {
             "code": "MURMUR_OF_INSANITY",
-            "require": 2
-          }
-        ],
-        "4": [
-          {
-            "code": "SPROUT_OF_FANTASY",
-            "require": 40
-          },
-          {
-            "code": "SEED_OF_INSPIRATION",
-            "require": 160
-          },
-          {
-            "code": "GOLDEN_FLEECE",
-            "require": 2
-          },
-          {
-            "code": "GLOWING_MOTHWING",
-            "require": 2
+            "require": 1
           }
         ]
       },
@@ -127,24 +119,24 @@
           "materials": [
             {
               "code": "SEED_OF_INSPIRATION",
-              "require": 195
+              "require": 98
             }
           ],
           "data": {
             "HP": {
-              "value": 180
+              "value": 130
             },
             "ATTACK": {
               "value": 30
             },
             "REALITY_DEFENSE": {
-              "value": 8
+              "value": 14
             },
             "MENTAL_DEFENSE": {
-              "value": 8
+              "value": 6
             },
-            "POISON_DMG": {
-              "value": 5,
+            "INCANTATION_MIGHT": {
+              "value": 7.5,
               "unit": "%"
             }
           }
@@ -153,24 +145,24 @@
           "materials": [
             {
               "code": "SEED_OF_INSPIRATION",
-              "require": 446
+              "require": 222
             }
           ],
           "data": {
             "HP": {
-              "value": 310
+              "value": 230
             },
             "ATTACK": {
-              "value": 50
+              "value": 53
             },
             "REALITY_DEFENSE": {
-              "value": 13
+              "value": 20
             },
             "MENTAL_DEFENSE": {
-              "value": 18
+              "value": 14
             },
-            "POISON_DMG": {
-              "value": 7.5,
+            "INCANTATION_MIGHT": {
+              "value": 11.5,
               "unit": "%"
             }
           }
@@ -179,24 +171,24 @@
           "materials": [
             {
               "code": "SEED_OF_INSPIRATION",
-              "require": 776
+              "require": 387
             }
           ],
           "data": {
             "HP": {
-              "value": 470
+              "value": 360
             },
             "ATTACK": {
-              "value": 65
+              "value": 71
             },
             "REALITY_DEFENSE": {
-              "value": 23
+              "value": 31
             },
             "MENTAL_DEFENSE": {
-              "value": 23
+              "value": 17
             },
-            "POISON_DMG": {
-              "value": 10,
+            "INCANTATION_MIGHT": {
+              "value": 15.5,
               "unit": "%"
             }
           }
@@ -205,24 +197,24 @@
           "materials": [
             {
               "code": "SEED_OF_INSPIRATION",
-              "require": 1811
+              "require": 936
             }
           ],
           "data": {
             "HP": {
-              "value": 680
+              "value": 545
             },
             "ATTACK": {
-              "value": 95
+              "value": 101
             },
             "REALITY_DEFENSE": {
-              "value": 48
+              "value": 58
             },
             "MENTAL_DEFENSE": {
-              "value": 48
+              "value": 40
             },
-            "POISON_DMG": {
-              "value": 10,
+            "INCANTATION_MIGHT": {
+              "value": 15.5,
               "unit": "%"
             }
           }

@@ -59,11 +59,11 @@
             "require": 80
           },
           {
-            "code": "RHEINGOLD",
+            "code": "MISTILTEINN",
             "require": 1
           },
           {
-            "code": "WYRMLING_SKELETON",
+            "code": "GLOWING_MOTHWING",
             "require": 1
           }
         ],
@@ -77,11 +77,11 @@
             "require": 120
           },
           {
-            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "code": "GOLDEN_FLEECE",
             "require": 1
           },
           {
-            "code": "SILVER_BULLET",
+            "code": "WATCH_CORE",
             "require": 2
           }
         ],
@@ -95,11 +95,11 @@
             "require": 140
           },
           {
-            "code": "MISTILTEINN",
+            "code": "SERPENT_SCEPTER",
             "require": 2
           },
           {
-            "code": "MURMUR_OF_INSANITY",
+            "code": "GOLDBELL_SPIRIT_BOTTLE",
             "require": 2
           }
         ],
@@ -113,11 +113,11 @@
             "require": 160
           },
           {
-            "code": "GOLDEN_FLEECE",
+            "code": "RHEINGOLD",
             "require": 2
           },
           {
-            "code": "GLOWING_MOTHWING",
+            "code": "BOGEYMAN",
             "require": 2
           }
         ]
@@ -132,19 +132,19 @@
           ],
           "data": {
             "HP": {
-              "value": 180
+              "value": 130
             },
             "ATTACK": {
               "value": 30
             },
             "REALITY_DEFENSE": {
-              "value": 8
+              "value": 15
             },
             "MENTAL_DEFENSE": {
-              "value": 8
+              "value": 10
             },
-            "POISON_DMG": {
-              "value": 5,
+            "INCANTATION_MIGHT": {
+              "value": 7.5,
               "unit": "%"
             }
           }
@@ -158,19 +158,19 @@
           ],
           "data": {
             "HP": {
-              "value": 310
+              "value": 235
             },
             "ATTACK": {
-              "value": 50
+              "value": 53
             },
             "REALITY_DEFENSE": {
-              "value": 13
+              "value": 21
             },
             "MENTAL_DEFENSE": {
-              "value": 18
+              "value": 21
             },
-            "POISON_DMG": {
-              "value": 7.5,
+            "INCANTATION_MIGHT": {
+              "value": 11.5,
               "unit": "%"
             }
           }
@@ -184,19 +184,19 @@
           ],
           "data": {
             "HP": {
-              "value": 470
+              "value": 370
             },
             "ATTACK": {
-              "value": 65
+              "value": 71
             },
             "REALITY_DEFENSE": {
-              "value": 23
+              "value": 32
             },
             "MENTAL_DEFENSE": {
-              "value": 23
+              "value": 27
             },
-            "POISON_DMG": {
-              "value": 10,
+            "INCANTATION_MIGHT": {
+              "value": 15.5,
               "unit": "%"
             }
           }
@@ -210,19 +210,19 @@
           ],
           "data": {
             "HP": {
-              "value": 680
+              "value": 615
             },
             "ATTACK": {
-              "value": 95
+              "value": 106
             },
             "REALITY_DEFENSE": {
-              "value": 48
+              "value": 49
             },
             "MENTAL_DEFENSE": {
-              "value": 48
+              "value": 49
             },
-            "POISON_DMG": {
-              "value": 10,
+            "INCANTATION_MIGHT": {
+              "value": 15.5,
               "unit": "%"
             }
           }

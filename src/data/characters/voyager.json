@@ -45,7 +45,7 @@
             "require": 200
           },
           {
-            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "code": "RHEINGOLD",
             "require": 3
           }
         ],
@@ -59,11 +59,11 @@
             "require": 80
           },
           {
-            "code": "RHEINGOLD",
+            "code": "FRUIT_OF_GOOD_AND_EVIL",
             "require": 1
           },
           {
-            "code": "WYRMLING_SKELETON",
+            "code": "INCORRUPT_MONKEYPAW",
             "require": 1
           }
         ],
@@ -77,11 +77,11 @@
             "require": 120
           },
           {
-            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "code": "MISTILTEINN",
             "require": 1
           },
           {
-            "code": "SILVER_BULLET",
+            "code": "WYRMLING_SKELETON",
             "require": 2
           }
         ],
@@ -95,11 +95,11 @@
             "require": 140
           },
           {
-            "code": "MISTILTEINN",
+            "code": "GOLDEN_FLEECE",
             "require": 2
           },
           {
-            "code": "MURMUR_OF_INSANITY",
+            "code": "SILVER_BULLET",
             "require": 2
           }
         ],
@@ -113,11 +113,11 @@
             "require": 160
           },
           {
-            "code": "GOLDEN_FLEECE",
+            "code": "SERPENT_SCEPTER",
             "require": 2
           },
           {
-            "code": "GLOWING_MOTHWING",
+            "code": "MURMUR_OF_INSANITY",
             "require": 2
           }
         ]
@@ -132,19 +132,19 @@
           ],
           "data": {
             "HP": {
-              "value": 180
+              "value": 165
             },
             "ATTACK": {
               "value": 30
             },
             "REALITY_DEFENSE": {
-              "value": 8
+              "value": 9
             },
             "MENTAL_DEFENSE": {
-              "value": 8
+              "value": 10
             },
-            "POISON_DMG": {
-              "value": 5,
+            "CRITICAL_RATE": {
+              "value": 7.5,
               "unit": "%"
             }
           }
@@ -158,19 +158,19 @@
           ],
           "data": {
             "HP": {
-              "value": 310
+              "value": 305
             },
             "ATTACK": {
-              "value": 50
+              "value": 53
             },
             "REALITY_DEFENSE": {
-              "value": 13
+              "value": 14
             },
             "MENTAL_DEFENSE": {
-              "value": 18
+              "value": 16
             },
-            "POISON_DMG": {
-              "value": 7.5,
+            "CRITICAL_RATE": {
+              "value": 11.5,
               "unit": "%"
             }
           }
@@ -184,19 +184,19 @@
           ],
           "data": {
             "HP": {
-              "value": 470
+              "value": 415
             },
             "ATTACK": {
-              "value": 65
+              "value": 71
             },
             "REALITY_DEFENSE": {
-              "value": 23
+              "value": 24
             },
             "MENTAL_DEFENSE": {
-              "value": 23
+              "value": 27
             },
-            "POISON_DMG": {
-              "value": 10,
+            "CRITICAL_RATE": {
+              "value": 15.5,
               "unit": "%"
             }
           }
@@ -210,19 +210,19 @@
           ],
           "data": {
             "HP": {
-              "value": 680
+              "value": 605
             },
             "ATTACK": {
-              "value": 95
+              "value": 101
             },
             "REALITY_DEFENSE": {
-              "value": 48
+              "value": 50
             },
             "MENTAL_DEFENSE": {
-              "value": 48
+              "value": 54
             },
-            "POISON_DMG": {
-              "value": 10,
+            "CRITICAL_RATE": {
+              "value": 15.5,
               "unit": "%"
             }
           }
