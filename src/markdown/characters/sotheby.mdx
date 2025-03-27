@@ -26,8 +26,6 @@ import CHARACTER from "@data/characters/sotheby.json";
 import RESONANCE from "@data/resonance/characters/sotheby.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='a-drop-of-creativity-an-ocean-of-naivety')
-
 # Sotheby
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
@@ -162,22 +160,22 @@ export const euphoria1 = CHARACTER.euphorias.find(ele=>ele.code==='a-drop-of-cre
   </Fragment>
 
   <Fragment slot="euphoria-content">
-    <div x-show={`active==='${euphoria1.code}'`}>
-      <CharacterEpiphanyContent epiphanyLevel={1} materials={euphoria1.materials[1]} stats={euphoria1.stats[1]} />
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
       :effect{code="CURE"} Enhancement: After being attacked, if own current HP is below **40%**, this effect is triggered immediately and the duration is reduced by **1** round. This effect also becomes stackable.
 
       *\[Genius Lady]* Insight III upgrade: The :effect{code="CURE"} that is granted by *\[Concentrated Essence!]* gains **+1** round duration.
 
-      <CharacterEpiphanyContent epiphanyLevel={2} materials={euphoria1.materials[2]} stats={euphoria1.stats[2]} />
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
       When entering battle, Sotheby gains Healing Done **+7%** for every **1000** Max HP she has.
 
-      <CharacterEpiphanyContent epiphanyLevel={3} materials={euphoria1.materials[3]} stats={euphoria1.stats[3]} />
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
       When entering battle, Sotheby gains Poison DMG **+2%** for every **100** ATK she has.
 
-      <CharacterEpiphanyContent epiphanyLevel={4} materials={euphoria1.materials[4]} stats={euphoria1.stats[4]} />
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
       At the start of the round, grant **1** stack of :effect{code="DUALITY_POTION"} to self.
     </div>

@@ -1,5 +1,6 @@
 ---
 import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
 import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
@@ -34,6 +35,7 @@ const { Content } = await render(psychubeEntry);
       p: MarkdownContent,
       strong: MarkdownHighlight,
       em: MarkdownEmphasis,
+      effect: EffectTooltip,
     }}
   />
 </Tooltip>

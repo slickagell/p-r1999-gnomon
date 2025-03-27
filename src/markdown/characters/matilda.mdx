@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -152,6 +153,30 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      Gain Max Eureka **+5**. At the start of the round, gain Eureka **+4**. Whenever an ally consumes Eureka, accumulate points of :effect{code="INSPIRATION"}. When entering battle, accumulate **3** points of :effect{code="INSPIRATION"}. Ages *\[Work of Genius]* or *\[Attention Everyone]*, consume **2** Eureka to grant Critical Rate **+15%** to :effect{code="IMPROMPTU_INCANTATION"} for the round. If :effect{code="IMPROMPTU_INCANTATION"} has at least **5** points of :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} gains an additional Critical DMG **+20%**.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      After casting *\[Work of Genius]* or *\[Attention Everyone]* and consuming Eureka, if :effect{code="IMPROMPTU_INCANTATION"} has at least **10** points of :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} gains an additional Critical DMG **+30%**.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      After casting *\[Instant of Prediction]*, grants **8** points of :effect{code="INSPIRATION"} and an additional Critical Rate **+15%** to :effect{code="IMPROMPTU_INCANTATION"} for the round. If :effect{code="IMPROMPTU_INCANTATION"} has at least **10** points of :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} gains an additional Critical DMG **+50%**.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      After casting *\[Instant of Prediction]*, if :effect{code="IMPROMPTU_INCANTATION"} has at least **10** :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} is always a critical hit.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

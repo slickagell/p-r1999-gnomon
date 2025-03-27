@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -148,6 +149,30 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="resonance-section-title">
     ## Resonance
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      When entering battle and at the end of the round, gain **2** stacks of :effect{code="MOSS_ON_STONE"} for self; after an ally actively casts and attacks with an incantation, if the main target is in a :effect{code="POISON"} status, gain **1** stack of :effect{code="MOSS_ON_STONE"} for self. At the start of the round, if holding **10** stacks of :effect{code="MOSS_ON_STONE"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an, additional :effect{code="PETRIFY"} status on the main target for **1** round, and remove all :effect{code="MOSS_ON_STONE"} statuses on self at the end of the round. Attacking an enemy in the :effect{code="PETRIFY"} status does not remove the :effect{code="PETRIFY"} status.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      \[White Blankie]: At incantation rank **1/2/3**, the Reality DMG bonus from each additional instance :effect{code="POISON"} is increased to **80%/120%/200%**, and the :effect{code="PETRIFY"} status is regarded as **2** additional instances of :effect{code="POISON"}.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      When actively attacking, if the main target is in the :effect{code="PETRIFY"} status, the attack gains Incantation Might **+30%**.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      When actively attacking, if the main target is in the :effect{code="PETRIFY"} status, the attack is always a critical hit.
+    </div>
   </Fragment>
 
   <Fragment slot="resonance-board">
