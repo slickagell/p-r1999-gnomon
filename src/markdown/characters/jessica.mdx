@@ -159,19 +159,19 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      When entering battle and at the end of the round, gain [Moss on Stone] for self; after an ally actively casts and attacks with an incantation, if the main target is in a [Poison] status, gain [Moss on Stone] for self. At the start of the round, if holding a certain number of stacks of [Moss on Stone], then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an additional [Petrify] status on the main target. Attacking an enemy in the [Petrify] status does not remove the [Petrify] status.
+      When entering battle and at the end of the round, gain **2** stacks of :effect{code="MOSS_ON_STONE"} for self; after an ally actively casts and attacks with an incantation, if the main target is in a :effect{code="POISON"} status, gain **1** stack of :effect{code="MOSS_ON_STONE"} for self. At the start of the round, if holding **10** stacks of :effect{code="MOSS_ON_STONE"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an, additional :effect{code="PETRIFY"} status on the main target for **1** round, and remove all :effect{code="MOSS_ON_STONE"} statuses on self at the end of the round. Attacking an enemy in the :effect{code="PETRIFY"} status does not remove the :effect{code="PETRIFY"} status.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      [White Blankie]: At incantation rank 1/2/3, the Reality DMG bonus from each additional instance [Poison] is increased greatly, and the [Petrify] status is regarded as some additional instances of [Poison].
+      \[White Blankie]: At incantation rank **1/2/3**, the Reality DMG bonus from each additional instance :effect{code="POISON"} is increased to **80%/120%/200%**, and the :effect{code="PETRIFY"} status is regarded as **2** additional instances of :effect{code="POISON"}.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      When actively attacking, if the main target is in the [Petrify] status, the attack gains Incantation Might increase.
+      When actively attacking, if the main target is in the :effect{code="PETRIFY"} status, the attack gains Incantation Might **+30%**.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      When actively attacking, if the main target is in the [Petrify] status, the attack is always a critical hit.
+      When actively attacking, if the main target is in the :effect{code="PETRIFY"} status, the attack is always a critical hit.
     </div>
   </Fragment>
 

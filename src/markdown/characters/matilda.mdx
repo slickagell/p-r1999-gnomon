@@ -163,23 +163,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      Increases Max Eureka. At the start of the round, gain Eureka. Whenever an ally consumes Eureka, accumulate points of [Inspiration]. When entering battle, accumulate some points of [Inspiration]. After casting [Work of Genius] or [Attention Everyone], consume Eureka to grant higher Critical Rate to [Impromptu Incantation] for the round. If [Impromptu Incantation] has certain points of [Inspiration], [Impromptu Incantation] gains an additional Critical DMG increase.
-      
-      • [Inspiration]: For every Eureka consumed, accumulate [Inspiration].At the start of each round, randomly distribute Inspiration points onto basic incantations.
-      
-      • [Impromptu Incantation]: When actively casting an incantation with [Inspiration] points on it, add an [Impromptu Incantation] to the end of the spell queue, and all Inspiration points on these casted incantations will be granted to the [Impromptu Incantation].
+      Gain Max Eureka **+5**. At the start of the round, gain Eureka **+4**. Whenever an ally consumes Eureka, accumulate points of :effect{code="INSPIRATION"}. When entering battle, accumulate **3** points of :effect{code="INSPIRATION"}. Ages *\[Work of Genius]* or *\[Attention Everyone]*, consume **2** Eureka to grant Critical Rate **+15%** to :effect{code="IMPROMPTU_INCANTATION"} for the round. If :effect{code="IMPROMPTU_INCANTATION"} has at least **5** points of :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} gains an additional Critical DMG **+20%**.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      After casting [Work of Genius] or [Attention Everyone] and consuming Eureka, if [Impromptu Incantation] has certain points of [Inspiration], [Impromptu Incantation] gains an additional Critical DMG increase.
+      After casting *\[Work of Genius]* or *\[Attention Everyone]* and consuming Eureka, if :effect{code="IMPROMPTU_INCANTATION"} has at least **10** points of :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} gains an additional Critical DMG **+30%**.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      After casting [Instant of Prediction], grants some points of [Inspiration] and an additional Critical Rate increase to [Impromptu Incantation] for the round. If [Impromptu Incantation] has certain points of [Inspiration], [Impromptu Incantation] gains an additional Critical DMG increase.
+      After casting *\[Instant of Prediction]*, grants **8** points of :effect{code="INSPIRATION"} and an additional Critical Rate **+15%** to :effect{code="IMPROMPTU_INCANTATION"} for the round. If :effect{code="IMPROMPTU_INCANTATION"} has at least **10** points of :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} gains an additional Critical DMG **+50%**.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      After casting [Instant of Prediction], if [Impromptu Incantation] has certain points of [Inspiration], [Impromptu Incantation] is always a critical hit.
+      After casting *\[Instant of Prediction]*, if :effect{code="IMPROMPTU_INCANTATION"} has at least **10** :effect{code="INSPIRATION"}, :effect{code="IMPROMPTU_INCANTATION"} is always a critical hit.
     </div>
   </Fragment>
 

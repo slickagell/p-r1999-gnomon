@@ -11,7 +11,6 @@ version: "2.4"
 releaseDate: "2025-03-27"
 specialties: ["DPS", "SUPPORT", "INSPIRATION"]
 isLimited: false
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -34,11 +33,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An arcanist's artwork, exhibited in the 1990s for 17 years. Completed in autumn on November 13. Originally exhibited in Cremona, Italy, and later exhibited around the world.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Synthetic Instruments
   </Fragment>
 
   <Fragment slot="info-afflatus">
@@ -50,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    69 17/25x33 1/4x23 3/5in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -66,16 +65,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-1 star-1 note:">
-      1-target attack. Deals Mental DMG. After attacking, consumes Eureka to increase \[Impromptu Incantation]s number of attacks in this round. When the allies with \[Quartet] reach a certain number, additionally increases \[Impromptu Incantation]'s number of attacks.
+    <CardInfo star="1" type="ATTACK" note="A new note joins the harmony.">
+      1-target attack. Deals **200%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +2 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="A new note joins the harmony, guiding her path.">
+      1-target attack. Deals **300%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +2 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="A new note joins the harmony, guiding her path, shaping the course of her journey.">
+      1-target attack. Deals **500%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +2 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
   </Fragment>
 
@@ -84,16 +83,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-2 star-1 note:">
-      1-target attack. Deals Mental DMG. After attacking, consumes Eureka to increase \[Impromptu Incantation]'s DMG Dealt in this round. When the allies with \[Quartet] reach a certain number, additionally increases \[Impromptu Incantation]'s DMG Dealt.
+    <CardInfo star="1" type="ATTACK" note="It flows with ease.">
+      1-target attack. Deals **200%** Mental DMG; after the attack, consumes 2 Eureka and grants DMG Dealt **+20%** to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional DMG Dealt **+20%** to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="It flows with ease, carried by the ocean breeze.">
+      1-target attack. Deals **300%** Mental DMG; after the attack, consumes 2 Eureka and grants DMG Dealt **+20%** to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional DMG Dealt **+20%** to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="It flows with ease, carried by the ocean breeze, bringing the familiar tune of home.">
+      1-target attack. Deals **500%** Mental DMG; after the attack, consumes 2 Eureka and grants DMG Dealt **+20%** to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional DMG Dealt **+20%** to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
   </Fragment>
 
@@ -102,12 +101,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note=":TODO - Add character ultimate note:">
-      1-target buff. Barcarola and a selected ally enter the \[Quartet] status.
-
-      If they are already in this status, their status duration gets extended.
-
-      This also slightly extends unselected allies \[Quartet] duration, if they are already in this status. Then, Barcarola restores Eureka for allies in the \[Quartet] status. She gains Moxie and adds additional \[Inspiration] points to \[Impromptu Incantation] of this round.
+    <CardInfo type="BUFF" note="The flow of tides, the cry of steam horns, and the twists of fate synthesize into new melodies.">
+      1-target buff. Extends the :effect{code="QUARTET"} status on all allies by 1 round, and grants the :effect{code="QUARTET"} status to target ally and to self for 5 rounds; if either target is already in the Quartet status, the Quartet status is extended to 5 rounds; after, recovers Eureka +3 to all allies in the Quartet status, grants Moxie +1 to self, and grants 8 points of :effect{code="INSPIRATION"} to :effect{code="IMPROMPTU_INCANTATION"} for the round.
     </CardInfo>
   </Fragment>
 
@@ -120,19 +115,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When your team consumes Eureka, it gains \[Inspiration] points. Barcarola will give these \[Inspiration] points primarily to attack-type incantations.
+    Whenever an ally consumes Eureka, accumulate points of :effect{code="INSPIRATION"}. Barcarola increases the likelihood of :effect{code="INSPIRATION"} points being distributed onto. attack-type incantations.
 
-    When Barcarola enters battle, your team gains \[Inspiration] points.
+    When entering battle, accumulate 3 points of :effect{code="INSPIRATION"} and gain Max Eureka +1. At the start of each round, Barcarola gains Eureka +4.
 
-    Barcarola's Max Eureka increases. At the start of each round, Barcarola gains Eureka. Whenever an ally actively casts an attack-type incantation, Barcarola gains Eureka.
+    After an ally actively casts an attack-type incantation, Barcarola gains Eureka +1.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    When entering battle, Barcarola's ATK increases.
+    ATK **+5%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    At the start of each round, Barcarola increases DMG Dealt based on the total \[Inspiration] points distributed to the incantations. \[Impromptu Incantation] transforms to Star Afflatus, with its Critical Rate and Critical DMG increasing each time it's cast.
+    At the start of the round, grants DMG Dealt +X% to self for 1 round, where X is equal to (5 + the accumulated points of :effect{code="INSPIRATION"} x 2.5).
+
+    :effect{code="IMPROMPTU_INCANTATION"} is now of the Star afflatus.
+
+    After each attack instance of :effect{code="IMPROMPTU_INCANTATION"} within the same round, :effect{code="IMPROMPTU_INCANTATION"} gains Critical Rate **+15%** and Critical DMG **+15%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -140,23 +139,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Cascading Arpeggios*: The attack instances granted to :effect{code="IMPROMPTU_INCANTATION"} for the round is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Solo Symphony*: After each attack instance of :effect{code="IMPROMPTU_INCANTATION"} within the same round, the Critical Rate increase is now **+15%**, and the Critical DMG increase is now **+15%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *Cascading Arpeggios*: When least **3** allies are in the Quartet] status, the additional attack instances granted to :effect{code="IMPROMPTU_INCANTATION"} is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Music of the Heart*: :effect{code="IMPROMPTU_INCANTATION"}'s Damage Dealt increase for the round is now **+35%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Sea Breeze Serenade*: While in the :effect{code="QUARTET"} status, after casting an attack-type incantation, grants another **1** additional point of Inspiration to :effect{code="IMPROMPTU_INCANTATION"}.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

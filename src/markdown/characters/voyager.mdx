@@ -163,22 +163,19 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      Increases Max Eureka. At the start of the round, gain Eureka. Whenever an ally consumes Eureka, accumulate points of [Inspiration]. When entering battle, accumulate some points of [Inspiration]. [Impromptu Incantation] splits on odd-numbered attacks.
-      • [Inspiration]: For every Eureka consumed, accumulate [Inspiration]. At the start of each round, randomly distribute Inspiration points onto basic incantations.
-      • [Impromptu Incantation]:When actively casting an incantation with [Inspiration] points on it, add an [Impromptu Incantation] to the end of the spell queue, and all Inspiration points on these casted incantations will be granted to the [Impromptu Incantation].
+      Gain Max Eureka **+5**. At the start of the round, gain Eureka **+4**. Whenever an ally consumes Eureka, accumulate points of :effect{code="INSPIRATION"}. When entering battle, accumulate **3** points of :effect{code="INSPIRATION"}. :effect{code="IMPROMPTU_INCANTATION"} splits on odd-numbered attacks (#1, #3, #5 ...) to select and attack an additional enemy target, at a Final DMG **-70%** penalty to that target.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      After casting [Starlight Sonata] or [Concerto in D-fense], consume some Eureka to grant more attack instance to [Impromptu Incantation] for the round. and [Impromptu Incantation]'s split attack will select additional enemy target.
+      After casting *\[Starlight Sonata]* or *\[Concerto in D-fense]*, consume **2** Eureka to grant attack instance **+1** to :effect{code="IMPROMPTU_INCANTATION"} for the round, and :effect{code="IMPROMPTU_INCANTATION"}'s split attack will select another **1** additional enemy target.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      After entering battle, gain Moxie. After casting [Galaxy on the Strings], gain more Moxie. If the target is in the [Confusion] status, inflict [Where the Stars Lead] on the target for some rounds.
-      • Where the Stars Lead: Impromptu Incantations target this unit with priority. When being attacked by an Impromptu Incantation, takes more Genesis DMG.
+      After entering battle, Moxie **+5**. After casting *\[Galaxy on the Strings]*, Moxie **+1**. If the target is in the :effect{code="CONFUSION"} status, inflict :effect{code="WHERE_THE_STARS_LEAD"} on the target for **3** rounds.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      [Galaxy on the Strings]: Trigger [Where the Stars Lead] and deal additional DMG even if the target is not in the [Confusion] status, and grants some points of [Inspiration] to [Impromptu Incantation] for the round.
+      \[Galaxy on the Strings]: Removes the effect of dealing additional Mental DMG and the effect of inflicting :effect{code="WHERE_THE_STARS_LEAD"} on the target; and grants **8** points of :effect{code="INSPIRATION"} to :effect{code="IMPROMPTU_INCANTATION"} for the round.
     </div>
   </Fragment>
 

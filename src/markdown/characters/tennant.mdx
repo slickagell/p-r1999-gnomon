@@ -163,19 +163,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      [Beautiful Lie] Insight I adjustments: After entering battle, immediately casts [A Bouquet of Galaxy]; at the start of odd-numbered rounds, gain [Diamond Bullet] for self.
+      *\[Beautiful Lie]* Insight I adjustments: After entering battle, immediately casts a rank **1** *\[A Bouquet of Galaxy]* (triggers up to **1** time); at the start of odd-numbered rounds, gain :effect{code="DIAMOND_BULLET"} for self.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      When casting [A Sincere Heart], for each type of Bullet held by all allies, the attack deals an additional Reality DMG.
+      When casting *\[A Sincere Heart]*, for each type of Bullet held by all allies, the attack deals additional **40%** Reality DMG, this effect can deal up to an additional **200%** Reality DMG.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      After an ally takes an action, if this unit is holding certain stacks of [Diamond Bullet], casts [A Shiny Diamond].
+      After an ally takes an action, if this unit is holding at least **2** stacks of :effect{code="DIAMOND_BULLET"}, casts a rank **1** *\[A Shiny Diamond]* (triggers up to **1** time per round)
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      Whenever this unit triggers some [Diamond Bullet], immediately casts [A Bouquet of Galaxy].
+      Whenever this unit triggers **2** :effect{code="DIAMOND_BULLET"} , immediately casts a rank **1** *\[A Bouquet of Galaxy]* (triggers up to **1** time per round).
     </div>
   </Fragment>
 
