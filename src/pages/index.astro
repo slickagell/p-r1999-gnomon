@@ -24,7 +24,7 @@ const { Content } = await render(whatsNewEntry);
       <Icon icon="star" />
       <div>
         <h4 class="my-0 text-primary">What's new</h4>
-        <div class="text-xs">Updated on 2025-03-27</div>
+        <div class="text-xs">Updated on {whatsNewEntry.data.lastModified}</div>
       </div>
       <button class="btn btn-sm" @click="whatsNewModal.showModal()">See</button>
 

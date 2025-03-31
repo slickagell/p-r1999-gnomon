@@ -37,19 +37,19 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-medium">
-    Synthetic Instruments
+    Synthetic Instrument
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Free Notes \[Star] Cruise Musician
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Aquatic - Lilac, Reeds, Lilies, Vanilla
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    69 17/25x33 1/4x23 3/5in.
+    69 17/25 x 33 1/4 x 23 3/5 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -66,15 +66,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="A new note joins the harmony.">
-      1-target attack. Deals **200%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +2 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
+      1-target attack. Deals **200%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +1 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="A new note joins the harmony, guiding her path.">
-      1-target attack. Deals **300%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +2 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
+      1-target attack. Deals **300%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +1 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="A new note joins the harmony, guiding her path, shaping the course of her journey.">
-      1-target attack. Deals **500%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +2 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
+      1-target attack. Deals **500%** Mental DMG; after the attack, consumes 2 Eureka and grants attack instances +1 to :effect{code="IMPROMPTU_INCANTATION"} for the round; if at least 3 allies are in the :effect{code="QUARTET"} status, grants an additional attack instance +1 to :effect{code="IMPROMPTU_INCANTATION"}.
     </CardInfo>
   </Fragment>
 
@@ -115,7 +115,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    Whenever an ally consumes Eureka, accumulate points of :effect{code="INSPIRATION"}. Barcarola increases the likelihood of :effect{code="INSPIRATION"} points being distributed onto. attack-type incantations.
+    Whenever an ally consumes Eureka, accumulate points of :effect{code="INSPIRATION"}. Barcarola increases the likelihood of :effect{code="INSPIRATION"} points being distributed onto attack-type incantations.
 
     When entering battle, accumulate 3 points of :effect{code="INSPIRATION"} and gain Max Eureka +1. At the start of each round, Barcarola gains Eureka +4.
 
@@ -183,6 +183,93 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
       <PsychubeIcon code="BELT_IT_OUT" />
 
       <PsychubeIcon code="LONG_NIGHT_TALK" />
+    </div>
+  </Fragment>
+
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Barcarola is one of key characters with ability to work with :effect{code="IMPROMPTU_INCANTATION"} mechanism.
+
+    <a class="custom-link" href="/mechanism#impromtu-incantation">How Impromptu Incantation mechanism works ></a>
+
+    <br />
+
+    With Insight 1
+
+    * Barcarola will have **6** Eureka points.
+    * At the start of each round, gain **+4** Eureka.
+    * When an ally actively casts an **Attack** incantation, gain **+1** Eureka.
+    * When have Barcarola in the team, :effect{code="INSPIRATION"} points will have high probability of being distributed to **Attack** incantation.
+
+    <br />
+
+    In Insight 3
+
+    * At the start of the round, Barcarola will have DMG Dealt increase based on :effect{code="INSPIRATION"} points x 2.5% + 5% for **1** round.
+    * After each attacks of :effect{code="IMPROMPTU_INCANTATION"} within the same round,its Critical Rate and Critical DMG increase **+15%**.
+    * :effect{code="IMPROMPTU_INCANTATION"} will have **Star** afflatus.
+
+    <br />
+
+    With <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Cascading Arpeggios]*</CharacterSkillTooltip>
+
+    * Single-target attack.
+    * Use **2** Eureka to increase **1** attack instances of :effect{code="IMPROMPTU_INCANTATION"}.
+    * If there are **>=3** allies in the :effect{code="QUARTET"} status, increase **1** additional attack instances of :effect{code="IMPROMPTU_INCANTATION"}.
+
+    <br />
+
+    The second skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Music of the Heart]*</CharacterSkillTooltip>
+
+    * Single-target attack.
+    * Use **2** Eureka to increase **20%** DMG Dealt of :effect{code="IMPROMPTU_INCANTATION"}.
+    * If there are **>=3** allies in the :effect{code="QUARTET"} status, increase **20%** additional DMG Dealt of :effect{code="IMPROMPTU_INCANTATION"}.
+
+    <br />
+
+    Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Sea Breeze Serenade]*</CharacterSkillTooltip> is a single-target Buff.
+
+    * Selected ally with Barcarola will receive :effect{code="QUARTET"} last for **5** rounds.
+    * If the target is already in the :effect{code="QUARTET"} status, it will be reset to **5** rounds.
+    * Extend the :effect{code="QUARTET"} status on other allies by **1** round.
+    * Recovers **3** Eureka for all allies in the :effect{code="QUARTET"} status.
+    * Grants Moxie **+1** to Barcarola.
+    * Increase **8** points of :effect{code="INSPIRATION"} in this round.
+
+    When the character with :effect{code="QUARTET"} use **Attack** incantation, it will increase **1** :effect{code="INSPIRATION"} point and the entire team will consume **1** Eureka.
+
+    * This includes **Follow-up Attacks**.
+
+    <br />
+
+    ### Operate / Rotation
+
+    * Prioritize using Barcarola's skills regularly to gain Moxie and increase DMG of :effect{code="IMPROMPTU_INCANTATION"}. Can use with other allies skills, prioritize their Attack incantations.
+    * Use Ultimate with other allies Ultimate in :effect{code="IMPROMPTU_INCANTATION"} squad (Matilda or Voyager), and other Barcarola's skills.
+    * Do **not** target Barcarola's Ultimate skill to Barcarola, prioritize ally who do not have or have least :effect{code="QUARTET"} status.
+    * Try to reach **12** or **20** :effect{code="INSPIRATION"} points to increase the number of attack instances of :effect{code="IMPROMPTU_INCANTATION"}.
+
+    <br />
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <div class="flex-1 step-arrow-two-ways">
+        <div class="flex gap-2 justify-center">
+          <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id} />
+
+          <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id} />
+        </div>
+
+        <div class="mt-1 text-center">Prioritize cast Barcarola's skills to gain Moxie and increase DMG of :effect{code="IMPROMPTU_INCANTATION"}. Can use other allies skills, prioritize their Attack incantations</div>
+      </div>
+
+      <div class="flex-1">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use Ultimate with other allies Ultimate in :effect{code="IMPROMPTU_INCANTATION"} squad (Matilda or Voyager), and other Barcarola's skills</div>
+      </div>
     </div>
   </Fragment>
 

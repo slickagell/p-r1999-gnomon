@@ -3,6 +3,9 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Snip">
+  <Fragment slot="meta"
+    ><meta name="robots" content="noindex, nofollow" />
+  </Fragment>
   <h1>Snip</h1>
   <div x-data="snipImage">
     <div class="tabs">

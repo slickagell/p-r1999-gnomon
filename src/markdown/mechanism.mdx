@@ -1,0 +1,51 @@
+# Mechanism
+
+## Impromtu Incantation
+
+<div class="flex justify-center">
+  ![impromtu-incantation](/images/general/impromptu.png)
+</div>
+
+:effect{code="IMPROMPTU_INCANTATION"} is a mechanism that deal DMG based on :effect{code="INSPIRATION"} points.
+
+<br />
+
+Whenever an ally consumes **Eureka**, the accumulated *\[Inspiration]* points will be displayed on the right side of the screen:
+
+* These points are used to **randomly** distribute to skill cards in the next round.
+* These points will be attached to normal skill cards, **not** Ultimate.
+* Each skill card can be attached up to **5** points of *\[Inspiration]*.
+
+<br />
+
+When using cards with *\[Inspiration]* points, it will record the total points, then summarize them into *\[Impromtu Incantation]*, which appears at the end of the skill chain.
+
+If the skill cards with *\[Inspiration]* points are **not** used, the accumulated *\[Inspiration]* points will be **cleared** at the end of the round.
+
+When 2 skills with *\[Inspiration]* points are **combined**, the points will also be added together.
+
+<br />
+
+*\[Impromtu Incantation]* deals **multiple random single-target** attacks on enemies:
+
+* This is considered a separate entity.
+* It's attacks will **not** be counted as active skill or Follow up Attack
+* The more points of *\[Inspiration]* accumulated, the more times it will attack, and it will deal greater DMG, so aim to use cards with higher points or use many cards with points as much as possible.
+* Each single-target attack that deals **200%** Mental DMG
+* With each point of *\[Inspiration]*, the attack deals an additional **15%** Mental DMG
+* If it has at least **3/6/12/20** points of *\[Inspiration]*, it gains attack instances **+1/2/3/5**
+
+For example: if it has 6 points of *\[Inspiration]*, it will deal 1 + 2 = 3 attacks, with 200% + (15% x 3) = 245% Mental DMG
+
+<br />
+
+*\[Impromtu Incantation]*' DMG calculation is based on the average stats of all allies. It will affected by stats such as:
+
+* ATK
+* Critical
+* Incantation Might
+* DMG Bonus
+* Penetration Rate
+* Mental DEF Reduction
+
+There are some buffs that does **not** affect *\[Impromtu Incantation]*, such as buffs that activate when attacking.
