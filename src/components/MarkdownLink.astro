@@ -1,0 +1,7 @@
+---
+interface Props {}
+
+const { ...props } = Astro.props;
+---
+
+<a class="custom-link" {...props}><slot /></a>

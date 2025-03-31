@@ -1,0 +1,43 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+
+import { getEntry, render } from "astro:content";
+
+interface Props {}
+
+const {} = Astro.props;
+
+const mechanismEntry = await getEntry("general", "mechanism")!;
+const { Content } = await render(mechanismEntry);
+---
+
+<Layout
+  title="Mechanism"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Mechanism",
+    },
+  ]}
+>
+  <Content
+    components={{
+      img: CustomImage,
+      ul: MarkdownDiscList,
+      p: MarkdownParagraphContent,
+      strong: MarkdownHighlight,
+      em: MarkdownEmphasis,
+      effect: EffectTooltip,
+    }}
+  />
+</Layout>
