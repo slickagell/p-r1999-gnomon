@@ -1,11 +1,22 @@
 ---
-import ArtefactItem from "@components/ArtefactItem.astro";
-import { ArtefactVirtualList } from "@components/VirtualList";
 import Layout from "@layouts/Layout.astro";
-import { sortArtefact } from "@scripts/common";
+import ARTEFACT_TYPE from "@data/common/artefact/type.json";
 import { getCollection } from "astro:content";
+import { ArtefactVirtualList } from "@components/VirtualList";
+import { sortArtefact } from "@scripts/common";
+import ArtefactItem from "@components/ArtefactItem.astro";
 
-const artefactEntries = await getCollection("artefacts");
+export async function getStaticPaths() {
+  return Object.entries(ARTEFACT_TYPE).map(([code, value]) => ({
+    params: { slug: value.id },
+    props: { ...value, code },
+  }));
+}
+
+const { code, title, id } = Astro.props;
+const artefactEntries = await getCollection("artefacts", ({ data }) => {
+  return data.type === code;
+});
 ---
 
 <Layout
@@ -25,7 +36,22 @@ const artefactEntries = await getCollection("artefacts");
     },
   ]}
 >
-  <h1>Artefact List</h1>
+  <div class="flex justify-center">
+    <div class="tabs">
+      {
+        Object.values(ARTEFACT_TYPE).map((type) => (
+          <a
+            href={"/a-series-of-dusks/artefacts/" + type.id}
+            class:list={["tab tab-bordered", { "tab-active": type.id === id }]}
+          >
+            {type.title}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+
+  <h1>{title} Artefact List</h1>
 
   <div x-data={"dataset"}>
     <div class="filters p-2">
@@ -62,39 +88,6 @@ const artefactEntries = await getCollection("artefacts");
         </select>
       </label>
       <!-- End Rarity -->
-      <!-- Type -->
-      <div class="hidden md:flex py-2 px-4 items-center">
-        Type
-        <ul class="flex py-2 px-4 gap-1 flex-wrap">
-          <template x-for="type in types">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                :class="type.code === typeFilter ? 'btn-active' : ''"
-                @click="filterType(type.code)"
-                x-text="type.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-      </div>
-      <label for="typeFilter" class="py-2 block md:hidden">
-        Type
-        <select
-          id="typeFilter"
-          class="md:hidden select select-secondary w-full"
-          @change="filterType($event.target.value)"
-        >
-          <template x-for="type in types">
-            <option
-              :value="type.code"
-              :selected="type.code === typeFilter"
-              x-text="type.title"></option>
-          </template>
-        </select>
-      </label>
-      <!-- End Type -->
       <!-- Tag -->
       <div class="hidden md:flex py-2 px-4 items-center">
         Tag
@@ -156,17 +149,13 @@ const artefactEntries = await getCollection("artefacts");
 <script>
   import ARTEFACT_RARITY from "@data/common/artefact/rarity.json";
   import ARTEFACT_TAG from "@data/common/artefact/tag.json";
-  import ARTEFACT_TYPE from "@data/common/artefact/type.json";
   import Alpine from "alpinejs";
   import {
     rarityFilter,
-    typeFilter,
     tagFilter,
     nameFilter,
   } from "@stores/artefactFilterStore";
   import anchor from "@alpinejs/anchor";
-
-  window.Alpine = Alpine;
 
   Alpine.plugin(anchor);
 
@@ -177,14 +166,6 @@ const artefactEntries = await getCollection("artefacts");
       { title: "All", code: "ALL" },
       ...Object.keys(ARTEFACT_RARITY).map((code) => ({
         title: ARTEFACT_RARITY[code].title,
-        code,
-      })),
-    ],
-    typeFilter: "ALL",
-    types: [
-      { title: "All", code: "ALL" },
-      ...Object.keys(ARTEFACT_TYPE).map((code) => ({
-        title: ARTEFACT_TYPE[code].title,
         code,
       })),
     ],
@@ -200,11 +181,6 @@ const artefactEntries = await getCollection("artefacts");
     filterRarity(rarity: string) {
       this.rarityFilter = rarity;
       rarityFilter.set(rarity);
-    },
-
-    filterType(type: string) {
-      this.typeFilter = type;
-      typeFilter.set(type);
     },
 
     filterTag(tag: string) {
