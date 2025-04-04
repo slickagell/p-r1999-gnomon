@@ -1,5 +1,6 @@
 {
   "COMMON": { "title": "Common", "code": "common" },
   "RARE": { "title": "Rare", "code": "rare" },
-  "EPIC": { "title": "Epic", "code": "epic" }
+  "EPIC": { "title": "Epic", "code": "epic" },
+  "SPECIAL": { "title": "Special", "code": "special" }
 }

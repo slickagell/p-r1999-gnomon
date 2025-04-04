@@ -4,5 +4,6 @@
   "ACCESSORY": { "title": "Accessory", "id": "accessory" },
   "MEDICATION": { "title": "Medication", "id": "medication" },
   "DISK": { "title": "Disk", "id": "disk" },
-  "SUPPLY": { "title": "Supply", "id": "supply" }
+  "SUPPLY": { "title": "Supply", "id": "supply" },
+  "ACOUSTICA": { "title": "Acoustica", "id": "acoustica" }
 }

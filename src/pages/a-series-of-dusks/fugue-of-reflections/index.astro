@@ -1,6 +1,8 @@
 ---
 import CustomImage from "@components/CustomImage.astro";
 import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
 import MarkdownText from "@components/MarkdownText.astro";
 import TableOfContents from "@components/TableOfContents.astro";
@@ -8,17 +10,17 @@ import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
 import { getEntry, render } from "astro:content";
 
-const rhapsodyOfTheMoonEntry = await getEntry(
+const fugueOfReflectionsEntry = await getEntry(
   "a-series-of-dusks",
-  "rhapsody-of-the-moon"
+  "fugue-of-reflections"
 )!;
 
-const { Content } = await render(rhapsodyOfTheMoonEntry);
+const { Content } = await render(fugueOfReflectionsEntry);
 ---
 
 <Layout
-  title="Rhapsody of the Moon | A Series of Dusks"
-  description="Rhapsody of the Moon is a expansion mode in A Series of Dusks in Reverse: 1999."
+  title="Fugue of Reflections | A Series of Dusks"
+  description="Fugue of Reflections is a expansion mode in A Series of Dusks in Reverse: 1999."
   breadcrumbs={[
     {
       label: "Home",
@@ -29,7 +31,7 @@ const { Content } = await render(rhapsodyOfTheMoonEntry);
       href: "/a-series-of-dusks",
     },
     {
-      label: "Rhapsody of the Moon",
+      label: "Fugue of Reflections",
     },
   ]}
 >
@@ -40,6 +42,8 @@ const { Content } = await render(rhapsodyOfTheMoonEntry);
       effect: EffectTooltip,
       text: MarkdownText,
       toc: TableOfContents,
+      em: MarkdownEmphasis,
+      ul: MarkdownDiscList,
     }}
   />
 </Layout>

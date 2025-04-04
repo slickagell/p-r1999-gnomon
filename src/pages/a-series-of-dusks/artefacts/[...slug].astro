@@ -36,19 +36,17 @@ const artefactEntries = await getCollection("artefacts", ({ data }) => {
     },
   ]}
 >
-  <div class="flex justify-center">
-    <div class="tabs">
-      {
-        Object.values(ARTEFACT_TYPE).map((type) => (
-          <a
-            href={"/a-series-of-dusks/artefacts/" + type.id}
-            class:list={["tab tab-bordered", { "tab-active": type.id === id }]}
-          >
-            {type.title}
-          </a>
-        ))
-      }
-    </div>
+  <div class="tabs justify-center">
+    {
+      Object.values(ARTEFACT_TYPE).map((type) => (
+        <a
+          href={"/a-series-of-dusks/artefacts/" + type.id}
+          class:list={["tab tab-bordered", { "tab-active": type.id === id }]}
+        >
+          {type.title}
+        </a>
+      ))
+    }
   </div>
 
   <h1>{title} Artefact List</h1>

@@ -28,6 +28,7 @@ export default {
         common: "#617594",
         rare: "#623583",
         epic: "#d3c47c",
+        special: "#d67c0f",
 
         syntony: "#597463",
         abundance: "#9f844d",
@@ -44,6 +45,7 @@ export default {
         disorder: "#95745d",
         focus: "#597463",
         meltdown: "#873a4b",
+        enhance: "#9f844d",
 
         all: "#9f844d",
         ally: "#5f7281",

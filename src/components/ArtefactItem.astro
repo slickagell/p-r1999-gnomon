@@ -9,6 +9,7 @@ import ARTEFACT_TAG from "@data/common/artefact/tag.json";
 import ARTEFACT_TYPE from "@data/common/artefact/type.json";
 import { render } from "astro:content";
 import matrix from "matrix-js";
+import MarkdownDiscList from "./MarkdownDiscList.astro";
 
 interface Props {
   artefactEntry: any;
@@ -23,7 +24,7 @@ const shapeSize = shape.size();
 ---
 
 <div
-  class="flex flex-col md:flex-row gap-4 py-2"
+  class="flex flex-col md:flex-row gap-4"
   data-artefact-slug={artefactEntry.slug}
   data-artefact-name={artefactEntry.data.name}
   data-artefact-rarity={artefactEntry.data.rarity}
@@ -55,6 +56,8 @@ const shapeSize = shape.size();
                             artefactEntry.data.rarity === "COMMON",
                           "bg-rare/30": artefactEntry.data.rarity === "RARE",
                           "bg-epic/30": artefactEntry.data.rarity === "EPIC",
+                          "bg-special/30":
+                            artefactEntry.data.rarity === "SPECIAL",
                         },
                   ]}
                 />
@@ -77,6 +80,8 @@ const shapeSize = shape.size();
                   artefactEntry.data.rarity === "COMMON",
                 "text-rare bg-rare/20": artefactEntry.data.rarity === "RARE",
                 "text-epic bg-epic/20": artefactEntry.data.rarity === "EPIC",
+                "text-special bg-special/20":
+                  artefactEntry.data.rarity === "SPECIAL",
               },
             ]}
           >
@@ -130,6 +135,7 @@ const shapeSize = shape.size();
     <div class="mt-2">
       <Content
         components={{
+          ul: MarkdownDiscList,
           p: MarkdownContent,
           strong: MarkdownHighlight,
           effect: EffectTooltip,
