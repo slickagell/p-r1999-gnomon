@@ -1,8 +1,9 @@
 {
-  "WEAPON": { "title": "Weapon" },
-  "CURIO": { "title": "Curio" },
-  "ACCESSORY": { "title": "Accessory" },
-  "MEDICATION": { "title": "Medication" },
-  "DISK": { "title": "Disk" },
-  "SUPPLY": { "title": "Supply" }
+  "WEAPON": { "title": "Weapon", "id": "weapon" },
+  "CURIO": { "title": "Curio", "id": "curio" },
+  "ACCESSORY": { "title": "Accessory", "id": "accessory" },
+  "MEDICATION": { "title": "Medication", "id": "medication" },
+  "DISK": { "title": "Disk", "id": "disk" },
+  "SUPPLY": { "title": "Supply", "id": "supply" },
+  "ACOUSTICA": { "title": "Acoustica", "id": "acoustica" }
 }

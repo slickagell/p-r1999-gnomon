@@ -58,7 +58,7 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
     const virtualEl = virtualListElement();
     if (virtualEl && artefactSlug) {
       const searchArtefactIdx = frozenArtefacts().findIndex(
-        (ele) => ele.getAttribute("data-artefact-slug") === artefactSlug,
+        (ele) => ele.getAttribute("data-artefact-slug") === artefactSlug
       );
 
       const header = document.getElementById("header");
@@ -73,9 +73,22 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
   });
 
   return (
-    <WindowVirtualizer ref={setVirtualListElement} data={list()}>
-      {(_, i) => <div data-index={i}>{list()[i]}</div>}
-    </WindowVirtualizer>
+    <>
+      <p class="my-4 text-right">
+        <strong class="text-xl">{list().length}</strong>{" "}
+        {list().length > 1 ? "artefacts" : "artefact"}
+      </p>
+      <WindowVirtualizer ref={setVirtualListElement} data={list()}>
+        {(_, i) => (
+          <div data-index={i}>
+            {!!i && (
+              <div class="divider before:bg-primary-content/30 after:bg-primary-content/30" />
+            )}
+            <div>{list()[i]}</div>
+          </div>
+        )}
+      </WindowVirtualizer>
+    </>
   );
 };
 

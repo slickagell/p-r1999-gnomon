@@ -1,0 +1,199 @@
+---
+import Layout from "@layouts/Layout.astro";
+import ARTEFACT_TYPE from "@data/common/artefact/type.json";
+import { getCollection } from "astro:content";
+import { ArtefactVirtualList } from "@components/VirtualList";
+import { sortArtefact } from "@scripts/common";
+import ArtefactItem from "@components/ArtefactItem.astro";
+
+export async function getStaticPaths() {
+  return Object.entries(ARTEFACT_TYPE).map(([code, value]) => ({
+    params: { slug: value.id },
+    props: { ...value, code },
+  }));
+}
+
+const { code, title, id } = Astro.props;
+const artefactEntries = await getCollection("artefacts", ({ data }) => {
+  return data.type === code;
+});
+---
+
+<Layout
+  title="Artefacts | A Series of Dusks"
+  description="Artefact list in A Series of Dusks in Reverse: 1999."
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "A Series of Dusks",
+      href: "/a-series-of-dusks",
+    },
+    {
+      label: "Artefacts",
+    },
+  ]}
+>
+  <div class="tabs justify-center">
+    {
+      Object.values(ARTEFACT_TYPE).map((type) => (
+        <a
+          href={"/a-series-of-dusks/artefacts/" + type.id}
+          class:list={["tab tab-bordered", { "tab-active": type.id === id }]}
+        >
+          {type.title}
+        </a>
+      ))
+    }
+  </div>
+
+  <h1>{title} Artefact List</h1>
+
+  <div x-data={"dataset"}>
+    {/* Filters */}
+    
+    <div class="filters p-2">
+      {code !== "ACOUSTICA" && (
+        <>
+          <!-- Rarity -->
+          <div class="hidden md:flex py-2 px-4 items-center">
+            Rarity
+            <ul class="flex py-2 px-4 gap-1 flex-wrap">
+              <template x-for="rarity in rarities">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    :class="rarity.code === rarityFilter ? 'btn-active' : ''"
+                    @click="filterRarity(rarity.code)"
+                    x-text="rarity.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <label for="rarityFilter" class="py-2 block md:hidden">
+            Rarity
+            <select
+              id="rarityFilter"
+              class="md:hidden select select-secondary w-full"
+              @change="filterRarity($event.target.value)"
+            >
+              <template x-for="rarity in rarities">
+                <option
+                  :value="rarity.code"
+                  :selected="rarity.code === rarityFilter"
+                  x-text="rarity.title"></option>
+              </template>
+            </select>
+          </label>
+          <!-- End Rarity -->
+          <!-- Tag -->
+          <div class="hidden md:flex py-2 px-4 items-center">
+            Tag
+            <ul class="flex py-2 px-4 gap-1 flex-wrap">
+              <template x-for="tag in tags">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    :class="tag.code === tagFilter ? 'btn-active' : ''"
+                    @click="filterTag(tag.code)"
+                    x-text="tag.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <label for="tagFilter" class="py-2 block md:hidden">
+            Tag
+            <select
+              id="tagFilter"
+              class="mt-1 select select-secondary w-full"
+              @change="filterTag($event.target.value)"
+            >
+              <template x-for="tag in tags">
+                <option
+                  :value="tag.code"
+                  :selected="tag.code === tagFilter"
+                  x-text="tag.title"></option>
+              </template>
+            </select>
+          </label>
+          <!-- End Tag -->
+       </>
+      )}
+      <input
+        type="text"
+        placeholder="Search"
+        class="mt-6 mb-4 input input-bordered input-secondary w-full"
+        x-model="searchText"
+        @change.debounce="search($event.target.value)"
+      />
+    </div>
+    <ArtefactVirtualList client:only="solid-js">
+      <div slot="fallback">
+        <span class="loading loading-dots text-primary block mx-auto"></span>
+      </div>
+      <Fragment slot="artefacts">
+        {
+          artefactEntries
+            .sort(sortArtefact)
+            .map((artefactEntry) => (
+              <ArtefactItem artefactEntry={artefactEntry} />
+            ))
+        }
+      </Fragment>
+    </ArtefactVirtualList>
+  </div>
+</Layout>
+
+<script>
+  import ARTEFACT_RARITY from "@data/common/artefact/rarity.json";
+  import ARTEFACT_TAG from "@data/common/artefact/tag.json";
+  import Alpine from "alpinejs";
+  import {
+    rarityFilter,
+    tagFilter,
+    nameFilter,
+  } from "@stores/artefactFilterStore";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
+
+  Alpine.data("dataset", () => ({
+    searchText: "",
+    rarityFilter: "ALL",
+    rarities: [
+      { title: "All", code: "ALL" },
+      ...Object.keys(ARTEFACT_RARITY).map((code) => ({
+        title: ARTEFACT_RARITY[code].title,
+        code,
+      })),
+    ],
+    tagFilter: "ALL",
+    tags: [
+      { title: "All", code: "ALL" },
+      ...Object.keys(ARTEFACT_TAG).map((code) => ({
+        title: ARTEFACT_TAG[code].title,
+        code,
+      })),
+    ],
+
+    filterRarity(rarity: string) {
+      this.rarityFilter = rarity;
+      rarityFilter.set(rarity);
+    },
+
+    filterTag(tag: string) {
+      this.tagFilter = tag;
+      tagFilter.set(tag);
+    },
+
+    search(searchText: string) {
+      nameFilter.set(searchText);
+    },
+  }));
+</script>

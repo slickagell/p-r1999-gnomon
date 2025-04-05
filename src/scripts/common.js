@@ -74,7 +74,7 @@ export function processSearchResult(result) {
 }
 
 export function sortArtefact(a, b) {
-  const rarityOrder = ["COMMON", "RARE", "EPIC"];
+  const rarityOrder = ["COMMON", "RARE", "EPIC", "FABLED"];
   const typeOrder = [
     "WEAPON",
     "CURIO",
@@ -90,9 +90,11 @@ export function sortArtefact(a, b) {
 
   if (typeIndex !== bTypeIndex) {
     return typeIndex - bTypeIndex;
-  } else {
+  }
+  if (rarityIndex !== bRarityIndex) {
     return rarityIndex - bRarityIndex;
   }
+  return a.data.name.localeCompare(b.data.name);
 }
 
 export function sortCatalyst(a, b) {

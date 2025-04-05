@@ -2,6 +2,8 @@
 import CustomImage from "@components/CustomImage.astro";
 import EffectTooltip from "@components/EffectTooltip.astro";
 import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import { ROUTES } from "@config/routes";
 import ARTEFACT_RARITY from "@data/common/artefact/rarity.json";
@@ -23,7 +25,7 @@ const shapeSize = shape.size();
 ---
 
 <div
-  class="flex flex-col md:flex-row gap-4 py-2"
+  class="flex flex-col md:flex-row gap-4"
   data-artefact-slug={artefactEntry.slug}
   data-artefact-name={artefactEntry.data.name}
   data-artefact-rarity={artefactEntry.data.rarity}
@@ -55,6 +57,8 @@ const shapeSize = shape.size();
                             artefactEntry.data.rarity === "COMMON",
                           "bg-rare/30": artefactEntry.data.rarity === "RARE",
                           "bg-epic/30": artefactEntry.data.rarity === "EPIC",
+                          "bg-fabled/30":
+                            artefactEntry.data.rarity === "FABLED",
                         },
                   ]}
                 />
@@ -77,6 +81,8 @@ const shapeSize = shape.size();
                   artefactEntry.data.rarity === "COMMON",
                 "text-rare bg-rare/20": artefactEntry.data.rarity === "RARE",
                 "text-epic bg-epic/20": artefactEntry.data.rarity === "EPIC",
+                "text-fabled bg-fabled/20":
+                  artefactEntry.data.rarity === "FABLED",
               },
             ]}
           >
@@ -119,7 +125,7 @@ const shapeSize = shape.size();
             class="btn btn-sm btn-ghost text-primary"
             href={
               ROUTES.A_SERIES_OF_DUSKS_ARTEFACT_EXCHANGE +
-              `#${artefactEntry.slug}`
+              `#${artefactEntry.id}`
             }
           >
             Exchange
@@ -130,9 +136,11 @@ const shapeSize = shape.size();
     <div class="mt-2">
       <Content
         components={{
+          ul: MarkdownDiscList,
           p: MarkdownContent,
           strong: MarkdownHighlight,
           effect: EffectTooltip,
+          em: MarkdownEmphasis,
         }}
       />
     </div>
