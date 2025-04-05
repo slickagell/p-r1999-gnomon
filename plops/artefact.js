@@ -26,7 +26,7 @@ export default {
       type: "checkbox",
       name: "tags",
       message: "Artefact tags:",
-      choices: Object.keys(ARTEFACT_TAG).map((item) => ({ name: item })),
+      choices: Object.keys(ARTEFACT_TAG),
     },
     {
       type: "number",

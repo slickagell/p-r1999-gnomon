@@ -74,7 +74,7 @@ export function processSearchResult(result) {
 }
 
 export function sortArtefact(a, b) {
-  const rarityOrder = ["COMMON", "RARE", "EPIC"];
+  const rarityOrder = ["COMMON", "RARE", "EPIC", "FABLED"];
   const typeOrder = [
     "WEAPON",
     "CURIO",

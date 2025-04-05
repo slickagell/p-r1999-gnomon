@@ -28,7 +28,7 @@ export default {
         common: "#617594",
         rare: "#623583",
         epic: "#d3c47c",
-        special: "#d67c0f",
+        fabled: "#d67c0f",
 
         syntony: "#597463",
         abundance: "#9f844d",

@@ -52,73 +52,79 @@ const artefactEntries = await getCollection("artefacts", ({ data }) => {
   <h1>{title} Artefact List</h1>
 
   <div x-data={"dataset"}>
+    {/* Filters */}
+    
     <div class="filters p-2">
-      <!-- Rarity -->
-      <div class="hidden md:flex py-2 px-4 items-center">
-        Rarity
-        <ul class="flex py-2 px-4 gap-1 flex-wrap">
-          <template x-for="rarity in rarities">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                :class="rarity.code === rarityFilter ? 'btn-active' : ''"
-                @click="filterRarity(rarity.code)"
-                x-text="rarity.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-      </div>
-      <label for="rarityFilter" class="py-2 block md:hidden">
-        Rarity
-        <select
-          id="rarityFilter"
-          class="md:hidden select select-secondary w-full"
-          @change="filterRarity($event.target.value)"
-        >
-          <template x-for="rarity in rarities">
-            <option
-              :value="rarity.code"
-              :selected="rarity.code === rarityFilter"
-              x-text="rarity.title"></option>
-          </template>
-        </select>
-      </label>
-      <!-- End Rarity -->
-      <!-- Tag -->
-      <div class="hidden md:flex py-2 px-4 items-center">
-        Tag
-        <ul class="flex py-2 px-4 gap-1 flex-wrap">
-          <template x-for="tag in tags">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                :class="tag.code === tagFilter ? 'btn-active' : ''"
-                @click="filterTag(tag.code)"
-                x-text="tag.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-      </div>
-      <label for="tagFilter" class="py-2 block md:hidden">
-        Tag
-        <select
-          id="tagFilter"
-          class="mt-1 select select-secondary w-full"
-          @change="filterTag($event.target.value)"
-        >
-          <template x-for="tag in tags">
-            <option
-              :value="tag.code"
-              :selected="tag.code === tagFilter"
-              x-text="tag.title"></option>
-          </template>
-        </select>
-      </label>
-      <!-- End Tag -->
+      {code !== "ACOUSTICA" && (
+        <>
+          <!-- Rarity -->
+          <div class="hidden md:flex py-2 px-4 items-center">
+            Rarity
+            <ul class="flex py-2 px-4 gap-1 flex-wrap">
+              <template x-for="rarity in rarities">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    :class="rarity.code === rarityFilter ? 'btn-active' : ''"
+                    @click="filterRarity(rarity.code)"
+                    x-text="rarity.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <label for="rarityFilter" class="py-2 block md:hidden">
+            Rarity
+            <select
+              id="rarityFilter"
+              class="md:hidden select select-secondary w-full"
+              @change="filterRarity($event.target.value)"
+            >
+              <template x-for="rarity in rarities">
+                <option
+                  :value="rarity.code"
+                  :selected="rarity.code === rarityFilter"
+                  x-text="rarity.title"></option>
+              </template>
+            </select>
+          </label>
+          <!-- End Rarity -->
+          <!-- Tag -->
+          <div class="hidden md:flex py-2 px-4 items-center">
+            Tag
+            <ul class="flex py-2 px-4 gap-1 flex-wrap">
+              <template x-for="tag in tags">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    :class="tag.code === tagFilter ? 'btn-active' : ''"
+                    @click="filterTag(tag.code)"
+                    x-text="tag.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+          </div>
+          <label for="tagFilter" class="py-2 block md:hidden">
+            Tag
+            <select
+              id="tagFilter"
+              class="mt-1 select select-secondary w-full"
+              @change="filterTag($event.target.value)"
+            >
+              <template x-for="tag in tags">
+                <option
+                  :value="tag.code"
+                  :selected="tag.code === tagFilter"
+                  x-text="tag.title"></option>
+              </template>
+            </select>
+          </label>
+          <!-- End Tag -->
+       </>
+      )}
       <input
         type="text"
         placeholder="Search"
