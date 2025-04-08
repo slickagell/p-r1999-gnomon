@@ -1,0 +1,894 @@
+import CharacterArchetypeListWrapper from '@components/CharacterMarkdown/CharacterArchetypeListWrapper.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import Icon from "@components/Icon.astro";
+
+# Character Archetype
+
+<Fragment>
+  <div class="mt-4 alert border-primary-content gap-y-2">
+    <Icon icon="info-circle" />
+
+    <div>
+      <p class="font-bold">Notice!</p>
+
+      <div class="text-xs">
+        The data is continuously updated, and the following content may not be
+        final.
+      </div>
+    </div>
+  </div>
+
+  ::toc
+
+  ## Array
+
+  <div class="mb-4 md:mb-6">
+    Have :effect{code="ARRAY"} skill effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="GETIAN" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="SEMMELWEIS" />
+
+    <CharacterHeadIcon code="TUESDAY" />
+  </CharacterArchetypeListWrapper>
+
+  ## Buff
+
+  <div class="mb-4 md:mb-6">
+    With *\[Buff]* effects.
+  </div>
+
+  ### Stats Up
+
+  <div class="mb-4 md:mb-6">
+    Increasing attributes.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="AN_AN_LEE"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="ARGUS"><span slot="note">(insight 1)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="AVGUST"><span slot="note">(skill 1, skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="DRUVIS_III"><span slot="note">(euphoria 1)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="ETERNITY"><span slot="note">(euphoria 1)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="LORELEI"><span slot="note">(skill 2, ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="MERCURIA"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="PICKLES"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="SEMMELWEIS"><span slot="note">(skill 2, ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="SONETTO"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="VILA"><span slot="note">(skill 1)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="ULU"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+  </CharacterArchetypeListWrapper>
+
+  ### Pos Status
+
+  <div class="mb-4 md:mb-6">
+    Provide special status, increase attributes.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="AVGUST"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="EZRA"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="GETIAN"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="KAKANIA"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="ISOLDE"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="LOPERA"><span slot="note">(skill 1, ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="LORELEI"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="VILA"><span slot="note">(skill 2, ultimate)</span></CharacterHeadIcon>
+  </CharacterArchetypeListWrapper>
+
+  ## Bullet
+
+  <div class="mb-4 md:mb-6">
+    Using *\[Bullet]* type
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="MONDLICHT" note="(insight 1)" />
+
+    <CharacterHeadIcon code="MR_DUNCAN" note="(skill 2)" />
+
+    <CharacterHeadIcon code="TENNANT" note="(ultimate)" />
+
+    <CharacterHeadIcon code="LILYA" note="(euphoria 2)" />
+
+    <CharacterHeadIcon code="LOPERA" note="(skill 1, skill 2)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Control
+
+  ### Captivated
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="CAPTIVATED"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ANJO_NALA"><span slot="note">(skill 1, skill 2, through *\[Titillated]* effect)</span></CharacterHeadIcon>
+  </CharacterArchetypeListWrapper>
+
+  ### Daze
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="DAZE"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="AN_AN_LEE" note="(skill 1)" />
+
+    <CharacterHeadIcon code="MEDICINE_POCKET" note="(ultimate)" />
+
+    <CharacterHeadIcon code="MESMER_JR"><span slot="note">(skill 2, ultimate, through *\[Paralyze]* effect)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="SWEETHEART" note="(ultimate)" />
+
+    <CharacterHeadIcon code="WHITE_RUM" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Disarm
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="DISARM"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ALIEN_T" note="(ultimate)" />
+
+    <CharacterHeadIcon code="ERICK" note="(ultimate)" />
+
+    <CharacterHeadIcon code="SONETTO" note="(skill 1)" />
+
+    <CharacterHeadIcon code="SPUTNIK" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Freeze
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="FREEZE"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="MS_MOISSAN" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Nightmare
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="NIGHTMARE"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="BABY_BLUE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="DIGGERS" note="(ultimate)" />
+
+    <CharacterHeadIcon code="TWINS_SLEEP" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Petrify
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="PETRIFY"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="DRUVIS_III" note="(skill-1, ultimate)" />
+
+    <CharacterHeadIcon code="JESSICA" note="(euphoria 1)" />
+
+    <CharacterHeadIcon code="SATSUKI"><span slot="note">(skill-1, ultimate, through *\[Rigidity]* effect)</span></CharacterHeadIcon>
+  </CharacterArchetypeListWrapper>
+
+  ### Seal
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="SEAL"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="BKORNBLUME" note="(ultimate)" />
+
+    <CharacterHeadIcon code="VOYAGER" note="(insight 3)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Silence
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="SILENCE"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ALIEN_T" note="(ultimate)" />
+
+    <CharacterHeadIcon code="SPUTNIK" note="(ultimate)" />
+
+    <CharacterHeadIcon code="VOYAGER" note="(insight 1)" />
+
+    <CharacterHeadIcon code="X" note="(insight 1)" />
+
+    <CharacterHeadIcon code="ZIMA" note="(skill 2)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Counter
+
+  <div class="mb-4 md:mb-6">
+    With *\[Counter]* skill.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ALIEN_T" />
+
+    <CharacterHeadIcon code="BALLOON_PARTY" />
+
+    <CharacterHeadIcon code="DESERT_FLANNEL" />
+
+    <CharacterHeadIcon code="JOE" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="MR_DUNCAN" />
+
+    <CharacterHeadIcon code="SPUTNIK" />
+
+    <CharacterHeadIcon code="THE_FOOL" />
+
+    <CharacterHeadIcon code="VOYAGER" />
+  </CharacterArchetypeListWrapper>
+
+  ## Debuff
+
+  <div class="mb-4 md:mb-6">
+    With *\[Debuff]* effects.
+  </div>
+
+   ### Stats Down
+
+  <div class="mb-4 md:mb-6">
+    Increase/decrease attributes of enemy.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6" note='(skill 1, -Critical DEF, -Reality DEF)' />
+
+    <CharacterHeadIcon code="ARGUS" note='(skill 2, -DMG Taken Reduction, -Critical DEF)' />
+
+    <CharacterHeadIcon code="BABY_BLUE" note='(skill 2, -DMG, +DMG Taken)' />
+
+    <CharacterHeadIcon code="BKORNBLUME" note='(skill 2, -Reality DEF, +DMG Taken)' />
+
+    <CharacterHeadIcon code="BUNNY_BUNNY" note='(insight 1, -Critical Resist Rate, -Critical DEF)' />
+
+    <CharacterHeadIcon code="DIGGERS" note='(skill 2, -Reality DEF, -Mental DEF)' />
+
+    <CharacterHeadIcon code="GETIAN" note='(skill 1, -Reality DEF)' />
+
+    <CharacterHeadIcon code="ISOLDE" note='(skill 2, -Critical DEF, -Reality DEF)' />
+
+    <CharacterHeadIcon code="SHAMANE" note='(skill 2, +DMG Taken, -Reality DEF, -Mental DEF)' />
+
+    <CharacterHeadIcon code="TENNANT" note='(ultimate, euphoria 1, -Reality DEF)' />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" note='(insight 1, -Critical Resist, -Critical DEF)' />
+
+    <CharacterHeadIcon code="TUESDAY" note='(skill 2, -Critical Resist)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Blind
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="BLIND"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6" note='(skill 1, random)' />
+
+    <CharacterHeadIcon code="ANJO_NALA" note='(ultimate, random)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Burn
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="BURN"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="JOE" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="SPATHODEA" />
+
+    <CharacterHeadIcon code="ULU" />
+  </CharacterArchetypeListWrapper>
+
+  ### Confusion
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="CONFUSION"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="BLONNEY" note='(skill 2)' />
+
+    <CharacterHeadIcon code="KANJIRA" note='(skill 2)' />
+
+    <CharacterHeadIcon code="MATILDA" note='(skill 1)' />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" note='(skill 1)' />
+
+    <CharacterHeadIcon code="VOYAGER" note='(skill 1)' />
+
+    <CharacterHeadIcon code="WINDSONG" note='(ultimate)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Corrode
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="CORRODE"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="THE_FOOL" note='(skill 2)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Fracture
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="FRACTURE_I"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6" note='(skill 1, random)' />
+
+    <CharacterHeadIcon code="ANJO_NALA" note='(ultimate, random)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Mis-aim
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="MIS_AIM"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6" note='(skill 1, random)' />
+
+    <CharacterHeadIcon code="ANJO_NALA" note='(ultimate, random)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Nasty Wound
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="NASTY_WOUND"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ANJO_NALA" note='(ultimate, random)' />
+
+    <CharacterHeadIcon code="BUNNY_BUNNY" note='(skill 2)' />
+
+    <CharacterHeadIcon code="CRISTALLO" note='(ultimate)' />
+
+    <CharacterHeadIcon code="ETERNITY" note='(skill 1)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Paralyze
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="PARALYZE"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="MESMER_JR" note='(ultimate)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Poison
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="POISON"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="JESSICA" />
+
+    <CharacterHeadIcon code="KANJIRA" note='(skill 1)' />
+
+    <CharacterHeadIcon code="RABIES" note='(insight 1)' />
+
+    <CharacterHeadIcon code="SOTHEBY" note='(skill 1)' />
+
+    <CharacterHeadIcon code="TUESDAY" />
+
+    <CharacterHeadIcon code="WILLOW" />
+  </CharacterArchetypeListWrapper>
+
+  ### Scared
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="SCARED"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ANJO_NALA" note='(ultimate, random)' />
+
+    <CharacterHeadIcon code="BARBARA" note='(skill 1)' />
+
+    <CharacterHeadIcon code="HORROPEDIA" note='(ultimate)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Terror
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="TERROR"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="DIGGERS" note='(skill 2)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Vulnerability
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="VULNERABILITY"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="EZRA" note='(skill 1, ultimate)' />
+  </CharacterArchetypeListWrapper>
+
+  ### Weakness
+
+  <div class="mb-4 md:mb-6">
+    Inflict :effect{code="WEAKNESS"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ANJO_NALA" note='(ultimate, random)' />
+
+    <CharacterHeadIcon code="BKORNBLUME" note='(euphoria 1)' />
+
+    <CharacterHeadIcon code="CENTURION" note='(ultimate)' />
+
+    <CharacterHeadIcon code="DIGGERS" note='(skill 1)' />
+
+    <CharacterHeadIcon code="LORELEI" note='(skill 1)' />
+
+    <CharacterHeadIcon code="MARCUS" note='(skill 2)' />
+
+    <CharacterHeadIcon code="TWINS_SLEEP" note='(skill 2)' />
+  </CharacterArchetypeListWrapper>
+
+  ## Dispel
+
+  <div class="mb-4 md:mb-6">
+    Dispel effects from enemy.
+  </div>
+
+  ### Stats Up, Pos Status
+
+  <div class="mb-4 md:mb-6">
+    Remove *\[Stats Up]*, *\[Pos Status]*.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ARGUS" note="(skill 2)" />
+
+    <CharacterHeadIcon code="AVGUST" note="(skill 1)" />
+
+    <CharacterHeadIcon code="CHARLIE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="ERICK" note="(ultimate)" />
+
+    <CharacterHeadIcon code="HORROPEDIA" note="(skill 1)" />
+
+    <CharacterHeadIcon code="JOHN_TITOR" note="(ultimate)" />
+
+    <CharacterHeadIcon code="MERCURIA" note="(ultimate)" />
+
+    <CharacterHeadIcon code="MESMER_JR" note="(skill 1)" />
+
+    <CharacterHeadIcon code="NECROLOGIST" note="(skill 2)" />
+
+    <CharacterHeadIcon code="PICKLES" note="(skill 2)" />
+
+    <CharacterHeadIcon code="X" note="(skill 1)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Counter
+
+  <div class="mb-4 md:mb-6">
+    Remove *\[Counter]* status.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="CHARLIE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="ERICK" note="(ultimate)" />
+
+    <CharacterHeadIcon code="HORROPEDIA" note="(insight 1)" />
+
+    <CharacterHeadIcon code="JOHN_TITOR" note="(ultimate)" />
+
+    <CharacterHeadIcon code="MS_MOISSAN" note="(skill 1)" />
+
+    <CharacterHeadIcon code="PICKLES" note="(skill 2)" />
+
+    <CharacterHeadIcon code="TTT" note="(skill 1)" />
+
+    <CharacterHeadIcon code="X" note="(skill 2)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Dodge
+
+  ### Non-Ultimate Reality (Concealment)
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="CONCEALMENT"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="POLTERGEIST" note="(ultimate)" />
+
+    <CharacterHeadIcon code="TTT" note="(insight 1)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Non-Ultimate
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="REGULUS" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Empower Incantation
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="EMPOWER_INCANTATION_I"}/:effect{code="EMPOWER_INCANTATION_II"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6" note="(skill 2)" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="ARGUS" note="(skill 1)" />
+
+    <CharacterHeadIcon code="BARBARA"><span slot="note">(ultimate, through *\[Counting Sheep]* card)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="BETTE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="KAALAA_BAUNAA" note="(insight 3)" />
+
+    <CharacterHeadIcon code="MARCUS" note="(insight 1)" />
+
+    <CharacterHeadIcon code="YENISEI" note="(insight 3)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Follow-up attack
+
+  <div class="mb-4 md:mb-6">
+    Have Follow-up attacks.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="ARGUS" />
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+
+    <CharacterHeadIcon code="ISOLDE" />
+
+    <CharacterHeadIcon code="JIU_NIANGZI" />
+
+    <CharacterHeadIcon code="JOE" />
+
+    <CharacterHeadIcon code="KAALAA_BAUNAA" />
+
+    <CharacterHeadIcon code="LILYA" />
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="SEMMELWEIS" />
+
+  </CharacterArchetypeListWrapper>
+
+  ## Force Field
+
+  <div class="mb-4 md:mb-6">
+    Have :effect{code="FORCE_FIELD"} skill effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+
+    <CharacterHeadIcon code="LUCY" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+  </CharacterArchetypeListWrapper>
+
+  ## Heal
+
+  <div class="mb-4 md:mb-6">
+    With *\[Heal]* skill.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6"><span slot="note">(through *\[Vitalize I]* effect)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="BALLOON_PARTY" />
+
+    <CharacterHeadIcon code="BARBARA" note="(insight 3)" />
+
+    <CharacterHeadIcon code="DIKKE" />
+
+    <CharacterHeadIcon code="FATUTU" />
+
+    <CharacterHeadIcon code="LA_SOURCE" />
+
+    <CharacterHeadIcon code="LOPERA"><span slot="note">(heal lowest ally with skill 1)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="MEDICINE_POCKET" />
+
+    <CharacterHeadIcon code="MERCURIA"><span slot="note">(heal lowest ally with skill 1)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="SOTHEBY" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" />
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="YENISEI" />
+  </CharacterArchetypeListWrapper>
+
+  ## Immunity
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="IMMUNITY"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="DIKKE" note="(ultimate, on self)" />
+
+    <CharacterHeadIcon code="YENISEI" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Impromptu
+
+  <div class="mb-4 md:mb-6">
+    With *\[Impromptu]* effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="BARCAROLA" />
+
+    <CharacterHeadIcon code="MATILDA" note="(euphoria 1)" />
+
+    <CharacterHeadIcon code="VOYAGER" note="(euphoria 1)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Moxie
+
+  ### Gain
+
+  <div class="mb-4 md:mb-6">
+    Grant Moxie to self or allies.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="A_KNIGHT" note="(skill 1, skill 2)" />
+
+    <CharacterHeadIcon code="BARBARA"><span slot="note">(ultimate, through *\[Counting Sheep]* card)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="CENTURION" note="(skill 2)" />
+
+    <CharacterHeadIcon code="DARLEY_CLATTER" note="(ultimate)" />
+
+    <CharacterHeadIcon code="DOOR" note="(ultimate)" />
+
+    <CharacterHeadIcon code="EZRA" note="(ultimate)" />
+
+    <CharacterHeadIcon code="LEILANI" note="(ultimate, insight 1)" />
+
+    <CharacterHeadIcon code="LOPERA" note="(insight 1)" />
+
+    <CharacterHeadIcon code="MARCUS"><span slot="note">(insight 3, through *\[Perusal]* effect)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="MELANIA" note="(skill 2)" />
+
+    <CharacterHeadIcon code="MERCURIA" note="(insight 3)" />
+
+    <CharacterHeadIcon code="PICKLES" note="(insight 1)" />
+
+    <CharacterHeadIcon code="SHAMANE"><span slot="note">(skill 1, through *\[Nature Blessing]* effect, euphoria 1)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="VILA"><span slot="note">(ultimate, through *\[Song of Inspiration]* card)</span></CharacterHeadIcon>
+  </CharacterArchetypeListWrapper>
+
+  ### Drain
+
+  <div class="mb-4 md:mb-6">
+    Reduce Moxie of enemies.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="CLICK" note="(skill 2)" />
+
+    <CharacterHeadIcon code="LA_SOURCE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="MS_RADIO" note="(insight 1)" />
+
+    <CharacterHeadIcon code="NICK_BOTTOM" note="(skill 1)" />
+
+    <CharacterHeadIcon code="REGULUS" note="(skill 2)" />
+
+    <CharacterHeadIcon code="THE_FOOL" note="(skill 1)" />
+
+    <CharacterHeadIcon code="X" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Lock (Disconcert)
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="DISCONCERT"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="MS_RADIO" note="(ultimate)" />
+
+    <CharacterHeadIcon code="TTT"><span slot="note">(ultimate, through *\[Disconnect]* effect)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="X" note="(insight 3)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Store
+
+  <div class="mb-4 md:mb-6">
+    Store overflow Moxie.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="TUESDAY" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Position
+
+  <div class="mb-4 md:mb-6">
+    Buff allies based on their position.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="AVGUST" note="(ultimate)" />
+
+    <CharacterHeadIcon code="LOPERA" note="(skill 1)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Precast Incantation
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="PRECAST_INCANTATION"} card.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="BARBARA" note="(ultimate)" />
+
+    <CharacterHeadIcon code="MARCUS" note="(ultimate)" />
+
+    <CharacterHeadIcon code="SPATHODEA" note="(skill 2)" />
+
+    <CharacterHeadIcon code="VILA" note="(ultimate with insight 1)" />
+
+    <CharacterHeadIcon code="WINDSONG" note="(skill 2)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Purify
+
+  <div class="mb-4 md:mb-6">
+    Purify *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from ally.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6" note="(skill 2)" />
+
+    <CharacterHeadIcon code="BUNNY_BUNNY" note="(ultimate)" />
+
+    <CharacterHeadIcon code="DIKKE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="JOHN_TITOR" note="(ultimate)" />
+
+    <CharacterHeadIcon code="NICK_BOTTOM" note="(ultimate)" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" note="(ultimate)" />
+
+    <CharacterHeadIcon code="VILA" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Rank up
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="RANK_UP"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="MERCURIA" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Revive
+
+  <div class="mb-4 md:mb-6">
+    Revive allies.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="NECROLOGIST" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Shield
+
+  <div class="mb-4 md:mb-6">
+    Have create *\[Shield]* skills.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="BARBARA" note="(skill 2, ultimate)" />
+
+    <CharacterHeadIcon code="BETTE" note="(ultimate)" />
+
+    <CharacterHeadIcon code="DOOR" note="(ultimate)" />
+
+    <CharacterHeadIcon code="EZRA" note="(skill 2)" />
+
+    <CharacterHeadIcon code="JOE" note="(skill 2)" />
+
+    <CharacterHeadIcon code="JOHN_TITOR" note="(ultimate)" />
+
+    <CharacterHeadIcon code="MS_MOISSAN" note="(skill 2)" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" note="(skill 2, euphoria 1)" />
+
+    <CharacterHeadIcon code="NICK_BOTTOM" note="(ultimate)" />
+
+    <CharacterHeadIcon code="PIONEER" note="(ultimate)" />
+
+    <CharacterHeadIcon code="TENNANT" note="(skill 2)" />
+
+    <CharacterHeadIcon code="YENISEI" note="(skill 2)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Shifting
+
+  <div class="mb-4 md:mb-6">
+    Change the position of the characters in battle.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="PIONEER" />
+
+    <CharacterHeadIcon code="WHITE_RUM" note="(skill 1, ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Taunt
+
+  <div class="mb-4 md:mb-6">
+    With :effect{code="TAUNT"} effect.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ALIEN_T" note="(skill 2)" />
+
+    <CharacterHeadIcon code="MS_NEWBABEL" note="(ultimate)" />
+
+    <CharacterHeadIcon code="PIONEER" note="(skill 2)" />
+
+    <CharacterHeadIcon code="POLTERGEIST" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+</Fragment>

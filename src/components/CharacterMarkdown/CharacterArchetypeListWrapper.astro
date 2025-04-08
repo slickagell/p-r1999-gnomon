@@ -1,0 +1,15 @@
+---
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<div class="collapse collapse-plus bg-base-content/10">
+  <input type="checkbox" />
+  <div class="collapse-title font-medium">Characters</div>
+  <div class="collapse-content">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-1 md:gap-y-1">
+      <slot />
+    </div>
+  </div>
+</div>

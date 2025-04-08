@@ -1,0 +1,45 @@
+---
+import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
+import MarkdownText from "@components/MarkdownText.astro";
+import TableOfContents from "@components/TableOfContents.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getEntry, render } from "astro:content";
+
+const characterArchetypeEntry = await getEntry("character-docs", "archetype")!;
+
+const { Content } = await render(characterArchetypeEntry);
+---
+
+<Layout
+  title="Characters Archetype"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Characters",
+      href: "/characters",
+    },
+    {
+      label: "Characters Archetype",
+    },
+  ]}
+>
+  <Content
+    components={{
+      ul: MarkdownDiscList,
+      strong: MarkdownHighlight,
+      em: MarkdownEmphasis,
+      p: MarkdownParagraphContent,
+      effect: EffectTooltip,
+      text: MarkdownText,
+      toc: TableOfContents,
+    }}
+  />
+</Layout>

@@ -3,7 +3,7 @@ import { defineCollection, z } from "astro:content";
 
 const characters = defineCollection({
   loader: glob({
-    pattern: "**/[^_]*.{md,mdx}",
+    pattern: "[^_]*.{md,mdx}",
     base: "./src/markdown/characters",
   }),
   schema: z.object({
@@ -19,6 +19,13 @@ const characters = defineCollection({
     releaseDate: z.string(),
     specialties: z.array(z.string()),
     isLimited: z.boolean(),
+  }),
+});
+
+const characterDocs = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/markdown/characters/docs",
   }),
 });
 
@@ -113,6 +120,7 @@ const general = defineCollection({
 
 export const collections = {
   characters,
+  "character-docs": characterDocs,
   effects,
   materials,
   "a-series-of-dusks": aSeriesOfDusks,
