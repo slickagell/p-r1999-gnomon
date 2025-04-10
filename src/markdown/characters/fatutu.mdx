@@ -11,7 +11,6 @@ version: "2.4"
 releaseDate: "2025-04-10"
 specialties: ["HEAL", "DISPELLER", "EXTRA_ACTION"]
 isLimited: false
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -34,23 +33,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An arcanist's work. Exhibited in the 1990s for 16 years. Completed in spring, on September 28th. Originally exhibited in Nukutaeao, South Pacific.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Shells
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Island Whimsy \[Mineral] Shell Reading
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Leafy - Orange Blossom, Green Grass, Fig Leaf, Guaiac Wood
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    61 x 28 9/25 x 18 1/10 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -62,48 +61,48 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### :TODO - Update skill-1 name:
+    ### Unmendable Cracks
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="DEBUFF" note="It once rested close to the heart.">
+      1-target attack. Deals **120%** Mental DMG; after attacking, deploys 3 stacks of :effect{code="SPIRIT_SHELL"}; dispels 1 type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effect from all allies.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="DEBUFF" note="It once rested close to the heart, pristine and pure.">
+      1-target attack. Deals **180%** Mental DMG; after attacking, deploys 3 stacks of :effect{code="SPIRIT_SHELL"}; dispels 2 types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="DEBUFF" note="It once rested close to the heart, pristine and pure, but what does it bear now?">
+      1-target attack. Deals **300%** Mental DMG; after attacking, deploys 3 stacks of :effect{code="SPIRIT_SHELL"}; dispels 3 types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### :TODO - Update skill-2 name:
+    ### Ocean in the Shell
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note="This sea is small.">
+      Mass buff. Equally redistributes the HP of all allies; grants 3 stacks of :effect{code="SHARED_SHELLS_SHARED_FATE"} to all allies, and retrieves all stacks of :effect{code="SPIRIT_SHELL"}.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note="This sea is small, enough to be held by a single shell.">
+      Mass buff. Equally redistributes the HP of all allies; grants 5 stacks of :effect{code="SHARED_SHELLS_SHARED_FATE"} to all allies, and retrieves all stacks of :effect{code="SPIRIT_SHELL"}.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note={`This sea is small, enough to be held by a single shell, and we call it "home."`}>
+      Mass buff. Equally redistributes the HP of all allies; grants 8 stacks of :effect{code="SHARED_SHELLS_SHARED_FATE"} to all allies, and retrieves all stacks of :effect{code="SPIRIT_SHELL"}.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### :TODO - Update ultimate name:
+    ### Proverb of the Sea
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note="We have never strayed too far, for our homeland is always carried with us.">
+      1-target attack. Deals **700%** Mental DMG; deploys all :effect{code="SPIRIT_SHELL"} and inflicts :effect{code="SHELL_BEACON"} on the target for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -112,19 +111,27 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### :TODO - Update inheritance title:
+    ### Shell Necklace
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    When entering battle, gains 8 stacks of :effect{code="SPIRIT_SHELL_SELF"} for self.
+
+    When deploying :effect{code="SPIRIT_SHELL"}, Fatutu has a **20%** chance to gain Moxie +1.
+
+    When retrieving :effect{code="SPIRIT_SHELL"}, recovers (stacks of Spirit Shell retrieved x Fatutu's ATK x **30%**) HP for all allies.
+
+    When an enemy carrying :effect{code="SPIRIT_SHELL"} dies, retrieves all stacks of :effect{code="SPIRIT_SHELL"} from that enemy.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    ATK **+5%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    When entering battle, gains 4 additional stacks of :effect{code="SPIRIT_SHELL_SELF"} for self.
+
+    After Fatutu accumulates a total of 7 deployments and or retrievals of :effect{code="SPIRIT_SHELL"}, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{code="SPIRIT_SHELL"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -132,23 +139,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Shell Necklace*: When entering battle, the additional stacks of :effect{code="SPIRIT_SHELL_SELF"} gained for self is increased to **8**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Shell Necklace*: The number of times required to trigger *\[Unmendable Cracks]* from deploying or retrieving :effect{code="SPIRIT_SHELL"} is decreased to **5**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *Unmendable Cracks*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **180/270/450%**; the deployed stacks of :effect{code="SPIRIT_SHELL"} is increased to **4**; and when deploying :effect{code="SPIRIT_SHELL"}, the chance to gain Moxie is increased to **25%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Ocean in the Shell*: The stacks of :effect{code="SHARED_SHELLS_SHARED_FATE"} granted to all allies is increased to **4/6/10**; and when retrieving :effect{code="SPIRIT_SHELL"}, the healing factor is increased to **40%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Shell Necklace*: When being attacked with an extra action, for each stack of :effect{code="SPIRIT_SHELL"} held, that attack's DMG Dealt increase is now **6%**, and the Critical DMG increase is now **6%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

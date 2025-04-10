@@ -10,13 +10,16 @@ import Layout from "@layouts/Layout.astro";
 import "@styles/markdown-layout.css";
 import { getEntry, render } from "astro:content";
 
-const characterArchetypeEntry = await getEntry("character-docs", "archetype")!;
+const characterArchetypeEntry = await getEntry(
+  "character-docs",
+  "archetype-trait"
+)!;
 
 const { Content } = await render(characterArchetypeEntry);
 ---
 
 <Layout
-  title="Characters Archetype"
+  title="Characters Archetype/Trait"
   breadcrumbs={[
     {
       label: "Home",
@@ -27,7 +30,7 @@ const { Content } = await render(characterArchetypeEntry);
       href: "/characters",
     },
     {
-      label: "Characters Archetype",
+      label: "Characters Archetype/Trait",
     },
   ]}
 >
