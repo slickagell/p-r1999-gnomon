@@ -1,202 +1,202 @@
 {
   "mindmap": {
     "nodes": [
-      { "id": "1", "code": "#", "r": 10 },
+      { "id": "1", "code": "DMG_TAKEN_REDUCTION", "r": 10 },
       {
         "id": "2",
         "offsetX": -0.5,
         "offsetY": -1,
-        "code": "#"
+        "code": "SACRIFICIAL_KINDLING_I"
       },
       {
         "id": "3",
         "offsetX": 0.5,
         "offsetY": -1,
-        "code": "#"
+        "code": "TANGIBLE_VEIL_I"
       },
       {
         "id": "4",
         "offsetX": -1.25,
         "offsetY": 0,
-        "code": "#"
+        "code": "SEARING_ASH_I"
       },
       {
         "id": "5",
         "offsetX": 1.25,
         "offsetY": 0,
-        "code": "#"
+        "code": "SWELTERING_DOMAIN_I"
       },
       {
         "id": "6",
         "offsetX": -1,
         "offsetY": -1.5,
-        "code": "#"
+        "code": "LIVING_TORCH"
       },
       {
         "id": "7",
         "offsetX": -0.5,
         "offsetY": -1.75,
-        "code": "#"
+        "code": "DMG_BONUS"
       },
       {
         "id": "8",
         "offsetX": 1,
         "offsetY": -1.5,
-        "code": "#"
+        "code": "PENETRATION_RATE"
       },
       {
         "id": "9",
         "offsetX": 0.5,
         "offsetY": -1.75,
-        "code": "#"
+        "code": "THICKENING_OBSCURITY"
       },
       {
         "id": "10",
         "offsetX": -2,
         "offsetY": 0,
-        "code": "#"
+        "code": "SUNLESS_OBSCURITY"
       },
       {
         "id": "11",
         "offsetX": -1.75,
         "offsetY": -0.5,
-        "code": "#"
+        "code": "DMG_TAKEN_REDUCTION"
       },
       {
         "id": "12",
         "offsetX": 2,
         "offsetY": 0,
-        "code": "#"
+        "code": "ATK"
       },
       {
         "id": "13",
         "offsetX": 1.75,
         "offsetY": -0.5,
-        "code": "#"
+        "code": "ASSEMBLAGE"
       },
       {
         "id": "14",
         "offsetX": -1,
         "offsetY": -2.25,
-        "code": "#"
+        "code": "WARNING_SMOKE"
       },
       {
         "id": "15",
         "offsetX": 1,
         "offsetY": -2.25,
-        "code": "#"
+        "code": "TANGIBLE_VEIL_II"
       },
       {
         "id": "16",
         "offsetX": -2.5,
         "offsetY": -0.5,
-        "code": "#"
+        "code": "SEARING_ASH_II"
       },
       {
         "id": "17",
         "offsetX": 2.5,
         "offsetY": -0.5,
-        "code": "#"
+        "code": "LINGERING_PERSISTENCE"
       },
       {
         "id": "18",
         "offsetX": -1.75,
         "offsetY": -2.5,
-        "code": "#"
+        "code": "CARBONIZE"
       },
       {
         "id": "19",
         "offsetX": -0.75,
         "offsetY": -3,
-        "code": "#"
+        "code": "ADD_KINDLING"
       },
       {
         "id": "20",
         "offsetX": 1.75,
         "offsetY": -2.5,
-        "code": "#"
+        "code": "DISCORDANT_UNITY"
       },
       {
         "id": "21",
         "offsetX": 0.75,
         "offsetY": -3,
-        "code": "#"
+        "code": "FERAL_FIRE"
       },
       {
         "id": "22",
         "offsetX": -3,
         "offsetY": -0.75,
-        "code": "#"
+        "code": "EMBERS"
       },
       {
         "id": "23",
         "offsetX": 3,
         "offsetY": -0.75,
-        "code": "#"
+        "code": "SWELTERING_DOMAIN_II"
       },
       {
         "id": "24",
         "offsetX": -1.5,
         "offsetY": -3.25,
-        "code": "#"
+        "code": "SACRIFICIAL_KINDLING_II"
       },
       {
         "id": "25",
         "offsetX": 1.5,
         "offsetY": -3.25,
-        "code": "#"
+        "code": "WOLF_S_FANG"
       },
       {
         "id": "26",
         "offsetX": -4,
         "offsetY": -0.75,
-        "code": "#"
+        "code": "SOOTHING_SPARK"
       },
       {
         "id": "27",
         "offsetX": -3.25,
         "offsetY": -1.75,
-        "code": "#"
+        "code": "SCORCHING_SPARK"
       },
       {
         "id": "28",
         "offsetX": 4,
         "offsetY": -0.75,
-        "code": "#"
+        "code": "HAZY_DISPERSAL"
       },
       {
         "id": "29",
         "offsetX": 3.25,
         "offsetY": -1.75,
-        "code": "#"
+        "code": "MIASMIC_FOG"
       },
       {
         "id": "30",
         "offsetX": -2,
         "offsetY": -4,
         "r": 8,
-        "code": "#"
+        "code": "SACRIFICIAL_KINDLING_III"
       },
       {
         "id": "31",
         "offsetX": 2,
         "offsetY": -4,
         "r": 8,
-        "code": "#"
+        "code": "TANGIBLE_VEIL_III"
       },
       {
         "id": "32",
         "offsetX": -4.25,
         "offsetY": -1.75,
         "r": 8,
-        "code": "#"
+        "code": "SEARING_ASH_III"
       },
       {
         "id": "33",
         "offsetX": 4.25,
         "offsetY": -1.75,
         "r": 8,
-        "code": "#"
+        "code": "SWELTERING_DOMAIN_III"
       }
     ],
     "links": [
