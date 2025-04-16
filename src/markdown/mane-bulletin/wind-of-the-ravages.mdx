@@ -3,8 +3,7 @@ title: "Wind of the Ravages"
 id: "wind-of-the-ravages"
 dmgType: "REALITY"
 afflatus: "MINERAL"
-keyUnitFeature: ""
-isDev: true
+keyUnitFeature: "Units with Star or Mineral afflatus with Mental DMG skills"
 ---
 
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
@@ -16,11 +15,66 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
   </Fragment>
 
   <Fragment slot="stage-mechanism-content">
+    * **Star** and **Mineral** afflatus units gain **20%** stats increase in ATK, DEF and HP
+
+    * Ally after taking an action, gain Eureka **+1** (triggers up to 1 time per character per round).
+
+    <br />
+
+    * There are the boss *Bearer of Hardship*, and its minion, *Windfury Incarnate*
+
+    <br />
+
+    * The boss, *Bearer of Hardship*:
+      * At the start of the battle, gains **20** stack of *\[Quiet Grudge]*.
+      * On revival, it will regain **20** stacks of *\[Quiet Grudge]* and remove all :effect{code="ETCHED_MALICE"} stacks.
+      * At the start of the round, the boss will inflict :effect{code="BLOODTHIRST"} to our ally with the highest ATK for **1** round.
+      * When being **attacked**, applies **1** stack of :effect{code="SCATTERING_WINDS"} to *Windfury Incarnate*.
+
+    <br />
+
+    * As the boss's second attack, the main threat to our allies:
+      * For every **2** stacks of *\[Quiet Grudge]*, it will put **1** *\[Infernal Resentment]* incatation to our Spelldock.
+      * Regains **15** stack of *\[Quiet Grudge]*.
+      * Enter *\[Channel]* status and in the next round, it will trigger **all** *\[Infernal Resentment]* incantations that deals massive DMG to our allies.
+
+    <br />
+
+    * Another threat is the boss's Ultimate:
+      * It will enter *\[Channel]* status and not act for **2** rounds and gain an amount of *\[Shield]*.
+      * If *\[Shield]* is lost, it can not act for **1** round and gains DMG Taken Reduction **-50%** for **4** rounds.
+      * If *\[Shield]* is **not** be destroyed after **2** rounds:
+        * Deals AoE Reality DMG to our allies.
+        * Regain **20** stacks of *\[Quiet Grudge]* and remove all :effect{code="ETCHED_MALICE"} stacks.
+        * Place **20** *\[Infernal Resentment]* incatations to our Spelldock.
+
+    <br />
+
+    * The minion, *Windfury Incarnate*:
+      * At the start of the battle, gains **1** stack of :effect{code="WINDFURY"}.
+      * At the end of the round, doubles the stack of :effect{code="WINDFURY"}.
+      * If :effect{code="WINDFURY"} is **>= 4**, grant  Incantation Might **+20%** to all allies for **1** rounds.
+      * If :effect{code="WINDFURY"} is **>= 8**, grant  DMG Reduction **+30%** to all allies for **1** rounds.
+      * When being **defeated**, deals Genesis DMG equal to **30%** Max HP of *Bearer of Hardship*.
+
+    <br />
+
+    * Attack *Bearer of Hardship* or *Windfury Incarnate* will remove **1** stack of *\[Quiet Grudge]* and inflict **1** stack of :effect{code="ETCHED_MALICE"} to the boss.
+
     #### Crisis Column mode
+
+    * Both allies and enemies when being attacked, if in a *\[Channel]* status, DMG Taken **-30%**.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
     ## Strategy and tips
+  </Fragment>
+
+  <Fragment slot="strategy-and-tips-content">
+    * Prioritize **Star** and **Mineral** with **Mental** DMG units since they deal more damage.
+    * Use **AoE** skills to attack enemies since it will help reduce **2** *\[Quiet Grudge]* stacks, try to reduce the stacks as much as possible.
+    * If you end up having *\[Infernal Resentment]* incantations in the Spelldock, use them **immediately** since we can only survive with 1 or 2 *\[Infernal Resentment]* incantations, more than that can kill entire team.
+    * If the boss is in Ultimate *\[Channel]* status, you **must** destroy the *\[Shield]* of the boss before the next **2** rounds or you will **lose** the Raid, since it will put **20** stacks of *\[Infernal Resentment]* and we can not remove them fast enough.
   </Fragment>
 
   <Fragment slot="team-suggestions-title">
@@ -29,13 +83,33 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
 
   <Fragment slot="team-suggestions-dps">
     #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="BARCAROLA" />
+
+    <CharacterHeadIcon code="WINDSONG" />
+
+    <CharacterHeadIcon code="37" />
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
   </Fragment>
 
   <Fragment slot="team-suggestions-support">
     #### Support
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="LOPERA" />
   </Fragment>
 
   <Fragment slot="team-suggestions-sustain">
     #### Sustain/Healer
+
+    <CharacterHeadIcon code="VOYAGER" />
+
+    <CharacterHeadIcon code="FATUTU" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="VILA" />
   </Fragment>
 </ManeBulletinContent>

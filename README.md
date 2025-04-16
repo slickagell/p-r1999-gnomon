@@ -23,10 +23,12 @@ Any suggestions or reported issues are appreciated.
         └── /cheatsheet
     └── /a-series-of-dusks
         └── /artefacts 
+            └── /:type 
             └── /exchange 
         └── /catalysts 
         └── /mechanism 
         └── /rhapsody-of-the-moon
+        └── /fugue-of-reflections
     └── /mane-bulletin
         └── /:boss
     └── /reveries-in-the-rain
