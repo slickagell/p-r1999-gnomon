@@ -5,7 +5,12 @@ export default {
       type: "list",
       name: "mythManifest",
       message: "Myth manifest:",
-      choices: ["Mountain Ghost", "Star of Misfortune", "Operatic Reflection"],
+      choices: [
+        "Ashen Beast",
+        "Mountain Ghost",
+        "Operatic Reflection",
+        "Star of Misfortune",
+      ],
     },
     {
       type: "input",
