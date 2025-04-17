@@ -10,7 +10,7 @@ import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
-import { kebabCase } from "change-case";
+import { capitalCase, kebabCase } from "change-case";
 
 type Props = {
   id: string;
@@ -60,6 +60,12 @@ const {
   resonanceMaterials,
   isDev,
 } = Astro.props;
+
+enum RESONANCE_MATERIALS_TABS {
+  DETAIL = 'detail',
+  TOTAL_R10 = 'total_r10',
+  TOTAL = 'total'
+}
 
 const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
@@ -536,21 +542,31 @@ const hasInsight3Materials = insightMaterials?.["3"];
 {/* Resonance Materials */}
 {
   resonanceMaterials && (
-    <div x-data="{isShowTotal: false}">
+    <div x-data="{active: 'detail'}">
       <slot name="resonance-materials-section-title" />
 
       <div class="flex items-center justify-end">
-        <label class="cursor-pointer label gap-2">
-          <span class="label-text">Total</span>
-          <input
-            type="checkbox"
-            class="toggle toggle-primary"
-            x-model="isShowTotal"
-          />
-        </label>
+        <div class="tabs tabs-boxed">
+          {Object.values(RESONANCE_MATERIALS_TABS).map((tab) => {
+            if (tab === RESONANCE_MATERIALS_TABS.TOTAL_R10) {
+              if(!(star >= 5)) {
+                return null
+              }
+            }
+            return (
+              <button
+                @click={`active = '${tab}'`}
+                class="tab"
+                :class={`(active === '${tab}') && 'tab-active !text-white'`}
+              >
+                {capitalCase(tab)}
+              </button>
+            )
+          })}
+        </div>
       </div>
 
-      <template x-if="!isShowTotal">
+      <template x-if={`active === '${RESONANCE_MATERIALS_TABS.DETAIL}'`}>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-5">
           {Object.entries(resonanceMaterials).map(
             ([resonanceLevel, materials]) => (
@@ -565,7 +581,49 @@ const hasInsight3Materials = insightMaterials?.["3"];
         </div>
       </template>
 
-      <template x-if="isShowTotal">
+      {star >= 5 && (<template x-if={`active === '${RESONANCE_MATERIALS_TABS.TOTAL_R10}'`}>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+          x-data="sortMaterials"
+        >
+          {Object.entries(
+            JSON.parse(JSON.stringify(resonanceMaterials)) as {
+              [resonanceLevel: string]: {
+                code: string;
+                require: number;
+              }[];
+            }
+          )
+            .reduce((accumulator, current) => {
+              const [resonanceLevel, currentValue] = current
+              if(parseInt(resonanceLevel) > 10) return accumulator
+
+              currentValue.forEach((material) => {
+                if (accumulator.some((m) => m.code === material.code)) {
+                  const index = accumulator.findIndex(
+                    (m) => m.code === material.code
+                  );
+                  accumulator[index].require += material.require;
+                } else {
+                  accumulator.push(material);
+                }
+              });
+              return accumulator;
+            }, [] as {
+                code: string;
+                require: number;
+              }[])
+            .map((material) => (
+              <Material
+                code={material.code}
+                require={material.require}
+                withMetadata
+              />
+            ))}
+        </div>
+      </template>)}
+
+      <template x-if={`active === '${RESONANCE_MATERIALS_TABS.TOTAL}'`}>
         <div
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
           x-data="sortMaterials"

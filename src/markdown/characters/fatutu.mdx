@@ -186,6 +186,73 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     </div>
   </Fragment>
 
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Fatutu is a sustain/healer character. Her special *[Spirit Shell]* effect heals entire team and increases DMG of Extra Action team significantly.
+
+    Fatutu can both deploy amount of *[Spirit Shell]* stacks to enemy and retrieve amount of *[Spirit Shell]* stacks from enemy.
+
+    <br />
+    *[Spirit Shell]* effect:
+    * Can **not** be purified and has **no** duration. 
+    * Maximum stacks on both self and enemies is **12**.
+    * Effect on self will be **different** from effect on enemies.
+
+    <br />
+    :effect{code="SPIRIT_SHELL_SELF"} on self:
+    * At Insight 1, when entering battle, Fatutu will gain **4** stacks of :effect{code="SPIRIT_SHELL_SELF"} for self.
+    * With Insight 3, when entering battle, Fatutu will gain total **12** stacks of :effect{code="SPIRIT_SHELL_SELF"} for self.
+    * When Fatutu is being **attacked** or **sharing damage**, applies **1** stack of :effect{code="SPIRIT_SHELL"} to the attacker.
+    
+    <br />
+    :effect{code="SPIRIT_SHELL"} on enemies:
+    * For each stacks on themselves, they will receive an additional **5%** DMG Bonus and **5%** Critical DMG when being attacked with **Follow up Attacks**.
+    * When an enemy is being **attacked**, Fatutu will retrieve **1** stack of :effect{code="SPIRIT_SHELL_SELF"}.
+    * When **multiple** enemies are being **attacked**, Fatutu still retrieve only **1** stack of :effect{code="SPIRIT_SHELL_SELF"}.
+    * When enemy is being attacked in *[Dodge]* status, Fatutu still retrieve **1** stack of :effect{code="SPIRIT_SHELL_SELF"}.
+    * When enemy is **defeated**, Fatutu will retrieve **all** stacks of :effect{code="SPIRIT_SHELL_SELF"} on that enemy.
+    * Each time a stack is retrieved, Fatutu will **heal** the entire team equal to **30%** Fatutu's ATK x number of :effect{code="SPIRIT_SHELL"} stacks.
+    <br />
+
+    Also with Insight 3, when Fatutu exchange (means both deploy and retrieve) *[Spirit Shell]* for **7** times, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{code="SPIRIT_SHELL"} and counted as a **Follow up Attack**.
+
+    <br />
+    With first Debuff skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip>:
+    * Deal single target Mental DMG attack.
+    * Deploy **3** stacks of :effect{code="SPIRIT_SHELL"} to the target.
+      * If the enemy already has :effect{code="SPIRIT_SHELL"} stacks, it means this will deploy **2** additional stacks of :effect{code="SPIRIT_SHELL"} to the target, since Fatutu will retrieve **1** stack to herself.
+    * Dispel **1/2/3** type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
+    <br />
+
+    Second skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> is a Buff incantation:
+    * Retrieve **all** stacks of :effect{code="SPIRIT_SHELL_SELF"} on enemies.
+    * The entire **HP** of the team will be **divided equally**.
+    * Grants **3/5/8** stacks of :effect{code="SHARED_SHELLS_SHARED_FATE"} to all allies.
+      * This effect **can** be dispelled, has **30** maximum stacks and has **no** duration.
+      * This effect stacks **can** be reduced even when the character is in *[Dodge]* status.
+      * HP sacrifice by other characters will **not** trigger this effect.
+      * If enemy attack multiple allies, :effect{code="SPIRIT_SHELL"} will also be deployed **multiple** times to the attacker.
+
+    <br />
+
+    Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Proverb of the Sea]*</CharacterSkillTooltip>:
+    * Deal single target Mental DMG attack.
+    * Deploy **all** stacks of :effect{code="SPIRIT_SHELL"} that Fatutu has to the target.
+    * Inflict :effect{code="SHELL_BEACON"} on the target for **2** rounds.
+
+    <br />
+    ### Operate / Rotation
+
+    * Always use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Cotton Kite]*</CharacterSkillTooltip> when it is in Spelldock, but **only 1 per round**.
+
+    <br />
+
+    
+  </Fragment>
+
   <Fragment slot="team-suggestion-section-title">
     ## Team Suggestion
   </Fragment>
