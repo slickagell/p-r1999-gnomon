@@ -1,5 +1,6 @@
 ---
 import EffectTooltip from "@components/EffectTooltip.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
 import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
 import MarkdownHighlight from "@components/MarkdownHighlight.astro";
 import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
@@ -45,6 +46,7 @@ const { Content } = await render(entry);
 >
   <Content
     components={{
+      ul: MarkdownDiscList,
       p: MarkdownParagraphContent,
       effect: EffectTooltip,
       strong: MarkdownHighlight,

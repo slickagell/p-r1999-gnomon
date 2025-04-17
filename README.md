@@ -12,21 +12,22 @@ Any suggestions or reported issues are appreciated.
 
 ```
 .
-└── / 
-    ├── /about 
-    ├── /characters 
-    │   └── /:character-detail
-    ├── /effects 
+└── /
+    ├── /about
+    ├── /characters
+        └── /:character-detail
+        └── /archetype-trait
+    ├── /effects
     └── /materials
         └── /:material-detail
         └── /craft
         └── /cheatsheet
     └── /a-series-of-dusks
-        └── /artefacts 
-            └── /:type 
-            └── /exchange 
-        └── /catalysts 
-        └── /mechanism 
+        └── /artefacts
+            └── /:type
+            └── /exchange
+        └── /catalysts
+        └── /mechanism
         └── /rhapsody-of-the-moon
         └── /fugue-of-reflections
     └── /mane-bulletin
