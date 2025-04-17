@@ -191,66 +191,121 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="how-to-play-content">
-    Fatutu is a sustain/healer character. Her special *[Spirit Shell]* effect heals entire team and increases DMG of Extra Action team significantly.
+    Fatutu is a sustain/healer character. Her special *\[Spirit Shell]* effect heals entire team and increases DMG of Extra Action team significantly.
 
-    Fatutu can both deploy amount of *[Spirit Shell]* stacks to enemy and retrieve amount of *[Spirit Shell]* stacks from enemy.
+    Fatutu can both deploy amount of *\[Spirit Shell]* stacks to enemy and retrieve amount of *\[Spirit Shell]* stacks from enemy.
 
     <br />
-    *[Spirit Shell]* effect:
-    * Can **not** be purified and has **no** duration. 
+
+    *\[Spirit Shell]* effect:
+
+    * Can **not** be purified and has **no** duration.
     * Maximum stacks on both self and enemies is **12**.
     * Effect on self will be **different** from effect on enemies.
 
     <br />
+
     :effect{code="SPIRIT_SHELL_SELF"} on self:
+
     * At Insight 1, when entering battle, Fatutu will gain **4** stacks of :effect{code="SPIRIT_SHELL_SELF"} for self.
     * With Insight 3, when entering battle, Fatutu will gain total **12** stacks of :effect{code="SPIRIT_SHELL_SELF"} for self.
     * When Fatutu is being **attacked** or **sharing damage**, applies **1** stack of :effect{code="SPIRIT_SHELL"} to the attacker.
-    
+
     <br />
+
     :effect{code="SPIRIT_SHELL"} on enemies:
+
     * For each stacks on themselves, they will receive an additional **5%** DMG Bonus and **5%** Critical DMG when being attacked with **Follow up Attacks**.
     * When an enemy is being **attacked**, Fatutu will retrieve **1** stack of :effect{code="SPIRIT_SHELL_SELF"}.
     * When **multiple** enemies are being **attacked**, Fatutu still retrieve only **1** stack of :effect{code="SPIRIT_SHELL_SELF"}.
-    * When enemy is being attacked in *[Dodge]* status, Fatutu still retrieve **1** stack of :effect{code="SPIRIT_SHELL_SELF"}.
+    * When enemy is being attacked in *\[Dodge]* status, Fatutu still retrieve **1** stack of :effect{code="SPIRIT_SHELL_SELF"}.
     * When enemy is **defeated**, Fatutu will retrieve **all** stacks of :effect{code="SPIRIT_SHELL_SELF"} on that enemy.
-    * Each time a stack is retrieved, Fatutu will **heal** the entire team equal to **30%** Fatutu's ATK x number of :effect{code="SPIRIT_SHELL"} stacks.
-    <br />
-
-    Also with Insight 3, when Fatutu exchange (means both deploy and retrieve) *[Spirit Shell]* for **7** times, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{code="SPIRIT_SHELL"} and counted as a **Follow up Attack**.
 
     <br />
+
+    With Insight 1, when deploying :effect{code="SPIRIT_SHELL"}, Fatutu has a **20%** chance to gain Moxie **+1**.
+
+    Also with Insight 3, when Fatutu exchange (means both deploy and retrieve) *\[Spirit Shell]* for **7** times, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{code="SPIRIT_SHELL"} and counted as a **Follow up Attack**.
+
+    Each time a stack is **retrieved**, Fatutu will **heal** the entire team equal to **30%** Fatutu's ATK x number of :effect{code="SPIRIT_SHELL"} stacks.
+
+    <br />
+
     With first Debuff skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip>:
+
     * Deal single target Mental DMG attack.
     * Deploy **3** stacks of :effect{code="SPIRIT_SHELL"} to the target.
       * If the enemy already has :effect{code="SPIRIT_SHELL"} stacks, it means this will deploy **2** additional stacks of :effect{code="SPIRIT_SHELL"} to the target, since Fatutu will retrieve **1** stack to herself.
     * Dispel **1/2/3** type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
+
     <br />
 
     Second skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> is a Buff incantation:
+
     * Retrieve **all** stacks of :effect{code="SPIRIT_SHELL_SELF"} on enemies.
     * The entire **HP** of the team will be **divided equally**.
     * Grants **3/5/8** stacks of :effect{code="SHARED_SHELLS_SHARED_FATE"} to all allies.
       * This effect **can** be dispelled, has **30** maximum stacks and has **no** duration.
-      * This effect stacks **can** be reduced even when the character is in *[Dodge]* status.
+      * This effect stacks **can** be reduced even when the character is in *\[Dodge]* status.
       * HP sacrifice by other characters will **not** trigger this effect.
       * If enemy attack multiple allies, :effect{code="SPIRIT_SHELL"} will also be deployed **multiple** times to the attacker.
 
     <br />
 
     Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Proverb of the Sea]*</CharacterSkillTooltip>:
+
     * Deal single target Mental DMG attack.
-    * Deploy **all** stacks of :effect{code="SPIRIT_SHELL"} that Fatutu has to the target.
+    * Deploy **all** stacks of :effect{code="SPIRIT_SHELL"} that Fatutu **has** to the target.
     * Inflict :effect{code="SHELL_BEACON"} on the target for **2** rounds.
+      * This effect **can** be dispelled.
+      * When attack enemy with this effect, Fatutu will exchange *\[Spirit Shell]* **2** times, 1 retrieve time and 1 redeploy time.
 
     <br />
+
     ### Operate / Rotation
 
-    * Always use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Cotton Kite]*</CharacterSkillTooltip> when it is in Spelldock, but **only 1 per round**.
+    * Cast <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip> and <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> in the early rounds to gain Moxie. Try to get the Ultimate as soon as possible.
+      * Use Debuff <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip> first to deploy :effect{code="SPIRIT_SHELL"} to the target then use the Buff skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> later.
+    * Use <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Proverb of the Sea]*</CharacterSkillTooltip> Ultimate when the other enemies do **not** have or have **few** *\[Spirit Shell]* so that the amount of *\[Spirit Shell]* can be focused on the target.
+      * If *\[Spirit Shell]* lying around between enemies, use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> to retrieve all of *\[Spirit Shell]* **first** then use Ultimate to attack the target later.
+      * Use Fatutu's Ultimate **before** using other characters skills.
+      * Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> after using Ultimate.
+    * Since Fatutu has a **20%** chance to gain Moxie when deploying :effect{code="SPIRIT_SHELL"}, depending on the Moxie that Fatutu has on the beginning of each round, we maybe just need to use Debuff or Buff incantation 1-2 times and be able to use Ultimate again.
+    * Pay attention to the amount of :effect{code="SHARED_SHELLS_SHARED_FATE"} stacks and use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> to provide more stacks when it is about to run out.
 
     <br />
 
-    
+    <div class="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center items-center">
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Cast this incantation first to deploy :effect{code="SPIRIT_SHELL"} to the target</div>
+      </div>
+
+      <div class="flex-1 step-arrow">
+        <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use this incantation to retrieve :effect{code="SPIRIT_SHELL_SELF"} and grant :effect{code="SHARED_SHELLS_SHARED_FATE"} to all allies</div>
+      </div>
+
+      <div class="flex-1 step-arrow-two-ways">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Use Ultimate to attack the target</div>
+      </div>
+
+      <div class="flex-1">
+        <div class="flex gap-2 justify-center">
+          <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id} />
+
+          <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id} />
+        </div>
+
+        <div class="mt-1 text-center">Ocassionally cast these skill to gain Moxie to Ultimate again. Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> after Ultimate and pay attention to the amount of :effect{code="SHARED_SHELLS_SHARED_FATE"} stacks</div>
+      </div>
+    </div>
+
+    <br />
   </Fragment>
 
   <Fragment slot="team-suggestion-section-title">
