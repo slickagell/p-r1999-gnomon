@@ -1,8 +1,8 @@
 import * as d3 from "d3";
 
 const MARGIN = { TOP: 16, RIGHT: 32, BOTTOM: 32, LEFT: 32 };
-const CHART_WIDTH = window.innerWidth - MARGIN.LEFT - MARGIN.RIGHT;
-const CHART_HEIGHT = window.innerHeight / 1.5 - MARGIN.TOP - MARGIN.BOTTOM;
+const CHART_WIDTH = 1366 - MARGIN.LEFT - MARGIN.RIGHT;
+const CHART_HEIGHT = 768 / 1.5 - MARGIN.TOP - MARGIN.BOTTOM;
 
 const MARKER_BOX_WIDTH = 8;
 const MARKER_BOX_HEIGHT = 8;
@@ -68,7 +68,6 @@ export default () => ({
   chartMargin: MARGIN,
   chartWidth: CHART_WIDTH,
   chartHeight: CHART_HEIGHT,
-  totalWidth: CHART_WIDTH * 3,
 
   markerBoxWidth: MARKER_BOX_WIDTH,
   markerBoxHeight: MARKER_BOX_HEIGHT,
@@ -93,11 +92,31 @@ export default () => ({
   svg: null,
 
   init() {
+    const { oldestYear, newestYear } = STORM_EVENT_DATA.reduce(
+      (prev, stormEventData) => {
+        if (stormEventData.period[0] < prev.oldestYear) {
+          prev.oldestYear = stormEventData.period[0];
+        }
+        if (
+          stormEventData.period[stormEventData.period.length - 1] >
+          prev.newestYear
+        ) {
+          prev.newestYear =
+            stormEventData.period[stormEventData.period.length - 1];
+        }
+        return prev;
+      },
+      {
+        oldestYear: 1999,
+        newestYear: 1999,
+      }
+    );
+
     // Add X axis
     this.xLine = d3
       .scaleLinear()
-      .domain([1910, 2010])
-      .range([this.chartMargin.LEFT, this.totalWidth - this.chartMargin.RIGHT]);
+      .domain([oldestYear - 3, newestYear + 3])
+      .range([this.chartMargin.LEFT, this.chartWidth - this.chartMargin.RIGHT]);
 
     // create svg element
     d3.select("#timeline")
@@ -123,8 +142,7 @@ export default () => ({
 
     this.svg = body
       .append("svg")
-      .attr("width", this.totalWidth)
-      .attr("height", this.chartHeight)
+      .attr("viewBox", [0, 0, this.chartWidth, this.chartHeight])
       .style("display", "block");
 
     this.xAxis = this.svg
@@ -138,18 +156,21 @@ export default () => ({
     // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
     let zoom = d3
       .zoom()
-      .scaleExtent([1, 10]) // This control how much you can unzoom (x0.5) and zoom (x20)
+      .scaleExtent([1, 10]) // This control how much you can unzoom and zoom
       .extent([
-        [0, 0],
-        [this.chartWidth, this.chartHeight],
+        [this.chartMargin.LEFT, 0],
+        [this.chartWidth - this.chartMargin.RIGHT, this.chartHeight],
       ])
-      .filter((event) => this.filterZoom(event))
+      .translateExtent([
+        [this.chartMargin.LEFT, -Infinity],
+        [this.chartWidth - this.chartMargin.RIGHT, Infinity],
+      ])
       .on("zoom", (event) => this.updateChart(event));
 
     // This add an invisible rect on top of the chart area. This rect can recover pointer events: necessary to understand when the user zoom
     this.chart = this.svg
       .append("rect")
-      .attr("width", this.totalWidth)
+      .attr("width", this.chartWidth)
       .attr("height", this.chartHeight)
       .style("fill", "none")
       .style("pointer-events", "all")
@@ -213,7 +234,7 @@ export default () => ({
         {
           title: `Storm ` + (idx + 1),
           source: {
-            year: time[0].year,
+            year: time[time.length - 1].year,
             x: sourceX,
             y: sourceY,
           },
@@ -251,10 +272,13 @@ export default () => ({
       .attr("height", CIRCLE_RADIUS)
       .style("fill", "#bba893")
       .on("mouseover", function (event, d, i) {
-        d3.select(this)
-          .transition()
-          .duration(TRANSITION_DURATION_TIME)
-          .attr("height", CIRCLE_RADIUS * 1.5);
+        const x = d3.select(this).attr("x");
+        const y = d3.select(this).attr("y");
+        console.log("🚀 ~ x:", x);
+        // d3.select(this)
+        //   .transition()
+        //   .duration(TRANSITION_DURATION_TIME)
+        //   .attr("height", CIRCLE_RADIUS * 1.5);
         tooltip
           .transition()
           .duration(TRANSITION_DURATION_TIME)
@@ -263,9 +287,9 @@ export default () => ({
           .html(
             `<p class="whitespace-nowrap">Period: ${d[0].year} - ${d[d.length - 1].year}</p>`
           )
-          .style("left", d[0].x + "px")
-          .style("top", d[0].y + "px")
-          .style("transform", "translate(-50%, calc(-100% - 16px))");
+          .style("left", x + "px")
+          .style("top", y + "px");
+        // .style("transform", "translate(-50%, calc(-100% - 16px))");
       })
       .on("mouseout", function (d) {
         d3.select(this)
@@ -276,7 +300,7 @@ export default () => ({
           .transition()
           .duration(TRANSITION_DURATION_TIME)
           .style("opacity", 0);
-        tooltip.style("left", 0).style("top", 0);
+        // tooltip.style("left", 0).style("top", 0);
       });
 
     this.nodes = this.svg
@@ -292,6 +316,9 @@ export default () => ({
       .attr("r", (d) => d.r)
       .style("fill", STORM_COLOR)
       .on("mouseover", function (event, d, i) {
+        const x = d3.select(this).attr("cx");
+        const y = d3.select(this).attr("cy");
+
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
@@ -303,9 +330,9 @@ export default () => ({
           .style("opacity", 1);
         tooltip
           .html(`<p class="whitespace-nowrap">Year: ${d.year}</p>`)
-          .style("left", d.x + "px")
-          .style("top", d.y + "px")
-          .style("transform", "translate(-50%, calc(-100% - 16px))");
+          .style("left", x + "px")
+          .style("top", y + "px");
+        //.style("transform", "translate(-50%, calc(-100% - 16px))");
       })
       .on("mouseout", function (d) {
         d3.select(this)
@@ -316,7 +343,7 @@ export default () => ({
           .transition()
           .duration(TRANSITION_DURATION_TIME)
           .style("opacity", 0);
-        tooltip.style("left", 0).style("top", 0);
+        // tooltip.style("left", 0).style("top", 0);
       });
 
     this.arrows = this.svg
