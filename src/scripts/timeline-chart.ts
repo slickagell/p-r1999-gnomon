@@ -119,26 +119,9 @@ export default () => ({
       .range([this.chartMargin.LEFT, this.chartWidth - this.chartMargin.RIGHT]);
 
     // create svg element
-    d3.select("#timeline")
-      .append("svg")
-      .attr("width", "100%")
-      .attr(
-        "height",
-        this.chartHeight + this.chartMargin.TOP + this.chartMargin.BOTTOM
-      )
-      .style("position", "absolute")
-      .style("pointer-events", "none")
-      .style("z-index", 1)
-      .append("g")
-      .attr("transform", "translate(" + this.chartMargin.LEFT + "," + 0 + ")");
 
     // Create a scrolling div containing the area shape and the horizontal axis.
-    const body = d3
-      .select("#timeline")
-      .append("div")
-      .attr("class", "relative")
-      .style("overflow-x", "auto")
-      .style("-webkit-overflow-scrolling", "touch");
+    const body = d3.select("#timeline").append("div").attr("class", "relative");
 
     this.svg = body
       .append("svg")
@@ -272,13 +255,10 @@ export default () => ({
       .attr("height", CIRCLE_RADIUS)
       .style("fill", "#bba893")
       .on("mouseover", function (event, d, i) {
-        const x = d3.select(this).attr("x");
-        const y = d3.select(this).attr("y");
-        console.log("🚀 ~ x:", x);
-        // d3.select(this)
-        //   .transition()
-        //   .duration(TRANSITION_DURATION_TIME)
-        //   .attr("height", CIRCLE_RADIUS * 1.5);
+        d3.select(this)
+          .transition()
+          .duration(TRANSITION_DURATION_TIME)
+          .attr("height", CIRCLE_RADIUS * 1.5);
         tooltip
           .transition()
           .duration(TRANSITION_DURATION_TIME)
@@ -287,9 +267,9 @@ export default () => ({
           .html(
             `<p class="whitespace-nowrap">Period: ${d[0].year} - ${d[d.length - 1].year}</p>`
           )
-          .style("left", x + "px")
-          .style("top", y + "px");
-        // .style("transform", "translate(-50%, calc(-100% - 16px))");
+          .style("left", event.offsetX + "px")
+          .style("top", event.offsetY + "px")
+          .style("transform", "translate(-50%, calc(-100% - 16px))");
       })
       .on("mouseout", function (d) {
         d3.select(this)
@@ -316,9 +296,6 @@ export default () => ({
       .attr("r", (d) => d.r)
       .style("fill", STORM_COLOR)
       .on("mouseover", function (event, d, i) {
-        const x = d3.select(this).attr("cx");
-        const y = d3.select(this).attr("cy");
-
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
@@ -330,9 +307,9 @@ export default () => ({
           .style("opacity", 1);
         tooltip
           .html(`<p class="whitespace-nowrap">Year: ${d.year}</p>`)
-          .style("left", x + "px")
-          .style("top", y + "px");
-        //.style("transform", "translate(-50%, calc(-100% - 16px))");
+          .style("left", event.offsetX + "px")
+          .style("top", event.offsetY + "px")
+          .style("transform", "translate(-50%, calc(-100% - 16px))");
       })
       .on("mouseout", function (d) {
         d3.select(this)
