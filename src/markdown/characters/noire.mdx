@@ -16,7 +16,9 @@ isDev: true
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -58,47 +60,47 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    ### :TODO - Update skill-1 name:
+    ### Experimental Montage
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
+    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-1 star-1 note:">
       :TODO - Add character skill-1 star-1 description:
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
+    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-1 star-2 note:">
       :TODO - Add character skill-2 star-2 description:
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
+    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-1 star-3 note:">
       :TODO - Add character skill-3 star-3 description:
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    ### :TODO - Update skill-2 name:
+    ### Stunt Take
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
+    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-2 star-1 note:">
       :TODO - Add character skill-1 star-1 description:
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
+    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-2 star-2 note:">
       :TODO - Add character skill-2 star-2 description:
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
+    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-2 star-3 note:">
       :TODO - Add character skill-3 star-3 description:
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    ### :TODO - Update ultimate name:
+    ### Climactic Moment
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
+    <CardInfo type="ATTACK" note=":TODO - Add character ultimate note:">
       :TODO - Update character ultimate description:
     </CardInfo>
   </Fragment>
@@ -108,7 +110,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    ### :TODO - Update inheritance title:
+    ### Miniature Set
   </Fragment>
 
   <Fragment slot="insight-1-info">
@@ -153,6 +155,66 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube Recommendation
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="REHEARSAL_OF_DREAMS" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="ANOTHER_STORY" />
+
+      <PsychubeIcon code="BALANCE_PLEASE" />
+
+      <PsychubeIcon code="LUXURIOUS_LEISURE" />
+    </div>
+  </Fragment>
+
+   <Fragment slot="team-suggestion-section-title">
+    ## Team Suggestion
+  </Fragment>
+
+  <Fragment slot="team-suggestion-dps">
+    #### DPS/Sup DPS
+
+    <CharacterHeadIcon code="ANJO_NALA" />
+
+    <CharacterHeadIcon code="TUESDAY" />
+
+    <CharacterHeadIcon code="DRUVIS_III" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-support">
+    #### Support
+
+    <CharacterHeadIcon code="LOPERA" />
+
+    <CharacterHeadIcon code="AN_AN_LEE" />
+
+    <CharacterHeadIcon code="MERCURIA" />
+
+    <CharacterHeadIcon code="ARGUS" />
+
+    <CharacterHeadIcon code="FLUTTERPAGE" />
+  </Fragment>
+
+  <Fragment slot="team-suggestion-sustain">
+    #### Sustain/Healer
+
+    <CharacterHeadIcon code="VILA" />
+
+    <CharacterHeadIcon code="KAKANIA" />
+
+    <CharacterHeadIcon code="FATUTU" />
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

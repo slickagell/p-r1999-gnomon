@@ -102,6 +102,404 @@
       ]
     }
   },
-  "patternRecommended": "PLACIDITY",
-  "recommended": {}
+  "patternRecommended": "GENUINITY",
+  "recommended": {
+    "10-11-12": [
+      {
+        "name": "Critical-1",
+        "source": {
+          "label": "Bilibili - 伊卡洛斯we",
+          "link": "https://www.bilibili.com/video/BV1pcwVeqEdZ/"
+        },
+        "patternRecommended": "GENUINITY",
+        "code": "AvQkOAUrRCUEJAEtEUJFSGYrAChRQFBFQEBCPDA=",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-2"],
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["0-3", "1-3", "2-3", "3-3"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-4", "1-4"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["2-4", "2-5", "3-4"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-0", "2-0", "3-0", "3-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["1-1", "2-1", "2-2", "3-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-0", "4-1", "4-2", "5-0"],
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_X_5_01"
+          },
+          {
+            "blocks": ["5-1", "6-0", "6-1", "6-2"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["4-4", "4-5", "4-6", "5-6"],
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["5-5", "6-4", "6-5"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["6-6"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          }
+        ]
+      },
+      {
+        "name": "Critical-2",
+        "source": {
+          "label": "Bilibili - 梦轩dada",
+          "link": "https://www.bilibili.com/video/BV1U3w5eUESn/"
+        },
+        "patternRecommended": "GENUINITY",
+        "code": "AjkAPRD0EUExKFBFUCQEJgMoVCpTLCNAJSg0",
+        "resonance": [
+          {
+            "blocks": ["0-0", "1-0", "1-1", "2-0"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-1", "0-2", "0-3", "0-4"],
+            "shape": [[1, 1, 1, 1]],
+            "orientation": 6,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["1-2", "2-1", "2-2", "2-3", "3-2"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_X_5_01"
+          },
+          {
+            "blocks": ["1-3", "1-4", "2-4"],
+            "shape": [
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-5", "1-5"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["0-6", "1-6", "2-5", "2-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["3-5", "3-6", "4-5", "5-5"],
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["4-6", "5-6", "6-5", "6-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["3-0", "3-1", "4-1", "5-1"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["3-3", "3-4", "4-2", "4-3"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["5-2", "5-3", "6-2"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["4-4", "5-4", "6-3", "6-4"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          }
+        ]
+      }
+    ],
+    "13-14-15": [
+      {
+        "name": "Critical",
+        "source": {
+          "label": "Bilibili - 伊卡洛斯we",
+          "link": "https://www.bilibili.com/video/BV1pcwVeqEdZ/"
+        },
+        "patternRecommended": "GENUINITY",
+        "code": "ADhFOAX0JCUEK0QkAS0RKwBDMkRCREFCUitARTA=",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-2"],
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["0-3", "1-3"],
+            "shape": [[1], [1]],
+            "orientation": 6,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["0-4", "0-5", "0-6", "1-6"],
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["1-4", "1-5"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["2-4", "2-5"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["2-6", "3-5", "3-6"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-3", "3-3", "3-4"],
+            "shape": [
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-1", "2-1", "2-2", "3-2"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["1-0", "2-0", "3-0", "3-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-0", "4-1", "4-2", "5-0"],
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_X_5_01"
+          },
+          {
+            "blocks": ["5-1", "6-0", "6-1", "6-2"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["5-5", "6-4", "6-5", "6-6"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["4-4", "4-5", "4-6", "5-6"],
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02"
+          }
+        ]
+      }
+    ]
+  }
 }
