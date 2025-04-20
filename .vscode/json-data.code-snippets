@@ -21,6 +21,12 @@
     "body": [
       "{",
       "\"name\": \"Recommended resonance name\",",
+      "\"source\": {",
+        "\"label\": \"\",",
+        "\"link\": \"\"",
+      "},",
+      "\"patternRecommended\": \"\",",
+      "\"code\": \"\",",
       "\"resonance\": []",
       "}",
     ],

@@ -691,12 +691,14 @@
     ],
     "10-11-12-13-14-15": [
       {
-        "name": "Attack/DMG Build",
+        "name": "Attack/DMG",
         "isPreferred": true,
         "source": {
           "label": "Vingler's Mirror - Marcus",
           "link": "https://sites.google.com/view/vinglersmirror/marcus"
         },
+        "patternRecommended": "HYPER",
+        "code": "A/gkJQAmUC1APDAtQi1EPGM5AjQRNAU7Ew==",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "0-2", "1-0"],
@@ -815,6 +817,8 @@
           "label": "Vingler's Mirror - Marcus",
           "link": "https://sites.google.com/view/vinglersmirror/marcus"
         },
+        "patternRecommended": "HYPER",
+        "code": "A/gkJQQsBS1EJlQ8ADwQQCBAIiwyKFFAUEVASDE=",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -942,6 +946,8 @@
           "label": "Vingler's Mirror - Marcus",
           "link": "https://sites.google.com/view/vinglersmirror/marcus"
         },
+        "patternRecommended": "HYPER",
+        "code": "A/gwNCA0UDwAPBAkIjtSMDNEBCwFLCU4RUxlTAU=",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],

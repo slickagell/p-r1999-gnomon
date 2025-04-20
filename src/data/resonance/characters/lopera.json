@@ -102,7 +102,7 @@
       ]
     }
   },
-  "patternRecommended": "HYPERPHRENIA",
+  "patternRecommended": "ASPIRATIONAL",
   "recommended": {
     "5-6": [
       {
@@ -691,6 +691,8 @@
           "label": "Vingler's Mirror - Lopera",
           "link": "https://sites.google.com/view/vinglersmirror/lopera"
         },
+        "patternRecommended": "ASPIRATIONAL",
+        "code": "AvQkJ0UpBTpEOgQkAS0RQzFEMyhRKlBBMEEQSAA=",
         "resonance": [
           {
             "blocks": ["0-0"],

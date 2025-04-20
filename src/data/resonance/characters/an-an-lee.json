@@ -361,6 +361,8 @@
           "label": "Community Guide - An An Lee",
           "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
         },
+        "patternRecommended": "GENUINITY",
+        "code": "AvgwNFA0IDwAPBA7Ui1DOgRDBUglSCZDIi00TDZCVQ==",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -494,6 +496,8 @@
           "label": "Community Guide - An An Lee",
           "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
         },
+        "patternRecommended": "GENUINITY",
+        "code": "AvgwNFA0IDwAPBAoEjkERBYlNSdFO1IwM0w0TCU=",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -613,11 +617,13 @@
         ]
       },
       {
-        "name": "Critical Chance",
+        "name": "Critical",
         "source": {
           "label": "Community Guide - An An Lee",
           "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
         },
+        "patternRecommended": "GENUINITY",
+        "code": "AiUAPTAsASwhLEH7QkAjQQMkBEQVOCUrNEJVSEU=",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "0-2", "1-0"],
@@ -747,6 +753,8 @@
           "label": "Community Guide - An An Lee",
           "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=970386537#gid=970386537"
         },
+        "patternRecommended": "GENUINITY",
+        "code": "AvhELCUsBSZTNBM0MzwCLQA6EDgwJlA9Ig==",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "1-1", "2-1"],

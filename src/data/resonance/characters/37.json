@@ -862,9 +862,11 @@
       {
         "name": "Attack",
         "source": {
-          "label": "To be updated",
+          "label": "Community Guide",
           "link": "#"
         },
+        "patternRecommended": "ASPIRATIONAL",
+        "code": "BDQBNEA8YDgFPQAqAygSJiE5U/QkJ0UqQg==",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "0-2", "0-3"],
@@ -979,9 +981,11 @@
       {
         "name": "Critical",
         "source": {
-          "label": "To be updated",
+          "label": "Community Guide",
           "link": "#"
         },
+        "patternRecommended": "ASPIRATIONAL",
+        "code": "BPQQPQY5Ay0SJxQqACYwQzJARERGQlRIZihRKlA=",
         "resonance": [
           {
             "blocks": ["0-2", "1-1", "1-2", "1-3", "2-2"],
@@ -1112,9 +1116,11 @@
       {
         "name": "Attack/Survivability",
         "source": {
-          "label": "To be updated",
+          "label": "Community Guide",
           "link": "#"
         },
+        "patternRecommended": "ASPIRATIONAL",
+        "code": "BPQkOAU4RTxiPAAlBDRDKRI0ISUQKkAxUA==",
         "resonance": [
           {
             "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
