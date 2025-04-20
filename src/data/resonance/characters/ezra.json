@@ -631,6 +631,8 @@
           "label": "Vingler's Mirror - Ezra",
           "link": "https://sites.google.com/view/vinglersmirror/ezra"
         },
+        "patternRecommended": "STUPEFACTION",
+        "code": "A/QkJ0UpBToEOkQ8ADwQLSAmMChRKlBMIkwjSDNIQw==",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],

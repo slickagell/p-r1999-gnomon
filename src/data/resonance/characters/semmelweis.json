@@ -587,11 +587,13 @@
     ],
     "10-11": [
       {
-        "name": "ATK Build",
+        "name": "ATK",
         "source": {
           "label": "Vingler's Mirror - Semmelweis",
           "link": "https://sites.google.com/view/vinglersmirror/semmelweis"
         },
+        "patternRecommended": "GENUINITY",
+        "code": "AvAkJAQtFCZULUQ0IDQiPAA8EDhCOUAmUA==",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -705,11 +707,13 @@
         ]
       },
       {
-        "name": "Crit Build",
+        "name": "Crit",
         "source": {
           "label": "Vingler's Mirror - Semmelweis",
           "link": "https://sites.google.com/view/vinglersmirror/semmelweis"
         },
+        "patternRecommended": "GENUINITY",
+        "code": "AvAkJAQtFC1EJlQoUSpQNAJBAEEgQTIkIUVASAE=",
         "resonance": [
           {
             "blocks": ["4-0", "5-0", "6-0", "6-1"],

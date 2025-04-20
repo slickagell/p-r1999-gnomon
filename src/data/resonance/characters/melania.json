@@ -366,6 +366,8 @@
           "label": "Community Guide - Melania",
           "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=2111489184#gid=2111489184"
         },
+        "patternRecommended": "ELUCIDATION",
+        "code": "AfAAJAE0IDRAPGAsIjtCOiQkBC0UPTYnRA==",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "1-1", "2-1", "2-2"],
@@ -477,11 +479,13 @@
         ]
       },
       {
-        "name": "Critical Hit (with Tooth Fairy)",
+        "name": "Critical Hit",
         "source": {
           "label": "Community Guide - Melania",
           "link": "https://docs.google.com/spreadsheets/d/1lUzkJvRfV2diLiU0ai6mCrM-kkm0cqwblo1VvCkhYi4/edit?gid=2111489184#gid=2111489184"
         },
+        "patternRecommended": "ELUCIDATION",
+        "code": "ATwARBA0ESUw8UAtMiZSKEMnRSgkQRNABCwF",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],

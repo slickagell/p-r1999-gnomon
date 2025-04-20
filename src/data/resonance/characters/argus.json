@@ -532,9 +532,11 @@
       {
         "name": "Critical Hit",
         "source": {
-          "label": "To be updated",
-          "link": "#"
+          "label": "Vingler's Mirror - Argus",
+          "link": "https://sites.google.com/view/vinglersmirror/argus"
         },
+        "patternRecommended": "GENUINITY",
+        "code": "AvAkJAQtFC1EJlQlADQCKlAoUUAwQRFCMUgjRDM=",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "0-2", "1-0"],
