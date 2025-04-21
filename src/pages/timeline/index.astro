@@ -7,7 +7,7 @@ import Layout from "@layouts/Layout.astro";
 import { render } from "astro:content";
 import { getEntry } from "astro:content";
 
-const timelineContentEntry = await getEntry("timeline", "general");
+const timelineContentEntry = await getEntry("timeline", "general")!;
 
 const { Content } = await render(timelineContentEntry);
 ---
@@ -27,7 +27,97 @@ const { Content } = await render(timelineContentEntry);
   <h1>Timeline</h1>
   <div class="mt-8" x-data="timelineChart">
     <div id="timeline" class="relative bg-base-content/10"></div>
-    <span x-text="'Zoom: ' + scale"></span>
+    <span x-text="'Zoom: ' + parseFloat(scale).toFixed(2)"></span>
+    <div class="p-2 border border-primary-content grid grid-cols-3 gap-2">
+      <label class="label justify-start gap-2" for="stormLink">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="stormLink"
+          name="stormLink"
+          :checked="isShow.stormLink"
+          @click="toggleShowStormLink"
+        />
+        Show storm link
+      </label>
+      <label class="label justify-start gap-2" for="stormNode">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="stormNode"
+          name="stormNode"
+          :checked="isShow.stormNode"
+          @click="toggleShowStormNode"
+        />
+        Show storm node
+      </label>
+      <label class="label justify-start gap-2" for="period">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="period"
+          name="period"
+          :checked="isShow.period"
+          @click="toggleShowPeriod"
+        />
+        Show period
+      </label>
+      <label class="label justify-start gap-2" for="mainStoryNode">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="mainStoryNode"
+          name="mainStoryNode"
+          :checked="isShow.mainStoryNode"
+          @click="toggleShowMainStoryNode"
+        />
+        Show main story node
+      </label>
+      <label class="label justify-start gap-2" for="eventStoryNode">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="eventStoryNode"
+          name="eventStoryNode"
+          :checked="isShow.eventStoryNode"
+          @click="toggleShowEventStoryNode"
+        />
+        Show event story node
+      </label>
+      <label class="label justify-start gap-2" for="characterStoryNode">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="characterStoryNode"
+          name="characterStoryNode"
+          :checked="isShow.characterStoryNode"
+          @click="toggleShowCharacterStoryNode"
+        />
+        Show character story node
+      </label>
+      <label class="label justify-start gap-2" for="anecdoteNode">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="anecdoteNode"
+          name="anecdoteNode"
+          :checked="isShow.anecdoteNode"
+          @click="toggleShowAnecdoteNode"
+        />
+        Show anecdote node
+      </label>
+      <label class="label justify-start gap-2" for="eventNodeGap">
+        <input
+          type="checkbox"
+          class="toggle toggle-primary"
+          id="eventNodeGap"
+          name="eventNodeGap"
+          :checked="isShow.eventNodeGap"
+          @click="toggleShowEventNodeGap"
+        />
+        Show event gap
+      </label>
+    </div>
   </div>
   <div class="mt-8">
     <Content
