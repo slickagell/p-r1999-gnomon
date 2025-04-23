@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -152,6 +153,30 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      [Time to Work] Insight I enhancement: Upon entering [Exorcism Time], increases the rank of an incantation for an ally in front. Upon entering [Break Time], grants [Sturdiness] to an ally behind.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      [Exorcism Time] enhancement: In addition to its original effects, An-an Lee's attack randomly inflicts one of the following on the target: a certain number of [Rigidity]/ [Poison]/[Burn] stacks. Using [Lily Nectar] additionally grants the new [Exorcism Time] effects to allies.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      [Exorcism Time] enhancement: If the enemy is affected by [Stats Down], [Neg Status], or [Control], further increases DMG Bonus. [Break Time] enhancement: If the enemy is affected by [Stats Down], [Neg Status], or [Control], further increases DMG Taken Reduction.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      After casting the Ultimate [Scientific Ghost Buster], upgrades the gained [Empower Incantation I] to [Empower Incantation I]. Additionally, whenever attacking an enemy with [Neg Status], randomly grants an ally [Empower Incantation I] for a number of rounds.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

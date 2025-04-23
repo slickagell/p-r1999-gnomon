@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -152,6 +153,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      At the start of the round, grants the ally in front of Pickles a random effect from the [Collection of Buffs] for a certain number of rounds. If the ally is a Mineral Afflatus character, they receive multiple buffs instead. If the ally in front of Pickles is a Mineral Afflatus character, Pickles performs a follow-up attack with [Hedonism Implement] whenever any ally acts, up to a limited number of chances per round.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      After using [Hedonism Implement], additionally grants the ally in front of Pickles a certain number of [Rousing Morale] stacks.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      At the start of the round, gains a certain number of [Clarified Topic] stacks.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      After casting an Ultimate, grants the ally in front [Extra Action DMG Boast]. If the target's Afflatus matches Pickles's, the effect is further enhanced.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
