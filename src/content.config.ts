@@ -164,6 +164,13 @@ const archetypes = defineCollection({
   }),
 });
 
+const anecdoteStory = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/markdown/story/anecdote",
+  }),
+});
+
 export const collections = {
   characters,
   effects,
@@ -176,4 +183,5 @@ export const collections = {
   psychubes,
   general,
   archetypes,
+  anecdoteStory,
 };

@@ -1,0 +1,164 @@
+---
+import Icon from "@components/Icon.astro";
+import StoryMarkdownHighlight from "@components/StoryMarkdown/StoryMarkdownHighlight.astro";
+import StoryMarkdownParagraphContent from "@components/StoryMarkdown/StoryMarkdownParagraphContent.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection, getEntry, render } from "astro:content";
+import fs from "fs";
+
+export async function getStaticPaths() {
+  const anecdoteFolders = fs.readdirSync("./src/markdown/story/anecdote");
+  return anecdoteFolders.map((folder) => ({
+    params: { slug: folder },
+    props: { id: folder },
+  }));
+}
+
+const { id } = Astro.props;
+const anecdoteEntries = await getCollection(
+  "anecdoteStory",
+  ({ id: entryId }) => {
+    return entryId.includes(id + "/");
+  }
+);
+
+const anecdoteChapters = anecdoteEntries
+  .map((entry, idx) => {
+    return {
+      id: entry.id.split("/").pop() ?? idx + "",
+      chapter: entry.data.chapter,
+      title: entry.data.title,
+    };
+  })
+  .sort((a, b) => a.chapter - b.chapter);
+
+const anecdotePart = await getEntry("anecdoteStory", id)!;
+---
+
+<Layout
+  title={`${anecdotePart.data.title} | Anecdote`}
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Story",
+      href: "/story",
+    },
+    {
+      label: "Anecdote",
+    },
+  ]}
+>
+  <h1>{anecdotePart.data.title}</h1>
+
+  <div x-data="dataset">
+    <div class="flex gap-2 justify-center items-center" x-ref="topChapter">
+      <button
+        :disabled="activeChapter === 0"
+        class="disabled:opacity-30"
+        @click="prevChapter"
+      >
+        <Icon icon="chevron-compact-left" />
+      </button>
+      <span x-text="chapterText"></span>
+      <button
+        :disabled={`activeChapter === ${anecdoteChapters.length - 1}`}
+        class="disabled:opacity-30"
+        @click="nextChapter"
+      >
+        <Icon icon="chevron-compact-right" />
+      </button>
+    </div>
+    <div class="divider"></div>
+    {
+      anecdoteEntries.map(async (entry, idx) => {
+        const { Content } = await render(entry);
+
+        return (
+          <template x-if={`activeChapter === ${idx}`}>
+            <div>
+              <Content
+                components={{
+                  p: StoryMarkdownParagraphContent,
+                  strong: StoryMarkdownHighlight,
+                }}
+              />
+            </div>
+          </template>
+        );
+      })
+    }
+    <div class="divider"></div>
+    <div class="flex gap-2 justify-center items-center">
+      <button
+        :disabled="activeChapter === 0"
+        class="disabled:opacity-30"
+        @click="prevChapter"
+      >
+        <Icon icon="chevron-compact-left" />
+      </button>
+      <span x-text="chapterText"></span>
+      <button
+        :disabled={`activeChapter === ${anecdoteChapters.length - 1}`}
+        class="disabled:opacity-30"
+        @click="nextChapter"
+      >
+        <Icon icon="chevron-compact-right" />
+      </button>
+    </div>
+  </div>
+</Layout>
+
+<script
+  is:inline
+  define:vars={{
+    chapters: anecdoteChapters,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("anecdote", {
+      chapters,
+    });
+  });
+</script>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("dataset", () => ({
+    activeChapter: 0,
+    chapterText: "",
+
+    init() {
+      this.renderChapter();
+    },
+
+    renderChapter() {
+      const chapter = this.$store.anecdote.chapters[this.activeChapter];
+      this.active = chapter?.id;
+      this.chapterText = "Chapter " + chapter?.chapter + ": " + chapter?.title;
+
+      this.$nextTick(() => {
+        this.scrollToTop();
+      });
+    },
+
+    nextChapter() {
+      this.activeChapter++;
+      this.renderChapter();
+    },
+
+    prevChapter() {
+      this.activeChapter--;
+      this.renderChapter();
+    },
+
+    scrollToTop() {
+      const topChapterPos =
+        this.$refs.topChapter.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top: topChapterPos, behavior: "smooth" });
+    },
+  }));
+</script>
