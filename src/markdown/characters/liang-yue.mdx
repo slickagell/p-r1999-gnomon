@@ -11,7 +11,6 @@ version: "2.5"
 releaseDate: "2025-04-24"
 specialties: ["DPS", "EXTRA_ACTION", "IMMUNITY"]
 isLimited: true
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -32,23 +31,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    A Mixed's work. Exhibited in the 1990s for a duration of 17 years, created on April 15, Year of the Tiger, at the Beginning of Summer. Initially displayed in Henan, China, it was later relocated to the St. Pavlov Foundation, with a brief exhibition in Los Angeles, California, USA.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Temple ceremonial candles
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    The Beast Dancing-Performing Zhenzi \[Star] Vigile Patrol Officer
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Oriental woody notes with old sandalwood, incense, bamboo leaves, and cedar.
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    64 61/64 x 26 49/64 x 17 23/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -64,16 +63,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="First, scold sternly.">
+      1-target attack. Deals **200%** Reality DMG. Extends the duration of :effect{code="GUARDIAN_S_RESOLVE"} on all allies by 1 round. If Liang Yue is in the :effect{code="ARISE_QIANGLIANG"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="First, scold sternly. Second, strike with thunderous force.">
+      1-target attack. Deals **300%** Reality DMG; this attack gains Penetration Rate **+30%**. Extends the duration of :effect{code="GUARDIAN_S_RESOLVE"} on all allies by 1 round. If Liang Yue is in the :effect{code="ARISE_QIANGLIANG"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="First, scold sternly. Second, strike with thunderous force. Third, take down on the spot.">
+      1-target attack. Deals **500%** Reality DMG; this attack gains Penetration Rate **+80%**. Extends the duration of :effect{code="GUARDIAN_S_RESOLVE"} on all allies by 1 round. If Liang Yue is in the :effect{code="ARISE_QIANGLIANG"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
     </CardInfo>
   </Fragment>
 
@@ -82,16 +81,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note="May I have your name?">
+      1-target buff. Grants :effect{code="GUARDIAN_S_BLESSING_I"} to the target for 1 round; repeated applications will extend its duration. If Liang Yue is in the :effect{code="ARISE_QIANGLIANG"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note="May I have your name? Where are you from, and where are you headed?">
+      1-target buff. Grants :effect{code="GUARDIAN_S_BLESSING_II"} to the target for 1 round; repeated applications will extend its duration. If Liang Yue is in the :effect{code="ARISE_QIANGLIANG"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note="May I have your name? Where are you from, and where are you headed? Please, I'll need to see your ID.">
+      1-target buff. Grants :effect{code="GUARDIAN_S_BLESSING_III"} to the target for 1 round; repeated applications will extend its duration. If Liang Yue is in the :effect{code="ARISE_QIANGLIANG"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
     </CardInfo>
   </Fragment>
 
@@ -100,8 +99,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note="Hello? Qiangliang, do you read me? Do you copy?">
+      Mass attack. Deals **300%** Reality DMG to all enemies. Grants :effect{code="IMMUNITY"} to all allies for 1 round, and grants 6 stacks of :effect{code="GUARDIAN_S_RESOLVE"} to all allies for 2 rounds. Grants :effect{code="ARISE_QIANGLIANG"} to self for 3 rounds, and if this unit is already in this status, extends the duration of the status to 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -114,15 +113,27 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    While in the :effect{code="ARISE_QIANGLIANG"} status, after actively casting a Qiangliang enhanced incantation, gain 1 *\[Justice Talon]* or 1 *\[Peace Talon]*; after actively casting an incantation from the overlap section of the Spelldock, gain 0.5 *\[Justice Talon]* and 0.5 *\[Peace Talon]*.
+
+    When reaching 6 *\[Justice Talon]* and or *\[Peace Talon]* combined, consume 6 of these *\[Justice Talon]* and or *\[Peace Talon]* to cast a :effect{code="BANE_OF_ALL_EVIL"} based on the balance of Justice Talons to Peace Talons:
+
+    Cast :effect{code="BANE_OF_ALL_EVIL_JUSTICE"} when there's more *\[Justice Talon]*.
+
+    Cast :effect{code="BANE_OF_ALL_EVIL_PEACE"} when there's more *\[Peace Talon]*.
+
+    Cast :effect{code="BANE_OF_ALL_EVIL_BALANCE"} when there's an equal number of talons.
+
+    For every 1 *\[Justice Talon]* or *\[Peace Talon]* consumed, grant 1 stack of :effect{code="GUARDIAN_S_RESOLVE"} to all allies for 2 rounds.
+
+    When :effect{code="ARISE_QIANGLIANG"} ends, all *\[Justice Talon]* and *\[Peace Talon]* are cleared, and every stack of :effect{code="SWIFT_RESOLVE"} on Liang Yue is converted into 3 stacks of :effect{code="GUARDIAN_S_RESOLVE"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    Critical Rate **+10%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    When entering battle, gain Moxie +3 for self.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -130,23 +141,27 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Call of Thunder: #0305*: :effect{code="ARISE_QIANGLIANG"}'s duration is extended to **4** rounds, and the size of each enhancement section in the Spelldock is increased to **4**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Destined Inheritor*: When entering battle, the Moxie gained for self is increased to **5**. The number of *\[Justice Talon]* and or *\[Peace Talon]* required for :effect{code="BANE_OF_ALL_EVIL"} is decreased to **5**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *Call of Thunder: #0305*: The :effect{code="IMMUNITY"} duration is increased to **2** rounds. The stacks of :effect{code="GUARDIAN_S_RESOLVE"} granted is increased to **12**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Banish Evil*: At incantation rank **1/2/3**, the Reality DMG is increased to **240%/360%/600%** and the Penetration rate is increased to **0%/40%/100%**. :effect{code="GUARDIAN_S_RESOLVE"}'s stack limit is increased to **40**, and each stack's DMG Taken Reduction is boosted to **-1%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Destined Inheritor*: :effect{code="BANE_OF_ALL_EVIL_JUSTICE"}'s Reality DMG is increased to **600%**; for every *\[Justice Talon]* consumed, the Critical DMG bonus is increased to **30%**.
+
+    :effect{code="BANE_OF_ALL_EVIL_PEACE"}'s Reality DMG is increased to **600%**; for every instance of :effect{code="POISON"} on the target, the DMG Dealt is increased to **20%**.
+
+    :effect{code="BANE_OF_ALL_EVIL_BALANCE"}'s Reality DMG is increased to **300%**; :effect{code="SWIFT_RESOLVE"}'s stack limit is increased to 3, and for each stack of :effect{code="SWIFT_RESOLVE"}, :effect{code="BANE_OF_ALL_EVIL_BALANCE"} s additional Reality DMG is increased to **80%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

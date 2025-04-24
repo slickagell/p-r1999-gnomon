@@ -26,6 +26,210 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "code": "THE_DOG_THINKS_THEREFORE_THE_DOG_EXISTS",
+      "name": "The Dog Thinks, Therefore The Dog Exists",
+      "materials": {
+        "0": [
+          {
+            "code": "KEY_OF_THOUGHT",
+            "require": 12
+          },
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 40
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 200
+          },
+          {
+            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "require": 3
+          }
+        ],
+        "1": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 20
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 80
+          },
+          {
+            "code": "RHEINGOLD",
+            "require": 1
+          },
+          {
+            "code": "GLOWING_MOTHWING",
+            "require": 1
+          }
+        ],
+        "2": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 30
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 120
+          },
+          {
+            "code": "FRUIT_OF_GOOD_AND_EVIL",
+            "require": 1
+          },
+          {
+            "code": "WATCH_CORE",
+            "require": 2
+          }
+        ],
+        "3": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 35
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 140
+          },
+          {
+            "code": "MISTILTEINN",
+            "require": 2
+          },
+          {
+            "code": "GOLDBELL_SPIRIT_BOTTLE",
+            "require": 2
+          }
+        ],
+        "4": [
+          {
+            "code": "SPROUT_OF_FANTASY",
+            "require": 40
+          },
+          {
+            "code": "SEED_OF_INSPIRATION",
+            "require": 160
+          },
+          {
+            "code": "GOLDEN_FLEECE",
+            "require": 2
+          },
+          {
+            "code": "BOGEYMAN",
+            "require": 2
+          }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 195
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 130
+            },
+            "ATTACK": {
+              "value": 30
+            },
+            "REALITY_DEFENSE": {
+              "value": 15
+            },
+            "MENTAL_DEFENSE": {
+              "value": 10
+            },
+            "FOLLOW_UP_DMG_BONUS": {
+              "value": 5,
+              "unit": "%"
+            }
+          }
+        },
+        "2": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 446
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 235
+            },
+            "ATTACK": {
+              "value": 53
+            },
+            "REALITY_DEFENSE": {
+              "value": 21
+            },
+            "MENTAL_DEFENSE": {
+              "value": 21
+            },
+            "FOLLOW_UP_DMG_BONUS": {
+              "value": 7.5,
+              "unit": "%"
+            }
+          }
+        },
+        "3": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 776
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 340
+            },
+            "ATTACK": {
+              "value": 71
+            },
+            "REALITY_DEFENSE": {
+              "value": 32
+            },
+            "MENTAL_DEFENSE": {
+              "value": 32
+            },
+            "FOLLOW_UP_DMG_BONUS": {
+              "value": 10,
+              "unit": "%"
+            }
+          }
+        },
+        "4": {
+          "materials": [
+            {
+              "code": "SEED_OF_INSPIRATION",
+              "require": 1811
+            }
+          ],
+          "data": {
+            "HP": {
+              "value": 585
+            },
+            "ATTACK": {
+              "value": 106
+            },
+            "REALITY_DEFENSE": {
+              "value": 49
+            },
+            "MENTAL_DEFENSE": {
+              "value": 54
+            },
+            "FOLLOW_UP_DMG_BONUS": {
+              "value": 10,
+              "unit": "%"
+            }
+          }
+        }
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

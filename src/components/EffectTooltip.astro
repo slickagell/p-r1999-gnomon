@@ -5,6 +5,7 @@ import { kebabCase } from "change-case";
 import MarkdownContent from "./MarkdownContent.astro";
 import MarkdownEmphasis from "./MarkdownEmphasis.astro";
 import MarkdownHighlight from "./MarkdownHighlight.astro";
+import Tooltip from "./Tooltip.astro";
 
 interface Props {
   code: string;
@@ -60,6 +61,7 @@ const { Content } = await render(effectEntry);
         strong: MarkdownHighlight,
         em: MarkdownEmphasis,
         effect: Astro.self,
+        tooltip: Tooltip,
       }}
     />
   </div>

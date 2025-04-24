@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -152,6 +153,32 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      *\[Time to Work]* Insight I Enhancement: When entering :effect{code="EXORCISM_TIME"}, grants rank **+1** to the rightmost incantation of an ally in front. When entering :effect{code="BREAK_TIME"}, grants **1** stack of :effect{code="STURDINESS"} to an ally behind.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      :effect{code="EXORCISM_TIME"} Enhancement: After attacking, randomly inflicts **1** of the following effects on the target: **1** stack of :effect{code="RIGIDITY"}, :effect{code="POISON"} for **2** rounds, or **5** stacks of \[Burn]. *\[Lily Nectar]* additionally grants the above new effects of :effect{code="EXORCISM_TIME"} to allies.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      :effect{code="EXORCISM_TIME"} Enhancement: When the enemy is afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*, the DMG Bonus is increased by an additional **15%**.
+
+      :effect{code="BREAK_TIME"} Enhancement: When the enemy is afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*, the DMG Taken Reduction is increased by an additional **15%**.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      *\[Scientific Ghost Buster]* Enhancement: Grants :effect{code="EMPOWER_INCANTATION_II"} to self for **2** rounds; for each enemy attacked that's with *\[Neg Status]*, grant :effect{code="EMPOWER_INCANTATION_I"} to a random ally for **2** rounds.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">

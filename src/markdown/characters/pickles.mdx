@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -152,6 +153,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    ## Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      At the start of the round, grants a random effect from :tooltip[There are 4 effects: Penetration Rate **+20%**, Critical Rate **+15%**, Critical DMG **+30%**, Leech Rate **+15%**.]{title="[Collection of Buffs]"} to the adjacent ally in front for **2** rounds; if the target is of the Mineral afflatus, grants **2** random effects instead. If the adjacent ally in front is of the Mineral afflatus, after any ally takes an action, Pickles casts an additional rank **2** *\[Hedonism Implement]* to attack the enemy with the highest HP percentage (triggers up to **1** time per round).
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      After casting *\[Hedonism Implement]*, grant an additional **1** stack of :effect{code="ROUSING_MORALE"} to the adjacent ally in front.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      At the start of the round, gain **1** stack of :effect{code="CLARIFIED_TOPIC"}.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      After casting *\[Thus Spoke Pickles]*, grants extra action DMG Dealt **+15%** to the adjacent ally in front for **2** rounds; if the enemy has the same afflatus as Pickles, the DMG Dealt is increased to **+30%**.
+    </div>
   </Fragment>
 
   <Fragment slot="insight-materials-section-title">
