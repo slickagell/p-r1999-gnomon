@@ -22,16 +22,17 @@ const anecdoteEntries = await getCollection(
   }
 );
 
-const anecdoteChapters = anecdoteEntries
-  .map((entry, idx) => {
-    return {
-      id: entry.id.split("/").pop() ?? idx + "",
-      chapter: entry.data.chapter,
-      title: entry.data.title,
-    };
-  })
-  .sort((a, b) => a.chapter - b.chapter);
+const sortedAnecdoteEntries = anecdoteEntries.sort((a, b) => {
+  return a.data.chapter - b.data.chapter;
+});
 
+const anecdoteChapters = sortedAnecdoteEntries.map((entry, idx) => {
+  return {
+    id: entry.id.split("/").pop() ?? idx + "",
+    chapter: entry.data.chapter,
+    title: entry.data.title,
+  };
+});
 const anecdotePart = await getEntry("anecdoteStory", id)!;
 ---
 
@@ -73,7 +74,7 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
     </div>
     <div class="divider"></div>
     {
-      anecdoteEntries.map(async (entry, idx) => {
+      sortedAnecdoteEntries.map(async (entry, idx) => {
         const { Content } = await render(entry);
 
         return (
