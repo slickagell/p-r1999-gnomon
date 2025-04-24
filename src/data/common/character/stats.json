@@ -93,5 +93,10 @@
     "label": "Genesis DMG Bonus",
     "keyVal": "genesisDmgBonus",
     "unit": "%"
+  },
+  "FOLLOW_UP_DMG_BONUS": {
+    "label": "Follow-up DMG Bonus",
+    "keyVal": "followUpDmgBonus",
+    "unit": "%"
   }
 }

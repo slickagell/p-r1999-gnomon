@@ -143,7 +143,7 @@
             "MENTAL_DEFENSE": {
               "value": 10
             },
-            "DMG_BONUS": {
+            "FOLLOW_UP_DMG_BONUS": {
               "value": 5,
               "unit": "%"
             }
@@ -169,7 +169,7 @@
             "MENTAL_DEFENSE": {
               "value": 21
             },
-            "DMG_BONUS": {
+            "FOLLOW_UP_DMG_BONUS": {
               "value": 7.5,
               "unit": "%"
             }
@@ -195,7 +195,7 @@
             "MENTAL_DEFENSE": {
               "value": 32
             },
-            "DMG_BONUS": {
+            "FOLLOW_UP_DMG_BONUS": {
               "value": 10,
               "unit": "%"
             }
@@ -221,7 +221,7 @@
             "MENTAL_DEFENSE": {
               "value": 54
             },
-            "DMG_BONUS": {
+            "FOLLOW_UP_DMG_BONUS": {
               "value": 10,
               "unit": "%"
             }
