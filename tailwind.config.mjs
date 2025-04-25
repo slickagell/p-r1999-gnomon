@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require("tailwindcss/plugin");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -15,12 +16,12 @@ export default {
         spirit: "#814886",
         intellect: "#9E8D4D",
 
-        paper: "#f7ebe7",
+        paper: "#F6F2EC",
         ["line-paper"]: "#c3b7a0",
 
         attack: "#B25859",
         buff: "#4D719A",
-        effect: "#4D719A",
+        effect: "#4A8BD6",
 
         highlight: "#db6f39",
         gray: "#808080",
@@ -65,17 +66,21 @@ export default {
         DEFAULT: "0 2px 4px var(--tw-shadow-color)",
         lg: "0 8px 16px var(--tw-shadow-color)",
       },
+      fontFamily: {
+        sans: ['"Noto Sans"', ...defaultTheme.fontFamily.sans],
+      },
     },
   },
   daisyui: {
     themes: [
       {
         r1999: {
-          primary: "#db6f39",
+          primary: "#FF8344",
           secondary: "#e9dccd",
+          tertiary: "#E9A319",
           accent: "#1fb2a6",
-          neutral: "#2a323c",
-          "base-100": "#1b1b1b",
+          neutral: "#294949",
+          "base-100": "#121212",
           info: "#3abff8",
           success: "#36d399",
           warning: "#fbbd23",
@@ -84,8 +89,8 @@ export default {
           "--rounded-btn": "0",
           "--rounded-badge": "0",
           "--rounded-box": "0",
-          "primary-content": "#bba893",
-          "base-content": "#e9dccd",
+          "primary-content": "#CBAF85",
+          "base-content": "#F5EEDC",
         },
       },
     ],
