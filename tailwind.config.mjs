@@ -16,12 +16,12 @@ export default {
         spirit: "#814886",
         intellect: "#9E8D4D",
 
-        paper: "#F6F2EC",
+        paper: "#E7E0D6",
         ["line-paper"]: "#c3b7a0",
 
         attack: "#B25859",
         buff: "#4D719A",
-        effect: "#4A8BD6",
+        effect: "#3E73B0",
 
         highlight: "#db6f39",
         gray: "#808080",
@@ -75,7 +75,7 @@ export default {
     themes: [
       {
         r1999: {
-          primary: "#FF8344",
+          primary: "#DA6C35",
           secondary: "#e9dccd",
           tertiary: "#E9A319",
           accent: "#1fb2a6",
@@ -90,7 +90,7 @@ export default {
           "--rounded-badge": "0",
           "--rounded-box": "0",
           "primary-content": "#CBAF85",
-          "base-content": "#F5EEDC",
+          "base-content": "#EBE0D5",
         },
       },
     ],
