@@ -66,7 +66,7 @@ h6 {
 }
 
 .highlight {
-  @apply text-primary font-bold;
+  @apply text-primary font-semibold;
 }
 
 .custom-link {
