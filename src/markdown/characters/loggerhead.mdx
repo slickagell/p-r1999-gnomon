@@ -30,23 +30,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An awakened artifact, exhibited in the 20th century for 96 years. Created in summer, on June 1. Originally exhibited in the United States before being relocated to the St. Pavlov Foundation.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Latham Circuit
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    <p />
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Leather notes with amber, patchouli, oak, motor oil, and lemongrass & Afflatus
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    61 27/64 x 23 5/8 x22 5/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -62,16 +62,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="DEBUFF" note="The glory of the 20th century has arrived.">
+      1-target attack. Deals **200%** Mental DMG to the target; inflicts 2 random effects from :effect{code="COLLECTION_OF_NEG_STATUS_LOGGERHEAD"} on the target hit.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="DEBUFF" note="The glory of the 20th century has arrived, and black and white will never go out of style.">
+      1-target attack. Deals **230%** Mental DMG to the target; inflicts 2 random effects from :effect{code="COLLECTION_OF_NEG_STATUS_LOGGERHEAD"} on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="DEBUFF" note="The glory of the 20th century has arrived, and she inspects and collects with delight.">
+      1-target attack. Deals **400%** Mental DMG to the target; inflicts 2 random effects from :effect{code="COLLECTION_OF_NEG_STATUS_LOGGERHEAD"} on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -80,16 +80,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="COUNTER" note="This is the inevitable side effect.">
+      1-target counter. Grants :effect{code="MEMORY_REPLAY"} to the target and to 1 unit behind the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="COUNTER" note="This is the inevitable side effect, leaving a strange taste and indigestion.">
+      1-target counter. Grants :effect{code="MEMORY_REPLAY"} to the target and to 2 units behind the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="COUNTER" note="This is the inevitable side effect. It either brings memories, or blurs them beyond recognition.">
+      1-target counter. Grants :effect{code="MEMORY_REPLAY"} to the target and to 3 units behind the target for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -98,8 +98,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="DEBUFF" note="A faithful recorder, she has much to say.">
+      Mass attack. Deals **400%** Mental DMG to all enemies. After attacking, inflicts 2 random effects from :effect{code="COLLECTION_OF_NEG_STATUS_LOGGERHEAD"} on the targets.
     </CardInfo>
   </Fragment>
 
@@ -112,15 +112,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    Whenever :effect{code="MEMORY_REPLAY"} is triggered on an ally, Loggerhead gains 1 stack of :effect{code="CLEAR_HEADED"} for 2 rounds. At the end of the round, for every stack of :effect{code="CLEAR_HEADED"} on self, recovers (the ally's Max HP x**1.2%**) HP for all allies carrying :effect{code="MEMORY_REPLAY"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    When entering battle, DMG Heal **+10%**.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    Whenever an ally actively casts an incantation, for every 1 *\[Neg Status]* inflicted on an enemy through that action, Loggerhead gains 1 stack of :effect{code="CLEAR_HEADED"} for 2 rounds.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -128,23 +128,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Cinema Binge*: Mental DMG increased to **450%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *A Must-See!*: At incantation rank **1/2/3**, deals **220%/260%/450%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *"Keeper of Memories"*: The HP recovered for allies in the :effect{code="MEMORY_REPLAY"} status is increased to **1.7%** of their Max HP.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *A Must-See!*: At incantation rank **1/2/3**, the number of :effect{code="COLLECTION_OF_NEG_STATUS_LOGGERHEAD"} effects inflicted on the target hit is increased to **3/3/3**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *A Mind-Blower!*: The DMG Taken Reduction granted by :effect{code="MEMORY_REPLAY"} is increased to **25%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
