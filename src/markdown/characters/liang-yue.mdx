@@ -16,6 +16,8 @@ isLimited: true
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
+import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
 import Material from "@components/Material.astro";
 import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";  
@@ -192,6 +194,181 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     </div>
   </Fragment>
 
+  <Fragment slot="how-to-play-section-title">
+    ## How to Play
+  </Fragment>
+
+  <Fragment slot="how-to-play-content">
+    Liang Yue is a character that dealt expressive DMG through *[Talon]* and *[Quiangliang]* mechanism.
+
+    <br />
+
+    With Special buff :effect{code="ARISE_QIANGLIANG"}:
+    - In Spelldock will appear 2 zones at **the start of next round**:
+      - :text[Green]{className="font-medium text-success"} zone on the **left** side, including 3 incantations.
+      - :text[Red]{className="font-medium text-error"} zone on the **right** side, including 3 incantations.
+    
+    When using incantations in the :text[Red]{className="font-medium text-error"} zone:
+      - Incantation will have rank **+1** before casting.
+      - Gain **1** *[Justice Talon]*.
+    
+    When using incantations in the :text[Green]{className="font-medium text-success"} zone:
+      - *\[Stats Up\]*, *\[Stats Down\]*, *\[Counter\]*, *\[Pos Status\]*, *\[Neg Status\]* from incantation will gain **+1** round duration.
+      - Gain **1** *[Peace Talon]*.
+    
+    When using incantations in the **overlap** of these 2 zones:
+      - Receive both **+1** rank and **+1** round duration.
+      - Gain **0.5** *[Peace Talon]* and **0.5** *[Justice Talon]*.
+    
+    Special incantations still can grant *[Talon]* without consumed AP, for example: Versatile incantation of Vila
+    
+    When Liang Yue gain enough **6** stacks of *[Talon]* she will dealt a **Follow-up Attack** called :effect{code="BANE_OF_ALL_EVIL"}. 
+
+    <br />
+
+    :effect{code="BANE_OF_ALL_EVIL"} will be cast differently depending on the balance of *[Justice Talon]* and *[Peace Talon]*:
+    - If there's more *[Justice Talon]*, cast :effect{code="BANE_OF_ALL_EVIL_JUSTICE"}.
+    - If there's more *[Peace Talon]*, cast :effect{code="BANE_OF_ALL_EVIL_PEACE"}.
+    - If *[Justice Talon]* and *[Peace Talon]* are equal, cast :effect{code="BANE_OF_ALL_EVIL_BALANCE"}.
+    - The amount of exceed *[Talon]* will be counted for the next :effect{code="BANE_OF_ALL_EVIL"}.
+    - For each *[Talon]* consumed, grant **1** stack of :effect{code="GUARDIAN_S_RESOLVE"} to all allies for **2** rounds.
+
+    <br />
+
+    First, with :effect{code="BANE_OF_ALL_EVIL_JUSTICE"}:
+    - Deal **400%** AoE Reality DMG.
+    - Considered as a rank **2** incantation.
+    - For each *[Justice Talon]* consumed, this attack will have Critical Rate **+5%**, Critical DMG **+20%**, and DMG Dealt **+10%**
+    - Excess Critical Rate is converted into Critical DMG.
+
+    <br />
+
+    Next, with :effect{code="BANE_OF_ALL_EVIL_PEACE"}:
+    - Deal **400%** AoE Reality DMG.
+    - For each *[Peace Talon]* consumed, **before** attack, target will receive **1** stack of :effect{code="POISON"} for 1 round and **3** stacks of :effect{code="BURN"}.
+    - For each :effect{code="POISON"} stack on target, this attack will have DMG Dealt **+10%**.
+    - For each :effect{code="BURN"} stack on target, this attack will have Penetration Rate **+3%**.
+
+    <br />
+
+    And with :effect{code="BANE_OF_ALL_EVIL_BALANCE"}:
+    - Deal **200%** AoE Reality DMG.
+    - Grant Liang Yue 1 stack of :effect{code="SWIFT_RESOLVE"}
+      - This is a Special buff.
+      - Maximum stacks is **2**.
+      - **Reduce** **1** stack of *[Talon]* that required to cast :effect{code="BANE_OF_ALL_EVIL"}. 
+      - Increase **20%** Reality DMG for :effect{code="BANE_OF_ALL_EVIL"}/:effect{code="BANE_OF_ALL_EVIL_PEACE"}, remove after trigger.
+      - Increase up to **60%** (20% for all type of *[Bane of All Evil]* + 40%) Reality DMG for :effect{code="BANE_OF_ALL_EVIL_BALANCE"}, **not** remove after trigger.
+      - It will also be removed when :effect{code="ARISE_QIANGLIANG"} end.
+
+    <br />
+
+    With first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Banish Evil]*</CharacterSkillTooltip>
+    - Deal single target Reality DMG.
+    - At rank **2/3**, this attack will have additional **30%/80%** Penetration Rate.
+    - Extends the duration of :effect{code="GUARDIAN_S_RESOLVE"} on all allies by **1** round.
+      - This will **not** have +1 round duration even when in the :text[Green]{className="font-medium text-success"} zone.
+      - If this skill is casted twice in a row, the duration will be increased by 2 rounds.
+    - When in the :effect{code="ARISE_QIANGLIANG"} status, gain **1** additional *[Justice Talon]*.
+
+    <br />
+
+    The second incantation <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Bless Life]*</CharacterSkillTooltip>
+    - Single target Buff.
+    - Grant :effect{code="GUARDIAN_S_BLESSING_I"}/:effect{code="GUARDIAN_S_BLESSING_II"}/:effect{code="GUARDIAN_S_BLESSING_III"} for **1** round.
+      - If the buff receiver attacking/being attacked/at the end of the round, cast :effect{code="BANISH_EVIL"} as a **Follow-up Attack** on the target/the attacker/the enemy with the lowest HP.
+      - This attack also have **all** the effect as the first skill, but it will **not** gain 1 *[Justice Talon]* since it's not actively casting.
+      - If the buff receiver being attacked, this attack will fall to :effect{code="RIPOSTE"} category and also receive buff for :effect{code="RIPOSTE"} type.
+    - When casting in the :text[Green]{className="font-medium text-success"} zone, above effect will also have **+1** round duration.
+    - When in the :effect{code="ARISE_QIANGLIANG"} status, gain **1** additional *[Peace Talon]*.
+    - If Liang Yue can **not** trigger Follow-up Attack, this buff still be reserved.
+    - This incantation at rank 1/2/3 can be casted **independently**.
+
+    <br />
+
+    Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Call of Thunder: #0305]*</CharacterSkillTooltip> 
+    - Deal AoE Reality DMG
+    - Grants **1** stack of :effect{code="IMMUNITY"} to all allies for **1** rounds.
+    - Grants **6** stacks of :effect{code="GUARDIAN_S_RESOLVE"} to all allies for **2** rounds.
+    - When casting Ultimate in the :text[Green]{className="font-medium text-success"} zone, above effects will also have **+1** round duration.
+    - Grants or extend (if already in this status) :effect{code="ARISE_QIANGLIANG"} to self for **3** rounds.
+
+    <br />
+
+    ### Operate / Rotation
+
+    At **Portray 0**, because Liang Yue can only have :text[Red]{className="font-medium text-error"} and :text[Green]{className="font-medium text-success"} zone for **2** rounds only (since zones take effect at the start of next round), so the rotation would be difficult to maintain. If there's no zone, her DMG will be reduced significantly.
+
+    Some ways to solve this is to **have** Anjo Nala in the team or Liang Yue must be at **Portray 1**, so the **3**-rounds rotation can be ensured.
+    - If Liang Yue is bound **with** Anjo Nala, when Anjo Nala's ultimate is casted, Liang Yue's ultimate will also be triggered **before** the start of the next round, so :text[Red]{className="font-medium text-error"}, :text[Green]{className="font-medium text-success"} zone will be available for total **3** rounds.
+    - If Liang Yue is at **Portray 1**, :effect{code="ARISE_QIANGLIANG"} will be extended to **4** rounds, means both zones will last for **3** rounds.
+
+    <br />
+
+    When operate Liang Yue, you need to pay attention to:
+    - **Maintain** Ultimate
+    - Use suitable incantations in :text[Red]{className="font-medium text-error"} and :text[Green]{className="font-medium text-success"} zone
+
+    <br />
+
+    Use Buff skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Bless Life]*</CharacterSkillTooltip> on Liang Yue to gain the optimized DMG Dealt.
+    - Try using this skill right **before** :effect{code="BANE_OF_ALL_EVIL"}, and **after** any attack skill so the DMG Dealt Bonus can be applied to :effect{code="BANE_OF_ALL_EVIL"}.
+
+    When Liang Yue is in :effect{code="ARISE_QIANGLIANG"}
+    - <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Banish Evil]*</CharacterSkillTooltip> will gain 1 *[Justice Talon]*.
+    - <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Bless Life]*</CharacterSkillTooltip> will gain 1 *[Peace Talon]*.
+
+    If these skills are casted in :text[Red]{className="font-medium text-error"}, :text[Green]{className="font-medium text-success"} zone, *[Talon]* from incantation effect will take effect **first**, then accumulate additional *[Talon]* from zones.
+
+    <br />
+
+    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+      <div class="flex-1 step-arrow">
+        <div class="flex gap-2 justify-center">
+          <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id} />
+
+          <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id} />
+        </div>
+
+        <div class="mt-1 text-center">Cast to gain Moxie enough to Ultimate. Prioritize Buff skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Bless Life]*</CharacterSkillTooltip></div>
+      </div>
+
+      <div class="flex-1 step-arrow-two-ways">
+        <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
+
+        <div class="mt-1 text-center">Cast Ultimate to enter :effect{code="ARISE_QIANGLIANG"} status.</div>
+      </div>
+
+      <div class="flex-1">
+        <div class="flex gap-2 justify-center">
+          <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id} />
+
+          <CharacterImg class="w-20" variant="skill-2" id={frontmatter.id} />
+        </div>
+
+        <div class="mt-1 text-center">Use these skill every round (prioritize buff skill) with other character skills to recast Ultimate to maintain :effect{code="ARISE_QIANGLIANG"} status</div>
+      </div>
+    </div>
+
+    <br />
+
+    Both :effect{code="BANE_OF_ALL_EVIL_JUSTICE"} and :effect{code="BANE_OF_ALL_EVIL_PEACE"} have almost the same DMG Dealt.
+
+    :effect{code="BANE_OF_ALL_EVIL_JUSTICE"} will:
+    - **Harder** to play than :effect{code="BANE_OF_ALL_EVIL_PEACE"}
+    - Have larger DMG Dealt when have Flutterpage in the team.
+    - **Not** be countered when meet enemy with *[Neg Status]* resistance.
+
+    :effect{code="BANE_OF_ALL_EVIL_PEACE"} will:
+    - **Easier** to play than :effect{code="BANE_OF_ALL_EVIL_JUSTICE"}
+    - Have larger DMG Dealt when do **not** have Flutterpage in the team.
+    - Be countered when meet enemy with *[Neg Status]* resistance.
+
+    :effect{code="BANE_OF_ALL_EVIL_BALANCE"} is not always recommended because DMG Dealt is lower than the other ones.
+
+    So pay attention on which incantation to play in :text[Red]{className="font-medium text-error"} and :text[Green]{className="font-medium text-success"} zone to trigger the appropriate :effect{code="BANE_OF_ALL_EVIL"}.
+  </Fragment>
+
   <Fragment slot="team-suggestion-section-title">
     ## Team Suggestion
   </Fragment>
@@ -211,9 +388,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   <Fragment slot="team-suggestion-support">
     #### Support
 
-    <CharacterHeadIcon code="MERCURIA" />
-
     <CharacterHeadIcon code="FLUTTERPAGE" />
+
+    <CharacterHeadIcon code="MERCURIA" />
 
     <CharacterHeadIcon code="LOPERA" />
 
