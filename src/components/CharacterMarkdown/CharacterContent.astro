@@ -76,7 +76,7 @@ enum INSIGHT_MATERIALS_TABS {
 const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
 const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
-
+const hasInfographic = Astro.slots.has("infographic-section-title");
 const hasInsight3Info = Astro.slots.has("insight-3-info");
 const hasInsight3Materials = insightMaterials?.["3"];
 ---
@@ -408,6 +408,16 @@ const hasInsight3Materials = insightMaterials?.["3"];
       </div>
     </>
   )
+}
+
+
+{/* Infographic */}
+{hasInfographic && (
+  <>
+    <slot name="infographic-section-title" />
+    <CharacterImg variant="infographic" id={id} />
+</>
+)
 }
 
 {/* How to play */}

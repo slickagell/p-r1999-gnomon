@@ -13,7 +13,8 @@ interface Props {
     | "skill-1"
     | "skill-2"
     | "ultimate"
-    | "headicon";
+    | "headicon"
+    | "infographic";
   id?: string;
   code?: string;
   class?: string;
@@ -127,9 +128,28 @@ const { variant, id = "", code = "", class: customClass } = Astro.props;
             />
           );
         }
+        case "infographic": {
+          if (!id) return null;
+          return (
+            <div x-data class={twMerge("w-full", customClass)}>
+              <CustomImage
+                x-zoomable
+                src={`/images/characters/${id}/infographic.jpg`}
+                alt="infographic"
+              />
+            </div>
+          );
+        }
         default:
           return null;
       }
     })()
   }
 </Fragment>
+
+<script>
+  import Alpine from "alpinejs";
+  import { Zoomable } from "@scripts/plugin";
+
+  Alpine.plugin(Zoomable);
+</script>

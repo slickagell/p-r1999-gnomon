@@ -14,7 +14,7 @@ const props = Astro.props;
 
 <div x-data="tocFloating">
   <template x-teleport="body">
-    <div class="fixed bottom-20 right-0 z-50" x-show="isShowToc" x-cloak>
+    <div class="fixed bottom-20 right-0 z-40" x-show="isShowToc" x-cloak>
       <Tooltip>
         <button
           slot="toggle"
