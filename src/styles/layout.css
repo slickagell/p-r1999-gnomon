@@ -115,3 +115,49 @@ strong {
 .pagefind-ui--reset .pagefind-ui__button {
   @apply transition-all;
 }
+
+img[x-zoomable]:hover {
+  @apply cursor-zoom-in;
+}
+
+.zoomable-fullscreen-container {
+  @apply fixed top-0 left-0 w-full h-full bg-base-100/90 hidden z-50 cursor-zoom-out overflow-hidden touch-none;
+}
+
+.zoomable-fullscreen-image {
+  @apply absolute max-w-none max-h-none cursor-grab transition top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 touch-none select-none;
+}
+
+.zoomable-fullscreen-image.dragging {
+  @apply cursor-grabbing transition-none;
+}
+
+.zoomable-controls-panel {
+  @apply fixed top-4 right-4 flex gap-2 z-50;
+}
+
+.zoomable-control-button {
+  @apply bg-primary flex items-center justify-center w-6 h-6 md:w-10 md:h-10 rounded-full transition touch-manipulation md:touch-auto;
+  -webkit-tap-highlight-color: transparent; /* Prevents gray flash on iOS */
+}
+
+.zoomable-control-button > svg {
+  @apply w-4 h-4 md:w-5 md:h-5;
+}
+
+.zoomable-control-button:hover,
+.zoomable-control-button:focus {
+  @apply opacity-90 outline-none;
+}
+
+.zoomable-loading-indicator {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 flex flex-col items-center text-base text-primary;
+}
+
+.zoomable-spinner {
+  @apply w-10 h-10 border-4 border-t-4 border-primary border-t-transparent rounded-full animate-spin mb-2;
+}
+
+.zoomable-loading-indicator[hidden] {
+  @apply hidden;
+}

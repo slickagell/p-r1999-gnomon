@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getEntry, render } from "astro:content";
+
+interface Props {}
+
+const {} = Astro.props;
+
+const guideEntry = await getEntry("general", "guides")!;
+const { Content } = await render(guideEntry);
+---
+
+<Layout
+  title="Guides"
+  description="General guides when playing Reverse: 1999."
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Guides",
+    },
+  ]}
+>
+  <Content />
+</Layout>
+
+<script>
+  import Alpine from "alpinejs";
+  import { Zoomable } from "@scripts/plugin";
+
+  Alpine.plugin(Zoomable);
+</script>
