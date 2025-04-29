@@ -68,11 +68,11 @@
       {
         "name": "Survivability",
         "source": {
-          "label": "Community Guide",
+          "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C55"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "",
+        "code": "APAkJwUlRDRVNAQ8YDxQOzA4IjERJRBFAUwDTAA",
         "resonance": [
           {
             "blocks": ["0-0"],
@@ -193,11 +193,11 @@
       {
         "name": "Damage",
         "source": {
-          "label": "Community Guide",
+          "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=D55"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "",
+        "code": "APAkNBU0RChUKgQ8ADwQJFEmUCYwOCI5IA",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],

@@ -68,11 +68,11 @@
       {
         "name": "Healing/Survivability",
         "source": {
-          "label": "Community Guide",
+          "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C79"
         },
         "patternRecommended": "DELIRAMENT",
-        "code": "",
+        "code": "APgkMRQqBDtEOjM8YzwgJAEmADRRNDFEQExgTDA",
         "resonance": [
           {
             "blocks": ["1-0", "2-0", "3-0", "3-1"],
@@ -196,11 +196,11 @@
       {
         "name": "Damage",
         "source": {
-          "label": "Community Guide",
+          "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=D79"
         },
         "patternRecommended": "DELIRAMENT",
-        "code": "",
+        "code": "ADQRJQA5AjsTNAX4JC9EL0IvQCZQPDA8Yw",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "0-2", "1-0"],

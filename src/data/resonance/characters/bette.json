@@ -68,11 +68,11 @@
       {
         "name": "Shield",
         "source": {
-          "label": "Community Guide",
+          "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C23"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "",
+        "code": "APAkQUVBFUIBOgM6MyZUJAQ8YD0gNEE0IUgATBBMAQ",
         "resonance": [
           {
             "blocks": ["1-0"],

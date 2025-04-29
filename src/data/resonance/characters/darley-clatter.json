@@ -68,7 +68,7 @@
       {
         "name": "General (Healing)",
         "source": {
-          "label": "Community Guide",
+          "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C19"
         },
         "patternRecommended": "EQUANIMITY",
@@ -197,7 +197,7 @@
       {
         "name": "Survivability",
         "source": {
-          "label": "Community Guide",
+          "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=D19"
         },
         "patternRecommended": "EQUANIMITY",
