@@ -82,6 +82,143 @@
       ]
     }
   },
-  "patternRecommended": "PLACIDITY",
-  "recommended": {}
+  "patternRecommended": "ASPIRATIONAL",
+  "recommended": {
+    "10-11-12-13-14-15": [
+      {
+        "name": "General",
+        "source": {
+          "label": "CTL Team",
+          "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C119"
+        },
+        "patternRecommended": "ASPIRATIONAL",
+        "code": "ACUALAFAMEIxKlAoUUQzQhJIAzgFOEUrRCUE9CQ",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-0"],
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["1-1", "1-2", "2-0", "2-1"],
+            "shape": [
+              [0, 1, 1],
+              [1, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["0-3", "0-4", "1-3"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["1-4", "2-3", "2-4"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-2", "3-1", "3-2"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-5", "2-5"],
+            "shape": [
+              [1, 1],
+              [1, 0],
+              [1, 0]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["1-6", "2-6", "3-5", "3-6"],
+            "shape": [
+              [0, 1],
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["3-3", "3-4"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["3-0"],
+            "shape": [[1]],
+            "orientation": 1,
+            "pieceId": "RP_O_1_02"
+          },
+          {
+            "blocks": ["4-0", "4-1", "4-2", "5-0"],
+            "shape": [
+              [1, 1, 1],
+              [1, 0, 0]
+            ],
+            "orientation": 6,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["5-1", "6-0", "6-1", "6-2"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1],
+              [0, 1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_X_5_01"
+          },
+          {
+            "blocks": ["4-4", "4-5", "4-6", "5-6"],
+            "shape": [
+              [1, 1, 1],
+              [0, 0, 1]
+            ],
+            "orientation": 8,
+            "pieceId": "RP_L_4_02"
+          },
+          {
+            "blocks": ["5-5", "6-4", "6-5", "6-6"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          }
+        ]
+      }
+    ]
+  }
 }
