@@ -28,6 +28,12 @@ const catalystEntries = await getCollection("catalysts");
 >
   <h1>Catalysts</h1>
 
+  <div class="flex flex-wrap justify-end gap-2">
+    <a href="/a-series-of-dusks/catalysts/guide">
+      <div class="btn btn-sm btn-outline">Guide</div>
+    </a>
+  </div>
+
   <div class="mt-10">
     {
       catalystEntries.sort(sortCatalyst).map(async (catalystEntry) => {
