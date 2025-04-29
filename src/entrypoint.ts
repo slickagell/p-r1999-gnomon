@@ -30,6 +30,6 @@ export default (Alpine: Alpine) => {
           });
         });
       });
-    }
+    },
   );
 };

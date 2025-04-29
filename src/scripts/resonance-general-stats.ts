@@ -34,7 +34,7 @@ export default () => ({
     isMainPiece: boolean;
   }) {
     const attributesEl = document.querySelector(
-      "#attributes"
+      "#attributes",
     ) as HTMLDivElement;
     if (!attributesEl) return;
 
@@ -108,7 +108,7 @@ export default () => ({
 
   updateTotalStats() {
     const attributesEl = document.querySelector(
-      "#attributes"
+      "#attributes",
     ) as HTMLDivElement;
     if (!attributesEl) return;
 
@@ -123,7 +123,7 @@ export default () => ({
 
       if (!this.stats[statId].unit && statVal.unit === "%") {
         this.stats[statId].value = Math.floor(
-          (statVal.value * baseStats[statId].value) / 100
+          (statVal.value * baseStats[statId].value) / 100,
         );
         return;
       } else {

@@ -24,6 +24,7 @@ type Props = {
   euphorias?: {
     code: string;
     name: string;
+    infographic?: string;
     materials: {
       [level: string]: {
         code: string;
@@ -77,6 +78,7 @@ const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
 const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 const hasInfographic = Astro.slots.has("infographic-section-title");
+const hasEuphoriaInfographic = Astro.slots.has("euphoria-infographic-section-title");
 const hasInsight3Info = Astro.slots.has("insight-3-info");
 const hasInsight3Materials = insightMaterials?.["3"];
 ---
@@ -380,7 +382,7 @@ const hasInsight3Materials = insightMaterials?.["3"];
                   <CustomImage
                     class="relative w-full z-10"
                     src={`/images/euphoria/${kebabCase(euphoria.code)}.png`}
-                    alt="udimo"
+                    alt={euphoria.name}
                   />
                 </div>
                 <span class="label-text-alt">
@@ -416,6 +418,49 @@ const hasInsight3Materials = insightMaterials?.["3"];
   <>
     <slot name="infographic-section-title" />
     <CharacterImg variant="infographic" id={id} />
+</>
+)
+}
+
+{/* Euphoria Infographic */}
+{hasEuphoriaInfographic && (
+  <>
+    <slot name="euphoria-infographic-section-title" />
+
+    {(()=>{
+      const euphoriasData = euphorias?.filter(euphoria => euphoria.infographic)
+      if(!euphoriasData || euphoriasData.length === 0) return null;
+
+     return (
+    <>
+      <div x-data={`{active: '${euphoriasData[0].code}'}`}>
+        <div class="tabs tabs-boxed">
+          {euphoriasData.map((euphoria, idx) => (
+            <button
+              @click={`active = '${euphoria.code}'`}
+              class="tab"
+              :class={`(active === '${euphoria.code}') && 'tab-active !text-white'`}
+            >
+              {euphoria.name}
+            </button>
+          ))}
+        </div>
+        <div class="mt-4">
+            {euphoriasData.map((euphoria, idx) => (
+              <div x-show={`active === '${euphoria.code}'`} x-cloak x-data>
+                  <CustomImage
+                    x-zoomable
+                    class="relative w-full z-10"
+                    src={`/images/euphoria/${id}/${euphoria.infographic}`}
+                    alt="udimo"
+                  />
+              </div>
+            ))}
+        </div>
+      </div>
+    </>
+  )
+    })()}
 </>
 )
 }

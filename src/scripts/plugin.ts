@@ -42,7 +42,7 @@ export function Clipboard(Alpine) {
       cleanup(() => {
         el.removeEventListener("click", clickHandler);
       });
-    }
+    },
   );
 }
 
@@ -68,7 +68,7 @@ export function Zoomable(Alpine) {
 
   // Attempt to find existing container in the DOM
   let container = document.querySelector(
-    ".zoomable-fullscreen-container"
+    ".zoomable-fullscreen-container",
   ) as HTMLDivElement;
   if (!container) {
     container = document.createElement("div");
@@ -81,7 +81,7 @@ export function Zoomable(Alpine) {
 
   // Make sure we have the loading indicator
   let loadingIndicator = container.querySelector(
-    ".zoomable-loading-indicator"
+    ".zoomable-loading-indicator",
   ) as HTMLDivElement;
   if (!loadingIndicator) {
     loadingIndicator = document.createElement("div");
@@ -143,7 +143,7 @@ export function Zoomable(Alpine) {
 
   // Make sure we have the fullscreen <img>
   let fullscreenImg = container.querySelector(
-    ".zoomable-fullscreen-image"
+    ".zoomable-fullscreen-image",
   ) as HTMLImageElement;
   if (!fullscreenImg) {
     fullscreenImg = document.createElement("img");
@@ -184,7 +184,7 @@ export function Zoomable(Alpine) {
       return;
     }
     focusableElements = Array.from(
-      container?.querySelectorAll(focusableSelectors)
+      container?.querySelectorAll(focusableSelectors),
     );
     if (focusableElements.length > 0) {
       firstFocusableElement = focusableElements[0];
@@ -381,7 +381,7 @@ export function Zoomable(Alpine) {
     if (el.tagName.toLowerCase() !== "img") {
       console.error(
         "The x-zoomable directive can only be used on an <img> element, but found:",
-        el.tagName
+        el.tagName,
       );
       return;
     }

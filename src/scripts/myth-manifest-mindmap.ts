@@ -49,7 +49,7 @@ export default () => ({
       .forceSimulation(nodes)
       .force(
         "link",
-        d3.forceLink(links).id((d) => d.id)
+        d3.forceLink(links).id((d) => d.id),
       )
       .force("charge", d3.forceManyBody())
       .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
@@ -119,14 +119,14 @@ export default () => ({
       })
       .on("click", async (e, d) => {
         const isSelectedNodeActive = !!this.activeCodes.includes(
-          this.selectedNode?.code
+          this.selectedNode?.code,
         );
         d3.select("circle[id='" + this.selectedNode?.id + "']")
           .attr("fill", () =>
-            isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+            isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR,
           )
           .attr("stroke", () =>
-            isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : null
+            isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : null,
           );
 
         this.selectedNode = {
@@ -188,14 +188,14 @@ export default () => ({
 
   clearSelectedNode() {
     const isSelectedNodeActive = !!this.activeCodes.includes(
-      this.selectedNode?.code
+      this.selectedNode?.code,
     );
     d3.select("circle[id='" + this.selectedNode?.id + "']")
       .attr("fill", () =>
-        isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+        isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR,
       )
       .attr("stroke", () =>
-        isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : null
+        isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : null,
       );
 
     this.selectedNode = null;
@@ -213,7 +213,7 @@ export default () => ({
           link.source +
           '"][data-target="' +
           link.target +
-          '"]'
+          '"]',
       ).attr("stroke", LINK_COLOR);
     });
 
@@ -251,7 +251,7 @@ export default () => ({
           link.source +
           '"][data-target="' +
           link.target +
-          '"]'
+          '"]',
       ).attr("stroke", LINK_ACTIVE_COLOR);
     });
   },
