@@ -1,0 +1,162 @@
+---
+import AfflatusIcon from "@components/AfflatusIcon.astro";
+import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import CustomImage from "@components/CustomImage.astro";
+
+type StatRate = "S" | "A+" | "A" | "B+" | "B" | "C+" | "C";
+
+type EnemyData = {
+  id: string;
+  headIconId: string;
+  name: string;
+  afflatus: string;
+  hp: number;
+  lv: string;
+  atkRate: StatRate;
+  criticalTechniqueRate: StatRate;
+  realityDefRate: StatRate;
+  mentalDefRate: StatRate;
+  skill1?: {
+    name: string;
+    cardId: string;
+  };
+  skill2?: {
+    name: string;
+    cardId: string;
+  };
+  ultimate?: {
+    name: string;
+    cardId: string;
+  };
+};
+
+interface Props {
+  enemies: EnemyData[];
+}
+
+const { enemies } = Astro.props;
+---
+
+<div class="mt-4" x-data="dataset">
+    <div class="flex flex-wrap gap-4">
+        {
+        enemies.map((enemy, idx) => (
+            <button
+            class="w-16 border border-primary-content/50 rounded-full relative"
+            @click={`handleChangeActive('${enemy.id}', ${idx})`}
+            :class={`(active === '${enemy.id}') && '!border-primary'`}
+            >
+            <CustomImage
+                class="rounded-full overflow-hidden"
+                src={`/images/enemies/headicon/${enemy.headIconId}.png`}
+                alt={enemy.name + " head icon"}
+            />
+            <div class="absolute w-4 -bottom-2 right-0">
+                <AfflatusIcon type={enemy.afflatus as keyof typeof AFFLATUS_TYPE} />
+            </div>
+            </button>
+        ))
+        }
+    </div>
+    <template x-if="activeEnemy">
+        <div>
+            <div class="mt-4">
+                <p class="text-xl font-medium text-primary-content mb-1" x-text="activeEnemy?.name"></p>
+                <p x-text="activeEnemy?.lv"></p>
+                <p>HP: <span class="font-medium text-primary" x-text="activeEnemy?.hp"></span></p>
+            </div>
+            <div class="divider"></div>
+            <div class="grid grid-cols-[minmax(min-content,12rem)_minmax(min-content,12rem)] gap-x-10 gap-y-2">
+                <div class="flex justify-between">
+                    <span>ATK</span>
+                    <span class="font-medium text-primary-content" x-text="activeEnemy?.atkRate"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Reality DEF</span>
+                    <span class="font-medium text-primary-content" x-text="activeEnemy?.realityDefRate"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Critical Technique</span>
+                    <span class="font-medium text-primary-content" x-text="activeEnemy?.criticalTechniqueRate"></span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Mental DEF</span>
+                    <span class="font-medium text-primary-content" x-text="activeEnemy?.mentalDefRate"></span>
+                </div>
+            </div>
+            <div class="mt-4">
+                <slot name="passive-info" />
+            </div>
+            <div class="divider"></div>
+            <div class="border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
+                <img
+                    class="max-w-20 self-center md:max-w-32"
+                    loading="lazy"
+                    :src="`/images/enemies/card/${activeEnemy?.skill1?.cardId}.png`"
+                    :alt="activeEnemy?.name + ' skill 1'"
+                />
+                <div>
+                    <p class="text-lg font-medium text-primary-content" x-text="activeEnemy?.skill1?.name"></p>
+                    <slot name="skill1-info" />
+                </div>
+            </div>
+            <div class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
+                <img
+                    class="max-w-20 self-center md:max-w-32"
+                    loading="lazy"
+                    :src="`/images/enemies/card/${activeEnemy?.skill2?.cardId}.png`"
+                    :alt="activeEnemy?.name + ' skill 2'"
+                />
+                <div>
+                    <p class="text-lg font-medium text-primary-content" x-text="activeEnemy?.skill2?.name"></p>
+                    <slot name="skill2-info" />
+                </div>
+            </div>
+            <div class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
+                <img
+                    class="max-w-20 self-center md:max-w-32"
+                    loading="lazy"
+                    :src="`/images/enemies/card/${activeEnemy?.ultimate?.cardId}.png`"
+                    :alt="activeEnemy?.name + ' ultimate'"
+                />
+                <div>
+                    <p class="text-lg font-medium text-primary-content" x-text="activeEnemy?.ultimate?.name"></p>
+                    <slot name="ultimate-info" />
+                </div>
+            </div>
+        </div>
+    </template>
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    enemies,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("zone", {
+        enemies,
+    });
+  });
+</script>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("dataset", () => ({
+    active: '',
+    activeEnemy: null,
+
+    handleChangeActive(activeId, idx) {
+      if (this.active === activeId) {
+        this.active = '';
+        this.activeEnemy = null;
+        return;
+      }
+
+      this.active = activeId;
+      this.activeEnemy = this.$store.zone.enemies[idx];
+    }
+  }));
+</script>

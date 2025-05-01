@@ -1,0 +1,54 @@
+{
+  "enemies": [
+    {
+      "id": "310m-1",
+      "name": "Little Girl",
+      "headIconId": "301601",
+      "dmgType": "MENTAL",
+      "afflatus": "PLANT",
+      "hp": 174896,
+      "lv": "Insight III Level 42",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "S",
+      "skill1": {
+        "name": "Tea Party",
+        "cardId": "30160111"
+      },
+      "skill2": {
+        "name": "Cough Syrup",
+        "cardId": "30160121"
+      },
+      "ultimate": {
+        "name": "Tea with Friends",
+        "cardId": "30160131"
+      }
+    },
+    {
+      "id": "310m-2",
+      "name": "Textile Artisan",
+      "headIconId": "305701",
+      "dmgType": "MENTAL",
+      "afflatus": "BEAST",
+      "hp": 147280,
+      "lv": "Insight III Level 42",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "A+",
+      "skill1": {
+        "name": "Magnetic Current",
+        "cardId": "30570111"
+      },
+      "skill2": {
+        "name": "Inhibition Ring",
+        "cardId": "30570121"
+      },
+      "ultimate": {
+        "name": "Artificial Somnambulism Therapy",
+        "cardId": "30570131"
+      }
+    }
+  ]
+}

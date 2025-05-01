@@ -1,0 +1,103 @@
+---
+title: "Abyssal Zone 310M"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/310m.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Mineral & Beast units
+    * Insight III Level 42
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Mental DEF **+40%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+        <Fragment slot="passive-info">
+            <div x-show={`active==='${data.enemies[0].id}'`}>
+                <span class='passive-title'>Don't Touch Her III</span>
+
+                When the caster takes Mental DMG, gives the attacker 1 stack of :effect{code="WONDERLAND_VISITOR"} for 2 rounds.
+            </div>
+            <div x-show={`active==='${data.enemies[1].id}'`}>
+                <span class='passive-title'>Don't Touch Her</span>
+
+                When being attacked by Mental DMG, DMG Taken **-80%** and Critical DEF **+80%**.
+
+                <span class='passive-title'>Blocking Agent</span>
+
+                At the end of the round, inflicts 1 stack of :effect{code="STABILIZE"} on the ally with the lowest HP percentage.
+            </div>
+        </Fragment>
+        <Fragment slot="skill1-info">
+            <div x-show={`active==='${data.enemies[0].id}'`}>
+                <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. Mental DEF **-25%** for the target for 2 rounds.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **350%** Mental DMG. Mental DEF **-35%** for the target for 3 rounds.
+            </div>
+            <div x-show={`active==='${data.enemies[1].id}'`}>
+                <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **220%** Mental DMG and dispels all *\[Stats Up]* or *\[Pos Status]* statuses from the target.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **280%** Mental DMG and dispels all *\[Stats Up]* or *\[Pos Status]* statuses from the target.
+            </div>
+        </Fragment>
+        <Fragment slot="skill2-info">
+            <div x-show={`active==='${data.enemies[0].id}'`}>
+                <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. DMG **-15%** and DMG Taken **+15%** for all enemies for 2 rounds.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. DMG **-25%** and DMG Taken **+25%** for all enemies for 2 rounds.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. All enemies suffer DMG Dealt **-25%** and DMG Taken **+25%**. Lasts 3 rounds.
+            </div>
+            <div x-show={`active==='${data.enemies[1].id}'`}>
+                <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+10%** for all allies for 2 rounds and gives the caster 1 stack of :effect{code="STABILIZE"}.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+15%** for all allies for 2 rounds and gives the caster 1 stack of :effect{code="STABILIZE"}.
+
+                <div class='divider my-1 h-1'/>
+
+                <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+20%** for all allies for 2 rounds and inflicts 2 stacks of :effect{code="STABILIZE"} on them.
+            </div>
+        </Fragment>
+        <Fragment slot="ultimate-info">
+            <div x-show={`active==='${data.enemies[0].id}'`}>
+                Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, inflicts :effect{code="NIGHTMARE"} status for 1 round on the target.
+            </div>
+            <div x-show={`active==='${data.enemies[1].id}'`}>
+                Mass attack. Deals **200%** Mental DMG and inflicts 1 stack of :effect{code="PARALYZE"} to all enemies. Also inflicts 1 stack of :effect{code="PARALYZE"} to the main target.
+            </div>
+        </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>
