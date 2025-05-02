@@ -1,0 +1,118 @@
+{
+  "enemies": [
+    {
+      "id": "380m-1",
+      "name": "The Gang's Blossom",
+      "headIconId": "304301",
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 206179,
+      "lv": "Insight III Level 56",
+      "atkRate": "B",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "MOXIE_DOWN_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "STRESS_UP_RESILIENCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "A Shiny Diamond",
+        "cardId": "30430111"
+      },
+      "skill2": {
+        "name": "A Bouquet of Galaxy",
+        "cardId": "30430121"
+      },
+      "ultimate": {
+        "name": "A Sincere Heart",
+        "cardId": "30430131"
+      }
+    },
+    {
+      "id": "380m-2",
+      "name": "Smuggled Cannon",
+      "headIconId": "670210",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 144911,
+      "lv": "Insight III Level 56",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Kinetic Weaponry",
+        "cardId": "1701"
+      },
+      "skill2": {
+        "name": "Suppressive Fire",
+        "cardId": "1702"
+      },
+      "ultimate": {
+        "name": "Optimum Angle",
+        "cardId": "1704"
+      }
+    },
+    {
+      "id": "380m-3",
+      "name": "Smuggled Cannon",
+      "headIconId": "670210",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 144911,
+      "lv": "Insight III Level 56",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Kinetic Weaponry",
+        "cardId": "1701"
+      },
+      "skill2": {
+        "name": "Suppressive Fire",
+        "cardId": "1702"
+      },
+      "ultimate": {
+        "name": "Optimum Angle",
+        "cardId": "1704"
+      }
+    },
+    {
+      "id": "380m-4",
+      "name": "Smuggled Cannon",
+      "headIconId": "670210",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 144911,
+      "lv": "Insight III Level 56",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Kinetic Weaponry",
+        "cardId": "1701"
+      },
+      "skill2": {
+        "name": "Suppressive Fire",
+        "cardId": "1702"
+      },
+      "ultimate": {
+        "name": "Optimum Angle",
+        "cardId": "1704"
+      }
+    }
+  ]
+}

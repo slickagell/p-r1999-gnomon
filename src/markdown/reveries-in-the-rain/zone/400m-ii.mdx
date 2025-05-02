@@ -1,0 +1,92 @@
+---
+title: "Abyssal Zone 400M-II"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Mineral units
+    * Insight III Level 60
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} At the start of the round, grant Moxie +1 to self.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Whenever an ally is attacked by a non-stronger Afflatus, this unit gains 1 stack of :effect{code="BEDROCK"} for 3 rounds.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} At the end of the round, purify *\[Neg Status]* from all allies.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">High Morale II</span>
+
+          For every positive status carried, DMG Dealt **+5%** and DMG Taken **-5%**. At the start of the round, gains 1 random positive status for 2 rounds.
+
+          <span class="passive-title">Warrior's Punishment</span>
+
+          At the start of the round, if this unit is below **50%** current HP, permanently gain DMG Taken **-30%**, and at the start of each round, gain Moxie +1.
+
+          <span class="passive-title">Principle of Transparency II</span>
+
+          At the end of the round, if this unit is below **50%** current HP, summon 1 Frenzied "Phantom"; otherwise summon 1 Razor's "Phantom" (up to 4 monsters on the field); when another ally dies, lose **5%** of own Max HP.
+
+          <span class="passive-title">Warrior's Punishment</span>
+
+          When this unit is being attacked by a 1-target attack, performs a riposte; at the start of every 3 rounds, this unit enters the :effect{code="TAUNT"} status for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">High Morale II</span>
+
+          For every positive status carried, DMG Dealt **+5%** and DMG Taken **-5%**. At the start of the round, gains 1 random positive status for 2 rounds.
+
+          <span class="passive-title">Shadow's Following</span>
+
+          After "Razor" Captain takes an action, this unit mimics his action 1 time;
+
+          Incantation 1: 1-target attack. Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG.
+
+          Incantation 2: Mass Buff. Grants 1 effect from :effect{code="COLLECTION_OF_BUFFS_400_M_II"} to all allies for 2 rounds.
+
+          Ultimate: Mass attack. Deals **250%** Reality DMG plus (own Reality DEF x**150%**) Genesis DMG to all enemies.
+
+          <span class="passive-title">Sympathetic Resonance</span>
+
+          When an enemy takes an action, for every instance of HP lost during that action phase, lose **1%** of own Max HP after the action (lose up to **8%** of own Max HP per action).
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack, Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis. DMG. Inflicts the \[Exposed] status for 2 rounds on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants Reality DEF **+30%** and Mental DEF **+30%** to all allies for 2 rounds.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG plus (own Reality DEF x**150%**) Genesis DMG. Grants the :effect{code="HIGH_MORALE"} status to all allies for 2 rounds.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

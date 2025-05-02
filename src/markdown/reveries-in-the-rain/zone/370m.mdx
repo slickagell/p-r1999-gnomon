@@ -1,0 +1,124 @@
+---
+title: "Abyssal Zone 370M"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/370m.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Star units
+    * Insight III Level 54
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} On death, grant Moxie +1 to other allies and recover (their Max HP x**5%**) HP to other allies.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Glory Restored</span>
+
+          If the caster's HP goes below **50%** after being attacked, Moxie +3 (only triggers 1 time).
+
+          <span class="passive-title">Glory Restored II</span>
+
+          When entering battle, DMG Heal **+10%**.
+
+          <span class="passive-title">Glory Restored II</span>
+
+          When entering battle, grant 1 stack of :effect{code="UNSPARING"} to all allies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Rising Courage</span>
+
+          After casting an ultimate, Max Moxie and Ultimate Moxie Consumption -2 (triggers up to 4 times). When on the battlefield, Moxie gained by other allies is gained by this unit instead.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Smite</span>
+
+          When the enemy is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, DMG Dealt **+50%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Deals **80%** Reality DMG to all enemies, then shifts self 1 position backward.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Deals **120%** Reality DMG to all enemies, then shifts self 1 position backward.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack, Deals **180%** Reality DMG. If the target is defeated, Moxie +1 for self.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack, Deals **250%** Reality DMG. If the target is defeated, Moxie +2 for self.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. HP +(the caster's ATK x**40%**) for the ally with the lowest HP.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **225%** Mental DMG. HP +(the caster's ATK x**60%**) for the ally with the lowest HP.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Self channel. Enters the :effect{code="BOARDING_ASSAULT"} status, If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Moxie +1 for self.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass buff. Grant Moxie +1 to other allies, doubles the stacks of :effect{code="UNSPARING"} on all allies, and recovers **15%** of Missing HP for self.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass DMG. Deals **300%** Mental DMG to all enemies; after attacking, inflicts Reality DEF **-20%** on the targets for 3 rounds, then makes other allies cast their ultimate 1 time.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **200%** Reality DMG to all enemies, and inflicts :effect{code="DAZE"} on the targets for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **600%** Reality DMG to all enemies, If any target is defeated, grants 1 stack of :effect{code="ROUSING_MORALE"} to all allies and 1 extra stack to self.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

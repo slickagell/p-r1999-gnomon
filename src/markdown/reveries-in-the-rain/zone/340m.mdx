@@ -1,0 +1,140 @@
+---
+title: "Abyssal Zone 340M"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/340m.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Beast units
+    * Insight III Level 48
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle and at the start of every 2 rounds, all allies gain 1 stack of :effect{code="REGEN"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Hard Bark</span>
+
+          When the caster enters battle, DMG Taken Reduction **+50%**. Every time the caster takes DMG, DMG Taken Reduction **-5%**, stacking up to 10 times.
+
+          <span class="passive-title">Break Free</span>
+
+          When a round ends, if the caster is below **40%** HP, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster, and the caster gains an :effect{code="IMMUNITY_SHIELD"} with (the caster's Max HP x**25%**) HP (only triggers 1 time).
+
+          <span class="passive-title">Bloodthirsty Soul</span>
+
+          When a round starts, if the :effect{code="IMMUNITY_SHIELD"} is active, casts *\[Sacrifice Ritual]* 1 time. For every *\[Stats Up]* or *\[Pos Status]* status the enemy is in, this attack enjoys Leech Rate **+5%** (only triggers 1 time).
+
+          <span class="passive-title">Aura of Exuberance I</span>
+
+          When a round starts, ATK and DMG Dealt **+1%**. Can stack.
+
+          <span class="passive-title">Desire for Blood II</span>
+
+          For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
+          <span class="passive-title">Desertification</span>
+
+          After taking an action, loses (Current HP x**10%**) and gains 1 stack of :effect{code="THORNY"}.
+
+          <span class="passive-title">Desire for Blood II</span>
+
+          For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
+          <span class="passive-title">Desertification</span>
+
+          When entering battle, loses (Max HP x**10%**) HP for self and grants 1 stack of :effect{code="THORNY"} to all allies.
+
+          <span class="passive-title">Desire for Blood II</span>
+
+          For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **175%** Reality DMG to 2 enemies. Inflicts Reality DEF **-15%** for 2 rounds on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts Critical Resist Rate and Critical DEF **-25%** for 2 rounds on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **175%** Reality DMG. When this attack scores a critical hit, Moxie +1.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG. When the caster scores a critical hit, Moxie +1 for the caster.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Reality DEF and Mental DEF **+15%** for all allies for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Reality DEF and Mental DEF **+25%** for all allies for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Reality DMG to 2 enemies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **275%** Reality DMG to all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. HP +(the caster's ATK x**100%**) for all allies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
+          1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{code="DAZE"} for 1 round on the target hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

@@ -1,0 +1,55 @@
+{
+  "enemies": [
+    {
+      "id": "400-i-1",
+      "name": "Arcanum Device No. 0623Y",
+      "headIconId": "690108",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 834436,
+      "lv": "Insight III Level 60",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "B+",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 200
+        }
+      ]
+    },
+    {
+      "id": "400-i-2",
+      "name": "Arcanum Device No. 0987X",
+      "headIconId": "690107",
+      "dmgType": "REALITY",
+      "afflatus": "MINERAL",
+      "hp": 956390,
+      "lv": "Insight III Level 60",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "B+",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 200
+        }
+      ]
+    },
+    {
+      "id": "400-i-3",
+      "name": "Guardian Spirit",
+      "headIconId": "670107",
+      "dmgType": "",
+      "afflatus": "MINERAL",
+      "hp": 5,
+      "lv": "Insight III Level 60",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+"
+    }
+  ]
+}

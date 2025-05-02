@@ -1,0 +1,51 @@
+{
+  "enemies": [
+    {
+      "id": "400-iv-1",
+      "name": "Suffering Converged Mind",
+      "headIconId": "610402",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 1421023,
+      "lv": "Insight III Level 60",
+      "atkRate": "SS",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 200
+        },
+        {
+          "code": "DAZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "SLEEP_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "FREEZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "DISARM_RESISTANCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "Sublime Punishment",
+        "cardId": "1301"
+      },
+      "skill2": {
+        "name": "Joyful Lashings",
+        "cardId": "1302"
+      },
+      "ultimate": {
+        "name": "Weeping in Sacrifice",
+        "cardId": "1304"
+      }
+    }
+  ]
+}

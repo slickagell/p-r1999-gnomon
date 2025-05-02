@@ -1,0 +1,95 @@
+---
+title: "Abyssal Zone 400M-III"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Insight III Level 60
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Allies gain DMG Dealt **+50%** against units of the Natural Afflatus.
+
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, apply the :effect{code="EXPOSED"} status on a random ally for 1 round; apply the :effect{code="ELECTRIC_COIL"} status on a random ally for 1 round; apply the :effect{code="INFUSION_TUBE"} status on a random character for 1 round.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, for each character of the Natural Afflatus on the enemy's field, the Servant of War gains Max HP **+25%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Prioritized Honor</span>
+
+          When entering battle, gain Moxie +5 for self (triggers only once); after an enemy takes an action, if own HP is below **70%/50%/30%**, cast an ultimate without consuming Moxie (each percentage threshold triggers only once).
+
+          <span class="passive-title">Chaotic Barrage</span>
+
+          At the end of every 2 rounds, gain 3 stacks of :effect{code="UNSPARING"} for self.
+
+          <span class="passive-title">Charged Overload</span>
+
+          At the start of the round, if this unit has 30 stacks of :effect{code="DYNAMO"}, cast an ultimate without consuming Moxie.
+
+          <span class="passive-title">Polarized Reality</span>
+
+          When dealing damage to units of a Natural Afflatus, the damage dealt is considered to be of a stronger afflatus. When dealing damage to units of a Primal Afflatus, the damage dealt is considered to be of a non-stronger afflatus.
+
+          <span class="passive-title">Call Reinforcement</span>
+
+          At the end of the round, if Dynamo Robot has died, resummon Dynamo Robot; if First-aid Crate has died, resummon First-aid Crate.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Emergency Treatments</span>
+
+          When being attacked by an enemy that has the :effect{code="INFUSION_TUBE"} status, recovers (own ATK x**200%**) HP for all enemies; If this unit did not take any damage during the round, at the end of the round, recovers (the canon's Max HP x**10%**) HP to the canon; when this unit dies, recovers (their Max HP x**50%**) HP for enemies.
+
+          <span class="passive-title">Small Wound</span>
+
+          Immune to all statuses. Cannot be healed. All DMG taken is set to 1.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Dynamo Transfer</span>
+
+          When entering battle or at the end of the round, gain 10 stacks of :effect{code="DYNAMO"} for self; when being attacked by an enemy that has the :effect{code="ELECTRIC_COIL"} status, 5 stacks of :effect{code="DYNAMO"} are stolen from this unit; at the start of the round, transfers 10 stacks of :effect{code="DYNAMO"} to Servant of War.
+
+          <span class="passive-title">Small Wound</span>
+
+          Immune to all statuses. Cannot be healed. All DMG taken is set to 1.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack, Deals **300%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains a *\[Shield]* with (own Max HP x**10%**) HP for 1 round (when losing the Shield, DMG Taken **+50%** for 1 round), and randomly gains 2 of the following: :effect{code="PIERCING_BULLET"}, :effect{code="FLASH_BULLET"}, :effect{code="FLAMING_BULLET"}, :effect{code="FLINCH_BULLET"}.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Right before the attack, dispels *\[Pos Status]*, *\[Stats Up]* and *\[Counter]* statuses from enemies of the Natural Afflatus, then deals **300%** Reality DMG to all enemies.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

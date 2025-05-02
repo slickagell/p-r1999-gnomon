@@ -1,9 +1,12 @@
 ---
 import AfflatusIcon from "@components/AfflatusIcon.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import RESISTANCE from "@data/common/enemy/resistance.json";
 import CustomImage from "@components/CustomImage.astro";
+import Tooltip from "@components/Tooltip.astro";
+import Icon from "@components/Icon.astro";
 
-type StatRate = "S" | "A+" | "A" | "B+" | "B" | "C+" | "C";
+type StatRate = "SS" | "S" | "A+" | "A" | "B+" | "B" | "C+" | "C";
 
 type EnemyData = {
   id: string;
@@ -16,6 +19,10 @@ type EnemyData = {
   criticalTechniqueRate: StatRate;
   realityDefRate: StatRate;
   mentalDefRate: StatRate;
+  resistance? : {
+    code: string;
+    value: number;
+  }[];
   skill1?: {
     name: string;
     cardId: string;
@@ -84,11 +91,32 @@ const { enemies } = Astro.props;
                     <span class="font-medium text-primary-content" x-text="activeEnemy?.mentalDefRate"></span>
                 </div>
             </div>
+            <div x-show="activeEnemy?.resistance" class="mt-4 border border-error/50 p-2">
+              <p class="font-medium text-error">Resistance</p>
+              <div class="mt-2 flex flex-wrap gap-x-10 gap-y-2">
+                {Object.entries(RESISTANCE).map(([code, resistance]) => (
+                  <div x-data={`{ resistance: activeEnemy?.resistance.find((r) => r.code === '${code}') }`} x-show={"resistance"} class="flex gap-4">
+                    <div class="flex gap-1 items-center">
+                      {resistance.title} 
+                      <Tooltip>
+                        <div slot="toggle" class="text-base-content">
+                          <Icon icon="info-circle" customClass="w-4 h-4" />
+                        </div>
+                        <div>
+                          {resistance.description} 
+                        </div>
+                      </Tooltip>
+                    </div>
+                    <span class="font-medium text-primary" x-text="resistance?.value + '%'"></span>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div class="mt-4">
                 <slot name="passive-info" />
             </div>
             <div class="divider"></div>
-            <div class="border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
+            <div x-show="activeEnemy?.skill1" class="border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
                 <img
                     class="max-w-20 self-center md:max-w-32"
                     loading="lazy"
@@ -100,7 +128,7 @@ const { enemies } = Astro.props;
                     <slot name="skill1-info" />
                 </div>
             </div>
-            <div class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
+            <div x-show="activeEnemy?.skill2" class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
                 <img
                     class="max-w-20 self-center md:max-w-32"
                     loading="lazy"
@@ -112,7 +140,7 @@ const { enemies } = Astro.props;
                     <slot name="skill2-info" />
                 </div>
             </div>
-            <div class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
+            <div x-show="activeEnemy?.ultimate" class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
                 <img
                     class="max-w-20 self-center md:max-w-32"
                     loading="lazy"

@@ -1,0 +1,39 @@
+{
+  "enemies": [
+    {
+      "id": "350m-i-1",
+      "name": "Mysterious Feather Man",
+      "headIconId": "308401",
+      "dmgType": "MENTAL",
+      "afflatus": "BEAST",
+      "hp": 1133381,
+      "lv": "Insight III Level 50",
+      "atkRate": "A",
+      "criticalTechniqueRate": "S",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "SEAL_RESISTANCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "Bone's Legacy",
+        "cardId": "1402"
+      },
+      "skill2": {
+        "name": "Flute of Yesteryear",
+        "cardId": "1402"
+      },
+      "ultimate": {
+        "name": "Above the Branches",
+        "cardId": "1404"
+      }
+    }
+  ]
+}

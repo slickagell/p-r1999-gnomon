@@ -1,0 +1,78 @@
+---
+title: "Abyssal Zone 400M-I"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/400m-i.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Star units
+    * Insight III Level 60
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} At the start of the round, if a Guardian Spirit is not present, summon Guardian Spirits to fill the allied battlefield (up to 3 monsters can be on the field at a time).
+
+    :text[\[Ally\]]{className="font-medium text-ally"} Healing Taken **-60%**.
+
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of every 3 rounds, all allies enter the :effect{code="DAZE"} status for 1 round.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Mental Improvement</span>
+
+          At the end of the round, performs a Mental DMG attack and accumulates 1 stack of :effect{code="CHARGE"}; if arcanum device no. 0987X has died, after the attack, grants 3 stacks of :effect{code="THORNY"} to self; when reaching 3 stacks of Charge, performs a powerful shot.
+
+          <span class="passive-title">Stacking Bastion</span>
+
+          At the start of the round, gain 3 stacks of :effect{code="WEAL"} for self; after round 5, gain an additional 2 stacks of :effect{code="WEAL"}; after round 10, gain another additional 2 stacks of :effect{code="WEAL"}; when being attacked, lose 1 stack of :effect{code="WEAL"} from self; when this unit dies, inflict the :effect{code="DAZE"} status on all enemies for 1 round.
+
+          <span class="passive-title">Seething Enmity</span>
+
+          When reaching 3 Eureka, consume 3 Eureka to cast a special powerful shot, dealing **350%** Mental DMG to all enemies; after the attack, inflict ATK **-10%** and DMG Dealt **-30%** on enemies for 3 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Camouflage Light</span>
+
+          At the end of the round, performs a Reality DMG attack and accumulates 1 stack of :effect{code="CHARGE"}; if arcanum device no. 0623Y has died, performs another attack; when reaching 3 stacks of Charge, performs a powerful shot.
+
+          <span class="passive-title">Ramping Fervor</span>
+
+          At the start of the round, gain 3 stacks of :effect{code="UNSPARING"} for self; after round 5, gain an additional 2 stacks of :effect{code="UNSPARING"}; after round 10, gain another additional 2 stacks of :effect{code="UNSPARING"}; when being attacked, lose 1 stack of :effect{code="UNSPARING"} from self; when this unit dies, inflict the :effect{code="DAZE"} status on all enemies for 1 round.
+
+          <span class="passive-title">Seething Enmity</span>
+
+          When reaching 3 Eureka, consume 3 Eureka to cast a special powerful shot, dealing **400%** Reality DMG to all enemies; the attack is always a critical hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Small Wound</span>
+
+          Immune to all statuses. All DMG taken is set to 1.
+
+          <span class="passive-title">Radiance of Protection</span>
+
+          When this unit is alive, other non-Guardian Spirit allies will dodge all attacks; at the start of the round, recovers **100%** of own Max HP.
+
+          <span class="passive-title">Seething Enmity</span>
+
+          When this unit dies, grants Eureka +1 to a random ally.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>
