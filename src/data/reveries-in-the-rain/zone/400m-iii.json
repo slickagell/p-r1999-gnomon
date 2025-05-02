@@ -1,0 +1,61 @@
+{
+  "enemies": [
+    {
+      "id": "400m-iii-1",
+      "name": "Servant of War",
+      "headIconId": "640303",
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
+      "hp": 954719,
+      "lv": "Insight III Level 60",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "C+",
+      "mentalDefRate": "C+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 200
+        }
+      ],
+      "skill1": {
+        "name": "Don't Bother Hiding!",
+        "cardId": "2001"
+      },
+      "skill2": {
+        "name": "No Need to Beg!",
+        "cardId": "2003"
+      },
+      "ultimate": {
+        "name": "Glory Awaits",
+        "cardId": "2004"
+      }
+    },
+    {
+      "id": "400m-iii-2",
+      "name": "First-aid Crate",
+      "headIconId": "413701",
+      "dmgType": "",
+      "afflatus": "INTELLECT",
+      "hp": 5,
+      "lv": "Insight III Level 60",
+      "atkRate": "C",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+"
+    },
+    {
+      "id": "400m-iii-3",
+      "name": "Dynamo Robot",
+      "headIconId": "670104",
+      "dmgType": "",
+      "afflatus": "SPIRIT",
+      "hp": 5,
+      "lv": "Insight III Level 60",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "C+",
+      "mentalDefRate": "C+"
+    }
+  ]
+}

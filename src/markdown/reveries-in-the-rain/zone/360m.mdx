@@ -1,0 +1,82 @@
+---
+title: "Abyssal Zone 360M"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/360m.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Star & Plant units
+    * Insight III Level 52
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gain 3 stacks of :effect{code="MORIBUND"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Catastrophic Loss III</span>
+
+          When the caster enters battle, gains a :effect{code="EXTERMINATION_BOON"} with (the caster's Max HP x**30%**) HP (only triggers one time). After losing :effect{code="EXTERMINATION_BOON"}, enters :effect{code="FRAGILE"} status for 2 rounds.
+
+          <span class="passive-title">Synergy II</span>
+
+          For every **20%** less current HP between self and other allies, gain DMG Heal **+20%**, DMG Dealt **+15%**, and DMG Taken **-15%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Catastrophic Loss</span>
+
+          When the caster enters battle, gains a :effect{code="VAJRAS_BOON"} with (the caster's Max HP x**30%**) HP (only triggers 1 time). After losing :effect{code="VAJRAS_BOON"}, enters :effect{code="FRAGILE"} status for 2 rounds.
+
+          <span class="passive-title">Synergy III</span>
+
+          For every **20%** less current HP between self and other allies, gain Leech Rate **+20%**, DMG Dealt **+15%**, and DMG Taken **-15%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. Inflicts DMG Dealt **-15%** for 1 round on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts DMG Taken **+10%** for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts Critical DMG **-30%** for 1 round on the targets hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies and grants the caster Leech Rate **+30%**, which is removed when losing the Shield. If the caster has no Shield, then grants a :effect{code="EXTERMINATION_BOON"} with (the caster's Max HP x**30%**) HP for 3 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. DMG Heal **+30%** for the caster, which is removed when losing the Shield. If the caster has no Shield, then gains a :effect{code="VAJRAS_BOON"} with (the caster's Max HP x**30%**) HP for 3 rounds.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

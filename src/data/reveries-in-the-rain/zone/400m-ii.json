@@ -1,0 +1,86 @@
+{
+  "enemies": [
+    {
+      "id": "400m-ii-1",
+      "name": "\"Razor\" Captain",
+      "headIconId": "640302",
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 1438200,
+      "lv": "Insight III Level 60",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 200
+        },
+        {
+          "code": "DAZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "SLEEP_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "PETRIFY_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "FREEZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "DISARM_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "CAPTIVATED_RESISTANCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "\"Phenomenon\"",
+        "cardId": "2001"
+      },
+      "skill2": {
+        "name": "\"Assumption\"",
+        "cardId": "2003"
+      },
+      "ultimate": {
+        "name": "From Deduction to Law",
+        "cardId": "2004"
+      }
+    },
+    {
+      "id": "400m-ii-2",
+      "name": "Razor's \"Phantom\"",
+      "headIconId": "640302",
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 230684,
+      "lv": "Insight III Level 60",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "DAZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "CAPTIVATED_RESISTANCE",
+          "value": 100
+        }
+      ]
+    }
+  ]
+}

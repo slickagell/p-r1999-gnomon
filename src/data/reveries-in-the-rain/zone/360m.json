@@ -1,0 +1,54 @@
+{
+  "enemies": [
+    {
+      "id": "360m-1",
+      "name": "Shiva Statue",
+      "headIconId": "670304",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 323943,
+      "lv": "Insight III Level 52",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": {
+        "name": "Ascetic",
+        "cardId": "1701"
+      },
+      "skill2": {
+        "name": "Exorcism",
+        "cardId": "1702"
+      },
+      "ultimate": {
+        "name": "End of the Universe",
+        "cardId": "1704"
+      }
+    },
+    {
+      "id": "360m-2",
+      "name": "Ravana Statue",
+      "headIconId": "670305",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 381109,
+      "lv": "Insight III Level 52",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": {
+        "name": "Inviting Trouble",
+        "cardId": "1701"
+      },
+      "skill2": {
+        "name": "Spite",
+        "cardId": "1702"
+      },
+      "ultimate": {
+        "name": "World Must Die Once",
+        "cardId": "1704"
+      }
+    }
+  ]
+}

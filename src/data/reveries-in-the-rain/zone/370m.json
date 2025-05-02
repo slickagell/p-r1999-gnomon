@@ -1,0 +1,110 @@
+{
+  "enemies": [
+    {
+      "id": "370m-1",
+      "name": "\"Supreme Steed\"",
+      "headIconId": "305001",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 180967,
+      "lv": "Insight III Level 54",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "skill1": {
+        "name": "Clatter Trample",
+        "cardId": "30500111"
+      },
+      "skill2": {
+        "name": "Commanding Aura",
+        "cardId": "30500121"
+      },
+      "ultimate": {
+        "name": "Great Inspirer",
+        "cardId": "30500131"
+      }
+    },
+    {
+      "id": "370m-2",
+      "name": "Gallant Knight",
+      "headIconId": "310601",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 264573,
+      "lv": "Insight III Level 54",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "MOXIE_DOWN_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "STRESS_UP_RESILIENCE",
+          "value": 100
+        }
+      ],
+      "ultimate": {
+        "name": "Giddy Up, Mate!",
+        "cardId": "31060131"
+      }
+    },
+    {
+      "id": "370m-3",
+      "name": "The Knight's \"Wand\"",
+      "headIconId": "310101",
+      "dmgType": "REALITY",
+      "afflatus": "MINERAL",
+      "hp": 180967,
+      "lv": "Insight III Level 54",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": {
+        "name": "Port Side Barrage",
+        "cardId": "31010111"
+      },
+      "skill2": {
+        "name": "Prepare to Board!",
+        "cardId": "31010121"
+      },
+      "ultimate": {
+        "name": "Boundless Sea, Limitless Sky",
+        "cardId": "31010131"
+      }
+    },
+    {
+      "id": "370m-4",
+      "name": "The Knight's \"Blade\"",
+      "headIconId": "300701",
+      "dmgType": "REALITY",
+      "afflatus": "MINERAL",
+      "hp": 143927,
+      "lv": "Insight III Level 54",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A+",
+      "mentalDefRate": "A+",
+      "skill1": {
+        "name": "Justice",
+        "cardId": "30070111"
+      },
+      "skill2": {
+        "name": "Glory",
+        "cardId": "30070121"
+      },
+      "ultimate": {
+        "name": "After AD 778",
+        "cardId": "30070131"
+      }
+    }
+  ]
+}

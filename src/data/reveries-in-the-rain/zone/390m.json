@@ -1,0 +1,93 @@
+{
+  "enemies": [
+    {
+      "id": "390m-1",
+      "name": "Traveling Apothecary",
+      "headIconId": "300901",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 241371,
+      "lv": "Insight III Level 58",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "MOXIE_DOWN_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "STRESS_UP_RESILIENCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "Triple the Dose!",
+        "cardId": "30090111"
+      },
+      "skill2": {
+        "name": "Concentrated Essence!",
+        "cardId": "30090121"
+      },
+      "ultimate": {
+        "name": "Mix Them All Up!",
+        "cardId": "30090131"
+      }
+    },
+    {
+      "id": "390m-2",
+      "name": "Scarecrow Guest",
+      "headIconId": "304201",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 257463,
+      "lv": "Insight III Level 58",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "skill1": {
+        "name": "Rabies",
+        "cardId": "30420111"
+      },
+      "skill2": {
+        "name": "Noise in the Field",
+        "cardId": "30420121"
+      },
+      "ultimate": {
+        "name": "Dedicated Straw Doctor",
+        "cardId": "30420131"
+      }
+    },
+    {
+      "id": "390m-3",
+      "name": "Scarecrow Guest",
+      "headIconId": "304201",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 257463,
+      "lv": "Insight III Level 58",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "skill1": {
+        "name": "Rabies",
+        "cardId": "30420111"
+      },
+      "skill2": {
+        "name": "Noise in the Field",
+        "cardId": "30420121"
+      },
+      "ultimate": {
+        "name": "Dedicated Straw Doctor",
+        "cardId": "30420131"
+      }
+    }
+  ]
+}

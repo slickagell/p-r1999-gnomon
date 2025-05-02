@@ -1,0 +1,179 @@
+{
+  "enemies": [
+    {
+      "id": "340m-1",
+      "name": "Yateveo",
+      "headIconId": "422701",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 259146,
+      "lv": "Insight III Level 48",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "skill1": {
+        "name": "Stab",
+        "cardId": "1202"
+      },
+      "skill2": {
+        "name": "Twine",
+        "cardId": "1201"
+      },
+      "ultimate": {
+        "name": "Sacrifice Ritual",
+        "cardId": "1204"
+      }
+    },
+    {
+      "id": "340m-2",
+      "name": "Hounding Statue",
+      "headIconId": "422402",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 64786,
+      "lv": "Insight III Level 48",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Swoop",
+        "cardId": "1201"
+      },
+      "skill2": {
+        "name": "Honey",
+        "cardId": "1203"
+      },
+      "ultimate": {
+        "name": "Immovable Honeycomb",
+        "cardId": "1204"
+      }
+    },
+    {
+      "id": "340m-3",
+      "name": "Preying Statue",
+      "headIconId": "422401",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 64786,
+      "lv": "Insight III Level 48",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Claw Strike",
+        "cardId": "1201"
+      },
+      "skill2": {
+        "name": "Sting",
+        "cardId": "1202"
+      },
+      "ultimate": {
+        "name": "Indestructible Honeycomb",
+        "cardId": "1204"
+      }
+    },
+    {
+      "id": "340m-4",
+      "name": "Hounding Statue",
+      "headIconId": "422402",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 64786,
+      "lv": "Insight III Level 48",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Swoop",
+        "cardId": "1201"
+      },
+      "skill2": {
+        "name": "Honey",
+        "cardId": "1203"
+      },
+      "ultimate": {
+        "name": "Immovable Honeycomb",
+        "cardId": "1204"
+      }
+    },
+    {
+      "id": "340m-5",
+      "name": "Preying Statue",
+      "headIconId": "422401",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 64786,
+      "lv": "Insight III Level 48",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Claw Strike",
+        "cardId": "1201"
+      },
+      "skill2": {
+        "name": "Sting",
+        "cardId": "1202"
+      },
+      "ultimate": {
+        "name": "Indestructible Honeycomb",
+        "cardId": "1204"
+      }
+    },
+    {
+      "id": "340m-6",
+      "name": "Hounding Statue",
+      "headIconId": "422402",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 64786,
+      "lv": "Insight III Level 48",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Swoop",
+        "cardId": "1201"
+      },
+      "skill2": {
+        "name": "Honey",
+        "cardId": "1203"
+      },
+      "ultimate": {
+        "name": "Immovable Honeycomb",
+        "cardId": "1204"
+      }
+    },
+    {
+      "id": "340m-7",
+      "name": "Preying Statue",
+      "headIconId": "422401",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 64786,
+      "lv": "Insight III Level 48",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Claw Strike",
+        "cardId": "1201"
+      },
+      "skill2": {
+        "name": "Sting",
+        "cardId": "1202"
+      },
+      "ultimate": {
+        "name": "Indestructible Honeycomb",
+        "cardId": "1204"
+      }
+    }
+  ]
+}

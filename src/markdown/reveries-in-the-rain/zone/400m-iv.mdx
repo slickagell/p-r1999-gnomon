@@ -1,0 +1,72 @@
+---
+title: "Abyssal Zone 400M-IV"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Plant units
+    * Insight III Level 60
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle and at the start of every 3 rounds, AP +1.
+
+    :text[\[Ally\]]{className="font-medium text-ally"} Each round, the first character to cast an ultimate gets DMG Dealt **-50%** in the following 3 rounds.
+
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, if an ally has at least 6 stacks of :effect{code="ENERVATE"}, the ally enters the :effect{code="PETRIFY"} status for 1 round and loses 2 stacks of :effect{code="ENERVATE"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div>
+          <span class="passive-title">Sacrificial Wounds</span>
+
+          When this unit has 4 or fewer types of *\[Stats Down]* or *\[Neg Status]* statuses, DMG Dealt **+50%**; when this unit has 5 or fewer types of *\[Stats Down]* or *\[Neg Status]* statuses, Penetration Rate **+60%**.
+
+          <span class="passive-title">Falsehood</span>
+
+          When entering battle and at the start of every 4 rounds, enters the :effect{code="PROTECTION_OF_DARKNESS"} status; right before being attacked by an ultimate, lose :effect{code="HAVOC"} from self; when being attacked by an ultimate, DMG taken **+30%**.
+
+          <span class="passive-title">Break Livelihood</span>
+
+          After being attacked by a non-ultimate attack, inflicts 1 stack of :effect{code="ENERVATE"} on the attacker; at the end of the round, if there are allies on the field, transfers own *\[Neg Status]* to a random ally.
+
+          <span class="passive-title">Falsehood</span>
+
+          At the end of round 1 and at every 2 rounds thereafter, randomly summon a Scale of Devilish or Scale of Demonic; and if own HP is below **50%** at this time, randomly summon another Scale of Devilish or Scale of Demonic (up to 3 scales can be present at a time).
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack, Deals **300%** Mental DMG to the enemy with the highest ATK; when this unit has reached 5 stacks of :effect{code="HAVOC"}, this attack gains Critical Rate **+30%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **250%** Mental DMG to the 2 enemies with the highest HP percentage and gains 3 stacks of :effect{code="HAVOC"}. After attacking, if the caster has 3 or fewer kinds of *\[Stats Down]* or *\[Neg Status]* effects, gains additional 2 stacks of :effect{code="HAVOC"}.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div>
+          Mass attack. Purifies all *\[Stats Down]* from self, deals **500%** Mental DMG to all enemies, and grants DMG **+30%** to the next ultimate (stackable).
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

@@ -1,0 +1,76 @@
+---
+title: "Abyssal Zone 320M"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/320m.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Plant units
+    * Insight III Level 44
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} On death, deal (the attacker's ATK x**100%**) Genesis DMG to all enemies.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div>
+          <span class="passive-title">Not Just Memories</span>
+
+          One of them doesn't seem to belong here.
+
+          <span class="passive-title">Truth and Falsehood</span>
+
+          At the end of odd-numbered rounds, evenly redistributes the HP of all allies to equalize their HP percentage, dispels all negative statuses from self, and shifts to a random position. After false storage bag dies, recovers **50%** of Max HP for other allies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. After attacking, inflicts 1 stack of :effect{code="CONFUSION"} on the target for 1 round.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **450%** Mental DMG. After attacking, inflicts 1 stack of :effect{code="CONFUSION"} on the target for 1 round.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div>
+          1-target attack. Deals **500%** Mental DMG. This attack enjoys Critical Rate **+15%**.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

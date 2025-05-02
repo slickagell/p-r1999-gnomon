@@ -1,0 +1,102 @@
+---
+title: "Abyssal Zone 350M-II"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Plant units
+    * Insight III Level 50
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, grant 1 stack of :effect{code="POLLUTION"} to all allies for 2 rounds.
+
+    :text[\[Ally\]]{className="font-medium text-ally"} Whenever an ally casts a debuff incantation, get 1 stack of :effect{code="WORD_SUPPRESSION"} for self.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When an ally attacks, if current HP Percentage is below **50%**, DMG Dealt **+50%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Pollution Resistance</span>
+
+          When attacked by an enemy afflicted with :effect{code="POLLUTION"}, damage taken is reduced by **20%**.
+
+          <span class="passive-title">Travel Companions</span>
+
+          When entering phase 2, summons Ghostly Bride and Blunt Blade Butcher.
+
+          <span class="passive-title">Unusually Afraid</span>
+
+          When being attacked, for every 1 type of *\[Neg Status]* held on self, dispel 1 type of *\[Neg Status]* from a random enemy.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Curse</span>
+
+          When attacking, inflicts 1 stack of :effect{code="FLINCH"} on the target hit.
+
+          <span class="passive-title">Noxious</span>
+
+          After attacking, inflict 1 stack of :effect{code="POLLUTION"} on the target for 1 round. On death, dispel :effect{code="POLLUTION"} on all enemies.
+
+          <span class="passive-title">Torment</span>
+
+          When being attacked, inflicts 2 stacks of :effect{code="POLLUTION"} on the attacker.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack, Deals **200%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the casters HP is lower than **50%**, deals an additional **50%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If the casters HP is lower than **50%**, deals an additional **50%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+          1-target attack. Deals **500%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

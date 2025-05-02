@@ -1,0 +1,92 @@
+---
+title: "Abyssal Zone 350M-III"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/350m-iii.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Star & Plant units
+    * Insight III Level 50
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} All allies gain Genesis DMG Taken **-100%**.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Whenever an ally takes Mental DMG, all allies gain Reality DEF **+10%** for 3 rounds, stackable. Whenever an ally takes Reality DMG, all allies gain Mental DEF **+10%** for 3 rounds, stackable.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When this unit dies, grant 3 stacks of :effect{code="UNSPARING"} to all allies.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Masterful Preparation</span>
+
+          At the start of the round, if Prop Wand is present, grant Reality DEF **+100%** to self for 1 round; at the start of the round, if Prop Armor is present, grant Mental DEF **+100%** to self for 1 round.
+
+          <span class="passive-title">Ritual Trickery</span>
+
+          At the start of every 3 rounds, if Prop Wand and or Prop Armor have died, resummon the props that died.
+
+          <span class="passive-title">Painful Memories</span>
+
+          When being attacked, if this unit is not in a :effect{code="POISON"} or :effect{code="BURN"} status, DMG Taken **-70%**.
+
+          <span class="passive-title">Painful Memories</span>
+
+          When the Prop Armor is present, this unit gains the same Control Resistances as the Prop Armor. When the Prop Wand is present, this unit gains the same Control Resistances as the Prop Wand.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Prime Rites</span>
+
+          At the start of the round, performs an attack, dealing **300%** Reality DMG to a random enemy; if the Prop Wand has died, the attack deals an additional **100%** Reality DMG and gains Penetration Rate **+30%**.
+
+          <span class="passive-title">Ritual Driven</span>
+
+          Gain significant Reality DEF for self. After Prop Wand dies, whenever an enemy casts a rank 1 basic incantation or an ultimate, the incantation or ultimate gets DMG Dealt **-80%**. After this unit dies, the great magician gets Mental DEF **-50%** until this unit re-enters battle.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Prime Rites</span>
+
+          At the start of the round, performs 1 attack, dealing **200%** Mental DMG to 2 random enemies; if the Prop Armor has died, the attack deals an additional **100%** Mental DMG.
+
+          <span class="passive-title">Ritual Driven</span>
+
+          Gain significant Mental DEF for self. After Prop Armor dies, whenever an enemy casts a basic incantation, the incantation gets DMG Dealt **-80%**. After this unit dies, the great magician gets Reality DEF **-50%** until this unit re-enters battle.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals 150% Mental DMG and dispels 2 types of *\[Stats Down]* statuses from other allies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 1 stack of :effect{code="STURDINESS"} to all allies and dispels 1 type of *\[Neg Status]* from other allies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies. Inflicts Moxie -1 and the :effect{code="DISCONCERT"} status for 1 round on the targets hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

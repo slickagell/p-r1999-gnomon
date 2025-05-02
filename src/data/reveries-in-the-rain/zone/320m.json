@@ -1,0 +1,104 @@
+{
+  "enemies": [
+    {
+      "id": "320m-1",
+      "name": "Storage Bag?",
+      "headIconId": "650201",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 245371,
+      "lv": "Insight III Level 44",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Work of Genius",
+        "cardId": "1501"
+      },
+      "skill2": {
+        "name": "Attention Everyone",
+        "cardId": "1502"
+      },
+      "ultimate": {
+        "name": "Instant of Prediction",
+        "cardId": "1504"
+      }
+    },
+    {
+      "id": "320m-2",
+      "name": "Storage Bag?",
+      "headIconId": "650201",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 245371,
+      "lv": "Insight III Level 44",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Work of Genius",
+        "cardId": "1501"
+      },
+      "skill2": {
+        "name": "Attention Everyone",
+        "cardId": "1502"
+      },
+      "ultimate": {
+        "name": "Instant of Prediction",
+        "cardId": "1504"
+      }
+    },
+    {
+      "id": "320m-3",
+      "name": "Storage Bag?",
+      "headIconId": "650201",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 245371,
+      "lv": "Insight III Level 44",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Work of Genius",
+        "cardId": "1501"
+      },
+      "skill2": {
+        "name": "Attention Everyone",
+        "cardId": "1502"
+      },
+      "ultimate": {
+        "name": "Instant of Prediction",
+        "cardId": "1504"
+      }
+    },
+    {
+      "id": "320m-4",
+      "name": "Storage Bag?",
+      "headIconId": "650201",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 245371,
+      "lv": "Insight III Level 44",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": {
+        "name": "Work of Genius",
+        "cardId": "1501"
+      },
+      "skill2": {
+        "name": "Attention Everyone",
+        "cardId": "1502"
+      },
+      "ultimate": {
+        "name": "Instant of Prediction",
+        "cardId": "1504"
+      }
+    }
+  ]
+}

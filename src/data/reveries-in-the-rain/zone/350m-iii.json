@@ -1,0 +1,109 @@
+{
+  "enemies": [
+    {
+      "id": "350m-iii-1",
+      "name": "Great Magician",
+      "headIconId": "630207",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 749485,
+      "lv": "Insight III Level 50",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A+",
+      "mentalDefRate": "A+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "MOXIE_DOWN_RESILIENCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "For Old Dreams",
+        "cardId": "1401"
+      },
+      "skill2": {
+        "name": "For Tomorrow",
+        "cardId": "1403"
+      },
+      "ultimate": {
+        "name": "Declaration of Secession",
+        "cardId": "1404"
+      }
+    },
+    {
+      "id": "350m-iii-2",
+      "name": "Prop Armor",
+      "headIconId": "690121",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 250516,
+      "lv": "Insight III Level 50",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "B+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "DAZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "SLEEP_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "FREEZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "CAPTIVATED_RESISTANCE",
+          "value": 100
+        }
+      ]
+    },
+    {
+      "id": "350m-iii-3",
+      "name": "Prop Wand",
+      "headIconId": "690122",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 252939,
+      "lv": "Insight III Level 50",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "SS",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "DISARM_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "SILENCE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "SEAL_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "TACITURN_RESISTANCE",
+          "value": 100
+        }
+      ]
+    }
+  ]
+}

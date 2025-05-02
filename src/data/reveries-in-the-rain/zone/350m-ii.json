@@ -1,0 +1,109 @@
+{
+  "enemies": [
+    {
+      "id": "350m-ii-1",
+      "name": "A Nightmare at Green Lake",
+      "headIconId": "305601",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 329719,
+      "lv": "Insight III Level 50",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 200
+        },
+        {
+          "code": "SILENCE_RESISTANCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "STAY!",
+        "cardId": "1401"
+      },
+      "skill2": {
+        "name": "My Buddy",
+        "cardId": "1402"
+      },
+      "ultimate": {
+        "name": "Generous Pleading to Stay",
+        "cardId": "1404"
+      }
+    },
+    {
+      "id": "350m-ii-2",
+      "name": "Corpse of the Past",
+      "headIconId": "670201",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 111331,
+      "lv": "Insight III Level 50",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "SLEEP_RESISTANCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "Blood Splatter",
+        "cardId": "2102"
+      },
+      "skill2": {
+        "name": "Invitation",
+        "cardId": "2102"
+      },
+      "ultimate": {
+        "name": "Intimate Touch",
+        "cardId": "2104"
+      }
+    },
+    {
+      "id": "350m-ii-3",
+      "name": "Corpse of the Past",
+      "headIconId": "670201",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 111331,
+      "lv": "Insight III Level 50",
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        },
+        {
+          "code": "SLEEP_RESISTANCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "Blood Splatter",
+        "cardId": "2102"
+      },
+      "skill2": {
+        "name": "Invitation",
+        "cardId": "2102"
+      },
+      "ultimate": {
+        "name": "Intimate Touch",
+        "cardId": "2104"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "CONTROL_RESILIENCE": {
+    "title": "Control Resilience",
+    "description": "When a unit is inflicted with a Control status, they gain Resistance to that Control status based on their Resilience. When gaining that Resistance, the value of that Resistance is based on the unit's Control Resilience, while the duration of that Resistance is based on the round duration of the inflicted Control status."
+  },
+  "DAZE_RESISTANCE": {
+    "title": "Daze Resistance",
+    "description": "When a unit is inflicted with a [Daze] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "SLEEP_RESISTANCE": {
+    "title": "Sleep Resistance",
+    "description": "When a unit is inflicted with a [Sleep] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "FREEZE_RESISTANCE": {
+    "title": "Freeze Resistance",
+    "description": "When a unit is inflicted with a [Freeze] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "DISARM_RESISTANCE": {
+    "title": "Disarm Resistance",
+    "description": "When a unit is inflicted with a [Disarm] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "PETRIFY_RESISTANCE": {
+    "title": "Petrify Resistance",
+    "description": "When a unit is inflicted with a [Petrify] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "SILENCE_RESISTANCE": {
+    "title": "Silence Resistance",
+    "description": "When a unit is inflicted with a [Silence] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "SEAL_RESISTANCE": {
+    "title": "Seal Resistance",
+    "description": "When a unit is inflicted with a [Seal] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "TACITURN_RESISTANCE": {
+    "title": "Taciturn Resistance",
+    "description": "When a unit is inflicted with a [Taciturn] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "CAPTIVATED_RESISTANCE": {
+    "title": "Captivated Resistance",
+    "description": "When a unit is inflicted with a [Captivated] status, they have a chance to resist that status based on their resistance to the status."
+  },
+  "MOXIE_DOWN_RESILIENCE": {
+    "title": "Moxie-down Resilience",
+    "description": "After a unit gets a decrease in Moxie, they gain Resistance to that effect based on their Resilience. When gaining that Resistance, the value of the Resistance is based on the unit's Moxie-down Resilience; the Resistances are stackable, and these effects are removed after a successful resist."
+  },
+  "MOXIE_DOWN_RESISTANCE": {
+    "title": "Moxie-down Resistance",
+    "description": "When a unit gets a decrease in Moxie, they have a chance to resist that effect based on their resistance to the effect."
+  },
+  "STRESS_UP_RESILIENCE": {
+    "title": "Stress-up Resilience",
+    "description": "After a unit gets an increase in Stress, they gain Resistance to that effect based on their Resilience. When gaining that Resistance, the value of the Resistance is based on the unit's Stress-up Resilience; these Resistances are stackable, and the effects are removed after a successful resist."
+  },
+  "STRESS_UP_RESISTANCE": {
+    "title": "Stress-up Resistance",
+    "description": "When a unit gets a decrease in Stress, they have a chance to resist that effect based on their resistance to the effect."
+  }
+}

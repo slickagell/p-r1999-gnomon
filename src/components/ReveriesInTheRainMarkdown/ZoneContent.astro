@@ -11,29 +11,21 @@ const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 
 <h1>{title}</h1>
 
-<div class="collapse collapse-plus bg-base-200">
-  <input type="checkbox" checked />
-  <div class="collapse-title text-xl font-medium">
-    <p>Recommended</p>
-  </div>
-  <div class="collapse-content">
-    <slot name="recommended-content" />
-  </div>
-</div>
+<p class="text-xl font-medium">Recommended</p>
 
-<div class="collapse collapse-plus bg-base-200">
-  <input type="checkbox" checked />
-  <div class="collapse-title text-xl font-medium">
-    <p>Stage environment</p>
-  </div>
-  <div class="collapse-content">
-    <slot name="stage-environment-content" />
-  </div>
-</div>
+<slot name="recommended-content" />
+
+<p class="mt-4 text-xl font-medium">Stage environment</p>
+
+<slot name="stage-environment-content" />
 
 <slot name="stage-info-title" />
 
 <slot name="stage-info-content" />
+
+<slot name="enemy-info-title" />
+
+<slot name="enemy-info-content" />
 
 <slot name="strategy-and-tips-title" />
 

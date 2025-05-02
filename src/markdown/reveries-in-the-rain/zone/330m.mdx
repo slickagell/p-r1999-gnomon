@@ -1,0 +1,105 @@
+---
+title: "Abyssal Zone 330M"
+---
+
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/330m.json";
+
+<ZoneContent {...frontmatter}>
+  <Fragment slot="recommended-content">
+    * Insight III Level 46
+  </Fragment>
+
+  <Fragment slot="stage-environment-content">
+    :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
+
+    :text[\[Enemy\]]{className="font-medium text-enemy"} ATK **+15%**, Reality DEF **+15%**, and Mental DEF **+15%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Static Ring</span>
+
+          When a round starts, inflicts 1 stack of :effect{code="ENDURING"} on other allies.
+
+          <span class="passive-title">Awake</span>
+
+          When the caster dies, dispels all *\[Stats Up]* and *\[Pos Status]* statuses from other allies, and bans them from gaining *\[Stats Up]* or *\[Pos Status]* statuses for 3 rounds.
+
+          <span class="passive-title">Positive Charge</span>
+
+          After being attacked, inflict :effect{code="POSITIVE_CHARGE"} on the attacker; when being attacked by a unit with :effect{code="POSITIVE_CHARGE"}, DMG Taken **+50%** for self; when this unit dies, dispel the :effect{code="POSITIVE_CHARGE"} status from all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Power Transformation Ring</span>
+
+          When a round starts, inflicts 1 stack of :effect{code="STABILIZE"} on other allies.
+
+          <span class="passive-title">Awake</span>
+
+          When the caster dies, dispels all *\[Stats Up]* and *\[Pos Status]* statuses from other allies, and bans them from gaining *\[Stats Up]* or *\[Pos Status]* statuses for 3 rounds.
+
+          <span class="passive-title">Negative Charge</span>
+
+          After being attacked, inflict :effect{code="NEGATIVE_CHARGE"} on the attacker; when being attacked by a unit with :effect{code="NEGATIVE_CHARGE"}, DMG Taken **+50%** for self; when this unit dies, dispel the :effect{code="NEGATIVE_CHARGE"} status from all enemies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Mental DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Mental DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. DMG **-15%** and DMG Taken **+15%** for all enemies for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. DMG **-20%** and DMG Taken **+20%** for all enemies for 2 rounds.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies. HP +(the caster's ATK x**100%**) for the ally with the lowest HP percentage.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts 1 stack of :effect{code="RIGIDITY"} on the targets hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+</ZoneContent>

@@ -156,9 +156,35 @@ const mythManifestEntries = await getCollection(
   >
     <p class="text-xl font-bold italic text-abyssal-zone">Abyssal Zone</p>
 
-    <p class="mt-2 text-base-content text-shadow shadow-abyssal-zone">
-      Not yet unlocked
-    </p>
+    <div class="mt-2 flex flex-wrap gap-5">
+      {
+        [
+          { level: "310m" },
+          { level: "320m" },
+          { level: "330m" },
+          { level: "340m" },
+          { level: "350m-i" },
+          { level: "350m-ii" },
+          { level: "350m-iii" },
+          { level: "360m" },
+          { level: "370m" },
+          { level: "380m" },
+          { level: "390m" },
+          { level: "400m-i" },
+          { level: "400m-ii" },
+          { level: "400m-iii" },
+          { level: "400m-iv" },
+        ].map((depth) => (
+          <div>
+            <a href={`/reveries-in-the-rain/zone/${depth.level}`}>
+              <span class="uppercase custom-link !text-base-content text-shadow shadow-bathyal-zone">
+                {depth.level}
+              </span>
+            </a>
+          </div>
+        ))
+      }
+    </div>
   </li>
 
   <li class="bg-hadal-zone/20 before:!bg-hadal-zone">
