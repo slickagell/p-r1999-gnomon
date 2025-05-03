@@ -62,6 +62,25 @@ const {
   isDev,
 } = Astro.props;
 
+enum PROFILE_TABS {
+  ARCANE_SKILLS = 'arcane-skills',
+  INHERITANCE = 'inheritance',
+  PORTRAY = 'portray',
+  EUPHORIA = 'euphoria'
+}
+
+enum GAMEPLAY_TABS {
+  INFOGRAPHIC = 'infographic',
+  EUPHORIA_INFOGRAPHIC = 'euphoria-infographic',
+  SKILL_BREAKDOWN = 'skill-breakdown',
+  TEAM_SUGGESTION = 'team-suggestion'
+}
+
+enum MATERIALS_TABS {
+  INSIGHT_MATERIALS = 'insight-materials',
+  RESONANCE_MATERIALS = 'resonance-materials'
+}
+
 enum RESONANCE_MATERIALS_TABS {
   DETAIL = 'detail',
   TOTAL_R10 = 'total_r10',
@@ -74,13 +93,29 @@ enum INSIGHT_MATERIALS_TABS {
   TOTAL = 'total'
 }
 
+const hasEuphoria = Astro.slots.has("euphoria-section-title");
 const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
-const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
+const hasOverview = Astro.slots.has("overview-section-title");
 const hasInfographic = Astro.slots.has("infographic-section-title");
 const hasEuphoriaInfographic = Astro.slots.has("euphoria-infographic-section-title");
+const hasSkillBreakdown = Astro.slots.has("skill-breakdown-section-title");
+const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 const hasInsight3Info = Astro.slots.has("insight-3-info");
 const hasInsight3Materials = insightMaterials?.["3"];
+
+let gameplayIntialTab = '';
+
+if (hasInfographic) {
+  gameplayIntialTab = GAMEPLAY_TABS.INFOGRAPHIC;
+} else if (hasEuphoriaInfographic) {
+  gameplayIntialTab = GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC;
+} else if (hasSkillBreakdown) {
+  gameplayIntialTab = GAMEPLAY_TABS.SKILL_BREAKDOWN;
+} else if (hasTeamSuggestion) {
+  gameplayIntialTab = GAMEPLAY_TABS.TEAM_SUGGESTION;
+}
+
 ---
 
 <div class="my-8">
@@ -179,11 +214,24 @@ const hasInsight3Materials = insightMaterials?.["3"];
 {/* TOC */}
 <slot name="toc" />
 
+<slot name="profile-section-title" />
+
+<div x-data={`{activeTab: '${PROFILE_TABS.ARCANE_SKILLS}'}`}>
+<div class="tabs tabs-slot">
+  <button class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.ARCANE_SKILLS}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.ARCANE_SKILLS}'`}><slot name="arcane-skills-section-title" /></button> 
+  <button class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.INHERITANCE}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.INHERITANCE}'`}><slot name="inheritance-section-title" /></button> 
+  <button class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.PORTRAY}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.PORTRAY}'`}><slot name="portray-section-title" /></button>
+  <button x-show={hasEuphoria} class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.EUPHORIA}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.EUPHORIA}'`}><slot name="euphoria-section-title" /></button>
+</div>
+
+<template x-if={`activeTab === '${PROFILE_TABS.ARCANE_SKILLS}'`}> 
+<div class="mt-4">
 {/* Arcane Skills */}
-<slot name="arcane-skills-section-title" />
 
 {/* Skill 1 */}
+<div class="subtitle-slot">
 <slot name="skill-1-title" />
+</div>
 <div
   class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap lg:flex-nowrap"
   {...hasSkill1Reinforced && { ["x-data"]: "{ reinforced: false }" }}
@@ -229,7 +277,9 @@ const hasInsight3Materials = insightMaterials?.["3"];
 </div>
 
 {/* Skill 2 */}
+<div class="subtitle-slot">
 <slot name="skill-2-title" />
+</div>
 <div
   class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap lg:flex-nowrap"
   {...hasSkill2Reinforced && { ["x-data"]: "{ reinforced: false }" }}
@@ -275,7 +325,9 @@ const hasInsight3Materials = insightMaterials?.["3"];
 </div>
 
 {/* Ultimate */}
+<div class="subtitle-slot">
 <slot name="ultimate-title" />
+</div>
 
 <div
   class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap"
@@ -288,11 +340,15 @@ const hasInsight3Materials = insightMaterials?.["3"];
 </div>
 {/* Extra Cards */}
 <slot name="extra-cards" />
+</div>
+</template>
 
+<template x-if={`activeTab === '${PROFILE_TABS.INHERITANCE}'`}>
+<div class="mt-4">
 {/* Inheritance */}
-<slot name="inheritance-section-title" />
-
+<div class="subtitle-slot">
 <slot name="inheritance-title" />
+</div>
 
 <div class="mt-4 flex items-center">
   <InsightImg classNames="w-8 mr-2" insight="1" />
@@ -323,10 +379,12 @@ const hasInsight3Materials = insightMaterials?.["3"];
     </Fragment>
   )
 }
+</div>
+</template>
 
+<template x-if={`activeTab === '${PROFILE_TABS.PORTRAY}'`}>
+<div class="mt-4">
 {/* Portray */}
-<slot name="portray-section-title" />
-
 <span class="text-2xl mr-2">Lv. 1:</span>
 <slot name="portray-1-info" />
 
@@ -341,22 +399,16 @@ const hasInsight3Materials = insightMaterials?.["3"];
 
 <span class="text-2xl mr-2">Lv. 5:</span>
 <slot name="portray-5-info" />
-
-{/* Resonance */}
-<slot name="resonance-section-title" />
-
-<slot name="resonance-board" />
-
-{/* Psychube */}
-<slot name="psychube-section-title" />
-
-<slot name="psychube-content" />
+</div>
+</template>
 
 {/* Euphoria */}
+{hasEuphoria && (
+<template x-if={`activeTab === '${PROFILE_TABS.EUPHORIA}'`}> 
+<div class="mt-4">
 {
   euphorias && euphorias.length > 0 && (
     <>
-      <slot name="euphoria-section-title" />
       <div x-data={`{active: '${euphorias[0].code}'}`}>
         <div class="tabs tabs-boxed">
           {euphorias?.map((euphoria, idx) => (
@@ -411,22 +463,49 @@ const hasInsight3Materials = insightMaterials?.["3"];
     </>
   )
 }
+</div>
+</template>
+)}
+</div>
 
+{/* Resonance */}
+<slot name="resonance-section-title" />
 
+<slot name="resonance-board" />
+
+{/* Psychube */}
+<slot name="psychube-section-title" />
+
+<slot name="psychube-content" />
+
+{hasOverview && (
+<slot name="overview-section-title" />
+
+<div x-data={`{activeTab: '${gameplayIntialTab}'}`}>
+  <div class="tabs tabs-slot">
+    <button x-show={hasInfographic} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.INFOGRAPHIC}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.INFOGRAPHIC}'`}><slot name="infographic-section-title" /></button> 
+    <button x-show={hasEuphoriaInfographic} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}'`}><slot name="euphoria-infographic-section-title" /></button>
+    <button x-show={hasSkillBreakdown} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.SKILL_BREAKDOWN}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.SKILL_BREAKDOWN}'`}><slot name="skill-breakdown-section-title" /></button>
+    <button x-show={hasTeamSuggestion} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.TEAM_SUGGESTION}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.TEAM_SUGGESTION}'`}><slot name="team-suggestion-section-title" /></button>
+  </div>
+
+<template x-if={`activeTab === '${GAMEPLAY_TABS.INFOGRAPHIC}'`}> 
+<div class="mt-4">
 {/* Infographic */}
 {hasInfographic && (
   <>
-    <slot name="infographic-section-title" />
     <CharacterImg variant="infographic" id={id} />
-</>
+  </>
 )
 }
+</div>
+</template>
 
 {/* Euphoria Infographic */}
 {hasEuphoriaInfographic && (
+<template x-if={`activeTab === '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}'`}>
+<div class="mt-4">
   <>
-    <slot name="euphoria-infographic-section-title" />
-
     {(()=>{
       const euphoriasData = euphorias?.filter(euphoria => euphoria.infographic)
       if(!euphoriasData || euphoriasData.length === 0) return null;
@@ -462,18 +541,23 @@ const hasInsight3Materials = insightMaterials?.["3"];
   )
     })()}
 </>
-)
-}
+</div>
+</template>
+)}
 
-{/* How to play */}
-<slot name="skill-breakdown-section-title" />
-
+{/* Skill breakdown */}
+{hasSkillBreakdown && (
+<template x-if={`activeTab === '${GAMEPLAY_TABS.SKILL_BREAKDOWN}'`}>
+<div class="mt-4">
 <slot name="skill-breakdown-content" />
+</div>
+</template>
+)}
 
 {/* Team suggestion */}
-<slot name="team-suggestion-section-title" />
-
 {hasTeamSuggestion && (
+<template x-if={`activeTab === '${GAMEPLAY_TABS.TEAM_SUGGESTION}'`}>
+<div class="mt-4">
   <div class="mb-6 md:grid md:grid-cols-3">
     <div>
       <slot name="team-suggestion-dps" />
@@ -489,14 +573,26 @@ const hasInsight3Materials = insightMaterials?.["3"];
   </div>
 
   <slot name="team-suggestion-exception" />
+</div>
+</template>
+)}
+</div>
 )}
 
+<slot name="materials-section-title" />
+
+<div x-data={`{activeTab: '${MATERIALS_TABS.INSIGHT_MATERIALS}'}`}>
+  <div class="tabs tabs-slot">
+    <button class="tab tab-bordered" :class={`(activeTab === '${MATERIALS_TABS.INSIGHT_MATERIALS}') && 'tab-active'`} @click={`activeTab = '${MATERIALS_TABS.INSIGHT_MATERIALS}'`}><slot name="insight-materials-section-title" /></button> 
+    <button class="tab tab-bordered" :class={`(activeTab === '${MATERIALS_TABS.RESONANCE_MATERIALS}') && 'tab-active'`} @click={`activeTab = '${MATERIALS_TABS.RESONANCE_MATERIALS}'`}><slot name="resonance-materials-section-title" /></button> 
+  </div>
+
+<template x-if={`activeTab === '${MATERIALS_TABS.INSIGHT_MATERIALS}'`}>
+<div class="mt-4">
 {/* Insight Materials */}
 {
   insightMaterials && (
     <div x-data="{active: 'detail'}">
-      <slot name="insight-materials-section-title" />
-
       <div class="flex items-center justify-end">
         <div class="tabs tabs-boxed">
           {Object.values(INSIGHT_MATERIALS_TABS).map((tab) => {
@@ -652,13 +748,15 @@ const hasInsight3Materials = insightMaterials?.["3"];
     </div>
   )
 }
+</div>
+</template> 
 
+<template x-if={`activeTab === '${MATERIALS_TABS.RESONANCE_MATERIALS}'`}>
+<div class="mt-4">
 {/* Resonance Materials */}
 {
   resonanceMaterials && (
     <div x-data="{active: 'detail'}">
-      <slot name="resonance-materials-section-title" />
-
       <div class="flex items-center justify-end">
         <div class="tabs tabs-boxed">
           {Object.values(RESONANCE_MATERIALS_TABS).map((tab) => {
@@ -776,6 +874,9 @@ const hasInsight3Materials = insightMaterials?.["3"];
     </div>
   )
 }
+</div>
+</template>
+</div>
 
 <script>
   import Alpine from "alpinejs";

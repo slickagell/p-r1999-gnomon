@@ -81,3 +81,19 @@ ul {
 .passive-title {
   @apply inline-block mt-2 pl-4 pr-2 py-1 font-medium bg-gradient-to-r from-transparent to-primary-content/50 to-10% text-shadow shadow-black;
 }
+
+.subtitle {
+  @apply text-primary-content text-2xl font-bold my-4 text-center md:text-left;
+}
+
+.subtitle-slot > div {
+  @apply text-primary-content text-2xl font-bold my-4 text-center md:text-left;
+}
+
+.tabs-slot {
+  @apply justify-center;
+}
+
+.tabs-slot .tab > div {
+  @apply my-0 md:text-lg;
+}
