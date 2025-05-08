@@ -11,7 +11,6 @@ version: "2.5"
 releaseDate: "2025-05-08"
 specialties: ["DPS", "BURST_DMG", "EXTRA_ACTION"]
 isLimited: false
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -32,23 +31,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An arcanist artifact active in the 1990s, with a 41-year exhibition history. Completed in winter, on February 14. Exhibited in Hong Kong, China, with a brief stint in Los Angeles, California, USA.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Blank Film
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Puppet Rehearsals \[Wood] Cinematic Narratives
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Oriental Fougère with Red Currant, Bergamot, Tea, and Cashmeran
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    62 63/64 x 47 8/33 x 43 9/28 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -68,16 +67,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="The audience always expects a masterpiece from her.">
+      1-target attack. Deals **200%** Mental DMG. Right before attacking, transfers all *\[Neg Status]* effects from other enemies onto the attack target.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="The audience always expects a masterpiece from her, and she always delivers.">
+      1-target attack. Deals **300%** Mental DMG. Right before attacking, transfers all *\[Neg Status]* effects from other enemies onto the attack target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="The audience always expects a masterpiece from her, and she always delivers something beyond that.">
+      1-target attack. Deals **500%** Mental DMG. Right before attacking, transfers all *\[Neg Status]* effects from other enemies onto the attack target.
     </CardInfo>
   </Fragment>
 
@@ -86,16 +85,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="Reshoots are an indispensable part of art.">
+      Mass attack. Deals **120%** Mental DMG to 2 enemies; after attacking, gains 4 stacks of :effect{code="GENIUS_IDEA"} for self; this attack triggers the added status effects from :effect{code="SPOTLIGHT"} an additional 1 time.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="Reshoots are an indispensable part of art—she'd do as many as 48 takes if needed.">
+      Mass attack. Deals **180%** Mental DMG to 2 enemies; after attacking, gains 5 stacks of :effect{code="GENIUS_IDEA"} for self; this attack triggers the added status effects from :effect{code="SPOTLIGHT"} an additional 2 times.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="Reshoots are an indispensable part of art—she'd do as many as 48 takes if needed, and you'd better not question her.">
+      Mass attack. Deals **300%** Mental DMG to 2 enemies; after attacking, gains 6 stacks of :effect{code="GENIUS_IDEA"} for self; this attack triggers the added status effects from :effect{code="SPOTLIGHT"} an additional 3 times.
     </CardInfo>
   </Fragment>
 
@@ -104,8 +103,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note="A shot of immeasurable worth, captured in a fleeting minute.">
+      Mass attack. Deals **450%** Mental DMG to all enemies. For every 1 type/stack of *\[Neg Status]* effect on a target, this attack gains Mental DMG **+100%**/Penetration Rate **+3%** against that target, up to a maximum of Mental DMG **+500%**/Penetration Rate **+30%**. For every 1 stack of :effect{code="GENIUS_IDEA"} on Noire, she has a **6%** chance to automatically recast this skill, with an additional **+40%** chance at 8 stacks of :effect{code="GENIUS_IDEA"}; whenever this skill is recasted in this way, 5 stacks of :effect{code="GENIUS_IDEA"} are consumed.
     </CardInfo>
   </Fragment>
 
@@ -118,15 +117,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    At the start of the round, inflicts :effect{code="SPOTLIGHT"} on the enemy with the highest current HP percentage for 1 round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    ATK **+5%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    Whenever another unit is inflicted with :effect{code="SPOTLIGHT"}, gain Moxie +1 for self, and gain 2 stacks of :effect{code="GENIUS_IDEA"} (stacks up to 10 times).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -134,23 +133,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Climactic Moment*: For each stack of :effect{code="GENIUS_IDEA"} held, the chance to recast the ultimate is increased to **10%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Climactic Moment*: When recasting the ultimate, the number of stacks of :effect{code="GENIUS_IDEA"} consumed is decreased to **4**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *Miniature Set*: :effect{code="GENIUS_IDEA"}'s stack limit is increased to **12**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Climactic Moment*: For each type/stack of *\[Neg Status]* effect on the target, the Mental DMG/Penetration Rate are increased to **120%/4%**, up to a maximum of **600%/40%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Climactic Moment*s effect changes to: deals **550%** Mental DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
