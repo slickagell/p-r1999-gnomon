@@ -118,7 +118,7 @@
         "id": "20",
         "offsetX": -4,
         "offsetY": -3.75,
-        "code": "CONVERTING_EXCESS",
+        "code": "STRINGENT_REGULATIONS_III",
         "r": 8
       },
       {
@@ -132,7 +132,7 @@
         "id": "22",
         "offsetX": -1.75,
         "offsetY": -4,
-        "code": "STRINGENT_REGULATIONS_III"
+        "code": "CONVERTING_EXCESS"
       },
       {
         "id": "23",
