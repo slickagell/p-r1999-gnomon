@@ -1,0 +1,10 @@
+---
+const props = Astro.props;
+---
+
+<ul
+  {...props}
+  class="pl-4 [&_li]:block [&_li]:my-1 [&_li]:relative [&_li]:before:absolute [&_li]:before:-left-4 [&_li]:before:top-2.5 [&_li]:before:w-1 [&_li]:before:h-px [&_li]:before:bg-base-content"
+>
+  <slot />
+</ul>

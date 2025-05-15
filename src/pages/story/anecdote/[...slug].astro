@@ -1,7 +1,10 @@
 ---
 import Icon from "@components/Icon.astro";
+import StoryMarkdownDiscList from "@components/StoryMarkdown/StoryMarkdownDiscList.astro";
+import StoryMarkdownEmphasis from "@components/StoryMarkdown/StoryMarkdownEmphasis.astro";
 import StoryMarkdownHighlight from "@components/StoryMarkdown/StoryMarkdownHighlight.astro";
 import StoryMarkdownParagraphContent from "@components/StoryMarkdown/StoryMarkdownParagraphContent.astro";
+import StoryMarkdownThematicBreak from "@components/StoryMarkdown/StoryMarkdownThematicBreak.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection, getEntry, render } from "astro:content";
 import fs from "fs";
@@ -49,23 +52,43 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
     },
     {
       label: "Anecdote",
+      href: "/story/anecdote",
+    },
+    {
+      label: anecdotePart.data.title,
     },
   ]}
 >
   <h1>{anecdotePart.data.title}</h1>
 
   <div x-data="dataset">
+    <select
+      class="select select-secondary w-full my-4"
+      @change="changeChapter($event.target.value)"
+    >
+      <template x-for="chapter in chapters">
+        <option
+          x-text="'Chapter ' + chapter.chapter + ': ' + chapter.title"
+          :value="chapter.id"
+          :selected="activeChapterIdx === chapter.id"></option>
+      </template>
+    </select>
     <div class="flex gap-2 justify-center items-center" x-ref="topChapter">
       <button
-        :disabled="activeChapter === 0"
+        :disabled="activeChapterIdx === 0"
         class="disabled:opacity-30"
         @click="prevChapter"
       >
         <Icon icon="chevron-compact-left" />
       </button>
-      <span x-text="chapterText"></span>
+      <div>
+        <p class="text-center">
+          Chapter <span x-text="activeChapter.chapter"></span>
+        </p>
+        <span class="text-center" x-text="activeChapter.title"></span>
+      </div>
       <button
-        :disabled={`activeChapter === ${anecdoteChapters.length - 1}`}
+        :disabled={`activeChapterIdx === ${anecdoteChapters.length - 1}`}
         class="disabled:opacity-30"
         @click="nextChapter"
       >
@@ -78,12 +101,15 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
         const { Content } = await render(entry);
 
         return (
-          <template x-if={`activeChapter === ${idx}`}>
+          <template x-if={`activeChapterIdx === ${idx}`}>
             <div>
               <Content
                 components={{
                   p: StoryMarkdownParagraphContent,
                   strong: StoryMarkdownHighlight,
+                  ul: StoryMarkdownDiscList,
+                  em: StoryMarkdownEmphasis,
+                  hr: StoryMarkdownThematicBreak,
                 }}
               />
             </div>
@@ -94,15 +120,20 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
     <div class="divider"></div>
     <div class="flex gap-2 justify-center items-center">
       <button
-        :disabled="activeChapter === 0"
+        :disabled="activeChapterIdx === 0"
         class="disabled:opacity-30"
         @click="prevChapter"
       >
         <Icon icon="chevron-compact-left" />
       </button>
-      <span x-text="chapterText"></span>
+      <div>
+        <p class="text-center">
+          Chapter <span x-text="activeChapter.chapter"></span>
+        </p>
+        <span class="text-center" x-text="activeChapter.title"></span>
+      </div>
       <button
-        :disabled={`activeChapter === ${anecdoteChapters.length - 1}`}
+        :disabled={`activeChapterIdx === ${anecdoteChapters.length - 1}`}
         class="disabled:opacity-30"
         @click="nextChapter"
       >
@@ -129,17 +160,35 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
   import Alpine from "alpinejs";
 
   Alpine.data("dataset", () => ({
-    activeChapter: 0,
-    chapterText: "",
+    chapters: [],
+    activeChapterIdx: 0,
+    activeChapter: {
+      id: 0,
+      chapter: "",
+      title: "",
+    },
 
     init() {
+      this.chapters = this.$store.anecdote.chapters.map((chapter, idx) => ({
+        id: idx,
+        chapter: chapter.chapter,
+        title: chapter.title,
+      }));
       this.renderChapter();
     },
 
     renderChapter() {
-      const chapter = this.$store.anecdote.chapters[this.activeChapter];
-      this.active = chapter?.id;
-      this.chapterText = "Chapter " + chapter?.chapter + ": " + chapter?.title;
+      const chapter = this.$store.anecdote.chapters[this.activeChapterIdx];
+
+      if (!chapter) {
+        return;
+      }
+
+      this.activeChapter = {
+        id: this.activeChapterIdx,
+        chapter: chapter.chapter,
+        title: chapter.title,
+      };
 
       this.$nextTick(() => {
         this.scrollToTop();
@@ -147,12 +196,17 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
     },
 
     nextChapter() {
-      this.activeChapter++;
+      this.activeChapterIdx++;
       this.renderChapter();
     },
 
     prevChapter() {
-      this.activeChapter--;
+      this.activeChapterIdx--;
+      this.renderChapter();
+    },
+
+    changeChapter(chapterId) {
+      this.activeChapterIdx = +chapterId;
       this.renderChapter();
     },
 

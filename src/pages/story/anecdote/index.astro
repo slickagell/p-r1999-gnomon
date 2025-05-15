@@ -1,5 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const anecdoteEntries = await getCollection(
+  "anecdoteStory",
+  ({ id: entryId }) => {
+    console.log("🚀 ~ entryId:", entryId);
+    return !entryId.includes("/");
+  }
+);
 ---
 
 <Layout
@@ -21,13 +30,17 @@ import Layout from "@layouts/Layout.astro";
   <h1>Anecdote</h1>
 
   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-    <a href="/story/anecdote/the-master-of-theatrics">
-      <div class="card card-compact border border-primary">
-        <div class="card-body">
-          <h2 class="card-title">The Master of Theatrics</h2>
-          <p>Charlie's anecdote</p>
-        </div>
-      </div>
-    </a>
+    {
+      anecdoteEntries.map((anecdoteEntry) => (
+        <a href={`/story/anecdote/${anecdoteEntry.id}`}>
+          <div class="card card-compact border border-primary">
+            <div class="card-body">
+              <h2 class="card-title">{anecdoteEntry.data.title}</h2>
+              <p>{anecdoteEntry.data.description}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
   </div>
 </Layout>
