@@ -1,5 +1,6 @@
 ---
 import Icon from "@components/Icon.astro";
+import StoryMarkdownBlockquote from "@components/StoryMarkdown/StoryMarkdownBlockquote.astro";
 import StoryMarkdownDiscList from "@components/StoryMarkdown/StoryMarkdownDiscList.astro";
 import StoryMarkdownEmphasis from "@components/StoryMarkdown/StoryMarkdownEmphasis.astro";
 import StoryMarkdownHighlight from "@components/StoryMarkdown/StoryMarkdownHighlight.astro";
@@ -110,6 +111,7 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
                   ul: StoryMarkdownDiscList,
                   em: StoryMarkdownEmphasis,
                   hr: StoryMarkdownThematicBreak,
+                  blockquote: StoryMarkdownBlockquote,
                 }}
               />
             </div>
