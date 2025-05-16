@@ -1,6 +1,7 @@
 ---
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
+import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
 import Layout from "@layouts/Layout.astro";
 
 const piecesData = Object.values(RESONANCE_PIECES).map((ele) => ({
@@ -9,10 +10,20 @@ const piecesData = Object.values(RESONANCE_PIECES).map((ele) => ({
   level: 1,
 }));
 
+const piecesPatternData = Object.values(RESONANCE_PATTERN_PIECES).map(
+  (ele) => ({
+    id: ele.id,
+    total: 1,
+    level: 1,
+  })
+);
+
+const allPiecesData = [...piecesData, ...piecesPatternData];
+
 let pieceShapeFilterList: string[] = [];
 let pieceBlocksFilterList: string[] = [];
 
-piecesData.forEach((piece) => {
+allPiecesData.forEach((piece) => {
   const [pieceType, pieceShape, pieceBlocks, pieceId] = piece.id.split("_");
   if (!pieceShapeFilterList.includes(pieceShape)) {
     pieceShapeFilterList.push(pieceShape);
@@ -23,9 +34,9 @@ piecesData.forEach((piece) => {
 });
 
 const PIECES: ResonanceInitPiecesType = Array.from(
-  Array(15),
+  Array(allPiecesData.length),
   (_, index) => index + 1
-).reduce((prev, curr) => ({ ...prev, [curr]: piecesData }), {});
+).reduce((prev, curr) => ({ ...prev, [curr]: allPiecesData }), {});
 ---
 
 <Layout title="Resonance">

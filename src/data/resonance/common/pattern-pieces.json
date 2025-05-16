@@ -1,6 +1,8 @@
 {
   "RPP_T_5_01_DELIRAMENT": {
     "id": "RPP_T_5_01_DELIRAMENT",
+    "gameId": [635, 435],
+    "sort": 1,
     "image": "rpp-t-5-01-delirament.png",
     "stats": {
       "6": {
@@ -117,6 +119,8 @@
   },
   "RPP_T_5_01_ELUCIDATION": {
     "id": "RPP_T_5_01_ELUCIDATION",
+    "gameId": [631, 431],
+    "sort": 1,
     "image": "rpp-t-5-01-elucidation.png",
     "stats": {
       "6": {
@@ -233,6 +237,8 @@
   },
   "RPP_T_5_01_GENUINITY": {
     "id": "RPP_T_5_01_GENUINITY",
+    "gameId": [635, 435],
+    "sort": 1,
     "image": "rpp-t-5-01-genuinity.png",
     "stats": {
       "6": {
@@ -349,6 +355,8 @@
   },
   "RPP_T_5_01_HYPER": {
     "id": "RPP_T_5_01_HYPER",
+    "gameId": [633, 433],
+    "sort": 1,
     "image": "rpp-t-5-01-hyper.png",
     "stats": {
       "6": {
@@ -437,6 +445,8 @@
   },
   "RPP_T_5_01_INSPIRE": {
     "id": "RPP_T_5_01_INSPIRE",
+    "gameId": [644, 444],
+    "sort": 1,
     "image": "rpp-t-5-01-inspire.png",
     "stats": {
       "6": {
@@ -525,6 +535,8 @@
   },
   "RPP_U_5_01_EQUANIMITY": {
     "id": "RPP_U_5_01_EQUANIMITY",
+    "gameId": [645, 445],
+    "sort": 1,
     "image": "rpp-u-5-01-equanimity.png",
     "stats": {
       "6": {
@@ -661,6 +673,8 @@
   },
   "RPP_U_5_01_HYPER": {
     "id": "RPP_U_5_01_HYPER",
+    "gameId": [641, 441],
+    "sort": 1,
     "image": "rpp-u-5-01-hyper.png",
     "stats": {
       "6": {
@@ -777,6 +791,8 @@
   },
   "RPP_U_5_01_OVERINDULGENCE": {
     "id": "RPP_U_5_01_OVERINDULGENCE",
+    "gameId": [642, 442],
+    "sort": 1,
     "image": "rpp-u-5-01-overindulgence.png",
     "stats": {
       "6": {
@@ -893,6 +909,8 @@
   },
   "RPP_U_5_01_PRUDENTIALITY": {
     "id": "RPP_U_5_01_PRUDENTIALITY",
+    "gameId": [644, 444],
+    "sort": 1,
     "image": "rpp-u-5-01-prudentiality.png",
     "stats": {
       "6": {
@@ -989,6 +1007,8 @@
   },
   "RPP_U_5_01_QUIESCENCE": {
     "id": "RPP_U_5_01_QUIESCENCE",
+    "gameId": [643, 443],
+    "sort": 1,
     "image": "rpp-u-5-01-quiescence.png",
     "stats": {
       "6": {
@@ -1085,6 +1105,8 @@
   },
   "RPP_X_5_01_ASPIRATIONAL": {
     "id": "RPP_X_5_01_ASPIRATIONAL",
+    "gameId": [624, 424],
+    "sort": 1,
     "image": "rpp-x-5-01-aspirational.png",
     "stats": {
       "6": {
@@ -1213,6 +1235,8 @@
   },
   "RPP_X_5_01_ELUCIDATION": {
     "id": "RPP_X_5_01_ELUCIDATION",
+    "gameId": [621, 421],
+    "sort": 1,
     "image": "rpp-x-5-01-elucidation.png",
     "stats": {
       "6": {
@@ -1361,6 +1385,8 @@
   },
   "RPP_X_5_01_GENUINITY": {
     "id": "RPP_X_5_01_GENUINITY",
+    "gameId": [622, 422],
+    "sort": 1,
     "image": "rpp-x-5-01-genuinity.png",
     "stats": {
       "6": {
@@ -1509,6 +1535,8 @@
   },
   "RPP_X_5_01_HYPERPHRENIA": {
     "id": "RPP_X_5_01_HYPERPHRENIA",
+    "gameId": [625, 425],
+    "sort": 1,
     "image": "rpp-x-5-01-hyperphrenia.png",
     "stats": {
       "6": {
@@ -1657,6 +1685,8 @@
   },
   "RPP_X_5_01_STUPEFACTION": {
     "id": "RPP_X_5_01_STUPEFACTION",
+    "gameId": [623, 423],
+    "sort": 1,
     "image": "rpp-x-5-01-stupefaction.png",
     "stats": {
       "6": {
@@ -1765,6 +1795,8 @@
   },
   "RPP_Z_5_01_ELUCIDATION": {
     "id": "RPP_Z_5_01_ELUCIDATION",
+    "gameId": [611, 411],
+    "sort": 1,
     "image": "rpp-z-5-01-elucidation.png",
     "stats": {
       "6": {
@@ -1921,6 +1953,8 @@
   },
   "RPP_Z_5_01_EQUANIMITY": {
     "id": "RPP_Z_5_01_EQUANIMITY",
+    "gameId": [614, 414],
+    "sort": 1,
     "image": "rpp-z-5-01-equanimity.png",
     "stats": {
       "6": {
@@ -2049,6 +2083,8 @@
   },
   "RPP_Z_5_01_EQUIBALANCE": {
     "id": "RPP_Z_5_01_EQUIBALANCE",
+    "gameId": [615, 415],
+    "sort": 1,
     "image": "rpp-z-5-01-equibalance.png",
     "stats": {
       "6": {
@@ -2205,6 +2241,8 @@
   },
   "RPP_Z_5_01_GENUINITY": {
     "id": "RPP_Z_5_01_GENUINITY",
+    "gameId": [612, 412],
+    "sort": 1,
     "image": "rpp-z-5-01-genuinity.png",
     "stats": {
       "6": {
@@ -2361,6 +2399,8 @@
   },
   "RPP_Z_5_01_MERCY": {
     "id": "RPP_Z_5_01_MERCY",
+    "gameId": [613, 413],
+    "sort": 1,
     "image": "rpp-z-5-01-mercy.png",
     "stats": {
       "6": {

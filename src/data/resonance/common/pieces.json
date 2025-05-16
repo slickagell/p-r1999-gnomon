@@ -1,6 +1,8 @@
 {
   "RP_I_2_01": {
     "id": "RP_I_2_01",
+    "gameId": [18],
+    "sort": 10,
     "image": "rp-i-2-01.png",
     "shape": [[1, 1]],
     "stats": {
@@ -28,6 +30,8 @@
   },
   "RP_I_4_01": {
     "id": "RP_I_4_01",
+    "gameId": [16],
+    "sort": 8,
     "image": "rp-i-4-01.png",
     "shape": [[1], [1], [1], [1]],
     "stats": {
@@ -91,6 +95,8 @@
   },
   "RP_L_3_01": {
     "id": "RP_L_3_01",
+    "gameId": [17],
+    "sort": 9,
     "image": "rp-l-3-01.png",
     "shape": [
       [1, 1],
@@ -131,6 +137,8 @@
   },
   "RP_L_4_01": {
     "id": "RP_L_4_01",
+    "gameId": [10],
+    "sort": 2,
     "image": "rp-l-4-01.png",
     "shape": [
       [1, 0],
@@ -198,6 +206,8 @@
   },
   "RP_L_4_02": {
     "id": "RP_L_4_02",
+    "gameId": [11],
+    "sort": 3,
     "image": "rp-l-4-02.png",
     "shape": [
       [0, 1],
@@ -265,6 +275,8 @@
   },
   "RP_O_1_01": {
     "id": "RP_O_1_01",
+    "gameId": [20],
+    "sort": 12,
     "image": "rp-o-1-01.png",
     "shape": [[1]],
     "stats": {
@@ -282,6 +294,8 @@
   },
   "RP_O_1_02": {
     "id": "RP_O_1_02",
+    "gameId": [19],
+    "sort": 11,
     "image": "rp-o-1-02.png",
     "shape": [[1]],
     "stats": {
@@ -299,6 +313,8 @@
   },
   "RP_O_4_01": {
     "id": "RP_O_4_01",
+    "gameId": [14],
+    "sort": 6,
     "image": "rp-o-4-01.png",
     "shape": [
       [1, 1],
@@ -365,6 +381,8 @@
   },
   "RP_T_4_01": {
     "id": "RP_T_4_01",
+    "gameId": [15],
+    "sort": 7,
     "image": "rp-t-4-01.png",
     "shape": [
       [0, 1, 0],
@@ -431,6 +449,8 @@
   },
   "RP_T_5_01": {
     "id": "RP_T_5_01",
+    "gameId": [63, 53, 43],
+    "sort": 1,
     "image": "rp-t-5-01.png",
     "isMainPiece": true,
     "shape": [
@@ -731,6 +751,8 @@
   },
   "RP_U_5_01": {
     "id": "RP_U_5_01",
+    "gameId": [64, 54, 44, 34, 24],
+    "sort": 1,
     "image": "rp-u-5-01.png",
     "isMainPiece": true,
     "shape": [
@@ -1042,6 +1064,8 @@
   },
   "RP_X_5_01": {
     "id": "RP_X_5_01",
+    "gameId": [62, 52, 42],
+    "sort": 1,
     "image": "rp-x-5-01.png",
     "isMainPiece": true,
     "shape": [
@@ -1335,6 +1359,8 @@
   "RP_Z_4_01": {
     "id": "RP_Z_4_01",
     "image": "rp-z-4-01.png",
+    "gameId": [13],
+    "sort": 5,
     "shape": [
       [1, 1, 0],
       [0, 1, 1]
@@ -1400,6 +1426,8 @@
   },
   "RP_Z_4_02": {
     "id": "RP_Z_4_02",
+    "gameId": [12],
+    "sort": 4,
     "image": "rp-z-4-02.png",
     "shape": [
       [0, 1, 1],
@@ -1466,6 +1494,8 @@
   },
   "RP_Z_5_01": {
     "id": "RP_Z_5_01",
+    "gameId": [61, 51, 41, 31, 21],
+    "sort": 1,
     "image": "rp-z-5-01.png",
     "isMainPiece": true,
     "shape": [

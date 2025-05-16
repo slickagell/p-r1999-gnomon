@@ -1,31 +1,28 @@
----
-lastModified: "2025-05-16"
----
-<p class="mt-4 text-primary text-lg font-medium">2025-05-16</p>
+##### 2025-05-16
 
 * Update resonance code now will be generated automatically based on resonance board
 
-<p class="mt-4 text-primary text-lg font-medium">2025-05-08</p>
+##### 2025-05-08
 
 * Update Noire official info
 * Fix Mountain ghost node position bug
 
-<p class="mt-4 text-primary text-lg font-medium">2025-05-04</p>
+##### 2025-05-04
 
 * Update Ashen Beast, Star of Misfortune mindmap (thanks @flare\_azazel, @penguin132, @dstorv on Discord server for the feedback)
 * Update character pages UI
 * Fix in Barcarola page: move Voyager to support category
 * Fix some effect bugs
 
-<p class="mt-4 text-primary text-lg font-medium">2025-05-03</p>
+##### 2025-05-03
 
 * Add Abyssal zone with enemy info in Reveries
 
-<p class="mt-4 text-primary text-lg font-medium">2025-04-30</p>
+##### 2025-04-30
 
 * Update resonance for characters from 2 to 5 stars
 
-<p class="mt-4 text-primary text-lg font-medium">2025-04-29</p>
+##### 2025-04-29
 
 * How to Play sections now renamed to Skill Breakdown
 * Thanks to CTL Team now we have some infographics ヽ(・ω・)ﾉ:
@@ -35,23 +32,34 @@ lastModified: "2025-05-16"
   * Catalysts guide infographic
 * Update Liang Yue Skill Breakdown.
 
-<p class="mt-4 text-primary text-lg font-medium">2025-04-27</p>
+##### 2025-04-27
 
 * Update official Loggerhead info.
 * Update font and colors.
 
-<p class="mt-4 text-primary text-lg font-medium">2025-04-25</p>
+##### 2025-04-25
 
 * Update official Liang Yue info.
 * Update Pickles, An-an Lee Euphoria info.
 
-<p class="mt-4 text-primary text-lg font-medium">2025-04-20</p>
+##### 2025-04-20
 
 * Prepare 2.5 patch content, these page info still in development until official release:
   * Add new characters: Liang Yue, Noire, Loggerhead
 * Update code for R10 of 6 star characters.
 
-<p class="mt-4 text-primary text-lg font-medium">2025-04-18</p>
+##### 2025-04-18
 
 * Update Fatutu Skill Breakdown
 * Update Insight and Resonance Material toggle, now it will include total info for Insight 2 and Resonance 10
+
+##### 2025-04-17
+
+* Update Myth Manifest: Ashen Beast info
+* Update Mane Bulletin boss: Wind of the Ravages info
+
+##### 2025-04-10
+
+* Add Character archetype/trait page
+* Update official Fatutu info
+* Update missing psychube info

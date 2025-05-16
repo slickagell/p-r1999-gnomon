@@ -237,46 +237,65 @@ const patternMaterialsList = patternPieces.map((ele) => {
   </div>
   {
     isDev && (
-      <div class="md:grid md:grid-rows-2 md:grid-flow-col gap-2 my-5">
-        <span class="text-2xl">Shape:</span>
-        <div class="flex-1 flex overflow-auto">
-          <button
-            class="btn btn-outline shrink-0"
-            x-bind:class="pieceShapeFilter === '' ? 'btn-primary' : ''"
-            x-on:click="pieceShapeFilter = ''"
-          >
-            All
-          </button>
-          {pieceShapeFilterList?.map((pieceShape) => (
+      <>
+        <div class="md:grid md:grid-rows-2 md:grid-flow-col gap-2 my-5">
+          <span class="text-2xl">Shape:</span>
+          <div class="flex-1 flex overflow-auto">
             <button
               class="btn btn-outline shrink-0"
-              x-bind:class={`pieceShapeFilter === '${pieceShape}' ? 'btn-primary' : ''`}
-              x-on:click={`pieceShapeFilter = '${pieceShape}'`}
+              x-bind:class="pieceShapeFilter === '' ? 'btn-primary' : ''"
+              x-on:click="pieceShapeFilter = ''"
             >
-              {pieceShape}
+              All
             </button>
-          ))}
-        </div>
-        <span class="text-2xl">Number of blocks:</span>
-        <div class="flex-1 flex overflow-auto">
-          <button
-            class="btn btn-outline shrink-0"
-            x-bind:class="pieceBlocksFilter === '' ? 'btn-primary' : ''"
-            x-on:click="pieceBlocksFilter = ''"
-          >
-            All
-          </button>
-          {pieceBlocksFilterList?.map((pieceBlocks) => (
+            {pieceShapeFilterList?.map((pieceShape) => (
+              <button
+                class="btn btn-outline shrink-0"
+                x-bind:class={`pieceShapeFilter === '${pieceShape}' ? 'btn-primary' : ''`}
+                x-on:click={`pieceShapeFilter = '${pieceShape}'`}
+              >
+                {pieceShape}
+              </button>
+            ))}
+          </div>
+          <span class="text-2xl">Number of blocks:</span>
+          <div class="flex-1 flex overflow-auto">
             <button
               class="btn btn-outline shrink-0"
-              x-bind:class={`pieceBlocksFilter === '${pieceBlocks}' ? 'btn-primary' : ''`}
-              x-on:click={`pieceBlocksFilter = '${pieceBlocks}'`}
+              x-bind:class="pieceBlocksFilter === '' ? 'btn-primary' : ''"
+              x-on:click="pieceBlocksFilter = ''"
             >
-              {pieceBlocks}
+              All
             </button>
-          ))}
+            {pieceBlocksFilterList?.map((pieceBlocks) => (
+              <button
+                class="btn btn-outline shrink-0"
+                x-bind:class={`pieceBlocksFilter === '${pieceBlocks}' ? 'btn-primary' : ''`}
+                x-on:click={`pieceBlocksFilter = '${pieceBlocks}'`}
+              >
+                {pieceBlocks}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+        <span class="text-2xl">Character stars:</span>
+        <div class="flex-1 flex overflow-auto mb-5">
+          <button
+            class="btn btn-outline shrink-0"
+            x-bind:class="maxResonanceLevel === 15 ? 'btn-primary' : ''"
+            x-on:click="maxResonanceLevel = 15"
+          >
+            6-5 stars
+          </button>
+          <button
+            class="btn btn-outline shrink-0"
+            x-bind:class="maxResonanceLevel === 10 ? 'btn-primary' : ''"
+            x-on:click="maxResonanceLevel = 10"
+          >
+            4-3-2 stars
+          </button>
+        </div>
+      </>
     )
   }
   <div
@@ -504,11 +523,20 @@ const patternMaterialsList = patternPieces.map((ele) => {
   </div>
   {
     isDev && (
-      <textarea
-        rows="10"
-        class="textarea textarea-secondary w-full"
-        x-model="printResonanceGeoJsonList()"
-      />
+      <div>
+        <label class="label">
+          <span class="label-text">Resonance Code</span>
+        </label>
+        <input class="input input-secondary w-full" x-model="resonanceCode" />
+        <label class="label">
+          <span class="label-text">Resonance GeoJsonList</span>
+        </label>
+        <textarea
+          rows="10"
+          class="textarea textarea-secondary w-full"
+          x-model="printResonanceGeoJsonList()"
+        />
+      </div>
     )
   }
 </div>
@@ -516,6 +544,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
 <script
   is:inline
   define:vars={{
+    isDev,
     resonancePieces,
     maxResonanceLevel,
     initialActiveResonanceLevel,
@@ -530,6 +559,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
 >
   document.addEventListener("alpine:init", () => {
     window.Alpine.store("resonance", {
+      isDev,
       resonancePieces,
       maxResonanceLevel,
       initialActiveResonanceLevel,
@@ -594,6 +624,10 @@ const patternMaterialsList = patternPieces.map((ele) => {
       }
       const baseStatsData = this.$store.resonance.baseStats;
       const baseStats = baseStatsData[`maxBaseStats`];
+
+      if (!baseStats) {
+        return;
+      }
 
       Object.entries(baseStats).forEach(
         ([statKey, stats]: [string, { value: number }]) => {

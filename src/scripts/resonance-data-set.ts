@@ -3,6 +3,7 @@ import {
   IMAGE_ORIENTATION,
 } from "@constants/resonance";
 import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
+import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
 import { centroid } from "@turf/centroid";
 import { polygon } from "@turf/helpers";
 import Alpine from "alpinejs";
@@ -35,6 +36,7 @@ export default () => ({
   boardY: 0,
   boardImgWidth: BOARD_IMG_WIDTH,
 
+  maxResonanceLevel: 0,
   activeResonanceLevel: 0,
   activeResonancePieces: [],
   resonancePatternPieces: [],
@@ -143,6 +145,8 @@ export default () => ({
     this.activeResonanceLevel =
       this.$store.resonance.initialActiveResonanceLevel;
 
+    this.maxResonanceLevel = this.$store.resonance.maxResonanceLevel;
+
     if (window.innerWidth < 768) {
       this.isOnMobile = true;
       this.blockSize = MOBILE_BLOCK_SIZE;
@@ -166,14 +170,25 @@ export default () => ({
     const activeResonancePieces = (
       this.$store.resonance.resonancePieces[this.activeResonanceLevel] || []
     ).reduce((prev, ele) => {
-      const piece = RESONANCE_PIECES[ele.id];
+      let piece = RESONANCE_PIECES[ele.id];
+
+      if (!piece && this.$store.resonance.isDev) {
+        piece = RESONANCE_PATTERN_PIECES[ele.id];
+        const [pieceType, pieceShape, pieceBlocks, pieceId, piecePattern] =
+          ele.id.split("_");
+        const originId = `RP_${pieceShape}_${pieceBlocks}_${pieceId}`;
+        piece.shape = RESONANCE_PIECES[originId].shape;
+        piece.isMainPiece = true;
+        piece.stats = RESONANCE_PIECES[originId].stats;
+        piece.pattern = piecePattern;
+      }
 
       if (piece) {
         const dimension = matrix(piece.shape).size();
         this.maxPieceSize = Math.max(
           this.maxPieceSize,
           dimension[0],
-          dimension[1],
+          dimension[1]
         );
 
         if (piece.id.includes(this.$store.resonance.mainPieceCode)) {
@@ -186,7 +201,7 @@ export default () => ({
                 },
               };
             },
-            {},
+            {}
           );
         }
 
@@ -206,10 +221,10 @@ export default () => ({
     }, []);
 
     this.initialActiveResonancePieces = JSON.parse(
-      JSON.stringify(activeResonancePieces),
+      JSON.stringify(activeResonancePieces)
     );
     this.activeResonancePieces = JSON.parse(
-      JSON.stringify(activeResonancePieces),
+      JSON.stringify(activeResonancePieces)
     );
 
     if (isFirstInit) {
@@ -236,11 +251,11 @@ export default () => ({
       //* Init recommended
       if (this.$store.resonance.recommendedResonanceList) {
         const recommendedLevelKey = Object.keys(
-          this.$store.resonance.recommendedResonanceList,
+          this.$store.resonance.recommendedResonanceList
         ).find((item) =>
           item
             .split("-")
-            .some((ele) => parseInt(ele) === this.activeResonanceLevel),
+            .some((ele) => parseInt(ele) === this.activeResonanceLevel)
         );
 
         if (!recommendedLevelKey) {
@@ -260,7 +275,7 @@ export default () => ({
 
         let defaultIndex = 0;
         const preferredIndex = activeRecommendedResonanceList.findIndex(
-          (ele) => ele.isPreferred,
+          (ele) => ele.isPreferred
         );
         if (preferredIndex !== -1) defaultIndex = preferredIndex;
         const defaultResonanceData =
@@ -287,7 +302,6 @@ export default () => ({
 
         this.selectedRecommended = `${this.activeResonanceLevel}-${defaultIndex}`;
         this.selectedRecommendedSource = defaultResonanceData.source;
-        this.resonanceCode = defaultResonanceData.code ?? "";
 
         this.initRecommendedResonanceData(defaultResonanceData);
       }
@@ -370,7 +384,7 @@ export default () => ({
         -originWidth / 2,
         -originHeight / 2,
         originWidth,
-        originHeight,
+        originHeight
       );
 
       ctx.drawImage(hiddenCanvas, x, y, width, height);
@@ -380,6 +394,31 @@ export default () => ({
   },
 
   drawResonanceGeoJsonList() {
+    const data = JSON.parse(
+      JSON.stringify(
+        this.resonanceGeoJsonList.map((ele) => {
+          const { blocks, shape, orientation, pieceId } = ele.properties;
+          return {
+            blocks,
+            shape,
+            orientation,
+            pieceId,
+          };
+        })
+      )
+    );
+
+    const { patternId, pieces } = this.generateDataForEncode(
+      data,
+      this.selectedPattern
+    );
+
+    const code = this.encodeShareCode(patternId, pieces);
+
+    this.resonanceCode = code;
+
+    //* Help
+
     this.resonanceGeoJsonList.forEach((geoJson) => {
       if (!geoJson.properties) return;
 
@@ -388,11 +427,11 @@ export default () => ({
       const orientation = geoJson.properties.orientation;
 
       const { x: startBlockX, y: startBlockY } = this.getStartBlockCoords(
-        geoJson.properties.blocks,
+        geoJson.properties.blocks
       );
 
       const image = document.querySelector(
-        "img[data-piece-img-id=" + geoJson.properties?.pieceId + "]",
+        "img[data-piece-img-id=" + geoJson.properties?.pieceId + "]"
       ) as HTMLImageElement;
 
       this.drawImageOnCanvas({
@@ -412,7 +451,7 @@ export default () => ({
       0,
       0,
       this.boardCanvas.width,
-      this.boardCanvas.height,
+      this.boardCanvas.height
     );
     this.drawResonanceGeoJsonList();
   },
@@ -456,7 +495,7 @@ export default () => ({
       const transformCoords = itemGeoJson.geometry.coordinates[0].map(
         (point) => {
           return [point[0] + delta.x, point[1] + delta.y] as Position;
-        },
+        }
       );
 
       transformGeoJson = {
@@ -485,7 +524,7 @@ export default () => ({
           }, []);
           return [...prevPolysCoords, transformPolys];
         },
-        [],
+        []
       );
 
       transformGeoJson = {
@@ -541,7 +580,7 @@ export default () => ({
       } else {
         const newPolyBlockCoords = union(
           itemGeoJson.geometry.coordinates,
-          eleBlock.geometry.coordinates,
+          eleBlock.geometry.coordinates
         );
 
         itemGeoJson = {
@@ -578,7 +617,7 @@ export default () => ({
 
   onInitDragGeoJson() {
     const wrapper = document.querySelector(
-      "div[data-piece-id=" + this.selectPieceId + "]",
+      "div[data-piece-id=" + this.selectPieceId + "]"
     ) as HTMLDivElement;
 
     let pieceAlpineData: any = Alpine.$data(wrapper);
@@ -587,9 +626,20 @@ export default () => ({
 
     pieceAlpineData.updateQuantity(-1);
 
-    const blockData = RESONANCE_PIECES[this.selectPieceId];
+    let blockData = RESONANCE_PIECES[this.selectPieceId];
 
-    if (!blockData) return;
+    if (!blockData) {
+      if (!this.$store.resonance.isDev) return;
+
+      blockData = RESONANCE_PATTERN_PIECES[this.selectPieceId];
+      const [pieceType, pieceShape, pieceBlocks, pieceId, piecePattern] =
+        this.selectPieceId.split("_");
+      const originId = `RP_${pieceShape}_${pieceBlocks}_${pieceId}`;
+      blockData.shape = RESONANCE_PIECES[originId].shape;
+      blockData.isMainPiece = true;
+      blockData.stats = RESONANCE_PIECES[originId].stats;
+      blockData.pattern = piecePattern;
+    }
 
     this.isDragging = true;
 
@@ -691,7 +741,7 @@ export default () => ({
       if (selectGeoJson) {
         if (selectGeoJsonIdx > -1) {
           this.resonanceGeoJsonList = JSON.parse(
-            JSON.stringify(this.resonanceGeoJsonList),
+            JSON.stringify(this.resonanceGeoJsonList)
           ).filter((_, idx) => idx !== selectGeoJsonIdx);
         }
         const blocksData = JSON.parse(JSON.stringify(this.blocks)).map(
@@ -703,7 +753,7 @@ export default () => ({
               };
             }
             return block;
-          },
+          }
         );
 
         this.initBlocks = blocksData;
@@ -711,7 +761,7 @@ export default () => ({
 
         this.isDragging = true;
         const { shape, shapeDimension, itemGeoJson } = this.initGeoJsonByShape(
-          selectGeoJson.properties?.shape,
+          selectGeoJson.properties?.shape
         );
         this.dragShape = shape;
         this.dragShapeDimension = shapeDimension;
@@ -743,7 +793,7 @@ export default () => ({
 
     const { transformGeoJson } = this.transformGeoJson(
       draggingGeoJson,
-      startPoint,
+      startPoint
     );
 
     this.dragGeoJson = {
@@ -779,7 +829,7 @@ export default () => ({
         this.processEndCollision();
       } else if (this.selectPieceId) {
         const wrapper = document.querySelector(
-          "div[data-piece-id=" + this.selectPieceId + "]",
+          "div[data-piece-id=" + this.selectPieceId + "]"
         ) as HTMLDivElement;
         let pieceAlpineData: any = Alpine.$data(wrapper);
         pieceAlpineData.selectPieceRotation();
@@ -897,7 +947,7 @@ export default () => ({
 
     const pieceId = this.itemOnBoardGeoJson.properties.pieceId;
     const wrapper = document.querySelector(
-      "div[data-piece-id=" + pieceId + "]",
+      "div[data-piece-id=" + pieceId + "]"
     ) as HTMLDivElement;
     let pieceAlpineData: any = Alpine.$data(wrapper);
 
@@ -928,7 +978,7 @@ export default () => ({
     }
 
     const blocks = JSON.parse(
-      JSON.stringify(this.blocks),
+      JSON.stringify(this.blocks)
     ) as ResonanceBlockType[];
 
     const invalidBlock = blocks.find((ele) => ele.isNotValid);
@@ -941,7 +991,7 @@ export default () => ({
             geometry: {
               coordinates: union(
                 this.resonanceGeoJson.geometry.coordinates,
-                this.itemOnBoardGeoJson.geometry.coordinates,
+                this.itemOnBoardGeoJson.geometry.coordinates
               ),
             },
           };
@@ -1006,23 +1056,23 @@ export default () => ({
 
     if (selectGeoJsonIdx > -1) {
       this.resonanceGeoJsonList = JSON.parse(
-        JSON.stringify(this.resonanceGeoJsonList),
+        JSON.stringify(this.resonanceGeoJsonList)
       ).filter((_, idx) => idx !== selectGeoJsonIdx);
     }
 
     const rotatedShape = this.shapeRotate(
       selectGeoJson.properties?.shape,
-      IMAGE_DEGREE_ORIENTATIONS["90deg"],
+      IMAGE_DEGREE_ORIENTATIONS["90deg"]
     );
 
     const { x: startBlockX, y: startBlockY } = this.getStartBlockCoords(
-      selectGeoJson.properties.blocks,
+      selectGeoJson.properties.blocks
     );
 
     const { itemGeoJson, shape, shapeDimension } = this.initGeoJsonByShape(
       rotatedShape,
       startBlockX,
-      startBlockY,
+      startBlockY
     );
 
     const newItemGeoJson = {
@@ -1035,7 +1085,7 @@ export default () => ({
           col: shapeDimension[1],
         },
         orientation: changeImageOrientation(
-          selectGeoJson.properties.orientation,
+          selectGeoJson.properties.orientation
         ),
       },
     };
@@ -1062,7 +1112,7 @@ export default () => ({
 
   distanceBetween(
     point1: { x: number; y: number },
-    point2: { x: number; y: number },
+    point2: { x: number; y: number }
   ) {
     const dx = point2.x - point1.x;
     const dy = point2.y - point1.y;
@@ -1096,7 +1146,7 @@ export default () => ({
         type: "Polygon",
         coordinates: intersection(
           item.geometry.coordinates,
-          blockPoly.geometry.coordinates,
+          blockPoly.geometry.coordinates
         ),
       },
     };
@@ -1114,7 +1164,7 @@ export default () => ({
   processCheckCollision(
     item: Feature,
     blocks: ResonanceBlockType[],
-    offsetDraggingPoint = { x: 0, y: 0 },
+    offsetDraggingPoint = { x: 0, y: 0 }
   ) {
     const bufferRadius =
       this.blockSize * (Math.max(...this.dragShapeDimension) / 2 + 1); // (slightly larger than the sweepRadius) is the maximum distance between the item's position and a block's position that is considered "far enough" to warrant pruning the block from the search space
@@ -1125,10 +1175,10 @@ export default () => ({
       const startPoint = item.geometry.coordinates[0][0];
 
       const column = Math.floor(
-        (startPoint[0] - offsetDraggingPoint.x) / this.blockSize,
+        (startPoint[0] - offsetDraggingPoint.x) / this.blockSize
       );
       const row = Math.floor(
-        (startPoint[1] - offsetDraggingPoint.y) / this.blockSize,
+        (startPoint[1] - offsetDraggingPoint.y) / this.blockSize
       );
 
       const { transformGeoJson } = this.transformGeoJson(item, {
@@ -1147,10 +1197,10 @@ export default () => ({
       const startPoint = item.geometry.coordinates[0][0][0];
 
       const column = Math.floor(
-        (startPoint[0] - offsetDraggingPoint.x) / this.blockSize,
+        (startPoint[0] - offsetDraggingPoint.x) / this.blockSize
       );
       const row = Math.floor(
-        (startPoint[1] - offsetDraggingPoint.y) / this.blockSize,
+        (startPoint[1] - offsetDraggingPoint.y) / this.blockSize
       );
 
       const { transformGeoJson } = this.transformGeoJson(item, {
@@ -1180,7 +1230,7 @@ export default () => ({
         {
           x: block.pos.x + this.blockSize / 2,
           y: block.pos.y + this.blockSize / 2,
-        },
+        }
       );
 
       if (distance > bufferRadius) continue;
@@ -1238,17 +1288,17 @@ export default () => ({
       shape: number[][];
       orientation: number;
       pieceId: string;
-    }[],
+    }[]
   ) {
     const geoJsonList = list.reduce((prev, item) => {
       const { x: startBlockX, y: startBlockY } = this.getStartBlockCoords(
-        item.blocks,
+        item.blocks
       );
 
       const { itemGeoJson, shapeDimension } = this.initGeoJsonByShape(
         item.shape,
         startBlockX,
-        startBlockY,
+        startBlockY
       );
 
       const newItemGeoJson = {
@@ -1271,7 +1321,7 @@ export default () => ({
   initResonanceData(resonanceData) {
     //* Update resonanceGeoJson
     this.resonanceGeoJsonList = this.initResonanceGeoJsonList(
-      resonanceData.resonance,
+      resonanceData.resonance
     );
 
     const { pieces, blocksList } = this.resonanceGeoJsonList.reduce(
@@ -1284,7 +1334,7 @@ export default () => ({
           };
           blocksList: string[];
         },
-        geoJson,
+        geoJson
       ) => {
         const pieceId = geoJson.properties?.pieceId;
         if (prev.pieces?.[pieceId]) {
@@ -1314,20 +1364,20 @@ export default () => ({
       {
         pieces: {},
         blocksList: [],
-      },
+      }
     );
 
     //* Update piece quantities
     Object.entries(pieces).forEach(
       ([pieceId, piece]: [string, { quantity: number }]) => {
         const pieceDiv = document.querySelector(
-          "div[data-piece-id=" + pieceId + "]",
+          "div[data-piece-id=" + pieceId + "]"
         ) as HTMLDivElement;
 
         let pieceAlpineData: any = Alpine.$data(pieceDiv);
 
         pieceAlpineData.updateQuantity(-(piece?.quantity || 0));
-      },
+      }
     );
 
     //* Update blocks
@@ -1362,7 +1412,7 @@ export default () => ({
   updateActiveResonancePiecesWithPattern(pattern) {
     if (pattern === "PLACIDITY") {
       this.activeResonancePieces = JSON.parse(
-        JSON.stringify(this.initialActiveResonancePieces),
+        JSON.stringify(this.initialActiveResonancePieces)
       );
       return;
     }
@@ -1370,7 +1420,7 @@ export default () => ({
     const pieceCode = this.$store.resonance.mainPieceCode;
 
     const patternPiece = this.$store.resonance.patternPieces.find((piece) =>
-      piece.id.includes(pattern),
+      piece.id.includes(pattern)
     );
 
     if (!patternPiece) return;
@@ -1390,14 +1440,14 @@ export default () => ({
                   },
                 };
               },
-              {},
+              {}
             ),
             pattern: pattern,
           };
         } else {
           return piece;
         }
-      },
+      }
     );
 
     this.activeResonancePieces = updatedActiveResonancePieces;
@@ -1406,7 +1456,7 @@ export default () => ({
   changeRecommended(value: string) {
     const [resonanceLevel, index] = value.split("-");
     const recommendedLevelKey = Object.keys(
-      this.$store.resonance.recommendedResonanceList,
+      this.$store.resonance.recommendedResonanceList
     ).find((item) => item.split("-").some((ele) => ele === resonanceLevel));
 
     if (!recommendedLevelKey) return;
@@ -1418,7 +1468,6 @@ export default () => ({
 
     this.selectedRecommended = value;
     this.selectedRecommendedSource = resonanceData.source;
-    this.resonanceCode = resonanceData.code;
 
     this.resetPiecesQuantity();
     this.resetGeneralStats();
@@ -1452,18 +1501,21 @@ export default () => ({
           } else {
             return item;
           }
-        },
+        }
       );
 
       this.resetPiecesQuantity();
       this.resetGeneralStats();
-      this.initResonanceData({ resonance: newResonanceData });
+      this.initResonanceData({
+        resonance: newResonanceData,
+        patternRecommended: value,
+      });
     });
   },
 
   resetPiecesQuantity() {
     const pieceDivs = document.querySelectorAll(
-      "div[data-piece-id]",
+      "div[data-piece-id]"
     ) as NodeListOf<HTMLDivElement>;
 
     pieceDivs.forEach((pieceDiv) => {
@@ -1474,7 +1526,7 @@ export default () => ({
 
   resetGeneralStats() {
     const generalStatsDiv = document.querySelector(
-      "#generalStats",
+      "#generalStats"
     ) as HTMLDivElement;
     const generalStatsAlpineData: any = Alpine.$data(generalStatsDiv);
     generalStatsAlpineData.resetGeneralStats();
@@ -1521,7 +1573,7 @@ export default () => ({
       0,
       0,
       this.boardCanvas.width,
-      this.boardCanvas.height,
+      this.boardCanvas.height
     );
     this.resonanceGeoJsonList = [];
     const blocksData = this.blocks.map((block) => ({
@@ -1542,5 +1594,166 @@ export default () => ({
       (this.pieceShapeFilter === pieceShape || !this.pieceShapeFilter) &&
       (this.pieceBlocksFilter === pieceBlocks || !this.pieceBlocksFilter)
     );
+  },
+
+  generateDataForEncode(
+    data: {
+      blocks: string[];
+      shape: number[][];
+      orientation: number;
+      pieceId: string;
+    }[],
+    patternRecommended?: string
+  ) {
+    let patternCode = "";
+
+    if (!patternRecommended) {
+      const patternIdx = data.findIndex((ele) => ele.pieceId.includes("RPP"));
+
+      if (patternIdx !== -1) {
+        patternCode = data[patternIdx].pieceId;
+        patternRecommended = data[patternIdx].pieceId.split("_").pop();
+      }
+    } else {
+      const mainPieceIdx = data.findIndex((ele) => {
+        const item = Object.values(RESONANCE_PIECES).find(
+          (item) => item.id === ele.pieceId
+        ) as any;
+        return item?.isMainPiece ?? false;
+      });
+
+      if (mainPieceIdx !== -1) {
+        const [pieceType, pieceShape, pieceBlocks, pieceId, piecePattern] =
+          data[mainPieceIdx].pieceId.split("_");
+
+        patternCode = `RPP_${pieceShape}_${pieceBlocks}_${pieceId}_${patternRecommended}`;
+      }
+    }
+
+    const mappedData = data.map((ele) => {
+      const { blocks, orientation, pieceId } = ele;
+
+      let piece =
+        RESONANCE_PIECES[pieceId] ?? RESONANCE_PATTERN_PIECES[pieceId];
+
+      let mappedOrientation = 0;
+
+      switch (orientation) {
+        case 6:
+          mappedOrientation = 1;
+          break;
+        case 3:
+          mappedOrientation = 2;
+          break;
+        case 8:
+          mappedOrientation = 3;
+          break;
+        default:
+          mappedOrientation = 0;
+      }
+
+      return {
+        ...ele,
+        orientation: mappedOrientation,
+        sort: piece.sort,
+        pieceGameId: piece.gameId,
+      };
+    });
+
+    const pId = patternCode
+      ? RESONANCE_PATTERN_PIECES[patternCode].gameId[0] % 10
+      : 0;
+
+    return {
+      patternId: pId,
+      pieces: mappedData.sort((a, b) => a.sort - b.sort),
+    };
+  },
+
+  encodeShareCode(
+    patternId: number,
+    pieces: {
+      blocks: string[];
+      orientation: number;
+      pieceId: string;
+      pieceGameId: number[];
+    }[]
+  ) {
+    if (!pieces.length) return;
+
+    const byteArray: number[] = [];
+
+    byteArray.push(patternId);
+
+    pieces.forEach((piece) => {
+      const { blocks, orientation, pieceGameId } = piece;
+
+      let id =
+        (this.maxResonanceLevel > 10
+          ? pieceGameId.find((ele) => ele.toString().match(/\d/)?.[0] === "6")
+          : pieceGameId.find(
+              (ele) => ele.toString().match(/\d/)?.[0] === "4"
+            )) ?? pieceGameId[0];
+
+      if (id > 100) {
+        id = Math.floor(id / 10);
+      }
+
+      let row = 6;
+      let col = 6;
+
+      blocks.forEach((block) => {
+        if (+block.split("-")[0] < row) {
+          row = +block.split("-")[0];
+        }
+        if (+block.split("-")[1] < col) {
+          col = +block.split("-")[1];
+        }
+      });
+
+      const byte1 = ((id - 1) << 2) + orientation;
+      const byte2 = (+col << 4) + +row;
+
+      byteArray.push(byte1, byte2);
+    });
+
+    // Convert to binary string and base64 encode
+    const binaryString = String.fromCharCode(...byteArray);
+    return btoa(binaryString);
+  },
+
+  decodeShareCode(base64Code: string) {
+    if (!base64Code) return;
+    const binaryString = atob(base64Code);
+    const byteArray = Array.from(binaryString, (c) => c.charCodeAt(0));
+    const pieces: {
+      pieceId: number;
+      direction: number;
+      row: number;
+      col: number;
+    }[] = [];
+    const patternId = byteArray[0];
+
+    for (let i = 1; i < byteArray.length; i += 2) {
+      let byte1 = byteArray[i];
+      const byte2 = byteArray[i + 1];
+
+      if (byte1 === undefined || byte2 === undefined) {
+        return;
+      }
+
+      if (byte1 < 0) {
+        byte1 = byte1 + 256;
+      }
+
+      const pieceId = (byte1 >> 2) + 1;
+      const direction = byte1 & 0b11;
+      const col = byte2 >> 4;
+      const row = byte2 & 0b1111;
+
+      pieces.push({ pieceId, direction, row, col });
+    }
+
+    return { pieces, patternId };
   },
 });

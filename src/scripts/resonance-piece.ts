@@ -1,6 +1,7 @@
 import STATS from "@data/common/character/stats.json";
 import { IMAGE_ORIENTATION } from "@constants/resonance";
 import RESONANCE_PIECES from "@data/resonance/common/pieces.json";
+import RESONANCE_PATTERN_PIECES from "@data/resonance/common/pattern-pieces.json";
 import Alpine from "alpinejs";
 import matrix from "matrix-js";
 import { changeImageOrientation } from "./common";
@@ -56,7 +57,7 @@ export default ({
           },
         };
       },
-      {},
+      {}
     );
   },
 
@@ -69,7 +70,7 @@ export default ({
     this.quantity = newQuantity;
 
     const generalStatsEl = document.querySelector(
-      "#generalStats",
+      "#generalStats"
     ) as HTMLDivElement;
     if (!generalStatsEl) return;
     let generalStatsAlpineData: any = Alpine.$data(generalStatsEl);
@@ -88,11 +89,23 @@ export default ({
     const container = this.$el;
     const wrapper = container.querySelector("div[data-piece-id=" + id + "]");
     const image = container.querySelector(
-      "img[data-piece-img-id=" + id + "]",
+      "img[data-piece-img-id=" + id + "]"
     ) as HTMLImageElement;
 
     if (!image || !wrapper) return;
-    const piece = RESONANCE_PIECES[id];
+    let piece = RESONANCE_PIECES[id];
+
+    if (!piece && this.$store.resonance.isDev) {
+      piece = RESONANCE_PATTERN_PIECES[id];
+      const [pieceType, pieceShape, pieceBlocks, pieceId, piecePattern] =
+        id.split("_");
+      const originId = `RP_${pieceShape}_${pieceBlocks}_${pieceId}`;
+      piece.shape = RESONANCE_PIECES[originId].shape;
+      piece.isMainPiece = true;
+      piece.stats = RESONANCE_PIECES[originId].stats;
+      piece.pattern = piecePattern;
+    }
+
     const dimension = matrix(piece.shape).size();
     let newDimension = dimension;
 
@@ -140,7 +153,7 @@ export default ({
   showPieceStat(statKey: string, stats) {
     if (this.isMainPiece) {
       const attributesEl = document.querySelector(
-        "#attributes",
+        "#attributes"
       ) as HTMLDivElement;
       if (!attributesEl) return;
 
