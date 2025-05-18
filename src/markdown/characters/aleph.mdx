@@ -1,0 +1,173 @@
+---
+title: "Aleph"
+id: "aleph"
+gameId: "3113"
+code: "ALEPH"
+star: 6
+afflatus: "INTELLECT"
+dmgType: "MENTAL"
+race: "HUMAN"
+version: "2.6"
+releaseDate: "2025-06-19"
+specialties: ["SUPPORT", "INSPIRATION", "BURST_DMG"]
+isLimited: false
+isDev: true
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import DMG_TYPE from "@data/common/character/dmg-type.json";
+import RACE from "@data/common/character/race.json";
+import SPECIALTY from "@data/common/character/specialty.json";
+import CHARACTER from "@data/characters/aleph.json";
+import RESONANCE from "@data/resonance/characters/aleph.json";
+import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
+
+# Aleph
+
+<CharacterContent {...frontmatter} {...CHARACTER}>
+  <Fragment slot="info-description">
+    :TODO - Add character description:
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    :TODO - Add character medium description:
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    :TODO - Add character afflatus description:
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    :TODO - Add character fragrance description:
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    :TODO - Add character dimension description:
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="profile-section-title">
+    ## Profile
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    :TODO - Update skill-1 name:
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
+      :TODO - Add character skill-1 star-1 description:
+    </CardInfo>
+
+    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
+      :TODO - Add character skill-2 star-2 description:
+    </CardInfo>
+
+    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
+      :TODO - Add character skill-3 star-3 description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    :TODO - Update skill-2 name:
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
+      :TODO - Add character skill-1 star-1 description:
+    </CardInfo>
+
+    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
+      :TODO - Add character skill-2 star-2 description:
+    </CardInfo>
+
+    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
+      :TODO - Add character skill-3 star-3 description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    :TODO - Update ultimate name:
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="" note=":TODO - Add character ultimate note:">
+      :TODO - Update character ultimate description:
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    :TODO - Update inheritance title:
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    :TODO - Update inheritance insight-1:
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    :TODO - Update inheritance insight-2:
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    :TODO - Update inheritance insight-3:
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    :TODO - Update portray lv-1 content:
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    :TODO - Update portray lv-2 content:
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    :TODO - Update portray lv-3 content:
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    :TODO - Update portray lv-4 content:
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    :TODO - Update portray lv-5 content:
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="materials-section-title">
+    ## Materials
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    Insight Materials
+  </Fragment>
+
+  <Fragment slot="resonance-materials-section-title">
+    Resonance Materials
+  </Fragment>
+</CharacterContent>

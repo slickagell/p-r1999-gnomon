@@ -1,3 +1,7 @@
+##### 2025-05-18
+
+* Add new characters: Recoleta, Aleph (these page info still in development until official release)
+
 ##### 2025-05-16
 
 * Update resonance code now will be generated automatically based on resonance board
