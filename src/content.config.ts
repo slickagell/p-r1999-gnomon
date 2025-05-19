@@ -171,6 +171,13 @@ const anecdoteStory = defineCollection({
   }),
 });
 
+const eventStory = defineCollection({
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/markdown/story/event",
+  }),
+});
+
 export const collections = {
   characters,
   effects,
@@ -184,4 +191,5 @@ export const collections = {
   general,
   archetypes,
   anecdoteStory,
+  eventStory,
 };
