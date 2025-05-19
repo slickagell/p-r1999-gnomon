@@ -10,6 +10,7 @@ export default {
         "Mountain Ghost",
         "Operatic Reflection",
         "Star of Misfortune",
+        "Primitive Urge",
       ],
     },
     {
