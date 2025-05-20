@@ -1,0 +1,51 @@
+---
+id: "primitive-urge"
+title: "Primitive Urge"
+afflatus: "SPIRIT"
+specialties: ["RITUAL"]
+---
+
+import MythManifestContent from '@components/ReveriesInTheRainMarkdown/MythManifestContent.astro';
+import data from '@data/myth-manifest/primitive-urge.json';
+
+<MythManifestContent {...frontmatter} {...data}>
+  <Fragment slot="information-section-title">
+    ## Information
+  </Fragment>
+
+  <Fragment slot="information-content">
+    Primitive Urge will be suitable for character specialize in casting **Ultimate**.
+  </Fragment>
+
+  <Fragment slot="manifest-skill-section-title">
+    ## Manifest skill
+  </Fragment>
+
+  <Fragment slot="manifest-skill-title">
+    ### Indulging in Dreams
+  </Fragment>
+
+  <Fragment slot="manifest-skill-content">
+    Consume all Energon (requires at least 3 points of Energon) to deploy the array :effect{code="CRIMSON_DREAMSCAPE"} for 2 rounds; for each additional point of Energon consumed, extend the array by 1 round; when the array disappears, cast the ultimate :effect{code="INTO_THE_ABYSS"}.
+  </Fragment>
+
+  <Fragment slot="passive-section-title">
+    ## Passive
+  </Fragment>
+
+  <Fragment slot="passive-1-content">
+    Whenever other allies gain 5 points of Moxie, gain Energon +1. Excess Moxie on allies are temporarily stored (up to 2 points of Moxie can be stored). At the end of the round, the character's stored Moxie is used to replenish their own Moxie if able (only the largest temporary Moxie storage in play applies; storages don't stack).
+  </Fragment>
+
+  <Fragment slot="passive-2-content">
+    While in the :effect{code="CRIMSON_DREAMSCAPE"} array, after another ally casts a damage-type ultimate, cast :effect{code="PASSIONATE_EMBRACE"} as a follow-up attack.
+  </Fragment>
+
+  <Fragment slot="passive-3-content">
+    After an ally casts an ultimate, recovers (Missing HP x**10%**) HP for all allies.
+  </Fragment>
+
+  <Fragment slot="mindmap-section-title">
+    ## Mindmap
+  </Fragment>
+</MythManifestContent>

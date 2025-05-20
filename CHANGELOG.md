@@ -1,69 +1,74 @@
+##### 2025-05-20
+
+- Add Primitive Urge Myth manifest (thanks @91.141 for the mindmap recommendation)
+- Fix resonance rotation bug
+
 ##### 2025-05-18
 
-* Add new characters: Recoleta, Aleph (these page info still in development until official release)
+- Add new characters: Recoleta, Aleph (these page info still in development until official release)
 
 ##### 2025-05-16
 
-* Update resonance code now will be generated automatically based on resonance board
+- Update resonance code now will be generated automatically based on resonance board
 
 ##### 2025-05-08
 
-* Update Noire official info
-* Fix Mountain ghost node position bug
+- Update Noire official info
+- Fix Mountain ghost node position bug
 
 ##### 2025-05-04
 
-* Update Ashen Beast, Star of Misfortune mindmap (thanks @flare\_azazel, @penguin132, @dstorv on Discord server for the feedback)
-* Update character pages UI
-* Fix in Barcarola page: move Voyager to support category
-* Fix some effect bugs
+- Update Ashen Beast, Star of Misfortune mindmap (thanks @flare_azazel, @penguin132, @dstorv on Discord server for the feedback)
+- Update character pages UI
+- Fix in Barcarola page: move Voyager to support category
+- Fix some effect bugs
 
 ##### 2025-05-03
 
-* Add Abyssal zone with enemy info in Reveries
+- Add Abyssal zone with enemy info in Reveries
 
 ##### 2025-04-30
 
-* Update resonance for characters from 2 to 5 stars
+- Update resonance for characters from 2 to 5 stars
 
 ##### 2025-04-29
 
-* How to Play sections now renamed to Skill Breakdown
-* Thanks to CTL Team now we have some infographics ヽ(・ω・)ﾉ:
-  * Character infographics: characters from 2.5 to Argus in 2.1
-  * Euphoria infographics
-  * Guides infographics
-  * Catalysts guide infographic
-* Update Liang Yue Skill Breakdown.
+- How to Play sections now renamed to Skill Breakdown
+- Thanks to CTL Team now we have some infographics ヽ(・ω・)ﾉ:
+  - Character infographics: characters from 2.5 to Argus in 2.1
+  - Euphoria infographics
+  - Guides infographics
+  - Catalysts guide infographic
+- Update Liang Yue Skill Breakdown.
 
 ##### 2025-04-27
 
-* Update official Loggerhead info.
-* Update font and colors.
+- Update official Loggerhead info.
+- Update font and colors.
 
 ##### 2025-04-25
 
-* Update official Liang Yue info.
-* Update Pickles, An-an Lee Euphoria info.
+- Update official Liang Yue info.
+- Update Pickles, An-an Lee Euphoria info.
 
 ##### 2025-04-20
 
-* Prepare 2.5 patch content, these page info still in development until official release:
-  * Add new characters: Liang Yue, Noire, Loggerhead
-* Update code for R10 of 6 star characters.
+- Prepare 2.5 patch content, these page info still in development until official release:
+  - Add new characters: Liang Yue, Noire, Loggerhead
+- Update code for R10 of 6 star characters.
 
 ##### 2025-04-18
 
-* Update Fatutu Skill Breakdown
-* Update Insight and Resonance Material toggle, now it will include total info for Insight 2 and Resonance 10
+- Update Fatutu Skill Breakdown
+- Update Insight and Resonance Material toggle, now it will include total info for Insight 2 and Resonance 10
 
 ##### 2025-04-17
 
-* Update Myth Manifest: Ashen Beast info
-* Update Mane Bulletin boss: Wind of the Ravages info
+- Update Myth Manifest: Ashen Beast info
+- Update Mane Bulletin boss: Wind of the Ravages info
 
 ##### 2025-04-10
 
-* Add Character archetype/trait page
-* Update official Fatutu info
-* Update missing psychube info
+- Add Character archetype/trait page
+- Update official Fatutu info
+- Update missing psychube info

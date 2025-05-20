@@ -1,0 +1,239 @@
+{
+  "mindmap": {
+    "nodes": [
+      { "id": "1", "offsetY": 0.25, "code": "ULTIMATE_MIGHT_MAIN", "r": 10 },
+      {
+        "id": "2",
+        "offsetX": -0.75,
+        "offsetY": -0.5,
+        "code": "INTO_DREAM_S_EMBRACE"
+      },
+      {
+        "id": "3",
+        "offsetX": 0.75,
+        "offsetY": -0.5,
+        "code": "ESSENCE_ABSORPTION"
+      },
+      {
+        "id": "4",
+        "offsetX": -0.75,
+        "offsetY": -1.25,
+        "code": "INTO_DREAM_S_EMBRACE_II"
+      },
+      {
+        "id": "5",
+        "offsetX": 0.75,
+        "offsetY": -1.25,
+        "code": "ALLURING_STARE"
+      },
+      {
+        "id": "6",
+        "offsetX": -1.5,
+        "offsetY": -0.25,
+        "code": "EXHAUSTION"
+      },
+      {
+        "id": "7",
+        "offsetX": 1.5,
+        "offsetY": -0.25,
+        "code": "DECADENT_INDULGENCE_II"
+      },
+      {
+        "id": "8",
+        "offsetX": -0.5,
+        "offsetY": -2,
+        "code": "ESSENCE_ABSORPTION_III"
+      },
+      {
+        "id": "9",
+        "offsetX": 0.5,
+        "offsetY": -2,
+        "code": "ULTIMATE_MIGHT"
+      },
+      {
+        "id": "10",
+        "offsetX": -1.25,
+        "offsetY": -1.75,
+        "code": "ULTIMATE_MIGHT"
+      },
+      {
+        "id": "11",
+        "offsetX": 1.25,
+        "offsetY": -1.75,
+        "code": "ESSENCE_ABSORPTION_II"
+      },
+      {
+        "id": "12",
+        "offsetX": -2,
+        "offsetY": -0.75,
+        "code": "NOSTALGIC_PAST"
+      },
+      {
+        "id": "13",
+        "offsetX": 2,
+        "offsetY": -0.75,
+        "code": "ULTIMATE_MIGHT"
+      },
+      {
+        "id": "14",
+        "offsetX": -2.25,
+        "offsetY": 0,
+        "code": "ULTIMATE_MIGHT"
+      },
+      {
+        "id": "15",
+        "offsetX": 2.25,
+        "offsetY": 0,
+        "code": "ENRAPTURING_EMBRACE"
+      },
+      {
+        "id": "16",
+        "offsetX": -1,
+        "offsetY": -2.5,
+        "code": "ENCHANTING_SURGE"
+      },
+      {
+        "id": "17",
+        "offsetX": 1,
+        "offsetY": -2.5,
+        "code": "DECADENT_INDULGENCE"
+      },
+      {
+        "id": "18",
+        "offsetX": -2.75,
+        "offsetY": -0.75,
+        "code": "DECADENCE_S_TOLL"
+      },
+      {
+        "id": "19",
+        "offsetX": 2.75,
+        "offsetY": -0.75,
+        "code": "DECADENT_INDULGENCE_III"
+      },
+      {
+        "id": "20",
+        "offsetX": -2.5,
+        "offsetY": -2.25,
+        "code": "RESTLESSNESS"
+      },
+      {
+        "id": "21",
+        "offsetX": 2.5,
+        "offsetY": -2.25,
+        "code": "PROLONGED_DREAMS"
+      },
+      {
+        "id": "22",
+        "offsetX": -1.75,
+        "offsetY": -3.25,
+        "code": "ULTIMATE_MIGHT"
+      },
+      {
+        "id": "23",
+        "offsetX": 1.75,
+        "offsetY": -3.25,
+        "code": "AWAKENING_HOURS"
+      },
+      {
+        "id": "24",
+        "offsetX": -3.75,
+        "offsetY": -1.5,
+        "code": "LINGERING_DREAMS"
+      },
+      {
+        "id": "25",
+        "offsetX": 3.75,
+        "offsetY": -1.5,
+        "code": "SERENE_QUIETUDE"
+      },
+      {
+        "id": "26",
+        "offsetX": -2.25,
+        "offsetY": -4,
+        "r": 8,
+        "code": "UNRELENTING_WHISPERS"
+      },
+      {
+        "id": "27",
+        "offsetX": 2.25,
+        "offsetY": -4,
+        "r": 8,
+        "code": "THANKS_FOR_THE_HOSPITALITY"
+      },
+      {
+        "id": "28",
+        "offsetX": -4.5,
+        "offsetY": -2,
+        "r": 8,
+        "code": "SURRENDERED_IN_TEMPTATIONS"
+      },
+      {
+        "id": "29",
+        "offsetX": 4.5,
+        "offsetY": -2,
+        "r": 8,
+        "code": "CEASELESS_INDULGENCE"
+      }
+    ],
+    "links": [
+      { "source": "2", "target": "4" },
+      { "source": "2", "target": "6" },
+      { "source": "3", "target": "5" },
+      { "source": "3", "target": "7" },
+      { "source": "4", "target": "8" },
+      { "source": "4", "target": "10" },
+      { "source": "5", "target": "9" },
+      { "source": "5", "target": "11" },
+      { "source": "6", "target": "12" },
+      { "source": "6", "target": "14" },
+      { "source": "7", "target": "13" },
+      { "source": "7", "target": "15" },
+      { "source": "8", "target": "16" },
+      { "source": "9", "target": "17" },
+      { "source": "10", "target": "16" },
+      { "source": "11", "target": "17" },
+      { "source": "12", "target": "18" },
+      { "source": "13", "target": "19" },
+      { "source": "14", "target": "18" },
+      { "source": "15", "target": "19" },
+      { "source": "16", "target": "20" },
+      { "source": "18", "target": "20" },
+      { "source": "17", "target": "21" },
+      { "source": "19", "target": "21" },
+      { "source": "20", "target": "22" },
+      { "source": "20", "target": "24" },
+      { "source": "21", "target": "23" },
+      { "source": "21", "target": "25" },
+      { "source": "22", "target": "26" },
+      { "source": "23", "target": "27" },
+      { "source": "24", "target": "28" },
+      { "source": "25", "target": "29" }
+    ],
+    "recommended": [
+      {
+        "name": "General Ult",
+        "source": {
+          "label": "",
+          "link": ""
+        },
+        "activeNodes": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "8",
+          "9",
+          "10",
+          "11",
+          "16",
+          "17",
+          "20",
+          "21",
+          "25",
+          "29"
+        ]
+      }
+    ]
+  }
+}
