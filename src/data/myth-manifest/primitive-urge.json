@@ -209,6 +209,31 @@
       { "source": "24", "target": "28" },
       { "source": "25", "target": "29" }
     ],
-    "recommended": []
+    "recommended": [
+      {
+        "name": "General Ult",
+        "source": {
+          "label": "",
+          "link": ""
+        },
+        "activeNodes": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "8",
+          "9",
+          "10",
+          "11",
+          "16",
+          "17",
+          "20",
+          "21",
+          "25",
+          "29"
+        ]
+      }
+    ]
   }
 }
