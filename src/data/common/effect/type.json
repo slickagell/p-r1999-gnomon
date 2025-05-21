@@ -29,8 +29,14 @@
   "STATS_UP": {
     "title": "Stats Up"
   },
+  "STATS_DOWN": {
+    "title": "Stats Down"
+  },
   "FORCE_FIELD": {
     "title": "Force Field"
+  },
+  "PASSIVE": {
+    "title": "Passive"
   },
   "UNKNOWN": {
     "title": "Unknown"

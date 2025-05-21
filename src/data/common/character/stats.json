@@ -1,80 +1,97 @@
 {
   "HP": {
+    "isMainStat": true,
     "label": "HP",
     "keyVal": "hp"
   },
   "ATTACK": {
+    "isMainStat": true,
     "label": "ATK",
     "keyVal": "attack"
   },
   "REALITY_DEFENSE": {
+    "isMainStat": true,
     "label": "Reality DEF",
     "keyVal": "realityDefense"
   },
   "MENTAL_DEFENSE": {
+    "isMainStat": true,
     "label": "Mental DEF",
     "keyVal": "mentalDefense"
   },
   "CRITICAL_TECHNIQUE": {
+    "isMainStat": true,
     "label": "Critical Technique",
     "keyVal": "criticalTechnique"
   },
   "CRITICAL_RATE": {
+    "isMainStat": true,
     "label": "Critical Rate",
     "keyVal": "criticalRate",
     "unit": "%"
   },
   "CRITICAL_DMG": {
+    "isMainStat": true,
     "label": "Critical DMG",
     "keyVal": "criticalDmg",
     "unit": "%"
   },
   "CRITICAL_DEFENSE": {
+    "isMainStat": true,
     "label": "Critical DEF",
     "keyVal": "criticalDefense",
     "unit": "%"
   },
   "CRITICAL_RESIST_RATE": {
+    "isMainStat": true,
     "label": "Critical Resist Rate",
     "keyVal": "criticalResistRate",
     "unit": "%"
   },
   "DMG_BONUS": {
+    "isMainStat": true,
     "label": "DMG Bonus",
     "keyVal": "dmgBonus",
     "unit": "%"
   },
   "DMG_REDUCTION": {
+    "isMainStat": true,
     "label": "DMG Taken Reduction",
     "keyVal": "dmgReduction",
     "unit": "%"
   },
   "DMG_HEAL": {
+    "isMainStat": true,
     "label": "DMG Heal",
     "keyVal": "dmgHeal",
     "unit": "%"
   },
   "LEECH_RATE": {
+    "isMainStat": true,
     "label": "Leech Rate",
     "keyVal": "leechRate",
     "unit": "%"
   },
   "HEALING_DONE": {
+    "isMainStat": true,
     "label": "Healing Done",
     "keyVal": "healingDone",
     "unit": "%"
   },
   "PENETRATION_RATE": {
+    "isMainStat": true,
     "label": "Penetration Rate",
     "keyVal": "penetrationRate",
     "unit": "%"
   },
   "INCANTATION_MIGHT": {
+    "isMainStat": true,
     "label": "Incantation Might",
     "keyVal": "incantationMight",
     "unit": "%"
   },
   "ULTIMATE_MIGHT": {
+    "isMainStat": true,
     "label": "Ultimate Might",
     "keyVal": "ultimateMight",
     "unit": "%"

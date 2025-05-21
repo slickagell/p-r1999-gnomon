@@ -1,23 +1,34 @@
 import STATS from "@data/common/character/stats.json";
 import Alpine from "alpinejs";
 
-const initStats = Object.entries(STATS).reduce((prev, stat) => {
-  const [statId, statVal] = stat as [
-    string,
-    { label: string; unit?: string; keyVal: string },
-  ];
+const initStats = Object.entries(STATS)
+  .filter(
+    (stat) =>
+      (
+        stat[1] as {
+          isMainStat?: boolean;
+          label: string;
+          keyVal: string;
+        }
+      ).isMainStat
+  )
+  .reduce((prev, stat) => {
+    const [statId, statVal] = stat as [
+      string,
+      { label: string; unit?: string; keyVal: string },
+    ];
 
-  return {
-    ...prev,
-    [statId]: {
-      label: statVal.label,
-      code: statId,
-      keyVal: statVal.keyVal,
-      value: 0,
-      unit: statVal.unit || "",
-    },
-  };
-}, {});
+    return {
+      ...prev,
+      [statId]: {
+        label: statVal.label,
+        code: statId,
+        keyVal: statVal.keyVal,
+        value: 0,
+        unit: statVal.unit || "",
+      },
+    };
+  }, {});
 
 export default () => ({
   stats: JSON.parse(JSON.stringify(initStats)),
@@ -34,7 +45,7 @@ export default () => ({
     isMainPiece: boolean;
   }) {
     const attributesEl = document.querySelector(
-      "#attributes",
+      "#attributes"
     ) as HTMLDivElement;
     if (!attributesEl) return;
 
@@ -108,7 +119,7 @@ export default () => ({
 
   updateTotalStats() {
     const attributesEl = document.querySelector(
-      "#attributes",
+      "#attributes"
     ) as HTMLDivElement;
     if (!attributesEl) return;
 
@@ -123,7 +134,7 @@ export default () => ({
 
       if (!this.stats[statId].unit && statVal.unit === "%") {
         this.stats[statId].value = Math.floor(
-          (statVal.value * baseStats[statId].value) / 100,
+          (statVal.value * baseStats[statId].value) / 100
         );
         return;
       } else {
