@@ -1,0 +1,38 @@
+---
+id: 1404
+title: "The Footloose"
+rarity: 5
+code: "THE_FOOTLOOSE"
+image: "1404.png"
+tags: ["ATK"]
+stats: {"HP":2000,"ATTACK":310,"REALITY_DEFENSE":140,"MENTAL_DEFENSE":140}
+specialStat: {"code":"ULTIMATE_MIGHT","enhances":{"0":{"value":9,"upToLevel":20},"1":{"value":11,"upToLevel":40},"2":{"value":13,"upToLevel":50},"3":{"value":15,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    The golden wattle drops to the ground. She sharpens it, polishes it till it is matte.<br />Half of it turns into the handy bow and arrows,<br />The other half turns into the streamlined surfboard.<br />"The tree is free as long as you are free," says the ocean.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    When the carrier attacks, if the target's HP is above 50%, DMG Dealt **+8%**.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    When the carrier attacks, if the target's HP is above 50%, DMG Dealt **+10%**.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    When the carrier attacks, if the target's HP is above 50%, DMG Dealt **+12%**.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    When the carrier attacks, if the target's HP is above 50%, DMG Dealt **+14%**.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    When the carrier attacks, if the target's HP is above 50%, DMG Dealt **+16%**.
+  </Fragment>
+</PsychubeContent>

@@ -1,13 +1,21 @@
 ---
+id: 1434
 title: "Falling for a Sweet Phenomenon"
 rarity: 5
 code: "FALLING_FOR_A_SWEET_PHENOMENON"
-image: "falling-for-a-sweet-phenomenon.png"
+image: "1434.png"
+tags: ["ATK","CRITICAL"]
+stats: {"HP":1900,"ATTACK":360,"REALITY_DEFENSE":120,"MENTAL_DEFENSE":120}
+specialStat: {"code":"ATTACK","enhances":{"0":{"value":2,"upToLevel":20},"1":{"value":4,"upToLevel":40},"2":{"value":6,"upToLevel":50},"3":{"value":8,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    One day, we will rise to the transcendent kingdom,<br />escaping, sooner or later, this painful phenomenon.<br />But until that day, go forth to prove it,<br />this icy, sweet hypothesis on the cone.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     When the carrier is a *\[Star]* character, Critical DMG **+10%**. After taking an extra action, Genesis DMG Dealt **+6%**, stacks up to 5 times.
   </Fragment>

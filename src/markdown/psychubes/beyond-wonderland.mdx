@@ -1,13 +1,21 @@
 ---
+id: 1511
 title: "Beyond Wonderland"
 rarity: 6
 code: "BEYOND_WONDERLAND"
-image: "beyond-wonderland.png"
+image: "1511.png"
+tags: ["ATK","CRITICAL","HEAL"]
+stats: {"HP":2600,"ATTACK":350,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":160}
+specialStat: {"code":"HP","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Rabbit, rabbit, takes a cookie,<br />Hatter, hatter, pours the tea.<br />The Cheshire Cat lays the table,<br />Alice lifts her cup with glee.<br />So do not weep, our dear old guest,<br />Soon, we'll have a tea party.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     After the carrier uses a debuff incantation, the carrier's healing rate increases by 3%. This effect can stack up to 4 times. Increases carrier's Critical Rate by **7%**.
   </Fragment>

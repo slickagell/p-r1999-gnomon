@@ -1,13 +1,21 @@
 ---
+id: 1509
 title: "Luxurious Leisure"
 rarity: 6
 code: "LUXURIOUS_LEISURE"
-image: "luxurious-leisure.png"
+image: "1509.png"
+tags: ["ATK"]
+stats: {"HP":2200,"ATTACK":380,"REALITY_DEFENSE":170,"MENTAL_DEFENSE":170}
+specialStat: {"code":"ULTIMATE_MIGHT","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Under all the spotlights, she is like the blackhole of attention.<br />The most beautiful dream in that beautiful nation.<br />Her hair is more expensive than gold, and her lip print can be exchanged for a bundle of cash.<br />Yet her heart, that very heart,<br />Is not worth a gold coin, or a silver one, or even a glance.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     After the Carrier casts a single-target Ultimate, damage dealt increases by **5%**. This effect is stackable up to 3 times.
   </Fragment>

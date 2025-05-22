@@ -1,0 +1,38 @@
+---
+id: 1413
+title: "A Satisfied Eater"
+rarity: 5
+code: "A_SATISFIED_EATER"
+image: "1413.png"
+tags: ["ATK"]
+stats: {"HP":2000,"ATTACK":310,"REALITY_DEFENSE":140,"MENTAL_DEFENSE":140}
+specialStat: {"code":"INCANTATION_MIGHT","enhances":{"0":{"value":9,"upToLevel":20},"1":{"value":11,"upToLevel":40},"2":{"value":13,"upToLevel":50},"3":{"value":15,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    On the left side of the street, a stalker.<br />On the right side of the rear window, three fools seeking revenge.<br />Beneath the earth, fifteen feet away, the thousand-legged worm wriggles without end.<br />The wolf pack surrounds. Until the last of the milk, sugar, and oil mix enters their stomachs, they are all safe.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    Whenever the Carrier attacks at below 80% HP, Penetration Rate **+8%**.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    Whenever the Carrier attacks at below 80% HP, Penetration Rate **+10%**.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    Whenever the Carrier attacks at below 80% HP, Penetration Rate **+12%**.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    Whenever the Carrier attacks at below 80% HP, Penetration Rate **+14%**.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    Whenever the Carrier attacks at below 80% HP, Penetration Rate **+16%**.
+  </Fragment>
+</PsychubeContent>

@@ -1,41 +1,53 @@
 ---
 import CustomImage from "@components/CustomImage.astro";
-import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownContent from "@components/MarkdownContent.astro";
-import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
-import MarkdownHighlight from "@components/MarkdownHighlight.astro";
-import Tooltip from "@components/Tooltip.astro";
-import { getEntry, render } from "astro:content";
+import { getEntry } from "astro:content";
 import { kebabCase } from "change-case";
 
 interface Props {
   code: string;
+  size?: "small" | "medium" | "large";
+  variant?: ("horizontal" | "vertical")[];
+  customClass?: string;
 }
 
-const { code } = Astro.props;
+const {
+  code,
+  size = "medium",
+  variant = ["vertical"],
+  customClass,
+} = Astro.props;
 
 const psychubeEntry = await getEntry("psychubes", kebabCase(code))!;
-
-const { Content } = await render(psychubeEntry);
 ---
 
-<Tooltip>
-  <div class="inline-block text-center" slot="toggle">
-    <CustomImage
-      class="w-28 mx-auto"
-      src={"/images/psychubes/icons/" + psychubeEntry.data.image}
-      alt={psychubeEntry.data.title}
-    />
+<div
+  class:list={[
+    "flex items-center",
+    {
+      "flex-row": variant.includes("horizontal"),
+      "flex-col": variant.includes("vertical"),
+    },
+    customClass,
+  ]}
+>
+  <a href={`/psychubes/${psychubeEntry.id}`}>
+    <div
+      class:list={[
+        "relative shrink-0 mx-auto",
+        { "w-20": size === "small" },
+        { "w-28": size === "medium" },
+        { "w-32": size === "large" },
+      ]}
+    >
+      <CustomImage
+        src={"/images/psychubes/icons/" + psychubeEntry.data.image}
+        alt={psychubeEntry.data.title}
+      />
+    </div>
+  </a>
+  <a href={`/psychubes/${psychubeEntry.id}`}>
     <span class="text-base-content">
       {psychubeEntry.data.title}
     </span>
-  </div>
-  <Content
-    components={{
-      p: MarkdownContent,
-      strong: MarkdownHighlight,
-      em: MarkdownEmphasis,
-      effect: EffectTooltip,
-    }}
-  />
-</Tooltip>
+  </a>
+</div>

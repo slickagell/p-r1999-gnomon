@@ -1,36 +1,157 @@
 ---
-interface Props {}
+import CustomImage from "@components/CustomImage.astro";
+import SPECIALTY from "@data/common/character/specialty.json";
+import "@styles/markdown-layout.css";
 
-const {} = Astro.props;
+interface Props {
+  id: number;
+  title: string;
+  description: string;
+  rarity: number;
+  tags: string[];
+  stats: {
+    [key: string]: number;
+  };
+  specialStat?: {
+    code: string;
+    enhance: {
+      [enhanceLevel: string]: {
+        value: number;
+        upToLevel: string;
+      };
+    };
+  };
+}
 
-const psychubeLevel = ['I', 'II', 'III', 'IV', 'V']
+const LEVEL = [{label: '1', value: 1}, {label:'20 (E)', value: 20}, {label:'40 (E)', value: 40}, {label:'50 (E)', value: 50}, {label:'60', value: 60}];
+
+const hasAmplification = Astro.slots.has("amplification-1-content");
+
+const { id, title, description, rarity, tags, stats, specialStat } = Astro.props;
 ---
 
-<div x-data={`{active: 'I'}`}>
-    <div class="tabs tabs-boxed">
-      {psychubeLevel?.map((level, idx) => (
-        <button
-          @click={`active = '${level}'`}
-          class="tab"
-          :class={`(active === '${level}') && 'tab-active !text-white'`}
-        >
-          {level}
-        </button>
-      ))}
+<h1>{title}</h1>
+
+<div class="flex flex-col md:flex-row my-4 gap-4">
+  <CustomImage
+    src={`/images/psychubes/icons/${id}.png`}
+    alt={title}
+    class="w-32 self-center md:self-start"
+  />
+  <div class="flex flex-col">
+    <div class="flex flex-wrap gap-2 justify-center md:justify-start">
+      {tags.map((tag) => <div class="badge badge-outline">{SPECIALTY[tag]?.title}</div>)}
     </div>
-    <div x-show={`active === 'I'`} x-cloak>
-        <slot name="amplification-1-content" />
-    </div>
-    <div x-show={`active === 'II'`} x-cloak>
-        <slot name="amplification-2-content" />
-    </div>
-    <div x-show={`active === 'III'`} x-cloak>
-        <slot name="amplification-3-content" />
-    </div>
-    <div x-show={`active === 'IV'`} x-cloak>
-        <slot name="amplification-4-content" />
-    </div>
-    <div x-show={`active === 'V'`} x-cloak>
-        <slot name="amplification-5-content" />
-    </div>
+    <div class="mt-2 opacity-80 italic"><slot name="description" /></div>
+  </div>
 </div>
+
+<div x-data={`psychube`}>
+  <h3>Stats</h3>
+
+  <div class="my-4 tabs tabs-boxed justify-center md:justify-start">
+    {LEVEL.map((level, idx) => (
+      <button
+        @click={`handleChangeActiveStateLevel(${level.value})`}
+        class="tab tab-bordered"
+        :class={`(activeStatLevel === ${level.value}) && 'tab-active !text-white'`}
+      >
+        {level.label}
+      </button>
+    ))}
+  </div>
+
+  <div class="max-w-md">
+    <div class="flex gap-2 items-center justify-between">
+      <p x-text="baseStats.HP.label"></p>
+      <p x-text="baseStats.HP.value"></p>
+    </div>
+    <div class="divider my-1 h-2" />
+    <div class="flex gap-2 items-center justify-between">
+      <p x-text="baseStats.ATTACK.label"></p>
+      <p x-text="baseStats.ATTACK.value"></p>
+    </div>
+    <div class="divider my-1 h-2" />
+    <div class="flex gap-2 items-center justify-between">
+      <p x-text="baseStats.REALITY_DEFENSE.label"></p>
+      <p x-text="baseStats.REALITY_DEFENSE.value"></p>
+    </div>
+    <div class="divider my-1 h-2" />
+    <div class="flex gap-2 items-center justify-between">
+      <p x-text="baseStats.MENTAL_DEFENSE.label"></p>
+      <p x-text="baseStats.MENTAL_DEFENSE.value"></p>
+    </div>
+    {specialStat && 
+      <>
+        <div class="divider my-1 h-2"></div>
+        <div class="flex gap-2 items-center justify-between">
+          <p class="text-primary" x-text="specialStat.label"></p>
+          <p class="text-primary" x-text="specialStat.value"></p>
+        </div>
+      </>
+    }
+  </div>
+
+  {
+    hasAmplification && <>
+      <h3 class="mt-6 md:mt-10">Amplification</h3>
+
+      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+        <h6 class="my-0 shrink-0">Lv. 1:</h6>
+        <slot name="amplification-1-content" />
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+        <h5 class="my-0 shrink-0">Lv. 2:</h5>
+        <slot name="amplification-2-content" />
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+        <h5 class="my-0 shrink-0">Lv. 3:</h5>
+        <slot name="amplification-3-content" />
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+        <h5 class="my-0 shrink-0">Lv. 4:</h5>
+        <slot name="amplification-4-content" />
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+        <h5 class="my-0 shrink-0">Lv. 5:</h5>
+        <slot name="amplification-5-content" />
+      </div>
+    </>
+  }
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    rarity,
+    stats,
+    specialStat,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("psychube", {
+      rarity,
+      stats,
+      specialStat
+    });
+  });
+</script>
+
+<script>
+  import psychube from "@scripts/psychube";
+  import Alpine from "alpinejs";
+
+  Alpine.data("psychube", psychube);
+</script>

@@ -1,13 +1,21 @@
 ---
+id: 1522
 title: "Same Old Story"
 rarity: 6
 code: "SAME_OLD_STORY"
-image: "same-old-story.png"
+image: "1522.png"
+tags: ["ATK"]
+stats: {"HP":1900,"ATTACK":370,"REALITY_DEFENSE":160,"MENTAL_DEFENSE":170}
+specialStat: {"code":"INCANTATION_MIGHT","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Watching, always watching. Five hundred years for spring, five hundred years for autumn.<br />Under the shade of the trees, there is nothing new.<br />In bones, in jade, in stories read countless times,<br />Yet the puzzle remains, still existing.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     When the carrier is a *\[Beast]* character, Penetration Rate +5%. When the carrier is in *\[Channel]* status, DMG Dealt **+12%** for their Mass Attacks.
   </Fragment>

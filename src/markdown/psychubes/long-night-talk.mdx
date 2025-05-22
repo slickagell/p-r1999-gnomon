@@ -1,30 +1,38 @@
 ---
+id: 1515
 title: "Long Night Talk"
 rarity: 6
 code: "LONG_NIGHT_TALK"
-image: "long-night-talk.png"
+image: "1515.png"
+tags: ["ATK"]
+stats: {"HP":2000,"ATTACK":380,"REALITY_DEFENSE":170,"MENTAL_DEFENSE":160}
+specialStat: {"code":"INCANTATION_MIGHT","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Where does the story begin?<br />Little stones, red earth, distant fire.<br />Groping silhouettes, in the night sky, those who chase fire.<br />Hand in hand, heart touching heart,<br />surging deep in the throat, my warm fire.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
-    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking. When the Carrier uses a Buff Incantation, gain ATK **+2%**, stacks up to **2** times.
+    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking.<br />When the Carrier uses a Buff Incantation, gain ATK **+2%**, stacks up to **2** times.
   </Fragment>
 
   <Fragment slot="amplification-2-content">
-    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking. When the Carrier uses a Buff Incantation, gain ATK **+2%**, stacks up to **3** times.
+    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking.<br />When the Carrier uses a Buff Incantation, gain ATK **+2%**, stacks up to **3** times.
   </Fragment>
 
   <Fragment slot="amplification-3-content">
-    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking. When the Carrier uses a Buff Incantation, gain ATK **+2.5%**, stacks up to **3** times.
+    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking.<br />When the Carrier uses a Buff Incantation, gain ATK **+2.5%**, stacks up to **3** times.
   </Fragment>
 
   <Fragment slot="amplification-4-content">
-    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking. When the Carrier uses a Buff Incantation, gain ATK **+2.5%**, stacks up to **4** times.
+    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking.<br />When the Carrier uses a Buff Incantation, gain ATK **+2.5%**, stacks up to **4** times.
   </Fragment>
 
   <Fragment slot="amplification-5-content">
-    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking. When the Carrier uses a Buff Incantation, gain ATK **+2.5%**, stacks up to **5** times.
+    When the Carrier has 2 or more *\[Pos Status]* buffs, DMG Dealt +8% when attacking.<br />When the Carrier uses a Buff Incantation, gain ATK **+2.5%**, stacks up to **5** times.
   </Fragment>
 </PsychubeContent>

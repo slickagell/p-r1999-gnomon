@@ -1,0 +1,22 @@
+[
+  { "rarity": 3, "level": 1, "multiplier": 0.15 },
+  { "rarity": 3, "level": 20, "multiplier": 0.32 },
+  { "rarity": 3, "level": 40, "multiplier": 0.58 },
+  { "rarity": 3, "level": 50, "multiplier": 0.79 },
+  { "rarity": 3, "level": 60, "multiplier": 1 },
+  { "rarity": 4, "level": 1, "multiplier": 0.15 },
+  { "rarity": 4, "level": 20, "multiplier": 0.32 },
+  { "rarity": 4, "level": 40, "multiplier": 0.58 },
+  { "rarity": 4, "level": 50, "multiplier": 0.79 },
+  { "rarity": 4, "level": 60, "multiplier": 1 },
+  { "rarity": 5, "level": 1, "multiplier": 0.15 },
+  { "rarity": 5, "level": 20, "multiplier": 0.32 },
+  { "rarity": 5, "level": 40, "multiplier": 0.58 },
+  { "rarity": 5, "level": 50, "multiplier": 0.79 },
+  { "rarity": 5, "level": 60, "multiplier": 1 },
+  { "rarity": 6, "level": 1, "multiplier": 0.15 },
+  { "rarity": 6, "level": 20, "multiplier": 0.32 },
+  { "rarity": 6, "level": 40, "multiplier": 0.58 },
+  { "rarity": 6, "level": 50, "multiplier": 0.79 },
+  { "rarity": 6, "level": 60, "multiplier": 1 }
+]

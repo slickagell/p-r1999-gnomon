@@ -1,0 +1,131 @@
+---
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const psychubeEntries = await getCollection("psychubes");
+
+function sortPsychubes(a, b) {
+  if (a.data.rarity !== b.data.rarity) {
+    return -(a.data.rarity - b.data.rarity);
+  }
+
+  if (a.data.id !== b.data.id) {
+    return -(a.data.id - b.data.id);
+  }
+
+  return ("" + a.data.title).localeCompare(b.data.title);
+}
+---
+
+<Layout
+  title="Psychubes"
+  description="Psychube list in Reverse: 1999."
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Psychubes",
+    },
+  ]}
+>
+  <h1 class="text-center">Psychube List</h1>
+
+  <div x-data={"dataset"}>
+    <div class="filters">
+      <div class="md:grid md:grid-cols-filter">
+        <!-- Rarity -->
+        <div class="py-2 md:px-4">Rarity</div>
+        <ul class="hidden md:flex py-2 px-4 gap-1">
+          <template x-for="rarity in rarities">
+            <li>
+              <button
+                class="btn btn-outline btn-xs"
+                :class="rarity.code === rarityFilter ? 'btn-active' : ''"
+                @click="filterRarity(rarity.code)"
+                x-text="rarity.title"
+              >
+              </button>
+            </li>
+          </template>
+        </ul>
+        <select
+          class="md:hidden select select-secondary w-full"
+          @change="filterRarity($event.target.value)"
+        >
+          <template x-for="rarity in rarities">
+            <option
+              :value="rarity.code"
+              :selected="rarity.code === rarityFilter"
+              x-text="rarity.title"></option>
+          </template>
+        </select>
+        <!-- End Rarity -->
+      </div>
+      <input
+        type="text"
+        placeholder="Search"
+        class="my-4 input input-bordered input-secondary w-full"
+        x-model="searchText"
+      />
+
+      <ul class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+        {
+          psychubeEntries.sort(sortPsychubes).map(async (effectEntry) => {
+            return (
+              <li
+                x-show={`filterPsychube({rarity:'${effectEntry.data.rarity}', title: '${effectEntry.data.title.replace(
+                  /'/g,
+                  "\\'"
+                )}'})`}
+              >
+                <PsychubeIcon
+                  size="small"
+                  variant={["horizontal"]}
+                  code={effectEntry.data.code}
+                />
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    import PSYCHUBE_RARITY from "@data/common/psychube/rarity.json";
+    import Alpine from "alpinejs";
+
+    window.Alpine = Alpine;
+
+    Alpine.data("dataset", () => ({
+      searchText: "",
+      rarityFilter: "ALL",
+      rarities: [
+        { title: "All", code: "ALL" },
+        ...Object.keys(PSYCHUBE_RARITY)
+          .splice(0, 4)
+          .map((code) => ({
+            title: PSYCHUBE_RARITY[code].title,
+            code: PSYCHUBE_RARITY[code].value.toString(),
+          })),
+      ],
+
+      filterPsychube({ rarity, title }) {
+        const filters =
+          this.rarityFilter === "ALL" || this.rarityFilter === rarity;
+
+        return !this.searchText
+          ? filters
+          : filters &&
+              title.toLowerCase().includes(this.searchText.toLowerCase());
+      },
+
+      filterRarity(rarity) {
+        this.rarityFilter = rarity;
+      },
+    }));
+  </script>
+</Layout>

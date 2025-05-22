@@ -1,0 +1,38 @@
+---
+id: 1402
+title: "Tomorrow Also"
+rarity: 5
+code: "TOMORROW_ALSO"
+image: "1402.png"
+tags: ["ATK","CRITICAL"]
+stats: {"HP":2000,"ATTACK":290,"REALITY_DEFENSE":140,"MENTAL_DEFENSE":160}
+specialStat: {"code":"CRITICAL_DMG","enhances":{"0":{"value":11,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":17,"upToLevel":50},"3":{"value":20,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    When lifting the fog from the city, be careful,<br />Don't disturb the people hurrying home.<br />He travels through the city in alleys and arrives in time.<br />His duty will catch up with him, just as always.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    When the carrier casts an Ultimate, Critical Rate **+10%**.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    When the carrier casts an Ultimate, Critical Rate **+12.5%**.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    When the carrier casts an Ultimate, Critical Rate **+15%**.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    When the carrier casts an Ultimate, Critical Rate **+17.5%**.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    When the carrier casts an Ultimate, Critical Rate **+20%**.
+  </Fragment>
+</PsychubeContent>

@@ -1,13 +1,21 @@
 ---
+id: 1523
 title: "Knock on the Door"
 rarity: 6
 code: "KNOCK_ON_THE_DOOR"
-image: "knock-on-the-door.png"
+image: "1523.png"
+tags: ["CRITICAL"]
+stats: {"HP":2400,"ATTACK":380,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":160}
+specialStat: {"code":"CRITICAL_RATE","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Where, where? Is it here, or there?<br />In the keyhole, in the door crack, or under the covers?<br />The new, flowing, golden me,<br />The scorching, dazzling, tiny me,<br />In your heart, in your mind, in your bones.<br />Blow it out, blow him out, blow her out!<br />The me to be found everywhere—where am I?
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     When the carrier attacks a target enemy that's in the *\[Burn]* status, DMG Dealt +6%. When the carrier's extra action is a mass attack, Incantation Might **+4%**.
   </Fragment>

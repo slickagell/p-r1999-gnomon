@@ -1,13 +1,21 @@
 ---
+id: 1514
 title: "Balance, Please"
 rarity: 6
 code: "BALANCE_PLEASE"
-image: "balance-please.png"
+image: "1514.png"
+tags: ["ATK"]
+stats: {"HP":2200,"ATTACK":380,"REALITY_DEFENSE":170,"MENTAL_DEFENSE":170}
+specialStat: {"code":"ULTIMATE_MIGHT","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Rolling forward, falling along the expected trajectory.<br />He looked around and felt at home.<br />Each cog has its role,<br />Each indispensable, each insignificant,<br />Each existing within a vast machine.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     When the carrier attacks, if they do not have an Afflatus advantage over the enemy, DMG Dealt **+6%**. If the carrier's Afflatus is of the Primal Afflatus, this effect is increased to **12%**.
   </Fragment>

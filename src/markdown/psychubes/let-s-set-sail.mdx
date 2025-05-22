@@ -1,0 +1,38 @@
+---
+id: 1421
+title: "Let's Set Sail"
+rarity: 5
+code: "LET_S_SET_SAIL"
+image: "1421.png"
+tags: ["ATK"]
+stats: {"HP":2000,"ATTACK":300,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":140}
+specialStat: {"code":"DMG_BONUS","enhances":{"0":{"value":4,"upToLevel":20},"1":{"value":6,"upToLevel":40},"2":{"value":8,"upToLevel":50},"3":{"value":10,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Sails billow, swords shine, down the river.<br />A star twinkles in the north, chase it, chase it.<br />Conquer the seas, the lands, the ice rinks, and park reservoirs.<br />Your star twinkles in the north, Lagasa, Lagasa.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    When the carrier attacks a target that's with a *\[Stats Down]* status, Critical DMG **+14%**.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    When the carrier attacks a target that's with a *\[Stats Down]* status, Critical DMG **+17.5%**.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    When the carrier attacks a target that's with a *\[Stats Down]* status, Critical DMG **+21%**.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    When the carrier attacks a target that's with a *\[Stats Down]* status, Critical DMG **+24.5%**.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    When the carrier attacks a target that's with a *\[Stats Down]* status, Critical DMG **+28%**.
+  </Fragment>
+</PsychubeContent>

@@ -1,30 +1,38 @@
 ---
+id: 1524
 title: "Another Story"
 rarity: 6
 code: "ANOTHER_STORY"
-image: "another-story.png"
+image: "1524.png"
+tags: ["ATK"]
+stats: {"HP":2200,"ATTACK":380,"REALITY_DEFENSE":140,"MENTAL_DEFENSE":180}
+specialStat: {"code":"ULTIMATE_MIGHT","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Page after page. One book, then another.<br />Reading again and again, pondering, seeking.<br />From the lighthouse, toward reality.<br />The other side of the ending, no longer abandoned.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
-    After the carrier casts a rank 2/3 incantation, DMG Dealt +**1%**/**2%**, stacking up to +**8%**. When the carrier consumes 2 or more Eureka within a round, gain Incantation Might +**10%** until the end of the round.
+    After the carrier casts a rank 2/3 incantation, DMG Dealt **+1%**/**2%**, stacking up to **+8%**. When the carrier consumes 2 or more Eureka within a round, gain Incantation Might **+10%** until the end of the round.
   </Fragment>
 
   <Fragment slot="amplification-2-content">
-    TODO - Add amplification-2-content
+    After the carrier casts a rank 2/3 incantation, DMG Dealt **+1.5%**/**3%**, stacking up to **+12%**. When the carrier consumes 2 or more Eureka within a round, gain Incantation Might **+12%** until the end of the round.
   </Fragment>
 
   <Fragment slot="amplification-3-content">
-    TODO - Add amplification-3-content
+    After the carrier casts a rank 2/3 incantation, DMG Dealt **+2%**/**4%**, stacking up to **+16%**. When the carrier consumes 2 or more Eureka within a round, gain Incantation Might **+14%** until the end of the round.
   </Fragment>
 
   <Fragment slot="amplification-4-content">
-    TODO - Add amplification-4-content
+    After the carrier casts a rank 2/3 incantation, DMG Dealt **+2.5%**/**5%**, stacking up to **+20%**. When the carrier consumes 2 or more Eureka within a round, gain Incantation Might **+16%** until the end of the round.
   </Fragment>
 
   <Fragment slot="amplification-5-content">
-    After the carrier casts a rank 2/3 incantation, DMG Dealt +**3%**/**6%**, stacking up to +**24%**. When the carrier consumes 2 or more Eureka within a round, gain Incantation Might +**18%** until the end of the round.
+    After the carrier casts a rank 2/3 incantation, DMG Dealt **+3%**/**6%**, stacking up to **+24%**. When the carrier consumes 2 or more Eureka within a round, gain Incantation Might **+18%** until the end of the round.
   </Fragment>
 </PsychubeContent>

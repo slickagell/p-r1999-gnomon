@@ -20,6 +20,11 @@ export default {
       message: "Is specific to?",
       choices: ["CHARACTER", "BULLET", "MODE", "MONSTER", "NONE"],
     },
+    {
+      type: "input",
+      name: "content",
+      message: "Content? (optional):",
+    },
   ],
   actions: () => {
     let defaultFolderPath = "markdown/effects";

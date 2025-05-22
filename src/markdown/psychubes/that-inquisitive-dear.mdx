@@ -1,30 +1,38 @@
 ---
+id: 1508
 title: "That Inquisitive Dear"
 rarity: 6
 code: "THAT_INQUISITIVE_DEAR"
-image: "that-inquisitive-dear.png"
+image: "1508.png"
+tags: ["HEAL"]
+stats: {"HP":2600,"ATTACK":360,"REALITY_DEFENSE":180,"MENTAL_DEFENSE":160}
+specialStat: {"code":"HEALING_DONE","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Paths are made by walking.<br />Wine and bread are achieved by working.<br />The new sprout stretches its leaves,<br />Fighting sleepiness among the mountain of potions.<br />More time, she needs more time,<br />To read the next page of the book.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
-    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**24**%) for the ally with the lowest HP percentage (only triggers 1 time per round).
+    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**24%**) for the ally with the lowest HP percentage (only triggers 1 time per round).
   </Fragment>
 
   <Fragment slot="amplification-2-content">
-    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**30**%) for the ally with the lowest HP percentage (only triggers 1 time per round).
+    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**30%**) for the ally with the lowest HP percentage (only triggers 1 time per round).
   </Fragment>
 
   <Fragment slot="amplification-3-content">
-    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**36**%) for the ally with the lowest HP percentage (only triggers 1 time per round).
+    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**36%**) for the ally with the lowest HP percentage (only triggers 1 time per round).
   </Fragment>
 
   <Fragment slot="amplification-4-content">
-    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**42**%) for the ally with the lowest HP percentage (only triggers 1 time per round).
+    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**42%**) for the ally with the lowest HP percentage (only triggers 1 time per round).
   </Fragment>
 
   <Fragment slot="amplification-5-content">
-    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**48**%) for the ally with the lowest HP percentage (only triggers 1 time per round).
+    When the carrier casts a basic Incantation debuff, HP +(the carrier's ATK x**48%**) for the ally with the lowest HP percentage (only triggers 1 time per round).
   </Fragment>
 </PsychubeContent>

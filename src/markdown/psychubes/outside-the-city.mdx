@@ -1,19 +1,27 @@
 ---
+id: 1521
 title: "Outside the City"
 rarity: 6
 code: "OUTSIDE_THE_CITY"
-image: "outside-the-city.png"
+image: "1521.png"
+tags: ["CRITICAL"]
+stats: {"HP":2400,"ATTACK":370,"REALITY_DEFENSE":170,"MENTAL_DEFENSE":160}
+specialStat: {"code":"CRITICAL_RATE","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Green mountains, willows, and moonlight.<br />Fragrant wine in poetry and beyond.<br />The sky within the city and the sky beyond.<br />Each word and stroke, what is known and what is still unknown.<br />Observe and learn, the world is like a cloudy wine, its taste only discovered through trying.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
-    After the carrier launches a 1-target attack through an extra action, Critical DMG **+1%**, up to 10 stacks. At 10 stacks, gain extra Critical Rate **+12%**.
+    After the carrier launches a 1-target attack through an extra action, Critical DMG **+2%**, up to 10 stacks. At 10 stacks, gain extra Critical Rate **+8%**.
   </Fragment>
 
   <Fragment slot="amplification-2-content">
-    After the carrier launches a 1-target attack through an extra action, Critical DMG **+2%**, up to 10 stacks. At 10 stacks, gain extra Critical Rate **+12%**.
+    After the carrier launches a 1-target attack through an extra action, Critical DMG **+3%**, up to 10 stacks. At 10 stacks, gain extra Critical Rate **+8%**.
   </Fragment>
 
   <Fragment slot="amplification-3-content">

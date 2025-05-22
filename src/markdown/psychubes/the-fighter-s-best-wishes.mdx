@@ -1,13 +1,21 @@
 ---
+id: 1528
 title: "The Fighter's Best Wishes"
 rarity: 6
-code: "THE_FIGHTERS_BEST_WISHES"
-image: "the-fighters-best-wishes.png"
+code: "THE_FIGHTER_S_BEST_WISHES"
+image: "1528.png"
+tags: ["SURVIVAL"]
+stats: {"HP":2800,"ATTACK":300,"REALITY_DEFENSE":170,"MENTAL_DEFENSE":190}
+specialStat: {"code":"HP","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    The moment of decision has come. Farewell, my friend.<br />I will forever bless tomorrow,<br />Hold hope in my heart for you,<br />And pour out all my remaining courage upon my homeland.<br />That shaded path, those halls, that golden circuit that bears me.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     At the start of the round, if the carrier's current HP is below **60%**, they get DMG Taken -10%; when the carrier attacks, they get Genesis DMG Dealt **+7%**.
   </Fragment>

@@ -21,14 +21,10 @@ interface Props {
 
 const { title, breadcrumbs, description, og } = Astro.props;
 
-const menu = [
+const SHORT_MENU = [
   {
     title: "Characters",
     href: "/characters",
-  },
-  {
-    title: "Materials",
-    href: "/materials",
   },
   {
     title: "A Series of Dusks",
@@ -41,6 +37,45 @@ const menu = [
   {
     title: "Reveries in the Rain",
     href: "/reveries-in-the-rain",
+  },
+];
+
+const FULL_MENU = [
+  {
+    title: "Characters",
+    href: "/characters",
+  },
+  {
+    title: "Psychubes",
+    href: "/psychubes",
+  },
+  {
+    title: "Materials",
+    href: "/materials",
+  },
+  {
+    title: "Guides",
+    href: "/guides",
+  },
+  {
+    title: "A Series of Dusks",
+    href: "/a-series-of-dusks",
+  },
+  {
+    title: "Mane's Bulletin",
+    href: "/mane-bulletin",
+  },
+  {
+    title: "Reveries in the Rain",
+    href: "/reveries-in-the-rain",
+  },
+  {
+    title: "Effects",
+    href: "/effects",
+  },
+  {
+    title: "About",
+    href: "/about",
   },
 ];
 ---
@@ -121,7 +156,7 @@ const menu = [
             <ul class="menu menu-horizontal py-1 items-center">
               <!-- Navbar menu content here -->
               {
-                menu.map((item) => (
+                SHORT_MENU.map((item) => (
                   <li>
                     <a href={item.href}>{item.title}</a>
                   </li>
@@ -160,7 +195,7 @@ const menu = [
           <ul class="flex-1">
             <!-- Sidebar content here -->
             {
-              menu.map((item) => (
+              FULL_MENU.map((item) => (
                 <li>
                   <a href={item.href}>{item.title}</a>
                 </li>

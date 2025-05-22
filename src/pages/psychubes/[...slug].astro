@@ -1,0 +1,45 @@
+---
+import MarkdownContent from "@components/MarkdownContent.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import Layout from "@layouts/Layout.astro";
+import "@styles/markdown-layout.css";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const psychubeEntries = await getCollection("psychubes");
+  return psychubeEntries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout
+  title={`${entry.data.title} | Psychube`}
+  description={`${entry.data.title} is a psychube in Reverse: 1999.`}
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Psychubes",
+      href: "/psychubes",
+    },
+    {
+      label: entry.data.title,
+    },
+  ]}
+>
+  <Content
+    components={{
+      p: MarkdownContent,
+      strong: MarkdownHighlight,
+      em: MarkdownEmphasis,
+    }}
+  />
+</Layout>

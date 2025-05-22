@@ -1,13 +1,21 @@
 ---
+id: 1534
 title: "Stray Off the Path"
 rarity: 6
 code: "STRAY_OFF_THE_PATH"
-image: "stray-off-the-path.png"
+image: "1534.png"
+tags: ["ATK","CRITICAL"]
+stats: {"HP":2600,"ATTACK":380,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":150}
+specialStat: {"code":"CRITICAL_RATE","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    You want to find the lost lamb?<br />Search until night falls and the stars surround you,<br />Search until that milky scent lingers, until blood and bones cover the ground.<br />And when the darkness comes to close your eyes, when you hear that awful sound,<br />There'll be no lamb, no trace, and no you left to be found.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     After the carrier actively casts a 1-target incantation, their next extra action within the round gains Incantation Might **+12%**. After the carrier casts a 1-target incantation, the carrier gains Critical DMG **+6%** (stacks up to 3 times, removed after casting a mass incantation).
   </Fragment>

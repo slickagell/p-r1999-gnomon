@@ -1,13 +1,21 @@
 ---
+id: 1536
 title: "Transcendent Love"
 rarity: 6
 code: "TRANSCENDENT_LOVE"
-image: "transcendent-love.png"
+image: "1536.png"
+tags: ["ATK","CRITICAL"]
+stats: {"HP":2600,"ATTACK":390,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":150}
+specialStat: {"code":"ATTACK","enhances":{"0":{"value":4,"upToLevel":20},"1":{"value":6,"upToLevel":40},"2":{"value":8,"upToLevel":50},"3":{"value":10,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Everyone holds desires,<br />within their hearts, within their letters.<br />Please, grant me true affection beyond words and actions,<br />with that gentle smile, those rusted dreams.<br />I would live for this.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     When the carrier casts an incantation in the Channel status, the carrier gains Critical Rate **+2%** and Critical DMG **+2%**, stacks up to 4 times. When the carrier is bound to another ally, each time the carrier or the bound ally casts an incantation, both bound characters gain DMG Bonus **+0.8%**, stacks up to 10 times.
   </Fragment>

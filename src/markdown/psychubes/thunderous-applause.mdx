@@ -1,0 +1,38 @@
+---
+id: 1507
+title: "Thunderous Applause"
+rarity: 6
+code: "THUNDEROUS_APPLAUSE"
+image: "1507.png"
+tags: ["ATK","CRITICAL"]
+stats: {"HP":2200,"ATTACK":330,"REALITY_DEFENSE":180,"MENTAL_DEFENSE":170}
+specialStat: {"code":"CRITICAL_RATE","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Through the wind and the rain, her voice grows louder and louder,<br />Echoing within the limited space.<br />Further, higher, it never ceases to spread, NEVER.<br />Owning the audience and the theater, the queen remains on the stage,<br />Still seeing herself as the lord of the infinite universe.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    When the carrier's 1-target attack scores a critical hit, Critical DMG **+16%**.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    When the carrier's 1-target attack scores a critical hit, Critical DMG **+20%**.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    When the carrier's 1-target attack scores a critical hit, Critical DMG **+24%**.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    When the carrier's 1-target attack scores a critical hit, Critical DMG **+28%**.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    When the carrier's 1-target attack scores a critical hit, Critical DMG **+32%**.
+  </Fragment>
+</PsychubeContent>

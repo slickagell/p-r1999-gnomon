@@ -9,6 +9,49 @@ import { getEntry, render } from "astro:content";
 
 const whatsNewEntry = await getEntry("general", "whats-new")!;
 const { Content } = await render(whatsNewEntry);
+
+const MENU = [
+  {
+    title: "Characters",
+    desc: "Characters information",
+    href: "/characters",
+  },
+  {
+    title: "Psychubes",
+    desc: "Psychubes information",
+    href: "/psychubes",
+  },
+  {
+    title: "Materials",
+    desc: "Materials, craft and cheatsheet",
+    href: "/materials",
+  },
+  {
+    title: "Guides",
+    desc: "General guides",
+    href: "/guides",
+  },
+  {
+    title: "A Series of Dusks",
+    desc: "Roguelike gamemode",
+    href: "/a-series-of-dusks",
+  },
+  {
+    title: "Mane's Bulletin",
+    desc: "Raid event",
+    href: "/mane-bulletin",
+  },
+  {
+    title: "Reveries in the Rain",
+    desc: "Gamemode for farming Euphoria materials",
+    href: "/reveries-in-the-rain",
+  },
+  {
+    title: "Effects",
+    desc: "Common effects",
+    href: "/effects",
+  },
+];
 ---
 
 <Layout title="Reverse 1999 Gnomon">
@@ -59,62 +102,18 @@ const { Content } = await render(whatsNewEntry);
       </template>
     </div>
     <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <a href="/characters">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">Characters</h2>
-            <p>Characters information</p>
-          </div>
-        </div>
-      </a>
-      <a href="/materials">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">Materials</h2>
-            <p>Materials, craft and cheatsheet</p>
-          </div>
-        </div>
-      </a>
-      <a href="/guides">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">Guides</h2>
-            <p>General guides</p>
-          </div>
-        </div>
-      </a>
-      <a href="/a-series-of-dusks">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">A Series of Dusks</h2>
-            <p>Roguelike gamemode</p>
-          </div>
-        </div>
-      </a>
-      <a href="/mane-bulletin">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">Mane's Bulletin</h2>
-            <p>Raid event</p>
-          </div>
-        </div>
-      </a>
-      <a href="/reveries-in-the-rain">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">Reveries in the Rain</h2>
-            <p>Gamemode for farming Euphoria materials</p>
-          </div>
-        </div>
-      </a>
-      <a href="/effects">
-        <div class="card card-compact border border-primary">
-          <div class="card-body">
-            <h2 class="card-title">Effects</h2>
-            <p>Common effects</p>
-          </div>
-        </div>
-      </a>
+      {
+        MENU.map(({ title, desc, href }) => (
+          <a href={href}>
+            <div class="card card-compact border border-primary">
+              <div class="card-body">
+                <h2 class="card-title">{title}</h2>
+                <p>{desc}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </main>
 </Layout>

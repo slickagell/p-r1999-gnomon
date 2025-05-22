@@ -1,0 +1,38 @@
+---
+id: 1501
+title: "Brave New World"
+rarity: 6
+code: "BRAVE_NEW_WORLD"
+image: "1501.png"
+tags: ["ATK"]
+stats: {"HP":2200,"ATTACK":370,"REALITY_DEFENSE":200,"MENTAL_DEFENSE":150}
+specialStat: {"code":"ULTIMATE_MIGHT","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Adjusts the angle, tightens the ribbon, and smooths the wrinkles.<br />Rolls the cuffs without drawing attention, unrolls them, and rolls them again.<br />She looks at herself in the mirror,<br />And the gentle good night.<br />I am ready to offer everything I have, for the new world and its well-being.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    After the carrier casts an Ultimate, Incantation Might of the next incantation **+20%**.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    After the carrier casts an Ultimate, Incantation Might of the next incantation **+25%**.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    After the carrier casts the Ultimate, **+30%** Incantation Might to the next basic Incantation.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    After the carrier casts an Ultimate, Incantation Might of the next incantation **+35%**.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    After the carrier casts an Ultimate, Incantation Might of the next incantation **+40%**.
+  </Fragment>
+</PsychubeContent>

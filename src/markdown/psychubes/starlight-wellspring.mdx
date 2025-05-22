@@ -1,13 +1,21 @@
 ---
+id: 1532
 title: "Starlight Wellspring"
 rarity: 6
 code: "STARLIGHT_WELLSPRING"
-image: "starlight-wellspring.png"
+image: "1532.png"
+tags: ["ATK","CRITICAL"]
+stats: {"HP":2200,"ATTACK":380,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":170}
+specialStat: {"code":"ULTIMATE_MIGHT","enhances":{"0":{"value":12,"upToLevel":20},"1":{"value":14,"upToLevel":40},"2":{"value":16,"upToLevel":50},"3":{"value":18,"upToLevel":60}}}
 ---
 
 import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
 
-<PsychubeContent>
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Noise, lights, all thrown into the campfire;<br />Friendship, encounters, all folded into the tent.<br />Walk, walk,<br />Walk until morning arrives as promised—<br />The cold spring flows through every night, washing the dawn anew.
+  </Fragment>
+
   <Fragment slot="amplification-1-content">
     If the carrier has both *\[Stats Up]* and *\[Force Field]* at the same time, gain Critical Rate +12% when attacking. If the carrier is of the Primal Afflatus, each time after a mass buff incantation is cast, gain Incantation Might **+2.5%** and Ultimate Might **+2.5%**, stackable up to 4 times.
   </Fragment>
