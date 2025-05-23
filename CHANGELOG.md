@@ -1,3 +1,7 @@
+##### 2025-05-23
+
+* Add Recoleta infographic (thanks CTL team for the infographic)
+
 ##### 2025-05-22
 
 * Add Psychube list
