@@ -208,40 +208,42 @@ const mythManifestEntries = await getCollection(
 
 <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
   {
-    mythManifestEntries.map((mythManifest) => (
-      <a href={`/reveries-in-the-rain/${mythManifest.id}`}>
-        <div class="relative transition group max-w-80 mx-auto hover:-translate-y-2 aspect-[2/3]">
-          <div class="absolute z-20 -top-2 left-2 w-8">
-            <AfflatusIcon
-              type={mythManifest.data.afflatus as keyof typeof AFFLATUS_TYPE}
-            />
-          </div>
-          <div class="relative w-full h-full overflow-hidden">
-            <CustomImage
-              src={`/images/reveries-in-the-rain/card-bg.png`}
-              alt={mythManifest.data.title}
-              class="absolute top-0 left-0 w-full h-full object-cover opacity-75"
-            />
-            <div class="absolute top-0 left-0 w-full h-full bg-white/50 z-10" />
-            <CustomImage
-              src={`/images/reveries-in-the-rain/card-circle.png`}
-              alt={mythManifest.data.title}
-              class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[120%] z-10 max-w-max"
-            />
-            <p class="absolute z-20 top-0 h-[20%] left-0 right-0 px-4 flex justify-center items-center text-2xl font-medium text-center transition group-hover:text-primary text-black text-shadow shadow-white">
-              {mythManifest.data.title}
-            </p>
-            <div class="absolute z-20 top-[20%] -m-6 left-0 overflow-hidden">
-              <CustomImage
-                src={`/images/reveries-in-the-rain/${mythManifest.data.id}.png`}
-                alt={mythManifest.data.title}
-                class="w-full transition"
+    mythManifestEntries
+      .sort((a, b) => a.data.title.localeCompare(b.data.title))
+      .map((mythManifest) => (
+        <a href={`/reveries-in-the-rain/${mythManifest.id}`}>
+          <div class="relative transition group max-w-80 mx-auto hover:-translate-y-2 aspect-[2/3]">
+            <div class="absolute z-20 -top-2 left-2 w-8">
+              <AfflatusIcon
+                type={mythManifest.data.afflatus as keyof typeof AFFLATUS_TYPE}
               />
             </div>
+            <div class="relative w-full h-full overflow-hidden">
+              <CustomImage
+                src={`/images/reveries-in-the-rain/card-bg.png`}
+                alt={mythManifest.data.title}
+                class="absolute top-0 left-0 w-full h-full object-cover opacity-75"
+              />
+              <div class="absolute top-0 left-0 w-full h-full bg-white/50 z-10" />
+              <CustomImage
+                src={`/images/reveries-in-the-rain/card-circle.png`}
+                alt={mythManifest.data.title}
+                class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-[120%] z-10 max-w-max"
+              />
+              <p class="absolute z-20 top-0 h-[20%] left-0 right-0 px-4 flex justify-center items-center text-2xl font-medium text-center transition group-hover:text-primary text-black text-shadow shadow-white">
+                {mythManifest.data.title}
+              </p>
+              <div class="absolute z-20 top-[20%] -m-6 left-0 overflow-hidden">
+                <CustomImage
+                  src={`/images/reveries-in-the-rain/${mythManifest.data.id}.png`}
+                  alt={mythManifest.data.title}
+                  class="w-full transition"
+                />
+              </div>
+            </div>
           </div>
-        </div>
-      </a>
-    ))
+        </a>
+      ))
   }
 </div>
 

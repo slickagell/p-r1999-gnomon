@@ -1,3 +1,8 @@
+##### 2025-05-24
+
+* Add new Primitive Urge mindmap (thanks @penguin132 for the mindmap recommendation)
+* Fix typo errors
+
 ##### 2025-05-23
 
 * Add Recoleta infographic (thanks CTL team for the infographic)
