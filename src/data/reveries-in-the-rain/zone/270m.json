@@ -1,0 +1,44 @@
+{
+  "enemies": [
+    {
+      "id": "270m-0-0",
+      "gameId": "900027102",
+      "wave": 1,
+      "name": "Noisy Spirit",
+      "headIconId": "304601",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 402260,
+      "lv": "Insight III Level 34",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A",
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 100 }],
+      "skill1": { "name": "Prank", "cardId": "30460111" },
+      "skill2": { "name": "Whispering Words", "cardId": "30460121" },
+      "ultimate": { "name": "The Sun Is Not Gentle", "cardId": "30460131" }
+    },
+    {
+      "id": "270m-1-0",
+      "gameId": "900027101",
+      "wave": 1,
+      "name": "Videographer Spirit",
+      "headIconId": "304901",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 354935,
+      "lv": "Insight III Level 34",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A",
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 100 }],
+      "skill1": { "name": "The Onlooker", "cardId": "30490111" },
+      "skill2": { "name": "The Witness", "cardId": "30490121" },
+      "ultimate": { "name": "A Picture at a Price", "cardId": "30490131" }
+    }
+  ]
+}

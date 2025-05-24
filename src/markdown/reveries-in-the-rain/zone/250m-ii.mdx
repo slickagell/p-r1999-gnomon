@@ -2,8 +2,11 @@
 title: "Bathyal Zone 250M-II"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/250m-ii.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -19,6 +22,50 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} DMG Heal **+20%**.
 
     :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, suffer :effect{code="DISCONCERT"} for 2 rounds.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Carbuncle Reincarnation</span>
+
+          A massive Critter is sealed inside the box. When :effect{code="CARBUNCLE_REINCARNATION"} disappears, it appears and reverts to its original form.
+        </div>
+
+        <div x-show={`!['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Hard as Stone</span>
+
+          At the start of the round, if not in the :effect{code="STONE_SKIN_ID_223001"} status, enter the :effect{code="PETRIFY"} status for 1 round, then gain 3 stacks of :effect{code="STONE_SKIN_ID_223001"} and recover **15%** of Missing HP.
+
+          <span class="passive-title">Crack in the Stone</span>
+
+          After being attacked or after taking an action, lose 1 stack of :effect{code="STONE_SKIN_ID_223001"}; when being attacked while not in the :effect{code="STONE_SKIN_ID_223001"} status, Critical Resist Rate **-75%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`!['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **100%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`!['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **100%** Reality DMG to 2 enemies plus (own Reality DEF x**50%**) Genesis DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`!['${data.enemies[0].id}'].includes(active)`}>
+          1-target attack. Deals **400%** Reality DMG; on hit, inflicts :effect{code="DAZE"} for 1 round on the target and deals an additional (own Reality DEF x**150%**) Genesis DMG.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">

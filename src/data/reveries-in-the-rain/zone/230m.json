@@ -1,0 +1,46 @@
+{
+  "enemies": [
+    {
+      "id": "230m-0",
+      "wave": 1,
+      "name": "Knife-wielding Butcher",
+      "headIconId": "670301",
+      "dmgType": "REALITY",
+      "afflatus": "MINERAL",
+      "hp": 100483,
+      "lv": "Insight III Level 26",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "resistance": [
+        { "code": "SLEEP_RESISTANCE", "value": 100 },
+        { "code": "PETRIFY_RESISTANCE", "value": 100 },
+        { "code": "FREEZE_RESISTANCE", "value": 100 },
+        { "code": "DISARM_RESISTANCE", "value": 100 },
+        { "code": "SILENCE_RESISTANCE", "value": 100 },
+        { "code": "SEAL_RESISTANCE", "value": 100 },
+        { "code": "TACITURN_RESISTANCE", "value": 100 },
+        { "code": "CAPTIVATED_RESISTANCE", "value": 100 }
+      ],
+      "skill1": { "name": "Trepanation", "cardId": "2101" },
+      "skill2": { "name": "Carnal Hanging", "cardId": "2101" },
+      "ultimate": { "name": "Manic Syndrome", "cardId": "2104" }
+    },
+    {
+      "id": "230m-1",
+      "wave": 1,
+      "name": "Butcher's Bubble",
+      "headIconId": "690101",
+      "isBoss": true,
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
+      "hp": 406719,
+      "lv": "Insight III Level 26",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S"
+    }
+  ]
+}

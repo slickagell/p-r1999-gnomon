@@ -2,8 +2,11 @@
 title: "Bathyal Zone 250M-I"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/250m-i.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -18,6 +21,122 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} Healing Taken **30%**.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When attacking, if this unit is holding 2 or fewer types of negative statuses, inflict 1 stack of :effect{code="DREAD"} to the target.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Blood Thirst</span>
+
+          At the start of the round, gain 5 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Blood Thirst</span>
+
+          At the start of the round, gain 5 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Blood Thirst</span>
+
+          At the start of the round, gain 5 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}.
+
+          <span class="passive-title">Feral Instinct</span>
+
+          When entering battle, lose **30%** of current HP and gain Moxie +5.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Blood Thirst</span>
+
+          At the start of the round, gain 2 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}. If not already in the :effect{code="MORIBUND"} status, gain an additional stack of :effect{code="MORIBUND"}.
+
+          <span class="passive-title">Feral Instinct</span>
+
+          When entering battle, inflict permanent :effect{code="CHAOS"} on all enemies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Loses (Current HP x**10%**) HP and deals **220%** Reality DMG; this attack gains Leech Rate **+100%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Loses (Current HP x**10%**) HP and deals **320%** Reality DMG; this attack gains Leech Rate **+150%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Loses (Current HP x**10%**) HP and deals **220%** Reality DMG; this attack gains Leech Rate **+100%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Loses (Current HP x**10%**) HP and deals **320%** Reality DMG; this attack gains Leech Rate **+150%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Loses (Current HP x**10%**) HP and deals **220%** Reality DMG; this attack gains Leech Rate **+100%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Loses (Current HP x**10%**) HP and deals **320%** Reality DMG; this attack gains Leech Rate **+150%**.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target debuff. Inflicts 2 stacks of :effect{code="DREAD"} and 5 types of random negative statuses on the target; if the target is in the :effect{code="NIGHTMARE"} status, they immediately die.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Loses (Current HP x**10%**) HP and deals **150%** Reality DMG to 2 enemies. This attack gains Leech Rate **+100%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Loses (Current HP x**10%**) HP and deals **200%** Reality DMG to 2 enemies. This attack gains Leech Rate **+150%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Loses (Current HP x**10%**) HP and deals **150%** Reality DMG to 2 enemies. This attack gains Leech Rate **+100%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Loses (Current HP x**10%**) HP and deals **200%** Reality DMG to 2 enemies. This attack gains Leech Rate **+150%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants the :effect{code="FRESH_BLOOD"} status to all allies for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants the :effect{code="FRESH_BLOOD"} status to all allies for 3 rounds.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Self buff. Recovers (own Missing HP x**50%**) HP, then gains DMG Bonus **+30%**, DMG Taken Reduction **+30%**, DMG Heal **+30%**, Leech Rate **+30%**, and Penetration Rate **+30%** for 3 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Self buff. Recovers (own Missing HP x**50%**) HP, then gains DMG Bonus **+30%**, DMG Taken Reduction **+30%**, DMG Heal **+30%**, Leech Rate **+30%**, and Penetration Rate **+30%** for 3 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass buff. Creates a special array :effect{code="BLOOD_DOMAIN"} for 2 rounds. Enters the :effect{code="FERAL_INSTINCT"} status for 3 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies. On hit, inflicts permanent :effect{code="CHAOS"} on the targets; if a target is already in the :effect{code="CHAOS"} status, inflicts permanent :effect{code="TERROR"} on the target; if a target is already in the :effect{code="TERROR"} status, inflicts permanent :effect{code="NIGHTMARE"} on the target.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">
@@ -47,7 +166,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
   </Fragment>
 
   <Fragment slot="team-suggestion-section-title">
-    ## Team Suggestion
+    ## Team suggestion
   </Fragment>
 
   <Fragment slot="team-suggestion-dps">

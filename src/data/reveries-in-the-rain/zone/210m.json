@@ -1,0 +1,57 @@
+{
+  "enemies": [
+    {
+      "id": "210m-0",
+      "wave": 1,
+      "name": "Tooth Fairy Queen",
+      "headIconId": "620306",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 203583,
+      "lv": "Insight III Level 22",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A",
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 100 }],
+      "skill1": { "name": "Slingshot Prank", "cardId": "1201" },
+      "skill2": { "name": "Farewell Party to Boulders", "cardId": "1202" },
+      "ultimate": { "name": "Terrifying Trick", "cardId": "1204" }
+    },
+    {
+      "id": "210m-1",
+      "wave": 1,
+      "name": "Tooth Spirites",
+      "headIconId": "620118",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 75401,
+      "lv": "Insight III Level 22",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A",
+      "skill1": { "name": "Slingshot Prank", "cardId": "1201" },
+      "skill2": { "name": "Farewell Party to Boulders", "cardId": "1202" },
+      "ultimate": { "name": "Terrifying Trick", "cardId": "1204" }
+    },
+    {
+      "id": "210m-2",
+      "wave": 1,
+      "name": "Tooth Spirites",
+      "headIconId": "620118",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 75401,
+      "lv": "Insight III Level 22",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A",
+      "skill1": { "name": "Slingshot Prank", "cardId": "1201" },
+      "skill2": { "name": "Farewell Party to Boulders", "cardId": "1202" },
+      "ultimate": { "name": "Terrifying Trick", "cardId": "1204" }
+    }
+  ]
+}

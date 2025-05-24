@@ -1,9 +1,12 @@
 ---
-title: "Bathyal Zone 300M-II"
+title: "Bathyal Zone 300M-III"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -19,6 +22,44 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, all enemies gain Moxie +1.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Whenever being attacked, the attacker gets non-Stronger Afflatus Damage **-60%** for that attack.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Oath Bound</span>
+
+          When entering battle, gain Moxie +5. When attacked by a 1-target attack while in a *\[Channel]* status, this unit gets Moxie -1. When Horn and Tail Enveiled dies, this unit gets Moxie -5.
+
+          <span class="passive-title">For Survival's Sake</span>
+
+          At the start of the round, if HP is below **75%**/**50%**/**25%**, gain Moxie +2/5/10 and 5/7/10 stacks of :effect{code="UNSPARING"}, each effect triggers up to 1 time.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG to the leftmost enemy and inflicts 4 stacks of :effect{code="FLINCH"} on the target hit; when not in a *\[Channel]* status, deals an additional **150%** Mental DMG and recovers **6%** missing HP.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to all enemies and inflicts 2 stacks of :effect{code="FLINCH"} on the targets hit; when not in a *\[Channel]* status, deals an additional **100%** Mental DMG and recovers **6%** missing HP.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Self channel. Enters the channel status, summons Horn and Tail Enveiled to battle, and gains Moxie +10. Each round, consumes 2 Moxie to perform a mass attack that deals **400%** Mental DMG and inflicts 5 stacks of :effect{code="FLINCH"} on all enemies (the channel status is removed if there isn't enough Moxie; while in the channel status, Anjo Nala gains Max Moxie +5 and Control Immunity).
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">

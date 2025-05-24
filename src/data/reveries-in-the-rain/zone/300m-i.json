@@ -1,0 +1,61 @@
+{
+  "enemies": [
+    {
+      "id": "300m-i-0-0",
+      "gameId": "900030101",
+      "wave": 1,
+      "name": "Lord of Dream (Matrix)",
+      "headIconId": "680404",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "INTELLECT",
+      "hp": 277101,
+      "lv": "Insight III Level 40",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A+",
+      "resistance": [
+        { "code": "SEAL_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 100 }
+      ],
+      "skill1": { "name": "Fount of Malice", "cardId": "1701" },
+      "skill2": { "name": "Split Thought", "cardId": "1702" },
+      "ultimate": { "name": "Price of Immortality", "cardId": "1704" }
+    },
+    {
+      "id": "300m-i-1-0",
+      "gameId": "900030104",
+      "wave": 1,
+      "name": "Lord of Dream (Right Arm)",
+      "headIconId": "680402",
+      "dmgType": "MENTAL",
+      "afflatus": "INTELLECT",
+      "hp": 151146,
+      "lv": "Insight III Level 40",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A+",
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 100 }],
+      "skill1": { "name": "Disintegrating Thought", "cardId": "1702" }
+    },
+    {
+      "id": "300m-i-2-0",
+      "gameId": "900030103",
+      "wave": 1,
+      "name": "Lord of Dream (Left Arm)",
+      "headIconId": "680401",
+      "dmgType": "MENTAL",
+      "afflatus": "INTELLECT",
+      "hp": 151146,
+      "lv": "Insight III Level 40",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A+",
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 100 }],
+      "skill1": { "name": "Collapsing Will", "cardId": "1701" }
+    }
+  ]
+}

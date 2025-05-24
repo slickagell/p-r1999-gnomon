@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "400-iv-1",
+      "wave": 1,
       "name": "Suffering Converged Mind",
       "headIconId": "610402",
+      "isBoss": true,
       "dmgType": "MENTAL",
       "afflatus": "STAR",
       "hp": 1421023,

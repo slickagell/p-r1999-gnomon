@@ -2,6 +2,7 @@
   "enemies": [
     {
       "id": "330m-1",
+      "wave": 1,
       "name": "Positive Charge",
       "headIconId": "670102",
       "dmgType": "MENTAL",
@@ -27,6 +28,7 @@
     },
     {
       "id": "330m-2",
+      "wave": 1,
       "name": "Negative Charge",
       "headIconId": "670103",
       "dmgType": "MENTAL",
@@ -52,6 +54,7 @@
     },
     {
       "id": "330m-3",
+      "wave": 1,
       "name": "Positive Charge",
       "headIconId": "670102",
       "dmgType": "MENTAL",
@@ -77,6 +80,7 @@
     },
     {
       "id": "330m-4",
+      "wave": 1,
       "name": "Negative Charge",
       "headIconId": "670103",
       "dmgType": "MENTAL",

@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "350m-iii-1",
+      "wave": 1,
       "name": "Great Magician",
       "headIconId": "630207",
+      "isBoss": true,
       "dmgType": "MENTAL",
       "afflatus": "SPIRIT",
       "hp": 749485,
@@ -37,6 +39,7 @@
     },
     {
       "id": "350m-iii-2",
+      "wave": 1,
       "name": "Prop Armor",
       "headIconId": "690121",
       "dmgType": "REALITY",
@@ -72,6 +75,7 @@
     },
     {
       "id": "350m-iii-3",
+      "wave": 1,
       "name": "Prop Wand",
       "headIconId": "690122",
       "dmgType": "MENTAL",

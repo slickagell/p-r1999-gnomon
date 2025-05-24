@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "400m-iii-1",
+      "wave": 1,
       "name": "Servant of War",
       "headIconId": "640303",
+      "isBoss": true,
       "dmgType": "REALITY",
       "afflatus": "SPIRIT",
       "hp": 954719,
@@ -33,6 +35,7 @@
     },
     {
       "id": "400m-iii-2",
+      "wave": 1,
       "name": "First-aid Crate",
       "headIconId": "413701",
       "dmgType": "",
@@ -46,6 +49,7 @@
     },
     {
       "id": "400m-iii-3",
+      "wave": 1,
       "name": "Dynamo Robot",
       "headIconId": "670104",
       "dmgType": "",

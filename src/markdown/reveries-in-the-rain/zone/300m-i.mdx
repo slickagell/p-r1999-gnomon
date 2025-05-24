@@ -2,8 +2,11 @@
 title: "Bathyal Zone 300M-I"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/300m-i.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -18,6 +21,88 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} After casting a rank 1 attack or debuff incantation, gain 1 stack of :effect{code="ENERVATE"}.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} At the end of each round, ATK **+5%** (stackable).
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Price of Immortality</span>
+
+          When another ally dies, gain 4 stacks of :effect{code="UNSPARING"} and 4 stacks of :effect{code="WEAL"} for self.
+
+          <span class="passive-title">Sleep Wake Cycle</span>
+
+          When entering battle, suffer the :effect{code="SHACKLED_REBIRTH_ID_223001"} status for 3 rounds; after entering phase 2, purify :effect{code="SHACKLED_REBIRTH_ID_223001"} and all negative statuses from self and cast an ultimate, then summon 3 body parts (triggers only once).
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Disintegrating Thought</span>
+
+          When being attacked by a rank 3/2 incantation, DMG Taken **+40%**/**20%** for self.
+
+          <span class="passive-title">Sleep Wake Cycle</span>
+
+          When entering battle, suffer the :effect{code="SHACKLED_REBIRTH_ID_223001"} status for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Collapsing Will</span>
+
+          When being attacked by a rank 3/2 incantation, DMG Taken **+40%**/**20%** for self.
+
+          <span class="passive-title">Sleep Wake Cycle</span>
+
+          When entering battle, suffer the :effect{code="SHACKLED_REBIRTH_ID_223001"} status for 1 round.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **350%** Mental DMG; for each stack of :effect{code="MALICE"} on self, this attack deals an additional **150%** Mental DMG; after attacking, grants 3 random permanent effects from :effect{code="COLLECTION_OF_BUFFS_ID_223001"} to self.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **1500%** Mental DMG; after hit, inflicts :effect{code="DISARM"} and :effect{code="SILENCE"} for 1 round; on hit, inflicts 2 permanent effects from :effect{code="COLLECTION_OF_DEBUFFS_ID_223001"} on the target.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="ROUSING_MORALE"} for self; after attacking, grant 2 random permanent effects from :effect{code="COLLECTION_OF_BUFFS_ID_223001"} to self.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **200%** Mental DMG to all enemies; for each stack of :effect{code="REGRET"} on self, this attack deals an additional **100%** Mental DMG; inflict 2 random permanent effects from :effect{code="COLLECTION_OF_DEBUFFS_ID_223001"} on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Self buff. For each stack of :effect{code="ETERNAL_VIGOR"} on self, recovers (Max HP x**15%**) HP.
+
+          <br />
+
+          Absorbs other body parts, recovers (Max HP x**10%**) HP for each part absorbed.
+
+          <br />
+
+          After absorbing the left arm, gain 1 stack of :effect{code="MALICE_ID_223001"}.
+
+          <br />
+
+          After absorbing the right arm, gain 1 stack of :effect{code="REGRET_ID_223001"}.
+
+          <br />
+
+          After absorbing the core, gain 1 stack of :effect{code="ETERNAL_VIGOR"}.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">

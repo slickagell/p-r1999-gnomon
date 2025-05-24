@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "350m-ii-1",
+      "wave": 1,
       "name": "A Nightmare at Green Lake",
       "headIconId": "305601",
+      "isBoss": true,
       "dmgType": "REALITY",
       "afflatus": "STAR",
       "hp": 329719,
@@ -37,6 +39,7 @@
     },
     {
       "id": "350m-ii-2",
+      "wave": 1,
       "name": "Corpse of the Past",
       "headIconId": "670201",
       "dmgType": "REALITY",
@@ -72,6 +75,7 @@
     },
     {
       "id": "350m-ii-3",
+      "wave": 1,
       "name": "Corpse of the Past",
       "headIconId": "670201",
       "dmgType": "REALITY",

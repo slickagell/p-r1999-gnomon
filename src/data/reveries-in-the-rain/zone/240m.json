@@ -1,0 +1,22 @@
+{
+  "enemies": [
+    {
+      "id": "240m-0",
+      "wave": 1,
+      "name": "Suture",
+      "headIconId": "410201",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "BEAST",
+      "hp": 308551,
+      "lv": "Insight III Level 28",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "A",
+      "skill1": { "name": "Thought Melting", "cardId": "1201" },
+      "skill2": { "name": "Soul Spy", "cardId": "1202" },
+      "ultimate": { "name": "Happy Halloween", "cardId": "1204" }
+    }
+  ]
+}

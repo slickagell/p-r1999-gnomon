@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "380m-1",
+      "wave": 1,
       "name": "The Gang's Blossom",
       "headIconId": "304301",
+      "isBoss": true,
       "dmgType": "REALITY",
       "afflatus": "BEAST",
       "hp": 206179,
@@ -41,6 +43,7 @@
     },
     {
       "id": "380m-2",
+      "wave": 1,
       "name": "Smuggled Cannon",
       "headIconId": "670210",
       "dmgType": "REALITY",
@@ -66,6 +69,7 @@
     },
     {
       "id": "380m-3",
+      "wave": 1,
       "name": "Smuggled Cannon",
       "headIconId": "670210",
       "dmgType": "REALITY",
@@ -91,6 +95,7 @@
     },
     {
       "id": "380m-4",
+      "wave": 1,
       "name": "Smuggled Cannon",
       "headIconId": "670210",
       "dmgType": "REALITY",

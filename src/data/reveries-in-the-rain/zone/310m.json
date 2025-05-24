@@ -2,6 +2,7 @@
   "enemies": [
     {
       "id": "310m-1",
+      "wave": 1,
       "name": "Little Girl",
       "headIconId": "301601",
       "dmgType": "MENTAL",
@@ -27,6 +28,7 @@
     },
     {
       "id": "310m-2",
+      "wave": 1,
       "name": "Textile Artisan",
       "headIconId": "305701",
       "dmgType": "MENTAL",

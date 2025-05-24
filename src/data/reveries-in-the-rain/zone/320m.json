@@ -2,6 +2,7 @@
   "enemies": [
     {
       "id": "320m-1",
+      "wave": 1,
       "name": "Storage Bag?",
       "headIconId": "650201",
       "dmgType": "MENTAL",
@@ -27,6 +28,7 @@
     },
     {
       "id": "320m-2",
+      "wave": 1,
       "name": "Storage Bag?",
       "headIconId": "650201",
       "dmgType": "MENTAL",
@@ -52,6 +54,7 @@
     },
     {
       "id": "320m-3",
+      "wave": 1,
       "name": "Storage Bag?",
       "headIconId": "650201",
       "dmgType": "MENTAL",
@@ -77,6 +80,7 @@
     },
     {
       "id": "320m-4",
+      "wave": 1,
       "name": "Storage Bag?",
       "headIconId": "650201",
       "dmgType": "MENTAL",

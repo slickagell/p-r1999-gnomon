@@ -2,6 +2,7 @@
   "enemies": [
     {
       "id": "360m-1",
+      "wave": 1,
       "name": "Shiva Statue",
       "headIconId": "670304",
       "dmgType": "MENTAL",
@@ -27,6 +28,7 @@
     },
     {
       "id": "360m-2",
+      "wave": 1,
       "name": "Ravana Statue",
       "headIconId": "670305",
       "dmgType": "MENTAL",

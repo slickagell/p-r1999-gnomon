@@ -46,7 +46,7 @@ const { Content } = await render(effectEntry);
     <div class="flex justify-between items-center gap-1 mb-1">
       <p class="font-bold">{effectEntry.data.title}</p>
       {
-        !["UNKNOWN", "DEFINITION", "GENERAL"].includes(
+        !["UNKNOWN", "DEFINITION", "GENERAL", "PASSIVE"].includes(
           effectEntry.data.type
         ) && (
           <p class="badge badge-neutral shrink-0">

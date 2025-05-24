@@ -1,6 +1,7 @@
 ##### 2025-05-24
 
 * Add new Primitive Urge mindmap (thanks @penguin132 for the mindmap recommendation)
+* Add enemy info for Bathyal zone (210-300M) in Reveries
 * Fix typo errors
 
 ##### 2025-05-23

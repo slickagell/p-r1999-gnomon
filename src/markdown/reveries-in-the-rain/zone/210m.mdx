@@ -2,7 +2,11 @@
 title: "Bathyal Zone 210M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/210m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,111 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle and at the start of every 2 rounds, gain a Shield with (own Max HP x**20%**) for 2 rounds.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Teething</span>
+
+          Every 2 rounds, at the start of the round, gains 1 stack of :effect{code="STURDINESS"}. When there are other allies on the battlefield, gains 1 additional stack of :effect{code="STURDINESS"}.
+
+          <span class="passive-title">Manic Chase</span>
+
+          When a round ends, gives other allies 1 stack of :effect{code="GROWTH"}.
+
+          <span class="passive-title">Tooth Fairy Summoning</span>
+
+          At the end of the round, if HP is lower than **75%**/**50%**/**25%**, a Tooth Spirit is summoned. (When there are 2 Tooth Spirits on the field, Tooth Spirits will no longer be summoned. Can only trigger 1 time.)
+
+          <span class="passive-title">Continuous Action I</span>
+
+          AP +1
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Prankster at Heart</span>
+
+          Gains :effect{code="NEVER_ENDING_RIOT"} at the start of each round. After taking damage of a stronger Afflatus or critical damage 3 times, removes :effect{code="NEVER_ENDING_RIOT"}.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Prankster at Heart</span>
+
+          Gains :effect{code="NEVER_ENDING_RIOT"} at the start of each round. After taking damage of a stronger Afflatus or critical damage 3 times, removes :effect{code="NEVER_ENDING_RIOT"}.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the target.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the target.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies and grants 1 stack of :effect{code="GROWTH"} to all allies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies. Targets afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* take an additional **100%** Mental DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies. Targets afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* take an additional **100%** Mental DMG.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

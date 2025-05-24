@@ -10,7 +10,9 @@ type StatRate = "SS" | "S" | "A+" | "A" | "B+" | "B" | "C+" | "C";
 
 type EnemyData = {
   id: string;
+  wave: number;
   headIconId: string;
+  isBoss: boolean
   name: string;
   afflatus: string;
   hp: number;
@@ -42,27 +44,47 @@ interface Props {
 }
 
 const { enemies } = Astro.props;
+
+const enemyGroups = enemies.reduce((acc, enemy) => {
+  const wave = enemy.wave;
+  if (!acc[wave]) {
+    acc[wave] = [];
+  }
+  acc[wave].push(enemy);
+  return acc;
+}, {} as Record<number, EnemyData[]>);
+
 ---
 
 <div class="mt-4" x-data="dataset">
-    <div class="flex flex-wrap gap-4">
+    <div class="flex flex-col gap-4">
         {
-        enemies.map((enemy, idx) => (
-            <button
-            class="w-16 border border-primary-content/50 rounded-full relative"
-            @click={`handleChangeActive('${enemy.id}', ${idx})`}
-            :class={`(active === '${enemy.id}') && '!border-primary'`}
-            >
-            <CustomImage
-                class="rounded-full overflow-hidden"
-                src={`/images/enemies/headicon/${enemy.headIconId}.png`}
-                alt={enemy.name + " head icon"}
-            />
-            <div class="absolute w-4 -bottom-2 right-0">
-                <AfflatusIcon type={enemy.afflatus as keyof typeof AFFLATUS_TYPE} />
+          Object.entries(enemyGroups).map(([group,enemies], idx) => (
+            <div class="flex gap-4">
+              <p class="text-primary-content shrink-0">No. <span class="text-xl">{group}</span></p>
+              <div class="flex flex-wrap gap-4 items-end">
+                {enemies.map((enemy) => (
+                  <div class="flex flex-col items-center">
+                    {enemy.isBoss && <Icon icon="crown" customClass="text-error" />}
+                    <button
+                    class="w-16 border border-primary-content/50 rounded-full relative"
+                    @click={`handleChangeActive('${enemy.id}')`}
+                    :class={`(active === '${enemy.id}') && '!border-primary'`}
+                    >
+                    <CustomImage
+                        class="rounded-full overflow-hidden"
+                        src={`/images/enemies/headicon/${enemy.headIconId}.png`}
+                        alt={enemy.name + " head icon"}
+                    />
+                    <div class="absolute w-4 -bottom-2 right-0">
+                        <AfflatusIcon type={enemy.afflatus as keyof typeof AFFLATUS_TYPE} />
+                    </div>
+                    </button>
+                  </div>
+                ))}
+              </div>
             </div>
-            </button>
-        ))
+          ))
         }
     </div>
     <template x-if="activeEnemy">
@@ -91,27 +113,29 @@ const { enemies } = Astro.props;
                     <span class="font-medium text-primary-content" x-text="activeEnemy?.mentalDefRate"></span>
                 </div>
             </div>
-            <div x-show="activeEnemy?.resistance" class="mt-4 border border-error/50 p-2">
-              <p class="font-medium text-error">Resistance</p>
-              <div class="mt-2 flex flex-wrap gap-x-10 gap-y-2">
-                {Object.entries(RESISTANCE).map(([code, resistance]) => (
-                  <div x-data={`{ resistance: activeEnemy?.resistance.find((r) => r.code === '${code}') }`} x-show={"resistance"} class="flex gap-4">
-                    <div class="flex gap-1 items-center">
-                      {resistance.title} 
-                      <Tooltip>
-                        <div slot="toggle" class="text-base-content">
-                          <Icon icon="info-circle" customClass="w-4 h-4" />
-                        </div>
-                        <div>
-                          {resistance.description} 
-                        </div>
-                      </Tooltip>
+            <template x-if="activeEnemy?.resistance">
+              <div class="mt-4 border border-error/50 p-2">
+                <p class="font-medium text-error">Resistance</p>
+                <div class="mt-2 flex flex-wrap gap-x-10 gap-y-2">
+                  {Object.entries(RESISTANCE).map(([code, resistance]) => (
+                    <div x-data={`{ resistance: activeEnemy?.resistance?.find((r) => r.code === '${code}') }`} x-show={"resistance"} class="flex gap-4">
+                      <div class="flex gap-1 items-center">
+                        {resistance.title} 
+                        <Tooltip>
+                          <div slot="toggle" class="text-base-content">
+                            <Icon icon="info-circle" customClass="w-4 h-4" />
+                          </div>
+                          <div>
+                            {resistance.description} 
+                          </div>
+                        </Tooltip>
+                      </div>
+                      <span class="font-medium text-primary" x-text="resistance?.value + '%'"></span>
                     </div>
-                    <span class="font-medium text-primary" x-text="resistance?.value + '%'"></span>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </template>
             <div class="mt-4">
                 <slot name="passive-info" />
             </div>
@@ -171,12 +195,15 @@ const { enemies } = Astro.props;
 
 <script>
   import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
 
   Alpine.data("dataset", () => ({
     active: '',
     activeEnemy: null,
 
-    handleChangeActive(activeId, idx) {
+    handleChangeActive(activeId) {
       if (this.active === activeId) {
         this.active = '';
         this.activeEnemy = null;
@@ -184,7 +211,7 @@ const { enemies } = Astro.props;
       }
 
       this.active = activeId;
-      this.activeEnemy = this.$store.zone.enemies[idx];
+      this.activeEnemy = this.$store.zone.enemies.find((enemy) => enemy.id === activeId);
     }
   }));
 </script>

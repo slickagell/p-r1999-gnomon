@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "340m-1",
+      "wave": 1,
       "name": "Yateveo",
       "headIconId": "422701",
+      "isBoss": true,
       "dmgType": "REALITY",
       "afflatus": "PLANT",
       "hp": 259146,
@@ -27,6 +29,7 @@
     },
     {
       "id": "340m-2",
+      "wave": 1,
       "name": "Hounding Statue",
       "headIconId": "422402",
       "dmgType": "REALITY",
@@ -52,6 +55,7 @@
     },
     {
       "id": "340m-3",
+      "wave": 1,
       "name": "Preying Statue",
       "headIconId": "422401",
       "dmgType": "REALITY",
@@ -77,6 +81,7 @@
     },
     {
       "id": "340m-4",
+      "wave": 1,
       "name": "Hounding Statue",
       "headIconId": "422402",
       "dmgType": "REALITY",
@@ -102,6 +107,7 @@
     },
     {
       "id": "340m-5",
+      "wave": 1,
       "name": "Preying Statue",
       "headIconId": "422401",
       "dmgType": "REALITY",
@@ -127,6 +133,7 @@
     },
     {
       "id": "340m-6",
+      "wave": 1,
       "name": "Hounding Statue",
       "headIconId": "422402",
       "dmgType": "REALITY",
@@ -152,6 +159,7 @@
     },
     {
       "id": "340m-7",
+      "wave": 1,
       "name": "Preying Statue",
       "headIconId": "422401",
       "dmgType": "REALITY",

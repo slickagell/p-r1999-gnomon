@@ -2,7 +2,11 @@
 title: "Bathyal Zone 260M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/260m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,151 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, all allies get 2 stacks of :effect{code="SLUGGISH"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">United as One</span>
+
+          When the caster dies, Moxie +1 for all allies.
+
+          <span class="passive-title">Frostbound Pulse</span>
+
+          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">United as One</span>
+
+          When the caster dies, Moxie +1 for all allies.
+
+          <span class="passive-title">Frostbound Pulse</span>
+
+          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">United as One</span>
+
+          When the caster dies, Moxie +1 for all allies.
+
+          <span class="passive-title">Frostbound Pulse</span>
+
+          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">United as One</span>
+
+          When the caster dies, Moxie +1 for all allies.
+
+          <span class="passive-title">Frostbound Pulse</span>
+
+          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <span class="passive-title">Spider Den</span>
+
+          All damage taken is fixed at 1. At the end of the round, summons 2 spiders (up to a maximum of 4 spiders).
+
+          <span class="passive-title">Den Revamp</span>
+
+          At the start of the round, for each spider on the field, this unit recovers 3 HP; when another ally dies, this unit loses 1 HP, repeating twice.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **50%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **75%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **50%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **75%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **50%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **75%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **50%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **75%** more Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **275%** Reality DMG to all enemies and HP +(this attack's DMG Dealt x**40%**) for the caster.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **275%** Reality DMG to all enemies and HP +(this attack's DMG Dealt x**40%**) for the caster.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **275%** Reality DMG to all enemies and HP +(this attack's DMG Dealt x**40%**) for the caster.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **275%** Reality DMG to all enemies and HP +(this attack's DMG Dealt x**40%**) for the caster.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

@@ -2,6 +2,7 @@
   "enemies": [
     {
       "id": "370m-1",
+      "wave": 1,
       "name": "\"Supreme Steed\"",
       "headIconId": "305001",
       "dmgType": "MENTAL",
@@ -27,6 +28,7 @@
     },
     {
       "id": "370m-2",
+      "wave": 1,
       "name": "Gallant Knight",
       "headIconId": "310601",
       "dmgType": "MENTAL",
@@ -58,6 +60,7 @@
     },
     {
       "id": "370m-3",
+      "wave": 1,
       "name": "The Knight's \"Wand\"",
       "headIconId": "310101",
       "dmgType": "REALITY",
@@ -83,6 +86,7 @@
     },
     {
       "id": "370m-4",
+      "wave": 1,
       "name": "The Knight's \"Blade\"",
       "headIconId": "300701",
       "dmgType": "REALITY",

@@ -1,0 +1,81 @@
+{
+  "enemies": [
+    {
+      "id": "300m-ii-0-0",
+      "gameId": "900030202",
+      "wave": 1,
+      "name": "Beast·Carbuncle",
+      "headIconId": "410101",
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 40305,
+      "lv": "Insight III Level 40",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "F",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "skill1": { "name": "Terrifying Scream", "cardId": "1201" },
+      "skill2": { "name": "Corrosive Smoke", "cardId": "1202" },
+      "ultimate": { "name": "Burst of Powder: Twine", "cardId": "1204" }
+    },
+    {
+      "id": "300m-ii-1-0",
+      "gameId": "900030203",
+      "wave": 1,
+      "name": "Green Lake Carbuncle",
+      "headIconId": "620105",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 38712,
+      "lv": "Insight III Level 40",
+      "atkRate": "B",
+      "criticalTechniqueRate": "F",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "skill1": { "name": "Stammering Stench", "cardId": "1201" },
+      "skill2": { "name": "Twinkling Eyeball", "cardId": "1202" },
+      "ultimate": { "name": "Siphon Dust and Stinky Stink", "cardId": "1204" }
+    },
+    {
+      "id": "300m-ii-2-0",
+      "gameId": "900030204",
+      "wave": 1,
+      "name": "Cacti",
+      "headIconId": "412501",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 34411,
+      "lv": "Insight III Level 40",
+      "atkRate": "B",
+      "criticalTechniqueRate": "F",
+      "realityDefRate": "SS",
+      "mentalDefRate": "F",
+      "skill1": { "name": "Many Plants", "cardId": "1202" },
+      "skill2": { "name": "Many Rain", "cardId": "1203" },
+      "ultimate": { "name": "Prankster's Noise", "cardId": "1204" }
+    },
+    {
+      "id": "300m-ii-3-0",
+      "gameId": "900030201",
+      "wave": 1,
+      "name": "Hopeless Drifter",
+      "headIconId": "300304",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "PLANT",
+      "hp": 232276,
+      "lv": "Insight III Level 40",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "A",
+      "mentalDefRate": "SS",
+      "resistance": [
+        { "code": "PETRIFY_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 100 }
+      ],
+      "skill1": { "name": "The Wind Stop Here", "cardId": "1301" },
+      "skill2": { "name": "Arboreal Reinforcement", "cardId": "1302" },
+      "ultimate": { "name": "Cacophony down the Moon", "cardId": "1304" }
+    }
+  ]
+}

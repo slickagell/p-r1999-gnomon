@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "350m-i-1",
+      "wave": 1,
       "name": "Mysterious Feather Man",
       "headIconId": "308401",
+      "isBoss": true,
       "dmgType": "MENTAL",
       "afflatus": "BEAST",
       "hp": 1133381,

@@ -2,8 +2,11 @@
 title: "Bathyal Zone 280M"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/280m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,6 +17,56 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} After being attacked, inflict 3 stacks of :effect{code="POLLUTION"} on the attacker for 2 rounds.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div>
+          <span class="passive-title">Racial Talent II</span>
+
+          Mass DMG Taken **-50%**. 1-target DMG Taken **+50%**.
+
+          <span class="passive-title">Cluster Effect</span>
+
+          When entering battle, grants DMG Dealt **+20%** to other allies (stackable, undispellable). On death, this effect is lost.
+
+          <span class="passive-title">Travel Companions II</span>
+
+          At the end of the round, If HP is below **40%**, summons 1 bird. (Can only trigger 2 times. Up to 4 birds can exist at the same time.)
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div>
+          Mass attack. Deals **200%** Reality DMG to all enemies. Targets afflicted with :effect{code="POLLUTION"} take an additional **200%** Reality DMG.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">

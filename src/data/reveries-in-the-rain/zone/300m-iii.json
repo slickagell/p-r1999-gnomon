@@ -1,0 +1,32 @@
+{
+  "enemies": [
+    {
+      "id": "300m-iii-0-0",
+      "gameId": "900025102",
+      "wave": 1,
+      "name": "Anjo Nala",
+      "headIconId": "310001",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "BEAST",
+      "hp": 650878,
+      "lv": "Insight III Level 40",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "resistance": [
+        { "code": "CONTROL_RESILIENCE", "value": 100 },
+        { "code": "DAZE_RESISTANCE", "value": 100 },
+        { "code": "SLEEP_RESISTANCE", "value": 100 },
+        { "code": "PETRIFY_RESISTANCE", "value": 100 },
+        { "code": "FREEZE_RESISTANCE", "value": 100 },
+        { "code": "SEAL_RESISTANCE", "value": 100 },
+        { "code": "CAPTIVATED_RESISTANCE", "value": 100 }
+      ],
+      "skill1": { "name": "Feast of Lust", "cardId": "31000111" },
+      "skill2": { "name": "Angel's Temptation", "cardId": "31000121" },
+      "ultimate": { "name": "Interwoven Dreams", "cardId": "31000131" }
+    }
+  ]
+}

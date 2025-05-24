@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "400-i-1",
+      "wave": 1,
       "name": "Arcanum Device No. 0623Y",
       "headIconId": "690108",
+      "isBoss": true,
       "dmgType": "MENTAL",
       "afflatus": "MINERAL",
       "hp": 834436,
@@ -21,8 +23,10 @@
     },
     {
       "id": "400-i-2",
+      "wave": 1,
       "name": "Arcanum Device No. 0987X",
       "headIconId": "690107",
+      "isBoss": true,
       "dmgType": "REALITY",
       "afflatus": "MINERAL",
       "hp": 956390,
@@ -40,6 +44,7 @@
     },
     {
       "id": "400-i-3",
+      "wave": 1,
       "name": "Guardian Spirit",
       "headIconId": "670107",
       "dmgType": "",

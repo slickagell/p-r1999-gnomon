@@ -2,8 +2,11 @@
 title: "Bathyal Zone 300M-II"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -19,6 +22,110 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gains a Shield with (Max HP x**50%**) for 2 rounds.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} After taking a 1-target attack, gain 1 stack of :effect{code="STURDINESS"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Goofball</span>
+
+          At the end of the round, gain 5 stacks of :effect{code="UNSPARING"} for self.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Goofball</span>
+
+          After death, inflict 5 stacks of :effect{code="POLLUTION"} on all enemies for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Goofball</span>
+
+          At the end of the round, gains 3 stacks of :effect{code="THORNY"}.
+
+          <span class="passive-title">Highly Combustible</span>
+
+          When being attacked, for each stack of :effect{code="BURN"} on self, DMG Taken **+2%**.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Caller</span>
+
+          At the end of the round, if there are no other allies present, randomly summon 3 different Carbuncles; when in phase 2, summon even stronger Carbuncles.
+
+          <span class="passive-title">Arrival of Silence</span>
+
+          At the end of each round, purify *\[Control]* statuses from self and inflict :effect{code="PETRIFY"} status on a random enemy for 2 rounds; when :effect{code="PETRIFY"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
+
+          <span class="passive-title">Among the Woods</span>
+
+          When :effect{code="PETRIFY"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
+
+          <span class="passive-title">Photosynthesis</span>
+
+          After entering battle, enter the :effect{code="PHOTOSYNTHESIS_ID_223001"} status for 2 rounds; after casting an ultimate, enter the :effect{code="PHOTOSYNTHESIS_ID_223001"} status again for 2 rounds; after casting an ultimate, get Max Moxie and Moxie Consumption -3 (triggers up to 2 times).
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **25%** Mental DMG. Inflicts 4 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **100%** Mental DMG to 2 enemies; gain 2 stacks of :effect{code="THORNY"} for self.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. Inflicts 1 stack of :effect{code="RIGIDITY"} on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **25%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{code="POLLUTION"} for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{code="TAUNT"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 3 stacks of :effect{code="UNSPARING"}, 3 stacks of :effect{code="LUCKY"}, and 3 stacks of :effect{code="GLEAN"} to all allies; other allies gain an additional 3 stacks of :effect{code="UNSPARING"}, 3 stacks of :effect{code="LUCKY"}, and 3 stacks of :effect{code="GLEAN"}.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **350%** Mental DMG to all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **50%** Mental DMG to all enemies. On hit, inflicts 4 stacks of :effect{code="POLLUTION"} on all enemies for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **100%** Mental DMG to all enemies. Recovers (Max HP x**20%**) HP. Grants 2 stacks of :effect{code="THORNY"} to self.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **400%** Mental DMG to all enemies, extends the duration of :effect{code="PETRIFY"} status on the target by 1 round; on hit, inflicts 1 stack of :effect{code="RIGIDITY"} on all enemies.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">

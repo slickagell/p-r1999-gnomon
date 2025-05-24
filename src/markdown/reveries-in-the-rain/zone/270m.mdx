@@ -2,7 +2,11 @@
 title: "Bathyal Zone 270M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/270m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -13,5 +17,97 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When taking Reality DMG, Critical Resist Rate **+100%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Good Girl</span>
+
+          When the caster enters battle, enters :effect{code="CONCEALMENT"} status for 2 rounds (only triggers 1 time).
+
+          <span class="passive-title">Good Girl Ⅱ</span>
+
+          When entering battle, DMG Heal **+10%**.
+
+          <span class="passive-title">Spirit Form</span>
+
+          Immune to :effect{code="BLEED"}, :effect{code="CORRODE"}, :effect{code="POISON"}, :effect{code="BURN"}, and :effect{code="POLLUTION"}. For each type of negative status held, gain DMG Dealt **+20%** and DMG Taken **-20%**.
+
+          <span class="passive-title">Continuous Action I</span>
+
+          AP +1
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">New Photography Theory</span>
+
+          At the beginning of every 2 rounds, enters :effect{code="LENS_CAP"} status for 1 round.
+
+          <span class="passive-title">New Photography Theory III</span>
+
+          When the caster is in :effect{code="LENS_CAP"} status, Penetration Rate **+30%**.
+
+          <span class="passive-title">Spirit Form</span>
+
+          Immune to :effect{code="BLEED"}, :effect{code="CORRODE"}, :effect{code="POISON"}, :effect{code="BURN"}, and :effect{code="POLLUTION"}. For each type of negative status held, gain DMG Dealt **+20%** and DMG Taken **-20%**.
+
+          <span class="passive-title">Continuous Action I</span>
+
+          AP +1
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. Inflicts Mental DEF **-25%** for 2 rounds on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Mental DMG. Inflicts Moxie -1 on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Self counter. Enters :effect{code="TAUNT"}: DMG Taken **-20%** and DMG Heal **+20%** for 3 rounds. Also enters :effect{code="CONCEALMENT"} for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies. Other allies enter :effect{code="LENS_CAP"} status for 1 round.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

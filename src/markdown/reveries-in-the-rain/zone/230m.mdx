@@ -2,8 +2,11 @@
 title: "Bathyal Zone 230M"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/230m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -17,6 +20,66 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} At the start of every 2 rounds, purify all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from all allies.
   </Fragment>
 
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Ephemeral Dawn</span>
+
+          When taking fatal damage, restores **100%** of Max HP and gain 1 stack of :effect{code="FROM_THE_GRAVE"}, enter the :effect{code="DAZE"} state for 1 round.
+
+          <span class="passive-title">Silent Vengeance</span>
+
+          At the end of the round, gains 2 stacks of :effect{code="BLOODY_HUNT"}. If not attacked this round, gains an additional 2 Moxie and 1 stack of :effect{code="ROUSING_MORALE"}.
+
+          <span class="passive-title">Rotten Meat Block</span>
+
+          After casting an ultimate, enter the :effect{code="TAUNT"} status for 1 round; after attacking while in the :effect{code="TAUNT"} status, inflict :effect{code="NASTY_WOUND"} on the targets for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">The Butcher's Nightmare</span>
+
+          When attacked, the Butcher gains 1 Moxie and a stack of :effect{code="ROUSING_MORALE"}. Once defeated, the Butcher leaves the battlefield.
+
+          <span class="passive-title">"No Survivors"</span>
+
+          At the end of the round, if own HP is below **75%**/**50%**/**25%**, gain AP +1/2/3 on the next round.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 2 rounds on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **175%** Reality DMG. Targets afflicted with *\[Neg Status]* take an additional **30%** damage.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **225%** Reality DMG. Targets afflicted with *\[Neg Status]* take an additional **30%** damage.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          1-target attack. Deals **450%** Reality DMG and gains 2 stacks of :effect{code="BLOODY_HUNT"}.
+        </div>
+      </Fragment>
+    </EnemyInfo>
+  </Fragment>
+
   <Fragment slot="stage-info-title">
     ## Stage info
   </Fragment>
@@ -27,7 +90,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
-    ## Strategy and tips
+    ## Strategy and Tips
   </Fragment>
 
   <Fragment slot="strategy-and-tips-content">
@@ -39,7 +102,7 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
   </Fragment>
 
   <Fragment slot="team-suggestion-section-title">
-    ## Team Suggestion
+    ## Team suggestion
   </Fragment>
 
   <Fragment slot="team-suggestion-dps">

@@ -2,8 +2,10 @@
   "enemies": [
     {
       "id": "400m-ii-1",
+      "wave": 1,
       "name": "\"Razor\" Captain",
       "headIconId": "640302",
+      "isBoss": true,
       "dmgType": "REALITY",
       "afflatus": "BEAST",
       "hp": 1438200,
@@ -57,6 +59,7 @@
     },
     {
       "id": "400m-ii-2",
+      "wave": 1,
       "name": "Razor's \"Phantom\"",
       "headIconId": "640302",
       "dmgType": "REALITY",

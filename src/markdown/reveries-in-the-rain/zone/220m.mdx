@@ -2,7 +2,11 @@
 title: "Bathyal Zone 220M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/220m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -13,5 +17,119 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} On death, deal (the attacker's ATK x**200%**) Genesis DMG to all enemies.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Noxious</span>
+
+          After attacking, inflict 1 stack of :effect{code="POLLUTION"} on the target for 1 round. On death, dispel :effect{code="POLLUTION"} on all enemies.
+
+          <span class="passive-title">Rancid Proliferation</span>
+
+          Increases :effect{code="POLLUTION"} duration by 1 round.
+
+          <span class="passive-title">Will of the Unliving</span>
+
+          When an ally dies, recover (Missing HP x**20%**) HP for self.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Intense Vendetta</span>
+
+          When taking fatal damage for the first time, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* from self, and gains :effect{code="IMMUNITY"} this round, recovering **100%** of Max HP, then attacks a random enemy target 1 time.
+
+          <span class="passive-title">Corrupted Gift II</span>
+
+          When attacking, if the caster's HP is less than **30%**, additionally inflicts 1 stack of :effect{code="POLLUTION"}. Lasts 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Tomb of the Living Dead</span>
+
+          When an ally leaves the battlefield, summons a Living Dead.
+
+          <span class="passive-title">Tremor</span>
+
+          When allies use Ultimates, gains 2 Moxie. At the end of the round, other allied characters gain 2 Moxie.
+
+          <span class="passive-title">Rancid Proliferation II</span>
+
+          When casting an Ultimate, inflicts 1 stack of :effect{code="POLLUTION"} for every stack of :effect{code="POLLUTION"} on the enemy. When attacked by an enemy, for every stack of :effect{code="POLLUTION"} they are afflicted with, the damage dealt by this attack is reduced by **5%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Mental DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts DMG Taken **+20%** for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. Inflicts DMG Taken **+20%** for 1 round on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the caster's HP is lower than **50%**, deals an additional **50%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If the caster's HP is lower than **50%**, deals an additional **50%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          1-target attack. Deals **500%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies. After attacking, inflicts 2 stacks of :effect{code="SCARED"} on the targets.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>
