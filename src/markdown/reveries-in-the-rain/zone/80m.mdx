@@ -2,7 +2,11 @@
 title: "Euphotic Zone 80M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/80m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,47 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} Healing Taken **-15%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div>
+          <span class="passive-title">Nibble</span>
+
+          When attacking, inflicts 1 stack of :effect{code="EROSION"} on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. Inflicts Reality DEF and Mental DEF **-20%** for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **240%** Reality DMG. Inflicts Reality DEF and Mental DEF **-30%** for 1 round on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div>
+          Mass attack. Deals **280%** Reality DMG to all enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Penetration Rate **+50%**.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

@@ -1,0 +1,58 @@
+{
+  "enemies": [
+    {
+      "id": "100m-i-0-0",
+      "gameId": "900010101",
+      "wave": 1,
+      "name": "Olitiau",
+      "headIconId": "610205",
+      "dmgType": "REALITY",
+      "afflatus": "MINERAL",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Scout", "cardId": "1201" },
+      "skill2": { "name": "Survey", "cardId": "1202" },
+      "ultimate": { "name": "Pacifist", "cardId": "1204" }
+    },
+    {
+      "id": "100m-i-1-0",
+      "gameId": "900010101",
+      "wave": 1,
+      "name": "Olitiau",
+      "headIconId": "610205",
+      "dmgType": "REALITY",
+      "afflatus": "MINERAL",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Scout", "cardId": "1201" },
+      "skill2": { "name": "Survey", "cardId": "1202" },
+      "ultimate": { "name": "Pacifist", "cardId": "1204" }
+    },
+    {
+      "id": "100m-i-2-0",
+      "gameId": "900010101",
+      "wave": 1,
+      "name": "Olitiau",
+      "headIconId": "610205",
+      "dmgType": "REALITY",
+      "afflatus": "MINERAL",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Scout", "cardId": "1201" },
+      "skill2": { "name": "Survey", "cardId": "1202" },
+      "ultimate": { "name": "Pacifist", "cardId": "1204" }
+    }
+  ]
+}

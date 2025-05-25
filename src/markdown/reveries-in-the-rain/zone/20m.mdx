@@ -3,7 +3,11 @@ id: "20m"
 title: "Euphotic Zone 20M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/20m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -15,5 +19,107 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Reality DEF **+10%**, Mental DEF **+10%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">For Survival's Sake</span>
+
+          After the caster casts the Ultimate, Moxie +1.
+
+          <span class="passive-title">For Survival's Sake II</span>
+
+          Leech Rate **+10%** when the caster enters battle.
+
+          <span class="passive-title">For Survival's Sake III</span>
+
+          When an ally dies, Moxie +2.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Terminate I</span>
+
+          Attacks against enemies with HP below **30%** enjoy DMG Dealt **+25%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Terminate I</span>
+
+          Attacks against enemies with HP below **30%** enjoy DMG Dealt **+25%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts DMG Taken **+20%** for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **230%** Mental DMG. Inflicts DMG Taken **+25%** for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts DMG Dealt **-20%** for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **230%** Mental DMG. Inflicts DMG Dealt **-25%** for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **360%** Mental DMG to all enemies. Moxie +1 for the caster.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Dispels all *\[Stats Up]* and *\[Pos Status]* statuses from all enemies and deals **320%** Reality DMG to them.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Dispels all *\[Stats Up]* and *\[Pos Status]* statuses from all enemies and deals **320%** Reality DMG to them.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

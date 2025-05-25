@@ -1,0 +1,59 @@
+{
+  "enemies": [
+    {
+      "id": "40m-0-0",
+      "gameId": "900004101",
+      "wave": 1,
+      "name": "Lordbuncle",
+      "headIconId": "420301",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 75969,
+      "lv": "Insight II Level 44",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Playful Mindset", "cardId": "1201" },
+      "skill2": { "name": "Golden Atmosphere", "cardId": "1202" },
+      "ultimate": { "name": "Property and Expression", "cardId": "1204" }
+    },
+    {
+      "id": "40m-1-0",
+      "gameId": "900002101",
+      "wave": 1,
+      "name": "Quinceys",
+      "headIconId": "412401",
+      "dmgType": "MENTAL",
+      "afflatus": "BEAST",
+      "hp": 42823,
+      "lv": "Insight II Level 42",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A+",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Bulging and Swollen", "cardId": "1201" },
+      "skill2": { "name": "Raucous Fun", "cardId": "1201" },
+      "ultimate": { "name": "Children's Games", "cardId": "1204" }
+    },
+    {
+      "id": "40m-2-0",
+      "gameId": "900003101",
+      "wave": 1,
+      "name": "Cacti",
+      "headIconId": "412501",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 51324,
+      "lv": "Insight II Level 43",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Many Plants", "cardId": "1202" },
+      "skill2": { "name": "Many Rain", "cardId": "1203" },
+      "ultimate": { "name": "Prankster's Noise", "cardId": "1204" }
+    }
+  ]
+}

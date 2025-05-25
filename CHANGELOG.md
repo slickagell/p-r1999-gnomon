@@ -1,6 +1,6 @@
 ##### 2025-05-24
 
-* Add enemy info for Mesophotic zone (100M-200M) in Reveries
+* Add enemy info for Euphotic, Mesophotic zone (10M-200M) in Reveries
 
 ##### 2025-05-24
 

@@ -1,0 +1,58 @@
+{
+  "enemies": [
+    {
+      "id": "20m-0-0",
+      "gameId": "900002101",
+      "wave": 1,
+      "name": "Quinceys",
+      "headIconId": "412401",
+      "dmgType": "MENTAL",
+      "afflatus": "BEAST",
+      "hp": 42823,
+      "lv": "Insight II Level 42",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A+",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Bulging and Swollen", "cardId": "1201" },
+      "skill2": { "name": "Raucous Fun", "cardId": "1201" },
+      "ultimate": { "name": "Children's Games", "cardId": "1204" }
+    },
+    {
+      "id": "20m-1-0",
+      "gameId": "900002102",
+      "wave": 1,
+      "name": "Quincey",
+      "headIconId": "412601",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 18300,
+      "lv": "Insight II Level 42",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A+",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Swollen Blob", "cardId": "1201" },
+      "skill2": { "name": "Unbalance", "cardId": "1202" },
+      "ultimate": { "name": "Children Doodle", "cardId": "1204" }
+    },
+    {
+      "id": "20m-2-0",
+      "gameId": "900002102",
+      "wave": 1,
+      "name": "Quincey",
+      "headIconId": "412601",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 18300,
+      "lv": "Insight II Level 42",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A+",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Swollen Blob", "cardId": "1201" },
+      "skill2": { "name": "Unbalance", "cardId": "1202" },
+      "ultimate": { "name": "Children Doodle", "cardId": "1204" }
+    }
+  ]
+}

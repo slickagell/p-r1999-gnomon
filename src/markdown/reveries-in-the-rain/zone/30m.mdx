@@ -2,7 +2,11 @@
 title: "Euphotic Zone 30M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/30m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,99 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} DMG Heal **+5%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Intimidating Stance</span>
+
+          When the caster's HP is below **30%**, Critical Resist **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Intimidating Stance</span>
+
+          When the caster's HP is below **30%**, Critical Resist **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Intimidating Stance</span>
+
+          When the caster's HP is below **30%**, Critical Resist **+30%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **50%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target's HP is below **50%**, this attack also deals **75%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. If the target's current HP is below **50%**, then deals **60%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. If the target's current HP is below **50%**, then deals **90%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. If the target's current HP is below **50%**, then deals **60%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. If the target's current HP is below **50%**, then deals **90%** more Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter for 2 rounds. When the caster is attacked, deals (the caster's ATK x**100%**) Genesis DMG to the attacker.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter for 2 rounds. Enters :effect{code="TAUNT"} status. When the caster is attacked, deals (the caster's ATK x**100%**) Genesis DMG to the attacker.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="HEALTH" /> Mass healing. HP +(the caster's ATK x**80%**) for all allies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="HEALTH" /> Mass healing. HP +(the caster's ATK x**120%**) for all allies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="HEALTH" /> Mass healing. HP +(the caster's ATK x**80%**) for all allies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="HEALTH" /> Mass healing. HP +(the caster's ATK x**120%**) for all allies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. Inflicts Moxie -2 on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. Inflicts Reality DEF **-25%** and Mental DEF **-25%** for 2 rounds on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. Inflicts Reality DEF **-25%** and Mental DEF **-25%** for 2 rounds on the targets hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

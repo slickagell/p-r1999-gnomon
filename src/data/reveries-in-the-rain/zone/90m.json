@@ -1,0 +1,42 @@
+{
+  "enemies": [
+    {
+      "id": "90m-0-0",
+      "gameId": "900009101",
+      "wave": 1,
+      "name": "Cave Guardian",
+      "headIconId": "620209",
+      "isBoss": true,
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 102807,
+      "lv": "Insight II Level 49",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Heavy Claws", "cardId": "1201" },
+      "skill2": { "name": "Stonebreaking Blow", "cardId": "1202" },
+      "ultimate": { "name": "Wrath of Rock", "cardId": "1204" }
+    },
+    {
+      "id": "90m-1-0",
+      "gameId": "900009102",
+      "wave": 1,
+      "name": "Cave Guardian",
+      "headIconId": "620209",
+      "isBoss": true,
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 102807,
+      "lv": "Insight II Level 49",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Heavy Claws", "cardId": "1201" },
+      "skill2": { "name": "Stonebreaking Blow", "cardId": "1202" },
+      "ultimate": { "name": "Wrath of Rock", "cardId": "1204" }
+    }
+  ]
+}

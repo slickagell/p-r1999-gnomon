@@ -2,7 +2,11 @@
 title: "Euphotic Zone 70M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/70m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,201 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} ATK **+10%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Toxicity & Pathology</span>
+
+          When attacking, inflicts :effect{code="POISON"} for 1 round on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. On death, dispels :effect{code="POISON"} on all enemies.
+
+          <span class="passive-title">Spread of Poison</span>
+
+          Inflicted :effect{code="POISON"} status duration +1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Toxicity & Pathology</span>
+
+          When attacking, inflicts :effect{code="POISON"} for 1 round on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. On death, dispels :effect{code="POISON"} on all enemies.
+
+          <span class="passive-title">Spread of Poison</span>
+
+          Inflicted :effect{code="POISON"} status duration +1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Toxicity & Pathology</span>
+
+          When attacking, inflicts :effect{code="POISON"} for 1 round on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. On death, dispels :effect{code="POISON"} on all enemies.
+
+          <span class="passive-title">Spread of Poison</span>
+
+          Inflicted :effect{code="POISON"} status duration +1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Toxicity & Pathology</span>
+
+          When attacking, inflicts :effect{code="POISON"} for 1 round on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. On death, dispels :effect{code="POISON"} on all enemies.
+
+          <span class="passive-title">Spread of Poison</span>
+
+          Inflicted :effect{code="POISON"} status duration +1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <span class="passive-title">Toxicity & Pathology</span>
+
+          When attacking, inflicts :effect{code="POISON"} for 1 round on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. On death, dispels :effect{code="POISON"} on all enemies.
+
+          <span class="passive-title">Spread of Poison</span>
+
+          Inflicted :effect{code="POISON"} status duration +1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <span class="passive-title">Toxicity & Pathology</span>
+
+          When attacking, inflicts :effect{code="POISON"} for 1 round on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. On death, dispels :effect{code="POISON"} on all enemies.
+
+          <span class="passive-title">Spread of Poison</span>
+
+          Inflicted :effect{code="POISON"} status duration +1 round.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also enjoys Penetration Rate **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also enjoys Penetration Rate **+40%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also enjoys Penetration Rate **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also enjoys Penetration Rate **+40%**.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also enjoys Penetration Rate **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also enjoys Penetration Rate **+40%**.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 2 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 3 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Penetration Rate **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Penetration Rate **+40%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 2 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 3 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Penetration Rate **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Penetration Rate **+40%**.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 2 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 3 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Penetration Rate **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack enjoys Penetration Rate **+40%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. If the target hit is in the :effect{code="POISON"} status, extends the status duration by 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. If the target hit is in the :effect{code="POISON"} status, extends the status duration by 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. If the target hit is in the :effect{code="POISON"} status, extends the status duration by 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. If the target hit is in the :effect{code="POISON"} status, extends the status duration by 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. If the target hit is in the :effect{code="POISON"} status, extends the status duration by 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. If the target hit is in the :effect{code="POISON"} status, extends the status duration by 1 round.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

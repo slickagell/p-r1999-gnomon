@@ -2,7 +2,11 @@
 title: "Euphotic Zone 90M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/90m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,81 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Any single instance of damage taken will not exceed (own Max HP x**30%**) HP.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Fireproof Fur</span>
+
+          At the start of the round, if any enemy is in the :effect{code="BURN"} status, recovers (Missing HP x**10%**) HP for self; if enemies have a total of 20 or more stacks of :effect{code="BURN"}, recovers an additional (Missing HP x**10%**) HP for self.
+
+          <span class="passive-title">Sleepward I</span>
+
+          At the end of an odd-numbered round, suffers the :effect{code="NIGHTMARE"} status for 1 round. When being attacked while in the :effect{code="NIGHTMARE"} status, immediately casts rank 1 incantation Stone-shattering Blow.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Fireproof Fur</span>
+
+          At the start of the round, if any enemy is in the :effect{code="BURN"} status, recovers (Missing HP x**10%**) HP for self; if enemies have a total of 20 or more stacks of :effect{code="BURN"}, recovers an additional (Missing HP x**10%**) HP for self.
+
+          <span class="passive-title">Sleepward II</span>
+
+          At the end of an even-numbered round, suffers the :effect{code="NIGHTMARE"} status for 1 round. When being attacked while in the :effect{code="NIGHTMARE"} status, immediately casts rank 1 incantation Stone-shattering Blow.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **160%** Reality DMG to 2 enemies. Inflicts 3 stacks of :effect{code="BURN"} on the targets.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **190%** Reality DMG to 2 enemies. Inflicts 5 stacks of :effect{code="BURN"} on the targets.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **160%** Reality DMG to 2 enemies. Inflicts 3 stacks of :effect{code="BURN"} on the targets.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **190%** Reality DMG to 2 enemies. Inflicts 5 stacks of :effect{code="BURN"} on the targets.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **350%** Reality DMG to all enemies. Inflicts 5 stacks of :effect{code="BURN"} on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **350%** Reality DMG to all enemies. Inflicts 5 stacks of :effect{code="BURN"} on the targets hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

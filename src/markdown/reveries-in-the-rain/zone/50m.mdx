@@ -2,7 +2,11 @@
 title: "Euphotic Zone 50M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/50m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,83 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} When the Banking Capitalist is being attacked, 5 Goldfinch Coins are stolen from him. Stealing a sufficient amount of Goldfinch Coins will also lead to victory.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Encouragement</span>
+
+          At the end of the round, gain 1 stack of :effect{code="UNSPARING"} and 1 stack of :effect{code="EAGERNESS"}.
+
+          <span class="passive-title">Desperate Struggle</span>
+
+          When being attacked, gain 1 stack of :effect{code="UNSPARING"}.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Sloth</span>
+
+          At the start of the round, enter the :effect{code="NIGHTMARE"} status for 1 round.
+
+          <span class="passive-title">Desperate Struggle</span>
+
+          When being attacked, gain 1 stack of :effect{code="UNSPARING"}.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Goldfinch Coin</span>
+
+          When entering battle, gain 200 Goldfinch Coins.
+
+          <span class="passive-title">Alert Status</span>
+
+          At the start of the round, if this unit has 180 or less Goldfinch Coins, dispel the :effect{code="NIGHTMARE"} status from all allies.
+
+          <span class="passive-title">Emergency Warning</span>
+
+          At the start of the round, if this unit has 160 or less Goldfinch Coins, summon 1 Shift Guard (triggers only once).
+
+          <span class="passive-title">Surrender</span>
+
+          At the start of the round, if this unit has 140 or less Goldfinch Coins, this unit enters the :effect{code="SURRENDER"} status for 1 round.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts :effect{code="DAZE"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG. If the target is in a *\[Control]* status, deals an additional **180%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Gains the :effect{code="TAUNT"} and :effect{code="PARALYZE_COUNTER"} statuses and DMG Taken **-50%** for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG. If the target is in a *\[Control]* status, deals an additional **180%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. The caster gains :effect{code="TAUNT"} and :effect{code="PARALYZE_COUNTER"} statuses and DMG Taken **-50%** for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. Inflicts 1 stack of :effect{code="PARALYZE"} on the targets hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

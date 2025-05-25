@@ -1,0 +1,58 @@
+{
+  "enemies": [
+    {
+      "id": "100m-ii-0-0",
+      "gameId": "900010201",
+      "wave": 1,
+      "name": "Abraxas",
+      "headIconId": "620205",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Capture", "cardId": "1201" },
+      "skill2": { "name": "Overwhelm", "cardId": "1202" },
+      "ultimate": { "name": "Cruel Poison", "cardId": "1204" }
+    },
+    {
+      "id": "100m-ii-1-0",
+      "gameId": "900010201",
+      "wave": 1,
+      "name": "Abraxas",
+      "headIconId": "620205",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Capture", "cardId": "1201" },
+      "skill2": { "name": "Overwhelm", "cardId": "1202" },
+      "ultimate": { "name": "Cruel Poison", "cardId": "1204" }
+    },
+    {
+      "id": "100m-ii-2-0",
+      "gameId": "900010201",
+      "wave": 1,
+      "name": "Abraxas",
+      "headIconId": "620205",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Capture", "cardId": "1201" },
+      "skill2": { "name": "Overwhelm", "cardId": "1202" },
+      "ultimate": { "name": "Cruel Poison", "cardId": "1204" }
+    }
+  ]
+}

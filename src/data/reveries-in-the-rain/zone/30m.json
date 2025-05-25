@@ -1,0 +1,58 @@
+{
+  "enemies": [
+    {
+      "id": "30m-0-0",
+      "gameId": "900003101",
+      "wave": 1,
+      "name": "Cacti",
+      "headIconId": "412501",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 51324,
+      "lv": "Insight II Level 43",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Many Plants", "cardId": "1202" },
+      "skill2": { "name": "Many Rain", "cardId": "1203" },
+      "ultimate": { "name": "Prankster's Noise", "cardId": "1204" }
+    },
+    {
+      "id": "30m-1-0",
+      "gameId": "900003102",
+      "wave": 1,
+      "name": "Cactusy",
+      "headIconId": "412701",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 21933,
+      "lv": "Insight II Level 43",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "A Plant", "cardId": "1201" },
+      "skill2": { "name": "Welcome Rain", "cardId": "1203" },
+      "ultimate": { "name": "Prankster's Shout", "cardId": "1204" }
+    },
+    {
+      "id": "30m-2-0",
+      "gameId": "900003102",
+      "wave": 1,
+      "name": "Cactusy",
+      "headIconId": "412701",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 21933,
+      "lv": "Insight II Level 43",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "A Plant", "cardId": "1201" },
+      "skill2": { "name": "Welcome Rain", "cardId": "1203" },
+      "ultimate": { "name": "Prankster's Shout", "cardId": "1204" }
+    }
+  ]
+}

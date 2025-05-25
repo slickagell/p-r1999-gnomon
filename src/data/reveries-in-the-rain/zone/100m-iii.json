@@ -1,0 +1,58 @@
+{
+  "enemies": [
+    {
+      "id": "100m-iii-0-0",
+      "gameId": "900010301",
+      "wave": 1,
+      "name": "Zhuye",
+      "headIconId": "620121",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "SS",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Under Dense Feathers", "cardId": "1201" },
+      "skill2": { "name": "Whistle and Chirp", "cardId": "1202" },
+      "ultimate": { "name": "It's Raining Feathers", "cardId": "1204" }
+    },
+    {
+      "id": "100m-iii-1-0",
+      "gameId": "900010301",
+      "wave": 1,
+      "name": "Zhuye",
+      "headIconId": "620121",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "SS",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Under Dense Feathers", "cardId": "1201" },
+      "skill2": { "name": "Whistle and Chirp", "cardId": "1202" },
+      "ultimate": { "name": "It's Raining Feathers", "cardId": "1204" }
+    },
+    {
+      "id": "100m-iii-2-0",
+      "gameId": "900010301",
+      "wave": 1,
+      "name": "Zhuye",
+      "headIconId": "620121",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 108317,
+      "lv": "Insight III Level 1",
+      "atkRate": "SS",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Under Dense Feathers", "cardId": "1201" },
+      "skill2": { "name": "Whistle and Chirp", "cardId": "1202" },
+      "ultimate": { "name": "It's Raining Feathers", "cardId": "1204" }
+    }
+  ]
+}

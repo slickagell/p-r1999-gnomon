@@ -1,0 +1,56 @@
+{
+  "enemies": [
+    {
+      "id": "50m-0-0",
+      "gameId": "900005103",
+      "wave": 1,
+      "name": "Shift Guard",
+      "headIconId": "640104",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 44955,
+      "lv": "Insight II Level 45",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C+",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Intimidate", "cardId": "1101" },
+      "skill2": { "name": "Suppress Speech", "cardId": "1103" },
+      "ultimate": { "name": "Armed Persuasion", "cardId": "1104" }
+    },
+    {
+      "id": "50m-1-0",
+      "gameId": "900005102",
+      "wave": 1,
+      "name": "Shielded Security",
+      "headIconId": "640103",
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 38458,
+      "lv": "Insight II Level 45",
+      "atkRate": "B+",
+      "criticalTechniqueRate": "C",
+      "realityDefRate": "SS",
+      "mentalDefRate": "C",
+      "skill1": { "name": "Warning", "cardId": "1101" },
+      "skill2": { "name": "Control and Contain", "cardId": "1101" },
+      "ultimate": { "name": "Armed Deterrence", "cardId": "1104" }
+    },
+    {
+      "id": "50m-2-0",
+      "gameId": "900005101",
+      "wave": 1,
+      "name": "Banking Capitalist",
+      "headIconId": "630206",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 89910,
+      "lv": "Insight II Level 45",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C+",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS"
+    }
+  ]
+}

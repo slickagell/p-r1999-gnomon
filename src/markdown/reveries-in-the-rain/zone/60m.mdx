@@ -2,7 +2,11 @@
 title: "Euphotic Zone 60M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/60m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,111 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+10%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+5%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Incantation Might **+20%**.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Greed</span>
+
+          DMG Heal **+25%**. When entering battle, enters :effect{code="WATCHFUL_GREED"} status. When HP is below **75%** after being attacked, enters :effect{code="ALERTED_EARS"} status. When HP is below **25%** after being attacked, enters :effect{code="DESPERATE_FIGHT"} status (each phase only triggers 1 time).
+
+          <span class="passive-title">Save Strength</span>
+
+          When a round ends, if the caster has not taken DMG in the round, Moxie +1.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Deviousness</span>
+
+          Leech Rate **+25%**. When entering battle, enters :effect{code="WATCHFUL_GREED"} status. When HP is below **75%** after being attacked, enters :effect{code="ALERTED_EARS"} status. When HP is below **25%** after being attacked, enters :effect{code="DESPERATE_FIGHT"} status (each phase only triggers 1 time).
+
+          <span class="passive-title">Save Strength</span>
+
+          When a round ends, if the caster has not taken DMG in the round, Moxie +1.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Spite</span>
+
+          Critical Resist **+25%**. When the caster enters battle, enters :effect{code="WATCHFUL_GREED"} status. When HP is below **75%** after being attacked, enters :effect{code="ALERTED_EARS"} status. When HP is below **25%** after being attacked, enters :effect{code="DESPERATE_FIGHT"} status (each phase only triggers 1 time).
+
+          <span class="passive-title">Save Strength</span>
+
+          When a round ends, if the caster has not taken DMG in the round, Moxie +1.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Reality DMG. This attack enjoys Critical Rate **+30%** and Critical DMG **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **225%** Reality DMG. This attack enjoys Critical Rate **+30%** and Critical DMG **+40%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. Inflicts Moxie -1 on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is above **50%**, this attack also deals **50%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target's HP is above **50%**, this attack also deals **75%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. Inflicts Moxie -1 on the targets hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **270%** Mental DMG to all enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **275%** Reality DMG to all enemies and HP +(this attack's DMG Dealt x**40%**) for the caster.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **270%** Mental DMG to all enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

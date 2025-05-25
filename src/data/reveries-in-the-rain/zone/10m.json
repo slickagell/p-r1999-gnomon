@@ -1,0 +1,58 @@
+{
+  "enemies": [
+    {
+      "id": "10m-0-0",
+      "gameId": "900001101",
+      "wave": 1,
+      "name": "Carbuncle",
+      "headIconId": "420101",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 20179,
+      "lv": "Insight II Level 41",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Stammering Speech", "cardId": "1201" },
+      "skill2": { "name": "Twinkle Twinkle", "cardId": "1202" },
+      "ultimate": { "name": "Bite the Dust, Then Explode", "cardId": "1204" }
+    },
+    {
+      "id": "10m-1-0",
+      "gameId": "900001101",
+      "wave": 1,
+      "name": "Carbuncle",
+      "headIconId": "420101",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 20179,
+      "lv": "Insight II Level 41",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Stammering Speech", "cardId": "1201" },
+      "skill2": { "name": "Twinkle Twinkle", "cardId": "1202" },
+      "ultimate": { "name": "Bite the Dust, Then Explode", "cardId": "1204" }
+    },
+    {
+      "id": "10m-2-0",
+      "gameId": "900001101",
+      "wave": 1,
+      "name": "Carbuncle",
+      "headIconId": "420101",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 20179,
+      "lv": "Insight II Level 41",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Stammering Speech", "cardId": "1201" },
+      "skill2": { "name": "Twinkle Twinkle", "cardId": "1202" },
+      "ultimate": { "name": "Bite the Dust, Then Explode", "cardId": "1204" }
+    }
+  ]
+}

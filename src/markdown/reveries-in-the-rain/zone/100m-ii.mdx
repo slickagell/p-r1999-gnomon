@@ -2,7 +2,11 @@
 title: "Euphotic Zone 100M-II"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -18,5 +22,123 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} Reality DEF **+10%**, Mental DEF **+10%**.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Any single instance of damage taken will not exceed (own Max HP x**30%**) HP.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Gregarious Being</span>
+
+          1-target DMG Taken **-25%**. Mass DMG Taken **+25%**.
+
+          <span class="passive-title">Poison Feather</span>
+
+          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{code="POISON"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
+
+          <span class="passive-title">Evolution</span>
+
+          After casting an ultimate, transform into Abraxas Chieftain, get an all-round power up, and purify all debuffs from self.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Gregarious Being</span>
+
+          1-target DMG Taken **-25%**. Mass DMG Taken **+25%**.
+
+          <span class="passive-title">Poison Feather</span>
+
+          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{code="POISON"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
+
+          <span class="passive-title">Evolution</span>
+
+          After casting an ultimate, transform into Abraxas Chieftain, get an all-round power up, and purify all debuffs from self.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Gregarious Being</span>
+
+          1-target DMG Taken **-25%**. Mass DMG Taken **+25%**.
+
+          <span class="passive-title">Poison Feather</span>
+
+          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{code="POISON"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
+
+          <span class="passive-title">Evolution</span>
+
+          After casting an ultimate, transform into Abraxas Chieftain, get an all-round power up, and purify all debuffs from self.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

@@ -2,7 +2,11 @@
 title: "Euphotic Zone 100M-III"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/100m-iii.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -18,5 +22,123 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} Mental DEF **+20%**.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 3 rounds, rewrite all incantations with :effect{code="SCALDING"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Robust Feathers</span>
+
+          When being attacked by a rank 1 incantation, DMG **-15%**.
+
+          <span class="passive-title">Sharpened Beak</span>
+
+          When being attacked by a rank 1 incantation, gain Moxie +1 and 1 stack of :effect{code="POWER_BURST"} for self.
+
+          <span class="passive-title">Evolution</span>
+
+          After casting an ultimate, transform into Zhuye Chief, get an all-round power up, and purify all debuffs from self.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Robust Feathers</span>
+
+          When being attacked by a rank 1 incantation, DMG **-15%**.
+
+          <span class="passive-title">Sharpened Beak</span>
+
+          When being attacked by a rank 1 incantation, gain Moxie +1 and 1 stack of :effect{code="POWER_BURST"} for self.
+
+          <span class="passive-title">Evolution</span>
+
+          After casting an ultimate, transform into Zhuye Chief, get an all-round power up, and purify all debuffs from self.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Robust Feathers</span>
+
+          When being attacked by a rank 1 incantation, DMG **-15%**.
+
+          <span class="passive-title">Sharpened Beak</span>
+
+          When being attacked by a rank 1 incantation, gain Moxie +1 and 1 stack of :effect{code="POWER_BURST"} for self.
+
+          <span class="passive-title">Evolution</span>
+
+          After casting an ultimate, transform into Zhuye Chief, get an all-round power up, and purify all debuffs from self.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **210%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **210%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **210%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **140%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **140%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **140%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>
