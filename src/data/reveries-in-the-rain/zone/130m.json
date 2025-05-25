@@ -1,0 +1,53 @@
+{
+  "enemies": [
+    {
+      "id": "130m-0-0",
+      "gameId": "900013101",
+      "wave": 1,
+      "name": "Queen of the Assembly",
+      "headIconId": "301103",
+      "isBoss": true,
+      "dmgType": "REALITY",
+      "afflatus": "PLANT",
+      "hp": 207002,
+      "lv": "Insight III Level 6",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Dud", "cardId": "30110111" },
+      "skill2": { "name": "Slight Breeze", "cardId": "30110121" },
+      "ultimate": { "name": "A Good Dream Tonight", "cardId": "30110131" }
+    },
+    {
+      "id": "130m-1-0",
+      "gameId": "900013102",
+      "wave": 1,
+      "name": "Signed Photo - Smile",
+      "headIconId": "690114",
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
+      "hp": 4,
+      "lv": "Insight III Level 6",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS"
+    },
+    {
+      "id": "130m-2-0",
+      "gameId": "900013103",
+      "wave": 1,
+      "name": "Signed Photo - Kiss Blown",
+      "headIconId": "690115",
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
+      "hp": 4,
+      "lv": "Insight III Level 6",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "enemies": [
+    {
+      "id": "190m-0-0",
+      "gameId": "900019101",
+      "wave": 1,
+      "name": "Sword Bearer",
+      "headIconId": "302201",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "INTELLECT",
+      "hp": 306254,
+      "lv": "Insight III Level 18",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Power", "cardId": "30220111" },
+      "ultimate": { "name": "Maverick Judge", "cardId": "30220131" }
+    }
+  ]
+}

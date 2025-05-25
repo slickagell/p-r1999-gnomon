@@ -1,5 +1,9 @@
 ##### 2025-05-24
 
+* Add enemy info for Mesophotic zone (100M-200M) in Reveries
+
+##### 2025-05-24
+
 * Add new Primitive Urge mindmap (thanks @penguin132 for the mindmap recommendation)
 * Add enemy info for Bathyal zone (210-300M) in Reveries
 * Fix typo errors

@@ -1,0 +1,42 @@
+{
+  "enemies": [
+    {
+      "id": "160m-0-0",
+      "gameId": "900016101",
+      "wave": 1,
+      "name": "LittleFinger Peter",
+      "headIconId": "420703",
+      "isBoss": true,
+      "dmgType": "REALITY",
+      "afflatus": "INTELLECT",
+      "hp": 154077,
+      "lv": "Insight III Level 12",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Ambush", "cardId": "1401" },
+      "skill2": { "name": "Performance", "cardId": "1402" },
+      "ultimate": { "name": "Life is Transient", "cardId": "1404" }
+    },
+    {
+      "id": "160m-1-0",
+      "gameId": "900016102",
+      "wave": 1,
+      "name": "PigFace Jack",
+      "headIconId": "420701",
+      "isBoss": true,
+      "dmgType": "REALITY",
+      "afflatus": "INTELLECT",
+      "hp": 154077,
+      "lv": "Insight III Level 12",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Ambush", "cardId": "1401" },
+      "skill2": { "name": "Performance", "cardId": "1402" },
+      "ultimate": { "name": "Life is Transient", "cardId": "1404" }
+    }
+  ]
+}

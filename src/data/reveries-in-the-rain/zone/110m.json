@@ -1,0 +1,58 @@
+{
+  "enemies": [
+    {
+      "id": "110m-0-0",
+      "gameId": "900011102",
+      "wave": 1,
+      "name": "Male Believer",
+      "headIconId": "630201",
+      "dmgType": "MENTAL",
+      "afflatus": "MINERAL",
+      "hp": 69612,
+      "lv": "Insight III Level 2",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Limited Testimony", "cardId": "2001" },
+      "skill2": { "name": "Sharp Argument", "cardId": "2002" },
+      "ultimate": { "name": "Outstanding Strawman", "cardId": "2004" }
+    },
+    {
+      "id": "110m-1-0",
+      "gameId": "900011101",
+      "wave": 1,
+      "name": "Female Believer",
+      "headIconId": "630202",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 54819,
+      "lv": "Insight III Level 2",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A+",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Difference of Opinion", "cardId": "2001" },
+      "skill2": { "name": "5D Chess", "cardId": "2002" },
+      "ultimate": { "name": "Perceived Truth", "cardId": "2004" }
+    },
+    {
+      "id": "110m-2-0",
+      "gameId": "900011101",
+      "wave": 1,
+      "name": "Female Believer",
+      "headIconId": "630202",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 54819,
+      "lv": "Insight III Level 2",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A+",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Difference of Opinion", "cardId": "2001" },
+      "skill2": { "name": "5D Chess", "cardId": "2002" },
+      "ultimate": { "name": "Perceived Truth", "cardId": "2004" }
+    }
+  ]
+}

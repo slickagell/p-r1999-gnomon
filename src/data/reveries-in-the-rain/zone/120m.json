@@ -1,0 +1,55 @@
+{
+  "enemies": [
+    {
+      "id": "120m-0-0",
+      "gameId": "900012101",
+      "wave": 1,
+      "name": "Number of Seeking",
+      "headIconId": "306602",
+      "dmgType": "MENTAL",
+      "afflatus": "STAR",
+      "hp": 63172,
+      "lv": "Insight III Level 4",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "A+",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Triangulation", "cardId": "30660111" },
+      "skill2": { "name": "Curve Mapping", "cardId": "30660121" },
+      "ultimate": { "name": "Kingdom of Geometry", "cardId": "30660131" }
+    },
+    {
+      "id": "120m-1-0",
+      "gameId": "900012102",
+      "wave": 1,
+      "name": "Number of Maintenance",
+      "headIconId": "307902",
+      "dmgType": "MENTAL",
+      "afflatus": "INTELLECT",
+      "hp": 92930,
+      "lv": "Insight III Level 4",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "A",
+      "mentalDefRate": "SS",
+      "skill1": { "name": "Discipline", "cardId": "30790111" },
+      "skill2": { "name": "Duty", "cardId": "30790121" },
+      "ultimate": { "name": "The Revelation", "cardId": "30790131" }
+    },
+    {
+      "id": "120m-2-0",
+      "gameId": "900012103",
+      "wave": 1,
+      "name": "Sign (Down)",
+      "headIconId": "690113",
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
+      "hp": 4,
+      "lv": "Insight III Level 4",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS"
+    }
+  ]
+}

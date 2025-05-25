@@ -2,7 +2,11 @@
 title: "Mesophotic Zone 150M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/150m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -18,5 +22,239 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} ATK **+5%**, Reality DEF **+5%**, and Mental DEF **+5%**.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, all allies get 1 stack of :effect{code="SLUGGISH"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Heated Drumming</span>
+
+          When the caster dies, Moxie +1 to the ally with the lowest Moxie.
+
+          <span class="passive-title">Feral Pack's Tending</span>
+
+          Gives other allies :effect{code="FERAL_PACK"} status when the caster enters battle. Moxie -1 and DMG Dealt **-50%** for all allies for 1 round, and dispels :effect{code="FERAL_PACK"} status from them when the caster dies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Heated Drumming</span>
+
+          When the caster dies, Moxie +1 to the ally with the lowest Moxie.
+
+          <span class="passive-title">Rock Tomb Armor</span>
+
+          Gives other allies :effect{code="ROCK_TOMB"} status when the caster enters battle. Moxie -1 and DMG Dealt **-50%** for all allies for 1 round, and dispels :effect{code="ROCK_TOMB"} status from them when the caster dies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Heated Drumming</span>
+
+          When the caster dies, Moxie +1 to the ally with the lowest Moxie.
+
+          <span class="passive-title">Starry Reflection</span>
+
+          Gives other allies :effect{code="STAR_MIRROR"} status when the caster enters battle. Moxie -1 and DMG Dealt **-50%** for all allies for 1 round, and dispels :effect{code="STAR_MIRROR"} status from them when the caster dies.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Stubborn</span>
+
+          For every **10%** Missing HP, DMG Taken **-5%**.
+
+          <span class="passive-title">Forget Me Not</span>
+
+          After being attacked, if HP is below **50%**, recover (Missing HP x**50%**) HP and enter the :effect{code="VENGEANCE_PUPPET"} status (triggers only 2 times).
+
+          <span class="passive-title">Continuous Action Ⅰ</span>
+
+          AP +1
+
+          <span class="passive-title">Control Resistance</span>
+
+          When a round ends, if the caster is in *\[Control]*, the caster gains 1 stack of :effect{code="CONTROL_RESISTANCE"}.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <span class="passive-title">Heated Drumming</span>
+
+          When the caster dies, Moxie +1 to the ally with the lowest Moxie.
+
+          <span class="passive-title">Forest Sanctuary</span>
+
+          Gives other allies :effect{code="VERDANT_BLESSING"} status when the caster enters battle. Moxie -1 and DMG Dealt **-50%** for all allies for 1 round, and dispels :effect{code="VERDANT_BLESSING"} status from them when the caster dies.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <span class="passive-title">Ritual Ripples Ⅰ</span>
+
+          After the caster casts an Ultimate, inflicts 1 stack of :effect{code="ROUSING_MORALE"} on the caster.
+
+          <span class="passive-title">Starry Reflection</span>
+
+          Gives other allies :effect{code="STAR_MIRROR"} status when the caster enters battle. Moxie -1 and DMG Dealt **-50%** for all allies for 1 round, and dispels :effect{code="STAR_MIRROR"} status from them when the caster dies.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <span class="passive-title">Ritual Ripple Ⅱ</span>
+
+          After the caster casts an Ultimate, inflicts 2 stacks of :effect{code="STURDINESS"} on the caster.
+
+          <span class="passive-title">Rock Tomb Armor</span>
+
+          Gives other allies :effect{code="ROCK_TOMB"} status when the caster enters battle. Moxie -1 and DMG Dealt **-50%** for all allies for 1 round, and dispels :effect{code="ROCK_TOMB"} status from them when the caster dies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG. Moxie +1.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Mental DMG. Inflicts Moxie -1 on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Mental DMG. If the caster is in at least 2 active *\[Stats Up]* or *\[Pos Status]* statuses, this attack also inflicts 1 round of :effect{code="PETRIFY"} status on the target.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. If the caster is in at least 2 active *\[Stats Up]* or *\[Pos Status]* statuses, this attack also inflicts 1 round of :effect{code="PETRIFY"} status and 1 stack of :effect{code="FRAGILITY"} status on the target.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG. When the caster scores a critical hit, Moxie +1 for the caster.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Mental DMG. HP +(the caster's ATK x**40%**) for the ally with the lowest HP.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **225%** Mental DMG. HP +(the caster's ATK x**60%**) for the ally with the lowest HP.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Reality DEF and Mental DEF **+15%** for all allies for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Reality DEF and Mental DEF **+25%** for all allies for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Reality DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **110%** Mental DMG to 2 enemies. This attack enjoys Critical Rate **+30%** and Critical DMG **+40%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **165%** Mental DMG to 2 enemies. This attack enjoys Critical Rate **+30%** and Critical DMG **+40%**.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **135%** Mental DMG to 2 enemies. For every *\[Stats Up]* or *\[Pos Status]* status the caster is in, deals **15%** more Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Mental DMG to 2 enemies. For every *\[Stats Up]* or *\[Pos Status]* status the caster is in, deals **25%** more Mental DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Heal **+15%** for all allies for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Heal **+20%** for all allies for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. When this attack scores a critical hit, it enjoys Penetration Rate **+50%**.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. When this attack scores a critical hit, it enjoys Penetration Rate **+50%**.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Mental DMG to 2 enemies and the caster's HP +(DMG Dealt x**20%**).
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Mental DMG to 2 enemies and the caster's HP +(DMG Dealt x**20%**).
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies. Inflicts the :effect{code="DISARM"} status for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **270%** Reality DMG to all enemies. If the targets' HP is below **50%**, then deals **135%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **260%** Mental DMG to all enemies. If the caster's HP is above **50%**, then deals **130%** more Mental DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **240%** Mental DMG to all enemies. Inflicts :effect{code="CORRODE"} for 3 rounds on the targets hit: at the end of the round, takes (own Current HP x**35%**) Genesis DMG, up to (the user's Max HP x**35%**) in damage.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{code="SEAL"} status on the main target for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          Self buff. Enters :effect{code="GREEDY"} status: ATK, Critical Rate, and Critical DMG **+15%** as well as HP +(**15%** Max HP). Lasts 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          Self buff. Enters :effect{code="FURIOUS_CRY"} status: ATK, Leech Rate, and Healing Done **+15%** as well as (**15%** Max HP) Shield. Lasts 2 rounds.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

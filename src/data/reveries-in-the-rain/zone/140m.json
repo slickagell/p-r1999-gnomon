@@ -1,0 +1,68 @@
+{
+  "enemies": [
+    {
+      "id": "140m-0-0",
+      "gameId": "900014102",
+      "wave": 1,
+      "name": "Fauvist Artwork",
+      "headIconId": "413501",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 30047,
+      "lv": "Insight III Level 8",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS"
+    },
+    {
+      "id": "140m-1-0",
+      "gameId": "900014103",
+      "wave": 1,
+      "name": "Abstract Artwork",
+      "headIconId": "413601",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 30047,
+      "lv": "Insight III Level 8",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS"
+    },
+    {
+      "id": "140m-2-0",
+      "gameId": "900014104",
+      "wave": 1,
+      "name": "Impressionist Artwork",
+      "headIconId": "413701",
+      "dmgType": "MENTAL",
+      "afflatus": "SPIRIT",
+      "hp": 30047,
+      "lv": "Insight III Level 8",
+      "atkRate": "B",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS"
+    },
+    {
+      "id": "140m-3-0",
+      "gameId": "900014101",
+      "wave": 1,
+      "name": "Artwork Collector",
+      "headIconId": "306402",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "PLANT",
+      "hp": 150235,
+      "lv": "Insight III Level 8",
+      "atkRate": "A",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Long Live Peace", "cardId": "30640111" },
+      "skill2": { "name": "Bubblism", "cardId": "30640121" },
+      "ultimate": { "name": "Sweet Dreams for You", "cardId": "30640131" }
+    }
+  ]
+}

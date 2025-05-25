@@ -2,7 +2,11 @@
 title: "Mesophotic Zone 180M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/180m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,121 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, rewrite 2 random ally incantations with :effect{code="ICEBOUND"} for 1 round.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Robust Physique</span>
+
+          When entering battle, all allies gain 50 stacks of :effect{code="REGEN"}. At the start of the round, grant 1 stack of :effect{code="REGEN"} to a random ally.
+
+          <span class="passive-title">Fading Strength</span>
+
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Fading Strength</span>
+
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Fading Strength</span>
+
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Fading Strength</span>
+
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Mental DMG. If own HP is below **75%**, grants Moxie +1 to self.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG and the caster's HP +(DMG Dealt x**30%**).
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG and the caster's HP +(DMG Dealt x**30%**).
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG and the caster's HP +(DMG Dealt x**30%**).
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG and the caster's HP +(DMG Dealt x**30%**).
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG and the caster's HP +(DMG Dealt x**30%**).
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG and the caster's HP +(DMG Dealt x**30%**).
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **130%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="FADING_UNSPARING"} on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies. Enters :effect{code="HEART_OF_GUARDIAN"} status for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **270%** Mental DMG to all enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Mass attack. Deals **270%** Mental DMG to all enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          Mass attack. Deals **270%** Mental DMG to all enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

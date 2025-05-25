@@ -2,8 +2,11 @@
 title: "Mesophotic Zone 200M-III"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/200m-iii.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -18,6 +21,48 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, **50%** chance to change all allied incantations to *\[Precast Incantation]*.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, if HP is below **50%**, gain :effect{code="DISCONCERT"} for 1 round.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Competitive Spirit</span>
+
+          After an enemy casts a buff or counter incantation, gain 2 stacks of :effect{code="UNSPARING"} for self; after an enemy casts a debuff or healing incantation, gain 1 stack of :effect{code="WEAL"} for self.
+
+          <span class="passive-title">Search the Past</span>
+
+          At the start of the round, if own HP is below **75%**/**50%**/**25%**, cast an ultimate without consuming Moxie (triggers up to once).
+
+          <span class="passive-title">Continuous Action I</span>
+
+          AP +1
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG. Penetration Rate **+30%** for this attack. Grants 1 stack of :effect{code="INSTANT_CONCEALMENT"} to self.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **175%** Reality DMG to 2 enemies. Penetration Rate **+30%** for this attack. Grants 1 stack of :effect{code="INSTANT_STRONG_WILL"} to self.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **400%** Reality DMG to all enemies, Penetration Rate **+30%** for this attack; on hit, inflicts :effect{code="MIS_AIM"} on the targets for 2 rounds, and grants 3 stacks of :effect{code="UNSPARING"} and 3 stacks of :effect{code="FRAGILITY"} to self.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">

@@ -1,0 +1,33 @@
+{
+  "enemies": [
+    {
+      "id": "200m-iii-0-0",
+      "gameId": "900020301",
+      "wave": 1,
+      "name": "Angry Exile",
+      "headIconId": "630203",
+      "isBoss": true,
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
+      "hp": 355406,
+      "lv": "Insight III Level 20",
+      "atkRate": "A",
+      "criticalTechniqueRate": "C+",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "resistance": [
+        { "code": "CONTROL_RESILIENCE", "value": 100 },
+        { "code": "DAZE_RESISTANCE", "value": 100 },
+        { "code": "PETRIFY_RESISTANCE", "value": 100 },
+        { "code": "FREEZE_RESISTANCE", "value": 100 },
+        { "code": "DISARM_RESISTANCE", "value": 100 },
+        { "code": "SILENCE_RESISTANCE", "value": 100 },
+        { "code": "TACITURN_RESISTANCE", "value": 100 },
+        { "code": "CAPTIVATED_RESISTANCE", "value": 100 }
+      ],
+      "skill1": { "name": "Unleash Anger!", "cardId": "1401" },
+      "skill2": { "name": "Fervent Sprint!", "cardId": "1402" },
+      "ultimate": { "name": "Desire to Burn All!", "cardId": "1404" }
+    }
+  ]
+}

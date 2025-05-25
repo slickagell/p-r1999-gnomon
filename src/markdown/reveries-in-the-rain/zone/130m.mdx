@@ -2,7 +2,11 @@
 title: "Mesophotic Zone 130M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/130m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,83 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 3 rounds, a random character gets :effect{code="DISARM"} for 1 round.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">A Low Whisper</span>
+
+          When the caster is attacked, inflicts the attacker 1 stack of :effect{code="ENCHANTED"} for 2 rounds. If the attacker is of the opposite gender, inflicts 1 stack of :effect{code="ENCHANTED"} for 2 rounds.
+
+          <span class="passive-title">Charming Appeal</span>
+
+          At the end of the round, for each Signed Photo that survives, gains +1 AP next round.
+
+          <span class="passive-title">Mass Frenzy</span>
+
+          At the end of the round, summon Signed Photo - Smile and Signed Photo - Kiss Blown (up to a maximum of 2 Signed Photos).
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Small Wound</span>
+
+          Immune to all statuses. Cannot be healed. All DMG taken is set to 1.
+
+          <span class="passive-title">Blessing of Beauty</span>
+
+          At the end of the round, for each point of HP you have, grant 1 stack of :effect{code="ROUSING_MORALE"} to the ally with the highest ATK.
+
+          <span class="passive-title">Sweet Smile</span>
+
+          At the start of the round, if HP is above **50%**, all allies enter :effect{code="STRONGHOLD_II"} for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Small Wound</span>
+
+          Immune to all statuses. Cannot be healed. All DMG taken is set to 1.
+
+          <span class="passive-title">Blessing of Beauty</span>
+
+          At the end of the round, for each point of HP you have, grant 1 stack of :effect{code="ROUSING_MORALE"} to the ally with the highest ATK.
+
+          <span class="passive-title">Gentle Kiss</span>
+
+          At the start of the round, if HP is above **50%**, all allies enter :effect{code="CONTEMPT_II"} for 1 round.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{code="DAZE"} for 1 round on the target hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

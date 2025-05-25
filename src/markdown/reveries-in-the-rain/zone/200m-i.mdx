@@ -2,8 +2,11 @@
 title: "Mesophotic Zone 200M-I"
 ---
 
+import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/200m-i.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -19,6 +22,248 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[Enemy\]]{className="font-medium text-enemy"} ATK **+10%**, Reality DEF **+10%**, and Mental DEF **+10%**.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} On death, grants Moxie +5 and :effect{code="DODGE"} to other allies for 1 round.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Metal Gear's Solid</span>
+
+          When entering battle, gain a Shield with (own Max HP x**30%**) HP.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Offensive Momentum</span>
+
+          After attacking, gain 1 stack of :effect{code="UNSPARING"} and lose 1 stack of :effect{code="REGEN"}. After being attacked, gain 1 stack of :effect{code="REGEN"} and lose 1 stack of :effect{code="UNSPARING"}.
+
+          <span class="passive-title">Punishing Fury</span>
+
+          At the end of each round, casts a 1-target attack, which deals **200%** Reality DMG to the enemy with the highest ATK, and inflicts :effect{code="DISARM"} on the target for 1 round.
+
+          <span class="passive-title">Stable Cooperation</span>
+
+          When the caster enters battle, Reality DEF and Mental DEF **+50%**. When an ally dies, Reality DEF and Mental DEF **-10%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Camouflage Tactics</span>
+
+          When entering battle, enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Logical Distribution</span>
+
+          When another ally dies, equip 1 :effect{code="LUCKY_BULLET"}.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <span class="passive-title">Zero In</span>
+
+          At the end of the round, randomly inflicts :effect{code="EXPOSED"} on an enemy for 2 rounds.
+
+          <span class="passive-title">Steady Composure</span>
+
+          Ultimate Moxie Consumption -4.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <span class="passive-title">Metal Gear's Solid</span>
+
+          When entering battle, gain a Shield with (own Max HP x**30%**) HP.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <span class="passive-title">Logical Distribution</span>
+
+          When another ally dies, equip 1 :effect{code="LUCKY_BULLET"}.
+        </div>
+
+        <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
+          <span class="passive-title">Zero In</span>
+
+          At the end of the round, randomly inflicts :effect{code="EXPOSED"} on an enemy for 2 rounds.
+
+          <span class="passive-title">Steady Composure</span>
+
+          Ultimate Moxie Consumption -4.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          <span class="passive-title">Camouflage Tactics</span>
+
+          When entering battle, enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. All allies gain Reality DEF **+30%** for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. All allies gain Reality DEF **+45%** for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG. After this attack scores a critical hit, launch this attack again as a follow-up attack.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Reality DMG. This attack is always a critical hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG. This attack is always a critical hit.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Reality DMG. If holding a *\[Bullet]*, deals an additional **100%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Reality DMG. If holding a *\[Bullet]*, deals an additional **200%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains Moxie +1 and 1 stack of :effect{code="ROUSING_MORALE"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains Moxie +1 and 2 stacks of :effect{code="ROUSING_MORALE"}.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. All allies gain Reality DEF **+30%** for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. All allies gain Reality DEF **+45%** for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Reality DMG. If holding a *\[Bullet]*, deals an additional **100%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Reality DMG. If holding a *\[Bullet]*, deals an additional **200%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains Moxie +1 and 1 stack of :effect{code="ROUSING_MORALE"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains Moxie +1 and 2 stacks of :effect{code="ROUSING_MORALE"}.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Reality DMG. This attack is always a critical hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG. This attack is always a critical hit.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**100%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**150%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{code="RIPOSTE_POSE"} for 1 round: after being attacked, ripostes the source of damage, dealing **150%** Reality DMG; after the riposte, inflicts :effect{code="DISARM"} on the target for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 4 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 8 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 1 :effect{code="LUCKY_BULLET"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 2 random :effect{code="LUCKY_BULLET"}.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**100%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**150%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 1 :effect{code="LUCKY_BULLET"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 2 random :effect{code="LUCKY_BULLET"}.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 4 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 8 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass buff. All allies gain a Shield with (own Max HP x**30%**) HP and the :effect{code="TAUNT"} status for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Self buff. Grants Critical Rate **+100%** and Critical DMG **+50%** to self for 3 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          Self channel. Enters the :effect{code="CONCEALED_ASSASSINATION"} status for 1 round.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          1-target attack. Deals **200%** Reality DMG; if holding a *\[Bullet]* on self, deals an additional **200%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to the target and the enemies in adjacent positions.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          Mass buff. All allies gain a Shield with (own Max HP x**30%**) HP and the :effect{code="TAUNT"} status for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          1-target attack. Deals **200%** Reality DMG; if holding a *\[Bullet]* on self, deals an additional **200%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Reality DMG to the target and the enemies in adjacent positions.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          Self channel. Enters the :effect{code="CONCEALED_ASSASSINATION"} status for 1 round.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 
   <Fragment slot="stage-info-title">

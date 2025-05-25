@@ -2,7 +2,11 @@
 title: "Mesophotic Zone 110M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/110m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,99 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of every 3 rounds, characters with less than 5 Moxie get Moxie -1.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Dimensional Perception</span>
+
+          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{code="REVERIE"}. At round start, when :effect{code="REVERIE"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Dimensional Perception</span>
+
+          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{code="REVERIE"}. At round start, when :effect{code="REVERIE"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Dimensional Perception</span>
+
+          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{code="REVERIE"}. At round start, when :effect{code="REVERIE"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG. Gain 1 stack of :effect{code="REVERIE"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG. Gain 1 stack of :effect{code="REVERIE"}.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Mental DMG to 2 enemies.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Mental DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts :effect{code="SILENCE"} for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          1-target attack. Deals **350%** Mental DMG. Inflicts :effect{code="DAZE"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          1-target attack. Deals **350%** Mental DMG. Inflicts :effect{code="DAZE"} for 1 round on the target hit.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

@@ -2,7 +2,11 @@
 title: "Mesophotic Zone 120M"
 ---
 
+import CardType from "@components/CardType.astro";
+import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
+import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
+import data from "@data/reveries-in-the-rain/zone/120m.json";
 
 <ZoneContent {...frontmatter}>
   <Fragment slot="recommended-content">
@@ -14,5 +18,115 @@ import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gain 1 stack of :effect{code="MORIBUND"}.
+  </Fragment>
+
+  <Fragment slot="enemy-info-title">
+    ## Enemy info
+  </Fragment>
+
+  <Fragment slot="enemy-info-content">
+    <EnemyInfo {...data}>
+      <Fragment slot="passive-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <span class="passive-title">Calculation of Genesis</span>
+
+          After using an Incantation, gains Eureka +1.
+
+          After another ally takes an extra action, gains Eureka +1.
+
+          When at 5 Eureka, consumes 5 Eureka to cast :effect{code="SUPPLEMENTARY_FORMULA_ID_1"}. This attack is regarded as 1 follow-up attack and does not grant any Eureka.
+
+          <span class="passive-title">Calculation of Genesis II</span>
+
+          Critical DMG **+15%** when the caster enters battle.
+
+          <span class="passive-title">Calculation of Genesis III</span>
+
+          When entering battle, Critical Rate **+20%**. All Genesis DMG applied through Incantations can critically hit.
+
+          <span class="passive-title">Summon</span>
+
+          At the end of an odd-numbered round, summons Sign (Up).
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Advocator of Knowledge</span>
+
+          Max Eureka +1. At the end of the round, if any 1 ally has 4 or more *\[Stats Up]*, *\[Pos Status]*, or *\[Counter]* statuses, gains Eureka +1. When attacking a target with *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses, DMG Dealt **+16%**.
+
+          <span class="passive-title">Advocator of Knowledge II</span>
+
+          DMG Dealt **+8%** when the caster enters battle.
+
+          <span class="passive-title">Advocator of Knowledge III</span>
+
+          Before the Ultimate takes effect, applies 2 random :effect{code="COLLECTION_OF_DEBUFFS_6"} effects to all enemies for 2 rounds. At the start of the round, applies 1 random :effect{code="COLLECTION_OF_BUFFS_6"} effect to all allies for 2 rounds.
+
+          <span class="passive-title">Summon</span>
+
+          At the end of an even-numbered round, summons Sign (Down).
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+          <span class="passive-title">Small Wound</span>
+
+          Immune to all statuses. Cannot be healed. All DMG taken is set to 1.
+
+          <span class="passive-title">Find the Way</span>
+
+          Immune to all statuses. All DMG taken is set to 1.
+
+          <span class="passive-title">Below</span>
+
+          After an ally takes an action, all characters get Eureka -1.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill1-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **140%** Mental DMG plus (ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **210%** Mental DMG plus (ATK x**60%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{code="COLLECTION_OF_DEBUFFS_6"} on the targets for 2 rounds. Gain Eureka +1 for self when at 4 or less Eureka.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **175%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{code="COLLECTION_OF_DEBUFFS_6"} on the targets for 2 rounds. Gain Eureka +2 for self when at 4 or less Eureka.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **70%** Mental DMG plus (ATK x**40%**) Genesis DMG to 2 enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **105%** Mental DMG plus (ATK x**60%**) Genesis DMG to 2 enemies. Gains 1 additional stack of :effect{code="STURDINESS"}.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> 1-target buff. Purifies 2 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> 1-target buff. Purifies 4 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{code="COLLECTION_OF_BUFFS_6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{code="EMPOWER_INCANTATION_I"} for 2 rounds.
+        </div>
+      </Fragment>
+
+      <Fragment slot="ultimate-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+          Mass buff. Grants 2 stacks of :effect{code="NUMERAL_PERCEPTION"} to all allies, gains 2 stacks of :effect{code="ENLIGHTENMENT"}, and gains Eureka +2.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          1-target attack. Deals **700%** Mental DMG. If at 6 or more Eureka, spend 6 Eureka to deal **75%** increased Mental DMG to the target for every 1 type of *\[Stats Down]*, *\[Neg Status]* and *\[Control]* status they have. Increases up to 4 times.
+        </div>
+      </Fragment>
+    </EnemyInfo>
   </Fragment>
 </ZoneContent>

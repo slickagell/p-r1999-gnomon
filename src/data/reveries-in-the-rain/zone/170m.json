@@ -1,0 +1,59 @@
+{
+  "enemies": [
+    {
+      "id": "170m-0-0",
+      "gameId": "900017101",
+      "wave": 1,
+      "name": "Head of Tyranny",
+      "headIconId": "301501",
+      "isBoss": true,
+      "dmgType": "MENTAL",
+      "afflatus": "BEAST",
+      "hp": 205553,
+      "lv": "Insight III Level 14",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "A+",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Dirty Thing", "cardId": "30150111" },
+      "skill2": { "name": "Poor Sod", "cardId": "30150121" },
+      "ultimate": { "name": "Nosier Than Me", "cardId": "30150131" }
+    },
+    {
+      "id": "170m-1-0",
+      "gameId": "900017102",
+      "wave": 1,
+      "name": "Minion of the Head of Tyranny",
+      "headIconId": "640205",
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 123332,
+      "lv": "Insight III Level 14",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Order", "cardId": "1102" },
+      "skill2": { "name": "Threat", "cardId": "1102" },
+      "ultimate": { "name": "A Stable Job", "cardId": "1104" }
+    },
+    {
+      "id": "170m-2-0",
+      "gameId": "900017103",
+      "wave": 1,
+      "name": "Minion of the Head of Tyranny",
+      "headIconId": "640205",
+      "dmgType": "REALITY",
+      "afflatus": "BEAST",
+      "hp": 123332,
+      "lv": "Insight III Level 14",
+      "atkRate": "A+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "skill1": { "name": "Order", "cardId": "1102" },
+      "skill2": { "name": "Threat", "cardId": "1102" },
+      "ultimate": { "name": "A Stable Job", "cardId": "1104" }
+    }
+  ]
+}
