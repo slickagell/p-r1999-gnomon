@@ -5,6 +5,7 @@ title: "Bathyal Zone 300M-I"
 import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import Icon from "@components/Icon.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 import data from "@data/reveries-in-the-rain/zone/300m-i.json";
 
@@ -129,6 +130,8 @@ import data from "@data/reveries-in-the-rain/zone/300m-i.json";
 
   <Fragment slot="team-suggestion-section-title">
     ## Team suggestion
+
+    <a class="custom-link !text-primary-content italic flex items-center" target="_blank" href="https://docs.google.com/spreadsheets/d/1RW_8QqAyiIzuG0Zv0supj6aralSJsO1L3qVPYYxs_Og/edit?gid=1935212988#gid=1935212988">Reveries Clears Database - 300M-I <Icon customClass="inline-block" icon="caret-right" /></a>
   </Fragment>
 
   <Fragment slot="team-suggestion-dps">

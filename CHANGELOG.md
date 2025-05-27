@@ -1,4 +1,10 @@
-##### 2025-05-24
+##### 2025-05-27
+
+* Add nav links to Reveries Clears Database
+* Fix errors in Reveries zone 190M, 200M-I (thanks @flare\_azazel for the feedbacks)
+* Update character archetype/trait list
+
+##### 2025-05-25
 
 * Add enemy info for Euphotic, Mesophotic zone (10M-200M) in Reveries
 

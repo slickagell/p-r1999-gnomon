@@ -5,6 +5,7 @@ title: "Mesophotic Zone 200M-I"
 import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import Icon from "@components/Icon.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 import data from "@data/reveries-in-the-rain/zone/200m-i.json";
 
@@ -274,6 +275,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
     * There are *Moldir* and enemies, you just need to defeat *Moldir* to pass the stage.
     * At the end of each round, *Moldir* will perform an additional attack to the highest ATK ally and make that ally fall into :effect{code="DISARM"} status.
     * When being attacked in *\[Counter]* status, *Moldir* will riposte and also inflict :effect{code="DISARM"} on the attacker.
+    * Moldir's Ultimate will grant herself Critical Rate **+100%** and Critical DMG **+50%** for **3** rounds.
     * There are enemies call *Shieldbearer* that will be in :effect{code="TAUNT"} status to protect *Moldir* from being attacked.
   </Fragment>
 
@@ -282,16 +284,18 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
   </Fragment>
 
   <Fragment slot="strategy-and-tips-content">
-    * Focus on dealing with *Moldir*.
-    * You can deal with *Shieldbearer* first to remove them from protecting *Moldir*.
     * Prioritize **Beast** or **single-target** units.
+    * You should bring units with **dispel** skills to dispel *\[Pos Status]* and *\[Counter]* from enemies.
+    * You can deal with *Shieldbearer* first to remove them from protecting *Moldir*.
     * You can choose units have skills that are **not** *\[Attack]* type skills and let them have the highest ATK to not be affected by :effect{code="DISARM"}.
-    * Characters like *Lopera* or *Joe* should not be used to deal with *Moldir* since they are affected by :effect{code="DISARM"}, which will cause them to lose ability to perform their Follow-up attacks.
-    * The **best** Myth Manifest to use is *Operatic Reflection* since it has stronger Afflatus, provides effects to *Beast* units and at the beginning of each round, perform an attack that can reduce enemies's :effect{code="DODGE"} stacks.
+    * Characters like *Lopera* should not be used to deal with *Moldir* since they are affected by :effect{code="DISARM"}, which will cause them to lose ability to perform their Follow-up attacks.
+    * The **best** Myth Manifest to use is *Operatic Reflection* since it has stronger Afflatus, provides effects to *Beast* units.
   </Fragment>
 
   <Fragment slot="team-suggestion-section-title">
     ## Team suggestion
+
+    <a class="custom-link !text-primary-content italic flex items-center" target="_blank" href="https://docs.google.com/spreadsheets/d/1RW_8QqAyiIzuG0Zv0supj6aralSJsO1L3qVPYYxs_Og/edit?gid=1928101951#gid=1928101951">Reveries Clears Database - 200M-I <Icon customClass="inline-block" icon="caret-right" /></a>
   </Fragment>
 
   <Fragment slot="team-suggestion-dps">
@@ -311,6 +315,8 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
   <Fragment slot="team-suggestion-support">
     #### Support
 
+    <CharacterHeadIcon code="PICKLES" note="(euphoria 1)" />
+
     <CharacterHeadIcon code="6" />
 
     <CharacterHeadIcon code="ISOLDE" />
@@ -326,6 +332,8 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
     #### Sustain/Healer
 
     <CharacterHeadIcon code="MS_NEWBABEL" />
+
+    <CharacterHeadIcon code="BALLOON_PARTY" />
 
     <CharacterHeadIcon code="VILA" />
 

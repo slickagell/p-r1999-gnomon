@@ -5,6 +5,7 @@ title: "Mesophotic Zone 190M"
 import CardType from "@components/CardType.astro";
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import EnemyInfo from "@components/ReveriesInTheRainMarkdown/EnemyInfo.astro";
+import Icon from "@components/Icon.astro";
 import ZoneContent from "@components/ReveriesInTheRainMarkdown/ZoneContent.astro";
 import data from "@data/reveries-in-the-rain/zone/190m.json";
 
@@ -33,7 +34,7 @@ import data from "@data/reveries-in-the-rain/zone/190m.json";
 
           <span class="passive-title">Legal Provision II</span>
 
-          At the end of the round, if own HP is below 75/50/**25%**, gain AP +1/2/3 on the next round and gain 1/2/3 stacks of :effect{code="INSTANT_CONCEALMENT"} for self.
+          At the end of the round, if own HP is below **75/50/25%**, gain AP +1/2/3 on the next round and gain 1/2/3 stacks of :effect{code="INSTANT_CONCEALMENT"} for self.
 
           <span class="passive-title">Legal Protection II</span>
 
@@ -86,7 +87,7 @@ import data from "@data/reveries-in-the-rain/zone/190m.json";
       * <CharacterHeadIcon code="SEMMELWEIS" />
 
     * If you don't have a character who can create :effect{code="ARRAY"}, bring sustain ally and try to keep HP higher than *Dikke*, prevent her from increasing her ATK.
-      * When *Dikke* is in :effect{code="ARRAY"}, she will attack the farthest left ally, so place your best resistance ally in the **first slot** to optimize sustain.
+      * When *Dikke* is in :effect{code="ARRAY"}, she will attack the leftmost ally, so place your best tankiest ally or unit thats not disturbed by :effect{code="DISARM"} like healer in the **first slot** to optimize sustain.
 
     - Pick DPS characters who can deals high DMG to **single target**.
 
@@ -95,6 +96,8 @@ import data from "@data/reveries-in-the-rain/zone/190m.json";
 
   <Fragment slot="team-suggestion-section-title">
     ## Team suggestion
+
+    <a class="custom-link !text-primary-content italic flex items-center" target="_blank" href="https://docs.google.com/spreadsheets/d/1RW_8QqAyiIzuG0Zv0supj6aralSJsO1L3qVPYYxs_Og/edit?gid=1545074841#gid=1545074841">Reveries Clears Database - 190M <Icon customClass="inline-block" icon="caret-right" /></a>
   </Fragment>
 
   <Fragment slot="team-suggestion-dps">
