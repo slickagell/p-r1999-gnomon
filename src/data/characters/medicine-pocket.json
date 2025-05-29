@@ -26,6 +26,87 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "name": "The Mad Alchemy of Blood",
+      "code": "THE_MAD_ALCHEMY_OF_BLOOD",
+      "icon": "304701",
+      "materials": {
+        "0": [
+          { "code": "KEY_OF_THOUGHT", "require": 12 },
+          { "code": "SPROUT_OF_FANTASY", "require": 40 },
+          { "code": "SEED_OF_INSPIRATION", "require": 200 },
+          { "code": "SERPENT_SCEPTER", "require": 3 }
+        ],
+        "1": [
+          { "code": "SPROUT_OF_FANTASY", "require": 20 },
+          { "code": "SEED_OF_INSPIRATION", "require": 80 },
+          { "code": "MISTILTEINN", "require": 1 },
+          { "code": "INCORRUPT_MONKEYPAW", "require": 1 }
+        ],
+        "2": [
+          { "code": "SPROUT_OF_FANTASY", "require": 30 },
+          { "code": "SEED_OF_INSPIRATION", "require": 120 },
+          { "code": "GOLDEN_FLEECE", "require": 1 },
+          { "code": "WYRMLING_SKELETON", "require": 2 }
+        ],
+        "3": [
+          { "code": "SPROUT_OF_FANTASY", "require": 35 },
+          { "code": "SEED_OF_INSPIRATION", "require": 140 },
+          { "code": "SERPENT_SCEPTER", "require": 2 },
+          { "code": "SILVER_BULLET", "require": 2 }
+        ],
+        "4": [
+          { "code": "SPROUT_OF_FANTASY", "require": 40 },
+          { "code": "SEED_OF_INSPIRATION", "require": 160 },
+          { "code": "RHEINGOLD", "require": 2 },
+          { "code": "MURMUR_OF_INSANITY", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "code": "SEED_OF_INSPIRATION", "require": 195 }],
+          "data": {
+            "HP": { "value": 160 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 10 },
+            "MENTAL_DEFENSE": { "value": 10 },
+            "HEALING_DONE": { "value": 10, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "code": "SEED_OF_INSPIRATION", "require": 446 }],
+          "data": {
+            "HP": { "value": 295 },
+            "ATTACK": { "value": 53 },
+            "REALITY_DEFENSE": { "value": 16 },
+            "MENTAL_DEFENSE": { "value": 16 },
+            "HEALING_DONE": { "value": 15, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "code": "SEED_OF_INSPIRATION", "require": 776 }],
+          "data": {
+            "HP": { "value": 400 },
+            "ATTACK": { "value": 71 },
+            "REALITY_DEFENSE": { "value": 27 },
+            "MENTAL_DEFENSE": { "value": 27 },
+            "HEALING_DONE": { "value": 20, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "code": "SEED_OF_INSPIRATION", "require": 1811 }],
+          "data": {
+            "HP": { "value": 615 },
+            "ATTACK": { "value": 96 },
+            "REALITY_DEFENSE": { "value": 54 },
+            "MENTAL_DEFENSE": { "value": 54 },
+            "HEALING_DONE": { "value": 20, "unit": "%" }
+          }
+        }
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

@@ -28,7 +28,24 @@ const { epiphanyLevel, materials, stats } = Astro.props;
 ---
 
 <div class="flex items-center justify-between gap">
-  <h4>Epiphany {Array(epiphanyLevel).fill("I").join("")}</h4>
+  <h4>
+    Epiphany {
+      (() => {
+        switch (epiphanyLevel) {
+          case 1:
+            return "I";
+          case 2:
+            return "II";
+          case 3:
+            return "III";
+          case 4:
+            return "IV";
+          default:
+            return "";
+        }
+      })()
+    }
+  </h4>
   <div class="flex flex-wrap gap-4">
     <span class="label-text-alt">
       <Tooltip>

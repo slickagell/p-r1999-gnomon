@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -156,6 +157,32 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      *\[Alchemy Ware]*: If a target is at **50%** HP or below, recover (the user's ATK x Healing Factor) HP to that target; if a target is above **50%** HP, that target gains a Shield with (the user's ATK x Healing Factor x **120%**) HP for **2** rounds.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      *\[Inherent Habit]*: When cast, lose (own Current HP x**10%**) HP and inflict Critical Resist Rate **-30%** and Critical DEF **-40%** on the target for **2** rounds.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      After an ally is attacked, this unit casts a rank **1** *\[Alchemy Ware]* as a follow-up attack (can trigger up to **2** times per round);
+
+      When casting *\[Alchemy Ware]*, cause all allies to lose (Current HP x**10%**) HP; and if a target is at **50%** HP or below, recover an additional (the user's Missing HP x**25%**) HP for that target.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      *\[26 Secondary Reactions]*: When cast, lose (own current HP x**20%**) HP and deal an additional (own Missing HP x**150%**) Genesis DMG.
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">

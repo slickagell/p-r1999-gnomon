@@ -11,12 +11,12 @@ version: "2.6"
 releaseDate: "2025-05-29"
 specialties: ["DPS", "BURST_DMG", "MOXIE"]
 isLimited: false
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -30,23 +30,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An arcanist's artwork. Exhibited in the 1990s, duration of exhibition unknown. Created in winter, on the 15th of July. Originally exhibited in Santiago, Chile, later toured across Latin America.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Visceral Realism
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Ghosts of the Past \[Mineral], Literary Symbolism
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Fruity Floral, Ink, Cattail, Iris, Labdanum, Cinnamon
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    65 3/4 x 19 5/16 x 17 23/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -62,48 +62,52 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    Metaphysical Conceit
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="DEBUFF" note="Keep writing.">
+      1-target attack. Deals **100%** Reality DMG; after attacking, inflicts 2 stacks of :effect{code="PASSION_DRAIN"} on the target.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="DEBUFF" note="Keep writing what you observed amidst the gray snowfields and green grapevines.">
+      1-target attack. Deals **150%** Reality DMG; after attacking, inflicts 2 stacks of :effect{code="PASSION_DRAIN"} on the target.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="DEBUFF" note="Keep writing what you've witnessed in the blend of illusion and reality on that land.">
+      1-target attack. Deals **250%** Reality DMG; after attacking, inflicts 2 stacks of :effect{code="PASSION_DRAIN"} on the target.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    Literary Imagery
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="A pen is no different from a sword.">
+      Mass attack. Deals **120%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} to self; otherwise, grant 5 stacks of :effect{code="ENSEMBLE_NARRATIVE"} to self.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="A pen is no different from a sword—they are both equally sharp, and equally fragile.">
+      Mass attack. Deals **180%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} to self; otherwise, grant 5 stacks of :effect{code="ENSEMBLE_NARRATIVE"} to self.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="A pen is no different from a sword—sharpen it with a myriad of stories.">
+      Mass attack. Deals **300%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} to self; otherwise, grant 5 stacks of :effect{code="ENSEMBLE_NARRATIVE"} to self.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Maze of Visceral Realism
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note="A jumble of verses that defy understanding, unforgettable yet impossible to remember.">
+      Mass attack. Deals **450%** Reality DMG to all enemies and an additional **450%** Reality DMG to the main target. Consumes all stacks of :effect{code="MONOMYTHIC_NARRATIVE"} and :effect{code="ENSEMBLE_NARRATIVE"} on self to deal additional Reality DMG;
+
+      When casting this ultimate, consume all Moxie on self. For each additional Moxie consumed, grant Ultimate Might **+3%** to this attack, and grant Moxie +1 to another ally with the lowest current Moxie;
+
+      If at least 5 additional Moxie are consumed, the bonus Ultimate Might granted to this attack is doubled.
     </CardInfo>
   </Fragment>
 
@@ -112,19 +116,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Spontaneous Writing
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    Max Moxie +2 (The Moxie required to gain ultimates is still 5).
+
+    After another ally casts an ultimate, Recoleta gains Moxie +1; and for each point of Moxie consumed by that 1-target/mass ultimate, Recoleta gains 1 stack of :effect{code="MONOMYTHIC_NARRATIVE"}/:effect{code="ENSEMBLE_NARRATIVE"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    Critical DMG **+15%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    Max Moxie +3. When entering battle, gain Moxie +3 and 1 stack of :effect{code="PREPARATION_RECOLETA"}.
+
+    After casting an ultimate, for every 10 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} and or :effect{code="ENSEMBLE_NARRATIVE"} consumed, gain 1 stack of :effect{code="PREPARATION_RECOLETA"}; a maximum of 1 stack can be gained in this way.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -132,23 +140,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    Spontaneous Writing: When casting an ultimate, the maximum stack limit of :effect{code="PREPARATION_RECOLETA"} is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    Maze of Visceral Realism: The additional Reality DMG dealt by consuming :effect{code="MONOMYTHIC_NARRATIVE"}/:effect{code="ENSEMBLE_NARRATIVE"} is increased to **70%/35%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    Maze of Visceral Realism: The Reality DMG dealt is increased to **550%/550%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    Literary Imagery: At incantation rank **1/2/3**, the Reality DMG dealt is increased to **150%/225%/375%**, and the stacks of :effect{code="MONOMYTHIC_NARRATIVE_ID_2"}/:effect{code="ENSEMBLE_NARRATIVE_ID_2"} granted to self are increased to **10**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    Maze of Visceral Realism: The Reality DMG dealt is increased to **650%/650%**, and for each additional Moxie consumed, the Ultimate Might bonus is increased to **+6%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -157,6 +165,26 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon code="THE_FINAL_ROLL" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon code="BALANCE_PLEASE" />
+
+      <PsychubeIcon code="REHEARSAL_OF_DREAMS" />
+    </div>
   </Fragment>
 
   <Fragment slot="overview-section-title">

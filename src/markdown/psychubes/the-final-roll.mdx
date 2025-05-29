@@ -1,0 +1,38 @@
+---
+id: 1544
+title: "The Final Roll"
+rarity: 6
+code: "THE_FINAL_ROLL"
+image: "1544.png"
+tags: ["ATK","CRITICAL"]
+stats: {"HP":2800,"ATTACK":380,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":160}
+specialStat: {"code":"CRITICAL_RATE","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    One last spin is all that remains,<br />the ending of the story you long for, the ending that belongs to you, to the ghost, to everyone.<br />Roll the die one last time!<br />No longer heavy, no longer absurd—<br />Look, it gleams in the dunes of night.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    When the carrier attacks, for each point of Moxie held, the attack gains Ultimate Might **+1.2%**.<br />If the carrier is of the *\[Mineral]* afflatus, for each point of Moxie consumed, gain Critical DMG **+1%**, stacks up to 16 times.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    When the carrier attacks, for each point of Moxie held, the attack gains Ultimate Might **+1.8%**.<br />If the carrier is of the *\[Mineral]* afflatus, for each point of Moxie consumed, gain Critical DMG **+1%**, stacks up to 16 times.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    When the carrier attacks, for each point of Moxie held, the attack gains Ultimate Might **+1.8%**.<br />If the carrier is of the *\[Mineral]* afflatus, for each point of Moxie consumed, gain Critical DMG **+1.5%**, stacks up to 16 times.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    When the carrier attacks, for each point of Moxie held, the attack gains Ultimate Might **+2.4%**.<br />If the carrier is of the *\[Mineral]* afflatus, for each point of Moxie consumed, gain Critical DMG **+1.5%**, stacks up to 16 times.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    When the carrier attacks, for each point of Moxie held, the attack gains Ultimate Might **+2.4%**.<br />If the carrier is of the *\[Mineral]* afflatus, for each point of Moxie consumed, gain Critical DMG **+2%**, stacks up to 16 times.
+  </Fragment>
+</PsychubeContent>

@@ -15,6 +15,7 @@ isLimited: false
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -156,6 +157,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      After actively attacking, inflicts **1** stack of :effect{code="PASSION_DRAIN"} on the target.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      *\[Top Student]* Enhancement: :effect{code="FIXED_PLAN"} is now granted to all allies and grants new additional effects: Ultimate Critical Rate **+6%** and Ultimate Critical DMG **+6%**.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      *\[Ridiculous Eyewitness Testimony]* Enhancement: For each stack of :effect{code="FIXED_PLAN_ID_1"}, deals an additional **50%** Mental DMG.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      When entering battle, gain Moxie **+5** for self. Excess Moxie on allies is temporarily stored. At the end of the round, each character's stored Moxie is used to replenish their own Moxie if able. Each character can store up to **5** points of Moxie this way.
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">
