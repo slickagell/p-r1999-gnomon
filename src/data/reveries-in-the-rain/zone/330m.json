@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "330m-1",
+      "id": "330m-0-0",
+      "gameId": "900031101",
       "wave": 1,
       "name": "Positive Charge",
       "headIconId": "670102",
@@ -9,25 +10,30 @@
       "afflatus": "SPIRIT",
       "hp": 208645,
       "lv": "Insight III Level 46",
+      "stats": {
+        "HP": 208645,
+        "ATTACK": 1788,
+        "REALITY_DEFENSE": 879,
+        "MENTAL_DEFENSE": 879,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 9.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 38.1,
+        "DMG_BONUS": 13.8,
+        "DMG_REDUCTION": 31.3
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "C+",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Revolve",
-        "cardId": "1701"
-      },
-      "skill2": {
-        "name": "Flip",
-        "cardId": "1703"
-      },
-      "ultimate": {
-        "name": "Deconstruct Law",
-        "cardId": "1704"
-      }
+      "skill1": { "name": "Revolve", "cardId": "1701" },
+      "skill2": { "name": "Flip", "cardId": "1703" },
+      "ultimate": { "name": "Deconstruct Law", "cardId": "1704" }
     },
     {
-      "id": "330m-2",
+      "id": "330m-1-0",
+      "gameId": "900031102",
       "wave": 1,
       "name": "Negative Charge",
       "headIconId": "670103",
@@ -35,25 +41,30 @@
       "afflatus": "INTELLECT",
       "hp": 208645,
       "lv": "Insight III Level 46",
+      "stats": {
+        "HP": 208645,
+        "ATTACK": 1967,
+        "REALITY_DEFENSE": 879,
+        "MENTAL_DEFENSE": 879,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 9.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 38.1,
+        "DMG_BONUS": 13.8,
+        "DMG_REDUCTION": 31.3
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "C+",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Revolve",
-        "cardId": "1701"
-      },
-      "skill2": {
-        "name": "Flip",
-        "cardId": "1702"
-      },
-      "ultimate": {
-        "name": "Deconstruct Law",
-        "cardId": "1704"
-      }
+      "skill1": { "name": "Revolve", "cardId": "1701" },
+      "skill2": { "name": "Flip", "cardId": "1702" },
+      "ultimate": { "name": "Deconstruct Law", "cardId": "1704" }
     },
     {
-      "id": "330m-3",
+      "id": "330m-2-0",
+      "gameId": "900031103",
       "wave": 1,
       "name": "Positive Charge",
       "headIconId": "670102",
@@ -61,25 +72,30 @@
       "afflatus": "SPIRIT",
       "hp": 208645,
       "lv": "Insight III Level 46",
+      "stats": {
+        "HP": 208645,
+        "ATTACK": 1788,
+        "REALITY_DEFENSE": 879,
+        "MENTAL_DEFENSE": 879,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 9.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 38.1,
+        "DMG_BONUS": 13.8,
+        "DMG_REDUCTION": 31.3
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "C+",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Revolve",
-        "cardId": "1701"
-      },
-      "skill2": {
-        "name": "Flip",
-        "cardId": "1703"
-      },
-      "ultimate": {
-        "name": "Deconstruct Law",
-        "cardId": "1704"
-      }
+      "skill1": { "name": "Revolve", "cardId": "1701" },
+      "skill2": { "name": "Flip", "cardId": "1703" },
+      "ultimate": { "name": "Deconstruct Law", "cardId": "1704" }
     },
     {
-      "id": "330m-4",
+      "id": "330m-3-0",
+      "gameId": "900031104",
       "wave": 1,
       "name": "Negative Charge",
       "headIconId": "670103",
@@ -87,22 +103,26 @@
       "afflatus": "INTELLECT",
       "hp": 208645,
       "lv": "Insight III Level 46",
+      "stats": {
+        "HP": 208645,
+        "ATTACK": 1967,
+        "REALITY_DEFENSE": 879,
+        "MENTAL_DEFENSE": 879,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 9.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 38.1,
+        "DMG_BONUS": 13.8,
+        "DMG_REDUCTION": 31.3
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "C+",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Revolve",
-        "cardId": "1701"
-      },
-      "skill2": {
-        "name": "Flip",
-        "cardId": "1702"
-      },
-      "ultimate": {
-        "name": "Deconstruct Law",
-        "cardId": "1704"
-      }
+      "skill1": { "name": "Revolve", "cardId": "1701" },
+      "skill2": { "name": "Flip", "cardId": "1702" },
+      "ultimate": { "name": "Deconstruct Law", "cardId": "1704" }
     }
   ]
 }

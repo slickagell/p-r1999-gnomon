@@ -1,44 +1,118 @@
 {
   "enemies": [
     {
-      "id": "350m-ii-1",
+      "id": "350m-ii-0-0",
+      "gameId": "900040404",
+      "wave": 1,
+      "name": "Corpse of the Past",
+      "headIconId": "670201",
+      "dmgType": "REALITY",
+      "afflatus": "STAR",
+      "hp": 111331,
+      "lv": "Insight III Level 50",
+      "stats": {
+        "HP": 111331,
+        "ATTACK": 1811,
+        "REALITY_DEFENSE": 630,
+        "MENTAL_DEFENSE": 630,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 9.5,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.2,
+        "CRITICAL_DEFENSE": 38.7,
+        "DMG_BONUS": 14,
+        "DMG_REDUCTION": 11.8
+      },
+      "atkRate": "C+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "resistance": [
+        { "code": "SLEEP_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 100 }
+      ],
+      "skill1": { "name": "Blood Splatter", "cardId": "2102" },
+      "skill2": { "name": "Invitation", "cardId": "2102" },
+      "ultimate": { "name": "Intimate Touch", "cardId": "2104" }
+    },
+    {
+      "id": "350m-ii-1-0",
+      "gameId": "900040401",
       "wave": 1,
       "name": "A Nightmare at Green Lake",
-      "headIconId": "305601",
+      "headIconId": "634101",
       "isBoss": true,
       "dmgType": "REALITY",
       "afflatus": "STAR",
       "hp": 329719,
       "lv": "Insight III Level 50",
+      "stats": {
+        "HP": 329719,
+        "ATTACK": 2083,
+        "REALITY_DEFENSE": 980,
+        "MENTAL_DEFENSE": 980,
+        "CRITICAL_TECHNIQUE": 322,
+        "CRITICAL_RATE": 19.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 126.1,
+        "CRITICAL_DEFENSE": 22.6,
+        "DMG_BONUS": 24.4,
+        "DMG_REDUCTION": 18.7
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "A+",
       "realityDefRate": "A",
       "mentalDefRate": "A",
-      "resistance": [
+      "phases": [
         {
-          "code": "CONTROL_RESILIENCE",
-          "value": 200
-        },
-        {
-          "code": "SILENCE_RESISTANCE",
-          "value": 100
+          "id": "350m-ii-1-0",
+          "gameId": "900040402",
+          "wave": 1,
+          "phase": "2",
+          "name": "A Nightmare at Green Lake",
+          "headIconId": "634101",
+          "isBoss": true,
+          "dmgType": "REALITY",
+          "afflatus": "SPIRIT",
+          "hp": 526292,
+          "lv": "Insight III Level 50",
+          "stats": {
+            "HP": 526292,
+            "ATTACK": 2083,
+            "REALITY_DEFENSE": 980,
+            "MENTAL_DEFENSE": 980,
+            "CRITICAL_TECHNIQUE": 322,
+            "CRITICAL_RATE": 17,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 126.1,
+            "CRITICAL_DEFENSE": 13,
+            "DMG_BONUS": 40.2,
+            "DMG_REDUCTION": 9.1
+          },
+          "atkRate": "A+",
+          "criticalTechniqueRate": "A+",
+          "realityDefRate": "A",
+          "mentalDefRate": "A",
+          "resistance": [
+            { "code": "SILENCE_RESISTANCE", "value": 100 },
+            { "code": "CONTROL_RESILIENCE", "value": 200 }
+          ],
+          "skill1": { "name": "DON'T LEAVE!", "cardId": "1401" },
+          "skill2": { "name": "My Buddy~", "cardId": "1402" },
+          "ultimate": { "name": "Generous Pleading to Stay", "cardId": "1404" }
         }
       ],
-      "skill1": {
-        "name": "STAY!",
-        "cardId": "1401"
-      },
-      "skill2": {
-        "name": "My Buddy",
-        "cardId": "1402"
-      },
-      "ultimate": {
-        "name": "Generous Pleading to Stay",
-        "cardId": "1404"
-      }
+      "resistance": [
+        { "code": "SILENCE_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 200 }
+      ],
+      "skill1": { "name": "STAY!", "cardId": "1401" },
+      "skill2": { "name": "My Buddy~", "cardId": "1402" },
+      "ultimate": { "name": "Generous Pleading to Stay", "cardId": "1404" }
     },
     {
-      "id": "350m-ii-2",
+      "id": "350m-ii-2-0",
+      "gameId": "900040404",
       "wave": 1,
       "name": "Corpse of the Past",
       "headIconId": "670201",
@@ -46,68 +120,30 @@
       "afflatus": "STAR",
       "hp": 111331,
       "lv": "Insight III Level 50",
+      "stats": {
+        "HP": 111331,
+        "ATTACK": 1811,
+        "REALITY_DEFENSE": 630,
+        "MENTAL_DEFENSE": 630,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 9.5,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.2,
+        "CRITICAL_DEFENSE": 38.7,
+        "DMG_BONUS": 14,
+        "DMG_REDUCTION": 11.8
+      },
       "atkRate": "C+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
       "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "SLEEP_RESISTANCE",
-          "value": 100
-        }
+        { "code": "SLEEP_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 100 }
       ],
-      "skill1": {
-        "name": "Blood Splatter",
-        "cardId": "2102"
-      },
-      "skill2": {
-        "name": "Invitation",
-        "cardId": "2102"
-      },
-      "ultimate": {
-        "name": "Intimate Touch",
-        "cardId": "2104"
-      }
-    },
-    {
-      "id": "350m-ii-3",
-      "wave": 1,
-      "name": "Corpse of the Past",
-      "headIconId": "670201",
-      "dmgType": "REALITY",
-      "afflatus": "STAR",
-      "hp": 111331,
-      "lv": "Insight III Level 50",
-      "atkRate": "C+",
-      "criticalTechniqueRate": "B",
-      "realityDefRate": "B+",
-      "mentalDefRate": "B+",
-      "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "SLEEP_RESISTANCE",
-          "value": 100
-        }
-      ],
-      "skill1": {
-        "name": "Blood Splatter",
-        "cardId": "2102"
-      },
-      "skill2": {
-        "name": "Invitation",
-        "cardId": "2102"
-      },
-      "ultimate": {
-        "name": "Intimate Touch",
-        "cardId": "2104"
-      }
+      "skill1": { "name": "Blood Splatter", "cardId": "2102" },
+      "skill2": { "name": "Invitation", "cardId": "2102" },
+      "ultimate": { "name": "Intimate Touch", "cardId": "2104" }
     }
   ]
 }

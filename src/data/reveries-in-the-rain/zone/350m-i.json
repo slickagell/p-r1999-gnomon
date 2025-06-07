@@ -1,41 +1,79 @@
 {
   "enemies": [
     {
-      "id": "350m-i-1",
+      "id": "350m-i-0-0",
+      "gameId": "900035101",
       "wave": 1,
       "name": "Mysterious Feather Man",
       "headIconId": "308401",
       "isBoss": true,
-      "dmgType": "MENTAL",
+      "dmgType": "REALITY",
       "afflatus": "BEAST",
       "hp": 1133381,
       "lv": "Insight III Level 50",
+      "stats": {
+        "HP": 1133381,
+        "ATTACK": 2183,
+        "REALITY_DEFENSE": 1229,
+        "MENTAL_DEFENSE": 1229,
+        "CRITICAL_TECHNIQUE": 322,
+        "CRITICAL_RATE": 17,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 126.1,
+        "CRITICAL_DEFENSE": 13,
+        "DMG_BONUS": 40.2,
+        "DMG_REDUCTION": 49.1
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "S",
       "realityDefRate": "A",
       "mentalDefRate": "A",
-      "resistance": [
+      "phases": [
         {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "SEAL_RESISTANCE",
-          "value": 100
+          "id": "350m-i-0-0",
+          "gameId": "900035102",
+          "wave": 1,
+          "phase": "2",
+          "name": "Mysterious Feather Man",
+          "headIconId": "630304",
+          "isBoss": true,
+          "dmgType": "REALITY",
+          "afflatus": "BEAST",
+          "hp": 1133381,
+          "lv": "Insight III Level 50",
+          "stats": {
+            "HP": 1133381,
+            "ATTACK": 2183,
+            "REALITY_DEFENSE": 1229,
+            "MENTAL_DEFENSE": 1229,
+            "CRITICAL_TECHNIQUE": 322,
+            "CRITICAL_RATE": 17,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 126.1,
+            "CRITICAL_DEFENSE": 13,
+            "DMG_BONUS": 40.2,
+            "DMG_REDUCTION": 49.1
+          },
+          "atkRate": "A",
+          "criticalTechniqueRate": "S",
+          "realityDefRate": "A",
+          "mentalDefRate": "A",
+          "resistance": [
+            { "code": "SEAL_RESISTANCE", "value": 100 },
+            { "code": "CONTROL_RESILIENCE", "value": 100 }
+          ],
+          "skill1": { "name": "Bone's Legacy", "cardId": "1402" },
+          "skill2": { "name": "Flute of Yesteryear", "cardId": "1402" },
+          "ultimate": { "name": "Above the Branches", "cardId": "1404" }
         }
       ],
-      "skill1": {
-        "name": "Bone's Legacy",
-        "cardId": "1402"
-      },
-      "skill2": {
-        "name": "Flute of Yesteryear",
-        "cardId": "1402"
-      },
-      "ultimate": {
-        "name": "Above the Branches",
-        "cardId": "1404"
-      }
+      "resistance": [
+        { "code": "SEAL_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 100 }
+      ],
+      "skill1": { "name": "Bone's Legacy", "cardId": "1402" },
+      "skill2": { "name": "Flute of Yesteryear", "cardId": "1402" },
+      "ultimate": { "name": "Above the Branches", "cardId": "1404" }
     }
   ]
 }

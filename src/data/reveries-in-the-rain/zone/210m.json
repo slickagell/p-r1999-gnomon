@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "210m-0",
+      "id": "210m-0-0",
+      "gameId": "900021101",
       "wave": 1,
       "name": "Tooth Fairy Queen",
       "headIconId": "620306",
@@ -10,6 +11,19 @@
       "afflatus": "MINERAL",
       "hp": 203583,
       "lv": "Insight III Level 22",
+      "stats": {
+        "HP": 203583,
+        "ATTACK": 1812,
+        "REALITY_DEFENSE": 972,
+        "MENTAL_DEFENSE": 648,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 16.8,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 20.3,
+        "DMG_BONUS": 21.9,
+        "DMG_REDUCTION": 16.8
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "SS",
@@ -20,7 +34,8 @@
       "ultimate": { "name": "Terrifying Trick", "cardId": "1204" }
     },
     {
-      "id": "210m-1",
+      "id": "210m-1-0",
+      "gameId": "900021102",
       "wave": 1,
       "name": "Tooth Spirites",
       "headIconId": "620118",
@@ -28,6 +43,19 @@
       "afflatus": "MINERAL",
       "hp": 75401,
       "lv": "Insight III Level 22",
+      "stats": {
+        "HP": 75401,
+        "ATTACK": 1647,
+        "REALITY_DEFENSE": 846,
+        "MENTAL_DEFENSE": 564,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 15.6,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.2,
+        "CRITICAL_DEFENSE": 20.3,
+        "DMG_BONUS": 21.9,
+        "DMG_REDUCTION": 16.8
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "SS",
@@ -37,7 +65,8 @@
       "ultimate": { "name": "Terrifying Trick", "cardId": "1204" }
     },
     {
-      "id": "210m-2",
+      "id": "210m-2-0",
+      "gameId": "900021102",
       "wave": 1,
       "name": "Tooth Spirites",
       "headIconId": "620118",
@@ -45,6 +74,19 @@
       "afflatus": "MINERAL",
       "hp": 75401,
       "lv": "Insight III Level 22",
+      "stats": {
+        "HP": 75401,
+        "ATTACK": 1647,
+        "REALITY_DEFENSE": 846,
+        "MENTAL_DEFENSE": 564,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 15.6,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.2,
+        "CRITICAL_DEFENSE": 20.3,
+        "DMG_BONUS": 21.9,
+        "DMG_REDUCTION": 16.8
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "SS",

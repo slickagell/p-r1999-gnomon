@@ -32,7 +32,7 @@ import data from "@data/reveries-in-the-rain/zone/250m-ii.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Carbuncle Reincarnation</span>
 
           A massive Critter is sealed inside the box. When :effect{code="CARBUNCLE_REINCARNATION"} disappears, it appears and reverts to its original form.
@@ -47,11 +47,29 @@ import data from "@data/reveries-in-the-rain/zone/250m-ii.json";
 
           After being attacked or after taking an action, lose 1 stack of :effect{code="STONE_SKIN_ID_223001"}; when being attacked while not in the :effect{code="STONE_SKIN_ID_223001"} status, Critical Resist Rate **-75%**.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '2'`}>
+          <span class="passive-title">The King's Dignity</span>
+
+          After attacking, gain 1 stack of :effect{code="UNSPARING"}. After being attacked, gain 1 stack of :effect{code="FLINCH"}.
+
+          <span class="passive-title">Sacrificial Wounds</span>
+
+          When entering the field, recover all missing HP for self; when another ally dies, gain 5 stacks of :effect{code="FLINCH"} for self.
+
+          <span class="passive-title">Sealed Resurgence</span>
+
+          At the start of the round, if HP is below **50%**, enter the :effect{code="CARBUNCLE_REINCARNATION"} status for 3 rounds.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
         <div x-show={`!['${data.enemies[3].id}'].includes(active)`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **100%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Mental DMG.
         </div>
       </Fragment>
 
@@ -59,11 +77,19 @@ import data from "@data/reveries-in-the-rain/zone/250m-ii.json";
         <div x-show={`!['${data.enemies[3].id}'].includes(active)`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **100%** Reality DMG to 2 enemies plus (own Reality DEF x**50%**) Genesis DMG.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **175%** Mental DMG to 2 enemies.
+        </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`!['${data.enemies[0].id}'].includes(active)`}>
           1-target attack. Deals **400%** Reality DMG; on hit, inflicts :effect{code="DAZE"} for 1 round on the target and deals an additional (own Reality DEF x**150%**) Genesis DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '2'`}>
+          Mass attack. Deals **400%** Mental DMG to all enemies. Purifies 2 types of random negative statuses from self.
         </div>
       </Fragment>
     </EnemyInfo>

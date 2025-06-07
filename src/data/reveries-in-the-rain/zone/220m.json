@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "220m-0",
+      "id": "220m-0-0",
+      "gameId": "900022103",
       "wave": 1,
       "name": "Living Dead",
       "headIconId": "670201",
@@ -9,6 +10,19 @@
       "afflatus": "SPIRIT",
       "hp": 50336,
       "lv": "Insight III Level 24",
+      "stats": {
+        "HP": 50336,
+        "ATTACK": 1659,
+        "REALITY_DEFENSE": 852,
+        "MENTAL_DEFENSE": 568,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 15.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.2,
+        "CRITICAL_DEFENSE": 20.5,
+        "DMG_BONUS": 22.1,
+        "DMG_REDUCTION": 16.9
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "SS",
@@ -18,7 +32,8 @@
       "ultimate": { "name": "Intimate Touch", "cardId": "2104" }
     },
     {
-      "id": "220m-1",
+      "id": "220m-1-0",
+      "gameId": "900022102",
       "wave": 1,
       "name": "Green Lake Ziro Lizard",
       "headIconId": "620107",
@@ -26,6 +41,19 @@
       "afflatus": "SPIRIT",
       "hp": 105012,
       "lv": "Insight III Level 24",
+      "stats": {
+        "HP": 105012,
+        "ATTACK": 1493,
+        "REALITY_DEFENSE": 639,
+        "MENTAL_DEFENSE": 639,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 9.4,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.2,
+        "CRITICAL_DEFENSE": 35,
+        "DMG_BONUS": 12.7,
+        "DMG_REDUCTION": 28.8
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "B",
       "realityDefRate": "S",
@@ -35,7 +63,8 @@
       "ultimate": { "name": "Toxic Caustic Agent", "cardId": "1204" }
     },
     {
-      "id": "220m-2",
+      "id": "220m-2-0",
+      "gameId": "900022101",
       "wave": 1,
       "name": "Green Lake Winged Cat",
       "headIconId": "620204",
@@ -44,6 +73,19 @@
       "afflatus": "SPIRIT",
       "hp": 303920,
       "lv": "Insight III Level 24",
+      "stats": {
+        "HP": 303920,
+        "ATTACK": 1825,
+        "REALITY_DEFENSE": 816,
+        "MENTAL_DEFENSE": 816,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 16.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 20.5,
+        "DMG_BONUS": 22.1,
+        "DMG_REDUCTION": 16.9
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "S",

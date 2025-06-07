@@ -32,7 +32,21 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Curse</span>
+
+          When attacking, inflicts 1 stack of :effect{code="FLINCH"} on the target hit.
+
+          <span class="passive-title">Noxious</span>
+
+          After attacking, inflict 1 stack of :effect{code="POLLUTION"} on the target for 1 round. On death, dispel :effect{code="POLLUTION"} on all enemies.
+
+          <span class="passive-title">Torment</span>
+
+          When being attacked, inflicts 2 stacks of :effect{code="POLLUTION"} on the attacker.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Pollution Resistance</span>
 
           When attacked by an enemy afflicted with :effect{code="POLLUTION"}, damage taken is reduced by **20%**.
@@ -46,7 +60,21 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
           When being attacked, for every 1 type of *\[Neg Status]* held on self, dispel 1 type of *\[Neg Status]* from a random enemy.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '2'`}>
+          <span class="passive-title">Travel Companions</span>
+
+          When entering battle, summons Ghostly Bride and Blunt Blade Butcher.
+
+          <span class="passive-title">Declaration of Revenge</span>
+
+          At the start of the round, if the Blunt Blade Butcher has died, inflicts 1 stack of :effect{code="BLEED"} on all enemies for 2 rounds; if the Ghostly Bride has died, inflicts 1 stack of :effect{code="POLLUTION"} on all enemies for 2 rounds; when another ally dies, AP +1 (triggers up to 2 times), and loses **20%** of Max HP.
+
+          <span class="passive-title">Unusually Afraid</span>
+
+          When being attacked, for every 1 type of *\[Neg Status]* held on self, dispel 1 type of *\[Neg Status]* from a random enemy.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Curse</span>
 
           When attacking, inflicts 1 stack of :effect{code="FLINCH"} on the target hit.
@@ -62,11 +90,23 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack, Deals **200%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG; inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit; if the Butcher has died, casts a follow-up attack.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
 
           <div class="divider my-1 h-1" />
@@ -76,25 +116,45 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
-        </div>
-
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the casters HP is lower than **50%**, deals an additional **50%** Reality DMG.
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the caster's HP is lower than **50%**, deals an additional **50%** Reality DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If the casters HP is lower than **50%**, deals an additional **50%** Reality DMG.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If the caster's HP is lower than **50%**, deals an additional **50%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Reality DMG to 2 enemies; inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit; if the Ghostly Bride has died, casts a follow-up attack.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the caster's HP is lower than **50%**, deals an additional **50%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If the caster's HP is lower than **50%**, deals an additional **50%** Reality DMG.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          1-target attack. Deals **500%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **300%** Reality DMG to all enemies.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '2'`}>
+          Mass attack. Deals **300%** Reality DMG to all enemies; if Ghostly Bride and Blunt Blade Butcher have both died, resolves all :effect{code="POLLUTION"}, :effect{code="POISON"}, :effect{code="CORRODE"}, :effect{code="BLEED"}, and :effect{code="GASH"} statuses on all enemies after the attack.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           1-target attack. Deals **500%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
         </div>
       </Fragment>

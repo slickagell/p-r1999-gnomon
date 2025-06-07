@@ -28,7 +28,7 @@ import data from "@data/reveries-in-the-rain/zone/360m.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Catastrophic Loss III</span>
 
           When the caster enters battle, gains a :effect{code="EXTERMINATION_BOON"} with (the caster's Max HP x**30%**) HP (only triggers one time). After losing :effect{code="EXTERMINATION_BOON"}, enters :effect{code="FRAGILE"} status for 2 rounds.
@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/360m.json";
           For every **20%** less current HP between self and other allies, gain DMG Heal **+20%**, DMG Dealt **+15%**, and DMG Taken **-15%**.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Catastrophic Loss</span>
 
           When the caster enters battle, gains a :effect{code="VAJRAS_BOON"} with (the caster's Max HP x**30%**) HP (only triggers 1 time). After losing :effect{code="VAJRAS_BOON"}, enters :effect{code="FRAGILE"} status for 2 rounds.
@@ -50,31 +50,31 @@ import data from "@data/reveries-in-the-rain/zone/360m.json";
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. Inflicts DMG Dealt **-15%** for 1 round on the target hit.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts DMG Taken **+10%** for 1 round on the targets hit.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts Critical DMG **-30%** for 1 round on the targets hit.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **300%** Reality DMG to all enemies and grants the caster Leech Rate **+30%**, which is removed when losing the Shield. If the caster has no Shield, then grants a :effect{code="EXTERMINATION_BOON"} with (the caster's Max HP x**30%**) HP for 3 rounds.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **300%** Reality DMG to all enemies. DMG Heal **+30%** for the caster, which is removed when losing the Shield. If the caster has no Shield, then gains a :effect{code="VAJRAS_BOON"} with (the caster's Max HP x**30%**) HP for 3 rounds.
         </div>
       </Fragment>

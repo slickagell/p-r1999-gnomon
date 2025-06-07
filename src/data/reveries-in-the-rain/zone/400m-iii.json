@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "400m-iii-1",
+      "id": "400m-iii-0-0",
+      "gameId": "900040101",
       "wave": 1,
       "name": "Servant of War",
       "headIconId": "640303",
@@ -10,52 +11,79 @@
       "afflatus": "SPIRIT",
       "hp": 954719,
       "lv": "Insight III Level 60",
+      "stats": {
+        "HP": 954719,
+        "ATTACK": 2346,
+        "REALITY_DEFENSE": 1152,
+        "MENTAL_DEFENSE": 1152,
+        "CRITICAL_TECHNIQUE": 290,
+        "CRITICAL_RATE": 16.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124.5,
+        "CRITICAL_DEFENSE": 13.5,
+        "DMG_BONUS": 41.6,
+        "DMG_REDUCTION": 9.4
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "B",
       "realityDefRate": "C+",
       "mentalDefRate": "C+",
-      "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 200
-        }
-      ],
-      "skill1": {
-        "name": "Don't Bother Hiding!",
-        "cardId": "2001"
-      },
-      "skill2": {
-        "name": "No Need to Beg!",
-        "cardId": "2003"
-      },
-      "ultimate": {
-        "name": "Glory Awaits",
-        "cardId": "2004"
-      }
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 200 }],
+      "skill1": { "name": "Don't Bother Hiding!", "cardId": "1101" },
+      "skill2": { "name": "No Need to Beg!", "cardId": "1103" },
+      "ultimate": { "name": "Glory Awaits", "cardId": "1104" }
     },
     {
-      "id": "400m-iii-2",
+      "id": "400m-iii-1-0",
+      "gameId": "900040103",
       "wave": 1,
       "name": "First-aid Crate",
       "headIconId": "413701",
-      "dmgType": "",
+      "dmgType": "REALITY",
       "afflatus": "INTELLECT",
       "hp": 5,
       "lv": "Insight III Level 60",
+      "stats": {
+        "HP": 5,
+        "ATTACK": 1000,
+        "REALITY_DEFENSE": 1152,
+        "MENTAL_DEFENSE": 1152,
+        "CRITICAL_TECHNIQUE": 290,
+        "CRITICAL_RATE": 16.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124.5,
+        "CRITICAL_DEFENSE": 13.5,
+        "DMG_BONUS": 41.6,
+        "DMG_REDUCTION": 9.4
+      },
       "atkRate": "C",
       "criticalTechniqueRate": "C",
       "realityDefRate": "B+",
       "mentalDefRate": "B+"
     },
     {
-      "id": "400m-iii-3",
+      "id": "400m-iii-2-0",
+      "gameId": "900040102",
       "wave": 1,
       "name": "Dynamo Robot",
       "headIconId": "670104",
-      "dmgType": "",
+      "dmgType": "REALITY",
       "afflatus": "SPIRIT",
       "hp": 5,
       "lv": "Insight III Level 60",
+      "stats": {
+        "HP": 5,
+        "ATTACK": 1,
+        "REALITY_DEFENSE": 1152,
+        "MENTAL_DEFENSE": 1152,
+        "CRITICAL_TECHNIQUE": 290,
+        "CRITICAL_RATE": 16.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124.5,
+        "CRITICAL_DEFENSE": 13.5,
+        "DMG_BONUS": 41.6,
+        "DMG_REDUCTION": 9.4
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "B",
       "realityDefRate": "C+",

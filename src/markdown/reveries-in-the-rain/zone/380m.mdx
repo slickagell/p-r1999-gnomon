@@ -27,12 +27,42 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Ready to Strike</span>
+
+          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{code="POWER_BURST"}.
+
+          <span class="passive-title">Precision Correction</span>
+
+          For each ally present, deal an additional (ATK x**30%**) Genesis DMG to the targets hit; when attacking, if a target has a Shield, DMG Dealt **+50%** for self. On death, recovers (their Missing HP x**20%**) HP for other allies, and grants Moxie +1 to other allies.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Ready to Strike</span>
+
+          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{code="POWER_BURST"}.
+
+          <span class="passive-title">Precision Correction</span>
+
+          For each ally present, deal an additional (ATK x**30%**) Genesis DMG to the targets hit; when attacking, if a target has a Shield, DMG Dealt **+50%** for self. On death, recovers (their Missing HP x**20%**) HP for other allies, and grants Moxie +1 to other allies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Ready to Strike</span>
+
+          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{code="POWER_BURST"}.
+
+          <span class="passive-title">Precision Correction</span>
+
+          For each ally present, deal an additional (ATK x**30%**) Genesis DMG to the targets hit; when attacking, if a target has a Shield, DMG Dealt **+50%** for self. On death, recovers (their Missing HP x**20%**) HP for other allies, and grants Moxie +1 to other allies.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Beautiful Lie</span>
 
           After the caster enters battle, immediately casts 1-star *\[A Bouquet of Galaxy]* and gains 1 stack of :effect{code="DIAMOND_BULLET"} (only triggers 1 time).
 
-          <span class="passive-title">Beautiful Lie III</span>
+          <span class="passive-title">Beautiful Lie Ⅲ</span>
 
           If the caster starts a round with HP below **50%**, immediately casts 1-star *\[A Bouquet of Galaxy]* (only triggers 1 time).
 
@@ -40,61 +70,91 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
 
           After casting an ultimate, all allies gain 1 bullet from :effect{code="BULLET_KIT"}.
         </div>
-
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}', '${data.enemies[3].id}'].includes(active)`}>
-          <span class="passive-title">Ready to Strike</span>
-
-          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{code="POWER_BURST"}.
-
-          <span class="passive-title">Precision Correction</span>
-
-          For each ally present, deal an additional (ATK x**50%**) Genesis DMG to the targets hit; when attacking, if a target has a Shield, DMG Dealt **+50%** for self. On death, recovers (their Missing HP x**20%**) HP for other allies, and grants Moxie +1 to other allies.
-        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
-
-          <div class="divider my-1 h-1" />
-
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Reality DMG.
-        </div>
-
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}', '${data.enemies[3].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
 
           <div class="divider my-1 h-1" />
 
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
         </div>
-      </Fragment>
 
-      <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**80%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{code="INCORPOREAL"} status, grants 1 stack of :effect{code="INCORPOREAL"} to the target.
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**120%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{code="INCORPOREAL"} status, grants 1 stack of :effect{code="INCORPOREAL"} to the target.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}', '${data.enemies[3].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Reality DMG.
+        </div>
+      </Fragment>
+
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
 
           <div class="divider my-1 h-1" />
 
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
         </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**80%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{code="INCORPOREAL"} status, grants 1 stack of :effect{code="INCORPOREAL"} to the target.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**120%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{code="INCORPOREAL"} status, grants 1 stack of :effect{code="INCORPOREAL"} to the target.
+        </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          1-target attack. Deals **550%** Reality DMG: and then gains 2 stacks of :effect{code="DIAMOND_BULLET"}.
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}', '${data.enemies[3].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          1-target attack. Deals **550%** Reality DMG and then gains 2 stacks of :effect{code="DIAMOND_BULLET"}.
         </div>
       </Fragment>
     </EnemyInfo>

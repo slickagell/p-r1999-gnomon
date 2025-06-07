@@ -8,15 +8,19 @@ import Icon from "@components/Icon.astro";
 
 type StatRate = "SS" | "S" | "A+" | "A" | "B+" | "B" | "C+" | "C";
 
-type EnemyData = {
+type EnemyBasicInfoData = {
   id: string;
   wave: number;
+  phase?: string;
   headIconId: string;
   isBoss: boolean
   name: string;
   afflatus: string;
   hp: number;
   lv: string;
+  stats: {
+    [key: string]: string | number;
+  }
   atkRate: StatRate;
   criticalTechniqueRate: StatRate;
   realityDefRate: StatRate;
@@ -37,6 +41,10 @@ type EnemyData = {
     name: string;
     cardId: string;
   };
+}
+
+type EnemyData = EnemyBasicInfoData & {
+  phases?: EnemyBasicInfoData[]
 };
 
 interface Props {
@@ -89,29 +97,71 @@ const enemyGroups = enemies.reduce((acc, enemy) => {
     </div>
     <template x-if="activeEnemy">
         <div>
-            <div class="mt-4">
-                <p class="text-xl font-medium text-primary-content mb-1" x-text="activeEnemy?.name"></p>
-                <p x-text="activeEnemy?.lv"></p>
-                <p>HP: <span class="font-medium text-primary" x-text="activeEnemy?.hp"></span></p>
+            <div class="mt-4 flex gap-4">
+                <img
+                  class="w-16 h-16 rounded-full overflow-hidden shrink-0 border border-base-content/30"
+                  loading="lazy"
+                  :src="`/images/enemies/headicon/${activeEnemy?.headIconId}.png`"
+                  :alt="activeEnemy?.name + ' headicon'"
+                />
+                <div>
+                  <p class="text-xl font-medium text-primary-content mb-1" x-text="activeEnemy?.name"></p>
+                  <p x-text="activeEnemy?.lv"></p>
+                  <p>HP: <span class="font-medium text-primary" x-text="activeEnemy?.hp"></span></p>
+                </div>
+            </div>
+            <div x-show="phases.length > 1" class="my-4 tabs tabs-boxed justify-center md:justify-start">
+              <template x-for="phase in phases">
+                <button
+                  @click={`handleChangeActivePhase(phase)`}
+                  class="tab tab-bordered"
+                  :class={`(activePhase === phase) && 'tab-active !text-white'`}
+                  x-text="'Phase ' + phase"
+                >
+                </button>
+              </template>
             </div>
             <div class="divider"></div>
-            <div class="grid grid-cols-[minmax(min-content,12rem)_minmax(min-content,12rem)] gap-x-10 gap-y-2">
-                <div class="flex justify-between">
-                    <span>ATK</span>
-                    <span class="font-medium text-primary-content" x-text="activeEnemy?.atkRate"></span>
+            <div class="border border-base-content/20 p-2">
+              <div class="flex justify-between gap-2">
+                <p class="font-medium text-primary-content">Stats</p>
+                <div class="form-control max-w-fit">
+                  <label class="label cursor-pointer">
+                    <input type="checkbox" x-model="isShowStatsDetail" class="checkbox mr-2" />
+                    <span class="label-text">Detail</span> 
+                  </label>
                 </div>
-                <div class="flex justify-between">
-                    <span>Reality DEF</span>
-                    <span class="font-medium text-primary-content" x-text="activeEnemy?.realityDefRate"></span>
+              </div>
+              <template x-if="!isShowStatsDetail">
+                <div class="mt-2 grid grid-cols-[minmax(min-content,12rem)_minmax(min-content,12rem)] gap-x-10 gap-y-4">
+                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
+                        <span>ATK</span>
+                        <span class="font-medium text-primary-content" x-text="activeEnemy?.atkRate"></span>
+                    </div>
+                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
+                        <span>Reality DEF</span>
+                        <span class="font-medium text-primary-content" x-text="activeEnemy?.realityDefRate"></span>
+                    </div>
+                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
+                        <span>Critical Technique</span>
+                        <span class="font-medium text-primary-content" x-text="activeEnemy?.criticalTechniqueRate"></span>
+                    </div>
+                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
+                        <span>Mental DEF</span>
+                        <span class="font-medium text-primary-content" x-text="activeEnemy?.mentalDefRate"></span>
+                    </div>
                 </div>
-                <div class="flex justify-between">
-                    <span>Critical Technique</span>
-                    <span class="font-medium text-primary-content" x-text="activeEnemy?.criticalTechniqueRate"></span>
+              </template>
+              <template x-if="isShowStatsDetail && stats">
+                <div class="mt-2 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+                  <template x-for="stat in stats">
+                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
+                        <span x-text="stat.label"></span>
+                        <span class="font-medium text-primary-content" x-text="stat.value.toLocaleString() + (stat.unit??'')"></span>
+                    </div>
+                  </template>
                 </div>
-                <div class="flex justify-between">
-                    <span>Mental DEF</span>
-                    <span class="font-medium text-primary-content" x-text="activeEnemy?.mentalDefRate"></span>
-                </div>
+              </template>
             </div>
             <template x-if="activeEnemy?.resistance">
               <div class="mt-4 border border-error/50 p-2">
@@ -196,22 +246,62 @@ const enemyGroups = enemies.reduce((acc, enemy) => {
 <script>
   import Alpine from "alpinejs";
   import anchor from "@alpinejs/anchor";
+  import STATS from "@data/common/character/stats.json";
 
   Alpine.plugin(anchor);
 
   Alpine.data("dataset", () => ({
     active: '',
+    activePhase: '1',
+    phases: ['1'],
     activeEnemy: null,
+    isShowStatsDetail: false,
+    stats: null,
+
+    handleMappingStats() {
+      this.stats = Object.entries(this.activeEnemy?.stats).reduce((acc, curr) => {
+        const [key, value] = curr;
+        const label = STATS[key].label;
+        const unit = STATS[key].unit;
+        return [
+          ...acc,
+          {
+            label,
+            value,
+            unit,
+            key
+          }
+        ];
+      },[]);
+    },
 
     handleChangeActive(activeId) {
       if (this.active === activeId) {
         this.active = '';
         this.activeEnemy = null;
+        this.activePhase = '1';
+        this.phases = ['1'];
+        this.stats = null;
         return;
       }
 
       this.active = activeId;
       this.activeEnemy = this.$store.zone.enemies.find((enemy) => enemy.id === activeId);
+      this.activePhase = '1';
+      this.phases = this.activeEnemy.phases?['1', ...this.activeEnemy.phases.map((_,idx)=> `${idx + 2}`)] : ['1'];
+      this.handleMappingStats();
+    },
+
+    handleChangeActivePhase(phase) {
+      if (phase === '1') {
+        this.activePhase = '1';
+        this.activeEnemy = this.$store.zone.enemies.find((enemy) => enemy.id === this.activeEnemy.id);
+        this.handleMappingStats();
+        return;
+      }
+      this.activePhase = phase;
+      this.activeEnemy = this.activeEnemy.phases[Number(phase) - 2];
+      this.handleMappingStats();
     }
   }));
 </script>

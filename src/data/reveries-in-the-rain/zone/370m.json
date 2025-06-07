@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "370m-1",
+      "id": "370m-0-0",
+      "gameId": "900036101",
       "wave": 1,
       "name": "\"Supreme Steed\"",
       "headIconId": "305001",
@@ -9,25 +10,30 @@
       "afflatus": "MINERAL",
       "hp": 180967,
       "lv": "Insight III Level 54",
+      "stats": {
+        "HP": 180967,
+        "ATTACK": 1651,
+        "REALITY_DEFENSE": 812,
+        "MENTAL_DEFENSE": 812,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 17,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 23,
+        "DMG_BONUS": 24.8,
+        "DMG_REDUCTION": 19
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "A+",
       "realityDefRate": "A",
       "mentalDefRate": "A",
-      "skill1": {
-        "name": "Clatter Trample",
-        "cardId": "30500111"
-      },
-      "skill2": {
-        "name": "Commanding Aura",
-        "cardId": "30500121"
-      },
-      "ultimate": {
-        "name": "Great Inspirer",
-        "cardId": "30500131"
-      }
+      "skill1": { "name": "Clatter Trample", "cardId": "30500111" },
+      "skill2": { "name": "Commanding Aura", "cardId": "30500121" },
+      "ultimate": { "name": "Great Inspirer", "cardId": "30500131" }
     },
     {
-      "id": "370m-2",
+      "id": "370m-1-0",
+      "gameId": "900036102",
       "wave": 1,
       "name": "Gallant Knight",
       "headIconId": "310601",
@@ -35,31 +41,33 @@
       "afflatus": "MINERAL",
       "hp": 264573,
       "lv": "Insight III Level 54",
+      "stats": {
+        "HP": 264573,
+        "ATTACK": 1651,
+        "REALITY_DEFENSE": 1083,
+        "MENTAL_DEFENSE": 722,
+        "CRITICAL_TECHNIQUE": 204,
+        "CRITICAL_RATE": 15.3,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 120.2,
+        "CRITICAL_DEFENSE": 23,
+        "DMG_BONUS": 24.8,
+        "DMG_REDUCTION": 19
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "S",
       "mentalDefRate": "S",
       "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "MOXIE_DOWN_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "STRESS_UP_RESILIENCE",
-          "value": 100
-        }
+        { "code": "CONTROL_RESILIENCE", "value": 100 },
+        { "code": "MOXIE_DOWN_RESILIENCE", "value": 100 },
+        { "code": "STRESS_UP_RESILIENCE", "value": 100 }
       ],
-      "ultimate": {
-        "name": "Giddy Up, Mate!",
-        "cardId": "31060131"
-      }
+      "ultimate": { "name": "Giddy Up, Mate!", "cardId": "31060131" }
     },
     {
-      "id": "370m-3",
+      "id": "370m-2-0",
+      "gameId": "900036103",
       "wave": 1,
       "name": "The Knight's \"Wand\"",
       "headIconId": "310101",
@@ -67,25 +75,33 @@
       "afflatus": "MINERAL",
       "hp": 180967,
       "lv": "Insight III Level 54",
+      "stats": {
+        "HP": 180967,
+        "ATTACK": 1651,
+        "REALITY_DEFENSE": 812,
+        "MENTAL_DEFENSE": 812,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 17,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 23,
+        "DMG_BONUS": 24.8,
+        "DMG_REDUCTION": 19
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "S",
       "mentalDefRate": "S",
-      "skill1": {
-        "name": "Port Side Barrage",
-        "cardId": "31010111"
-      },
-      "skill2": {
-        "name": "Prepare to Board!",
-        "cardId": "31010121"
-      },
+      "skill1": { "name": "Port Side Barrage", "cardId": "31010111" },
+      "skill2": { "name": "Prepare to Board!", "cardId": "31010121" },
       "ultimate": {
         "name": "Boundless Sea, Limitless Sky",
         "cardId": "31010131"
       }
     },
     {
-      "id": "370m-4",
+      "id": "370m-3-0",
+      "gameId": "900036104",
       "wave": 1,
       "name": "The Knight's \"Blade\"",
       "headIconId": "300701",
@@ -93,22 +109,26 @@
       "afflatus": "MINERAL",
       "hp": 143927,
       "lv": "Insight III Level 54",
+      "stats": {
+        "HP": 143927,
+        "ATTACK": 2201,
+        "REALITY_DEFENSE": 812,
+        "MENTAL_DEFENSE": 812,
+        "CRITICAL_TECHNIQUE": 229,
+        "CRITICAL_RATE": 16.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 121.5,
+        "CRITICAL_DEFENSE": 23,
+        "DMG_BONUS": 24.8,
+        "DMG_REDUCTION": 19
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "B",
       "realityDefRate": "A+",
       "mentalDefRate": "A+",
-      "skill1": {
-        "name": "Justice",
-        "cardId": "30070111"
-      },
-      "skill2": {
-        "name": "Glory",
-        "cardId": "30070121"
-      },
-      "ultimate": {
-        "name": "After AD 778",
-        "cardId": "30070131"
-      }
+      "skill1": { "name": "Justice", "cardId": "30070111" },
+      "skill2": { "name": "Glory", "cardId": "30070121" },
+      "ultimate": { "name": "After AD 778", "cardId": "30070131" }
     }
   ]
 }

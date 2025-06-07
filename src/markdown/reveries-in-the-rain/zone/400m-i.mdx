@@ -32,7 +32,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-i.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Mental Improvement</span>
 
           At the end of the round, performs a Mental DMG attack and accumulates 1 stack of :effect{code="CHARGE"}; if arcanum device no. 0987X has died, after the attack, grants 3 stacks of :effect{code="THORNY"} to self; when reaching 3 stacks of Charge, performs a powerful shot.
@@ -46,7 +46,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-i.json";
           When reaching 3 Eureka, consume 3 Eureka to cast a special powerful shot, dealing **350%** Mental DMG to all enemies; after the attack, inflict ATK **-10%** and DMG Dealt **-30%** on enemies for 3 rounds.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Camouflage Light</span>
 
           At the end of the round, performs a Reality DMG attack and accumulates 1 stack of :effect{code="CHARGE"}; if arcanum device no. 0623Y has died, performs another attack; when reaching 3 stacks of Charge, performs a powerful shot.
@@ -57,10 +57,10 @@ import data from "@data/reveries-in-the-rain/zone/400m-i.json";
 
           <span class="passive-title">Seething Enmity</span>
 
-          When reaching 3 Eureka, consume 3 Eureka to cast a special powerful shot, dealing **400%** Reality DMG to all enemies; the attack is always a critical hit.
+          When reaching 3 Eureka, consume 3 Eureka to cast a special powerful shot, dealing **400%** Reality DMG to all enemies; the attack is always a critical hit..
         </div>
 
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Small Wound</span>
 
           Immune to all statuses. All DMG taken is set to 1.
@@ -69,7 +69,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-i.json";
 
           When this unit is alive, other non-Guardian Spirit allies will dodge all attacks; at the start of the round, recovers **100%** of own Max HP.
 
-          <span class="passive-title">Seething Enmity</span>
+          <span class="passive-title">Offering</span>
 
           When this unit dies, grants Eureka +1 to a random ally.
         </div>

@@ -1,7 +1,43 @@
 {
   "enemies": [
     {
-      "id": "350m-iii-1",
+      "id": "350m-iii-0-0",
+      "gameId": "900035302",
+      "wave": 1,
+      "name": "Prop Armor",
+      "headIconId": "690121",
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
+      "hp": 250516,
+      "lv": "Insight III Level 50",
+      "stats": {
+        "HP": 250516,
+        "ATTACK": 1992,
+        "REALITY_DEFENSE": 4800,
+        "MENTAL_DEFENSE": 980,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 17.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 22.6,
+        "DMG_BONUS": 24.4,
+        "DMG_REDUCTION": 18.7
+      },
+      "atkRate": "B+",
+      "criticalTechniqueRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "B+",
+      "resistance": [
+        { "code": "DAZE_RESISTANCE", "value": 100 },
+        { "code": "SLEEP_RESISTANCE", "value": 100 },
+        { "code": "FREEZE_RESISTANCE", "value": 100 },
+        { "code": "CAPTIVATED_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 100 }
+      ]
+    },
+    {
+      "id": "350m-iii-1-0",
+      "gameId": "900035301",
       "wave": 1,
       "name": "Great Magician",
       "headIconId": "630207",
@@ -10,103 +46,64 @@
       "afflatus": "SPIRIT",
       "hp": 749485,
       "lv": "Insight III Level 50",
+      "stats": {
+        "HP": 749485,
+        "ATTACK": 1874,
+        "REALITY_DEFENSE": 1014,
+        "MENTAL_DEFENSE": 1014,
+        "CRITICAL_TECHNIQUE": 322,
+        "CRITICAL_RATE": 12.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 126.1,
+        "CRITICAL_DEFENSE": 38.7,
+        "DMG_BONUS": 14,
+        "DMG_REDUCTION": 31.8
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "B",
       "realityDefRate": "A+",
       "mentalDefRate": "A+",
       "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "MOXIE_DOWN_RESILIENCE",
-          "value": 100
-        }
+        { "code": "CONTROL_RESILIENCE", "value": 200 },
+        { "code": "MOXIE_DOWN_RESILIENCE", "value": 100 }
       ],
-      "skill1": {
-        "name": "For Old Dreams",
-        "cardId": "1401"
-      },
-      "skill2": {
-        "name": "For Tomorrow",
-        "cardId": "1403"
-      },
-      "ultimate": {
-        "name": "Declaration of Secession",
-        "cardId": "1404"
-      }
+      "skill1": { "name": "For Old Dreams", "cardId": "1401" },
+      "skill2": { "name": "For Tomorrow", "cardId": "1403" },
+      "ultimate": { "name": "Declaration of Secession", "cardId": "1404" }
     },
     {
-      "id": "350m-iii-2",
-      "wave": 1,
-      "name": "Prop Armor",
-      "headIconId": "690121",
-      "dmgType": "REALITY",
-      "afflatus": "STAR",
-      "hp": 250516,
-      "lv": "Insight III Level 50",
-      "atkRate": "B+",
-      "criticalTechniqueRate": "B",
-      "realityDefRate": "SS",
-      "mentalDefRate": "B+",
-      "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "DAZE_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "SLEEP_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "FREEZE_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "CAPTIVATED_RESISTANCE",
-          "value": 100
-        }
-      ]
-    },
-    {
-      "id": "350m-iii-3",
+      "id": "350m-iii-2-0",
+      "gameId": "900035303",
       "wave": 1,
       "name": "Prop Wand",
       "headIconId": "690122",
-      "dmgType": "MENTAL",
-      "afflatus": "MINERAL",
+      "dmgType": "REALITY",
+      "afflatus": "SPIRIT",
       "hp": 252939,
       "lv": "Insight III Level 50",
+      "stats": {
+        "HP": 252939,
+        "ATTACK": 1992,
+        "REALITY_DEFENSE": 785,
+        "MENTAL_DEFENSE": 4800,
+        "CRITICAL_TECHNIQUE": 252,
+        "CRITICAL_RATE": 14.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.6,
+        "CRITICAL_DEFENSE": 13,
+        "DMG_BONUS": 40.2,
+        "DMG_REDUCTION": 9.1
+      },
       "atkRate": "B+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "B+",
       "mentalDefRate": "SS",
       "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "DISARM_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "SILENCE_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "SEAL_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "TACITURN_RESISTANCE",
-          "value": 100
-        }
+        { "code": "DISARM_RESISTANCE", "value": 100 },
+        { "code": "SILENCE_RESISTANCE", "value": 100 },
+        { "code": "SEAL_RESISTANCE", "value": 100 },
+        { "code": "TACITURN_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 100 }
       ]
     }
   ]

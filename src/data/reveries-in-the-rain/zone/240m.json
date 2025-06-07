@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "240m-0",
+      "id": "240m-0-0",
+      "gameId": "900024101",
       "wave": 1,
       "name": "Suture",
       "headIconId": "410201",
@@ -10,6 +11,19 @@
       "afflatus": "BEAST",
       "hp": 308551,
       "lv": "Insight III Level 28",
+      "stats": {
+        "HP": 308551,
+        "ATTACK": 1935,
+        "REALITY_DEFENSE": 1142,
+        "MENTAL_DEFENSE": 761,
+        "CRITICAL_TECHNIQUE": 322,
+        "CRITICAL_RATE": 18.4,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 126.1,
+        "CRITICAL_DEFENSE": 20.8,
+        "DMG_BONUS": 22.5,
+        "DMG_REDUCTION": 17.2
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "SS",

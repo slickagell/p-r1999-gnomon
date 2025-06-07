@@ -31,10 +31,10 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Prioritized Honor</span>
 
-          When entering battle, gain Moxie +5 for self (triggers only once); after an enemy takes an action, if own HP is below **70%/50%/30%**, cast an ultimate without consuming Moxie (each percentage threshold triggers only once).
+          When entering battle, gain Moxie +5 for self (triggers only once); after an enemy takes an action, if own HP is below **70%**/**50%**/**30%**, cast an ultimate without consuming Moxie (each percentage threshold triggers only once).
 
           <span class="passive-title">Chaotic Barrage</span>
 
@@ -53,17 +53,17 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
           At the end of the round, if Dynamo Robot has died, resummon Dynamo Robot; if First-aid Crate has died, resummon First-aid Crate.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Emergency Treatments</span>
 
-          When being attacked by an enemy that has the :effect{code="INFUSION_TUBE"} status, recovers (own ATK x**200%**) HP for all enemies; If this unit did not take any damage during the round, at the end of the round, recovers (the canon's Max HP x**10%**) HP to the canon; when this unit dies, recovers (their Max HP x**50%**) HP for enemies.
+          When being attacked by an enemy that has the :effect{code="INFUSION_TUBE"} status, recovers (own ATK x**200%**) HP for all enemies; if this unit did not take any damage during the round, at the end of the round, recovers (the canon's Max HP x**10%**) HP to the canon; when this unit dies, recovers (their Max HP x**50%**) HP for enemies.
 
           <span class="passive-title">Small Wound</span>
 
           Immune to all statuses. Cannot be healed. All DMG taken is set to 1.
         </div>
 
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Dynamo Transfer</span>
 
           When entering battle or at the end of the round, gain 10 stacks of :effect{code="DYNAMO"} for self; when being attacked by an enemy that has the :effect{code="ELECTRIC_COIL"} status, 5 stacks of :effect{code="DYNAMO"} are stolen from this unit; at the start of the round, transfers 10 stacks of :effect{code="DYNAMO"} to Servant of War.
@@ -75,19 +75,19 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack, Deals **300%** Reality DMG.
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Reality DMG.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains a *\[Shield]* with (own Max HP x**10%**) HP for 1 round (when losing the Shield, DMG Taken **+50%** for 1 round), and randomly gains 2 of the following: :effect{code="PIERCING_BULLET"}, :effect{code="FLASH_BULLET"}, :effect{code="FLAMING_BULLET"}, :effect{code="FLINCH_BULLET"}.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Right before the attack, dispels *\[Pos Status]*, *\[Stats Up]* and *\[Counter]* statuses from enemies of the Natural Afflatus, then deals **300%** Reality DMG to all enemies.
         </div>
       </Fragment>

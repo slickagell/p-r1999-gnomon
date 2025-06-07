@@ -32,25 +32,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <span class="passive-title">High Morale II</span>
-
-          For every positive status carried, DMG Dealt **+5%** and DMG Taken **-5%**. At the start of the round, gains 1 random positive status for 2 rounds.
-
-          <span class="passive-title">Warrior's Punishment</span>
-
-          At the start of the round, if this unit is below **50%** current HP, permanently gain DMG Taken **-30%**, and at the start of each round, gain Moxie +1.
-
-          <span class="passive-title">Principle of Transparency II</span>
-
-          At the end of the round, if this unit is below **50%** current HP, summon 1 Frenzied "Phantom"; otherwise summon 1 Razor's "Phantom" (up to 4 monsters on the field); when another ally dies, lose **5%** of own Max HP.
-
-          <span class="passive-title">Warrior's Punishment</span>
-
-          When this unit is being attacked by a 1-target attack, performs a riposte; at the start of every 3 rounds, this unit enters the :effect{code="TAUNT"} status for 1 round.
-        </div>
-
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">High Morale II</span>
 
           For every positive status carried, DMG Dealt **+5%** and DMG Taken **-5%**. At the start of the round, gains 1 random positive status for 2 rounds.
@@ -69,22 +51,40 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
 
           When an enemy takes an action, for every instance of HP lost during that action phase, lose **1%** of own Max HP after the action (lose up to **8%** of own Max HP per action).
         </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">High Morale II</span>
+
+          For every positive status carried, DMG Dealt **+5%** and DMG Taken **-5%**. At the start of the round, gains 1 random positive status for 2 rounds.
+
+          <span class="passive-title">Warrior's Punishment</span>
+
+          At the start of the round, if this unit is below **50%** current HP, permanently gain DMG Taken **-30%**, and at the start of each round, gain Moxie +1.
+
+          <span class="passive-title">Principle of Transparency II</span>
+
+          At the end of the round, if this unit is below **50%** current HP, summon 1 Frenzied "Phantom"; otherwise summon 1 Razor's "Phantom" (up to 4 monsters on the field); when another ally dies, lose **5%** of own Max HP.
+
+          <span class="passive-title">Warrior's Punishment</span>
+
+          When this unit is being attacked by a 1-target attack, performs a riposte; at the start of every 3 rounds, this unit enters the :effect{code="TAUNT"} status for 1 round.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack, Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis. DMG. Inflicts the \[Exposed] status for 2 rounds on the target hit.
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG. Inflicts the :effect{code="EXPOSED"} status for 2 rounds on the target hit.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants Reality DEF **+30%** and Mental DEF **+30%** to all allies for 2 rounds.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **250%** Reality DMG plus (own Reality DEF x**150%**) Genesis DMG. Grants the :effect{code="HIGH_MORALE"} status to all allies for 2 rounds.
         </div>
       </Fragment>

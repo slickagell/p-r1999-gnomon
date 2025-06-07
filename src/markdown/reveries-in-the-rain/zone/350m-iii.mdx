@@ -32,7 +32,17 @@ import data from "@data/reveries-in-the-rain/zone/350m-iii.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Prime Rites</span>
+
+          At the start of the round, performs an attack, dealing **300%** Reality DMG to a random enemy; if the Prop Wand has died, the attack deals an additional **100%** Reality DMG and gains Penetration Rate **+30%**.
+
+          <span class="passive-title">Ritual Driven</span>
+
+          Gain significant Reality DEF for self. After Prop Wand dies, whenever an enemy casts a rank 1 basic incantation or an ultimate, the incantation or ultimate gets DMG Dealt **-80%**. After this unit dies, the great magician gets Mental DEF **-50%** until this unit re-enters battle.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Masterful Preparation</span>
 
           At the start of the round, if Prop Wand is present, grant Reality DEF **+100%** to self for 1 round; at the start of the round, if Prop Armor is present, grant Mental DEF **+100%** to self for 1 round.
@@ -45,22 +55,12 @@ import data from "@data/reveries-in-the-rain/zone/350m-iii.json";
 
           When being attacked, if this unit is not in a :effect{code="POISON"} or :effect{code="BURN"} status, DMG Taken **-70%**.
 
-          <span class="passive-title">Painful Memories</span>
+          <span class="passive-title">Masterful Preparation II</span>
 
           When the Prop Armor is present, this unit gains the same Control Resistances as the Prop Armor. When the Prop Wand is present, this unit gains the same Control Resistances as the Prop Wand.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <span class="passive-title">Prime Rites</span>
-
-          At the start of the round, performs an attack, dealing **300%** Reality DMG to a random enemy; if the Prop Wand has died, the attack deals an additional **100%** Reality DMG and gains Penetration Rate **+30%**.
-
-          <span class="passive-title">Ritual Driven</span>
-
-          Gain significant Reality DEF for self. After Prop Wand dies, whenever an enemy casts a rank 1 basic incantation or an ultimate, the incantation or ultimate gets DMG Dealt **-80%**. After this unit dies, the great magician gets Mental DEF **-50%** until this unit re-enters battle.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Prime Rites</span>
 
           At the start of the round, performs 1 attack, dealing **200%** Mental DMG to 2 random enemies; if the Prop Armor has died, the attack deals an additional **100%** Mental DMG.
@@ -72,19 +72,19 @@ import data from "@data/reveries-in-the-rain/zone/350m-iii.json";
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals 150% Mental DMG and dispels 2 types of *\[Stats Down]* statuses from other allies.
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **150%** Mental DMG and dispels 2 types of *\[Stats Down]* statuses from other allies.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 1 stack of :effect{code="STURDINESS"} to all allies and dispels 1 type of *\[Neg Status]* from other allies.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **300%** Mental DMG to all enemies. Inflicts Moxie -1 and the :effect{code="DISCONCERT"} status for 1 round on the targets hit.
         </div>
       </Fragment>

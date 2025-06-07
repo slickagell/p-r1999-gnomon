@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "390m-1",
+      "id": "390m-0-0",
+      "gameId": "900039101",
       "wave": 1,
       "name": "Traveling Apothecary",
       "headIconId": "300901",
@@ -9,39 +10,35 @@
       "afflatus": "PLANT",
       "hp": 241371,
       "lv": "Insight III Level 58",
+      "stats": {
+        "HP": 241371,
+        "ATTACK": 1672,
+        "REALITY_DEFENSE": 822,
+        "MENTAL_DEFENSE": 822,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 17.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 23.3,
+        "DMG_BONUS": 25.1,
+        "DMG_REDUCTION": 19.3
+      },
       "atkRate": "B",
       "criticalTechniqueRate": "B",
       "realityDefRate": "A",
       "mentalDefRate": "A",
       "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "MOXIE_DOWN_RESILIENCE",
-          "value": 100
-        },
-        {
-          "code": "STRESS_UP_RESILIENCE",
-          "value": 100
-        }
+        { "code": "CONTROL_RESILIENCE", "value": 100 },
+        { "code": "MOXIE_DOWN_RESILIENCE", "value": 100 },
+        { "code": "STRESS_UP_RESILIENCE", "value": 100 }
       ],
-      "skill1": {
-        "name": "Triple the Dose!",
-        "cardId": "30090111"
-      },
-      "skill2": {
-        "name": "Concentrated Essence!",
-        "cardId": "30090121"
-      },
-      "ultimate": {
-        "name": "Mix Them All Up!",
-        "cardId": "30090131"
-      }
+      "skill1": { "name": "Triple the Dose!", "cardId": "30090111" },
+      "skill2": { "name": "Concentrated Essence!", "cardId": "30090121" },
+      "ultimate": { "name": "Mix Them All Up!", "cardId": "30090131" }
     },
     {
-      "id": "390m-2",
+      "id": "390m-1-0",
+      "gameId": "900039102",
       "wave": 1,
       "name": "Scarecrow Guest",
       "headIconId": "304201",
@@ -49,25 +46,30 @@
       "afflatus": "PLANT",
       "hp": 257463,
       "lv": "Insight III Level 58",
+      "stats": {
+        "HP": 257463,
+        "ATTACK": 1858,
+        "REALITY_DEFENSE": 914,
+        "MENTAL_DEFENSE": 914,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 17.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 23.3,
+        "DMG_BONUS": 25.1,
+        "DMG_REDUCTION": 19.3
+      },
       "atkRate": "B",
       "criticalTechniqueRate": "B",
       "realityDefRate": "A",
       "mentalDefRate": "A",
-      "skill1": {
-        "name": "Rabies",
-        "cardId": "30420111"
-      },
-      "skill2": {
-        "name": "Noise in the Field",
-        "cardId": "30420121"
-      },
-      "ultimate": {
-        "name": "Dedicated Straw Doctor",
-        "cardId": "30420131"
-      }
+      "skill1": { "name": "Rabies", "cardId": "30420111" },
+      "skill2": { "name": "Noise in the Field", "cardId": "30420121" },
+      "ultimate": { "name": "Dedicated Straw Doctor", "cardId": "30420131" }
     },
     {
-      "id": "390m-3",
+      "id": "390m-2-0",
+      "gameId": "900039103",
       "wave": 1,
       "name": "Scarecrow Guest",
       "headIconId": "304201",
@@ -75,22 +77,26 @@
       "afflatus": "PLANT",
       "hp": 257463,
       "lv": "Insight III Level 58",
+      "stats": {
+        "HP": 257463,
+        "ATTACK": 1858,
+        "REALITY_DEFENSE": 914,
+        "MENTAL_DEFENSE": 914,
+        "CRITICAL_TECHNIQUE": 255,
+        "CRITICAL_RATE": 17.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.8,
+        "CRITICAL_DEFENSE": 23.3,
+        "DMG_BONUS": 25.1,
+        "DMG_REDUCTION": 19.3
+      },
       "atkRate": "B",
       "criticalTechniqueRate": "B",
       "realityDefRate": "A",
       "mentalDefRate": "A",
-      "skill1": {
-        "name": "Rabies",
-        "cardId": "30420111"
-      },
-      "skill2": {
-        "name": "Noise in the Field",
-        "cardId": "30420121"
-      },
-      "ultimate": {
-        "name": "Dedicated Straw Doctor",
-        "cardId": "30420131"
-      }
+      "skill1": { "name": "Rabies", "cardId": "30420111" },
+      "skill2": { "name": "Noise in the Field", "cardId": "30420121" },
+      "ultimate": { "name": "Dedicated Straw Doctor", "cardId": "30420131" }
     }
   ]
 }

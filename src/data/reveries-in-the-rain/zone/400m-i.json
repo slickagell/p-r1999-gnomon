@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "400-i-1",
+      "id": "400m-i-0-0",
+      "gameId": "900040302",
       "wave": 1,
       "name": "Arcanum Device No. 0623Y",
       "headIconId": "690108",
@@ -10,47 +11,78 @@
       "afflatus": "MINERAL",
       "hp": 834436,
       "lv": "Insight III Level 60",
+      "stats": {
+        "HP": 834436,
+        "ATTACK": 2380,
+        "REALITY_DEFENSE": 1143,
+        "MENTAL_DEFENSE": 1043,
+        "CRITICAL_TECHNIQUE": 290,
+        "CRITICAL_RATE": 18.4,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124.5,
+        "CRITICAL_DEFENSE": 23.5,
+        "DMG_BONUS": 25.3,
+        "DMG_REDUCTION": 25.9
+      },
       "atkRate": "B+",
       "criticalTechniqueRate": "B+",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 200
-        }
-      ]
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 200 }]
     },
     {
-      "id": "400-i-2",
+      "id": "400m-i-1-0",
+      "gameId": "900040301",
       "wave": 1,
       "name": "Arcanum Device No. 0987X",
       "headIconId": "690107",
       "isBoss": true,
       "dmgType": "REALITY",
-      "afflatus": "MINERAL",
+      "afflatus": "SPIRIT",
       "hp": 956390,
       "lv": "Insight III Level 60",
+      "stats": {
+        "HP": 956390,
+        "ATTACK": 2185,
+        "REALITY_DEFENSE": 1396,
+        "MENTAL_DEFENSE": 1246,
+        "CRITICAL_TECHNIQUE": 258,
+        "CRITICAL_RATE": 10.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.9,
+        "CRITICAL_DEFENSE": 40.1,
+        "DMG_BONUS": 14.5,
+        "DMG_REDUCTION": 25.9
+      },
       "atkRate": "B+",
       "criticalTechniqueRate": "B+",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 200
-        }
-      ]
+      "resistance": [{ "code": "CONTROL_RESILIENCE", "value": 200 }]
     },
     {
-      "id": "400-i-3",
+      "id": "400m-i-2-0",
+      "gameId": "900040303",
       "wave": 1,
       "name": "Guardian Spirit",
       "headIconId": "670107",
-      "dmgType": "",
+      "dmgType": "REALITY",
       "afflatus": "MINERAL",
       "hp": 5,
       "lv": "Insight III Level 60",
+      "stats": {
+        "HP": 5,
+        "ATTACK": 1,
+        "REALITY_DEFENSE": 1,
+        "MENTAL_DEFENSE": 1,
+        "CRITICAL_TECHNIQUE": 1,
+        "CRITICAL_RATE": 0.1,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 0.2,
+        "CRITICAL_DEFENSE": 0.1,
+        "DMG_BONUS": 0.1,
+        "DMG_REDUCTION": 0.1
+      },
       "atkRate": "B",
       "criticalTechniqueRate": "B",
       "realityDefRate": "B+",

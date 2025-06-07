@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "230m-0",
+      "id": "230m-0-0",
+      "gameId": "900023101",
       "wave": 1,
       "name": "Knife-wielding Butcher",
       "headIconId": "670301",
@@ -9,6 +10,19 @@
       "afflatus": "MINERAL",
       "hp": 100483,
       "lv": "Insight III Level 26",
+      "stats": {
+        "HP": 100483,
+        "ATTACK": 1838,
+        "REALITY_DEFENSE": 822,
+        "MENTAL_DEFENSE": 822,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 16.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 20.6,
+        "DMG_BONUS": 22.3,
+        "DMG_REDUCTION": 17.1
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "S",
@@ -28,7 +42,8 @@
       "ultimate": { "name": "Manic Syndrome", "cardId": "2104" }
     },
     {
-      "id": "230m-1",
+      "id": "230m-1-0",
+      "gameId": "900023102",
       "wave": 1,
       "name": "Butcher's Bubble",
       "headIconId": "690101",
@@ -37,6 +52,19 @@
       "afflatus": "SPIRIT",
       "hp": 406719,
       "lv": "Insight III Level 26",
+      "stats": {
+        "HP": 406719,
+        "ATTACK": 1504,
+        "REALITY_DEFENSE": 740,
+        "MENTAL_DEFENSE": 740,
+        "CRITICAL_TECHNIQUE": 229,
+        "CRITICAL_RATE": 15.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 121.5,
+        "CRITICAL_DEFENSE": 20.6,
+        "DMG_BONUS": 22.3,
+        "DMG_REDUCTION": 17.1
+      },
       "atkRate": "A+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "S",

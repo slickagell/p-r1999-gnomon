@@ -28,7 +28,27 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}', '${data.enemies[5].id}', '${data.enemies[7].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Desertification</span>
+
+          After taking an action, loses (Current HP x**10%**) and gains 1 stack of :effect{code="THORNY"}.
+
+          <span class="passive-title">Desire for Blood II</span>
+
+          For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Desertification</span>
+
+          When entering battle, loses (Max HP x**10%**) HP for self and grants 1 stack of :effect{code="THORNY"} to all allies.
+
+          <span class="passive-title">Desire for Blood II</span>
+
+          For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Hard Bark</span>
 
           When the caster enters battle, DMG Taken Reduction **+50%**. Every time the caster takes DMG, DMG Taken Reduction **-5%**, stacking up to 10 times.
@@ -49,38 +69,10 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
 
           For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
         </div>
-
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
-          <span class="passive-title">Desertification</span>
-
-          After taking an action, loses (Current HP x**10%**) and gains 1 stack of :effect{code="THORNY"}.
-
-          <span class="passive-title">Desire for Blood II</span>
-
-          For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
-          <span class="passive-title">Desertification</span>
-
-          When entering battle, loses (Max HP x**10%**) HP for self and grants 1 stack of :effect{code="THORNY"} to all allies.
-
-          <span class="passive-title">Desire for Blood II</span>
-
-          For every type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status on self, gain Leech Rate **+30%** and ATK **+30%**.
-        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies.
-
-          <div class="divider my-1 h-1" />
-
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **175%** Reality DMG to 2 enemies. Inflicts Reality DEF **-15%** for 2 rounds on the targets hit.
-        </div>
-
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}', '${data.enemies[5].id}', '${data.enemies[7].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
 
           <div class="divider my-1 h-1" />
@@ -88,25 +80,25 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
           <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts Critical Resist Rate and Critical DEF **-25%** for 2 rounds on the target hit.
         </div>
 
-        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **175%** Reality DMG. When this attack scores a critical hit, Moxie +1.
 
           <div class="divider my-1 h-1" />
 
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG. When the caster scores a critical hit, Moxie +1 for the caster.
         </div>
-      </Fragment>
 
-      <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **175%** Reality DMG to 2 enemies. Inflicts Reality DEF **-15%** for 2 rounds on the targets hit.
         </div>
+      </Fragment>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
+      <Fragment slot="skill2-info">
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}', '${data.enemies[5].id}', '${data.enemies[7].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Reality DEF and Mental DEF **+15%** for all allies for 2 rounds.
 
           <div class="divider my-1 h-1" />
@@ -114,26 +106,34 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
           <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Reality DEF and Mental DEF **+25%** for all allies for 2 rounds.
         </div>
 
-        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies.
 
           <div class="divider my-1 h-1" />
 
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **225%** Reality DMG to 2 enemies.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+        </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **275%** Reality DMG to all enemies.
-        </div>
-
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}', '${data.enemies[5].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}', '${data.enemies[5].id}', '${data.enemies[7].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **250%** Reality DMG to all enemies. HP +(the caster's ATK x**100%**) for all allies.
         </div>
 
-        <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active) && activePhase === '1'`}>
           1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{code="DAZE"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          Mass attack. Deals **275%** Reality DMG to all enemies.
         </div>
       </Fragment>
     </EnemyInfo>

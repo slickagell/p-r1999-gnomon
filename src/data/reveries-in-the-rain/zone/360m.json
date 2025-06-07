@@ -1,56 +1,66 @@
 {
   "enemies": [
     {
-      "id": "360m-1",
+      "id": "360m-0-0",
+      "gameId": "900037101",
       "wave": 1,
       "name": "Shiva Statue",
       "headIconId": "670304",
-      "dmgType": "MENTAL",
+      "dmgType": "REALITY",
       "afflatus": "MINERAL",
       "hp": 323943,
       "lv": "Insight III Level 52",
+      "stats": {
+        "HP": 323943,
+        "ATTACK": 2187,
+        "REALITY_DEFENSE": 888,
+        "MENTAL_DEFENSE": 888,
+        "CRITICAL_TECHNIQUE": 229,
+        "CRITICAL_RATE": 9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 121.5,
+        "CRITICAL_DEFENSE": 39,
+        "DMG_BONUS": 14.1,
+        "DMG_REDUCTION": 32
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "C",
       "realityDefRate": "S",
       "mentalDefRate": "S",
-      "skill1": {
-        "name": "Ascetic",
-        "cardId": "1701"
-      },
-      "skill2": {
-        "name": "Exorcism",
-        "cardId": "1702"
-      },
-      "ultimate": {
-        "name": "End of the Universe",
-        "cardId": "1704"
-      }
+      "skill1": { "name": "Ascetic", "cardId": "1701" },
+      "skill2": { "name": "Exorcism", "cardId": "1702" },
+      "ultimate": { "name": "End of the Universe", "cardId": "1704" }
     },
     {
-      "id": "360m-2",
+      "id": "360m-1-0",
+      "gameId": "900037102",
       "wave": 1,
       "name": "Ravana Statue",
       "headIconId": "670305",
-      "dmgType": "MENTAL",
+      "dmgType": "REALITY",
       "afflatus": "STAR",
       "hp": 381109,
       "lv": "Insight III Level 52",
+      "stats": {
+        "HP": 381109,
+        "ATTACK": 1640,
+        "REALITY_DEFENSE": 1184,
+        "MENTAL_DEFENSE": 789,
+        "CRITICAL_TECHNIQUE": 204,
+        "CRITICAL_RATE": 8.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 120.2,
+        "CRITICAL_DEFENSE": 39,
+        "DMG_BONUS": 14.1,
+        "DMG_REDUCTION": 32
+      },
       "atkRate": "A",
       "criticalTechniqueRate": "C",
       "realityDefRate": "S",
       "mentalDefRate": "S",
-      "skill1": {
-        "name": "Inviting Trouble",
-        "cardId": "1701"
-      },
-      "skill2": {
-        "name": "Spite",
-        "cardId": "1702"
-      },
-      "ultimate": {
-        "name": "World Must Die Once",
-        "cardId": "1704"
-      }
+      "skill1": { "name": "Inviting Trouble", "cardId": "1701" },
+      "skill2": { "name": "Spite", "cardId": "1702" },
+      "ultimate": { "name": "World Must Die Once", "cardId": "1704" }
     }
   ]
 }

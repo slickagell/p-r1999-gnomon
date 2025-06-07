@@ -1,108 +1,128 @@
 {
   "enemies": [
     {
-      "id": "320m-1",
+      "id": "320m-0-0",
+      "gameId": "900032101",
       "wave": 1,
       "name": "Storage Bag?",
-      "headIconId": "650201",
+      "headIconId": "6502011",
       "dmgType": "MENTAL",
       "afflatus": "STAR",
       "hp": 245371,
       "lv": "Insight III Level 44",
+      "stats": {
+        "HP": 245371,
+        "ATTACK": 1954,
+        "REALITY_DEFENSE": 961,
+        "MENTAL_DEFENSE": 961,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 10.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 37.9,
+        "DMG_BONUS": 13.7,
+        "DMG_REDUCTION": 31.1
+      },
       "atkRate": "C+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Work of Genius",
-        "cardId": "1501"
-      },
-      "skill2": {
-        "name": "Attention Everyone",
-        "cardId": "1502"
-      },
-      "ultimate": {
-        "name": "Instant of Prediction",
-        "cardId": "1504"
-      }
+      "skill1": { "name": "Work of Genius", "cardId": "1501" },
+      "skill2": { "name": "Attention Everyone", "cardId": "1502" },
+      "ultimate": { "name": "Instant of Prediction", "cardId": "1504" }
     },
     {
-      "id": "320m-2",
+      "id": "320m-1-0",
+      "gameId": "900032102",
       "wave": 1,
       "name": "Storage Bag?",
-      "headIconId": "650201",
+      "headIconId": "6502011",
       "dmgType": "MENTAL",
       "afflatus": "STAR",
       "hp": 245371,
       "lv": "Insight III Level 44",
+      "stats": {
+        "HP": 245371,
+        "ATTACK": 1954,
+        "REALITY_DEFENSE": 961,
+        "MENTAL_DEFENSE": 961,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 10.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 37.9,
+        "DMG_BONUS": 13.7,
+        "DMG_REDUCTION": 31.1
+      },
       "atkRate": "C+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Work of Genius",
-        "cardId": "1501"
-      },
-      "skill2": {
-        "name": "Attention Everyone",
-        "cardId": "1502"
-      },
-      "ultimate": {
-        "name": "Instant of Prediction",
-        "cardId": "1504"
-      }
+      "skill1": { "name": "Work of Genius", "cardId": "1501" },
+      "skill2": { "name": "Attention Everyone", "cardId": "1502" },
+      "ultimate": { "name": "Instant of Prediction", "cardId": "1504" }
     },
     {
-      "id": "320m-3",
+      "id": "320m-2-0",
+      "gameId": "900032103",
       "wave": 1,
       "name": "Storage Bag?",
-      "headIconId": "650201",
+      "headIconId": "6502011",
       "dmgType": "MENTAL",
       "afflatus": "STAR",
       "hp": 245371,
       "lv": "Insight III Level 44",
+      "stats": {
+        "HP": 245371,
+        "ATTACK": 1954,
+        "REALITY_DEFENSE": 961,
+        "MENTAL_DEFENSE": 961,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 10.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 37.9,
+        "DMG_BONUS": 13.7,
+        "DMG_REDUCTION": 31.1
+      },
       "atkRate": "C+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Work of Genius",
-        "cardId": "1501"
-      },
-      "skill2": {
-        "name": "Attention Everyone",
-        "cardId": "1502"
-      },
-      "ultimate": {
-        "name": "Instant of Prediction",
-        "cardId": "1504"
-      }
+      "skill1": { "name": "Work of Genius", "cardId": "1501" },
+      "skill2": { "name": "Attention Everyone", "cardId": "1502" },
+      "ultimate": { "name": "Instant of Prediction", "cardId": "1504" }
     },
     {
-      "id": "320m-4",
+      "id": "320m-3-0",
+      "gameId": "900032104",
       "wave": 1,
       "name": "Storage Bag?",
-      "headIconId": "650201",
+      "headIconId": "6502011",
       "dmgType": "MENTAL",
       "afflatus": "STAR",
       "hp": 245371,
       "lv": "Insight III Level 44",
+      "stats": {
+        "HP": 245371,
+        "ATTACK": 1954,
+        "REALITY_DEFENSE": 961,
+        "MENTAL_DEFENSE": 961,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 10.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 37.9,
+        "DMG_BONUS": 13.7,
+        "DMG_REDUCTION": 31.1
+      },
       "atkRate": "C+",
       "criticalTechniqueRate": "B",
       "realityDefRate": "B+",
       "mentalDefRate": "B+",
-      "skill1": {
-        "name": "Work of Genius",
-        "cardId": "1501"
-      },
-      "skill2": {
-        "name": "Attention Everyone",
-        "cardId": "1502"
-      },
-      "ultimate": {
-        "name": "Instant of Prediction",
-        "cardId": "1504"
-      }
+      "skill1": { "name": "Work of Genius", "cardId": "1501" },
+      "skill2": { "name": "Attention Everyone", "cardId": "1502" },
+      "ultimate": { "name": "Instant of Prediction", "cardId": "1504" }
     }
   ]
 }

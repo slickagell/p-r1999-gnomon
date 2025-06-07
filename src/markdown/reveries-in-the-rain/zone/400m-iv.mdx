@@ -32,7 +32,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Sacrificial Wounds</span>
 
           When this unit has 4 or fewer types of *\[Stats Down]* or *\[Neg Status]* statuses, DMG Dealt **+50%**; when this unit has 5 or fewer types of *\[Stats Down]* or *\[Neg Status]* statuses, Penetration Rate **+60%**.
@@ -45,26 +45,30 @@ import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
 
           After being attacked by a non-ultimate attack, inflicts 1 stack of :effect{code="ENERVATE"} on the attacker; at the end of the round, if there are allies on the field, transfers own *\[Neg Status]* to a random ally.
 
-          <span class="passive-title">Falsehood</span>
+          <span class="passive-title">Dark Invocation</span>
 
           At the end of round 1 and at every 2 rounds thereafter, randomly summon a Scale of Devilish or Scale of Demonic; and if own HP is below **50%** at this time, randomly summon another Scale of Devilish or Scale of Demonic (up to 3 scales can be present at a time).
+
+          <span class="passive-title">Protection of Darkness</span>
+
+          When entering battle and at the start of every 4 rounds, this unit enters the :effect{code="PROTECTION_OF_DARKNESS"} status.
         </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack, Deals **300%** Mental DMG to the enemy with the highest ATK; when this unit has reached 5 stacks of :effect{code="HAVOC"}, this attack gains Critical Rate **+30%**.
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Mental DMG to the enemy with the highest ATK; when this unit has reached 5 stacks of :effect{code="HAVOC"}, this attack gains Critical Rate **+30%**.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **250%** Mental DMG to the 2 enemies with the highest HP percentage and gains 3 stacks of :effect{code="HAVOC"}. After attacking, if the caster has 3 or fewer kinds of *\[Stats Down]* or *\[Neg Status]* effects, gains additional 2 stacks of :effect{code="HAVOC"}.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Purifies all *\[Stats Down]* from self, deals **500%** Mental DMG to all enemies, and grants DMG **+30%** to the next ultimate (stackable).
         </div>
       </Fragment>

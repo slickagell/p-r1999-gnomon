@@ -28,7 +28,7 @@ import data from "@data/reveries-in-the-rain/zone/390m.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Meeting Gift</span>
 
           When attacking, if the target is in the :effect{code="POISON"} status, inflicts 1 instance of :effect{code="POISON"} on the target for 2 rounds.
@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/390m.json";
           At the end of the round, loses (Current HP x**5%**) HP and inflicts 1 instance of :effect{code="POISON"} on a random enemy for 2 rounds. Triggers 2 times.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Imitate</span>
 
           When attacking, if the target is in the :effect{code="POISON"} status, inflicts 1 instance of :effect{code="POISON"} on the target for 2 rounds.
@@ -49,12 +49,26 @@ import data from "@data/reveries-in-the-rain/zone/390m.json";
 
           <span class="passive-title">Toxic Body</span>
 
-          Immune to :effect{code="POISON"}.
+          Immune to :effect{code="POISON"}
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Imitate</span>
+
+          When attacking, if the target is in the :effect{code="POISON"} status, inflicts 1 instance of :effect{code="POISON"} on the target for 2 rounds.
+
+          <span class="passive-title">Bird Enthusiast</span>
+
+          At the end of the round, if any enemy is in the :effect{code="POISON"} status, gain 2 stacks of :effect{code="GLEAN"} for self.
+
+          <span class="passive-title">Toxic Body</span>
+
+          Immune to :effect{code="POISON"}
         </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 2 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
 
           <div class="divider my-1 h-1" />
@@ -62,7 +76,15 @@ import data from "@data/reveries-in-the-rain/zone/390m.json";
           <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} for 3 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also deals **40%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **270%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also deals **60%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also deals **40%** more Reality DMG.
 
           <div class="divider my-1 h-1" />
@@ -72,7 +94,7 @@ import data from "@data/reveries-in-the-rain/zone/390m.json";
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="HEALTH" /> Mass healing. Gives all allies 2 rounds of :effect{code="CURE"}: when a round starts, HP +(the caster's ATK x**50%**).
 
           <div class="divider my-1 h-1" />
@@ -80,7 +102,15 @@ import data from "@data/reveries-in-the-rain/zone/390m.json";
           <CardType class="w-24 mb-1" type="HEALTH" /> Mass healing. Gives all allies 2 rounds of :effect{code="CURE"}: when a round starts, HP +(the caster's ATK x**75%**).
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is above **50%**, this attack also deals **50%** more Reality DMG.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If the target's HP is above **50%**, this attack also deals **75%** more Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. If the target's HP is above **50%**, this attack also deals **50%** more Reality DMG.
 
           <div class="divider my-1 h-1" />
@@ -90,12 +120,16 @@ import data from "@data/reveries-in-the-rain/zone/390m.json";
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **350%** Reality DMG to all enemies and all active :effect{code="POISON"} and :effect{code="CURE"} statuses on every character take effect immediately.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Reality DMG to all enemies, This attack enjoys Penetration Rate **+30%**.
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. This attack enjoys Penetration Rate **+30%**.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          Mass attack. Deals **250%** Reality DMG to all enemies. This attack enjoys Penetration Rate **+30%**.
         </div>
       </Fragment>
     </EnemyInfo>

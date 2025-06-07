@@ -1,7 +1,8 @@
 {
   "enemies": [
     {
-      "id": "400-iv-1",
+      "id": "400m-iv-0-0",
+      "gameId": "900035201",
       "wave": 1,
       "name": "Suffering Converged Mind",
       "headIconId": "610402",
@@ -10,44 +11,33 @@
       "afflatus": "STAR",
       "hp": 1421023,
       "lv": "Insight III Level 60",
+      "stats": {
+        "HP": 1421023,
+        "ATTACK": 2150,
+        "REALITY_DEFENSE": 1163,
+        "MENTAL_DEFENSE": 1163,
+        "CRITICAL_TECHNIQUE": 322,
+        "CRITICAL_RATE": 12.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 126.1,
+        "CRITICAL_DEFENSE": 40.1,
+        "DMG_BONUS": 14.5,
+        "DMG_REDUCTION": 33
+      },
       "atkRate": "SS",
       "criticalTechniqueRate": "C",
       "realityDefRate": "S",
       "mentalDefRate": "S",
       "resistance": [
-        {
-          "code": "CONTROL_RESILIENCE",
-          "value": 200
-        },
-        {
-          "code": "DAZE_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "SLEEP_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "FREEZE_RESISTANCE",
-          "value": 100
-        },
-        {
-          "code": "DISARM_RESISTANCE",
-          "value": 100
-        }
+        { "code": "DAZE_RESISTANCE", "value": 100 },
+        { "code": "SLEEP_RESISTANCE", "value": 100 },
+        { "code": "FREEZE_RESISTANCE", "value": 100 },
+        { "code": "DISARM_RESISTANCE", "value": 100 },
+        { "code": "CONTROL_RESILIENCE", "value": 200 }
       ],
-      "skill1": {
-        "name": "Sublime Punishment",
-        "cardId": "1301"
-      },
-      "skill2": {
-        "name": "Joyful Lashings",
-        "cardId": "1302"
-      },
-      "ultimate": {
-        "name": "Weeping in Sacrifice",
-        "cardId": "1304"
-      }
+      "skill1": { "name": "Sublime Punishment", "cardId": "1301" },
+      "skill2": { "name": "Joyful Lashings", "cardId": "1302" },
+      "ultimate": { "name": "Weeping in Sacrifice", "cardId": "1304" }
     }
   ]
 }
