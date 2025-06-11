@@ -1,3 +1,7 @@
+##### 2025-06-11
+
+* Add new materials and update material cheatsheet
+
 ##### 2025-06-07
 
 * Update enemies stats and phase 2 info in Reveries
