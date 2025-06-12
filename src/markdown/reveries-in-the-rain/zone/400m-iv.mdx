@@ -53,6 +53,26 @@ import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
 
           When entering battle and at the start of every 4 rounds, this unit enters the :effect{code="PROTECTION_OF_DARKNESS"} status.
         </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Self-destruct I</span>
+
+          After entering battle for 2 rounds, self destructs; when performing a self destruct, if own HP percentage is below **50%**, deals (own ATK x**300%**) Genesis DMG to all enemies; otherwise deals (own ATK x**600%**) Genesis DMG to all enemies and loses all HP afterwards.
+
+          <span class="passive-title">United as One</span>
+
+          When the caster dies, Moxie +1 for all allies.
+        </div>
+
+        <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Self-destruct II</span>
+
+          After entering battle for 3 rounds, self destructs; when performing a self destruct, if own HP percentage is below **50%**, deals (own ATK x**300%**) Genesis DMG to all enemies; otherwise deals (own ATK x**600%**) Genesis DMG to all enemies and loses all HP afterwards.
+
+          <span class="passive-title">United as One</span>
+
+          When the caster dies, Moxie +1 for all allies.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">

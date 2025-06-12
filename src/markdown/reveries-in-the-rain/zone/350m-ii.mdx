@@ -87,6 +87,18 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
 
           When being attacked, inflicts 2 stacks of :effect{code="POLLUTION"} on the attacker.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Vow of Grudges</span>
+
+          When entering the battle, inflicts :effect{code="DAZE"} for 2 rounds, and :effect{code="CURSED_GRUDGE"} on the enemy with the highest ATK. When this unit dies, dispels :effect{code="CURSED_GRUDGE"} from enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active) && activePhase === '1'`}>
+          <span class="passive-title">Uncontainable Rage</span>
+
+          At the start of the round, gains 2 stacks of :effect{code="BLOODY_HUNT"}; at the end of every 2 rounds, enters the :effect{code="TAUNT"} status for 1 round.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
@@ -112,6 +124,22 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
           <div class="divider my-1 h-1" />
 
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Targets afflicted with *\[Neg Status]* take an additional **50%** Reality DMG.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Mental DMG to 2 enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 1 round on the target hit.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 2 rounds on the target hit.
         </div>
       </Fragment>
 
@@ -139,6 +167,22 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
 
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If the caster's HP is lower than **50%**, deals an additional **50%** Reality DMG.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Mental DMG to 2 enemies, then inflicts Moxie -1 on the main target.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies, then inflicts Moxie -1 on the main target.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active) && activePhase === '1'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **175%** Reality DMG. Targets afflicted with *\[Neg Status]* take an additional **30%** damage.
+
+          <div class="divider my-1 h-1" />
+
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **225%** Reality DMG. Targets afflicted with *\[Neg Status]* take an additional **30%** damage.
+        </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
@@ -156,6 +200,14 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           1-target attack. Deals **500%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
+          Mass attack. Deals **300%** Mental DMG to all enemies and inflicts :effect{code="SEAL"} on the main target for 2 rounds.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active) && activePhase === '1'`}>
+          1-target attack. Deals **450%** Reality DMG and gains 2 stacks of :effect{code="BLOODY_HUNT"}.
         </div>
       </Fragment>
     </EnemyInfo>

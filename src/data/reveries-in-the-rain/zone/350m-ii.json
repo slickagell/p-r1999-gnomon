@@ -144,6 +144,114 @@
       "skill1": { "name": "Blood Splatter", "cardId": "2102" },
       "skill2": { "name": "Invitation", "cardId": "2102" },
       "ultimate": { "name": "Intimate Touch", "cardId": "2104" }
+    },
+    {
+      "id": "350m-ii-0-0-ps",
+      "gameId": "900040405",
+      "wave": "ps",
+      "name": "Ghostly Bride",
+      "hp": 180496,
+      "stats": {
+        "HP": 180496,
+        "ATTACK": 1992,
+        "REALITY_DEFENSE": 720,
+        "MENTAL_DEFENSE": 720,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 10.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 38.7,
+        "DMG_BONUS": 14,
+        "DMG_REDUCTION": 1.8
+      },
+      "lv": "Insight III Level 50",
+      "headIconId": "670302",
+      "afflatus": "STAR",
+      "dmgType": "MENTAL",
+      "atkRate": "A",
+      "realityDefRate": "S",
+      "mentalDefRate": "S",
+      "criticalTechniqueRate": "C+",
+      "resistance": [
+        {
+          "code": "DAZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "PETRIFY_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "Bawl",
+        "cardId": 2102
+      },
+      "skill2": {
+        "name": "Gift",
+        "cardId": 2102
+      },
+      "ultimate": {
+        "name": "Endless Marriage",
+        "cardId": 2104
+      }
+    },
+    {
+      "id": "350m-ii-1-0-ps",
+      "gameId": "900040406",
+      "wave": "ps",
+      "name": "Blunt Blade Butcher",
+      "hp": 250496,
+      "stats": {
+        "HP": 250496,
+        "ATTACK": 1992,
+        "REALITY_DEFENSE": 720,
+        "MENTAL_DEFENSE": 720,
+        "CRITICAL_TECHNIQUE": 280,
+        "CRITICAL_RATE": 10.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 124,
+        "CRITICAL_DEFENSE": 38.7,
+        "DMG_BONUS": 14,
+        "DMG_REDUCTION": 31.8
+      },
+      "lv": "Insight III Level 50",
+      "headIconId": "670301",
+      "afflatus": "STAR",
+      "dmgType": "REALITY",
+      "atkRate": "A",
+      "realityDefRate": "A+",
+      "mentalDefRate": "A+",
+      "criticalTechniqueRate": "B",
+      "resistance": [
+        {
+          "code": "SLEEP_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "FREEZE_RESISTANCE",
+          "value": 100
+        },
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        }
+      ],
+      "skill1": {
+        "name": "Trepanation",
+        "cardId": 2101
+      },
+      "skill2": {
+        "name": "Carnal Hanging",
+        "cardId": 2101
+      },
+      "ultimate": {
+        "name": "Manic Syndrome",
+        "cardId": 2104
+      }
     }
   ]
 }

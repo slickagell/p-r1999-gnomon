@@ -10,13 +10,14 @@ type StatRate = "SS" | "S" | "A+" | "A" | "B+" | "B" | "C+" | "C";
 
 type EnemyBasicInfoData = {
   id: string;
-  wave: number;
+  wave: number | string;
   phase?: string;
   headIconId: string;
   isBoss: boolean
   name: string;
   afflatus: string;
   hp: number;
+  multiHp?: number[];
   lv: string;
   stats: {
     [key: string]: string | number;
@@ -65,11 +66,11 @@ const enemyGroups = enemies.reduce((acc, enemy) => {
 ---
 
 <div class="mt-4" x-data="dataset">
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-5">
         {
           Object.entries(enemyGroups).map(([group,enemies], idx) => (
             <div class="flex gap-4">
-              <p class="text-primary-content shrink-0">No. <span class="text-xl">{group}</span></p>
+              <p class="text-primary-content shrink-0 basis-16">{group==="ps"?<span class="text-xl">P.S</span>:<span class="text-xl">No. {group}</span>}</p>
               <div class="flex flex-wrap gap-4 items-end">
                 {enemies.map((enemy) => (
                   <div class="flex flex-col items-center">
@@ -108,6 +109,13 @@ const enemyGroups = enemies.reduce((acc, enemy) => {
                   <p class="text-xl font-medium text-primary-content mb-1" x-text="activeEnemy?.name"></p>
                   <p x-text="activeEnemy?.lv"></p>
                   <p>HP: <span class="font-medium text-primary" x-text="activeEnemy?.hp"></span></p>
+                  <template x-if="activeEnemy?.multiHp">
+                    <div class="mt-2 flex gap-1 ">
+                      <template x-for="hp in activeEnemy?.multiHp">
+                        <div class="h-1 w-10 bg-primary"></div>
+                      </template>
+                    </div>
+                  </template>
                 </div>
             </div>
             <div x-show="phases.length > 1" class="my-4 tabs tabs-boxed justify-center md:justify-start">

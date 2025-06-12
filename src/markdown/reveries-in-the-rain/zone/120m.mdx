@@ -80,6 +80,20 @@ import data from "@data/reveries-in-the-rain/zone/120m.json";
 
           After an ally takes an action, all characters get Eureka -1.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <span class="passive-title">Small Wound</span>
+
+          Immune to all statuses. Cannot be healed. All DMG taken is set to 1.
+
+          <span class="passive-title">Find the Way</span>
+
+          Immune to all statuses. All DMG taken is set to 1.
+
+          <span class="passive-title">Above</span>
+
+          After an ally takes an action, all characters get Eureka +1.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">

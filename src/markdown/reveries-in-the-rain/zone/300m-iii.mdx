@@ -41,11 +41,25 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
 
           At the start of the round, if HP is below **75%**/**50%**/**25%**, gain Moxie +2/5/10 and 5/7/10 stacks of :effect{code="UNSPARING"}, each effect triggers up to 1 time.
         </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <span class="passive-title">Worship of Fertility</span>
+
+          After entering battle, casts an ultimate and grants **50%** of this unit's Reality DEF and Mental DEF to Anjo Nala (removed after death).
+
+          <span class="passive-title">Sensual Reception</span>
+
+          Right before attacking, if Anjo Nala is not in a *\[Channel]* status, recover (Missing HP x**15%**) HP; if Anjo Nala is not in the *\[Channel]* status, this unit loses own (Current HP x**20%**) HP; after being attacked, lose (Current HP x**5%**) HP; after being attacked by an ultimate, lose (Current HP x**20%**) HP.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG to the leftmost enemy and inflicts 4 stacks of :effect{code="FLINCH"} on the target hit; when not in a *\[Channel]* status, deals an additional **150%** Mental DMG and recovers **6%** missing HP.
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG to the enemy with the highest Moxie; after attacking, shifts the target 3 positions forward.
         </div>
       </Fragment>
 
@@ -53,11 +67,19 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to all enemies and inflicts 2 stacks of :effect{code="FLINCH"} on the targets hit; when not in a *\[Channel]* status, deals an additional **100%** Mental DMG and recovers **6%** missing HP.
         </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **300%** Reality DMG to the leftmost enemy and inflicts 4 stacks of :effect{code="FLINCH"} on the target.
+        </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           Self channel. Enters the channel status, summons Horn and Tail Enveiled to battle, and gains Moxie +10. Each round, consumes 2 Moxie to perform a mass attack that deals **400%** Mental DMG and inflicts 5 stacks of :effect{code="FLINCH"} on all enemies (the channel status is removed if there isn't enough Moxie; while in the channel status, Anjo Nala gains Max Moxie +5 and Control Immunity).
+        </div>
+
+        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
+          Mass attack. Deals **400%** Reality DMG to all enemies; on hit, inflicts :effect{code="CAPTIVATED"} for 2 rounds on the leftmost enemy and rearranges enemy positions.
         </div>
       </Fragment>
     </EnemyInfo>

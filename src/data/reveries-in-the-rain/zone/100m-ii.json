@@ -29,7 +29,50 @@
       "mentalDefRate": "S",
       "skill1": { "name": "Capture", "cardId": "1201" },
       "skill2": { "name": "Overwhelm", "cardId": "1202" },
-      "ultimate": { "name": "Cruel Poison", "cardId": "1204" }
+      "ultimate": { "name": "Cruel Poison", "cardId": "1204" },
+      "phases": [
+        {
+          "id": "100m-ii-0-0",
+          "gameId": "900010202",
+          "wave": 1,
+          "phase": 2,
+          "name": "Abraxas Chieftain",
+          "hp": 108317,
+          "stats": {
+            "HP": 108317,
+            "ATTACK": 1311,
+            "REALITY_DEFENSE": 675,
+            "MENTAL_DEFENSE": 675,
+            "CRITICAL_TECHNIQUE": 219,
+            "CRITICAL_RATE": 14.2,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 121,
+            "CRITICAL_DEFENSE": 18.5,
+            "DMG_BONUS": 20.1,
+            "DMG_REDUCTION": 15.4
+          },
+          "lv": "Insight III Level 1",
+          "headIconId": "620303",
+          "afflatus": "INTELLECT",
+          "dmgType": "REALITY",
+          "atkRate": "A",
+          "realityDefRate": "S",
+          "mentalDefRate": "S",
+          "criticalTechniqueRate": "B",
+          "skill1": {
+            "name": "Dimensional Punishment",
+            "cardId": 1201
+          },
+          "skill2": {
+            "name": "Cage of Miasma",
+            "cardId": 1202
+          },
+          "ultimate": {
+            "name": "Profound Precept",
+            "cardId": 1204
+          }
+        }
+      ]
     },
     {
       "id": "100m-ii-1-0",
@@ -60,7 +103,50 @@
       "mentalDefRate": "S",
       "skill1": { "name": "Capture", "cardId": "1201" },
       "skill2": { "name": "Overwhelm", "cardId": "1202" },
-      "ultimate": { "name": "Cruel Poison", "cardId": "1204" }
+      "ultimate": { "name": "Cruel Poison", "cardId": "1204" },
+      "phases": [
+        {
+          "id": "100m-ii-1-0",
+          "gameId": "900010202",
+          "wave": 1,
+          "phase": 2,
+          "name": "Abraxas Chieftain",
+          "hp": 108317,
+          "stats": {
+            "HP": 108317,
+            "ATTACK": 1311,
+            "REALITY_DEFENSE": 675,
+            "MENTAL_DEFENSE": 675,
+            "CRITICAL_TECHNIQUE": 219,
+            "CRITICAL_RATE": 14.2,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 121,
+            "CRITICAL_DEFENSE": 18.5,
+            "DMG_BONUS": 20.1,
+            "DMG_REDUCTION": 15.4
+          },
+          "lv": "Insight III Level 1",
+          "headIconId": "620303",
+          "afflatus": "INTELLECT",
+          "dmgType": "REALITY",
+          "atkRate": "A",
+          "realityDefRate": "S",
+          "mentalDefRate": "S",
+          "criticalTechniqueRate": "B",
+          "skill1": {
+            "name": "Dimensional Punishment",
+            "cardId": 1201
+          },
+          "skill2": {
+            "name": "Cage of Miasma",
+            "cardId": 1202
+          },
+          "ultimate": {
+            "name": "Profound Precept",
+            "cardId": 1204
+          }
+        }
+      ]
     },
     {
       "id": "100m-ii-2-0",
@@ -91,7 +177,50 @@
       "mentalDefRate": "S",
       "skill1": { "name": "Capture", "cardId": "1201" },
       "skill2": { "name": "Overwhelm", "cardId": "1202" },
-      "ultimate": { "name": "Cruel Poison", "cardId": "1204" }
+      "ultimate": { "name": "Cruel Poison", "cardId": "1204" },
+      "phases": [
+        {
+          "id": "100m-ii-2-0",
+          "gameId": "900010202",
+          "wave": 1,
+          "phase": 2,
+          "name": "Abraxas Chieftain",
+          "hp": 108317,
+          "stats": {
+            "HP": 108317,
+            "ATTACK": 1311,
+            "REALITY_DEFENSE": 675,
+            "MENTAL_DEFENSE": 675,
+            "CRITICAL_TECHNIQUE": 219,
+            "CRITICAL_RATE": 14.2,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 121,
+            "CRITICAL_DEFENSE": 18.5,
+            "DMG_BONUS": 20.1,
+            "DMG_REDUCTION": 15.4
+          },
+          "lv": "Insight III Level 1",
+          "headIconId": "620303",
+          "afflatus": "INTELLECT",
+          "dmgType": "REALITY",
+          "atkRate": "A",
+          "realityDefRate": "S",
+          "mentalDefRate": "S",
+          "criticalTechniqueRate": "B",
+          "skill1": {
+            "name": "Dimensional Punishment",
+            "cardId": 1201
+          },
+          "skill2": {
+            "name": "Cage of Miasma",
+            "cardId": 1202
+          },
+          "ultimate": {
+            "name": "Profound Precept",
+            "cardId": 1204
+          }
+        }
+      ]
     }
   ]
 }

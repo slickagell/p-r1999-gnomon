@@ -60,6 +60,12 @@ import data from "@data/reveries-in-the-rain/zone/300m-i.json";
 
           When entering battle, suffer the :effect{code="SHACKLED_REBIRTH_ID_223001"} status for 1 round.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}', '${data.enemies[4].id}', '${data.enemies[5].id}'].includes(active)`}>
+          <span class="passive-title">Healing Respite</span>
+
+          When being attacked by a rank 3/2 incantation, DMG Taken **+40%**/**20%** for self.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
@@ -74,6 +80,18 @@ import data from "@data/reveries-in-the-rain/zone/300m-i.json";
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="ROUSING_MORALE"} for self; after attacking, grant 2 random permanent effects from :effect{code="COLLECTION_OF_BUFFS_ID_223001"} to self.
         </div>
+
+        <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="HEALTH" /> Mass heal. Recovers **15%** of missing HP to all allies and purify 2 random types of *\[Stats Down]* or *\[Neg Status]* effects from all allies.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. Inflicts 1 stack of :effect{code="CRIPPLING_WEAKNESS"} on all enemies and dispels 2 random *\[Stats Up]* or *\[Pos Status]* effects from all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 1 stack of :effect{code="ROUSING_MORALE"} and 3 stacks of :effect{code="UNSPARING"} to all allies.
+        </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
@@ -86,19 +104,11 @@ import data from "@data/reveries-in-the-rain/zone/300m-i.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           Self buff. For each stack of :effect{code="ETERNAL_VIGOR"} on self, recovers (Max HP x**15%**) HP.
 
-          <br />
-
           Absorbs other body parts, recovers (Max HP x**10%**) HP for each part absorbed.
-
-          <br />
 
           After absorbing the left arm, gain 1 stack of :effect{code="MALICE_ID_223001"}.
 
-          <br />
-
           After absorbing the right arm, gain 1 stack of :effect{code="REGRET_ID_223001"}.
-
-          <br />
 
           After absorbing the core, gain 1 stack of :effect{code="ETERNAL_VIGOR"}.
         </div>

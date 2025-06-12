@@ -89,6 +89,34 @@
       "criticalTechniqueRate": "B",
       "realityDefRate": "SS",
       "mentalDefRate": "SS"
+    },
+    {
+      "id": "120m-0-0-ps",
+      "gameId": "900012104",
+      "wave": "ps",
+      "name": "Sign (Up)",
+      "hp": 4,
+      "stats": {
+        "HP": 4,
+        "ATTACK": 1122,
+        "REALITY_DEFENSE": 660,
+        "MENTAL_DEFENSE": 660,
+        "CRITICAL_TECHNIQUE": 177,
+        "CRITICAL_RATE": 12.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 118.8,
+        "CRITICAL_DEFENSE": 18.8,
+        "DMG_BONUS": 20.4,
+        "DMG_REDUCTION": 15.6
+      },
+      "lv": "Insight III Level 4",
+      "headIconId": "690116",
+      "afflatus": "SPIRIT",
+      "dmgType": "REALITY",
+      "atkRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "criticalTechniqueRate": "B"
     }
   ]
 }

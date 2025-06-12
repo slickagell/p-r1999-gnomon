@@ -31,7 +31,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Racial Talent</span>
 
           Mass DMG Taken **-25%**. 1-target DMG Taken **+25%**.
@@ -45,37 +45,23 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
           After casting an ultimate, transform into Primitive Olitiau, get an all-round power up, and purify all debuffs from self.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <span class="passive-title">Racial Talent</span>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '2'`}>
+          <span class="passive-title">Racial Talent II</span>
 
-          Mass DMG Taken **-25%**. 1-target DMG Taken **+25%**.
-
-          <span class="passive-title">Cold Current</span>
-
-          When being attacked by a mass attack, gain Moxie +1 for self and inflict 1 stack of :effect{code="COLD"} on a random enemy.
-
-          <span class="passive-title">Evolution</span>
-
-          After casting an ultimate, transform into Primitive Olitiau, get an all-round power up, and purify all debuffs from self.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <span class="passive-title">Racial Talent</span>
-
-          Mass DMG Taken **-25%**. 1-target DMG Taken **+25%**.
+          Mass DMG Taken **-50%**. 1-target DMG Taken **+50%**.
 
           <span class="passive-title">Cold Current</span>
 
           When being attacked by a mass attack, gain Moxie +1 for self and inflict 1 stack of :effect{code="COLD"} on a random enemy.
 
-          <span class="passive-title">Evolution</span>
+          <span class="passive-title">Icebreaker</span>
 
-          After casting an ultimate, transform into Primitive Olitiau, get an all-round power up, and purify all debuffs from self.
+          When an enemy enters the :effect{code="FREEZE"} status, recover (own Missing HP x**5%**) HP (triggers up to once per round).
         </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
 
           <div class="divider my-1 h-1" />
@@ -83,25 +69,17 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
           <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 1 stack of :effect{code="COLD"} on the target hit.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 1 stack of :effect{code="COLD"} on the target hit.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG.
-
-          <div class="divider my-1 h-1" />
-
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 1 stack of :effect{code="COLD"} on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="COLD"} on the targets hit.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
 
           <div class="divider my-1 h-1" />
@@ -109,34 +87,22 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
           <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **60%** more Reality DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
-
-          <div class="divider my-1 h-1" />
-
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **240%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **90%** more Reality DMG.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           Mass attack. Deals **300%** Reality DMG to all enemies.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies.
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '2'`}>
+          Mass attack. Deals **400%** Reality DMG to all enemies. Inflicts 1 stack of :effect{code="COLD"} on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>

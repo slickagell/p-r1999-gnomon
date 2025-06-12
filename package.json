@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "repository": "xREMAGIx/p-r1999-gnomon",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --port 1999",
     "start": "astro dev",
     "check": "astro check --minimumSeverity error",
     "build": "astro build",

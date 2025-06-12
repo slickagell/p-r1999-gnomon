@@ -29,7 +29,50 @@
       "mentalDefRate": "S",
       "skill1": { "name": "Scout", "cardId": "1201" },
       "skill2": { "name": "Survey", "cardId": "1202" },
-      "ultimate": { "name": "Pacifist", "cardId": "1204" }
+      "ultimate": { "name": "Pacifist", "cardId": "1204" },
+      "phases": [
+        {
+          "id": "100m-i-0-0",
+          "gameId": "900010102",
+          "wave": 1,
+          "phase": "2",
+          "name": "Primitive Olitiau",
+          "hp": 108317,
+          "stats": {
+            "HP": 108317,
+            "ATTACK": 1311,
+            "REALITY_DEFENSE": 675,
+            "MENTAL_DEFENSE": 675,
+            "CRITICAL_TECHNIQUE": 219,
+            "CRITICAL_RATE": 14.2,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 121,
+            "CRITICAL_DEFENSE": 18.5,
+            "DMG_BONUS": 20.1,
+            "DMG_REDUCTION": 15.4
+          },
+          "lv": "Insight III Level 1",
+          "headIconId": "610301",
+          "afflatus": "SPIRIT",
+          "dmgType": "MINERAL",
+          "atkRate": "A+",
+          "realityDefRate": "S",
+          "mentalDefRate": "S",
+          "criticalTechniqueRate": "B",
+          "skill1": {
+            "name": "Silent Song",
+            "cardId": 1202
+          },
+          "skill2": {
+            "name": "Hover",
+            "cardId": 1202
+          },
+          "ultimate": {
+            "name": "\"Pacifist\"",
+            "cardId": 1204
+          }
+        }
+      ]
     },
     {
       "id": "100m-i-1-0",
@@ -60,7 +103,50 @@
       "mentalDefRate": "S",
       "skill1": { "name": "Scout", "cardId": "1201" },
       "skill2": { "name": "Survey", "cardId": "1202" },
-      "ultimate": { "name": "Pacifist", "cardId": "1204" }
+      "ultimate": { "name": "Pacifist", "cardId": "1204" },
+      "phases": [
+        {
+          "id": "100m-i-1-0",
+          "gameId": "900010102",
+          "wave": 1,
+          "phase": "2",
+          "name": "Primitive Olitiau",
+          "hp": 108317,
+          "stats": {
+            "HP": 108317,
+            "ATTACK": 1311,
+            "REALITY_DEFENSE": 675,
+            "MENTAL_DEFENSE": 675,
+            "CRITICAL_TECHNIQUE": 219,
+            "CRITICAL_RATE": 14.2,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 121,
+            "CRITICAL_DEFENSE": 18.5,
+            "DMG_BONUS": 20.1,
+            "DMG_REDUCTION": 15.4
+          },
+          "lv": "Insight III Level 1",
+          "headIconId": "610301",
+          "afflatus": "SPIRIT",
+          "dmgType": "MINERAL",
+          "atkRate": "A+",
+          "realityDefRate": "S",
+          "mentalDefRate": "S",
+          "criticalTechniqueRate": "B",
+          "skill1": {
+            "name": "Silent Song",
+            "cardId": 1202
+          },
+          "skill2": {
+            "name": "Hover",
+            "cardId": 1202
+          },
+          "ultimate": {
+            "name": "\"Pacifist\"",
+            "cardId": 1204
+          }
+        }
+      ]
     },
     {
       "id": "100m-i-2-0",
@@ -91,7 +177,50 @@
       "mentalDefRate": "S",
       "skill1": { "name": "Scout", "cardId": "1201" },
       "skill2": { "name": "Survey", "cardId": "1202" },
-      "ultimate": { "name": "Pacifist", "cardId": "1204" }
+      "ultimate": { "name": "Pacifist", "cardId": "1204" },
+      "phases": [
+        {
+          "id": "100m-i-2-0",
+          "gameId": "900010102",
+          "wave": 1,
+          "phase": "2",
+          "name": "Primitive Olitiau",
+          "hp": 108317,
+          "stats": {
+            "HP": 108317,
+            "ATTACK": 1311,
+            "REALITY_DEFENSE": 675,
+            "MENTAL_DEFENSE": 675,
+            "CRITICAL_TECHNIQUE": 219,
+            "CRITICAL_RATE": 14.2,
+            "CRITICAL_RESIST_RATE": 0,
+            "CRITICAL_DMG": 121,
+            "CRITICAL_DEFENSE": 18.5,
+            "DMG_BONUS": 20.1,
+            "DMG_REDUCTION": 15.4
+          },
+          "lv": "Insight III Level 1",
+          "headIconId": "610301",
+          "afflatus": "SPIRIT",
+          "dmgType": "MINERAL",
+          "atkRate": "A+",
+          "realityDefRate": "S",
+          "mentalDefRate": "S",
+          "criticalTechniqueRate": "B",
+          "skill1": {
+            "name": "Silent Song",
+            "cardId": 1202
+          },
+          "skill2": {
+            "name": "Hover",
+            "cardId": 1202
+          },
+          "ultimate": {
+            "name": "\"Pacifist\"",
+            "cardId": 1204
+          }
+        }
+      ]
     }
   ]
 }

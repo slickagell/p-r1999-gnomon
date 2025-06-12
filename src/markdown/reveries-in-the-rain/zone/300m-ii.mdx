@@ -71,6 +71,62 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
           After entering battle, enter the :effect{code="PHOTOSYNTHESIS_ID_223001"} status for 2 rounds; after casting an ultimate, enter the :effect{code="PHOTOSYNTHESIS_ID_223001"} status again for 2 rounds; after casting an ultimate, get Max Moxie and Moxie Consumption -3 (triggers up to 2 times).
         </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          <span class="passive-title">Goofball</span>
+
+          At the end of the round, Moxie +2.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <span class="passive-title">Goofball</span>
+
+          At the end of the round, gain 3 stacks of :effect{code="MERCY"}.
+
+          <span class="passive-title">Highly Combustible</span>
+
+          When being attacked, for each stack of :effect{code="BURN"} on self, DMG Taken **+2%**.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <span class="passive-title">Goofball II</span>
+
+          At the end of the round, gain 5 stacks of :effect{code="UNSPARING_ID_90001"} and gain Moxie +1.
+        </div>
+
+        <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
+          <span class="passive-title">Goofball II</span>
+
+          After death, inflict 5 stacks of :effect{code="POLLUTION"} on all enemies for 1 round; at the end of the round, Moxie +1.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          <span class="passive-title">Goofball II</span>
+
+          At the end of the round, 3 stacks of :effect{code="THORNY"} and Moxie +1.
+        </div>
+
+        <div x-show={`['${data.enemies[9].id}'].includes(active)`}>
+          <span class="passive-title">Goofball II</span>
+
+          At the end of the round, Moxie +2.
+        </div>
+
+        <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
+          <span class="passive-title">Goofball II</span>
+
+          At the end of the round, gain 3 stacks of :effect{code="MERCY"}. At the end of the round, Moxie +1.
+
+          <span class="passive-title">Highly Combustible</span>
+
+          When being attacked, for each stack of :effect{code="BURN"} on self, DMG Taken **+2%**.
+        </div>
+
+        <div x-show={`['${data.enemies[11].id}'].includes(active)`}>
+          <span class="passive-title">Expensive Decoration</span>
+
+          When entering battle, gains 100 Goldfinch Coins. At the end of the round, consumes 5 Goldfinch Coins and deals **150%** Mental DMG to all enemies.
+        </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
@@ -88,6 +144,26 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. Inflicts 1 stack of :effect{code="RIGIDITY"} on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **75%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the target.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Mental DMG. Penetration Rate **+50%** for this attack.
+        </div>
+
+        <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **25%** Mental DMG. Inflicts 4 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG; after attacking, inflicts :effect{code="CORRODE"} for 2 rounds on the target hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
+        </div>
+
+        <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **75%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the target.
         </div>
       </Fragment>
 
@@ -107,6 +183,26 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
           <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 3 stacks of :effect{code="UNSPARING"}, 3 stacks of :effect{code="LUCKY"}, and 3 stacks of :effect{code="GLEAN"} to all allies; other allies gain an additional 3 stacks of :effect{code="UNSPARING"}, 3 stacks of :effect{code="LUCKY"}, and 3 stacks of :effect{code="GLEAN"}.
         </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="HEALTH" /> Mass heal. Recovers (Missing HP x**15%**) HP for all allies. Grants Moxie +1 to self.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. This attack gains Leech Rate **+100%**.
+        </div>
+
+        <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **25%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{code="POLLUTION"} for 1 round on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{code="TAUNT"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
+        </div>
+
+        <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
+          <CardType class="w-24 mb-1" type="HEALTH" /> Mass heal. Recovers (Missing HP x**15%**) HP for all allies. Grants Moxie +1 to self.
+        </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
@@ -124,6 +220,34 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
           Mass attack. Deals **400%** Mental DMG to all enemies, extends the duration of :effect{code="PETRIFY"} status on the target by 1 round; on hit, inflicts 1 stack of :effect{code="RIGIDITY"} on all enemies.
+        </div>
+
+        <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
+          Mass attack. Deals **700%** Mental DMG to all enemies. Destroys self after cast.
+        </div>
+
+        <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies and extends their :effect{code="POISON"} status for 2 rounds on the targets hit, then inflicts :effect{code="POISON"} status on the targets for 3 rounds: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the targets.
+        </div>
+
+        <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
+          Mass attack. Deals **350%** Mental DMG to all enemies. Inflicts Reality DEF **-30%** and Mental DEF **-30%** for 3 rounds on the targets hit.
+        </div>
+
+        <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
+          1-target attack. Deals **400%** Mental DMG. Inflicts 10 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+        </div>
+
+        <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies; after attacking, inflicts :effect{code="CORRODE"} for 2 rounds on the targets hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
+        </div>
+
+        <div x-show={`['${data.enemies[9].id}'].includes(active)`}>
+          1-target attack. Deals **700%** Mental DMG. After attacking, inflicts Moxie -5 on the target. Dies after cast.
+        </div>
+
+        <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts :effect{code="SEAL"} for 2 rounds on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>

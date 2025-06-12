@@ -40,6 +40,62 @@
       "skill1": { "name": "Feast of Lust", "cardId": "31000111" },
       "skill2": { "name": "Angel's Temptation", "cardId": "31000121" },
       "ultimate": { "name": "Interwoven Dreams", "cardId": "31000131" }
+    },
+    {
+      "id": "300m-iii-0-0-ps",
+      "gameId": "900025101",
+      "wave": "ps",
+      "name": "Horn and Tail Enveiled",
+      "hp": 121432,
+      "stats": {
+        "HP": 121432,
+        "ATTACK": 1629,
+        "REALITY_DEFENSE": 958,
+        "MENTAL_DEFENSE": 958,
+        "CRITICAL_TECHNIQUE": 269,
+        "CRITICAL_RATE": 16.8,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 123.5,
+        "CRITICAL_DEFENSE": 21,
+        "DMG_BONUS": 22.7,
+        "DMG_REDUCTION": 17.4
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "630410",
+      "afflatus": "BEAST",
+      "dmgType": "REALITY",
+      "atkRate": "A",
+      "realityDefRate": "SS",
+      "mentalDefRate": "SS",
+      "criticalTechniqueRate": "C+",
+      "resistance": [
+        {
+          "code": "CONTROL_RESILIENCE",
+          "value": 100
+        }
+      ],
+      "passiveSkills": [
+        {
+          "name": "Worship of Fertility",
+          "desc": "After entering battle, casts an ultimate and grants **50%** of this unit's Reality DEF and Mental DEF to Anjo Nala (removed after death)."
+        },
+        {
+          "name": "Sensual Reception",
+          "desc": "Right before attacking, if Anjo Nala is not in a *[Channel]* status, recover (Missing HP x**15%**) HP; if Anjo Nala is not in the *[Channel]* status, this unit loses own (Current HP x**20%**) HP; after being attacked, lose (Current HP x**5%**) HP; after being attacked by an ultimate, lose (Current HP x**20%**) HP."
+        }
+      ],
+      "skill1": {
+        "name": "Licked by Thorns",
+        "cardId": 1403
+      },
+      "skill2": {
+        "name": "Passionate Embrace",
+        "cardId": 1401
+      },
+      "ultimate": {
+        "name": "Together, Into the Abyss",
+        "cardId": 1404
+      }
     }
   ]
 }

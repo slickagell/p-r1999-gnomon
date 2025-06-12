@@ -38,6 +38,82 @@
       "skill1": { "name": "Sublime Punishment", "cardId": "1301" },
       "skill2": { "name": "Joyful Lashings", "cardId": "1302" },
       "ultimate": { "name": "Weeping in Sacrifice", "cardId": "1304" }
+    },
+    {
+      "id": "400m-iv-0-0-ps",
+      "gameId": "900035202",
+      "wave": "ps",
+      "name": "Scale of Devilish",
+      "hp": 254168,
+      "stats": {
+        "HP": 254168,
+        "ATTACK": 1000,
+        "REALITY_DEFENSE": 685,
+        "MENTAL_DEFENSE": 685,
+        "CRITICAL_TECHNIQUE": 252,
+        "CRITICAL_RATE": 14.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 23.6,
+        "CRITICAL_DEFENSE": 13,
+        "DMG_BONUS": 40.2,
+        "DMG_REDUCTION": 9.1
+      },
+      "lv": "Insight III Level 60",
+      "headIconId": "422601",
+      "afflatus": "STAR",
+      "dmgType": "MENTAL",
+      "atkRate": "C",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "criticalTechniqueRate": "B",
+      "passiveSkills": [
+        {
+          "name": "Self-destruct I",
+          "desc": "After entering battle for 2 rounds, self destructs; when performing a self destruct, if own HP percentage is below **50%**, deals (own ATK x**300%**) Genesis DMG to all enemies; otherwise deals (own ATK x**600%**) Genesis DMG to all enemies and loses all HP afterwards."
+        },
+        {
+          "name": "United as One",
+          "desc": "When the caster dies, Moxie +1 for all allies."
+        }
+      ]
+    },
+    {
+      "id": "400m-iv-1-0-ps",
+      "gameId": "900035203",
+      "wave": "ps",
+      "name": "Scale of Demonic",
+      "hp": 327498,
+      "stats": {
+        "HP": 327498,
+        "ATTACK": 1000,
+        "REALITY_DEFENSE": 685,
+        "MENTAL_DEFENSE": 685,
+        "CRITICAL_TECHNIQUE": 252,
+        "CRITICAL_RATE": 14.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 23.6,
+        "CRITICAL_DEFENSE": 13,
+        "DMG_BONUS": 40.2,
+        "DMG_REDUCTION": 9.1
+      },
+      "lv": "Insight III Level 60",
+      "headIconId": "422602",
+      "afflatus": "STAR",
+      "dmgType": "REALITY",
+      "atkRate": "C",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "criticalTechniqueRate": "B",
+      "passiveSkills": [
+        {
+          "name": "Self-destruct II",
+          "desc": "After entering battle for 3 rounds, self destructs; when performing a self destruct, if own HP percentage is below **50%**, deals (own ATK x**300%**) Genesis DMG to all enemies; otherwise deals (own ATK x**600%**) Genesis DMG to all enemies and loses all HP afterwards."
+        },
+        {
+          "name": "United as One",
+          "desc": "When the caster dies, Moxie +1 for all allies."
+        }
+      ]
     }
   ]
 }

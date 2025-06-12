@@ -18,9 +18,6 @@ export default defineConfig({
   build: {
     format: "file",
   },
-  server: {
-    port: 1999,
-  },
   integrations: [
     tailwind(),
     alpinejs({ entrypoint: "/src/entrypoint" }),

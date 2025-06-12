@@ -31,7 +31,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
   <Fragment slot="enemy-info-content">
     <EnemyInfo {...data}>
       <Fragment slot="passive-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '1'`}>
           <span class="passive-title">Gregarious Being</span>
 
           1-target DMG Taken **-25%**. Mass DMG Taken **+25%**.
@@ -45,37 +45,23 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
           After casting an ultimate, transform into Abraxas Chieftain, get an all-round power up, and purify all debuffs from self.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <span class="passive-title">Gregarious Being</span>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
+          <span class="passive-title">Gregarious Being II</span>
 
-          1-target DMG Taken **-25%**. Mass DMG Taken **+25%**.
-
-          <span class="passive-title">Poison Feather</span>
-
-          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{code="POISON"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
-
-          <span class="passive-title">Evolution</span>
-
-          After casting an ultimate, transform into Abraxas Chieftain, get an all-round power up, and purify all debuffs from self.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <span class="passive-title">Gregarious Being</span>
-
-          1-target DMG Taken **-25%**. Mass DMG Taken **+25%**.
+          1-target DMG Taken **-50%**. Mass DMG Taken **+50%**.
 
           <span class="passive-title">Poison Feather</span>
 
           When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{code="POISON"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
 
-          <span class="passive-title">Evolution</span>
+          <span class="passive-title">Strict Disciplinarian</span>
 
-          After casting an ultimate, transform into Abraxas Chieftain, get an all-round power up, and purify all debuffs from self.
+          Marks the enemy that last took action and attacks them at the start of the round. Inflicts :effect{code="POISON"} for 2 rounds on the target hit: at the end of the round, the target takes (own ATK x**30%**) Genesis DMG.
         </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
 
           <div class="divider my-1 h-1" />
@@ -83,25 +69,17 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
           <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+50%**.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
-
-          <div class="divider my-1 h-1" />
-
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+50%**.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '1'`}>
           <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
 
           <div class="divider my-1 h-1" />
@@ -109,34 +87,22 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
           <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
-
-          <div class="divider my-1 h-1" />
-
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
-        <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '1'`}>
           Mass attack. Deals **300%** Reality DMG to all enemies.
         </div>
 
-        <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies.
-        </div>
-
-        <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies.
+        <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
+          Mass attack. Deals **400%** Reality DMG to all enemies. Inflicts 1 stack of :effect{code="PARALYZE"} on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>

@@ -103,6 +103,7 @@
       "dmgType": "MENTAL",
       "afflatus": "PLANT",
       "hp": 232276,
+      "multiHp": [232276, 232276],
       "lv": "Insight III Level 40",
       "stats": {
         "HP": 232276,
@@ -128,6 +129,298 @@
       "skill1": { "name": "The Wind Stop Here", "cardId": "1301" },
       "skill2": { "name": "Arboreal Reinforcement", "cardId": "1302" },
       "ultimate": { "name": "Cacophony down the Moon", "cardId": "1304" }
+    },
+    {
+      "id": "300m-ii-0-0-ps",
+      "gameId": "900030205",
+      "wave": "ps",
+      "name": "Gravel Carbuncle",
+      "hp": 34259,
+      "stats": {
+        "HP": 34259,
+        "ATTACK": 1912,
+        "REALITY_DEFENSE": 675,
+        "MENTAL_DEFENSE": 675,
+        "CRITICAL_TECHNIQUE": 199,
+        "CRITICAL_RATE": 12.7,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 120,
+        "CRITICAL_DEFENSE": 12.5,
+        "DMG_BONUS": 38.7,
+        "DMG_REDUCTION": 8.8
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "620120",
+      "afflatus": "SPIRIT",
+      "dmgType": "REALITY",
+      "atkRate": "A+",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "criticalTechniqueRate": "C",
+      "ultimate": {
+        "name": "Random Sabotage!",
+        "cardId": 1204
+      }
+    },
+    {
+      "id": "300m-ii-1-0-ps",
+      "gameId": "900030206",
+      "wave": "ps",
+      "name": "Cactusy",
+      "hp": 40305,
+      "stats": {
+        "HP": 40305,
+        "ATTACK": 1593,
+        "REALITY_DEFENSE": 750,
+        "MENTAL_DEFENSE": 750,
+        "CRITICAL_TECHNIQUE": 221,
+        "CRITICAL_RATE": 15.5,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 121,
+        "CRITICAL_DEFENSE": 21.8,
+        "DMG_BONUS": 23.5,
+        "DMG_REDUCTION": 18
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "412701",
+      "afflatus": "PLANT",
+      "dmgType": "REALITY",
+      "atkRate": "B+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "criticalTechniqueRate": "C",
+      "skill1": {
+        "name": "Many Plants",
+        "cardId": 1202
+      },
+      "skill2": {
+        "name": "Welcome Rain",
+        "cardId": 1203
+      },
+      "ultimate": {
+        "name": "Prankster's Shout",
+        "cardId": 1204
+      }
+    },
+    {
+      "id": "300m-ii-2-0-ps",
+      "gameId": "900030207",
+      "wave": "ps",
+      "name": "Uluru Red Land Guardian",
+      "hp": 88168,
+      "stats": {
+        "HP": 88168,
+        "ATTACK": 1753,
+        "REALITY_DEFENSE": 825,
+        "MENTAL_DEFENSE": 825,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 16.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.2,
+        "CRITICAL_DEFENSE": 21.8,
+        "DMG_BONUS": 23.5,
+        "DMG_REDUCTION": 18
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "620209",
+      "afflatus": "BEAST",
+      "dmgType": "REALITY",
+      "atkRate": "B+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "criticalTechniqueRate": "C",
+      "skill1": {
+        "name": "Heavy Pounce",
+        "cardId": 1201
+      },
+      "skill2": {
+        "name": "Sparkling Throw",
+        "cardId": 1202
+      },
+      "ultimate": {
+        "name": "Inspiration From Above",
+        "cardId": 1204
+      }
+    },
+    {
+      "id": "300m-ii-3-0-ps",
+      "gameId": "900030208",
+      "wave": "ps",
+      "name": "Green Lake Groupbuncle",
+      "hp": 88168,
+      "stats": {
+        "HP": 88168,
+        "ATTACK": 1753,
+        "REALITY_DEFENSE": 825,
+        "MENTAL_DEFENSE": 825,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 16.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.3,
+        "CRITICAL_DEFENSE": 21.8,
+        "DMG_BONUS": 23.5,
+        "DMG_REDUCTION": 18
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "620203",
+      "afflatus": "SPIRIT",
+      "dmgType": "MENTAL",
+      "atkRate": "B",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "criticalTechniqueRate": "C",
+      "skill1": {
+        "name": "Jumpy in the Ditch",
+        "cardId": 1201
+      },
+      "skill2": {
+        "name": "Mess of a Bush",
+        "cardId": 1202
+      },
+      "ultimate": {
+        "name": "Play with Me, in the Graveyard",
+        "cardId": 1204
+      }
+    },
+    {
+      "id": "300m-ii-4-0-ps",
+      "gameId": "900030209",
+      "wave": "ps",
+      "name": "Groupbuncoal",
+      "hp": 84684,
+      "stats": {
+        "HP": 84684,
+        "ATTACK": 1577,
+        "REALITY_DEFENSE": 742,
+        "MENTAL_DEFENSE": 742,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 9.5,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.4,
+        "CRITICAL_DEFENSE": 37.3,
+        "DMG_BONUS": 13.5,
+        "DMG_REDUCTION": 30.6
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "620145",
+      "afflatus": "PLANT",
+      "dmgType": "MENTAL",
+      "atkRate": "B",
+      "realityDefRate": "SS",
+      "mentalDefRate": "C",
+      "criticalTechniqueRate": "C",
+      "skill1": {
+        "name": "Burly Side-to-Side",
+        "cardId": 1201
+      },
+      "skill2": {
+        "name": "Looong Pipeline",
+        "cardId": 1202
+      },
+      "ultimate": {
+        "name": "Emissions Strategy",
+        "cardId": 1204
+      }
+    },
+    {
+      "id": "300m-ii-5-0-ps",
+      "gameId": "900030210",
+      "wave": "ps",
+      "name": "Prism Carbuncle",
+      "hp": 75274,
+      "stats": {
+        "HP": 75274,
+        "ATTACK": 1577,
+        "REALITY_DEFENSE": 1188,
+        "MENTAL_DEFENSE": 528,
+        "CRITICAL_TECHNIQUE": 195,
+        "CRITICAL_RATE": 7.9,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 120,
+        "CRITICAL_DEFENSE": 37.3,
+        "DMG_BONUS": 13.5,
+        "DMG_REDUCTION": 30.6
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "620119",
+      "afflatus": "SPIRIT",
+      "dmgType": "MENTAL",
+      "atkRate": "A+",
+      "realityDefRate": "B+",
+      "mentalDefRate": "B+",
+      "criticalTechniqueRate": "C",
+      "ultimate": {
+        "name": "Inspiration From Above",
+        "cardId": 1204
+      }
+    },
+    {
+      "id": "300m-ii-6-0-ps",
+      "gameId": "900030211",
+      "wave": "ps",
+      "name": "Spore Carbuncle",
+      "hp": 74943,
+      "stats": {
+        "HP": 74943,
+        "ATTACK": 2103,
+        "REALITY_DEFENSE": 742,
+        "MENTAL_DEFENSE": 742,
+        "CRITICAL_TECHNIQUE": 219,
+        "CRITICAL_RATE": 13.4,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 121.4,
+        "CRITICAL_DEFENSE": 12.5,
+        "DMG_BONUS": 38.7,
+        "DMG_REDUCTION": 8.8
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "620147",
+      "afflatus": "PLANT",
+      "dmgType": "MENTAL",
+      "atkRate": "B+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "criticalTechniqueRate": "C",
+      "skill1": {
+        "name": "Thorns and Barbs",
+        "cardId": 1201
+      },
+      "skill2": {
+        "name": "Dew and Tears",
+        "cardId": 1203
+      },
+      "ultimate": {
+        "name": "As Loneliness Builds",
+        "cardId": 1204
+      }
+    },
+    {
+      "id": "300m-ii-7-0-ps",
+      "gameId": "900030212",
+      "wave": "ps",
+      "name": "Gold Collector",
+      "hp": 88168,
+      "stats": {
+        "HP": 88168,
+        "ATTACK": 1753,
+        "REALITY_DEFENSE": 825,
+        "MENTAL_DEFENSE": 825,
+        "CRITICAL_TECHNIQUE": 243,
+        "CRITICAL_RATE": 16.2,
+        "CRITICAL_RESIST_RATE": 0,
+        "CRITICAL_DMG": 122.7,
+        "CRITICAL_DEFENSE": 21.8,
+        "DMG_BONUS": 23.5,
+        "DMG_REDUCTION": 18
+      },
+      "lv": "Insight III Level 40",
+      "headIconId": "620216",
+      "afflatus": "PLANT",
+      "dmgType": "MENTAL",
+      "atkRate": "B+",
+      "realityDefRate": "A",
+      "mentalDefRate": "A",
+      "criticalTechniqueRate": "C"
     }
   ]
 }
