@@ -1,6 +1,8 @@
-##### 2025-06-12
+##### 2025-06-13
 
 * Update minion enemies stats and phase 2 info in Reveries
+* Add new psychube and fix psychube detail page
+* Update Recoleta versatile card
 
 ##### 2025-06-11
 

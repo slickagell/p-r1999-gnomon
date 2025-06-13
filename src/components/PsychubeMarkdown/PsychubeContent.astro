@@ -5,6 +5,7 @@ import "@styles/markdown-layout.css";
 
 interface Props {
   id: number;
+  image: string;
   title: string;
   description: string;
   rarity: number;
@@ -27,14 +28,14 @@ const LEVEL = [{label: '1', value: 1}, {label:'20 (E)', value: 20}, {label:'40 (
 
 const hasAmplification = Astro.slots.has("amplification-1-content");
 
-const { id, title, description, rarity, tags, stats, specialStat } = Astro.props;
+const { id, title, description, image, rarity, tags, stats, specialStat } = Astro.props;
 ---
 
 <h1>{title}</h1>
 
 <div class="flex flex-col md:flex-row my-4 gap-4">
   <CustomImage
-    src={`/images/psychubes/icons/${id}.png`}
+    src={`/images/psychubes/icons/${image}`}
     alt={title}
     class="w-32 self-center md:self-start"
   />
