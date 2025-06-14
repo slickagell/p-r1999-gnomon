@@ -26,21 +26,21 @@ const shapeSize = shape.size();
 
 <div
   class="flex flex-col md:flex-row gap-4"
-  data-artefact-slug={artefactEntry.slug}
+  data-artefact-slug={artefactEntry.id}
   data-artefact-name={artefactEntry.data.name}
   data-artefact-rarity={artefactEntry.data.rarity}
   data-artefact-type={artefactEntry.data.type}
   data-artefact-tags={artefactEntry.data.tags}
 >
   <div>
-    <p id={artefactEntry.slug} class="w-48 text-lg font-bold">
-      <a href={`#${artefactEntry.slug}`}>{artefactEntry.data.name}</a>
+    <p id={artefactEntry.id} class="w-48 text-lg font-bold">
+      <a href={`#${artefactEntry.id}`}>{artefactEntry.data.name}</a>
     </p>
     <div class="flex gap-4">
       <CustomImage
         class="w-20"
         src={`/images/artefacts/${artefactEntry.data.image}`}
-        alt={`artefact ${artefactEntry.slug}`}
+        alt={`artefact ${artefactEntry.id}`}
       />
       <div class="flex flex-col gap-1">
         {
@@ -57,8 +57,8 @@ const shapeSize = shape.size();
                             artefactEntry.data.rarity === "COMMON",
                           "bg-rare/30": artefactEntry.data.rarity === "RARE",
                           "bg-epic/30": artefactEntry.data.rarity === "EPIC",
-                          "bg-fabled/30":
-                            artefactEntry.data.rarity === "FABLED",
+                          "bg-legendary/30":
+                            artefactEntry.data.rarity === "LEGENDARY",
                         },
                   ]}
                 />
@@ -81,8 +81,8 @@ const shapeSize = shape.size();
                   artefactEntry.data.rarity === "COMMON",
                 "text-rare bg-rare/20": artefactEntry.data.rarity === "RARE",
                 "text-epic bg-epic/20": artefactEntry.data.rarity === "EPIC",
-                "text-fabled bg-fabled/20":
-                  artefactEntry.data.rarity === "FABLED",
+                "text-legendary bg-legendary/20":
+                  artefactEntry.data.rarity === "LEGENDARY",
               },
             ]}
           >

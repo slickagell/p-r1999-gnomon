@@ -16,8 +16,8 @@ export default {
         spirit: "#814886",
         intellect: "#9E8D4D",
 
-        paper: "#E7E0D6",
-        ["line-paper"]: "#c3b7a0",
+        paper: "#F6EEE3",
+        ["line-paper"]: "#d9bda5",
 
         attack: "#B25859",
         buff: "#4D719A",
@@ -29,7 +29,7 @@ export default {
         common: "#617594",
         rare: "#623583",
         epic: "#d3c47c",
-        fabled: "#d67c0f",
+        legendary: "#d67c0f",
 
         syntony: "#597463",
         abundance: "#9f844d",
@@ -89,7 +89,7 @@ export default {
           "--rounded-btn": "0",
           "--rounded-badge": "0",
           "--rounded-box": "0",
-          "primary-content": "#CBAF85",
+          "primary-content": "#d0ac81",
           "base-content": "#EBE0D5",
         },
       },
@@ -104,7 +104,7 @@ export default {
             textShadow: value,
           }),
         },
-        { values: theme("textShadow") },
+        { values: theme("textShadow") }
       );
     }),
   ],
