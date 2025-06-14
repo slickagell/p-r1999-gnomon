@@ -1,3 +1,9 @@
+##### 2025-06-15
+
+* Add Aleph infographic (thanks CTL team for the infographic)
+* Add The Effervescent Silence, A Series of Dusks expansion info
+* Update new artefacts
+
 ##### 2025-06-13
 
 * Update minion enemies stats and phase 2 info in Reveries
