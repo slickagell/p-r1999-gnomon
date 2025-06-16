@@ -35,6 +35,8 @@
     "matrix-js": "^1.7.1",
     "mdast-util-toc": "^7.1.0",
     "nanostores": "^0.11.3",
+    "pixi-viewport": "^6.0.3",
+    "pixi.js": "^8.10.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-directive": "^3.0.0",

@@ -1,0 +1,27 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout
+  title="Timeline"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Timeline",
+    },
+  ]}
+>
+  <h1>Timeline</h1>
+
+  <div id="timeline" x-data={"dataset"}></div>
+</Layout>
+
+<script>
+  import timeline from "@scripts/timeline";
+  import Alpine from "alpinejs";
+
+  Alpine.data("dataset", timeline);
+</script>
