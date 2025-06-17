@@ -16,7 +16,13 @@ import Layout from "@layouts/Layout.astro";
 >
   <h1>Timeline</h1>
 
-  <div id="timeline" x-data={"dataset"}></div>
+  <div x-data={"dataset"}>
+    <div
+      id="timeline"
+      class="aspect-[3/4] md:aspect-video border border-primary/20"
+    >
+    </div>
+  </div>
 </Layout>
 
 <script>
