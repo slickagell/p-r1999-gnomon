@@ -1,9 +1,33 @@
-.arrow-label {
+#timeline g[id*="group"] {
+  clip-path: url(#chart-clip);
+}
+
+.storm-link-label {
   paint-order: stroke;
 
   @apply stroke-primary stroke-1 font-bold fill-base-content select-none;
 }
 
+.storm-link-line {
+  @apply stroke-timeline-storm fill-none;
+}
+
+.storm-link-marker {
+  @apply fill-timeline-storm stroke-timeline-storm stroke-1;
+}
+
+.storm-node {
+  @apply select-none cursor-pointer fill-timeline-storm;
+}
+
 .period-zone {
-  @apply select-none pointer-events-none;
+  @apply select-none pointer-events-none fill-timeline-storm;
+}
+
+.period {
+  @apply cursor-pointer;
+}
+
+.story-node {
+  @apply cursor-pointer;
 }

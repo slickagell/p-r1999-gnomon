@@ -2,8 +2,10 @@ import * as d3 from "d3";
 import dayjs from "dayjs";
 
 const MARGIN = { TOP: 16, RIGHT: 32, BOTTOM: 32, LEFT: 32 };
-const CHART_WIDTH = 1200 - MARGIN.LEFT - MARGIN.RIGHT;
-const CHART_HEIGHT = 800 / 1.5 - MARGIN.TOP - MARGIN.BOTTOM;
+const CHART_BOX_WIDTH = 1200;
+const CHART_BOX_HEIGHT = 600;
+const CHART_WIDTH = CHART_BOX_WIDTH - MARGIN.LEFT - MARGIN.RIGHT;
+const CHART_HEIGHT = CHART_BOX_HEIGHT - MARGIN.TOP - MARGIN.BOTTOM;
 
 const MARKER_BOX_WIDTH = 8;
 const MARKER_BOX_HEIGHT = 8;
@@ -24,7 +26,6 @@ const MAX_PERIOD_HEIGHT = 8;
 
 const TRANSITION_DURATION_TIME = 300;
 
-const STORM_COLOR = "#db6f39";
 const PERIOD_COLOR = "#EBE0D5";
 const MAIN_STORY_EVENT_COLOR = "#873a4b";
 const EVENT_EVENT_COLOR = "#d3c47c";
@@ -404,7 +405,7 @@ export default () => ({
       { passive: false }
     );
 
-    const { oldestPeriodYear, newestPeriodYear } = PERIOD_EVENT_DATA.reduce(
+    const { oldestPeriodYear, latestPeriodYear } = PERIOD_EVENT_DATA.reduce(
       (prev, stormEventData) => {
         if (
           parseDayJsFromString(stormEventData.period[0]).diff(
@@ -417,20 +418,20 @@ export default () => ({
         if (
           parseDayJsFromString(
             stormEventData.period[stormEventData.period.length - 1]
-          ).diff(parseDayJsFromString(prev.newestPeriodYear), "year") > 0
+          ).diff(parseDayJsFromString(prev.latestPeriodYear), "year") > 0
         ) {
-          prev.newestPeriodYear =
+          prev.latestPeriodYear =
             stormEventData.period[stormEventData.period.length - 1].toString();
         }
         return prev;
       },
       {
         oldestPeriodYear: "1999",
-        newestPeriodYear: "1999",
+        latestPeriodYear: "1999",
       }
     );
 
-    const { oldestYear, newestYear } = STORM_NODE_DATA.reduce(
+    const { oldestYear, latestYear } = STORM_NODE_DATA.reduce(
       (prev, stormEventData) => {
         if (
           parseDayJsFromString(stormEventData.jump[0]).diff(
@@ -443,16 +444,16 @@ export default () => ({
         if (
           parseDayJsFromString(
             stormEventData.jump[stormEventData.jump.length - 1]
-          ).diff(parseDayJsFromString(prev.newestYear), "year") > 0
+          ).diff(parseDayJsFromString(prev.latestYear), "year") > 0
         ) {
-          prev.newestYear =
+          prev.latestYear =
             stormEventData.jump[stormEventData.jump.length - 1].toString();
         }
         return prev;
       },
       {
         oldestYear: oldestPeriodYear,
-        newestYear: newestPeriodYear,
+        latestYear: latestPeriodYear,
       }
     );
 
@@ -460,17 +461,17 @@ export default () => ({
     this.xLine = d3
       .scaleTime()
       .domain([
-        parseDayJsFromString(oldestYear).subtract(3, "year").toDate(),
-        parseDayJsFromString(newestYear).add(3, "year").toDate(),
+        parseDayJsFromString(oldestYear).subtract(5, "year").toDate(),
+        parseDayJsFromString(latestYear).add(5, "year").toDate(),
       ])
-      .range([this.chartMargin.LEFT, this.chartWidth - this.chartMargin.RIGHT]);
+      .range([this.chartMargin.LEFT, CHART_BOX_WIDTH - this.chartMargin.RIGHT]);
 
     this.yLine = d3
       .scaleLinear()
       .domain([0, this.chartHeight])
       .range([
         this.chartMargin.TOP,
-        this.chartHeight - this.chartMargin.BOTTOM,
+        CHART_BOX_HEIGHT - this.chartMargin.BOTTOM,
       ]);
 
     // create svg element
@@ -480,23 +481,25 @@ export default () => ({
 
     this.svg = body
       .append("svg")
-      .attr("viewBox", [0, 0, this.chartWidth, this.chartHeight])
+      .attr("viewBox", [0, 0, CHART_BOX_WIDTH, CHART_BOX_HEIGHT])
       .style("display", "block");
 
     this.xAxis = this.svg
       .append("g")
       .attr(
         "transform",
-        "translate(0," +
-          (this.chartHeight - this.chartMargin.BOTTOM - this.chartMargin.TOP) +
+        "translate(" +
+          0 +
+          "," +
+          (CHART_BOX_HEIGHT - this.chartMargin.BOTTOM) +
           ")"
       )
       .call(d3.axisBottom(this.xLine));
 
-    this.yAxis = this.svg
-      .append("g")
-      .attr("transform", "translate(" + this.chartMargin.LEFT + "," + 0 + ")")
-      .call(d3.axisLeft(this.yLine));
+    // this.yAxis = this.svg
+    //   .append("g")
+    //   .attr("transform", "translate(" + this.chartMargin.LEFT + "," + 0 + ")")
+    //   .call(d3.axisLeft(this.yLine));
 
     // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
     this.zoom = d3
@@ -515,16 +518,27 @@ export default () => ({
     // This add an invisible rect on top of the chart area. This rect can recover pointer events: necessary to understand when the user zoom
     this.chart = this.svg
       .append("rect")
-      .attr("width", this.chartWidth)
-      .attr("height", this.chartHeight)
+      .attr("width", CHART_BOX_WIDTH)
+      .attr("height", CHART_BOX_HEIGHT)
       .style("fill", "none")
       .style("pointer-events", "all")
       .call(this.zoom);
 
     this.svg
       .append("defs")
+      .append("clipPath")
+      .attr("id", "chart-clip")
+      .append("rect")
+      .attr("width", this.chartWidth)
+      .attr("height", this.chartHeight)
+      .attr("x", this.chartMargin.LEFT)
+      .attr("y", this.chartMargin.TOP);
+
+    this.svg
+      .append("defs")
       .append("marker")
       .attr("id", "arrow")
+      .attr("class", "storm-link-marker")
       .attr("viewBox", [0, 0, this.markerBoxWidth, this.markerBoxHeight])
       .attr("refX", REF_X)
       .attr("refY", REF_Y)
@@ -532,9 +546,7 @@ export default () => ({
       .attr("markerHeight", this.markerBoxHeight)
       .attr("orient", "auto-start-reverse")
       .append("path")
-      .attr("d", d3.line()(ARROW_POINTS))
-      .attr("stroke", STORM_COLOR)
-      .attr("fill", STORM_COLOR);
+      .attr("d", d3.line()(ARROW_POINTS));
 
     const stormNodes = STORM_NODE_DATA.map((event, idx) => {
       return event.jump.map((year, jumpIdx) => {
@@ -621,31 +633,35 @@ export default () => ({
       .style("top", 0);
 
     this.arrows = this.svg
-      .selectAll(".arrow")
+      .append("g")
+      .attr("id", "storm-link-group")
+      .selectAll(".storm-link-line")
       .data(stormLinks)
       .enter()
       .append("path")
-      .attr("class", "arrow");
+      .attr("class", "storm-link-line");
 
     this.arrows
       .attr("id", (d, i) => `storm-link-${i + 1}`)
-      .style("stroke", STORM_COLOR)
-      .style("fill", "none")
       .style("stroke-dasharray", "4 4")
       .attr("d", (d, i) => {
         return this.drawLinkCurve(d.source, d.target, i);
       })
       .attr("marker-end", "url(#arrow)");
 
+    const stormLinkLabel = this.svg
+      .append("g")
+      .attr("id", "storm-link-label-group");
+
     this.arrows.each((d, i, nodes) => {
       const bbox = d3.select(nodes[i]).node().getBBox();
       const centreX = bbox.x + bbox.width / 2; // <-- get x centre
       const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
 
-      this.svg
+      stormLinkLabel
         .append("text")
-        .attr("class", "arrow-label")
-        .attr("id", `arrow-label-${i + 1}`)
+        .attr("class", "storm-link-label")
+        .attr("id", `storm-link-label-${i + 1}`)
         .text(d.title)
         .attr("x", centreX)
         .attr("y", centreY)
@@ -654,13 +670,15 @@ export default () => ({
     });
 
     this.periods = this.svg
+      .append("g")
+      .attr("id", "period-group")
       .selectAll(".period")
       .data(periodTimes)
       .enter()
       .append("a")
       .attr("href", (d) => d[0].href)
       .append("rect")
-      .attr("class", "period cursor-pointer");
+      .attr("class", "period");
 
     this.periods
       .attr("x", (d) => d[0].x)
@@ -701,6 +719,8 @@ export default () => ({
     );
 
     this.periodZone = this.svg
+      .append("g")
+      .attr("id", "period-zone-group")
       .selectAll(".period-zone")
       .data(periodTimes)
       .enter()
@@ -708,23 +728,23 @@ export default () => ({
       .attr("class", "period-zone")
       .attr("x", (d) => d[0].x)
       .attr("y", (d) => d[0].y)
-      .style("fill", STORM_COLOR)
       .style("fill-opacity", 0.1)
       .attr("width", (d) => d[d.length - 1].x - d[0].x)
       .attr("height", (d) => yOfXAxis - d[0].y);
 
     this.stormNodes = this.svg
-      .selectAll(".node")
+      .append("g")
+      .attr("id", "storm-node-group")
+      .selectAll(".storm-node")
       .data(stormNodes.flat())
       .enter()
       .append("circle")
-      .attr("class", "node cursor-pointer");
+      .attr("class", "storm-node");
 
     this.stormNodes
       .attr("cx", (d, i) => d.x)
       .attr("cy", (d, i) => d.y)
       .attr("r", (d) => d.r)
-      .style("fill", STORM_COLOR)
       .on("mouseover", function (event, d, i) {
         d3.select(this)
           .transition()
@@ -753,11 +773,13 @@ export default () => ({
       });
 
     this.eventNodes = this.svg
-      .selectAll(".event-node")
+      .append("g")
+      .attr("id", "story-node-group")
+      .selectAll(".story-node")
       .data(eventNodes.flat())
       .enter()
       .append("circle")
-      .attr("class", "node cursor-pointer");
+      .attr("class", "story-node");
 
     this.eventNodes
       .attr("cx", (d, i) => d.x)
@@ -841,7 +863,7 @@ export default () => ({
 
     // update axes with these new boundaries
     this.xAxis.call(d3.axisBottom(newX));
-    this.yAxis.call(d3.axisLeft(newY));
+    //this.yAxis.call(d3.axisLeft(newY));
 
     this.stormNodes
       .attr("cx", function (d) {
@@ -920,7 +942,7 @@ export default () => ({
       const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
 
       this.svg
-        .select(`#arrow-label-${i + 1}`)
+        .select(`#storm-link-label-${i + 1}`)
         .attr("x", centreX)
         .attr("y", centreY)
         .style(
@@ -938,12 +960,12 @@ export default () => ({
     if (this.isShow.stormLink) {
       this.arrows.style("opacity", 1);
       this.arrows.each((d, i, nodes) => {
-        this.svg.select(`#arrow-label-${i + 1}`).style("opacity", 1);
+        this.svg.select(`#storm-link-label-${i + 1}`).style("opacity", 1);
       });
     } else {
       this.arrows.style("opacity", 0);
       this.arrows.each((d, i, nodes) => {
-        this.svg.select(`#arrow-label-${i + 1}`).style("opacity", 0);
+        this.svg.select(`#storm-link-label-${i + 1}`).style("opacity", 0);
       });
     }
   },

@@ -57,6 +57,8 @@ export default {
         ["bathyal-zone"]: "#66b1d2",
         ["abyssal-zone"]: "#4ea5cb",
         ["hadal-zone"]: "#3998c2",
+
+        ["timeline-storm"]: "#db6f39",
       },
       gridTemplateColumns: {
         filter: "auto 1fr",
