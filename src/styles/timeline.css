@@ -1,0 +1,9 @@
+.arrow-label {
+  paint-order: stroke;
+
+  @apply stroke-primary stroke-1 font-bold fill-base-content select-none;
+}
+
+.period-zone {
+  @apply select-none pointer-events-none;
+}

@@ -6,6 +6,7 @@ import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro
 import Layout from "@layouts/Layout.astro";
 import { render } from "astro:content";
 import { getEntry } from "astro:content";
+import "@styles/timeline.css";
 
 const timelineContentEntry = await getEntry("timeline", "general")!;
 

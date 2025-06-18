@@ -16,25 +16,78 @@ const ARROW_POINTS: [number, number][] = [
   [0, 8],
   [8, 4],
 ];
-const CIRCLE_RADIUS = 4;
+
+const CIRCLE_RADIUS = 2;
+const MAX_CIRCLE_RADIUS = 8;
+const PERIOD_HEIGHT = 2;
+const MAX_PERIOD_HEIGHT = 8;
+
 const TRANSITION_DURATION_TIME = 300;
 
 const STORM_COLOR = "#db6f39";
-
+const PERIOD_COLOR = "#EBE0D5";
 const MAIN_STORY_EVENT_COLOR = "#873a4b";
 const EVENT_EVENT_COLOR = "#d3c47c";
 const CHARACTER_STORY_EVENT_COLOR = "#623583";
 const ANECDOTE_EVENT_COLOR = "#617594";
 
 const EVENTS_Y_GAP = 12;
+const STORM_LINK_GAP = 10;
 
-const STORM_EVENT_DATA = [
+const STORM_TEXT_FONT_SIZE_REM = 1;
+
+const STORM_NODE_DATA = [
   {
-    period: [1999],
-    href: "#year-1999",
+    id: "storm_1",
+    jump: ["1999", "1996"],
+    jumpText: ["1999", "1996"],
   },
   {
+    id: "storm_2",
+    jump: ["1997", "1985"],
+    jumpText: ["1997", "1985"],
+  },
+  {
+    id: "storm_3",
+    jump: ["1987", "1977"],
+    jumpText: ["1987", "1977"],
+  },
+  {
+    id: "storm_4",
+    jump: ["1978", "1933"],
+    jumpText: ["1978", "193X"],
+  },
+  {
+    id: "storm_5",
+    jump: ["1937", "1912"],
+    jumpText: ["193X", "1912"],
+  },
+  {
+    id: "storm_6",
+    jump: ["1913", "1966"],
+    jumpText: ["1913", "1966"],
+  },
+  {
+    id: "storm_7",
+    jump: ["1966", "1929"],
+    jumpText: ["1966", "1929"],
+  },
+  {
+    id: "storm_8",
+    jump: ["1929", "1913"],
+    jumpText: ["1929", "1913"],
+  },
+  {
+    id: "storm_9",
+    jump: ["1914", "1990"],
+    jumpText: ["1914", "1990"],
+  },
+];
+
+const PERIOD_EVENT_DATA = [
+  {
     period: [1996, 1997],
+    periodText: ["1996", "1997"],
     href: "#period-1996---1997",
     events: [
       {
@@ -51,6 +104,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1985, 1987],
+    periodText: ["1985", "1987"],
     href: "#period-1985---1987",
     events: [
       {
@@ -92,6 +146,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1977, 1978],
+    periodText: ["1977", "1978"],
     href: "#period-1977---1978",
     events: [
       {
@@ -103,6 +158,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1933, 1937],
+    periodText: ["193X", "193X"],
     href: "#period-193x---194x",
     events: [
       {
@@ -114,6 +170,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1912, 1913],
+    periodText: ["1912", "1913"],
     href: "#period-1912---1913",
     events: [
       {
@@ -130,6 +187,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1966],
+    periodText: ["1966"],
     href: "#year-1966",
     events: [
       {
@@ -146,6 +204,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1929],
+    periodText: ["1929"],
     href: "#year-1929",
     events: [
       {
@@ -167,6 +226,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1913, 1914],
+    periodText: ["1913", "1914"],
     href: "#period-1913---1914",
     events: [
       {
@@ -213,6 +273,7 @@ const STORM_EVENT_DATA = [
   },
   {
     period: [1990, "1991-03-22"],
+    periodText: ["1990", "1991"],
     href: "#year-1990",
     events: [
       {
@@ -310,7 +371,9 @@ export default () => ({
   scale: 1,
 
   xLine: null,
+  yLine: null,
   xAxis: null,
+  yAxis: null,
 
   stormNodes: null,
   periods: null,
@@ -333,29 +396,63 @@ export default () => ({
   },
 
   init() {
-    const { oldestYear, newestYear } = STORM_EVENT_DATA.reduce(
+    document.querySelector("#timeline")?.addEventListener(
+      "wheel",
+      (e) => {
+        e.preventDefault();
+      },
+      { passive: false }
+    );
+
+    const { oldestPeriodYear, newestPeriodYear } = PERIOD_EVENT_DATA.reduce(
       (prev, stormEventData) => {
         if (
           parseDayJsFromString(stormEventData.period[0]).diff(
-            parseDayJsFromString(prev.oldestYear),
+            parseDayJsFromString(prev.oldestPeriodYear),
             "year"
           ) < 0
         ) {
-          prev.oldestYear = stormEventData.period[0].toString();
+          prev.oldestPeriodYear = stormEventData.period[0].toString();
         }
         if (
           parseDayJsFromString(
             stormEventData.period[stormEventData.period.length - 1]
-          ).diff(parseDayJsFromString(prev.newestYear), "year") > 0
+          ).diff(parseDayJsFromString(prev.newestPeriodYear), "year") > 0
         ) {
-          prev.newestYear =
+          prev.newestPeriodYear =
             stormEventData.period[stormEventData.period.length - 1].toString();
         }
         return prev;
       },
       {
-        oldestYear: "1999",
-        newestYear: "1999",
+        oldestPeriodYear: "1999",
+        newestPeriodYear: "1999",
+      }
+    );
+
+    const { oldestYear, newestYear } = STORM_NODE_DATA.reduce(
+      (prev, stormEventData) => {
+        if (
+          parseDayJsFromString(stormEventData.jump[0]).diff(
+            parseDayJsFromString(prev.oldestYear),
+            "year"
+          ) < 0
+        ) {
+          prev.oldestYear = stormEventData.jump[0].toString();
+        }
+        if (
+          parseDayJsFromString(
+            stormEventData.jump[stormEventData.jump.length - 1]
+          ).diff(parseDayJsFromString(prev.newestYear), "year") > 0
+        ) {
+          prev.newestYear =
+            stormEventData.jump[stormEventData.jump.length - 1].toString();
+        }
+        return prev;
+      },
+      {
+        oldestYear: oldestPeriodYear,
+        newestYear: newestPeriodYear,
       }
     );
 
@@ -367,6 +464,14 @@ export default () => ({
         parseDayJsFromString(newestYear).add(3, "year").toDate(),
       ])
       .range([this.chartMargin.LEFT, this.chartWidth - this.chartMargin.RIGHT]);
+
+    this.yLine = d3
+      .scaleLinear()
+      .domain([0, this.chartHeight])
+      .range([
+        this.chartMargin.TOP,
+        this.chartHeight - this.chartMargin.BOTTOM,
+      ]);
 
     // create svg element
 
@@ -382,9 +487,16 @@ export default () => ({
       .append("g")
       .attr(
         "transform",
-        "translate(0," + (this.chartHeight - this.chartMargin.BOTTOM) + ")"
+        "translate(0," +
+          (this.chartHeight - this.chartMargin.BOTTOM - this.chartMargin.TOP) +
+          ")"
       )
       .call(d3.axisBottom(this.xLine));
+
+    this.yAxis = this.svg
+      .append("g")
+      .attr("transform", "translate(" + this.chartMargin.LEFT + "," + 0 + ")")
+      .call(d3.axisLeft(this.yLine));
 
     // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
     this.zoom = d3
@@ -407,7 +519,6 @@ export default () => ({
       .attr("height", this.chartHeight)
       .style("fill", "none")
       .style("pointer-events", "all")
-      .attr("transform", "translate(" + 0 + "," + this.chartMargin.TOP + ")")
       .call(this.zoom);
 
     this.svg
@@ -425,67 +536,73 @@ export default () => ({
       .attr("stroke", STORM_COLOR)
       .attr("fill", STORM_COLOR);
 
-    const stormNodes = STORM_EVENT_DATA.map((event, idx) => {
-      if (!STORM_EVENT_DATA[idx - 1]) {
-        return event.period.map((year) => {
-          return {
-            year,
-            x: this.xLine(parseDate(year)),
-            y: STORM_EVENT_Y_COORDINATE,
-            r: CIRCLE_RADIUS,
-            href: event.href,
-          };
-        });
-      }
-
-      return event.period.map((year) => {
+    const stormNodes = STORM_NODE_DATA.map((event, idx) => {
+      return event.jump.map((year, jumpIdx) => {
         return {
+          id: event.id + "-" + year,
           year,
+          text: event.jumpText[jumpIdx],
           x: this.xLine(parseDate(year)),
-          y: STORM_EVENT_Y_COORDINATE,
+          y: this.yLine(STORM_EVENT_Y_COORDINATE),
+          originY: this.yLine(STORM_EVENT_Y_COORDINATE),
           r: CIRCLE_RADIUS,
-          href: event.href,
         };
       });
     });
 
     const stormLinks = stormNodes.reduce((prev, time, idx) => {
-      if (idx === stormNodes.length - 1) {
-        return prev;
-      }
-      const sourceX = time[time.length - 1].x;
-      const sourceY = time[time.length - 1].y;
-      const targetX = stormNodes[idx + 1][0].x;
-      const targetY = stormNodes[idx + 1][0].y;
-      const xDelta = Math.abs(targetX - time[0].x);
-      const yDelta = Math.abs(targetY - time[0].y);
+      const sourceX = time[0].x;
+      const sourceY = time[0].y;
+      const targetX = time[1].x;
+      const targetY = time[1].y;
+      const xDelta = Math.abs(targetX - sourceX);
+      const yDelta = Math.abs(targetY - sourceY);
 
       return [
         ...prev,
         {
           title: `Storm ` + (idx + 1),
           source: {
-            year: time[time.length - 1].year,
+            id: time[0].id,
+            year: time[0].year,
             x: sourceX,
             y: sourceY,
+            originY: time[0].originY,
           },
           target: {
-            year: stormNodes[idx + 1][0].year,
+            id: time[1].id,
+            year: time[1].year,
             x: targetX,
             y: targetY,
+            originY: time[1].originY,
           },
           arrowDirection: yDelta >= xDelta ? "V" : "H",
         },
       ];
     }, []);
 
-    const eventNodes = STORM_EVENT_DATA.map((event, idx) => {
+    const periodTimes = PERIOD_EVENT_DATA.map((event, idx) => {
+      return event.period.map((year, yearIdx) => {
+        return {
+          year,
+          text: event.periodText[yearIdx],
+          x: this.xLine(parseDate(year)),
+          y: this.yLine(STORM_EVENT_Y_COORDINATE),
+          originY: this.yLine(STORM_EVENT_Y_COORDINATE),
+          h: PERIOD_HEIGHT,
+          href: event.href,
+        };
+      });
+    });
+
+    const eventNodes = PERIOD_EVENT_DATA.map((event, idx) => {
       return (
         event.events?.map((event, eventIdx) => {
           return {
             year: event.year[0],
             x: this.xLine(parseDate(event.year[0])),
-            y: EVENT_Y_COORDINATE,
+            y: this.yLine(EVENT_Y_COORDINATE),
+            originY: this.yLine(EVENT_Y_COORDINATE),
             r: CIRCLE_RADIUS,
             label: event.label,
             type: event.type,
@@ -503,9 +620,42 @@ export default () => ({
       .style("left", 0)
       .style("top", 0);
 
+    this.arrows = this.svg
+      .selectAll(".arrow")
+      .data(stormLinks)
+      .enter()
+      .append("path")
+      .attr("class", "arrow");
+
+    this.arrows
+      .attr("id", (d, i) => `storm-link-${i + 1}`)
+      .style("stroke", STORM_COLOR)
+      .style("fill", "none")
+      .style("stroke-dasharray", "4 4")
+      .attr("d", (d, i) => {
+        return this.drawLinkCurve(d.source, d.target, i);
+      })
+      .attr("marker-end", "url(#arrow)");
+
+    this.arrows.each((d, i, nodes) => {
+      const bbox = d3.select(nodes[i]).node().getBBox();
+      const centreX = bbox.x + bbox.width / 2; // <-- get x centre
+      const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
+
+      this.svg
+        .append("text")
+        .attr("class", "arrow-label")
+        .attr("id", `arrow-label-${i + 1}`)
+        .text(d.title)
+        .attr("x", centreX)
+        .attr("y", centreY)
+        .attr("text-anchor", "middle")
+        .style("font-size", STORM_TEXT_FONT_SIZE_REM + "rem");
+    });
+
     this.periods = this.svg
       .selectAll(".period")
-      .data(stormNodes.filter((d) => d.length > 1))
+      .data(periodTimes)
       .enter()
       .append("a")
       .attr("href", (d) => d[0].href)
@@ -514,21 +664,22 @@ export default () => ({
 
     this.periods
       .attr("x", (d) => d[0].x)
-      .attr("y", (d) => d[0].y - CIRCLE_RADIUS / 2)
+      .attr("y", (d) => d[0].y - PERIOD_HEIGHT / 2)
       .attr("width", (d) => d[d.length - 1].x - d[0].x)
-      .attr("height", CIRCLE_RADIUS)
-      .style("fill", "#bba893")
+      .attr("height", PERIOD_HEIGHT)
+      .style("fill", PERIOD_COLOR)
+      .style("opacity", 1)
       .on("mouseover", function (event, d, i) {
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
-          .attr("height", CIRCLE_RADIUS * 1.5);
+          .style("opacity", 0.75);
         tooltip
           .transition()
           .duration(TRANSITION_DURATION_TIME)
           .style("opacity", 1);
         tooltip
-          .html(`<p>Period: ${d[0].year} - ${d[d.length - 1].year}</p>`)
+          .html(`<p>Period: ${d[0].text} - ${d[d.length - 1].text}</p>`)
           .style("left", event.offsetX + "px")
           .style("top", event.offsetY + "px")
           .style("transform", "translate(-50%, calc(-100% - 16px))");
@@ -537,7 +688,7 @@ export default () => ({
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
-          .attr("height", CIRCLE_RADIUS);
+          .style("opacity", 1);
         tooltip
           .transition()
           .duration(TRANSITION_DURATION_TIME)
@@ -551,7 +702,7 @@ export default () => ({
 
     this.periodZone = this.svg
       .selectAll(".period-zone")
-      .data(stormNodes.filter((d) => d.length > 1))
+      .data(periodTimes)
       .enter()
       .append("rect")
       .attr("class", "period-zone")
@@ -578,23 +729,23 @@ export default () => ({
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
-          .attr("r", CIRCLE_RADIUS * 1.5);
+          .attr("r", d.r * 1.5);
 
         tooltip
           .transition()
           .duration(TRANSITION_DURATION_TIME)
           .style("opacity", 1);
         tooltip
-          .html(`<p>Year: ${d.year}</p>`)
+          .html(`<p>Year: ${d.text}</p>`)
           .style("left", event.offsetX + "px")
           .style("top", event.offsetY + "px")
           .style("transform", "translate(-50%, calc(-100% - 16px))");
       })
-      .on("mouseout", function (d) {
+      .on("mouseout", function (_, d) {
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
-          .attr("r", CIRCLE_RADIUS);
+          .attr("r", d.r);
         tooltip
           .transition()
           .duration(TRANSITION_DURATION_TIME)
@@ -610,7 +761,7 @@ export default () => ({
 
     this.eventNodes
       .attr("cx", (d, i) => d.x)
-      .attr("cy", (d, i) => d.y + d.epi * EVENTS_Y_GAP)
+      .attr("cy", (d, i) => d.y + d.epi * EVENTS_Y_GAP - 4)
       .attr("r", (d) => d.r)
       .attr("data-type", (d) => d.type)
       .attr("data-epi", (d) => d.epi)
@@ -630,7 +781,7 @@ export default () => ({
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
-          .attr("r", CIRCLE_RADIUS * 1.5);
+          .attr("r", d.r * 1.5);
 
         tooltip
           .transition()
@@ -642,70 +793,38 @@ export default () => ({
           .style("top", event.offsetY + "px")
           .style("transform", "translate(-50%, calc(-100% - 16px))");
       })
-      .on("mouseout", function (d) {
+      .on("mouseout", function (_, d) {
         d3.select(this)
           .transition()
           .duration(TRANSITION_DURATION_TIME)
-          .attr("r", CIRCLE_RADIUS);
+          .attr("r", d.r);
         tooltip
           .transition()
           .duration(TRANSITION_DURATION_TIME)
           .style("opacity", 0);
       });
-
-    this.arrows = this.svg
-      .selectAll(".arrow")
-      .data(stormLinks)
-      .enter()
-      .append("path")
-      .attr("class", "arrow");
-
-    this.arrows
-      .attr("id", (d, i) => `storm-link-${i + 1}`)
-      .style("stroke", STORM_COLOR)
-      .style("fill", "none")
-      .style("stroke-dasharray", "4 4")
-      .attr("d", (d, i) => {
-        // const reversedX = d.source.x < d.target.x ? 1 : -1;
-        // d.source.x += CIRCLE_RADIUS * reversedX;
-        // d.target.x -= (CIRCLE_RADIUS + MARKER_WIDTH) * reversedX;
-        const reversedY = d.source.y > d.target.y ? 1 : -1;
-        const reversedIndex = i % 2 === 0 ? -1 : 1;
-        d.source.y += CIRCLE_RADIUS * reversedY * reversedIndex;
-        d.target.y +=
-          (CIRCLE_RADIUS + MARKER_WIDTH) * reversedY * reversedIndex;
-        return this.drawLinkCurve(d.source, d.target, i);
-      })
-      .attr("marker-end", "url(#arrow)");
-
-    this.arrows.each((d, i, nodes) => {
-      const bbox = d3.select(nodes[i]).node().getBBox();
-      const centreX = bbox.x + bbox.width / 2; // <-- get x centre
-      const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
-      this.svg
-        .append("text")
-        .attr("class", "arrow-label")
-        .attr("id", `arrow-label-${i + 1}`)
-        .text(d.title)
-        .attr("x", centreX)
-        .attr("y", centreY)
-        .attr("text-anchor", "middle")
-        .attr("fill", STORM_COLOR)
-        .style("font-size", "12px")
-        .style("font-weight", "bold");
-    });
   },
 
-  drawLinkCurve(source: { x; y }, target: { x; y }, index = 0) {
+  drawLinkCurve(source: { x; y }, target: { x; y }, index = 0, scale = 1) {
+    // const reversedX = d.source.x < d.target.x ? 1 : -1;
+    // d.source.x += CIRCLE_RADIUS * reversedX;
+    // d.target.x -= (CIRCLE_RADIUS + MARKER_WIDTH) * reversedX;
+    const reversedY = source.y > target.y ? 1 : -1;
+    const reversedIndex = index % 2 === 0 ? -1 : 1;
+    source.y += CIRCLE_RADIUS * reversedY * reversedIndex;
+    target.y += (CIRCLE_RADIUS + MARKER_WIDTH) * reversedY * reversedIndex;
+
     const context = d3.path();
     context.moveTo(source.x, source.y);
     context.lineTo(
       source.x,
-      target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
+      target.y +
+        (index % 2 === 0 ? 1 : -1) * STORM_LINK_GAP * scale * (index + 1)
     );
     context.lineTo(
       target.x,
-      target.y + (index % 2 === 0 ? 1 : -1) * 10 * (index + 1)
+      target.y +
+        (index % 2 === 0 ? 1 : -1) * STORM_LINK_GAP * scale * (index + 1)
     );
     context.lineTo(target.x, target.y);
     return context + "";
@@ -718,24 +837,49 @@ export default () => ({
   updateChart(event) {
     // recover the new scale
     let newX = event.transform.rescaleX(this.xLine);
+    let newY = event.transform.rescaleY(this.yLine);
 
     // update axes with these new boundaries
     this.xAxis.call(d3.axisBottom(newX));
+    this.yAxis.call(d3.axisLeft(newY));
 
-    this.stormNodes.attr("cx", function (d) {
-      d.x = newX(parseDate(d.year));
-      return d.x;
-    });
+    this.stormNodes
+      .attr("cx", function (d) {
+        return newX(parseDate(d.year));
+      })
+      .attr("cy", function (d) {
+        return newY(d.originY);
+      })
+      .attr("r", function (d) {
+        d.r = Math.min(CIRCLE_RADIUS * event.transform.k, MAX_CIRCLE_RADIUS);
+        return d.r;
+      });
 
-    this.eventNodes.attr("cx", function (d) {
-      d.x = newX(parseDate(d.year));
-      return d.x;
-    });
+    this.eventNodes
+      .attr("r", function (d) {
+        d.r = Math.min(CIRCLE_RADIUS * event.transform.k, MAX_CIRCLE_RADIUS);
+        return d.r;
+      })
+      .attr("cx", function (d) {
+        return newX(parseDate(d.year));
+      })
+      .attr("cy", function (d) {
+        d.y = newY(d.originY) + d.epi * EVENTS_Y_GAP * event.transform.k;
+        return d.y;
+      });
 
     this.periods
+      .attr("height", function (d) {
+        d.h = Math.min(PERIOD_HEIGHT * event.transform.k, MAX_PERIOD_HEIGHT);
+        return d.h;
+      })
       .attr("x", function (d) {
         d.x = newX(parseDate(d[0].year));
         return d.x;
+      })
+      .attr("y", function (d) {
+        d.y = newY(d[0].originY) - d.h / 2;
+        return d.y;
       })
       .attr("width", function (d) {
         return (
@@ -745,29 +889,44 @@ export default () => ({
 
     this.periodZone
       .attr("x", function (d) {
-        d.x = newX(parseDate(d[0].year));
-        return d.x;
+        return newX(parseDate(d[0].year));
+      })
+      .attr("y", function (d) {
+        d.y = newY(d[0].originY);
+        return d.y;
       })
       .attr("width", function (d) {
         return (
           newX(parseDate(d[d.length - 1].year)) - newX(parseDate(d[0].year))
         );
-      });
+      })
+      .attr(
+        "height",
+        (d) =>
+          parseFloat(this.xAxis.attr("transform").split(/[\s,()]+/)[2]) - d.y
+      );
 
     this.arrows.attr("d", (d, i) => {
       d.source.x = newX(parseDate(d.source.year));
       d.target.x = newX(parseDate(d.target.year));
-      return this.drawLinkCurve(d.source, d.target, i);
+      d.source.y = newY(d.source.originY);
+      d.target.y = newY(d.target.originY);
+      return this.drawLinkCurve(d.source, d.target, i, event.transform.k);
     });
 
     this.arrows.each((d, i, nodes) => {
       const bbox = d3.select(nodes[i]).node().getBBox();
       const centreX = bbox.x + bbox.width / 2; // <-- get x centre
       const centreY = i % 2 !== 0 ? bbox.y + 4 : bbox.y + bbox.height + 4; // <-- get y centre
+
       this.svg
         .select(`#arrow-label-${i + 1}`)
         .attr("x", centreX)
-        .attr("y", centreY);
+        .attr("y", centreY)
+        .style(
+          "font-size",
+          Math.min(STORM_TEXT_FONT_SIZE_REM * event.transform.k, 1.5) + "rem"
+        );
     });
 
     this.scale = event.transform.k;
@@ -855,7 +1014,10 @@ export default () => ({
     this.isShow.eventNodeGap = !this.isShow.eventNodeGap;
 
     if (this.isShow.eventNodeGap) {
-      this.eventNodes.attr("cy", (d) => d.y + d.epi * EVENTS_Y_GAP);
+      this.eventNodes.attr(
+        "cy",
+        (d) => d.y + d.epi * EVENTS_Y_GAP * this.scale
+      );
     } else {
       this.eventNodes.attr("cy", (d) => d.y);
     }
