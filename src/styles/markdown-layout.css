@@ -37,11 +37,11 @@ th {
 }
 
 .container {
-  @apply max-w-5xl mx-auto px-4;
+  @apply max-w-[73.75rem] mx-auto px-6 md:px-10;
 }
 
 .paper-texture {
-  @apply min-w-40 lg:min-w-60 p-2 relative text-black flex flex-col max-w-80 flex-1 bg-paper border-2 border-line-paper;
+  @apply min-w-40 lg:min-w-60 p-2 relative text-black flex flex-col max-w-96 flex-1 bg-paper border-2 border-line-paper;
 }
 
 ul {

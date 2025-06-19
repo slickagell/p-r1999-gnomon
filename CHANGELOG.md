@@ -1,5 +1,11 @@
 ##### 2025-06-19
 
+* Make effect tooltip scrollable
+* Update layout spacing
+* Fix infographic zoom issue
+
+##### 2025-06-19
+
 * Add Aleph official data
 * Remove unused artefacts data
 * Add new psychube and fix detail page bug

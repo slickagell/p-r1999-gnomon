@@ -233,7 +233,7 @@ if (hasInfographic) {
 <slot name="skill-1-title" />
 </div>
 <div
-  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap lg:flex-nowrap"
+  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
   {...hasSkill1Reinforced && { ["x-data"]: "{ reinforced: false }" }}
 >
   <div class="basis-full lg:basis-auto shrink-0">
@@ -271,7 +271,9 @@ if (hasInfographic) {
         </template>
       </Fragment>
     ) : (
-      <slot name="skill-1-cards-info" />
+      <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+        <slot name="skill-1-cards-info" />
+      </div>
     )
   }
 </div>
@@ -281,7 +283,7 @@ if (hasInfographic) {
 <slot name="skill-2-title" />
 </div>
 <div
-  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap lg:flex-nowrap"
+  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
   {...hasSkill2Reinforced && { ["x-data"]: "{ reinforced: false }" }}
 >
   <div class="basis-full lg:basis-auto shrink-0">
@@ -319,7 +321,9 @@ if (hasInfographic) {
         </template>
       </Fragment>
     ) : (
-      <slot name="skill-2-cards-info" />
+      <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+        <slot name="skill-2-cards-info" />
+      </div>
     )
   }
 </div>
@@ -880,7 +884,9 @@ if (hasInfographic) {
 
 <script>
   import Alpine from "alpinejs";
+  import { Zoomable } from "@scripts/plugin";
 
+  Alpine.plugin(Zoomable);
   Alpine.data("sortMaterials", () => ({
     init() {
       const sorted = Array.from(this.$el.children as HTMLCollection).sort(

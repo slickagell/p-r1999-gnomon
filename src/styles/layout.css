@@ -60,7 +60,7 @@ h6 {
 }
 
 .container {
-  @apply max-w-5xl mx-auto px-4;
+  @apply max-w-[73.75rem] mx-auto px-6 md:px-10;
 }
 
 .drawer-content {
@@ -139,7 +139,7 @@ img[x-zoomable]:hover {
 }
 
 .zoomable-control-button {
-  @apply bg-primary flex items-center justify-center w-6 h-6 md:w-10 md:h-10 rounded-full transition touch-manipulation md:touch-auto;
+  @apply bg-primary flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full transition touch-manipulation md:touch-auto;
   -webkit-tap-highlight-color: transparent; /* Prevents gray flash on iOS */
 }
 
