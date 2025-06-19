@@ -66,15 +66,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="He cares deeply.">
-      Mass attack. Loses (Current HP x**15%**) and deals **30%** Mental DMG plus (Own Max HP x**15%**) Genesis DMG to 2 enemies. The inflicted Genesis DMG can critically hit. Plants 1 :effect{code="HONEY_FUNGUS"}. Fungus cap: 2.
+      Mass attack. Loses (Current HP x**15%**) and deals **30%** Mental DMG plus (Own Max HP x**15%**) Genesis DMG to 2 enemies. The inflicted Genesis DMG can critically hit. Plants 1 :effect{param="honey-fungus"}. Fungus cap: 2.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="He cares deeply and handles all your problems.">
-      Mass attack. Loses (Current HP x**15%**) and deals **40%** Mental DMG plus (Own Max HP x**20%**) Genesis DMG to 2 enemies. The inflicted Genesis DMG can critically hit. Plants 1 :effect{code="HONEY_FUNGUS"}. Fungus cap: 2.
+      Mass attack. Loses (Current HP x**15%**) and deals **40%** Mental DMG plus (Own Max HP x**20%**) Genesis DMG to 2 enemies. The inflicted Genesis DMG can critically hit. Plants 1 :effect{param="honey-fungus"}. Fungus cap: 2.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="He cares deeply and brings beauty to your life.">
-      Mass attack. Loses (Current HP x**10%**) and deals **50%** Mental DMG plus (Own Max HP x**25%**) Genesis DMG to 2 enemies. The inflicted Genesis DMG can critically hit. Plants 2 :effect{code="HONEY_FUNGUS"}. Fungus cap: 2.
+      Mass attack. Loses (Current HP x**10%**) and deals **50%** Mental DMG plus (Own Max HP x**25%**) Genesis DMG to 2 enemies. The inflicted Genesis DMG can critically hit. Plants 2 :effect{param="honey-fungus"}. Fungus cap: 2.
     </CardInfo>
   </Fragment>
 
@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Someone could really use a boost.">
-      Mass buff. Loses (Current HP x**15%**) and grants a Shield with (the user's Max HP x**15%**) for 1 round. Plants 1 :effect{code="GHOST_FUNGUS"}. Fungus cap: 2.
+      Mass buff. Loses (Current HP x**15%**) and grants a Shield with (the user's Max HP x**15%**) for 1 round. Plants 1 :effect{param="ghost-fungus"}. Fungus cap: 2.
     </CardInfo>
 
     <CardInfo star="2" type="BUFF" note="Someone could really use a boost, and these will give it.">
-      Mass buff. Loses (Current HP x**15%**) and grants a Shield with (the user's Max HP x**20%**) for 1 round. Plants 1 :effect{code="GHOST_FUNGUS"}. Fungus cap: 2.
+      Mass buff. Loses (Current HP x**15%**) and grants a Shield with (the user's Max HP x**20%**) for 1 round. Plants 1 :effect{param="ghost-fungus"}. Fungus cap: 2.
     </CardInfo>
 
     <CardInfo star="3" type="BUFF" note="Someone could really use a boost, and these will give it. Sometimes a little too much.">
-      Mass buff. Loses (Current HP x**10%**) and grants a Shield with (the user's Max HP x**25%**) for 1 round. Plants 2 :effect{code="GHOST_FUNGUS"}. Fungus cap: 2.
+      Mass buff. Loses (Current HP x**10%**) and grants a Shield with (the user's Max HP x**25%**) for 1 round. Plants 2 :effect{param="ghost-fungus"}. Fungus cap: 2.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="BUFF" note="A perfect, selfless, servant of humanity.">
-      Mass buff. Moxie +1 and Eureka +1 for other allies. Plant the max number of :effect{code="HONEY_FUNGUS"} on any available empty spaces; all mushrooms then mature and immediately trigger their effects.
+      Mass buff. Moxie +1 and Eureka +1 for other allies. Plant the max number of :effect{param="honey-fungus"} on any available empty spaces; all mushrooms then mature and immediately trigger their effects.
     </CardInfo>
   </Fragment>
 
@@ -135,11 +135,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Protection to the Body*: At Incantation rank 1/2, the HP loss is reduced to **10%** of current HP. The :effect{code="VULNERABILITY"} inflicted by :effect{code="HONEY_FUNGUS"} increases to 3 stacks.
+    *Protection to the Body*: At Incantation rank 1/2, the HP loss is reduced to **10%** of current HP. The :effect{param="vulnerability"} inflicted by :effect{param="honey-fungus"} increases to 3 stacks.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Stimulus to the Mind*: At Incantation rank 1/2/3, the :effect{code="SHIELD"} granted to all allies is increased to (Own HP x**20%/25%/35%**).
+    *Stimulus to the Mind*: At Incantation rank 1/2/3, the :effect{param="shield"} granted to all allies is increased to (Own HP x**20%/25%/35%**).
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -147,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Stimulus to the Mind*: At Incantation rank 1/2, the HP loss is reduced to 10% of current HP. The :effect{code="DISCERNMENT"} granted by :effect{code="GHOST_FUNGUS"} increases to 3 stacks.
+    *Stimulus to the Mind*: At Incantation rank 1/2, the HP loss is reduced to 10% of current HP. The :effect{param="discernment"} granted by :effect{param="ghost-fungus"} increases to 3 stacks.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

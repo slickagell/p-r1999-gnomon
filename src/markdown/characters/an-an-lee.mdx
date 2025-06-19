@@ -75,7 +75,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="Obey my order with every haste and speed. Pull the trigger and it's all done.">
-      1-target attack. Deals **350%** Reality DMG and inflicts :effect{code="DAZE"} status for 1 round.
+      1-target attack. Deals **350%** Reality DMG and inflicts :effect{param="daze"} status for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="Here's some tough advice for you: Have faith in science, and be wary of ghosts!">
-      Mass attack. Deals **400%** Reality DMG to all enemies. The caster enters :effect{code="EMPOWER_INCANTATION_I"} status for 2 rounds.
+      Mass attack. Deals **400%** Reality DMG to all enemies. The caster enters :effect{param="empower-incantation-i"} status for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -116,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When a round starts, switches between :effect{code="BREAK_TIME"} and :effect{code="EXORCISM_TIME"} statuses. When the caster enters :effect{code="EXORCISM_TIME"} status, the caster's right-most Incantation +1 star.
+    When a round starts, switches between :effect{param="break-time"} and :effect{param="exorcism-time"} statuses. When the caster enters :effect{param="exorcism-time"} status, the caster's right-most Incantation +1 star.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,7 +124,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Enhance :effect{code="BREAK_TIME"} effect: DMG Taken Reduction **+15%**. Enhances :effect{code="EXORCISM_TIME"} effect: DMG Bonus **+15%**, Penetration Rate **+15%**.
+    Enhance :effect{param="break-time"} effect: DMG Taken Reduction **+15%**. Enhances :effect{param="exorcism-time"} effect: DMG Bonus **+15%**, Penetration Rate **+15%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -167,21 +167,21 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      *\[Time to Work]* Insight I Enhancement: When entering :effect{code="EXORCISM_TIME"}, grants rank **+1** to the rightmost incantation of an ally in front. When entering :effect{code="BREAK_TIME"}, grants **1** stack of :effect{code="STURDINESS"} to an ally behind.
+      *\[Time to Work]* Insight I Enhancement: When entering :effect{param="exorcism-time"}, grants rank **+1** to the rightmost incantation of an ally in front. When entering :effect{param="break-time"}, grants **1** stack of :effect{param="sturdiness"} to an ally behind.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      :effect{code="EXORCISM_TIME"} Enhancement: After attacking, randomly inflicts **1** of the following effects on the target: **1** stack of :effect{code="RIGIDITY"}, :effect{code="POISON"} for **2** rounds, or **5** stacks of \[Burn]. *\[Lily Nectar]* additionally grants the above new effects of :effect{code="EXORCISM_TIME"} to allies.
+      :effect{param="exorcism-time"} Enhancement: After attacking, randomly inflicts **1** of the following effects on the target: **1** stack of :effect{param="rigidity"}, :effect{param="poison"} for **2** rounds, or **5** stacks of \[Burn]. *\[Lily Nectar]* additionally grants the above new effects of :effect{param="exorcism-time"} to allies.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      :effect{code="EXORCISM_TIME"} Enhancement: When the enemy is afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*, the DMG Bonus is increased by an additional **15%**.
+      :effect{param="exorcism-time"} Enhancement: When the enemy is afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*, the DMG Bonus is increased by an additional **15%**.
 
-      :effect{code="BREAK_TIME"} Enhancement: When the enemy is afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*, the DMG Taken Reduction is increased by an additional **15%**.
+      :effect{param="break-time"} Enhancement: When the enemy is afflicted with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*, the DMG Taken Reduction is increased by an additional **15%**.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      *\[Scientific Ghost Buster]* Enhancement: Grants :effect{code="EMPOWER_INCANTATION_II"} to self for **2** rounds; for each enemy attacked that's with *\[Neg Status]*, grant :effect{code="EMPOWER_INCANTATION_I"} to a random ally for **2** rounds.
+      *\[Scientific Ghost Buster]* Enhancement: Grants :effect{param="empower-incantation-ii"} to self for **2** rounds; for each enemy attacked that's with *\[Neg Status]*, grant :effect{param="empower-incantation-i"} to a random ally for **2** rounds.
     </div>
   </Fragment>
 

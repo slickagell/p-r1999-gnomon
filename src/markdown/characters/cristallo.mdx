@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="She closed the book.">
-      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+10%** for 2 rounds.
+      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+10%** for 2 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="BUFF" note="She closed the book and mended the wound.">
-      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+15%** for them for 2 rounds.
+      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+15%** for them for 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="BUFF" note="She closed the book and mended the wound. She knew how fragile life could be.">
-      Mass buff. Inflicts 1 stack of :effect{code="STURDINESS"} on all allies. Reality DEF and Mental DEF **+20%** for them for 2 rounds.
+      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+20%** for them for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="DEBUFF" note="The therapeutic machine is quite lethal to those tiny and ignorant cells.">
-      Mass debuff. Inflicts :effect{code="NASTY_WOUND"} and :effect{code="RADIATION_THERAPY"} statuses on all enemies for 2 rounds. When the round ends, deals (the caster's ATK x**100%**) Genesis DMG to them.
+      Mass debuff. Inflicts :effect{param="nasty-wound"} and :effect{param="radiation-therapy"} statuses on all enemies for 2 rounds. When the round ends, deals (the caster's ATK x**100%**) Genesis DMG to them.
     </CardInfo>
   </Fragment>
 

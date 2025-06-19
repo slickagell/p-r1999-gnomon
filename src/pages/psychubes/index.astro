@@ -10,8 +10,8 @@ function sortPsychubes(a, b) {
     return -(a.data.rarity - b.data.rarity);
   }
 
-  if (a.data.id !== b.data.id) {
-    return -(a.data.id - b.data.id);
+  if (a.data.gameId !== b.data.gameId) {
+    return -(a.data.gameId - b.data.gameId);
   }
 
   return ("" + a.data.title).localeCompare(b.data.title);
@@ -84,7 +84,7 @@ function sortPsychubes(a, b) {
                 <PsychubeIcon
                   size="small"
                   variant={["horizontal"]}
-                  code={effectEntry.data.code}
+                  param={effectEntry.id}
                 />
               </li>
             );

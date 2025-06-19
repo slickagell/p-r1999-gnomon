@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
 
           <span class="passive-title">Cold Current</span>
 
-          When being attacked by a mass attack, gain Moxie +1 for self and inflict 1 stack of :effect{code="COLD"} on a random enemy.
+          When being attacked by a mass attack, gain Moxie +1 for self and inflict 1 stack of :effect{param="cold"} on a random enemy.
 
           <span class="passive-title">Evolution</span>
 
@@ -52,11 +52,11 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
 
           <span class="passive-title">Cold Current</span>
 
-          When being attacked by a mass attack, gain Moxie +1 for self and inflict 1 stack of :effect{code="COLD"} on a random enemy.
+          When being attacked by a mass attack, gain Moxie +1 for self and inflict 1 stack of :effect{param="cold"} on a random enemy.
 
           <span class="passive-title">Icebreaker</span>
 
-          When an enemy enters the :effect{code="FREEZE"} status, recover (own Missing HP x**5%**) HP (triggers up to once per round).
+          When an enemy enters the :effect{param="freeze"} status, recover (own Missing HP x**5%**) HP (triggers up to once per round).
         </div>
       </Fragment>
 
@@ -66,7 +66,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 1 stack of :effect{code="COLD"} on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 1 stack of :effect{param="cold"} on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '2'`}>
@@ -74,7 +74,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="COLD"} on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{param="cold"} on the targets hit.
         </div>
       </Fragment>
 
@@ -102,7 +102,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) && activePhase === '2'`}>
-          Mass attack. Deals **400%** Reality DMG to all enemies. Inflicts 1 stack of :effect{code="COLD"} on the targets hit.
+          Mass attack. Deals **400%** Reality DMG to all enemies. Inflicts 1 stack of :effect{param="cold"} on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>

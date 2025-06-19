@@ -30,7 +30,7 @@ import data from "@data/reveries-in-the-rain/zone/270m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Good Girl</span>
 
-          When the caster enters battle, enters :effect{code="CONCEALMENT"} status for 2 rounds (only triggers 1 time).
+          When the caster enters battle, enters :effect{param="concealment"} status for 2 rounds (only triggers 1 time).
 
           <span class="passive-title">Good Girl Ⅱ</span>
 
@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/270m.json";
 
           <span class="passive-title">Spirit Form</span>
 
-          Immune to :effect{code="BLEED"}, :effect{code="CORRODE"}, :effect{code="POISON"}, :effect{code="BURN"}, and :effect{code="POLLUTION"}. For each type of negative status held, gain DMG Dealt **+20%** and DMG Taken **-20%**.
+          Immune to :effect{param="bleed"}, :effect{param="corrode"}, :effect{param="poison"}, :effect{param="burn"}, and :effect{code="POLLUTION"}. For each type of negative status held, gain DMG Dealt **+20%** and DMG Taken **-20%**.
 
           <span class="passive-title">Continuous Action I</span>
 
@@ -48,15 +48,15 @@ import data from "@data/reveries-in-the-rain/zone/270m.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">New Photography Theory</span>
 
-          At the beginning of every 2 rounds, enters :effect{code="LENS_CAP"} status for 1 round.
+          At the beginning of every 2 rounds, enters :effect{param="lens-cap"} status for 1 round.
 
           <span class="passive-title">New Photography Theory III</span>
 
-          When the caster is in :effect{code="LENS_CAP"} status, Penetration Rate **+30%**.
+          When the caster is in :effect{param="lens-cap"} status, Penetration Rate **+30%**.
 
           <span class="passive-title">Spirit Form</span>
 
-          Immune to :effect{code="BLEED"}, :effect{code="CORRODE"}, :effect{code="POISON"}, :effect{code="BURN"}, and :effect{code="POLLUTION"}. For each type of negative status held, gain DMG Dealt **+20%** and DMG Taken **-20%**.
+          Immune to :effect{param="bleed"}, :effect{param="corrode"}, :effect{param="poison"}, :effect{param="burn"}, and :effect{code="POLLUTION"}. For each type of negative status held, gain DMG Dealt **+20%** and DMG Taken **-20%**.
 
           <span class="passive-title">Continuous Action I</span>
 
@@ -78,7 +78,7 @@ import data from "@data/reveries-in-the-rain/zone/270m.json";
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{param="blind"} status for 1 round on the target hit.
         </div>
       </Fragment>
 
@@ -102,11 +102,11 @@ import data from "@data/reveries-in-the-rain/zone/270m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Self counter. Enters :effect{code="TAUNT"}: DMG Taken **-20%** and DMG Heal **+20%** for 3 rounds. Also enters :effect{code="CONCEALMENT"} for 1 round.
+          Self counter. Enters :effect{param="taunt"}: DMG Taken **-20%** and DMG Heal **+20%** for 3 rounds. Also enters :effect{param="concealment"} for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies. Other allies enter :effect{code="LENS_CAP"} status for 1 round.
+          Mass attack. Deals **300%** Mental DMG to all enemies. Other allies enter :effect{param="lens-cap"} status for 1 round.
         </div>
       </Fragment>
     </EnemyInfo>

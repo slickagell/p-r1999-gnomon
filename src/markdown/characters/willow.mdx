@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="May you be the embodiment of elegance and beauty.">
-      1-target attack. Deals **100%** Mental DMG; if the target hit already has an instance of :effect{code="POISON"}, convert 1 instance of :effect{code="POISON"} into 1 stack of :effect{code="HAG_S_BANE"} that lasts 2 rounds; up to 3 instances of Poison can be converted by this effect.
+      1-target attack. Deals **100%** Mental DMG; if the target hit already has an instance of :effect{param="poison"}, convert 1 instance of :effect{param="poison"} into 1 stack of :effect{param="hag-s-bane"} that lasts 2 rounds; up to 3 instances of Poison can be converted by this effect.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="May you be the embodiment of elegance and beauty. May you be cherished by the stars.">
-      1-target attack. Deals **125%** Mental DMG; if the target hit already has an instance of :effect{code="POISON"}, convert 1 instance of :effect{code="POISON"} into 1 stack of :effect{code="HAG_S_BANE"} that lasts 2 rounds; up to 4 instances of Poison can be converted by this effect.
+      1-target attack. Deals **125%** Mental DMG; if the target hit already has an instance of :effect{param="poison"}, convert 1 instance of :effect{param="poison"} into 1 stack of :effect{param="hag-s-bane"} that lasts 2 rounds; up to 4 instances of Poison can be converted by this effect.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="May you be the embodiment of elegance and beauty. May you be cherished by the stars. May you avoid a fate like mine.">
-      1-target attack. Deals **175%** Mental DMG; if the target hit already has an instance of :effect{code="POISON"}, convert 1 instance of :effect{code="POISON"} into 1 stack of :effect{code="HAG_S_BANE"} that lasts 2 rounds; up to 5 instances of Poison can be converted by this effect.
+      1-target attack. Deals **175%** Mental DMG; if the target hit already has an instance of :effect{param="poison"}, convert 1 instance of :effect{param="poison"} into 1 stack of :effect{param="hag-s-bane"} that lasts 2 rounds; up to 5 instances of Poison can be converted by this effect.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="It's just a little cold.">
-      1-target attack. Deals **100%** Mental DMG; if the target hit already has both an instance of :effect{code="POISON"} and the :effect{code="HAG_S_BANE"} status, consume up to 2 instances of :effect{code="POISON"}, each instance of :effect{code="POISON"} resolves the :effect{code="HAG_S_BANE"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
+      1-target attack. Deals **100%** Mental DMG; if the target hit already has both an instance of :effect{param="poison"} and the :effect{param="hag-s-bane"} status, consume up to 2 instances of :effect{param="poison"}, each instance of :effect{param="poison"} resolves the :effect{param="hag-s-bane"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="It's just a little cold, bestowed by the witch.">
-      1-target attack. Deals **125%** Mental DMG; if the target hit already has both an instance of :effect{code="POISON"} and the :effect{code="HAG_S_BANE"} status, consume up to 3 instances of :effect{code="POISON"}, each instance of :effect{code="POISON"} resolves the :effect{code="HAG_S_BANE"} status on the target once, and the remaining rounds of Hags Bane do not decrease when resolved this way.
+      1-target attack. Deals **125%** Mental DMG; if the target hit already has both an instance of :effect{param="poison"} and the :effect{param="hag-s-bane"} status, consume up to 3 instances of :effect{param="poison"}, each instance of :effect{param="poison"} resolves the :effect{param="hag-s-bane"} status on the target once, and the remaining rounds of Hags Bane do not decrease when resolved this way.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="It's just a little cold, bestowed by the witch. May your suffering come to an end soon.">
-      1-target attack. Deals **175%** Mental DMG; if the target hit already has both an instance of :effect{code="POISON"} and the :effect{code="HAG_S_BANE"} status, consume up to 4 instances of :effect{code="POISON"}, each instance of :effect{code="POISON"} resolves the :effect{code="HAG_S_BANE"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
+      1-target attack. Deals **175%** Mental DMG; if the target hit already has both an instance of :effect{param="poison"} and the :effect{param="hag-s-bane"} status, consume up to 4 instances of :effect{param="poison"}, each instance of :effect{param="poison"} resolves the :effect{param="hag-s-bane"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="CHANNEL" note="She now has the one spectator that truly matters; no other witness is necessary.">
-      Self channel. Enters the :effect{code="ANCIENT_RITUAL"} status.
+      Self channel. Enters the :effect{param="ancient-ritual"} status.
     </CardInfo>
   </Fragment>
 
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    At the start of the round, inflict 2 instances of :effect{code="POISON"} on 2 enemy targets for 2 rounds, prioritizing targets with the most instances of :effect{code="POISON"}. When another ally actively casts and attacks an enemy with an incantation, Willow inflicts 2 additional instances of :effect{code="POISON"} on the main target for 2 rounds, this effect can trigger up to 2 times per round.
+    At the start of the round, inflict 2 instances of :effect{param="poison"} on 2 enemy targets for 2 rounds, prioritizing targets with the most instances of :effect{param="poison"}. When another ally actively casts and attacks an enemy with an incantation, Willow inflicts 2 additional instances of :effect{param="poison"} on the main target for 2 rounds, this effect can trigger up to 2 times per round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Enhances :effect{code="ANCIENT_RITUAL"}: Grants an additional Max Moxie +5; gains an additional Moxie +1 from casting or moving incantations.
+    Enhances :effect{param="ancient-ritual"}: Grants an additional Max Moxie +5; gains an additional Moxie +1 from casting or moving incantations.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,11 +135,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Hag's Advice*: All :effect{code="HAG_S_BANE"} inflicted by Willow is increased to (the user's ATK X**24%**) Genesis DMG.
+    *Hag's Advice*: All :effect{param="hag-s-bane"} inflicted by Willow is increased to (the user's ATK X**24%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Hag's Steps*: The damage of all :effect{code="POISON"} effects inflicted by this passive is increased to (the user's ATK x**40%**) Genesis DMG. In addition, each time Willow's :effect{code="HAG_S_BANE"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **45%**.
+    *Hag's Steps*: The damage of all :effect{param="poison"} effects inflicted by this passive is increased to (the user's ATK x**40%**) Genesis DMG. In addition, each time Willow's :effect{param="hag-s-bane"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **45%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -147,11 +147,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Hag's Steps*: When another ally actively casts and attacks an enemy with an incantation, the instances of :effect{code="POISON"} Willow inflicts on the main target is inereased to **3**.
+    *Hag's Steps*: When another ally actively casts and attacks an enemy with an incantation, the instances of :effect{param="poison"} Willow inflicts on the main target is inereased to **3**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Hag's Advice*: Each time Willow's :effect{code="HAG_S_BANE"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **50%**.
+    *Hag's Advice*: Each time Willow's :effect{param="hag-s-bane"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **50%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -170,17 +170,17 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="OFFBEAT_STRIDES" />
+      <PsychubeIcon param="offbeat-strides" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="HER_MOURNFUL_FACE" />
+      <PsychubeIcon param="her-mournful-face" />
 
-      <PsychubeIcon code="FALLING_FOR_A_SWEET_PHENOMENON" />
+      <PsychubeIcon param="falling-for-a-sweet-phenomenon" />
 
-      <PsychubeIcon code="TRANSCENDENT_LOVE" />
+      <PsychubeIcon param="transcendent-love" />
     </div>
   </Fragment>
 
@@ -197,30 +197,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-breakdown-content">
-    Willow is one of the key character in the poison quad with the ability to convert :effect{code="POISON"} to :effect{code="HAG_S_BANE"}.
+    Willow is one of the key character in the poison quad with the ability to convert :effect{param="poison"} to :effect{param="hag-s-bane"}.
 
     <br />
 
-    :effect{code="HAG_S_BANE"} can stack up to **10** times, and last for **2** rounds:
+    :effect{param="hag-s-bane"} can stack up to **10** times, and last for **2** rounds:
 
-    * If we stack in the same round, there will be add up in **1** instance of :effect{code="HAG_S_BANE"} and lasts 2 rounds.
-    * If we stack in the different round, there will be **2** instances of :effect{code="HAG_S_BANE"}, one last 2 rounds (new applied) and the other last 1 round, and total stacks of all instances still **can not exceed 10**.
+    * If we stack in the same round, there will be add up in **1** instance of :effect{param="hag-s-bane"} and lasts 2 rounds.
+    * If we stack in the different round, there will be **2** instances of :effect{param="hag-s-bane"}, one last 2 rounds (new applied) and the other last 1 round, and total stacks of all instances still **can not exceed 10**.
 
-    When :effect{code="HAG_S_BANE"} is activated (and it **will activated in 1 round only**), enemies will be increased DMG Taken by :effect{code="POISON"} by **40%**, up to **4** times, and it will be calculated in multiplier progression.
+    When :effect{param="hag-s-bane"} is activated (and it **will activated in 1 round only**), enemies will be increased DMG Taken by :effect{param="poison"} by **40%**, up to **4** times, and it will be calculated in multiplier progression.
 
-    Since :effect{code="HAG_S_BANE"} count as a :effect{code="POISON"} type, so it still takes effect in Tuesday \[Array]: :effect{code="HORROR_STORY_NIGHT"}, but :effect{code="POISON"} will be converted to :effect{code="HAG_S_BANE"}.
-
-    <br />
-
-    If enemy doesn't have :effect{code="POISON"}, the :effect{code="HAG_S_BANE"} will not be applied, so only use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hag's Advice]*</CharacterSkillTooltip> skill when enemy has :effect{code="POISON"}.
+    Since :effect{param="hag-s-bane"} count as a :effect{param="poison"} type, so it still takes effect in Tuesday \[Array]: :effect{param="horror-story-night"}, but :effect{param="poison"} will be converted to :effect{param="hag-s-bane"}.
 
     <br />
 
-    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Hag's Gratitude]*</CharacterSkillTooltip> skill, if enemy has both :effect{code="POISON"} and :effect{code="HAG_S_BANE"}, consume 2-4 stacks of :effect{code="POISON"} to resolve :effect{code="HAG_S_BANE"}:
+    If enemy doesn't have :effect{param="poison"}, the :effect{param="hag-s-bane"} will not be applied, so only use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hag's Advice]*</CharacterSkillTooltip> skill when enemy has :effect{param="poison"}.
 
-    * If there is 1 stack of :effect{code="POISON"} only, resolve :effect{code="HAG_S_BANE"} once, 2 stacks of will resolve twice and so on.
-    * Stacks and duration of :effect{code="HAG_S_BANE"} **will not decrease** when resolved this way.
-    * If the amount of :effect{code="POISON"} and :effect{code="HAG_S_BANE"} is guaranteed, it is recommended to **use this skill many times in a round**, since it will become much more effective.
+    <br />
+
+    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Hag's Gratitude]*</CharacterSkillTooltip> skill, if enemy has both :effect{param="poison"} and :effect{param="hag-s-bane"}, consume 2-4 stacks of :effect{param="poison"} to resolve :effect{param="hag-s-bane"}:
+
+    * If there is 1 stack of :effect{param="poison"} only, resolve :effect{param="hag-s-bane"} once, 2 stacks of will resolve twice and so on.
+    * Stacks and duration of :effect{param="hag-s-bane"} **will not decrease** when resolved this way.
+    * If the amount of :effect{param="poison"} and :effect{param="hag-s-bane"} is guaranteed, it is recommended to **use this skill many times in a round**, since it will become much more effective.
 
     <br />
 
@@ -228,7 +228,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     * Increase Moxie capacity by **5**. When **using or move** incantations will **+2** Moxie instead of 1.
     * At the end of each round, **consume Moxie** to maintain channeling status. The longer channeling, the more Moxie consumed, and greater effect.
-    * Enemy will be considered to have activated :effect{code="HAG_S_BANE"} multiple times (which is number of rounds in channeling status, up to **4** times).
+    * Enemy will be considered to have activated :effect{param="hag-s-bane"} multiple times (which is number of rounds in channeling status, up to **4** times).
     * When there is no more Moxie, end channeling status with Follow-up Attack.
 
     You can see the effect table below:
@@ -244,30 +244,30 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     #### Operate / Rotation
 
-    * Enemy should have at least **4** :effect{code="POISON"} before casting Willow skills
-    * Use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hag's Advice]*</CharacterSkillTooltip> for stack up :effect{code="HAG_S_BANE"}, if you have Tuesday, use Tuesday Ultimate to secure :effect{code="HAG_S_BANE"} stacks, after that use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Hag's Gratitude]*</CharacterSkillTooltip> to deal DMG.
+    * Enemy should have at least **4** :effect{param="poison"} before casting Willow skills
+    * Use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Hag's Advice]*</CharacterSkillTooltip> for stack up :effect{param="hag-s-bane"}, if you have Tuesday, use Tuesday Ultimate to secure :effect{param="hag-s-bane"} stacks, after that use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Hag's Gratitude]*</CharacterSkillTooltip> to deal DMG.
 
     <br />
 
     <div class="flex flex-col md:flex-row md:flex-wrap gap-4 justify-center items-center">
       <div class="flex-1 step-arrow">
-        <div class="mt-1 text-center">Stacking up :effect{code="POISON"} by other allies</div>
+        <div class="mt-1 text-center">Stacking up :effect{param="poison"} by other allies</div>
       </div>
 
       <div class="flex-1 step-arrow">
         <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Cast this incantation to build up :effect{code="HAG_S_BANE"} up to 10.</div>
+        <div class="mt-1 text-center">Cast this incantation to build up :effect{param="hag-s-bane"} up to 10.</div>
       </div>
 
       <div class="flex-1 step-arrow">
-        <div class="mt-1 text-center">If you have Tuesday, use Tuesday Ultimate to maintain :effect{code="HAG_S_BANE"} stacks</div>
+        <div class="mt-1 text-center">If you have Tuesday, use Tuesday Ultimate to maintain :effect{param="hag-s-bane"} stacks</div>
       </div>
 
       <div class="flex-1">
         <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">When has 10 :effect{code="HAG_S_BANE"}, use this to deal DMG</div>
+        <div class="mt-1 text-center">When has 10 :effect{param="hag-s-bane"}, use this to deal DMG</div>
       </div>
 
       <div class="flex-1">

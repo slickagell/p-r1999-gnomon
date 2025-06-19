@@ -31,21 +31,21 @@ import data from "@data/reveries-in-the-rain/zone/230m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Ephemeral Dawn</span>
 
-          When taking fatal damage, restores **100%** of Max HP and gain 1 stack of :effect{code="FROM_THE_GRAVE"}, enter the :effect{code="DAZE"} state for 1 round.
+          When taking fatal damage, restores **100%** of Max HP and gain 1 stack of :effect{code="FROM_THE_GRAVE"}, enter the :effect{param="daze"} state for 1 round.
 
           <span class="passive-title">Silent Vengeance</span>
 
-          At the end of the round, gains 2 stacks of :effect{code="BLOODY_HUNT"}. If not attacked this round, gains an additional 2 Moxie and 1 stack of :effect{code="ROUSING_MORALE"}.
+          At the end of the round, gains 2 stacks of :effect{code="BLOODY_HUNT"}. If not attacked this round, gains an additional 2 Moxie and 1 stack of :effect{param="rousing-morale"}.
 
           <span class="passive-title">Rotten Meat Block</span>
 
-          After casting an ultimate, enter the :effect{code="TAUNT"} status for 1 round; after attacking while in the :effect{code="TAUNT"} status, inflict :effect{code="NASTY_WOUND"} on the targets for 1 round.
+          After casting an ultimate, enter the :effect{param="taunt"} status for 1 round; after attacking while in the :effect{param="taunt"} status, inflict :effect{param="nasty-wound"} on the targets for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">The Butcher's Nightmare</span>
 
-          When attacked, the Butcher gains 1 Moxie and a stack of :effect{code="ROUSING_MORALE"}. Once defeated, the Butcher leaves the battlefield.
+          When attacked, the Butcher gains 1 Moxie and a stack of :effect{param="rousing-morale"}. Once defeated, the Butcher leaves the battlefield.
 
           <span class="passive-title">"No Survivors"</span>
 
@@ -55,11 +55,11 @@ import data from "@data/reveries-in-the-rain/zone/230m.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{param="bleed"} status for 1 round on the target hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 2 rounds on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{param="bleed"} status for 2 rounds on the target hit.
         </div>
       </Fragment>
 
@@ -87,7 +87,7 @@ import data from "@data/reveries-in-the-rain/zone/230m.json";
 
   <Fragment slot="stage-info-content">
     * There are **2** enemies, *Butcher* and *Bubble*, you just need to defeat *Bubble* to pass the stage.
-    * After Butcher cast Ultimate, he will in :effect{code="TAUNT"} status for 1 round.
+    * After Butcher cast Ultimate, he will in :effect{param="taunt"} status for 1 round.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
@@ -97,7 +97,7 @@ import data from "@data/reveries-in-the-rain/zone/230m.json";
   <Fragment slot="strategy-and-tips-content">
     * **Focus** DMG on *Bubble*.
     * *Butcher* can make a significant amount of DMG to our allies, so allies need to be sustained well to survive.
-    * When *Butcher* is in :effect{code="TAUNT"} status, limit the attacks to enemies and focus on preparing for dealing DMG in the next round. Then in the next round, perform Burst DMG on *Bubble*.
+    * When *Butcher* is in :effect{param="taunt"} status, limit the attacks to enemies and focus on preparing for dealing DMG in the next round. Then in the next round, perform Burst DMG on *Bubble*.
     * Repeat this process until *Bubble* is dead.
     * You can choose **any** Myth Manifests based on your team.
   </Fragment>

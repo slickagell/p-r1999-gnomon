@@ -30,7 +30,7 @@ import data from "@data/reveries-in-the-rain/zone/210m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Teething</span>
 
-          Every 2 rounds, at the start of the round, gains 1 stack of :effect{code="STURDINESS"}. When there are other allies on the battlefield, gains 1 additional stack of :effect{code="STURDINESS"}.
+          Every 2 rounds, at the start of the round, gains 1 stack of :effect{param="sturdiness"}. When there are other allies on the battlefield, gains 1 additional stack of :effect{param="sturdiness"}.
 
           <span class="passive-title">Manic Chase</span>
 
@@ -60,27 +60,27 @@ import data from "@data/reveries-in-the-rain/zone/210m.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="scared"} on the target.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="scared"} on the target.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{param="blind"} status for 1 round on the target hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{param="blind"} status for 1 round on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{param="blind"} status for 1 round on the target hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{code="BLIND"} status for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **250%** Mental DMG. Inflicts the :effect{param="blind"} status for 1 round on the target hit.
         </div>
       </Fragment>
 

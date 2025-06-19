@@ -67,15 +67,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Nihilism ends here.">
-      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, deals **50%** more Mental DMG.
+      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{param="clarified-topic"} status, deals **50%** more Mental DMG.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="Nihilism ends here. No one is running away from the ultimate question this time.">
-      1-target attack. Deals **300%** Mental DMG. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, deals **75%** more Mental DMG.
+      1-target attack. Deals **300%** Mental DMG. If the caster is in :effect{param="clarified-topic"} status, deals **75%** more Mental DMG.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="Nihilism ends here. Get your bag packed, even though we own nothing but countless questions.">
-      1-target attack. Deals **500%** Mental DMG. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, deals **125%** more Mental DMG.
+      1-target attack. Deals **500%** Mental DMG. If the caster is in :effect{param="clarified-topic"} status, deals **125%** more Mental DMG.
     </CardInfo>
   </Fragment>
 
@@ -85,15 +85,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="A smooth, spherical thing.">
-      Mass attack. Deals **150%** Mental DMG to 2 enemies. If the caster is in :effect{code="CLARIFIED_TOPIC"} state, this attack has **+25%** Penetration Rate.
+      Mass attack. Deals **150%** Mental DMG to 2 enemies. If the caster is in :effect{param="clarified-topic"} state, this attack has **+25%** Penetration Rate.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="A smooth, spherical thing. He once questioned himself.">
-      Mass attack. Deals **150%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*. If the caster is in :effect{code="CLARIFIED_TOPIC"} state, this attack has **+25%** Penetration Rate.
+      Mass attack. Deals **150%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*. If the caster is in :effect{param="clarified-topic"} state, this attack has **+25%** Penetration Rate.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="A smooth, spherical thing. He struggled his way out of the swamp of tricky thoughts and let his five senses lead his way.">
-      Mass attack. Deals **300%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*. If the caster is in :effect{code="CLARIFIED_TOPIC"} state, this attack has **+25%** Penetration Rate.
+      Mass attack. Deals **300%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]*. If the caster is in :effect{param="clarified-topic"} state, this attack has **+25%** Penetration Rate.
     </CardInfo>
   </Fragment>
 
@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="At least I have never wasted one day in this life.">
-      1-target attack. Deals **500%** Mental DMG. After that, DMG Dealt **+30%** for all allies for 2 rounds. If the caster is in :effect{code="CLARIFIED_TOPIC"} status, the duration of this DMG Dealt buff +1 round.
+      1-target attack. Deals **500%** Mental DMG. After that, DMG Dealt **+30%** for all allies for 2 rounds. If the caster is in :effect{param="clarified-topic"} status, the duration of this DMG Dealt buff +1 round.
     </CardInfo>
   </Fragment>
 
@@ -116,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    At the end of the round, if having not actively casted an incantation for the round, gain 1 stack of :effect{code="CLARIFIED_TOPIC"}. For every :effect{code="CLARIFIED_TOPIC"} triggered, gain Moxie +1.
+    At the end of the round, if having not actively casted an incantation for the round, gain 1 stack of :effect{param="clarified-topic"}. For every :effect{param="clarified-topic"} triggered, gain Moxie +1.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,7 +124,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Gains 2 stacks of :effect{code="CLARIFIED_TOPIC"} immediately upon entering battle.
+    Gains 2 stacks of :effect{param="clarified-topic"} immediately upon entering battle.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -140,7 +140,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Nihilism Abuse*'s effect changes to: at **1/2/3** stars, if the caster is in :effect{code="CLARIFIED_TOPIC"} status, additional Mental DMG dealt is increased to **80/120/200%**.
+    *Nihilism Abuse*'s effect changes to: at **1/2/3** stars, if the caster is in :effect{param="clarified-topic"} status, additional Mental DMG dealt is increased to **80/120/200%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -171,11 +171,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      After casting *\[Hedonism Implement]*, grant an additional **1** stack of :effect{code="ROUSING_MORALE"} to the adjacent ally in front.
+      After casting *\[Hedonism Implement]*, grant an additional **1** stack of :effect{param="rousing-morale"} to the adjacent ally in front.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      At the start of the round, gain **1** stack of :effect{code="CLARIFIED_TOPIC"}.
+      At the start of the round, gain **1** stack of :effect{param="clarified-topic"}.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 

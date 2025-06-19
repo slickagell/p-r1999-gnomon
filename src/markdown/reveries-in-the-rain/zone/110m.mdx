@@ -100,15 +100,15 @@ import data from "@data/reveries-in-the-rain/zone/110m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts :effect{code="SILENCE"} for 1 round on the targets hit.
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts :effect{param="silence"} for 1 round on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          1-target attack. Deals **350%** Mental DMG. Inflicts :effect{code="DAZE"} for 1 round on the target hit.
+          1-target attack. Deals **350%** Mental DMG. Inflicts :effect{param="daze"} for 1 round on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          1-target attack. Deals **350%** Mental DMG. Inflicts :effect{code="DAZE"} for 1 round on the target hit.
+          1-target attack. Deals **350%** Mental DMG. Inflicts :effect{param="daze"} for 1 round on the target hit.
         </div>
       </Fragment>
     </EnemyInfo>

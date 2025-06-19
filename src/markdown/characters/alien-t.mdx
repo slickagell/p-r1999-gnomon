@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="COUNTER" note="It claims to harbor no ill intent.">
-      Self counter. Enter :effect{code="TAUNT"} and DMG Taken **-40%** for 1 round.
+      Self counter. Enter :effect{param="taunt"} and DMG Taken **-40%** for 1 round.
     </CardInfo>
 
     <CardInfo star="2" type="COUNTER" note="It claims to harbor no ill intent, it just...">
-      Self counter. Enter :effect{code="TAUNT"} and DMG Taken **-40%** for 2 round.
+      Self counter. Enter :effect{param="taunt"} and DMG Taken **-40%** for 2 round.
     </CardInfo>
 
     <CardInfo star="3" type="COUNTER" note="It claims to harbor no ill intent, it just finds it hard to control itself.">
-      Self counter. Enter :effect{code="TAUNT"} and DMG Taken **-60%** for 3 round.
+      Self counter. Enter :effect{param="taunt"} and DMG Taken **-60%** for 3 round.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="DEBUFF" note="Those hiding secrets tend to talk in their sleep or think that they're still in a dream.">
-      Mass attack. Deals **200%** Reality DMG and inflicts 1 round of :effect{code="DISARM"} and :effect{code="SILENCE"} statuses on all enemies.
+      Mass attack. Deals **200%** Reality DMG and inflicts 1 round of :effect{param="disarm"} and :effect{param="silence"} statuses on all enemies.
     </CardInfo>
   </Fragment>
 
@@ -115,7 +115,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{code="TAUNT"} status and gains a :effect{code="SHIELD"} with (aliEn T's Reality DEF x**300%**) HP for 2 rounds (only triggers 1 time).
+    When the caster enters battle, enters :effect{param="taunt"} status and gains a :effect{param="shield"} with (aliEn T's Reality DEF x**300%**) HP for 2 rounds (only triggers 1 time).
   </Fragment>
 
   <Fragment slot="insight-2-info">

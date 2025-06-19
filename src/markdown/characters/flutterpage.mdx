@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Your messenger at the window.">
-      Mass attack. Deals **150%** Reality DMG to 2 enemies; grants 2 stacks of :effect{code="GUST"} to self for 3 rounds.
+      Mass attack. Deals **150%** Reality DMG to 2 enemies; grants 2 stacks of :effect{param="gust"} to self for 3 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="Your messenger at the window, greeting you in the morning breeze.">
-      Mass attack. Deals **225%** Reality DMG to 2 enemies; grants 2 stacks of :effect{code="GUST"} to self for 3 rounds.
+      Mass attack. Deals **225%** Reality DMG to 2 enemies; grants 2 stacks of :effect{param="gust"} to self for 3 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="Your messenger at the window, greeting you in the morning breeze. Wake up, or you'll be late!">
-      Mass attack. Deals **575%** Reality DMG to 2 enemies; grants 2 stacks of :effect{code="GUST"} to self for 3 rounds.
+      Mass attack. Deals **575%** Reality DMG to 2 enemies; grants 2 stacks of :effect{param="gust"} to self for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="An excellent tool for landing.">
-      1-target attack. Deals **100%** Reality DMG and grants :effect{code="CONTINUOUS_ACTION_I"} to self for 1 round.
+      1-target attack. Deals **100%** Reality DMG and grants :effect{param="continuous-action-i"} to self for 1 round.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="An excellent tool for landing; the larger it is, the slower the descent.">
-      1-target attack. Deals **150%** Reality DMG and grants :effect{code="CONTINUOUS_ACTION_I"} to self for 1 round.
+      1-target attack. Deals **150%** Reality DMG and grants :effect{param="continuous-action-i"} to self for 1 round.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="An excellent tool for landing, it catches the wind and is freshly cleaned and ready for flight.">
-      1-target attack. Deals **250%** Reality DMG and grants :effect{code="CONTINUOUS_ACTION_I"} to self for 1 round.
+      1-target attack. Deals **250%** Reality DMG and grants :effect{param="continuous-action-i"} to self for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="CHANNEL" note="Why don't any of you want to fly?">
-      Self channel. Recovers all Eureka, converts all own incantations into :effect{code="REGARDS_FROM_THE_SKY"}, and casts them all if able; enters the :effect{code="A_DREAM_THAT_NEVER_GROWS_OLD"} status for 3 rounds, cannot gain Moxie during channeling.
+      Self channel. Recovers all Eureka, converts all own incantations into :effect{param="regards-from-the-sky"}, and casts them all if able; enters the :effect{param="a-dream-that-never-grows-old"} status for 3 rounds, cannot gain Moxie during channeling.
     </CardInfo>
   </Fragment>
 
@@ -119,13 +119,13 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    After any ally takes an action, Flutterpage gains 1 stack of :effect{code="GUST"} for 3 rounds. At the start of the round, Flutterpage gains a Force Field based on the stacks of :effect{code="GUST"} she has, while removing other Force Fields:
+    After any ally takes an action, Flutterpage gains 1 stack of :effect{param="gust"} for 3 rounds. At the start of the round, Flutterpage gains a Force Field based on the stacks of :effect{param="gust"} she has, while removing other Force Fields:
 
-    At 5 or more stacks, gain :effect{code="PAPER_PARADE"}.
+    At 5 or more stacks, gain :effect{param="paper-parade"}.
 
-    At 15 or more stacks, gain :effect{code="WAVE_OF_SHEETS"}.
+    At 15 or more stacks, gain :effect{param="wave-of-sheets"}.
 
-    At 25 or more stacks, gain :effect{code="ADIEU_MOTHER_EARTH"}.
+    At 25 or more stacks, gain :effect{param="adieu-mother-earth"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -133,7 +133,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Max Eureka +2. After attacking, grant Eureka +2 to self. When entering battle, grant Moxie +2 to self, and gain 10 stacks of :effect{code="GUST"} for 2 rounds.
+    Max Eureka +2. After attacking, grant Eureka +2 to self. When entering battle, grant Moxie +2 to self, and gain 10 stacks of :effect{param="gust"} for 2 rounds.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -141,23 +141,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Cotton Kite*: At incantation rank **1/2/3**, Reality DMG is increased to **150%/225%/575%**. The duration of :effect{code="CONTINUOUS_ACTION_I"} is increased to **2** rounds.
+    *Cotton Kite*: At incantation rank **1/2/3**, Reality DMG is increased to **150%/225%/575%**. The duration of :effect{param="continuous-action-i"} is increased to **2** rounds.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *"I Can Fly"*: :effect{code="PAPER_PARADE"}, :effect{code="WAVE_OF_SHEETS"}, and :effect{code="ADIEU_MOTHER_EARTH"}'s added damage is increased to **18%/18%** when attacking and to **18/18%** when performing an extra action.
+    *"I Can Fly"*: :effect{param="paper-parade"}, :effect{param="wave-of-sheets"}, and :effect{param="adieu-mother-earth"}'s added damage is increased to **18%/18%** when attacking and to **18/18%** when performing an extra action.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *"I Can Fly"*: When entering battle, the Moxie granted to self is increased to **3**, and the stacks of :effect{code="GUST"} gained is increased to **20**. For each stack of :effect{code="GUST"} Flutterpage has, the DMG Dealt and Genesis DMG. granted by :effect{code="WAVE_OF_SHEETS"} and :effect{code="ADIEU_MOTHER_EARTH"} are increased to **2.5%**.
+    *"I Can Fly"*: When entering battle, the Moxie granted to self is increased to **3**, and the stacks of :effect{param="gust"} gained is increased to **20**. For each stack of :effect{param="gust"} Flutterpage has, the DMG Dealt and Genesis DMG. granted by :effect{param="wave-of-sheets"} and :effect{param="adieu-mother-earth"} are increased to **2.5%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *"I Can Fly"*: :effect{code="PAPER_PARADE"}, :effect{code="WAVE_OF_SHEETS"}, and :effect{code="ADIEU_MOTHER_EARTH"}'s added damage is increased to **23%/23%** when attacking and to **23/23%** when performing an extra action.
+    *"I Can Fly"*: :effect{param="paper-parade"}, :effect{param="wave-of-sheets"}, and :effect{param="adieu-mother-earth"}'s added damage is increased to **23%/23%** when attacking and to **23/23%** when performing an extra action.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *A Dream That Never Grows Old*: :effect{code="REGARDS_FROM_THE_SKY"}'s Reality DMG is increased to **60%/60%**. When :effect{code="A_DREAM_THAT_NEVER_GROWS_OLD"}'s channel status ends, the Moxie granted to self is increased to **2/3/4**.
+    *A Dream That Never Grows Old*: :effect{param="regards-from-the-sky"}'s Reality DMG is increased to **60%/60%**. When :effect{param="a-dream-that-never-grows-old"}'s channel status ends, the Moxie granted to self is increased to **2/3/4**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -176,17 +176,17 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="ON_THE_HAND_OF_TIME" />
+      <PsychubeIcon param="on-the-hand-of-time" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="SAME_OLD_STORY" />
+      <PsychubeIcon param="same-old-story" />
 
-      <PsychubeIcon code="TRANSCENDENT_LOVE" />
+      <PsychubeIcon param="transcendent-love" />
 
-      <PsychubeIcon code="KNOCK_ON_THE_DOOR" />
+      <PsychubeIcon param="knock-on-the-door" />
     </div>
   </Fragment>
 
@@ -203,29 +203,29 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-breakdown-content">
-    Flutterpage is a character that buff Follow-up attack (FuA) characters through the :effect{code="GUST"} effect.
+    Flutterpage is a character that buff Follow-up attack (FuA) characters through the :effect{param="gust"} effect.
 
-    :effect{code="GUST"} can be gained by:
+    :effect{param="gust"} can be gained by:
 
     * Other allies actions (active or FuA) will grant **1** stack last **3** rounds.
     * Casting <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Knock, Knock]*</CharacterSkillTooltip> will grant **2** stacks last **3** rounds.
-    * **10** stacks of :effect{code="GUST"} last **2** rounds when entering battle when updated to Insight 3
+    * **10** stacks of :effect{param="gust"} last **2** rounds when entering battle when updated to Insight 3
 
     <br />
 
-    At the beginning of each round, based on the stacks of :effect{code="GUST"} Flutterpage has, she will grant a :effect{code="FORCE_FIELD"} that benefits all allies and the added Reality DMG is considered dealt by Flutterpage herself:
+    At the beginning of each round, based on the stacks of :effect{param="gust"} Flutterpage has, she will grant a :effect{param="force-field"} that benefits all allies and the added Reality DMG is considered dealt by Flutterpage herself:
 
-    * Up to **5** stacks or more: gain :effect{code="PAPER_PARADE"}.
-    * Up to **15** stacks or more: gain :effect{code="WAVE_OF_SHEETS"}.
-    * Up to **25** stacks or more: gain :effect{code="ADIEU_MOTHER_EARTH"}.
+    * Up to **5** stacks or more: gain :effect{param="paper-parade"}.
+    * Up to **15** stacks or more: gain :effect{param="wave-of-sheets"}.
+    * Up to **25** stacks or more: gain :effect{param="adieu-mother-earth"}.
 
-    To maintain :effect{code="FORCE_FIELD"} level 3, it is recommended to make allies **do extra actions 2-3 times per round**.
+    To maintain :effect{param="force-field"} level 3, it is recommended to make allies **do extra actions 2-3 times per round**.
 
     <br />
 
     Flutterpage has **8** Eureka in total.
 
-    :effect{code="FORCE_FIELD"} at level 2 and above doesn't need to consume Eureka and still benefits all allies but will lose some DMG.
+    :effect{param="force-field"} at level 2 and above doesn't need to consume Eureka and still benefits all allies but will lose some DMG.
 
     With Insight 3, when Flutterpage attacks will grant 2 Eureka to self.
 
@@ -233,21 +233,21 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     <br />
 
-    <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Cotton Kite]*</CharacterSkillTooltip> is a skill that grant a :effect{code="CONTINUOUS_ACTION_I"} effect for **1** round, which takes effect in the following round.
+    <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Cotton Kite]*</CharacterSkillTooltip> is a skill that grant a :effect{param="continuous-action-i"} effect for **1** round, which takes effect in the following round.
 
-    So prioritize to use this skill to gain Moxie and :effect{code="GUST"} stacks for Flutterpage.
+    So prioritize to use this skill to gain Moxie and :effect{param="gust"} stacks for Flutterpage.
 
-    :effect{code="CONTINUOUS_ACTION_I"} effect is not stackable so **don't use it twice in a round** and **don't combine them** to 2 or 3 stars as it only increases Reality DMG.
+    :effect{param="continuous-action-i"} effect is not stackable so **don't use it twice in a round** and **don't combine them** to 2 or 3 stars as it only increases Reality DMG.
 
     <br />
 
-    Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[A Dream That Never Grows Old]*</CharacterSkillTooltip> will recover all Eureka and **convert all incantations** into :effect{code="REGARDS_FROM_THE_SKY"} as a Follow-up Attack at the start of each round.
+    Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[A Dream That Never Grows Old]*</CharacterSkillTooltip> will recover all Eureka and **convert all incantations** into :effect{param="regards-from-the-sky"} as a Follow-up Attack at the start of each round.
 
-    At the end of each round, Flutterpage will cast **1** :effect{code="REGARDS_FROM_THE_SKY"} additionally.
+    At the end of each round, Flutterpage will cast **1** :effect{param="regards-from-the-sky"} additionally.
 
-    Since this will convert all incantations into :effect{code="REGARDS_FROM_THE_SKY"}, despite 1/2/3 stars, so it **not recommended to combine incantations** of Flutterpage.
+    Since this will convert all incantations into :effect{param="regards-from-the-sky"}, despite 1/2/3 stars, so it **not recommended to combine incantations** of Flutterpage.
 
-    Moxie will not be gained during the Ultimate channeling. At the end of channeling, Moxie will be recovered based on the current level of :effect{code="FORCE_FIELD"}
+    Moxie will not be gained during the Ultimate channeling. At the end of channeling, Moxie will be recovered based on the current level of :effect{param="force-field"}
 
     <br />
 

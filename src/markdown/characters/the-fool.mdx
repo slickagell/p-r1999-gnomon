@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="COUNTER" note="He controls your emotions.">
-      Self counter. Enters :effect{code="TAUNT"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{code="CORRODE"}:when a round ends, takes (Target's Current HP x**15%**) Genesis DMG, capped at **15%** of Caster's Max HP.
+      Self counter. Enters :effect{param="taunt"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{param="corrode"}:when a round ends, takes (Target's Current HP x**15%**) Genesis DMG, capped at **15%** of Caster's Max HP.
     </CardInfo>
 
     <CardInfo star="2" type="COUNTER" note="He is the Fool on the stage and he controls your emotions.">
-      Self counter. Enters :effect{code="TAUNT"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{code="CORRODE"}: when a round ends, takes (Target's Current HP x**25%**) Genesis DMG, capped at **25%** of Caster's Max HP.
+      Self counter. Enters :effect{param="taunt"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{param="corrode"}: when a round ends, takes (Target's Current HP x**25%**) Genesis DMG, capped at **25%** of Caster's Max HP.
     </CardInfo>
 
     <CardInfo star="3" type="COUNTER" note="He is the Fool on the stage and he controls your emotions. And there's more than one of them.">
-      Self counter. Enters :effect{code="TAUNT"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{code="CORRODE"}: when a round ends, takes (Target's Current HP x**35%**) Genesis DMG, capped at **35%** of Caster's Max HP.
+      Self counter. Enters :effect{param="taunt"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{param="corrode"}: when a round ends, takes (Target's Current HP x**35%**) Genesis DMG, capped at **35%** of Caster's Max HP.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="He hates it when people barge on to the stage.">
-      Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in :effect{code="CORRODE"} status, extends the status duration for 1 round.
+      Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in :effect{param="corrode"} status, extends the status duration for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -115,7 +115,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{code="FOOL_IN_THE_PLAY"} status for 2 rounds (only triggers 1 time).
+    When the caster enters battle, enters :effect{param="fool-in-the-play"} status for 2 rounds (only triggers 1 time).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -135,7 +135,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *The Fool*'s effect changes to: at **1/2** stars, :effect{code="CORRODE"} deals (current HP x**20/30%**) Genesis DMG.
+    *The Fool*'s effect changes to: at **1/2** stars, :effect{param="corrode"} deals (current HP x**20/30%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">

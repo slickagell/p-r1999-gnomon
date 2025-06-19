@@ -17,7 +17,7 @@ import data from "@data/reveries-in-the-rain/zone/130m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 3 rounds, a random character gets :effect{code="DISARM"} for 1 round.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 3 rounds, a random character gets :effect{param="disarm"} for 1 round.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -30,7 +30,7 @@ import data from "@data/reveries-in-the-rain/zone/130m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">A Low Whisper</span>
 
-          When the caster is attacked, inflicts the attacker 1 stack of :effect{code="ENCHANTED"} for 2 rounds. If the attacker is of the opposite gender, inflicts 1 stack of :effect{code="ENCHANTED"} for 2 rounds.
+          When the caster is attacked, inflicts the attacker 1 stack of :effect{param="enchanted"} for 2 rounds. If the attacker is of the opposite gender, inflicts 1 stack of :effect{param="enchanted"} for 2 rounds.
 
           <span class="passive-title">Charming Appeal</span>
 
@@ -48,7 +48,7 @@ import data from "@data/reveries-in-the-rain/zone/130m.json";
 
           <span class="passive-title">Blessing of Beauty</span>
 
-          At the end of the round, for each point of HP you have, grant 1 stack of :effect{code="ROUSING_MORALE"} to the ally with the highest ATK.
+          At the end of the round, for each point of HP you have, grant 1 stack of :effect{param="rousing-morale"} to the ally with the highest ATK.
 
           <span class="passive-title">Sweet Smile</span>
 
@@ -62,7 +62,7 @@ import data from "@data/reveries-in-the-rain/zone/130m.json";
 
           <span class="passive-title">Blessing of Beauty</span>
 
-          At the end of the round, for each point of HP you have, grant 1 stack of :effect{code="ROUSING_MORALE"} to the ally with the highest ATK.
+          At the end of the round, for each point of HP you have, grant 1 stack of :effect{param="rousing-morale"} to the ally with the highest ATK.
 
           <span class="passive-title">Gentle Kiss</span>
 
@@ -92,7 +92,7 @@ import data from "@data/reveries-in-the-rain/zone/130m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{code="DAZE"} for 1 round on the target hit.
+          1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{param="daze"} for 1 round on the target hit.
         </div>
       </Fragment>
     </EnemyInfo>

@@ -71,11 +71,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="He learned this dance where the snow melted, and is determined to teach it to you.">
-      1-target attack. Deals **250%** Reality DMG and grants the caster 1 stack of :effect{code="NATURE_S_BLESSING"}.
+      1-target attack. Deals **250%** Reality DMG and grants the caster 1 stack of :effect{param="nature-s-blessing"}.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="He learned this dance where the snow melted, and is determined to teach it to you without reservation.">
-      1-target attack. Deals **450%** Reality DMG and grants the caster 1 stack of :effect{code="NATURE_S_BLESSING"}.
+      1-target attack. Deals **450%** Reality DMG and grants the caster 1 stack of :effect{param="nature-s-blessing"}.
     </CardInfo>
   </Fragment>
 
@@ -116,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    For each *\[Stats Down]* status on the target, the attack enjoys DMG Dealt **+8%** (Max: **24%**). When the caster enters battle, gains 2 stacks of :effect{code="NATURE_S_BLESSING"}.
+    For each *\[Stats Down]* status on the target, the attack enjoys DMG Dealt **+8%** (Max: **24%**). When the caster enters battle, gains 2 stacks of :effect{param="nature-s-blessing"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,7 +124,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    At the start of every 2 rounds, gains 1 stack of :effect{code="NATURE_S_BLESSING"}.
+    At the start of every 2 rounds, gains 1 stack of :effect{param="nature-s-blessing"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -132,7 +132,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Inheritance of Wisdom*'s effect changes to: when the caster enters battle, gains 3 additional stacks of :effect{code="NATURE_S_BLESSING"}.
+    *Inheritance of Wisdom*'s effect changes to: when the caster enters battle, gains 3 additional stacks of :effect{param="nature-s-blessing"}.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -167,19 +167,19 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      After another ally casts an ultimate, gain **2** stacks of :effect{code="RIPPLING_ENERGY"} for self.
+      After another ally casts an ultimate, gain **2** stacks of :effect{param="rippling-energy"} for self.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      After casting an ultimate, consume all stacks of :effect{code="RIPPLING_ENERGY"} if able; for every **2** stacks consumed, grant Moxie **+1** to a random ally.
+      After casting an ultimate, consume all stacks of :effect{param="rippling-energy"} if able; for every **2** stacks consumed, grant Moxie **+1** to a random ally.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      Whenever consuming :effect{code="RIPPLING_ENERGY"} to restore Moxie **+1** for an ally, grant **5** additional stacks of :effect{code="CEREMONIOUS"} to the target.
+      Whenever consuming :effect{param="rippling-energy"} to restore Moxie **+1** for an ally, grant **5** additional stacks of :effect{param="ceremonious"} to the target.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      After another ally casts an ultimate, gain an additional stack of :effect{code="RIPPLING_ENERGY"} for self; right before casting an ultimate, gain **2** stacks of :effect{code="RIPPLING_ENERGY"} for self.
+      After another ally casts an ultimate, gain an additional stack of :effect{param="rippling-energy"} for self; right before casting an ultimate, gain **2** stacks of :effect{param="rippling-energy"} for self.
     </div>
   </Fragment>
 

@@ -72,11 +72,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="The wind chases away visitors of the forest, but sometimes, it keeps them around.">
-      1-target attack. Deals **200%** Mental DMG. Inflicts :effect{code="PETRIFY"} status for 1 round on the target hit.
+      1-target attack. Deals **200%** Mental DMG. Inflicts :effect{param="petrify"} status for 1 round on the target hit.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="The wind chases away visitors of the forest, but sometimes, it keeps them around for long.">
-      1-target attack. Deals **300%** Mental DMG. Inflicts :effect{code="PETRIFY"} status for 2 rounds on the target hit.
+      1-target attack. Deals **300%** Mental DMG. Inflicts :effect{param="petrify"} status for 2 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -104,7 +104,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="DEBUFF" note="It grows in the lushest area of the forest.">
-      Mass attack. Deals **400%** Mental DMG to all enemies. On hitting the main target, inflicts :effect{code="PETRIFY"} on the main target for 1 round.
+      Mass attack. Deals **400%** Mental DMG to all enemies. On hitting the main target, inflicts :effect{param="petrify"} on the main target for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -176,7 +176,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      Enhances :effect{code="CIRCLE_OF_LIFE"} with extra effects: attacking enemies in the :effect{code="PETRIFY"} status does not remove the :effect{code="PETRIFY"} status, and gain an additional Penetration Rate **+25%** against targets in the :effect{code="PETRIFY"} status.
+      Enhances :effect{code="CIRCLE_OF_LIFE"} with extra effects: attacking enemies in the :effect{param="petrify"} status does not remove the :effect{param="petrify"} status, and gain an additional Penetration Rate **+25%** against targets in the :effect{param="petrify"} status.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 

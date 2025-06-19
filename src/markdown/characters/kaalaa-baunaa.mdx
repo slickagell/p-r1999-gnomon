@@ -66,15 +66,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="A technique known to very few scholars.">
-      1-target attack. Deals **180%** Mental DMG. After active casting, gains 1 :effect{code="SATURN"} that grants Penetration Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+      1-target attack. Deals **180%** Mental DMG. After active casting, gains 1 :effect{param="saturn"} that grants Penetration Rate **+6%** each. Up to 3 :effect{param="planet"} can be carried.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="A technique known to very few scholars. It hardly benefits academic research.">
-      1-target attack. Deals **270%** Mental DMG. After active casting, gains 2 :effect{code="SATURN"} that grants Penetration Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+      1-target attack. Deals **270%** Mental DMG. After active casting, gains 2 :effect{param="saturn"} that grants Penetration Rate **+6%** each. Up to 3 :effect{param="planet"} can be carried.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="A technique known to very few scholars. It hardly benefits academic research, but is extremely useful for debates.">
-      1-target attack. Deals **450%** Mental DMG. After active casting, gains 3 :effect{code="SATURN"} that grants Penetration Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+      1-target attack. Deals **450%** Mental DMG. After active casting, gains 3 :effect{param="saturn"} that grants Penetration Rate **+6%** each. Up to 3 :effect{param="planet"} can be carried.
     </CardInfo>
   </Fragment>
 
@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="It accompanied me for quite a while.">
-      Mass attack. Deals **135%** Mental DMG to 2 enemies. After active casting, gains 1 :effect{code="MARS"} that grants Leech Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+      Mass attack. Deals **135%** Mental DMG to 2 enemies. After active casting, gains 1 :effect{param="mars"} that grants Leech Rate **+6%** each. Up to 3 :effect{param="planet"} can be carried.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="It accompanied me for quite a while, from Banner to London.">
-      Mass attack. Deals **200%** Mental DMG to 2 enemies. After active casting, gains 2 :effect{code="MARS"} that grants Leech Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+      Mass attack. Deals **200%** Mental DMG to 2 enemies. After active casting, gains 2 :effect{param="mars"} that grants Leech Rate **+6%** each. Up to 3 :effect{param="planet"} can be carried.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="It accompanied me for quite a while, from night to day.">
-      Mass attack. Deals **335%** Mental DMG to 2 enemies. After active casting, gains 3 :effect{code="MARS"} that grants Leech Rate **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+      Mass attack. Deals **335%** Mental DMG to 2 enemies. After active casting, gains 3 :effect{param="mars"} that grants Leech Rate **+6%** each. Up to 3 :effect{param="planet"} can be carried.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="And so the planet rose, passed beyond the orbital plane, and sank into the intact sky.">
-      1-target attack. After removing all :effect{code="PLANET"}, deals **600%** Mental DMG and gains 2 :effect{code="FULL_MOON"} that grant Incantation Might **+6%** each. Up to 3 :effect{code="PLANET"} can be carried.
+      1-target attack. After removing all :effect{param="planet"}, deals **600%** Mental DMG and gains 2 :effect{param="full-moon"} that grant Incantation Might **+6%** each. Up to 3 :effect{param="planet"} can be carried.
     </CardInfo>
   </Fragment>
 
@@ -115,7 +115,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the :effect{code="PLANET"} is removed, gains 1 of the following effects based on the type of planet removed: :effect{code="SATURN_DIVINATION"}, :effect{code="MARS_DIVINATION"}, or :effect{code="FULL_MOON_DIVINATION"}.
+    When the :effect{param="planet"} is removed, gains 1 of the following effects based on the type of planet removed: :effect{param="saturn-divination"}, :effect{param="mars-divination"}, or :effect{param="full-moon-divination"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -123,13 +123,13 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After casting the Ultimate, gains 1 effect based on the :effect{code="PLANET"} with the largest number removed.
+    After casting the Ultimate, gains 1 effect based on the :effect{param="planet"} with the largest number removed.
 
-    When removing 1/2/3 :effect{code="SATURN"}: immediately casts 1/2/3-star *\[Enchanted Strike]* for a follow-up attack on the target.
+    When removing 1/2/3 :effect{param="saturn"}: immediately casts 1/2/3-star *\[Enchanted Strike]* for a follow-up attack on the target.
 
-    When removing 1/2/3 :effect{code="MARS"}: immediately casts 1/2/3-star *\[Mythical Meteors]* for a follow-up attack on the target.
+    When removing 1/2/3 :effect{param="mars"}: immediately casts 1/2/3-star *\[Mythical Meteors]* for a follow-up attack on the target.
 
-    When removing 1/2 :effect{code="FULL_MOON"}: the caster enters :effect{code="EMPOWER_INCANTATION_II"} status for 1/2 rounds.
+    When removing 1/2 :effect{param="full-moon"}: the caster enters :effect{param="empower-incantation-ii"} status for 1/2 rounds.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -137,23 +137,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Starbending*'s effect changes to: Up to 4 :effect{code="PLANET"} can be carried.
+    *Starbending*'s effect changes to: Up to 4 :effect{param="planet"} can be carried.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Ultimate Perfection*'s effect changes to: gains 3 :effect{code="FULL_MOON"}. After casting the Ultimate, if at least 3 :effect{code="FULL_MOON"} are removed, gains :effect{code="EMPOWER_INCANTATION_II"} status for 3 rounds.
+    *Ultimate Perfection*'s effect changes to: gains 3 :effect{param="full-moon"}. After casting the Ultimate, if at least 3 :effect{param="full-moon"} are removed, gains :effect{param="empower-incantation-ii"} status for 3 rounds.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Enchanted Strike*'s effect changes to: each :effect{code="SATURN"} grants Penetration Rate **+9%**. At 1/2/3 stars, deals **195/295/490%** Mental DMG.
+    *Enchanted Strike*'s effect changes to: each :effect{param="saturn"} grants Penetration Rate **+9%**. At 1/2/3 stars, deals **195/295/490%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Mythical Meteors*'s effect changes to: each :effect{code="MARS"} grants Leech Rate **+9%**. At 1/2/3 stars, deals **145/215/360%** Mental DMG.
+    *Mythical Meteors*'s effect changes to: each :effect{param="mars"} grants Leech Rate **+9%**. At 1/2/3 stars, deals **145/215/360%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Ultimate Perfection*'s effect changes to: gains 4 :effect{code="FULL_MOON"} that grants Incantation Might **+9%**.
+    *Ultimate Perfection*'s effect changes to: gains 4 :effect{param="full-moon"} that grants Incantation Might **+9%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave.">
-      Self counter. Grants :effect{code="TAUNT"}, Reality DEF **+25%**, and Mental DEF **+25%** to self for 2 rounds, then shifts 1 position backwards.
+      Self counter. Grants :effect{param="taunt"}, Reality DEF **+25%**, and Mental DEF **+25%** to self for 2 rounds, then shifts 1 position backwards.
     </CardInfo>
 
     <CardInfo star="2" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave, even if no deal is made.">
-      Self counter. Grants :effect{code="TAUNT"}, Reality DEF **+30%**, and Mental DEF **+30%** to self for 2 rounds, then shifts 2 position backwards.
+      Self counter. Grants :effect{param="taunt"}, Reality DEF **+30%**, and Mental DEF **+30%** to self for 2 rounds, then shifts 2 position backwards.
     </CardInfo>
 
     <CardInfo star="3" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave; 'no deal' simply means that a deal has not yet been made.">
-      Self counter. Grants :effect{code="TAUNT"}, Reality DEF **+35%**, and Mental DEF **+35%** to self for 3 rounds, then shifts 3 position backwards.
+      Self counter. Grants :effect{param="taunt"}, Reality DEF **+35%**, and Mental DEF **+35%** to self for 3 rounds, then shifts 3 position backwards.
     </CardInfo>
   </Fragment>
 
@@ -117,13 +117,13 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="insight-1-info">
     At the start of the round and after being shifted, gain a buff that matches the position:
 
-    Position #1: :effect{code="HOT_DEAL"};
+    Position #1: :effect{param="hot-deal"};
 
-    Position #2: :effect{code="PROMOTIONAL_PACKAGE"};
+    Position #2: :effect{param="promotional-package"};
 
-    Position #3: :effect{code="RISK_MANAGEMENT"};
+    Position #3: :effect{param="risk-management"};
 
-    Position #4: :effect{code="AFTER_SALES_SERVICE"}.
+    Position #4: :effect{param="after-sales-service"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -147,11 +147,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Roving Salesman*: :effect{code="PROMOTIONAL_PACKAGE"}'s DMG Bonus and DMG Reduction are increased to **25%**.
+    *Roving Salesman*: :effect{param="promotional-package"}'s DMG Bonus and DMG Reduction are increased to **25%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Roving Salesman*: :effect{code="HOT_DEAL"}'s Critical Rate and Critical DMG are increased to **30%**.
+    *Roving Salesman*: :effect{param="hot-deal"}'s Critical Rate and Critical DMG are increased to **30%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

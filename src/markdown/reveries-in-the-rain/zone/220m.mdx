@@ -43,7 +43,7 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Intense Vendetta</span>
 
-          When taking fatal damage for the first time, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* from self, and gains :effect{code="IMMUNITY"} this round, recovering **100%** of Max HP, then attacks a random enemy target 1 time.
+          When taking fatal damage for the first time, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* from self, and gains :effect{param="immunity"} this round, recovering **100%** of Max HP, then attacks a random enemy target 1 time.
 
           <span class="passive-title">Corrupted Gift II</span>
 
@@ -109,11 +109,11 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{param="scared"} on the targets.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{param="scared"} on the targets.
         </div>
       </Fragment>
 
@@ -127,7 +127,7 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies. After attacking, inflicts 2 stacks of :effect{code="SCARED"} on the targets.
+          Mass attack. Deals **300%** Mental DMG to all enemies. After attacking, inflicts 2 stacks of :effect{param="scared"} on the targets.
         </div>
       </Fragment>
     </EnemyInfo>

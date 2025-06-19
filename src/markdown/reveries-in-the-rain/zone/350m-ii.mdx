@@ -67,7 +67,7 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
 
           <span class="passive-title">Declaration of Revenge</span>
 
-          At the start of the round, if the Blunt Blade Butcher has died, inflicts 1 stack of :effect{code="BLEED"} on all enemies for 2 rounds; if the Ghostly Bride has died, inflicts 1 stack of :effect{code="POLLUTION"} on all enemies for 2 rounds; when another ally dies, AP +1 (triggers up to 2 times), and loses **20%** of Max HP.
+          At the start of the round, if the Blunt Blade Butcher has died, inflicts 1 stack of :effect{param="bleed"} on all enemies for 2 rounds; if the Ghostly Bride has died, inflicts 1 stack of :effect{code="POLLUTION"} on all enemies for 2 rounds; when another ally dies, AP +1 (triggers up to 2 times), and loses **20%** of Max HP.
 
           <span class="passive-title">Unusually Afraid</span>
 
@@ -91,13 +91,13 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Vow of Grudges</span>
 
-          When entering the battle, inflicts :effect{code="DAZE"} for 2 rounds, and :effect{code="CURSED_GRUDGE"} on the enemy with the highest ATK. When this unit dies, dispels :effect{code="CURSED_GRUDGE"} from enemies.
+          When entering the battle, inflicts :effect{param="daze"} for 2 rounds, and :effect{code="CURSED_GRUDGE"} on the enemy with the highest ATK. When this unit dies, dispels :effect{code="CURSED_GRUDGE"} from enemies.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Uncontainable Rage</span>
 
-          At the start of the round, gains 2 stacks of :effect{code="BLOODY_HUNT"}; at the end of every 2 rounds, enters the :effect{code="TAUNT"} status for 1 round.
+          At the start of the round, gains 2 stacks of :effect{code="BLOODY_HUNT"}; at the end of every 2 rounds, enters the :effect{param="taunt"} status for 1 round.
         </div>
       </Fragment>
 
@@ -135,11 +135,11 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{param="bleed"} status for 1 round on the target hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="BLEED"} status for 2 rounds on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{param="bleed"} status for 2 rounds on the target hit.
         </div>
       </Fragment>
 
@@ -195,7 +195,7 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '2'`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies; if Ghostly Bride and Blunt Blade Butcher have both died, resolves all :effect{code="POLLUTION"}, :effect{code="POISON"}, :effect{code="CORRODE"}, :effect{code="BLEED"}, and :effect{code="GASH"} statuses on all enemies after the attack.
+          Mass attack. Deals **300%** Reality DMG to all enemies; if Ghostly Bride and Blunt Blade Butcher have both died, resolves all :effect{code="POLLUTION"}, :effect{param="poison"}, :effect{param="corrode"}, :effect{param="bleed"}, and :effect{code="GASH"} statuses on all enemies after the attack.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
@@ -203,7 +203,7 @@ import data from "@data/reveries-in-the-rain/zone/350m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies and inflicts :effect{code="SEAL"} on the main target for 2 rounds.
+          Mass attack. Deals **300%** Mental DMG to all enemies and inflicts :effect{param="seal"} on the main target for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active) && activePhase === '1'`}>

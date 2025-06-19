@@ -86,15 +86,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="Reshoots are an indispensable part of art.">
-      Mass attack. Deals **120%** Mental DMG to 2 enemies; after attacking, gains 4 stacks of :effect{code="GENIUS_IDEA"} for self; this attack triggers the added status effects from :effect{code="SPOTLIGHT"} an additional 1 time.
+      Mass attack. Deals **120%** Mental DMG to 2 enemies; after attacking, gains 4 stacks of :effect{param="genius-idea"} for self; this attack triggers the added status effects from :effect{param="spotlight"} an additional 1 time.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="Reshoots are an indispensable part of art—she'd do as many as 48 takes if needed.">
-      Mass attack. Deals **180%** Mental DMG to 2 enemies; after attacking, gains 5 stacks of :effect{code="GENIUS_IDEA"} for self; this attack triggers the added status effects from :effect{code="SPOTLIGHT"} an additional 2 times.
+      Mass attack. Deals **180%** Mental DMG to 2 enemies; after attacking, gains 5 stacks of :effect{param="genius-idea"} for self; this attack triggers the added status effects from :effect{param="spotlight"} an additional 2 times.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="Reshoots are an indispensable part of art—she'd do as many as 48 takes if needed, and you'd better not question her.">
-      Mass attack. Deals **300%** Mental DMG to 2 enemies; after attacking, gains 6 stacks of :effect{code="GENIUS_IDEA"} for self; this attack triggers the added status effects from :effect{code="SPOTLIGHT"} an additional 3 times.
+      Mass attack. Deals **300%** Mental DMG to 2 enemies; after attacking, gains 6 stacks of :effect{param="genius-idea"} for self; this attack triggers the added status effects from :effect{param="spotlight"} an additional 3 times.
     </CardInfo>
   </Fragment>
 
@@ -104,7 +104,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="A shot of immeasurable worth, captured in a fleeting minute.">
-      Mass attack. Deals **450%** Mental DMG to all enemies. For every 1 type/stack of *\[Neg Status]* effect on a target, this attack gains Mental DMG **+100%**/Penetration Rate **+3%** against that target, up to a maximum of Mental DMG **+500%**/Penetration Rate **+30%**. For every 1 stack of :effect{code="GENIUS_IDEA"} on Noire, she has a **6%** chance to automatically recast this skill, with an additional **+40%** chance at 8 stacks of :effect{code="GENIUS_IDEA"}; whenever this skill is recasted in this way, 5 stacks of :effect{code="GENIUS_IDEA"} are consumed.
+      Mass attack. Deals **450%** Mental DMG to all enemies. For every 1 type/stack of *\[Neg Status]* effect on a target, this attack gains Mental DMG **+100%**/Penetration Rate **+3%** against that target, up to a maximum of Mental DMG **+500%**/Penetration Rate **+30%**. For every 1 stack of :effect{param="genius-idea"} on Noire, she has a **6%** chance to automatically recast this skill, with an additional **+40%** chance at 8 stacks of :effect{param="genius-idea"}; whenever this skill is recasted in this way, 5 stacks of :effect{param="genius-idea"} are consumed.
     </CardInfo>
   </Fragment>
 
@@ -117,7 +117,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    At the start of the round, inflicts :effect{code="SPOTLIGHT"} on the enemy with the highest current HP percentage for 1 round.
+    At the start of the round, inflicts :effect{param="spotlight"} on the enemy with the highest current HP percentage for 1 round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -125,7 +125,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Whenever another unit is inflicted with :effect{code="SPOTLIGHT"}, gain Moxie +1 for self, and gain 2 stacks of :effect{code="GENIUS_IDEA"} (stacks up to 10 times).
+    Whenever another unit is inflicted with :effect{param="spotlight"}, gain Moxie +1 for self, and gain 2 stacks of :effect{param="genius-idea"} (stacks up to 10 times).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -133,15 +133,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Climactic Moment*: For each stack of :effect{code="GENIUS_IDEA"} held, the chance to recast the ultimate is increased to **10%**.
+    *Climactic Moment*: For each stack of :effect{param="genius-idea"} held, the chance to recast the ultimate is increased to **10%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Climactic Moment*: When recasting the ultimate, the number of stacks of :effect{code="GENIUS_IDEA"} consumed is decreased to **4**.
+    *Climactic Moment*: When recasting the ultimate, the number of stacks of :effect{param="genius-idea"} consumed is decreased to **4**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Miniature Set*: :effect{code="GENIUS_IDEA"}'s stack limit is increased to **12**.
+    *Miniature Set*: :effect{param="genius-idea"}'s stack limit is increased to **12**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -168,17 +168,17 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="REHEARSAL_OF_DREAMS" />
+      <PsychubeIcon param="rehearsal-of-dreams" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="BALANCE_PLEASE" />
+      <PsychubeIcon param="balance-please" />
 
-      <PsychubeIcon code="ANOTHER_STORY" />
+      <PsychubeIcon param="another-story" />
 
-      <PsychubeIcon code="LUXURIOUS_LEISURE" />
+      <PsychubeIcon param="luxurious-leisure" />
     </div>
   </Fragment>
 

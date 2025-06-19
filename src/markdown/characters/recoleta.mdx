@@ -68,15 +68,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Keep writing.">
-      1-target attack. Deals **100%** Reality DMG; after attacking, inflicts 2 stacks of :effect{code="PASSION_DRAIN"} on the target.
+      1-target attack. Deals **100%** Reality DMG; after attacking, inflicts 2 stacks of :effect{param="passion-drain"} on the target.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="Keep writing what you observed amidst the gray snowfields and green grapevines.">
-      1-target attack. Deals **150%** Reality DMG; after attacking, inflicts 2 stacks of :effect{code="PASSION_DRAIN"} on the target.
+      1-target attack. Deals **150%** Reality DMG; after attacking, inflicts 2 stacks of :effect{param="passion-drain"} on the target.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="Keep writing what you've witnessed in the blend of illusion and reality on that land.">
-      1-target attack. Deals **250%** Reality DMG; after attacking, inflicts 2 stacks of :effect{code="PASSION_DRAIN"} on the target.
+      1-target attack. Deals **250%** Reality DMG; after attacking, inflicts 2 stacks of :effect{param="passion-drain"} on the target.
     </CardInfo>
   </Fragment>
 
@@ -86,15 +86,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="A pen is no different from a sword.">
-      Mass attack. Deals **120%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} to self; otherwise, grant 5 stacks of :effect{code="ENSEMBLE_NARRATIVE"} to self.
+      Mass attack. Deals **120%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{param="monomythic-narrative"} to self; otherwise, grant 5 stacks of :effect{param="ensemble-narrative"} to self.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="A pen is no different from a sword—they are both equally sharp, and equally fragile.">
-      Mass attack. Deals **180%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} to self; otherwise, grant 5 stacks of :effect{code="ENSEMBLE_NARRATIVE"} to self.
+      Mass attack. Deals **180%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{param="monomythic-narrative"} to self; otherwise, grant 5 stacks of :effect{param="ensemble-narrative"} to self.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="A pen is no different from a sword—sharpen it with a myriad of stories.">
-      Mass attack. Deals **300%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} to self; otherwise, grant 5 stacks of :effect{code="ENSEMBLE_NARRATIVE"} to self.
+      Mass attack. Deals **300%** Reality DMG to 2 enemies. If there's only 1 enemy target, grant 5 stacks of :effect{param="monomythic-narrative"} to self; otherwise, grant 5 stacks of :effect{param="ensemble-narrative"} to self.
     </CardInfo>
   </Fragment>
 
@@ -104,7 +104,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="A jumble of verses that defy understanding, unforgettable yet impossible to remember.">
-      Mass attack. Deals **450%** Reality DMG to all enemies and an additional **450%** Reality DMG to the main target. Consumes all stacks of :effect{code="MONOMYTHIC_NARRATIVE"} and :effect{code="ENSEMBLE_NARRATIVE"} on self to deal additional Reality DMG;
+      Mass attack. Deals **450%** Reality DMG to all enemies and an additional **450%** Reality DMG to the main target. Consumes all stacks of :effect{param="monomythic-narrative"} and :effect{param="ensemble-narrative"} on self to deal additional Reality DMG;
 
       When casting this ultimate, consume all Moxie on self. For each additional Moxie consumed, grant Ultimate Might **+3%** to this attack, and grant Moxie +1 to another ally with the lowest current Moxie;
 
@@ -139,7 +139,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   <Fragment slot="insight-1-info">
     Max Moxie +2 (The Moxie required to gain ultimates is still 5).
 
-    After another ally casts an ultimate, Recoleta gains Moxie +1; and for each point of Moxie consumed by that 1-target/mass ultimate, Recoleta gains 1 stack of :effect{code="MONOMYTHIC_NARRATIVE"}/:effect{code="ENSEMBLE_NARRATIVE"}.
+    After another ally casts an ultimate, Recoleta gains Moxie +1; and for each point of Moxie consumed by that 1-target/mass ultimate, Recoleta gains 1 stack of :effect{param="monomythic-narrative"}/:effect{param="ensemble-narrative"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -147,9 +147,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Max Moxie +3. When entering battle, gain Moxie +3 and 1 stack of :effect{code="PREPARATION_RECOLETA"}.
+    Max Moxie +3. When entering battle, gain Moxie +3 and 1 stack of :effect{param="preparation-recoleta"}.
 
-    After casting an ultimate, for every 10 stacks of :effect{code="MONOMYTHIC_NARRATIVE"} and or :effect{code="ENSEMBLE_NARRATIVE"} consumed, gain 1 stack of :effect{code="PREPARATION_RECOLETA"}; a maximum of 1 stack can be gained in this way.
+    After casting an ultimate, for every 10 stacks of :effect{param="monomythic-narrative"} and or :effect{param="ensemble-narrative"} consumed, gain 1 stack of :effect{param="preparation-recoleta"}; a maximum of 1 stack can be gained in this way.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -157,11 +157,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    Spontaneous Writing: When casting an ultimate, the maximum stack limit of :effect{code="PREPARATION_RECOLETA"} is increased to **2**.
+    Spontaneous Writing: When casting an ultimate, the maximum stack limit of :effect{param="preparation-recoleta"} is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    Maze of Visceral Realism: The additional Reality DMG dealt by consuming :effect{code="MONOMYTHIC_NARRATIVE"}/:effect{code="ENSEMBLE_NARRATIVE"} is increased to **70%/35%**.
+    Maze of Visceral Realism: The additional Reality DMG dealt by consuming :effect{param="monomythic-narrative"}/:effect{param="ensemble-narrative"} is increased to **70%/35%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -169,7 +169,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    Literary Imagery: At incantation rank **1/2/3**, the Reality DMG dealt is increased to **150%/225%/375%**, and the stacks of :effect{code="MONOMYTHIC_NARRATIVE_ID_2"}/:effect{code="ENSEMBLE_NARRATIVE_ID_2"} granted to self are increased to **10**.
+    Literary Imagery: At incantation rank **1/2/3**, the Reality DMG dealt is increased to **150%/225%/375%**, and the stacks of :effect{param="monomythic-narrative-id-2"}/:effect{param="ensemble-narrative-id-2"} granted to self are increased to **10**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
@@ -192,15 +192,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="THE_FINAL_ROLL" />
+      <PsychubeIcon param="the-final-roll" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="BALANCE_PLEASE" />
+      <PsychubeIcon param="balance-please" />
 
-      <PsychubeIcon code="REHEARSAL_OF_DREAMS" />
+      <PsychubeIcon param="rehearsal-of-dreams" />
     </div>
   </Fragment>
 

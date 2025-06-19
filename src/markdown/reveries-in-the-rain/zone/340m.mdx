@@ -115,11 +115,11 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{code="POISON"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Reality DMG. Inflicts the :effect{param="poison"} status for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{code="POISON"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts the :effect{param="poison"} status for 3 rounds on the target hit: at the end of the round, deals (the user's ATK x**40%**) Genesis DMG.
         </div>
       </Fragment>
 
@@ -129,7 +129,7 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active) && activePhase === '1'`}>
-          1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{code="DAZE"} for 1 round on the target hit.
+          1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{param="daze"} for 1 round on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>

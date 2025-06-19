@@ -38,7 +38,7 @@ export default () => ({
       PSYCHUBE_STATS_CONST.find(
         (d) =>
           d.level === this.activeStatLevel &&
-          d.rarity === this.$store.psychube.rarity
+          d.rarity === this.$store.psychube.rarity,
       )?.multiplier ?? 0;
 
     this.baseStats = {

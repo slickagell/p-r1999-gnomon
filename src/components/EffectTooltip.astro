@@ -44,7 +44,7 @@ const { Content } = await render(effectEntry);
     x-transition:leave-start="opacity-100"
     x-transition:leave-end="opacity-0"
   >
-    <div class="flex justify-between items-center gap-1 mb-1">
+    <div class="flex justify-between items-center gap-1 pb-1">
       <p class="font-bold">{effectEntry.data.title}</p>
       {
         !["UNKNOWN", "DEFINITION", "GENERAL", "PASSIVE"].includes(
@@ -56,15 +56,17 @@ const { Content } = await render(effectEntry);
         )
       }
     </div>
-    <Content
-      components={{
-        p: MarkdownContent,
-        strong: MarkdownHighlight,
-        em: MarkdownEmphasis,
-        effect: Astro.self,
-        tooltip: Tooltip,
-      }}
-    />
+    <div class="max-h-96 overflow-auto">
+      <Content
+        components={{
+          p: MarkdownContent,
+          strong: MarkdownHighlight,
+          em: MarkdownEmphasis,
+          effect: Astro.self,
+          tooltip: Tooltip,
+        }}
+      />
+    </div>
   </div>
 </span>
 

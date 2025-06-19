@@ -66,15 +66,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="The pinata is the best party present.">
-      1-target attack. Deals **160%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
+      1-target attack. Deals **160%** Reality DMG. If the caster has :effect{param="party-balloon"} or :effect{param="balloon-of-innocence"}, this attack enjoys Penetration Rate **+70%**.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="The pinata is the best party present. Our next step is to...">
-      1-target attack. Deals **240%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
+      1-target attack. Deals **240%** Reality DMG. If the caster has :effect{param="party-balloon"} or :effect{param="balloon-of-innocence"}, this attack enjoys Penetration Rate **+70%**.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="The pinata is the best party present. Smash it open!">
-      1-target attack. Deals **400%** Reality DMG. If the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, this attack enjoys Penetration Rate **+70%**.
+      1-target attack. Deals **400%** Reality DMG. If the caster has :effect{param="party-balloon"} or :effect{param="balloon-of-innocence"}, this attack enjoys Penetration Rate **+70%**.
     </CardInfo>
   </Fragment>
 
@@ -88,11 +88,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     </CardInfo>
 
     <CardInfo star="2" type="COUNTER" note="*Cough hard*...">
-      Mass counter. Recovers (Missing HP x**35%**) HP for all allies, Gains 1 :effect{code="PARTY_BALLOON"}.
+      Mass counter. Recovers (Missing HP x**35%**) HP for all allies, Gains 1 :effect{param="party-balloon"}.
     </CardInfo>
 
     <CardInfo star="3" type="COUNTER" note="*Cough hard*... BURRRP—">
-      Mass counter. Recovers (Missing HP x**45%**) HP for all allies, Gains 2 :effect{code="PARTY_BALLOON"}s.
+      Mass counter. Recovers (Missing HP x**45%**) HP for all allies, Gains 2 :effect{param="party-balloon"}s.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="There're balloons for rewarding well-behaved children, and balloons for punishing bad adults.">
-      Mass attack. Deals **300%** Reality DMG to all enemies. Grants 1 :effect{code="BALLOON_OF_INNOCENCE"} and 1 :effect{code="PARTY_BALLOON"} to all allies. Recovers (Missing HP x**30%**) HP for the ally with the lowest HP percentage.
+      Mass attack. Deals **300%** Reality DMG to all enemies. Grants 1 :effect{param="balloon-of-innocence"} and 1 :effect{param="party-balloon"} to all allies. Recovers (Missing HP x**30%**) HP for the ally with the lowest HP percentage.
     </CardInfo>
   </Fragment>
 
@@ -115,7 +115,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When a round starts, gets 1 :effect{code="PARTY_BALLOON"} (triggers up to 3 times).
+    When a round starts, gets 1 :effect{param="party-balloon"} (triggers up to 3 times).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -123,7 +123,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    The :effect{code="PARTY_BALLOON"} acquired when a round begins becomes permanent.
+    The :effect{param="party-balloon"} acquired when a round begins becomes permanent.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,7 +135,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Pinata*'s effect changes to: when the caster has :effect{code="PARTY_BALLOON"} or :effect{code="BALLOON_OF_INNOCENCE"}, Penetration Rate **+70%**.
+    *Pinata*'s effect changes to: when the caster has :effect{param="party-balloon"} or :effect{param="balloon-of-innocence"}, Penetration Rate **+70%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">

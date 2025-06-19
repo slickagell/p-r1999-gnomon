@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-iii.json";
 
           <span class="passive-title">Sharpened Beak</span>
 
-          When being attacked by a rank 1 incantation, gain Moxie +1 and 1 stack of :effect{code="POWER_BURST"} for self.
+          When being attacked by a rank 1 incantation, gain Moxie +1 and 1 stack of :effect{param="power-burst"} for self.
 
           <span class="passive-title">Evolution</span>
 
@@ -52,47 +52,47 @@ import data from "@data/reveries-in-the-rain/zone/100m-iii.json";
 
           <span class="passive-title">Sharpened Beak</span>
 
-          When being attacked by a rank 1 incantation, gain Moxie +1 and 1 stack of :effect{code="POWER_BURST"} for self.
+          When being attacked by a rank 1 incantation, gain Moxie +1 and 1 stack of :effect{param="power-burst"} for self.
 
           <span class="passive-title">One Who Sought Fire</span>
 
-          When attacking, if the main target has 10 stacks of :effect{code="BURN"}, performs a follow-up attack with the rank 1 incantation Flapping Wings; if the main target has 15 or more stacks of :effect{code="BURN"}, performs 2 follow-up attacks with the rank 1 incantation Flapping Wings.
+          When attacking, if the main target has 10 stacks of :effect{param="burn"}, performs a follow-up attack with the rank 1 incantation Flapping Wings; if the main target has 15 or more stacks of :effect{param="burn"}, performs 2 follow-up attacks with the rank 1 incantation Flapping Wings.
         </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **180%** Mental DMG. Inflicts 3 stacks of :effect{param="burn"} on the target hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **210%** Mental DMG. Inflicts 3 stacks of :effect{code="BURN"} on the target hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **210%** Mental DMG. Inflicts 3 stacks of :effect{param="burn"} on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **180%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{code="BURN"} on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **180%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{param="burn"} on the targets hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **210%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{code="BURN"} on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **210%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{param="burn"} on the targets hit.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{param="burn"}, deals an additional Mental DMG **+30%**.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **140%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+30%**.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **140%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{param="burn"}, deals an additional Mental DMG **+30%**.
         </div>
 
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+60%**.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{param="burn"}, deals an additional Mental DMG **+60%**.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **210%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{code="BURN"}, deals an additional Mental DMG **+60%**.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **210%** Mental DMG to 2 enemies. If a target has 5 or more stacks of :effect{param="burn"}, deals an additional Mental DMG **+60%**.
         </div>
       </Fragment>
 
@@ -102,7 +102,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-iii.json";
         </div>
 
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
-          Mass attack. Deals **350%** Mental DMG to all enemies, and then immediately resolves the :effect{code="BURN"} statuses on all enemies.
+          Mass attack. Deals **350%** Mental DMG to all enemies, and then immediately resolves the :effect{param="burn"} statuses on all enemies.
         </div>
       </Fragment>
     </EnemyInfo>

@@ -42,7 +42,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
 
           <span class="passive-title">Charged Overload</span>
 
-          At the start of the round, if this unit has 30 stacks of :effect{code="DYNAMO"}, cast an ultimate without consuming Moxie.
+          At the start of the round, if this unit has 30 stacks of :effect{param="dynamo"}, cast an ultimate without consuming Moxie.
 
           <span class="passive-title">Polarized Reality</span>
 
@@ -66,7 +66,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Dynamo Transfer</span>
 
-          When entering battle or at the end of the round, gain 10 stacks of :effect{code="DYNAMO"} for self; when being attacked by an enemy that has the :effect{code="ELECTRIC_COIL"} status, 5 stacks of :effect{code="DYNAMO"} are stolen from this unit; at the start of the round, transfers 10 stacks of :effect{code="DYNAMO"} to Servant of War.
+          When entering battle or at the end of the round, gain 10 stacks of :effect{param="dynamo"} for self; when being attacked by an enemy that has the :effect{code="ELECTRIC_COIL"} status, 5 stacks of :effect{param="dynamo"} are stolen from this unit; at the start of the round, transfers 10 stacks of :effect{param="dynamo"} to Servant of War.
 
           <span class="passive-title">Small Wound</span>
 
@@ -82,7 +82,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains a *\[Shield]* with (own Max HP x**10%**) HP for 1 round (when losing the Shield, DMG Taken **+50%** for 1 round), and randomly gains 2 of the following: :effect{code="PIERCING_BULLET"}, :effect{code="FLASH_BULLET"}, :effect{code="FLAMING_BULLET"}, :effect{code="FLINCH_BULLET"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains a *\[Shield]* with (own Max HP x**10%**) HP for 1 round (when losing the Shield, DMG Taken **+50%** for 1 round), and randomly gains 2 of the following: :effect{code="PIERCING_BULLET"}, :effect{code="FLASH_BULLET"}, :effect{param="flaming-bullet"}, :effect{code="FLINCH_BULLET"}.
         </div>
       </Fragment>
 

@@ -17,7 +17,7 @@ import data from "@data/reveries-in-the-rain/zone/140m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} On death, all enemies get Moxie -2 and get :effect{code="DISCONCERT"} for 1 round.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} On death, all enemies get Moxie -2 and get :effect{param="disconcert"} for 1 round.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -50,7 +50,7 @@ import data from "@data/reveries-in-the-rain/zone/140m.json";
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Medical Supply</span>
 
-          When destroyed, the destroyer's side purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses, recovers (Missing HP x**50%**) HP, and gains the :effect{code="IMMUNITY"} status for 3 rounds.
+          When destroyed, the destroyer's side purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses, recovers (Missing HP x**50%**) HP, and gains the :effect{param="immunity"} status for 3 rounds.
 
           <span class="passive-title">Price</span>
 
@@ -74,7 +74,7 @@ import data from "@data/reveries-in-the-rain/zone/140m.json";
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. After attacking, inflicts 1 stack of :effect{code="WEAKNESS"} on the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="weakness"} on the target.
         </div>
       </Fragment>
 
@@ -84,13 +84,13 @@ import data from "@data/reveries-in-the-rain/zone/140m.json";
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds. Also inflicts :effect{code="TERROR"} on the main target for 1 round.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass debuff. Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds. Also inflicts :effect{param="terror"} on the main target for 1 round.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          1-target attack. Deals **450%** Mental DMG and inflicts 1 round of :effect{code="NIGHTMARE"}. If the enemy is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this effect lasts 2 rounds instead.
+          1-target attack. Deals **450%** Mental DMG and inflicts 1 round of :effect{param="nightmare"}. If the enemy is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this effect lasts 2 rounds instead.
         </div>
       </Fragment>
     </EnemyInfo>

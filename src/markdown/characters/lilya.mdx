@@ -163,11 +163,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      When attacking, excess Critical Rate is converted into Critical DMG; after scoring a critical hit, gain **1** stack of :effect{code="INTENSE_FERVOR"} for self; when casting an ultimate, consume all stacks of :effect{code="INTENSE_FERVOR"} to gain an equal number of Moxie.
+      When attacking, excess Critical Rate is converted into Critical DMG; after scoring a critical hit, gain **1** stack of :effect{param="intense-fervor"} for self; when casting an ultimate, consume all stacks of :effect{param="intense-fervor"} to gain an equal number of Moxie.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      When an extra action scores a critical hit, gain **2** stacks of :effect{code="CEREMONIOUS"}.
+      When an extra action scores a critical hit, gain **2** stacks of :effect{param="ceremonious"}.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
@@ -175,7 +175,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      When casting an ultimate, deal an additional **30%** Reality DMG for each stack of :effect{code="CEREMONIOUS"} held; up to **15** stacks can be used to count toward this bonus.
+      When casting an ultimate, deal an additional **30%** Reality DMG for each stack of :effect{param="ceremonious"} held; up to **15** stacks can be used to count toward this bonus.
     </div>
 
     <div x-show={`active==='${CHARACTER.euphorias[1].code}'`}>
@@ -185,7 +185,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[1].materials[2]} stats={CHARACTER.euphorias[1].stats[2]} />
 
-      At the start of the round, gain **1** :effect{code="POINTED_BULLET"}. When scoring critical hit, there's a **50%** chance to gain **1** :effect{code="POINTED_BULLET"}.
+      At the start of the round, gain **1** :effect{param="pointed-bullet"}. When scoring critical hit, there's a **50%** chance to gain **1** :effect{param="pointed-bullet"}.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[1].materials[3]} stats={CHARACTER.euphorias[1].stats[3]} />
 
@@ -193,7 +193,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[1].materials[4]} stats={CHARACTER.euphorias[1].stats[4]} />
 
-      After :effect{code="POINTED_BULLET"} is triggered at least twice in one round, get Incantation Might **+20%** when attacking for the rest of the round.
+      After :effect{param="pointed-bullet"} is triggered at least twice in one round, get Incantation Might **+20%** when attacking for the rest of the round.
     </div>
   </Fragment>
 

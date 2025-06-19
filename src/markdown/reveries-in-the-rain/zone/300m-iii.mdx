@@ -79,7 +79,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          Mass attack. Deals **400%** Reality DMG to all enemies; on hit, inflicts :effect{code="CAPTIVATED"} for 2 rounds on the leftmost enemy and rearranges enemy positions.
+          Mass attack. Deals **400%** Reality DMG to all enemies; on hit, inflicts :effect{param="captivated"} for 2 rounds on the leftmost enemy and rearranges enemy positions.
         </div>
       </Fragment>
     </EnemyInfo>
@@ -107,7 +107,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
   <Fragment slot="strategy-and-tips-content">
     * If there are *Anjo Nala* and the summoned enemy, focus on attacking the summoned enemy first.
     * Bring sustain units to withstand attacks from *Anjo Nala* and the summoned enemy.
-    * Can bring units with ability to **reduce Moxie** or with :effect{code="SEAL"}, :effect{code="NIGHTMARE"} effect to prevent *Anjo Nala* from casting Ultimate. Focus on using these reduce Moxie skills on the round that *Anjo Nala* prepares to cast Ultimate.
+    * Can bring units with ability to **reduce Moxie** or with :effect{param="seal"}, :effect{param="nightmare"} effect to prevent *Anjo Nala* from casting Ultimate. Focus on using these reduce Moxie skills on the round that *Anjo Nala* prepares to cast Ultimate.
     * **Ideally**, bring 1 DPS unit, 1 sustain unit and 2 units who can prevent Ultimate.
     * Try to make every ally perform at least 1 action in the round to limit receiving :effect{code="CRIPPLING_WEAKNESS"}, :effect{code="FLINCH"} effects.
     * You can choose **any** Myth Manifests based on your team

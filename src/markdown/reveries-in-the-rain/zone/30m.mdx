@@ -78,7 +78,7 @@ import data from "@data/reveries-in-the-rain/zone/30m.json";
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter for 2 rounds. Enters :effect{code="TAUNT"} status. When the caster is attacked, deals (the caster's ATK x**100%**) Genesis DMG to the attacker.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter for 2 rounds. Enters :effect{param="taunt"} status. When the caster is attacked, deals (the caster's ATK x**100%**) Genesis DMG to the attacker.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>

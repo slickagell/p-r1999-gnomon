@@ -67,15 +67,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Keep an eye on her.">
-      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{code="THIEF_MASTER"} status, this attack steals 1 Moxie from the target.
+      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{param="thief-master"} status, this attack steals 1 Moxie from the target.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="Keep an eye on her. She is right here.">
-      1-target attack. Deals **250%** Mental DMG and Moxie -1 for the target. If the caster is in :effect{code="THIEF_MASTER"}, this attack steals 1 additional Moxie from the target.
+      1-target attack. Deals **250%** Mental DMG and Moxie -1 for the target. If the caster is in :effect{param="thief-master"}, this attack steals 1 additional Moxie from the target.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="Keep an eye on her. She is right here. At least she was a moment ago.">
-      1-target attack. Deals **400%** Mental DMG, Moxie -1 for the target, and Moxie +1 for the caster. If the caster is in :effect{code="THIEF_MASTER"}, this attack steals 1 additional Moxie from the target.
+      1-target attack. Deals **400%** Mental DMG, Moxie -1 for the target, and Moxie +1 for the caster. If the caster is in :effect{param="thief-master"}, this attack steals 1 additional Moxie from the target.
     </CardInfo>
   </Fragment>
 
@@ -85,15 +85,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="ATTACK" note="A group of frantic stalkers are gathering.">
-      Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
+      Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{param="thief-master"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic.">
-      Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
+      Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{param="thief-master"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic. The rodenticide didn't work.">
-      Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{code="THIEF_MASTER"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
+      Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{param="thief-master"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
   </Fragment>
 
@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="Take off, exchange positions, and retreat.">
-      1-target attack. Deals **600%** Mental DMG. Inflicts 1 stack of :effect{code="THIEF_MASTER"} on the caster.
+      1-target attack. Deals **600%** Mental DMG. Inflicts 1 stack of :effect{param="thief-master"} on the caster.
     </CardInfo>
   </Fragment>
 
@@ -116,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    After the caster casts an Ultimate, gains 1 stack of :effect{code="FIXED_PLAN"}.
+    After the caster casts an Ultimate, gains 1 stack of :effect{param="fixed-plan"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,7 +124,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After the caster casts an Ultimate, gains an additional stack of :effect{code="FIXED_PLAN"}.
+    After the caster casts an Ultimate, gains an additional stack of :effect{param="fixed-plan"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,7 +136,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Ridiculous Eyewitness Testimony* additionally gains 1 stack of :effect{code="THIEF_MASTER"}.
+    *Ridiculous Eyewitness Testimony* additionally gains 1 stack of :effect{param="thief-master"}.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -167,15 +167,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      After actively attacking, inflicts **1** stack of :effect{code="PASSION_DRAIN"} on the target.
+      After actively attacking, inflicts **1** stack of :effect{param="passion-drain"} on the target.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      *\[Top Student]* Enhancement: :effect{code="FIXED_PLAN"} is now granted to all allies and grants new additional effects: Ultimate Critical Rate **+6%** and Ultimate Critical DMG **+6%**.
+      *\[Top Student]* Enhancement: :effect{param="fixed-plan"} is now granted to all allies and grants new additional effects: Ultimate Critical Rate **+6%** and Ultimate Critical DMG **+6%**.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      *\[Ridiculous Eyewitness Testimony]* Enhancement: For each stack of :effect{code="FIXED_PLAN_ID_1"}, deals an additional **50%** Mental DMG.
+      *\[Ridiculous Eyewitness Testimony]* Enhancement: For each stack of :effect{param="fixed-plan-id-1"}, deals an additional **50%** Mental DMG.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 

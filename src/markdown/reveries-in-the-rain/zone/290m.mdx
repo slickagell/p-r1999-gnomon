@@ -18,7 +18,7 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 2 rounds, all allies get :effect{code="SILENCE"} for 1 round.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 2 rounds, all allies get :effect{param="silence"} for 1 round.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -115,11 +115,11 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Mental DMG. Inflicts the :effect{code="CORRODE"} status for 2 rounds on the target hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Mental DMG. Inflicts the :effect{param="corrode"} status for 2 rounds on the target hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{code="CORRODE"} status for 3 rounds on the target hit: at the end of the round, takes (own Current HP x**20%**) Genesis DMG, up to (the user's Max HP x**20%**).
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{param="corrode"} status for 3 rounds on the target hit: at the end of the round, takes (own Current HP x**20%**) Genesis DMG, up to (the user's Max HP x**20%**).
         </div>
       </Fragment>
 
@@ -129,7 +129,7 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
-          Mass attack. Deals **200%** Mental DMG to all enemies. Inflicts the :effect{code="DISCONCERT"} status for 2 rounds on the targets hit.
+          Mass attack. Deals **200%** Mental DMG to all enemies. Inflicts the :effect{param="disconcert"} status for 2 rounds on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}'].includes(active)`}>
@@ -147,7 +147,7 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
     * The enemies are *Necrologist* and ghosts.
     * Every **2** rounds, enemies will receive **1** stack of :effect{code="INCORPOREAL"}.
       * If *Necrologist* lose all :effect{code="INCORPOREAL"} stacks, she will gain **2** more :effect{code="MORIBUND"} stacks.
-    * At the first round and at the start of every **2** rounds, all allies get :effect{code="SILENCE"} for **1** round.
+    * At the first round and at the start of every **2** rounds, all allies get :effect{param="silence"} for **1** round.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
@@ -156,7 +156,7 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
 
   <Fragment slot="strategy-and-tips-content">
     * **Only** focus on dealing DMG to *Necrologist*, use **single-target** skills instead of multi-target skills.
-    * **Attack** and **Channel** incantation will operate more efficiently, since they are not affected by :effect{code="SILENCE"}.
+    * **Attack** and **Channel** incantation will operate more efficiently, since they are not affected by :effect{param="silence"}.
     * You can choose **any** Myth Manifests other than *Operatic Reflection* based on your team, but do **not** use Ultimate.
   </Fragment>
 

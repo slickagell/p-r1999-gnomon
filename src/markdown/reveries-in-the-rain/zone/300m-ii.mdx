@@ -22,7 +22,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gains a Shield with (Max HP x**50%**) for 2 rounds.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} After taking a 1-target attack, gain 1 stack of :effect{code="STURDINESS"}.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} After taking a 1-target attack, gain 1 stack of :effect{param="sturdiness"}.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -51,7 +51,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
           <span class="passive-title">Highly Combustible</span>
 
-          When being attacked, for each stack of :effect{code="BURN"} on self, DMG Taken **+2%**.
+          When being attacked, for each stack of :effect{param="burn"} on self, DMG Taken **+2%**.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -61,11 +61,11 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
           <span class="passive-title">Arrival of Silence</span>
 
-          At the end of each round, purify *\[Control]* statuses from self and inflict :effect{code="PETRIFY"} status on a random enemy for 2 rounds; when :effect{code="PETRIFY"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
+          At the end of each round, purify *\[Control]* statuses from self and inflict :effect{param="petrify"} status on a random enemy for 2 rounds; when :effect{param="petrify"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
 
           <span class="passive-title">Among the Woods</span>
 
-          When :effect{code="PETRIFY"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
+          When :effect{param="petrify"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
 
           <span class="passive-title">Photosynthesis</span>
 
@@ -85,7 +85,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
           <span class="passive-title">Highly Combustible</span>
 
-          When being attacked, for each stack of :effect{code="BURN"} on self, DMG Taken **+2%**.
+          When being attacked, for each stack of :effect{param="burn"} on self, DMG Taken **+2%**.
         </div>
 
         <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
@@ -119,7 +119,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
           <span class="passive-title">Highly Combustible</span>
 
-          When being attacked, for each stack of :effect{code="BURN"} on self, DMG Taken **+2%**.
+          When being attacked, for each stack of :effect{param="burn"} on self, DMG Taken **+2%**.
         </div>
 
         <div x-show={`['${data.enemies[11].id}'].includes(active)`}>
@@ -143,11 +143,11 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. Inflicts 1 stack of :effect{code="RIGIDITY"} on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG. Inflicts 1 stack of :effect{param="rigidity"} on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **75%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **75%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the target.
         </div>
 
         <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
@@ -159,11 +159,11 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG; after attacking, inflicts :effect{code="CORRODE"} for 2 rounds on the target hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG; after attacking, inflicts :effect{param="corrode"} for 2 rounds on the target hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
         </div>
 
         <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **75%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **75%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the target.
         </div>
       </Fragment>
 
@@ -177,7 +177,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{code="TAUNT"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{param="taunt"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -197,7 +197,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{code="TAUNT"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{param="taunt"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
         </div>
 
         <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
@@ -219,7 +219,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          Mass attack. Deals **400%** Mental DMG to all enemies, extends the duration of :effect{code="PETRIFY"} status on the target by 1 round; on hit, inflicts 1 stack of :effect{code="RIGIDITY"} on all enemies.
+          Mass attack. Deals **400%** Mental DMG to all enemies, extends the duration of :effect{param="petrify"} status on the target by 1 round; on hit, inflicts 1 stack of :effect{param="rigidity"} on all enemies.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
@@ -227,7 +227,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies and extends their :effect{code="POISON"} status for 2 rounds on the targets hit, then inflicts :effect{code="POISON"} status on the targets for 3 rounds: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the targets.
+          Mass attack. Deals **250%** Mental DMG to all enemies and extends their :effect{param="poison"} status for 2 rounds on the targets hit, then inflicts :effect{param="poison"} status on the targets for 3 rounds: at the end of the round, deals (the user's ATK x**50%**) Genesis DMG to the targets.
         </div>
 
         <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
@@ -239,7 +239,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies; after attacking, inflicts :effect{code="CORRODE"} for 2 rounds on the targets hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
+          Mass attack. Deals **250%** Mental DMG to all enemies; after attacking, inflicts :effect{param="corrode"} for 2 rounds on the targets hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
         </div>
 
         <div x-show={`['${data.enemies[9].id}'].includes(active)`}>
@@ -247,7 +247,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts :effect{code="SEAL"} for 2 rounds on the targets hit.
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts :effect{param="seal"} for 2 rounds on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>
@@ -259,12 +259,12 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
   <Fragment slot="stage-info-content">
     * Enemies are the main boss *Hopeless Drifter* and other critters, you just need to defeat *Hopeless Drifter* to pass the stage.
-    * At the end of each round, *Hopeless Drifter* will inflict :effect{code="PETRIFY"} on random ally.
-      * They also have skills that can inflict :effect{code="PETRIFY"}.
+    * At the end of each round, *Hopeless Drifter* will inflict :effect{param="petrify"} on random ally.
+      * They also have skills that can inflict :effect{param="petrify"}.
     * The main boss can also summon other critters
       * With Beast critter, be careful when this unit attack, since it can deal a lot of DMG.
       * With Green Lake critter, it will inflict :effect{code="POLLUTION"} on our allies when attacks or being defeated.
-      * With Cactus critter, it will have :effect{code="TAUNT"} effect.
+      * With Cactus critter, it will have :effect{param="taunt"} effect.
     * When go to phase 2, the critters will be strengthened and become much stronger
       * When entering battle, they will receive a large amount of *\[Shield]* for **2** rounds.
   </Fragment>
@@ -275,7 +275,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
   <Fragment slot="strategy-and-tips-content">
     * Units whose DMG depend on Ultimate will **not** be ideal for this zone, since after casting Ultimate, they will get permanent Ultimate Might **-10%**.
-    * Bring units with dispel skills to dispel :effect{code="PETRIFY"}.
+    * Bring units with dispel skills to dispel :effect{param="petrify"}.
     * When entering phase 2, in the first **2** rounds, we can skip not to attack enemies, instead focus on buff, enhance skills then deal Burst DMG in the third round.
     * You can choose **any** Myth Manifests based on your team.
   </Fragment>

@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="Ahoy!">
-      Self channel. Enters :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
+      Self channel. Enters :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
     </CardInfo>
 
     <CardInfo star="2" type="CHANNEL" note="Ahoy! Board that ship!">
-      Self channel. Enters :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
+      Self channel. Enters :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
     </CardInfo>
 
     <CardInfo star="3" type="CHANNEL" note="Ahoy! Board that ship and raise our flag!">
-      Self channel. Enters :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
+      Self channel. Enters :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="The spirit of exploration lives on!">
-      Mass attack. Can only be cast in the :effect{code="BOARDING_ASSAULT"} status. Shifts to the front-most position, deals **200%** Reality DMG to all enemies and inflicts :effect{code="DAZE"} on the targets for 1 round; for every position shifted, this attack gains DMG Dealt **+15%**; If at least 3 positions were shifted, this attack ignores **50%** Daze Resistance.
+      Mass attack. Can only be cast in the :effect{param="boarding-assault"} status. Shifts to the front-most position, deals **200%** Reality DMG to all enemies and inflicts :effect{param="daze"} on the targets for 1 round; for every position shifted, this attack gains DMG Dealt **+15%**; If at least 3 positions were shifted, this attack ignores **50%** Daze Resistance.
     </CardInfo>
   </Fragment>
 
@@ -115,7 +115,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When receiving a shift effect, for every position shifted backward, gain 1 stack of :effect{code="ROUSING_MORALE"}, for every position shifted forward, gain 1 stack of :effect{code="STURDINESS"}.
+    When receiving a shift effect, for every position shifted backward, gain 1 stack of :effect{param="rousing-morale"}, for every position shifted forward, gain 1 stack of :effect{param="sturdiness"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Privateering License*: Gain **2** stacks of :effect{code="ROUSING_MORALE"} for each position shifted backward, and gain **2** stacks of :effect{code="STURDINESS"} for each position shifted forward.
+    *Privateering License*: Gain **2** stacks of :effect{param="rousing-morale"} for each position shifted backward, and gain **2** stacks of :effect{param="sturdiness"} for each position shifted forward.
   </Fragment>
 
   <Fragment slot="portray-2-info">

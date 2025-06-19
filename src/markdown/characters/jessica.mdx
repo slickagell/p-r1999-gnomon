@@ -67,15 +67,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Delicate and fragrant.">
-      1-target attack. Deals **180%** Reality DMG. If the target is afflicted with :effect{code="POISON"}, deals an additional **40%** Reality DMG. For each additional stack of :effect{code="POISON"} afterwards, deals **20%** more Reality DMG, up to a max of Reality DMG **+40%**.
+      1-target attack. Deals **180%** Reality DMG. If the target is afflicted with :effect{param="poison"}, deals an additional **40%** Reality DMG. For each additional stack of :effect{param="poison"} afterwards, deals **20%** more Reality DMG, up to a max of Reality DMG **+40%**.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="Delicate and fragrant, and as pure as virgin snow.">
-      1-target attack. Deals **270%** Reality DMG. If the target is afflicted with :effect{code="POISON"}, deals an additional **60%** Reality DMG. For each additional stack of :effect{code="POISON"} afterwards, deals **30%** more Reality DMG, up to a max of Reality DMG **+60%**.
+      1-target attack. Deals **270%** Reality DMG. If the target is afflicted with :effect{param="poison"}, deals an additional **60%** Reality DMG. For each additional stack of :effect{param="poison"} afterwards, deals **30%** more Reality DMG, up to a max of Reality DMG **+60%**.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="Delicate and fragrant, it covers the captive completely.">
-      1-target attack. Deals **450%** Reality DMG. If the target is afflicted with :effect{code="POISON"}, deals an additional **100%** Reality DMG. For each additional stack of :effect{code="POISON"} afterwards, deals **50%** more Reality DMG, up to a max of Reality DMG **+100%**.
+      1-target attack. Deals **450%** Reality DMG. If the target is afflicted with :effect{param="poison"}, deals an additional **100%** Reality DMG. For each additional stack of :effect{param="poison"} afterwards, deals **50%** more Reality DMG, up to a max of Reality DMG **+100%**.
     </CardInfo>
   </Fragment>
 
@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="I've missed you so much.">
-      Mass attack. Deals **350%** to all enemies. Inflicts :effect{code="POISON"} on all enemies for 2 rounds: at the end of the round, deals (Jessica's ATK x**30%**) Genesis DMG.
+      Mass attack. Deals **350%** to all enemies. Inflicts :effect{param="poison"} on all enemies for 2 rounds: at the end of the round, deals (Jessica's ATK x**30%**) Genesis DMG.
     </CardInfo>
   </Fragment>
 
@@ -116,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When attacking an enemy afflicted with :effect{code="POISON"}, damage dealt increases by **20%**. At the start of the battle and once every 3 rounds (rounds 1, 3, 6, 9... after the battle begins), inflicts :effect{code="POISON"} on all enemies for 2 rounds, inflicting Genesis DMG equal to **30%** of the caster's ATK at the end of each round.
+    When attacking an enemy afflicted with :effect{param="poison"}, damage dealt increases by **20%**. At the start of the battle and once every 3 rounds (rounds 1, 3, 6, 9... after the battle begins), inflicts :effect{param="poison"} on all enemies for 2 rounds, inflicting Genesis DMG equal to **30%** of the caster's ATK at the end of each round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,7 +124,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After attacking enemies not afflicted with :effect{code="POISON"}, inflicts :effect{code="POISON"} for 2 rounds, inflicting Genesis DMG equal to **30%** of Jessica's ATK at the end of each round.
+    After attacking enemies not afflicted with :effect{param="poison"}, inflicts :effect{param="poison"} for 2 rounds, inflicting Genesis DMG equal to **30%** of Jessica's ATK at the end of each round.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,7 +136,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Changeling*: When entering battle and at the start of every 3rd round, :effect{code="POISON"} inflicted on enemies +1 round.
+    *Changeling*: When entering battle and at the start of every 3rd round, :effect{param="poison"} inflicted on enemies +1 round.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -163,19 +163,19 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      When entering battle and at the end of the round, gain **2** stacks of :effect{code="MOSS_ON_STONE"} for self; after an ally actively casts and attacks with an incantation, if the main target is in a :effect{code="POISON"} status, gain **1** stack of :effect{code="MOSS_ON_STONE"} for self. At the start of the round, if holding **10** stacks of :effect{code="MOSS_ON_STONE"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an, additional :effect{code="PETRIFY"} status on the main target for **1** round, and remove all :effect{code="MOSS_ON_STONE"} statuses on self at the end of the round. Attacking an enemy in the :effect{code="PETRIFY"} status does not remove the :effect{code="PETRIFY"} status.
+      When entering battle and at the end of the round, gain **2** stacks of :effect{param="moss-on-stone"} for self; after an ally actively casts and attacks with an incantation, if the main target is in a :effect{param="poison"} status, gain **1** stack of :effect{param="moss-on-stone"} for self. At the start of the round, if holding **10** stacks of :effect{param="moss-on-stone"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an, additional :effect{param="petrify"} status on the main target for **1** round, and remove all :effect{param="moss-on-stone"} statuses on self at the end of the round. Attacking an enemy in the :effect{param="petrify"} status does not remove the :effect{param="petrify"} status.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      *\[White Blankie]*: At incantation rank **1/2/3**, the Reality DMG bonus from each additional instance :effect{code="POISON"} is increased to **80%/120%/200%**, and the :effect{code="PETRIFY"} status is regarded as **2** additional instances of :effect{code="POISON"}.
+      *\[White Blankie]*: At incantation rank **1/2/3**, the Reality DMG bonus from each additional instance :effect{param="poison"} is increased to **80%/120%/200%**, and the :effect{param="petrify"} status is regarded as **2** additional instances of :effect{param="poison"}.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
-      When actively attacking, if the main target is in the :effect{code="PETRIFY"} status, the attack gains Incantation Might **+30%**.
+      When actively attacking, if the main target is in the :effect{param="petrify"} status, the attack gains Incantation Might **+30%**.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      When actively attacking, if the main target is in the :effect{code="PETRIFY"} status, the attack is always a critical hit.
+      When actively attacking, if the main target is in the :effect{param="petrify"} status, the attack is always a critical hit.
     </div>
   </Fragment>
 

@@ -44,7 +44,7 @@ import data from "@data/reveries-in-the-rain/zone/330m.json";
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
           <span class="passive-title">Power Transformation Ring</span>
 
-          When a round starts, inflicts 1 stack of :effect{code="STABILIZE"} on other allies.
+          When a round starts, inflicts 1 stack of :effect{param="stabilize"} on other allies.
 
           <span class="passive-title">Awake</span>
 
@@ -98,7 +98,7 @@ import data from "@data/reveries-in-the-rain/zone/330m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts 1 stack of :effect{code="RIGIDITY"} on the targets hit.
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts 1 stack of :effect{param="rigidity"} on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>

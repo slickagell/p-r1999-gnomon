@@ -67,7 +67,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
 
           <span class="passive-title">Warrior's Punishment</span>
 
-          When this unit is being attacked by a 1-target attack, performs a riposte; at the start of every 3 rounds, this unit enters the :effect{code="TAUNT"} status for 1 round.
+          When this unit is being attacked by a 1-target attack, performs a riposte; at the start of every 3 rounds, this unit enters the :effect{param="taunt"} status for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>

@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="A chance to test it in a real fight.">
-      1-target attack. Deals **180%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+      1-target attack. Deals **180%** Reality DMG. Inflicts 2 stacks of :effect{param="burn"} on the target hit; for every stack of :effect{param="burn"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="A chance to test it in a real fight is hard to come by.">
-      1-target attack. Deals **270%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+      1-target attack. Deals **270%** Reality DMG. Inflicts 2 stacks of :effect{param="burn"} on the target hit; for every stack of :effect{param="burn"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="A chance to test it in a real fight is hard to come by. So, who wants to go first?">
-      1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of :effect{code="BURN"} on the target hit; for every stack of :effect{code="BURN"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
+      1-target attack. Deals **450%** Reality DMG. Inflicts 2 stacks of :effect{param="burn"} on the target hit; for every stack of :effect{param="burn"} on self, grant all allies DMG Dealt **+1%** for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="COUNTER" note="He was thrown into the fiery furnace of life.">
-      Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**100%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
+      Mass counter. Grants all allies a :effect{param="shield"} with (J's ATK x**100%**) HP for 2 rounds, with each stack of :effect{param="burn"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{param="tempering"}.
     </CardInfo>
 
     <CardInfo star="2" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age.">
-      Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**150%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
+      Mass counter. Grants all allies a :effect{param="shield"} with (J's ATK x**150%**) HP for 2 rounds, with each stack of :effect{param="burn"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{param="tempering"}.
     </CardInfo>
 
     <CardInfo star="3" type="COUNTER" note="He was thrown into the fiery furnace of life at a young age, and to this day, he still feels little fear.">
-      Mass counter. Grants all allies a :effect{code="SHIELD"} with (J's ATK x**250%**) HP for 2 rounds, with each stack of :effect{code="BURN"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{code="TEMPERING"}.
+      Mass counter. Grants all allies a :effect{param="shield"} with (J's ATK x**250%**) HP for 2 rounds, with each stack of :effect{param="burn"} on self granting an additional **3%** Shield Factor. After an ally holding a Shield is attacked, J ripostes with :effect{param="tempering"}.
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="This isn't an action film, and there are no heroes.">
-      Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict :effect{code="BURN"} on the targets equal to the number of :effect{code="BURN"} stacks on self. J does not gain :effect{code="BURN"} stacks from this attack, and for every excess :effect{code="BURN"} stack on the main target, this attack deals an additional **10%** Reality DMG.
+      Mass attack. Deals **350%** Reality DMG to all enemies. Right before attacking, inflict :effect{param="burn"} on the targets equal to the number of :effect{param="burn"} stacks on self. J does not gain :effect{param="burn"} stacks from this attack, and for every excess :effect{param="burn"} stack on the main target, this attack deals an additional **10%** Reality DMG.
     </CardInfo>
   </Fragment>
 
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When attacking, gain an ATK percentage equal to **0.5**x the number of :effect{code="BURN"} stacks on self, and resolve own :effect{code="BURN"} to deal damage to self while retaining the number of stacks. Every time after J's attack successfully inflicts :effect{code="BURN"}, J grants the same number of :effect{code="BURN"} stacks to self. Take **50%** less damage from resolving own :effect{code="BURN"} stacks, and never fall below **15%** HP this way.
+    When attacking, gain an ATK percentage equal to **0.5**x the number of :effect{param="burn"} stacks on self, and resolve own :effect{param="burn"} to deal damage to self while retaining the number of stacks. Every time after J's attack successfully inflicts :effect{param="burn"}, J grants the same number of :effect{param="burn"} stacks to self. Take **50%** less damage from resolving own :effect{param="burn"} stacks, and never fall below **15%** HP this way.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    J's :effect{code="BURN"} stack limit is increased to **35**, and becomes immune to :effect{code="FREEZE"} and :effect{code="COLD"} while in the :effect{code="BURN"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for 1 round.
+    J's :effect{param="burn"} stack limit is increased to **35**, and becomes immune to :effect{param="freeze"} and :effect{param="cold"} while in the :effect{param="burn"} status. At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for 1 round.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,23 +135,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Heat Treating*: :effect{code="TEMPERING"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
+    *Heat Treating*: :effect{param="tempering"} now deals **40%** Reality DMG. For every **10%** Missing HP on self, now deals an additional **15%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Bodily Furnace*: Now gain an ATK percentage equal to **1.0**x the number of :effect{code="BURN"} stacks on self.
+    *Bodily Furnace*: Now gain an ATK percentage equal to **1.0**x the number of :effect{param="burn"} stacks on self.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Bodily Furnace*: The :effect{code="BURN"} stack limit on self is increased to 45 stacks.
+    *Bodily Furnace*: The :effect{param="burn"} stack limit on self is increased to 45 stacks.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Over the Haight Street*!: Reality DMG is increased **450%**. For every excess :effect{code="BURN"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
+    *Over the Haight Street*!: Reality DMG is increased **450%**. For every excess :effect{param="burn"} stack on the main target, this attack now deals an additional **15%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Bodily Furnace*: Now gain an ATK percentage equal to **1.5**x the number of :effect{code="BURN"} stacks on self.
+    *Bodily Furnace*: Now gain an ATK percentage equal to **1.5**x the number of :effect{param="burn"} stacks on self.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -170,15 +170,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="THE_UNBEARABLE_LIGHTNESS" />
+      <PsychubeIcon param="the-unbearable-lightness" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="KNOCK_ON_THE_DOOR" />
+      <PsychubeIcon param="knock-on-the-door" />
 
-      <PsychubeIcon code="BLASPHEMER_OF_NIGHT" />
+      <PsychubeIcon param="blasphemer-of-night" />
     </div>
   </Fragment>
 
@@ -191,7 +191,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-breakdown-content">
-    J is a Shield, DPS and :effect{code="BURN"} effect oriented character.
+    J is a Shield, DPS and :effect{param="burn"} effect oriented character.
 
     Not only applying *\[Burn]* to enemies, he also apply them to himself to boost DMG and reduce his own HP.
 
@@ -199,7 +199,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     All of J's attacks can apply *\[Burn]* to enemies, from basic incatations to Ultimate, or counterattacks.
 
-    If J has :effect{code="PREIGNITION"} buff, the amount of *\[Burn]* from this can also be converted to J's *\[Burn]*.
+    If J has :effect{param="preignition"} buff, the amount of *\[Burn]* from this can also be converted to J's *\[Burn]*.
 
     In Insight 1
 
@@ -211,7 +211,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     With Insight 3
 
-    * J will **immune** to :effect{code="FREEZE"} and :effect{code="COLD"} while in the *\[Burn]* status.
+    * J will **immune** to :effect{param="freeze"} and :effect{param="cold"} while in the *\[Burn]* status.
     * The *\[Burn]* effect applied to himself can be up to **35** stacks (common *\[Burn]* only have maximum 30 stacks).
     * At the start of the round, if J is below **50%** HP, dispel all non-Burn *\[Stats Down]* and *\[Neg Status]* from self, then grant Critical Rate **+20%** to self for **1** round.
 
@@ -227,11 +227,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Heat Treating]*</CharacterSkillTooltip> incantation
 
-    * Provide allies with a :effect{code="SHIELD"}, scales with J's ATK for **2** rounds.
+    * Provide allies with a :effect{param="shield"}, scales with J's ATK for **2** rounds.
     * For each stack of *\[Burn]* on self, grants an additional **3%** Shield Factor.
     * If *\[Burn]* is triggered during J's attacks, from the effect of Insight 1, it will reduce his HP.
     * Otherwise, the *\[Burn]* activated at the end of the round will have its DMG reduced by the *\[Shield]*.
-    * When the shielded allies are attacked, J ripostes with :effect{code="TEMPERING"}.
+    * When the shielded allies are attacked, J ripostes with :effect{param="tempering"}.
     * The number of ripostes is **equal** to the amount of allies who have J's *\[Shield]* and being **attacked** by enemies.
     * The ripostes is considered as a **Follow up Attack**.
     * If J's *\[Shield]* is present and another *\[Shield]* is applied, that *\[Shield]* will **replace** J's *\[Shield]* if it has more HP than the previous one (with Ms. NewBabel's Euphoria, she has the ability to increase the HP of old *\[Shield]*, which can work around this).
@@ -263,7 +263,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
       <div class="flex-1">
         <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Priority to use this incantation to maintain the :effect{code="SHIELD"} and riposte</div>
+        <div class="mt-1 text-center">Priority to use this incantation to maintain the :effect{param="shield"} and riposte</div>
       </div>
 
       <div class="flex-1">
@@ -311,7 +311,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="team-suggestion-exception">
-    **Note**: Debuff dispel effect from Vila and Tooth Fairy can dispel J's :effect{code="BURN"}
+    **Note**: Debuff dispel effect from Vila and Tooth Fairy can dispel J's :effect{param="burn"}
   </Fragment>
 
   <Fragment slot="materials-section-title">

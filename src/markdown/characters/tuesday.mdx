@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="A seed of fear.">
-      1-target attack. Deals **130%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, repeating up to 2 times.
+      1-target attack. Deals **130%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, repeating up to 2 times.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="A seed of fear, deeply planted.">
-      1-target attack. Deals **250%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, repeating up to 3 times.
+      1-target attack. Deals **250%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, repeating up to 3 times.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="A seed of fear, deeply planted and delightfully nurtured.">
-      1-target attack. Deals **455%** Mental DMG. Inflicts 2 instances of :effect{code="POISON"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, repeating up to 4 times.
+      1-target attack. Deals **455%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, repeating up to 4 times.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Exactly what a baby needs.">
-      Mass debuff. Inflicts Genesis DMG Taken **+15%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{code="POISON"} status) on all enemies for 2 rounds.
+      Mass debuff. Inflicts Genesis DMG Taken **+15%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{param="poison"} status) on all enemies for 2 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="Exactly what a baby —and any adult— needs.">
-      Mass debuff. Inflicts Genesis DMG Taken **+25%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets. in the :effect{code="POISON"} status) on all enemies for 2 rounds.
+      Mass debuff. Inflicts Genesis DMG Taken **+25%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets. in the :effect{param="poison"} status) on all enemies for 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="Exactly what a baby —and any adult— needs, and she makes sure all of those needs ase met.">
-      Mass debuff. Inflicts Genesis DMG Taken **+35%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{code="POISON"} status) on all enemies for 2 rounds.
+      Mass debuff. Inflicts Genesis DMG Taken **+35%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{param="poison"} status) on all enemies for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="DEBUFF" note="Relax, it's nothing but an empty room at the heart of terror.">
-      Mass attack. Deals **225%** Mental DMG to all enemies, inflicts 1 instance of :effect{code="POISON"} for 2 rounds on the targets hit: at the end of each round, deals (the user's ATK x**20%**) Genesis DMG to the target, then deals an additional (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**30%**) Genesis DMG that can critically hit to the target; and at the same time, deploys array :effect{code="HORROR_STORY_NIGHT"} for 3 rounds.
+      Mass attack. Deals **225%** Mental DMG to all enemies, inflicts 1 instance of :effect{param="poison"} for 2 rounds on the targets hit: at the end of each round, deals (the user's ATK x**20%**) Genesis DMG to the target, then deals an additional (Tuesday's ATK x number of instances of :effect{param="poison"} on the target x**30%**) Genesis DMG that can critically hit to the target; and at the same time, deploys array :effect{param="horror-story-night"} for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, gain :effect{code="FEAR_CRADLE"}. When entering battle, grant Genesis DMG Dealt **+15%** to self.
+    When entering battle, gain :effect{param="fear-cradle"}. When entering battle, grant Genesis DMG Dealt **+15%** to self.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, gain :effect{code="ROOM_SERVICE"}. When entering battle, gain Moxie +2 for self (triggers only 1 time).
+    When entering battle, gain :effect{param="room-service"}. When entering battle, gain Moxie +2 for self (triggers only 1 time).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,15 +135,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Please, Come On In*: The instances of :effect{code="POISON"} inflicted is increased to **2**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**50%**).
+    *Please, Come On In*: The instances of :effect{param="poison"} inflicted is increased to **2**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{param="poison"} on the target x**50%**).
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *In Mother's Arms*: At incantation rank **1/2/3**, the Genesis DMG Taken is now **+30%/40%/50%**, and the Critical Resist Rate is now **-25%** (**-30%** to targets in the :effect{code="POISON"} status).
+    *In Mother's Arms*: At incantation rank **1/2/3**, the Genesis DMG Taken is now **+30%/40%/50%**, and the Critical Resist Rate is now **-25%** (**-30%** to targets in the :effect{param="poison"} status).
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Please, Come On In*: The instances of :effect{code="POISON"} inflicted is increased to **3**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{code="POISON"} on the target x**70%**).
+    *Please, Come On In*: The instances of :effect{param="poison"} inflicted is increased to **3**. The additional Genesis DMG is increased to (Tuesday's ATK x number of instances of :effect{param="poison"} on the target x**70%**).
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -151,7 +151,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *The Horror's Delight*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **210%/310%/535%**, and inflicts 1 instance of the same :effect{code="POISON"} on another random, legal enemy target if able, now repeating up to **3/4/5** times.
+    *The Horror's Delight*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **210%/310%/535%**, and inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, now repeating up to **3/4/5** times.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -170,17 +170,17 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="AND_THE_MAID_SAYS" />
+      <PsychubeIcon param="and-the-maid-says" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="OFFBEAT_STRIDES" />
+      <PsychubeIcon param="offbeat-strides" />
 
-      <PsychubeIcon code="THE_FIGHTER_S_BEST_WISHES" />
+      <PsychubeIcon param="the-fighter-s-best-wishes" />
 
-      <PsychubeIcon code="HER_SECOND_LIFE" />
+      <PsychubeIcon param="her-second-life" />
     </div>
   </Fragment>
 
@@ -193,19 +193,19 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-breakdown-content">
-    Tuesday is one of the key character in the poison quad with the strong interaction with :effect{code="POISON"} effect.
+    Tuesday is one of the key character in the poison quad with the strong interaction with :effect{param="poison"} effect.
 
     <br />
 
-    All the :effect{code="POISON"} cause by Tuesday will deal Genesis DMG to the target scale by **20%** of Tuesday's ATK, which is lower than most *\[Poison]* characters (30%).
+    All the :effect{param="poison"} cause by Tuesday will deal Genesis DMG to the target scale by **20%** of Tuesday's ATK, which is lower than most *\[Poison]* characters (30%).
 
-    With Insight 1, gains :effect{code="FEAR_CRADLE"}, that make all :effect{code="POISON"} become Critical hits.
+    With Insight 1, gains :effect{param="fear-cradle"}, that make all :effect{param="poison"} become Critical hits.
 
-    * If ally inflicts any *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status, it has a **50%** chance to inflict 1 instance of :effect{code="POISON"} on that target for 1 round, based on **ally**'s ATK.
-    * This inflict effect will be calculated **separately**, which means more *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status, more chances to inflict :effect{code="POISON"}.
+    * If ally inflicts any *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status, it has a **50%** chance to inflict 1 instance of :effect{param="poison"} on that target for 1 round, based on **ally**'s ATK.
+    * This inflict effect will be calculated **separately**, which means more *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status, more chances to inflict :effect{param="poison"}.
     * Only active inflict actions will trigger this effect.
 
-    Insight 3 grant Tuesday :effect{code="ROOM_SERVICE"}, help exceed Moxie on allies can be **temporarily stored**.
+    Insight 3 grant Tuesday :effect{param="room-service"}, help exceed Moxie on allies can be **temporarily stored**.
 
     * At the end of the round, these stored Moxie on allies can be used to recharge the missing Moxie.
     * Each character can store up to **5** Moxie.
@@ -214,8 +214,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
     With first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[The Horror's Delight]*</CharacterSkillTooltip>
 
-    * Deals DMG and inflicts **2** stacks of :effect{code="POISON"} on the target and **1** stack on another random legal enemy target, repeat 2-4 times based on rank.
-    * If there is only 1 enemy left, it will only inflict 2 stacks of :effect{code="POISON"} on the target.
+    * Deals DMG and inflicts **2** stacks of :effect{param="poison"} on the target and **1** stack on another random legal enemy target, repeat 2-4 times based on rank.
+    * If there is only 1 enemy left, it will only inflict 2 stacks of :effect{param="poison"} on the target.
 
     <br />
 
@@ -228,12 +228,12 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
     Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Please, Come On In]*</CharacterSkillTooltip>
 
-    * Deals DMG to all enemies, and inflicts 1 stack of :effect{code="POISON"}.
-    * Deals additional Generis DMG based on the number of instances of :effect{code="POISON"} on the target, and they can be Critical hits.
-    * This skill will also create an :effect{code="ARRAY"}: :effect{code="HORROR_STORY_NIGHT"} in **3** rounds.
-    * :effect{code="POISON"} during this *\[Array]* time will **not** be decreased in duration.
-    * At the start of each round when the *\[Array]* is available, :effect{code="POISON"} effect will trigger 1 more time.
-    * When the *\[Array]* **ends** or is **replaced**, :effect{code="POISON"} will be resolved on all enemies.
+    * Deals DMG to all enemies, and inflicts 1 stack of :effect{param="poison"}.
+    * Deals additional Generis DMG based on the number of instances of :effect{param="poison"} on the target, and they can be Critical hits.
+    * This skill will also create an :effect{param="array"}: :effect{param="horror-story-night"} in **3** rounds.
+    * :effect{param="poison"} during this *\[Array]* time will **not** be decreased in duration.
+    * At the start of each round when the *\[Array]* is available, :effect{param="poison"} effect will trigger 1 more time.
+    * When the *\[Array]* **ends** or is **replaced**, :effect{param="poison"} will be resolved on all enemies.
 
     <br />
 
@@ -255,13 +255,13 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
       <div class="flex-1 step-arrow">
         <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Use to inflicts more :effect{code="POISON"} and gain Moxie</div>
+        <div class="mt-1 text-center">Use to inflicts more :effect{param="poison"} and gain Moxie</div>
       </div>
 
       <div class="flex-1">
         <CharacterImg class="w-20 mx-auto" variant="ultimate" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Use this to active *\[Array]* :effect{code="HORROR_STORY_NIGHT"} and only use it again when the *\[Array]* ends</div>
+        <div class="mt-1 text-center">Use this to active *\[Array]* :effect{param="horror-story-night"} and only use it again when the *\[Array]* ends</div>
       </div>
     </div>
   </Fragment>

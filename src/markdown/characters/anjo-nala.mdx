@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="She doesn't know what restraint is.">
-      1-target attack. Deals **180%** Mental DMG, inflicts :effect{code="TITILLATED"} for 2 rounds on the target hit; if Anjo Nala is in the :effect{code="HYMN"} status, reduce :effect{code="HYMN"}'s remaining duration by 1 round; when attacking, for every type of *\[Neg Status]* the target has, this attack deals an additional **40%** Mental DMG.
+      1-target attack. Deals **180%** Mental DMG, inflicts :effect{param="titillated"} for 2 rounds on the target hit; if Anjo Nala is in the :effect{param="hymn"} status, reduce :effect{param="hymn"}'s remaining duration by 1 round; when attacking, for every type of *\[Neg Status]* the target has, this attack deals an additional **40%** Mental DMG.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="She knows no restraint, devouring passion and love without reservation.">
-      1-target attack. Deals **270%** Mental DMG, inflicts :effect{code="TITILLATED"} for 2 rounds on the target hit; if Anjo Nala is in the :effect{code="HYMN"} status, reduce :effect{code="HYMN"}'s remaining duration by 1 round; when attacking, for every type of *\[Neg Status]* the target has, this attack deals an additional **60%** Mental DMG.
+      1-target attack. Deals **270%** Mental DMG, inflicts :effect{param="titillated"} for 2 rounds on the target hit; if Anjo Nala is in the :effect{param="hymn"} status, reduce :effect{param="hymn"}'s remaining duration by 1 round; when attacking, for every type of *\[Neg Status]* the target has, this attack deals an additional **60%** Mental DMG.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="She knows no restraint, devouring passion and love without reservation, fully indulged in her feast.">
-      1-target attack. Deals **450%** Mental DMG, inflicts :effect{code="TITILLATED"} for 2 rounds on the target hit; if Anjo Nala is in the :effect{code="HYMN"} status, reduce :effect{code="HYMN"} 's remaining duration by 1 round; when attacking, for every type of *\[Neg Status]* the target has, this attack deals an additional **100%** Mental DMG.
+      1-target attack. Deals **450%** Mental DMG, inflicts :effect{param="titillated"} for 2 rounds on the target hit; if Anjo Nala is in the :effect{param="hymn"} status, reduce :effect{param="hymn"} 's remaining duration by 1 round; when attacking, for every type of *\[Neg Status]* the target has, this attack deals an additional **100%** Mental DMG.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="Irreplaceable love.">
-      Self channel. Enters the :effect{code="HYMN"} status for 7 rounds; when the channel ends, casts :effect{code="ANGEL_TEMPTATION"}. When casting this incantation, if Anjo Nala is already in the :effect{code="HYMN"} status, then reduce the duration of :effect{code="HYMN"} by 1 round.
+      Self channel. Enters the :effect{param="hymn"} status for 7 rounds; when the channel ends, casts :effect{param="angel-temptation"}. When casting this incantation, if Anjo Nala is already in the :effect{param="hymn"} status, then reduce the duration of :effect{param="hymn"} by 1 round.
     </CardInfo>
 
     <CardInfo star="2" type="CHANNEL" note="Irreplaceable love, acceptance, and compassion.">
-      Self channel. Enters the :effect{code="HYMN"} status for 7 rounds; when the channel ends, casts :effect{code="ANGEL_TEMPTATION"}. When casting this incantation, if Anjo Nala is already in the :effect{code="HYMN"} status, then reduce the duration of :effect{code="HYMN"} by 2 rounds.
+      Self channel. Enters the :effect{param="hymn"} status for 7 rounds; when the channel ends, casts :effect{param="angel-temptation"}. When casting this incantation, if Anjo Nala is already in the :effect{param="hymn"} status, then reduce the duration of :effect{param="hymn"} by 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="CHANNEL" note="Irreplaceable love, acceptance, and compassion—gone forever.">
-      Self channel. Enters the :effect{code="HYMN"} status for 7 rounds; when the channel ends, casts :effect{code="ANGEL_TEMPTATION"}. When casting this incantation, if Anjo Nala is already in the :effect{code="HYMN"} status, then reduce the duration of :effect{code="HYMN"} by 3 rounds.
+      Self channel. Enters the :effect{param="hymn"} status for 7 rounds; when the channel ends, casts :effect{param="angel-temptation"}. When casting this incantation, if Anjo Nala is already in the :effect{param="hymn"} status, then reduce the duration of :effect{param="hymn"} by 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="CHANNEL" note="The comfort and happiness she once basked in... A beautiful dream she never thought would end.">
-      Self channel. Both Anjo Nala and her bound ally enter a channeling status and cannot act for 1 round; at the start of the next round, the bound ally loses (Current HP x**50%**) HP and casts their ultimate, then Anjo Nala casts her own ultimate: Mass attack. Inflicts 2 random effects from :effect{code="COLLECTION_OF_DEBUFFS_ANJO_NALA"} on all enemies, then deals **500%** Mental DMG to all enemies; for every type of *\[Neg Status]* held among all enemies, this attack deals an additional **60%** Mental DMG.
+      Self channel. Both Anjo Nala and her bound ally enter a channeling status and cannot act for 1 round; at the start of the next round, the bound ally loses (Current HP x**50%**) HP and casts their ultimate, then Anjo Nala casts her own ultimate: Mass attack. Inflicts 2 random effects from :effect{param="collection-of-debuffs-anjo-nala"} on all enemies, then deals **500%** Mental DMG to all enemies; for every type of *\[Neg Status]* held among all enemies, this attack deals an additional **60%** Mental DMG.
     </CardInfo>
   </Fragment>
 
@@ -121,11 +121,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   <Fragment slot="insight-1-info">
     When entering battle, Anjo Nala chooses another ally to bind with. The type of binding is determined by the Afflatus of the bound character, and provides enhancements to both characters:
 
-    Spirit/Intelligence :effect{code="MIND_AND_FLESH"}: **4%** of each other's ATK and Max HP.
+    Spirit/Intelligence :effect{param="mind-and-flesh"}: **4%** of each other's ATK and Max HP.
 
-    Beast/Plant :effect{code="BONE_AND_BLOOD"}: **8%** of each other's Critical DMG and Reality DEF.
+    Beast/Plant :effect{param="bone-and-blood"}: **8%** of each other's Critical DMG and Reality DEF.
 
-    Mineral/Star :effect{code="FORM_AND_PHANTOM"}: **8%** of each other's Critical Rate and Mental DEF.
+    Mineral/Star :effect{param="form-and-phantom"}: **8%** of each other's Critical Rate and Mental DEF.
 
     Anjo Nala's Max Moxie is changed to 12 while Ultimate Moxie Cost or Consumption is changed to 8.
 
@@ -137,13 +137,13 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After the bound ally actively casts an incantation, if Anjo Nala is in the :effect{code="HYMN"} status, reduce the duration of the :effect{code="HYMN"} status by 1 round, and trigger additional effects based on the binding's type:
+    After the bound ally actively casts an incantation, if Anjo Nala is in the :effect{param="hymn"} status, reduce the duration of the :effect{param="hymn"} status by 1 round, and trigger additional effects based on the binding's type:
 
-    :effect{code="MIND_AND_FLESH"}: Anjo Nala casts a rank 1 *\[Feast of Lust]* as a follow-up attack on the enemy with the lowest HP percentage.
+    :effect{param="mind-and-flesh"}: Anjo Nala casts a rank 1 *\[Feast of Lust]* as a follow-up attack on the enemy with the lowest HP percentage.
 
-    :effect{code="BONE_AND_BLOOD"}: Anjo Nala gains 1 additional Moxie.
+    :effect{param="bone-and-blood"}: Anjo Nala gains 1 additional Moxie.
 
-    :effect{code="FORM_AND_PHANTOM"}: Anjo Nala casts 1 :effect{code="ANGEL_TEMPTATION"}, up to 2 times per round.
+    :effect{param="form-and-phantom"}: Anjo Nala casts 1 :effect{param="angel-temptation"}, up to 2 times per round.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -151,23 +151,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Oath Bound*: :effect{code="FORM_AND_PHANTOM"}'s follow-up attack can now be casted up to **3** times per round, and :effect{code="ANGEL_TEMPTATION"}'s Mental DMG dealt is increased to **250%**.
+    *Oath Bound*: :effect{param="form-and-phantom"}'s follow-up attack can now be casted up to **3** times per round, and :effect{param="angel-temptation"}'s Mental DMG dealt is increased to **250%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Twin Phantoms*: When :effect{code="ANGEL_TEMPTATION"} is casted from a completed channel, the Mental DMG dealt is increased to **375%**, and the ATK reduction from \[Captivated] is boosted to **15%**.
+    *Twin Phantoms*: When :effect{param="angel-temptation"} is casted from a completed channel, the Mental DMG dealt is increased to **375%**, and the ATK reduction from \[Captivated] is boosted to **15%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Interwoven Dreams*: The Mental DMG dealt is increased to **600%**; and for every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to **100%**. :effect{code="BONE_AND_BLOOD"}'s additional Moxie gained is increased to **2**.
+    *Interwoven Dreams*: The Mental DMG dealt is increased to **600%**; and for every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to **100%**. :effect{param="bone-and-blood"}'s additional Moxie gained is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Oath Bound*: :effect{code="MIND_AND_FLESH"}'s stat bonus is increased to **8%**; :effect{code="BONE_AND_BLOOD"} stat bonus is increased to **18%**; :effect{code="FORM_AND_PHANTOM"}'s stat bonus is increased to **18%**; The stack requirement for :effect{code="TITILLATED"} to become \[Captivated] is reduced to **2**.
+    *Oath Bound*: :effect{param="mind-and-flesh"}'s stat bonus is increased to **8%**; :effect{param="bone-and-blood"} stat bonus is increased to **18%**; :effect{param="form-and-phantom"}'s stat bonus is increased to **18%**; The stack requirement for :effect{param="titillated"} to become \[Captivated] is reduced to **2**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Interwoven Dreams*: The number of random debuffs inflicted by :effect{code="COLLECTION_OF_DEBUFFS_ANJO_NALA"} is increased to **4**; and for every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to **140%**.
+    *Interwoven Dreams*: The number of random debuffs inflicted by :effect{param="collection-of-debuffs-anjo-nala"} is increased to **4**; and for every type of *\[Neg Status]*, the additional Mental DMG dealt is increased to **140%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -186,19 +186,19 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="TRANSCENDENT_LOVE" />
+      <PsychubeIcon param="transcendent-love" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="BLASPHEMER_OF_NIGHT" />
+      <PsychubeIcon param="blasphemer-of-night" />
 
-      <PsychubeIcon code="SAME_OLD_STORY" />
+      <PsychubeIcon param="same-old-story" />
 
-      <PsychubeIcon code="OUTSIDE_THE_CITY" />
+      <PsychubeIcon param="outside-the-city" />
 
-      <PsychubeIcon code="ON_THE_HAND_OF_TIME" />
+      <PsychubeIcon param="on-the-hand-of-time" />
     </div>
   </Fragment>
 
@@ -233,10 +233,10 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     <br />
 
-    With <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Feast of Lust]*</CharacterSkillTooltip> skill, deal Mental DMG, scale with number of *\[Neg Status]* types on the target, and inflict 1 :effect{code="TITILLATED"}
+    With <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Feast of Lust]*</CharacterSkillTooltip> skill, deal Mental DMG, scale with number of *\[Neg Status]* types on the target, and inflict 1 :effect{param="titillated"}
 
-    * DMG Bonus will **not** add up even if there are 2 or more :effect{code="TITILLATED"} stacks on the target.
-    * :effect{code="TITILLATED"} duration will be calculated **independently**, so you will need to inflict 3 stacks within 2 rounds to be able to trigger :effect{code="CAPTIVATED"}
+    * DMG Bonus will **not** add up even if there are 2 or more :effect{param="titillated"} stacks on the target.
+    * :effect{param="titillated"} duration will be calculated **independently**, so you will need to inflict 3 stacks within 2 rounds to be able to trigger :effect{param="captivated"}
 
     <br />
 
@@ -245,7 +245,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     * When casting incantation of Anjo Nala in *\[Hymn]* status, it will reduce the duration of *\[Hymn]*.
     * With Insight 3, when binded ally cast active incantations, it will also reduce the duration of *\[Hymn]*.
     * *\[Hymn]* will also reduce by 1 when pass a round.
-    * When *\[Hymn]* status end, cast :effect{code="ANGEL_TEMPTATION"}
+    * When *\[Hymn]* status end, cast :effect{param="angel-temptation"}
 
     <br />
 
@@ -265,7 +265,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     |---------------------|--------------------------------------------------|----------------------------------------------------------------------------------------------------|
     | Spirit/Intellect    | ATK and Max HP increased by **4%**               | Casts a rank 1 *\[Feast of Lust]* as a follow-up attack on the enemy with the lowest HP percentage |
     | Beast/Plant         | Critical DMG and Reality DEF increased by **8%** | Gains 1 additional Moxie                                                                           |
-    | Mineral/Star        | Critical Rate and Mental DEF increased by **8%** | Casts 1 :effect{code="ANGEL_TEMPTATION"}                                                           |
+    | Mineral/Star        | Critical Rate and Mental DEF increased by **8%** | Casts 1 :effect{param="angel-temptation"}                                                           |
 
     <br />
 

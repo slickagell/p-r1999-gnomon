@@ -90,7 +90,7 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target debuff. Inflicts 2 stacks of :effect{code="DREAD"} and 5 types of random negative statuses on the target; if the target is in the :effect{code="NIGHTMARE"} status, they immediately die.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target debuff. Inflicts 2 stacks of :effect{code="DREAD"} and 5 types of random negative statuses on the target; if the target is in the :effect{param="nightmare"} status, they immediately die.
         </div>
       </Fragment>
 
@@ -112,11 +112,11 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants the :effect{code="FRESH_BLOOD"} status to all allies for 2 rounds.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants the :effect{param="fresh-blood"} status to all allies for 2 rounds.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants the :effect{code="FRESH_BLOOD"} status to all allies for 3 rounds.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants the :effect{param="fresh-blood"} status to all allies for 3 rounds.
         </div>
       </Fragment>
 
@@ -130,11 +130,11 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass buff. Creates a special array :effect{code="BLOOD_DOMAIN"} for 2 rounds. Enters the :effect{code="FERAL_INSTINCT"} status for 3 rounds.
+          Mass buff. Creates a special array :effect{param="blood-domain"} for 2 rounds. Enters the :effect{param="feral-instinct"} status for 3 rounds.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies. On hit, inflicts permanent :effect{code="CHAOS"} on the targets; if a target is already in the :effect{code="CHAOS"} status, inflicts permanent :effect{code="TERROR"} on the target; if a target is already in the :effect{code="TERROR"} status, inflicts permanent :effect{code="NIGHTMARE"} on the target.
+          Mass attack. Deals **300%** Mental DMG to all enemies. On hit, inflicts permanent :effect{code="CHAOS"} on the targets; if a target is already in the :effect{code="CHAOS"} status, inflicts permanent :effect{param="terror"} on the target; if a target is already in the :effect{param="terror"} status, inflicts permanent :effect{param="nightmare"} on the target.
         </div>
       </Fragment>
     </EnemyInfo>
@@ -159,9 +159,9 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
 
   <Fragment slot="strategy-and-tips-content">
     * Bring units with these **traits** to withstand first attacks of *Semmelweis* or prevent her from Ultimate in the first round:
-      * Who can sustain or create :effect{code="SHIELD"}.
+      * Who can sustain or create :effect{param="shield"}.
       * Who has *\[Control]*, reduce Moxie skills.
-      * Who can create :effect{code="ARRAY"} to override *Semmelweis*'s :effect{code="ARRAY"}.
+      * Who can create :effect{param="array"} to override *Semmelweis*'s :effect{param="array"}.
     * In the round that *Mondlicht* can cast Ultimate, use *Mondlicht*'s Ultimate to dispel :effect{code="MORIBUND"} on all enemies **first**, then use attacks skills to deal DMG and finish off enemies.
     * You can choose **any** Myth Manifests based on your team.
   </Fragment>

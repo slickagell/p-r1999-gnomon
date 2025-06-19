@@ -117,7 +117,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies, inflicts :effect{code="SILENCE"} on all enemies for 2 rounds, then grants 1 stack of :effect{code="INCORPOREAL"} to all allies.
+          Mass attack. Deals **300%** Reality DMG to all enemies, inflicts :effect{param="silence"} on all enemies for 2 rounds, then grants 1 stack of :effect{code="INCORPOREAL"} to all allies.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -138,7 +138,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
   <Fragment slot="stage-info-content">
     * There are *Legers* and enemies, you just need to defeat *Legers* to pass the stage.
     * *Legers* has a Debuff skill that reduce our allies DMG.
-    * At the beginning of each round, enemies will receive a :effect{code="SHIELD"}.
+    * At the beginning of each round, enemies will receive a :effect{param="shield"}.
     * When defeated, enemies will revive **1** time and recover **50%** HP and 5 Moxie.
   </Fragment>
 
@@ -148,7 +148,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
 
   <Fragment slot="strategy-and-tips-content">
     * Focus on dealing with *Legers*.
-    * Destroy :effect{code="SHIELD"} layer first, then cast other important Burst attack skills to optimize DMG.
+    * Destroy :effect{param="shield"} layer first, then cast other important Burst attack skills to optimize DMG.
     * Prioritize **Star** or **single-target** units.
     * The **best** Myth Manifest to use is *Star of Misfortune* since it has stronger Afflatus, provides significant amount DMG to enemies.
   </Fragment>

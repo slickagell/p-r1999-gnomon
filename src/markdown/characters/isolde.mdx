@@ -66,15 +66,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="I sing and twirl.">
-      Mass Attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 2 stacks of :effect{code="BURN"} on the targets hit. When in the :effect{code="INTERMEZZO"} status, gain Penetration Rate **+30%** for this attack. When in the :effect{code="FINALE"} status, gain Penetration Rate **+30%** for this attack.
+      Mass Attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 2 stacks of :effect{param="burn"} on the targets hit. When in the :effect{param="intermezzo"} status, gain Penetration Rate **+30%** for this attack. When in the :effect{param="finale"} status, gain Penetration Rate **+30%** for this attack.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="I sing and twirl on stage.">
-      Mass Attack. Deals **225%** Reality DMG to 2 enemies. Inflicts 2 stacks of :effect{code="BURN"} on the targets hit. When in the :effect{code="INTERMEZZO"} status, gain Penetration Rate **+30%** for this attack. When in the :effect{code="FINALE"} status, gain Penetration Rate **+30%** for this attack.
+      Mass Attack. Deals **225%** Reality DMG to 2 enemies. Inflicts 2 stacks of :effect{param="burn"} on the targets hit. When in the :effect{param="intermezzo"} status, gain Penetration Rate **+30%** for this attack. When in the :effect{param="finale"} status, gain Penetration Rate **+30%** for this attack.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="I sing and twirl on stage, for there is no place for me other than the stage.">
-      Mass Attack. Deals **300%** Reality DMG to 2 enemies. Inflicts 2 stacks of :effect{code="BURN"} on the targets hit. When in the :effect{code="INTERMEZZO"} status, gain Penetration Rate **+30%** for this attack. When in the :effect{code="FINALE"} status, gain Penetration Rate **+30%** for this attack.
+      Mass Attack. Deals **300%** Reality DMG to 2 enemies. Inflicts 2 stacks of :effect{param="burn"} on the targets hit. When in the :effect{param="intermezzo"} status, gain Penetration Rate **+30%** for this attack. When in the :effect{param="finale"} status, gain Penetration Rate **+30%** for this attack.
     </CardInfo>
   </Fragment>
 
@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="I dance.">
-      Mass debuff. Inflicts Critical DEF **-25%** and Reality DEF **-15%** (**-20%** to targets in the :effect{code="BURN"} status) on all enemies for 2 rounds.
+      Mass debuff. Inflicts Critical DEF **-25%** and Reality DEF **-15%** (**-20%** to targets in the :effect{param="burn"} status) on all enemies for 2 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="I dance to recount my story.">
-      Mass debuff. Inflicts Critical DEF **-35%** and Reality DEF **-15%** (**-20%** to targets in the :effect{code="BURN"} status) on all enemies for 2 rounds.
+      Mass debuff. Inflicts Critical DEF **-35%** and Reality DEF **-15%** (**-20%** to targets in the :effect{param="burn"} status) on all enemies for 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="I dance to recount my story, so that others may hear me.">
-      Mass debuff. Inflicts Critical DEF **-50%** and Reality DEF **-15%** (**-20%** to targets in the :effect{code="BURN"} status) on all enemies for 2 rounds.
+      Mass debuff. Inflicts Critical DEF **-50%** and Reality DEF **-15%** (**-20%** to targets in the :effect{param="burn"} status) on all enemies for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="DEBUFF" note="I hereby relieve you!">
-      Mass debuff. Inflicts 5 stacks of :effect{code="BURN"} on all enemies, and additional 5 stacks of :effect{code="BURN"} on the main target, at the same time, grants 1 stack of :effect{code="ROUSING_MORALE"} to all allies, and then casts :effect{code="INTERMEZZO"} as a follow-up attack on the targets. For every excess stack of :effect{code="BURN"} on the main target, this :effect{code="INTERMEZZO"} gains Incantation Might **+15%**.
+      Mass debuff. Inflicts 5 stacks of :effect{param="burn"} on all enemies, and additional 5 stacks of :effect{param="burn"} on the main target, at the same time, grants 1 stack of :effect{param="rousing-morale"} to all allies, and then casts :effect{param="intermezzo"} as a follow-up attack on the targets. For every excess stack of :effect{param="burn"} on the main target, this :effect{param="intermezzo"} gains Incantation Might **+15%**.
     </CardInfo>
   </Fragment>
 
@@ -115,9 +115,9 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, enter the :effect{code="PRELUDE"} status and inflict 3 stacks of :effect{code="BURN"} on all enemies.
-    At the end of the round, when the highest enemy :effect{code="BURN"} stack resolves and loses stacks, gain an equal number of :effect{code="HEAT"} stacks in turn.
-    When holding 15 stacks of :effect{code="HEAT"}, the :effect{code="PRELUDE"} status changes to the :effect{code="INTERLUDE"} status.
+    When entering battle, enter the :effect{param="prelude"} status and inflict 3 stacks of :effect{param="burn"} on all enemies.
+    At the end of the round, when the highest enemy :effect{param="burn"} stack resolves and loses stacks, gain an equal number of :effect{param="heat"} stacks in turn.
+    When holding 15 stacks of :effect{param="heat"}, the :effect{param="prelude"} status changes to the :effect{param="interlude"} status.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -125,7 +125,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When holding 40 :effect{code="HEAT"} stacks, the :effect{code="INTERLUDE"} status changes to the :effect{code="FINALE"} status.
+    When holding 40 :effect{param="heat"} stacks, the :effect{param="interlude"} status changes to the :effect{param="finale"} status.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -133,16 +133,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Seven Veils*: For every stack of :effect{code="BURN"} a target has, :effect{code="INTERMEZZO"} now deals Reality DMG **+13%** to that target.
+    *Seven Veils*: For every stack of :effect{param="burn"} a target has, :effect{param="intermezzo"} now deals Reality DMG **+13%** to that target.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Seven Veils*: :effect{code="PRELUDE"} now advances to :effect{code="INTERLUDE"} at 10 stacks of :effect{code="HEAT"}.
-    :effect{code="INTERLUDE"} now advances to :effect{code="FINALE"} at 30 stacks of Heat.
+    *Seven Veils*: :effect{param="prelude"} now advances to :effect{param="interlude"} at 10 stacks of :effect{param="heat"}.
+    :effect{param="interlude"} now advances to :effect{param="finale"} at 30 stacks of Heat.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Seven Veils*: For every stack of :effect{code="BURN"} a target has, :effect{code="INTERMEZZO"} now deals Reality DMG **+16%** to that target.
+    *Seven Veils*: For every stack of :effect{param="burn"} a target has, :effect{param="intermezzo"} now deals Reality DMG **+16%** to that target.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -150,7 +150,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Seven Veils*: For every stack of :effect{code="BURN"} a target has, :effect{code="INTERMEZZO"} now deals Reality DMG **+20%** to that target.
+    *Seven Veils*: For every stack of :effect{param="burn"} a target has, :effect{param="intermezzo"} now deals Reality DMG **+20%** to that target.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -91,11 +91,11 @@ import data from "@data/reveries-in-the-rain/zone/370m.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Self channel. Enters the :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Self channel. Enters the :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Self channel. Enters the :effect{code="BOARDING_ASSAULT"} status. If already in the :effect{code="BOARDING_ASSAULT"} status, gains an additional Moxie +1.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Self channel. Enters the :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
@@ -117,11 +117,11 @@ import data from "@data/reveries-in-the-rain/zone/370m.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **200%** Reality DMG to all enemies, and inflicts :effect{code="DAZE"} on the targets for 1 round.
+          Mass attack. Deals **200%** Reality DMG to all enemies, and inflicts :effect{param="daze"} on the targets for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **600%** Reality DMG to all enemies. If any target is defeated, grants 1 stack of :effect{code="ROUSING_MORALE"} to all allies and 1 extra stack to self.
+          Mass attack. Deals **600%** Reality DMG to all enemies. If any target is defeated, grants 1 stack of :effect{param="rousing-morale"} to all allies and 1 extra stack to self.
         </div>
       </Fragment>
     </EnemyInfo>

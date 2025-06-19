@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="HEALTH" note="Fi Fi Fo FUM!">
-      Self heal. Grants DMG Dealt **+20%** and enters :effect{code="SELF_HEALING"}: when a round starts, HP +(Lost HP x**20%**). Lasts 2 rounds.
+      Self heal. Grants DMG Dealt **+20%** and enters :effect{param="self-healing"}: when a round starts, HP +(Lost HP x**20%**). Lasts 2 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="HEALTH" note="Fi Fi Fo FUM! I'm a genius!">
-      Self heal. Grants DMG Dealt **+25%** and enters :effect{code="SELF_HEALING"}: when a round starts, HP +(Lost HP x**25%**). Lasts 2 rounds.
+      Self heal. Grants DMG Dealt **+25%** and enters :effect{param="self-healing"}: when a round starts, HP +(Lost HP x**25%**). Lasts 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="HEALTH" note="Fi Fi Fo FUM! I'm no pushover! I'm a GENIUS!">
-      Self heal. Grants DMG Dealt **+35%** and enters :effect{code="SELF_HEALING"}: when a round starts, HP +(Lost HP x**35%**). Lasts 2 rounds.
+      Self heal. Grants DMG Dealt **+35%** and enters :effect{param="self-healing"}: when a round starts, HP +(Lost HP x**35%**). Lasts 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="BUFF" note="Read these codes. Device which can is IDM5100, otherwise a piece of scrap with a crappy motherboard.">
-      Mass buff. Dispels *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]* statuses from all enemies. Purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* from all allies. All allies also gain (the caster's ATK x**100%**) :effect{code="SHIELD"} for 3 rounds.
+      Mass buff. Dispels *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]* statuses from all enemies. Purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* from all allies. All allies also gain (the caster's ATK x**100%**) :effect{param="shield"} for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *65,536 Bytes*'s effect changes to: inflicts a :effect{code="SHIELD"} with (the caster's ATK x**130%**) HP on all allies.
+    *65,536 Bytes*'s effect changes to: inflicts a :effect{param="shield"} with (the caster's ATK x**130%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -135,7 +135,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *65,536 Bytes*'s effect changes to: inflicts a :effect{code="SHIELD"} with (the caster's ATK x**160%**) HP on all allies.
+    *65,536 Bytes*'s effect changes to: inflicts a :effect{param="shield"} with (the caster's ATK x**160%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -143,7 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *65,536 Bytes*'s effect changes to: inflicts a :effect{code="SHIELD"} with (the caster's ATK x**200%**) HP on all allies.
+    *65,536 Bytes*'s effect changes to: inflicts a :effect{param="shield"} with (the caster's ATK x**200%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -67,15 +67,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Unhealed scars haunt you every moment.">
-      Mass attack. Deals **160%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
+      Mass attack. Deals **160%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{param="scared"} on the targets.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="Unhealed scars haunt you every moment, even in your dreams.">
-      Mass attack. Deals **240%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
+      Mass attack. Deals **240%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{param="scared"} on the targets.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="Unhealed scars haunt you every moment, even in your dreams, as if constantly being gnawed by unseen teeth.">
-      Mass attack. Deals **400%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{code="SCARED"} on the targets.
+      Mass attack. Deals **400%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{param="scared"} on the targets.
     </CardInfo>
   </Fragment>
 
@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="BUFF" note="Dream serves as a boundary, separating reality from imagination.">
-      Self buff. Enter the :effect{code="DREAM_VISIT"} status, grant a :effect{code="SHIELD"} with (own ATK x**250%**) HP to all allies for 3 rounds.
+      Self buff. Enter the :effect{param="dream-visit"} status, grant a :effect{param="shield"} with (own ATK x**250%**) HP to all allies for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -138,7 +138,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    At the start of the round, if in the :effect{code="DREAM_VISIT"} status, recover (Max HP x**20%**) HP for self; then if own HP is above **90%**, recover (own Max HP x**15%**) HP for adjacent allies.
+    At the start of the round, if in the :effect{param="dream-visit"} status, recover (Max HP x**20%**) HP for self; then if own HP is above **90%**, recover (own Max HP x**15%**) HP for adjacent allies.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -162,7 +162,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Another Jump This Way*: The duration of :effect{code="DREAM_VISIT"} is increased by 1 round.
+    *Another Jump This Way*: The duration of :effect{param="dream-visit"} is increased by 1 round.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

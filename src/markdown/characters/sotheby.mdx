@@ -67,15 +67,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin.">
-      Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} status for 2 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+      Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} status for 2 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin, but there are always exceptions.">
-      Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} status for 3 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+      Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} status for 3 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin, but there are always exceptions. In fact, what's bottled up is far more dangerous.">
-      Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts :effect{code="POISON"} status for 5 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+      Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} status for 5 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
     </CardInfo>
   </Fragment>
 
@@ -85,15 +85,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="HEALTH" note="Efficacy is not determined by the dose.">
-      Mass healing. Gives all allies 2 rounds of :effect{code="CURE"} when a round starts, HP +(the caster's ATK x**50%**).
+      Mass healing. Gives all allies 2 rounds of :effect{param="cure"} when a round starts, HP +(the caster's ATK x**50%**).
     </CardInfo>
 
     <CardInfo star="2" type="HEALTH" note="Efficacy is not determined by the dose. The original formula still has room for improvement.">
-      Mass healing. Gives all allies 2 rounds of :effect{code="CURE"} when a round starts, HP +(the caster's ATK x**75%**).
+      Mass healing. Gives all allies 2 rounds of :effect{param="cure"} when a round starts, HP +(the caster's ATK x**75%**).
     </CardInfo>
 
     <CardInfo star="3" type="HEALTH" note="Efficacy is not determined by the dose. The original formula still has room for improvement. Just use 1 drop.">
-      Mass healing. Gives all allies 2 rounds of :effect{code="CURE"} when a round starts, HP +(the caster's ATK x**125%**).
+      Mass healing. Gives all allies 2 rounds of :effect{param="cure"} when a round starts, HP +(the caster's ATK x**125%**).
     </CardInfo>
   </Fragment>
 
@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="1 bottle, 1 bottle, 1 bottle, 1 bottle, 1 bottle...">
-      Mass attack. Deals **350%** Reality DMG to all enemies and all active :effect{code="POISON"} and :effect{code="CURE"} statuses on every character take effect immediately.
+      Mass attack. Deals **350%** Reality DMG to all enemies and all active :effect{param="poison"} and :effect{param="cure"} statuses on every character take effect immediately.
     </CardInfo>
   </Fragment>
 
@@ -116,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    The duration of :effect{code="POISON"} inflicted by *Triple the Dose!* +1 round.
+    The duration of :effect{param="poison"} inflicted by *Triple the Dose!* +1 round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,7 +124,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Before *Concentrated Essence!* inflicts :effect{code="CURE"} status, the :effect{code="CURE"} statuses on all allies take effect immediately.
+    Before *Concentrated Essence!* inflicts :effect{param="cure"} status, the :effect{param="cure"} statuses on all allies take effect immediately.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,7 +136,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Triple the Dose!*'s effect changes to: :effect{code="POISON"} status inflicted by the skill deals (the caster's ATK x**40%**) Genesis DMG.
+    *Triple the Dose!*'s effect changes to: :effect{param="poison"} status inflicted by the skill deals (the caster's ATK x**40%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -148,7 +148,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Triple the Dose!*'s effect changes to: :effect{code="POISON"} status inflicted by the skill deals (the caster's ATK x**50%**) Genesis DMG.
+    *Triple the Dose!*'s effect changes to: :effect{param="poison"} status inflicted by the skill deals (the caster's ATK x**50%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -167,9 +167,9 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      :effect{code="CURE"} Enhancement: After being attacked, if own current HP is below **40%**, this effect is triggered immediately and the duration is reduced by **1** round. This effect also becomes stackable.
+      :effect{param="cure"} Enhancement: After being attacked, if own current HP is below **40%**, this effect is triggered immediately and the duration is reduced by **1** round. This effect also becomes stackable.
 
-      *\[Genius Lady]* Insight III upgrade: The :effect{code="CURE"} that is granted by *\[Concentrated Essence!]* gains **+1** round duration.
+      *\[Genius Lady]* Insight III upgrade: The :effect{param="cure"} that is granted by *\[Concentrated Essence!]* gains **+1** round duration.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
@@ -181,7 +181,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      At the start of the round, grant **1** stack of :effect{code="DUALITY_POTION"} to self.
+      At the start of the round, grant **1** stack of :effect{param="duality-potion"} to self.
     </div>
   </Fragment>
 

@@ -66,15 +66,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="Move, shoot, move.">
-      Mass DMG. Deals **120%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="HORSEMANSHIP"}; if this unit has 3 stacks of :effect{code="HORSEMANSHIP"}, spend all stacks of :effect{code="HORSEMANSHIP"} to make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill #2, this effect can trigger up to once per round.
+      Mass DMG. Deals **120%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{param="horsemanship"}; if this unit has 3 stacks of :effect{param="horsemanship"}, spend all stacks of :effect{param="horsemanship"} to make the unit with the :effect{param="riding-double"} status cast a rank 1 version of their skill #2, this effect can trigger up to once per round.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="Move, shoot, move. Speed is a ranger's lifeline.">
-      Mass DMG. Deals **180%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="HORSEMANSHIP"}; if this unit has 3 stacks of :effect{code="HORSEMANSHIP"}, spend all stacks of :effect{code="HORSEMANSHIP"} to make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill #2, this effect can trigger up to once per round.
+      Mass DMG. Deals **180%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{param="horsemanship"}; if this unit has 3 stacks of :effect{param="horsemanship"}, spend all stacks of :effect{param="horsemanship"} to make the unit with the :effect{param="riding-double"} status cast a rank 1 version of their skill #2, this effect can trigger up to once per round.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="Move, shoot, move. Speed is a ranger's lifeline, Never stop moving!">
-      Mass DMG. Deals **300%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{code="HORSEMANSHIP"}; if this unit has 3 stacks of :effect{code="HORSEMANSHIP"}, spend all stacks of :effect{code="HORSEMANSHIP"} to make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill #2, this effect can trigger up to once per round.
+      Mass DMG. Deals **300%** Mental DMG to 2 enemies; after attacking, gain 1 stack of :effect{param="horsemanship"}; if this unit has 3 stacks of :effect{param="horsemanship"}, spend all stacks of :effect{param="horsemanship"} to make the unit with the :effect{param="riding-double"} status cast a rank 1 version of their skill #2, this effect can trigger up to once per round.
     </CardInfo>
   </Fragment>
 
@@ -84,15 +84,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Generosity is the rangers virtue.">
-      1-target buff. Grants the :effect{code="RIDING_DOUBLE"} status to the target for 2 rounds; only one :effect{code="RIDING_DOUBLE"} status can exist on the field at a time.
+      1-target buff. Grants the :effect{param="riding-double"} status to the target for 2 rounds; only one :effect{param="riding-double"} status can exist on the field at a time.
     </CardInfo>
 
     <CardInfo star="2" type="BUFF" note="Generosity is the ranger's virtue, and my loyal horse will carry you.">
-      1-target buff. Grants the :effect{code="RIDING_DOUBLE"} status to the target for 2 rounds and 1 stack of :effect{code="HORSEMANSHIP"} to self; only one :effect{code="RIDING_DOUBLE"} status can exist on the field at a time.
+      1-target buff. Grants the :effect{param="riding-double"} status to the target for 2 rounds and 1 stack of :effect{param="horsemanship"} to self; only one :effect{param="riding-double"} status can exist on the field at a time.
     </CardInfo>
 
     <CardInfo star="3" type="BUFF" note="Generosity is the rangers virtue. My loyal horse will carry you, while your head will carry me.">
-      1-target buff. Grants the :effect{code="RIDING_DOUBLE"} status to the target for 2 rounds and 2 stacks of :effect{code="HORSEMANSHIP"} to self; only one :effect{code="RIDING_DOUBLE"} status can exist on the field at a time.
+      1-target buff. Grants the :effect{param="riding-double"} status to the target for 2 rounds and 2 stacks of :effect{param="horsemanship"} to self; only one :effect{param="riding-double"} status can exist on the field at a time.
     </CardInfo>
   </Fragment>
 
@@ -102,7 +102,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="With this, the real battle begins!">
-      Mass DMG. Deals **300%** Mental DMG to all enemies; after attacking, inflict Reality DEF **-20%** on the target for 3 rounds, then make the unit with the :effect{code="RIDING_DOUBLE"} status cast a rank 1 version of their skill #1.
+      Mass DMG. Deals **300%** Mental DMG to all enemies; after attacking, inflict Reality DEF **-20%** on the target for 3 rounds, then make the unit with the :effect{param="riding-double"} status cast a rank 1 version of their skill #1.
     </CardInfo>
   </Fragment>
 
@@ -123,7 +123,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After another ally performs an extra action, grant 1 stack of :effect{code="HORSEMANSHIP"} to self (triggers up to once per round); whenever the unit with the :effect{code="RIDING_DOUBLE"} status takes 3 actions, Brimley gets Moxie +1 (triggers up to once per round).
+    After another ally performs an extra action, grant 1 stack of :effect{param="horsemanship"} to self (triggers up to once per round); whenever the unit with the :effect{param="riding-double"} status takes 3 actions, Brimley gets Moxie +1 (triggers up to once per round).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -147,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Hop On!*: :effect{code="RIDING_DOUBLE"}'s bonus ATK multiplier is increased to **8%**.
+    *Hop On!*: :effect{param="riding-double"}'s bonus ATK multiplier is increased to **8%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

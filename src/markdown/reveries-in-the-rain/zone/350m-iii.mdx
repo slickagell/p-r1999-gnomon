@@ -53,7 +53,7 @@ import data from "@data/reveries-in-the-rain/zone/350m-iii.json";
 
           <span class="passive-title">Painful Memories</span>
 
-          When being attacked, if this unit is not in a :effect{code="POISON"} or :effect{code="BURN"} status, DMG Taken **-70%**.
+          When being attacked, if this unit is not in a :effect{param="poison"} or :effect{param="burn"} status, DMG Taken **-70%**.
 
           <span class="passive-title">Masterful Preparation II</span>
 
@@ -79,13 +79,13 @@ import data from "@data/reveries-in-the-rain/zone/350m-iii.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 1 stack of :effect{code="STURDINESS"} to all allies and dispels 1 type of *\[Neg Status]* from other allies.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 1 stack of :effect{param="sturdiness"} to all allies and dispels 1 type of *\[Neg Status]* from other allies.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies. Inflicts Moxie -1 and the :effect{code="DISCONCERT"} status for 1 round on the targets hit.
+          Mass attack. Deals **300%** Mental DMG to all enemies. Inflicts Moxie -1 and the :effect{param="disconcert"} status for 1 round on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>

@@ -102,13 +102,13 @@ import data from "@data/reveries-in-the-rain/zone/40m.json";
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter for 2 rounds. Enters :effect{code="TAUNT"} status. When the caster is attacked, deals (the caster's ATK x**100%**) Genesis DMG to the attacker.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter for 2 rounds. Enters :effect{param="taunt"} status. When the caster is attacked, deals (the caster's ATK x**100%**) Genesis DMG to the attacker.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies. After attacking, inflicts 1 stack of :effect{code="WEAKNESS"} on the targets.
+          Mass attack. Deals **300%** Mental DMG to all enemies. After attacking, inflicts 1 stack of :effect{param="weakness"} on the targets.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>

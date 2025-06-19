@@ -30,7 +30,7 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Ready to Strike</span>
 
-          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{code="POWER_BURST"}.
+          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{param="power-burst"}.
 
           <span class="passive-title">Precision Correction</span>
 
@@ -40,7 +40,7 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Ready to Strike</span>
 
-          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{code="POWER_BURST"}.
+          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{param="power-burst"}.
 
           <span class="passive-title">Precision Correction</span>
 
@@ -50,7 +50,7 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Ready to Strike</span>
 
-          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{code="POWER_BURST"}.
+          When the first of a bullet type is gained, immediately casts a rank 1 *\[Kinetic Weaponry]* 1 time; at the end of the round, if carrying a Shield, gains 1 stack of :effect{param="power-burst"}.
 
           <span class="passive-title">Precision Correction</span>
 
@@ -60,7 +60,7 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Beautiful Lie</span>
 
-          After the caster enters battle, immediately casts 1-star *\[A Bouquet of Galaxy]* and gains 1 stack of :effect{code="DIAMOND_BULLET"} (only triggers 1 time).
+          After the caster enters battle, immediately casts 1-star *\[A Bouquet of Galaxy]* and gains 1 stack of :effect{param="diamond-bullet"} (only triggers 1 time).
 
           <span class="passive-title">Beautiful Lie Ⅲ</span>
 
@@ -74,27 +74,27 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{param="power-burst"} status, Penetration Rate **+25%** for this attack.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{param="power-burst"} status, Penetration Rate **+25%** for this attack.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{param="power-burst"} status, Penetration Rate **+25%** for this attack.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{param="power-burst"} status, Penetration Rate **+25%** for this attack.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **200%** Reality DMG; if in the :effect{param="power-burst"} status, Penetration Rate **+25%** for this attack.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{code="POWER_BURST"} status, Penetration Rate **+25%** for this attack.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG; if in the :effect{param="power-burst"} status, Penetration Rate **+25%** for this attack.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
@@ -108,27 +108,27 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, inflicts the :effect{param="blind"} status for 2 rounds on the targets hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, inflicts the :effect{param="blind"} status for 2 rounds on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, inflicts the :effect{param="blind"} status for 2 rounds on the targets hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, inflicts the :effect{param="blind"} status for 2 rounds on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, inflicts the :effect{param="blind"} status for 2 rounds on the targets hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, inflicts the :effect{code="BLIND"} status for 2 rounds on the targets hit.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **180%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, inflicts the :effect{param="blind"} status for 2 rounds on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
@@ -142,19 +142,19 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
+          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
+          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{code="POWER_BURST"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
+          Mass attack. Deals **250%** Reality DMG to 2 enemies. If in the :effect{param="power-burst"} status, deals an additional (the target's Max HP x**15%**) Genesis DMG to the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
-          1-target attack. Deals **550%** Reality DMG and then gains 2 stacks of :effect{code="DIAMOND_BULLET"}.
+          1-target attack. Deals **550%** Reality DMG and then gains 2 stacks of :effect{param="diamond-bullet"}.
         </div>
       </Fragment>
     </EnemyInfo>

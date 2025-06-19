@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
 
           <span class="passive-title">Poison Feather</span>
 
-          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{code="POISON"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
+          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{param="poison"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
 
           <span class="passive-title">Evolution</span>
 
@@ -52,11 +52,11 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
 
           <span class="passive-title">Poison Feather</span>
 
-          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{code="POISON"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
+          When being attacked by a 1-target attack, gain Moxie +1 for self and inflict :effect{param="poison"} on the attacker for 2 rounds: at the end of the round, take (own ATK x**30%**) Genesis DMG.
 
           <span class="passive-title">Strict Disciplinarian</span>
 
-          Marks the enemy that last took action and attacks them at the start of the round. Inflicts :effect{code="POISON"} for 2 rounds on the target hit: at the end of the round, the target takes (own ATK x**30%**) Genesis DMG.
+          Marks the enemy that last took action and attacks them at the start of the round. Inflicts :effect{param="poison"} for 2 rounds on the target hit: at the end of the round, the target takes (own ATK x**30%**) Genesis DMG.
         </div>
       </Fragment>
 
@@ -80,19 +80,19 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{param="poison"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{param="poison"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
         </div>
 
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG. After attacking, inflicts :effect{param="poison"} for 2 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{code="POISON"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **160%** Reality DMG. After attacking, inflicts :effect{param="poison"} for 3 rounds on the target: at the end of the round, takes (the user's ATK x**30%**) Genesis DMG.
         </div>
       </Fragment>
 
@@ -102,7 +102,7 @@ import data from "@data/reveries-in-the-rain/zone/100m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[1].id}', '${data.enemies[2].id}'].includes(active) & activePhase === '2'`}>
-          Mass attack. Deals **400%** Reality DMG to all enemies. Inflicts 1 stack of :effect{code="PARALYZE"} on the targets hit.
+          Mass attack. Deals **400%** Reality DMG to all enemies. Inflicts 1 stack of :effect{param="paralyze"} on the targets hit.
         </div>
       </Fragment>
     </EnemyInfo>

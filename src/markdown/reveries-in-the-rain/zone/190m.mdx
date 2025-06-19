@@ -17,7 +17,7 @@ import data from "@data/reveries-in-the-rain/zone/190m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 2 rounds, a random character gets :effect{code="DISARM"} for 1 round.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the first round and at the start of every 2 rounds, a random character gets :effect{param="disarm"} for 1 round.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -58,7 +58,7 @@ import data from "@data/reveries-in-the-rain/zone/190m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          1-target attack. Purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster and enters :effect{code="IMMUNITY"} for 1 round to the caster. Deals **400%** Mental DMG plus (the caster's ATK x**100%**) Genesis DMG.
+          1-target attack. Purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster and enters :effect{param="immunity"} for 1 round to the caster. Deals **400%** Mental DMG plus (the caster's ATK x**100%**) Genesis DMG.
         </div>
       </Fragment>
     </EnemyInfo>
@@ -71,8 +71,8 @@ import data from "@data/reveries-in-the-rain/zone/190m.json";
   <Fragment slot="stage-info-content">
     * There is only **1** enemy, *Dikke*, with high HP, DMG and *\[Control]* immunity.
     * Every attacks of *Dikke* will increases her ATK or Leech Rate based on the difference between *Dikke*'s HP and target's, higher or lower.
-    * Every **4** rounds, *Dikke* will create an :effect{code="ARRAY"} that increases her ATK and Leech Rate, also reduce DMG Taken.
-    * When in :effect{code="ARRAY"}, *Dikke* will also deals DMG to the far **left** ally at the end of the round.
+    * Every **4** rounds, *Dikke* will create an :effect{param="array"} that increases her ATK and Leech Rate, also reduce DMG Taken.
+    * When in :effect{param="array"}, *Dikke* will also deals DMG to the far **left** ally at the end of the round.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
@@ -80,14 +80,14 @@ import data from "@data/reveries-in-the-rain/zone/190m.json";
   </Fragment>
 
   <Fragment slot="strategy-and-tips-content">
-    * Bring 1 ally who **can create** :effect{code="ARRAY"} to override *Dikke*'s :effect{code="ARRAY"}. For example, some allies below:
+    * Bring 1 ally who **can create** :effect{param="array"} to override *Dikke*'s :effect{param="array"}. For example, some allies below:
       * <CharacterHeadIcon code="LOPERA" />
       * <CharacterHeadIcon code="TUESDAY" />
       * <CharacterHeadIcon code="GETIAN" />
       * <CharacterHeadIcon code="SEMMELWEIS" />
 
-    * If you don't have a character who can create :effect{code="ARRAY"}, bring sustain ally and try to keep HP higher than *Dikke*, prevent her from increasing her ATK.
-      * When *Dikke* is in :effect{code="ARRAY"}, she will attack the leftmost ally, so place your best tankiest ally or unit thats not disturbed by :effect{code="DISARM"} like healer in the **first slot** to optimize sustain.
+    * If you don't have a character who can create :effect{param="array"}, bring sustain ally and try to keep HP higher than *Dikke*, prevent her from increasing her ATK.
+      * When *Dikke* is in :effect{param="array"}, she will attack the leftmost ally, so place your best tankiest ally or unit thats not disturbed by :effect{param="disarm"} like healer in the **first slot** to optimize sustain.
 
     - Pick DPS characters who can deals high DMG to **single target**.
 

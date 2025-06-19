@@ -17,7 +17,7 @@ import data from "@data/reveries-in-the-rain/zone/150m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, suffer :effect{code="DISCONCERT"} for 2 rounds.
+    :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, suffer :effect{param="disconcert"} for 2 rounds.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} ATK **+5%**, Reality DEF **+5%**, and Mental DEF **+5%**.
 
@@ -92,7 +92,7 @@ import data from "@data/reveries-in-the-rain/zone/150m.json";
         <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
           <span class="passive-title">Ritual Ripples Ⅰ</span>
 
-          After the caster casts an Ultimate, inflicts 1 stack of :effect{code="ROUSING_MORALE"} on the caster.
+          After the caster casts an Ultimate, inflicts 1 stack of :effect{param="rousing-morale"} on the caster.
 
           <span class="passive-title">Starry Reflection</span>
 
@@ -102,7 +102,7 @@ import data from "@data/reveries-in-the-rain/zone/150m.json";
         <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
           <span class="passive-title">Ritual Ripple Ⅱ</span>
 
-          After the caster casts an Ultimate, inflicts 2 stacks of :effect{code="STURDINESS"} on the caster.
+          After the caster casts an Ultimate, inflicts 2 stacks of :effect{param="sturdiness"} on the caster.
 
           <span class="passive-title">Rock Tomb Armor</span>
 
@@ -136,11 +136,11 @@ import data from "@data/reveries-in-the-rain/zone/150m.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Mental DMG. If the caster is in at least 2 active *\[Stats Up]* or *\[Pos Status]* statuses, this attack also inflicts 1 round of :effect{code="PETRIFY"} status on the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Mental DMG. If the caster is in at least 2 active *\[Stats Up]* or *\[Pos Status]* statuses, this attack also inflicts 1 round of :effect{param="petrify"} status on the target.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. If the caster is in at least 2 active *\[Stats Up]* or *\[Pos Status]* statuses, this attack also inflicts 1 round of :effect{code="PETRIFY"} status and 1 stack of :effect{code="FRAGILITY"} status on the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. If the caster is in at least 2 active *\[Stats Up]* or *\[Pos Status]* statuses, this attack also inflicts 1 round of :effect{param="petrify"} status and 1 stack of :effect{code="FRAGILITY"} status on the target.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
@@ -228,7 +228,7 @@ import data from "@data/reveries-in-the-rain/zone/150m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies. Inflicts the :effect{code="DISARM"} status for 1 round on the targets hit.
+          Mass attack. Deals **300%** Reality DMG to all enemies. Inflicts the :effect{param="disarm"} status for 1 round on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
@@ -240,11 +240,11 @@ import data from "@data/reveries-in-the-rain/zone/150m.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          Mass attack. Deals **240%** Mental DMG to all enemies. Inflicts :effect{code="CORRODE"} for 3 rounds on the targets hit: at the end of the round, takes (own Current HP x**35%**) Genesis DMG, up to (the user's Max HP x**35%**) in damage.
+          Mass attack. Deals **240%** Mental DMG to all enemies. Inflicts :effect{param="corrode"} for 3 rounds on the targets hit: at the end of the round, takes (own Current HP x**35%**) Genesis DMG, up to (the user's Max HP x**35%**) in damage.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{code="SEAL"} status on the main target for 2 rounds.
+          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{param="seal"} status on the main target for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[5].id}'].includes(active)`}>

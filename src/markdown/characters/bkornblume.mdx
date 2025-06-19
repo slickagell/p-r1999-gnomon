@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="She heard numerous details of the neighborhood's story and has plenty of ideas about them.">
-      1-target attack. Deals **550%** Reality DMG and inflicts :effect{code="SEAL"} for 3 rounds. If the target is immune to :effect{code="SEAL"}, Moxie -2 to the target instead.
+      1-target attack. Deals **550%** Reality DMG and inflicts :effect{param="seal"} for 3 rounds. If the target is immune to :effect{param="seal"}, Moxie -2 to the target instead.
     </CardInfo>
   </Fragment>
 
@@ -171,7 +171,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      At the end of the round, inflict **1** stack of :effect{code="WEAKNESS"} on enemy units that did not attack this unit during the round.
+      At the end of the round, inflict **1** stack of :effect{param="weakness"} on enemy units that did not attack this unit during the round.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 

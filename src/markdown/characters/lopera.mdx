@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="She hedges her bets.">
-      1-target attack. Deals **200%** Reality DMG to the target; Lopera converts her own :effect{code="FLAMING_BULLET"} into :effect{code="INCANTATION_BULLET"}/:effect{code="RITUAL_BULLET"} and distributes them to allies in front/behind, respectively; each ally can gain 1 bullet at most this way.
+      1-target attack. Deals **200%** Reality DMG to the target; Lopera converts her own :effect{param="flaming-bullet"} into :effect{param="incantation-bullet"}/:effect{param="ritual-bullet"} and distributes them to allies in front/behind, respectively; each ally can gain 1 bullet at most this way.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="She hedges her bets, never puts all her eggs in one basket.">
-      1-target attack. Deals **300%** Reality DMG to the target; Lopera converts her own :effect{code="FLAMING_BULLET"} into :effect{code="INCANTATION_BULLET"}/:effect{code="RITUAL_BULLET"} and distributes them to allies in front/behind, respectively; each ally can gain 1 bullet at most this way.
+      1-target attack. Deals **300%** Reality DMG to the target; Lopera converts her own :effect{param="flaming-bullet"} into :effect{param="incantation-bullet"}/:effect{param="ritual-bullet"} and distributes them to allies in front/behind, respectively; each ally can gain 1 bullet at most this way.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="She hedges her bets, never puts all her eggs in one basket. You'd be a fool to wager against her!">
-      1-target attack, Deals **500%** Reality DMG to the target; Lopera converts her own :effect{code="FLAMING_BULLET"} into :effect{code="INCANTATION_BULLET"}/:effect{code="RITUAL_BULLET"} and distributes them to allies in front/behind, respectively; each ally can gain 1 bullet at most this way.
+      1-target attack, Deals **500%** Reality DMG to the target; Lopera converts her own :effect{param="flaming-bullet"} into :effect{param="incantation-bullet"}/:effect{param="ritual-bullet"} and distributes them to allies in front/behind, respectively; each ally can gain 1 bullet at most this way.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="CHANNEL" note="A curious creation from her crucible.">
-      Self channel. Grants 5 stacks of :effect{code="FLAMING_BULLET"} to self and enters the :effect{code="READY_TO_SHOOT"} status.
+      Self channel. Grants 5 stacks of :effect{param="flaming-bullet"} to self and enters the :effect{param="ready-to-shoot"} status.
     </CardInfo>
 
     <CardInfo star="2" type="CHANNEL" note="A curious creation from her crucible—still scorching hot!">
-      Self channel. Grants 8 stacks of :effect{code="FLAMING_BULLET"} to self and enters the :effect{code="READY_TO_SHOOT"} status.
+      Self channel. Grants 8 stacks of :effect{param="flaming-bullet"} to self and enters the :effect{param="ready-to-shoot"} status.
     </CardInfo>
 
     <CardInfo star="3" type="CHANNEL" note="A curious creation from her crucible—scorching hot and ready to blast!">
-      Self channel. Grants 12 stacks of :effect{code="FLAMING_BULLET"} to self and enters the :effect{code="READY_TO_SHOOT"} status.
+      Self channel. Grants 12 stacks of :effect{param="flaming-bullet"} to self and enters the :effect{param="ready-to-shoot"} status.
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="BUFF" note="A perfect balance of chance and quick thinking, Both are essential.">
-      Self buff. Creates array :effect{code="CRUCIBLE_ARSENAL"} for 3 rounds.
+      Self buff. Creates array :effect{param="crucible-arsenal"} for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -135,23 +135,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *More Than Alchemy*: :effect{code="CRUCIBLE_ARSENAL"}'s Critical Rate is increased to **50%**; when converting excess Critical Rate into Critical DMG, the base conversion rate is increased to **65%**.
+    *More Than Alchemy*: :effect{param="crucible-arsenal"}'s Critical Rate is increased to **50%**; when converting excess Critical Rate into Critical DMG, the base conversion rate is increased to **65%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Winning Chips*: The number of :effect{code="FLAMING_BULLET"} granted is increased to **6/10/15**. :effect{code="RIGHT_ON_TARGET"}'s Critical DMG multiplier is increased to **15%**.
+    *Winning Chips*: The number of :effect{param="flaming-bullet"} granted is increased to **6/10/15**. :effect{param="right-on-target"}'s Critical DMG multiplier is increased to **15%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *More Than Alchemy*: :effect{code="CRUCIBLE_ARSENAL"}'s duration is increased to **4** rounds.
+    *More Than Alchemy*: :effect{param="crucible-arsenal"}'s duration is increased to **4** rounds.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Winning Chips*: :effect{code="BULL_EYE"}'s Reality DMG is increased to **250%**.
+    *Winning Chips*: :effect{param="bull-eye"}'s Reality DMG is increased to **250%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Double Backups*: Reality DMG is increased to **230/345/575%**, and :effect{code="INCANTATION_BULLET"}'s and :effect{code="RITUAL_BULLET"}'s Incantation Might/Ultimate Might are increased to **35/35%**.
+    *Double Backups*: Reality DMG is increased to **230/345/575%**, and :effect{param="incantation-bullet"}'s and :effect{param="ritual-bullet"}'s Incantation Might/Ultimate Might are increased to **35/35%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -170,15 +170,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="THE_THIRD_COMMITMENT" />
+      <PsychubeIcon param="the-third-commitment" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="STRAY_OFF_THE_PATH" />
+      <PsychubeIcon param="stray-off-the-path" />
 
-      <PsychubeIcon code="OUTSIDE_THE_CITY" />
+      <PsychubeIcon param="outside-the-city" />
     </div>
   </Fragment>
 
@@ -201,35 +201,35 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     With Insight 1, Lopera will gain Moxie +1 and recover (Missing HP x**50%**) HP to the ally with the lowest HP percentage when an attack triggers a *\[Bullet]* effect.
 
-    * This effect will trigger even when Lopera use her first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip> or do the Follow up Attack: :effect{code="BULL_EYE"} when in channeling status.
+    * This effect will trigger even when Lopera use her first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip> or do the Follow up Attack: :effect{param="bull-eye"} when in channeling status.
 
     In Insight 3, Lopera gain Moxie +1 and will gain +1 extra Moxie for every other **Beast**, **Spirit**, or **Intellect** ally present up to Moxie +2.
 
     <br />
 
-    With her first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip>, deals Reality DMG and convert :effect{code="FLAMING_BULLET"} into 2 other types of *\[Bullet]*:
+    With her first skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip>, deals Reality DMG and convert :effect{param="flaming-bullet"} into 2 other types of *\[Bullet]*:
 
-    * 1 :effect{code="INCANTATION_BULLET"} for allies at the **front** of Lopera.
-    * 1 :effect{code="RITUAL_BULLET"} for allies **behind** Lopera.
-    * *\[Bullet]* will be given to allies from **left to right**, so if Lopera does not have enough :effect{code="FLAMING_BULLET"}, only the front allies will receive *\[Bullet]*.
-    * When activate, Lopera will use 1 :effect{code="FLAMING_BULLET"} first, then convert *\[Bullet]* for allies later. You will need **4** *\[Bullet]* in total, so consider team position.
+    * 1 :effect{param="incantation-bullet"} for allies at the **front** of Lopera.
+    * 1 :effect{param="ritual-bullet"} for allies **behind** Lopera.
+    * *\[Bullet]* will be given to allies from **left to right**, so if Lopera does not have enough :effect{param="flaming-bullet"}, only the front allies will receive *\[Bullet]*.
+    * When activate, Lopera will use 1 :effect{param="flaming-bullet"} first, then convert *\[Bullet]* for allies later. You will need **4** *\[Bullet]* in total, so consider team position.
 
     <br />
 
-    Using <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Winning Chips]*</CharacterSkillTooltip> grants herself stacks of :effect{code="FLAMING_BULLET"} which can inflict :effect{code="BURN"} and enter channeling status:
+    Using <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Winning Chips]*</CharacterSkillTooltip> grants herself stacks of :effect{param="flaming-bullet"} which can inflict :effect{param="burn"} and enter channeling status:
 
-    * When in channeling status, at the end of each round, if Lopera has at least 1 *\[Bullet]*, she will cast :effect{code="BULL_EYE"} that deals Reality DMG and **increases Critical DMG for allies** in 2 rounds.
-    * If enemy has more than **20** stacks of :effect{code="BURN"}, the buff effect will be **doubled**.
-    * :effect{code="BULL_EYE"} will prioritize targets with the highest :effect{code="BURN"}.
+    * When in channeling status, at the end of each round, if Lopera has at least 1 *\[Bullet]*, she will cast :effect{param="bull-eye"} that deals Reality DMG and **increases Critical DMG for allies** in 2 rounds.
+    * If enemy has more than **20** stacks of :effect{param="burn"}, the buff effect will be **doubled**.
+    * :effect{param="bull-eye"} will prioritize targets with the highest :effect{param="burn"}.
     * Channeling status is **permanent** and will end only if Lopera does not have any *\[Bullet]*.
-    * If binding with Anjo Nala, Anjo Nala's Ultimate will prevent Lopera from casting :effect{code="BULL_EYE"} at the end of round.
+    * If binding with Anjo Nala, Anjo Nala's Ultimate will prevent Lopera from casting :effect{param="bull-eye"} at the end of round.
 
     <br />
 
-    Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[More Than Alchemy]*</CharacterSkillTooltip> will initialize an *\[Array]*: :effect{code="CRUCIBLE_ARSENAL"}
+    Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[More Than Alchemy]*</CharacterSkillTooltip> will initialize an *\[Array]*: :effect{param="crucible-arsenal"}
 
     * *\[Bullet]* status of Lopera and allies will be retained at **1** until the end of *\[Array]*.
-    * Even only 1 :effect{code="FLAMING_BULLET"} remained, it still can be converted to :effect{code="INCANTATION_BULLET"}/:effect{code="RITUAL_BULLET"} for allies.
+    * Even only 1 :effect{param="flaming-bullet"} remained, it still can be converted to :effect{param="incantation-bullet"}/:effect{param="ritual-bullet"} for allies.
     * Exceed Critical Rate will be converted to Critical DMG, calculated as follow, for example:
 
     80% <sup>(from character)</sup>  + 40% <sup>(from *\[Crucible Arsenal]*)</sup> = 120% - 100% = 20% <sup>(excess)</sup> \* (40% + 10% \* 2<sup> *\[Bullet]* stacks</sup>) = 12%
@@ -240,8 +240,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     #### Operate / Rotation
 
-    * Use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Winning Chips]*</CharacterSkillTooltip> first to gain :effect{code="FLAMING_BULLET"} stacks and enter channeling status.
-    * Use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip> to convert :effect{code="FLAMING_BULLET"} into others *\[Bullet]*, heal allies, and gain Moxie.
+    * Use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Winning Chips]*</CharacterSkillTooltip> first to gain :effect{param="flaming-bullet"} stacks and enter channeling status.
+    * Use <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Double Backups]*</CharacterSkillTooltip> to convert :effect{param="flaming-bullet"} into others *\[Bullet]*, heal allies, and gain Moxie.
     * Cast <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[More Than Alchemy]*</CharacterSkillTooltip> as much as possible.
 
     <br />
@@ -250,7 +250,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
       <div class="flex-1 step-arrow">
         <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Cast to gain :effect{code="FLAMING_BULLET"} and enter channeling status</div>
+        <div class="mt-1 text-center">Cast to gain :effect{param="flaming-bullet"} and enter channeling status</div>
       </div>
 
       <div class="flex-1 step-arrow">
@@ -310,7 +310,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="team-suggestion-exception">
-    **Exception**: Lopera should not team up with other characters who have :effect{code="ARRAY"}, since only one :effect{code="ARRAY"} can be active in the battle field.
+    **Exception**: Lopera should not team up with other characters who have :effect{param="array"}, since only one :effect{param="array"} can be active in the battle field.
   </Fragment>
 
   <Fragment slot="materials-section-title">

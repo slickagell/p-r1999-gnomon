@@ -35,7 +35,7 @@ import data from "@data/reveries-in-the-rain/zone/240m.json";
 
           <span class="passive-title">Scorching Passion</span>
 
-          At the start of the round, gain Moxie +1 for self; if this unit is holding at least 10 stacks of :effect{code="SEARING_GASH"}, get Moxie -2 for self and suffer the :effect{code="DISCONCERT"} status for 1 round.
+          At the start of the round, gain Moxie +1 for self; if this unit is holding at least 10 stacks of :effect{code="SEARING_GASH"}, get Moxie -2 for self and suffer the :effect{param="disconcert"} status for 1 round.
 
           <span class="passive-title">Torment II</span>
 
@@ -53,11 +53,11 @@ import data from "@data/reveries-in-the-rain/zone/240m.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Mental DMG. Inflicts the :effect{code="CORRODE"} status for 2 rounds on the target hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **100%** Mental DMG. Inflicts the :effect{param="corrode"} status for 2 rounds on the target hit: at the end of the round, takes (own Current HP x**15%**) Genesis DMG, up to (the user's Max HP x**15%**).
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{code="CORRODE"} status for 3 rounds on the target hit: at the end of the round, takes (own Current HP x**20%**) Genesis DMG, up to (the user's Max HP x**20%**).
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Mental DMG. Inflicts the :effect{param="corrode"} status for 3 rounds on the target hit: at the end of the round, takes (own Current HP x**20%**) Genesis DMG, up to (the user's Max HP x**20%**).
         </div>
       </Fragment>
 

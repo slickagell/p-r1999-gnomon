@@ -100,15 +100,15 @@ import data from "@data/reveries-in-the-rain/zone/10m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{code="SEAL"} status on the main target for 2 rounds.
+          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{param="seal"} status on the main target for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{code="SEAL"} status on the main target for 2 rounds.
+          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{param="seal"} status on the main target for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{code="SEAL"} status on the main target for 2 rounds.
+          Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{param="seal"} status on the main target for 2 rounds.
         </div>
       </Fragment>
     </EnemyInfo>

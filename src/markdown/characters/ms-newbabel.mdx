@@ -71,11 +71,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="We see each other as enemy, even to this day.">
-      1-target attack. Deals **180%** Reality DMG plus (the caster's Reality DEF x**120%**) Genesis DMG. If the caster has an active :effect{code="SHIELD"} after the attack, Moxie +1 to the caster.
+      1-target attack. Deals **180%** Reality DMG plus (the caster's Reality DEF x**120%**) Genesis DMG. If the caster has an active :effect{param="shield"} after the attack, Moxie +1 to the caster.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="We see each other as enemy, and everything gets to be reformed now.">
-      1-target attack. Deals **300%** Reality DMG plus (the caster's Reality DEF x**200%**) Genesis DMG. If the caster has an active :effect{code="SHIELD"} after the attack, Moxie +1 to the caster.
+      1-target attack. Deals **300%** Reality DMG plus (the caster's Reality DEF x**200%**) Genesis DMG. If the caster has an active :effect{param="shield"} after the attack, Moxie +1 to the caster.
     </CardInfo>
   </Fragment>
 
@@ -85,15 +85,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="Use the right method.">
-      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's Reality DEF x**150%**) HP for 2 rounds.
+      Mass buff. Gives all allies a :effect{param="shield"} with (the caster's Reality DEF x**150%**) HP for 2 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="BUFF" note="Use the right method, and be gentle.">
-      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's Reality DEF x**225%**) HP for 2 rounds.
+      Mass buff. Gives all allies a :effect{param="shield"} with (the caster's Reality DEF x**225%**) HP for 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="BUFF" note="Use the right method, and be gentle, and they will become a help.">
-      Mass buff. Gives all allies a :effect{code="SHIELD"} with (the caster's Reality DEF x**375%**) HP for 2 rounds.
+      Mass buff. Gives all allies a :effect{param="shield"} with (the caster's Reality DEF x**375%**) HP for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -103,7 +103,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="BUFF" note="This place is already full of tall buildings, but it still needs the most special one.">
-      Self counter. Enters :effect{code="TAUNT"} and :effect{code="FANGED_PARTNER"} statuses and gains Control Immunity and Riposte: when attacked, deals **100%** Reality DMG and (Reality DEF x**100%**) Genesis DMG. Lasts 2 rounds.
+      Self counter. Enters :effect{param="taunt"} and :effect{param="fanged-partner"} statuses and gains Control Immunity and Riposte: when attacked, deals **100%** Reality DMG and (Reality DEF x**100%**) Genesis DMG. Lasts 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -116,7 +116,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster is attacked, gives the caster 1 stack of :effect{code="GUARDING_INSTINCT"} for 2 rounds.
+    When the caster is attacked, gives the caster 1 stack of :effect{param="guarding-instinct"} for 2 rounds.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -124,7 +124,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After gaining a total of 15 :effect{code="GUARDING_INSTINCT"} stacks, enters :effect{code="LOYAL_PARTNER"} status and the caster no longer gains :effect{code="GUARDING_INSTINCT"}.
+    After gaining a total of 15 :effect{param="guarding-instinct"} stacks, enters :effect{param="loyal-partner"} status and the caster no longer gains :effect{param="guarding-instinct"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -132,7 +132,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *The Future Is Near*'s effect changes to: when :effect{code="FANGED_PARTNER"} ripostes, deals **110%** Reality DMG plus (Reality DEF x**110%**) Genesis DMG.
+    *The Future Is Near*'s effect changes to: when :effect{param="fanged-partner"} ripostes, deals **110%** Reality DMG plus (Reality DEF x**110%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -140,15 +140,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *The Future Is Near*'s effect changes to: when :effect{code="FANGED_PARTNER"} ripostes, deals **120%** Reality DMG plus (Reality DEF x**120%**) Genesis DMG.
+    *The Future Is Near*'s effect changes to: when :effect{param="fanged-partner"} ripostes, deals **120%** Reality DMG plus (Reality DEF x**120%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *The Future Is Near*'s effect changes to: when :effect{code="FANGED_PARTNER"} ripostes, deals **130%** Reality DMG plus (Reality DEF x**130%**) Genesis DMG.
+    *The Future Is Near*'s effect changes to: when :effect{param="fanged-partner"} ripostes, deals **130%** Reality DMG plus (Reality DEF x**130%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *A New Wave*'s effect changes to: at **1/2/3** stars, grants a :effect{code="SHIELD"} with (Ms. NewBabel's Reality DEF x**170/250/410%**) HP on all allies.
+    *A New Wave*'s effect changes to: at **1/2/3** stars, grants a :effect{param="shield"} with (Ms. NewBabel's Reality DEF x**170/250/410%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

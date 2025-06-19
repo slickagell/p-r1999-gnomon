@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="BUFF" note="She shines like the morning star.">
-      Mass buff. Grants Critical Rate **+20%** to all allies for 2 rounds. Gain 4 additional stacks of :effect{code="COSMIC_ENERGY"} for self for 2 rounds.
+      Mass buff. Grants Critical Rate **+20%** to all allies for 2 rounds. Gain 4 additional stacks of :effect{param="cosmic-energy"} for self for 2 rounds.
     </CardInfo>
 
     <CardInfo star="2" type="BUFF" note="She shines like the morning star, capturing the attention of those around her.">
-      Mass buff. Grants Critical Rate **+25%** to all allies for 2 rounds. Gain 5 additional stacks of :effect{code="COSMIC_ENERGY"} for self for 2 rounds.
+      Mass buff. Grants Critical Rate **+25%** to all allies for 2 rounds. Gain 5 additional stacks of :effect{param="cosmic-energy"} for self for 2 rounds.
     </CardInfo>
 
     <CardInfo star="3" type="BUFF" note="She shines like the morning star, capturing the attention of those around her as she guides them through their inner journeys.">
-      Mass buff. Grants Critical Rate **+30%** to all allies for 2 rounds. Gain 6 additional stacks of :effect{code="COSMIC_ENERGY"} for self for 2 rounds.
+      Mass buff. Grants Critical Rate **+30%** to all allies for 2 rounds. Gain 6 additional stacks of :effect{param="cosmic-energy"} for self for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="On this night, I trade gifts with the world.">
-      Mass attack. Dispels 2 random *\[Stats Up]* and *\[Pos Status]* effects on all enemies, then deals 400% Mental DMG to the targets. Grants :effect{code="RANK_UP"} to all allies for 2 rounds.
+      Mass attack. Dispels 2 random *\[Stats Up]* and *\[Pos Status]* effects on all enemies, then deals 400% Mental DMG to the targets. Grants :effect{param="rank-up"} to all allies for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, gain 8 stacks of :effect{code="COSMIC_ENERGY"} for 2 rounds; after an ally casts a rank 1/2/3 incantation, gain 2/3/4 stacks of Cosmic Energy for self, to a maximum of 25 stacks.
+    When entering battle, gain 8 stacks of :effect{param="cosmic-energy"} for 2 rounds; after an ally casts a rank 1/2/3 incantation, gain 2/3/4 stacks of Cosmic Energy for self, to a maximum of 25 stacks.
     When entering battle, for each ally of the Natural Afflatus, gain Moxie +1 for self, up to a maximum of Moxie +3.
   </Fragment>
 
@@ -128,7 +128,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    At the start of the round, if holding 9 or more stacks of :effect{code="COSMIC_ENERGY"}, grant Critical DMG **+30%** to all allies for 1 round; if holding 16 or more stacks of Cosmic Energy, grant an additional Incantation Might **+20%** to all allies for 2 rounds.
+    At the start of the round, if holding 9 or more stacks of :effect{param="cosmic-energy"}, grant Critical DMG **+30%** to all allies for 1 round; if holding 16 or more stacks of Cosmic Energy, grant an additional Incantation Might **+20%** to all allies for 2 rounds.
     At the end of the round, if allies have casted two or more rank 3 incantations for that round, gain Moxie +1 for self.
   </Fragment>
 
@@ -145,15 +145,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Lengthy Journey*: :effect{code="COSMIC_ENERGY"}'s stack limit is increased to **30**. The DMG Dealt granted by each stack is increased to **+2.5%**.
+    *Lengthy Journey*: :effect{param="cosmic-energy"}'s stack limit is increased to **30**. The DMG Dealt granted by each stack is increased to **+2.5%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Morning Star for the Night*: Mental DMG is increased to **475%**, and extends :effect{code="RANK_UP"} by +1 round.
+    *Morning Star for the Night*: Mental DMG is increased to **475%**, and extends :effect{param="rank-up"} by +1 round.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Lengthy Journey*: Extends :effect{code="COSMIC_ENERGY"} by +1 round. The DMG Dealt granted by each stack is increased to **+3%**.
+    *Lengthy Journey*: Extends :effect{param="cosmic-energy"} by +1 round. The DMG Dealt granted by each stack is increased to **+3%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -172,17 +172,17 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="STARLIGHT_WELLSPRING" />
+      <PsychubeIcon param="starlight-wellspring" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="BALANCE_PLEASE" />
+      <PsychubeIcon param="balance-please" />
 
-      <PsychubeIcon code="LONG_NIGHT_TALK" />
+      <PsychubeIcon param="long-night-talk" />
 
-      <PsychubeIcon code="BLASPHEMER_OF_NIGHT" />
+      <PsychubeIcon param="blasphemer-of-night" />
     </div>
   </Fragment>
 
@@ -195,9 +195,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-breakdown-content">
-    Mercuria is a support character, her special feature come from her :effect{code="COSMIC_ENERGY"}, bringing an extra DMG boost to the team.
+    Mercuria is a support character, her special feature come from her :effect{param="cosmic-energy"}, bringing an extra DMG boost to the team.
 
-    :effect{code="COSMIC_ENERGY"} is a :effect{code="FORCE_FIELD"} type buff that cannot be dispelled.
+    :effect{param="cosmic-energy"} is a :effect{param="force-field"} type buff that cannot be dispelled.
 
     * Can add up to **25** stacks by using incantations in battle or use Mercuria's Buff incatations.
     * With each incantation rank 1/2/3 used, gain **2/3/4** stacks of *\[Cosmic Energy]* for herself.
@@ -239,7 +239,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     For the Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Morning Star for the Night]*</CharacterSkillTooltip>, a mass attack skill.
 
     * Dispels **2** random *\[Stats Up]* and *\[Pos Status]* effects on all enemies.
-    * Grants :effect{code="RANK_UP"} to all allies for **2** rounds, this does not directly increase the strength of allies's incantations, instead it will help increase the stacking of *\[Cosmic Energy]* by counting the stars of casting incantations.
+    * Grants :effect{param="rank-up"} to all allies for **2** rounds, this does not directly increase the strength of allies's incantations, instead it will help increase the stacking of *\[Cosmic Energy]* by counting the stars of casting incantations.
     * The effect *\[Rank Up]* starts immediately after casting the skill, so use Mercuria's Ultimate **first**, then use other incantations.
 
     #### Operate / Rotation

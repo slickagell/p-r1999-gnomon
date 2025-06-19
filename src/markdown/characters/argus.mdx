@@ -71,15 +71,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note="She seldom cares about the size of the commission.">
-      1-target attack. Deals **160%** Reality DMG, then grants :effect{code="EMPOWER_INCANTATION_I"} to self for 1 round.
+      1-target attack. Deals **160%** Reality DMG, then grants :effect{param="empower-incantation-i"} to self for 1 round.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note="She seldom cares about the size of the commission, and her pricing is always fair.">
-      1-target attack. Deals **280%** Reality DMG, then grants :effect{code="EMPOWER_INCANTATION_II"} to self for 1 round.
+      1-target attack. Deals **280%** Reality DMG, then grants :effect{param="empower-incantation-ii"} to self for 1 round.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note="She seldom cares about the size of the commission, and her pricing is always fair—however, the rewards she seeks are not limited to that.">
-      1-target attack. Deals **450%** Reality DMG, then grants :effect{code="EMPOWER_INCANTATION_II"} to self for 2 rounds.
+      1-target attack. Deals **450%** Reality DMG, then grants :effect{param="empower-incantation-ii"} to self for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -89,15 +89,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="skill-2-cards-info">
     <CardInfo star="1" type="DEBUFF" note="Covered by dust.">
-      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts :effect{code="PINPOINTED"} on the target for 3 rounds. Only 1 :effect{code="PINPOINTED"} debuff can exist on the field at a time.
+      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts :effect{param="pinpointed"} on the target for 3 rounds. Only 1 :effect{param="pinpointed"} debuff can exist on the field at a time.
     </CardInfo>
 
     <CardInfo star="2" type="DEBUFF" note="Covered by dust, undiscovered by anyone.">
-      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts 5 stacks of :effect{code="PINPOINTED"} on the target for 3 rounds. Only 1 :effect{code="PINPOINTED"} debuff can exist on the field at a time.
+      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts 5 stacks of :effect{param="pinpointed"} on the target for 3 rounds. Only 1 :effect{param="pinpointed"} debuff can exist on the field at a time.
     </CardInfo>
 
     <CardInfo star="3" type="DEBUFF" note="Covered by dust, waiting for her arrival.">
-      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts 10 stacks of :effect{code="PINPOINTED"} on the target for 3 rounds. Only 1 :effect{code="PINPOINTED"} debuff can exist on the field at a time.
+      1-target debuff. Dispels all *\[Stats Up]* and *\[Pos Status]* on the target, then inflicts 10 stacks of :effect{param="pinpointed"} on the target for 3 rounds. Only 1 :effect{param="pinpointed"} debuff can exist on the field at a time.
     </CardInfo>
   </Fragment>
 
@@ -107,7 +107,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="ultimate-card-info">
     <CardInfo type="ATTACK" note="Your fear confirms it: you are fully aware of what you've done.">
-      1-target attack. Deals **500%** Reality DMG to the target. Right before attacking, if the target is in the :effect{code="PINPOINTED"} status, increase the :effect{code="PINPOINTED"} status by 5 stacks, refresh the duration of the entire stack, and grant Penetration Rate **+30%** and Critical Rate **+30%** to this attack.
+      1-target attack. Deals **500%** Reality DMG to the target. Right before attacking, if the target is in the :effect{param="pinpointed"} status, increase the :effect{param="pinpointed"} status by 5 stacks, refresh the duration of the entire stack, and grant Penetration Rate **+30%** and Critical Rate **+30%** to this attack.
     </CardInfo>
   </Fragment>
 
@@ -142,7 +142,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Right before the incantations in the AP Area resolve, add a ranked incantation *\[Grave Digger]* to the spell queue based on the total ranks of the incantations played this round. This attack is considered an extra action and prioritizes targets with :effect{code="PINPOINTED"}.
+    Right before the incantations in the AP Area resolve, add a ranked incantation *\[Grave Digger]* to the spell queue based on the total ranks of the incantations played this round. This attack is considered an extra action and prioritizes targets with :effect{param="pinpointed"}.
 
     3-4 Ranks: Adds a rank 1 incantation. 1-target attack, deals **100%** Reality DMG.
 
@@ -160,7 +160,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Penetrating Eye*: The base effect of :effect{code="PINPOINTED"} is increased to **20%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-2.5%** and Critical DEF **-2.5%**.
+    *Penetrating Eye*: The base effect of :effect{param="pinpointed"} is increased to **20%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-2.5%** and Critical DEF **-2.5%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -168,7 +168,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Penetrating Eye*: The base effect of :effect{code="PINPOINTED"} is increased to **25%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-3%** and Critical DEF **-3%**.
+    *Penetrating Eye*: The base effect of :effect{param="pinpointed"} is increased to **25%**, and each stack beyond the first now inflicts an additional DMG Taken Reduction **-3%** and Critical DEF **-3%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
@@ -191,17 +191,17 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      <PsychubeIcon code="STRAY_OFF_THE_PATH" />
+      <PsychubeIcon param="stray-off-the-path" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
-      <PsychubeIcon code="OUTSIDE_THE_CITY" />
+      <PsychubeIcon param="outside-the-city" />
 
-      <PsychubeIcon code="BLASPHEMER_OF_NIGHT" />
+      <PsychubeIcon param="blasphemer-of-night" />
 
-      <PsychubeIcon code="LUXURIOUS_LEISURE" />
+      <PsychubeIcon param="luxurious-leisure" />
     </div>
   </Fragment>
 
@@ -218,11 +218,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-breakdown-content">
-    Argus is a support character has ability to  increase DMG strongly through the :effect{code="PINPOINTED"} effect.
+    Argus is a support character has ability to  increase DMG strongly through the :effect{param="pinpointed"} effect.
 
     <br />
 
-    :effect{code="PINPOINTED"} is a *\[Neg Status]* which can be cleansed
+    :effect{param="pinpointed"} is a *\[Neg Status]* which can be cleansed
 
     After attack with **1/2/3/rankless** incantation, **2/3/4/1** stacks are added to this status, and the existing stacks do **not** refresh in duration by this way.
 
@@ -235,8 +235,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     At Insight 3, Argus add a ranked incantation *\[Grave Digger]* to the spell queue.
 
-    * *\[Grave Digger]* is considered an **extra action** and prioritizes targets with :effect{code="PINPOINTED"}.
-    * If there are no targets with :effect{code="PINPOINTED"}, it will target randomly.
+    * *\[Grave Digger]* is considered an **extra action** and prioritizes targets with :effect{param="pinpointed"}.
+    * If there are no targets with :effect{param="pinpointed"}, it will target randomly.
 
     When the total of stars of the incantations played this round is:
 
@@ -249,26 +249,26 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
     <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Shotgun Shower]*</CharacterSkillTooltip> skill is a single target attack.
 
-    * Grant :effect{code="EMPOWER_INCANTATION_I"}/:effect{code="EMPOWER_INCANTATION_II"} to self,
+    * Grant :effect{param="empower-incantation-i"}/:effect{param="empower-incantation-ii"} to self,
     * These effect can not coexist, so it is **not recommended** to use this skill 2 or more times in a row.
 
     <br />
 
-    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Penetrating Eye]*</CharacterSkillTooltip> skill, inflict :effect{code="PINPOINTED"} and **dispel** all *\[Stats Up]* and *\[Pos Status]* effects on the target.
+    With <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Penetrating Eye]*</CharacterSkillTooltip> skill, inflict :effect{param="pinpointed"} and **dispel** all *\[Stats Up]* and *\[Pos Status]* effects on the target.
 
-    * Apply **1/5/10** stacks of :effect{code="PINPOINTED"} last 3 rounds to the target.
-    * Only 1 instance of :effect{code="PINPOINTED"} can be existed at a time.
+    * Apply **1/5/10** stacks of :effect{param="pinpointed"} last 3 rounds to the target.
+    * Only 1 instance of :effect{param="pinpointed"} can be existed at a time.
 
     <br />
 
-    Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[No Mark Unstruck]*</CharacterSkillTooltip>, deals DMG to single target, if the target has :effect{code="PINPOINTED"}:
+    Ultimate <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[No Mark Unstruck]*</CharacterSkillTooltip>, deals DMG to single target, if the target has :effect{param="pinpointed"}:
 
     * Add 5 more stacks to the target and refresh the duration of the entire stack.
     * Increase Penetration Rate and Critical Rate
 
     #### Operate / Rotation
 
-    * Use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Penetrating Eye]*</CharacterSkillTooltip> incantation every 2 rounds to maintain the :effect{code="PINPOINTED"} status.
+    * Use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Penetrating Eye]*</CharacterSkillTooltip> incantation every 2 rounds to maintain the :effect{param="pinpointed"} status.
     * Use <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[No Mark Unstruck]*</CharacterSkillTooltip> when available.
 
     <br />
@@ -283,7 +283,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
       <div class="flex-1">
         <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Use this Debuff incantation every 2 rounds to maintain the :effect{code="PINPOINTED"} status</div>
+        <div class="mt-1 text-center">Use this Debuff incantation every 2 rounds to maintain the :effect{param="pinpointed"} status</div>
       </div>
 
       <div class="flex-1">

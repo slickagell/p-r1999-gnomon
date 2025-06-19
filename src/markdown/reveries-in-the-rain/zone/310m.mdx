@@ -31,7 +31,7 @@ import data from "@data/reveries-in-the-rain/zone/310m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Don't Touch Her III</span>
 
-          When the caster takes Mental DMG, gives the attacker 1 stack of :effect{code="WONDERLAND_VISITOR"} for 2 rounds.
+          When the caster takes Mental DMG, gives the attacker 1 stack of :effect{param="wonderland-visitor"} for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
@@ -41,7 +41,7 @@ import data from "@data/reveries-in-the-rain/zone/310m.json";
 
           <span class="passive-title">Blocking Agent</span>
 
-          At the end of the round, inflicts 1 stack of :effect{code="STABILIZE"} on the ally with the lowest HP percentage.
+          At the end of the round, inflicts 1 stack of :effect{param="stabilize"} on the ally with the lowest HP percentage.
         </div>
       </Fragment>
 
@@ -85,25 +85,25 @@ import data from "@data/reveries-in-the-rain/zone/310m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+10%** for all allies for 2 rounds and gives the caster 1 stack of :effect{code="STABILIZE"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+10%** for all allies for 2 rounds and gives the caster 1 stack of :effect{param="stabilize"}.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+15%** for all allies for 2 rounds and gives the caster 1 stack of :effect{code="STABILIZE"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+15%** for all allies for 2 rounds and gives the caster 1 stack of :effect{param="stabilize"}.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+20%** for all allies for 2 rounds and inflicts 2 stacks of :effect{code="STABILIZE"} on them.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Mental DEF **+20%** for all allies for 2 rounds and inflicts 2 stacks of :effect{param="stabilize"} on them.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, inflicts :effect{code="NIGHTMARE"} status for 1 round on the target.
+          Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, inflicts :effect{param="nightmare"} status for 1 round on the target.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **200%** Mental DMG to all enemies. Inflicts 1 stack of :effect{code="PARALYZE"} on the targets hit and 1 additional stack of :effect{code="PARALYZE"} on the main target.
+          Mass attack. Deals **200%** Mental DMG to all enemies. Inflicts 1 stack of :effect{param="paralyze"} on the targets hit and 1 additional stack of :effect{param="paralyze"} on the main target.
         </div>
       </Fragment>
     </EnemyInfo>
