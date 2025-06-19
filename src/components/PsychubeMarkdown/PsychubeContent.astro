@@ -41,7 +41,7 @@ const { id, title, description, image, rarity, tags, stats, specialStat } = Astr
   />
   <div class="flex flex-col">
     <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-      {tags.map((tag) => <div class="badge badge-outline">{SPECIALTY[tag]?.title}</div>)}
+      {tags.map((tag) => <div class="badge badge-outline">{tag}</div>)}
     </div>
     <div class="mt-2 opacity-80 italic"><slot name="description" /></div>
   </div>

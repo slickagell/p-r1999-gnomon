@@ -8,12 +8,13 @@ import MarkdownHighlight from "./MarkdownHighlight.astro";
 import Tooltip from "./Tooltip.astro";
 
 interface Props {
+  param: string;
   code: string;
 }
 
-const { code, ...props } = Astro.props;
+const { param, code, ...props } = Astro.props;
 
-const effectEntry = await getEntry("effects", kebabCase(code))!;
+const effectEntry = await getEntry("effects", param ?? kebabCase(code))!;
 
 const { Content } = await render(effectEntry);
 ---

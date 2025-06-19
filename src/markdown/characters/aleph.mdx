@@ -11,12 +11,12 @@ version: "2.6"
 releaseDate: "2025-06-19"
 specialties: ["SUPPORT", "INSPIRATION", "BURST_DMG"]
 isLimited: false
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -30,23 +30,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    A human's artwork. Exhibited in the late 20th century for 29 years. Completed in summer, on the 28th of February. Initial exhibition location unknown, later moved to Ushuaia, Argentina, and is now sealed within the St. Pavlov Foundation.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    The Mask in the Mirror
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    The Curse of Hyperthymesia \[Intelligence] Multiple Consultants
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Woody, Rust, Mercury, Vetiver, Cedar, Benzoin
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    74 13/32 x 23 5/8 x 22 5/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -62,48 +62,48 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    Disciplinary Power
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="Scientifically verified.">
+      1-target attack. Deals **100%** Mental DMG. Gains :effect{param="continuous-action-i"} for 1 round. After the attack, consumes 2 Eureka and grants attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="Scientifically verified and efficient.">
+      1-target attack. Deals **200%** Mental DMG. Gains :effect{param="continuous-action-i"} for 1 round. After the attack, consumes 2 Eureka and grants attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="Scientifically verified, efficient, and within acceptable cost.">
+      1-target attack. Deals **400%** Mental DMG. Gains :effect{param="continuous-action-i"} for 1 round. After the attack, consumes 2 Eureka and grants attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    Idealist's Declaration
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note="We raise our voices.">
+      Mass buff. Grants 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds; consumes 2 Eureka and grants an additional 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note="We raise our voices to praise poetry and flowers.">
+      Mass buff. Grants 2 stacks of :effect{param="clarification-id-1"} to all allies for 3 rounds; consumes 2 Eureka and grants an additional 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note="We raise our voices to praise poetry and flowers—and the countless frontal lobes that belong to free minds.">
+      Mass buff. Grants 3 stacks of :effect{param="clarification-id-1"} to all allies for 3 rounds; consumes 2 Eureka and grants an additional 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Reflections of Omniscience
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note="The truth is, you can never find the ultimate truth.">
+      Self channel. Aleph :effect{param="memorize"} the first 2 basic incantations actively casted this round and enter the :effect{param="hyperthymesia-id-1"} status for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -112,19 +112,25 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Know It All, Answer It All
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    Max Eureka +2.
+
+    Whenever an ally consumes Eureka, accumulate points of :effect{param="inspiration"}.
+
+    At the start of each round, gain Eureka +4.
+
+    Whenever an ally in the :effect{param="clarification-id-1"} status actively casts and attacks with an incantation, Aleph consumes 1 Eureka to make 1 attack instance of :effect{param="impromptu-incantation"} this round inflict the :effect{param="interpretation-id-1"} status on the target hit.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    DMG Dealt **+8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    Each time after this unit consumes Eureka, there's a **25%** chance to recover 1 Eureka.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -132,23 +138,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *\[Disciplinary Power]*: The duration of :effect{param="continuous-action-i"} is increased to 2 rounds. The chance to recover Eureka is increased to **50%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *\[Reflections of Omniscience]*: The number of memorized incantations is increased to 3. Each stack of :effect{param="interpretation-id-1"} beyond the first now inflicts Mental DEF **-3%** and DMG Taken Reduction **-3%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *\[Reflections of Omniscience]*: The additional Mental DMG also dealt by Impromptu Incantation's final attack instance is increased to (the target's stacks of :effect{param="interpretation-id-2"} x **160**)% Mental DMG to each enemy target holding the Interpretation status. When the channel status ends, the attack instances granted to :effect{param="impromptu-incantation"} is increased to +4.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *\[Idealist's Declaration]*: :effect{param="clarification-id-1"}'s Incantation Might is increased to **+15%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *\[Reflections of Omniscience]*: The additional Mental DMG also dealt by Impromptu Incantation's final attack instance is increased to (the target's stacks of :effect{param="interpretation-id-2"} x **240**)% Mental DMG to each enemy target holding the Interpretation status. Each stack of :effect{param="interpretation-id-2"} beyond the first now inflicts Mental DEF **-5%** and DMG Taken Reduction **-5%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -157,6 +163,26 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon param="mental-cage" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon param="long-night-talk" />
+
+      <PsychubeIcon param="belt-it-out" />
+    </div>
   </Fragment>
 
   <Fragment slot="overview-section-title">
