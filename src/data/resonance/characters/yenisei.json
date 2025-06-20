@@ -4,15 +4,15 @@
     "HYPER": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "MURMUR_OF_INSANITY",
+          "param": "murmur-of-insanity",
           "require": 2
         },
         {
-          "code": "GOLDEN_GRASS_INCENSE",
+          "param": "golden-grass-incense",
           "require": 3
         }
       ]
@@ -20,15 +20,15 @@
     "OVERINDULGENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GLOWING_MOTHWING",
+          "param": "glowing-mothwing",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -36,15 +36,15 @@
     "QUIESCENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GOLDEN_COMPASS",
+          "param": "golden-compass",
           "require": 2
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]
@@ -52,15 +52,15 @@
     "PRUDENTIALITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 5
         }
       ]
@@ -68,15 +68,15 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]

@@ -30,7 +30,7 @@ const mindMapNodeEntries = await getCollection(
   "reveries-in-the-rain",
   ({ id: entryId }) => {
     return entryId.includes(`myth-manifest/mind-map/${id}`);
-  }
+  },
 );
 
 const entries = await Promise.all(
@@ -41,7 +41,7 @@ const entries = await Promise.all(
       entry: entry,
       Content,
     };
-  })
+  }),
 );
 ---
 

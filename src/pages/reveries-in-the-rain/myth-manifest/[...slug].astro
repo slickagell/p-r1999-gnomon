@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     "reveries-in-the-rain",
     ({ id }) => {
       return id.includes("myth-manifest/") && !id.includes("mind-map/");
-    }
+    },
   );
   return mythManifestEntries.map((entry) => ({
     params: { slug: entry.id.replace("myth-manifest/", "/") },

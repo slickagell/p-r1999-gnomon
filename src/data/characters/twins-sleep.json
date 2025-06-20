@@ -29,41 +29,41 @@
   "insightMaterials": {
     "1": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 5000
       },
       {
-        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "param": "page-of-plantal-vimen",
         "require": 1
       },
       {
-        "code": "PAGE_OF_BEASTLY_THIRST",
+        "param": "page-of-beastly-thirst",
         "require": 1
       },
       {
-        "code": "TREMBLING_TOOTH",
+        "param": "trembling-tooth",
         "require": 2
       }
     ],
     "2": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 20000
       },
       {
-        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "param": "scroll-of-plantal-vimen",
         "require": 2
       },
       {
-        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "param": "scroll-of-beastly-thirst",
         "require": 2
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 2
       },
       {
-        "code": "MILLED_MAGNESIA",
+        "param": "milled-magnesia",
         "require": 2
       }
     ]
@@ -71,115 +71,115 @@
   "resonanceMaterials": {
     "2": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       }
     ],
     "3": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       },
       {
-        "code": "MAGNESIA_CRYSTAL",
+        "param": "magnesia-crystal",
         "require": 2
       }
     ],
     "4": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       },
       {
-        "code": "SHATTERED_BONES",
+        "param": "shattered-bones",
         "require": 2
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 1
       }
     ],
     "5": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 2
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 1
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 2
       }
     ],
     "6": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 10000
       },
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 2
       },
       {
-        "code": "CLAWED_PENDULUM",
+        "param": "clawed-pendulum",
         "require": 1
       }
     ],
     "7": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 3
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 2
       }
     ],
     "8": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 3
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 2
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 3
       }
     ],
     "9": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 4
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 4
       },
       {
-        "code": "SPELL_OF_FORTUNE",
+        "param": "spell-of-fortune",
         "require": 4
       }
     ],
     "10": [
       {
-        "code": "HOARSE_ECHO",
+        "param": "hoarse-echo",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 2
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 4
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 6
       }
     ]

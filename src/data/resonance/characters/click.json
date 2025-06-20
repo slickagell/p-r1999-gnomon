@@ -4,15 +4,15 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "INCORRUPT_MONKEYPAW",
+          "param": "incorrupt-monkeypaw",
           "require": 2
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 4
         }
       ]
@@ -20,15 +20,15 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GLOWING_MOTHWING",
+          "param": "glowing-mothwing",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -36,15 +36,15 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "PLATINUM_OUIJA",
+          "param": "platinum-ouija",
           "require": 2
         },
         {
-          "code": "HOLY_SILVER",
+          "param": "holy-silver",
           "require": 4
         }
       ]
@@ -52,15 +52,15 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -68,15 +68,15 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "INCORRUPT_MONKEYPAW",
+          "param": "incorrupt-monkeypaw",
           "require": 2
         },
         {
-          "code": "HOLY_SILVER",
+          "param": "holy-silver",
           "require": 4
         }
       ]

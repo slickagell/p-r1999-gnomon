@@ -4,15 +4,15 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 4
         }
       ]
@@ -20,15 +20,15 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "WATCH_CORE",
+          "param": "watch-core",
           "require": 2
         },
         {
-          "code": "HOLY_SILVER",
+          "param": "holy-silver",
           "require": 4
         }
       ]
@@ -36,15 +36,15 @@
     "HYPER": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "GOOSE_NECK",
+          "param": "goose-neck",
           "require": 3
         }
       ]
@@ -52,15 +52,15 @@
     "INSPIRE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GOLDEN_COMPASS",
+          "param": "golden-compass",
           "require": 2
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]
@@ -68,15 +68,15 @@
     "DELIRAMENT": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GLOWING_MOTHWING",
+          "param": "glowing-mothwing",
           "require": 2
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]

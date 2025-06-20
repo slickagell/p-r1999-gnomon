@@ -29,33 +29,33 @@
   "insightMaterials": {
     "1": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 5000
       },
       {
-        "code": "PAGE_OF_STARLIT_ASCENT",
+        "param": "page-of-starlit-ascent",
         "require": 2
       },
       {
-        "code": "SPELL_OF_BANISHING",
+        "param": "spell-of-banishing",
         "require": 2
       }
     ],
     "2": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 20000
       },
       {
-        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "param": "scroll-of-starlit-ascent",
         "require": 4
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 2
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 2
       }
     ]
@@ -63,115 +63,115 @@
   "resonanceMaterials": {
     "2": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       }
     ],
     "3": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       },
       {
-        "code": "SPELL_OF_BANISHING",
+        "param": "spell-of-banishing",
         "require": 4
       }
     ],
     "4": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       },
       {
-        "code": "SHATTERED_BONES",
+        "param": "shattered-bones",
         "require": 2
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 1
       }
     ],
     "5": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 2
       },
       {
-        "code": "SPELL_OF_FORTUNE",
+        "param": "spell-of-fortune",
         "require": 2
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 1
       }
     ],
     "6": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 10000
       },
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 2
       },
       {
-        "code": "CLAWED_PENDULUM",
+        "param": "clawed-pendulum",
         "require": 1
       }
     ],
     "7": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 3
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 3
       }
     ],
     "8": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 3
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 1
       },
       {
-        "code": "MILLED_MAGNESIA",
+        "param": "milled-magnesia",
         "require": 3
       }
     ],
     "9": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 4
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 3
       },
       {
-        "code": "ESOTERIC_BONES",
+        "param": "esoteric-bones",
         "require": 6
       }
     ],
     "10": [
       {
-        "code": "HOARSE_ECHO",
+        "param": "hoarse-echo",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 2
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 4
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 4
       }
     ]

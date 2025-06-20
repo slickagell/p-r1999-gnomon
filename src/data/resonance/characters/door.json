@@ -4,11 +4,11 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "GOLDEN_GRASS_INCENSE",
+          "param": "golden-grass-incense",
           "require": 2
         }
       ]
@@ -16,11 +16,11 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 2
         }
       ]
@@ -28,11 +28,11 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "SALTED_MANDRAKE",
+          "param": "salted-mandrake",
           "require": 2
         }
       ]
@@ -40,11 +40,11 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 2
         }
       ]
@@ -52,11 +52,11 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "SALTED_MANDRAKE",
+          "param": "salted-mandrake",
           "require": 2
         }
       ]

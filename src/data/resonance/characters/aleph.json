@@ -4,19 +4,19 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "param": "fruit-of-good-and-evil",
           "require": 1
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]
@@ -24,19 +24,19 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "WATCH_CORE",
+          "param": "watch-core",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]
@@ -44,19 +44,19 @@
     "HYPER": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "SERPENT_SCEPTER",
+          "param": "serpent-scepter",
           "require": 1
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 5
         }
       ]
@@ -64,19 +64,19 @@
     "INSPIRE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "GOLDEN_FLEECE",
+          "param": "golden-fleece",
           "require": 1
         },
         {
-          "code": "WYRMLING_SKELETON",
+          "param": "wyrmling-skeleton",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -84,19 +84,19 @@
     "DELIRAMENT": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "WATCH_CORE",
+          "param": "watch-core",
           "require": 2
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]
@@ -111,7 +111,6 @@
           "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C395"
         },
-        "code": "APgkJQQmVCgRLUAsBS1EOQE6ADwwQVBCUkVC",
         "patternRecommended": "GENUINITY",
         "resonance": [
           {
@@ -239,7 +238,6 @@
           "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=D395"
         },
-        "code": "APgkJQQmVChRLAUtRCwyOxA5MEAAQAJBQEQTSGA=",
         "patternRecommended": "GENUINITY",
         "resonance": [
           {

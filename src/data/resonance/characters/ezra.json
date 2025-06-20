@@ -4,19 +4,19 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "GOLDEN_FLEECE",
+          "param": "golden-fleece",
           "require": 1
         },
         {
-          "code": "GLOWING_MOTHWING",
+          "param": "glowing-mothwing",
           "require": 2
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 4
         }
       ]
@@ -24,19 +24,19 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "GOLDEN_FLEECE",
+          "param": "golden-fleece",
           "require": 1
         },
         {
-          "code": "GLOWING_MOTHWING",
+          "param": "glowing-mothwing",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]
@@ -44,19 +44,19 @@
     "STUPEFACTION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "WYRMLING_SKELETON",
+          "param": "wyrmling-skeleton",
           "require": 2
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]
@@ -64,19 +64,19 @@
     "ASPIRATIONAL": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "MISTILTEINN",
+          "param": "mistilteinn",
           "require": 1
         },
         {
-          "code": "MURMUR_OF_INSANITY",
+          "param": "murmur-of-insanity",
           "require": 2
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]
@@ -84,19 +84,19 @@
     "HYPERPHRENIA": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "GOLDEN_FLEECE",
+          "param": "golden-fleece",
           "require": 1
         },
         {
-          "code": "PLATINUM_OUIJA",
+          "param": "platinum-ouija",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]

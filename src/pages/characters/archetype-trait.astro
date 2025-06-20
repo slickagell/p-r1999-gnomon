@@ -12,7 +12,7 @@ import { getEntry, render } from "astro:content";
 
 const characterArchetypeEntry = await getEntry(
   "character-docs",
-  "archetype-trait"
+  "archetype-trait",
 )!;
 
 const { Content } = await render(characterArchetypeEntry);

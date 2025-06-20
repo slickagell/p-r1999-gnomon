@@ -4,11 +4,11 @@
     "HYPER": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]
@@ -16,11 +16,11 @@
     "OVERINDULGENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "GOLDEN_GRASS_INCENSE",
+          "param": "golden-grass-incense",
           "require": 3
         }
       ]
@@ -28,11 +28,11 @@
     "QUIESCENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]
@@ -40,11 +40,11 @@
     "PRUDENTIALITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "SALTED_MANDRAKE",
+          "param": "salted-mandrake",
           "require": 3
         }
       ]
@@ -52,11 +52,11 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]

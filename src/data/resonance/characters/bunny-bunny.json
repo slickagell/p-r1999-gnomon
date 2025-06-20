@@ -4,11 +4,11 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 5
         }
       ]
@@ -16,11 +16,11 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]
@@ -28,11 +28,11 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "GOOSE_NECK",
+          "param": "goose-neck",
           "require": 3
         }
       ]
@@ -40,11 +40,11 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]
@@ -52,11 +52,11 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 4
         }
       ]
@@ -72,7 +72,6 @@
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C95"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "AEAASBE0AiQELRTwJC1EJlRFYEFSJEFBQCghKiA",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "1-0"],
@@ -211,7 +210,6 @@
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=D95"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "APAkJAQtFC1EQVRIZjxgPFA0MjQwOAI7EEAASAI",
         "resonance": [
           {
             "blocks": ["0-0", "0-1", "1-0"],

@@ -4,15 +4,15 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "HOLY_SILVER",
+          "param": "holy-silver",
           "require": 4
         }
       ]
@@ -20,15 +20,15 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GOLDEN_COMPASS",
+          "param": "golden-compass",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -36,15 +36,15 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "GOLDEN_COMPASS",
+          "param": "golden-compass",
           "require": 2
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 5
         }
       ]
@@ -52,15 +52,15 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "INCORRUPT_MONKEYPAW",
+          "param": "incorrupt-monkeypaw",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]
@@ -68,15 +68,15 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]
@@ -92,7 +92,6 @@
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C295"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "APAkJAQlQC0UMEU5QjtTRFFMUkxiPAA8EDQiNCA",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -219,7 +218,6 @@
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=D295"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "APAkLRQkBDwAPBA0IjQgOkA7UUFFQVRAQ0hmTEJMQQ",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],

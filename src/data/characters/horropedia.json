@@ -29,55 +29,55 @@
   "insightMaterials": {
     "1": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 12000
       },
       {
-        "code": "PAGE_OF_MINERAL_WEALTH",
+        "param": "page-of-mineral-wealth",
         "require": 6
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 4
       },
       {
-        "code": "MAGNESIA_CRYSTAL",
+        "param": "magnesia-crystal",
         "require": 4
       }
     ],
     "2": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 30000
       },
       {
-        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "param": "scroll-of-mineral-wealth",
         "require": 8
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 3
       },
       {
-        "code": "ESOTERIC_BONES",
+        "param": "esoteric-bones",
         "require": 4
       }
     ],
     "3": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 120000
       },
       {
-        "code": "TOME_OF_MINERAL_WEALTH",
+        "param": "tome-of-mineral-wealth",
         "require": 12
       },
       {
-        "code": "GOLDEN_FLEECE",
+        "param": "golden-fleece",
         "require": 2
       },
       {
-        "code": "PLATINUM_OUIJA",
+        "param": "platinum-ouija",
         "require": 4
       }
     ]
@@ -85,205 +85,205 @@
   "resonanceMaterials": {
     "2": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 4
       }
     ],
     "3": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 4
       },
       {
-        "code": "SILVER_ORE",
+        "param": "silver-ore",
         "require": 5
       }
     ],
     "4": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 4
       },
       {
-        "code": "MAGNESIA_CRYSTAL",
+        "param": "magnesia-crystal",
         "require": 4
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 3
       }
     ],
     "5": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 4
       },
       {
-        "code": "ESOTERIC_BONES",
+        "param": "esoteric-bones",
         "require": 3
       },
       {
-        "code": "MILLED_MAGNESIA",
+        "param": "milled-magnesia",
         "require": 3
       }
     ],
     "6": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 25000
       },
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 4
       },
       {
-        "code": "CLAWED_PENDULUM",
+        "param": "clawed-pendulum",
         "require": 3
       }
     ],
     "7": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 5
       }
     ],
     "8": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 4
       },
       {
-        "code": "ESOTERIC_BONES",
+        "param": "esoteric-bones",
         "require": 6
       }
     ],
     "9": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 6
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 4
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 5
       }
     ],
     "10": [
       {
-        "code": "SINUOUS_HOWL",
+        "param": "sinuous-howl",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 4
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 6
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 8
       }
     ],
     "11": [
       {
-        "code": "SINUOUS_HOWL",
+        "param": "sinuous-howl",
         "require": 1
       },
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 100000
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 4
       },
       {
-        "code": "PLATINUM_OUIJA",
+        "param": "platinum-ouija",
         "require": 3
       }
     ],
     "12": [
       {
-        "code": "SINUOUS_HOWL",
+        "param": "sinuous-howl",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "INCORRUPT_MONKEYPAW",
+        "param": "incorrupt-monkeypaw",
         "require": 3
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 5
       }
     ],
     "13": [
       {
-        "code": "SINUOUS_HOWL",
+        "param": "sinuous-howl",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "WYRMLING_SKELETON",
+        "param": "wyrmling-skeleton",
         "require": 4
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 7
       }
     ],
     "14": [
       {
-        "code": "SINUOUS_HOWL",
+        "param": "sinuous-howl",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "FRUIT_OF_GOOD_AND_EVIL",
+        "param": "fruit-of-good-and-evil",
         "require": 1
       },
       {
-        "code": "BOGEYMAN",
+        "param": "bogeyman",
         "require": 3
       }
     ],
     "15": [
       {
-        "code": "SINUOUS_HOWL",
+        "param": "sinuous-howl",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "MISTILTEINN",
+        "param": "mistilteinn",
         "require": 2
       },
       {
-        "code": "WYRMLING_SKELETON",
+        "param": "wyrmling-skeleton",
         "require": 4
       }
     ]

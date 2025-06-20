@@ -29,55 +29,55 @@
   "insightMaterials": {
     "1": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 18000
       },
       {
-        "code": "PAGE_OF_BEASTLY_THIRST",
+        "param": "page-of-beastly-thirst",
         "require": 6
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 4
       },
       {
-        "code": "SPELL_OF_BANISHING",
+        "param": "spell-of-banishing",
         "require": 6
       }
     ],
     "2": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 40000
       },
       {
-        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "param": "scroll-of-beastly-thirst",
         "require": 10
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 4
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 5
       }
     ],
     "3": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 200000
       },
       {
-        "code": "TOME_OF_BEASTLY_THIRST",
+        "param": "tome-of-beastly-thirst",
         "require": 16
       },
       {
-        "code": "GOLDEN_FLEECE",
+        "param": "golden-fleece",
         "require": 3
       },
       {
-        "code": "BOGEYMAN",
+        "param": "bogeyman",
         "require": 5
       }
     ]
@@ -85,205 +85,205 @@
   "resonanceMaterials": {
     "2": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       }
     ],
     "3": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       },
       {
-        "code": "MAGNESIA_CRYSTAL",
+        "param": "magnesia-crystal",
         "require": 4
       }
     ],
     "4": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       },
       {
-        "code": "SHATTERED_BONES",
+        "param": "shattered-bones",
         "require": 4
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 3
       }
     ],
     "5": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 3
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 4
       }
     ],
     "6": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 30000
       },
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "CLAWED_PENDULUM",
+        "param": "clawed-pendulum",
         "require": 3
       }
     ],
     "7": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 6
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 4
       }
     ],
     "8": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 6
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 4
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 5
       }
     ],
     "9": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 8
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 6
       },
       {
-        "code": "SPELL_OF_FORTUNE",
+        "param": "spell-of-fortune",
         "require": 6
       }
     ],
     "10": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 6
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 8
       }
     ],
     "11": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 120000
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "PLATINUM_OUIJA",
+        "param": "platinum-ouija",
         "require": 4
       }
     ],
     "12": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "WYRMLING_SKELETON",
+        "param": "wyrmling-skeleton",
         "require": 4
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 5
       }
     ],
     "13": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "SILVER_BULLET",
+        "param": "silver-bullet",
         "require": 5
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 6
       }
     ],
     "14": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 8
       },
       {
-        "code": "MISTILTEINN",
+        "param": "mistilteinn",
         "require": 2
       },
       {
-        "code": "SILVER_BULLET",
+        "param": "silver-bullet",
         "require": 4
       }
     ],
     "15": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 8
       },
       {
-        "code": "GOLDEN_FLEECE",
+        "param": "golden-fleece",
         "require": 3
       },
       {
-        "code": "MURMUR_OF_INSANITY",
+        "param": "murmur-of-insanity",
         "require": 4
       }
     ]

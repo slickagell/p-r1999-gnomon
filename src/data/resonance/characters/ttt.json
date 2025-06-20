@@ -4,11 +4,11 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "HOLY_SILVER",
+          "param": "holy-silver",
           "require": 4
         }
       ]
@@ -16,11 +16,11 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]
@@ -28,11 +28,11 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]
@@ -40,11 +40,11 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -52,11 +52,11 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "HOLY_SILVER",
+          "param": "holy-silver",
           "require": 4
         }
       ]

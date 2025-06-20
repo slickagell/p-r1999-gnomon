@@ -4,11 +4,11 @@
     "HYPER": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "GOOSE_NECK",
+          "param": "goose-neck",
           "require": 3
         }
       ]
@@ -16,11 +16,11 @@
     "OVERINDULGENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -28,11 +28,11 @@
     "QUIESCENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "SALTED_MANDRAKE",
+          "param": "salted-mandrake",
           "require": 3
         }
       ]
@@ -40,11 +40,11 @@
     "PRUDENTIALITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 4
         }
       ]
@@ -52,11 +52,11 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 50000
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]

@@ -4,19 +4,19 @@
     "HYPER": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "MISTILTEINN",
+          "param": "mistilteinn",
           "require": 1
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "GOOSE_NECK",
+          "param": "goose-neck",
           "require": 3
         }
       ]
@@ -24,19 +24,19 @@
     "OVERINDULGENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "MURMUR_OF_INSANITY",
+          "param": "murmur-of-insanity",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -44,19 +44,19 @@
     "QUIESCENCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "WATCH_CORE",
+          "param": "watch-core",
           "require": 2
         },
         {
-          "code": "SALTED_MANDRAKE",
+          "param": "salted-mandrake",
           "require": 3
         }
       ]
@@ -64,19 +64,19 @@
     "PRUDENTIALITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "MISTILTEINN",
+          "param": "mistilteinn",
           "require": 1
         },
         {
-          "code": "WYRMLING_SKELETON",
+          "param": "wyrmling-skeleton",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]
@@ -84,19 +84,19 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "SERPENT_SCEPTER",
+          "param": "serpent-scepter",
           "require": 1
         },
         {
-          "code": "INCORRUPT_MONKEYPAW",
+          "param": "incorrupt-monkeypaw",
           "require": 2
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 5
         }
       ]

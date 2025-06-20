@@ -34,20 +34,24 @@ const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 {/* Team suggestion */}
 <slot name="team-suggestion-section-title" />
 
-{hasTeamSuggestion && (
-  <div class="mb-6 md:grid md:grid-cols-3">
-    <div>
-      <slot name="team-suggestion-dps" />
-    </div>
+{
+  hasTeamSuggestion && (
+    <>
+      <div class="mb-6 md:grid md:grid-cols-3">
+        <div>
+          <slot name="team-suggestion-dps" />
+        </div>
 
-    <div>
-      <slot name="team-suggestion-support" />
-    </div>
+        <div>
+          <slot name="team-suggestion-support" />
+        </div>
 
-    <div>
-      <slot name="team-suggestion-sustain" />
-    </div>
-  </div>
+        <div>
+          <slot name="team-suggestion-sustain" />
+        </div>
+      </div>
 
-  <slot name="team-suggestion-exception" />
-)}
+      <slot name="team-suggestion-exception" />
+    </>
+  )
+}

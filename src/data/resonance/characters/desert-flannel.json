@@ -4,15 +4,15 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "WATCH_CORE",
+          "param": "watch-core",
           "require": 2
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 4
         }
       ]
@@ -20,15 +20,15 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "SILVER_BULLET",
+          "param": "silver-bullet",
           "require": 2
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         }
       ]
@@ -36,15 +36,15 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "INCORRUPT_MONKEYPAW",
+          "param": "incorrupt-monkeypaw",
           "require": 2
         },
         {
-          "code": "SALTED_MANDRAKE",
+          "param": "salted-mandrake",
           "require": 3
         }
       ]
@@ -52,15 +52,15 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "MURMUR_OF_INSANITY",
+          "param": "murmur-of-insanity",
           "require": 2
         },
         {
-          "code": "GOLDEN_GRASS_INCENSE",
+          "param": "golden-grass-incense",
           "require": 3
         }
       ]
@@ -68,15 +68,15 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 100000
         },
         {
-          "code": "WYRMLING_SKELETON",
+          "param": "wyrmling-skeleton",
           "require": 2
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]

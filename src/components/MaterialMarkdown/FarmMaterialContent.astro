@@ -4,25 +4,25 @@ import { getEntry } from "astro:content";
 import { kebabCase } from "change-case";
 
 interface Props {
-  code: string;
+  param: string;
   recommendAction?: string;
   stages?: {
     stage: string;
     stamina: number;
     otherMaterials: {
-      code: string;
+      param: string;
       dropRate: string;
     }[];
   }[];
 }
 
-const { code, recommendAction, stages } = Astro.props;
+const { param, recommendAction, stages } = Astro.props;
 
-const materialEntry = await getEntry("materials", kebabCase(code))!;
+const materialEntry = await getEntry("materials", param)!;
 ---
 
 <div class="flex flex-col items-center my-4">
-  <Material code={code} size={"large"} variant={["vertical"]} />
+  <Material param={param} size={"large"} variant={["vertical"]} />
   <div
     class:list={[
       "badge  rounded-full mt-2",
@@ -72,7 +72,10 @@ const materialEntry = await getEntry("materials", kebabCase(code))!;
                     .filter((material) => material.dropRate !== "possible")
                     .map((material) => (
                       <div class="relative text-center">
-                        <Material code={material.code} variant={["vertical"]} />
+                        <Material
+                          param={material.param}
+                          variant={["vertical"]}
+                        />
                         <p class="capitalize badge badge-sm text-[0.625rem]  bg-neutral border-none">
                           {material.dropRate}
                         </p>
@@ -91,7 +94,7 @@ const materialEntry = await getEntry("materials", kebabCase(code))!;
                         .map((material) => (
                           <div class="relative text-center">
                             <Material
-                              code={material.code}
+                              param={material.param}
                               variant={["vertical"]}
                             />
                             <p class="capitalize badge badge-sm text-[0.625rem] bg-neutral border-none">
@@ -120,7 +123,7 @@ const materialEntry = await getEntry("materials", kebabCase(code))!;
         materialEntry.data.craftMaterials.map((material) => (
           <div class="basis-1/3 md:basis-1/5 flex justify-center">
             <Material
-              code={material.code}
+              param={material.param}
               variant={["vertical"]}
               require={material.require}
             />

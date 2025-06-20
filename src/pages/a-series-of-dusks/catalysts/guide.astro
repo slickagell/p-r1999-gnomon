@@ -4,7 +4,7 @@ import { getEntry, render } from "astro:content";
 
 const catalystGuideEntry = await getEntry(
   "a-series-of-dusks",
-  "catalysts-guide"
+  "catalysts-guide",
 )!;
 
 const { Content } = await render(catalystGuideEntry);

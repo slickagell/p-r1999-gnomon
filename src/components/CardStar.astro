@@ -1,5 +1,5 @@
 ---
-import CustomImage from '@components/CustomImage.astro';
+import CustomImage from "@components/CustomImage.astro";
 
 interface Props {
   star: string;
@@ -9,44 +9,88 @@ const { star } = Astro.props;
 ---
 
 <div class="flex justify-center gap-1">
-    {(()=>{
-        switch (star) {
-            case '2':
-                return (
-                    <div>
-                        <CustomImage class='w-8' src="/images/card/lv-star.png" alt="lv-star icon"/>
-                    </div>
-                    <div>
-                        <CustomImage class='w-8' src="/images/card/lv-star.png" alt="lv-star icon" />
-                    </div>
-                    <div>
-                        <CustomImage class='w-8' src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
-                    </div>
-                )
-            case '3':
-                return (
-                    <div>
-                        <CustomImage class='w-8' src="/images/card/lv-star.png" alt="lv-star icon"/>
-                    </div>
-                    <div>
-                        <CustomImage class='w-8' src="/images/card/lv-star.png" alt="lv-star icon" />
-                    </div>
-                    <div>
-                        <CustomImage class='w-8' src="/images/card/lv-star.png" alt="lv-star icon" />
-                    </div>
-                )
-            default:
-                return (
-                        <div>
-                            <CustomImage class='w-8' src="/images/card/lv-star.png" alt="lv-star icon"/>
-                        </div>
-                        <div>
-                            <CustomImage class='w-8' src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
-                        </div>
-                        <div>
-                            <CustomImage class='w-8' src="/images/card/lv-unstar.png" alt="lv-unstar icon" />
-                        </div>
-                    )
-        }
-    })()}
+  {
+    (() => {
+      switch (star) {
+        case "2":
+          return (
+            <>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-star.png"
+                  alt="lv-star icon"
+                />
+              </div>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-star.png"
+                  alt="lv-star icon"
+                />
+              </div>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-unstar.png"
+                  alt="lv-unstar icon"
+                />
+              </div>
+            </>
+          );
+        case "3":
+          return (
+            <>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-star.png"
+                  alt="lv-star icon"
+                />
+              </div>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-star.png"
+                  alt="lv-star icon"
+                />
+              </div>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-star.png"
+                  alt="lv-star icon"
+                />
+              </div>
+            </>
+          );
+        default:
+          return (
+            <>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-star.png"
+                  alt="lv-star icon"
+                />
+              </div>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-unstar.png"
+                  alt="lv-unstar icon"
+                />
+              </div>
+              <div>
+                <CustomImage
+                  class="w-8"
+                  src="/images/card/lv-unstar.png"
+                  alt="lv-unstar icon"
+                />
+              </div>
+            </>
+          );
+      }
+    })()
+  }
 </div>

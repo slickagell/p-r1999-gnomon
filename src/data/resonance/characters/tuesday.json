@@ -4,19 +4,19 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 4
         },
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         }
       ]
@@ -24,19 +24,19 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SERPENT_SCEPTER",
+          "param": "serpent-scepter",
           "require": 1
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         },
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         }
       ]
@@ -44,19 +44,19 @@
     "HYPER": {
       "materials": [
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "PLATINUM_OUIJA",
+          "param": "platinum-ouija",
           "require": 2
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 5
         },
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         }
       ]
@@ -64,19 +64,19 @@
     "INSPIRE": {
       "materials": [
         {
-          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "param": "fruit-of-good-and-evil",
           "require": 1
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 3
         },
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         }
       ]
@@ -84,19 +84,19 @@
     "DELIRAMENT": {
       "materials": [
         {
-          "code": "GOLDEN_FLEECE",
+          "param": "golden-fleece",
           "require": 1
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 5
         },
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         }
       ]

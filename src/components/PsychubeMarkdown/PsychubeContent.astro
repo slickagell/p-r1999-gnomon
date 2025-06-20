@@ -24,11 +24,18 @@ interface Props {
   };
 }
 
-const LEVEL = [{label: '1', value: 1}, {label:'20 (E)', value: 20}, {label:'40 (E)', value: 40}, {label:'50 (E)', value: 50}, {label:'60', value: 60}];
+const LEVEL = [
+  { label: "1", value: 1 },
+  { label: "20 (E)", value: 20 },
+  { label: "40 (E)", value: 40 },
+  { label: "50 (E)", value: 50 },
+  { label: "60", value: 60 },
+];
 
 const hasAmplification = Astro.slots.has("amplification-1-content");
 
-const { id, title, description, image, rarity, tags, stats, specialStat } = Astro.props;
+const { id, title, description, image, rarity, tags, stats, specialStat } =
+  Astro.props;
 ---
 
 <h1>{title}</h1>
@@ -51,15 +58,17 @@ const { id, title, description, image, rarity, tags, stats, specialStat } = Astr
   <h3>Stats</h3>
 
   <div class="my-4 tabs tabs-boxed justify-center md:justify-start">
-    {LEVEL.map((level, idx) => (
-      <button
-        @click={`handleChangeActiveStateLevel(${level.value})`}
-        class="tab tab-bordered"
-        :class={`(activeStatLevel === ${level.value}) && 'tab-active !text-white'`}
-      >
-        {level.label}
-      </button>
-    ))}
+    {
+      LEVEL.map((level, idx) => (
+        <button
+          @click={`handleChangeActiveStateLevel(${level.value})`}
+          class="tab tab-bordered"
+          x-bind:class={`(activeStatLevel === ${level.value}) && 'tab-active !text-white'`}
+        >
+          {level.label}
+        </button>
+      ))
+    }
   </div>
 
   <div class="max-w-md">
@@ -67,69 +76,73 @@ const { id, title, description, image, rarity, tags, stats, specialStat } = Astr
       <p x-text="baseStats.HP.label"></p>
       <p x-text="baseStats.HP.value"></p>
     </div>
-    <div class="divider my-1 h-2" />
+    <div class="divider my-1 h-2"></div>
     <div class="flex gap-2 items-center justify-between">
       <p x-text="baseStats.ATTACK.label"></p>
       <p x-text="baseStats.ATTACK.value"></p>
     </div>
-    <div class="divider my-1 h-2" />
+    <div class="divider my-1 h-2"></div>
     <div class="flex gap-2 items-center justify-between">
       <p x-text="baseStats.REALITY_DEFENSE.label"></p>
       <p x-text="baseStats.REALITY_DEFENSE.value"></p>
     </div>
-    <div class="divider my-1 h-2" />
+    <div class="divider my-1 h-2"></div>
     <div class="flex gap-2 items-center justify-between">
       <p x-text="baseStats.MENTAL_DEFENSE.label"></p>
       <p x-text="baseStats.MENTAL_DEFENSE.value"></p>
     </div>
-    {specialStat && 
-      <>
-        <div class="divider my-1 h-2"></div>
-        <div class="flex gap-2 items-center justify-between">
-          <p class="text-primary" x-text="specialStat.label"></p>
-          <p class="text-primary" x-text="specialStat.value"></p>
-        </div>
-      </>
+    {
+      specialStat && (
+        <>
+          <div class="divider my-1 h-2" />
+          <div class="flex gap-2 items-center justify-between">
+            <p class="text-primary" x-text="specialStat.label" />
+            <p class="text-primary" x-text="specialStat.value" />
+          </div>
+        </>
+      )
     }
   </div>
 
   {
-    hasAmplification && <>
-      <h3 class="mt-6 md:mt-10">Amplification</h3>
+    hasAmplification && (
+      <>
+        <h3 class="mt-6 md:mt-10">Amplification</h3>
 
-      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
-        <h6 class="my-0 shrink-0">Lv. 1:</h6>
-        <slot name="amplification-1-content" />
-      </div>
+        <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+          <h6 class="my-0 shrink-0">Lv. 1:</h6>
+          <slot name="amplification-1-content" />
+        </div>
 
-      <div class="divider"></div>
+        <div class="divider" />
 
-      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
-        <h5 class="my-0 shrink-0">Lv. 2:</h5>
-        <slot name="amplification-2-content" />
-      </div>
+        <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+          <h5 class="my-0 shrink-0">Lv. 2:</h5>
+          <slot name="amplification-2-content" />
+        </div>
 
-      <div class="divider"></div>
+        <div class="divider" />
 
-      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
-        <h5 class="my-0 shrink-0">Lv. 3:</h5>
-        <slot name="amplification-3-content" />
-      </div>
+        <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+          <h5 class="my-0 shrink-0">Lv. 3:</h5>
+          <slot name="amplification-3-content" />
+        </div>
 
-      <div class="divider"></div>
+        <div class="divider" />
 
-      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
-        <h5 class="my-0 shrink-0">Lv. 4:</h5>
-        <slot name="amplification-4-content" />
-      </div>
+        <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+          <h5 class="my-0 shrink-0">Lv. 4:</h5>
+          <slot name="amplification-4-content" />
+        </div>
 
-      <div class="divider"></div>
+        <div class="divider" />
 
-      <div class="flex flex-col md:flex-row gap-1 md:gap-4">
-        <h5 class="my-0 shrink-0">Lv. 5:</h5>
-        <slot name="amplification-5-content" />
-      </div>
-    </>
+        <div class="flex flex-col md:flex-row gap-1 md:gap-4">
+          <h5 class="my-0 shrink-0">Lv. 5:</h5>
+          <slot name="amplification-5-content" />
+        </div>
+      </>
+    )
   }
 </div>
 
@@ -145,7 +158,7 @@ const { id, title, description, image, rarity, tags, stats, specialStat } = Astr
     window.Alpine.store("psychube", {
       rarity,
       stats,
-      specialStat
+      specialStat,
     });
   });
 </script>

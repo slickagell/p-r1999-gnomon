@@ -29,55 +29,55 @@
   "insightMaterials": {
     "1": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 18000
       },
       {
-        "code": "PAGE_OF_BEASTLY_THIRST",
+        "param": "page-of-beastly-thirst",
         "require": 6
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 5
       },
       {
-        "code": "TREMBLING_TOOTH",
+        "param": "trembling-tooth",
         "require": 5
       }
     ],
     "2": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 40000
       },
       {
-        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "param": "scroll-of-beastly-thirst",
         "require": 10
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 6
       },
       {
-        "code": "CICADA_WINGS",
+        "param": "cicada-wings",
         "require": 6
       }
     ],
     "3": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 200000
       },
       {
-        "code": "TOME_OF_BEASTLY_THIRST",
+        "param": "tome-of-beastly-thirst",
         "require": 16
       },
       {
-        "code": "GOLDEN_FLEECE",
+        "param": "golden-fleece",
         "require": 3
       },
       {
-        "code": "INCORRUPT_MONKEYPAW",
+        "param": "incorrupt-monkeypaw",
         "require": 7
       }
     ]
@@ -85,205 +85,205 @@
   "resonanceMaterials": {
     "2": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       }
     ],
     "3": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       },
       {
-        "code": "SILVER_ORE",
+        "param": "silver-ore",
         "require": 5
       }
     ],
     "4": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       },
       {
-        "code": "SPELL_OF_BANISHING",
+        "param": "spell-of-banishing",
         "require": 6
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 3
       }
     ],
     "5": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "ESOTERIC_BONES",
+        "param": "esoteric-bones",
         "require": 3
       },
       {
-        "code": "CICADA_WINGS",
+        "param": "cicada-wings",
         "require": 4
       }
     ],
     "6": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 30000
       },
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "GOLDEN_BEETLE",
+        "param": "golden-beetle",
         "require": 3
       }
     ],
     "7": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 6
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 4
       }
     ],
     "8": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 6
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 4
       },
       {
-        "code": "SPELL_OF_FORTUNE",
+        "param": "spell-of-fortune",
         "require": 6
       }
     ],
     "9": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 8
       },
       {
-        "code": "GOOSE_NECK",
+        "param": "goose-neck",
         "require": 5
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 8
       }
     ],
     "10": [
       {
-        "code": "HYPOCRITICAL_MURMUR",
+        "param": "hypocritical-murmur",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 8
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 8
       }
     ],
     "11": [
       {
-        "code": "HYPOCRITICAL_MURMUR",
+        "param": "hypocritical-murmur",
         "require": 1
       },
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 120000
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "GOLDEN_COMPASS",
+        "param": "golden-compass",
         "require": 4
       }
     ],
     "12": [
       {
-        "code": "HYPOCRITICAL_MURMUR",
+        "param": "hypocritical-murmur",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "SILVER_BULLET",
+        "param": "silver-bullet",
         "require": 4
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 5
       }
     ],
     "13": [
       {
-        "code": "HYPOCRITICAL_MURMUR",
+        "param": "hypocritical-murmur",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "INCORRUPT_MONKEYPAW",
+        "param": "incorrupt-monkeypaw",
         "require": 5
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 6
       }
     ],
     "14": [
       {
-        "code": "HYPOCRITICAL_MURMUR",
+        "param": "hypocritical-murmur",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 8
       },
       {
-        "code": "MISTILTEINN",
+        "param": "mistilteinn",
         "require": 2
       },
       {
-        "code": "GLOWING_MOTHWING",
+        "param": "glowing-mothwing",
         "require": 4
       }
     ],
     "15": [
       {
-        "code": "HYPOCRITICAL_MURMUR",
+        "param": "hypocritical-murmur",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 8
       },
       {
-        "code": "GOLDEN_FLEECE",
+        "param": "golden-fleece",
         "require": 3
       },
       {
-        "code": "WATCH_CORE",
+        "param": "watch-core",
         "require": 4
       }
     ]

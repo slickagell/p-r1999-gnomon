@@ -33,17 +33,13 @@ const materials = materialEntries.sort((a, b) => b.data.rarity - a.data.rarity);
       materials.map((entry) => (
         <div class="flex flex-col md:flex-row gap-4 p-2 border border-base-content/25 ">
           <div class="md:basis-40 flex justify-center relative after:absolute after:left-1/4 after:right-1/4 after:-bottom-2 md:after:left-auto md:after:-right-2 md:after:top-0 md:after:bottom-0 after:h-px md:after:h-auto md:after:w-px after:bg-base-content/50">
-            <Material
-              code={entry.data.code}
-              variant={["vertical"]}
-              id={entry.id}
-            />
+            <Material param={entry.id} variant={["vertical"]} id={entry.id} />
           </div>
           <div class="flex-1 flex gap-4 flex-wrap justify-center md:justify-start">
             {entry.data.craftMaterials.map((material) => (
               <div class="basis-1/3 md:basis-1/5 flex justify-center">
                 <Material
-                  code={material.code}
+                  param={material.param}
                   variant={["vertical", "tag-link"]}
                   require={material.require}
                 />

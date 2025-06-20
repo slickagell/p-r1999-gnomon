@@ -29,41 +29,41 @@
   "insightMaterials": {
     "1": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 5000
       },
       {
-        "code": "PAGE_OF_PLANTAL_VIMEN",
+        "param": "page-of-plantal-vimen",
         "require": 1
       },
       {
-        "code": "PAGE_OF_BEASTLY_THIRST",
+        "param": "page-of-beastly-thirst",
         "require": 1
       },
       {
-        "code": "MAGNESIA_CRYSTAL",
+        "param": "magnesia-crystal",
         "require": 2
       }
     ],
     "2": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 20000
       },
       {
-        "code": "SCROLL_OF_PLANTAL_VIMEN",
+        "param": "scroll-of-plantal-vimen",
         "require": 2
       },
       {
-        "code": "SCROLL_OF_BEASTLY_THIRST",
+        "param": "scroll-of-beastly-thirst",
         "require": 2
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 2
       },
       {
-        "code": "ESOTERIC_BONES",
+        "param": "esoteric-bones",
         "require": 2
       }
     ]
@@ -71,115 +71,115 @@
   "resonanceMaterials": {
     "2": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       }
     ],
     "3": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       },
       {
-        "code": "SPELL_OF_BANISHING",
+        "param": "spell-of-banishing",
         "require": 3
       }
     ],
     "4": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 2
       },
       {
-        "code": "TREMBLING_TOOTH",
+        "param": "trembling-tooth",
         "require": 2
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 1
       }
     ],
     "5": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 2
       },
       {
-        "code": "ROUGH_SILVER_INGOT",
+        "param": "rough-silver-ingot",
         "require": 1
       },
       {
-        "code": "MILLED_MAGNESIA",
+        "param": "milled-magnesia",
         "require": 1
       }
     ],
     "6": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 10000
       },
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 2
       },
       {
-        "code": "GOLDEN_BEETLE",
+        "param": "golden-beetle",
         "require": 1
       }
     ],
     "7": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 3
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 3
       }
     ],
     "8": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 3
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 2
       },
       {
-        "code": "SPELL_OF_FORTUNE",
+        "param": "spell-of-fortune",
         "require": 4
       }
     ],
     "9": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 4
       },
       {
-        "code": "SALTED_MANDRAKE",
+        "param": "salted-mandrake",
         "require": 2
       },
       {
-        "code": "CICADA_WINGS",
+        "param": "cicada-wings",
         "require": 3
       }
     ],
     "10": [
       {
-        "code": "HOARSE_ECHO",
+        "param": "hoarse-echo",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 2
       },
       {
-        "code": "HOLY_SILVER",
+        "param": "holy-silver",
         "require": 4
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 6
       }
     ]

@@ -4,11 +4,11 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 3
         }
       ]
@@ -16,11 +16,11 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "SALTED_MANDRAKE",
+          "param": "salted-mandrake",
           "require": 2
         }
       ]
@@ -28,11 +28,11 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 2
         }
       ]
@@ -40,11 +40,11 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 3
         }
       ]
@@ -52,11 +52,11 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "GOOSE_NECK",
+          "param": "goose-neck",
           "require": 2
         }
       ]
@@ -72,7 +72,6 @@
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356&range=C23"
         },
         "patternRecommended": "EQUIBALANCE",
-        "code": "APAkQUVBFUIBOgM6MyZUJAQ8YD0gNEE0IUgATBBMAQ",
         "resonance": [
           {
             "blocks": ["1-0"],

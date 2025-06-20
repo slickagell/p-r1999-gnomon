@@ -13,7 +13,7 @@ type EnemyBasicInfoData = {
   wave: number | string;
   phase?: string;
   headIconId: string;
-  isBoss: boolean
+  isBoss: boolean;
   name: string;
   afflatus: string;
   hp: number;
@@ -21,12 +21,12 @@ type EnemyBasicInfoData = {
   lv: string;
   stats: {
     [key: string]: string | number;
-  }
+  };
   atkRate: StatRate;
   criticalTechniqueRate: StatRate;
   realityDefRate: StatRate;
   mentalDefRate: StatRate;
-  resistance? : {
+  resistance?: {
     code: string;
     value: number;
   }[];
@@ -42,10 +42,10 @@ type EnemyBasicInfoData = {
     name: string;
     cardId: string;
   };
-}
+};
 
 type EnemyData = EnemyBasicInfoData & {
-  phases?: EnemyBasicInfoData[]
+  phases?: EnemyBasicInfoData[];
 };
 
 interface Props {
@@ -54,188 +54,262 @@ interface Props {
 
 const { enemies } = Astro.props;
 
-const enemyGroups = enemies.reduce((acc, enemy) => {
-  const wave = enemy.wave;
-  if (!acc[wave]) {
-    acc[wave] = [];
-  }
-  acc[wave].push(enemy);
-  return acc;
-}, {} as Record<number, EnemyData[]>);
-
+const enemyGroups = enemies.reduce(
+  (acc, enemy) => {
+    const wave = enemy.wave;
+    if (!acc[wave]) {
+      acc[wave] = [];
+    }
+    acc[wave].push(enemy);
+    return acc;
+  },
+  {} as Record<number, EnemyData[]>,
+);
 ---
 
 <div class="mt-4" x-data="dataset">
-    <div class="flex flex-col gap-5">
-        {
-          Object.entries(enemyGroups).map(([group,enemies], idx) => (
-            <div class="flex gap-4">
-              <p class="text-primary-content shrink-0 basis-16">{group==="ps"?<span class="text-xl">P.S</span>:<span class="text-xl">No. {group}</span>}</p>
-              <div class="flex flex-wrap gap-4 items-end">
-                {enemies.map((enemy) => (
-                  <div class="flex flex-col items-center">
-                    {enemy.isBoss && <Icon icon="crown" customClass="text-error" />}
-                    <button
-                    class="w-16 border border-primary-content/50 rounded-full relative"
-                    @click={`handleChangeActive('${enemy.id}')`}
-                    :class={`(active === '${enemy.id}') && '!border-primary'`}
-                    >
-                    <CustomImage
-                        class="rounded-full overflow-hidden"
-                        src={`/images/enemies/headicon/${enemy.headIconId}.png`}
-                        alt={enemy.name + " head icon"}
-                    />
-                    <div class="absolute w-4 -bottom-2 right-0">
-                        <AfflatusIcon type={enemy.afflatus as keyof typeof AFFLATUS_TYPE} />
-                    </div>
-                    </button>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))
-        }
-    </div>
-    <template x-if="activeEnemy">
-        <div>
-            <div class="mt-4 flex gap-4">
-                <img
-                  class="w-16 h-16 rounded-full overflow-hidden shrink-0 border border-base-content/30"
-                  loading="lazy"
-                  :src="`/images/enemies/headicon/${activeEnemy?.headIconId}.png`"
-                  :alt="activeEnemy?.name + ' headicon'"
-                />
-                <div>
-                  <p class="text-xl font-medium text-primary-content mb-1" x-text="activeEnemy?.name"></p>
-                  <p x-text="activeEnemy?.lv"></p>
-                  <p>HP: <span class="font-medium text-primary" x-text="activeEnemy?.hp"></span></p>
-                  <template x-if="activeEnemy?.multiHp">
-                    <div class="mt-2 flex gap-1 ">
-                      <template x-for="hp in activeEnemy?.multiHp">
-                        <div class="h-1 w-10 bg-primary"></div>
-                      </template>
-                    </div>
-                  </template>
-                </div>
-            </div>
-            <div x-show="phases.length > 1" class="my-4 tabs tabs-boxed justify-center md:justify-start">
-              <template x-for="phase in phases">
+  <div class="flex flex-col gap-5">
+    {
+      Object.entries(enemyGroups).map(([group, enemies], idx) => (
+        <div class="flex gap-4">
+          <p class="text-primary-content shrink-0 basis-16">
+            {group === "ps" ? (
+              <span class="text-xl">P.S</span>
+            ) : (
+              <span class="text-xl">No. {group}</span>
+            )}
+          </p>
+          <div class="flex flex-wrap gap-4 items-end">
+            {enemies.map((enemy) => (
+              <div class="flex flex-col items-center">
+                {enemy.isBoss && <Icon icon="crown" customClass="text-error" />}
                 <button
-                  @click={`handleChangeActivePhase(phase)`}
-                  class="tab tab-bordered"
-                  :class={`(activePhase === phase) && 'tab-active !text-white'`}
-                  x-text="'Phase ' + phase"
+                  class="w-16 border border-primary-content/50 rounded-full relative"
+                  @click={`handleChangeActive('${enemy.id}')`}
+                  x-bind:class={`(active === '${enemy.id}') && '!border-primary'`}
                 >
+                  <CustomImage
+                    class="rounded-full overflow-hidden"
+                    src={`/images/enemies/headicon/${enemy.headIconId}.png`}
+                    alt={enemy.name + " head icon"}
+                  />
+                  <div class="absolute w-4 -bottom-2 right-0">
+                    <AfflatusIcon
+                      type={enemy.afflatus as keyof typeof AFFLATUS_TYPE}
+                    />
+                  </div>
                 </button>
-              </template>
-            </div>
-            <div class="divider"></div>
-            <div class="border border-base-content/20 p-2">
-              <div class="flex justify-between gap-2">
-                <p class="font-medium text-primary-content">Stats</p>
-                <div class="form-control max-w-fit">
-                  <label class="label cursor-pointer">
-                    <input type="checkbox" x-model="isShowStatsDetail" class="checkbox mr-2" />
-                    <span class="label-text">Detail</span> 
-                  </label>
-                </div>
               </div>
-              <template x-if="!isShowStatsDetail">
-                <div class="mt-2 grid grid-cols-[minmax(min-content,12rem)_minmax(min-content,12rem)] gap-x-10 gap-y-4">
-                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
-                        <span>ATK</span>
-                        <span class="font-medium text-primary-content" x-text="activeEnemy?.atkRate"></span>
-                    </div>
-                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
-                        <span>Reality DEF</span>
-                        <span class="font-medium text-primary-content" x-text="activeEnemy?.realityDefRate"></span>
-                    </div>
-                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
-                        <span>Critical Technique</span>
-                        <span class="font-medium text-primary-content" x-text="activeEnemy?.criticalTechniqueRate"></span>
-                    </div>
-                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
-                        <span>Mental DEF</span>
-                        <span class="font-medium text-primary-content" x-text="activeEnemy?.mentalDefRate"></span>
-                    </div>
-                </div>
-              </template>
-              <template x-if="isShowStatsDetail && stats">
-                <div class="mt-2 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
-                  <template x-for="stat in stats">
-                    <div class="flex justify-between border-b border-base-content/20 pb-2 gap-2">
-                        <span x-text="stat.label"></span>
-                        <span class="font-medium text-primary-content" x-text="stat.value.toLocaleString() + (stat.unit??'')"></span>
-                    </div>
-                  </template>
-                </div>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+  <template x-if="activeEnemy">
+    <div>
+      <div class="mt-4 flex gap-4">
+        <img
+          class="w-16 h-16 rounded-full overflow-hidden shrink-0 border border-base-content/30"
+          loading="lazy"
+          :src="`/images/enemies/headicon/${activeEnemy?.headIconId}.png`"
+          :alt="activeEnemy?.name + ' headicon'"
+        />
+        <div>
+          <p
+            class="text-xl font-medium text-primary-content mb-1"
+            x-text="activeEnemy?.name"
+          >
+          </p>
+          <p x-text="activeEnemy?.lv"></p>
+          <p>
+            HP: <span class="font-medium text-primary" x-text="activeEnemy?.hp"
+            ></span>
+          </p>
+          <template x-if="activeEnemy?.multiHp">
+            <div class="mt-2 flex gap-1">
+              <template x-for="hp in activeEnemy?.multiHp">
+                <div class="h-1 w-10 bg-primary"></div>
               </template>
             </div>
-            <template x-if="activeEnemy?.resistance">
-              <div class="mt-4 border border-error/50 p-2">
-                <p class="font-medium text-error">Resistance</p>
-                <div class="mt-2 flex flex-wrap gap-x-10 gap-y-2">
-                  {Object.entries(RESISTANCE).map(([code, resistance]) => (
-                    <div x-data={`{ resistance: activeEnemy?.resistance?.find((r) => r.code === '${code}') }`} x-show={"resistance"} class="flex gap-4">
-                      <div class="flex gap-1 items-center">
-                        {resistance.title} 
-                        <Tooltip>
-                          <div slot="toggle" class="text-base-content">
-                            <Icon icon="info-circle" customClass="w-4 h-4" />
-                          </div>
-                          <div>
-                            {resistance.description} 
-                          </div>
-                        </Tooltip>
-                      </div>
-                      <span class="font-medium text-primary" x-text="resistance?.value + '%'"></span>
-                    </div>
-                  ))}
-                </div>
+          </template>
+        </div>
+      </div>
+      <div
+        x-show="phases.length > 1"
+        class="my-4 tabs tabs-boxed justify-center md:justify-start"
+      >
+        <template x-for="phase in phases">
+          <button
+            @click={`handleChangeActivePhase(phase)`}
+            class="tab tab-bordered"
+            x-bind:class={`(activePhase === phase) && 'tab-active !text-white'`}
+            x-text="'Phase ' + phase"
+          >
+          </button>
+        </template>
+      </div>
+      <div class="divider"></div>
+      <div class="border border-base-content/20 p-2">
+        <div class="flex justify-between gap-2">
+          <p class="font-medium text-primary-content">Stats</p>
+          <div class="form-control max-w-fit">
+            <label class="label cursor-pointer">
+              <input
+                type="checkbox"
+                x-model="isShowStatsDetail"
+                class="checkbox mr-2"
+              />
+              <span class="label-text">Detail</span>
+            </label>
+          </div>
+        </div>
+        <template x-if="!isShowStatsDetail">
+          <div
+            class="mt-2 grid grid-cols-[minmax(min-content,12rem)_minmax(min-content,12rem)] gap-x-10 gap-y-4"
+          >
+            <div
+              class="flex justify-between border-b border-base-content/20 pb-2 gap-2"
+            >
+              <span>ATK</span>
+              <span
+                class="font-medium text-primary-content"
+                x-text="activeEnemy?.atkRate"></span>
+            </div>
+            <div
+              class="flex justify-between border-b border-base-content/20 pb-2 gap-2"
+            >
+              <span>Reality DEF</span>
+              <span
+                class="font-medium text-primary-content"
+                x-text="activeEnemy?.realityDefRate"></span>
+            </div>
+            <div
+              class="flex justify-between border-b border-base-content/20 pb-2 gap-2"
+            >
+              <span>Critical Technique</span>
+              <span
+                class="font-medium text-primary-content"
+                x-text="activeEnemy?.criticalTechniqueRate"></span>
+            </div>
+            <div
+              class="flex justify-between border-b border-base-content/20 pb-2 gap-2"
+            >
+              <span>Mental DEF</span>
+              <span
+                class="font-medium text-primary-content"
+                x-text="activeEnemy?.mentalDefRate"></span>
+            </div>
+          </div>
+        </template>
+        <template x-if="isShowStatsDetail && stats">
+          <div class="mt-2 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-4">
+            <template x-for="stat in stats">
+              <div
+                class="flex justify-between border-b border-base-content/20 pb-2 gap-2"
+              >
+                <span x-text="stat.label"></span>
+                <span
+                  class="font-medium text-primary-content"
+                  x-text="stat.value.toLocaleString() + (stat.unit??'')"></span>
               </div>
             </template>
-            <div class="mt-4">
-                <slot name="passive-info" />
-            </div>
-            <div class="divider"></div>
-            <div x-show="activeEnemy?.skill1" class="border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
-                <img
-                    class="max-w-20 self-center md:max-w-32"
-                    loading="lazy"
-                    :src="`/images/enemies/card/${activeEnemy?.skill1?.cardId}.png`"
-                    :alt="activeEnemy?.name + ' skill 1'"
-                />
-                <div>
-                    <p class="text-lg font-medium text-primary-content" x-text="activeEnemy?.skill1?.name"></p>
-                    <slot name="skill1-info" />
+          </div>
+        </template>
+      </div>
+      <template x-if="activeEnemy?.resistance">
+        <div class="mt-4 border border-error/50 p-2">
+          <p class="font-medium text-error">Resistance</p>
+          <div class="mt-2 flex flex-wrap gap-x-10 gap-y-2">
+            {
+              Object.entries(RESISTANCE).map(([code, resistance]) => (
+                <div
+                  x-data={`{ resistance: activeEnemy?.resistance?.find((r) => r.code === '${code}') }`}
+                  x-show={"resistance"}
+                  class="flex gap-4"
+                >
+                  <div class="flex gap-1 items-center">
+                    {resistance.title}
+                    <Tooltip>
+                      <div slot="toggle" class="text-base-content">
+                        <Icon icon="info-circle" customClass="w-4 h-4" />
+                      </div>
+                      <div>{resistance.description}</div>
+                    </Tooltip>
+                  </div>
+                  <span
+                    class="font-medium text-primary"
+                    x-text="resistance?.value + '%'"
+                  />
                 </div>
-            </div>
-            <div x-show="activeEnemy?.skill2" class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
-                <img
-                    class="max-w-20 self-center md:max-w-32"
-                    loading="lazy"
-                    :src="`/images/enemies/card/${activeEnemy?.skill2?.cardId}.png`"
-                    :alt="activeEnemy?.name + ' skill 2'"
-                />
-                <div>
-                    <p class="text-lg font-medium text-primary-content" x-text="activeEnemy?.skill2?.name"></p>
-                    <slot name="skill2-info" />
-                </div>
-            </div>
-            <div x-show="activeEnemy?.ultimate" class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4">
-                <img
-                    class="max-w-20 self-center md:max-w-32"
-                    loading="lazy"
-                    :src="`/images/enemies/card/${activeEnemy?.ultimate?.cardId}.png`"
-                    :alt="activeEnemy?.name + ' ultimate'"
-                />
-                <div>
-                    <p class="text-lg font-medium text-primary-content" x-text="activeEnemy?.ultimate?.name"></p>
-                    <slot name="ultimate-info" />
-                </div>
-            </div>
+              ))
+            }
+          </div>
         </div>
-    </template>
+      </template>
+      <div class="mt-4">
+        <slot name="passive-info" />
+      </div>
+      <div class="divider"></div>
+      <div
+        x-show="activeEnemy?.skill1"
+        class="border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4"
+      >
+        <img
+          class="max-w-20 self-center md:max-w-32"
+          loading="lazy"
+          :src="`/images/enemies/card/${activeEnemy?.skill1?.cardId}.png`"
+          :alt="activeEnemy?.name + ' skill 1'"
+        />
+        <div>
+          <p
+            class="text-lg font-medium text-primary-content"
+            x-text="activeEnemy?.skill1?.name"
+          >
+          </p>
+          <slot name="skill1-info" />
+        </div>
+      </div>
+      <div
+        x-show="activeEnemy?.skill2"
+        class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4"
+      >
+        <img
+          class="max-w-20 self-center md:max-w-32"
+          loading="lazy"
+          :src="`/images/enemies/card/${activeEnemy?.skill2?.cardId}.png`"
+          :alt="activeEnemy?.name + ' skill 2'"
+        />
+        <div>
+          <p
+            class="text-lg font-medium text-primary-content"
+            x-text="activeEnemy?.skill2?.name"
+          >
+          </p>
+          <slot name="skill2-info" />
+        </div>
+      </div>
+      <div
+        x-show="activeEnemy?.ultimate"
+        class="mt-2 border border-base-content/20 p-2 flex flex-col md:flex-row items-start gap-4"
+      >
+        <img
+          class="max-w-20 self-center md:max-w-32"
+          loading="lazy"
+          :src="`/images/enemies/card/${activeEnemy?.ultimate?.cardId}.png`"
+          :alt="activeEnemy?.name + ' ultimate'"
+        />
+        <div>
+          <p
+            class="text-lg font-medium text-primary-content"
+            x-text="activeEnemy?.ultimate?.name"
+          >
+          </p>
+          <slot name="ultimate-info" />
+        </div>
+      </div>
+    </div>
+  </template>
 </div>
 
 <script
@@ -246,7 +320,7 @@ const enemyGroups = enemies.reduce((acc, enemy) => {
 >
   document.addEventListener("alpine:init", () => {
     window.Alpine.store("zone", {
-        enemies,
+      enemies,
     });
   });
 </script>
@@ -259,57 +333,66 @@ const enemyGroups = enemies.reduce((acc, enemy) => {
   Alpine.plugin(anchor);
 
   Alpine.data("dataset", () => ({
-    active: '',
-    activePhase: '1',
-    phases: ['1'],
+    active: "",
+    activePhase: "1",
+    phases: ["1"],
     activeEnemy: null,
     isShowStatsDetail: false,
     stats: null,
 
     handleMappingStats() {
-      this.stats = Object.entries(this.activeEnemy?.stats).reduce((acc, curr) => {
-        const [key, value] = curr;
-        const label = STATS[key].label;
-        const unit = STATS[key].unit;
-        return [
-          ...acc,
-          {
-            label,
-            value,
-            unit,
-            key
-          }
-        ];
-      },[]);
+      this.stats = Object.entries(this.activeEnemy?.stats).reduce(
+        (acc, curr) => {
+          const [key, value] = curr;
+          const label = STATS[key].label;
+          const unit = STATS[key].unit;
+          return [
+            ...acc,
+            {
+              label,
+              value,
+              unit,
+              key,
+            },
+          ];
+        },
+        [],
+      );
     },
 
     handleChangeActive(activeId) {
       if (this.active === activeId) {
-        this.active = '';
+        this.active = "";
         this.activeEnemy = null;
-        this.activePhase = '1';
-        this.phases = ['1'];
+        this.activePhase = "1";
+        this.phases = ["1"];
         this.stats = null;
         return;
       }
 
       this.active = activeId;
-      this.activeEnemy = this.$store.zone.enemies.find((enemy) => enemy.id === activeId);
-      this.activePhase = '1';
-      this.phases = this.activeEnemy.phases?['1', ...this.activeEnemy.phases.map((_,idx)=> `${idx + 2}`)] : ['1'];
+      this.activeEnemy = this.$store.zone.enemies.find(
+        (enemy) => enemy.id === activeId,
+      );
+      this.activePhase = "1";
+      this.phases = this.activeEnemy.phases
+        ? ["1", ...this.activeEnemy.phases.map((_, idx) => `${idx + 2}`)]
+        : ["1"];
       this.handleMappingStats();
     },
 
     handleChangeActivePhase(phase) {
-      if (phase === '1') {
-        this.activePhase = '1';
-        this.activeEnemy = this.$store.zone.enemies.find((enemy) => enemy.id === this.activeEnemy.id);
+      if (phase === "1") {
+        this.activePhase = "1";
+        this.activeEnemy = this.$store.zone.enemies.find(
+          (enemy) => enemy.id === this.activeEnemy.id,
+        );
         this.handleMappingStats();
         return;
       }
       this.activePhase = phase;
       this.activeEnemy = this.activeEnemy.phases[Number(phase) - 2];
       this.handleMappingStats();
-    }
+    },
   }));
 </script>

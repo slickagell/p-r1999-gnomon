@@ -12,7 +12,7 @@ import { getEntry, render } from "astro:content";
 
 const reveriesInTheRainEntry = await getEntry(
   "reveries-in-the-rain",
-  "general"
+  "general",
 )!;
 
 const { Content } = await render(reveriesInTheRainEntry);

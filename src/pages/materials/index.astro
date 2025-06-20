@@ -77,7 +77,7 @@ const materialEntries = await getCollection("materials", ({ id }) => {
               <li
                 x-show={`filterMaterial({rarity:'${effectEntry.data.rarity}', title: '${effectEntry.data.title}'})`}
               >
-                <Material code={effectEntry.data.code} />
+                <Material param={effectEntry.id} />
               </li>
             );
           })

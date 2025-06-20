@@ -4,8 +4,7 @@ import { getEntry } from "astro:content";
 import { kebabCase } from "change-case";
 
 interface Props {
-  param?: string;
-  code?: string;
+  param: string;
   size?: "small" | "medium" | "large";
   variant?: ("horizontal" | "vertical")[];
   customClass?: string;
@@ -13,16 +12,12 @@ interface Props {
 
 const {
   param,
-  code,
   size = "medium",
   variant = ["vertical"],
   customClass,
 } = Astro.props;
 
-const psychubeEntry = await getEntry(
-  "psychubes",
-  param ?? kebabCase(code ?? "")
-)!;
+const psychubeEntry = await getEntry("psychubes", param)!;
 ---
 
 <div

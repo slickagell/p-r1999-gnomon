@@ -29,55 +29,55 @@
   "insightMaterials": {
     "1": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 18000
       },
       {
-        "code": "PAGE_OF_MINERAL_WEALTH",
+        "param": "page-of-mineral-wealth",
         "require": 6
       },
       {
-        "code": "SHATTERED_BONES",
+        "param": "shattered-bones",
         "require": 6
       },
       {
-        "code": "PERPETUAL_COG",
+        "param": "perpetual-cog",
         "require": 5
       }
     ],
     "2": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 40000
       },
       {
-        "code": "SCROLL_OF_MINERAL_WEALTH",
+        "param": "scroll-of-mineral-wealth",
         "require": 10
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 5
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 6
       }
     ],
     "3": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 200000
       },
       {
-        "code": "TOME_OF_MINERAL_WEALTH",
+        "param": "tome-of-mineral-wealth",
         "require": 16
       },
       {
-        "code": "GLOWING_MOTHWING",
+        "param": "glowing-mothwing",
         "require": 6
       },
       {
-        "code": "GOLDEN_FLEECE",
+        "param": "golden-fleece",
         "require": 3
       }
     ]
@@ -85,205 +85,205 @@
   "resonanceMaterials": {
     "2": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       }
     ],
     "3": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       },
       {
-        "code": "SPELL_OF_BANISHING",
+        "param": "spell-of-banishing",
         "require": 6
       }
     ],
     "4": [
       {
-        "code": "MOMENT_OF_DISSONANCE",
+        "param": "moment-of-dissonance",
         "require": 5
       },
       {
-        "code": "SHATTERED_BONES",
+        "param": "shattered-bones",
         "require": 4
       },
       {
-        "code": "SOLIDUS",
+        "param": "solidus",
         "require": 3
       }
     ],
     "5": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "FOX_TAIL",
+        "param": "fox-tail",
         "require": 3
       },
       {
-        "code": "LIQUEFIED_TERROR",
+        "param": "liquefied-terror",
         "require": 3
       }
     ],
     "6": [
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 30000
       },
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 5
       },
       {
-        "code": "GOLDEN_BEETLE",
+        "param": "golden-beetle",
         "require": 3
       }
     ],
     "7": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 6
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 5
       }
     ],
     "8": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 6
       },
       {
-        "code": "PROPHETIC_BIRD",
+        "param": "prophetic-bird",
         "require": 4
       },
       {
-        "code": "CICADA_WINGS",
+        "param": "cicada-wings",
         "require": 5
       }
     ],
     "9": [
       {
-        "code": "BRIEF_CACOPHONY",
+        "param": "brief-cacophony",
         "require": 8
       },
       {
-        "code": "BITING_BOX",
+        "param": "biting-box",
         "require": 4
       },
       {
-        "code": "PERPETUAL_COG",
+        "param": "perpetual-cog",
         "require": 4
       }
     ],
     "10": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "BIFURCATED_SKELETON",
+        "param": "bifurcated-skeleton",
         "require": 8
       },
       {
-        "code": "WINGED_KEY",
+        "param": "winged-key",
         "require": 6
       }
     ],
     "11": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SHARPODONTY",
+        "param": "sharpodonty",
         "require": 120000
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 5
       },
       {
-        "code": "GOLDEN_COMPASS",
+        "param": "golden-compass",
         "require": 4
       }
     ],
     "12": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "MURMUR_OF_INSANITY",
+        "param": "murmur-of-insanity",
         "require": 4
       },
       {
-        "code": "GOLDEN_GRASS_INCENSE",
+        "param": "golden-grass-incense",
         "require": 5
       }
     ],
     "13": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 6
       },
       {
-        "code": "SILVER_BULLET",
+        "param": "silver-bullet",
         "require": 5
       },
       {
-        "code": "GOOSE_NECK",
+        "param": "goose-neck",
         "require": 5
       }
     ],
     "14": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 8
       },
       {
-        "code": "SERPENT_SCEPTER",
+        "param": "serpent-scepter",
         "require": 2
       },
       {
-        "code": "BOGEYMAN",
+        "param": "bogeyman",
         "require": 4
       }
     ],
     "15": [
       {
-        "code": "INTERLACED_SHUDDER",
+        "param": "interlaced-shudder",
         "require": 1
       },
       {
-        "code": "SONOROUS_KNELL",
+        "param": "sonorous-knell",
         "require": 8
       },
       {
-        "code": "MISTILTEINN",
+        "param": "mistilteinn",
         "require": 3
       },
       {
-        "code": "WYRMLING_SKELETON",
+        "param": "wyrmling-skeleton",
         "require": 4
       }
     ]

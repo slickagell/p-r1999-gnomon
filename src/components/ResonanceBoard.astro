@@ -18,10 +18,7 @@ interface Props {
   resonanceMainPiece: string;
   resonancePatternPieces: {
     [pattern: string]: {
-      materials: {
-        code: string;
-        require: number;
-      }[];
+      materials: RequireMaterialType[];
       baseStats: ResonancePieceStatsGeneralType;
     };
   };
@@ -64,10 +61,10 @@ const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
         id: string;
         image?: string;
         stats?: any;
-        materials?: { code: string; require?: number }[];
+        materials?: RequireMaterialType[];
       },
     ],
-    patternPiece
+    patternPiece,
   ) => {
     if (patternPiece[0].includes(mainPieceCode)) {
       return [
@@ -83,7 +80,7 @@ const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
     {
       id: `RPP_${mainPieceCode}_PLACIDITY`,
     },
-  ]
+  ],
 );
 
 const patternOptions = patternPieces.map((ele) => {
@@ -437,7 +434,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
                           <div>
                             {ele.materials.map((material) => (
                               <Material
-                                code={material.code}
+                                param={material.param}
                                 require={material.require}
                               />
                             ))}
@@ -635,7 +632,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
             ...this.baseStats[statKey],
             ...stats,
           };
-        }
+        },
       );
     },
   }));

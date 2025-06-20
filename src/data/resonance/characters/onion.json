@@ -4,11 +4,11 @@
     "ASPIRATIONAL": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "PROPHETIC_BIRD",
+          "param": "prophetic-bird",
           "require": 3
         }
       ]
@@ -16,11 +16,11 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "GOOSE_NECK",
+          "param": "goose-neck",
           "require": 2
         }
       ]
@@ -28,11 +28,11 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "CLAWED_PENDULUM",
+          "param": "clawed-pendulum",
           "require": 2
         }
       ]
@@ -40,11 +40,11 @@
     "HYPERPHRENIA": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "BIFURCATED_SKELETON",
+          "param": "bifurcated-skeleton",
           "require": 3
         }
       ]
@@ -52,11 +52,11 @@
     "STUPEFACTION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 20000
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 2
         }
       ]

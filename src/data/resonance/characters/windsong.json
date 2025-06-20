@@ -4,19 +4,19 @@
     "ELUCIDATION": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "param": "fruit-of-good-and-evil",
           "require": 1
         },
         {
-          "code": "GOLDEN_COMPASS",
+          "param": "golden-compass",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -24,19 +24,19 @@
     "GENUINITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "RHEINGOLD",
+          "param": "rheingold",
           "require": 1
         },
         {
-          "code": "WYRMLING_SKELETON",
+          "param": "wyrmling-skeleton",
           "require": 2
         },
         {
-          "code": "GOLDEN_BEETLE",
+          "param": "golden-beetle",
           "require": 3
         }
       ]
@@ -44,19 +44,19 @@
     "EQUANIMITY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "FRUIT_OF_GOOD_AND_EVIL",
+          "param": "fruit-of-good-and-evil",
           "require": 1
         },
         {
-          "code": "GOLDBELL_SPIRIT_BOTTLE",
+          "param": "goldbell-spirit-bottle",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]
@@ -64,19 +64,19 @@
     "EQUIBALANCE": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "MISTILTEINN",
+          "param": "mistilteinn",
           "require": 1
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "WINGED_KEY",
+          "param": "winged-key",
           "require": 3
         }
       ]
@@ -84,19 +84,19 @@
     "MERCY": {
       "materials": [
         {
-          "code": "SHARPODONTY",
+          "param": "sharpodonty",
           "require": 120000
         },
         {
-          "code": "SERPENT_SCEPTER",
+          "param": "serpent-scepter",
           "require": 1
         },
         {
-          "code": "BOGEYMAN",
+          "param": "bogeyman",
           "require": 2
         },
         {
-          "code": "BITING_BOX",
+          "param": "biting-box",
           "require": 3
         }
       ]

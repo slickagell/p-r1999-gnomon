@@ -10,7 +10,7 @@ import { getEntry, render } from "astro:content";
 
 const rhapsodyOfTheMoonEntry = await getEntry(
   "a-series-of-dusks",
-  "rhapsody-of-the-moon"
+  "rhapsody-of-the-moon",
 )!;
 
 const { Content } = await render(rhapsodyOfTheMoonEntry);

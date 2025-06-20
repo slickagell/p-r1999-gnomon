@@ -26,23 +26,14 @@ type Props = {
     name: string;
     infographic?: string;
     materials: {
-      [level: string]: {
-        code: string;
-        require: number;
-      }[];
-    }
+      [level: string]: RequireMaterialType[];
+    };
   }[];
   insightMaterials?: {
-    [insightLevel: string]: {
-      code: string;
-      require: number;
-    }[];
+    [insightLevel: string]: RequireMaterialType[];
   };
   resonanceMaterials?: {
-    [resonanceLevel: string]: {
-      code: string;
-      require: number;
-    }[];
+    [resonanceLevel: string]: RequireMaterialType[];
   };
   isDev?: boolean;
 };
@@ -63,34 +54,34 @@ const {
 } = Astro.props;
 
 enum PROFILE_TABS {
-  ARCANE_SKILLS = 'arcane-skills',
-  INHERITANCE = 'inheritance',
-  PORTRAY = 'portray',
-  EUPHORIA = 'euphoria'
+  ARCANE_SKILLS = "arcane-skills",
+  INHERITANCE = "inheritance",
+  PORTRAY = "portray",
+  EUPHORIA = "euphoria",
 }
 
 enum GAMEPLAY_TABS {
-  INFOGRAPHIC = 'infographic',
-  EUPHORIA_INFOGRAPHIC = 'euphoria-infographic',
-  SKILL_BREAKDOWN = 'skill-breakdown',
-  TEAM_SUGGESTION = 'team-suggestion'
+  INFOGRAPHIC = "infographic",
+  EUPHORIA_INFOGRAPHIC = "euphoria-infographic",
+  SKILL_BREAKDOWN = "skill-breakdown",
+  TEAM_SUGGESTION = "team-suggestion",
 }
 
 enum MATERIALS_TABS {
-  INSIGHT_MATERIALS = 'insight-materials',
-  RESONANCE_MATERIALS = 'resonance-materials'
+  INSIGHT_MATERIALS = "insight-materials",
+  RESONANCE_MATERIALS = "resonance-materials",
 }
 
 enum RESONANCE_MATERIALS_TABS {
-  DETAIL = 'detail',
-  TOTAL_R10 = 'total_r10',
-  TOTAL = 'total'
+  DETAIL = "detail",
+  TOTAL_R10 = "total_r10",
+  TOTAL = "total",
 }
 
 enum INSIGHT_MATERIALS_TABS {
-  DETAIL = 'detail',
-  TOTAL_I2 = 'total_i2',
-  TOTAL = 'total'
+  DETAIL = "detail",
+  TOTAL_I2 = "total_i2",
+  TOTAL = "total",
 }
 
 const hasEuphoria = Astro.slots.has("euphoria-section-title");
@@ -98,13 +89,15 @@ const hasSkill1Reinforced = Astro.slots.has("skill-1-cards-info-reinforced");
 const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
 const hasOverview = Astro.slots.has("overview-section-title");
 const hasInfographic = Astro.slots.has("infographic-section-title");
-const hasEuphoriaInfographic = Astro.slots.has("euphoria-infographic-section-title");
+const hasEuphoriaInfographic = Astro.slots.has(
+  "euphoria-infographic-section-title",
+);
 const hasSkillBreakdown = Astro.slots.has("skill-breakdown-section-title");
 const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
 const hasInsight3Info = Astro.slots.has("insight-3-info");
 const hasInsight3Materials = insightMaterials?.["3"];
 
-let gameplayIntialTab = '';
+let gameplayIntialTab = "";
 
 if (hasInfographic) {
   gameplayIntialTab = GAMEPLAY_TABS.INFOGRAPHIC;
@@ -115,24 +108,26 @@ if (hasInfographic) {
 } else if (hasTeamSuggestion) {
   gameplayIntialTab = GAMEPLAY_TABS.TEAM_SUGGESTION;
 }
-
 ---
 
 <div class="my-8">
   <CharacterStar star={star} />
 </div>
 
-{isDev && (
-  <div class="my-6 alert border-primary-content gap-y-2">
-    <Icon icon="info-circle" />
-    <div>
-      <p class="font-bold">Notice!</p>
-      <div class="text-xs">
-        This is a development version, some content will be updated when global official data is released.
+{
+  isDev && (
+    <div class="my-6 alert border-primary-content gap-y-2">
+      <Icon icon="info-circle" />
+      <div>
+        <p class="font-bold">Notice!</p>
+        <div class="text-xs">
+          This is a development version, some content will be updated when
+          global official data is released.
+        </div>
       </div>
     </div>
-  </div>
-)}
+  )
+}
 
 <div class="flex justify-between flex-col-reverse md:flex-row gap-8">
   <div>
@@ -217,259 +212,284 @@ if (hasInfographic) {
 <slot name="profile-section-title" />
 
 <div x-data={`{activeTab: '${PROFILE_TABS.ARCANE_SKILLS}'}`}>
-<div class="tabs tabs-slot">
-  <button class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.ARCANE_SKILLS}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.ARCANE_SKILLS}'`}><slot name="arcane-skills-section-title" /></button> 
-  <button class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.INHERITANCE}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.INHERITANCE}'`}><slot name="inheritance-section-title" /></button> 
-  <button class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.PORTRAY}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.PORTRAY}'`}><slot name="portray-section-title" /></button>
-  <button x-show={hasEuphoria} class="tab tab-bordered" :class={`(activeTab === '${PROFILE_TABS.EUPHORIA}') && 'tab-active'`} @click={`activeTab = '${PROFILE_TABS.EUPHORIA}'`}><slot name="euphoria-section-title" /></button>
-</div>
-
-<template x-if={`activeTab === '${PROFILE_TABS.ARCANE_SKILLS}'`}> 
-<div class="mt-4">
-{/* Arcane Skills */}
-
-{/* Skill 1 */}
-<div class="subtitle-slot">
-<slot name="skill-1-title" />
-</div>
-<div
-  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
-  {...hasSkill1Reinforced && { ["x-data"]: "{ reinforced: false }" }}
->
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-1" id={id} />
-
-    {
-      hasSkill1Reinforced && (
-        <div class="form-control">
-          <label class="label w-fit gap-2 cursor-pointer">
-            <span class="label-text">Reinforce</span>
-
-            <input
-              type="checkbox"
-              class="checkbox checkbox-secondary"
-              x-model="reinforced"
-            />
-          </label>
-        </div>
-      )
-    }
+  <div class="tabs tabs-slot">
+    <button
+      class="tab tab-bordered"
+      x-bind:class={`(activeTab === '${PROFILE_TABS.ARCANE_SKILLS}') && 'tab-active'`}
+      @click={`activeTab = '${PROFILE_TABS.ARCANE_SKILLS}'`}
+      ><slot name="arcane-skills-section-title" /></button
+    >
+    <button
+      class="tab tab-bordered"
+      x-bind:class={`(activeTab === '${PROFILE_TABS.INHERITANCE}') && 'tab-active'`}
+      @click={`activeTab = '${PROFILE_TABS.INHERITANCE}'`}
+      ><slot name="inheritance-section-title" /></button
+    >
+    <button
+      class="tab tab-bordered"
+      x-bind:class={`(activeTab === '${PROFILE_TABS.PORTRAY}') && 'tab-active'`}
+      @click={`activeTab = '${PROFILE_TABS.PORTRAY}'`}
+      ><slot name="portray-section-title" /></button
+    >
+    <button
+      x-show={hasEuphoria}
+      class="tab tab-bordered"
+      x-bind:class={`(activeTab === '${PROFILE_TABS.EUPHORIA}') && 'tab-active'`}
+      @click={`activeTab = '${PROFILE_TABS.EUPHORIA}'`}
+      ><slot name="euphoria-section-title" /></button
+    >
   </div>
 
-  {
-    hasSkill1Reinforced ? (
-      <Fragment>
-        <template x-if="!reinforced">
-          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-            <slot name="skill-1-cards-info" />
-          </div>
-        </template>
-        <template x-if="reinforced">
-          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-            <slot name="skill-1-cards-info-reinforced" />
-          </div>
-        </template>
-      </Fragment>
-    ) : (
-      <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-        <slot name="skill-1-cards-info" />
+  <template x-if={`activeTab === '${PROFILE_TABS.ARCANE_SKILLS}'`}>
+    <div class="mt-4">
+      {/* Arcane Skills */}
+
+      {/* Skill 1 */}
+      <div class="subtitle-slot">
+        <slot name="skill-1-title" />
       </div>
-    )
-  }
-</div>
+      <div
+        class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
+        {...hasSkill1Reinforced && { ["x-data"]: "{ reinforced: false }" }}
+      >
+        <div class="basis-full lg:basis-auto shrink-0">
+          <CharacterImg variant="skill-1" id={id} />
 
-{/* Skill 2 */}
-<div class="subtitle-slot">
-<slot name="skill-2-title" />
-</div>
-<div
-  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
-  {...hasSkill2Reinforced && { ["x-data"]: "{ reinforced: false }" }}
->
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="skill-2" id={id} />
+          {
+            hasSkill1Reinforced && (
+              <div class="form-control">
+                <label class="label w-fit gap-2 cursor-pointer">
+                  <span class="label-text">Reinforce</span>
 
-    {
-      hasSkill2Reinforced && (
-        <div class="form-control">
-          <label class="label w-fit gap-2 cursor-pointer">
-            <span class="label-text">Reinforce</span>
-
-            <input
-              type="checkbox"
-              class="checkbox checkbox-secondary"
-              x-model="reinforced"
-            />
-          </label>
-        </div>
-      )
-    }
-  </div>
-
-  {
-    hasSkill2Reinforced ? (
-      <Fragment>
-        <template x-if="!reinforced">
-          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-            <slot name="skill-2-cards-info" />
-          </div>
-        </template>
-        <template x-if="reinforced">
-          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-            <slot name="skill-2-cards-info-reinforced" />
-          </div>
-        </template>
-      </Fragment>
-    ) : (
-      <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-        <slot name="skill-2-cards-info" />
-      </div>
-    )
-  }
-</div>
-
-{/* Ultimate */}
-<div class="subtitle-slot">
-<slot name="ultimate-title" />
-</div>
-
-<div
-  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap"
->
-  <div class="basis-full lg:basis-auto shrink-0">
-    <CharacterImg variant="ultimate" id={id} />
-  </div>
-
-  <slot name="ultimate-card-info" />
-</div>
-{/* Extra Cards */}
-<slot name="extra-cards" />
-</div>
-</template>
-
-<template x-if={`activeTab === '${PROFILE_TABS.INHERITANCE}'`}>
-<div class="mt-4">
-{/* Inheritance */}
-<div class="subtitle-slot">
-<slot name="inheritance-title" />
-</div>
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="1" />
-
-  <h5 id="insight-1">Insight 1</h5>
-</div>
-
-<slot name="insight-1-info" />
-
-<div class="mt-4 flex items-center">
-  <InsightImg classNames="w-8 mr-2" insight="2" />
-
-  <h5 id="insight-2">Insight 2</h5>
-</div>
-
-<slot name="insight-2-info" />
-
-{
-  hasInsight3Info && (
-    <Fragment>
-      <div class="mt-4 flex items-center">
-        <InsightImg classNames="w-8 mr-2" insight="3" />
-
-        <h5 id="insight-3">Insight 3</h5>
-      </div>
-
-      <slot name="insight-3-info" />
-    </Fragment>
-  )
-}
-</div>
-</template>
-
-<template x-if={`activeTab === '${PROFILE_TABS.PORTRAY}'`}>
-<div class="mt-4">
-{/* Portray */}
-<span class="text-2xl mr-2">Lv. 1:</span>
-<slot name="portray-1-info" />
-
-<span class="text-2xl mr-2">Lv. 2:</span>
-<slot name="portray-2-info" />
-
-<span class="text-2xl mr-2">Lv. 3:</span>
-<slot name="portray-3-info" />
-
-<span class="text-2xl mr-2">Lv. 4:</span>
-<slot name="portray-4-info" />
-
-<span class="text-2xl mr-2">Lv. 5:</span>
-<slot name="portray-5-info" />
-</div>
-</template>
-
-{/* Euphoria */}
-{hasEuphoria && (
-<template x-if={`activeTab === '${PROFILE_TABS.EUPHORIA}'`}> 
-<div class="mt-4">
-{
-  euphorias && euphorias.length > 0 && (
-    <>
-      <div x-data={`{active: '${euphorias[0].code}'}`}>
-        <div class="tabs tabs-boxed">
-          {euphorias?.map((euphoria, idx) => (
-            <button
-              @click={`active = '${euphoria.code}'`}
-              class="tab"
-              :class={`(active === '${euphoria.code}') && 'tab-active !text-white'`}
-            >
-              {euphoria.name}
-            </button>
-          ))}
-        </div>
-        <div class="mt-4 flex flex-col md:flex-row gap-4 md:gap-10">
-          <div class="shrink-0 md:basis-1/3" >
-            {euphorias?.map((euphoria, idx) => (
-              <div x-show={`active === '${euphoria.code}'`} x-cloak>
-                <div class="border rounded border-primary/25 relative mb-4">
-                <CustomImage
-                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-                    src={`/images/euphoria/bg.png`}
-                    alt="euphoria bg"
+                  <input
+                    type="checkbox"
+                    class="checkbox checkbox-secondary"
+                    x-model="reinforced"
                   />
-                  <CustomImage
-                    class="relative w-full z-10"
-                    src={`/images/euphoria/${kebabCase(euphoria.code)}.png`}
-                    alt={euphoria.name}
-                  />
-                </div>
-                <span class="label-text-alt">
-                  <Tooltip>
-                    <p slot="toggle" class="text-base-content flex items-center gap-1">
-                      Unlock Material
-                      <Icon icon="info-circle" />
-                    </p>
-                    <div>
-                      {
-                        euphoria.materials[0].map((material) => (
-                          <Material code={material.code} require={material.require} />
-                        ))
-                      }
-                    </div>
-                  </Tooltip>
-                </span>
+                </label>
               </div>
-            ))}
-          </div>
-          <div>      
-            <slot name="euphoria-content" />
-          </div>
+            )
+          }
         </div>
+
+        {
+          hasSkill1Reinforced ? (
+            <Fragment>
+              <template x-if="!reinforced">
+                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+                  <slot name="skill-1-cards-info" />
+                </div>
+              </template>
+              <template x-if="reinforced">
+                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+                  <slot name="skill-1-cards-info-reinforced" />
+                </div>
+              </template>
+            </Fragment>
+          ) : (
+            <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+              <slot name="skill-1-cards-info" />
+            </div>
+          )
+        }
       </div>
-    </>
-  )
-}
-</div>
-</template>
-)}
+
+      {/* Skill 2 */}
+      <div class="subtitle-slot">
+        <slot name="skill-2-title" />
+      </div>
+      <div
+        class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
+        {...hasSkill2Reinforced && { ["x-data"]: "{ reinforced: false }" }}
+      >
+        <div class="basis-full lg:basis-auto shrink-0">
+          <CharacterImg variant="skill-2" id={id} />
+
+          {
+            hasSkill2Reinforced && (
+              <div class="form-control">
+                <label class="label w-fit gap-2 cursor-pointer">
+                  <span class="label-text">Reinforce</span>
+
+                  <input
+                    type="checkbox"
+                    class="checkbox checkbox-secondary"
+                    x-model="reinforced"
+                  />
+                </label>
+              </div>
+            )
+          }
+        </div>
+
+        {
+          hasSkill2Reinforced ? (
+            <Fragment>
+              <template x-if="!reinforced">
+                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+                  <slot name="skill-2-cards-info" />
+                </div>
+              </template>
+              <template x-if="reinforced">
+                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+                  <slot name="skill-2-cards-info-reinforced" />
+                </div>
+              </template>
+            </Fragment>
+          ) : (
+            <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+              <slot name="skill-2-cards-info" />
+            </div>
+          )
+        }
+      </div>
+
+      {/* Ultimate */}
+      <div class="subtitle-slot">
+        <slot name="ultimate-title" />
+      </div>
+
+      <div
+        class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap"
+      >
+        <div class="basis-full lg:basis-auto shrink-0">
+          <CharacterImg variant="ultimate" id={id} />
+        </div>
+
+        <slot name="ultimate-card-info" />
+      </div>
+      {/* Extra Cards */}
+      <slot name="extra-cards" />
+    </div>
+  </template>
+
+  <template x-if={`activeTab === '${PROFILE_TABS.INHERITANCE}'`}>
+    <div class="mt-4">
+      {/* Inheritance */}
+      <div class="subtitle-slot">
+        <slot name="inheritance-title" />
+      </div>
+
+      <div class="mt-4 flex items-center">
+        <InsightImg classNames="w-8 mr-2" insight="1" />
+
+        <h5 id="insight-1">Insight 1</h5>
+      </div>
+
+      <slot name="insight-1-info" />
+
+      <div class="mt-4 flex items-center">
+        <InsightImg classNames="w-8 mr-2" insight="2" />
+
+        <h5 id="insight-2">Insight 2</h5>
+      </div>
+
+      <slot name="insight-2-info" />
+
+      {
+        hasInsight3Info && (
+          <Fragment>
+            <div class="mt-4 flex items-center">
+              <InsightImg classNames="w-8 mr-2" insight="3" />
+
+              <h5 id="insight-3">Insight 3</h5>
+            </div>
+
+            <slot name="insight-3-info" />
+          </Fragment>
+        )
+      }
+    </div>
+  </template>
+
+  <template x-if={`activeTab === '${PROFILE_TABS.PORTRAY}'`}>
+    <div class="mt-4">
+      {/* Portray */}
+      <span class="text-2xl mr-2">Lv. 1:</span>
+      <slot name="portray-1-info" />
+
+      <span class="text-2xl mr-2">Lv. 2:</span>
+      <slot name="portray-2-info" />
+
+      <span class="text-2xl mr-2">Lv. 3:</span>
+      <slot name="portray-3-info" />
+
+      <span class="text-2xl mr-2">Lv. 4:</span>
+      <slot name="portray-4-info" />
+
+      <span class="text-2xl mr-2">Lv. 5:</span>
+      <slot name="portray-5-info" />
+    </div>
+  </template>
+
+  {/* Euphoria */}
+  {
+    hasEuphoria && (
+      <template x-if={`activeTab==='${PROFILE_TABS.EUPHORIA}' `}>
+        <div class="mt-4">
+          {euphorias && euphorias.length > 0 && (
+            <>
+              <div x-data={`{active: '${euphorias[0].code}' }`}>
+                <div class="tabs tabs-boxed">
+                  {euphorias?.map((euphoria, idx) => (
+                    <button
+                      @click={`active = '${euphoria.code}'`}
+                      class="tab"
+                      x-bind:class={`(active === '${euphoria.code}') && 'tab-active !text-white'`}
+                    >
+                      {euphoria.name}
+                    </button>
+                  ))}
+                </div>
+                <div class="mt-4 flex flex-col md:flex-row gap-4 md:gap-10">
+                  <div class="shrink-0 md:basis-1/3">
+                    {euphorias?.map((euphoria, idx) => (
+                      <div x-show={`active==='${euphoria.code}' `} x-cloak>
+                        <div class="border rounded border-primary/25 relative mb-4">
+                          <CustomImage
+                            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                            src={`/images/euphoria/bg.png`}
+                            alt="euphoria bg"
+                          />
+                          <CustomImage
+                            class="relative w-full z-10"
+                            src={`/images/euphoria/${kebabCase(euphoria.code)}.png`}
+                            alt={euphoria.name}
+                          />
+                        </div>
+                        <span class="label-text-alt">
+                          <Tooltip>
+                            <p
+                              slot="toggle"
+                              class="text-base-content flex items-center gap-1"
+                            >
+                              Unlock Material
+                              <Icon icon="info-circle" />
+                            </p>
+                            <div>
+                              {euphoria.materials[0].map((material) => (
+                                <Material
+                                  param={material.param}
+                                  require={material.require}
+                                />
+                              ))}
+                            </div>
+                          </Tooltip>
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <div>
+                    <slot name="euphoria-content" />
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </template>
+    )
+  }
 </div>
 
 {/* Resonance */}
@@ -482,404 +502,456 @@ if (hasInfographic) {
 
 <slot name="psychube-content" />
 
-{hasOverview && (
-<slot name="overview-section-title" />
-
-<div x-data={`{activeTab: '${gameplayIntialTab}'}`}>
-  <div class="tabs tabs-slot">
-    <button x-show={hasInfographic} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.INFOGRAPHIC}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.INFOGRAPHIC}'`}><slot name="infographic-section-title" /></button> 
-    <button x-show={hasEuphoriaInfographic} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}'`}><slot name="euphoria-infographic-section-title" /></button>
-    <button x-show={hasSkillBreakdown} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.SKILL_BREAKDOWN}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.SKILL_BREAKDOWN}'`}><slot name="skill-breakdown-section-title" /></button>
-    <button x-show={hasTeamSuggestion} class="tab tab-bordered" :class={`(activeTab === '${GAMEPLAY_TABS.TEAM_SUGGESTION}') && 'tab-active'`} @click={`activeTab = '${GAMEPLAY_TABS.TEAM_SUGGESTION}'`}><slot name="team-suggestion-section-title" /></button>
-  </div>
-
-<template x-if={`activeTab === '${GAMEPLAY_TABS.INFOGRAPHIC}'`}> 
-<div class="mt-4">
-{/* Infographic */}
-{hasInfographic && (
-  <>
-    <CharacterImg variant="infographic" id={id} />
-  </>
-)
-}
-</div>
-</template>
-
-{/* Euphoria Infographic */}
-{hasEuphoriaInfographic && (
-<template x-if={`activeTab === '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}'`}>
-<div class="mt-4">
-  <>
-    {(()=>{
-      const euphoriasData = euphorias?.filter(euphoria => euphoria.infographic)
-      if(!euphoriasData || euphoriasData.length === 0) return null;
-
-     return (
+{
+  hasOverview && (
     <>
-      <div x-data={`{active: '${euphoriasData[0].code}'}`}>
-        <div class="tabs tabs-boxed">
-          {euphoriasData.map((euphoria, idx) => (
-            <button
-              @click={`active = '${euphoria.code}'`}
-              class="tab"
-              :class={`(active === '${euphoria.code}') && 'tab-active !text-white'`}
-            >
-              {euphoria.name}
-            </button>
-          ))}
+      <slot name="overview-section-title" />
+
+      <div x-data={`{activeTab: '${gameplayIntialTab}' }`}>
+        <div class="tabs tabs-slot">
+          <button
+            x-show={hasInfographic}
+            class="tab tab-bordered"
+            x-bind:class={`(activeTab === '${GAMEPLAY_TABS.INFOGRAPHIC}') && 'tab-active'`}
+            @click={`activeTab = '${GAMEPLAY_TABS.INFOGRAPHIC}'`}
+          >
+            <slot name="infographic-section-title" />
+          </button>
+          <button
+            x-show={hasEuphoriaInfographic}
+            class="tab tab-bordered"
+            x-bind:class={`(activeTab === '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}') && 'tab-active'`}
+            @click={`activeTab = '${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}'`}
+          >
+            <slot name="euphoria-infographic-section-title" />
+          </button>
+          <button
+            x-show={hasSkillBreakdown}
+            class="tab tab-bordered"
+            x-bind:class={`(activeTab === '${GAMEPLAY_TABS.SKILL_BREAKDOWN}') && 'tab-active'`}
+            @click={`activeTab = '${GAMEPLAY_TABS.SKILL_BREAKDOWN}'`}
+          >
+            <slot name="skill-breakdown-section-title" />
+          </button>
+          <button
+            x-show={hasTeamSuggestion}
+            class="tab tab-bordered"
+            x-bind:class={`(activeTab === '${GAMEPLAY_TABS.TEAM_SUGGESTION}') && 'tab-active'`}
+            @click={`activeTab = '${GAMEPLAY_TABS.TEAM_SUGGESTION}'`}
+          >
+            <slot name="team-suggestion-section-title" />
+          </button>
         </div>
-        <div class="mt-4">
-            {euphoriasData.map((euphoria, idx) => (
-              <div x-show={`active === '${euphoria.code}'`} x-cloak x-data>
-                  <CustomImage
-                    x-zoomable
-                    class="relative w-full z-10"
-                    src={`/images/euphoria/${id}/${euphoria.infographic}`}
-                    alt="udimo"
-                  />
+
+        <template x-if={`activeTab==='${GAMEPLAY_TABS.INFOGRAPHIC}' `}>
+          <div class="mt-4">
+            {/* Infographic */}
+            {hasInfographic && <CharacterImg variant="infographic" id={id} />}
+          </div>
+        </template>
+
+        {/* Euphoria Infographic */}
+        {hasEuphoriaInfographic && (
+          <template
+            x-if={`activeTab==='${GAMEPLAY_TABS.EUPHORIA_INFOGRAPHIC}' `}
+          >
+            <div class="mt-4">
+              {(() => {
+                const euphoriasData = euphorias?.filter(
+                  (euphoria) => euphoria.infographic,
+                );
+                if (!euphoriasData || euphoriasData.length === 0) return null;
+
+                return (
+                  <div x-data={`{active: '${euphoriasData[0].code}' }`}>
+                    <div class="tabs tabs-boxed">
+                      {euphoriasData.map((euphoria, idx) => (
+                        <button
+                          @click={`active = '${euphoria.code}'`}
+                          class="tab"
+                          x-bind:class={`(active === '${euphoria.code}') && 'tab-active !text-white'`}
+                        >
+                          {euphoria.name}
+                        </button>
+                      ))}
+                    </div>
+                    <div class="mt-4">
+                      {euphoriasData.map((euphoria, idx) => (
+                        <div
+                          x-show={`active==='${euphoria.code}' `}
+                          x-cloak
+                          x-data
+                        >
+                          <CustomImage
+                            x-zoomable
+                            class="relative w-full z-10"
+                            src={`/images/euphoria/${id}/${euphoria.infographic}`}
+                            alt="udimo"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+          </template>
+        )}
+
+        {/* Skill breakdown */}
+        {hasSkillBreakdown && (
+          <template x-if={`activeTab==='${GAMEPLAY_TABS.SKILL_BREAKDOWN}' `}>
+            <div class="mt-4">
+              <slot name="skill-breakdown-content" />
+            </div>
+          </template>
+        )}
+
+        {/* Team suggestion */}
+        {hasTeamSuggestion && (
+          <template x-if={`activeTab==='${GAMEPLAY_TABS.TEAM_SUGGESTION}' `}>
+            <div class="mt-4">
+              <div class="mb-6 md:grid md:grid-cols-3">
+                <div>
+                  <slot name="team-suggestion-dps" />
+                </div>
+
+                <div>
+                  <slot name="team-suggestion-support" />
+                </div>
+
+                <div>
+                  <slot name="team-suggestion-sustain" />
+                </div>
               </div>
-            ))}
-        </div>
+
+              <slot name="team-suggestion-exception" />
+            </div>
+          </template>
+        )}
       </div>
     </>
   )
-    })()}
-</>
-</div>
-</template>
-)}
-
-{/* Skill breakdown */}
-{hasSkillBreakdown && (
-<template x-if={`activeTab === '${GAMEPLAY_TABS.SKILL_BREAKDOWN}'`}>
-<div class="mt-4">
-<slot name="skill-breakdown-content" />
-</div>
-</template>
-)}
-
-{/* Team suggestion */}
-{hasTeamSuggestion && (
-<template x-if={`activeTab === '${GAMEPLAY_TABS.TEAM_SUGGESTION}'`}>
-<div class="mt-4">
-  <div class="mb-6 md:grid md:grid-cols-3">
-    <div>
-      <slot name="team-suggestion-dps" />
-    </div>
-
-    <div>
-      <slot name="team-suggestion-support" />
-    </div>
-
-    <div>
-      <slot name="team-suggestion-sustain" />
-    </div>
-  </div>
-
-  <slot name="team-suggestion-exception" />
-</div>
-</template>
-)}
-</div>
-)}
+}
 
 <slot name="materials-section-title" />
 
 <div x-data={`{activeTab: '${MATERIALS_TABS.INSIGHT_MATERIALS}'}`}>
   <div class="tabs tabs-slot">
-    <button class="tab tab-bordered" :class={`(activeTab === '${MATERIALS_TABS.INSIGHT_MATERIALS}') && 'tab-active'`} @click={`activeTab = '${MATERIALS_TABS.INSIGHT_MATERIALS}'`}><slot name="insight-materials-section-title" /></button> 
-    <button class="tab tab-bordered" :class={`(activeTab === '${MATERIALS_TABS.RESONANCE_MATERIALS}') && 'tab-active'`} @click={`activeTab = '${MATERIALS_TABS.RESONANCE_MATERIALS}'`}><slot name="resonance-materials-section-title" /></button> 
+    <button
+      class="tab tab-bordered"
+      x-bind:class={`(activeTab === '${MATERIALS_TABS.INSIGHT_MATERIALS}') && 'tab-active'`}
+      @click={`activeTab = '${MATERIALS_TABS.INSIGHT_MATERIALS}'`}
+      ><slot name="insight-materials-section-title" /></button
+    >
+    <button
+      class="tab tab-bordered"
+      x-bind:class={`(activeTab === '${MATERIALS_TABS.RESONANCE_MATERIALS}') && 'tab-active'`}
+      @click={`activeTab = '${MATERIALS_TABS.RESONANCE_MATERIALS}'`}
+      ><slot name="resonance-materials-section-title" /></button
+    >
   </div>
 
-<template x-if={`activeTab === '${MATERIALS_TABS.INSIGHT_MATERIALS}'`}>
-<div class="mt-4">
-{/* Insight Materials */}
-{
-  insightMaterials && (
-    <div x-data="{active: 'detail'}">
-      <div class="flex items-center justify-end">
-        <div class="tabs tabs-boxed">
-          {Object.values(INSIGHT_MATERIALS_TABS).map((tab) => {
-            if (tab === INSIGHT_MATERIALS_TABS.TOTAL_I2) {
-              if(!(star >= 5)) {
-                return null
-              }
-            }
-            return (
-              <button
-                @click={`active = '${tab}'`}
-                class="tab"
-                :class={`(active === '${tab}') && 'tab-active !text-white'`}
-              >
-                {capitalCase(tab)}
-              </button>
-            )
-          })}
-        </div>
-      </div>
-
-      <template x-if={`active === '${INSIGHT_MATERIALS_TABS.DETAIL}'`}>
-        <div class="flex flex-col md:flex-row flex-wrap justify-center">
-          <div
-            class:list={[
-              "md:basis-1/2  md:px-2",
-              { "lg:basis-1/3": hasInsight3Materials },
-            ]}
-          >
-            <div class="flex items-center">
-              <InsightImg classNames="w-6 mr-2" insight="1" />
-
-              <h5 id="insight-1">Insight 1</h5>
-            </div>
-
-            {insightMaterials["1"].map((material) => (
-              <Material code={material.code} require={material.require} />
-            ))}
-          </div>
-
-          <div
-            class:list={[
-              "md:basis-1/2  md:px-2",
-              { "lg:basis-1/3": hasInsight3Materials },
-            ]}
-          >
-            <div class="flex items-center">
-              <InsightImg classNames="w-6 mr-2" insight="2" />
-
-              <h5 id="insight-2">Insight 2</h5>
-            </div>
-            {insightMaterials["2"].map((material) => (
-              <Material code={material.code} require={material.require} />
-            ))}
-          </div>
-
-          {hasInsight3Materials && (
-            <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
-              <div class="flex items-center">
-                <InsightImg classNames="w-6 mr-2" insight="3" />
-
-                <h5 id="insight-3">Insight 3</h5>
-              </div>
-
-              {insightMaterials["3"].map((material) => (
-                <Material code={material.code} require={material.require} />
-              ))}
-            </div>
-          )}
-        </div>
-      </template>
-
-      {star >= 5 && (<template x-if={`active === '${INSIGHT_MATERIALS_TABS.TOTAL_I2}'`}>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-          x-data="sortMaterials"
-        >
-          {insightMaterials &&
-            Object.entries(
-              JSON.parse(JSON.stringify(insightMaterials)) as {
-                [insightLevel: string]: {
-                  code: string;
-                  require: number;
-                }[];
-              }
-            )
-              .reduce((accumulator, current) => {
-                const [insightLevel, currentValue] = current
-                if(parseInt(insightLevel) > 2) return accumulator
-
-                currentValue.forEach((material) => {
-                  if (accumulator.some((m) => m.code === material.code)) {
-                    const index = accumulator.findIndex(
-                      (m) => m.code === material.code
-                    );
-                    accumulator[index].require += material.require;
-                  } else {
-                    accumulator.push(material);
+  <template x-if={`activeTab === '${MATERIALS_TABS.INSIGHT_MATERIALS}'`}>
+    <div class="mt-4">
+      {/* Insight Materials */}
+      {
+        insightMaterials && (
+          <div x-data="{active: 'detail'}">
+            <div class="flex items-center justify-end">
+              <div class="tabs tabs-boxed">
+                {Object.values(INSIGHT_MATERIALS_TABS).map((tab) => {
+                  if (tab === INSIGHT_MATERIALS_TABS.TOTAL_I2) {
+                    if (!(star >= 5)) {
+                      return null;
+                    }
                   }
-                });
-                return accumulator;
-              }, [] as {
-                  code: string;
-                  require: number;
-                }[])
-              .map((material) => (
-                <Material
-                  code={material.code}
-                  require={material.require}
-                  withMetadata
-                />
-              ))}
-        </div>
-      </template>
-    )}
-
-      <template x-if={`active === '${INSIGHT_MATERIALS_TABS.TOTAL}'`}>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-          x-data="sortMaterials"
-        >
-          {insightMaterials &&
-            Object.values(
-              JSON.parse(JSON.stringify(insightMaterials)) as {
-                [insightLevel: string]: {
-                  code: string;
-                  require: number;
-                }[];
-              }
-            )
-              .reduce((accumulator, currentValue) => {
-                currentValue.forEach((material) => {
-                  if (accumulator.some((m) => m.code === material.code)) {
-                    const index = accumulator.findIndex(
-                      (m) => m.code === material.code
-                    );
-                    accumulator[index].require += material.require;
-                  } else {
-                    accumulator.push(material);
-                  }
-                });
-                return accumulator;
-              }, [])
-              .map((material) => (
-                <Material
-                  code={material.code}
-                  require={material.require}
-                  withMetadata
-                />
-              ))}
-        </div>
-      </template>
-    </div>
-  )
-}
-</div>
-</template> 
-
-<template x-if={`activeTab === '${MATERIALS_TABS.RESONANCE_MATERIALS}'`}>
-<div class="mt-4">
-{/* Resonance Materials */}
-{
-  resonanceMaterials && (
-    <div x-data="{active: 'detail'}">
-      <div class="flex items-center justify-end">
-        <div class="tabs tabs-boxed">
-          {Object.values(RESONANCE_MATERIALS_TABS).map((tab) => {
-            if (tab === RESONANCE_MATERIALS_TABS.TOTAL_R10) {
-              if(!(star >= 5)) {
-                return null
-              }
-            }
-            return (
-              <button
-                @click={`active = '${tab}'`}
-                class="tab"
-                :class={`(active === '${tab}') && 'tab-active !text-white'`}
-              >
-                {capitalCase(tab)}
-              </button>
-            )
-          })}
-        </div>
-      </div>
-
-      <template x-if={`active === '${RESONANCE_MATERIALS_TABS.DETAIL}'`}>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-5">
-          {Object.entries(resonanceMaterials).map(
-            ([resonanceLevel, materials]) => (
-              <div>
-                <h5>Lv. {resonanceLevel}</h5>
-                {materials.map((material) => (
-                  <Material code={material.code} require={material.require} />
-                ))}
+                  return (
+                    <button
+                      @click={`active = '${tab}'`}
+                      class="tab"
+                      x-bind:class={`(active === '${tab}') && 'tab-active !text-white'`}
+                    >
+                      {capitalCase(tab)}
+                    </button>
+                  );
+                })}
               </div>
-            )
-          )}
-        </div>
-      </template>
+            </div>
 
-      {star >= 5 && (<template x-if={`active === '${RESONANCE_MATERIALS_TABS.TOTAL_R10}'`}>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-          x-data="sortMaterials"
-        >
-          {Object.entries(
-            JSON.parse(JSON.stringify(resonanceMaterials)) as {
-              [resonanceLevel: string]: {
-                code: string;
-                require: number;
-              }[];
-            }
-          )
-            .reduce((accumulator, current) => {
-              const [resonanceLevel, currentValue] = current
-              if(parseInt(resonanceLevel) > 10) return accumulator
+            <template x-if={`active === '${INSIGHT_MATERIALS_TABS.DETAIL}'`}>
+              <div class="flex flex-col md:flex-row flex-wrap justify-center">
+                <div
+                  class:list={[
+                    "md:basis-1/2  md:px-2",
+                    { "lg:basis-1/3": hasInsight3Materials },
+                  ]}
+                >
+                  <div class="flex items-center">
+                    <InsightImg classNames="w-6 mr-2" insight="1" />
 
-              currentValue.forEach((material) => {
-                if (accumulator.some((m) => m.code === material.code)) {
-                  const index = accumulator.findIndex(
-                    (m) => m.code === material.code
-                  );
-                  accumulator[index].require += material.require;
-                } else {
-                  accumulator.push(material);
-                }
-              });
-              return accumulator;
-            }, [] as {
-                code: string;
-                require: number;
-              }[])
-            .map((material) => (
-              <Material
-                code={material.code}
-                require={material.require}
-                withMetadata
-              />
-            ))}
-        </div>
-      </template>
-    )}
+                    <h5 id="insight-1">Insight 1</h5>
+                  </div>
 
-      <template x-if={`active === '${RESONANCE_MATERIALS_TABS.TOTAL}'`}>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
-          x-data="sortMaterials"
-        >
-          {Object.values(
-            JSON.parse(JSON.stringify(resonanceMaterials)) as {
-              [resonanceLevel: string]: {
-                code: string;
-                require: number;
-              }[];
-            }
-          )
-            .reduce((accumulator, currentValue) => {
-              currentValue.forEach((material) => {
-                if (accumulator.some((m) => m.code === material.code)) {
-                  const index = accumulator.findIndex(
-                    (m) => m.code === material.code
-                  );
-                  accumulator[index].require += material.require;
-                } else {
-                  accumulator.push(material);
-                }
-              });
-              return accumulator;
-            }, [])
-            .map((material) => (
-              <Material
-                code={material.code}
-                require={material.require}
-                withMetadata
-              />
-            ))}
-        </div>
-      </template>
+                  {insightMaterials["1"].map((material) => (
+                    <Material
+                      param={material.param}
+                      require={material.require}
+                    />
+                  ))}
+                </div>
+
+                <div
+                  class:list={[
+                    "md:basis-1/2  md:px-2",
+                    { "lg:basis-1/3": hasInsight3Materials },
+                  ]}
+                >
+                  <div class="flex items-center">
+                    <InsightImg classNames="w-6 mr-2" insight="2" />
+
+                    <h5 id="insight-2">Insight 2</h5>
+                  </div>
+                  {insightMaterials["2"].map((material) => (
+                    <Material
+                      param={material.param}
+                      require={material.require}
+                    />
+                  ))}
+                </div>
+
+                {hasInsight3Materials && (
+                  <div class="md:basis-1/2 lg:basis-1/3 md:px-2">
+                    <div class="flex items-center">
+                      <InsightImg classNames="w-6 mr-2" insight="3" />
+
+                      <h5 id="insight-3">Insight 3</h5>
+                    </div>
+
+                    {insightMaterials["3"].map((material) => (
+                      <Material
+                        param={material.param}
+                        require={material.require}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </template>
+
+            {star >= 5 && (
+              <template
+                x-if={`active === '${INSIGHT_MATERIALS_TABS.TOTAL_I2}'`}
+              >
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+                  x-data="sortMaterials"
+                >
+                  {insightMaterials &&
+                    Object.entries(
+                      JSON.parse(JSON.stringify(insightMaterials)) as {
+                        [insightLevel: string]: RequireMaterialType[];
+                      },
+                    )
+                      .reduce((accumulator: RequireMaterialType[], current) => {
+                        const [insightLevel, currentValue] = current;
+                        if (parseInt(insightLevel) > 2) return accumulator;
+
+                        currentValue.forEach((material) => {
+                          if (
+                            accumulator.some((m) => m.param === material.param)
+                          ) {
+                            const index = accumulator.findIndex(
+                              (m) => m.param === material.param,
+                            );
+                            accumulator[index].require += material.require;
+                          } else {
+                            accumulator.push(material);
+                          }
+                        });
+                        return accumulator;
+                      }, [])
+                      .map((material) => (
+                        <Material
+                          param={material.param}
+                          require={material.require}
+                          withMetadata
+                        />
+                      ))}
+                </div>
+              </template>
+            )}
+
+            <template x-if={`active === '${INSIGHT_MATERIALS_TABS.TOTAL}'`}>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+                x-data="sortMaterials"
+              >
+                {insightMaterials &&
+                  Object.values(
+                    JSON.parse(JSON.stringify(insightMaterials)) as {
+                      [insightLevel: string]: RequireMaterialType[];
+                    },
+                  )
+                    .reduce((accumulator, currentValue) => {
+                      currentValue.forEach((material) => {
+                        if (
+                          accumulator.some((m) => m.param === material.param)
+                        ) {
+                          const index = accumulator.findIndex(
+                            (m) => m.param === material.param,
+                          );
+                          accumulator[index].require += material.require;
+                        } else {
+                          accumulator.push(material);
+                        }
+                      });
+                      return accumulator;
+                    }, [])
+                    .map((material) => (
+                      <Material
+                        param={material.param}
+                        require={material.require}
+                        withMetadata
+                      />
+                    ))}
+              </div>
+            </template>
+          </div>
+        )
+      }
     </div>
-  )
-}
-</div>
-</template>
+  </template>
+
+  <template x-if={`activeTab === '${MATERIALS_TABS.RESONANCE_MATERIALS}'`}>
+    <div class="mt-4">
+      {/* Resonance Materials */}
+      {
+        resonanceMaterials && (
+          <div x-data="{active: 'detail'}">
+            <div class="flex items-center justify-end">
+              <div class="tabs tabs-boxed">
+                {Object.values(RESONANCE_MATERIALS_TABS).map((tab) => {
+                  if (tab === RESONANCE_MATERIALS_TABS.TOTAL_R10) {
+                    if (!(star >= 5)) {
+                      return null;
+                    }
+                  }
+                  return (
+                    <button
+                      @click={`active = '${tab}'`}
+                      class="tab"
+                      x-bind:class={`(active === '${tab}') && 'tab-active !text-white'`}
+                    >
+                      {capitalCase(tab)}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <template x-if={`active === '${RESONANCE_MATERIALS_TABS.DETAIL}'`}>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-5">
+                {Object.entries(resonanceMaterials).map(
+                  ([resonanceLevel, materials]) => (
+                    <div>
+                      <h5>Lv. {resonanceLevel}</h5>
+                      {materials.map((material) => (
+                        <Material
+                          param={material.param}
+                          require={material.require}
+                        />
+                      ))}
+                    </div>
+                  ),
+                )}
+              </div>
+            </template>
+
+            {star >= 5 && (
+              <template
+                x-if={`active === '${RESONANCE_MATERIALS_TABS.TOTAL_R10}'`}
+              >
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+                  x-data="sortMaterials"
+                >
+                  {Object.entries(
+                    JSON.parse(JSON.stringify(resonanceMaterials)) as {
+                      [resonanceLevel: string]: RequireMaterialType[];
+                    },
+                  )
+                    .reduce((accumulator: RequireMaterialType[], current) => {
+                      const [resonanceLevel, currentValue] = current;
+                      if (parseInt(resonanceLevel) > 10) return accumulator;
+
+                      currentValue.forEach((material) => {
+                        if (
+                          accumulator.some((m) => m.param === material.param)
+                        ) {
+                          const index = accumulator.findIndex(
+                            (m) => m.param === material.param,
+                          );
+                          accumulator[index].require += material.require;
+                        } else {
+                          accumulator.push(material);
+                        }
+                      });
+                      return accumulator;
+                    }, [])
+                    .map((material) => (
+                      <Material
+                        param={material.param}
+                        require={material.require}
+                        withMetadata
+                      />
+                    ))}
+                </div>
+              </template>
+            )}
+
+            <template x-if={`active === '${RESONANCE_MATERIALS_TABS.TOTAL}'`}>
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2"
+                x-data="sortMaterials"
+              >
+                {Object.values(
+                  JSON.parse(JSON.stringify(resonanceMaterials)) as {
+                    [resonanceLevel: string]: RequireMaterialType[];
+                  },
+                )
+                  .reduce(
+                    (accumulator: RequireMaterialType[], currentValue) => {
+                      currentValue.forEach((material) => {
+                        if (
+                          accumulator.some((m) => m.param === material.param)
+                        ) {
+                          const index = accumulator.findIndex(
+                            (m) => m.param === material.param,
+                          );
+                          accumulator[index].require += material.require;
+                        } else {
+                          accumulator.push(material);
+                        }
+                      });
+                      return accumulator;
+                    },
+                    [],
+                  )
+                  .map((material) => (
+                    <Material
+                      param={material.param}
+                      require={material.require}
+                      withMetadata
+                    />
+                  ))}
+              </div>
+            </template>
+          </div>
+        )
+      }
+    </div>
+  </template>
 </div>
 
 <script>
@@ -895,7 +967,7 @@ if (hasInfographic) {
             (b.getAttribute("data-rarity") ?? 0)
             ? 1
             : -1;
-        }
+        },
       );
 
       this.$el.replaceChildren(...sorted);

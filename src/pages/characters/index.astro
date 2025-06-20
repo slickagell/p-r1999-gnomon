@@ -33,7 +33,7 @@ const versions = [
   ...new Set(
     characterEntries.map((entry) => {
       if (entry.data.version) return entry.data.version;
-    })
+    }),
   ),
 ].sort((a, b) => parseFloat(b ?? "") - parseFloat(a ?? ""));
 ---
@@ -69,7 +69,7 @@ const versions = [
             <li>
               <button
                 class="btn btn-outline btn-xs"
-                :class="rarity.code === rarityFilter ? 'btn-active' : ''"
+                x-bind:class="rarity.code === rarityFilter ? 'btn-active' : ''"
                 @click="filterRarity(rarity.code)"
                 x-text="rarity.title"
               >
@@ -87,8 +87,8 @@ const versions = [
         >
           <template x-for="rarity in rarities">
             <option
-              :value="rarity.code"
-              :selected="rarity.code === rarityFilter"
+              x-bind:value="rarity.code"
+              x-bind:selected="rarity.code === rarityFilter"
               x-text="rarity.title"></option>
           </template>
         </select>
@@ -103,7 +103,7 @@ const versions = [
             <li>
               <button
                 class="btn btn-outline btn-xs"
-                :class="afflatusType.code === afflatusTypeFilter ? 'btn-active' : ''"
+                x-bind:class="afflatusType.code === afflatusTypeFilter ? 'btn-active' : ''"
                 @click="filterAfflatusType(afflatusType.code)"
                 x-text="afflatusType.title"
               >
@@ -120,8 +120,8 @@ const versions = [
         >
           <template x-for="afflatusType in afflatusTypes">
             <option
-              :value="afflatusType.code"
-              :selected="afflatusType.code === afflatusTypeFilter"
+              x-bind:value="afflatusType.code"
+              x-bind:selected="afflatusType.code === afflatusTypeFilter"
               x-text="afflatusType.title"></option>
           </template>
         </select>
@@ -136,7 +136,7 @@ const versions = [
             <li>
               <button
                 class="btn btn-outline btn-xs"
-                :class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
+                x-bind:class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
                 @click="filterDmgType(dmgType.code)"
                 x-text="dmgType.title"
               >
@@ -153,8 +153,8 @@ const versions = [
         >
           <template x-for="dmgType in dmgTypes">
             <option
-              :value="dmgType.code"
-              :selected="dmgType.code === dmgTypeFilter"
+              x-bind:value="dmgType.code"
+              x-bind:selected="dmgType.code === dmgTypeFilter"
               x-text="dmgType.title"></option>
           </template>
         </select>
@@ -168,7 +168,7 @@ const versions = [
             <li>
               <button
                 class="btn btn-outline btn-xs"
-                :class="raceType.code === raceTypeFilter ? 'btn-active' : ''"
+                x-bind:class="raceType.code === raceTypeFilter ? 'btn-active' : ''"
                 @click="filterRaceType(raceType.code)"
                 x-text="raceType.title"
               >
@@ -185,57 +185,51 @@ const versions = [
         >
           <template x-for="raceType in raceTypes">
             <option
-              :value="raceType.code"
-              :selected="raceType.code === raceTypeFilter"
+              x-bind:value="raceType.code"
+              x-bind:selected="raceType.code === raceTypeFilter"
               x-text="raceType.title"></option>
           </template>
         </select>
       </label>
       <!-- End Race -->
       <!-- Version -->
-      <div class="mt-2 md:mt-0 py-2 md:py-4 ">
-          <Tooltip>
-            <button slot="toggle" x-transition class="btn btn-outline btn-sm">
-              <Icon icon="version" />
-              Version Filter
-            </button>
-            <div>
-              <p class="text-center font-medium">Version</p>
-              <div class="max-h-[30vh] overflow-auto">
-                {
-                  versions.map((version) => {
-                    return (
-                      <div class="form-control">
-                        <label class="label gap-2 justify-start cursor-pointer">
-                          <input
-                            type="checkbox"
-                            :checked={`versionFilter.includes('${version}')`}
-                            class="checkbox checkbox-sm checkbox-secondary"
-                            @change={`toggleVersion('${version}')`}
-                          />
-                          <span class="label-text">{version}</span>
-                        </label>
-                      </div>
-                    );
-                  })
-                }
-              </div>
-              <div class="pt-2 mt-2 flex justify-between gap-2">
-                <button
-                  class="btn btn-outline btn-sm"
-                  @click="selectAllVersions"
-                >
-                  Select all
-                </button>
-                <button
-                  class="btn btn-outline btn-sm"
-                  @click="clearAllVersions"
-                >
-                  Clear
-                </button>
-              </div>
+      <div class="mt-2 md:mt-0 py-2 md:py-4">
+        <Tooltip>
+          <button slot="toggle" x-transition class="btn btn-outline btn-sm">
+            <Icon icon="version" />
+            Version Filter
+          </button>
+          <div>
+            <p class="text-center font-medium">Version</p>
+            <div class="max-h-[30vh] overflow-auto">
+              {
+                versions.map((version) => {
+                  return (
+                    <div class="form-control">
+                      <label class="label gap-2 justify-start cursor-pointer">
+                        <input
+                          type="checkbox"
+                          x-bind:checked={`versionFilter.includes('${version}')`}
+                          class="checkbox checkbox-sm checkbox-secondary"
+                          @change={`toggleVersion('${version}')`}
+                        />
+                        <span class="label-text">{version}</span>
+                      </label>
+                    </div>
+                  );
+                })
+              }
             </div>
-          </Tooltip>
+            <div class="pt-2 mt-2 flex justify-between gap-2">
+              <button class="btn btn-outline btn-sm" @click="selectAllVersions">
+                Select all
+              </button>
+              <button class="btn btn-outline btn-sm" @click="clearAllVersions">
+                Clear
+              </button>
+            </div>
+          </div>
+        </Tooltip>
       </div>
       <!-- End Version -->
       <input

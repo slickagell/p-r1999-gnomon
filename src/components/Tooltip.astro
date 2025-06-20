@@ -31,7 +31,7 @@ const { title, contentCustomClass, ...props } = Astro.props;
     x-anchor.top="$refs.tooltip"
     class={twMerge(
       "bg-base-100 w-80 text-base-content border-line-paper border p-2 z-50 absolute",
-      contentCustomClass
+      contentCustomClass,
     )}
     x-transition:enter="ease duration-300 transition-opacity"
     x-transition:enter-start="opacity-0"

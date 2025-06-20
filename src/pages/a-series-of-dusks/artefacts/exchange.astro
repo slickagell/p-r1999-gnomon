@@ -122,13 +122,13 @@ const exchangeArtefacts = artefactEntries
                 (combineArtefactCode, combineIdx) => {
                   const combineArtefact = artefactEntries.find(
                     (artefactEntry) =>
-                      artefactEntry.data.code === combineArtefactCode
+                      artefactEntry.data.code === combineArtefactCode,
                   );
 
                   if (!combineArtefact) return null;
 
                   const combineArtefactShape = matrix(
-                    combineArtefact.data.shape
+                    combineArtefact.data.shape,
                   );
                   const combineArtefactShapeSize = combineArtefactShape.size();
 
@@ -224,7 +224,7 @@ const exchangeArtefacts = artefactEntries
                       </div>
                     </Fragment>
                   );
-                }
+                },
               )}
             </div>
           </div>

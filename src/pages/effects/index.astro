@@ -122,7 +122,7 @@ const effectEntries = await getCollection("effects", ({ data }) => {
             .filter(
               (code) =>
                 !!this.$store.effects.typesTotal[code] &&
-                this.$store.effects.typesTotal[code] > 0
+                this.$store.effects.typesTotal[code] > 0,
             )
             .map((code) => ({
               title: EFFECT_TYPE[code].title,

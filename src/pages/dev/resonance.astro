@@ -15,7 +15,7 @@ const piecesPatternData = Object.values(RESONANCE_PATTERN_PIECES).map(
     id: ele.id,
     total: 1,
     level: 1,
-  })
+  }),
 );
 
 const allPiecesData = [...piecesData, ...piecesPatternData];
@@ -35,7 +35,7 @@ allPiecesData.forEach((piece) => {
 
 const PIECES: ResonanceInitPiecesType = Array.from(
   Array(allPiecesData.length),
-  (_, index) => index + 1
+  (_, index) => index + 1,
 ).reduce((prev, curr) => ({ ...prev, [curr]: allPiecesData }), {});
 ---
 

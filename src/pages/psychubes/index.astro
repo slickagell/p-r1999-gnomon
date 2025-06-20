@@ -78,7 +78,7 @@ function sortPsychubes(a, b) {
               <li
                 x-show={`filterPsychube({rarity:'${effectEntry.data.rarity}', title: '${effectEntry.data.title.replace(
                   /'/g,
-                  "\\'"
+                  "\\'",
                 )}'})`}
               >
                 <PsychubeIcon
