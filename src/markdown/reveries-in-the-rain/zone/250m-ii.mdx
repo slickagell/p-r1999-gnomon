@@ -35,31 +35,31 @@ import data from "@data/reveries-in-the-rain/zone/250m-ii.json";
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Carbuncle Reincarnation</span>
 
-          A massive Critter is sealed inside the box. When :effect{code="CARBUNCLE_REINCARNATION"} disappears, it appears and reverts to its original form.
+          A massive Critter is sealed inside the box. When :effect{param="carbuncle-reincarnation"} disappears, it appears and reverts to its original form.
         </div>
 
         <div x-show={`!['${data.enemies[3].id}'].includes(active)`}>
           <span class="passive-title">Hard as Stone</span>
 
-          At the start of the round, if not in the :effect{code="STONE_SKIN_ID_223001"} status, enter the :effect{param="petrify"} status for 1 round, then gain 3 stacks of :effect{code="STONE_SKIN_ID_223001"} and recover **15%** of Missing HP.
+          At the start of the round, if not in the :effect{param="stone-skin-id-223001"} status, enter the :effect{param="petrify"} status for 1 round, then gain 3 stacks of :effect{param="stone-skin-id-223001"} and recover **15%** of Missing HP.
 
           <span class="passive-title">Crack in the Stone</span>
 
-          After being attacked or after taking an action, lose 1 stack of :effect{code="STONE_SKIN_ID_223001"}; when being attacked while not in the :effect{code="STONE_SKIN_ID_223001"} status, Critical Resist Rate **-75%**.
+          After being attacked or after taking an action, lose 1 stack of :effect{param="stone-skin-id-223001"}; when being attacked while not in the :effect{param="stone-skin-id-223001"} status, Critical Resist Rate **-75%**.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '2'`}>
           <span class="passive-title">The King's Dignity</span>
 
-          After attacking, gain 1 stack of :effect{code="UNSPARING"}. After being attacked, gain 1 stack of :effect{code="FLINCH"}.
+          After attacking, gain 1 stack of :effect{param="unsparing"}. After being attacked, gain 1 stack of :effect{param="flinch"}.
 
           <span class="passive-title">Sacrificial Wounds</span>
 
-          When entering the field, recover all missing HP for self; when another ally dies, gain 5 stacks of :effect{code="FLINCH"} for self.
+          When entering the field, recover all missing HP for self; when another ally dies, gain 5 stacks of :effect{param="flinch"} for self.
 
           <span class="passive-title">Sealed Resurgence</span>
 
-          At the start of the round, if HP is below **50%**, enter the :effect{code="CARBUNCLE_REINCARNATION"} status for 3 rounds.
+          At the start of the round, if HP is below **50%**, enter the :effect{param="carbuncle-reincarnation"} status for 3 rounds.
         </div>
       </Fragment>
 
@@ -107,7 +107,7 @@ import data from "@data/reveries-in-the-rain/zone/250m-ii.json";
     * In the first **3** rounds, *Mysterious Medical Kit* will **not** act, after that it will recover all HP and **turn into** *Carbuncle*.
       * If we reduce *Carbuncle*'s HP to **50%**, it will become *Mysterious Medical Kit* again.
       * In the next **2** rounds, if we do not defeat *Mysterious Medical Kit*, it will become *Carbuncle* again.
-    * If the main boss is being attacked or any of *Sturdy Stone Knight*s are defeated, it will be inflicted 1 :effect{code="FLINCH"} stack.
+    * If the main boss is being attacked or any of *Sturdy Stone Knight*s are defeated, it will be inflicted 1 :effect{param="flinch"} stack.
     * When our character casts Ultimate, they can **not** gain Moxie for **2** rounds
   </Fragment>
 
@@ -118,7 +118,7 @@ import data from "@data/reveries-in-the-rain/zone/250m-ii.json";
   <Fragment slot="strategy-and-tips-content">
     * We can control *Sturdy Stone Knight* by attacking it multiple times, make it unable to act, so any units with **multi-target** attacks or **high attack frequency** is preferable.
     * When the boss HP is below **50%**, in the next 2 round, we need to try to deal DMG to **finish off** *Carbuncle*
-    * Try to attack *Carbuncle* and defeat multiple *Sturdy Stone Knight*s to stack up :effect{code="FLINCH"}, up to 30-50 stacks and then you can focus on dealing DMG to *Carbuncle* to finish it.
+    * Try to attack *Carbuncle* and defeat multiple *Sturdy Stone Knight*s to stack up :effect{param="flinch"}, up to 30-50 stacks and then you can focus on dealing DMG to *Carbuncle* to finish it.
     * Myth Manifest *Star of Misfortune* will be ideal for this stage since it helps reduce *\[Stone Skin]* stacks, but other Myth Manifests can also be used.
   </Fragment>
 

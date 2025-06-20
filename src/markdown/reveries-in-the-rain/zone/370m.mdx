@@ -39,7 +39,7 @@ import data from "@data/reveries-in-the-rain/zone/370m.json";
 
           <span class="passive-title">Seize the Initiative</span>
 
-          When entering battle, grant 1 stack of :effect{code="UNSPARING"} to all allies.
+          When entering battle, grant 1 stack of :effect{param="unsparing"} to all allies.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
@@ -109,7 +109,7 @@ import data from "@data/reveries-in-the-rain/zone/370m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          Mass buff. Grant Moxie +1 to other allies, doubles the stacks of :effect{code="UNSPARING"} on all allies, and recovers **15%** of Missing HP for self.
+          Mass buff. Grant Moxie +1 to other allies, doubles the stacks of :effect{param="unsparing"} on all allies, and recovers **15%** of Missing HP for self.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>

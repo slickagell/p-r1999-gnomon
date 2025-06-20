@@ -35,11 +35,11 @@ import data from "@data/reveries-in-the-rain/zone/400m-i.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Mental Improvement</span>
 
-          At the end of the round, performs a Mental DMG attack and accumulates 1 stack of :effect{code="CHARGE"}; if arcanum device no. 0987X has died, after the attack, grants 3 stacks of :effect{code="THORNY"} to self; when reaching 3 stacks of Charge, performs a powerful shot.
+          At the end of the round, performs a Mental DMG attack and accumulates 1 stack of :effect{param="charge"}; if arcanum device no. 0987X has died, after the attack, grants 3 stacks of :effect{param="thorny"} to self; when reaching 3 stacks of Charge, performs a powerful shot.
 
           <span class="passive-title">Stacking Bastion</span>
 
-          At the start of the round, gain 3 stacks of :effect{code="WEAL"} for self; after round 5, gain an additional 2 stacks of :effect{code="WEAL"}; after round 10, gain another additional 2 stacks of :effect{code="WEAL"}; when being attacked, lose 1 stack of :effect{code="WEAL"} from self; when this unit dies, inflict the :effect{param="daze"} status on all enemies for 1 round.
+          At the start of the round, gain 3 stacks of :effect{param="weal"} for self; after round 5, gain an additional 2 stacks of :effect{param="weal"}; after round 10, gain another additional 2 stacks of :effect{param="weal"}; when being attacked, lose 1 stack of :effect{param="weal"} from self; when this unit dies, inflict the :effect{param="daze"} status on all enemies for 1 round.
 
           <span class="passive-title">Seething Enmity</span>
 
@@ -49,11 +49,11 @@ import data from "@data/reveries-in-the-rain/zone/400m-i.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Camouflage Light</span>
 
-          At the end of the round, performs a Reality DMG attack and accumulates 1 stack of :effect{code="CHARGE"}; if arcanum device no. 0623Y has died, performs another attack; when reaching 3 stacks of Charge, performs a powerful shot.
+          At the end of the round, performs a Reality DMG attack and accumulates 1 stack of :effect{param="charge"}; if arcanum device no. 0623Y has died, performs another attack; when reaching 3 stacks of Charge, performs a powerful shot.
 
           <span class="passive-title">Ramping Fervor</span>
 
-          At the start of the round, gain 3 stacks of :effect{code="UNSPARING"} for self; after round 5, gain an additional 2 stacks of :effect{code="UNSPARING"}; after round 10, gain another additional 2 stacks of :effect{code="UNSPARING"}; when being attacked, lose 1 stack of :effect{code="UNSPARING"} from self; when this unit dies, inflict the :effect{param="daze"} status on all enemies for 1 round.
+          At the start of the round, gain 3 stacks of :effect{param="unsparing"} for self; after round 5, gain an additional 2 stacks of :effect{param="unsparing"}; after round 10, gain another additional 2 stacks of :effect{param="unsparing"}; when being attacked, lose 1 stack of :effect{param="unsparing"} from self; when this unit dies, inflict the :effect{param="daze"} status on all enemies for 1 round.
 
           <span class="passive-title">Seething Enmity</span>
 

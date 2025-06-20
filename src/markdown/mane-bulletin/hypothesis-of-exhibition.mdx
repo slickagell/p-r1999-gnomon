@@ -21,10 +21,10 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
 
     * Our allies after cast a non-attack skill will gain **1** :effect{param="rousing-morale"} stack and Ultimate will gain **2** :effect{param="rousing-morale"} stacks.
 
-    * At the start of each round, *Strange Doctor* will enter :effect{code="MASTERMIND"} status.
-      * If *Futurism* is in *\[Control]* status, exit that status, gain *Futurism* **3** :effect{param="dynamo"} stack and suffer :effect{code="TRUE_FORM_EXPOSED"} for **1** round.
+    * At the start of each round, *Strange Doctor* will enter :effect{param="mastermind"} status.
+      * If *Futurism* is in *\[Control]* status, exit that status, gain *Futurism* **3** :effect{param="dynamo"} stack and suffer :effect{param="true-form-exposed"} for **1** round.
 
-    * If all robots are dead, *Strange Doctor* will suffer :effect{code="TRUE_FORM_EXPOSED"} for **3** rounds.
+    * If all robots are dead, *Strange Doctor* will suffer :effect{param="true-form-exposed"} for **3** rounds.
 
     * *Strange Doctor* rotation:
       * First, it will buff DMG bonus to all enemies and gain *Futurism* **1** :effect{param="dynamo"} stack and **+1** Moxie.
@@ -35,7 +35,7 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
     * *Futurism* mechanism:
       * Enters battle, gain **4** :effect{param="dynamo"} stacks.
       * At the end of each turn or being attacked, lose **1** :effect{param="dynamo"} stack.
-      * If lose all :effect{param="dynamo"} stacks, enter :effect{code="STAGGERED"} status.
+      * If lose all :effect{param="dynamo"} stacks, enter :effect{param="staggered"} status.
       * When in :effect{param="burn"}, :effect{param="poison"} and :effect{param="corrode"} status, DMG Dealt **-25%**.
       * Every turn, it attacks **2** units with the highest HP percentages.
 
@@ -55,7 +55,7 @@ import ManeBulletinContent from "@components/ManeBulletinMarkdown/ManeBulletinCo
 
     * Focus on dealing with *Futurism* and *Strange Doctor*.
 
-    * When *Futurism* is not in :effect{code="STAGGERED"} status, the *Strange Doctor* will takes masively reduce Reality DMG, so focus on dealing with *Futurism* until he is in :effect{code="STAGGERED"}, then focus on dealing with the *Strange Doctor*.
+    * When *Futurism* is not in :effect{param="staggered"} status, the *Strange Doctor* will takes masively reduce Reality DMG, so focus on dealing with *Futurism* until he is in :effect{param="staggered"}, then focus on dealing with the *Strange Doctor*.
 
     * Inflict DoT effects like :effect{param="burn"}, :effect{param="poison"} and :effect{param="corrode"} will reduce the DMG dealt by *Futurism* and deals DMG to other test robots.
   </Fragment>

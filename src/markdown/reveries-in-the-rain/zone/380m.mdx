@@ -68,7 +68,7 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
 
           <span class="passive-title">Swift Load</span>
 
-          After casting an ultimate, all allies gain 1 bullet from :effect{code="BULLET_KIT"}.
+          After casting an ultimate, all allies gain 1 bullet from :effect{param="bullet-kit"}.
         </div>
       </Fragment>
 
@@ -132,11 +132,11 @@ import data from "@data/reveries-in-the-rain/zone/380m.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**80%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{code="INCORPOREAL"} status, grants 1 stack of :effect{code="INCORPOREAL"} to the target.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**80%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{param="incorporeal"} status, grants 1 stack of :effect{param="incorporeal"} to the target.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**120%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{code="INCORPOREAL"} status, grants 1 stack of :effect{code="INCORPOREAL"} to the target.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants a *\[Shield]* with (the user's ATK x**120%**) HP to all allies for 1 round. DMG Taken **-20%** while the Shield is active. If the target is not in the :effect{param="incorporeal"} status, grants 1 stack of :effect{param="incorporeal"} to the target.
         </div>
       </Fragment>
 

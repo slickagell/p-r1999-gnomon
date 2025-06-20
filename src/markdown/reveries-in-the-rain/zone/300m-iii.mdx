@@ -18,7 +18,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
   <Fragment slot="stage-environment-content">
     :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, characters who haven't taken action this round get 1 stack of :effect{code="CRIPPLING_WEAKNESS"} and 3 stacks of :effect{code="FLINCH"}.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, characters who haven't taken action this round get 1 stack of :effect{param="crippling-weakness"} and 3 stacks of :effect{param="flinch"}.
 
     :text[\[Ally\]]{className="font-medium text-ally"} After casting an ultimate, all enemies gain Moxie +1.
 
@@ -39,7 +39,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
 
           <span class="passive-title">For Survival's Sake</span>
 
-          At the start of the round, if HP is below **75%**/**50%**/**25%**, gain Moxie +2/5/10 and 5/7/10 stacks of :effect{code="UNSPARING"}, each effect triggers up to 1 time.
+          At the start of the round, if HP is below **75%**/**50%**/**25%**, gain Moxie +2/5/10 and 5/7/10 stacks of :effect{param="unsparing"}, each effect triggers up to 1 time.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
@@ -55,7 +55,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG to the leftmost enemy and inflicts 4 stacks of :effect{code="FLINCH"} on the target hit; when not in a *\[Channel]* status, deals an additional **150%** Mental DMG and recovers **6%** missing HP.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Mental DMG to the leftmost enemy and inflicts 4 stacks of :effect{param="flinch"} on the target hit; when not in a *\[Channel]* status, deals an additional **150%** Mental DMG and recovers **6%** missing HP.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
@@ -65,17 +65,17 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to all enemies and inflicts 2 stacks of :effect{code="FLINCH"} on the targets hit; when not in a *\[Channel]* status, deals an additional **100%** Mental DMG and recovers **6%** missing HP.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to all enemies and inflicts 2 stacks of :effect{param="flinch"} on the targets hit; when not in a *\[Channel]* status, deals an additional **100%** Mental DMG and recovers **6%** missing HP.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **300%** Reality DMG to the leftmost enemy and inflicts 4 stacks of :effect{code="FLINCH"} on the target.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **300%** Reality DMG to the leftmost enemy and inflicts 4 stacks of :effect{param="flinch"} on the target.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Self channel. Enters the channel status, summons Horn and Tail Enveiled to battle, and gains Moxie +10. Each round, consumes 2 Moxie to perform a mass attack that deals **400%** Mental DMG and inflicts 5 stacks of :effect{code="FLINCH"} on all enemies (the channel status is removed if there isn't enough Moxie; while in the channel status, Anjo Nala gains Max Moxie +5 and Control Immunity).
+          Self channel. Enters the channel status, summons Horn and Tail Enveiled to battle, and gains Moxie +10. Each round, consumes 2 Moxie to perform a mass attack that deals **400%** Mental DMG and inflicts 5 stacks of :effect{param="flinch"} on all enemies (the channel status is removed if there isn't enough Moxie; while in the channel status, Anjo Nala gains Max Moxie +5 and Control Immunity).
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
@@ -109,7 +109,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-iii.json";
     * Bring sustain units to withstand attacks from *Anjo Nala* and the summoned enemy.
     * Can bring units with ability to **reduce Moxie** or with :effect{param="seal"}, :effect{param="nightmare"} effect to prevent *Anjo Nala* from casting Ultimate. Focus on using these reduce Moxie skills on the round that *Anjo Nala* prepares to cast Ultimate.
     * **Ideally**, bring 1 DPS unit, 1 sustain unit and 2 units who can prevent Ultimate.
-    * Try to make every ally perform at least 1 action in the round to limit receiving :effect{code="CRIPPLING_WEAKNESS"}, :effect{code="FLINCH"} effects.
+    * Try to make every ally perform at least 1 action in the round to limit receiving :effect{param="crippling-weakness"}, :effect{param="flinch"} effects.
     * You can choose **any** Myth Manifests based on your team
       * Using *Operatic Reflection* will gain more Moxie that helps prevent Ultimate.
       * With *Mountain Ghost*, it helps rank up incantations, useful for allies who can reduce Moxie with rank 2/3 incantations.

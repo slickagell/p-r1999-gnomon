@@ -22,7 +22,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
 
     :text[\[Ally\]]{className="font-medium text-ally"} Each round, the first character to cast an ultimate gets DMG Dealt **-50%** in the following 3 rounds.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, if an ally has at least 6 stacks of :effect{code="ENERVATE"}, the ally enters the :effect{param="petrify"} status for 1 round and loses 2 stacks of :effect{code="ENERVATE"}.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, if an ally has at least 6 stacks of :effect{param="enervate"}, the ally enters the :effect{param="petrify"} status for 1 round and loses 2 stacks of :effect{param="enervate"}.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -39,11 +39,11 @@ import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
 
           <span class="passive-title">Falsehood</span>
 
-          When entering battle and at the start of every 4 rounds, enters the :effect{code="PROTECTION_OF_DARKNESS"} status; right before being attacked by an ultimate, lose :effect{code="HAVOC"} from self; when being attacked by an ultimate, DMG taken **+30%**.
+          When entering battle and at the start of every 4 rounds, enters the :effect{param="protection-of-darkness"} status; right before being attacked by an ultimate, lose :effect{param="havoc"} from self; when being attacked by an ultimate, DMG taken **+30%**.
 
           <span class="passive-title">Break Livelihood</span>
 
-          After being attacked by a non-ultimate attack, inflicts 1 stack of :effect{code="ENERVATE"} on the attacker; at the end of the round, if there are allies on the field, transfers own *\[Neg Status]* to a random ally.
+          After being attacked by a non-ultimate attack, inflicts 1 stack of :effect{param="enervate"} on the attacker; at the end of the round, if there are allies on the field, transfers own *\[Neg Status]* to a random ally.
 
           <span class="passive-title">Dark Invocation</span>
 
@@ -51,7 +51,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
 
           <span class="passive-title">Protection of Darkness</span>
 
-          When entering battle and at the start of every 4 rounds, this unit enters the :effect{code="PROTECTION_OF_DARKNESS"} status.
+          When entering battle and at the start of every 4 rounds, this unit enters the :effect{param="protection-of-darkness"} status.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
@@ -77,13 +77,13 @@ import data from "@data/reveries-in-the-rain/zone/400m-iv.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Mental DMG to the enemy with the highest ATK; when this unit has reached 5 stacks of :effect{code="HAVOC"}, this attack gains Critical Rate **+30%**.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **300%** Mental DMG to the enemy with the highest ATK; when this unit has reached 5 stacks of :effect{param="havoc"}, this attack gains Critical Rate **+30%**.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **250%** Mental DMG to the 2 enemies with the highest HP percentage and gains 3 stacks of :effect{code="HAVOC"}. After attacking, if the caster has 3 or fewer kinds of *\[Stats Down]* or *\[Neg Status]* effects, gains additional 2 stacks of :effect{code="HAVOC"}.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **250%** Mental DMG to the 2 enemies with the highest HP percentage and gains 3 stacks of :effect{param="havoc"}. After attacking, if the caster has 3 or fewer kinds of *\[Stats Down]* or *\[Neg Status]* effects, gains additional 2 stacks of :effect{param="havoc"}.
         </div>
       </Fragment>
 

@@ -31,15 +31,15 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Black Iris II</span>
 
-          When entering battle, gains 6 stacks of :effect{code="MORIBUND"}, and other allies gain 3 stacks of :effect{code="MORIBUND"} (triggers only 1 time).
+          When entering battle, gains 6 stacks of :effect{param="moribund"}, and other allies gain 3 stacks of :effect{param="moribund"} (triggers only 1 time).
 
           <span class="passive-title">Black Iris III</span>
 
-          At the start of every 2 rounds, gain 1 stack of :effect{code="INCORPOREAL"}; when an ally loses their final stack of :effect{code="MORIBUND"}, dispel *\[Stats Up]*, *\[Pos Status]*, *\[Counter]*, and *\[Shield]* statuses from all enemies and inflict 20 stacks of :effect{code="FLINCH"} on all enemies.
+          At the start of every 2 rounds, gain 1 stack of :effect{param="incorporeal"}; when an ally loses their final stack of :effect{param="moribund"}, dispel *\[Stats Up]*, *\[Pos Status]*, *\[Counter]*, and *\[Shield]* statuses from all enemies and inflict 20 stacks of :effect{param="flinch"} on all enemies.
 
           <span class="passive-title">Low Whispers II</span>
 
-          When an ally loses their final stack of :effect{code="INCORPOREAL"}, gain 2 stacks of :effect{code="MORIBUND"} for self and purify *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from self; at the start of the round, consume 2 stacks of :effect{code="MORIBUND"} to inflict 4 stacks of :effect{code="FLINCH"} on all enemies; consume all stacks of :effect{code="MORIBUND"} if there's not enough stacks.
+          When an ally loses their final stack of :effect{param="incorporeal"}, gain 2 stacks of :effect{param="moribund"} for self and purify *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from self; at the start of the round, consume 2 stacks of :effect{param="moribund"} to inflict 4 stacks of :effect{param="flinch"} on all enemies; consume all stacks of :effect{param="moribund"} if there's not enough stacks.
 
           <span class="passive-title">Continuous Action I</span>
 
@@ -53,7 +53,7 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
           <span class="passive-title">Wandering Soul II</span>
 
-          At the end of each round, gain 2 stacks of :effect{code="INCORPOREAL"} if not in this status.
+          At the end of each round, gain 2 stacks of :effect{param="incorporeal"} if not in this status.
 
           <span class="passive-title">Resentment</span>
 
@@ -63,7 +63,7 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
         <div x-show={`['${data.enemies[2].id}', '${data.enemies[4].id}'].includes(active)`}>
           <span class="passive-title">Wandering Soul II</span>
 
-          At the end of each round, gain 2 stacks of :effect{code="INCORPOREAL"} if not in this status.
+          At the end of each round, gain 2 stacks of :effect{param="incorporeal"} if not in this status.
 
           <span class="passive-title">Resentment</span>
 
@@ -125,7 +125,7 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass buff. Gains 5 stacks of :effect{code="MORIBUND"} for self; grants 1 stack of :effect{code="MORIBUND"}, 5 stacks of :effect{code="GLEAN"}, and DMG Dealt **+50%** to other allies for 3 rounds. If a target already has :effect{code="MORIBUND"}, then recover (the user's ATK x**500%**) HP.
+          Mass buff. Gains 5 stacks of :effect{param="moribund"} for self; grants 1 stack of :effect{param="moribund"}, 5 stacks of :effect{param="glean"}, and DMG Dealt **+50%** to other allies for 3 rounds. If a target already has :effect{param="moribund"}, then recover (the user's ATK x**500%**) HP.
         </div>
 
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
@@ -145,8 +145,8 @@ import data from "@data/reveries-in-the-rain/zone/290m.json";
 
   <Fragment slot="stage-info-content">
     * The enemies are *Necrologist* and ghosts.
-    * Every **2** rounds, enemies will receive **1** stack of :effect{code="INCORPOREAL"}.
-      * If *Necrologist* lose all :effect{code="INCORPOREAL"} stacks, she will gain **2** more :effect{code="MORIBUND"} stacks.
+    * Every **2** rounds, enemies will receive **1** stack of :effect{param="incorporeal"}.
+      * If *Necrologist* lose all :effect{param="incorporeal"} stacks, she will gain **2** more :effect{param="moribund"} stacks.
     * At the first round and at the start of every **2** rounds, all allies get :effect{param="silence"} for **1** round.
   </Fragment>
 

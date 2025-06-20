@@ -29,11 +29,11 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Noxious</span>
 
-          After attacking, inflict 1 stack of :effect{code="POLLUTION"} on the target for 1 round. On death, dispel :effect{code="POLLUTION"} on all enemies.
+          After attacking, inflict 1 stack of :effect{param="pollution"} on the target for 1 round. On death, dispel :effect{param="pollution"} on all enemies.
 
           <span class="passive-title">Rancid Proliferation</span>
 
-          Increases :effect{code="POLLUTION"} duration by 1 round.
+          Increases :effect{param="pollution"} duration by 1 round.
 
           <span class="passive-title">Will of the Unliving</span>
 
@@ -47,7 +47,7 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
 
           <span class="passive-title">Corrupted Gift II</span>
 
-          When attacking, if the caster's HP is less than **30%**, additionally inflicts 1 stack of :effect{code="POLLUTION"}. Lasts 1 round.
+          When attacking, if the caster's HP is less than **30%**, additionally inflicts 1 stack of :effect{param="pollution"}. Lasts 1 round.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
@@ -61,7 +61,7 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
 
           <span class="passive-title">Rancid Proliferation II</span>
 
-          When casting an Ultimate, inflicts 1 stack of :effect{code="POLLUTION"} for every stack of :effect{code="POLLUTION"} on the enemy. When attacked by an enemy, for every stack of :effect{code="POLLUTION"} they are afflicted with, the damage dealt by this attack is reduced by **5%**.
+          When casting an Ultimate, inflicts 1 stack of :effect{param="pollution"} for every stack of :effect{param="pollution"} on the enemy. When attacked by an enemy, for every stack of :effect{param="pollution"} they are afflicted with, the damage dealt by this attack is reduced by **5%**.
         </div>
       </Fragment>
 
@@ -101,11 +101,11 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="pollution"} for 1 round on the targets hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="pollution"} for 1 round on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
@@ -119,11 +119,11 @@ import data from "@data/reveries-in-the-rain/zone/220m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          1-target attack. Deals **500%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+          1-target attack. Deals **500%** Reality DMG. Inflicts 2 stacks of :effect{param="pollution"} for 1 round on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the targets hit.
+          Mass attack. Deals **250%** Mental DMG to all enemies. Inflicts 2 stacks of :effect{param="pollution"} for 1 round on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>

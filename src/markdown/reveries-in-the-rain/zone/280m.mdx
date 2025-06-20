@@ -17,7 +17,7 @@ import data from "@data/reveries-in-the-rain/zone/280m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} After being attacked, inflict 3 stacks of :effect{code="POLLUTION"} on the attacker for 2 rounds.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} After being attacked, inflict 3 stacks of :effect{param="pollution"} on the attacker for 2 rounds.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -44,27 +44,27 @@ import data from "@data/reveries-in-the-rain/zone/280m.json";
 
       <Fragment slot="skill1-info">
         <div>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **150%** Reality DMG. Inflicts 2 stacks of :effect{param="pollution"} for 1 round on the target hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 2 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG. Inflicts 2 stacks of :effect{param="pollution"} for 1 round on the target hit.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
         <div>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{param="pollution"} for 1 round on the targets hit.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{code="POLLUTION"} for 1 round on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Inflicts 1 stack of :effect{param="pollution"} for 1 round on the targets hit.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div>
-          Mass attack. Deals **200%** Reality DMG to all enemies. Targets afflicted with :effect{code="POLLUTION"} take an additional **200%** Reality DMG.
+          Mass attack. Deals **200%** Reality DMG to all enemies. Targets afflicted with :effect{param="pollution"} take an additional **200%** Reality DMG.
         </div>
       </Fragment>
     </EnemyInfo>
@@ -76,9 +76,9 @@ import data from "@data/reveries-in-the-rain/zone/280m.json";
 
   <Fragment slot="stage-info-content">
     * There are enemies called *Olivery*.
-    * Whenever an enemy is being attacked, the ally who attacked the enemy gets **3** stack of :effect{code="POLLUTION"}.
-    * If our ally do multi-target attack, the amount of :effect{code="POLLUTION"} stacks will be significantly **increased**.
-    * Every attacks of *Olivery* will also inflict :effect{code="POLLUTION"}.
+    * Whenever an enemy is being attacked, the ally who attacked the enemy gets **3** stack of :effect{param="pollution"}.
+    * If our ally do multi-target attack, the amount of :effect{param="pollution"} stacks will be significantly **increased**.
+    * Every attacks of *Olivery* will also inflict :effect{param="pollution"}.
     * Enemies will have multi-target DMG Taken **-50%** and single-target DMG Taken **+50%**.
     * At the end of the round, if enemy's HP is below **40%**, a new enemy will **spawn**, can trigger **2** times, with maximum of 4 enemies on the battlefield.
   </Fragment>
@@ -88,8 +88,8 @@ import data from "@data/reveries-in-the-rain/zone/280m.json";
   </Fragment>
 
   <Fragment slot="strategy-and-tips-content">
-    * Prioritize units with **single-target** attacks, since they will deal more DMG, and recommended to bring **multiple** sustain units to withstand :effect{code="POLLUTION"}.
-    * If our allies have **multi-target** attacks, they will need someone to protect, recovery or remove :effect{code="POLLUTION"} on them.
+    * Prioritize units with **single-target** attacks, since they will deal more DMG, and recommended to bring **multiple** sustain units to withstand :effect{param="pollution"}.
+    * If our allies have **multi-target** attacks, they will need someone to protect, recovery or remove :effect{param="pollution"} on them.
     * We need to calculate so that the HP of all enemies is equal, then deal with all of them within 1 round so they cannot spawn new enemies.
     * You can choose **any** Myth Manifests based on your team.
   </Fragment>

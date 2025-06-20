@@ -18,7 +18,7 @@ import data from "@data/reveries-in-the-rain/zone/260m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, all allies get 2 stacks of :effect{code="SLUGGISH"}.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, all allies get 2 stacks of :effect{param="sluggish"}.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -35,7 +35,7 @@ import data from "@data/reveries-in-the-rain/zone/260m.json";
 
           <span class="passive-title">Frostbound Pulse</span>
 
-          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+          On death, inflict 1 stack of :effect{param="sluggish"} on all enemies.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
@@ -45,7 +45,7 @@ import data from "@data/reveries-in-the-rain/zone/260m.json";
 
           <span class="passive-title">Frostbound Pulse</span>
 
-          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+          On death, inflict 1 stack of :effect{param="sluggish"} on all enemies.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
@@ -55,7 +55,7 @@ import data from "@data/reveries-in-the-rain/zone/260m.json";
 
           <span class="passive-title">Frostbound Pulse</span>
 
-          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+          On death, inflict 1 stack of :effect{param="sluggish"} on all enemies.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -65,7 +65,7 @@ import data from "@data/reveries-in-the-rain/zone/260m.json";
 
           <span class="passive-title">Frostbound Pulse</span>
 
-          On death, inflict 1 stack of :effect{code="SLUGGISH"} on all enemies.
+          On death, inflict 1 stack of :effect{param="sluggish"} on all enemies.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>

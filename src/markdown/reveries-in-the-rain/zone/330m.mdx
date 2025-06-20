@@ -30,7 +30,7 @@ import data from "@data/reveries-in-the-rain/zone/330m.json";
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Static Ring</span>
 
-          When a round starts, inflicts 1 stack of :effect{code="ENDURING"} on other allies.
+          When a round starts, inflicts 1 stack of :effect{param="enduring"} on other allies.
 
           <span class="passive-title">Awake</span>
 
@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/330m.json";
 
           <span class="passive-title">Positive Charge</span>
 
-          After being attacked, inflict :effect{code="POSITIVE_CHARGE"} on the attacker; when being attacked by a unit with :effect{code="POSITIVE_CHARGE"}, DMG Taken **+50%** for self; when this unit dies, dispel the :effect{code="POSITIVE_CHARGE"} status from all enemies.
+          After being attacked, inflict :effect{param="positive-charge"} on the attacker; when being attacked by a unit with :effect{param="positive-charge"}, DMG Taken **+50%** for self; when this unit dies, dispel the :effect{param="positive-charge"} status from all enemies.
         </div>
 
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[3].id}'].includes(active)`}>
@@ -52,7 +52,7 @@ import data from "@data/reveries-in-the-rain/zone/330m.json";
 
           <span class="passive-title">Negative Charge</span>
 
-          After being attacked, inflict :effect{code="NEGATIVE_CHARGE"} on the attacker; when being attacked by a unit with :effect{code="NEGATIVE_CHARGE"}, DMG Taken **+50%** for self; when this unit dies, dispel the :effect{code="NEGATIVE_CHARGE"} status from all enemies.
+          After being attacked, inflict :effect{param="negative-charge"} on the attacker; when being attacked by a unit with :effect{param="negative-charge"}, DMG Taken **+50%** for self; when this unit dies, dispel the :effect{param="negative-charge"} status from all enemies.
         </div>
       </Fragment>
 

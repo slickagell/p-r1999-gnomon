@@ -18,7 +18,7 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle and at the start of every 2 rounds, all allies gain 1 stack of :effect{code="REGEN"}.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle and at the start of every 2 rounds, all allies gain 1 stack of :effect{param="regen"}.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -31,7 +31,7 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
         <div x-show={`['${data.enemies[0].id}', '${data.enemies[2].id}', '${data.enemies[5].id}', '${data.enemies[7].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Desertification</span>
 
-          After taking an action, loses (Current HP x**10%**) and gains 1 stack of :effect{code="THORNY"}.
+          After taking an action, loses (Current HP x**10%**) and gains 1 stack of :effect{param="thorny"}.
 
           <span class="passive-title">Desire for Blood II</span>
 
@@ -41,7 +41,7 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
         <div x-show={`['${data.enemies[1].id}', '${data.enemies[4].id}', '${data.enemies[6].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Desertification</span>
 
-          When entering battle, loses (Max HP x**10%**) HP for self and grants 1 stack of :effect{code="THORNY"} to all allies.
+          When entering battle, loses (Max HP x**10%**) HP for self and grants 1 stack of :effect{param="thorny"} to all allies.
 
           <span class="passive-title">Desire for Blood II</span>
 
@@ -55,11 +55,11 @@ import data from "@data/reveries-in-the-rain/zone/340m.json";
 
           <span class="passive-title">Break Free</span>
 
-          When a round ends, if the caster is below **40%** HP, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster, and the caster gains an :effect{code="IMMUNITY_SHIELD"} with (the caster's Max HP x**25%**) HP (only triggers 1 time).
+          When a round ends, if the caster is below **40%** HP, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster, and the caster gains an :effect{param="immunity-shield"} with (the caster's Max HP x**25%**) HP (only triggers 1 time).
 
           <span class="passive-title">Bloodthirsty Soul</span>
 
-          When a round starts, if the :effect{code="IMMUNITY_SHIELD"} is active, casts *\[Sacrifice Ritual]* 1 time. For every *\[Stats Up]* or *\[Pos Status]* status the enemy is in, this attack enjoys Leech Rate **+5%** (only triggers 1 time).
+          When a round starts, if the :effect{param="immunity-shield"} is active, casts *\[Sacrifice Ritual]* 1 time. For every *\[Stats Up]* or *\[Pos Status]* status the enemy is in, this attack enjoys Leech Rate **+5%** (only triggers 1 time).
 
           <span class="passive-title">Aura of Exuberance I</span>
 

@@ -18,7 +18,7 @@ import data from "@data/reveries-in-the-rain/zone/360m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gain 3 stacks of :effect{code="MORIBUND"}.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, gain 3 stacks of :effect{param="moribund"}.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -31,7 +31,7 @@ import data from "@data/reveries-in-the-rain/zone/360m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Catastrophic Loss III</span>
 
-          When the caster enters battle, gains a :effect{code="EXTERMINATION_BOON"} with (the caster's Max HP x**30%**) HP (only triggers one time). After losing :effect{code="EXTERMINATION_BOON"}, enters :effect{code="FRAGILE"} status for 2 rounds.
+          When the caster enters battle, gains a :effect{param="extermination-boon"} with (the caster's Max HP x**30%**) HP (only triggers one time). After losing :effect{param="extermination-boon"}, enters :effect{param="fragile"} status for 2 rounds.
 
           <span class="passive-title">Synergy II</span>
 
@@ -41,7 +41,7 @@ import data from "@data/reveries-in-the-rain/zone/360m.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Catastrophic Loss</span>
 
-          When the caster enters battle, gains a :effect{code="VAJRAS_BOON"} with (the caster's Max HP x**30%**) HP (only triggers 1 time). After losing :effect{code="VAJRAS_BOON"}, enters :effect{code="FRAGILE"} status for 2 rounds.
+          When the caster enters battle, gains a :effect{param="vajras-boon"} with (the caster's Max HP x**30%**) HP (only triggers 1 time). After losing :effect{param="vajras-boon"}, enters :effect{param="fragile"} status for 2 rounds.
 
           <span class="passive-title">Synergy III</span>
 
@@ -71,11 +71,11 @@ import data from "@data/reveries-in-the-rain/zone/360m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies and grants the caster Leech Rate **+30%**, which is removed when losing the Shield. If the caster has no Shield, then grants a :effect{code="EXTERMINATION_BOON"} with (the caster's Max HP x**30%**) HP for 3 rounds.
+          Mass attack. Deals **300%** Reality DMG to all enemies and grants the caster Leech Rate **+30%**, which is removed when losing the Shield. If the caster has no Shield, then grants a :effect{param="extermination-boon"} with (the caster's Max HP x**30%**) HP for 3 rounds.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies. DMG Heal **+30%** for the caster, which is removed when losing the Shield. If the caster has no Shield, then gains a :effect{code="VAJRAS_BOON"} with (the caster's Max HP x**30%**) HP for 3 rounds.
+          Mass attack. Deals **300%** Reality DMG to all enemies. DMG Heal **+30%** for the caster, which is removed when losing the Shield. If the caster has no Shield, then gains a :effect{param="vajras-boon"} with (the caster's Max HP x**30%**) HP for 3 rounds.
         </div>
       </Fragment>
     </EnemyInfo>

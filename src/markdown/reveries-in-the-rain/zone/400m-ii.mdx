@@ -20,7 +20,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} At the start of the round, grant Moxie +1 to self.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} Whenever an ally is attacked by a non-stronger Afflatus, this unit gains 1 stack of :effect{code="BEDROCK"} for 3 rounds.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} Whenever an ally is attacked by a non-stronger Afflatus, this unit gains 1 stack of :effect{param="bedrock"} for 3 rounds.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} At the end of the round, purify *\[Neg Status]* from all allies.
   </Fragment>
@@ -43,7 +43,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
 
           Incantation 1: 1-target attack. Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG.
 
-          Incantation 2: Mass Buff. Grants 1 effect from :effect{code="COLLECTION_OF_BUFFS_400_M_II"} to all allies for 2 rounds.
+          Incantation 2: Mass Buff. Grants 1 effect from :effect{param="collection-of-buffs-400-m-ii"} to all allies for 2 rounds.
 
           Ultimate: Mass attack. Deals **250%** Reality DMG plus (own Reality DEF x**150%**) Genesis DMG to all enemies.
 
@@ -81,7 +81,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
 
           Incantation 1: 1-target attack. Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG.
 
-          Incantation 2: Mass Buff. Grants 1 effect from :effect{code="COLLECTION_OF_BUFFS_400_M_II"} to all allies for 2 rounds.
+          Incantation 2: Mass Buff. Grants 1 effect from :effect{param="collection-of-buffs-400-m-ii"} to all allies for 2 rounds.
 
           Ultimate: Mass attack. Deals **250%** Reality DMG plus (own Reality DEF x**150%**) Genesis DMG to all enemies.
 
@@ -97,7 +97,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG. Inflicts the :effect{code="EXPOSED"} status for 2 rounds on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **50%** Reality DMG plus (own Reality DEF x**100%**) Genesis DMG. Inflicts the :effect{param="exposed"} status for 2 rounds on the target hit.
         </div>
       </Fragment>
 
@@ -109,7 +109,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-ii.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **250%** Reality DMG plus (own Reality DEF x**150%**) Genesis DMG. Grants the :effect{code="HIGH_MORALE"} status to all allies for 2 rounds.
+          Mass attack. Deals **250%** Reality DMG plus (own Reality DEF x**150%**) Genesis DMG. Grants the :effect{param="high-morale"} status to all allies for 2 rounds.
         </div>
       </Fragment>
     </EnemyInfo>

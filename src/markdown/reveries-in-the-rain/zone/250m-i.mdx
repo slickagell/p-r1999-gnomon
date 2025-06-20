@@ -17,11 +17,11 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
   <Fragment slot="stage-environment-content">
     :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+40%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+20%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, if HP is above 90%, gain 1 stack of :effect{code="ENERVATE"} and 1 stack of :effect{code="BLOOD_SIPHON"}.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the end of the round, if HP is above 90%, gain 1 stack of :effect{param="enervate"} and 1 stack of :effect{param="blood-siphon"}.
 
     :text[\[Ally\]]{className="font-medium text-ally"} Healing Taken **30%**.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} When attacking, if this unit is holding 2 or fewer types of negative statuses, inflict 1 stack of :effect{code="DREAD"} to the target.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} When attacking, if this unit is holding 2 or fewer types of negative statuses, inflict 1 stack of :effect{param="dread"} to the target.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -34,19 +34,19 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Blood Thirst</span>
 
-          At the start of the round, gain 5 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}.
+          At the start of the round, gain 5 stacks of :effect{param="regen"}. At the end of each round, gain 1 stack of :effect{param="moribund"}.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Blood Thirst</span>
 
-          At the start of the round, gain 5 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}.
+          At the start of the round, gain 5 stacks of :effect{param="regen"}. At the end of each round, gain 1 stack of :effect{param="moribund"}.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Blood Thirst</span>
 
-          At the start of the round, gain 5 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}.
+          At the start of the round, gain 5 stacks of :effect{param="regen"}. At the end of each round, gain 1 stack of :effect{param="moribund"}.
 
           <span class="passive-title">Feral Instinct</span>
 
@@ -56,11 +56,11 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
           <span class="passive-title">Blood Thirst</span>
 
-          At the start of the round, gain 2 stacks of :effect{code="REGEN"}. At the end of each round, gain 1 stack of :effect{code="MORIBUND"}. If not already in the :effect{code="MORIBUND"} status, gain an additional stack of :effect{code="MORIBUND"}.
+          At the start of the round, gain 2 stacks of :effect{param="regen"}. At the end of each round, gain 1 stack of :effect{param="moribund"}. If not already in the :effect{param="moribund"} status, gain an additional stack of :effect{param="moribund"}.
 
           <span class="passive-title">Feral Instinct</span>
 
-          When entering battle, inflict permanent :effect{code="CHAOS"} on all enemies.
+          When entering battle, inflict permanent :effect{param="chaos"} on all enemies.
         </div>
       </Fragment>
 
@@ -90,7 +90,7 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target debuff. Inflicts 2 stacks of :effect{code="DREAD"} and 5 types of random negative statuses on the target; if the target is in the :effect{param="nightmare"} status, they immediately die.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target debuff. Inflicts 2 stacks of :effect{param="dread"} and 5 types of random negative statuses on the target; if the target is in the :effect{param="nightmare"} status, they immediately die.
         </div>
       </Fragment>
 
@@ -134,7 +134,7 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies. On hit, inflicts permanent :effect{code="CHAOS"} on the targets; if a target is already in the :effect{code="CHAOS"} status, inflicts permanent :effect{param="terror"} on the target; if a target is already in the :effect{param="terror"} status, inflicts permanent :effect{param="nightmare"} on the target.
+          Mass attack. Deals **300%** Mental DMG to all enemies. On hit, inflicts permanent :effect{param="chaos"} on the targets; if a target is already in the :effect{param="chaos"} status, inflicts permanent :effect{param="terror"} on the target; if a target is already in the :effect{param="terror"} status, inflicts permanent :effect{param="nightmare"} on the target.
         </div>
       </Fragment>
     </EnemyInfo>
@@ -146,9 +146,9 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
 
   <Fragment slot="stage-info-content">
     * There are *Semmelweis* and other enemies.
-    * During the battle, enemies will receive an effect called :effect{code="MORIBUND"}.
+    * During the battle, enemies will receive an effect called :effect{param="moribund"}.
     * Our team will have 1 more character: <CharacterHeadIcon code="MONDLICHT" isInline />
-    * Ultimate of *Mondlicht* will **dispel** :effect{code="MORIBUND"} on all enemies.
+    * Ultimate of *Mondlicht* will **dispel** :effect{param="moribund"} on all enemies.
     * In the first round, *Semmelweis*, in Ultimate status, has ability to deals large DMG to all allies.
     * Phase 2 will have almost the same mechanism as Phase 1.
   </Fragment>
@@ -162,7 +162,7 @@ import data from "@data/reveries-in-the-rain/zone/250m-i.json";
       * Who can sustain or create :effect{param="shield"}.
       * Who has *\[Control]*, reduce Moxie skills.
       * Who can create :effect{param="array"} to override *Semmelweis*'s :effect{param="array"}.
-    * In the round that *Mondlicht* can cast Ultimate, use *Mondlicht*'s Ultimate to dispel :effect{code="MORIBUND"} on all enemies **first**, then use attacks skills to deal DMG and finish off enemies.
+    * In the round that *Mondlicht* can cast Ultimate, use *Mondlicht*'s Ultimate to dispel :effect{param="moribund"} on all enemies **first**, then use attacks skills to deal DMG and finish off enemies.
     * You can choose **any** Myth Manifests based on your team.
   </Fragment>
 

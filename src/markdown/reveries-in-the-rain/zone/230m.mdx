@@ -31,11 +31,11 @@ import data from "@data/reveries-in-the-rain/zone/230m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Ephemeral Dawn</span>
 
-          When taking fatal damage, restores **100%** of Max HP and gain 1 stack of :effect{code="FROM_THE_GRAVE"}, enter the :effect{param="daze"} state for 1 round.
+          When taking fatal damage, restores **100%** of Max HP and gain 1 stack of :effect{param="from-the-grave"}, enter the :effect{param="daze"} state for 1 round.
 
           <span class="passive-title">Silent Vengeance</span>
 
-          At the end of the round, gains 2 stacks of :effect{code="BLOODY_HUNT"}. If not attacked this round, gains an additional 2 Moxie and 1 stack of :effect{param="rousing-morale"}.
+          At the end of the round, gains 2 stacks of :effect{param="bloody-hunt"}. If not attacked this round, gains an additional 2 Moxie and 1 stack of :effect{param="rousing-morale"}.
 
           <span class="passive-title">Rotten Meat Block</span>
 
@@ -75,7 +75,7 @@ import data from "@data/reveries-in-the-rain/zone/230m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          1-target attack. Deals **450%** Reality DMG and gains 2 stacks of :effect{code="BLOODY_HUNT"}.
+          1-target attack. Deals **450%** Reality DMG and gains 2 stacks of :effect{param="bloody-hunt"}.
         </div>
       </Fragment>
     </EnemyInfo>

@@ -20,9 +20,9 @@ import data from "@data/reveries-in-the-rain/zone/350m-i.json";
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Any single instance of damage taken will not exceed (own Max HP x**10%**) HP.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} At the start of the round, grant 4 random effects from :effect{code="COLLECTION_OF_BUFFS_350_M_I"} to all allies.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} At the start of the round, grant 4 random effects from :effect{param="collection-of-buffs-350-m-i"} to all allies.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, if an allied character has 4 or more stacks of :effect{code="SAW_THROUGH"}, the allied character will enter the :effect{param="daze"} status for 1 round and lose 2 stacks of :effect{code="SAW_THROUGH"}.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, if an allied character has 4 or more stacks of :effect{param="saw-through"}, the allied character will enter the :effect{param="daze"} status for 1 round and lose 2 stacks of :effect{param="saw-through"}.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -35,51 +35,51 @@ import data from "@data/reveries-in-the-rain/zone/350m-i.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Dig Your Own Grave</span>
 
-          After being attacked, if this unit's current HP percentage is below **70%**, become immune to damage until the start of the next allied round; at the start of the next round, enters phase 2; after entering phase 2, Getian gains :effect{code="PEAK_FORM"}.
+          After being attacked, if this unit's current HP percentage is below **70%**, become immune to damage until the start of the next allied round; at the start of the next round, enters phase 2; after entering phase 2, Getian gains :effect{param="peak-form"}.
 
           <span class="passive-title">Physiognomy</span>
 
-          At the start of the round, inflicts 1 stack of :effect{code="SAW_THROUGH_ID_7253502"} on a random enemy character; for each type of *\[Pos Status]*, *\[Stats Up]*, or *\[Counter]* on self, gain DMG Dealt **+5%** and DMG Taken **-5%**.
+          At the start of the round, inflicts 1 stack of :effect{param="saw-through-id-7253502"} on a random enemy character; for each type of *\[Pos Status]*, *\[Stats Up]*, or *\[Counter]* on self, gain DMG Dealt **+5%** and DMG Taken **-5%**.
         </div>
 
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '2'`}>
           <span class="passive-title">The Fittest Prevail</span>
 
-          When entering battle, gains :effect{code="PEAK_FORM"} and applies :effect{code="DECISIVE_CONFRONTATION"} to the leftmost character; enemies not in the :effect{code="DECISIVE_CONFRONTATION"} status get a significant decrease in damage dealt.
+          When entering battle, gains :effect{param="peak-form"} and applies :effect{param="decisive-confrontation"} to the leftmost character; enemies not in the :effect{param="decisive-confrontation"} status get a significant decrease in damage dealt.
 
           <span class="passive-title">Physiognomy II</span>
 
-          At the start of the round, inflicts 1 stack of :effect{code="SAW_THROUGH_ID_7253502"} on all enemies, and inflict 1 additional stack of :effect{code="SAW_THROUGH_ID_7253502"} on enemies holding :effect{code="DECISIVE_CONFRONTATION"}; for each type of *\[Pos Status]*, *\[Stats Up]*, or *\[Counter]* on self, gain DMG Dealt **+5%** and DMG Taken **-5%**.
+          At the start of the round, inflicts 1 stack of :effect{param="saw-through-id-7253502"} on all enemies, and inflict 1 additional stack of :effect{param="saw-through-id-7253502"} on enemies holding :effect{param="decisive-confrontation"}; for each type of *\[Pos Status]*, *\[Stats Up]*, or *\[Counter]* on self, gain DMG Dealt **+5%** and DMG Taken **-5%**.
         </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. Reality DMG **+50%** if a target is in :effect{code="SAW_THROUGH_ID_7253502"} status.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies. Reality DMG **+50%** if a target is in :effect{param="saw-through-id-7253502"} status.
         </div>
 
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '2'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies; if at least 1 target is in the :effect{code="SAW_THROUGH_ID_7253502"} status, deal an additional **100%** Reality DMG.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies; if at least 1 target is in the :effect{param="saw-through-id-7253502"} status, deal an additional **100%** Reality DMG.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Casts rank 1 Bone's Legacy as the follow-up attack if a target is in :effect{code="SAW_THROUGH_ID_7253502"} status.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **150%** Reality DMG to 2 enemies. Casts rank 1 Bone's Legacy as the follow-up attack if a target is in :effect{param="saw-through-id-7253502"} status.
         </div>
 
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '2'`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies; if at least 1 target is in the :effect{code="SAW_THROUGH_ID_7253502"} status, casts a rank 1 *\[Bone's Legacy]* as a follow-up attack.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **200%** Reality DMG to 2 enemies; if at least 1 target is in the :effect{param="saw-through-id-7253502"} status, casts a rank 1 *\[Bone's Legacy]* as a follow-up attack.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies; after attacking, consumes all :effect{code="SAW_THROUGH_ID_7253502"} on the enemies and inflicts 10 stacks of :effect{code="FLINCH"} on the enemies for each stack of :effect{code="SAW_THROUGH_ID_7253502"} consumed.
+          Mass attack. Deals **300%** Reality DMG to all enemies; after attacking, consumes all :effect{param="saw-through-id-7253502"} on the enemies and inflicts 10 stacks of :effect{param="flinch"} on the enemies for each stack of :effect{param="saw-through-id-7253502"} consumed.
         </div>
 
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '2'`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies; after attacking, consumes all :effect{code="SAW_THROUGH_ID_7253502"} on the enemies and inflicts 10 stacks of :effect{code="FLINCH"} on the enemies for each stack of :effect{code="SAW_THROUGH_ID_7253502"} consumed.
+          Mass attack. Deals **300%** Reality DMG to all enemies; after attacking, consumes all :effect{param="saw-through-id-7253502"} on the enemies and inflicts 10 stacks of :effect{param="flinch"} on the enemies for each stack of :effect{param="saw-through-id-7253502"} consumed.
         </div>
       </Fragment>
     </EnemyInfo>

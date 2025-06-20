@@ -35,19 +35,19 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Goofball</span>
 
-          At the end of the round, gain 5 stacks of :effect{code="UNSPARING"} for self.
+          At the end of the round, gain 5 stacks of :effect{param="unsparing"} for self.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Goofball</span>
 
-          After death, inflict 5 stacks of :effect{code="POLLUTION"} on all enemies for 1 round.
+          After death, inflict 5 stacks of :effect{param="pollution"} on all enemies for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Goofball</span>
 
-          At the end of the round, gains 3 stacks of :effect{code="THORNY"}.
+          At the end of the round, gains 3 stacks of :effect{param="thorny"}.
 
           <span class="passive-title">Highly Combustible</span>
 
@@ -61,15 +61,15 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
 
           <span class="passive-title">Arrival of Silence</span>
 
-          At the end of each round, purify *\[Control]* statuses from self and inflict :effect{param="petrify"} status on a random enemy for 2 rounds; when :effect{param="petrify"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
+          At the end of each round, purify *\[Control]* statuses from self and inflict :effect{param="petrify"} status on a random enemy for 2 rounds; when :effect{param="petrify"} ends on an enemy, inflict :effect{param="enhancement-ban"} on that enemy for 2 rounds.
 
           <span class="passive-title">Among the Woods</span>
 
-          When :effect{param="petrify"} ends on an enemy, inflict :effect{code="ENHANCEMENT_BAN"} on that enemy for 2 rounds.
+          When :effect{param="petrify"} ends on an enemy, inflict :effect{param="enhancement-ban"} on that enemy for 2 rounds.
 
           <span class="passive-title">Photosynthesis</span>
 
-          After entering battle, enter the :effect{code="PHOTOSYNTHESIS_ID_223001"} status for 2 rounds; after casting an ultimate, enter the :effect{code="PHOTOSYNTHESIS_ID_223001"} status again for 2 rounds; after casting an ultimate, get Max Moxie and Moxie Consumption -3 (triggers up to 2 times).
+          After entering battle, enter the :effect{param="photosynthesis-id-223001"} status for 2 rounds; after casting an ultimate, enter the :effect{param="photosynthesis-id-223001"} status again for 2 rounds; after casting an ultimate, get Max Moxie and Moxie Consumption -3 (triggers up to 2 times).
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
@@ -81,7 +81,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
           <span class="passive-title">Goofball</span>
 
-          At the end of the round, gain 3 stacks of :effect{code="MERCY"}.
+          At the end of the round, gain 3 stacks of :effect{param="mercy"}.
 
           <span class="passive-title">Highly Combustible</span>
 
@@ -91,19 +91,19 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
           <span class="passive-title">Goofball II</span>
 
-          At the end of the round, gain 5 stacks of :effect{code="UNSPARING_ID_90001"} and gain Moxie +1.
+          At the end of the round, gain 5 stacks of :effect{param="unsparing-id-90001"} and gain Moxie +1.
         </div>
 
         <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
           <span class="passive-title">Goofball II</span>
 
-          After death, inflict 5 stacks of :effect{code="POLLUTION"} on all enemies for 1 round; at the end of the round, Moxie +1.
+          After death, inflict 5 stacks of :effect{param="pollution"} on all enemies for 1 round; at the end of the round, Moxie +1.
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
           <span class="passive-title">Goofball II</span>
 
-          At the end of the round, 3 stacks of :effect{code="THORNY"} and Moxie +1.
+          At the end of the round, 3 stacks of :effect{param="thorny"} and Moxie +1.
         </div>
 
         <div x-show={`['${data.enemies[9].id}'].includes(active)`}>
@@ -115,7 +115,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
           <span class="passive-title">Goofball II</span>
 
-          At the end of the round, gain 3 stacks of :effect{code="MERCY"}. At the end of the round, Moxie +1.
+          At the end of the round, gain 3 stacks of :effect{param="mercy"}. At the end of the round, Moxie +1.
 
           <span class="passive-title">Highly Combustible</span>
 
@@ -135,11 +135,11 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **25%** Mental DMG. Inflicts 4 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **25%** Mental DMG. Inflicts 4 stacks of :effect{param="pollution"} for 1 round on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **100%** Mental DMG to 2 enemies; gain 2 stacks of :effect{code="THORNY"} for self.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **100%** Mental DMG to 2 enemies; gain 2 stacks of :effect{param="thorny"} for self.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -155,7 +155,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **25%** Mental DMG. Inflicts 4 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **25%** Mental DMG. Inflicts 4 stacks of :effect{param="pollution"} for 1 round on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
@@ -173,15 +173,15 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **25%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{code="POLLUTION"} for 1 round on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **25%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{param="pollution"} for 1 round on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{param="taunt"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{param="taunt"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{param="thorny"} to self.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 3 stacks of :effect{code="UNSPARING"}, 3 stacks of :effect{code="LUCKY"}, and 3 stacks of :effect{code="GLEAN"} to all allies; other allies gain an additional 3 stacks of :effect{code="UNSPARING"}, 3 stacks of :effect{code="LUCKY"}, and 3 stacks of :effect{code="GLEAN"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Grants 3 stacks of :effect{param="unsparing"}, 3 stacks of :effect{param="lucky"}, and 3 stacks of :effect{param="glean"} to all allies; other allies gain an additional 3 stacks of :effect{param="unsparing"}, 3 stacks of :effect{param="lucky"}, and 3 stacks of :effect{param="glean"}.
         </div>
 
         <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
@@ -193,11 +193,11 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **25%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{code="POLLUTION"} for 1 round on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **25%** Mental DMG to 2 enemies. Inflicts 3 stacks of :effect{param="pollution"} for 1 round on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{param="taunt"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{code="THORNY"} to self.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{param="taunt"} and gains DMG Taken **-40%** for 1 round. Grants 2 stacks of :effect{param="thorny"} to self.
         </div>
 
         <div x-show={`['${data.enemies[10].id}'].includes(active)`}>
@@ -211,11 +211,11 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          Mass attack. Deals **50%** Mental DMG to all enemies. On hit, inflicts 4 stacks of :effect{code="POLLUTION"} on all enemies for 1 round.
+          Mass attack. Deals **50%** Mental DMG to all enemies. On hit, inflicts 4 stacks of :effect{param="pollution"} on all enemies for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **100%** Mental DMG to all enemies. Recovers (Max HP x**20%**) HP. Grants 2 stacks of :effect{code="THORNY"} to self.
+          Mass attack. Deals **100%** Mental DMG to all enemies. Recovers (Max HP x**20%**) HP. Grants 2 stacks of :effect{param="thorny"} to self.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -235,7 +235,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
-          1-target attack. Deals **400%** Mental DMG. Inflicts 10 stacks of :effect{code="POLLUTION"} for 1 round on the target hit.
+          1-target attack. Deals **400%** Mental DMG. Inflicts 10 stacks of :effect{param="pollution"} for 1 round on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
@@ -263,7 +263,7 @@ import data from "@data/reveries-in-the-rain/zone/300m-ii.json";
       * They also have skills that can inflict :effect{param="petrify"}.
     * The main boss can also summon other critters
       * With Beast critter, be careful when this unit attack, since it can deal a lot of DMG.
-      * With Green Lake critter, it will inflict :effect{code="POLLUTION"} on our allies when attacks or being defeated.
+      * With Green Lake critter, it will inflict :effect{param="pollution"} on our allies when attacks or being defeated.
       * With Cactus critter, it will have :effect{param="taunt"} effect.
     * When go to phase 2, the critters will be strengthened and become much stronger
       * When entering battle, they will receive a large amount of *\[Shield]* for **2** rounds.

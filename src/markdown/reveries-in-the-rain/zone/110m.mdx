@@ -30,29 +30,29 @@ import data from "@data/reveries-in-the-rain/zone/110m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Dimensional Perception</span>
 
-          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{code="REVERIE"}. At round start, when :effect{code="REVERIE"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
+          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{param="reverie"}. At round start, when :effect{param="reverie"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Dimensional Perception</span>
 
-          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{code="REVERIE"}. At round start, when :effect{code="REVERIE"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
+          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{param="reverie"}. At round start, when :effect{param="reverie"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Dimensional Perception</span>
 
-          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{code="REVERIE"}. At round start, when :effect{code="REVERIE"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
+          Cannot gain Moxie. At the end of the round, gain 1 stack of :effect{param="reverie"}. At round start, when :effect{param="reverie"} reaches 4 stacks, consume 4 stacks to cast the Ultimate.
         </div>
       </Fragment>
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG. Gain 1 stack of :effect{code="REVERIE"}.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **160%** Mental DMG. Gain 1 stack of :effect{param="reverie"}.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG. Gain 1 stack of :effect{code="REVERIE"}.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **240%** Mental DMG. Gain 1 stack of :effect{param="reverie"}.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
@@ -82,19 +82,19 @@ import data from "@data/reveries-in-the-rain/zone/110m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{param="reverie"}.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{param="reverie"}.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{param="reverie"}.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{code="REVERIE"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies. Lasts 2 rounds. Gain 1 stack of :effect{param="reverie"}.
         </div>
       </Fragment>
 

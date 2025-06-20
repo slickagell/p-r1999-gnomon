@@ -19,7 +19,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} Allies gain DMG Dealt **+50%** against units of the Natural Afflatus.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, apply the :effect{code="EXPOSED"} status on a random ally for 1 round; apply the :effect{code="ELECTRIC_COIL"} status on a random ally for 1 round; apply the :effect{code="INFUSION_TUBE"} status on a random character for 1 round.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, apply the :effect{param="exposed"} status on a random ally for 1 round; apply the :effect{param="electric-coil"} status on a random ally for 1 round; apply the :effect{param="infusion-tube"} status on a random character for 1 round.
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} When entering battle, for each character of the Natural Afflatus on the enemy's field, the Servant of War gains Max HP **+25%**.
   </Fragment>
@@ -38,7 +38,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
 
           <span class="passive-title">Chaotic Barrage</span>
 
-          At the end of every 2 rounds, gain 3 stacks of :effect{code="UNSPARING"} for self.
+          At the end of every 2 rounds, gain 3 stacks of :effect{param="unsparing"} for self.
 
           <span class="passive-title">Charged Overload</span>
 
@@ -56,7 +56,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Emergency Treatments</span>
 
-          When being attacked by an enemy that has the :effect{code="INFUSION_TUBE"} status, recovers (own ATK x**200%**) HP for all enemies; if this unit did not take any damage during the round, at the end of the round, recovers (the canon's Max HP x**10%**) HP to the canon; when this unit dies, recovers (their Max HP x**50%**) HP for enemies.
+          When being attacked by an enemy that has the :effect{param="infusion-tube"} status, recovers (own ATK x**200%**) HP for all enemies; if this unit did not take any damage during the round, at the end of the round, recovers (the canon's Max HP x**10%**) HP to the canon; when this unit dies, recovers (their Max HP x**50%**) HP for enemies.
 
           <span class="passive-title">Small Wound</span>
 
@@ -66,7 +66,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
         <div x-show={`['${data.enemies[2].id}'].includes(active) && activePhase === '1'`}>
           <span class="passive-title">Dynamo Transfer</span>
 
-          When entering battle or at the end of the round, gain 10 stacks of :effect{param="dynamo"} for self; when being attacked by an enemy that has the :effect{code="ELECTRIC_COIL"} status, 5 stacks of :effect{param="dynamo"} are stolen from this unit; at the start of the round, transfers 10 stacks of :effect{param="dynamo"} to Servant of War.
+          When entering battle or at the end of the round, gain 10 stacks of :effect{param="dynamo"} for self; when being attacked by an enemy that has the :effect{param="electric-coil"} status, 5 stacks of :effect{param="dynamo"} are stolen from this unit; at the start of the round, transfers 10 stacks of :effect{param="dynamo"} to Servant of War.
 
           <span class="passive-title">Small Wound</span>
 
@@ -82,7 +82,7 @@ import data from "@data/reveries-in-the-rain/zone/400m-iii.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active) && activePhase === '1'`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains a *\[Shield]* with (own Max HP x**10%**) HP for 1 round (when losing the Shield, DMG Taken **+50%** for 1 round), and randomly gains 2 of the following: :effect{code="PIERCING_BULLET"}, :effect{code="FLASH_BULLET"}, :effect{param="flaming-bullet"}, :effect{code="FLINCH_BULLET"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains a *\[Shield]* with (own Max HP x**10%**) HP for 1 round (when losing the Shield, DMG Taken **+50%** for 1 round), and randomly gains 2 of the following: :effect{param="piercing-bullet"}, :effect{param="flash-bullet"}, :effect{param="flaming-bullet"}, :effect{param="flinch-bullet"}.
         </div>
       </Fragment>
 

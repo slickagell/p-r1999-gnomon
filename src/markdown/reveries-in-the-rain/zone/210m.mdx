@@ -34,7 +34,7 @@ import data from "@data/reveries-in-the-rain/zone/210m.json";
 
           <span class="passive-title">Manic Chase</span>
 
-          When a round ends, gives other allies 1 stack of :effect{code="GROWTH"}.
+          When a round ends, gives other allies 1 stack of :effect{param="growth"}.
 
           <span class="passive-title">Tooth Fairy Summoning</span>
 
@@ -48,13 +48,13 @@ import data from "@data/reveries-in-the-rain/zone/210m.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Prankster at Heart</span>
 
-          Gains :effect{code="NEVER_ENDING_RIOT"} at the start of each round. After taking damage of a stronger Afflatus or critical damage 3 times, removes :effect{code="NEVER_ENDING_RIOT"}.
+          Gains :effect{param="never-ending-riot"} at the start of each round. After taking damage of a stronger Afflatus or critical damage 3 times, removes :effect{param="never-ending-riot"}.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Prankster at Heart</span>
 
-          Gains :effect{code="NEVER_ENDING_RIOT"} at the start of each round. After taking damage of a stronger Afflatus or critical damage 3 times, removes :effect{code="NEVER_ENDING_RIOT"}.
+          Gains :effect{param="never-ending-riot"} at the start of each round. After taking damage of a stronger Afflatus or critical damage 3 times, removes :effect{param="never-ending-riot"}.
         </div>
       </Fragment>
 
@@ -112,7 +112,7 @@ import data from "@data/reveries-in-the-rain/zone/210m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **250%** Mental DMG to all enemies and grants 1 stack of :effect{code="GROWTH"} to all allies.
+          Mass attack. Deals **250%** Mental DMG to all enemies and grants 1 stack of :effect{param="growth"} to all allies.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>

@@ -22,7 +22,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
 
     :text[\[Enemy\]]{className="font-medium text-enemy"} ATK **+10%**, Reality DEF **+10%**, and Mental DEF **+10%**.
 
-    :text[\[Enemy\]]{className="font-medium text-enemy"} On death, grants Moxie +5 and :effect{code="DODGE"} to other allies for 1 round.
+    :text[\[Enemy\]]{className="font-medium text-enemy"} On death, grants Moxie +5 and :effect{param="dodge"} to other allies for 1 round.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -41,7 +41,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Offensive Momentum</span>
 
-          After attacking, gain 1 stack of :effect{code="UNSPARING"} and lose 1 stack of :effect{code="REGEN"}. After being attacked, gain 1 stack of :effect{code="REGEN"} and lose 1 stack of :effect{code="UNSPARING"}.
+          After attacking, gain 1 stack of :effect{param="unsparing"} and lose 1 stack of :effect{param="regen"}. After being attacked, gain 1 stack of :effect{param="regen"} and lose 1 stack of :effect{param="unsparing"}.
 
           <span class="passive-title">Punishing Fury</span>
 
@@ -55,19 +55,19 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Camouflage Tactics</span>
 
-          When entering battle, enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+          When entering battle, enters the :effect{param="hidden-camouflage"} status.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
           <span class="passive-title">Logical Distribution</span>
 
-          When another ally dies, equip 1 :effect{code="LUCKY_BULLET"}.
+          When another ally dies, equip 1 :effect{param="lucky-bullet"}.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
           <span class="passive-title">Zero In</span>
 
-          At the end of the round, randomly inflicts :effect{code="EXPOSED"} on an enemy for 2 rounds.
+          At the end of the round, randomly inflicts :effect{param="exposed"} on an enemy for 2 rounds.
 
           <span class="passive-title">Steady Composure</span>
 
@@ -83,13 +83,13 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
         <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
           <span class="passive-title">Logical Distribution</span>
 
-          When another ally dies, equip 1 :effect{code="LUCKY_BULLET"}.
+          When another ally dies, equip 1 :effect{param="lucky-bullet"}.
         </div>
 
         <div x-show={`['${data.enemies[7].id}'].includes(active)`}>
           <span class="passive-title">Zero In</span>
 
-          At the end of the round, randomly inflicts :effect{code="EXPOSED"} on an enemy for 2 rounds.
+          At the end of the round, randomly inflicts :effect{param="exposed"} on an enemy for 2 rounds.
 
           <span class="passive-title">Steady Composure</span>
 
@@ -99,7 +99,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
           <span class="passive-title">Camouflage Tactics</span>
 
-          When entering battle, enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+          When entering battle, enters the :effect{param="hidden-camouflage"} status.
         </div>
       </Fragment>
 
@@ -175,55 +175,55 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**100%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{param="reflect"} status for 2 rounds: when being attacked, reflects (own ATK x**100%**) Genesis DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**150%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{param="reflect"} status for 2 rounds: when being attacked, reflects (own ATK x**150%**) Genesis DMG.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{code="RIPOSTE_POSE"} for 1 round: after being attacked, ripostes the source of damage, dealing **150%** Reality DMG; after the riposte, inflicts :effect{param="disarm"} on the target for 1 round.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters :effect{param="riposte-pose"} for 1 round: after being attacked, ripostes the source of damage, dealing **150%** Reality DMG; after the riposte, inflicts :effect{param="disarm"} on the target for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 4 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 4 stacks of :effect{param="unsparing"}. Enters the :effect{param="hidden-camouflage"} status.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 8 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 8 stacks of :effect{param="unsparing"}. Enters the :effect{param="hidden-camouflage"} status.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 1 :effect{code="LUCKY_BULLET"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{param="uncanny-agility"} status for 1 round. Gains 1 :effect{param="lucky-bullet"}.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 2 random :effect{code="LUCKY_BULLET"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{param="uncanny-agility"} status for 1 round. Gains 2 random :effect{param="lucky-bullet"}.
         </div>
 
         <div x-show={`['${data.enemies[5].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**100%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{param="reflect"} status for 2 rounds: when being attacked, reflects (own ATK x**100%**) Genesis DMG.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{code="REFLECT"} status for 2 rounds: when being attacked, reflects (own ATK x**150%**) Genesis DMG.
+          <CardType class="w-24 mb-1" type="COUNTER" /> Self counter. Enters the :effect{param="reflect"} status for 2 rounds: when being attacked, reflects (own ATK x**150%**) Genesis DMG.
         </div>
 
         <div x-show={`['${data.enemies[6].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 1 :effect{code="LUCKY_BULLET"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{param="uncanny-agility"} status for 1 round. Gains 1 :effect{param="lucky-bullet"}.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{code="UNCANNY_AGILITY"} status for 1 round. Gains 2 random :effect{code="LUCKY_BULLET"}.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Enters the :effect{param="uncanny-agility"} status for 1 round. Gains 2 random :effect{param="lucky-bullet"}.
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 4 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 4 stacks of :effect{param="unsparing"}. Enters the :effect{param="hidden-camouflage"} status.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 8 stacks of :effect{code="UNSPARING"}. Enters the :effect{code="HIDDEN_CAMOUFLAGE"} status.
+          <CardType class="w-24 mb-1" type="BUFF" /> Self buff. Gains 8 stacks of :effect{param="unsparing"}. Enters the :effect{param="hidden-camouflage"} status.
         </div>
       </Fragment>
 
@@ -237,7 +237,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Self channel. Enters the :effect{code="CONCEALED_ASSASSINATION"} status for 1 round.
+          Self channel. Enters the :effect{param="concealed-assassination"} status for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -261,7 +261,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-i.json";
         </div>
 
         <div x-show={`['${data.enemies[8].id}'].includes(active)`}>
-          Self channel. Enters the :effect{code="CONCEALED_ASSASSINATION"} status for 1 round.
+          Self channel. Enters the :effect{param="concealed-assassination"} status for 1 round.
         </div>
       </Fragment>
     </EnemyInfo>

@@ -17,7 +17,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-iii.json";
   <Fragment slot="stage-environment-content">
     :text[\[Enemy\]]{className="font-medium text-enemy"} Stronger Afflatus Damage **+30%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+15%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, rewrite 3 random incantations with :effect{code="SCALDING"}.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, rewrite 3 random incantations with :effect{param="scalding"}.
 
     :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, **50%** chance to change all allied incantations to *\[Precast Incantation]*.
 
@@ -34,7 +34,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-iii.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Competitive Spirit</span>
 
-          After an enemy casts a buff or counter incantation, gain 2 stacks of :effect{code="UNSPARING"} for self; after an enemy casts a debuff or healing incantation, gain 1 stack of :effect{code="WEAL"} for self.
+          After an enemy casts a buff or counter incantation, gain 2 stacks of :effect{param="unsparing"} for self; after an enemy casts a debuff or healing incantation, gain 1 stack of :effect{param="weal"} for self.
 
           <span class="passive-title">Search the Past</span>
 
@@ -48,19 +48,19 @@ import data from "@data/reveries-in-the-rain/zone/200m-iii.json";
 
       <Fragment slot="skill1-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG. Penetration Rate **+30%** for this attack. Grants 1 stack of :effect{code="INSTANT_CONCEALMENT"} to self.
+          <CardType class="w-24 mb-1" type="ATTACK" /> 1-target attack. Deals **250%** Reality DMG. Penetration Rate **+30%** for this attack. Grants 1 stack of :effect{param="instant-concealment"} to self.
         </div>
       </Fragment>
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **175%** Reality DMG to 2 enemies. Penetration Rate **+30%** for this attack. Grants 1 stack of :effect{code="INSTANT_STRONG_WILL"} to self.
+          <CardType class="w-24 mb-1" type="ATTACK" /> Mass attack. Deals **175%** Reality DMG to 2 enemies. Penetration Rate **+30%** for this attack. Grants 1 stack of :effect{param="instant-strong-will"} to self.
         </div>
       </Fragment>
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **400%** Reality DMG to all enemies, Penetration Rate **+30%** for this attack; on hit, inflicts :effect{code="MIS_AIM"} on the targets for 2 rounds, and grants 3 stacks of :effect{code="UNSPARING"} and 3 stacks of :effect{code="FRAGILITY"} to self.
+          Mass attack. Deals **400%** Reality DMG to all enemies, Penetration Rate **+30%** for this attack; on hit, inflicts :effect{param="mis-aim"} on the targets for 2 rounds, and grants 3 stacks of :effect{param="unsparing"} and 3 stacks of :effect{param="fragility"} to self.
         </div>
       </Fragment>
     </EnemyInfo>
@@ -74,12 +74,12 @@ import data from "@data/reveries-in-the-rain/zone/200m-iii.json";
     * There is only **1** enemy, *Spathodea*.
     * At the beginning of each round, there will be **50%** probability of converting all your incantations to *\[Precast Incantation]*, this also make *\[Tuning: First Melody]* become unusable.
     * At the end of each round, if ally's HP is below **50%**, fall into :effect{param="disconcert"} status for **1** round.
-    * *Spathodea*'s Ultimate deals **extremely** high DMG to all allies, also gains **3** :effect{code="UNSPARING"} stacks, **3** :effect{code="WEAL"} stacks and inflict effects to reduce our allies DMG.
+    * *Spathodea*'s Ultimate deals **extremely** high DMG to all allies, also gains **3** :effect{param="unsparing"} stacks, **3** :effect{param="weal"} stacks and inflict effects to reduce our allies DMG.
     * If *Spathodea*'s HP is below **75%/50%/25%**, she will cast Ultimate **without** consuming Moxie for **1** time.
     * One of *Spathodea* skills will grant her ability to *\[Dodge]* non-Ultimate Reality or Mental DMG, so pay attention to these effects, use normal attacks skills to remove *\[Dodge]* effects first, then use important skills to deal Burst DMG.
     * With *Spathodea*'s passive, whenever our ally using:
-      * **Buff** or **Counter** skills, she gains **2** :effect{code="UNSPARING"} stacks.
-      * **Heal** or **Debuff** skills, she gains **1** :effect{code="WEAL"} stack.
+      * **Buff** or **Counter** skills, she gains **2** :effect{param="unsparing"} stacks.
+      * **Heal** or **Debuff** skills, she gains **1** :effect{param="weal"} stack.
   </Fragment>
 
   <Fragment slot="strategy-and-tips-title">
@@ -89,7 +89,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-iii.json";
   <Fragment slot="strategy-and-tips-content">
     * Make sure HP of all allies in team is around **70-80%** to be able to withstand the boss's attacks
 
-    * **Attack** and **Channel** incantations are recommended to use more often, since it will not grant *Spathodea* :effect{code="UNSPARING"} or :effect{code="WEAL"} stacks.
+    * **Attack** and **Channel** incantations are recommended to use more often, since it will not grant *Spathodea* :effect{param="unsparing"} or :effect{param="weal"} stacks.
 
     * Bring units with :effect{param="seal"} or :effect{param="nightmare"} skills to prevent *Spathodea* from casting Ultimate.
       * Especially, try to use it at **75%/50%/25%** *Spathodea*'s HP
@@ -100,8 +100,8 @@ import data from "@data/reveries-in-the-rain/zone/200m-iii.json";
 
     * With Myth Manifest:
       * Choose *Mountain Ghost* to go with *\[Poison]* or *\[Rank Up]* team
-      * *Star of Misfortune* can be use to go with *\[Star]* unit team, but **limit** the use of Ultimate because it is a *Buff* skill, which can grant boss :effect{code="UNSPARING"} stacks.
-      * *Operatic Reflection* is **not** recommended since it will cast a Debuff skill each round, which will grant *Spathodea* lots of :effect{code="WEAL"} stacks.
+      * *Star of Misfortune* can be use to go with *\[Star]* unit team, but **limit** the use of Ultimate because it is a *Buff* skill, which can grant boss :effect{param="unsparing"} stacks.
+      * *Operatic Reflection* is **not** recommended since it will cast a Debuff skill each round, which will grant *Spathodea* lots of :effect{param="weal"} stacks.
   </Fragment>
 
   <Fragment slot="team-suggestion-section-title">

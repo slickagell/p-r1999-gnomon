@@ -18,6 +18,6 @@
 
   "Create new markdown effect": {
     "prefix": "markdown-effect",
-    "body": [":effect{code=\"\"}"],
+    "body": [":effect{param=\"\"}"],
   },
 }

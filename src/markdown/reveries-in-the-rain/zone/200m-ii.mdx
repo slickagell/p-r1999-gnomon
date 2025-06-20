@@ -35,13 +35,13 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Direct Lineage</span>
 
-          After taking an action, gain 1 stack of :effect{code="UNSPARING"} but suffer 2 stacks of :effect{code="GASH"} status for 2 rounds.
+          After taking an action, gain 1 stack of :effect{param="unsparing"} but suffer 2 stacks of :effect{param="gash"} status for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Direct Lineage</span>
 
-          After taking an action, gain 1 stack of :effect{code="UNSPARING"} but suffer 2 stacks of :effect{code="GASH"} status for 2 rounds.
+          After taking an action, gain 1 stack of :effect{param="unsparing"} but suffer 2 stacks of :effect{param="gash"} status for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
@@ -53,13 +53,13 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
           <span class="passive-title">Direct Lineage</span>
 
-          After taking an action, gain 1 stack of :effect{code="UNSPARING"} but suffer 2 stacks of :effect{code="GASH"} status for 2 rounds.
+          After taking an action, gain 1 stack of :effect{param="unsparing"} but suffer 2 stacks of :effect{param="gash"} status for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
           <span class="passive-title">Direct Lineage</span>
 
-          After taking an action, gain 1 stack of :effect{code="UNSPARING"} but suffer 2 stacks of :effect{code="GASH"} status for 2 rounds.
+          After taking an action, gain 1 stack of :effect{param="unsparing"} but suffer 2 stacks of :effect{param="gash"} status for 2 rounds.
         </div>
       </Fragment>
 
@@ -73,7 +73,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG; inflicts 2 stacks of :effect{code="CRIPPLING_WEAKNESS"} on the target hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> 1-target attack. Deals **200%** Reality DMG; inflicts 2 stacks of :effect{param="crippling-weakness"} on the target hit.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -95,7 +95,7 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Applies 6 stacks of :effect{code="GASH"} on other allies for 2 rounds, and grants other allies Leech Rate **+50%** and DMG Dealt **+50%** for 2 rounds.
+          <CardType class="w-24 mb-1" type="BUFF" /> Mass buff. Applies 6 stacks of :effect{param="gash"} on other allies for 2 rounds, and grants other allies Leech Rate **+50%** and DMG Dealt **+50%** for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
@@ -109,23 +109,23 @@ import data from "@data/reveries-in-the-rain/zone/200m-ii.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{code="CONTROL_IMMUNITY"} status for 2 rounds.
+          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{param="control-immunity"} status for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{code="CONTROL_IMMUNITY"} status for 2 rounds.
+          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{param="control-immunity"} status for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Reality DMG to all enemies, inflicts :effect{param="silence"} on all enemies for 2 rounds, then grants 1 stack of :effect{code="INCORPOREAL"} to all allies.
+          Mass attack. Deals **300%** Reality DMG to all enemies, inflicts :effect{param="silence"} on all enemies for 2 rounds, then grants 1 stack of :effect{param="incorporeal"} to all allies.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
-          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{code="CONTROL_IMMUNITY"} status for 2 rounds.
+          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{param="control-immunity"} status for 2 rounds.
         </div>
 
         <div x-show={`['${data.enemies[4].id}'].includes(active)`}>
-          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{code="CONTROL_IMMUNITY"} status for 2 rounds.
+          1-target attack. Deals **300%** Reality DMG; recovers **50%** of missing HP for self, then enters the :effect{param="control-immunity"} status for 2 rounds.
         </div>
       </Fragment>
     </EnemyInfo>

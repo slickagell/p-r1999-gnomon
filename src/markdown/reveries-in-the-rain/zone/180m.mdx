@@ -17,7 +17,7 @@ import data from "@data/reveries-in-the-rain/zone/180m.json";
   <Fragment slot="stage-environment-content">
     :text[\[All\]]{className="font-medium text-all"} Stronger Afflatus Damage **+20%**. When being attacked by a non-stronger Afflatus, Final DMG Taken Reduction **+10%**. After round 15 in battle, all monsters gain the Frenzy status.
 
-    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, rewrite 2 random ally incantations with :effect{code="ICEBOUND"} for 1 round.
+    :text[\[Ally\]]{className="font-medium text-ally"} At the start of the round, rewrite 2 random ally incantations with :effect{param="icebound"} for 1 round.
   </Fragment>
 
   <Fragment slot="enemy-info-title">
@@ -30,29 +30,29 @@ import data from "@data/reveries-in-the-rain/zone/180m.json";
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
           <span class="passive-title">Robust Physique</span>
 
-          When entering battle, all allies gain 50 stacks of :effect{code="REGEN"}. At the start of the round, grant 1 stack of :effect{code="REGEN"} to a random ally.
+          When entering battle, all allies gain 50 stacks of :effect{param="regen"}. At the start of the round, grant 1 stack of :effect{param="regen"} to a random ally.
 
           <span class="passive-title">Fading Strength</span>
 
-          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{param="regen"}, and apply 1 stack of :effect{param="zealotry"} on the source of damage.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
           <span class="passive-title">Fading Strength</span>
 
-          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{param="regen"}, and apply 1 stack of :effect{param="zealotry"} on the source of damage.
         </div>
 
         <div x-show={`['${data.enemies[2].id}'].includes(active)`}>
           <span class="passive-title">Fading Strength</span>
 
-          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{param="regen"}, and apply 1 stack of :effect{param="zealotry"} on the source of damage.
         </div>
 
         <div x-show={`['${data.enemies[3].id}'].includes(active)`}>
           <span class="passive-title">Fading Strength</span>
 
-          After taking an action or after being attacked, this unit loses 1 stack of :effect{code="REGEN"}, and apply 1 stack of :effect{code="ZEALOTRY"} on the source of damage.
+          After taking an action or after being attacked, this unit loses 1 stack of :effect{param="regen"}, and apply 1 stack of :effect{param="zealotry"} on the source of damage.
         </div>
       </Fragment>
 
@@ -88,7 +88,7 @@ import data from "@data/reveries-in-the-rain/zone/180m.json";
 
       <Fragment slot="skill2-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **130%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{code="FADING_UNSPARING"} on the targets hit.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **130%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="fading-unsparing"} on the targets hit.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
@@ -118,7 +118,7 @@ import data from "@data/reveries-in-the-rain/zone/180m.json";
 
       <Fragment slot="ultimate-info">
         <div x-show={`['${data.enemies[0].id}'].includes(active)`}>
-          Mass attack. Deals **300%** Mental DMG to all enemies. Enters :effect{code="HEART_OF_GUARDIAN"} status for 1 round.
+          Mass attack. Deals **300%** Mental DMG to all enemies. Enters :effect{param="heart-of-guardian"} status for 1 round.
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
