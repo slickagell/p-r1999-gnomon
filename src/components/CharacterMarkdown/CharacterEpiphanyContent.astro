@@ -63,7 +63,7 @@ const { epiphanyLevel, materials, stats } = Astro.props;
             class="divider before:bg-primary-content after:bg-primary-content my-1"
           >
           </div>
-          <p>Level up require:</p>
+          <p>Total materials needed to reach:</p>
           {
             stats.materials.map((material) => (
               <Material param={material.param} require={material.require} />

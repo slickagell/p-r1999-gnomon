@@ -1,4 +1,9 @@
-##### 2025-06-19
+##### 2025-06-27
+
+* Enhance characters filter options
+* Update character archetype/trait list (thanks @solmy for the feedbacks)
+
+##### 2025-06-20
 
 * Make effect tooltip scrollable
 * Update layout spacing

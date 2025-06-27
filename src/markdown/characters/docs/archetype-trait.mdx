@@ -11,10 +11,10 @@ import Icon from "@components/Icon.astro";
     <div>
       <p class="font-bold">Notice!</p>
 
-      <div class="text-xs">
-        The data is continuously updated, and the following content may not be
-        final.
+      <div class="text-sm">
+        The data is continuously updated, and the following content may not be final.
       </div>
+      <span class="text-sm italic">(This page will be revamped in the future for readability)</span>
     </div>
   </div>
 
@@ -53,15 +53,21 @@ import Icon from "@components/Icon.astro";
     <CharacterHeadIcon code="AN_AN_LEE"><span slot="note">(skill 2)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="ARGUS"><span slot="note">(insight 1)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="AVGUST"><span slot="note">(skill 1, skill 2)</span></CharacterHeadIcon>
-    <CharacterHeadIcon code="DRUVIS_III"><span slot="note">(euphoria 1)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="BETTE"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="CRISTALLO"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="DARLEY_CLATTER"><span slot="note">(ultimate)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="ETERNITY"><span slot="note">(euphoria 1)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="LORELEI"><span slot="note">(skill 2, ultimate)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="MERCURIA"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="MESMER_JR"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="NICK_BOTTOM"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="OLIVER_FOG"><span slot="note">(skill 2)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="PICKLES"><span slot="note">(ultimate)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="SEMMELWEIS"><span slot="note">(skill 2, ultimate)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="SONETTO"><span slot="note">(skill 2)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="VILA"><span slot="note">(skill 1)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="ULU"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="ZIMA"><span slot="note">(skill 2)</span></CharacterHeadIcon>
   </CharacterArchetypeListWrapper>
 
   ### Pos Status
@@ -72,11 +78,16 @@ import Icon from "@components/Icon.astro";
 
   <CharacterArchetypeListWrapper>
     <CharacterHeadIcon code="6"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="ALEPH"><span slot="note">(skill 2)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="AVGUST"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="CRISTALLO"><span slot="note">(skill 2)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="DESERT_FLANNEL"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="DRUVIS_III"><span slot="note">(insight 3)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="EZRA"><span slot="note">(skill 2)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="GETIAN"><span slot="note">(ultimate)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="KAKANIA"><span slot="note">(skill 2)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="ISOLDE"><span slot="note">(ultimate)</span></CharacterHeadIcon>
+    <CharacterHeadIcon code="OLIVER_FOG"><span slot="note">(skill 2)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="LOPERA"><span slot="note">(skill 1, ultimate)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="LORELEI"><span slot="note">(ultimate)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="VILA"><span slot="note">(skill 2, ultimate)</span></CharacterHeadIcon>
@@ -196,8 +207,8 @@ import Icon from "@components/Icon.astro";
 
   <CharacterArchetypeListWrapper>
     <CharacterHeadIcon code="BKORNBLUME" note="(ultimate)" />
-
     <CharacterHeadIcon code="VOYAGER" note="(insight 3)" />
+    <CharacterHeadIcon code="ZIMA" note="(ultimate)" />
   </CharacterArchetypeListWrapper>
 
   ### Silence
@@ -269,13 +280,19 @@ import Icon from "@components/Icon.astro";
 
     <CharacterHeadIcon code="BUNNY_BUNNY" note="(insight 1, -Critical Resist Rate, -Critical DEF)" />
 
+    <CharacterHeadIcon code="CRISTALLO" note="(skill 1, -Reality DEF)" />
+
     <CharacterHeadIcon code="DIGGERS" note="(skill 2, -Reality DEF, -Mental DEF)" />
+
+    <CharacterHeadIcon code="ERICK" note="(skill 1, -Critical Resist, -Critical DEF)" />
 
     <CharacterHeadIcon code="FATUTU" note="(+DMG Dealt, +Critical DMG when attack enemy)" />
 
     <CharacterHeadIcon code="GETIAN" note="(skill 1, -Reality DEF)" />
 
     <CharacterHeadIcon code="ISOLDE" note="(skill 2, -Critical DEF, -Reality DEF)" />
+
+    <CharacterHeadIcon code="POLTERGEIST" note="(skill 2, -Mental DEF)" />
 
     <CharacterHeadIcon code="SHAMANE" note="(skill 2, +DMG Taken, -Reality DEF, -Mental DEF)" />
 
@@ -284,6 +301,8 @@ import Icon from "@components/Icon.astro";
     <CharacterHeadIcon code="TOOTH_FAIRY" note="(insight 1, -Critical Resist, -Critical DEF)" />
 
     <CharacterHeadIcon code="TUESDAY" note="(skill 2, -Critical Resist)" />
+
+    <CharacterHeadIcon code="TWINS_SLEEP" note="(skill 2, -Critical DEF)" />
   </CharacterArchetypeListWrapper>
 
   ### Blind
@@ -294,6 +313,8 @@ import Icon from "@components/Icon.astro";
 
   <CharacterArchetypeListWrapper>
     <CharacterHeadIcon code="6" note="(skill 1, random)" />
+
+    <CharacterHeadIcon code="CLICK" note="(skill 1)" />
 
     <CharacterHeadIcon code="ANJO_NALA" note="(ultimate, random)" />
   </CharacterArchetypeListWrapper>
@@ -564,30 +585,6 @@ import Icon from "@components/Icon.astro";
     <CharacterHeadIcon code="REGULUS" note="(ultimate)" />
   </CharacterArchetypeListWrapper>
 
-  ## Empower Incantation
-
-  <div class="mb-4 md:mb-6">
-    With :effect{param="empower-incantation-i"}/:effect{param="empower-incantation-ii"} effect.
-  </div>
-
-  <CharacterArchetypeListWrapper>
-    <CharacterHeadIcon code="6" note="(skill 2)" />
-
-    <CharacterHeadIcon code="AN_AN_LEE" note="(ultimate)" />
-
-    <CharacterHeadIcon code="ARGUS" note="(skill 1)" />
-
-    <CharacterHeadIcon code="BARBARA"><span slot="note">(ultimate, through *\[Counting Sheep]* card)</span></CharacterHeadIcon>
-
-    <CharacterHeadIcon code="BETTE" note="(ultimate)" />
-
-    <CharacterHeadIcon code="KAALAA_BAUNAA" note="(insight 3)" />
-
-    <CharacterHeadIcon code="MARCUS" note="(insight 1)" />
-
-    <CharacterHeadIcon code="YENISEI" note="(insight 3)" />
-  </CharacterArchetypeListWrapper>
-
   ## Follow-up attack
 
   <div class="mb-4 md:mb-6">
@@ -600,6 +597,8 @@ import Icon from "@components/Icon.astro";
     <CharacterHeadIcon code="ANJO_NALA" />
 
     <CharacterHeadIcon code="ARGUS" />
+
+    <CharacterHeadIcon code="BRIMLEY" />
 
     <CharacterHeadIcon code="FLUTTERPAGE" />
 
@@ -647,21 +646,33 @@ import Icon from "@components/Icon.astro";
   <CharacterArchetypeListWrapper>
     <CharacterHeadIcon code="6"><span slot="note">(through *\[Vitalize I]* effect)</span></CharacterHeadIcon>
 
+    <CharacterHeadIcon code="APPLE" />
+
+    <CharacterHeadIcon code="AVGUST" />
+
     <CharacterHeadIcon code="BALLOON_PARTY" />
 
     <CharacterHeadIcon code="BARBARA" note="(insight 3)" />
+
+    <CharacterHeadIcon code="DESERT_FLANNEL" note="(ultimate)" />
 
     <CharacterHeadIcon code="DIKKE" />
 
     <CharacterHeadIcon code="FATUTU" />
 
+    <CharacterHeadIcon code="KAKANIA" note="(insight 3, skill 2 heal on self)" />
+
     <CharacterHeadIcon code="LA_SOURCE" />
+
+    <CharacterHeadIcon code="LOGGERHEAD" />
 
     <CharacterHeadIcon code="LOPERA"><span slot="note">(heal lowest ally with skill 1)</span></CharacterHeadIcon>
 
     <CharacterHeadIcon code="MEDICINE_POCKET" />
 
     <CharacterHeadIcon code="MERCURIA"><span slot="note">(heal lowest ally with skill 1)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="NECROLOGIST"><span slot="note">(ultimate, heal when ally already have *[Prayer]*)</span></CharacterHeadIcon>
 
     <CharacterHeadIcon code="SOTHEBY" />
 
@@ -693,9 +704,13 @@ import Icon from "@components/Icon.astro";
   </div>
 
   <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="ALEPH" />
+
     <CharacterHeadIcon code="BARCAROLA" />
 
     <CharacterHeadIcon code="MATILDA" note="(euphoria 1)" />
+
+    <CharacterHeadIcon code="REGULUS" note="(euphoria 1)" />
 
     <CharacterHeadIcon code="VOYAGER" note="(euphoria 1)" />
   </CharacterArchetypeListWrapper>
@@ -733,6 +748,8 @@ import Icon from "@components/Icon.astro";
 
     <CharacterHeadIcon code="PICKLES" note="(insight 1)" />
 
+    <CharacterHeadIcon code="RECOLETA" />
+
     <CharacterHeadIcon code="SHAMANE"><span slot="note">(skill 1, through *\[Nature Blessing]* effect, euphoria 1)</span></CharacterHeadIcon>
     <CharacterHeadIcon code="VILA"><span slot="note">(ultimate, through *\[Song of Inspiration]* card)</span></CharacterHeadIcon>
   </CharacterArchetypeListWrapper>
@@ -753,6 +770,8 @@ import Icon from "@components/Icon.astro";
     <CharacterHeadIcon code="NICK_BOTTOM" note="(skill 1)" />
 
     <CharacterHeadIcon code="REGULUS" note="(skill 2)" />
+
+    <CharacterHeadIcon code="SPUTNIK" note="(skill 2 on counter)" />
 
     <CharacterHeadIcon code="THE_FOOL" note="(skill 1)" />
 
@@ -780,6 +799,8 @@ import Icon from "@components/Icon.astro";
   </div>
 
   <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="MELANIA" note="(euphoria 1)" />
+
     <CharacterHeadIcon code="TUESDAY" note="(ultimate)" />
   </CharacterArchetypeListWrapper>
 
@@ -792,7 +813,13 @@ import Icon from "@components/Icon.astro";
   <CharacterArchetypeListWrapper>
     <CharacterHeadIcon code="AVGUST" note="(ultimate)" />
 
+    <CharacterHeadIcon code="LOGGERHEAD" note="(skill 2)" />
+
     <CharacterHeadIcon code="LOPERA" note="(skill 1)" />
+
+    <CharacterHeadIcon code="PIONEER" note="(ultimate)" />
+
+    <CharacterHeadIcon code="WHITE_RUM" note="(ultimate, on self when shifted)" />
   </CharacterArchetypeListWrapper>
 
   ## Precast Incantation
@@ -813,31 +840,43 @@ import Icon from "@components/Icon.astro";
     <CharacterHeadIcon code="WINDSONG" note="(skill 2)" />
   </CharacterArchetypeListWrapper>
 
-  ## Purify
+  ## Enhance Incantation
+
+  ### Empower Incantation
 
   <div class="mb-4 md:mb-6">
-    Purify *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from ally.
+    With :effect{param="empower-incantation-i"}/:effect{param="empower-incantation-ii"} effect.
   </div>
 
   <CharacterArchetypeListWrapper>
-    <CharacterHeadIcon code="6" note="(skill 2)" />
+    <CharacterHeadIcon code="6" note="(skill 2, on ally)" />
 
-    <CharacterHeadIcon code="BUNNY_BUNNY" note="(ultimate)" />
+    <CharacterHeadIcon code="AN_AN_LEE" note="(ultimate, on self)" />
 
-    <CharacterHeadIcon code="DIKKE" note="(ultimate)" />
+    <CharacterHeadIcon code="ARGUS" note="(skill 1, on self)" />
 
-    <CharacterHeadIcon code="FATUTU" note="(skill 1)" />
+    <CharacterHeadIcon code="BETTE" note="(ultimate, on self)" />
 
-    <CharacterHeadIcon code="JOHN_TITOR" note="(ultimate)" />
+    <CharacterHeadIcon code="KAALAA_BAUNAA" note="(insight 3, on self)" />
 
-    <CharacterHeadIcon code="NICK_BOTTOM" note="(ultimate)" />
+    <CharacterHeadIcon code="MARCUS" note="(insight 1, on self)" />
 
-    <CharacterHeadIcon code="TOOTH_FAIRY" note="(ultimate)" />
-
-    <CharacterHeadIcon code="VILA" note="(ultimate)" />
+    <CharacterHeadIcon code="YENISEI" note="(insight 3, on self)" />
   </CharacterArchetypeListWrapper>
 
-  ## Rank up
+  ### Rank Up 
+
+  <div class="mb-4 md:mb-6">
+    Increase the rank of incantations that casted intentionally (not randomly like empower).
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="BARBARA"><span slot="note">(ultimate, through *\[Counting Sheep]* card)</span></CharacterHeadIcon>
+
+    <CharacterHeadIcon code="LIANG_YUE" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ### Rank Up (only for rank calculations)
 
   <div class="mb-4 md:mb-6">
     With :effect{param="rank-up"} effect.
@@ -845,6 +884,30 @@ import Icon from "@components/Icon.astro";
 
   <CharacterArchetypeListWrapper>
     <CharacterHeadIcon code="MERCURIA" note="(ultimate)" />
+  </CharacterArchetypeListWrapper>
+
+  ## Purify
+
+  <div class="mb-4 md:mb-6">
+    Purify *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from ally.
+  </div>
+
+  <CharacterArchetypeListWrapper>
+    <CharacterHeadIcon code="6" note="(skill 2, all allies)" />
+
+    <CharacterHeadIcon code="BUNNY_BUNNY" note="(ultimate, all allies)" />
+
+    <CharacterHeadIcon code="DIKKE" note="(ultimate, on self only)" />
+
+    <CharacterHeadIcon code="FATUTU" note="(skill 1, all allies)" />
+
+    <CharacterHeadIcon code="JOHN_TITOR" note="(ultimate, all allies)" />
+
+    <CharacterHeadIcon code="NICK_BOTTOM" note="(ultimate, 1 ally)" />
+
+    <CharacterHeadIcon code="TOOTH_FAIRY" note="(ultimate, all allies)" />
+
+    <CharacterHeadIcon code="VILA" note="(ultimate, all allies)" />
   </CharacterArchetypeListWrapper>
 
   ## Revive
@@ -924,8 +987,12 @@ import Icon from "@components/Icon.astro";
 
     <CharacterHeadIcon code="MS_NEW_BABEL" note="(ultimate)" />
 
+    <CharacterHeadIcon code="ONION" note="(insight 1)" />
+
     <CharacterHeadIcon code="PIONEER" note="(skill 2)" />
 
     <CharacterHeadIcon code="POLTERGEIST" note="(ultimate)" />
+
+    <CharacterHeadIcon code="THE_FOOL" note="(skill 2)" />
   </CharacterArchetypeListWrapper>
 </Fragment>

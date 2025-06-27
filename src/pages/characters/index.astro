@@ -30,11 +30,15 @@ function sortCharacters(a, b) {
   return ("" + a.data.title).localeCompare(b.data.title);
 }
 
+const euphorias = [
+  ...new Set(characterEntries.map((entry) => entry.data.euphorias + "")),
+].sort((a, b) => Number(a ?? 0) - Number(b ?? 0));
+
 const versions = [
   ...new Set(
     characterEntries.map((entry) => {
       if (entry.data.version) return entry.data.version;
-    }),
+    })
   ),
 ].sort((a, b) => parseFloat(b ?? "") - parseFloat(a ?? ""));
 
@@ -184,19 +188,41 @@ const characters = characterEntries.map((entry) => {
               </template>
             </ul>
             <span class="text-primary-content">Euphoria</span>
-            <ul class="flex gap-1 flex-wrap">
-              <template x-for="euphoria in euphorias">
-                <li>
-                  <button
-                    class="btn btn-outline btn-xs"
-                    x-bind:class="euphoria.code === euphoriaFilter ? 'btn-active' : ''"
-                    @click="filterEuphoria(euphoria.code)"
-                    x-text="euphoria.title"
-                  >
-                  </button>
-                </li>
-              </template>
-            </ul>
+            <div>
+              <ul class="flex gap-x-4 gap-y-1 flex-wrap">
+                {
+                  euphorias.map((euphoria) => {
+                    return (
+                      <li class="form-control">
+                        <label class="label py-1 gap-2 justify-start cursor-pointer">
+                          <input
+                            type="checkbox"
+                            x-bind:checked={`euphoriaFilter.includes('${euphoria}')`}
+                            class="checkbox checkbox-xs checkbox-secondary"
+                            @change={`toggleEuphoria('${euphoria}')`}
+                          />
+                          <span class="label-text">{euphoria + ""}</span>
+                        </label>
+                      </li>
+                    );
+                  })
+                }
+              </ul>
+              <div class="mt-2 flex gap-2">
+                <button
+                  class="btn btn-outline btn-xs border-base-content/15"
+                  @click="selectAllEuphorias"
+                >
+                  All
+                </button>
+                <button
+                  class="btn btn-outline btn-xs border-base-content/15"
+                  @click="clearAllEuphorias"
+                >
+                  Clear
+                </button>
+              </div>
+            </div>
             <span class="text-primary-content">Specialty</span>
             <div>
               <ul class="grid gap-x-4 gap-y-1 grid-cols-5">
@@ -222,13 +248,13 @@ const characters = characterEntries.map((entry) => {
               </ul>
               <div class="mt-2 flex gap-2">
                 <button
-                  class="btn btn-outline btn-xs"
+                  class="btn btn-outline btn-xs border-base-content/15"
                   @click="selectAllSpecialties"
                 >
                   All
                 </button>
                 <button
-                  class="btn btn-outline btn-xs"
+                  class="btn btn-outline btn-xs border-base-content/15"
                   @click="clearAllSpecialties"
                 >
                   Clear
@@ -258,13 +284,13 @@ const characters = characterEntries.map((entry) => {
               </ul>
               <div class="mt-2 flex gap-2">
                 <button
-                  class="btn btn-outline btn-xs"
+                  class="btn btn-outline btn-xs border-base-content/15"
                   @click="selectAllVersions"
                 >
                   All
                 </button>
                 <button
-                  class="btn btn-outline btn-xs"
+                  class="btn btn-outline btn-xs border-base-content/15"
                   @click="clearAllVersions"
                 >
                   Clear
@@ -372,23 +398,55 @@ const characters = characterEntries.map((entry) => {
                 </template>
               </select>
             </label>
-            <label for="euphoriaFilter" class="py-2 block">
-              Euphoria
-              <select
-                class="select select-secondary w-full"
-                @change="filterEuphoria($event.target.value)"
-              >
-                <template x-for="euphoria in euphorias">
-                  <option
-                    x-bind:value="euphoria.code"
-                    x-bind:selected="euphoria.code === euphoriaFilter"
-                    x-text="euphoria.title"></option>
-                </template>
-              </select>
-            </label>
             <div
               class="mt-2 md:mt-0 py-2 md:py-4 flex gap-2 flex-wrap justify-center"
             >
+              <Tooltip>
+                <button
+                  slot="toggle"
+                  x-transition
+                  class="btn btn-outline btn-sm"
+                >
+                  <Icon icon="laurel-wreath" />
+                  Euphoria
+                </button>
+                <div>
+                  <p class="text-center font-medium">Euphoria</p>
+                  <div class="max-h-[30vh] overflow-auto">
+                    {
+                      euphorias.map((euphoria) => {
+                        return (
+                          <div class="form-control">
+                            <label class="label gap-2 justify-start cursor-pointer">
+                              <input
+                                type="checkbox"
+                                x-bind:checked={`euphoriaFilter.includes('${euphoria}')`}
+                                class="checkbox checkbox-sm checkbox-secondary"
+                                @change={`toggleEuphoria('${euphoria}')`}
+                              />
+                              <span class="label-text">{euphoria}</span>
+                            </label>
+                          </div>
+                        );
+                      })
+                    }
+                  </div>
+                  <div class="pt-2 mt-2 flex justify-between gap-2">
+                    <button
+                      class="btn btn-outline btn-sm"
+                      @click="selectAllEuphorias"
+                    >
+                      Select all
+                    </button>
+                    <button
+                      class="btn btn-outline btn-sm"
+                      @click="clearAllEuphorias"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </Tooltip>
               <Tooltip>
                 <button
                   slot="toggle"
@@ -493,6 +551,7 @@ const characters = characterEntries.map((entry) => {
         placeholder="Search"
         class="mt-6 mb-4 input input-bordered input-secondary w-full"
         x-model="searchText"
+        @input.debounce="handleSearch"
       />
     </div>
     <p class="my-4 text-right">
@@ -554,6 +613,7 @@ const characters = characterEntries.map((entry) => {
   define:vars={{
     versions,
     specialties,
+    euphorias,
     characters,
   }}
 >
@@ -561,6 +621,7 @@ const characters = characterEntries.map((entry) => {
     window.Alpine.store("characterList", {
       versions,
       specialties,
+      euphorias,
       characters,
     });
   });
@@ -630,13 +691,7 @@ const characters = characterEntries.map((entry) => {
       { title: "T", code: "t" },
       { title: "Z", code: "z" },
     ],
-    euphoriaFilter: "ALL",
-    euphorias: [
-      { title: "All", code: "ALL" },
-      { title: "0", code: "0" },
-      { title: "1", code: "1" },
-      { title: "2", code: "2" },
-    ],
+    euphoriaFilter: [],
     versionFilter: [],
     specialtyFilter: [],
     isShowCharacter: {},
@@ -645,12 +700,13 @@ const characters = characterEntries.map((entry) => {
     init() {
       this.versionFilter = this.$store.characterList.versions;
       this.specialtyFilter = this.$store.characterList.specialties;
+      this.euphoriaFilter = this.$store.characterList.euphorias;
       this.isShowCharacter = this.$store.characterList.characters.reduce(
         (acc, characterEntry) => {
           acc[characterEntry.id] = true;
           return acc;
         },
-        {},
+        {}
       );
       this.numberOfCharacters = Object.keys(this.isShowCharacter).length;
     },
@@ -679,10 +735,10 @@ const characters = characterEntries.map((entry) => {
           this.limitedTypeFilter === (!!limited ? "true" : "false")) &&
         (this.mainPieceFilter === "ALL" ||
           this.mainPieceFilter === mainPiece) &&
-        (this.euphoriaFilter === "ALL" || +this.euphoriaFilter === euphorias) &&
+        this.euphoriaFilter.includes(euphorias + "") &&
         this.versionFilter.includes(version) &&
         this.specialtyFilter.some((specialty) =>
-          specialties.includes(specialty),
+          specialties.includes(specialty)
         );
 
       return !this.searchText
@@ -699,8 +755,12 @@ const characters = characterEntries.map((entry) => {
         this.isShowCharacter[character.id] = isShow;
       }
       this.numberOfCharacters = Object.keys(this.isShowCharacter).filter(
-        (id) => this.isShowCharacter[id],
+        (id) => this.isShowCharacter[id]
       ).length;
+    },
+
+    handleSearch() {
+      this.handleFilterCharacters();
     },
 
     filterRarity(rarity: string) {
@@ -765,7 +825,7 @@ const characters = characterEntries.map((entry) => {
     toggleSpecialty(specialty: string) {
       if (this.specialtyFilter.includes(specialty)) {
         this.specialtyFilter = this.specialtyFilter.filter(
-          (v) => v !== specialty,
+          (v) => v !== specialty
         );
       } else {
         this.specialtyFilter.push(specialty);
@@ -780,6 +840,26 @@ const characters = characterEntries.map((entry) => {
 
     clearAllSpecialties() {
       this.specialtyFilter = [];
+      this.handleFilterCharacters();
+    },
+
+    toggleEuphoria(euphoria: string) {
+      if (this.euphoriaFilter.includes(euphoria)) {
+        this.euphoriaFilter = this.euphoriaFilter.filter((v) => v !== euphoria);
+      } else {
+        this.euphoriaFilter.push(euphoria);
+      }
+
+      this.handleFilterCharacters();
+    },
+
+    selectAllEuphorias() {
+      this.euphoriaFilter = this.$store.characterList.euphorias;
+      this.handleFilterCharacters();
+    },
+
+    clearAllEuphorias() {
+      this.euphoriaFilter = [];
       this.handleFilterCharacters();
     },
   }));
