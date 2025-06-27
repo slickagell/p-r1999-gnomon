@@ -1,16 +1,20 @@
 ---
-title: "Bunny Bunny"
+name: "Bunny Bunny"
 id: "bunny-bunny"
 gameId: "3014"
 code: "BUNNY_BUNNY"
+gender: "FEMALE"
 star: 4
 afflatus: "BEAST"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "11/6"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["HEAL", "NASTY_WOUND"]
-isLimited: false
+specialties: ["HEAL","NASTY_WOUND"]
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/bunny-bunny.json";
 import RESONANCE from "@data/resonance/characters/bunny-bunny.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Bunny Bunny
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

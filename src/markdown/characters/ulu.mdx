@@ -1,16 +1,20 @@
 ---
-title: "Ulu"
+name: "Ulu"
 id: "ulu"
 gameId: "3076"
 code: "ULU"
+gender: "FEMALE"
 star: 5
 afflatus: "MINERAL"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "1/12"
 version: "1.5"
 releaseDate: "2024-04-18"
-specialties: ["DPS", "SUPPORT", "BURN"]
-isLimited: false
+specialties: ["SUPPORT","DPS","BURN"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/ulu.json";
 import RESONANCE from "@data/resonance/characters/ulu.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Ulu
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

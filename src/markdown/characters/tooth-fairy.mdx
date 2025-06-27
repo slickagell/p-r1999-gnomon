@@ -1,16 +1,20 @@
 ---
-title: "Tooth Fairy"
+name: "Tooth Fairy"
 id: "tooth-fairy"
 gameId: "3053"
 code: "TOOTH_FAIRY"
+gender: "FEMALE"
 star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "11/27"
 version: "1.2"
 releaseDate: "2023-12-07"
-specialties: ["HEAL", "DEBUFF", "PURIFY"]
-isLimited: false
+specialties: ["HEAL","DEBUFF","PURIFY"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/tooth-fairy.json";
 import RESONANCE from "@data/resonance/characters/tooth-fairy.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Tooth Fairy
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

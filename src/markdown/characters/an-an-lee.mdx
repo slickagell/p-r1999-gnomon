@@ -1,16 +1,20 @@
 ---
-title: "An-an Lee"
+name: "An-an Lee"
 id: "an-an-lee"
 gameId: "3039"
 code: "AN_AN_LEE"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "7/27"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "SUPPORT", "CONTROL"]
-isLimited: false
+specialties: ["SUPPORT","CONTROL","DPS"]
+limited: 0
+mainPiece: "t"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/an-an-lee.json";
 import RESONANCE from "@data/resonance/characters/an-an-lee.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# An an Lee
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

@@ -1,16 +1,20 @@
 ---
-title: "Ms Radio"
+name: "Ms. Radio"
 id: "ms-radio"
 gameId: "3027"
 code: "MS_RADIO"
+gender: "FEMALE"
 star: 2
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "AWAKENED"
+birthday: "4/1"
 version: "1.0"
 releaseDate: "2023-10-26"
 specialties: ["DEBUFF"]
-isLimited: false
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/ms-radio.json";
 import RESONANCE from "@data/resonance/characters/ms-radio.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Ms Radio
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

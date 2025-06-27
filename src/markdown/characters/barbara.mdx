@@ -1,16 +1,20 @@
 ---
-title: "Barbara"
+name: "Barbara"
 id: "barbara"
 gameId: "3099"
 code: "BARBARA"
+gender: "FEMALE"
 star: 5
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "MIXED"
+birthday: "7/5"
 version: "2.1"
 releaseDate: "2024-12-05"
-specialties: ["SUPPORT", "SHIELD", "HEAL"]
-isLimited: false
+specialties: ["SUPPORT","SHIELD","HEAL"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/barbara.json";
 import RESONANCE from "@data/resonance/characters/barbara.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Barbara
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -110,7 +114,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="extra-cards">
     <p class="subtitle">Counting Sheep</p>
 
-    <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
       <div class="basis-full lg:basis-auto shrink-0">
         <CustomImage class="w-48" src={`/images/characters/${frontmatter.id}/counting-sheep.png`} alt="counting-sheep" />
       </div>

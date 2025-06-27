@@ -1,16 +1,20 @@
 ---
-title: "Twins Sleep"
+name: "Twins Sleep"
 id: "twins-sleep"
 gameId: "3040"
 code: "TWINS_SLEEP"
+gender: "FEMALE"
 star: 3
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "4/27"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DEBUFF", "CONTROL"]
-isLimited: false
+specialties: ["DEBUFF","CONTROL"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/twins-sleep.json";
 import RESONANCE from "@data/resonance/characters/twins-sleep.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Twins Sleep
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

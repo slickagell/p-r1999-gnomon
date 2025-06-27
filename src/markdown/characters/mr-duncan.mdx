@@ -1,16 +1,20 @@
 ---
-title: "Mr Duncan"
+name: "Mr. Duncan"
 id: "mr-duncan"
 gameId: "3103"
 code: "MR_DUNCAN"
+gender: "MALE"
 star: 5
 afflatus: "BEAST"
 dmgType: "REALITY"
 race: "HUMAN"
+birthday: "6/30"
 version: "2.2"
 releaseDate: "2025-01-09"
-specialties: ["DPS", "RIPOSTE", "REAPER"]
-isLimited: false
+specialties: ["DPS","RIPOSTE","REAPER"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/mr-duncan.json";
 import RESONANCE from "@data/resonance/characters/mr-duncan.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Mr Duncan
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

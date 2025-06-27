@@ -1,16 +1,20 @@
 ---
-title: "AliEn T"
+name: "aliEn T"
 id: "alien-t"
 gameId: "3034"
-code: "ALIEN_T"
+code: "ALI_EN_T"
+gender: "MALE"
 star: 3
 afflatus: "STAR"
 dmgType: "REALITY"
 race: "BEYOND"
+birthday: "7/10"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DEF", "CONTROL"]
-isLimited: false
+specialties: ["DEF","CONTROL"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/alien-t.json";
 import RESONANCE from "@data/resonance/characters/alien-t.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# AliEn T
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

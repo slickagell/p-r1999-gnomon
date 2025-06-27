@@ -1,16 +1,20 @@
 ---
-title: "Sotheby"
+name: "Sotheby"
 id: "sotheby"
 gameId: "3009"
 code: "SOTHEBY"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "4/15"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["POISON", "HEAL", "DPS"]
-isLimited: false
+specialties: ["POISON","HEAL","DPS"]
+limited: 0
+mainPiece: "z"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/sotheby.json";
 import RESONANCE from "@data/resonance/characters/sotheby.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Sotheby
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

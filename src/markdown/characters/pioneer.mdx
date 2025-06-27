@@ -1,16 +1,20 @@
 ---
-title: "Pioneer"
+name: "Pioneer"
 id: "pioneer"
-gameId: "3059"
+gameId: "3096"
 code: "PIONEER"
+gender: "MALE"
 star: 3
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "AWAKENED"
+birthday: "7/9"
 version: "2.0"
 releaseDate: "2024-10-31"
-specialties: ["SUPPORT", "SHIELD", "SHIFT"]
-isLimited: false
+specialties: ["SUPPORT","SHIELD","SHIFT"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/pioneer.json";
 import RESONANCE from "@data/resonance/characters/pioneer.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Pioneer
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

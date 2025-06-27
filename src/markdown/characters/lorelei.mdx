@@ -1,16 +1,20 @@
 ---
-title: "Lorelei"
+name: "Lorelei"
 id: "lorelei"
 gameId: "3091"
 code: "LORELEI"
+gender: "FEMALE"
 star: 5
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "4/16"
 version: "1.9"
 releaseDate: "2024-09-19"
-specialties: ["DPS", "SUPPORT"]
-isLimited: false
+specialties: ["SUPPORT","DPS"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/lorelei.json";
 import RESONANCE from "@data/resonance/characters/lorelei.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Lorelei
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

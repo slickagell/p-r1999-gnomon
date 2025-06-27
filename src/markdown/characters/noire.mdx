@@ -1,16 +1,20 @@
 ---
-title: "Noire"
+name: "Noire"
 id: "noire"
 gameId: "3111"
 code: "NOIRE"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "2/14"
 version: "2.5"
 releaseDate: "2025-05-08"
-specialties: ["DPS", "BURST_DMG", "EXTRA_ACTION"]
-isLimited: false
+specialties: ["DPS","BURST_DMG","EXTRA_ACTION"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -27,7 +31,7 @@ import CHARACTER from "@data/characters/noire.json";
 import RESONANCE from "@data/resonance/characters/noire.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Noire
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

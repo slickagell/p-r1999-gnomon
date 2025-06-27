@@ -1,16 +1,20 @@
 ---
-title: "Kanjira"
+name: "Kanjira"
 id: "kanjira"
-gameId: "3061"
+gameId: "3071"
 code: "KANJIRA"
+gender: "FEMALE"
 star: 5
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "4/8"
 version: "1.3"
 releaseDate: "2024-01-18"
-specialties: ["DPS", "POISON", "DEBUFF"]
-isLimited: false
+specialties: ["DPS","POISON","DEBUFF"]
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/kanjira.json";
 import RESONANCE from "@data/resonance/characters/kanjira.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Kanjira
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

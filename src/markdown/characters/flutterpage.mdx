@@ -1,16 +1,20 @@
 ---
-title: "Flutterpage"
+name: "Flutterpage"
 id: "flutterpage"
 gameId: "3105"
 code: "FLUTTERPAGE"
+gender: "FEMALE"
 star: 6
 afflatus: "STAR"
 dmgType: "REALITY"
 race: "MIXED"
+birthday: "7/14"
 version: "2.3"
 releaseDate: "2025-03-06"
-specialties: ["DPS", "SUPPORT", "EXTRA_ACTION"]
-isLimited: false
+specialties: ["DPS","SUPPORT","EXTRA_ACTION"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -29,7 +33,7 @@ import CHARACTER from "@data/characters/flutterpage.json";
 import RESONANCE from "@data/resonance/characters/flutterpage.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Flutterpage
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -301,7 +305,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     <CharacterHeadIcon code="WINDSONG" />
 
-    <CharacterHeadIcon code="JOE" />
+    <CharacterHeadIcon code="J" />
   </Fragment>
 
   <Fragment slot="team-suggestion-support">
@@ -315,7 +319,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   <Fragment slot="team-suggestion-sustain">
     #### Sustain/Healer
 
-    <CharacterHeadIcon code="MS_NEWBABEL" />
+    <CharacterHeadIcon code="MS_NEW_BABEL" />
 
     <CharacterHeadIcon code="VILA" />
   </Fragment>

@@ -1,16 +1,20 @@
 ---
-title: "Matilda"
+name: "Matilda"
 id: "matilda"
 gameId: "3041"
 code: "MATILDA"
+gender: "FEMALE"
 star: 5
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "6/22"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "DEBUFF"]
-isLimited: false
+specialties: ["DEBUFF","DPS"]
+limited: 0
+mainPiece: "x"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/matilda.json";
 import RESONANCE from "@data/resonance/characters/matilda.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Matilda
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

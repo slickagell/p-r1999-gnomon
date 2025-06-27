@@ -1,16 +1,20 @@
 ---
-title: "Loggerhead"
+name: "Loggerhead"
 id: "loggerhead"
 gameId: "3112"
 code: "LOGGERHEAD"
+gender: "FEMALE"
 star: 5
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "AWAKENED"
+birthday: "6/1"
 version: "2.5"
 releaseDate: "2025-04-24"
-specialties: ["HEAL", "DEF", "SUPPORT"]
-isLimited: false
+specialties: ["HEAL","DEF","SUPPORT"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/loggerhead.json";
 import RESONANCE from "@data/resonance/characters/loggerhead.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Loggerhead
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

@@ -22,7 +22,7 @@ const characterEntry = await getEntry("characters", kebabCase(code))!;
     class="transition hover:opacity-75"
   >
     <CharacterImg variant="headicon" id={characterEntry.id} class="mr-2" />
-    <span>{characterEntry.data.title}</span>{" "}
+    <span>{characterEntry.data.name}</span>{" "}
     <span set:html={note} />
     <slot name="note" />
   </a>

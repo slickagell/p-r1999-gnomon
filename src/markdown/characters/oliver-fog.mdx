@@ -1,16 +1,20 @@
 ---
-title: "Oliver Fog"
+name: "Oliver Fog"
 id: "oliver-fog"
 gameId: "3018"
 code: "OLIVER_FOG"
+gender: "MALE"
 star: 4
 afflatus: "STAR"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "12/26"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DEF", "SUPPORT"]
-isLimited: false
+specialties: ["SUPPORT","DEF"]
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/oliver-fog.json";
 import RESONANCE from "@data/resonance/characters/oliver-fog.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Oliver Fog
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

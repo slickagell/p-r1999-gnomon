@@ -1,16 +1,20 @@
 ---
-title: "Regulus"
+name: "Regulus"
 id: "regulus"
 gameId: "3025"
 code: "REGULUS"
+gender: "FEMALE"
 star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "8/15"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "SUPPORT"]
-isLimited: false
+specialties: ["DPS","SUPPORT"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/regulus.json";
 import RESONANCE from "@data/resonance/characters/regulus.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Regulus
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

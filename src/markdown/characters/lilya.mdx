@@ -1,16 +1,20 @@
 ---
-title: "Lilya"
+name: "Lilya"
 id: "lilya"
 gameId: "3004"
 code: "LILYA"
+gender: "FEMALE"
 star: 6
 afflatus: "STAR"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "11/14"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "BURST_DMG"]
-isLimited: false
+specialties: ["BURST_DMG","DPS","FOLLOW_UP_ATTACK"]
+limited: 0
+mainPiece: "x"
+euphorias: 2
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/lilya.json";
 import RESONANCE from "@data/resonance/characters/lilya.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Lilya
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

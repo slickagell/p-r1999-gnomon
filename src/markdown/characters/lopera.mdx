@@ -1,16 +1,20 @@
 ---
-title: "Lopera"
+name: "Lopera"
 id: "lopera"
 gameId: "3102"
 code: "LOPERA"
+gender: "FEMALE"
 star: 6
 afflatus: "BEAST"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "5/6"
 version: "2.2"
 releaseDate: "2025-01-30"
-specialties: ["SUPPORT", "BURN", "EXTRA_ACTION"]
-isLimited: false
+specialties: ["SUPPORT","BURN","EXTRA_ACTION"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -29,7 +33,7 @@ import CHARACTER from "@data/characters/lopera.json";
 import RESONANCE from "@data/resonance/characters/lopera.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Lopera
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -292,7 +296,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     <CharacterHeadIcon code="WINDSONG" />
 
-    <CharacterHeadIcon code="JOE" />
+    <CharacterHeadIcon code="J" />
   </Fragment>
 
   <Fragment slot="team-suggestion-support">

@@ -1,16 +1,20 @@
 ---
-title: "Nick Bottom"
+name: "Nick Bottom"
 id: "nick-bottom"
 gameId: "3005"
 code: "NICK_BOTTOM"
+gender: "MALE"
 star: 4
 afflatus: "BEAST"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "4/30"
 version: "1.0"
 releaseDate: "2023-10-26"
 specialties: ["SUPPORT"]
-isLimited: false
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/nick-bottom.json";
 import RESONANCE from "@data/resonance/characters/nick-bottom.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Nick Bottom
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

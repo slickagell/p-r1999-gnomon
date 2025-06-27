@@ -1,16 +1,20 @@
 ---
-title: "Click"
+name: "Click"
 id: "click"
 gameId: "3049"
 code: "CLICK"
+gender: "MALE"
 star: 5
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "6/28"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "DEBUFF"]
-isLimited: false
+specialties: ["DPS","DEBUFF"]
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/click.json";
 import RESONANCE from "@data/resonance/characters/click.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Click
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

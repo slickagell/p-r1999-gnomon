@@ -1,16 +1,20 @@
 ---
-title: "Barcarola"
+name: "Barcarola"
 id: "barcarola"
 gameId: "3108"
 code: "BARCAROLA"
+gender: "FEMALE"
 star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "11/13"
 version: "2.4"
 releaseDate: "2025-03-27"
-specialties: ["DPS", "SUPPORT", "INSPIRATION"]
-isLimited: false
+specialties: ["DPS","SUPPORT","INSPIRATION"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -29,7 +33,7 @@ import CHARACTER from "@data/characters/barcarola.json";
 import RESONANCE from "@data/resonance/characters/barcarola.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Barcarola
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

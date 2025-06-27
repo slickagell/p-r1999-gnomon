@@ -1,16 +1,20 @@
 ---
-title: "Tennant"
+name: "Tennant"
 id: "tennant"
 gameId: "3043"
 code: "TENNANT"
+gender: "FEMALE"
 star: 5
 afflatus: "BEAST"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "9/8"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "DEBUFF", "SHIELD"]
-isLimited: false
+specialties: ["SHIELD","DEBUFF","DPS"]
+limited: 0
+mainPiece: "x"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/tennant.json";
 import RESONANCE from "@data/resonance/characters/tennant.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Tennant
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

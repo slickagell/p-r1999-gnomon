@@ -1,16 +1,20 @@
 ---
-title: "Melania"
+name: "Melania"
 id: "melania"
 gameId: "3062"
 code: "MELANIA"
+gender: "FEMALE"
 star: 6
 afflatus: "BEAST"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "3/20"
 version: "1.1"
 releaseDate: "2023-11-09"
-specialties: ["DPS", "BURST_DMG"]
-isLimited: false
+specialties: ["DPS","BURST_DMG"]
+limited: 0
+mainPiece: "z"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/melania.json";
 import RESONANCE from "@data/resonance/characters/melania.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Melania
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

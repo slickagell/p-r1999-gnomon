@@ -1,16 +1,20 @@
 ---
-title: "Зима"
+name: "Зима"
 id: "zima"
 gameId: "3013"
-code: "ZIMA"
+code: "ЗИМА"
+gender: "MALE"
 star: 4
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "4/28"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["SUPPORT", "CONTROL"]
-isLimited: false
+specialties: ["SUPPORT","CONTROL"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/zima.json";
 import RESONANCE from "@data/resonance/characters/zima.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Зима
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

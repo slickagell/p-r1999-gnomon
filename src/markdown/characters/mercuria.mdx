@@ -1,16 +1,20 @@
 ---
-title: "Mercuria"
+name: "Mercuria"
 id: "mercuria"
 gameId: "3095"
 code: "MERCURIA"
+gender: "FEMALE"
 star: 6
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "2/18"
 version: "2.0"
 releaseDate: "2024-10-31"
-specialties: ["DPS", "SUPPORT", "RANK_UP"]
-isLimited: false
+specialties: ["SUPPORT","DPS","RANK_UP"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -29,7 +33,7 @@ import CHARACTER from "@data/characters/mercuria.json";
 import RESONANCE from "@data/resonance/characters/mercuria.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Mercuria
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

@@ -1,16 +1,20 @@
 ---
-title: "Recoleta"
+name: "Recoleta"
 id: "recoleta"
 gameId: "3114"
 code: "RECOLETA"
+gender: "FEMALE"
 star: 6
 afflatus: "MINERAL"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "7/15"
 version: "2.6"
 releaseDate: "2025-05-29"
-specialties: ["DPS", "BURST_DMG", "MOXIE"]
-isLimited: false
+specialties: ["DPS","BURST_DMG","MOXIE"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -27,7 +31,7 @@ import CHARACTER from "@data/characters/recoleta.json";
 import RESONANCE from "@data/resonance/characters/recoleta.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Recoleta
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -115,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   <Fragment slot="extra-cards">
     <p class="subtitle">Flood of Fiction</p>
 
-    <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
       <div class="basis-full lg:basis-auto shrink-0">
         <CustomImage class="w-48" src={`/images/characters/${frontmatter.id}/31140151.png`} alt="flood-of-fiction" />
       </div>

@@ -1,16 +1,20 @@
 ---
-title: "Getian"
+name: "Getian"
 id: "getian"
 gameId: "3084"
 code: "GETIAN"
+gender: "MALE"
 star: 6
 afflatus: "BEAST"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "7/22"
 version: "1.6"
 releaseDate: "2024-06-20"
-specialties: ["SUPPORT", "DEBUFF", "DPS"]
-isLimited: false
+specialties: ["SUPPORT","DEBUFF","DPS"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/getian.json";
 import RESONANCE from "@data/resonance/characters/getian.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Getian
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

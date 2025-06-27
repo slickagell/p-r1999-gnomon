@@ -1,16 +1,20 @@
 ---
-title: "Poltergeist"
+name: "Poltergeist"
 id: "poltergeist"
 gameId: "3046"
 code: "POLTERGEIST"
+gender: "FEMALE"
 star: 4
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "7/12"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DEF", "DEBUFF"]
-isLimited: false
+specialties: ["DEF","DEBUFF"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/poltergeist.json";
 import RESONANCE from "@data/resonance/characters/poltergeist.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Poltergeist
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

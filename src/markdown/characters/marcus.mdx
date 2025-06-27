@@ -1,16 +1,20 @@
 ---
-title: "Marcus"
+name: "Marcus"
 id: "marcus"
 gameId: "3065"
 code: "MARCUS"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "1/12"
 version: "1.7"
 releaseDate: "2024-08-01"
-specialties: ["DPS", "BURST_DMG"]
-isLimited: false
+specialties: ["DPS","BURST_DMG"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/marcus.json";
 import RESONANCE from "@data/resonance/characters/marcus.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Marcus
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

@@ -1,16 +1,20 @@
 ---
-title: "Liang Yue"
+name: "Liang Yue"
 id: "liang-yue"
 gameId: "3110"
 code: "LIANG_YUE"
+gender: "FEMALE"
 star: 6
 afflatus: "STAR"
 dmgType: "REALITY"
 race: "MIXED"
+birthday: "5/6"
 version: "2.5"
 releaseDate: "2025-04-24"
-specialties: ["DPS", "EXTRA_ACTION", "IMMUNITY"]
-isLimited: true
+specialties: ["DPS","EXTRA_ACTION","IMMUNITY"]
+limited: 1
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -29,7 +33,7 @@ import CHARACTER from "@data/characters/liang-yue.json";
 import RESONANCE from "@data/resonance/characters/liang-yue.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Liang Yue
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

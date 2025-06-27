@@ -1,16 +1,20 @@
 ---
-title: "Ezra"
+name: "Ezra"
 id: "ezra"
 gameId: "3074"
 code: "EZRA"
+gender: "MALE"
 star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "HUMAN"
+birthday: "6/1"
 version: "1.5"
 releaseDate: "2024-05-09"
-specialties: ["SUPPORT", "SHIELD", "DEBUFF"]
-isLimited: false
+specialties: ["SUPPORT","SHIELD","DEBUFF"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/ezra.json";
 import RESONANCE from "@data/resonance/characters/ezra.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Ezra
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

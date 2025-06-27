@@ -1,16 +1,20 @@
 ---
-title: "Necrologist"
+name: "Necrologist"
 id: "necrologist"
 gameId: "3037"
 code: "NECROLOGIST"
+gender: "FEMALE"
 star: 5
 afflatus: "MINERAL"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "11/2"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "SUPPORT"]
-isLimited: false
+specialties: ["SUPPORT","DPS"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/necrologist.json";
 import RESONANCE from "@data/resonance/characters/necrologist.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Necrologist
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

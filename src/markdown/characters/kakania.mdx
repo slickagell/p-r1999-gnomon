@@ -1,16 +1,20 @@
 ---
-title: "Kakania"
+name: "Kakania"
 id: "kakania"
 gameId: "3080"
 code: "KAKANIA"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "12/7"
 version: "1.9"
 releaseDate: "2024-10-10"
-specialties: ["DEF", "SUPPORT", "BURST_DMG"]
-isLimited: false
+specialties: ["DEF","SUPPORT","BURST_DMG"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/kakania.json";
 import RESONANCE from "@data/resonance/characters/kakania.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Kakania
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

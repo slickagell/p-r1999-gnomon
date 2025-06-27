@@ -1,16 +1,20 @@
 ---
-title: "Lucy"
+name: "Lucy"
 id: "lucy"
 gameId: "3086"
 code: "LUCY"
+gender: "FEMALE"
 star: 6
 afflatus: "INTELLECT"
 dmgType: "REALITY"
 race: "AWAKENED"
+birthday: "12/30"
 version: "1.9"
 releaseDate: "2024-09-19"
-specialties: ["DPS", "REAPER", "EXTRA_ACTION"]
-isLimited: true
+specialties: ["DPS","REAPER","EXTRA_ACTION"]
+limited: 1
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/lucy.json";
 import RESONANCE from "@data/resonance/characters/lucy.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Lucy
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -138,7 +142,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   <Fragment slot="extra-cards">
     <p class="subtitle">Conservation of Energy</p>
 
-    <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
       <div class="basis-full lg:basis-auto shrink-0">
         <CustomImage class="w-48" src={`/images/characters/${frontmatter.id}/conservation-of-energy.png`} alt="conservation-of-energy" />
       </div>

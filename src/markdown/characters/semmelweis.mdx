@@ -1,16 +1,20 @@
 ---
-title: "Semmelweis"
+name: "Semmelweis"
 id: "semmelweis"
 gameId: "3088"
 code: "SEMMELWEIS"
+gender: "FEMALE"
 star: 6
 afflatus: "MINERAL"
 dmgType: "REALITY"
 race: "INFECTED"
+birthday: "8/19"
 version: "1.9"
 releaseDate: "2024-09-19"
-specialties: ["SUPPORT", 'DPS', 'HP_SACRIFICE']
-isLimited: false
+specialties: ["SUPPORT","DPS","HP_SACRIFICE"]
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/semmelweis.json";
 import RESONANCE from "@data/resonance/characters/semmelweis.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Semmelweis
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

@@ -1,16 +1,20 @@
 ---
-title: "Tuesday"
+name: "Tuesday"
 id: "tuesday"
 gameId: "3098"
 code: "TUESDAY"
+gender: "FEMALE"
 star: 6
 afflatus: "SPIRIT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "10/30"
 version: "2.1"
 releaseDate: "2024-07-11"
-specialties: ["DEBUFF", "POISON", "SUPPORT"]
-isLimited: false
+specialties: ["DEBUFF","POISON","SUPPORT"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -29,7 +33,7 @@ import CHARACTER from "@data/characters/tuesday.json";
 import RESONANCE from "@data/resonance/characters/tuesday.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Tuesday
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

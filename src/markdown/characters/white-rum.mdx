@@ -1,16 +1,20 @@
 ---
-title: "White Rum"
+name: "White Rum"
 id: "white-rum"
 gameId: "3101"
 code: "WHITE_RUM"
+gender: "FEMALE"
 star: 4
 afflatus: "INTELLECT"
 dmgType: "REALITY"
 race: "AWAKENED"
+birthday: "1/15"
 version: "2.2"
 releaseDate: "2025-01-09"
-specialties: ["DPS", "CONTROL", "SHIFT"]
-isLimited: false
+specialties: ["DPS","CONTROL","SHIFT"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/white-rum.json";
 import RESONANCE from "@data/resonance/characters/white-rum.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# White Rum
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

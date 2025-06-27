@@ -1,16 +1,20 @@
 ---
-title: "Brimley"
+name: "Brimley"
 id: "brimley"
 gameId: "3106"
 code: "BRIMLEY"
+gender: "ANY"
 star: 5
 afflatus: "MINERAL"
 dmgType: "MENTAL"
 race: "AWAKENED"
+birthday: "10/31"
 version: "2.3"
 releaseDate: "2025-03-06"
-specialties: ["SUPPORT", "DISPELLER", "EXTRA_ACTION"]
-isLimited: false
+specialties: ["SUPPORT","DISPELLER","EXTRA_ACTION"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/brimley.json";
 import RESONANCE from "@data/resonance/characters/brimley.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Brimley
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

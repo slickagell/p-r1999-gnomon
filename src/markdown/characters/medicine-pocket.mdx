@@ -1,16 +1,20 @@
 ---
-title: "Medicine Pocket"
+name: "Medicine Pocket"
 id: "medicine-pocket"
 gameId: "3047"
 code: "MEDICINE_POCKET"
+gender: "ANY"
 star: 6
 afflatus: "BEAST"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "11/24"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["HEAL", "DEBUFF", "CONTROL"]
-isLimited: false
+specialties: ["HEAL","DEBUFF","CONTROL"]
+limited: 0
+mainPiece: "u"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/medicine-pocket.json";
 import RESONANCE from "@data/resonance/characters/medicine-pocket.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Medicine Pocket
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

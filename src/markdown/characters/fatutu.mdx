@@ -1,16 +1,20 @@
 ---
-title: "Fatutu"
+name: "Fatutu"
 id: "fatutu"
 gameId: "3109"
 code: "FATUTU"
+gender: "FEMALE"
 star: 6
 afflatus: "MINERAL"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "9/28"
 version: "2.4"
 releaseDate: "2025-04-10"
-specialties: ["HEAL", "DISPELLER", "EXTRA_ACTION"]
-isLimited: false
+specialties: ["HEAL","DISPELLER","EXTRA_ACTION"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -29,7 +33,7 @@ import CHARACTER from "@data/characters/fatutu.json";
 import RESONANCE from "@data/resonance/characters/fatutu.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Fatutu
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

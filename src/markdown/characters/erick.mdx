@@ -1,16 +1,20 @@
 ---
-title: "Erick"
+name: "Erick"
 id: "erick"
 gameId: "3058"
 code: "ERICK"
+gender: "FEMALE"
 star: 4
 afflatus: "STAR"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "5/14"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "DISPELLER"]
-isLimited: false
+specialties: ["DPS","DISPELLER"]
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/erick.json";
 import RESONANCE from "@data/resonance/characters/erick.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Erick
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

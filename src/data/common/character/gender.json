@@ -1,0 +1,11 @@
+{
+  "MALE": {
+    "title": "Male"
+  },
+  "FEMALE": {
+    "title": "Female"
+  },
+  "ANY": {
+    "title": "Any"
+  }
+}

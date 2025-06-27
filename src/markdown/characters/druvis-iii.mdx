@@ -1,16 +1,20 @@
 ---
-title: "Druvis III"
+name: "Druvis III"
 id: "druvis-iii"
 gameId: "3003"
 code: "DRUVIS_III"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "10/23"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "CONTROL", "SUPPORT"]
-isLimited: false
+specialties: ["DPS","CONTROL","SUPPORT"]
+limited: 0
+mainPiece: "z"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -27,7 +31,7 @@ import CHARACTER from "@data/characters/druvis-iii.json";
 import RESONANCE from "@data/resonance/characters/druvis-iii.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Druvis III
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

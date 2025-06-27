@@ -1,16 +1,20 @@
 ---
-title: "Charlie"
+name: "Charlie"
 id: "charlie"
 gameId: "3017"
 code: "CHARLIE"
+gender: "FEMALE"
 star: 5
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "4/23"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "DISPELLER"]
-isLimited: false
+specialties: ["DPS","DISPELLER"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/charlie.json";
 import RESONANCE from "@data/resonance/characters/charlie.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Charlie
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

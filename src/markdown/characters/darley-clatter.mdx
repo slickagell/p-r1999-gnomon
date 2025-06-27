@@ -1,16 +1,20 @@
 ---
-title: "Darley Clatter"
+name: "Darley Clatter"
 id: "darley-clatter"
 gameId: "3050"
 code: "DARLEY_CLATTER"
+gender: "MALE"
 star: 3
 afflatus: "BEAST"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "1/19"
 version: "1.0"
 releaseDate: "2023-10-26"
 specialties: ["SUPPORT"]
-isLimited: false
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/darley-clatter.json";
 import RESONANCE from "@data/resonance/characters/darley-clatter.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Darley Clatter
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

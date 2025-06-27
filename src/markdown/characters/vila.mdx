@@ -1,16 +1,20 @@
 ---
-title: "Vila"
+name: "Vila"
 id: "vila"
 gameId: "3087"
 code: "VILA"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "4/6"
 version: "1.8"
 releaseDate: "2024-08-15"
-specialties: ["SUPPORT", "HEAL", "PURIFY"]
-isLimited: false
+specialties: ["SUPPORT","HEAL","PURIFY"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/vila.json";
 import RESONANCE from "@data/resonance/characters/vila.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Vila
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -110,7 +114,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="extra-cards">
     <p class="subtitle">Song of Inspiration</p>
 
-    <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
       <div class="basis-full lg:basis-auto shrink-0">
         <CustomImage class="w-48" src={`/images/characters/${frontmatter.id}/song-of-inspiration.png`} alt="song-of-inspiration" />
       </div>

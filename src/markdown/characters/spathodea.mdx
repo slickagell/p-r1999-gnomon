@@ -1,16 +1,20 @@
 ---
-title: "Spathodea"
+name: "Spathodea"
 id: "spathodea"
 gameId: "3073"
 code: "SPATHODEA"
+gender: "FEMALE"
 star: 6
 afflatus: "BEAST"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "1/10"
 version: "1.5"
 releaseDate: "2024-04-18"
-specialties: ["DPS", "BURST_DMG", "BURN"]
-isLimited: false
+specialties: ["DPS","BURST_DMG","BURN"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/spathodea.json";
 import RESONANCE from "@data/resonance/characters/spathodea.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Spathodea
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

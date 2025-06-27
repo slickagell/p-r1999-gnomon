@@ -25,8 +25,8 @@ const { Content } = await render(entry);
 ---
 
 <Layout
-  title={`${entry.data.title} | Character`}
-  description={`${entry.data.title} is a ${capitalCase(entry.data.afflatus)} character released in version ${entry.data.version} in Reverse: 1999.`}
+  title={`${entry.data.name} | Character`}
+  description={`${entry.data.name} is a ${capitalCase(entry.data.afflatus)} character released in version ${entry.data.version} in Reverse: 1999.`}
   og={{
     imageUrl: `/images/characters/${entry.id}/headicon.png`,
   }}
@@ -40,7 +40,7 @@ const { Content } = await render(entry);
       href: "/characters",
     },
     {
-      label: entry.data.title,
+      label: entry.data.name,
     },
   ]}
 >

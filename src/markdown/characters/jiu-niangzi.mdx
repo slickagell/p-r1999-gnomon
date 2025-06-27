@@ -1,16 +1,20 @@
 ---
-title: "Jiu Niangzi"
+name: "Jiu Niangzi"
 id: "jiu-niangzi"
 gameId: "3083"
 code: "JIU_NIANGZI"
+gender: "FEMALE"
 star: 6
 afflatus: "MINERAL"
 dmgType: "REALITY"
 race: "MIXED"
+birthday: "2/10"
 version: "1.6"
 releaseDate: "2024-05-30"
-specialties: ["DPS", "BURST_DMG", "EXTRA_ACTION"]
-isLimited: true
+specialties: ["DPS","BURST_DMG","EXTRA_ACTION"]
+limited: 1
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/jiu-niangzi.json";
 import RESONANCE from "@data/resonance/characters/jiu-niangzi.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Jiu Niangzi
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

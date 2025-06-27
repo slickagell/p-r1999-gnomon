@@ -1,16 +1,20 @@
 ---
-title: "Jessica"
+name: "Jessica"
 id: "jessica"
 gameId: "3056"
 code: "JESSICA"
+gender: "FEMALE"
 star: 6
 afflatus: "PLANT"
 dmgType: "REALITY"
 race: "BEYOND"
+birthday: "4/11"
 version: "1.2"
 releaseDate: "2023-12-28"
-specialties: ["POISON", "DPS"]
-isLimited: false
+specialties: ["DPS","POISON"]
+limited: 0
+mainPiece: "t"
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -26,7 +30,7 @@ import CHARACTER from "@data/characters/jessica.json";
 import RESONANCE from "@data/resonance/characters/jessica.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Jessica
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

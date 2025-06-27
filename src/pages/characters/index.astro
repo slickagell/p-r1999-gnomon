@@ -4,6 +4,7 @@ import CustomImage from "@components/CustomImage.astro";
 import Icon from "@components/Icon.astro";
 import Tooltip from "@components/Tooltip.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import SPECIALTIES from "@data/common/character/specialty.json";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 import dayjs from "dayjs";
@@ -36,6 +37,16 @@ const versions = [
     }),
   ),
 ].sort((a, b) => parseFloat(b ?? "") - parseFloat(a ?? ""));
+
+const specialties = [
+  ...new Set(characterEntries.map((entry) => entry.data.specialties).flat()),
+].sort((a, b) => a.localeCompare(b));
+
+const characters = characterEntries.map((entry) => {
+  return {
+    ...entry.data,
+  };
+});
 ---
 
 <Layout
@@ -61,177 +72,422 @@ const versions = [
 
   <div x-data={"dataset"}>
     <div class="filters">
-      <!-- Rarity -->
-      <div class="hidden md:flex py-2 px-4 items-center">
-        Rarity
-        <ul class="flex py-2 px-4 gap-1 flex-wrap">
-          <template x-for="rarity in rarities">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                x-bind:class="rarity.code === rarityFilter ? 'btn-active' : ''"
-                @click="filterRarity(rarity.code)"
-                x-text="rarity.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-      </div>
-      <label for="rarityFilter" class="py-2 block md:hidden">
-        Rarity
-        <select
-          id="rarityFilter"
-          class="md:hidden select select-secondary w-full"
-          @change="filterRarity($event.target.value)"
+      <div
+        class="mt-4 collapse collapse-plus border border-primary bg-base-200"
+      >
+        <input type="checkbox" class="min-h-10" />
+        <div
+          class="collapse-title py-0 pt-1 min-h-10 text-lg font-medium after:!top-[0.3125rem] after:!w-auto after:!h-auto"
         >
-          <template x-for="rarity in rarities">
-            <option
-              x-bind:value="rarity.code"
-              x-bind:selected="rarity.code === rarityFilter"
-              x-text="rarity.title"></option>
-          </template>
-        </select>
-      </label>
-      <!-- End Rarity -->
-
-      <!-- Afflatus -->
-      <div class="hidden md:flex py-2 px-4 items-center">
-        Afflatus
-        <ul class="flex py-2 px-4 gap-1 flex-wrap">
-          <template x-for="afflatusType in afflatusTypes">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                x-bind:class="afflatusType.code === afflatusTypeFilter ? 'btn-active' : ''"
-                @click="filterAfflatusType(afflatusType.code)"
-                x-text="afflatusType.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-      </div>
-      <label for="afflatusFilter" class="py-2 block md:hidden">
-        Afflatus
-        <select
-          class="md:hidden select select-secondary w-full"
-          @change="filterAfflatusType($event.target.value)"
-        >
-          <template x-for="afflatusType in afflatusTypes">
-            <option
-              x-bind:value="afflatusType.code"
-              x-bind:selected="afflatusType.code === afflatusTypeFilter"
-              x-text="afflatusType.title"></option>
-          </template>
-        </select>
-      </label>
-      <!-- End Afflatus -->
-
-      <!-- Dmg -->
-      <div class="hidden md:flex py-2 px-4 items-center">
-        Damage type
-        <ul class="flex py-2 px-4 gap-1 flex-wrap">
-          <template x-for="dmgType in dmgTypes">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                x-bind:class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
-                @click="filterDmgType(dmgType.code)"
-                x-text="dmgType.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-      </div>
-      <label for="dmgTypeFilter" class="py-2 block md:hidden">
-        Damage type
-        <select
-          class="md:hidden select select-secondary w-full"
-          @change="filterDmgType($event.target.value)"
-        >
-          <template x-for="dmgType in dmgTypes">
-            <option
-              x-bind:value="dmgType.code"
-              x-bind:selected="dmgType.code === dmgTypeFilter"
-              x-text="dmgType.title"></option>
-          </template>
-        </select>
-      </label>
-      <!-- End Dmg -->
-      <!-- Race -->
-      <div class="hidden md:flex py-2 px-4 items-center">
-        Race
-        <ul class="flex py-2 px-4 gap-1 flex-wrap">
-          <template x-for="raceType in raceTypes">
-            <li>
-              <button
-                class="btn btn-outline btn-xs"
-                x-bind:class="raceType.code === raceTypeFilter ? 'btn-active' : ''"
-                @click="filterRaceType(raceType.code)"
-                x-text="raceType.title"
-              >
-              </button>
-            </li>
-          </template>
-        </ul>
-      </div>
-      <label for="raceTypeFilter" class="py-2 block md:hidden">
-        Race
-        <select
-          class="md:hidden select select-secondary w-full"
-          @change="filterRaceType($event.target.value)"
-        >
-          <template x-for="raceType in raceTypes">
-            <option
-              x-bind:value="raceType.code"
-              x-bind:selected="raceType.code === raceTypeFilter"
-              x-text="raceType.title"></option>
-          </template>
-        </select>
-      </label>
-      <!-- End Race -->
-      <!-- Version -->
-      <div class="mt-2 md:mt-0 py-2 md:py-4">
-        <Tooltip>
-          <button slot="toggle" x-transition class="btn btn-outline btn-sm">
-            <Icon icon="version" />
-            Version Filter
-          </button>
-          <div>
-            <p class="text-center font-medium">Version</p>
-            <div class="max-h-[30vh] overflow-auto">
-              {
-                versions.map((version) => {
-                  return (
-                    <div class="form-control">
-                      <label class="label gap-2 justify-start cursor-pointer">
-                        <input
-                          type="checkbox"
-                          x-bind:checked={`versionFilter.includes('${version}')`}
-                          class="checkbox checkbox-sm checkbox-secondary"
-                          @change={`toggleVersion('${version}')`}
-                        />
-                        <span class="label-text">{version}</span>
-                      </label>
-                    </div>
-                  );
-                })
-              }
+          Filters
+        </div>
+        <div class="collapse-content">
+          <div
+            class="hidden md:grid md:grid-cols-[max-content_1fr] [&>*]:border-t [&>*]:border-base-content/25 [&>*]:py-3 [&>*]:px-2"
+          >
+            <span class="text-primary-content">Rarity</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="rarity in rarities">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="rarity.code === rarityFilter ? 'btn-active' : ''"
+                    @click="filterRarity(rarity.code)"
+                    x-text="rarity.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Afflatus</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="afflatusType in afflatusTypes">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="afflatusType.code === afflatusTypeFilter ? 'btn-active' : ''"
+                    @click="filterAfflatusType(afflatusType.code)"
+                    x-text="afflatusType.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Damage type</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="dmgType in dmgTypes">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="dmgType.code === dmgTypeFilter ? 'btn-active' : ''"
+                    @click="filterDmgType(dmgType.code)"
+                    x-text="dmgType.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Race</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="raceType in raceTypes">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="raceType.code === raceTypeFilter ? 'btn-active' : ''"
+                    @click="filterRaceType(raceType.code)"
+                    x-text="raceType.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Gender</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="gender in genders">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="gender.code === genderFilter ? 'btn-active' : ''"
+                    @click="filterGender(gender.code)"
+                    x-text="gender.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Limited</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="limitedType in limitedTypes">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="limitedType.code === limitedTypeFilter ? 'btn-active' : ''"
+                    @click="filterLimitedType(limitedType.code)"
+                    x-text="limitedType.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Main piece</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="mainPiece in mainPieces">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="mainPiece.code === mainPieceFilter ? 'btn-active' : ''"
+                    @click="filterMainPiece(mainPiece.code)"
+                    x-text="mainPiece.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Euphoria</span>
+            <ul class="flex gap-1 flex-wrap">
+              <template x-for="euphoria in euphorias">
+                <li>
+                  <button
+                    class="btn btn-outline btn-xs"
+                    x-bind:class="euphoria.code === euphoriaFilter ? 'btn-active' : ''"
+                    @click="filterEuphoria(euphoria.code)"
+                    x-text="euphoria.title"
+                  >
+                  </button>
+                </li>
+              </template>
+            </ul>
+            <span class="text-primary-content">Specialty</span>
+            <div>
+              <ul class="grid gap-x-4 gap-y-1 grid-cols-5">
+                {
+                  specialties.map((specialty) => {
+                    return (
+                      <li class="form-control">
+                        <label class="label py-1 gap-2 justify-start cursor-pointer">
+                          <input
+                            type="checkbox"
+                            x-bind:checked={`specialtyFilter.includes('${specialty}')`}
+                            class="checkbox checkbox-xs checkbox-secondary"
+                            @change={`toggleSpecialty('${specialty}')`}
+                          />
+                          <span class="label-text">
+                            {SPECIALTIES[specialty].title}
+                          </span>
+                        </label>
+                      </li>
+                    );
+                  })
+                }
+              </ul>
+              <div class="mt-2 flex gap-2">
+                <button
+                  class="btn btn-outline btn-xs"
+                  @click="selectAllSpecialties"
+                >
+                  All
+                </button>
+                <button
+                  class="btn btn-outline btn-xs"
+                  @click="clearAllSpecialties"
+                >
+                  Clear
+                </button>
+              </div>
             </div>
-            <div class="pt-2 mt-2 flex justify-between gap-2">
-              <button class="btn btn-outline btn-sm" @click="selectAllVersions">
-                Select all
-              </button>
-              <button class="btn btn-outline btn-sm" @click="clearAllVersions">
-                Clear
-              </button>
+            <span class="text-primary-content">Version</span>
+            <div>
+              <ul class="flex gap-x-4 gap-y-1 flex-wrap">
+                {
+                  versions.map((version) => {
+                    return (
+                      <li class="form-control">
+                        <label class="label py-1 gap-2 justify-start cursor-pointer">
+                          <input
+                            type="checkbox"
+                            x-bind:checked={`versionFilter.includes('${version}')`}
+                            class="checkbox checkbox-xs checkbox-secondary"
+                            @change={`toggleVersion('${version}')`}
+                          />
+                          <span class="label-text">{version}</span>
+                        </label>
+                      </li>
+                    );
+                  })
+                }
+              </ul>
+              <div class="mt-2 flex gap-2">
+                <button
+                  class="btn btn-outline btn-xs"
+                  @click="selectAllVersions"
+                >
+                  All
+                </button>
+                <button
+                  class="btn btn-outline btn-xs"
+                  @click="clearAllVersions"
+                >
+                  Clear
+                </button>
+              </div>
             </div>
           </div>
-        </Tooltip>
+          <div class="md:hidden">
+            <label for="rarityFilter" class="py-2 block">
+              Rarity
+              <select
+                id="rarityFilter"
+                class="select select-secondary w-full"
+                @change="filterRarity($event.target.value)"
+              >
+                <template x-for="rarity in rarities">
+                  <option
+                    x-bind:value="rarity.code"
+                    x-bind:selected="rarity.code === rarityFilter"
+                    x-text="rarity.title"></option>
+                </template>
+              </select>
+            </label>
+            <label for="afflatusFilter" class="py-2 block">
+              Afflatus
+              <select
+                class="select select-secondary w-full"
+                @change="filterAfflatusType($event.target.value)"
+              >
+                <template x-for="afflatusType in afflatusTypes">
+                  <option
+                    x-bind:value="afflatusType.code"
+                    x-bind:selected="afflatusType.code === afflatusTypeFilter"
+                    x-text="afflatusType.title"></option>
+                </template>
+              </select>
+            </label>
+            <label for="dmgTypeFilter" class="py-2 block">
+              Damage type
+              <select
+                class="select select-secondary w-full"
+                @change="filterDmgType($event.target.value)"
+              >
+                <template x-for="dmgType in dmgTypes">
+                  <option
+                    x-bind:value="dmgType.code"
+                    x-bind:selected="dmgType.code === dmgTypeFilter"
+                    x-text="dmgType.title"></option>
+                </template>
+              </select>
+            </label>
+            <label for="raceTypeFilter" class="py-2 block">
+              Race
+              <select
+                class="select select-secondary w-full"
+                @change="filterRaceType($event.target.value)"
+              >
+                <template x-for="raceType in raceTypes">
+                  <option
+                    x-bind:value="raceType.code"
+                    x-bind:selected="raceType.code === raceTypeFilter"
+                    x-text="raceType.title"></option>
+                </template>
+              </select>
+            </label>
+            <label for="genderFilter" class="py-2 block">
+              Gender
+              <select
+                class="select select-secondary w-full"
+                @change="filterGender($event.target.value)"
+              >
+                <template x-for="gender in genders">
+                  <option
+                    x-bind:value="gender.code"
+                    x-bind:selected="gender.code === genderFilter"
+                    x-text="gender.title"></option>
+                </template>
+              </select>
+            </label>
+            <label for="limitedTypeFilter" class="py-2 block">
+              Limited
+              <select
+                class="select select-secondary w-full"
+                @change="filterLimitedType($event.target.value)"
+              >
+                <template x-for="limitedType in limitedTypes">
+                  <option
+                    x-bind:value="limitedType.code"
+                    x-bind:selected="limitedType.code === limitedTypeFilter"
+                    x-text="limitedType.title"></option>
+                </template>
+              </select>
+            </label>
+            <label for="mainPieceFilter" class="py-2 block">
+              Main piece
+              <select
+                class="select select-secondary w-full"
+                @change="filterMainPiece($event.target.value)"
+              >
+                <template x-for="mainPiece in mainPieces">
+                  <option
+                    x-bind:value="mainPiece.code"
+                    x-bind:selected="mainPiece.code === mainPieceFilter"
+                    x-text="mainPiece.title"></option>
+                </template>
+              </select>
+            </label>
+            <label for="euphoriaFilter" class="py-2 block">
+              Euphoria
+              <select
+                class="select select-secondary w-full"
+                @change="filterEuphoria($event.target.value)"
+              >
+                <template x-for="euphoria in euphorias">
+                  <option
+                    x-bind:value="euphoria.code"
+                    x-bind:selected="euphoria.code === euphoriaFilter"
+                    x-text="euphoria.title"></option>
+                </template>
+              </select>
+            </label>
+            <div
+              class="mt-2 md:mt-0 py-2 md:py-4 flex gap-2 flex-wrap justify-center"
+            >
+              <Tooltip>
+                <button
+                  slot="toggle"
+                  x-transition
+                  class="btn btn-outline btn-sm"
+                >
+                  <Icon icon="chart-radar" />
+                  Specialties
+                </button>
+                <div>
+                  <p class="text-center font-medium">Specialty</p>
+                  <div class="max-h-[30vh] overflow-auto">
+                    {
+                      specialties.map((specialty) => {
+                        return (
+                          <div class="form-control">
+                            <label class="label gap-2 justify-start cursor-pointer">
+                              <input
+                                type="checkbox"
+                                x-bind:checked={`specialtyFilter.includes('${specialty}')`}
+                                class="checkbox checkbox-sm checkbox-secondary"
+                                @change={`toggleSpecialty('${specialty}')`}
+                              />
+                              <span class="label-text">
+                                {SPECIALTIES[specialty].title}
+                              </span>
+                            </label>
+                          </div>
+                        );
+                      })
+                    }
+                  </div>
+                  <div class="pt-2 mt-2 flex justify-between gap-2">
+                    <button
+                      class="btn btn-outline btn-sm"
+                      @click="selectAllSpecialties"
+                    >
+                      Select all
+                    </button>
+                    <button
+                      class="btn btn-outline btn-sm"
+                      @click="clearAllSpecialties"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </Tooltip>
+              <Tooltip>
+                <button
+                  slot="toggle"
+                  x-transition
+                  class="btn btn-outline btn-sm"
+                >
+                  <Icon icon="version" />
+                  Versions
+                </button>
+                <div>
+                  <p class="text-center font-medium">Version</p>
+                  <div class="max-h-[30vh] overflow-auto">
+                    {
+                      versions.map((version) => {
+                        return (
+                          <div class="form-control">
+                            <label class="label gap-2 justify-start cursor-pointer">
+                              <input
+                                type="checkbox"
+                                x-bind:checked={`versionFilter.includes('${version}')`}
+                                class="checkbox checkbox-sm checkbox-secondary"
+                                @change={`toggleVersion('${version}')`}
+                              />
+                              <span class="label-text">{version}</span>
+                            </label>
+                          </div>
+                        );
+                      })
+                    }
+                  </div>
+                  <div class="pt-2 mt-2 flex justify-between gap-2">
+                    <button
+                      class="btn btn-outline btn-sm"
+                      @click="selectAllVersions"
+                    >
+                      Select all
+                    </button>
+                    <button
+                      class="btn btn-outline btn-sm"
+                      @click="clearAllVersions"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </Tooltip>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- End Version -->
+
       <input
         type="text"
         placeholder="Search"
@@ -239,21 +495,17 @@ const versions = [
         x-model="searchText"
       />
     </div>
+    <p class="my-4 text-right">
+      <strong class="text-xl" x-text="numberOfCharacters"></strong>{" "}
+      <span x-text="numberOfCharacters === 1 ? 'character' : 'characters'"
+      ></span>
+    </p>
 
     <ul class="mt-8 grid grid-cols-2 md:grid-cols-6 gap-4">
       {
         characterEntries.sort(sortCharacters).map((characterEntry) => {
           return (
-            <li
-              x-show={`filterCharacter({ 
-                rarity:'${characterEntry.data.star}',
-                afflatus:'${characterEntry.data.afflatus}',
-                dmgType:'${characterEntry.data.dmgType}',
-                title:'${characterEntry.data.title}',
-                race:'${characterEntry.data.race}',
-                version: '${characterEntry.data.version}'
-              })`}
-            >
+            <li x-show={`isShowCharacter['${characterEntry.id}']`}>
               <div class="group h-full min-h-80 oveflow-hidden rounded-lg card card-compact bg-base-100 border-base-content/10 border transition-all hover:shadow-md hover:shadow-base-content">
                 <a class="h-full" href={`/characters/${characterEntry.id}`}>
                   <div class="h-full relative ">
@@ -283,7 +535,7 @@ const versions = [
                       />
 
                       <h5 class="absolute bottom-4 left-0 right-0 text-center px-2 text-white font-normal">
-                        {characterEntry.data.title}
+                        {characterEntry.data.name}
                       </h5>
                     </div>
                   </div>
@@ -301,11 +553,15 @@ const versions = [
   is:inline
   define:vars={{
     versions,
+    specialties,
+    characters,
   }}
 >
   document.addEventListener("alpine:init", () => {
     window.Alpine.store("characterList", {
       versions,
+      specialties,
+      characters,
     });
   });
 </script>
@@ -315,6 +571,7 @@ const versions = [
   import DMG_TYPE from "@data/common/character/dmg-type.json";
   import RACE from "@data/common/character/race.json";
   import RARITY from "@data/common/character/rarity.json";
+  import GENDER from "@data/common/character/gender.json";
   import Alpine from "alpinejs";
 
   Alpine.data("dataset", () => ({
@@ -351,41 +608,139 @@ const versions = [
         code,
       })),
     ],
+    genderFilter: "ALL",
+    genders: [
+      { title: "All", code: "ALL" },
+      ...Object.keys(GENDER).map((code) => ({
+        title: GENDER[code].title,
+        code,
+      })),
+    ],
+    limitedTypeFilter: "ALL",
+    limitedTypes: [
+      { title: "All", code: "ALL" },
+      { title: "Limited", code: "true" },
+      { title: "Normal", code: "false" },
+    ],
+    mainPieceFilter: "ALL",
+    mainPieces: [
+      { title: "All", code: "ALL" },
+      { title: "X", code: "x" },
+      { title: "U", code: "u" },
+      { title: "T", code: "t" },
+      { title: "Z", code: "z" },
+    ],
+    euphoriaFilter: "ALL",
+    euphorias: [
+      { title: "All", code: "ALL" },
+      { title: "0", code: "0" },
+      { title: "1", code: "1" },
+      { title: "2", code: "2" },
+    ],
     versionFilter: [],
+    specialtyFilter: [],
+    isShowCharacter: {},
+    numberOfCharacters: 0,
 
     init() {
       this.versionFilter = this.$store.characterList.versions;
+      this.specialtyFilter = this.$store.characterList.specialties;
+      this.isShowCharacter = this.$store.characterList.characters.reduce(
+        (acc, characterEntry) => {
+          acc[characterEntry.id] = true;
+          return acc;
+        },
+        {},
+      );
+      this.numberOfCharacters = Object.keys(this.isShowCharacter).length;
     },
 
-    filterCharacter({ rarity, afflatus, dmgType, title, race, version }) {
+    filterCharacter({
+      star,
+      afflatus,
+      dmgType,
+      name,
+      race,
+      version,
+      gender,
+      limited,
+      mainPiece,
+      euphorias,
+      specialties,
+    }) {
       const filters =
         (this.afflatusTypeFilter === "ALL" ||
           this.afflatusTypeFilter === afflatus) &&
-        (this.rarityFilter === "ALL" || this.rarityFilter === rarity) &&
+        (this.rarityFilter === "ALL" || this.rarityFilter === star + "") &&
         (this.dmgTypeFilter === "ALL" || this.dmgTypeFilter === dmgType) &&
         (this.raceTypeFilter === "ALL" || this.raceTypeFilter === race) &&
-        this.versionFilter.includes(version);
+        (this.genderFilter === "ALL" || this.genderFilter === gender) &&
+        (this.limitedTypeFilter === "ALL" ||
+          this.limitedTypeFilter === (!!limited ? "true" : "false")) &&
+        (this.mainPieceFilter === "ALL" ||
+          this.mainPieceFilter === mainPiece) &&
+        (this.euphoriaFilter === "ALL" || +this.euphoriaFilter === euphorias) &&
+        this.versionFilter.includes(version) &&
+        this.specialtyFilter.some((specialty) =>
+          specialties.includes(specialty),
+        );
 
       return !this.searchText
         ? filters
-        : filters &&
-            title.toLowerCase().includes(this.searchText.toLowerCase());
+        : filters && name.toLowerCase().includes(this.searchText.toLowerCase());
+    },
+
+    handleFilterCharacters() {
+      for (const character of this.$store.characterList.characters) {
+        const isShow = this.filterCharacter({
+          ...character,
+        });
+
+        this.isShowCharacter[character.id] = isShow;
+      }
+      this.numberOfCharacters = Object.keys(this.isShowCharacter).filter(
+        (id) => this.isShowCharacter[id],
+      ).length;
     },
 
     filterRarity(rarity: string) {
       this.rarityFilter = rarity;
+      this.handleFilterCharacters();
     },
 
     filterAfflatusType(afflatusType: string) {
       this.afflatusTypeFilter = afflatusType;
+      this.handleFilterCharacters();
     },
 
     filterDmgType(dmgType: string) {
       this.dmgTypeFilter = dmgType;
+      this.handleFilterCharacters();
     },
 
     filterRaceType(raceType: string) {
       this.raceTypeFilter = raceType;
+      this.handleFilterCharacters();
+    },
+
+    filterGender(gender: string) {
+      this.genderFilter = gender;
+      this.handleFilterCharacters();
+    },
+
+    filterLimitedType(limitedType: string) {
+      this.limitedTypeFilter = limitedType;
+      this.handleFilterCharacters();
+    },
+
+    filterMainPiece(mainPiece: string) {
+      this.mainPieceFilter = mainPiece;
+      this.handleFilterCharacters();
+    },
+
+    filterEuphoria(euphoria: string) {
+      this.euphoriaFilter = euphoria;
+      this.handleFilterCharacters();
     },
 
     toggleVersion(version: string) {
@@ -394,14 +749,38 @@ const versions = [
       } else {
         this.versionFilter.push(version);
       }
+      this.handleFilterCharacters();
     },
 
     selectAllVersions() {
       this.versionFilter = this.$store.characterList.versions;
+      this.handleFilterCharacters();
     },
 
     clearAllVersions() {
       this.versionFilter = [];
+      this.handleFilterCharacters();
+    },
+
+    toggleSpecialty(specialty: string) {
+      if (this.specialtyFilter.includes(specialty)) {
+        this.specialtyFilter = this.specialtyFilter.filter(
+          (v) => v !== specialty,
+        );
+      } else {
+        this.specialtyFilter.push(specialty);
+      }
+      this.handleFilterCharacters();
+    },
+
+    selectAllSpecialties() {
+      this.specialtyFilter = this.$store.characterList.specialties;
+      this.handleFilterCharacters();
+    },
+
+    clearAllSpecialties() {
+      this.specialtyFilter = [];
+      this.handleFilterCharacters();
     },
   }));
 </script>

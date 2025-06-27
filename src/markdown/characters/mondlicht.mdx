@@ -1,16 +1,20 @@
 ---
-title: "Mondlicht"
+name: "Mondlicht"
 id: "mondlicht"
 gameId: "3026"
 code: "MONDLICHT"
+gender: "FEMALE"
 star: 4
 afflatus: "MINERAL"
 dmgType: "REALITY"
 race: "ARCANIST"
+birthday: "1/1"
 version: "1.0"
 releaseDate: "2023-10-26"
 specialties: ["DPS"]
-isLimited: false
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/mondlicht.json";
 import RESONANCE from "@data/resonance/characters/mondlicht.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# Mondlicht
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

@@ -1,16 +1,20 @@
 ---
-title: "37"
+name: "37"
 id: "37"
 gameId: "3066"
 code: "37"
+gender: "FEMALE"
 star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "7/27"
 version: "1.4"
 releaseDate: "2024-02-29"
-specialties: ["DPS", "SUPPORT", "FOLLOW_UP_ATTACK"]
-isLimited: false
+specialties: ["DPS","FOLLOW_UP_ATTACK","SUPPORT"]
+limited: 0
+mainPiece: "x"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/37.json";
 import RESONANCE from "@data/resonance/characters/37.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# 37
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

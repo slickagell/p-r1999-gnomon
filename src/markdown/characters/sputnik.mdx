@@ -1,16 +1,20 @@
 ---
-title: "Sputnik"
+name: "Sputnik"
 id: "sputnik"
 gameId: "3055"
 code: "SPUTNIK"
+gender: "FEMALE"
 star: 3
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "AWAKENED"
+birthday: "10/4"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DEF", "CONTROL"]
-isLimited: false
+specialties: ["DEF","CONTROL"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/sputnik.json";
 import RESONANCE from "@data/resonance/characters/sputnik.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Sputnik
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

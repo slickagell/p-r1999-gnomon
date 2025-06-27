@@ -1,16 +1,20 @@
 ---
-title: "6"
+name: "6"
 id: "6"
 gameId: "3079"
 code: "6"
+gender: "MALE"
 star: 6
 afflatus: "INTELLECT"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "2/13"
 version: "1.4"
 releaseDate: "2024-03-28"
-specialties: ["SUPPORT", "DEBUFF", "PURIFY"]
-isLimited: false
+specialties: ["SUPPORT","DEBUFF","PURIFY"]
+limited: 0
+mainPiece: "z"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/6.json";
 import RESONANCE from "@data/resonance/characters/6.json";
 import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
-# 6
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

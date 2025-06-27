@@ -1,16 +1,20 @@
 ---
-title: "Pavia"
+name: "Pavia"
 id: "pavia"
 gameId: "3015"
 code: "PAVIA"
+gender: "MALE"
 star: 4
 afflatus: "BEAST"
 dmgType: "MENTAL"
 race: "MIXED"
+birthday: "7/24"
 version: "1.0"
 releaseDate: "2023-10-26"
-specialties: ["DPS", "SELF_HEALING"]
-isLimited: false
+specialties: ["DPS","SELF_HEALING"]
+limited: 0
+mainPiece: "t"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/pavia.json";
 import RESONANCE from "@data/resonance/characters/pavia.json";
 import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
-# Pavia
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">

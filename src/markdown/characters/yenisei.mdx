@@ -1,16 +1,20 @@
 ---
-title: "Yenisei"
+name: "Yenisei"
 id: "yenisei"
 gameId: "3082"
 code: "YENISEI"
+gender: "FEMALE"
 star: 5
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
+birthday: "3/4"
 version: "1.6"
 releaseDate: "2024-05-30"
-specialties: ["SUPPORT", "HEAL", "IMMUNITY"]
-isLimited: false
+specialties: ["SUPPORT","HEAL","IMMUNITY"]
+limited: 0
+mainPiece: "u"
+euphorias: 0
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -25,7 +29,7 @@ import CHARACTER from "@data/characters/yenisei.json";
 import RESONANCE from "@data/resonance/characters/yenisei.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Yenisei
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
