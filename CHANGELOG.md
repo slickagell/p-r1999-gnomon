@@ -1,3 +1,7 @@
+##### 2025-07-02
+
+* Add new characters: Hissabeth, Kiperina, Name Day (these page info still in development until official release)
+
 ##### 2025-06-27
 
 * Enhance characters filter options

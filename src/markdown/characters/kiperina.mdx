@@ -21,6 +21,7 @@ isDev: true
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -161,6 +162,21 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon param="long-night-talk" />
+
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">
