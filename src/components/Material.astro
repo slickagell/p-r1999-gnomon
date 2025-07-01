@@ -24,6 +24,10 @@ const {
   id,
 } = Astro.props;
 
+if (!param) {
+  return null;
+}
+
 const material = await getEntry("materials", param)!;
 ---
 

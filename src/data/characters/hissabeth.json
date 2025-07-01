@@ -1,0 +1,121 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6270
+      },
+      "ATTACK": {
+        "value": 1163
+      },
+      "REALITY_DEFENSE": {
+        "value": 515
+      },
+      "MENTAL_DEFENSE": {
+        "value": 515
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 456
+      },
+      "CRITICAL_RATE": {
+        "value": 15.2,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 22.8,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      { "param": "sharpodonty", "require": 18000 },
+      { "param": "page-of-plantal-vimen", "require": 6 },
+      { "param": "magnesia-crystal", "require": 6 },
+      { "param": "liquefied-terror", "require": 5 }
+    ],
+    "2": [
+      { "param": "sharpodonty", "require": 40000 },
+      { "param": "scroll-of-plantal-vimen", "require": 10 },
+      { "param": "esoteric-bones", "require": 6 },
+      { "param": "goose-neck", "require": 5 }
+    ],
+    "3": [
+      { "param": "sharpodonty", "require": 200000 },
+      { "param": "tome-of-plantal-vimen", "require": 16 },
+      { "param": "goldbell-spirit-bottle", "require": 6 },
+      { "param": "serpent-scepter", "require": 3 }
+    ]
+  },
+  "resonanceMaterials": {
+    "2": [{ "param": "moment-of-dissonance", "require": 5 }],
+    "3": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "shattered-bones", "require": 4 }
+    ],
+    "4": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "trembling-tooth", "require": 4 },
+      { "param": "solidus", "require": 3 }
+    ],
+    "5": [
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "cicada-wings", "require": 4 },
+      { "param": "rough-silver-ingot", "require": 4 }
+    ],
+    "6": [
+      { "param": "sharpodonty", "require": 30000 },
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "golden-beetle", "require": 3 }
+    ],
+    "7": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "prophetic-bird", "require": 5 }
+    ],
+    "8": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "goose-neck", "require": 4 },
+      { "param": "luminite-ore", "require": 5 }
+    ],
+    "9": [
+      { "param": "brief-cacophony", "require": 8 },
+      { "param": "holy-silver", "require": 6 },
+      { "param": "fox-tail", "require": 4 }
+    ],
+    "10": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "bifurcated-skeleton", "require": 8 },
+      { "param": "biting-box", "require": 6 }
+    ],
+    "11": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sharpodonty", "require": 120000 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "golden-compass", "require": 4 }
+    ],
+    "12": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "wyrmling-skeleton", "require": 4 },
+      { "param": "winged-key", "require": 5 }
+    ],
+    "13": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "watch-core", "require": 5 },
+      { "param": "red-lacquer-slab", "require": 6 }
+    ],
+    "14": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "rheingold", "require": 2 },
+      { "param": "bogeyman", "require": 4 }
+    ],
+    "15": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "golden-fleece", "require": 3 },
+      { "param": "murmur-of-insanity", "require": 4 }
+    ]
+  }
+}

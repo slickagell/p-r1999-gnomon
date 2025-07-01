@@ -1,0 +1,107 @@
+{
+  "mainPiece": "RP_X_5_01",
+  "patternPiecesMaterials": {
+    "ELUCIDATION": {
+      "materials": [
+        {
+          "param": "serpent-scepter",
+          "require": 1
+        },
+        {
+          "param": "silver-bullet",
+          "require": 2
+        },
+        {
+          "param": "biting-box",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        {
+          "param": "serpent-scepter",
+          "require": 1
+        },
+        {
+          "param": "glowing-mothwing",
+          "require": 2
+        },
+        {
+          "param": "prophetic-bird",
+          "require": 5
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "STUPEFACTION": {
+      "materials": [
+        {
+          "param": "rheingold",
+          "require": 1
+        },
+        {
+          "param": "glowing-mothwing",
+          "require": 2
+        },
+        {
+          "param": "clawed-pendulum",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "ASPIRATIONAL": {
+      "materials": [
+        {
+          "param": "fruit-of-good-and-evil",
+          "require": 1
+        },
+        {
+          "param": "wyrmling-skeleton",
+          "require": 2
+        },
+        {
+          "param": "bifurcated-skeleton",
+          "require": 4
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "HYPERPHRENIA": {
+      "materials": [
+        {
+          "param": "mistilteinn",
+          "require": 1
+        },
+        {
+          "param": "murmur-of-insanity",
+          "require": 2
+        },
+        {
+          "param": "golden-grass-incense",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {}
+}

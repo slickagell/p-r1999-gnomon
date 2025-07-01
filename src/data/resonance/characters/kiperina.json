@@ -1,0 +1,128 @@
+{
+  "mainPiece": "RP_U_5_01",
+  "patternPiecesMaterials": {
+    "HYPER": {
+      "materials": [
+        {
+          "param": "fruit-of-good-and-evil",
+          "require": 1
+        },
+        {
+          "param": "wyrmling-skeleton",
+          "require": 2
+        },
+        {
+          "param": "goose-neck",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "INSPIRE": {
+      "materials": [
+        {
+          "param": "fruit-of-good-and-evil",
+          "require": 1
+        },
+        {
+          "param": "goldbell-spirit-bottle",
+          "require": 2
+        },
+        {
+          "param": "golden-beetle",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "param": "fruit-of-good-and-evil",
+          "require": 1
+        },
+        {
+          "param": "watch-core",
+          "require": 2
+        },
+        {
+          "param": "golden-beetle",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "param": "rheingold",
+          "require": 1
+        },
+        {
+          "param": "murmur-of-insanity",
+          "require": 2
+        },
+        {
+          "param": "prophetic-bird",
+          "require": 5
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "param": "fruit-of-good-and-evil",
+          "require": 1
+        },
+        {
+          "param": "bogeyman",
+          "require": 2
+        },
+        {
+          "param": "holy-silver",
+          "require": 4
+        },
+        {
+          "param": "sharpodonty",
+          "require": 120000
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {
+    "5": [
+      {
+        "name": "Attack",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-1"],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ]
+          }
+        ],
+        "source": {
+          "label": "To be updated",
+          "link": "#"
+        }
+      }
+    ]
+  }
+}

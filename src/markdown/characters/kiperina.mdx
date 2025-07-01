@@ -1,27 +1,21 @@
 ---
-name: "{{titleCase name}}"
-id: "{{dashCase name}}"
-gameId: ""
-code: "{{constantCase name}}"
-gender: ""
-star: {{star}}
-afflatus: "{{afflatus}}"
-dmgType: "{{dmgType}}"
-race: "{{race}}"
+name: "Kiperina"
+id: "kiperina"
+gameId: "3117"
+code: "KIPERINA"
+gender: "FEMALE"
+star: 6
+afflatus: "STAR"
+dmgType: "MENTAL"
+race: "ARCANIST"
 birthday: ""
-version: "{{version}}"
-releaseDate: "{{releaseDate}}"
-specialties: []
-{{#switch isLimited}} 
-    {{#case true}}
-limited: 1
-    {{/case}}
-    {{#case false}}
+version: "2.7"
+releaseDate: "2025-07-24"
+specialties: ["SHIELD","SUPPORT","DISPELLER"]
 limited: 0
-    {{/case}}
-{{/switch}}
-mainPiece: "{{lowerCase mainResonancePieceType}}"
+mainPiece: "u"
 euphorias: 0
+isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -32,11 +26,11 @@ import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
-import CHARACTER from "@data/characters/{{dashCase name}}.json";
-import RESONANCE from "@data/resonance/characters/{{dashCase name}}.json";
-import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePieceType}}-pieces-list.json";
+import CHARACTER from "@data/characters/kiperina.json";
+import RESONANCE from "@data/resonance/characters/kiperina.json";
+import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# {{titleCase name}}
+# Kiperina
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -133,11 +127,9 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     :TODO - Update inheritance insight-2:
   </Fragment>
 
-  {{#if star '>=' '5'}}      
   <Fragment slot="insight-3-info">
     :TODO - Update inheritance insight-3:
   </Fragment>
-  {{/if}}
   
   <Fragment slot="portray-section-title">
     Portray
@@ -167,15 +159,9 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     ## Resonance
   </Fragment>
 
-  {{#if star '>=' '5'}}      
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
   </Fragment>
-  {{else}}
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
-  {{/if}}
 
   <Fragment slot="materials-section-title">
     ## Materials

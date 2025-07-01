@@ -1,0 +1,121 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 6072
+      },
+      "ATTACK": {
+        "value": 1143
+      },
+      "REALITY_DEFENSE": {
+        "value": 549
+      },
+      "MENTAL_DEFENSE": {
+        "value": 549
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 445
+      },
+      "CRITICAL_RATE": {
+        "value": 14.8,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 22.2,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      { "param": "sharpodonty", "require": 18000 },
+      { "param": "page-of-starlit-ascent", "require": 6 },
+      { "param": "trembling-tooth", "require": 5 },
+      { "param": "solidus", "require": 4 }
+    ],
+    "2": [
+      { "param": "sharpodonty", "require": 40000 },
+      { "param": "scroll-of-starlit-ascent", "require": 10 },
+      { "param": "spell-of-fortune", "require": 6 },
+      { "param": "red-lacquer-slab", "require": 5 }
+    ],
+    "3": [
+      { "param": "sharpodonty", "require": 200000 },
+      { "param": "tome-of-starlit-ascent", "require": 16 },
+      { "param": "silver-bullet", "require": 6 },
+      { "param": "mistilteinn", "require": 3 }
+    ]
+  },
+  "resonanceMaterials": {
+    "2": [{ "param": "moment-of-dissonance", "require": 5 }],
+    "3": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "magnesia-crystal", "require": 4 }
+    ],
+    "4": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "spell-of-banishing", "require": 6 },
+      { "param": "solidus", "require": 3 }
+    ],
+    "5": [
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "luminite-ore", "require": 3 },
+      { "param": "liquefied-terror", "require": 3 }
+    ],
+    "6": [
+      { "param": "sharpodonty", "require": 30000 },
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "clawed-pendulum", "require": 3 }
+    ],
+    "7": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "bifurcated-skeleton", "require": 5 }
+    ],
+    "8": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "biting-box", "require": 4 },
+      { "param": "cicada-wings", "require": 5 }
+    ],
+    "9": [
+      { "param": "brief-cacophony", "require": 8 },
+      { "param": "golden-grass-incense", "require": 4 },
+      { "param": "rough-silver-ingot", "require": 8 }
+    ],
+    "10": [
+      { "param": "hoarse-echo", "require": 1 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "goose-neck", "require": 6 },
+      { "param": "prophetic-bird", "require": 8 }
+    ],
+    "11": [
+      { "param": "hoarse-echo", "require": 1 },
+      { "param": "sharpodonty", "require": 120000 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "platinum-ouija", "require": 4 }
+    ],
+    "12": [
+      { "param": "hoarse-echo", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "silver-bullet", "require": 4 },
+      { "param": "red-lacquer-slab", "require": 5 }
+    ],
+    "13": [
+      { "param": "hoarse-echo", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "murmur-of-insanity", "require": 5 },
+      { "param": "winged-key", "require": 6 }
+    ],
+    "14": [
+      { "param": "hoarse-echo", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "fruit-of-good-and-evil", "require": 2 },
+      { "param": "bogeyman", "require": 4 }
+    ],
+    "15": [
+      { "param": "hoarse-echo", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "serpent-scepter", "require": 3 },
+      { "param": "emerald-slate", "require": 4 }
+    ]
+  }
+}

@@ -1,42 +1,37 @@
 ---
-name: "{{titleCase name}}"
-id: "{{dashCase name}}"
-gameId: ""
-code: "{{constantCase name}}"
-gender: ""
-star: {{star}}
-afflatus: "{{afflatus}}"
-dmgType: "{{dmgType}}"
-race: "{{race}}"
+name: "Hissabeth"
+id: "hissabeth"
+gameId: "3116"
+code: "HISSABETH"
+gender: "FEMALE"
+star: 6
+afflatus: "PLANT"
+dmgType: "MENTAL"
+race: "ARCANIST"
 birthday: ""
-version: "{{version}}"
-releaseDate: "{{releaseDate}}"
-specialties: []
-{{#switch isLimited}} 
-    {{#case true}}
-limited: 1
-    {{/case}}
-    {{#case false}}
+version: "2.7"
+releaseDate: "2025-07-03"
+specialties: ["DPS","CONTROL","MOXIE"]
 limited: 0
-    {{/case}}
-{{/switch}}
-mainPiece: "{{lowerCase mainResonancePieceType}}"
+mainPiece: "x"
 euphorias: 0
+isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
-import CHARACTER from "@data/characters/{{dashCase name}}.json";
-import RESONANCE from "@data/resonance/characters/{{dashCase name}}.json";
-import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePieceType}}-pieces-list.json";
+import CHARACTER from "@data/characters/hissabeth.json";
+import RESONANCE from "@data/resonance/characters/hissabeth.json";
+import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# {{titleCase name}}
+# Hissabeth
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -117,6 +112,20 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     </CardInfo>
   </Fragment>
 
+  <Fragment slot="extra-cards">
+    <p class="subtitle">:TODO - Update extra card name:</p>
+
+    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
+      <div class="basis-full lg:basis-auto shrink-0">
+        <CustomImage class="w-48" src={`/images/skill/${frontmatter.gameId}0141.png`} alt="" />
+      </div>
+
+      <CardInfo type="VERSATILE" note="">
+        :TODO - Update extra card description:
+      </CardInfo>
+    </div>
+  </Fragment>
+
   <Fragment slot="inheritance-section-title">
     Inheritance
   </Fragment>
@@ -133,11 +142,9 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     :TODO - Update inheritance insight-2:
   </Fragment>
 
-  {{#if star '>=' '5'}}      
   <Fragment slot="insight-3-info">
     :TODO - Update inheritance insight-3:
   </Fragment>
-  {{/if}}
   
   <Fragment slot="portray-section-title">
     Portray
@@ -167,15 +174,9 @@ import PIECES_LIST from "@data/resonance/common/main-{{lowerCase mainResonancePi
     ## Resonance
   </Fragment>
 
-  {{#if star '>=' '5'}}      
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
   </Fragment>
-  {{else}}
-  <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={10} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
-  </Fragment>
-  {{/if}}
 
   <Fragment slot="materials-section-title">
     ## Materials

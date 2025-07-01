@@ -1,0 +1,108 @@
+{
+  "mainPiece": "RP_U_5_01",
+  "patternPiecesMaterials": {
+    "HYPER": {
+      "materials": [
+        {
+          "param": "murmur-of-insanity",
+          "require": 2
+        },
+        {
+          "param": "clawed-pendulum",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 100000
+        }
+      ]
+    },
+    "INSPIRE": {
+      "materials": [
+        {
+          "param": "glowing-mothwing",
+          "require": 2
+        },
+        {
+          "param": "holy-silver",
+          "require": 4
+        },
+        {
+          "param": "sharpodonty",
+          "require": 100000
+        }
+      ]
+    },
+    "OVERINDULGENCE": {
+      "materials": [
+        {
+          "param": "goldbell-spirit-bottle",
+          "require": 2
+        },
+        {
+          "param": "winged-key",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 100000
+        }
+      ]
+    },
+    "QUIESCENCE": {
+      "materials": [
+        {
+          "param": "incorrupt-monkeypaw",
+          "require": 2
+        },
+        {
+          "param": "salted-mandrake",
+          "require": 3
+        },
+        {
+          "param": "sharpodonty",
+          "require": 100000
+        }
+      ]
+    },
+    "EQUANIMITY": {
+      "materials": [
+        {
+          "param": "watch-core",
+          "require": 2
+        },
+        {
+          "param": "bifurcated-skeleton",
+          "require": 4
+        },
+        {
+          "param": "sharpodonty",
+          "require": 100000
+        }
+      ]
+    }
+  },
+  "patternRecommended": "PLACIDITY",
+  "recommended": {
+    "5": [
+      {
+        "name": "Attack",
+        "resonance": [
+          {
+            "blocks": ["0-0", "0-1", "0-2", "1-1"],
+            "orientation": 3,
+            "pieceId": "RP_T_4_01",
+            "shape": [
+              [1, 1, 1],
+              [0, 1, 0]
+            ]
+          }
+        ],
+        "source": {
+          "label": "To be updated",
+          "link": "#"
+        }
+      }
+    ]
+  }
+}
