@@ -15,12 +15,19 @@ interface Props {
     | "ultimate"
     | "headicon"
     | "infographic";
+  gameId?: string;
   id?: string;
   code?: string;
   class?: string;
 }
 
-const { variant, id = "", code = "", class: customClass } = Astro.props;
+const {
+  variant,
+  id = "",
+  gameId = "",
+  code = "",
+  class: customClass,
+} = Astro.props;
 ---
 
 <Fragment>
@@ -48,93 +55,93 @@ const { variant, id = "", code = "", class: customClass } = Astro.props;
           );
         }
         case "signature": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class="w-64"
-              src={`/images/characters/${id}/signature.png`}
+              src={`/images/signature/${gameId}.png`}
               alt="signature"
             />
           );
         }
         case "portrait": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class="w-80"
               loading="eager"
-              src={`/images/characters/${id}/portrait.png`}
+              src={`/images/portrait/${gameId}01.png`}
               alt="portrait"
             />
           );
         }
         case "udimo": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class="w-40"
-              src={`/images/characters/${id}/udimo.png`}
+              src={`/images/udimo/${gameId}01.png`}
               alt="udimo"
             />
           );
         }
         case "chibi": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class="w-24"
-              src={`/images/characters/${id}/chibi.png`}
+              src={`/images/chibi/${gameId}01.png`}
               alt="chibi"
             />
           );
         }
         case "skill-1": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class={twMerge("w-48", customClass)}
-              src={`/images/characters/${id}/skill-1.png`}
+              src={`/images/skill/${gameId}0111.png`}
               alt="skill-1"
             />
           );
         }
         case "skill-2": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class={twMerge("w-48", customClass)}
-              src={`/images/characters/${id}/skill-2.png`}
+              src={`/images/skill/${gameId}0121.png`}
               alt="skill-2"
             />
           );
         }
         case "ultimate": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class={twMerge("w-48", customClass)}
-              src={`/images/characters/${id}/ultimate.png`}
+              src={`/images/skill/${gameId}0131.png`}
               alt="ultimate"
             />
           );
         }
         case "headicon": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class={twMerge("w-12 inline-block", customClass)}
-              src={`/images/characters/${id}/headicon.png`}
+              src={`/images/headicon/${gameId}01.png`}
               alt="headicon"
             />
           );
         }
         case "infographic": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <div x-data class={twMerge("w-full", customClass)}>
               <CustomImage
                 x-zoomable
-                src={`/images/characters/${id}/infographic.jpg`}
+                src={`/images/infographic/${gameId}.jpg`}
                 alt="infographic"
               />
             </div>

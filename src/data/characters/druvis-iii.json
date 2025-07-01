@@ -28,9 +28,9 @@
   },
   "euphorias": [
     {
+      "gameId": "300301",
       "code": "THE_VERDANCE_AMONG_STONES",
       "name": "The Verdance Among Stones",
-      "infographic": "euphoria-infographic-1.jpg",
       "materials": {
         "0": [
           {

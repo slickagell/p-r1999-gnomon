@@ -11,9 +11,12 @@ import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
 import { capitalCase, kebabCase } from "change-case";
+import fs from "fs";
+import path from "path";
 
 type Props = {
   id: string;
+  gameId: string;
   star: number;
   afflatus: string;
   dmgType: string;
@@ -22,9 +25,9 @@ type Props = {
   specialties: string[];
   isLimited: string;
   euphorias?: {
+    gameId: string;
     code: string;
     name: string;
-    infographic?: string;
     materials: {
       [level: string]: RequireMaterialType[];
     };
@@ -40,6 +43,7 @@ type Props = {
 
 const {
   id,
+  gameId,
   star,
   afflatus,
   dmgType,
@@ -90,7 +94,7 @@ const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
 const hasOverview = Astro.slots.has("overview-section-title");
 const hasInfographic = Astro.slots.has("infographic-section-title");
 const hasEuphoriaInfographic = Astro.slots.has(
-  "euphoria-infographic-section-title",
+  "euphoria-infographic-section-title"
 );
 const hasSkillBreakdown = Astro.slots.has("skill-breakdown-section-title");
 const hasTeamSuggestion = Astro.slots.has("team-suggestion-section-title");
@@ -183,22 +187,22 @@ if (hasInfographic) {
     </div>
 
     <div class="mt-4 flex gap-4 justify-center">
-      <CharacterImg variant="signature" id={id} />
+      <CharacterImg variant="signature" gameId={gameId} />
     </div>
   </div>
 
   <div class="flex flex-col items-center shrink-0">
-    <CharacterImg variant="portrait" id={id} />
+    <CharacterImg variant="portrait" gameId={gameId} />
 
     <div class="mt-5 flex gap-6 justify-center items-end">
       <div class="text-center">
-        <CharacterImg variant="chibi" id={id} />
+        <CharacterImg variant="chibi" gameId={gameId} />
 
         Chibi
       </div>
 
       <div class="text-center">
-        <CharacterImg variant="udimo" id={id} />
+        <CharacterImg variant="udimo" gameId={gameId} />
 
         Udimo
       </div>
@@ -253,7 +257,7 @@ if (hasInfographic) {
         {...hasSkill1Reinforced && { ["x-data"]: "{ reinforced: false }" }}
       >
         <div class="basis-full lg:basis-auto shrink-0">
-          <CharacterImg variant="skill-1" id={id} />
+          <CharacterImg variant="skill-1" gameId={gameId} />
 
           {
             hasSkill1Reinforced && (
@@ -303,7 +307,7 @@ if (hasInfographic) {
         {...hasSkill2Reinforced && { ["x-data"]: "{ reinforced: false }" }}
       >
         <div class="basis-full lg:basis-auto shrink-0">
-          <CharacterImg variant="skill-2" id={id} />
+          <CharacterImg variant="skill-2" gameId={gameId} />
 
           {
             hasSkill2Reinforced && (
@@ -353,7 +357,7 @@ if (hasInfographic) {
         class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap"
       >
         <div class="basis-full lg:basis-auto shrink-0">
-          <CharacterImg variant="ultimate" id={id} />
+          <CharacterImg variant="ultimate" gameId={gameId} />
         </div>
 
         <slot name="ultimate-card-info" />
@@ -453,7 +457,7 @@ if (hasInfographic) {
                           />
                           <CustomImage
                             class="relative w-full z-10"
-                            src={`/images/euphoria/${kebabCase(euphoria.code)}.png`}
+                            src={`/images/euphoria/${gameId}${idx + 1 < 10 ? "0" : ""}${idx + 1}.png`}
                             alt={euphoria.name}
                           />
                         </div>
@@ -546,7 +550,9 @@ if (hasInfographic) {
         <template x-if={`activeTab==='${GAMEPLAY_TABS.INFOGRAPHIC}' `}>
           <div class="mt-4">
             {/* Infographic */}
-            {hasInfographic && <CharacterImg variant="infographic" id={id} />}
+            {hasInfographic && (
+              <CharacterImg variant="infographic" gameId={gameId} />
+            )}
           </div>
         </template>
 
@@ -557,9 +563,15 @@ if (hasInfographic) {
           >
             <div class="mt-4">
               {(() => {
-                const euphoriasData = euphorias?.filter(
-                  (euphoria) => euphoria.infographic,
-                );
+                const euphoriasData = euphorias?.filter((euphoria) => {
+                  const existedEuphoriaInfographic = fs.existsSync(
+                    path.join(
+                      "public/images/euphoria/infographic",
+                      `${euphoria.gameId}.jpg`
+                    )
+                  );
+                  return existedEuphoriaInfographic;
+                });
                 if (!euphoriasData || euphoriasData.length === 0) return null;
 
                 return (
@@ -585,8 +597,8 @@ if (hasInfographic) {
                           <CustomImage
                             x-zoomable
                             class="relative w-full z-10"
-                            src={`/images/euphoria/${id}/${euphoria.infographic}`}
-                            alt="udimo"
+                            src={`/images/euphoria/infographic/${gameId}${idx + 1 < 10 ? "0" : ""}${idx + 1}.jpg`}
+                            alt="euphoria infographic"
                           />
                         </div>
                       ))}
@@ -751,7 +763,7 @@ if (hasInfographic) {
                     Object.entries(
                       JSON.parse(JSON.stringify(insightMaterials)) as {
                         [insightLevel: string]: RequireMaterialType[];
-                      },
+                      }
                     )
                       .reduce((accumulator: RequireMaterialType[], current) => {
                         const [insightLevel, currentValue] = current;
@@ -762,7 +774,7 @@ if (hasInfographic) {
                             accumulator.some((m) => m.param === material.param)
                           ) {
                             const index = accumulator.findIndex(
-                              (m) => m.param === material.param,
+                              (m) => m.param === material.param
                             );
                             accumulator[index].require += material.require;
                           } else {
@@ -791,7 +803,7 @@ if (hasInfographic) {
                   Object.values(
                     JSON.parse(JSON.stringify(insightMaterials)) as {
                       [insightLevel: string]: RequireMaterialType[];
-                    },
+                    }
                   )
                     .reduce((accumulator, currentValue) => {
                       currentValue.forEach((material) => {
@@ -799,7 +811,7 @@ if (hasInfographic) {
                           accumulator.some((m) => m.param === material.param)
                         ) {
                           const index = accumulator.findIndex(
-                            (m) => m.param === material.param,
+                            (m) => m.param === material.param
                           );
                           accumulator[index].require += material.require;
                         } else {
@@ -863,7 +875,7 @@ if (hasInfographic) {
                         />
                       ))}
                     </div>
-                  ),
+                  )
                 )}
               </div>
             </template>
@@ -879,7 +891,7 @@ if (hasInfographic) {
                   {Object.entries(
                     JSON.parse(JSON.stringify(resonanceMaterials)) as {
                       [resonanceLevel: string]: RequireMaterialType[];
-                    },
+                    }
                   )
                     .reduce((accumulator: RequireMaterialType[], current) => {
                       const [resonanceLevel, currentValue] = current;
@@ -890,7 +902,7 @@ if (hasInfographic) {
                           accumulator.some((m) => m.param === material.param)
                         ) {
                           const index = accumulator.findIndex(
-                            (m) => m.param === material.param,
+                            (m) => m.param === material.param
                           );
                           accumulator[index].require += material.require;
                         } else {
@@ -918,7 +930,7 @@ if (hasInfographic) {
                 {Object.values(
                   JSON.parse(JSON.stringify(resonanceMaterials)) as {
                     [resonanceLevel: string]: RequireMaterialType[];
-                  },
+                  }
                 )
                   .reduce(
                     (accumulator: RequireMaterialType[], currentValue) => {
@@ -927,7 +939,7 @@ if (hasInfographic) {
                           accumulator.some((m) => m.param === material.param)
                         ) {
                           const index = accumulator.findIndex(
-                            (m) => m.param === material.param,
+                            (m) => m.param === material.param
                           );
                           accumulator[index].require += material.require;
                         } else {
@@ -936,7 +948,7 @@ if (hasInfographic) {
                       });
                       return accumulator;
                     },
-                    [],
+                    []
                   )
                   .map((material) => (
                     <Material
@@ -967,7 +979,7 @@ if (hasInfographic) {
             (b.getAttribute("data-rarity") ?? 0)
             ? 1
             : -1;
-        },
+        }
       );
 
       this.$el.replaceChildren(...sorted);

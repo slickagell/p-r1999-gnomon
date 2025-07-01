@@ -28,9 +28,9 @@
   },
   "euphorias": [
     {
+      "gameId": "304301",
       "code": "AGENT_OF_PRICELESS_SPECTACLES",
       "name": "Agent of Priceless Spectacles",
-      "infographic": "euphoria-infographic-1.jpg",
       "materials": {
         "0": [
           {

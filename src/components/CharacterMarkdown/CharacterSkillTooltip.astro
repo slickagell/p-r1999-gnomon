@@ -4,10 +4,11 @@ import Tooltip from "@components/Tooltip.astro";
 
 interface Props {
   id?: string;
+  gameId?: string;
   variant: "skill-1" | "skill-2" | "ultimate";
 }
 
-const { id, variant } = Astro.props;
+const { id, gameId, variant } = Astro.props;
 ---
 
 <Tooltip contentCustomClass="w-24">
@@ -16,31 +17,31 @@ const { id, variant } = Astro.props;
     (() => {
       switch (variant) {
         case "skill-1": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class={"w-24"}
-              src={`/images/characters/${id}/skill-1.png`}
+              src={`/images/skill/${gameId}0111.png`}
               alt="skill-1"
             />
           );
         }
         case "skill-2": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class="w-24"
-              src={`/images/characters/${id}/skill-2.png`}
+              src={`/images/skill/${gameId}0121.png`}
               alt="skill-2"
             />
           );
         }
         case "ultimate": {
-          if (!id) return null;
+          if (!gameId) return null;
           return (
             <CustomImage
               class="w-24"
-              src={`/images/characters/${id}/ultimate.png`}
+              src={`/images/skill/${gameId}0131.png`}
               alt="ultimate"
             />
           );

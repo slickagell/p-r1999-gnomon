@@ -63,7 +63,7 @@ const enemyGroups = enemies.reduce(
     acc[wave].push(enemy);
     return acc;
   },
-  {} as Record<number, EnemyData[]>,
+  {} as Record<number, EnemyData[]>
 );
 ---
 
@@ -258,7 +258,7 @@ const enemyGroups = enemies.reduce(
         <img
           class="max-w-20 self-center md:max-w-32"
           loading="lazy"
-          :src="`/images/enemies/card/${activeEnemy?.skill1?.cardId}.png`"
+          :src="`/images/skill/${activeEnemy?.skill1?.cardId}.png`"
           :alt="activeEnemy?.name + ' skill 1'"
         />
         <div>
@@ -277,7 +277,7 @@ const enemyGroups = enemies.reduce(
         <img
           class="max-w-20 self-center md:max-w-32"
           loading="lazy"
-          :src="`/images/enemies/card/${activeEnemy?.skill2?.cardId}.png`"
+          :src="`/images/skill/${activeEnemy?.skill2?.cardId}.png`"
           :alt="activeEnemy?.name + ' skill 2'"
         />
         <div>
@@ -296,7 +296,7 @@ const enemyGroups = enemies.reduce(
         <img
           class="max-w-20 self-center md:max-w-32"
           loading="lazy"
-          :src="`/images/enemies/card/${activeEnemy?.ultimate?.cardId}.png`"
+          :src="`/images/skill/${activeEnemy?.ultimate?.cardId}.png`"
           :alt="activeEnemy?.name + ' ultimate'"
         />
         <div>
@@ -356,7 +356,7 @@ const enemyGroups = enemies.reduce(
             },
           ];
         },
-        [],
+        []
       );
     },
 
@@ -372,7 +372,7 @@ const enemyGroups = enemies.reduce(
 
       this.active = activeId;
       this.activeEnemy = this.$store.zone.enemies.find(
-        (enemy) => enemy.id === activeId,
+        (enemy) => enemy.id === activeId
       );
       this.activePhase = "1";
       this.phases = this.activeEnemy.phases
@@ -385,7 +385,7 @@ const enemyGroups = enemies.reduce(
       if (phase === "1") {
         this.activePhase = "1";
         this.activeEnemy = this.$store.zone.enemies.find(
-          (enemy) => enemy.id === this.activeEnemy.id,
+          (enemy) => enemy.id === this.activeEnemy.id
         );
         this.handleMappingStats();
         return;

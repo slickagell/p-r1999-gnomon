@@ -28,9 +28,9 @@
   },
   "euphorias": [
     {
+      "gameId": "305601",
       "code": "NATURE_S_PRAYER_FOR_SPRING_S_EMBRACE",
       "name": "Nature's Prayer for Spring's Embrace",
-      "infographic": "euphoria-infographic-1.jpg",
       "materials": {
         "0": [
           {

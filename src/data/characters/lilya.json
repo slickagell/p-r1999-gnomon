@@ -28,9 +28,9 @@
   },
   "euphorias": [
     {
+      "gameId": "300401",
       "code": "WHAT_ROARS_LIKE_A_VICTORY_SONG",
       "name": "What Roars Like a Victory Song?",
-      "infographic": "euphoria-infographic-1.jpg",
       "materials": {
         "0": [
           {
@@ -231,6 +231,7 @@
       }
     },
     {
+      "gameId": "300402",
       "code": "THE_KAMCHATKA_HUNT",
       "name": "The Kamchatka Hunt",
       "materials": {

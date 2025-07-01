@@ -28,9 +28,9 @@
   },
   "euphorias": [
     {
+      "gameId": "306301",
       "code": "THE_DOG_THINKS_THEREFORE_THE_DOG_EXISTS",
       "name": "The Dog Thinks, Therefore The Dog Exists",
-      "infographic": "euphoria-infographic-1.jpg",
       "materials": {
         "0": [
           {

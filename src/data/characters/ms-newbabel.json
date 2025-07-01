@@ -28,9 +28,9 @@
   },
   "euphorias": [
     {
+      "gameId": "305201",
       "code": "A_LOFTY_SPIRE_RISEN_TO_ASPIRE",
       "name": "A Lofty Spire, Risen to Aspire",
-      "infographic": "euphoria-infographic-1.jpg",
       "materials": {
         "0": [
           {
