@@ -1,0 +1,185 @@
+---
+import Icon from "@components/Icon.astro";
+import CustomImage from "@components/CustomImage.astro";
+
+interface Props {
+  id: string;
+  slides: { imgSrc: string; imgAlt: string }[];
+}
+
+const { id, slides } = Astro.props;
+---
+
+<div x-data="carousel" class="relative w-full">
+  <!-- previous button -->
+  <button
+    type="button"
+    class="absolute -left-3 md:-left-5 top-1/2 z-10 flex rounded-full w-6 h-6 md:w-10 md:h-10 -translate-y-1/2 items-center justify-center bg-primary/40 transition hover:bg-primary/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:outline-offset-0"
+    x-bind:class="activeItem === 0 ? 'hidden' : ''"
+    aria-label="previous slide"
+    x-on:click="previous()"
+  >
+    <Icon
+      icon="chevron-left"
+      customClass="text-base-content w-3 h-3 md:w-6 md:h-6"
+    />
+  </button>
+
+  <!-- next button -->
+  <button
+    type="button"
+    class="absolute -right-3 md:-right-5 top-1/2 z-10 flex rounded-full w-6 h-6 md:w-10 md:h-10 -translate-y-1/2 items-center justify-center bg-primary/40 transition hover:bg-primary/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:outline-offset-0"
+    x-bind:class={`activeItem === ${slides.length - 1} ? 'hidden' : ''`}
+    aria-label="next slide"
+    x-on:click="next()"
+  >
+    <Icon
+      icon="chevron-right"
+      customClass="text-base-content w-3 h-3 md:w-6 md:h-6"
+    />
+  </button>
+
+  <!-- slides -->
+  <div class="relative overflow-x-hidden group">
+    <div
+      class="relative flex flex-nowrap overflow-auto transition-all cursor-pointer carousel-snap"
+      x-ref="slider"
+      id={id}
+      data-items={slides.length}
+      @scroll="setActiveItem($event)"
+      @touchstart="handleTouchStart($event)"
+      @touchmove="handleTouchMove($event)"
+      @touchend="handleTouchEnd()"
+      @mousedown="handleDragStart($event)"
+      @mousemove="handleDragMove($event)"
+      @mouseup="handleDragEnd()"
+    >
+      {
+        slides.map((slide, index) => (
+          <div class="relative shrink-0 w-full pointer-events-none select-none">
+            <div class="flex items-center justify-center">
+              <CustomImage
+                src={slide.imgSrc}
+                alt={slide.imgAlt}
+                class="object-contain w-full h-full"
+              />
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- indicators -->
+    <div
+      class="absolute rounded-sm bottom-2 md:bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2 md:gap-3 bg-black/75 px-1.5 py-1 md:px-2"
+      role="group"
+      aria-label="slides"
+    >
+      {
+        slides.map((slide, index) => (
+          <button
+            class="w-2 h-2 rounded-full transition bg-white/50"
+            @click={`goTo(${index})`}
+            x-bind:class={`activeItem === ${index} ? '!bg-primary' : 'bg-white/75'`}
+            x-bind:aria-label={`'slide ' + (${index})`}
+          />
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("carousel", () => ({
+    slider: null,
+    numItems: 0,
+    activeItem: 0,
+    touchStartX: null,
+    touchEndX: null,
+    swipeThreshold: 50,
+    dragStartX: null,
+    dragEndX: null,
+    isDragging: false,
+
+    init() {
+      this.slider = this.$refs.slider;
+      this.numItems = this.$refs.slider.dataset.items;
+    },
+
+    next() {
+      // Moves the slider items wrapper to the previous item
+      this.slider.scrollLeft =
+        this.slider.scrollLeft + this.slider.scrollWidth / this.numItems;
+    },
+
+    previous() {
+      // Moves the slider items wrapper to the next item
+      this.slider.scrollLeft =
+        this.slider.scrollLeft - this.slider.scrollWidth / this.numItems;
+    },
+
+    goTo(num) {
+      // Goes to a specific item
+      this.slider.scrollLeft = (this.slider.scrollWidth / this.numItems) * num;
+    },
+
+    setActiveItem(event) {
+      // Figures out which thumbnail should be active based on the scroll position of the slider items wrapper
+      this.activeItem = Math.round(
+        event.target.scrollLeft / (event.target.scrollWidth / this.numItems)
+      );
+    },
+
+    handleDragStart(event) {
+      this.isDragging = true;
+      this.dragStartX = event.clientX;
+    },
+
+    handleDragMove(event) {
+      if (!this.isDragging) return;
+      this.dragEndX = event.clientX;
+    },
+
+    handleDragEnd() {
+      this.isDragging = false;
+
+      if (this.dragEndX) {
+        if (this.dragStartX - this.dragEndX > this.swipeThreshold) {
+          this.$nextTick(() => {
+            this.next();
+          });
+        }
+        if (this.dragStartX - this.dragEndX < -this.swipeThreshold) {
+          this.$nextTick(() => {
+            this.previous();
+          });
+        }
+        this.dragStartX = null;
+        this.dragEndX = null;
+      }
+    },
+
+    handleTouchStart(event) {
+      this.touchStartX = event.touches[0].clientX;
+    },
+
+    handleTouchMove(event) {
+      this.touchEndX = event.touches[0].clientX;
+    },
+
+    handleTouchEnd() {
+      if (this.touchEndX) {
+        if (this.touchStartX - this.touchEndX > this.swipeThreshold) {
+          this.next();
+        }
+        if (this.touchStartX - this.touchEndX < -this.swipeThreshold) {
+          this.previous();
+        }
+        this.touchStartX = null;
+        this.touchEndX = null;
+      }
+    },
+  }));
+</script>

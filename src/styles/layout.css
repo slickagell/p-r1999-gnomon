@@ -163,3 +163,20 @@ img[x-zoomable]:hover {
 .zoomable-loading-indicator[hidden] {
   @apply hidden;
 }
+
+.carousel-snap {
+  -ms-scroll-snap-type: x mandatory;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.carousel-snap::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.carousel-snap > div {
+  scroll-snap-align: center;
+}

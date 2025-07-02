@@ -1,5 +1,6 @@
 ##### 2025-07-02
 
+* Add Hissabeth infographic (thanks CTL team for the infographic)
 * Add new characters: Hissabeth, Kiperina, Name Day (these page info still in development until official release)
 
 ##### 2025-06-27
