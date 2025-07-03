@@ -11,62 +11,85 @@ const { id, slides } = Astro.props;
 ---
 
 <div x-data="carousel" class="relative w-full">
-  <!-- previous button -->
-  <button
-    type="button"
-    class="absolute -left-3 md:-left-5 top-1/2 z-10 flex rounded-full w-6 h-6 md:w-10 md:h-10 -translate-y-1/2 items-center justify-center bg-primary/40 transition hover:bg-primary/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:outline-offset-0"
-    x-bind:class="activeItem === 0 ? 'hidden' : ''"
-    aria-label="previous slide"
-    x-on:click="previous()"
+  <div
+    x-bind:class="{ 'fixed top-0 bottom-0 right-0 z-[100] left-0 w-screen h-screen overflow-hidden bg-black/50 flex items-center justify-center': isOpenLightbox }"
+    @keydown.arrow-left.debounce="previous()"
+    @keydown.arrow-right.debounce="next()"
+    @keydown.escape.window.debounce="closeLightbox()"
   >
-    <Icon
-      icon="chevron-left"
-      customClass="text-base-content w-3 h-3 md:w-6 md:h-6"
-    />
-  </button>
-
-  <!-- next button -->
-  <button
-    type="button"
-    class="absolute -right-3 md:-right-5 top-1/2 z-10 flex rounded-full w-6 h-6 md:w-10 md:h-10 -translate-y-1/2 items-center justify-center bg-primary/40 transition hover:bg-primary/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:outline-offset-0"
-    x-bind:class={`activeItem === ${slides.length - 1} ? 'hidden' : ''`}
-    aria-label="next slide"
-    x-on:click="next()"
-  >
-    <Icon
-      icon="chevron-right"
-      customClass="text-base-content w-3 h-3 md:w-6 md:h-6"
-    />
-  </button>
-
-  <!-- slides -->
-  <div class="relative overflow-x-hidden group">
-    <div
-      class="relative flex flex-nowrap overflow-auto transition-all cursor-pointer carousel-snap"
-      x-ref="slider"
-      id={id}
-      data-items={slides.length}
-      @scroll="setActiveItem($event)"
-      @touchstart="handleTouchStart($event)"
-      @touchmove="handleTouchMove($event)"
-      @touchend="handleTouchEnd()"
-      @mousedown="handleDragStart($event)"
-      @mousemove="handleDragMove($event)"
-      @mouseup="handleDragEnd()"
+    <!-- previous button -->
+    <button
+      type="button"
+      class="absolute -left-3 md:-left-5 top-1/2 z-10 flex rounded-full w-6 h-6 md:w-10 md:h-10 -translate-y-1/2 items-center justify-center bg-primary/40 transition hover:bg-primary/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:outline-offset-0"
+      x-bind:class="{'hidden': !activeItem,'hidden md:flex': true,'left-3 md:left-5': isOpenLightbox}"
+      aria-label="previous slide"
+      @click="previous()"
     >
-      {
-        slides.map((slide, index) => (
-          <div class="relative shrink-0 w-full pointer-events-none select-none">
-            <div class="flex items-center justify-center">
-              <CustomImage
-                src={slide.imgSrc}
-                alt={slide.imgAlt}
-                class="object-contain w-full h-full"
-              />
+      <Icon
+        icon="chevron-left"
+        customClass="text-base-content w-3 h-3 md:w-6 md:h-6"
+      />
+    </button>
+
+    <!-- next button -->
+    <button
+      type="button"
+      class="absolute -right-3 md:-right-5 top-1/2 z-10 flex rounded-full w-6 h-6 md:w-10 md:h-10 -translate-y-1/2 items-center justify-center bg-primary/40 transition hover:bg-primary/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:outline-offset-0"
+      x-bind:class=`{'hidden': activeItem === ${slides.length - 1}, 'hidden md:flex': true, 'right-3 md:right-5': isOpenLightbox}`
+      aria-label="next slide"
+      @click="next()"
+    >
+      <Icon
+        icon="chevron-right"
+        customClass="text-base-content w-3 h-3 md:w-6 md:h-6"
+      />
+    </button>
+
+    <!-- close button -->
+    <button
+      type="button"
+      class="absolute right-3 md:right-5 top-3 md:top-3 z-10 flex rounded-full w-6 h-6 md:w-10 md:h-10 items-center justify-center bg-primary/75 transition hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white active:outline-offset-0"
+      x-bind:class=`{'hidden': !isOpenLightbox, 'right-3 md:right-5': isOpenLightbox}`
+      aria-label="close lightbox"
+      @click="closeLightbox()"
+    >
+      <Icon icon="x" customClass="text-base-content w-3 h-3 md:w-6 md:h-6" />
+    </button>
+
+    <!-- slides -->
+    <div
+      class="relative overflow-x-hidden group"
+      x-bind:class="{ 'md:max-w-4xl mx-auto md:px-10': isOpenLightbox }"
+      x-ref="sliderWrapper"
+    >
+      <div
+        class="relative flex flex-nowrap overflow-auto transition-all cursor-pointer carousel-snap"
+        x-ref="slider"
+        id={id}
+        data-items={slides.length}
+        @scroll="setActiveItem($event)"
+        @touchstart.passive="handleTouchStart($event)"
+        @touchmove.passive="handleTouchMove($event)"
+        @touchend.passive="handleTouchEnd($event)"
+        @mousedown="handleDragStart($event)"
+        @mousemove="handleDragMove($event)"
+        @mouseup="handleDragEnd()"
+        @click="openLightbox()"
+      >
+        {
+          slides.map((slide, index) => (
+            <div class="relative shrink-0 w-full pointer-events-none select-none">
+              <div class="flex items-center justify-center">
+                <CustomImage
+                  src={slide.imgSrc}
+                  alt={slide.imgAlt}
+                  class="object-contain w-full h-full"
+                />
+              </div>
             </div>
-          </div>
-        ))
-      }
+          ))
+        }
+      </div>
     </div>
 
     <!-- indicators -->
@@ -98,10 +121,11 @@ const { id, slides } = Astro.props;
     activeItem: 0,
     touchStartX: null,
     touchEndX: null,
-    swipeThreshold: 50,
+    swipeThreshold: 80,
     dragStartX: null,
     dragEndX: null,
     isDragging: false,
+    isOpenLightbox: false,
 
     init() {
       this.slider = this.$refs.slider;
@@ -169,7 +193,12 @@ const { id, slides } = Astro.props;
       this.touchEndX = event.touches[0].clientX;
     },
 
-    handleTouchEnd() {
+    handleTouchEnd(event) {
+      if (event.touches.length > 1) {
+        this.touchStartX = null;
+        this.touchEndX = null;
+        return;
+      }
       if (this.touchEndX) {
         if (this.touchStartX - this.touchEndX > this.swipeThreshold) {
           this.next();
@@ -180,6 +209,20 @@ const { id, slides } = Astro.props;
         this.touchStartX = null;
         this.touchEndX = null;
       }
+    },
+
+    openLightbox() {
+      if (this.isOpenLightbox) return;
+
+      document.body.style.overflowY = "hidden";
+      document.body.style.height = "100vh";
+      this.isOpenLightbox = true;
+    },
+
+    closeLightbox() {
+      document.body.style.removeProperty("overflow-y");
+      document.body.style.removeProperty("height");
+      this.isOpenLightbox = false;
     },
   }));
 </script>

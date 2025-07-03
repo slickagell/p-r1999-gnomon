@@ -14,8 +14,5 @@ export async function getFilesWithText(folderPath, matchText) {
   const files = await fsPromise.readdir(folderPath);
   const matchedFiles = files.filter((file) => file.includes(matchText));
 
-  console.log(`📄 Files containing "${matchText}":`);
-  matchedFiles.forEach((file) => console.log("  -", file));
-
   return matchedFiles;
 }
