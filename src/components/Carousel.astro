@@ -83,7 +83,8 @@ const { id, slides } = Astro.props;
                 <CustomImage
                   src={slide.imgSrc}
                   alt={slide.imgAlt}
-                  class="object-contain w-full h-full"
+                  class="object-contain w-full"
+                  x-bind:class={`{'max-h-screen': isOpenLightbox}`}
                 />
               </div>
             </div>

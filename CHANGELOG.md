@@ -1,3 +1,11 @@
+##### 2025-07-04
+
+* Add 2.7 characters official data:
+  * Hissabeth, Nameday info
+  * Jiu Niangzi, Ezra euphoria info
+* Add new psychube: Never-Ending Q\&A
+* Enhance Infographic carousel
+
 ##### 2025-07-02
 
 * Add Hissabeth infographic (thanks CTL team for the infographic)

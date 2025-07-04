@@ -8,14 +8,13 @@ star: 5
 afflatus: "MINERAL"
 dmgType: "MENTAL"
 race: "ARCANIST"
-birthday: ""
+birthday: "1/6"
 version: "2.7"
 releaseDate: "2025-07-03"
 specialties: ["SUPPORT","DPS"]
 limited: 0
 mainPiece: "u"
 euphorias: 0
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -30,27 +29,27 @@ import CHARACTER from "@data/characters/name-day.json";
 import RESONANCE from "@data/resonance/characters/name-day.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Name Day
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An arcanist's work. Exhibited in the 1980s for 23 years. Completed in winter, on January 6. First exhibited in Novgorod, USSR. Later relocated to Leningrad and archived by the St. Pavlov Foundation.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    A Faraway Land
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Snow-Covered Salt Flats \[Mineral], Collection of Relics
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Spicy Aromatic, Ivan Chai, Cedar, Candle Flame, Amber, Raspberry
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    69 19/64 x 23 5/64 x 12 19/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -62,52 +61,52 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="arcane-skills-section-title">
-     Arcane Skills
+    Arcane Skills
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    Circular Maneuvers
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="Honesty is a tool.">
+      Mass attack. Deals **120%** Mental DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="Honesty is a powerful tool.">
+      Mass attack. Deals **160%** Mental DMG to 2 enemies, dispels all *\[Counter]* statuses from the targets.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="Honesty is a powerful tool when used with care.">
+      Mass attack. Deals **300%** Mental DMG to 2 enemies, dispels all *\[Counter]* statuses from the targets.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    As You Wish
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note="True intentions are often hidden.">
+      Mass buff. DMG Dealt **+20%** and DMG Heal **+20%** for all allies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note="True intentions are often hidden behind flattering words.">
+      Mass buff. Grants DMG Dealt **+25%** and DMG Heal **+25%** to all allies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note="True intentions are often hidden behind flattering words. Can you see through them?">
+      Mass buff. Grants DMG Dealt **+35%** and DMG Heal **+35%** to all allies for 3 rounds.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Etched in Snow
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="BUFF" note="He who holds these words inherits their kingdom—along with the wind, the snow, the suffering, and the torment.">
+      Mass buff. Grants Ultimate DMG **+50%** to all allies for 3 rounds. Grants :effect{param="enname"} to the adjacent ally in front for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -116,43 +115,43 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Unforgettable Bonds
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    After taking an action, grant 2 stacks of :effect{param="ceremonious"} to the adjacent ally in front.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    DMG Taken **-8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    When the adjacent ally in front casts an ultimate, Name Day gains Moxie +1.
   </Fragment>
-  
+
   <Fragment slot="portray-section-title">
     Portray
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Circular Maneuvers*: At incantation rank 1/2/3, deals **160%**/**240%**/**360%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *As You Wish*: At incantation rank 1/2/3, the DMG Dealt and DMG Heal bonuses are increased to **25%**/**30%**/**40%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *Unforgettable Bonds*: The amount of :effect{param="ceremonious"} granted to the adjacent ally in front is increased to 3 stacks.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Etched in Snow*: The duration of :effect{param="enname"} granted is extended to 3 rounds.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Etched in Snow*: The Ultimate DMG bonus granted to all allies is increased to **+65%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -8,7 +8,7 @@ star: 6
 afflatus: "STAR"
 dmgType: "MENTAL"
 race: "ARCANIST"
-birthday: ""
+birthday: "4/19"
 version: "2.7"
 releaseDate: "2025-07-24"
 specialties: ["SHIELD","SUPPORT","DISPELLER"]
@@ -31,7 +31,7 @@ import CHARACTER from "@data/characters/kiperina.json";
 import RESONANCE from "@data/resonance/characters/kiperina.json";
 import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
-# Kiperina
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -63,7 +63,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="arcane-skills-section-title">
-     Arcane Skills
+    Arcane Skills
   </Fragment>
 
   <Fragment slot="skill-1-title">
@@ -131,7 +131,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="insight-3-info">
     :TODO - Update inheritance insight-3:
   </Fragment>
-  
+
   <Fragment slot="portray-section-title">
     Portray
   </Fragment>
@@ -167,15 +167,12 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="psychube-content">
     #### Best in Slot
 
-    <div class="flex justify-center md:justify-start">
-      
-    </div>
+    <div class="flex justify-center md:justify-start" />
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
       <PsychubeIcon param="long-night-talk" />
-
     </div>
   </Fragment>
 

@@ -115,5 +115,10 @@
     "label": "Follow-up DMG Bonus",
     "keyVal": "followUpDmgBonus",
     "unit": "%"
+  },
+  "HP_PERCENT": {
+    "label": "HP",
+    "keyVal": "hpPercent",
+    "unit": "%"
   }
 }

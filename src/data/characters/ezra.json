@@ -26,6 +26,166 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "gameId": "307401",
+      "name": "Mycelium-Guided Wind Probe",
+      "code": "MYCELIUM_GUIDED_WIND_PROBE",
+      "materials": {
+        "0": [
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "rheingold", "require": 3 }
+        ],
+        "1": [
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "fruit-of-good-and-evil", "require": 1 },
+          { "param": "glowing-mothwing", "require": 1 }
+        ],
+        "2": [
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "mistilteinn", "require": 1 },
+          { "param": "watch-core", "require": 2 }
+        ],
+        "3": [
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "golden-fleece", "require": 2 },
+          { "param": "goldbell-spirit-bottle", "require": 2 }
+        ],
+        "4": [
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "serpent-scepter", "require": 2 },
+          { "param": "platinum-ouija", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
+          "data": {
+            "HP": { "value": 210 },
+            "ATTACK": { "value": 21 },
+            "REALITY_DEFENSE": { "value": 15 },
+            "MENTAL_DEFENSE": { "value": 10 },
+            "HP_PERCENT": { "value": 9, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
+          "data": {
+            "HP": { "value": 380 },
+            "ATTACK": { "value": 36 },
+            "REALITY_DEFENSE": { "value": 21 },
+            "MENTAL_DEFENSE": { "value": 21 },
+            "HP_PERCENT": { "value": 13.5, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
+          "data": {
+            "HP": { "value": 520 },
+            "ATTACK": { "value": 51 },
+            "REALITY_DEFENSE": { "value": 32 },
+            "MENTAL_DEFENSE": { "value": 32 },
+            "HP_PERCENT": { "value": 18, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
+          "data": {
+            "HP": { "value": 760 },
+            "ATTACK": { "value": 86 },
+            "REALITY_DEFENSE": { "value": 54 },
+            "MENTAL_DEFENSE": { "value": 54 },
+            "HP_PERCENT": { "value": 18, "unit": "%" }
+          }
+        }
+      }
+    },
+    {
+      "gameId": "307402",
+      "name": "Spores of Ever-Burning Spark",
+      "code": "SPORES_OF_EVER_BURNING_SPARK",
+      "materials": {
+        "0": [
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "fruit-of-good-and-evil", "require": 3 }
+        ],
+        "1": [
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "fruit-of-good-and-evil", "require": 1 },
+          { "param": "glowing-mothwing", "require": 1 }
+        ],
+        "2": [
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "mistilteinn", "require": 1 },
+          { "param": "watch-core", "require": 2 }
+        ],
+        "3": [
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "golden-fleece", "require": 2 },
+          { "param": "goldbell-spirit-bottle", "require": 2 }
+        ],
+        "4": [
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "serpent-scepter", "require": 2 },
+          { "param": "platinum-ouija", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
+          "data": {
+            "HP": { "value": 210 },
+            "ATTACK": { "value": 21 },
+            "REALITY_DEFENSE": { "value": 15 },
+            "MENTAL_DEFENSE": { "value": 10 },
+            "HP_PERCENT": { "value": 9, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
+          "data": {
+            "HP": { "value": 380 },
+            "ATTACK": { "value": 36 },
+            "REALITY_DEFENSE": { "value": 21 },
+            "MENTAL_DEFENSE": { "value": 21 },
+            "HP_PERCENT": { "value": 13.5, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
+          "data": {
+            "HP": { "value": 520 },
+            "ATTACK": { "value": 51 },
+            "REALITY_DEFENSE": { "value": 32 },
+            "MENTAL_DEFENSE": { "value": 32 },
+            "HP_PERCENT": { "value": 18, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
+          "data": {
+            "HP": { "value": 760 },
+            "ATTACK": { "value": 86 },
+            "REALITY_DEFENSE": { "value": 54 },
+            "MENTAL_DEFENSE": { "value": 54 },
+            "HP_PERCENT": { "value": 18, "unit": "%" }
+          }
+        }
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

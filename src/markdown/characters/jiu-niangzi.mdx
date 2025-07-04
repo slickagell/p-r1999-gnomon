@@ -14,11 +14,12 @@ releaseDate: "2024-05-30"
 specialties: ["DPS","BURST_DMG","EXTRA_ACTION"]
 limited: 1
 mainPiece: "z"
-euphorias: 0
+euphorias: 1
 ---
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -160,6 +161,36 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      The :effect{param="tipsy-id-1"} status is no longer removed after being attacked by an ultimate. After another ally performs an extra action, grant **1** stack of *\[Liquor]* and **1** stack of :effect{param="sublime-flow"} to self.
+
+      When :effect{param="sublime-flow"} is at maximum stacks, casting *\[Baijiu Ladle]* will also cast a *\[Bottoms Up]* of the same rank first before entering the :effect{param="tipsy-id-1"} status.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      When casting *\[Baijiu and Mayhem]*, for each stack of :effect{param="sublime-flow"} held, gain Ultimate Might **+4%**, up to a maximum of **+48%**.
+
+      After casting *\[Baijiu and Mayhem]*, for each stack of :effect{param="sublime-flow"} held, gain **1** stack of *\[Liquor]*.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      When gaining *\[Liquor]* at the end of the round, also gain an equal number of stacks of :effect{param="sublime-flow"}.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      After casting a rank **1/2/3** *\[Baijiu Ladle]*, gain **2/3/5** stacks of :effect{param="sublime-flow"}.
+
+      After another ally actively takes an action, Jiu Niangzi consumes a random number of *\[Liquor]* stacks to cast a *\[Bottoms Up]*, this effect can trigger up to **3** times per round.
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">

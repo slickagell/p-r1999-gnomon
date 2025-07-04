@@ -8,14 +8,13 @@ star: 6
 afflatus: "PLANT"
 dmgType: "MENTAL"
 race: "ARCANIST"
-birthday: ""
+birthday: "12/23"
 version: "2.7"
 releaseDate: "2025-07-03"
 specialties: ["DPS","CONTROL","MOXIE"]
 limited: 0
 mainPiece: "x"
 euphorias: 0
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -32,27 +31,28 @@ import CHARACTER from "@data/characters/hissabeth.json";
 import RESONANCE from "@data/resonance/characters/hissabeth.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Hissabeth
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An Arcanist's Artwork. Exhibited during the 1980s for 19 years. Completed in winter, on the 23rd of December.
+    First displayed in Lusignan, Vienne, Fifth Republic of France, later transferred to the United States and archived at the LSCC.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Pursuit
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Speculation Among the Branches \[Wood], Nine in One
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Fruity Aromatic, Embers, Cherry, Melilot, Bitter Orange, Frankincense.
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    68 1/2 x 22 53/64 x 16 17/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -64,57 +64,57 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="arcane-skills-section-title">
-     Arcane Skills
+    Arcane Skills
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    Ouroboros
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note="An ancient symbol.">
+      Mass attack. Deals **120%** Mental DMG to 2 enemies, and deals an additional **60%** Mental DMG to targets holding the :effect{param="serpentine-scales"} status.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note="An ancient symbol of the infinite pursuit of truth.">
+      Mass attack. Deals **180%** Mental DMG to 2 enemies, and deals an additional **100%** Mental DMG to targets holding the :effect{param="serpentine-scales"} status.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note="An ancient symbol of the infinite pursuit of truth and the endless quest for progress.">
+      Mass attack. Deals **300%** Mental DMG to 2 enemies, and deals an additional **150%** Mental DMG to targets holding the :effect{param="serpentine-scales"} status.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    Infinite Recursion
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note="A mind-blowing idea.">
+      Self buff. Consume 2 stacks of :effect{param="snake-s-den"}. At the end of the round, generate two copies of rank 1 *\[Hiss!]* that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 1 additional Moxie.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note="A mind-blowing idea. A gravity-defying trick.">
+      Self buff. Consume 3 stacks of :effect{param="snake-s-den"}. At the end of the round, generate three copies of rank 1 *\[Hiss!]* that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 2 additional Moxie.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note="A mind-blowing idea, a gravity-defying trick, and a raisin cake—each born to please!">
+      Self buff. Consume 4 stacks of :effect{param="snake-s-den"}. At the end of the round, generate four copies of rank 1 *\[Hiss!]* that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 3 additional Moxie.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Experimental Rocketry
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note="Ready to be blasted into outer space? Initiating countdown ...">
+      Mass Attack. Deals **500%** Mental DMG to all enemies; on hitting a target, the Genesis DMG taken by that target at the end of this round from each stack of :effect{param="serpentine-scales"} is increased from **20%** to **70%**, and at the end of the round, convert all :effect{param="serpentine-scales"} into an equivalent number of copies of rank 1 *\[Hiss!]*.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="extra-cards">
-    <p class="subtitle">:TODO - Update extra card name:</p>
+    <p class="subtitle">Hiss!</p>
 
     <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
       <div class="basis-full lg:basis-auto shrink-0">
@@ -122,7 +122,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
       </div>
 
       <CardInfo type="VERSATILE" note="">
-        :TODO - Update extra card description:
+        1-target attack. Deals **50%**/**100%**/**250%** Mental DMG; inflicts 1/2/4 stacks of :effect{param="serpentine-scales"} and gains 0/1/2 Moxie. This effect counts as an ultimate and does not consume AP.
       </CardInfo>
     </div>
   </Fragment>
@@ -132,43 +132,43 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Eternally Inquisitive
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    When entering battle, gain 8 stacks of :effect{param="snake-s-den"}. At the start of the round, if holding at least 1 stack of :effect{param="snake-s-den"} on self, consume 1 stack of :effect{param="snake-s-den"} and generate a copy of rank 1 :effect{param="hiss-id-0"}; this effect can trigger up to 1 time per round. :effect{param="hiss-id-0"} and this unit's ultimates do not take up the allied Incantation Limit.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    DMG Dealt **+8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    When attacking an enemy that's holding :effect{param="serpentine-scales"}, Hissabeth inflicts :effect{param="rigidity"} on the target and gains 1 additional Moxie (triggers up to 1 time per round).
   </Fragment>
-  
+
   <Fragment slot="portray-section-title">
     Portray
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Eternally Inquisitive*: At the start of the round, if holding at least 1 stack of :effect{param="snake-s-den"} on self, consume 1 stack of :effect{param="snake-s-den"} and generate a copy of rank 1 :effect{param="hiss-id-0"}; this effect can now trigger up to 2 times per round. :effect{param="hiss-id-0"}'s Mental DMG is increased to **75%**/**150%**/**375%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Eternally Inquisitive*: When attacking an enemy that's holding :effect{param="serpentine-scales"}, Hissabeth inflicts :effect{param="rigidity"} on the enemy and gains 1 additional Moxie; this effect can now trigger up to 2 times per round.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    After casting *Experimental Rocketry*, the Genesis DMG taken from each stack of :effect{param="serpentine-scales"} resolved at the end of the same round is increased to **100%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Experimental Rocketry*'s effect changes to: deals **750%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    After casting *Experimental Rocketry*, the Genesis DMG taken from each stack of :effect{param="serpentine-scales"} resolved at the end of the same round is increased to **130%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -187,14 +187,13 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     #### Best in Slot
 
     <div class="flex justify-center md:justify-start">
-      
+      <PsychubeIcon param="never-ending-q-a" />
     </div>
 
     #### Other alternative
 
     <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
       <PsychubeIcon param="rehearsal-of-dreams" />
-
     </div>
   </Fragment>
 
