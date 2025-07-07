@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Hackers have many tricks.">
+    <CardInfo star="1" type="ATTACK" note={`Hackers have many tricks.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Hackers usually hack into devices through the internet.">
-      1-target attack. Deals **260%** Mental DMG and dispels all *\[Counter]* from the target.
+    <CardInfo star="2" type="ATTACK" note={`Hackers usually hack into devices through the internet.`}>
+      1-target attack. Deals **250%** Mental DMG and dispels all *\[Counter]* from the target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Hackers hack into devices through the internet and many other channels.">
-      1-target attack. Deals **440%** Mental DMG and dispels all *\[Counter]* from the target.
+    <CardInfo star="3" type="ATTACK" note={`Hackers hack into devices through the internet and many other channels.`}>
+      1-target attack. Deals **450%** Mental DMG and dispels all *\[Counter]* from the target.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Leaks happen a lot.">
+    <CardInfo star="1" type="ATTACK" note={`Leaks happen a lot.`}>
       1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Leaks happen a lot, such as electric leakage.">
+    <CardInfo star="2" type="ATTACK" note={`Leaks happen a lot, such as electric leakage.`}>
       1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Leaks happen a lot, no matter it's electricity, or a secret.">
+    <CardInfo star="3" type="ATTACK" note={`Leaks happen a lot, no matter it's electricity, or a secret.`}>
       1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="This is probably the most exciting TV show ever.">
-      Mass attack. Deals **200%** Mental DMG to all enemies and inflicts :effect{param="disconnect"} on them for 2 rounds.
+    <CardInfo type="DEBUFF" note={`This is probably the most exciting TV show ever.`}>
+      Mass attack. Deals **200%** Mental DMG to all enemies. Inflicts the :effect{param="disconcert"} status for 2 rounds on the targets hit.
     </CardInfo>
   </Fragment>
 
@@ -143,7 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Electricity Security*'s effect changes to: this attack enjoys Penetration Rate **40%**.
+    *Electricity Security*'s effect changes to: this attack enjoys Penetration Rate **+40%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">

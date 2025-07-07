@@ -33,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    Anarcanist's work. Exhibited in the 1930s for 17 years. Completed in Summer, on June 1. First exhibited in Los Angeles, California, USA, and later in many different places, though it primarily remained in the States.
+    An arcanist's work. Exhibited in the 1930s for 17 years. Completed in Summer, on June 1. First exhibited in Los Angeles, California, USA, and later in many different places, though it primarily remained in the States.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Bullets always hurt people.">
+    <CardInfo star="1" type="ATTACK" note={`Bullets always hurt people.`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Bullets always hurt people, no matter their type.">
+    <CardInfo star="2" type="ATTACK" note={`Bullets always hurt people, no matter their type.`}>
       1-target attack. Deals **300%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Bullets always hurt people, no matter their type. But some people still love them.">
+    <CardInfo star="3" type="ATTACK" note={`Bullets always hurt people, no matter their type. But some people still love them.`}>
       1-target attack. Deals **500%** Reality DMG.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="They're in the eye of the storm.">
+    <CardInfo star="1" type="ATTACK" note={`They're in the eye of the storm.`}>
       Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="They're in the eye of the storm, but they never tried to leave.">
+    <CardInfo star="2" type="ATTACK" note={`They're in the eye of the storm, but they never tried to leave.`}>
       Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="They're in the eye of the storm, but they never tried to leave. Perhaps everyone has a reason to be obsessed.">
+    <CardInfo star="3" type="ATTACK" note={`They're in the eye of the storm, but they never tried to leave. Perhaps everyone has a reason to be obsessed.`}>
       Mass attack. Deals **335%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **75%** more Reality DMG.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Spent a night having a dream, then spent a lifetime trying to escape from it.">
-      1-target attack. Deals **400%** Reality DMG, the target's Reality DEF and Mental DEF **-20%** for 3 rounds, and inflicts :effect{param="daze"} for 1 round.
+    <CardInfo type="DEBUFF" note={`Spent a night having a dream, then spent a lifetime trying to escape from it.`}>
+      1-target attack. Deals **400%** Reality DMG. Inflicts Reality DEF **-20%** and Mental DEF **-20%** for 3 rounds and :effect{param="daze"} for 1 round on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When the caster attacks, inflicts 1 stack of :effect{param="enchanted"} on the target for 2 rounds. If the target is of the opposite sex, inflicts 1 additional stack of :effect{param="enchanted"}.
+    When attacking, inflicts 1 stack of :effect{param="enchanted"} for 2 rounds on the target hit. If the target is of the opposite gender, inflicts 1 additional stack of :effect{param="enchanted"} on the target.
   </Fragment>
 
   <Fragment slot="portray-section-title">

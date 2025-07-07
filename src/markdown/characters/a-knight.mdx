@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A thousand swings, just like before.">
+    <CardInfo star="1" type="ATTACK" note={`A thousand swings, just like before.`}>
       1-target attack. Deals **180%** Reality DMG. If the target is defeated, Moxie +1 for self.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A thousand swings throughout the night, just like before.">
+    <CardInfo star="2" type="ATTACK" note={`A thousand swings throughout the night, just like before.`}>
       1-target attack. Deals **250%** Reality DMG. If the target is defeated, Moxie +2 for self.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A thousand swings throughout the night that never ends, just like before.">
+    <CardInfo star="3" type="ATTACK" note={`A thousand swings throughout the night that never ends, just like before.`}>
       1-target attack. Deals **450%** Reality DMG. If the target is defeated, Moxie +3 for self.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Someone witnessed the sun.">
+    <CardInfo star="1" type="ATTACK" note={`Someone witnessed the sun.`}>
       Mass attack. Deals **150%** Reality DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Someone witnessed the sun, its light shining upon the soil.">
+    <CardInfo star="2" type="ATTACK" note={`Someone witnessed the sun, its light shining upon the soil.`}>
       Mass attack. Deals **150%** Reality DMG to 2 enemies. Moxie +1 for self.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Someone witnessed the sun. Its light shone upon the soil and gave rise to the mighty mountains.">
+    <CardInfo star="3" type="ATTACK" note={`Someone witnessed the sun. Its light shone upon the soil and gave rise to the mighty mountains.`}>
       Mass attack. Deals **225%** Reality DMG to 2 enemies. Moxie +2 for self.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="Heroic souls returned to their homes as the ancient horn of war gave its call.">
+    <CardInfo type="ATTACK" note={`Heroic souls returned to their homes as the ancient horn of war gave its call.`}>
       Mass attack. Deals **400%** Reality DMG to all enemies. If any target is defeated, grants 1 stack of :effect{param="rousing-morale"} to all allies.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    For every **20%** Max HP lost on the target, DMG Dealt **+10%**.
+    For every **20%** Missing HP on the enemy, DMG Dealt **+10%**.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    For every **20%** Max HP lost on the enemy, Penetration Rate **+10%**.
+    For every **20%** Missing HP on the enemy, Penetration Rate **+10%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -151,7 +151,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *After AD 778*: If this attack defeats an enemy, gains 1 additional stack of :effect{param="rousing-morale"}.
+    *After AD 778*: If this attack defeats an enemy, gains **1** additional stack of :effect{param="rousing-morale"}.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

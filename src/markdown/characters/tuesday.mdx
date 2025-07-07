@@ -45,7 +45,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Phantom Hospitality \[Spirit] Motel Owner.
+    Phantom Hospitality \[Spirit] Motel Owner
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -53,7 +53,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    65 7/20x 19 3/10 x12 99/100 in.
+    65 7/20 x 19 3/10 x 12 99/100 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -73,15 +73,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="A seed of fear.">
+    <CardInfo star="1" type="DEBUFF" note={`A seed of fear.`}>
       1-target attack. Deals **130%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, repeating up to 2 times.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="A seed of fear, deeply planted.">
-      1-target attack. Deals **250%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, repeating up to 3 times.
+    <CardInfo star="2" type="DEBUFF" note={`A seed of fear, deeply planted.`}>
+      1-target attack. Deals **230%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, repeating up to 3 times.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="A seed of fear, deeply planted and delightfully nurtured.">
+    <CardInfo star="3" type="DEBUFF" note={`A seed of fear, deeply planted and delightfully nurtured.`}>
       1-target attack. Deals **455%** Mental DMG. Inflicts 2 instances of :effect{param="poison"} on the target for 2 rounds: at the end of the round, deals (the user's ATK x**20%**) Genesis DMG to the target; then inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, repeating up to 4 times.
     </CardInfo>
   </Fragment>
@@ -91,15 +91,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Exactly what a baby needs.">
+    <CardInfo star="1" type="DEBUFF" note={`Exactly what a baby needs.`}>
       Mass debuff. Inflicts Genesis DMG Taken **+15%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{param="poison"} status) on all enemies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Exactly what a baby —and any adult— needs.">
-      Mass debuff. Inflicts Genesis DMG Taken **+25%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets. in the :effect{param="poison"} status) on all enemies for 2 rounds.
+    <CardInfo star="2" type="DEBUFF" note={`Exactly what a baby—and any adult—needs.`}>
+      Mass debuff. Inflicts Genesis DMG Taken **+25%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{param="poison"} status) on all enemies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Exactly what a baby —and any adult— needs, and she makes sure all of those needs ase met.">
+    <CardInfo star="3" type="DEBUFF" note={`Exactly what a baby—and any adult—needs, and she makes sure all of those needs are met.`}>
       Mass debuff. Inflicts Genesis DMG Taken **+35%** on all enemies for 2 rounds; inflicts Critical Resist Rate **-15%** (**-20%** to targets in the :effect{param="poison"} status) on all enemies for 2 rounds.
     </CardInfo>
   </Fragment>
@@ -109,7 +109,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Relax, it's nothing but an empty room at the heart of terror.">
+    <CardInfo type="DEBUFF" note={`Relax, it's nothing but an empty room at the heart of terror.`}>
       Mass attack. Deals **225%** Mental DMG to all enemies, inflicts 1 instance of :effect{param="poison"} for 2 rounds on the targets hit: at the end of each round, deals (the user's ATK x**20%**) Genesis DMG to the target, then deals an additional (Tuesday's ATK x number of instances of :effect{param="poison"} on the target x**30%**) Genesis DMG that can critically hit to the target; and at the same time, deploys array :effect{param="horror-story-night"} for 3 rounds.
     </CardInfo>
   </Fragment>
@@ -123,7 +123,9 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, gain :effect{param="fear-cradle"}. When entering battle, grant Genesis DMG Dealt **+15%** to self.
+    When entering battle, gain :effect{param="fear-s-cradle"}.
+
+    When entering battle, grant Genesis DMG Dealt **+15%** to self.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -131,7 +133,9 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, gain :effect{param="room-service"}. When entering battle, gain Moxie +2 for self (triggers only 1 time).
+    When entering battle, gain :effect{param="room-service"}.
+
+    When entering battle, gain Moxie +2 for self (triggers only 1 time).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -143,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *In Mother's Arms*: At incantation rank **1/2/3**, the Genesis DMG Taken is now **+30%/40%/50%**, and the Critical Resist Rate is now **-25%** (**-30%** to targets in the :effect{param="poison"} status).
+    *In Mother's Arms*: At incantation rank **1/2/3**, the Genesis DMG Taken is now **+30%**/**40%**/**50%**, and the Critical Resist Rate is now **-25%** (**-30%** to targets in the :effect{param="poison"} status).
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -155,7 +159,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *The Horror's Delight*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **210%/310%/535%**, and inflicts 1 instance of the same :effect{param="poison"} on another random, legal enemy target if able, now repeating up to **3/4/5** times.
+    *The Horror's Delight*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **210%**/**310%**/**535%**, and inflicts **1** instance of the same :effect{param="poison"} on another random, legal enemy target if able, now repeating up to **3/4/5** times.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -203,7 +207,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
     All the :effect{param="poison"} cause by Tuesday will deal Genesis DMG to the target scale by **20%** of Tuesday's ATK, which is lower than most *\[Poison]* characters (30%).
 
-    With Insight 1, gains :effect{param="fear-cradle"}, that make all :effect{param="poison"} become Critical hits.
+    With Insight 1, gains :effect{param="fear-s-cradle"}, that make all :effect{param="poison"} become Critical hits.
 
     * If ally inflicts any *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status, it has a **50%** chance to inflict 1 instance of :effect{param="poison"} on that target for 1 round, based on **ally**'s ATK.
     * This inflict effect will be calculated **separately**, which means more *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status, more chances to inflict :effect{param="poison"}.

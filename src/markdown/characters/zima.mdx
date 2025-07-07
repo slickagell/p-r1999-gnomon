@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Nature's gift to humanity.">
+    <CardInfo star="1" type="ATTACK" note={`Nature's gift to humanity.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Nature's gift to humanity. Examples include birds chirping.">
-      1-target attack. Deals **200%** Mental DMG and inflicts :effect{param="silence"} status for 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`Nature's gift to humanity. Examples include birds chirping.`}>
+      1-target attack. Deals **200%** Mental DMG. Inflicts :effect{param="silence"} for 1 round on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Nature's gift to humanity. Examples include the wind from frost-covered isles.">
-      1-target attack. Deals **300%** Mental DMG and inflicts :effect{param="silence"} status for 2 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`Nature's gift to humanity. Examples include the wind from frost-covered isles.`}>
+      1-target attack. Deals **300%** Mental DMG. Inflicts :effect{param="silence"} for 2 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="Text written on parchment.">
+    <CardInfo star="1" type="BUFF" note={`Text written on parchment.`}>
       Mass buff. DMG Dealt **+15%** and DMG Heal **+15%** for all allies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="Text written on torn and charred parchment.">
+    <CardInfo star="2" type="BUFF" note={`Text written on torn and charred parchment.`}>
       Mass buff. DMG Dealt **+20%** and DMG Heal **+20%** for all allies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="Text written on torn and charred parchment, but epics will endure forever.">
+    <CardInfo star="3" type="BUFF" note={`Text is written on torn and charred parchment, but epics will endure forever.`}>
       Mass buff. DMG Dealt **+25%** and DMG Heal **+25%** for all allies for 3 rounds.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Many things have been written on paper. We have praises, histories, and orders of exile.">
+    <CardInfo type="DEBUFF" note={`Many things have been written on paper. We have praises, histories, and orders of exile.`}>
       Mass attack. Deals **250%** Mental DMG to all enemies. On hitting the main target, inflicts the :effect{param="seal"} status on the main target for 2 rounds.
     </CardInfo>
   </Fragment>
@@ -131,7 +131,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Poem, Island, Breeze*'s effect changes to: deals **280%**, Mental DMG.
+    *Poem, Island, Breeze*'s effect changes to: deals **280%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">

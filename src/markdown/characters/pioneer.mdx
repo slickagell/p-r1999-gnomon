@@ -45,7 +45,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Chypre Woody, Leather, Gakmoss, Patchouli, Aldehydes
+    Chypre Woody, Leather, Oakmoss, Patchouli, Aldehydes
   </Fragment>
 
   <Fragment slot="info-dimensions">
@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A foundational conecept.">
+    <CardInfo star="1" type="ATTACK" note={`A foundational concept.`}>
       1-target attack. Deals **200%** Mental DMG, then shifts self 1 position forward.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A foundational conecept in the world of commerce.">
-      1-target attack. Deals **300%** Mental DMG, then shifts self 2 position forward.
+    <CardInfo star="2" type="ATTACK" note={`A foundational concept in the world of commerce.`}>
+      1-target attack. Deals **300%** Mental DMG, then shifts self 2 positions forward.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A foundational conecept in the world of commerce, relevant to both shopping malls aand streets.">
-      1-target attack. Deals **500%** Mental DMG, then shifts self 3 position forward.
+    <CardInfo star="3" type="ATTACK" note={`A foundational concept in the world of commerce, relevant both to shopping malls and street.`}>
+      1-target attack. Deals **500%** Mental DMG, then shifts self 3 positions forward.
     </CardInfo>
   </Fragment>
 
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave.">
-      Self counter. Grants :effect{param="taunt"}, Reality DEF **+25%**, and Mental DEF **+25%** to self for 2 rounds, then shifts 1 position backwards.
+    <CardInfo star="1" type="COUNTER" note={`A savvy entrepreneur will accompany the customer as they leave.`}>
+      Self counter. Grants :effect{param="taunt"}, Reality DEF **+25%**, and Mental DEF **+25%** to self for 2 rounds, then shifts self 1 position backward.
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave, even if no deal is made.">
-      Self counter. Grants :effect{param="taunt"}, Reality DEF **+30%**, and Mental DEF **+30%** to self for 2 rounds, then shifts 2 position backwards.
+    <CardInfo star="2" type="COUNTER" note={`A savvy entrepreneur will accompany the customer as they leave, even if no deal is made.`}>
+      Self counter. Grants :effect{param="taunt"}, Reality DEF **+30%**, and Mental DEF **+30%** to self for 2 rounds, then shifts self 2 positions backward.
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="A savvy enterpreneur will accompany the customer as they leave; 'no deal' simply means that a deal has not yet been made.">
-      Self counter. Grants :effect{param="taunt"}, Reality DEF **+35%**, and Mental DEF **+35%** to self for 3 rounds, then shifts 3 position backwards.
+    <CardInfo star="3" type="COUNTER" note={`A savvy entrepreneur will accompany the customer as they leave; "no deal" simply means that a deal has not yet been made.`}>
+      Self counter. Grants :effect{param="taunt"}, Reality DEF **+35%**, and Mental DEF **+35%** to self for 3 rounds, then shifts self 3 position backward.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="This desire to be the 'bridge' is sparked by the immense divide he percieves.">
-      1-target buff. Grants an ally a Shield with (Pioneer's Max HP x**50%**) HP for 2 rounds. Pioneer swaps positions with the target and grants the target a *\[Roving Salesman]* buff that matches their new position, with the duration of the buff extended by 1.
+    <CardInfo type="BUFF" note={`This desire to be the "bridge" is sparked by the immense divide he perceives.`}>
+      1-target buff. Grants an ally a Shield with (Pioneer's Max HP x**50%**) HP for 2 rounds. Pioneer swaps positions with the target and grants the target a *\[Roving Salesman]* buff that matches their new position, with the duration of the buff extended by 1 round.
     </CardInfo>
   </Fragment>
 
@@ -121,9 +121,9 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   <Fragment slot="insight-1-info">
     At the start of the round and after being shifted, gain a buff that matches the position:
 
-    Position #1: :effect{param="hot-deal"};
+    Position #1: :effect{param="hot-deal-id-1"};
 
-    Position #2: :effect{param="promotional-package"};
+    Position #2: :effect{param="promotional-package-id-1"};
 
     Position #3: :effect{param="risk-management"};
 
@@ -143,7 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *To Future Business*: The Reality DEF and Mental DEF are increased to **30%/35%/40%**.
+    *To Future Business*: The Reality DEF and Mental DEF are increased to **30%**/**35%**/**40%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -151,11 +151,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Roving Salesman*: :effect{param="promotional-package"}'s DMG Bonus and DMG Reduction are increased to **25%**.
+    *Roving Salesman*: :effect{param="promotional-package-id-1"}'s DMG Bonus and DMG Reduction are increased to **25%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Roving Salesman*: :effect{param="hot-deal"}'s Critical Rate and Critical DMG are increased to **30%**.
+    *Roving Salesman*: :effect{param="hot-deal-id-1"}'s Critical Rate and Critical DMG are increased to **30%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

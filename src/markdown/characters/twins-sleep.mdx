@@ -33,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    arcanist's work exhibited in the 1980s for 8 years. Completed in spring, on April 27. Exhibited in New Work, USA.
+    An arcanist's work exhibited in the 1980s for 8 years. Completed in spring, on April 27. Exhibited in New York, USA.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Watch your back.">
-      1-target attack. Deals **220%** Mental DMG.
+    <CardInfo star="1" type="ATTACK" note={`Watch your back.`}>
+      1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Watch your back. She has 2 chances.">
-      1-target attack. Deals **230%** Mental DMG. Inflicts Mental DEF **-25%** for 2 rounds on the target hit.
+    <CardInfo star="2" type="DEBUFF" note={`Watch your back. She has 2 chances.`}>
+      1-target attack. Deals **200%** Mental DMG. Inflicts Mental DEF **-25%** for 2 rounds on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Watch your back, or you'll never leave this game!">
-      1-target attack. Deals **400%** Mental DMG. Inflicts Mental DEF **-35%** for 3 rounds on the target hit.
+    <CardInfo star="3" type="DEBUFF" note={`Watch your back, or you'll never leave this game!`}>
+      1-target attack. Deals **350%** Mental DMG. Inflicts Mental DEF **-35%** for 3 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Hold your breath.">
+    <CardInfo star="1" type="DEBUFF" note={`Hold your breath.`}>
+      Mass debuff. Inflicts 1 stack of :effect{param="weakness"} on all enemies and Critical DEF **-20%** for them for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="2" type="DEBUFF" note={`Hold your breath. The twins are inseparable.`}>
       Mass debuff. Inflicts 1 stack of :effect{param="weakness"} on all enemies and Critical DEF **-30%** for them for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Hold your breath. The twins are inseparable.">
-      Mass debuff. Inflicts 1 stack of :effect{param="weakness"} on all enemies and Critical DEF **-40%** for them for 2 rounds.
-    </CardInfo>
-
-    <CardInfo star="3" type="DEBUFF" note="Hold your breath. She's a lovely one, so why are you hiding from her?">
-      Mass debuff. Inflicts 2 stacks of :effect{param="weakness"} on all enemies and Critical DEF **-50%** for them for 3 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`Hold your breath. She's a lovely one, so why are you hiding from her?`}>
+      Mass debuff. Inflicts 2 stacks of :effect{param="weakness"} on all enemies and Critical DEF **-40%** for them for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="They're skilled in making you dream. You'll like her more there.">
-      1-target attack. Deals **600%** Mental DMG. Inflicts :effect{param="nightmare"} for 1 round on the target hit.
+    <CardInfo type="DEBUFF" note={`They're skilled in making you dream. You'll like her more there.`}>
+      1-target attack. Deals **450%** Mental DMG. Inflicts :effect{param="nightmare"} for 1 round on the target hit.
     </CardInfo>
   </Fragment>
 

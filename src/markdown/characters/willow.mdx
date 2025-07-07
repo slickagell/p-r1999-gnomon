@@ -73,15 +73,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="May you be the embodiment of elegance and beauty.">
+    <CardInfo star="1" type="DEBUFF" note={`May you be the embodiment of elegance and beauty.`}>
       1-target attack. Deals **100%** Mental DMG; if the target hit already has an instance of :effect{param="poison"}, convert 1 instance of :effect{param="poison"} into 1 stack of :effect{param="hag-s-bane"} that lasts 2 rounds; up to 3 instances of Poison can be converted by this effect.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="May you be the embodiment of elegance and beauty. May you be cherished by the stars.">
+    <CardInfo star="2" type="DEBUFF" note={`May you be the embodiment of elegance and beauty. May you be cherished by the stars.`}>
       1-target attack. Deals **125%** Mental DMG; if the target hit already has an instance of :effect{param="poison"}, convert 1 instance of :effect{param="poison"} into 1 stack of :effect{param="hag-s-bane"} that lasts 2 rounds; up to 4 instances of Poison can be converted by this effect.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="May you be the embodiment of elegance and beauty. May you be cherished by the stars. May you avoid a fate like mine.">
+    <CardInfo star="3" type="DEBUFF" note={`May you be the embodiment of elegance and beauty. May you be cherished by the stars. May you avoid a fate like mine.`}>
       1-target attack. Deals **175%** Mental DMG; if the target hit already has an instance of :effect{param="poison"}, convert 1 instance of :effect{param="poison"} into 1 stack of :effect{param="hag-s-bane"} that lasts 2 rounds; up to 5 instances of Poison can be converted by this effect.
     </CardInfo>
   </Fragment>
@@ -91,15 +91,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="It's just a little cold.">
+    <CardInfo star="1" type="DEBUFF" note={`It's just a little cold.`}>
       1-target attack. Deals **100%** Mental DMG; if the target hit already has both an instance of :effect{param="poison"} and the :effect{param="hag-s-bane"} status, consume up to 2 instances of :effect{param="poison"}, each instance of :effect{param="poison"} resolves the :effect{param="hag-s-bane"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="It's just a little cold, bestowed by the witch.">
-      1-target attack. Deals **125%** Mental DMG; if the target hit already has both an instance of :effect{param="poison"} and the :effect{param="hag-s-bane"} status, consume up to 3 instances of :effect{param="poison"}, each instance of :effect{param="poison"} resolves the :effect{param="hag-s-bane"} status on the target once, and the remaining rounds of Hags Bane do not decrease when resolved this way.
+    <CardInfo star="2" type="DEBUFF" note={`It's just a little cold, bestowed by the witch.`}>
+      1-target attack. Deals **125%** Mental DMG; if the target hit already has both an instance of :effect{param="poison"} and the :effect{param="hag-s-bane"} status, consume up to 3 instances of :effect{param="poison"}, each instance of :effect{param="poison"} resolves the :effect{param="hag-s-bane"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="It's just a little cold, bestowed by the witch. May your suffering come to an end soon.">
+    <CardInfo star="3" type="DEBUFF" note={`It's just a little cold, bestowed by the witch. May your suffering come to an end soon.`}>
       1-target attack. Deals **175%** Mental DMG; if the target hit already has both an instance of :effect{param="poison"} and the :effect{param="hag-s-bane"} status, consume up to 4 instances of :effect{param="poison"}, each instance of :effect{param="poison"} resolves the :effect{param="hag-s-bane"} status on the target once, and the remaining rounds of Hag's Bane do not decrease when resolved this way.
     </CardInfo>
   </Fragment>
@@ -109,7 +109,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="CHANNEL" note="She now has the one spectator that truly matters; no other witness is necessary.">
+    <CardInfo type="CHANNEL" note={`She now has the one spectator that truly matters; no other witness is necessary.`}>
       Self channel. Enters the :effect{param="ancient-ritual"} status.
     </CardInfo>
   </Fragment>
@@ -123,7 +123,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    At the start of the round, inflict 2 instances of :effect{param="poison"} on 2 enemy targets for 2 rounds, prioritizing targets with the most instances of :effect{param="poison"}. When another ally actively casts and attacks an enemy with an incantation, Willow inflicts 2 additional instances of :effect{param="poison"} on the main target for 2 rounds, this effect can trigger up to 2 times per round.
+    At the start of the round, inflict 2 instances of :effect{param="poison-id-2"} on 2 enemy targets for 2 rounds, prioritizing targets with the most instances of :effect{param="poison"}. When another ally actively casts and attacks an enemy with an incantation, Willow inflicts 2 additional instances of :effect{param="poison-id-2"} on the main target for 2 rounds, this effect can trigger up to 2 times per round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -139,11 +139,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Hag's Advice*: All :effect{param="hag-s-bane"} inflicted by Willow is increased to (the user's ATK X**24%**) Genesis DMG.
+    *Hag's Advice*: All :effect{param="hag-s-bane"} inflicted by Willow is increased to (the user's ATK x**24%**) Genesis DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Hag's Steps*: The damage of all :effect{param="poison"} effects inflicted by this passive is increased to (the user's ATK x**40%**) Genesis DMG. In addition, each time Willow's :effect{param="hag-s-bane"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **45%**.
+    *Hag's Steps*: The damage of all :effect{param="poison-id-2"} effects inflicted by this passive is increased to (the user's ATK x**40%**) Genesis DMG. In addition, each time Willow's :effect{param="hag-s-bane-id-1"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **45%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -151,11 +151,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Hag's Steps*: When another ally actively casts and attacks an enemy with an incantation, the instances of :effect{param="poison"} Willow inflicts on the main target is inereased to **3**.
+    *Hag's Steps*: When another ally actively casts and attacks an enemy with an incantation, the instances of :effect{param="poison-id-3"} Willow inflicts on the main target is increased to **3**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Hag's Advice*: Each time Willow's :effect{param="hag-s-bane"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **50%**.
+    *Hag's Advice*: Each time Willow's :effect{param="hag-s-bane-id-2"} resolves, the compounding damage the target takes from each subsequent resolve of Hag's Bane is increased to **50%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

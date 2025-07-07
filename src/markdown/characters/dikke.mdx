@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An act against the rules.">
-      1-target attack. Deals **220%** Mental DMG.
+    <CardInfo star="1" type="ATTACK" note={`An act against the rules.`}>
+      1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This act is beyond the power and duty of a judge.">
-      1-target attack. Deals **230%** Mental DMG plus (the caster's ATK x**50%**) Genesis DMG.
+    <CardInfo star="2" type="ATTACK" note={`This act is beyond the power and duty of a judge.`}>
+      1-target attack. Deals **200%** Mental DMG plus (the caster's ATK x**50%**) Genesis DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This act is beyond the power and duty of a judge, but it is allowed by “justice.”">
-      1-target attack. Deals **350%** Mental DMG plus (ATK x**100%**) Genesis DMG.
+    <CardInfo star="3" type="ATTACK" note={`This act is beyond the power and duty of a judge, but it is allowed by "justice."`}>
+      1-target attack. Deals **300%** Mental DMG plus (the caster's ATK x**100%**) Genesis DMG.
     </CardInfo>
   </Fragment>
 
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="An act within the rules.">
-      Mass healing. HP +(the casters ATK x**60%**) for all allies; if a target's HP is below **50%**, additionally HP +(the caster's ATK x**30%**) for the target.
+    <CardInfo star="1" type="HEALTH" note={`An act within the rules.`}>
+      Mass healing. HP +(the caster's ATK x**60%**) for all allies; if a target's HP is below **50%**, additionally HP +(the caster's ATK x**30%**) for the target.
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="A rare act within the rules.">
+    <CardInfo star="2" type="HEALTH" note={`A rare act within the rules.`}>
       Mass healing. HP +(the caster's ATK x**90%**) for all allies; if a target's HP is below **50%**, additionally HP +(the caster's ATK x**45%**) for the target.
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="A rare act within the rules, for the sake of the weak.">
-      Mass healing. HP +(the caster's ATK x**150%**) for all allies; if a target's HP is below **50%**, additionally HP +(the casters ATK x**75%**) for the target.
+    <CardInfo star="3" type="HEALTH" note={`A rare act within the rules, for the sake of the weak.`}>
+      Mass healing. HP +(the caster's ATK x**150%**) for all allies; if a target's HP is below **50%**, additionally HP +(the caster's ATK x**75%**) for the target.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="Her heart is as clear as mirror, her sword is as fierce as fire.">
-      1-target attack. Purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster and enters :effect{param="immunity"} for 1 round to the caster. Deals **400%** Mental DMG plus (the caster's ATK x**170%**) Genesis DMG.
+    <CardInfo type="ATTACK" note={`Her heart is as clear as mirror, her sword is as fierce as fire.`}>
+      1-target attack. Purifies all *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from the caster and enters :effect{param="immunity"} for 1 round to the caster. Deals **400%** Mental DMG plus (the caster's ATK x**100%**) Genesis DMG.
     </CardInfo>
   </Fragment>
 

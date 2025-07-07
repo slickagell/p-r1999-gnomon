@@ -41,7 +41,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Sleep-talking in the Star Night \[Star] Adventures in Wonderland
+    Sleep-talking in the Starry Night \[Star] Adventures in Wonderland
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    74 51/64x54 21/64x5 29/32 in.
+    74 51/64x54 21/64x5 29/32in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Ding dong. Ding dong. There's no doorbell here.">
+    <CardInfo star="1" type="ATTACK" note={`Ding dong. Ding dong. There's no doorbell here.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Ding dong. Ding dong. We don't lack guests here.">
-      1-target attack. Deals **200%** Mental DMG. Mental DEF **-25%** for the target for 2 rounds.
+    <CardInfo star="2" type="DEBUFF" note={`Ding dong. Ding dong. We don't lack guests here.`}>
+      1-target attack. Deals **200%** Mental DMG. Inflicts Mental DEF **-25%** for 2 rounds on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Ding dong. Ding dong. They're all waiting for you, waiting for you.">
-      1-target attack. Deals **350%** Mental DMG. Mental DEF **-35%** for the target for 3 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`Ding dong. Ding dong. They're all waiting for you, waiting for you.`}>
+      1-target attack. Deals **350%** Mental DMG. Inflicts Mental DEF **-35%** for 3 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Aromas of fungi and dew.">
+    <CardInfo star="1" type="DEBUFF" note={`Aromas of fungi and dew.`}>
       Mass debuff. DMG **-15%** and DMG Taken **+15%** for all enemies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Aromas of fungi and dew. The puppies kept barking at it.">
-      Mass debuff. DMG **-25%** and DMG Taken **+25%** for all enemies for 2 rounds.
+    <CardInfo star="2" type="DEBUFF" note={`Aromas of fungi and dew. The puppies kept barking at it.`}>
+      Mass debuff. DMG **-20%** and DMG Taken **+20%** for all enemies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Aromas of fungi and dew. A new world upside down. A party it is.">
+    <CardInfo star="3" type="DEBUFF" note={`Aromas of fungi and dew. A new world upside down. A party it is.`}>
       Mass debuff. All enemies suffer DMG Dealt **-25%** and DMG Taken **+25%**. Lasts 3 rounds.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Click. You can smell the fragrance, dear friends.">
+    <CardInfo type="DEBUFF" note={`Click. You can smell the fragrance, dear friends.`}>
       Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, inflicts :effect{param="nightmare"} status for 1 round on the target.
     </CardInfo>
   </Fragment>
@@ -135,11 +135,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Tea with Friends* effect changes to: deals **350%** Mental DMG.
+    *Tea with Friends*'s effect changes to: deals **350%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Tea Party*'s effect changes to: at **1/2/3** stars, deals **220/230/400%** Mental DMG.
+    *Tea Party*: at rank **1/2/3**, deals **220/230/400%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">

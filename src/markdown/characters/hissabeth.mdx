@@ -72,15 +72,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An ancient symbol.">
+    <CardInfo star="1" type="ATTACK" note={`An ancient symbol.`}>
       Mass attack. Deals **120%** Mental DMG to 2 enemies, and deals an additional **60%** Mental DMG to targets holding the :effect{param="serpentine-scales"} status.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="An ancient symbol of the infinite pursuit of truth.">
+    <CardInfo star="2" type="ATTACK" note={`An ancient symbol of the infinite pursuit of truth.`}>
       Mass attack. Deals **180%** Mental DMG to 2 enemies, and deals an additional **100%** Mental DMG to targets holding the :effect{param="serpentine-scales"} status.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="An ancient symbol of the infinite pursuit of truth and the endless quest for progress.">
+    <CardInfo star="3" type="ATTACK" note={`An ancient symbol of the infinite pursuit of truth and the endless quest for progress.`}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies, and deals an additional **150%** Mental DMG to targets holding the :effect{param="serpentine-scales"} status.
     </CardInfo>
   </Fragment>
@@ -90,16 +90,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="A mind-blowing idea.">
-      Self buff. Consume 2 stacks of :effect{param="snake-s-den"}. At the end of the round, generate two copies of rank 1 *\[Hiss!]* that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 1 additional Moxie.
+    <CardInfo star="1" type="BUFF" note={`A mind-blowing idea.`}>
+      Self buff. Consume 2 stacks of :effect{param="snake-s-den"}. At the end of the round, generate two copies of rank 1 :effect{param="hiss-id-0"} that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 1 additional Moxie.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="A mind-blowing idea. A gravity-defying trick.">
-      Self buff. Consume 3 stacks of :effect{param="snake-s-den"}. At the end of the round, generate three copies of rank 1 *\[Hiss!]* that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 2 additional Moxie.
+    <CardInfo star="2" type="BUFF" note={`A mind-blowing idea. A gravity-defying trick.`}>
+      Self buff. Consume 3 stacks of :effect{param="snake-s-den"}. At the end of the round, generate three copies of rank 1 :effect{param="hiss-id-0"} that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 2 additional Moxie.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="A mind-blowing idea, a gravity-defying trick, and a raisin cake—each born to please!">
-      Self buff. Consume 4 stacks of :effect{param="snake-s-den"}. At the end of the round, generate four copies of rank 1 *\[Hiss!]* that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 3 additional Moxie.
+    <CardInfo star="3" type="BUFF" note={`A mind-blowing idea, a gravity-defying trick, and a raisin cake—each born to please!`}>
+      Self buff. Consume 4 stacks of :effect{param="snake-s-den"}. At the end of the round, generate four copies of rank 1 :effect{param="hiss-id-0"} that do not take up the allied Incantation Limit; if there aren't enough stacks of :effect{param="snake-s-den"}, gain 3 additional Moxie.
     </CardInfo>
   </Fragment>
 
@@ -108,8 +108,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Ready to be blasted into outer space? Initiating countdown ...">
-      Mass Attack. Deals **500%** Mental DMG to all enemies; on hitting a target, the Genesis DMG taken by that target at the end of this round from each stack of :effect{param="serpentine-scales"} is increased from **20%** to **70%**, and at the end of the round, convert all :effect{param="serpentine-scales"} into an equivalent number of copies of rank 1 *\[Hiss!]*.
+    <CardInfo type="ATTACK" note={`Ready to be blasted into outer space? Initiating countdown ...`}>
+      Mass Attack. Deals **500%** Mental DMG to all enemies; on hitting a target, the Genesis DMG taken by that target at the end of this round from each stack of :effect{param="serpentine-scales"} is increased from **20%** to **70%**, and at the end of the round, convert all :effect{param="serpentine-scales"} into an equivalent number of copies of rank 1 :effect{param="hiss-id-0"}.
     </CardInfo>
   </Fragment>
 
@@ -152,11 +152,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Eternally Inquisitive*: At the start of the round, if holding at least 1 stack of :effect{param="snake-s-den"} on self, consume 1 stack of :effect{param="snake-s-den"} and generate a copy of rank 1 :effect{param="hiss-id-0"}; this effect can now trigger up to 2 times per round. :effect{param="hiss-id-0"}'s Mental DMG is increased to **75%**/**150%**/**375%**.
+    *Eternally Inquisitive*: At the start of the round, if holding at least **1** stack of :effect{param="snake-s-den"} on self, consume **1** stack of :effect{param="snake-s-den"} and generate a copy of rank **1** :effect{param="hiss-id-0"}; this effect can now trigger up to **2** times per round. :effect{param="hiss-id-0"}'s Mental DMG is increased to **75%**/**150%**/**375%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Eternally Inquisitive*: When attacking an enemy that's holding :effect{param="serpentine-scales"}, Hissabeth inflicts :effect{param="rigidity"} on the enemy and gains 1 additional Moxie; this effect can now trigger up to 2 times per round.
+    *Eternally Inquisitive*: When attacking an enemy that's holding :effect{param="serpentine-scales"}, Hissabeth inflicts :effect{param="rigidity"} on the enemy and gains **1** additional Moxie; this effect can now trigger up to **2** times per round.
   </Fragment>
 
   <Fragment slot="portray-3-info">

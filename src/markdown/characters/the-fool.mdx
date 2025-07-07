@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="He wears many faces.">
+    <CardInfo star="1" type="ATTACK" note={`He wears many faces.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="He wears many faces. He can be a messenger, or a deserter.">
-      1-target attack. Deals **250%** Mental DMG. Moxie -1 for the target.
+    <CardInfo star="2" type="ATTACK" note={`He wears many faces. He can be a messenger, or a deserter.`}>
+      1-target attack. Deals **250%** Mental DMG. Inflicts Moxie -1 on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="He wears many faces. Perhaps he's just an actor.">
-      1-target attack. Deals **400%** Mental DMG. Moxie -2 for the target.
+    <CardInfo star="3" type="ATTACK" note={`He wears many faces. Perhaps he's just an actor.`}>
+      1-target attack. Deals **400%** Mental DMG. Inflicts Moxie -2 on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="He controls your emotions.">
-      Self counter. Enters :effect{param="taunt"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{param="corrode"}:when a round ends, takes (Target's Current HP x**15%**) Genesis DMG, capped at **15%** of Caster's Max HP.
+    <CardInfo star="1" type="COUNTER" note={`He controls your emotions.`}>
+      Self counter. Enters :effect{param="taunt"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{param="corrode"}: when a round ends, takes (Target's Current HP x**15%**) Genesis DMG, capped at **15%** of Caster's Max HP.
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="He is the Fool on the stage and he controls your emotions.">
+    <CardInfo star="2" type="COUNTER" note={`He is the Fool on the stage and he controls your emotions.`}>
       Self counter. Enters :effect{param="taunt"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{param="corrode"}: when a round ends, takes (Target's Current HP x**25%**) Genesis DMG, capped at **25%** of Caster's Max HP.
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="He is the Fool on the stage and he controls your emotions. And there's more than one of them.">
+    <CardInfo star="3" type="COUNTER" note={`He is the Fool on the stage and he controls your emotions. And there's more than one of them.`}>
       Self counter. Enters :effect{param="taunt"} for 1 round. When the caster is attacked, the attacker suffers 2 rounds of :effect{param="corrode"}: when a round ends, takes (Target's Current HP x**35%**) Genesis DMG, capped at **35%** of Caster's Max HP.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="He hates it when people barge on to the stage.">
-      Mass attack. Deals **250%** Mental DMG to all enemies. If the target is in :effect{param="corrode"} status, extends the status duration for 1 round.
+    <CardInfo type="ATTACK" note={`He hates it when people barge on to the stage.`}>
+      Mass attack. Deals **250%** Mental DMG to all enemies. If the target hit is in the :effect{param="corrode"} status, extends the status duration by 1 round.
     </CardInfo>
   </Fragment>
 

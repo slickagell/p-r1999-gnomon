@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    64 61/64 x37 21/64 x 11 13/16 in.
+    64 61/64 x 37 21/64 x 11 13/16 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="The customer is always right.">
+    <CardInfo star="1" type="ATTACK" note={`The customer is always right.`}>
       1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="No matter what happens, the customer is always right.">
+    <CardInfo star="2" type="ATTACK" note={`No matter what happens, the customer is always right.`}>
       1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="No matter what happens, the customer is always right till the bill is paid.">
+    <CardInfo star="3" type="ATTACK" note={`No matter what happens, the customer is always right till the bill is paid.`}>
       1-target attack. Deals **400%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="This is the scheduled meal time.">
+    <CardInfo star="1" type="ATTACK" note={`This is the scheduled meal time.`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="This is the scheduled meal time, as it should be.">
-      1-target attack. Deals **250%** Reality DMG and inflicts 2 rounds of :effect{param="nasty-wound"}.
+    <CardInfo star="2" type="DEBUFF" note={`This is the scheduled meal time, as it should be.`}>
+      1-target attack. Deals **250%** Reality DMG. Inflicts :effect{param="nasty-wound"} for 2 rounds on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="This is the scheduled meal time, but some children may need more.">
-      1-target attack. Deals **400%** Reality DMG and inflicts 3 rounds of :effect{param="nasty-wound"}.
+    <CardInfo star="3" type="DEBUFF" note={`This is the scheduled meal time, but some children may need more.`}>
+      1-target attack. Deals **400%** Reality DMG. Inflicts :effect{param="nasty-wound"} for 3 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="HEALTH" note="Who can change the pre-destined fate?">
+    <CardInfo type="HEALTH" note={`Who can change the pre-destined fate?`}>
       Mass healing. Purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses for all allies and HP +(the caster's ATK x**200%**) for them.
     </CardInfo>
   </Fragment>

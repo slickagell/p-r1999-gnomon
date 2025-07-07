@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Scientifically verified.">
+    <CardInfo star="1" type="ATTACK" note={`Scientifically verified.`}>
       1-target attack. Deals **100%** Mental DMG. Gains :effect{param="continuous-action-i"} for 1 round. After the attack, consumes 2 Eureka and grants attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Scientifically verified and efficient.">
+    <CardInfo star="2" type="ATTACK" note={`Scientifically verified and efficient.`}>
       1-target attack. Deals **200%** Mental DMG. Gains :effect{param="continuous-action-i"} for 1 round. After the attack, consumes 2 Eureka and grants attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Scientifically verified, efficient, and within acceptable cost.">
+    <CardInfo star="3" type="ATTACK" note={`Scientifically verified, efficient, and within acceptable cost.`}>
       1-target attack. Deals **400%** Mental DMG. Gains :effect{param="continuous-action-i"} for 1 round. After the attack, consumes 2 Eureka and grants attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
   </Fragment>
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="We raise our voices.">
+    <CardInfo star="1" type="BUFF" note={`We raise our voices.`}>
       Mass buff. Grants 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds; consumes 2 Eureka and grants an additional 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="We raise our voices to praise poetry and flowers.">
+    <CardInfo star="2" type="BUFF" note={`We raise our voices to praise poetry and flowers.`}>
       Mass buff. Grants 2 stacks of :effect{param="clarification-id-1"} to all allies for 3 rounds; consumes 2 Eureka and grants an additional 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="We raise our voices to praise poetry and flowers—and the countless frontal lobes that belong to free minds.">
+    <CardInfo star="3" type="BUFF" note={`We raise our voices to praise poetry and flowers—and the countless frontal lobes that belong to free minds.`}>
       Mass buff. Grants 3 stacks of :effect{param="clarification-id-1"} to all allies for 3 rounds; consumes 2 Eureka and grants an additional 1 stack of :effect{param="clarification-id-1"} to all allies for 3 rounds.
     </CardInfo>
   </Fragment>
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The truth is, you can never find the ultimate truth.">
+    <CardInfo type="CHANNEL" note={`The truth is, you can never find the ultimate truth.`}>
       Self channel. Aleph :effect{param="memorize"} the first 2 basic incantations actively casted this round and enter the :effect{param="hyperthymesia-id-1"} status for 1 round.
     </CardInfo>
   </Fragment>
@@ -142,15 +142,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Disciplinary Power*: The duration of :effect{param="continuous-action-i"} is increased to 2 rounds. The chance to recover Eureka is increased to **50%**.
+    *Disciplinary Power*: The duration of :effect{param="continuous-action-i"} is increased to **2** rounds. The chance to recover Eureka is increased to **50%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Reflections of Omniscience*: The number of memorized incantations is increased to 3. Each stack of :effect{param="interpretation-id-1"} beyond the first now inflicts Mental DEF **-3%** and DMG Taken Reduction **-3%**.
+    *Reflections of Omniscience*: The number of memorized incantations is increased to **3**. Each stack of :effect{param="interpretation-id-1"} beyond the first now inflicts Mental DEF **-3%** and DMG Taken Reduction **-3%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Reflections of Omniscience*: The additional Mental DMG also dealt by Impromptu Incantation's final attack instance is increased to (the target's stacks of :effect{param="interpretation-id-2"} x **160**)% Mental DMG to each enemy target holding the Interpretation status. When the channel status ends, the attack instances granted to :effect{param="impromptu-incantation"} is increased to +4.
+    *Reflections of Omniscience*: The additional Mental DMG also dealt by Impromptu Incantation's final attack instance is increased to (the target's stacks of :effect{param="interpretation-id-2"} x **160**)% Mental DMG to each enemy target holding the Interpretation status. When the channel status ends, the attack instances granted to :effect{param="impromptu-incantation"} is increased to **+4**.
   </Fragment>
 
   <Fragment slot="portray-4-info">

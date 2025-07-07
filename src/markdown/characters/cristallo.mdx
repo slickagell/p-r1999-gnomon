@@ -33,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    An arcanist's work. Exhibited in the 1940s for 16 years. Completed in winter, on December 30th. First exhibited in Smaland, Sweden, but the exhibit was soon transferred to Lund, Malmohus County due to its special condition.
+    An arcanist's work. Exhibited in the 1940s for 16 years. Completed in winter, on December 30th. First exhibited in Småland, Sweden, but the exhibit was soon transferred to Lund, Malmöhus County due to its special condition.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    52 3/4 x 25 63/64 x21 21/32 in.
+    52 3/4 x 25 63/64 x 21 21/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="She's used to this.">
+    <CardInfo star="1" type="ATTACK" note={`She's used to this.`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="She's used to such great pain.">
-      1-target attack. Deals **200%** Reality DMG. Reality DEF **-25%** for the target for 2 rounds.
+    <CardInfo star="2" type="DEBUFF" note={`She's used to such great pain.`}>
+      1-target attack. Deals **200%** Reality DMG. Inflicts Reality DEF **-25%** for 2 rounds on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="She's used to such great pain that feels like glass cutting through the flesh.">
-      1-target attack. Deals **350%** Reality DMG. Reality DEF **-35%** for the target for 3 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`She's used to such great pain that feels like glass cutting through the flesh.`}>
+      1-target attack. Deals **350%** Reality DMG. Inflicts Reality DEF **-35%** for 3 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="She closed the book.">
-      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+10%** for 2 rounds.
+    <CardInfo star="1" type="BUFF" note={`She closed the book.`}>
+      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+10%** for them for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="She closed the book and mended the wound.">
+    <CardInfo star="2" type="BUFF" note={`She closed the book and mended the wound.`}>
       Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+15%** for them for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="She closed the book and mended the wound. She knew how fragile life could be.">
+    <CardInfo star="3" type="BUFF" note={`She closed the book and mended the wound. She knew how fragile life could be.`}>
       Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+20%** for them for 2 rounds.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="The therapeutic machine is quite lethal to those tiny and ignorant cells.">
+    <CardInfo type="DEBUFF" note={`The therapeutic machine is quite lethal to those tiny and ignorant cells.`}>
       Mass debuff. Inflicts :effect{param="nasty-wound"} and :effect{param="radiation-therapy"} statuses on all enemies for 2 rounds. When the round ends, deals (the caster's ATK x**100%**) Genesis DMG to them.
     </CardInfo>
   </Fragment>

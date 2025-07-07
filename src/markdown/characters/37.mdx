@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An obvious triangle.">
+    <CardInfo star="1" type="ATTACK" note={`An obvious triangle.`}>
       1-target attack. Deals **140%** Mental DMG plus (ATK x**40%**) Genesis DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="An obvious triangle, speaking out against overlooked injustices.">
+    <CardInfo star="2" type="ATTACK" note={`An obvious triangle, speaking out against overlooked injustices.`}>
       1-target attack. Deals **210%** Mental DMG plus (ATK x**60%**) Genesis DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="An obvious triangle, speaking out against overlooked injustices, the evidence is as follows.">
+    <CardInfo star="3" type="ATTACK" note={`An obvious triangle, speaking out against overlooked injustices, the evidence is as follows.`}>
       1-target attack. Deals **350%** Mental DMG plus (ATK x**100%**) Genesis DMG.
     </CardInfo>
   </Fragment>
@@ -87,19 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Such beautiful form.">
-      Mass Attack. Deals **70%** Mental DMG plus (ATK x**40**%) Genesis DMG to 2
-      enemies. Gains 1 additional stack of :effect{param="sturdiness"}.
+    <CardInfo star="1" type="ATTACK" note={`Such beautiful form.`}>
+      Mass attack. Deals **70%** Mental DMG plus (ATK x**40%**) Genesis DMG to 2 enemies. Gains 1 additional stack of :effect{param="sturdiness"}.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Such beautiful form. Desirable in dimensions and fractals.">
-      Mass Attack. Deals **105%** Mental DMG plus (ATK x**60**%) Genesis DMG to 2
-      enemies. Gains 1 additional stack of :effect{param="sturdiness"}.
+    <CardInfo star="2" type="ATTACK" note={`Such beautiful form. Desirable in dimensions and fractals.`}>
+      Mass attack. Deals **105%** Mental DMG plus (ATK x**60%**) Genesis DMG to 2 enemies. Gains 1 additional stack of :effect{param="sturdiness"}.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Such beautiful form. Desirable in dimensions and fractals, the evidence is as follows.">
-      Mass Attack. Deals **150%** Mental DMG plus (ATK x**100**%) Genesis DMG to 2
-      enemies. Gains 1 additional stack of :effect{param="sturdiness"}.
+    <CardInfo star="3" type="ATTACK" note={`Such beautiful form. Desirable in dimensions and fractals—a truth agreed upon by all.`}>
+      Mass attack. Deals **175%** Mental DMG plus (ATK x**100%**) Genesis DMG to 2 enemies. Gains 2 additional stacks of :effect{param="sturdiness"}.
     </CardInfo>
   </Fragment>
 
@@ -108,9 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="It is the omega, the final answer, the result of all calculations.">
-      Mass Buff. Grants 2 stacks of :effect{param="numeral-perception"} to all allies,
-      gains 2 stacks of :effect{param="enlightenment"}, and gains Eureka +2.
+    <CardInfo type="BUFF" note={`It is the omega, the final answer, the result of all calculations.`}>
+      Mass buff. Grants 2 stacks of :effect{param="numeral-perception"} to all allies, gains 2 stacks of :effect{param="enlightenment"}, and gains Eureka +2.
     </CardInfo>
   </Fragment>
 
@@ -123,7 +119,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    After using an Incantation, gains Eureka +1. After another ally takes an extra action, gains Eureka +1. When at 5 Eureka, consumes 5 Eureka to cast :tooltip[Mass attack. Deals **120%** Mental DMG plus (ATK x**40%**) Genesis DMG to all enemies.]{title="[Supplementary Formula]"}. This attack is regarded as 1 follow-up attack and does not grant Eureka.
+    After using an Incantation, gains Eureka +1.
+
+    After another ally takes an extra action, gains Eureka +1.
+
+    When at 5 Eureka, consumes 5 Eureka to cast :effect{param="supplementary-formula-id-1"}. This attack is regarded as 1 follow-up attack and does not grant any Eureka.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -143,24 +143,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Calculation of Genesis*: :effect{param="numeral-perception"}
-    's Mental DMG is increased to **180%**; additional Genesis DMG increased to (ATKx**60%**).
+    *Calculation of Genesis*: :effect{param="supplementary-formula-id-1"}'s Mental DMG is increased to **180%**; additional Genesis DMG is increased to (own ATK x**60%**).
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Kingdom of Geometry*: :effect{param="enlightenment"} increased
-    to **3** stacks; Eureka gained increased to **3**.
+    *Kingdom of Geometry*: :effect{param="enlightenment"} increased to **3** stacks; Eureka gained increased to **3**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Calculation of Genesis*: :tooltip[Mass attack. Deals **120%** Mental DMG plus (ATK x**40%**) Genesis DMG to all enemies.]{title="[Supplementary Formula]"}
-    's Mental DMG is increased to **240%**; additional Genesis DMG increased to
-    (ATKx**80%**).
+    *Calculation of Genesis*: :effect{param="supplementary-formula-id-2"}'s Mental DMG is increased to **240%**; additional Genesis DMG is increased to (own ATK x**80%**).
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Kingdom of Geometry*: :effect{param="numeral-perception"} increased
-    to **3** stacks; Eureka gained increased to **4**.
+    *Kingdom of Geometry*: :effect{param="numeral-perception"} increased to **3** stacks; Eureka gained increased to **4**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

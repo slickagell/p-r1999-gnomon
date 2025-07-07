@@ -73,16 +73,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="The spotlight is a restless tide.">
-      1-target attack. Deals **160%** Mental DMG to an enemy and recovers (the user's ATK x**50%**) HP for the ally with the lowest HP. For each rank 2/3 incantation in the AP Area, deals an additional **30%/50%** Mental DMG, up to a maximum of **250%**.
+    <CardInfo star="1" type="ATTACK" note={`The spotlight is a restless tide.`}>
+      1-target attack. Deals **160%** Mental DMG to an enemy and recovers (the user's ATK x**50%**) HP for the ally with the lowest HP. For each rank 2/3 incantation in the AP Area, deals an additional **30%**/**50%** Mental DMG, up to a maximum of **250%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="The spotlight is a restless tide, constantly ebbing and flowing.">
-      1-target attack. Deals **240%** Mental DMG to an enemy and recovers (the user's ATK x**50%**) HP for the ally with the lowest HP. For each rank 2/3 incantation in the AP Area, deals an additional **30%/50%** Mental DMG, up to a maximum of **250%**.
+    <CardInfo star="2" type="ATTACK" note={`The spotlight is a restless tide, constantly ebbing and flowing.`}>
+      1-target attack. Deals **240%** Mental DMG to an enemy and recovers (the user's ATK x**50%**) HP for the ally with the lowest HP. For each rank 2/3 incantation in the AP Area, deals an additional **30%**/**50%** Mental DMG, up to a maximum of **250%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="The spotlight is a restless tide, constantly ebbing and flowing, searching for stillness amidst its chaos.">
-      1-target attack. Deals **400%** Mental DMG to an enemy and recovers (the user's ATK x**50%**) HP for the ally with the lowest HP. For each rank 2/3 incantation in the AP Area, deals an additional **30%/50%** Mental DMG, up to a maximum of **250%**.
+    <CardInfo star="3" type="ATTACK" note={`The spotlight is a restless tide, constantly ebbing and flowing, searching for stillness amidst its chaos.`}>
+      1-target attack. Deals **400%** Mental DMG to an enemy and recovers (the user's ATK x**50%**) HP for the ally with the lowest HP. For each rank 2/3 incantation in the AP Area, deals an additional **30%**/**50%** Mental DMG, up to a maximum of **250%**.
     </CardInfo>
   </Fragment>
 
@@ -91,16 +91,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="She shines like the morning star.">
-      Mass buff. Grants Critical Rate **+20%** to all allies for 2 rounds. Gain 4 additional stacks of :effect{param="cosmic-energy"} for self for 2 rounds.
+    <CardInfo star="1" type="BUFF" note={`She shines like the morning star.`}>
+      Mass buff. Grants Critical Rate **+20%** to all allies for 2 rounds. Gain 4 additional stacks of :effect{param="cosmic-energy-id-1"} for self for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="She shines like the morning star, capturing the attention of those around her.">
-      Mass buff. Grants Critical Rate **+25%** to all allies for 2 rounds. Gain 5 additional stacks of :effect{param="cosmic-energy"} for self for 2 rounds.
+    <CardInfo star="2" type="BUFF" note={`She shines like the morning star, capturing the attention of those around her.`}>
+      Mass buff. Grants Critical Rate **+25%** to all allies for 2 rounds. Gain 5 additional stacks of :effect{param="cosmic-energy-id-1"} for self for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="She shines like the morning star, capturing the attention of those around her as she guides them through their inner journeys.">
-      Mass buff. Grants Critical Rate **+30%** to all allies for 2 rounds. Gain 6 additional stacks of :effect{param="cosmic-energy"} for self for 2 rounds.
+    <CardInfo star="3" type="BUFF" note={`She shines like the morning star, capturing the attention of those around her as she guides them through their inner journeys.`}>
+      Mass buff. Grants Critical Rate **+30%** to all allies for 2 rounds. Gain 6 additional stacks of :effect{param="cosmic-energy-id-1"} for self for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -109,8 +109,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="On this night, I trade gifts with the world.">
-      Mass attack. Dispels 2 random *\[Stats Up]* and *\[Pos Status]* effects on all enemies, then deals 400% Mental DMG to the targets. Grants :effect{param="rank-up"} to all allies for 2 rounds.
+    <CardInfo type="ATTACK" note={`On this night, I trade gifts with the world.`}>
+      Mass attack. Dispels 2 random *\[Stats Up]* and *\[Pos Status]* effects on all enemies, then deals **400%** Mental DMG to the targets. Grants :effect{param="rank-up"} to all allies for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -123,7 +123,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, gain 8 stacks of :effect{param="cosmic-energy"} for 2 rounds; after an ally casts a rank 1/2/3 incantation, gain 2/3/4 stacks of Cosmic Energy for self, to a maximum of 25 stacks.
+    When entering battle, gain 8 stacks of :effect{param="cosmic-energy-id-1"} for 2 rounds; after an ally casts a rank 1/2/3 incantation, gain 2/3/4 stacks of Cosmic Energy for self, to a maximum of 25 stacks.
+
     When entering battle, for each ally of the Natural Afflatus, gain Moxie +1 for self, up to a maximum of Moxie +3.
   </Fragment>
 
@@ -132,7 +133,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    At the start of the round, if holding 9 or more stacks of :effect{param="cosmic-energy"}, grant Critical DMG **+30%** to all allies for 1 round; if holding 16 or more stacks of Cosmic Energy, grant an additional Incantation Might **+20%** to all allies for 2 rounds.
+    At the start of the round, if holding 9 or more stacks of :effect{param="cosmic-energy-id-1"}, grant Critical DMG **+30%** to all allies for 1 round; if holding 16 or more stacks of Cosmic Energy, grant an additional Incantation Might **+20%** to all allies for 2 rounds.
+
     At the end of the round, if allies have casted two or more rank 3 incantations for that round, gain Moxie +1 for self.
   </Fragment>
 
@@ -141,7 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Lengthy Journey*: At the end of the round, now if allies have casted two or more rank 2 incantations for that round, gain Moxie +1 for self.
+    *Lengthy Journey*: At the end of the round, now if allies have casted two or more rank **2** incantations for that round, gain Moxie **+1** for self.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -149,15 +151,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Lengthy Journey*: :effect{param="cosmic-energy"}'s stack limit is increased to **30**. The DMG Dealt granted by each stack is increased to **+2.5%**.
+    *Lengthy Journey*: :effect{param="cosmic-energy-id-1"}'s stack limit is increased to **30**. The DMG Dealt granted by each stack is increased to **+2.5%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Morning Star for the Night*: Mental DMG is increased to **475%**, and extends :effect{param="rank-up"} by +1 round.
+    *Morning Star for the Night*: Mental DMG is increased to **475%**, and extends :effect{param="rank-up"} by **+1** round.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Lengthy Journey*: Extends :effect{param="cosmic-energy"} by +1 round. The DMG Dealt granted by each stack is increased to **+3%**.
+    *Lengthy Journey*: Extends :effect{param="cosmic-energy-id-2"} by **+1** round. The DMG Dealt granted by each stack is increased to **+3%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

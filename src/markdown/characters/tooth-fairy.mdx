@@ -41,7 +41,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Veil of Stars Ng Rearing Tooth Spirits.
+    Veil of Stars (Star) - Rearing Tooth Spirits
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    67 1/8 in x19 5/32 in x 14 1/16 in
+    67 1/8 in x19 5/32 in x14 1/16 in
   </Fragment>
 
   <Fragment slot="toc">
@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="The taste of rust.">
-      1-target attack. Deals **150%** Mental DMG and inflicts 1 stack of :effect{param="confusion"} on the target. Lasts 1 round.
+    <CardInfo star="1" type="DEBUFF" note={`The taste of rust.`}>
+      1-target attack. Deals **150%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="confusion"} on the target for 1 round.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="The taste of rust creeps down your throat.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{param="confusion"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`The taste of rust creeps down your throat.`}>
+      1-target attack. Deals **250%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="confusion"} on the target for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="The taste of rust creeps down your throat. They shriek and flee from sight.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{param="confusion"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="DEBUFF" note={`The taste of rust creeps down your throat. They shriek and flee from sight.`}>
+      1-target attack. Deals **450%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="confusion"} on the target for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround.">
+    <CardInfo star="1" type="HEALTH" note={`In the dead of night, the glorious sounds of nature surround.`}>
       Mass healing. HP +(the caster's ATK x**80%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The obedient children fall into a deep sleep.">
+    <CardInfo star="2" type="HEALTH" note={`In the dead of night, the glorious sounds of nature surround. The obedient children fall into a deep sleep.`}>
       Mass healing. HP +(the caster's ATK x**120%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="In the dead of night, the glorious sounds of nature surround. The little tooth thief is ready to make her move.">
+    <CardInfo star="3" type="HEALTH" note={`In the dead of night, the glorious sounds of nature surround. The little tooth thief is ready to make her move.`}>
       Mass healing. HP +(the caster's ATK x**200%**) for all allies. This healing effect gains an additional **30%** Critical Rate.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="This was never their choice. They still harbor resentment.">
+    <CardInfo type="ATTACK" note={`This was never their choice. They still harbor resentment.`}>
       1-target attack. Deals **500%** Mental DMG. This attack has a **+30%** Critical Rate. After the attack scores a critical hit, purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from all allies.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, instantly gains 3 :effect{param="baby-tooth"}. When any team member actively uses a character incantation, collects 1 :effect{param="baby-tooth"}. At the start of the round, consumes 5 :effect{param="baby-tooth"} to reduce the enemy team's Critical Resist and Critical DEF by **15%**. Lasts 1 round. (Cannot trigger if :effect{param="baby-tooth"} are insufficient.)
+    When entering battle, instantly gains 3 :effect{param="baby-tooth"}. When any team member actively uses a character incantation, collects 1 :effect{param="baby-tooth"}. At the start of the round, consumes 5 :effect{param="baby-tooth"} to reduce the enemy team's Critical Resist and Critical DEF by **15%**. Lasts 1 round. (Cannot trigger if Baby Tooth are insufficient.)
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When triggering the :effect{param="baby-tooth"} Stats Down effect, all allies recover **10%** of missing HP. When entering battle, gains an additional 2 :effect{param="baby-tooth"}.
+    When triggering the :effect{param="baby-tooth"} Stats Down effect, all allies recover (Missing HP x**10%**) HP. When entering battle, gain additional :effect{param="baby-tooth"} +2.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -139,7 +139,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Baby Tooth Collector*: Critical Resist and Critical DEF decrease +1 round for target.
+    *Baby Tooth Collector*: Critical Resist and Critical DEF decrease **+1** round for target.
   </Fragment>
 
   <Fragment slot="portray-3-info">

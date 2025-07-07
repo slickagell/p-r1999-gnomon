@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Repeated measurements and calculations.">
+    <CardInfo star="1" type="ATTACK" note={`Repeated measurements and calculations.`}>
       1-target attack. Gains Eureka +1 and deals **180%** Mental DMG. Spend 2 Eureka to deal Mental DMG **+60%** and convert excess Critical Rate to Critical DMG for this attack.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Repeated measurements and calculations. All in pursuit of her dream.">
+    <CardInfo star="2" type="ATTACK" note={`Repeated measurements and calculations. All in pursuit of her dream.`}>
       1-target attack. Gains Eureka +1 and deals **270%** Mental DMG. Spend 2 Eureka to deal Mental DMG **+90%** and convert excess Critical Rate to Critical DMG for this attack.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Repeated measurements and calculations. All in pursuit of her dream and the ultimate truth.">
+    <CardInfo star="3" type="ATTACK" note={`Repeated measurements and calculations. All in pursuit of her dream and the ultimate truth.`}>
       1-target attack. Gains Eureka +1 and deals **450%** Mental DMG. Spend 2 Eureka to deal Mental DMG **+150%** and convert excess Critical Rate to Critical DMG for this attack.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="To depict a mountain.">
+    <CardInfo star="1" type="ATTACK" note={`To depict a mountain.`}>
       Mass attack. Gains Eureka +1 and deals **110%** Mental DMG to 2 enemies; gains 1 stack of :effect{param="preparation-windsong"}.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="To depict a mountain with dirt, foliage, sky, and music...">
+    <CardInfo star="2" type="ATTACK" note={`To depict a mountain with dirt, foliage, sky, and music ...`}>
       Mass attack. Gains Eureka +1 and deals **165%** Mental DMG to 2 enemies; gains 2 stacks of :effect{param="preparation-windsong"}.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="To depict a mountain with dirt, foliage, sky, and music... that requires a different cost, my friend.">
+    <CardInfo star="3" type="ATTACK" note={`To depict a mountain with dirt, foliage, sky, and music ... that requires a different cost, my friend.`}>
       Mass attack. Gains Eureka +1 and deals **285%** Mental DMG to 2 enemies; gains 3 stacks of :effect{param="preparation-windsong"}.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="She traveled across the valley, through the rainforest, and over the snowfield. It's been a lonely journey.">
+    <CardInfo type="DEBUFF" note={`She traveled across the valley, through the rainforest, and over the snowfield. It's been a lonely journey.`}>
       1-target debuff. Inflicts 1 stack of :effect{param="confusion"} on the target for 1 round; then enters the :effect{param="mapping"} status for the round, gains Eureka +2, converts all own incantations to *\[Rehabilitation]* of their matching rank, and casts them all if able.
     </CardInfo>
   </Fragment>
@@ -127,7 +127,9 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, gain Critical Rate **+10%** and Critical DMG **+10%**. After casting an Ultimate, gain 1 stack of :effect{param="preparation-windsong"}.
+    When entering battle, gain Critical Rate **+10%** and Critical DMG **+10%**.
+
+    After casting an Ultimate, gain 1 stack of :effect{param="preparation-windsong"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,7 +137,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Rehabilitation*: at rank 1/2/3 incantation, Mental DMG dealt is increased to **200/290/480%**, and the additional Mental DMG dealt by spending Eureka is increased to **90/130/200%**.
+    *Rehabilitation*: at rank **1/2/3** incantation, Mental DMG dealt is increased to **200/290/480%**, and the additional Mental DMG dealt by spending Eureka is increased to **90/130/200%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -147,11 +149,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Practicability*: At rank 1/2 incantation, the Mental DMG is increased to **180/230%**.
+    *Practicability*: At rank **1/2** incantation, the Mental DMG is increased to **180/230%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Rehabilitation*: At rank 1/2/3 incantation, the Mental DMG dealt is increased to **220/320/520%**, and the additional Mental DMG dealt by spending Eureka is increased to **110/160/240%**.
+    *Rehabilitation*: At rank **1/2/3** incantation, the Mental DMG dealt is increased to **220/320/520%**, and the additional Mental DMG dealt by spending Eureka is increased to **110/160/240%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

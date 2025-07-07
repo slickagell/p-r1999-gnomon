@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Thousands of ceremonies.">
+    <CardInfo star="1" type="ATTACK" note={`Thousands of ceremonies.`}>
       1-target attack. Deals **160%** Mental DMG. This attack gains Penetration Rate **+25%** against targets afflicted with :effect{param="burn"}.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Thousands of ceremonies, bursting with stunning displays of talent.">
+    <CardInfo star="2" type="ATTACK" note={`Thousands of ceremonies, bursting with stunning displays of talent.`}>
       1-target attack. Deals **240%** Mental DMG. This attack gains Penetration Rate **+30%** against targets afflicted with :effect{param="burn"}.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Thousands of ceremonies, some of the dangerous elements still remain.">
+    <CardInfo star="3" type="ATTACK" note={`Thousands of ceremonies, some of the dangerous elements still remain.`}>
       1-target attack. Deals **400%** Mental DMG. This attack gains Penetration Rate **+35%** against targets afflicted with :effect{param="burn"}.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="The telling of the blazing fire.">
-      Mass attack. Deals **120%** Mental DMG to 2 enemies and inflicts 1 stack of :effect{param="burn"}.
+    <CardInfo star="1" type="DEBUFF" note={`The telling of the blazing fire.`}>
+      Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{param="burn"} on the targets.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="The telling of the blazing fire, hard not to ramble incessantly.">
-      Mass attack. Deals **180%** Mental DMG to 2 enemies and inflicts 2 stacks of :effect{param="burn"}.
+    <CardInfo star="2" type="DEBUFF" note={`The telling of the blazing fire, hard not to ramble incessantly.`}>
+      Mass attack. Deals **180%** Mental DMG to 2 enemies. After attacking, inflicts 2 stacks of :effect{param="burn"} on the targets.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="The telling of the blazing fire, forever etched into memory-the birth of the first spark.">
-      Mass attack. Deals **300%** Mental DMG to 2 enemies and inflicts 3 stacks of :effect{param="burn"}.
+    <CardInfo star="3" type="DEBUFF" note={`The telling of the blazing fire, forever etched into memory—the birth of the first spark.`}>
+      Mass attack. Deals **300%** Mental DMG to 2 enemies. After attacking, inflicts 3 stacks of :effect{param="burn"} on the targets.
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="I was once a torch worshipped by thousands. Now, I am rekindled on the same land to burn forever.">
+    <CardInfo type="BUFF" note={`I was once a torch worshipped by thousands. Now, I am rekindled on the same land to burn forever.`}>
       Mass buff. All allies gain DMG Dealt **+15%** and DMG Taken **-15%** for 3 rounds. If enemies have 15 or more stacks of :effect{param="burn"} in total, the DMG Dealt effect is doubled.
     </CardInfo>
   </Fragment>
@@ -147,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Fire Worship*: HP recovery increased to **10%** Lost HP for all allies.
+    *Fire Worship*: Recovery increased to (Missing HP x**10%**) HP for all allies.
   </Fragment>
 
   <Fragment slot="portray-5-info">

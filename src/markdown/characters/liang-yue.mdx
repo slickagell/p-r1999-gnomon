@@ -73,16 +73,22 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="First, scold sternly.">
-      1-target attack. Deals **200%** Reality DMG. Extends the duration of :effect{param="guardian-s-resolve"} on all allies by 1 round. If Liang Yue is in the :effect{param="arise-qiangliang"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
+    <CardInfo star="1" type="ATTACK" note={`First, scold sternly.`}>
+      1-target attack. Deals **200%** Reality DMG. Extends the duration of :effect{param="guardian-s-resolve-id-0"} on all allies by 1 round.
+
+      If Liang Yue is in the :effect{param="arise-qiangliang-id-0"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="First, scold sternly. Second, strike with thunderous force.">
-      1-target attack. Deals **300%** Reality DMG; this attack gains Penetration Rate **+30%**. Extends the duration of :effect{param="guardian-s-resolve"} on all allies by 1 round. If Liang Yue is in the :effect{param="arise-qiangliang"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
+    <CardInfo star="2" type="ATTACK" note={`First, scold sternly. Second, strike with thunderous force.`}>
+      1-target attack. Deals **300%** Reality DMG; this attack gains Penetration Rate **+30%**. Extends the duration of :effect{param="guardian-s-resolve-id-0"} on all allies by 1 round.
+
+      If Liang Yue is in the :effect{param="arise-qiangliang-id-0"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="First, scold sternly. Second, strike with thunderous force. Third, take down on the spot.">
-      1-target attack. Deals **500%** Reality DMG; this attack gains Penetration Rate **+80%**. Extends the duration of :effect{param="guardian-s-resolve"} on all allies by 1 round. If Liang Yue is in the :effect{param="arise-qiangliang"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
+    <CardInfo star="3" type="ATTACK" note={`First, scold sternly. Second, strike with thunderous force. Third, take down on the spot.`}>
+      1-target attack. Deals **500%** Reality DMG; this attack gains Penetration Rate **+80%**. Extends the duration of :effect{param="guardian-s-resolve-id-0"} on all allies by 1 round.
+
+      If Liang Yue is in the :effect{param="arise-qiangliang-id-0"} status, actively casting this incantation grants 1 additional *\[Justice Talon]*.
     </CardInfo>
   </Fragment>
 
@@ -91,16 +97,22 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="May I have your name?">
-      1-target buff. Grants :effect{param="guardian-s-blessing-i"} to the target for 1 round; repeated applications will extend its duration. If Liang Yue is in the :effect{param="arise-qiangliang"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
+    <CardInfo star="1" type="BUFF" note={`May I have your name?`}>
+      1-target buff. Grants :effect{param="guardian-s-blessing-i-id-0"} to the target for 1 round; repeated applications will extend its duration.
+
+      If Liang Yue is in the :effect{param="arise-qiangliang-id-0"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="May I have your name? Where are you from, and where are you headed?">
-      1-target buff. Grants :effect{param="guardian-s-blessing-ii"} to the target for 1 round; repeated applications will extend its duration. If Liang Yue is in the :effect{param="arise-qiangliang"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
+    <CardInfo star="2" type="BUFF" note={`May I have your name? Where are you from, and where are you headed?`}>
+      1-target buff. Grants :effect{param="guardian-s-blessing-ii-id-0"} to the target for 1 round; repeated applications will extend its duration.
+
+      If Liang Yue is in the :effect{param="arise-qiangliang-id-0"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="May I have your name? Where are you from, and where are you headed? Please, I'll need to see your ID.">
-      1-target buff. Grants :effect{param="guardian-s-blessing-iii"} to the target for 1 round; repeated applications will extend its duration. If Liang Yue is in the :effect{param="arise-qiangliang"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
+    <CardInfo star="3" type="BUFF" note={`May I have your name? Where are you from, and where are you headed? Please, I'll need to see your ID.`}>
+      1-target buff. Grants :effect{param="guardian-s-blessing-iii-id-0"} to the target for 1 round; repeated applications will extend its duration.
+
+      If Liang Yue is in the :effect{param="arise-qiangliang-id-0"} status, actively casting this incantation grants 1 additional *\[Peace Talon]*.
     </CardInfo>
   </Fragment>
 
@@ -109,8 +121,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Hello? Qiangliang, do you read me? Do you copy?">
-      Mass attack. Deals **300%** Reality DMG to all enemies. Grants :effect{param="immunity"} to all allies for 1 round, and grants 6 stacks of :effect{param="guardian-s-resolve"} to all allies for 2 rounds. Grants :effect{param="arise-qiangliang"} to self for 3 rounds, and if this unit is already in this status, extends the duration of the status to 3 rounds.
+    <CardInfo type="ATTACK" note={`Hello? Qiangliang, do you read me? Do you copy?`}>
+      Mass attack. Deals **300%** Reality DMG to all enemies. Grants :effect{param="immunity"} to all allies for 1 round, and grants 6 stacks of :effect{param="guardian-s-resolve-id-0"} to all allies for 2 rounds. Grants :effect{param="arise-qiangliang-id-0"} to self for 3 rounds, and if this unit is already in this status, extends the duration of the status to 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -123,19 +135,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    While in the :effect{param="arise-qiangliang"} status, after actively casting a Qiangliang enhanced incantation, gain 1 *\[Justice Talon]* or 1 *\[Peace Talon]*; after actively casting an incantation from the overlap section of the Spelldock, gain 0.5 *\[Justice Talon]* and 0.5 *\[Peace Talon]*.
+    While in the :effect{param="arise-qiangliang-id-0"} status, after actively casting a Qiangliang enhanced incantation, gain 1 *\[Justice Talon]* or 1 *\[Peace Talon]*; after actively casting an incantation from the overlap section of the Spelldock, gain 0.5 *\[Justice Talon]* and 0.5 *\[Peace Talon]*.
 
-    When reaching 6 *\[Justice Talon]* and or *\[Peace Talon]* combined, consume 6 of these *\[Justice Talon]* and or *\[Peace Talon]* to cast a :effect{param="bane-of-all-evil"} based on the balance of Justice Talons to Peace Talons:
+    When reaching 6 *\[Justice Talon]* and or *\[Peace Talon]* combined, consume 6 of these *\[Justice Talon]* and or *\[Peace Talon]* to cast a :effect{param="bane-of-all-evil-id-0"} based on the balance of Justice Talons to Peace Talons:
 
-    Cast :effect{param="bane-of-all-evil-justice"} when there's more *\[Justice Talon]*.
+    Cast :effect{param="bane-of-all-evil-justice-id-0"} when there's more *\[Justice Talon]*.
 
-    Cast :effect{param="bane-of-all-evil-peace"} when there's more *\[Peace Talon]*.
+    Cast :effect{param="bane-of-all-evil-peace-id-0"} when there's more *\[Peace Talon]*.
 
-    Cast :effect{param="bane-of-all-evil-balance"} when there's an equal number of talons.
+    Cast :effect{param="bane-of-all-evil-balance-id-0"} when there's an equal number of talons.
 
-    For every 1 *\[Justice Talon]* or *\[Peace Talon]* consumed, grant 1 stack of :effect{param="guardian-s-resolve"} to all allies for 2 rounds.
+    For every 1 *\[Justice Talon]* or *\[Peace Talon]* consumed, grant 1 stack of :effect{param="guardian-s-resolve-id-0"} to all allies for 2 rounds.
 
-    When :effect{param="arise-qiangliang"} ends, all *\[Justice Talon]* and *\[Peace Talon]* are cleared, and every stack of :effect{param="swift-resolve"} on Liang Yue is converted into 3 stacks of :effect{param="guardian-s-resolve"}.
+    When :effect{param="arise-qiangliang-id-0"} ends, all *\[Justice Talon]* and *\[Peace Talon]* are cleared, and every stack of :effect{param="swift-resolve-id-0"} on Liang Yue is converted into 3 stacks of :effect{param="guardian-s-resolve-id-0"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -151,27 +163,27 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Call of Thunder: #0305*: :effect{param="arise-qiangliang"}'s duration is extended to **4** rounds, and the size of each enhancement section in the Spelldock is increased to **4**.
+    *Call of Thunder: #0305*: :effect{param="arise-qiangliang-id-0"}'s duration is extended to **4** rounds, and the size of each enhancement section in the Spelldock is increased to **4**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Destined Inheritor*: When entering battle, the Moxie gained for self is increased to **5**. The number of *\[Justice Talon]* and or *\[Peace Talon]* required for :effect{param="bane-of-all-evil"} is decreased to **5**.
+    *Destined Inheritor*: When entering battle, the Moxie gained for self is increased to **5**. The number of *\[Justice Talon]* and or *\[Peace Talon]* required for :effect{param="bane-of-all-evil-id-0"} is decreased to **5**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Call of Thunder: #0305*: The :effect{param="immunity"} duration is increased to **2** rounds. The stacks of :effect{param="guardian-s-resolve"} granted is increased to **12**.
+    *Call of Thunder: #0305*: The :effect{param="immunity"} duration is increased to **2** rounds. The stacks of :effect{param="guardian-s-resolve-id-2"} granted is increased to **12**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Banish Evil*: At incantation rank **1/2/3**, the Reality DMG is increased to **240%/360%/600%** and the Penetration rate is increased to **0%/40%/100%**. :effect{param="guardian-s-resolve"}'s stack limit is increased to **40**, and each stack's DMG Taken Reduction is boosted to **-1%**.
+    *Banish Evil*: At incantation rank **1/2/3**, the Reality DMG is increased to **240%**/**360%**/**600%** and the Penetration rate is increased to **0%**/**40%**/**100%**. :effect{param="guardian-s-resolve-id-0"}'s stack limit is increased to **40**, and each stack's DMG Taken Reduction is boosted to **-1%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Destined Inheritor*: :effect{param="bane-of-all-evil-justice"}'s Reality DMG is increased to **600%**; for every *\[Justice Talon]* consumed, the Critical DMG bonus is increased to **30%**.
+    *Destined Inheritor*: :effect{param="bane-of-all-evil-justice-id-0"}'s Reality DMG is increased to **600%**; for every *\[Justice Talon]* consumed, the Critical DMG bonus is increased to **30%**.
 
-    :effect{param="bane-of-all-evil-peace"}'s Reality DMG is increased to **600%**; for every instance of :effect{param="poison"} on the target, the DMG Dealt is increased to **20%**.
+    :effect{param="bane-of-all-evil-peace-id-0"}'s Reality DMG is increased to **600%**; for every instance of :effect{param="poison"} on the target, the DMG Dealt is increased to **20%**.
 
-    :effect{param="bane-of-all-evil-balance"}'s Reality DMG is increased to **300%**; :effect{param="swift-resolve"}'s stack limit is increased to 3, and for each stack of :effect{param="swift-resolve"}, :effect{param="bane-of-all-evil-balance"} s additional Reality DMG is increased to **80%**.
+    :effect{param="bane-of-all-evil-balance-id-0"}'s Reality DMG is increased to **300%**; :effect{param="swift-resolve-id-4"}'s stack limit is increased to **3**, and for each stack of :effect{param="swift-resolve-id-4"}, :effect{param="bane-of-all-evil-balance-id-0"}'s additional Reality DMG is increased to **80%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -219,7 +231,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     <br />
 
-    With Special buff :effect{param="arise-qiangliang"}:
+    With Special buff :effect{param="arise-qiangliang-id-0"}:
 
     * In Spelldock will appear 2 zones at **the start of next round**:
       * :text[Green]{className="font-medium text-success"} zone on the **left** side, including 3 incantations.
@@ -246,17 +258,17 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     <br />
 
-    :effect{param="bane-of-all-evil"} will be cast differently depending on the balance of *\[Justice Talon]* and *\[Peace Talon]*:
+    :effect{param="bane-of-all-evil-id-0"} will be cast differently depending on the balance of *\[Justice Talon]* and *\[Peace Talon]*:
 
     * If there's more *\[Justice Talon]*, cast *\[Bane of All Evil - Justice]*.
     * If there's more *\[Peace Talon]*, cast *\[Bane of All Evil - Peace]*.
     * If *\[Justice Talon]* and *\[Peace Talon]* are equal, cast *\[Bane of All Evil - Balance]*.
     * The amount of exceed *\[Talon]* will be counted for the next *\[Bane of All Evil]*.
-    * For each *\[Talon]* consumed, grant **1** stack of :effect{param="guardian-s-resolve"} to all allies for **2** rounds.
+    * For each *\[Talon]* consumed, grant **1** stack of :effect{param="guardian-s-resolve-id-0"} to all allies for **2** rounds.
 
     <br />
 
-    First, with :effect{param="bane-of-all-evil-justice"}:
+    First, with :effect{param="bane-of-all-evil-justice-id-0"}:
 
     * Deal **400%** AoE Reality DMG.
     * Considered as a rank **2** incantation.
@@ -265,7 +277,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     <br />
 
-    Next, with :effect{param="bane-of-all-evil-peace"}:
+    Next, with :effect{param="bane-of-all-evil-peace-id-0"}:
 
     * Deal **400%** AoE Reality DMG.
     * For each *\[Peace Talon]* consumed, **before** attack, target will receive **1** stack of :effect{param="poison"} for 1 round and **3** stacks of :effect{param="burn"}.
@@ -274,10 +286,10 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     <br />
 
-    And with :effect{param="bane-of-all-evil-balance"}:
+    And with :effect{param="bane-of-all-evil-balance-id-0"}:
 
     * Deal **200%** AoE Reality DMG.
-    * Grant Liang Yue 1 stack of :effect{param="swift-resolve"}
+    * Grant Liang Yue 1 stack of :effect{param="swift-resolve-id-0"}
       * This is a Special buff.
       * Maximum stacks is **2**.
       * **Reduce** **1** stack of *\[Talon]* that required to cast *\[Bane of All Evil]*.
@@ -291,7 +303,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     * Deal single target Reality DMG.
     * At rank **2/3**, this attack will have additional **30%/80%** Penetration Rate.
-    * Extends the duration of :effect{param="guardian-s-resolve"} on all allies by **1** round.
+    * Extends the duration of :effect{param="guardian-s-resolve-id-0"} on all allies by **1** round.
       * This will **not** have +1 round duration even when in the :text[Green]{className="font-medium text-success"} zone.
       * If this skill is casted twice in a row, the duration will be increased by 2 rounds.
     * When in the *\[Arise, Qiangliang!]* status, gain **1** additional *\[Justice Talon]*.
@@ -301,8 +313,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     The second incantation <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Bless Life]*</CharacterSkillTooltip>
 
     * Single target Buff.
-    * Grant :effect{param="guardian-s-blessing-i"}/:effect{param="guardian-s-blessing-ii"}/:effect{param="guardian-s-blessing-iii"} for **1** round.
-      * If the buff receiver attacking/being attacked/at the end of the round, cast :effect{param="banish-evil"} as a **Follow-up Attack** on the target/the attacker/the enemy with the lowest HP.
+    * Grant :effect{param="guardian-s-blessing-i-id-0"}/:effect{param="guardian-s-blessing-ii-id-0"}/:effect{param="guardian-s-blessing-iii-id-0"} for **1** round.
+      * If the buff receiver attacking/being attacked/at the end of the round, cast *\[Banish Evil]* as a **Follow-up Attack** on the target/the attacker/the enemy with the lowest HP.
       * This attack also have **all** the effect as the first skill, but it will **not** gain 1 *\[Justice Talon]* since it's not actively casting.
       * If the buff receiver being attacked, this attack will fall to *\[Riposte]* category and also receive buff for *\[Riposte]* type.
     * When casting in the :text[Green]{className="font-medium text-success"} zone, above effect will also have **+1** round duration.
@@ -316,7 +328,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     * Deal AoE Reality DMG
     * Grants **1** stack of :effect{param="immunity"} to all allies for **1** rounds.
-    * Grants **6** stacks of :effect{param="guardian-s-resolve"} to all allies for **2** rounds.
+    * Grants **6** stacks of :effect{param="guardian-s-resolve-id-0"} to all allies for **2** rounds.
     * When casting Ultimate in the :text[Green]{className="font-medium text-success"} zone, above effects will also have **+1** round duration.
     * Grants or extend (if already in this status) *\[Arise, Qiangliang!]* to self for **3** rounds.
 
@@ -344,7 +356,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     * Try using this skill right **before** *\[Bane of All Evil]*, and **after** any attack skill so the DMG Dealt Bonus can be applied to *\[Bane of All Evil]*.
 
-    When Liang Yue is in :effect{param="arise-qiangliang"}
+    When Liang Yue is in :effect{param="arise-qiangliang-id-0"}
 
     * <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Banish Evil]*</CharacterSkillTooltip> will gain 1 *\[Justice Talon]*.
     * <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Bless Life]*</CharacterSkillTooltip> will gain 1 *\[Peace Talon]*.

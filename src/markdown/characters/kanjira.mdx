@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    62 13/64x24 5/16x9 1/16 in
+    62 13/64x24 5/16x9 1/16in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Forgive her.">
-      1-target attack. Deals **150%** Mental DMG and inflicts :effect{param="poison"} status on the target for 2 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG. If the caster is in *\[Emerald Fortune]* status, then inflicts 1 additional :effect{param="poison"} status of the same type to the target.
+    <CardInfo star="1" type="DEBUFF" note={`Forgive her.`}>
+      1-target attack. Deals **150%** Mental DMG. Inflicts :effect{param="poison"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. If the user is in the :effect{param="emerald-fortune"} status, inflicts 1 additional instance of the same :effect{param="poison"} on the target.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Forgive her. She didn't mean to poison.">
-      1-target attack. Deals **250%** Mental DMG and inflicts :effect{param="poison"} status on the target for 2 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG. If the caster is in *\[Emerald Fortune]* status, then inflicts 1 additional :effect{param="poison"} status of the same type to the target.
+    <CardInfo star="2" type="DEBUFF" note={`Forgive her. She didn't mean to poison.`}>
+      1-target attack. Deals **250%** Mental DMG. Inflicts :effect{param="poison"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. If the user is in the :effect{param="emerald-fortune"} status, inflicts 1 additional instance of the same :effect{param="poison"} on the target.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Forgive her. She didn't mean to poison... She just wanted to sell the cure.">
-      1-target attack. Deals **450%** Mental DMG and inflicts :effect{param="poison"} status on the target for 2 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG. If the caster is in *\[Emerald Fortune]* status, then inflicts 1 additional :effect{param="poison"} status of the same type to the target
+    <CardInfo star="3" type="DEBUFF" note={`Forgive her. She didn't mean to poison... She just wanted to sell the cure.`}>
+      1-target attack. Deals **450%** Mental DMG. Inflicts :effect{param="poison"} for 2 rounds on the target hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target. If the user is in the :effect{param="emerald-fortune"} status, inflicts 1 additional instance of the same :effect{param="poison"} on the target.
     </CardInfo>
   </Fragment>
 
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="You understand.">
-      1-target attack. Deals **200%** Mental DMG. If the caster is in *\[Pearl Fortune]* status, inflicts 1 additional stack of :effect{param="confusion"} on the target.
+    <CardInfo star="1" type="ATTACK" note={`You understand.`}>
+      1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{param="pearl-fortune"} status, inflicts 1 additional stack of :effect{param="confusion"} on the target.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="You understand. Poor children are not interested in such things.">
-      1-target attack. Deals **300%** Mental DMG. If the caster is in *\[Pearl Fortune]* status, inflicts 1 additional stack of :effect{param="confusion"} on the target.
+    <CardInfo star="2" type="ATTACK" note={`You understand. Poor children are not interested in such things.`}>
+      1-target attack. Deals **300%** Mental DMG. If the caster is in :effect{param="pearl-fortune"} status, inflicts 1 additional stack of :effect{param="confusion"} on the target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="You understand. Poor children are not interested in such things, but not if it helps them cheat and make money.">
-      1-target attack. Deals **500%** Mental DMG. If the caster is in *\[Pearl Fortune]* status, inflicts 1 additional stack of :effect{param="confusion"} on the target.
+    <CardInfo star="3" type="ATTACK" note={`You understand. Poor children are not interested in such things, but not if it helps them cheat and make money.`}>
+      1-target attack. Deals **500%** Mental DMG. If the caster is in :effect{param="pearl-fortune"} status, inflicts 1 additional stack of :effect{param="confusion"} on the target.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="A spacious caravan and beautiful posters. Punji... Bring them along. The day will come when she sets off.">
-      Mass attack. Deals **300%** Mental DMG to all enemies. This attack enjoys Ultimate Might **+10%**. If the caster is in *\[Agate Fortune]* status, gains additional Ultimate Might **+15%**.
+    <CardInfo type="ATTACK" note={`A spacious caravan and beautiful posters. Punji... Bring them along. The day will come when she sets off.`}>
+      Mass attack. Deals **300%** Mental DMG to all enemies. This attack enjoys Ultimate Might **+10%**. If the caster is in :effect{param="agate-fortune"} status, gains additional Ultimate Might **+15%**.
     </CardInfo>
   </Fragment>
 
@@ -119,7 +119,9 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When a round starts, performs 1 Divination and acquires each of these every round in the sequence provided. *\[Emerald Fortune]*, *\[Pearl Fortune]*, and *\[Agate Fortune]*.
+    When a round starts, performs 1 Divination and acquires each of these every round in the sequence provided.
+
+    :effect{param="emerald-fortune"}, :effect{param="pearl-fortune"}, and :effect{param="agate-fortune"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -135,7 +137,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Seasoned Wanderer*'s effect changes to: If the caster is in *\[Emerald Fortune]*: status, when casting *\[Hey, Punji!]*, inflicts :effect{param="poison"} status with **+1** round of duration.
+    *Seasoned Wanderer*'s effect changes to: If the caster is in :effect{param="emerald-fortune"} status, when casting *\[Hey, Punji!]*, inflicts :effect{param="poison"} status with **+1** round of duration.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -143,11 +145,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Seasoned Wanderer*'s effect changes to: If the caster is in *\[Agate Fortune]*: status, when casting *\[Song of Wandering]*, Ultimate Might **+15%**.
+    *Seasoned Wanderer*'s effect changes to: if the caster is in *\[Agate Fortune]* status, when casting *\[Song of Wandering]*, Ultimate Might **+15%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Hey, Punji!*'s effect changes to: at **1/2/3** stars, deals **170/280/500%** Mental DMG.
+    *Hey, Punji!*: At Incantation rank **1/2/3**, Mental DMG increased to **170/280/500%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">

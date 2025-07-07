@@ -70,16 +70,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An outstanding piece of work">
+    <CardInfo star="1" type="ATTACK" note={`An outstanding piece of work.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="An outstanding piece of work, as praised by the people.">
-      1-target attack. Deals **250%** Mental DMG and inflicts 1 stack of :effect{param="confusion"} on the target. Lasts 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`An outstanding piece of work, as praised by the people.`}>
+      1-target attack. Deals **250%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="confusion"} on the target for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="An outstanding piece of work. Yet she showed no sign of joy as there was something better out there.">
-      1-target attack. Deals **450%** Mental DMG and inflicts 1 stack of :effect{param="confusion"} on the target. Lasts 1 round.
+    <CardInfo star="3" type="DEBUFF" note={`An outstanding piece of work. Yet she showed no sign of joy as there was something better out there.`}>
+      1-target attack. Deals **450%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="confusion"} on the target for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A rising star.">
+    <CardInfo star="1" type="ATTACK" note={`A rising star.`}>
       Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A rising star, but it was something that she grew used to.">
+    <CardInfo star="2" type="ATTACK" note={`A rising star, but it was something that she grew used to.`}>
       Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A rising star, but she never slowed down, and she laid her sights far and wide.">
+    <CardInfo star="3" type="ATTACK" note={`A rising star, but she never slowed down, and she laid her sights far and wide.`}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Her talent was second to none in this particular test of spheres.">
+    <CardInfo type="ATTACK" note={`Her talent was second to none in this particular test of spheres.`}>
       1-target attack. Deals **500%** Mental DMG. This attack enjoys Critical Rate **+15%**.
     </CardInfo>
   </Fragment>

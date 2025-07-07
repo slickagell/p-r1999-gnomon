@@ -41,7 +41,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Preview of Intelligence \[Intelligence] Programming,
+    Preview of Intelligence \[Intelligence] Programming
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Who said this was just a computer?">
+    <CardInfo star="1" type="ATTACK" note={`Who said this was just a computer?`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Who said this was just a computer? Take this!">
+    <CardInfo star="2" type="ATTACK" note={`Who said this was just a computer? Take this!`}>
       1-target attack. Deals **300%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Who said this is just a computer? Well, he surely doesn't know about that because he can't afford it.">
+    <CardInfo star="3" type="ATTACK" note={`Who said this is just a computer? Well, he surely doesn't know about that because he can't afford it.`}>
       1-target attack. Deals **500%** Reality DMG.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="Fi Fi Fo FUM!">
-      Self heal. Grants DMG Dealt **+20%** and enters :effect{param="self-healing"}: when a round starts, HP +(Lost HP x**20%**). Lasts 2 rounds.
+    <CardInfo star="1" type="HEALTH" note={`Fi Fi Fo FUM!`}>
+      Self heal. Gains DMG Dealt **+20%** and enters the :effect{param="self-healing"} status: at the start of the round, recovers (Missing HP x**20%**) HP, lasts 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="Fi Fi Fo FUM! I'm a genius!">
-      Self heal. Grants DMG Dealt **+25%** and enters :effect{param="self-healing"}: when a round starts, HP +(Lost HP x**25%**). Lasts 2 rounds.
+    <CardInfo star="2" type="HEALTH" note={`Fi Fi Fo FUM! I'm a genius!`}>
+      Self heal. Gains DMG Dealt **+25%** and enters the :effect{param="self-healing"} status: at the start of the round, recovers (Missing HP x**25%**) HP, lasts 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="Fi Fi Fo FUM! I'm no pushover! I'm a GENIUS!">
-      Self heal. Grants DMG Dealt **+35%** and enters :effect{param="self-healing"}: when a round starts, HP +(Lost HP x**35%**). Lasts 2 rounds.
+    <CardInfo star="3" type="HEALTH" note={`Fi Fi Fo FUM! I'm no pushover! I'm a GENIUS!`}>
+      Self heal. Gains DMG Dealt **+35%** and enters the :effect{param="self-healing"} status: at the start of the round, recovers (Missing HP x**35%**) HP, lasts 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="Read these codes. Device which can is IDM5100, otherwise a piece of scrap with a crappy motherboard.">
-      Mass buff. Dispels *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]* statuses from all enemies. Purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* from all allies. All allies also gain (the caster's ATK x**100%**) :effect{param="shield"} for 3 rounds.
+    <CardInfo type="BUFF" note={`Read these codes. Device which can is IDM5100, otherwise a piece of scrap with a crappy motherboard.`}>
+      Mass buff. Dispels *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]* statuses from all enemies. Purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* from all allies. All allies also gain (the caster's ATK x**100%**) *\[Shield]* for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    After the caster acts, HP +(Lost HP x**15%**).
+    After taking an action, recover (Missing HP x**15%**) HP.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -131,15 +131,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *65,536 Bytes*'s effect changes to: inflicts a :effect{param="shield"} with (the caster's ATK x**130%**) HP on all allies.
+    *65,536 Bytes*'s effect changes to: inflicts a *\[Shield]* with (the caster's ATK x**130%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Not a Decoration!*'s effect changes to: at **1/2/3** stars, deals **220/330/550%** Reality DMG.
+    *Not a Decoration!*: At Incantation rank **1/2/3**, Reality DMG increased to **220/330/550%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *65,536 Bytes*'s effect changes to: inflicts a :effect{param="shield"} with (the caster's ATK x**160%**) HP on all allies.
+    *65,536 Bytes*'s effect changes to: inflicts a *\[Shield]* with (the caster's ATK x**160%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -147,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *65,536 Bytes*'s effect changes to: inflicts a :effect{param="shield"} with (the caster's ATK x**200%**) HP on all allies.
+    *65,536 Bytes*'s effect changes to: inflicts a *\[Shield]* with (the caster's ATK x**200%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

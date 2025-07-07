@@ -73,16 +73,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="It once rested close to the heart.">
-      1-target attack. Deals **120%** Mental DMG; after attacking, deploys 3 stacks of :effect{param="spirit-shell"}; dispels 1 type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effect from all allies.
+    <CardInfo star="1" type="DEBUFF" note={`It once rested close to the heart.`}>
+      1-target attack. Deals **120%** Mental DMG; after attacking, deploys 3 stacks of :effect{param="spirit-shell-id-31090112"}; dispels 1 type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effect from all allies.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="It once rested close to the heart, pristine and pure.">
-      1-target attack. Deals **180%** Mental DMG; after attacking, deploys 3 stacks of :effect{param="spirit-shell"}; dispels 2 types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
+    <CardInfo star="2" type="DEBUFF" note={`It once rested close to the heart, pristine and pure.`}>
+      1-target attack. Deals **180%** Mental DMG; after attacking, deploys 3 stacks of :effect{param="spirit-shell-id-31090112"}; dispels 2 types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="It once rested close to the heart, pristine and pure, but what does it bear now?">
-      1-target attack. Deals **300%** Mental DMG; after attacking, deploys 3 stacks of :effect{param="spirit-shell"}; dispels 3 types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
+    <CardInfo star="3" type="DEBUFF" note={`It once rested close to the heart, pristine and pure, but what does it bear now?`}>
+      1-target attack. Deals **300%** Mental DMG; after attacking, deploys 3 stacks of :effect{param="spirit-shell-id-31090112"}; dispels 3 types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
     </CardInfo>
   </Fragment>
 
@@ -91,16 +91,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="This sea is small.">
-      Mass buff. Equally redistributes the HP of all allies; grants 3 stacks of :effect{param="shared-shells-shared-fate"} to all allies, and retrieves all stacks of :effect{param="spirit-shell"}.
+    <CardInfo star="1" type="BUFF" note={`This sea is small.`}>
+      Mass buff. Equally redistributes the HP of all allies; grants 3 stacks of :effect{param="shared-shells-shared-fate-id-0"} to all allies, and retrieves all stacks of :effect{param="spirit-shell-id-31090112"}.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="This sea is small, enough to be held by a single shell.">
-      Mass buff. Equally redistributes the HP of all allies; grants 5 stacks of :effect{param="shared-shells-shared-fate"} to all allies, and retrieves all stacks of :effect{param="spirit-shell"}.
+    <CardInfo star="2" type="BUFF" note={`This sea is small, enough to be held by a single shell.`}>
+      Mass buff. Equally redistributes the HP of all allies; grants 5 stacks of :effect{param="shared-shells-shared-fate-id-0"} to all allies, and retrieves all stacks of :effect{param="spirit-shell-id-31090112"}.
     </CardInfo>
 
     <CardInfo star="3" type="BUFF" note={`This sea is small, enough to be held by a single shell, and we call it "home."`}>
-      Mass buff. Equally redistributes the HP of all allies; grants 8 stacks of :effect{param="shared-shells-shared-fate"} to all allies, and retrieves all stacks of :effect{param="spirit-shell"}.
+      Mass buff. Equally redistributes the HP of all allies; grants 8 stacks of :effect{param="shared-shells-shared-fate-id-0"} to all allies, and retrieves all stacks of :effect{param="spirit-shell-id-31090112"}.
     </CardInfo>
   </Fragment>
 
@@ -109,8 +109,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="We have never strayed too far, for our homeland is always carried with us.">
-      1-target attack. Deals **700%** Mental DMG; deploys all :effect{param="spirit-shell"} and inflicts :effect{param="shell-beacon"} on the target for 2 rounds.
+    <CardInfo type="DEBUFF" note={`We have never strayed too far, for our homeland is always carried with us.`}>
+      1-target attack. Deals **700%** Mental DMG; deploys all :effect{param="spirit-shell-id-31090112"} and inflicts :effect{param="shell-beacon-id-0"} on the target for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -123,13 +123,13 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, gains 8 stacks of :effect{param="spirit-shell-self"} for self.
+    When entering battle, gains 8 stacks of :effect{param="spirit-shell-id-31090111"} for self.
 
-    When deploying :effect{param="spirit-shell"}, Fatutu has a **20%** chance to gain Moxie +1.
+    When deploying :effect{param="spirit-shell-id-31090112"}, Fatutu has a **20%** chance to gain Moxie +1.
 
-    When retrieving :effect{param="spirit-shell"}, recovers (stacks of Spirit Shell retrieved x Fatutu's ATK x **30%**) HP for all allies.
+    When retrieving :effect{param="spirit-shell-id-31090112"}, recovers (stacks of Spirit Shell retrieved x Fatutu's ATK x **30%**) HP for all allies.
 
-    When an enemy carrying :effect{param="spirit-shell"} dies, retrieves all stacks of :effect{param="spirit-shell"} from that enemy.
+    When an enemy carrying :effect{param="spirit-shell-id-31090112"} dies, retrieves all stacks of :effect{param="spirit-shell-id-31090112"} from that enemy.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -137,9 +137,9 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, gains 4 additional stacks of :effect{param="spirit-shell-self"} for self.
+    When entering battle, gains 4 additional stacks of :effect{param="spirit-shell-id-31090111"} for self.
 
-    After Fatutu accumulates a total of 7 deployments and or retrievals of :effect{param="spirit-shell"}, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{param="spirit-shell"}.
+    After Fatutu accumulates a total of 7 deployments and or retrievals of :effect{param="spirit-shell-id-31090112"}, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{param="spirit-shell-id-31090112"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -147,23 +147,23 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Shell Necklace*: When entering battle, the additional stacks of :effect{param="spirit-shell-self"} gained for self is increased to **8**.
+    *Shell Necklace*: When entering battle, the additional stacks of :effect{param="spirit-shell-id-31090111"} gained for self is increased to **8**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Shell Necklace*: The number of times required to trigger *\[Unmendable Cracks]* from deploying or retrieving :effect{param="spirit-shell"} is decreased to **5**.
+    *Shell Necklace*: The number of times required to trigger *\[Unmendable Cracks]* from deploying or retrieving :effect{param="spirit-shell-id-31090112"} is decreased to **5**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Unmendable Cracks*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **180/270/450%**; the deployed stacks of :effect{param="spirit-shell"} is increased to **4**; and when deploying :effect{param="spirit-shell"}, the chance to gain Moxie is increased to **25%**.
+    *Unmendable Cracks*: At incantation rank **1/2/3**, the Mental DMG dealt is increased to **180/270/450%**; the deployed stacks of :effect{param="spirit-shell-id-31090112"} is increased to **4**; and when deploying :effect{param="spirit-shell-id-31090112"}, the chance to gain Moxie is increased to **25%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Ocean in the Shell*: The stacks of :effect{param="shared-shells-shared-fate"} granted to all allies is increased to **4/6/10**; and when retrieving :effect{param="spirit-shell"}, the healing factor is increased to **40%**.
+    *Ocean in the Shell*: The stacks of :effect{param="shared-shells-shared-fate-id-0"} granted to all allies is increased to **4/6/10**; and when retrieving :effect{param="spirit-shell-id-31090112"}, the healing factor is increased to **40%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Shell Necklace*: When being attacked with an extra action, for each stack of :effect{param="spirit-shell"} held, that attack's DMG Dealt increase is now **6%**, and the Critical DMG increase is now **6%**.
+    *Shell Necklace*: When being attacked with an extra action, for each stack of :effect{param="spirit-shell-id-31090112"} held, that attack's DMG Dealt increase is now **6%**, and the Critical DMG increase is now **6%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -221,57 +221,57 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
     <br />
 
-    :effect{param="spirit-shell-self"} on self:
+    :effect{param="spirit-shell-id-31090111"} on self:
 
-    * At Insight 1, when entering battle, Fatutu will gain **4** stacks of :effect{param="spirit-shell-self"} for self.
-    * With Insight 3, when entering battle, Fatutu will gain total **12** stacks of :effect{param="spirit-shell-self"} for self.
-    * When Fatutu is being **attacked** or **sharing damage**, applies **1** stack of :effect{param="spirit-shell"} to the attacker.
+    * At Insight 1, when entering battle, Fatutu will gain **4** stacks of :effect{param="spirit-shell-id-31090111"} for self.
+    * With Insight 3, when entering battle, Fatutu will gain total **12** stacks of :effect{param="spirit-shell-id-31090111"} for self.
+    * When Fatutu is being **attacked** or **sharing damage**, applies **1** stack of :effect{param="spirit-shell-id-31090112"} to the attacker.
 
     <br />
 
-    :effect{param="spirit-shell"} on enemies:
+    :effect{param="spirit-shell-id-31090112"} on enemies:
 
     * For each stacks on themselves, they will receive an additional **5%** DMG Bonus and **5%** Critical DMG when being attacked with **Follow up Attacks**.
-    * When an enemy is being **attacked**, Fatutu will retrieve **1** stack of :effect{param="spirit-shell-self"}.
-    * When **multiple** enemies are being **attacked**, Fatutu still retrieve only **1** stack of :effect{param="spirit-shell-self"}.
-    * When enemy is being attacked in *\[Dodge]* status, Fatutu still retrieve **1** stack of :effect{param="spirit-shell-self"}.
-    * When enemy is **defeated**, Fatutu will retrieve **all** stacks of :effect{param="spirit-shell-self"} on that enemy.
+    * When an enemy is being **attacked**, Fatutu will retrieve **1** stack of :effect{param="spirit-shell-id-31090111"}.
+    * When **multiple** enemies are being **attacked**, Fatutu still retrieve only **1** stack of :effect{param="spirit-shell-id-31090111"}.
+    * When enemy is being attacked in *\[Dodge]* status, Fatutu still retrieve **1** stack of :effect{param="spirit-shell-id-31090111"}.
+    * When enemy is **defeated**, Fatutu will retrieve **all** stacks of :effect{param="spirit-shell-id-31090111"} on that enemy.
 
     <br />
 
-    With Insight 1, when deploying :effect{param="spirit-shell"}, Fatutu has a **20%** chance to gain Moxie **+1**.
+    With Insight 1, when deploying :effect{param="spirit-shell-id-31090112"}, Fatutu has a **20%** chance to gain Moxie **+1**.
 
-    Also with Insight 3, when Fatutu exchange (means both deploy and retrieve) *\[Spirit Shell]* for **7** times, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{param="spirit-shell"} and counted as a **Follow up Attack**.
+    Also with Insight 3, when Fatutu exchange (means both deploy and retrieve) *\[Spirit Shell]* for **7** times, triggers a rank 1 *\[Unmendable Cracks]* on the enemy with the most stacks of :effect{param="spirit-shell-id-31090112"} and counted as a **Follow up Attack**.
 
-    Each time a stack is **retrieved**, Fatutu will **heal** the entire team equal to **30%** Fatutu's ATK x number of :effect{param="spirit-shell"} stacks.
+    Each time a stack is **retrieved**, Fatutu will **heal** the entire team equal to **30%** Fatutu's ATK x number of :effect{param="spirit-shell-id-31090112"} stacks.
 
     <br />
 
     With first Debuff skill <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip>:
 
     * Deal single target Mental DMG attack.
-    * Deploy **3** stacks of :effect{param="spirit-shell"} to the target.
-      * If the enemy already has :effect{param="spirit-shell"} stacks, it means this will deploy **2** additional stacks of :effect{param="spirit-shell"} to the target, since Fatutu will retrieve **1** stack to herself.
+    * Deploy **3** stacks of :effect{param="spirit-shell-id-31090112"} to the target.
+      * If the enemy already has :effect{param="spirit-shell-id-31090112"} stacks, it means this will deploy **2** additional stacks of :effect{param="spirit-shell-id-31090112"} to the target, since Fatutu will retrieve **1** stack to herself.
     * Dispel **1/2/3** type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* effects from all allies.
 
     <br />
 
     Second skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> is a Buff incantation:
 
-    * Retrieve **all** stacks of :effect{param="spirit-shell-self"} on enemies.
+    * Retrieve **all** stacks of :effect{param="spirit-shell-id-31090111"} on enemies.
     * The entire **HP** of the team will be **divided equally**.
-    * Grants **3/5/8** stacks of :effect{param="shared-shells-shared-fate"} to all allies.
+    * Grants **3/5/8** stacks of :effect{param="shared-shells-shared-fate-id-0"} to all allies.
       * This effect **can** be dispelled, has **30** maximum stacks and has **no** duration.
       * This effect stacks **can** be reduced even when the character is in *\[Dodge]* status.
       * HP sacrifice by other characters will **not** trigger this effect.
-      * If enemy attack multiple allies, :effect{param="spirit-shell"} will also be deployed **multiple** times to the attacker.
+      * If enemy attack multiple allies, :effect{param="spirit-shell-id-31090112"} will also be deployed **multiple** times to the attacker.
 
     <br />
 
     Ultimate skill <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Proverb of the Sea]*</CharacterSkillTooltip>:
 
     * Deal single target Mental DMG attack.
-    * Deploy **all** stacks of :effect{param="spirit-shell"} that Fatutu **has** to the target.
+    * Deploy **all** stacks of :effect{param="spirit-shell-id-31090112"} that Fatutu **has** to the target.
     * Inflict :effect{param="shell-beacon"} on the target for **2** rounds.
       * This effect **can** be dispelled.
       * When attack enemy with this effect, Fatutu will exchange *\[Spirit Shell]* **2** times, 1 retrieve time and 1 redeploy time.
@@ -281,13 +281,13 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     #### Operate / Rotation
 
     * Cast <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip> and <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> in the early rounds to gain Moxie. Try to get the Ultimate as soon as possible.
-      * Use Debuff <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip> first to deploy :effect{param="spirit-shell"} to the target then use the Buff skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> later.
+      * Use Debuff <CharacterSkillTooltip variant="skill-1" id={frontmatter.id}>*\[Unmendable Cracks]*</CharacterSkillTooltip> first to deploy :effect{param="spirit-shell-id-31090112"} to the target then use the Buff skill <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> later.
     * Use <CharacterSkillTooltip variant="ultimate" id={frontmatter.id}>*\[Proverb of the Sea]*</CharacterSkillTooltip> Ultimate when the other enemies do **not** have or have **few** *\[Spirit Shell]* so that the amount of *\[Spirit Shell]* can be focused on the target.
       * If *\[Spirit Shell]* lying around between enemies, use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> to retrieve all of *\[Spirit Shell]* **first** then use Ultimate to attack the target later.
       * Use Fatutu's Ultimate **before** using other characters skills.
       * Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> after using Ultimate.
-    * Since Fatutu has a **20%** chance to gain Moxie when deploying :effect{param="spirit-shell"}, depending on the Moxie that Fatutu has on the beginning of each round, we maybe just need to use Debuff or Buff incantation 1-2 times and be able to use Ultimate again.
-    * Pay attention to the amount of :effect{param="shared-shells-shared-fate"} stacks and use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> to provide more stacks when it is about to run out.
+    * Since Fatutu has a **20%** chance to gain Moxie when deploying :effect{param="spirit-shell-id-31090112"}, depending on the Moxie that Fatutu has on the beginning of each round, we maybe just need to use Debuff or Buff incantation 1-2 times and be able to use Ultimate again.
+    * Pay attention to the amount of :effect{param="shared-shells-shared-fate-id-0"} stacks and use <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> to provide more stacks when it is about to run out.
 
     <br />
 
@@ -295,13 +295,13 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
       <div class="flex-1 step-arrow">
         <CharacterImg class="w-20 mx-auto" variant="skill-1" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Cast this incantation first to deploy :effect{param="spirit-shell"} to the target</div>
+        <div class="mt-1 text-center">Cast this incantation first to deploy :effect{param="spirit-shell-id-31090112"} to the target</div>
       </div>
 
       <div class="flex-1 step-arrow">
         <CharacterImg class="w-20 mx-auto" variant="skill-2" id={frontmatter.id} />
 
-        <div class="mt-1 text-center">Use this incantation to retrieve :effect{param="spirit-shell-self"} and grant :effect{param="shared-shells-shared-fate"} to all allies</div>
+        <div class="mt-1 text-center">Use this incantation to retrieve :effect{param="spirit-shell-id-31090111"} and grant :effect{param="shared-shells-shared-fate-id-0"} to all allies</div>
       </div>
 
       <div class="flex-1 step-arrow-two-ways">
@@ -317,7 +317,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
           <CharacterImg class="w-20" variant="skill-1" id={frontmatter.id} />
         </div>
 
-        <div class="mt-1 text-center">Ocassionally cast these skill to gain Moxie to Ultimate again. Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> after Ultimate and pay attention to the amount of :effect{param="shared-shells-shared-fate"} stacks</div>
+        <div class="mt-1 text-center">Ocassionally cast these skill to gain Moxie to Ultimate again. Prioritize <CharacterSkillTooltip variant="skill-2" id={frontmatter.id}>*\[Ocean in the Shell]*</CharacterSkillTooltip> after Ultimate and pay attention to the amount of :effect{param="shared-shells-shared-fate-id-0"} stacks</div>
       </div>
     </div>
 

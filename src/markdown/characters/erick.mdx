@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="An aged axe.">
+    <CardInfo star="1" type="ATTACK" note={`An aged axe.`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="An aged axe serving the hands of some rebellious child in most of the time.">
-      1-target attack. Deals **200%** Reality DMG. Critical Resist Rate and Critical DEF **-25%** for the target for 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`An aged axe serving the hands of some rebellious child in most of the time.`}>
+      1-target attack. Deals **200%** Reality DMG. Inflicts Critical Resist Rate and Critical DEF **-25%** for 1 round on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="An aged axe serving the hands of some rebellious child in most of the time. Sometimes it weighs more than a thousand pounds.">
-      1-target attack. Deals **300%** Reality DMG. Critical Resist Rate and Critical DEF **-30%** for the target for 1 round.
+    <CardInfo star="3" type="DEBUFF" note={`An aged axe serving the hands of some rebellious child in most of the time. Sometimes it weighs more than a thousand pounds.`}>
+      1-target attack. Deals **300%** Reality DMG. Inflicts Critical Resist Rate and Critical DEF **-30%** for 1 round on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A plundered boat.">
+    <CardInfo star="1" type="ATTACK" note={`A plundered boat.`}>
       Mass attack. Deals **120%** Reality DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A plundered boat which used to work on a peaceful lake.">
+    <CardInfo star="2" type="ATTACK" note={`A plundered boat which used to work on a peaceful lake.`}>
       Mass attack. Deals **180%** Reality DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A plundered boat which now has a nobler purpose.">
+    <CardInfo star="3" type="ATTACK" note={`A plundered boat which now has a nobler purpose.`}>
       Mass attack. Deals **300%** Reality DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The battlefield is a place of iron and blood, but of course you can also see a duck boat and a plastic helmet.">
+    <CardInfo type="DEBUFF" note={`The battlefield is a place of iron and blood, but of course you can also see a duck boat and a plastic helmet.`}>
       1-target attack. Dispels *\[Stats Up]*, *\[Pos Status]*, and *\[Counter]* statuses from the target and deals **450%** Reality DMG. Also inflicts :effect{param="disarm"} status on the target for 1 round.
     </CardInfo>
   </Fragment>
@@ -131,7 +131,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Glory to the Jarl*'s effect changes to: deals **500%** Reality DMG.
+    *Glory to the Jarl*: Reality DMG increased to **500%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -139,7 +139,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Glory to the Jarl*'s effect changes to: deals **550%** Reality DMG.
+    *Glory to the Jarl*: Reality DMG increased to **550%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">

@@ -69,18 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Focus.">
+    <CardInfo star="1" type="ATTACK" note={`Focus.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Focus. Mark the sentence.">
+    <CardInfo star="2" type="ATTACK" note={`Focus. Mark this sentence.`}>
       1-target attack. Deals **330%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Focus. Mark the sentence, and the next one.">
-      1-target attack. Deals **450%** Mental DMG.
-
-      Penetration Rate **+30%** for this attack.
+    <CardInfo star="3" type="ATTACK" note={`Focus. Mark this sentence, and the next one.`}>
+      1-target attack. Deals **450%** Mental DMG; Penetration Rate **+30%** for this attack.
     </CardInfo>
   </Fragment>
 
@@ -89,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="She searches the waters.">
+    <CardInfo star="1" type="ATTACK" note={`She searches the waters.`}>
       Mass attack. Deals **130%** Mental DMG to 2 enemies. Deals Mental DMG **+30%** to the target in the :effect{param="annotate"} status.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="She searches the waters, looking for shadows.">
+    <CardInfo star="2" type="DEBUFF" note={`She searches the waters, looking for shadows.`}>
       Mass attack. Deals **200%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="weakness"} on the targets hit. Deals Mental DMG **+40%** to the target in the :effect{param="annotate"} status.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="She searches the waters, looking for shadows to reveal with light.">
+    <CardInfo star="3" type="DEBUFF" note={`She searches the waters, looking for shadows to reveal with light.`}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="weakness"} on the targets hit. Deals Mental DMG **+75%** to the target in the :effect{param="annotate"} status.
     </CardInfo>
   </Fragment>
@@ -107,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="When she reads, even an eternity seems like an instant.">
-      Mass attack. Deals **250%** Mental DMG to all enemies and Mental DMG **+200%** to the target with :effect{param="annotate"} status. Gain 1 stack of :effect{param="preparation-marcus"}, and grant Eureka +2 to self.
+    <CardInfo type="ATTACK" note={`When she reads, even an eternity seems like an instant.`}>
+      Mass attack. Deals **250%** Mental DMG to all enemies and Mental DMG **+200%** to the target in the :effect{param="annotate"} status. Gain 1 stack of :effect{param="preparation-marcus"}, and grant Eureka +2 to self.
     </CardInfo>
   </Fragment>
 
@@ -133,7 +131,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, gain Eureka +1. At the start of the round, gain Eureka +1. When entering battle, if there are 3 or more Plant, Spirit, and/or Intelligence allies, gain the :effect{param="perusal"} status. Whenever the requirements are not met, the :effect{param="perusal"} status is removed.
+    When entering battle, gain Eureka +1.
+
+    At the start of the round, gain Eureka +1.
+
+    When entering battle, if there are 3 or more Plant, Spirit, and/or Intelligence allies, gain the :effect{param="perusal"} status. Whenever the requirements are not met, the :effect{param="perusal"} status is removed.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -141,11 +143,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Read the Page*: When entering battle, the Eureka gained is increased to 3.
+    *Read the Page*: When entering battle, the Eureka gained is increased to **3**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Read the Page*: Now only costs 2 Eureka to upgrade incantations from rank 2 to rank 3.
+    *Read the Page*: Now only costs **2** Eureka to upgrade incantations from rank **2** to rank **3**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -153,7 +155,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Read the Page*: At the start of the round, the Eureka gained is increased to 2
+    *Read the Page*: At the start of the round, the Eureka gained is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-5-info">

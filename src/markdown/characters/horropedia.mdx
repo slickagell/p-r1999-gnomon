@@ -33,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    An arcanist artwork completed on January 3rd. First put on display in the 1990s, it remained on display for 21 years. It was displayed at the St. Pavlov Foundation's External Inspection Unit.
+    An Arcanist artwork completed on January 3rd. First put on display in the 1990s, it remained on display for 21 years. It was displayed at the St. Pavlov Foundation's External Inspection Unit.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -41,7 +41,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Will of the Bedrock \[Mineral] Logical Deduction
+    Will of the Bedrock (Mineral) - Logical Deduction
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="This is all perfectly logical.">
+    <CardInfo star="1" type="ATTACK" note={`This is all perfectly logical.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This is all perfectly logical, although difficult to understand.">
+    <CardInfo star="2" type="ATTACK" note={`This is all perfectly logical, although difficult to understand.`}>
       1-target attack. Deals **250%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This is all perfectly logical, my friend logic said.">
+    <CardInfo star="3" type="ATTACK" note={`This is all perfectly logical, my friend logic said.`}>
       1-target attack. Deals **450%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="It dazzles the eyes.">
+    <CardInfo star="1" type="ATTACK" note={`It dazzles the eyes.`}>
       1-target attack. Deals **160%** Mental DMG, and if the target is not affected by *\[Stats Up]* or a *\[Pos Status]*, deals an additional **60%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="It dazzles the eyes, too quick to be captured.">
+    <CardInfo star="2" type="ATTACK" note={`It dazzles the eyes, too quick to be captured.`}>
       1-target attack. Deals **240%** Mental DMG, and if the target is not affected by *\[Stats Up]* or a *\[Pos Status]*, deals an additional **90%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="It dazzles the eyes, too quick to be captured in this moment.">
+    <CardInfo star="3" type="ATTACK" note={`It dazzles the eyes, too quick to be captured in this moment.`}>
       1-target attack. Deals **400%** Mental DMG, and if the target is not affected by *\[Stats Up]* or a *\[Pos Status]*, deals an additional **150%** Mental DMG.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="It's a little cliché, but always so effective.">
-      Mass attack. Deals **300%** Mental DMG to all enemies and inflicts 1 stack of :effect{param="scared"} on all targets.
+    <CardInfo type="DEBUFF" note={`It's a little cliché, but always so effective.`}>
+      Mass attack. Deals **300%** Mental DMG to all enemies. After attacking, inflicts 1 stack of :effect{param="scared"} on the targets.
     </CardInfo>
   </Fragment>
 
@@ -143,15 +143,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Twins' Play*'s effect changes to: deals **400%** Mental DMG.
+    *Twins' Play*: Mental DMG increased to **400%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Sideshow*: When at Incantation Rank **1/2/3**, Mental DMG dealt increases to **180/270/450%**.
+    *Sideshow* When at Incantation Rank **1/2/3**, Mental DMG dealt increases to **180/270/450%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Twins' Play* Additionally inflicts 1 stack of :effect{param="scared"} on the target.
+    *Twins' Play* Additionally inflicts **1** stack of :effect{param="scared"} on the target.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

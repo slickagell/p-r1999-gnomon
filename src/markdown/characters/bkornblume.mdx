@@ -50,7 +50,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    67 21/64x40 35/64x8 21/32 in.
+    67 21/64x40 35/64x8 21/32in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="It seems she's not very skilled at this.">
+    <CardInfo star="1" type="ATTACK" note={`It seems she's not very skilled at this.`}>
       Mass attack. Deals **135%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **30%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="It seems she does not want to use it to hurt people.">
+    <CardInfo star="2" type="ATTACK" note={`It seems she does not want to use it to hurt people.`}>
       Mass attack. Deals **200%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **45%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Hurting people is not her intention, but protecting herself is.">
+    <CardInfo star="3" type="ATTACK" note={`Hurting people is not her intention, but protecting herself is.`}>
       Mass attack. Deals **335%** Reality DMG to 2 enemies. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack deals **75%** more Reality DMG.
     </CardInfo>
   </Fragment>
@@ -88,16 +88,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="They're whispering secrets to each other.">
+    <CardInfo star="1" type="DEBUFF" note={`They're whispering secrets to each other.`}>
       Mass debuff. All enemies suffer Reality DEF **-15%** and DMG Taken **+15%**. Lasts 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="They're whispering secrets to each other as if no one's around.">
+    <CardInfo star="2" type="DEBUFF" note={`They're whispering secrets to each other as if no one's around.`}>
       Mass debuff. All enemies suffer Reality DEF **-20%** and DMG Taken **+20%**. Lasts 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="They're whispering secrets to each other as if no one's around, but there's always a prying ear.">
-      Mass debuff. All enemies suffer Reality DEF **-25%** and DMG Taken **+25%**. Lasts 2 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`They're whispering secrets to each other as if no one's around, but there's always a prying ear.`}>
+      Mass debuff. All enemies suffer Reality DEF **-25%** and DMG Taken **+25%**. Lasts 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -106,8 +106,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="She heard numerous details of the neighborhood's story and has plenty of ideas about them.">
-      1-target attack. Deals **550%** Reality DMG and inflicts :effect{param="seal"} for 3 rounds. If the target is immune to :effect{param="seal"}, Moxie -2 to the target instead.
+    <CardInfo type="DEBUFF" note={`She heard numerous details of the neighborhood's story and has plenty of ideas about them.`}>
+      1-target attack. Deals **550%** Reality DMG. Inflicts :effect{param="seal"} for 3 rounds on the target hit. If the target is immune to :effect{param="seal"}, inflicts Moxie -2 on the target instead.
     </CardInfo>
   </Fragment>
 
@@ -120,7 +120,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the enemy is in *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses, DMG Dealt **+20%** to the enemy.
+    When the enemy is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, DMG Dealt **+20%** to the enemy.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -128,7 +128,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When the caster is attacked by an enemy in *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses, DMG Taken **-20%**.
+    When the caster is attacked by an enemy in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, DMG Taken **-20%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -140,7 +140,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Watch Your Sleeves*'s effect changes to: at **1/2/3** stars, additionally deals **45/65/100%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses.
+    *Watch Her Sleeves*'s effect changes to: at **1/2/3** stars, additionally deals **45/65/100%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses.
   </Fragment>
 
   <Fragment slot="portray-3-info">

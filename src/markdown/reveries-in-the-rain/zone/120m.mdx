@@ -60,7 +60,7 @@ import data from "@data/reveries-in-the-rain/zone/120m.json";
 
           <span class="passive-title">Advocator of Knowledge III</span>
 
-          Before the Ultimate takes effect, applies 2 random :effect{param="collection-of-debuffs-6"} effects to all enemies for 2 rounds. At the start of the round, applies 1 random :effect{param="collection-of-buffs-6"} effect to all allies for 2 rounds.
+          Before the Ultimate takes effect, applies 2 random :effect{param="collection-of-debuffs"} effects to all enemies for 2 rounds. At the start of the round, applies 1 random :effect{param="collection-of-buffs"} effect to all allies for 2 rounds.
 
           <span class="passive-title">Summon</span>
 
@@ -106,11 +106,11 @@ import data from "@data/reveries-in-the-rain/zone/120m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{param="collection-of-debuffs-6"} on the targets for 2 rounds. Gain Eureka +1 for self when at 4 or less Eureka.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{param="collection-of-debuffs"} on the targets for 2 rounds. Gain Eureka +1 for self when at 4 or less Eureka.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **175%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{param="collection-of-debuffs-6"} on the targets for 2 rounds. Gain Eureka +2 for self when at 4 or less Eureka.
+          <CardType class="w-24 mb-1" type="DEBUFF" /> Mass attack. Deals **175%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{param="collection-of-debuffs"} on the targets for 2 rounds. Gain Eureka +2 for self when at 4 or less Eureka.
         </div>
       </Fragment>
 
@@ -124,11 +124,11 @@ import data from "@data/reveries-in-the-rain/zone/120m.json";
         </div>
 
         <div x-show={`['${data.enemies[1].id}'].includes(active)`}>
-          <CardType class="w-24 mb-1" type="BUFF" /> 1-target buff. Purifies 2 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs-6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
+          <CardType class="w-24 mb-1" type="BUFF" /> 1-target buff. Purifies 2 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
 
           <div class="divider my-1 h-1" />
 
-          <CardType class="w-24 mb-1" type="BUFF" /> 1-target buff. Purifies 4 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs-6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
+          <CardType class="w-24 mb-1" type="BUFF" /> 1-target buff. Purifies 4 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
         </div>
       </Fragment>
 

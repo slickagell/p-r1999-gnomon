@@ -34,7 +34,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    An awakened's work. Exhibited at the end of the 1820s, on display to this day — 181 years in total. Completed in winter, on the 30th of December. Initially exhibited in the Greater London area of the United Kingdom of Great Britain and Northern Ireland, and later moved to the Laplace Scientific Computing Center.
+    An awakened's work. Exhibited at the end of the 1820s, on display to this day—181 years in total. Completed in winter, on the 30th of December. Initially exhibited in the Greater London area of the United Kingdom of Great Britain and Northern Ireland, and later moved to the Laplace Scientific Computing Center.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -42,15 +42,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Metallic Wisdom \[Intelligence] Scientific Progress
+    Metallic Wisdom \[Intelligence], Scientific Progress
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Leather, Patchouli, Aluminum Alloy, Rust, Hay, Liurel Leaves
+    Leather, Patchouli, Aluminum Alloy, Rust, Hay, Laurel Leaves
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    74x 42 15/16 x 22 13/16 inches.
+    74 x 42 15/16 x 22 13/16 inches.
   </Fragment>
 
   <Fragment slot="toc">
@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="It all started with a sling.">
+    <CardInfo star="1" type="ATTACK" note={`It all started with a sling.`}>
       1-target attack. Deals **200%** Reality DMG. Consume 10 stacks of :effect{param="dynamo"} to deal Reality DMG **+60%** for this attack.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="It all started with a sling. Then we shot bullets.">
+    <CardInfo star="2" type="ATTACK" note={`It all started with a sling. Then we shot bullets.`}>
       1-target attack. Deals **300%** Reality DMG. Consume 10 stacks of :effect{param="dynamo"} to deal Reality DMG **+90%** for this attack.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="It all started with a sling. Then we shot bullets. Now, we re blasting off into space.">
+    <CardInfo star="3" type="ATTACK" note={`It all started with a sling. Then we shot bullets. Now, we're blasting off into space.`}>
       1-target attack. Deals **500%** Reality DMG. Consume 10 stacks of :effect{param="dynamo"} to deal Reality DMG **+150%** for this attack.
     </CardInfo>
   </Fragment>
@@ -102,16 +102,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="It runs through our veins.">
+    <CardInfo star="1" type="ATTACK" note={`It runs through our veins.`}>
       Mass attack. Deals **150%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{param="dynamo"} to either attack 1 additional target, or deal Reality DMG **+40%** if less than 3 enemies are present.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="It runs through our veins. It flows among gears.">
+    <CardInfo star="2" type="ATTACK" note={`It runs through our veins. It flows among gears.`}>
       Mass attack. Deals **225%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{param="dynamo"} to either attack 1 additional target, or deal Reality DMG **+60%** if less than 3 enemies are present.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="It runs through our veins. It flows between the gears. It never ceases to advance.">
-      Mass attack. Deals **575%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{param="dynamo"} to either attack 1 additional target, or deal Reality DMG **+100%** if less than 3 enemies are present.
+    <CardInfo star="3" type="ATTACK" note={`It runs through our veins. It flows between the gears. It never ceases to advance.`}>
+      Mass attack. Deals **375%** Reality DMG to 2 enemies. Consume 10 stacks of :effect{param="dynamo"} to either attack 1 additional target, or deal Reality DMG **+100%** if less than 3 enemies are present.
     </CardInfo>
   </Fragment>
 
@@ -134,8 +134,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="By changing ourselves, we have the power to change the world.">
-      Self buff. Enters :effect{param="pragmatist"} for 2 rounds. Gains 1 stack of :effect{param="data-iteration"}. Loads 2 :effect{param="charged-ammunition"}.
+    <CardInfo type="BUFF" note={`By changing ourselves, we have the power to change the world.`}>
+      Self buff. Enters :effect{param="pragmatist-id-1"} for 2 rounds. Gains 1 stack of :effect{param="data-iteration-id-1"}. Loads 2 :effect{param="charged-ammunition"}.
     </CardInfo>
   </Fragment>
 
@@ -162,7 +162,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    For every Moxie gained by sell, gain 2 stacks of :effect{param="dynamo"} for self. For every Moxie or Eureka gained by another ally, gain 1 stack of :effect{param="dynamo"} for self. Whenever a total of 20 stacks of :effect{param="dynamo"} is gained among all allies, gain :effect{param="advancement"} for self.
+    For every Moxie gained by self, gain 2 stacks of :effect{param="dynamo"} for self. For every Moxie or Eureka gained by another ally, gain 1 stack of :effect{param="dynamo"} for self. Whenever a total of 20 stacks of :effect{param="dynamo"} is gained among all allies, gain :effect{param="advancement"} for self.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -170,7 +170,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Right after casting an Ultimate, gain :effect{param="leadership"} for 2 rounds and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation. Whenever an enemy is defeated, gain 10 stacks of Dynamo, 1 stack of :effect{param="data-iteration"}, and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation (triggers up to 2 times per round).
+    Right after casting an Ultimate, gain :effect{param="leadership-id-1"} for 2 rounds and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation.
+
+    Whenever an enemy is defeated, gain 10 stacks of :effect{param="dynamo"}, 1 stack of :effect{param="data-iteration-id-1"}, and cast *\[Conservation of Energy]*, which is considered a rank 2 incantation (triggers up to 2 times per round).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -178,15 +180,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *The First Push*: *\[Conservation of Energy]*'s Reality DMG is increased to **150%**; now. deals additional damage when the target's current HP is below **75%**, and the additional DMG is increased to **100%**.
+    *The First Push*: *\[Conservation of Energy]*'s Reality DMG is increased to **150%**; now deals additional damage when the target's current HP is below **75%**, and the additional DMG is increased to **100%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *A Step Forward*: :effect{param="pragmatist"} and :effect{param="leadership"}'s durations are increased to 3 rounds, and the Stronger Afflatus Damage Factor increase is now **20%**.
+    *A Step Forward*: :effect{param="pragmatist-id-1"} and :effect{param="leadership-id-1"}'s durations are increased to **3** rounds, and the Stronger Afflatus Damage Factor increase is now **20%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *The First Push*: :effect{param="data-iteration"}'s ATK bonus is increased to **6%**; and whenever an enemy dies, the stacks of :effect{param="data-iteration"} gained is increased to **2**.
+    *The First Push*: :effect{param="data-iteration-id-1"}'s ATK bonus is increased to **6%**; and whenever an enemy dies, the stacks of :effect{param="data-iteration-id-1"} gained is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -194,7 +196,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *The First Push*: :effect{param="data-iteration"}'s ATK bonus is increased to **8%**, and maximum stacks is increased to **6**; and whenever an ally gains 1 Moxie or Eureka, the stacks of :effect{param="dynamo"} gained is increased to **2**.
+    *The First Push*: :effect{param="data-iteration-id-2"}'s ATK bonus is increased to **8%**, and maximum stacks is increased to **6**; and whenever an ally gains **1** Moxie or Eureka, the stacks of :effect{param="dynamo"} gained is increased to **2**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

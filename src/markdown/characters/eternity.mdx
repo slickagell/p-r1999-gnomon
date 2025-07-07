@@ -50,7 +50,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    74 4/5x22 21/25x16 9/25 in.
+    74 4/5x22 21/25x16 9/25in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -70,16 +70,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="She has seen too much.">
-      1-target attack. The caster suffers Current HP **-10%** and deals **200%** Reality DMG. Inflicts 1 round of :effect{param="nasty-wound"} on the target.
+    <CardInfo star="1" type="DEBUFF" note={`She has seen too much.`}>
+      1-target attack. Loses (Current HP x**10%**) HP and deals **200%** Reality DMG. Inflicts :effect{param="nasty-wound"} for 1 round on the target hit.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="She has seen too much, even more than what you can understand.">
-      1-target attack. The caster suffers Current HP **-10%** and deals **300%** Reality DMG. Inflicts 1 round of :effect{param="nasty-wound"} on the target.
+    <CardInfo star="2" type="DEBUFF" note={`She has seen too much, even more than what you can understand.`}>
+      1-target attack. Loses (Current HP x**10%**) HP and deals **300%** Reality DMG. Inflicts :effect{param="nasty-wound"} for 1 round on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="She has seen too much, including, of course, the history of purses.">
-      1-target attack. The caster suffers Current HP **-10%** and deals **500%** Reality DMG. Inflicts 1 round of :effect{param="nasty-wound"} on the target.
+    <CardInfo star="3" type="DEBUFF" note={`She has seen too much, including, of course, the history of purses.`}>
+      1-target attack. Loses (Current HP x**10%**) HP and deals **500%** Reality DMG. Inflicts :effect{param="nasty-wound"} for 1 round on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Experience is our teacher.">
+    <CardInfo star="1" type="ATTACK" note={`Experience is our teacher.`}>
       Mass attack. HP -(current HP x**10%**) and deals **160%** Reality DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Experience is our teacher. Listen, read, and learn.">
+    <CardInfo star="2" type="ATTACK" note={`Experience is our teacher. Listen, read, and learn.`}>
       Mass attack. HP -(current HP x**10%**) and deals **240%** Reality DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Experience is our teacher, and the best self-defense.">
+    <CardInfo star="3" type="ATTACK" note={`Experience is our teacher, and the best self-defense.`}>
       Mass attack. HP -(current HP x**10%**) and deals **400%** Reality DMG to 2 enemies.
     </CardInfo>
   </Fragment>
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="People tried every means to find clues about her, for some cocktail made with blue blood, and immortality.">
+    <CardInfo type="ATTACK" note={`People tried every means to find clues about her, for some cocktail made with blue blood, and immortality.`}>
       Mass attack. Deals **300%** Reality DMG to all enemies. This attack enjoys Leech Rate **+50%**.
     </CardInfo>
   </Fragment>
@@ -116,11 +116,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    Solitude for 100 years
+    Solitude for 100 years
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    Immune to :effect{param="bleed"}, :effect{param="corrode"}, and :effect{param="poison"}. At the start of each round, gains 1 stack of :effect{param="blood-of-longevity"}: Deals **3%** increased DMG and DMG recovery increases by **3%** (cannot be dispelled, and the effect is stackable up to 5 times).
+    Immune to :effect{param="bleed"}, :effect{param="corrode"}, and :effect{param="poison"}. At the start of each round, gains 1 stack of :effect{param="blood-of-longevity"}: Deals **3%** increased damage and damage recovery increases by **3%** (cannot be dispelled, and the effect is stackable up to 5 times).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -136,11 +136,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Anecdotes in Exeter*'s effect changes to: deals **350%** Reality DMG.
+    *Anecdotes in Exeter*: Reality DMG increased to **350%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Vigor Handbag*'s effect changes to: at **1/2/3** stars, deals **220/330/550%** Reality DMG.
+    *Vigor Handbag*: At Incantation rank **1/2/3**, Reality DMG increased to **220/330/550%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -152,7 +152,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Anecdotes in Exeter*'s effect changes to: deals **400%** Reality DMG.
+    *Anecdotes in Exeter*: Reality DMG increased to **400%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

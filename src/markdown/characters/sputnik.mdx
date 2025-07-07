@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="The era is long gone.">
+    <CardInfo star="1" type="ATTACK" note={`The era is long gone.`}>
       1-target attack. Deals **160%** Mental DMG. If the caster's HP is above **50%**, this attack deals **60%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Just like her passing, the era is long gone.">
+    <CardInfo star="2" type="ATTACK" note={`Just like her passing, the era is long gone.`}>
       1-target attack. Deals **240%** Mental DMG. If the caster's HP is above **50%**, this attack deals **90%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="The era is long gone, though she never strayed off course.">
+    <CardInfo star="3" type="ATTACK" note={`The era is long gone, though she never strayed off course.`}>
       1-target attack. Deals **400%** Mental DMG. If the caster's HP is above **50%**, this attack deals **150%** more Mental DMG.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="She always remains silent.">
+    <CardInfo star="1" type="COUNTER" note={`She always remains silent.`}>
       Self counter for 2 rounds. When the caster is attacked, Moxie -1 for the attacker.
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="She always remains silent and acts only in the capacity as a cosmic listener.">
+    <CardInfo star="2" type="COUNTER" note={`She always remains silent and acts only in the capacity as a cosmic listener.`}>
       Self counter for 3 rounds. When the caster is attacked, Moxie -1 for the attacker.
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="She always remains silent, unless you're talking about rockets.">
+    <CardInfo star="3" type="COUNTER" note={`She always remains silent, unless you're talking about rockets.`}>
       Self counter for 3 rounds. When the caster is attacked, Moxie -1 for the attacker and Moxie +1 for the caster.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Be careful when talking about Sputnik-1. Witnesses will be eliminated pursuant to the relevant protocols.">
-      1-target attack. Deals **350%** Mental DMG and inflicts :effect{param="disarm"} and :effect{param="silence"} statuses on the target for 2 rounds.
+    <CardInfo type="DEBUFF" note={`Be careful when talking about Sputnik-1. Witnesses will be eliminated pursuant to the relevant protocols.`}>
+      1-target attack. Deals **350%** Mental DMG. Inflicts :effect{param="disarm"} and :effect{param="silence"} for 2 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -131,7 +131,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *NDA Keeper*'s effect changes to: deals **400%** Mental DMG.
+    *NDA Keeper*: Mental DMG increased to **400%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -139,7 +139,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *NDA Keeper*'s effect changes to: deals **450%** Mental DMG.
+    *NDA Keeper*: Mental DMG increased to **450%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -147,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *NDA Keeper*'s effect changes to: deals **500%** Mental DMG.
+    *NDA Keeper*: Mental DMG increased to **500%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

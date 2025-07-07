@@ -70,16 +70,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Sometimes people call them 'mad kid'.">
-      1-target attack. Deals **150%** Mental DMG. DMG Taken **+20%** for the target for 1 round.
+    <CardInfo star="1" type="DEBUFF" note={`Sometimes people call them "mad kid."`}>
+      1-target attack. Deals **150%** Mental DMG. Inflicts DMG Taken **+20%** for 1 round on the target hit.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Sometimes people call them 'mad kid' or other similar nicknames.">
-      1-target attack. Deals **250%** Mental DMG. DMG Taken **+20%** for the target for 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`Sometimes people call them "mad kid" or other similar nicknames.`}>
+      1-target attack. Deals **250%** Mental DMG. Inflicts DMG Taken **+20%** for 1 round on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Sometimes people call them 'mad kid' and, of course, it still doesn't sound as mad as they are.">
-      1-target attack. Deals **450%** Mental DMG. DMG Taken **+20%** for the target for 1 round.
+    <CardInfo star="3" type="DEBUFF" note={`Sometimes people call them "mad kid" and, of course, it still doesn't sound as mad as they are.`}>
+      1-target attack. Deals **450%** Mental DMG. Inflicts DMG Taken **+20%** for 1 round on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="This thing can only be stored in a special ware.">
+    <CardInfo star="1" type="HEALTH" note={`This thing can only be stored in a special ware.`}>
       Mass healing. Grants HP +(the caster's ATK x**80%**) and 1 stack of :effect{param="sturdiness"} to all allies.
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="This thing can only be stored in a special ware, like a Mars ampoule.">
+    <CardInfo star="2" type="HEALTH" note={`This thing can only be stored in a special ware, like a Mars ampoule.`}>
       Mass healing. Grants HP +(the caster's ATK x**120%**) and 1 stack of :effect{param="sturdiness"} to all allies.
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="This thing can only be stored in a special ware, like a Mars ampoule, or a living body.">
+    <CardInfo star="3" type="HEALTH" note={`This thing can only be stored in a special ware, like a Mars ampoule, or a living body.`}>
       Mass healing. Grants HP +(the caster's ATK x**200%**) and 1 stack of :effect{param="sturdiness"} to all allies.
     </CardInfo>
   </Fragment>
@@ -106,8 +106,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="A generic ceramide receptor antagonist of complicated composition. The effect is unclear so human experiment is strictly prohibited.">
-      1-target attack. Deals **450%** Mental DMG and inflicts :effect{param="daze"} on the target for 1 round. Moxie +1 for the caster.
+    <CardInfo type="DEBUFF" note={`A generic ceramide receptor antagonist of complicated composition. The effect is unclear so human experiment is strictly prohibited.`}>
+      1-target attack. Deals **450%** Mental DMG. Inflicts :effect{param="daze"} for 1 round on the target hit. After attacking, grant Moxie +1 to self.
     </CardInfo>
   </Fragment>
 
@@ -120,7 +120,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    After the caster casts an Ultimate, HP +(Medicine Pocket's ATK x**80%**) for all allies.
+    Right after casting an Ultimate, recovers (Medicine Pocket's ATK x**80%**) HP for all allies.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -128,7 +128,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    If the caster's HP is below **50%**, Healing Done **+10%**.
+    If the caster's HP percentage is below **50%**, Healing Done **+10%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -152,7 +152,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Inherent Habit*: DMG Taken increased to **+30%** for the target.
+    *Inherent Habit*: DMG Taken increased to **30%** for the target.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

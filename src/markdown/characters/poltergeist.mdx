@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="It's 'untrodden' here.">
+    <CardInfo star="1" type="ATTACK" note={`It's untrodden here.`}>
       1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="It's 'untrodden' here.">
+    <CardInfo star="2" type="ATTACK" note={`It's "untrodden" here.`}>
       1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="It's 'untrodden' here, and it rains heavily sometimes.">
+    <CardInfo star="3" type="ATTACK" note={`It's "untrodden" here, and it rains heavily sometimes.`}>
       1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A piece of advice.">
+    <CardInfo star="1" type="ATTACK" note={`A piece of advice.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="A piece of advice: don't ignore her.">
-      1-target attack. Deals **200%** Mental DMG. Mental DEF **-25%** for the target for 2 rounds.
+    <CardInfo star="2" type="DEBUFF" note={`A piece of advice: don't ignore her.`}>
+      1-target attack. Deals **200%** Mental DMG. Inflicts Mental DEF **-25%** for 2 rounds on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="A piece of advice: don't ignore her nor look at her.">
-      1-target attack. Deals **350%** Mental DMG. Mental DEF **-35%** for the target for 3 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`A piece of advice: don't ignore her nor look at her.`}>
+      1-target attack. Deals **350%** Mental DMG. Inflicts Mental DEF **-35%** for 3 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="No, NOOOO!">
-      Self counter. Enters :effect{param="taunt"}: DMG Taken **-20%** and DMG Heal **+35%** for 3 rounds. Also enters :effect{param="concealment"} for 1 round.
+    <CardInfo type="COUNTER" note={`No, NOOOO!`}>
+      Self counter. Enters :effect{param="taunt"}: DMG Taken **-20%** and DMG Heal **+20%** for 3 rounds. Also enters :effect{param="concealment"} for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -143,7 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Whispering Words*'s effect changes to: at **1/2/3** stars, deals **220/230/400%** Mental DMG.
+    *Whispering Words*: at rank **1/2/3**, deals **220/230/400%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">

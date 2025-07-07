@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="This is the result of natural ability.">
-      1-target attack. Deals **100%** Reality DMG. Inflicts :effect{param="shape-of-bones"} on the target for 2 rounds.
+    <CardInfo star="1" type="DEBUFF" note={`This is the result of natural ability.`}>
+      1-target attack. Deals **100%** Reality DMG. After attacking, inflicts :effect{param="shape-of-bones"} on the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="This is the result of natural ability. Ask not the cause.">
-      1-target attack. Deals **200%** Reality DMG. Inflicts :effect{param="shape-of-bones"} on the target for 2 rounds.
+    <CardInfo star="2" type="DEBUFF" note={`This is the result of natural ability. Ask not the cause.`}>
+      1-target attack. Deals **200%** Reality DMG. After attacking, inflicts :effect{param="shape-of-bones"} on the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="This is the result of natural ability. Ask not the cause, ask not the origin.">
-      1-target attack. Deals **300%** Reality DMG. Inflicts :effect{param="shape-of-bones"} on the target for 2 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`This is the result of natural ability. Ask not the cause, ask not the origin.`}>
+      1-target attack. Deals **400%** Reality DMG. After attacking, inflicts :effect{param="shape-of-bones"} on the target for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="CHANNEL" note="For centuries, this was the way of things.">
-      Self channel. Enters :effect{param="bone-reading"} status. Eureka +2.
+    <CardInfo star="1" type="CHANNEL" note={`For centuries, this was the way of things.`}>
+      Self channel. Enters :effect{param="bone-reading-id-21601"} status. Eureka +2.
     </CardInfo>
 
-    <CardInfo star="2" type="CHANNEL" note="For centuries, this was the way of things. The lone scholar tree stood tall.">
-      Self channel. Enters :effect{param="bone-reading"} status. Eureka +3.
+    <CardInfo star="2" type="CHANNEL" note={`For centuries, this was the way of things. The lone scholar tree stood tall.`}>
+      Self channel. Enters :effect{param="bone-reading-id-21601"} status. Eureka +3.
     </CardInfo>
 
-    <CardInfo star="3" type="CHANNEL" note="For centuries, this was the way of things. The lone scholar tree stood tall, with few to keep it company.">
-      Self channel. Enters :effect{param="bone-reading"} status. Eureka +5.
+    <CardInfo star="3" type="CHANNEL" note={`For centuries, this was the way of things. The lone scholar tree stood tall, with few to keep it company.`}>
+      Self channel. Enters :effect{param="bone-reading-id-21601"} status. Eureka +5.
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="A never-ending river that will inevitably consume all.">
+    <CardInfo type="DEBUFF" note={`A never-ending river that will inevitably consume all.`}>
       Mass debuff. Creates special array :effect{param="a-prophecy-told"} for 3 rounds. Gains Eureka +3. Inflicts :effect{param="shape-of-bones"} on all enemies for 3 rounds.
     </CardInfo>
   </Fragment>
@@ -129,7 +129,9 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    At the start of the round, inflicts :effect{param="shape-of-bones"} on a random enemy for 2 rounds. At the end of the round, if in :effect{param="a-prophecy-told"}, gain Eureka +1.
+    At the start of the round, inflict :effect{param="shape-of-bones"} on a random enemy for 2 rounds.
+
+    At the end of the round, if in :effect{param="a-prophecy-told"}, gain Eureka +1.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -137,11 +139,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *I Shall Walk, Exist, and Know*: +1 round duration to :effect{param="a-prophecy-told"}.
+    *I Shall Walk, Exist, and Know*: **+1** round duration to :effect{param="a-prophecy-told"}.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Bone Interpretor*: Now triggers with 2+ Reality DMG allies, and Moxie gained is increased to +4. When in :effect{param="a-prophecy-told"}, :effect{param="admonition"}'s Critical Rate and Critical DMG increase are now **+30%**.
+    *Bone Interpretor*: Now triggers with **2+** Reality DMG allies, and Moxie gained is increased to **+4**. When in :effect{param="a-prophecy-told"}, :effect{param="admonition"}'s Critical Rate and Critical DMG increase are now **+30%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -149,7 +151,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Old Bones*: At rank 1 incantation, Reality DMG dealt is increased to **160%**.
+    *Old Bones*: At rank **1** incantation, Reality DMG dealt is increased to **160%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">

@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    62 63/64 x29 13/16 x 8 17/64 in.
+    62 63/64 x 29 13/16 x 8 17/64 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -65,37 +65,37 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    Commandment V
+    Commandment Ⅴ
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Sloth will lead to physical debilitation.">
+    <CardInfo star="1" type="ATTACK" note={`Sloth will lead to physical debilitation.`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it.">
-      1-target attack. Deals **200%** Reality DMG and inflicts :effect{param="disarm"} status for 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`Sloth will lead to physical debilitation. They keep reminding people of it.`}>
+      1-target attack. Deals **200%** Reality DMG. Inflicts :effect{param="disarm"} for 1 round on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Sloth will lead to physical debilitation. They keep reminding people of it, but it doesn't seem to work.">
-      1-target attack. Deals **300%** Reality DMG and inflicts :effect{param="disarm"} status for 2 rounds.
+    <CardInfo star="3" type="DEBUFF" note={`Sloth will lead to physical debilitation. They keep reminding people of it, but it doesn't seem to work.`}>
+      1-target attack. Deals **300%** Reality DMG. Inflicts :effect{param="disarm"} for 2 rounds on the target hit.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    Exhortations IX
+    Exhortation Ⅸ
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="A merciful heart will foster loyalty.">
+    <CardInfo star="1" type="BUFF" note={`A merciful heart will foster loyalty.`}>
       Mass buff. DMG Dealt **+15%** and DMG Taken **-15%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="A merciful heart will foster loyalty. It works all the time.">
+    <CardInfo star="2" type="BUFF" note={`A merciful heart will foster loyalty. It works all the time.`}>
       Mass buff. DMG Dealt **+20%** and DMG Taken **-20%** for all allies and Penetration Rate **+10%** for the caster. Lasts 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="A merciful heart will foster loyalty. Of course, you won't have to do it all the time.">
+    <CardInfo star="3" type="BUFF" note={`A merciful heart will foster loyalty. Of course, it's not required all the time.`}>
       Mass buff. DMG Dealt **+25%** and DMG Taken **-25%** for all allies and Penetration Rate **+10%** for the caster. Lasts 3 rounds.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="It is the omega, the final answer, the result of all calculations.">
+    <CardInfo type="ATTACK" note={`The stars have their task to keep the world intact. Of course, they sometimes may stray off their course.`}>
       Mass attack. Deals **300%** Reality DMG to all enemies. If the caster is in *\[Stats Up]* or *\[Pos Status]* statuses, this attack enjoys Penetration Rate **+8%** and deals **100%** more Reality DMG.
     </CardInfo>
   </Fragment>
@@ -139,11 +139,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Commandment V*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Reality DMG.
+    *Commandment Ⅴ*'s effect changes to: at **1/2/3** stars, deals **220/230/350%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Exhortation IX*'s effect changes to: Penetration Rate **+15%**.
+    *Exhortation Ⅸ*'s effect changes to: Penetration Rate **+15%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">

@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="This act might attract the authority's attention.">
+    <CardInfo star="1" type="ATTACK" note={`This act might attract the authority's attention.`}>
       1-target attack. Deals **160%** Reality DMG. If the target's current HP is above **50%**, then deals **60%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This act attracted the authority's attention.">
+    <CardInfo star="2" type="ATTACK" note={`This act attracted the authority's attention.`}>
       1-target attack. Deals **240%** Reality DMG. If the target's current HP is above **50%**, then deals **90%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This act attracted the authority's attention, but it's beyond the jurisdiction of Distant Stars Act.">
+    <CardInfo star="3" type="ATTACK" note={`This act attracted the authority's attention, but it's beyond the jurisdiction of Distant Stars Act.`}>
       1-target attack. Deals **400%** Reality DMG. If the target's current HP is above **50%**, then deals **150%** more Reality DMG.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="It claims to harbor no ill intent.">
-      Self counter. Enter :effect{param="taunt"} and DMG Taken **-40%** for 1 round.
+    <CardInfo star="1" type="COUNTER" note={`It claims to harbor no ill intent.`}>
+      Self counter. Enters :effect{param="taunt"} and DMG Taken **-40%** for 1 round.
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="It claims to harbor no ill intent, it just...">
-      Self counter. Enter :effect{param="taunt"} and DMG Taken **-40%** for 2 round.
+    <CardInfo star="2" type="COUNTER" note={`It claims to harbor no ill intent, it just...`}>
+      Self counter. Enters :effect{param="taunt"} and DMG Taken **-40%** for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="It claims to harbor no ill intent, it just finds it hard to control itself.">
-      Self counter. Enter :effect{param="taunt"} and DMG Taken **-60%** for 3 round.
+    <CardInfo star="3" type="COUNTER" note={`It claims to harbor no ill intent, it just finds it hard to control itself.`}>
+      Self counter. Enters :effect{param="taunt"} and DMG Taken **-60%** for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Those hiding secrets tend to talk in their sleep or think that they're still in a dream.">
-      Mass attack. Deals **200%** Reality DMG and inflicts 1 round of :effect{param="disarm"} and :effect{param="silence"} statuses on all enemies.
+    <CardInfo type="DEBUFF" note={`Those hiding secrets tend to talk in their sleep or think that they're still in a dream.`}>
+      Mass attack. Deals **200%** Reality DMG to all enemies. Inflicts :effect{param="disarm"} and :effect{param="silence"} for 1 round on the targets hit.
     </CardInfo>
   </Fragment>
 
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When the caster enters battle, enters :effect{param="taunt"} status and gains a :effect{param="shield"} with (aliEn T's Reality DEF x**300%**) HP for 2 rounds (only triggers 1 time).
+    When entering battle, enters the :effect{param="taunt"} status and gains a Shield with (aliEn T's Reality DEF x**300%**) HP for 2 rounds (triggers only 1 time).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -131,23 +131,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **230%** Reality DMG.
+    *Future Interstellar War: Prelude*'s effect changes to: deals **230%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **40%**
+    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **40%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **270%** Reality DMG.
+    *Future Interstellar War: Prelude*'s effect changes to: deals **270%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **30%**
+    *The Spotted*'s effect changes to: additionally deals Reality DMG when the target's HP is above **30%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Future Interstellar War*: Prelude's effect changes to: deals **300%** Reality DMG.
+    *Future Interstellar War: Prelude*'s effect changes to: deals **300%** Reality DMG.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

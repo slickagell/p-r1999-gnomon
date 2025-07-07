@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A loaded pistol.">
+    <CardInfo star="1" type="ATTACK" note={`A loaded pistol.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="A loaded pistol hidden up in someone's sleeves.">
-      1-target attack. Deals **200%** Mental DMG and inflicts 1 stack of :effect{param="weakness"} on the target.
+    <CardInfo star="2" type="DEBUFF" note={`A loaded pistol hidden up in someone's sleeves.`}>
+      1-target attack. Deals **200%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="weakness"} on the target.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="A loaded pistol. This is the metaphor of peace, my friend.">
-      1-target attack. Deals **400%** Mental DMG and inflicts 1 stack of :effect{param="weakness"} on the target.
+    <CardInfo star="3" type="DEBUFF" note={`A loaded pistol. This is the metaphor of peace, my friend.`}>
+      1-target attack. Deals **400%** Mental DMG. After attacking, inflicts 1 stack of :effect{param="weakness"} on the target.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Bubbles. Light and fragile.">
+    <CardInfo star="1" type="DEBUFF" note={`Bubbles. Light and fragile.`}>
       Mass debuff. Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Bubbles. Light and fragile, like wishes.">
+    <CardInfo star="2" type="DEBUFF" note={`Bubbles. Light and fragile, like wishes.`}>
       Mass debuff. Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds. Also inflicts :effect{param="terror"} on the main target for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Bubbles. Light and fragile, like wishes. One day they will come true.">
+    <CardInfo star="3" type="DEBUFF" note={`Bubbles. Light and fragile, like wishes. One day they will come true.`}>
       Mass debuff. Reality DEF and Mental DEF **-15%** for all enemies for 2 rounds. Also inflicts :effect{param="terror"} on the main target for 2 rounds.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Close your eyes, but open the window of your soul. A dream is weaved for you.">
+    <CardInfo type="DEBUFF" note={`Close your eyes, but open the window of your soul. A dream is weaved for you.`}>
       1-target attack. Deals **450%** Mental DMG and inflicts 1 round of :effect{param="nightmare"}. If the enemy is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this effect lasts 2 rounds instead.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, gives (the caster's Max HP x**33%**) Shield to Diggers for 3 rounds (only triggers 1 time).
+    When entering battle, grants a Shield with (own Max HP x**33%**) HP to Diggers for 3 rounds (triggers only 1 time).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, gives (Digger's Max HP x**33%**) Shield to other allies for 3 rounds (only triggers 1 time).
+    When entering battle, grants a Shield with (Diggers's Max HP x**33%**) HP to other allies for 3 rounds (triggers only 1 time).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -139,7 +139,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Long Live Peace*'s effect changes to: **1/2/3** stars, Mental DMG increased to **220%/230%/450%**.
+    *Long Live Peace*'s effect changes to: at **1/2/3** stars, Mental DMG dealt is increased to **220%**/**230%**/**450%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -147,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Long Live Peace*'s effect changes to: at **2/3** stars, inflicts 1 more stack of :effect{param="weakness"} on the target.
+    *Long Live Peace*'s effect changes to: at **2/3** stars, inflicts **1** more stack of :effect{param="weakness"} on the target.
   </Fragment>
 
   <Fragment slot="portray-5-info">

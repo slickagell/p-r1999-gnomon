@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="The forest visitor plucked a rose.">
+    <CardInfo star="1" type="ATTACK" note={`The forest visitor plucked a rose.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="The forest visitor plucked a rose and was pricked by thorns.">
-      1-target attack. Deals **250%** Mental DMG. Moxie -1 for the target.
+    <CardInfo star="2" type="ATTACK" note={`The forest visitor plucked a rose and was pricked by the thorns.`}>
+      1-target attack. Deals **250%** Mental DMG. Inflicts Moxie -1 on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="The forest visitor plucked a rose and was pricked by thorns. He has endured this for a while.">
-      1-target attack. Deals **400%** Mental DMG. Moxie -2 for the target.
+    <CardInfo star="3" type="ATTACK" note={`The forest visitor plucked a rose and was pricked by the thorns. He has endured this for a while.`}>
+      1-target attack. Deals **400%** Mental DMG. Inflicts Moxie -2 on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="A crown of summer night, woven with vines.">
+    <CardInfo star="1" type="BUFF" note={`A crown of summer night, woven with vines.`}>
       1-target buff. Reality DEF and Mental DEF **+25%** and DMG Taken **-25%** for the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="A crown of summer night, woven with vines. It never enjoyed a long, lasting life.">
+    <CardInfo star="2" type="BUFF" note={`A crown of summer night, woven with vines. It never enjoyed a long, lasting life.`}>
       1-target buff. Reality DEF and Mental DEF **+30%** and DMG Taken **-30%** for the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="A crown of summer night, woven with vines. It never enjoyed a long, lasting life but its memory shall endure.">
+    <CardInfo star="3" type="BUFF" note={`A crown of summer night, woven with vines. It never enjoyed a long, lasting life but its memory shall endure.`}>
       1-target buff. Reality DEF and Mental DEF **+35%** and DMG Taken **-35%** for the target for 3 rounds.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="The forest wrote a eulogy for the flowers and grasses that passed away.">
-      1-target buff. Loses (Current HP x**99%**) HP; purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from an ally, gains a :effect{param="shield"} with (HP Lost in this Action x**100%**) HP, and enters the :effect{param="summer-dream"} status for 3 rounds.
+    <CardInfo type="BUFF" note={`The forest wrote a eulogy for the flowers and grasses that passed away.`}>
+      1-target buff. Loses (Current HP x**99%**) HP; purifies *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from an ally, gains a Shield with (HP Lost in this Action x**100%**) HP, and enters the :effect{param="summer-dream"} status for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -131,11 +131,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Forest Eulogy*'s effect changes to: grants a :effect{param="shield"} with (the user's Missing HP x**125%**) HP for all allies.
+    *Forest Eulogy*'s effect changes to: grants a *\[Shield]* with (the user's Missing HP x**125%**) HP for all allies.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Wild Roses*'s effect changes to at **1/2/3** stars, deals **220/280/450%** Mental DMG.
+    *Wild Rose*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Mental DMG.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -143,11 +143,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Forest Eulogy*'s effect changes to: grants a :effect{param="shield"} with (the user's Missing HP x**150%**) HP for all allies.
+    *Forest Eulogy*'s effect changes to: grants a *\[Shield]* with (the user's Missing HP x**150%**) HP for all allies.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Forest Eulogy*'s effect changes to: grants a :effect{param="shield"} with (the user's Missing HP x**175%**) HP for all allies.
+    *Forest Eulogy*'s effect changes to: grants a *\[Shield]* with (the user's Missing HP x**175%**) HP for all allies.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

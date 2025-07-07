@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="People are afraid of her arrival.">
-      1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="1" type="ATTACK" note={`People are afraid of her arrival.`}>
+      1-target attack. Deals **160%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="People are afraid of her arrival, as they dislike death.">
-      1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="2" type="ATTACK" note={`People are afraid of her arrival, as they dislike death.`}>
+      1-target attack. Deals **240%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="People are afraid of her arrival, until death arrives first.">
-      1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+40%**.
+    <CardInfo star="3" type="ATTACK" note={`People are afraid of her arrival, until death arrives first.`}>
+      1-target attack. Deals **400%** Mental DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
 
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Something inside the coffin murmured.">
-      1-target attack. Deals **220%** Mental DMG.
+    <CardInfo star="1" type="ATTACK" note={`Something inside the coffin murmured.`}>
+      1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Something inside the coffin murmured. Could it be a ghost? Or...">
-      1-target attack. Deals **280%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
+    <CardInfo star="2" type="ATTACK" note={`Something inside the coffin murmured. Could it be a ghost? Or...`}>
+      1-target attack. Deals **250%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Something inside the coffin murmured. It's the praise from the tomestone.">
-      1-target attack. Deals **500%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
+    <CardInfo star="3" type="ATTACK" note={`Something inside the coffin murmured. It's the praise from the tomestone.`}>
+      1-target attack. Deals **450%** Mental DMG and dispels all *\[Stats Up]* and *\[Pos Status]* statuses from the target.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="BUFF" note="She only listened to the murmuring tombstones and recorded the incomplete dialogs.">
-      Mass buff. Grants 1 stack of :effect{param="prayer"} and DMG Dealt **+50%** to other alles. Lasts 3 rounds. If the target already is in :effect{param="prayer"} status, HP +(the caster's ATK x**150%**).
+    <CardInfo type="BUFF" note={`She only listened to the murmuring tombstones and recorded the incomplete dialogs.`}>
+      Mass buff. Inflicts 1 stack of :effect{param="prayer"} on other allies and DMG Dealt **+30%** for them for 3 rounds. If a target already has :effect{param="prayer"}, HP +(the caster's ATK x**100%**) for the target.
     </CardInfo>
   </Fragment>
 
@@ -123,7 +123,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    DMG Dealt +8% when the caster enters battle.
+    DMG Dealt **+8%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
@@ -139,11 +139,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Timely Farewells* effect changes to: Penetration Rate **40%**.
+    *Timely Farewell*'s effect changes to: Penetration Rate **+40%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Whispers of the Deceased*'s effect changes to: if target already has active :effect{param="prayer"}, HP +(the casters ATK x**150%**).
+    *Whispers of the Deceased*'s effect changes to: if target already has active :effect{param="prayer"}, HP +(the caster's ATK x**150%**).
   </Fragment>
 
   <Fragment slot="portray-4-info">

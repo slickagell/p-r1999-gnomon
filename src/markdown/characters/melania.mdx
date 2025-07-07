@@ -70,16 +70,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Keep an eye on her.">
+    <CardInfo star="1" type="ATTACK" note={`Keep an eye on her.`}>
       1-target attack. Deals **200%** Mental DMG. If the caster is in :effect{param="thief-master"} status, this attack steals 1 Moxie from the target.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Keep an eye on her. She is right here.">
-      1-target attack. Deals **250%** Mental DMG and Moxie -1 for the target. If the caster is in :effect{param="thief-master"}, this attack steals 1 additional Moxie from the target.
+    <CardInfo star="2" type="ATTACK" note={`Keep an eye on her. She is right here.`}>
+      1-target attack. Deals **250%** Mental DMG. Inflicts Moxie -1 on the target hit, and if this unit is holding the :effect{param="thief-master"} status, this attack steals 1 additional Moxie from the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Keep an eye on her. She is right here. At least she was a moment ago.">
-      1-target attack. Deals **400%** Mental DMG, Moxie -1 for the target, and Moxie +1 for the caster. If the caster is in :effect{param="thief-master"}, this attack steals 1 additional Moxie from the target.
+    <CardInfo star="3" type="ATTACK" note={`Keep an eye on her. She is right here. At least she was a moment ago.`}>
+      1-target attack. Deals **400%** Mental DMG. Gains Moxie +1 for self and inflicts Moxie -1 on the target hit, and if this unit is holding the :effect{param="thief-master"} status, this attack steals 1 additional Moxie from the target hit.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A group of frantic stalkers are gathering.">
+    <CardInfo star="1" type="ATTACK" note={`A group of frantic stalkers are gathering.`}>
       Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{param="thief-master"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic.">
+    <CardInfo star="2" type="ATTACK" note={`A group of frantic stalkers are gathering, which has become problematic.`}>
       Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{param="thief-master"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A group of frantic stalkers are gathering, which has become problematic. The rodenticide didn't work.">
+    <CardInfo star="3" type="ATTACK" note={`A group of frantic stalkers are gathering, which has become problematic. The rodenticide didn't work. `}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Leech Rate **+20%**. If the caster is in :effect{param="thief-master"}, Moxie +1 and extra Leech Rate **+30%** for the caster.
     </CardInfo>
   </Fragment>
@@ -106,8 +106,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Take off, exchange positions, and retreat.">
-      1-target attack. Deals **600%** Mental DMG. Inflicts 1 stack of :effect{param="thief-master"} on the caster.
+    <CardInfo type="ATTACK" note={`Take off, exchange positions, and retreat.`}>
+      1-target attack. Deals **650%** Mental DMG. Inflicts 1 stack of :effect{param="thief-master"} on the caster.
     </CardInfo>
   </Fragment>
 
@@ -140,7 +140,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Ridiculous Eyewitness Testimony* additionally gains 1 stack of :effect{param="thief-master"}.
+    *Ridiculous Eyewitness Testimony* additionally gains **1** stack of :effect{param="thief-master"}.
   </Fragment>
 
   <Fragment slot="portray-3-info">

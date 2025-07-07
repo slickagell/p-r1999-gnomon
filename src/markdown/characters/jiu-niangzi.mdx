@@ -46,11 +46,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Oriental Spices Curcuma Aromatica, Sweet Fermented Rice, Sichuan Pepper
+    Oriental Spices - Curcuma Aromatica, Sweet Fermented Rice, Sichuan Pepper
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    62 13/64 x 25 25/64 x7 3/32 in.
+    62 13/64 x 25 25/64 x 7 3/32 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -70,16 +70,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A tradition to show camaraderie.">
-      1-target attack. Deals **160%** Reality DMG. While in *\[Liquor]* status, randomly consumes 1-3 stacks of *\[Liquor]* for a follow-up attack. Deals Reality DMG **+60%** for every stack of *\[Liquor]* consumed (Chance to consume **1/2/3** *\[Liquor]*: **20%/40%/40%**).
+    <CardInfo star="1" type="ATTACK" note={`A tradition to show camaraderie.`}>
+      1-target attack. Deals **160%** Reality DMG. While in :effect{param="liquor"} status, randomly consumes 1-3 stacks of :effect{param="liquor"} for a follow-up attack. Deals Reality DMG **+60%** for each stack of :effect{param="liquor"} consumed (Chance to consume 1/2/3 :effect{param="liquor"}: **20%**/**40%**/**40%**).
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A tradition to show camaraderie, most of the time.">
-      1-target attack. Deals **240%** Reality DMG. While in *\[Liquor]* status, randomly consumes 1-3 stacks of *\[Liquor]* for a follow-up attack. Deals Reality DMG **+60%** for every stack of *\[Liquor]* consumed (Chance to consume **1/2/3** *\[Liquor]*: **20%/40%/40%**).
+    <CardInfo star="2" type="ATTACK" note={`A tradition to show camaraderie, most of the time.`}>
+      1-target attack. Deals **240%** Reality DMG. While in :effect{param="liquor"} status, randomly consumes 1-3 stacks of :effect{param="liquor"} for a follow-up attack. Deals Reality DMG **+60%** for each stack of :effect{param="liquor"} consumed (Chance to consume 1/2/3 :effect{param="liquor"}: **20%**/**40%**/**40%**).
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A tradition to show camaraderie, even if not so friendly.">
-      1-target attack. Deals **400%** Reality DMG. While in *\[Liquor]* status, randomly consumes 1-3 stacks of *\[Liquor]* for a follow-up attack. Deals Reality DMG **+60%** for each stack of *\[Liquor]* consumed (Chance to consume **1/2/3** *\[Liquor]*: **20%/40%/40%**).
+    <CardInfo star="3" type="ATTACK" note={`A tradition to show camaraderie, even if not so friendly.`}>
+      1-target attack. Deals **400%** Reality DMG. While in :effect{param="liquor"} status, randomly consumes 1-3 stacks of :effect{param="liquor"} for a follow-up attack. Deals Reality DMG **+60%** for each stack of :effect{param="liquor"} consumed (Chance to consume 1/2/3 :effect{param="liquor"}: **20%**/**40%**/**40%**).
     </CardInfo>
   </Fragment>
 
@@ -88,16 +88,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="CHANNEL" note="A fermented drink.">
-      Self channel. Gains 3 stacks of *\[Liquor]* and 1 stack of :effect{param="cheers"}. Enters :effect{param="tipsy"} for 1 round.
+    <CardInfo star="1" type="CHANNEL" note={`A fermented drink.`}>
+      Self channel. Gains 3 stacks of :effect{param="liquor"} and 1 stack of :effect{param="cheers"}. Enters :effect{param="tipsy-id-1"} for 1 round.
     </CardInfo>
 
-    <CardInfo star="2" type="CHANNEL" note="A fermented drink made from spring water and yeast.">
-      Self channel. Gains 6 stacks of *\[Liquor]* and 1 stack of :effect{param="cheers"}. Enters :effect{param="tipsy"} for 1 round.
+    <CardInfo star="2" type="CHANNEL" note={`A fermented drink made from spring water and yeast.`}>
+      Self channel. Gains 6 stacks of :effect{param="liquor"} and 1 stack of :effect{param="cheers"}. Enters :effect{param="tipsy-id-2"} for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="CHANNEL" note="A fermented drink made from spring water and yeast, with a lingering taste of the past.">
-      Self channel. Gains 9 stacks of *\[Liquor]* and 2 stack of :effect{param="cheers"}. Enters :effect{param="tipsy"} for 1 round.
+    <CardInfo star="3" type="CHANNEL" note={`A fermented drink made from spring water and yeast, with a lingering taste of the past.`}>
+      Self channel. Gains 9 stacks of :effect{param="liquor"} and 2 stacks of :effect{param="cheers"}. Enters :effect{param="tipsy-id-3"} for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -106,8 +106,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Drink up! Three thousand more cups for you!">
-      Mass attack. Deals **350%** Reality DMG. If less than 3 enemies are present, adds Reality DMG **+100%** for each missing enemy (up to **+200%**). If holding 6 or more *\[Liquor]* before casting, spend 6 stacks of *\[Liquor]* to grant Penetration Rate **+100%** to this attack. If holding less than 6 stacks of *\[Liquor]* before casting, gain 6 stacks of *\[Liquor]* and 2 stacks of :effect{param="cheers"}.
+    <CardInfo type="ATTACK" note={`Drink up! Three thousand more cups for you!`}>
+      Mass attack. Deals **350%** Reality DMG. If less than 3 enemies are present, adds Reality DMG **+100%** for each missing enemy (up to **+200%**). If holding 6 or more :effect{param="liquor"} before casting, spend 6 stacks of :effect{param="liquor"} to grant Penetration Rate **+100%** to this attack. If holding less than 6 stacks of :effect{param="liquor"} before casting, gain 6 stacks of :effect{param="liquor"} and 2 stacks of :effect{param="cheers"}.
     </CardInfo>
   </Fragment>
 
@@ -120,7 +120,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When entering battle, gain 3 stacks of *\[Liquor]*. At the end of the round, gain *\[Liquor]* based on the number of *\[Stats Up]*, *\[Pos Status]*, *\[Counter]*, *\[Shield]*, and *\[Channel]* statuses on all allies (gain 1 stack of *\[Liquor]* for every 4 different types of these statuses, up to a maximum of 3 stacks; round down if there are not enough statuses present).
+    When entering battle, gain 3 stacks of :effect{param="liquor"}. At the end of the round, gain :effect{param="liquor"} based on the number of *\[Stats Up]*, *\[Pos Status]*, *\[Counter]*, *\[Shield]*, and *\[Channel]* statuses on all allies (gain 1 stack of :effect{param="liquor"} for every 4 different types of these statuses, up to a maximum of 3 stacks; round down if there are not enough statuses present).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -128,7 +128,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    At the start of the round, if in *\[Liquor]* status, grant 1 effect from :effect{param="collection-of-buffs-jiu-niangzi"} to self for two rounds.
+    At the start of the round, if in :effect{param="liquor"} status, grant 1 effect from :effect{param="collection-of-buffs-id-30831"} to self for 2 rounds.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,23 +136,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Baijiu and Mayham*: Reality DMG dealt is increased to **400%**. Extra Reality DMG dealt is increased to **+150%** for each missing enemy (up to **+300%**).
+    *Baijiu and Mayhem*: Reality DMG dealt is increased to **400%**. Extra Reality DMG dealt is increased to **+150%** for each missing enemy (up to **+300%**).
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Bottoms Up*: For each stack of *\[Liquor]* consumed, Reality DMG dealt is increased to **+90%**.
+    *Bottoms Up*: For each stack of :effect{param="liquor"} consumed, Reality DMG dealt is increased to **+90%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Contemplation*: Random :effect{param="collection-of-buffs-jiu-niangzi"} effect granted to self is increased to 2 types.
+    *Contemplation*: Random :effect{param="collection-of-buffs-id-30831"} effects granted to self is increased to **2** types.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Bottoms Up*: Maximum stacks of *\[Liquor]* consumed is increased to 4, and chance to consume **1/2/3/4** stacks of *\[Liquor]* is increased to **5%/15%/40%/40%**.
+    *Bottoms Up*: Maximum stacks of :effect{param="liquor"} consumed is increased to **4**, and chance to consume **1/2/3/4** stacks of :effect{param="liquor"} is increased to **5%**/**15%**/**40%**/**40%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Contemplation*: :effect{param="collection-of-buffs-jiu-niangzi"}'s effect are now increased to **+25%** each. At the end of the round, now for for every 3 different types of statuses possessed, grant 1 stack of *\[Liquor]* to self (now gain up to 5 stacks).
+    *Contemplation*: :effect{param="collection-of-buffs-id-30831"}'s effects are increased to **+25%** each. At the end of the round, now for every **3** different types of statuses possessed, grant **1** stack of :effect{param="liquor"} to self (can now gain up to **5** stacks).
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="The thief has been captured.">
+    <CardInfo star="1" type="ATTACK" note={`The thief has been captured.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="The thief has been captured and would never steal again.">
-      1-target attack. Deals **220%** Mental DMG and inflicts 1 stack of :effect{param="rigidity"} on the target.
+    <CardInfo star="2" type="DEBUFF" note={`The thief has been captured and would never steal again.`}>
+      1-target attack. Deals **220%** Mental DMG. Inflicts 1 stack of :effect{param="rigidity"} on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="The thief has been captured, but why are we still losing money?">
-      1-target attack. Deals **330%** Mental DMG and inflicts 2 stacks of :effect{param="rigidity"} on the target.
+    <CardInfo star="3" type="DEBUFF" note={`The thief has been captured, but why are we still losing money?`}>
+      1-target attack. Deals **330%** Mental DMG. Inflicts 2 stacks of :effect{param="rigidity"} on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="The lady dances with chains.">
+    <CardInfo star="1" type="ATTACK" note={`The lady dances with chains.`}>
       Mass attack. Deals **120%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="The lady dances with chains yet feels free and unshackled.">
+    <CardInfo star="2" type="ATTACK" note={`The lady dances with chains yet feels free and unshackled.`}>
       Mass attack. Deals **180%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="The lady dances with chains. Time has passed yet she is as graceful as ever.">
+    <CardInfo star="3" type="ATTACK" note={`The lady dances with chains. Time has passed yet she is as graceful as ever.`}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="Fragrance spreads in moonlit nights of spring, yet her enrapturing beauty remains unseen.">
-      1-target attack. Deals **550%** Mental DMG and inflicts 2 stacks of :effect{param="rigidity"} to the target.
+    <CardInfo type="DEBUFF" note={`Fragrance spreads in moonlit nights of spring, yet her enrapturing beauty remains unseen.`}>
+      1-target attack. Deals **550%** Mental DMG. Inflicts 2 stacks of :effect{param="rigidity"} on the target hit.
     </CardInfo>
   </Fragment>
 
@@ -135,7 +135,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Walk Down the Sakura*'s effect changes to: deals **600%** Mental DMG.
+    *Walk Down the Sakura*: Mental DMG increased to **600%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">

@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="She made a killing at the card table.">
+    <CardInfo star="1" type="ATTACK" note={`She made a killing at the card table.`}>
       1-target attack. Deals **180%** Reality DMG plus (the caster's Moxie x**8%**) Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="She made a killing at the card table and left.">
+    <CardInfo star="2" type="ATTACK" note={`She made a killing at the card table and left.`}>
       1-target attack. Deals **270%** Reality DMG plus (the caster's Moxie x**12%**) Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="She made a killing at the card table and left. It takes quite a skill to pull that off.">
+    <CardInfo star="3" type="ATTACK" note={`She made a killing at the card table and left. It takes quite a skill to pull that off.`}>
       1-target attack. Deals **450%** Reality DMG plus (the caster's Moxie x**20%**) Reality DMG.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Her ads appear in many places.">
+    <CardInfo star="1" type="ATTACK" note={`Her ads appear in many places.`}>
       Mass attack. Deals **150%** Reality DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Her ads appear in many places such as cliff faces, deep valleys, and...">
+    <CardInfo star="2" type="ATTACK" note={`Her ads appear in many places such as cliff faces, deep valleys, and...`}>
       Mass attack. Deals **150%** Reality DMG to 2 enemies. Moxie +1 for self.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Her ads appear in many places, and they all happen to be very dangerous.">
+    <CardInfo star="3" type="ATTACK" note={`Her ads appear in many places, and they all happen to be very dangerous.`}>
       Mass attack. Deals **225%** Reality DMG to 2 enemies. Moxie +2 for self.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="DEBUFF" note="She never met danger before, but she must have wished for it.">
-      Mass attack. Deals 300% Reality DMG and inflicts 1 stack of :effect{param="weakness"} on all enemies.
+    <CardInfo type="DEBUFF" note={`She never met danger before, but she must have wished for it.`}>
+      Mass attack. Deals **300%** Reality DMG. On hit, inflicts 1 stack of :effect{param="weakness"} on all enemies.
     </CardInfo>
   </Fragment>
 

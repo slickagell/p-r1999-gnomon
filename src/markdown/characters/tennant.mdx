@@ -42,7 +42,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Deceitful Nature of Beast \[Beast] Diamond Synthesis.
+    Deceitful Nature of Beast \[Beast] Diamond Synthesis
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -70,15 +70,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="It's glamorous.">
+    <CardInfo star="1" type="ATTACK" note={`It's glamorous.`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="It used to be sand, or charcoal.">
+    <CardInfo star="2" type="ATTACK" note={`It used to be sand, or charcoal.`}>
       1-target attack. Deals **300%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="It's just a lie known to everyone.">
+    <CardInfo star="3" type="ATTACK" note={`It's just a lie known to everyone.`}>
       1-target attack. Deals **500%** Reality DMG.
     </CardInfo>
   </Fragment>
@@ -88,16 +88,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="People have always dreamed of such thing.">
-      Mass buff. Gives all allies a :effect{param="shield"} with (the caster's ATK x**80%**) HP for 1 round. DMG Taken **-20%** while the :effect{param="shield"} is active.
+    <CardInfo star="1" type="BUFF" note={`People have always dreamed of such thing.`}>
+      Mass buff. Gives all allies a *\[Shield]* with (the caster's ATK x**80%**) HP for 1 round. DMG Taken **-20%** while the *\[Shield]* is active.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="People have always dreamed of such thing, but they can only gaze at it from the ground.">
-      Mass buff. Gives all allies a :effect{param="shield"} with (the caster's ATK x**120%**) HP for 1 round. DMG Taken **-20%** while the :effect{param="shield"} is active.
+    <CardInfo star="2" type="BUFF" note={`People have always dreamed of such thing, but they can only gaze at it from the ground.`}>
+      Mass buff. Gives all allies a *\[Shield]* with (the caster's ATK x**120%**) HP for 1 round. DMG Taken **-20%** while the *\[Shield]* is active.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="People have always dreamed of such thing, no matter it's in the distant universe, or right in front of them.">
-      Mass buff. Gives all allies a :effect{param="shield"} with (the caster's ATK x**200%**) HP for 1 round. DMG Taken **-20%** while the :effect{param="shield"} is active.
+    <CardInfo star="3" type="BUFF" note={`People have always dreamed of such thing, no matter it's in the distant universe, or right in front of them.`}>
+      Mass buff. Gives all allies a *\[Shield]* with (the caster's ATK x**200%**) HP for 1 round. DMG Taken **-20%** while the *\[Shield]* is active.
     </CardInfo>
   </Fragment>
 
@@ -106,8 +106,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="Her heart is sincere. It's just split into many pieces. Don't blame her.">
-      1-target attack. Deals **550%** Reality DMG to the target and loads 2 rounds of :effect{param="diamond-bullet"}.
+    <CardInfo type="ATTACK" note={`Her heart is sincere. It's just split into many pieces. Don't blame her.`}>
+      1-target attack. Deals **550%** Reality DMG and then gains 2 stacks of :effect{param="diamond-bullet"}.
     </CardInfo>
   </Fragment>
 
@@ -120,7 +120,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    After the caster enters battle, immediately casts 1-star *A Bouquet of Galaxy* and gains 1 stack of :effect{param="diamond-bullet"} (only triggers 1 time).
+    After the caster enters battle, immediately casts 1-star *\[A Bouquet of Galaxy]* and gains 1 stack of :effect{param="diamond-bullet"} (only triggers 1 time).
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -128,7 +128,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    If the caster starts a round with HP below **50%**, immediately casts 1-star *A Bouquet of Galaxy* (only triggers 1 time).
+    If the caster starts a round with HP below **50%**, immediately casts 1-star *\[A Bouquet of Galaxy]* (only triggers 1 time).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -140,7 +140,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *A Shiny Diamond*'s effect changes to: at **1/2/3** stars, deals **220/280/450%** Reality DMG.
+    *A Shiny Diamond*: At Incantation rank **1/2/3**, Reality DMG increased to **220/330/550%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -148,7 +148,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *A Bouquet of Galaxy*'s effect changes to: at **1/2/3** stars, grants a :effect{param="shield"} with (the caster's ATK x**90/135/225%**) HP on all allies.
+    *A Bouquet of Galaxy*'s effect changes to: at **1/2/3** stars, grants a *\[Shield]* with (the caster's ATK x**90/135/225%**) HP on all allies.
   </Fragment>
 
   <Fragment slot="portray-5-info">

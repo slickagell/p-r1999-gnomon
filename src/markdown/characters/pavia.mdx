@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Sometimes, people can find iron-nickel bullets.">
+    <CardInfo star="1" type="ATTACK" note={`Sometimes, people can find iron-nickel bullets.`}>
       Mass attack. Deals **120%** Mental DMG to 2 enemies. If the caster's HP is above **50%**, this attack deals **50%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Sometimes, people can find iron-nickel bullets at places splattered with fresh blood.">
+    <CardInfo star="2" type="ATTACK" note={`Sometimes, people can find iron-nickel bullets at places splattered with fresh blood.`}>
       Mass attack. Deals **180%** Mental DMG to 2 enemies. If the caster's HP is above **50%**, this attack deals **75%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Sometimes, people can find iron-nickel bullets with stick sugar at places splattered with fresh blood.">
+    <CardInfo star="3" type="ATTACK" note={`Sometimes, people can find iron-nickel bullets with stick sugar at places splattered with fresh blood.`}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies. If the caster's HP is above **50%**, this attack deals **125%** more Mental DMG.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A crude art.">
+    <CardInfo star="1" type="ATTACK" note={`A crude art.`}>
       Mass attack. Deals **135%** Mental DMG to 2 enemies. If the caster's HP is below **50%**, then deals **40%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="A crude art that could be the handiwork of an inept vet.">
+    <CardInfo star="2" type="ATTACK" note={`A crude art that could be the handiwork of an inept vet.`}>
       Mass attack. Deals **200%** Mental DMG to 2 enemies. If the caster's HP is below **50%**, then deals **60%** more Mental DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="A crude art that could be the handiwork of an inept vet. That's what we're guessing.">
+    <CardInfo star="3" type="ATTACK" note={`A crude art that could be the handiwork of an inept vet. That's what we're guessing.`}>
       Mass attack. Deals **330%** Mental DMG to 2 enemies. If the caster's HP is below **50%**, then deals **100%** more Mental DMG.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Split the shadow to reveal the offspring nurtured within. They'll be feared as a pack of wolves by the mortals.">
-      1-target attack. Deals **400%** Mental DMG. Enters :effect{param="self-healing"} status for 3 rounds: At the start of the round, recovers (Missing HP x**25%**) to the caster.
+    <CardInfo type="ATTACK" note={`Split the shadow to reveal the offspring nurtured within. They'll be feared as a pack of wolves by the mortals.`}>
+      1-target attack. Deals **400%** Mental DMG. Enters the :effect{param="self-healing"} status for 3 rounds: At the start of the round, recovers (Missing HP x**25%**) HP.
     </CardInfo>
   </Fragment>
 

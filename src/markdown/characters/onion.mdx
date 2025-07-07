@@ -41,7 +41,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Stubborn Journalist \[Mineral] Strange News.
+    Stubborn Journalist \[Mineral] Strange News
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Eyes dazzled, ears tingling.">
+    <CardInfo star="1" type="ATTACK" note={`Eyes dazzled, ears tingling.`}>
       1-target attack. Deals **180%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also deals **40%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Eyes dazzled, ears tingling head dizzy.">
+    <CardInfo star="2" type="ATTACK" note={`Eyes dazzled, ears tingling, head dizzy.`}>
       1-target attack. Deals **270%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also deals **60%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Eyes dazzled, ears tingling head dizzy. The price for understanding the truth is quite high.">
+    <CardInfo star="3" type="ATTACK" note={`Eyes dazzled, ears tingling, head dizzy. The price for understanding the truth is quite high.`}>
       1-target attack. Deals **450%** Reality DMG. If the target is in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, this attack also deals **100%** more Reality DMG.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Limbs rigid.">
+    <CardInfo star="1" type="ATTACK" note={`Limbs rigid.`}>
       1-target attack. Deals **160%** Reality DMG. If the target's current HP is below **50%**, then deals **60%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Limbs rigid, eyes blinded.">
+    <CardInfo star="2" type="ATTACK" note={`Limbs rigid, eyes blinded.`}>
       1-target attack. Deals **240%** Reality DMG. If the target's current HP is below **50%**, then deals **90%** more Reality DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Limbs rigid, eyes blinded. Her performance can only replay 1/10 of the reality.">
+    <CardInfo star="3" type="ATTACK" note={`Limbs rigid, eyes blinded. Her performance can only replay 1/10 of the reality.`}>
       1-target attack. Deals **400%** Reality DMG. If the target's current HP is below **50%**, then deals **150%** more Reality DMG.
     </CardInfo>
   </Fragment>
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The good news is, this is just her show; the bad news is, this is not just her show.">
-      Mass attack. Deals **300%** Reality DMG to all enemies; Gives all allies 2 stacks of :effect{param="sturdiness"}.
+    <CardInfo type="ATTACK" note={`The good news is, this is just her show; the bad news is, this is not just her show.`}>
+      Mass attack. Deals **250%** Reality DMG to all enemies; Gives all allies 2 stacks of :effect{param="sturdiness"}.
     </CardInfo>
   </Fragment>
 
@@ -131,15 +131,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Frequent Phenomena*'s effect changes to: deals **300%** Reality Damage.
+    *Frequent Phenomena*'s effect changes to: deals **300%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Not Fake News*'s effect changes to: **1/2/3** stars, additionally deals **65/95/160%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]*, or *\[Control]*.
+    *Not Fake News*'s effect changes to: at **1/2/3** stars, additionally deals **65/95/160%** Reality DMG to enemies in *\[Stats Down]*, *\[Neg Status]* or *\[Control]*.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Frequent Phenomena*'s effect changes to: deals **350%** Reality Damage.
+    *Frequent Phenomena*: Reality DMG increased to **350%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
@@ -147,7 +147,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Frequent Phenomena*'s effect changes to: deals **400%** Reality Damage.
+    *Frequent Phenomena*: Reality DMG increased to **400%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

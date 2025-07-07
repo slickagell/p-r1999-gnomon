@@ -38,7 +38,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-medium">
-    Entrophy
+    Entropy
   </Fragment>
 
   <Fragment slot="info-afflatus">
@@ -50,7 +50,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    64 11/64 x 34 7/8 x22 53/64 in.
+    64 11/64 x 34 7/8 x 22 53/64 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -70,16 +70,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A traveler roaming the universe.">
+    <CardInfo star="1" type="ATTACK" note={`A traveler roaming the universe.`}>
       Mass attack. Deals **150%** Mental DMG to 2 enemies.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="A traveler roaming the universe in search of harmony.">
-      Mass attack. Deals **150%** Mental DMG to 2 enemies and inflicts 1 stack of :effect{param="confusion"} for 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`A traveler roaming the universe in search of harmony.`}>
+      Mass attack. Deals **150%** Mental DMG to 2 enemies. After attacking, inflicts 1 stack of :effect{param="confusion"} on the targets for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="A traveler roaming the universe in search of harmony that entwines the start with its rhythms.">
-      Mass attack. Deals **200%** Mental DMG to 2 enemies and inflicts 2 stacks of :effect{param="confusion"} for 1 round.
+    <CardInfo star="3" type="DEBUFF" note={`A traveler roaming the universe in search of the harmony that entwines the stars with its rhythms.`}>
+      Mass attack. Deals **200%** Mental DMG to 2 enemies. After attacking, inflicts 2 stacks of :effect{param="confusion"} on the targets for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -88,15 +88,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="A sonata played for the others.">
+    <CardInfo star="1" type="COUNTER" note={`A sonata played for the others.`}>
       Mass counter. Gives all allies 1 stack of :effect{param="interstellar-blessing"} and :effect{param="sturdiness"} statuses.
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="A sonata played for the others to experience the other side of rhythms.">
-      Mass counter. Gives all allies 1 stack of :effect{param="interstellar-blessing"} and :effect{param="sturdiness"} statuses. The caster gains 1 additional stacks of :effect{param="interstellar-blessing"} .
+    <CardInfo star="2" type="COUNTER" note={`A sonata played for the others to experience the other side of rhythms.`}>
+      Mass counter. Gives all allies 1 stack of :effect{param="interstellar-blessing"} and :effect{param="sturdiness"} statuses. The caster gains 1 additional stack of :effect{param="interstellar-blessing"}.
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="A sonata played for the audience. No need to distinguish one another, as everyone is immersed in it.">
+    <CardInfo star="3" type="COUNTER" note={`A sonata played for the audience. No need to distinguish one another, as everyone is immersed in it.`}>
       Mass counter. Gives all allies 1 stack of :effect{param="interstellar-blessing"} and :effect{param="sturdiness"} statuses. The caster gains 2 additional stacks of :effect{param="interstellar-blessing"}.
     </CardInfo>
   </Fragment>
@@ -106,8 +106,8 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Brilliance served as her notes, while darkness acted as the lute by which she played the music of the Universe.">
-      1-target attack. Deals **500%** Mental DMG and inflicts Moxie -2 on the target. If the target is in :effect{param="confusion"} status, this attack deals **100%** more Mental DMG.
+    <CardInfo type="ATTACK" note={`Brilliance served as her notes, while darkness acted as the lute by which she played the music of the Universe.`}>
+      1-target attack. Deals **500%** Mental DMG. After attacking, inflicts Moxie -2 on the target. If the target is in the :effect{param="confusion"} status, this attack deals an additional **100%** Mental DMG.
     </CardInfo>
   </Fragment>
 
@@ -128,7 +128,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Enhanced :effect{param="refrain"}. effect: If there are enemies after the caster takes action, also inflicts 1 round of :effect{param="seal"} on all enemies.
+    Enhanced :effect{param="refrain"} effect: If there are enemies after the caster takes action, also inflicts 1 round of :effect{param="seal"} on all enemies.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,7 +136,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Galactic on Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **+175%**.
+    *Galaxy on the Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **175%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -144,15 +144,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *Galactic on Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **+250%**.
+    *Galaxy on the Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **250%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Galactic on Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **+325%**.
+    *Galaxy on the Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **325%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Galactic on Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **+400%** Mental DMG.
+    *Galaxy on the Strings*: If the target is in :effect{param="confusion"} status, additional Mental DMG increased to **400%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

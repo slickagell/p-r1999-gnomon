@@ -33,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    Arcanist's work, exhibited in the 1980s for a duration of 22 years, created on February 13th in winter. Exhibition location: an island in Aegean Sea region.
+    Arcanist's work, exhibited in the 1980s for a duration of 22 years, created on February 13th in winter. Exhibition location: an island in the Aegean Sea region.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -41,15 +41,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    The Wise Men of the Cave \[Intelligence] Wisdom's Legacy
+    The Wise Men of the Cave \[Intelligence], Wisdom's Legacy
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    Woody, Fir, Ambergris, Water
+    Woody, Fir, Incense, Ambergris, Water
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    69 17/32x21 29/64x14 11/64in.
+    69 17/32x21 29/64x14 11/64 inches.
   </Fragment>
 
   <Fragment slot="toc">
@@ -65,20 +65,20 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    Disciple
+    Discipline
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="The tenets of the scripture are so.">
-      Mass attack. Deals **120%** Mental DMG to 2 enemies and applies 2 random :effect{param="collection-of-debuffs-6"} effects on the target for 2 rounds. Gains Eureka +1 when at 4 Eureka or less.
+    <CardInfo star="1" type="DEBUFF" note={`The tenets of the scriptures are so.`}>
+      Mass attack. Deals **120%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{param="collection-of-debuffs"} on the targets for 2 rounds. Gain Eureka +1 for self when at 4 or less Eureka.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="The tenets of the scripture have always been perplexing.">
-      Mass attack. Deals **175%** Mental DMG to 2 enemies and applies 2 random :effect{param="collection-of-debuffs-6"} effects on the target for 2 rounds. Gains Eureka +2 when at 4 Eureka or less.
+    <CardInfo star="2" type="DEBUFF" note={`The tenets of the scriptures have always been perplexing.`}>
+      Mass attack. Deals **175%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{param="collection-of-debuffs"} on the targets for 2 rounds. Gain Eureka +2 for self when at 4 or less Eureka.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="The tenets of the scripture have always been perplexing. No matter, at least the punishments are clear.">
-      Mass attack. Deals **305%** Mental DMG to 2 enemies and applies 2 random :effect{param="collection-of-debuffs-6"} effects on the target for 2 rounds. Gains Eureka +3 when at 4 Eureka or less.
+    <CardInfo star="3" type="DEBUFF" note={`The tenets of the scriptures have always been perplexing. No matter, at least the punishments are clear.`}>
+      Mass attack. Deals **305%** Mental DMG to 2 enemies. After attacking, inflicts 2 random effects from :effect{param="collection-of-debuffs"} on the targets for 2 rounds. Gain Eureka +3 for self when at 4 or less Eureka.
     </CardInfo>
   </Fragment>
 
@@ -87,25 +87,25 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="He often clarifies doubts for others.">
-      1-target buff. Purifies 2 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs-6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
+    <CardInfo star="1" type="BUFF" note={`He often clarifies doubts for others.`}>
+      1-target buff. Purifies 2 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="He often clarifies doubt for others, out of duty.">
-      1-target buff. Purifies 4 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs-6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
+    <CardInfo star="2" type="BUFF" note={`He often clarifies doubts for others, out of duty.`}>
+      1-target buff. Purifies 4 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="He often clarifies doubt for others, out of duty and truth.">
-      1-target buff. Purifies 6 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs-6"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 3 rounds.
+    <CardInfo star="3" type="BUFF" note={`He often clarifies doubts for others, out of duty and truth.`}>
+      1-target buff. Purifies 6 random types of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses from the target and grants the target 2 random :effect{param="collection-of-buffs"} effects for 2 rounds. If at 5 or more Eureka, spend 5 Eureka to grant the target :effect{param="empower-incantation-i"} for 3 rounds.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    Revelation
+    The Revelation
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="I see, I think, I understand.">
+    <CardInfo type="ATTACK" note={`I see, I think, I understand.`}>
       1-target attack. Deals **700%** Mental DMG. If at 6 or more Eureka, spend 6 Eureka to deal **75%** increased Mental DMG to the target for every 1 type of *\[Stats Down]*, *\[Neg Status]* and *\[Control]* status they have. Increases up to 4 times.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    Max Eureka +1. At the end of the round, if any 1 ally has 4 or more *\[Stats Up]*, *\[Pos Status]*, or *\[Counter]* statuses, gains Eureka +1. When attacking a target with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, DMG Dealt **+16%**.
+    Max Eureka +1. At the end of the round, if any 1 ally has 4 or more *\[Stats Up]*, *\[Pos Status]*, or *\[Counter]* statuses, gains Eureka +1. When attacking a target with *\[Stats Down]*, *\[Neg Status]* or *\[Control]* statuses, DMG Dealt **+16%**.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Before the Ultimate takes effect, applies 2 random :effect{param="collection-of-debuffs-6"} effects to all enemies for 2 rounds. At the start of the round, applies 1 random :effect{param="collection-of-buffs-6"} effect to all allies for 2 rounds.
+    Before the Ultimate takes effect, applies 2 random :effect{param="collection-of-debuffs"} effects to all enemies for 2 rounds. At the start of the round, applies 1 random :effect{param="collection-of-buffs"} effect to all allies for 2 rounds.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,11 +135,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *The Revelation*: If at **5** or more Eureka, spend **5** Eureka to deal **100%** increased Mental DMG to the target for every 1 type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status they have.
+    *The Revelation*: If at **5** or more Eureka, spend **5** Eureka to deal **100%** increased Mental DMG to the target for every **1** type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status they have.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Advocator of Knowledge*: Gain 1 additional Eureka. When attacking a target with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, the DMG Dealt increases to **24%**.
+    *Advocator of Knowledge*: Gain **1** additional Eureka. When attacking targets with *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* statuses, the DMG Dealt increases to **24%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
@@ -151,7 +151,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *The Revelation*: If at **4** or more Eureka, spend **4** Eureka to deal increased Mental DMG to the target for every 1 type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status they have. Increases up to **6** times.
+    *The Revelation*: If at **4** or more Eureka, spend **4** Eureka to deal increased Mental DMG to the target for every **1** type of *\[Stats Down]*, *\[Neg Status]*, or *\[Control]* status they have. Increases up to **6** times.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

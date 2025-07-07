@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="A pixelated fighter.">
+    <CardInfo star="1" type="ATTACK" note={`A pixelated fighter.`}>
       1-target attack. Deals **180%** Reality DMG. When in *\[Pos Status]* or *\[Counter]* status, this attack gains Critical Rate **+25%** and Critical DMG **+25%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="An awful pixelated fighter.">
+    <CardInfo star="2" type="ATTACK" note={`An awful pixelated fighter.`}>
       1-target attack. Deals **270%** Reality DMG. When in *\[Pos Status]* or *\[Counter]* status, this attack gains Critical Rate **+25%** and Critical DMG **+25%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="An awful pixelated fighter; at least it has its own entrance music.">
+    <CardInfo star="3" type="ATTACK" note={`An awful pixelated fighter; at least it has its own entrance music.`}>
       1-target attack. Deals **450%** Reality DMG. When in *\[Pos Status]* or *\[Counter]* status, this attack gains Critical Rate **+25%** and Critical DMG **+25%**.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="Some kind of electronic pet.">
-      Self counter. Grants 1 stack of :effect{param="plappy"} and 1 stack of :effect{param="power-burst"}.
+    <CardInfo star="1" type="COUNTER" note={`Some kind of electronic pet.`}>
+      Self counter. Grants 1 stack of :effect{param="plappy-id-21501"} and 1 stack of :effect{param="power-burst"}
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="Some kind of harmless electronic pet.">
-      Self counter. Grants 2 stacks of :effect{param="plappy"} and 1 stack of :effect{param="power-burst"}.
+    <CardInfo star="2" type="COUNTER" note={`Some kind of harmless electronic pet.`}>
+      Self counter. Grants 2 stacks of :effect{param="plappy-id-21501"} and 1 stack of :effect{param="power-burst"}
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="Some kind of screeching but mostly harmless electronic pet.">
-      Self counter. Grants 3 stacks of :effect{param="plappy"} and 2 stacks of :effect{param="power-burst"}.
+    <CardInfo star="3" type="COUNTER" note={`Some kind of screeching but mostly harmless electronic pet.`}>
+      Self counter. Grants 3 stacks of :effect{param="plappy-id-21501"} and 2 stacks of :effect{param="power-burst"}
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="HEALTH" note="Don't be afraid, it's just a show of affection.">
+    <CardInfo type="HEALTH" note={`Don't be afraid, it's just a show of affection.`}>
       Mass healing. HP +(the user's ATK x**100%**) for all allies. Grants 2 stacks of :effect{param="power-burst"} to all allies, and 2 stacks of :effect{param="aura-of-might"} to allied *\[Beast]* Afflatus characters.
     </CardInfo>
   </Fragment>
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, for every *\[Beast]* ally on the field, gains 1 Moxie (only triggers 1 time).
+    When entering battle, for each *\[Beast]* afflatus character present on the allied field, grant Moxie +1 to self (triggers only once).
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -147,11 +147,11 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *The Only Family!*: :effect{param="plappy"}'s Critical Rate and Critical DMG when Riposting is increased to **35%**.
+    *The Only Family!*: :effect{param="plappy-id-21501"}'s Critical Rate and Critical DMG when Riposting is increased to **35%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Beep Beep Bop Bop, Plappy!*: Increased to HP +(the user's ATK x**160%**) for all allies. :effect{param="power-burst"} is increased to 3 stacks.
+    *Beep Beep Bop Bop, Plappy!*: Increased to HP +(the user's ATK x**160%**) for all allies. :effect{param="power-burst"} is increased to **3** stacks.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

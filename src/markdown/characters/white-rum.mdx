@@ -33,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    An Awakened's work. Exhibited in the mid-17th century for approximately 300 years. Completed in winter, on January 15th. Originally exhibited in the United Kingdom and Northern Ireland, and active in the Caribbean region. After a long hiatus, it later drifted to São Paulo, Brazil.
+    An Awakened's work. Exhibited in the mid-17th century for approximately 300 years. Completed in winter, on January 15th. Originally exhibited in England, and active in the Caribbean region. After a long hiatus, it later drifted to São Paulo, Brazil.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -41,7 +41,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Amind adrift, \[Intelligence], drifting in a bottle
+    A mind adrift, \[Intelligence], drifting in a bottle
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    27 3/11x 14 9/25 x5 7/10 in.
+    27 3/11 x 14 9/25 x 5 7/10 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -69,16 +69,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Take aim—and fire!">
-      Deals **80%** Reality DMG to all enemies, the shifts self 1 position backward.
+    <CardInfo star="1" type="ATTACK" note={`Take aim—and fire!`}>
+      Deals **80%** Reality DMG to all enemies, then shifts self 1 position backward.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Take aim—and fire! Make sure to cover your ears!">
-      Deals **120%** Reality DMG to all enemies, the shifts self 1 position backward.
+    <CardInfo star="2" type="ATTACK" note={`Take aim—and fire! Make sure to cover your ears!`}>
+      Deals **120%** Reality DMG to all enemies, then shifts self 1 position backward.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Take aim—and fire! Make sure to cover your ears! Too late, oops!">
-      Deals **200%** Reality DMG to all enemies, the shifts self 1 position backward.
+    <CardInfo star="3" type="ATTACK" note={`Take aim—and fire! Make sure to cover your ears! Too late, oops!`}>
+      Deals **200%** Reality DMG to all enemies, then shifts self 1 position backward.
     </CardInfo>
   </Fragment>
 
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="CHANNEL" note="Ahoy!">
-      Self channel. Enters :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
+    <CardInfo star="1" type="CHANNEL" note={`Ahoy!`}>
+      Self channel. Enters the :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
     </CardInfo>
 
-    <CardInfo star="2" type="CHANNEL" note="Ahoy! Board that ship!">
-      Self channel. Enters :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
+    <CardInfo star="2" type="CHANNEL" note={`Ahoy! Board that ship!`}>
+      Self channel. Enters the :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
     </CardInfo>
 
-    <CardInfo star="3" type="CHANNEL" note="Ahoy! Board that ship and raise our flag!">
-      Self channel. Enters :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
+    <CardInfo star="3" type="CHANNEL" note={`Ahoy! Board that ship and raise our flag!`}>
+      Self channel. Enters the :effect{param="boarding-assault"} status. If already in the :effect{param="boarding-assault"} status, gains an additional Moxie +1.
     </CardInfo>
   </Fragment>
 
@@ -105,8 +105,8 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The spirit of exploration lives on!">
-      Mass attack. Can only be cast in the :effect{param="boarding-assault"} status. Shifts to the front-most position, deals **200%** Reality DMG to all enemies and inflicts :effect{param="daze"} on the targets for 1 round; for every position shifted, this attack gains DMG Dealt **+15%**; If at least 3 positions were shifted, this attack ignores **50%** Daze Resistance.
+    <CardInfo type="ATTACK" note={`The spirit of exploration lives on!`}>
+      Mass attack. Can only be cast in the :effect{param="boarding-assault"} status. Shifts to the front-most position, deals **200%** Reality DMG to all enemies and inflicts :effect{param="daze"} on the targets for 1 round; for every position shifted, this attack gains DMG Dealt **+15%**; if at least 3 positions were shifted, this attack ignores **50%** Daze Resistance.
     </CardInfo>
   </Fragment>
 
@@ -143,7 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Boundless Sea, Limitless Sky*: If at least 3 positions were shifted, this attack now ignores **100%** Daze resistance.
+    *Boundless Sea, Limitless Sky*: If at least **3** positions were shifted, this attack now ignores **100%** Daze resistance.
   </Fragment>
 
   <Fragment slot="portray-5-info">

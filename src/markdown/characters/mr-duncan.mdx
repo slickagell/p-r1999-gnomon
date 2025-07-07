@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="This is a simple musical instrument.">
+    <CardInfo star="1" type="ATTACK" note={`This is a simple musical instrument.`}>
       Mass attack. Deals **70%** Reality DMG to 2 enemies and an additional (own ATK x**60%**) Genesis DMG to the enemy if it is below **50%** HP.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This is a simple musical instrument, and also a weapon.">
+    <CardInfo star="2" type="ATTACK" note={`This is a simple musical instrument, and also a weapon.`}>
       Mass attack. Deals **105%** Reality DMG to 2 enemies and an additional (own ATK x**90%**) Genesis DMG to the enemy if it is below **50%** HP.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This is a simple musical instrument, and also a weapon that protects him from danger and loneliness.">
+    <CardInfo star="3" type="ATTACK" note={`This is a simple musical instrument, and also a weapon that protects him from danger and loneliness.`}>
       Mass attack. Deals **175%** Reality DMG to 2 enemies and an additional (own ATK x**150%**) Genesis DMG to the enemy if it is below **50%** HP.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="COUNTER" note="Improvised materials.">
-      1-target counter. Gains 2 bullets from :effect{param="veteran-cartridge"} and enters the :effect{param="quick-draw"} status for 2 rounds.
+    <CardInfo star="1" type="COUNTER" note={`Improvised materials.`}>
+      1-target counter. Gains 2 bullets from :effect{param="veteran-s-cartridge"} and enters the :effect{param="quick-draw-id-31030125"} status for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note="Improvised materials and a dash of inspiration.">
-      1-target counter. Gains 3 bullets from :effect{param="veteran-cartridge"} and enters the :effect{param="quick-draw"} status for 2 rounds.
+    <CardInfo star="2" type="COUNTER" note={`Improvised materials and a dash of inspiration.`}>
+      1-target counter. Gains 3 bullets from :effect{param="veteran-s-cartridge"} and enters the :effect{param="quick-draw-id-31030125"} status for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note="Improvised materials, a dash of inspiration, and fifty years of living experience.">
-      1-target counter. Gains 5 bullets from :effect{param="veteran-cartridge"} and enters the :effect{param="quick-draw"} status for 2 rounds.
+    <CardInfo star="3" type="COUNTER" note={`Improvised materials, a dash of inspiration, and fifty years of living experience.`}>
+      1-target counter. Gains 5 bullets from :effect{param="veteran-s-cartridge"} and enters the :effect{param="quick-draw-id-31030125"} status for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="An adrenaline rush that far surpasses the finest wines.">
+    <CardInfo type="ATTACK" note={`An adrenaline rush that far surpasses the finest wines.`}>
       1-target attack. Deals **500%** Reality DMG to an enemy. For each type of *\[Bullet]* held on self, this attack gains an additional Critical Rate **+10%**.
     </CardInfo>
   </Fragment>
@@ -123,11 +123,13 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    When entering battle, gain Critical Rate **+10%**.
+    Critical Rate **+10%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After scoring a critical hit or defeating an enemy, all allies gain 1 type of Bullet from :effect{param="veteran-cartridge"}. Whenever this unit scores 3 critical hits, this unit gains Moxie +1.
+    After scoring a critical hit or defeating an enemy, all allies gain 1 type of Bullet from :effect{param="veteran-s-cartridge"}.
+
+    Whenever this unit scores 3 critical hits, this unit gains Moxie +1.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,7 +137,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Lethal Melody*: At incantation rank **1/2/3**, the Genesis DMG fs increased to **100/150/250%**.
+    *Lethal Melody*: At incantation rank **1/2/3**, the Genesis DMG is increased to **100/150/250%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -147,11 +149,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Makeshift Inventions*: \[Swift Riposte]'s Reality DMG dealt is increased to **500%**.
+    *Makeshift Inventions*: :effect{param="swift-riposte-id-31030124"}'s Reality DMG dealt is increased to **300%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Military Experience*: After defeating an enemy, the types of bullets gained from :effect{param="veteran-cartridge"} by all allies is increased to **2**.
+    *Military Experience*: After defeating an enemy, the types of bullets gained from :effect{param="veteran-s-cartridge"} by all allies is increased to **2**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

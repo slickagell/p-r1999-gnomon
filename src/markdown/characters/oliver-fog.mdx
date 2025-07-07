@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="This is the family's calling.">
+    <CardInfo star="1" type="ATTACK" note={`This is the family's calling.`}>
       1-target attack. Deals **160%** Reality DMG. This attack enjoys Leech Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This is the family's calling? No.">
+    <CardInfo star="2" type="ATTACK" note={`This is the family's calling? No.`}>
       1-target attack. Deals **240%** Reality DMG. This attack enjoys Leech Rate **+30%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This is the family's calling? No. This is just a job.">
+    <CardInfo star="3" type="ATTACK" note={`This is the family's calling? No. This is just a job.`}>
       1-target attack. Deals **400%** Reality DMG. This attack enjoys Leech Rate **+30%**.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="One will hear the bell of the campanile.">
-      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+10%** for 2 rounds.
+    <CardInfo star="1" type="BUFF" note={`One will hear the bell of the campanile.`}>
+      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+10%** for them for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="One will hear the bell of the campanile. I shall uphold my duty.">
-      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+15%** for 2 rounds.
+    <CardInfo star="2" type="BUFF" note={`One will hear the bell of the campanile. I shall uphold my duty.`}>
+      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+15%** for them for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="One will hear the bell of the campanile. I will fulfill my duty till then.">
-      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+20%** for 2 rounds.
+    <CardInfo star="3" type="BUFF" note={`One will hear the bell of the campanile. I will fulfill my duty till then.`}>
+      Mass buff. Inflicts 1 stack of :effect{param="sturdiness"} on all allies. Reality DEF and Mental DEF **+20%** for them for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The fog used to cover this place. It still does.">
+    <CardInfo type="ATTACK" note={`The fog used to cover this place. It still does.`}>
       1-target attack. Deals **450%** Reality DMG. This attack enjoys Penetration Rate **+30%**.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When a round ends, loses (Current HP x**15%**) HP and Gains a shield with (HP Lost this time x**150%**) HP which lasts until the start of the next round. While Shield is active, DMG Taken **-20%**.
+    When a round ends, loses (Current HP x**15%**) HP and gains a Shield with (HP Lost this time x**150%**) HP which lasts until the start of the next round. While the Shield is active, DMG Taken **-20%**.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -131,7 +131,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Meaningless as Expected*'s effect changes to: deals **500%** Reality DMG.
+    *Meaningless as Expected*: Reality DMG increased to **500%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -143,7 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Home of the Fog* :effect{param="shield"} effect changes to: shield DMG of lost HPx**200%**.
+    *Home of the Fog* *\[Shield]* Effect changes to: shield DMG of lost HPx**200%**
   </Fragment>
 
   <Fragment slot="portray-5-info">

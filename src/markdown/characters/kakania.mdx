@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Please look into my eyes.">
+    <CardInfo star="1" type="ATTACK" note={`Please look into my eyes.`}>
       1-target attack. Deals **180%** Mental DMG plus (Current :effect{param="empathy"} x**180%**) Genesis DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Please look into my eyes and show yourself.">
+    <CardInfo star="2" type="ATTACK" note={`Please look into my eyes and show yourself.`}>
       1-target attack. Deals **270%** Mental DMG plus (Current :effect{param="empathy"} x**220%**) Genesis DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Please look into my eyes and show yourself, yes, your true “self.”">
+    <CardInfo star="3" type="ATTACK" note={`Please look into my eyes and show yourself, yes, your true "self."`}>
       1-target attack. Deals **450%** Mental DMG plus (Current :effect{param="empathy"} x**260%**) Genesis DMG.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="The endoscope ...">
-      1-target buff. When cast on self, recovers (the user's Max HP x**20%**) HP. When cast on other allies, loses own (Max HP x**10%**) HP and grants :effect{param="solace"} to the target for 2 rounds.
+    <CardInfo star="1" type="BUFF" note={`The endoscope ...`}>
+      1-target buff. When cast on self, recovers (the user's Max HP x**20%**) HP. When cast on other allies, loses own (Max HP x**10%**) HP and grants :effect{param="solace-id-1"} to the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="The endoscope, the dust ...">
-      1-target buff. When cast on self, recovers (the user's Max HP x**30%**) HP. When cast on other allies, loses own (Max HP x**15%**) HP and grants :effect{param="solace"} to the target for 2 rounds.
+    <CardInfo star="2" type="BUFF" note={`The endoscope, the dust ...`}>
+      1-target buff. When cast on self, recovers (the user's Max HP x**30%**) HP. When cast on other allies, loses own (Max HP x**15%**) HP and grants :effect{param="solace-id-1"} to the target for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="The endoscope, the dust, the stars ...">
-      1-target buff. When cast on self, recovers (the user's Max HP x**40%**) HP. When cast on other allies, loses own (Max HP x**20%**) HP and grants :effect{param="solace"} to the target for 2 rounds.
+    <CardInfo star="3" type="BUFF" note={`The endoscope, the dust, the stars ...`}>
+      1-target buff. When cast on self, recovers (the user's Max HP x**40%**) HP. When cast on other allies, loses own (Max HP x**20%**) HP and grants :effect{param="solace-id-1"} to the target for 2 rounds.
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="The tale of an unconventional psychiatrist with an obedient patient.">
+    <CardInfo type="ATTACK" note={`The tale of an unconventional psychiatrist with an obedient patient.`}>
       1-target attack. Deals **400%** Mental DMG plus (Current :effect{param="empathy"} x**1000%**) Genesis DMG to the target, resets :effect{param="empathy"} to zero, and then starts recording the damage the target takes for the round. At the end of the round, deals (recorded damage taken x**30%**) Genesis DMG to the target.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,9 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When attacked, directs **50%** of the damage taken by other allies to Kakania instead. Whenever Kakania takes damage, **10%** of that damage is stored as :effect{param="empathy"}, which can store up to **20%** of Kakania's Max HP. Once :effect{param="empathy"} is full, Kakania can no longer take damage on behalf of other allies.
+    When attacked, directs **50%** of the damage taken by other allies to Kakania instead.
+
+    Whenever Kakania takes damage, **10%** of that damage is stored as :effect{param="empathy"}, which can store up to **20%** of Kakania's Max HP. Once :effect{param="empathy"} is full, Kakania can no longer take damage on behalf of other allies.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +129,9 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Whenever :effect{param="empathy"} stores (Kakania's Max HP x**3%**) damage, recovers own (Max HP x**10%**) HP for all allies. When being healed, deals (current :effect{param="empathy"} x**100%**) Genesis DMG to all enemies.
+    Whenever :effect{param="empathy"} stores (Kakania's Max HP x**3%**) damage, recovers own (Max HP x**10%**) HP for all allies.
+
+    When being healed, deals (Current :effect{param="empathy"} x**100%**) Genesis DMG to all enemies.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -135,11 +139,11 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Association*: :effect{param="solace"}'s ATK bonus is increased to **400**, and the additional ATK bonus based on :effect{param="empathy"} value is increased to **15%**.
+    *Association*: :effect{param="solace-id-1"}'s ATK bonus is increased to **400**, and the additional ATK bonus based on :effect{param="empathy"} value is increased to **13%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Psychoanalysis*: The threshold for :effect{param="empathy"} to trigger healing is decreased from **5%** HP to **2%** HP. When healed, the Genesis DMG dealt is increased to (Current :effect{param="empathy"} value x**120%**).
+    *Psychoanalysis*: The threshold for :effect{param="empathy"} to trigger healing is decreased from **3%** HP to **2%** HP. When healed, the Genesis DMG dealt is increased to (current Empathy value x**120%**).
   </Fragment>
 
   <Fragment slot="portray-3-info">

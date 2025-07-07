@@ -34,7 +34,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    An arcanist's work. Exhibited in the early 20th century for 13 years. Completed in spring, on April 4. Exhibited in the City of Westminster, London, United Kingdom of Great Britain and Northern Ireland.
+    An arcanist's work. Exhibited in the early 20th century for 13 years. Completed in spring, on April 15. Exhibited in the City of Westminster, London, United Kingdom of Great Britain and Northern Ireland.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -70,16 +70,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin.">
-      Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} status for 2 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+    <CardInfo star="1" type="DEBUFF" note={`Danger is often hidden within the teeth of crawling vermin.`}>
+      Mass attack. Deals **80%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} for 2 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin, but there are always exceptions.">
-      Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} status for 3 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+    <CardInfo star="2" type="DEBUFF" note={`Danger is often hidden within the teeth of crawling vermin, but there are always exceptions.`}>
+      Mass attack. Deals **120%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} for 3 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Danger is often hidden within the teeth of crawling vermin, but there are always exceptions. In fact, what's bottled up is far more dangerous.">
-      Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} status for 5 rounds: when a round ends, deals (the caster's ATK x**30%**) Genesis DMG.
+    <CardInfo star="3" type="DEBUFF" note={`Danger is often hidden within the teeth of crawling vermin, but there are always exceptions. In fact, what's bottled up is far more dangerous.`}>
+      Mass attack. Deals **200%** Reality DMG to 2 enemies. Inflicts :effect{param="poison"} for 5 rounds on the targets hit: at the end of the round, deals (the user's ATK x**30%**) Genesis DMG to the target.
     </CardInfo>
   </Fragment>
 
@@ -88,16 +88,16 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="HEALTH" note="Efficacy is not determined by the dose.">
-      Mass healing. Gives all allies 2 rounds of :effect{param="cure"} when a round starts, HP +(the caster's ATK x**50%**).
+    <CardInfo star="1" type="HEALTH" note={`Efficacy is not determined by the dose.`}>
+      Mass healing. Gives all allies 2 rounds of :effect{param="cure"}: when a round starts, HP +(the caster's ATK x**50%**).
     </CardInfo>
 
-    <CardInfo star="2" type="HEALTH" note="Efficacy is not determined by the dose. The original formula still has room for improvement.">
-      Mass healing. Gives all allies 2 rounds of :effect{param="cure"} when a round starts, HP +(the caster's ATK x**75%**).
+    <CardInfo star="2" type="HEALTH" note={`Efficacy is not determined by the dose. The original formula still has room for improvement.`}>
+      Mass healing. Gives all allies 2 rounds of :effect{param="cure"}: when a round starts, HP +(the caster's ATK x**75%**).
     </CardInfo>
 
-    <CardInfo star="3" type="HEALTH" note="Efficacy is not determined by the dose. The original formula still has room for improvement. Just use 1 drop.">
-      Mass healing. Gives all allies 2 rounds of :effect{param="cure"} when a round starts, HP +(the caster's ATK x**125%**).
+    <CardInfo star="3" type="HEALTH" note={`Efficacy is not determined by the dose. The original formula still has room for improvement. Just use 1 drop.`}>
+      Mass healing. Gives all allies 2 rounds of :effect{param="cure"}: when a round starts, HP +(the caster's ATK x**125%**).
     </CardInfo>
   </Fragment>
 
@@ -106,7 +106,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="1 bottle, 1 bottle, 1 bottle, 1 bottle, 1 bottle...">
+    <CardInfo type="ATTACK" note={`1 bottle, 1 bottle, 1 bottle, 1 bottle, 1 bottle...`}>
       Mass attack. Deals **350%** Reality DMG to all enemies and all active :effect{param="poison"} and :effect{param="cure"} statuses on every character take effect immediately.
     </CardInfo>
   </Fragment>
@@ -120,7 +120,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    The duration of :effect{param="poison"} inflicted by *Triple the Dose!* +1 round.
+    The duration of :effect{param="poison"} inflicted by *\[Triple the Dose!]* +1 round.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -128,7 +128,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    Before *Concentrated Essence!* inflicts :effect{param="cure"} status, the :effect{param="cure"} statuses on all allies take effect immediately.
+    Before *\[Concentrated Essence!]* inflicts :effect{param="cure"} status, the :effect{param="cure"} statuses on all allies take effect immediately.
   </Fragment>
 
   <Fragment slot="portray-section-title">

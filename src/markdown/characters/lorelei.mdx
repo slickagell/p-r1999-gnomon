@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="DEBUFF" note="Who is singing?">
+    <CardInfo star="1" type="DEBUFF" note={`Who is singing?`}>
       Mass attack. Deals **120%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="weakness"} on the targets hit.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="Who is singing? Who is watching me?">
-      Mass attack. Deals **200%** Mental DMG to 2 enemies, Inflicts 1 stack of :effect{param="weakness"} on the targets hit.
+    <CardInfo star="2" type="DEBUFF" note={`Who is singing? Who is watching me?`}>
+      Mass attack. Deals **200%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="weakness"} on the targets hit.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="Who is singing? Who is watching me? Shh...">
+    <CardInfo star="3" type="DEBUFF" note={`Who is singing? Who is watching me? Shh ...`}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies. Inflicts 1 stack of :effect{param="weakness"} on the targets hit.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="Beep, bop, gurgle.">
+    <CardInfo star="1" type="BUFF" note={`Beep, bop, gurgle.`}>
       Mass buff. Grants Critical DMG **+25%** and DMG Taken Reduction **+15%** to all allies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="Beep, bop, gurgle, greetings from the river.">
+    <CardInfo star="2" type="BUFF" note={`Beep, bop, gurgle, greetings from the river.`}>
       Mass buff. Grants Critical DMG **+35%** and DMG Taken Reduction **+20%** to all allies for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="Beep, bop, gurgle, greetings from the river, plop, plop.">
+    <CardInfo star="3" type="BUFF" note={`Beep, bop, gurgle, greetings from the river, plop, plop.`}>
       Mass buff. Grants Critical DMG **+45%** and DMG Taken Reduction **+25%** to all allies for 2 rounds.
     </CardInfo>
   </Fragment>
@@ -105,14 +105,14 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="Oh, the ears. They break free. They hold the foam.">
+    <CardInfo type="ATTACK" note={`Oh, the ears. They break free. They hold the foam.`}>
       Mass attack. Deals **300%** Mental DMG to all enemies; this attack gains bonuses based on the incantations present in the Spelldock:
 
-      Each attack incantation grants additional Mental DMG **+40%**
+      Each attack incantation grants additional Mental DMG **+20%**
 
-      Each buff incantation grants Critical Rate **+20%**
+      Each buff incantation grants Critical Rate **+10%**
 
-      Each debuff incantation grants Penetration Rate **30%**.
+      Each debuff incantation grants Penetration Rate **+20%**.
     </CardInfo>
   </Fragment>
 
@@ -127,9 +127,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   <Fragment slot="insight-1-info">
     At the start of the round, triggers one effect for 1 round based on the most common type of incantation in the Spelldock:
 
-    Attack incantation: all allies gain DMG Dealt **+20%**
+    Attack incantation: all allies gain DMG Dealt **+15%**
 
-    Buff incantation: all allies gain Critical Rate **+20%**
+    Buff incantation: all allies gain Critical Rate **+15%**
 
     Debuff incantation: all enemies suffer DMG Dealt **-15%**
   </Fragment>

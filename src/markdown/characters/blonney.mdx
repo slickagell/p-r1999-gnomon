@@ -33,7 +33,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    An arcanist artwork completed on July 22nd. First put on exhibit in the 1990s and has remained on display for 20 years. It was originally displayed in the southeastern United States before being moved to the northeast.
+    An Arcanist artwork completed on July 22nd. First put on exhibit in the 1990s and has remained on display for 20 years. It was originally displayed in the southeastern United States before being moved to the northeast.
   </Fragment>
 
   <Fragment slot="info-medium">
@@ -41,7 +41,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Relatives from Venus \[Star] - Monster Designer
+    Relatives from Venus (Star) - Monster Designer
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Just an ordinary rabbit doll.">
+    <CardInfo star="1" type="ATTACK" note={`Just an ordinary rabbit doll.`}>
       1-target attack. Deals **160%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Just an ordinary rabbit doll, at least that's what people think.">
+    <CardInfo star="2" type="ATTACK" note={`Just an ordinary rabbit doll, at least that's what people think.`}>
       1-target attack. Deals **240%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Just an ordinary rabbit doll, before the spiked stick is unleashed.">
+    <CardInfo star="3" type="ATTACK" note={`Just an ordinary rabbit doll, before the spiked stick is unleashed.`}>
       1-target attack. Deals **400%** Reality DMG. This attack enjoys Critical Rate and Critical DMG **+25%**.
     </CardInfo>
   </Fragment>
@@ -87,16 +87,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="This party needs a surprise.">
+    <CardInfo star="1" type="ATTACK" note={`This party needs a surprise.`}>
       1-target attack. Deals **200%** Reality DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="DEBUFF" note="This party needs a surprise, not a night of horror.">
-      1-target attack. Deals **250%** Reality DMG and inflicts the target with 1 stack of :effect{param="confusion"}. Lasts 1 round.
+    <CardInfo star="2" type="DEBUFF" note={`This party needs a surprise, not a night of horror.`}>
+      1-target attack. Deals **250%** Reality DMG. After attacking, inflicts 1 stack of :effect{param="confusion"} on the target for 1 round.
     </CardInfo>
 
-    <CardInfo star="3" type="DEBUFF" note="This party needs a surprise, like a live chainsaw show.">
-      1-target attack. Deals **450%** Reality DMG and inflicts the target with 1 stack of :effect{param="confusion"}. Lasts 1 round.
+    <CardInfo star="3" type="DEBUFF" note={`This party needs a surprise, like a live chainsaw show.`}>
+      1-target attack. Deals **450%** Reality DMG. After attacking, inflicts 1 stack of :effect{param="confusion"} on the target for 1 round.
     </CardInfo>
   </Fragment>
 
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="There is always a more suitable color to replace bright red.">
+    <CardInfo type="ATTACK" note={`There is always a more suitable color than bright red.`}>
       Mass attack. Deals **250%** Reality DMG to all enemies and increases the Critical Rate of this attack by **20%**.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    After casting an Ultimate, Critical Rate and Critical DMG increase by **+20%**. Lasts 2 rounds.
+    After casting an Ultimate, Critical Rate and Critical DMG increase by **20%**. Lasts 2 rounds.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    After casting an Ultimate, Critical Rate and Critical DMG increase by an additional **+10%**.
+    After casting an Ultimate, Critical Rate and Critical DMG increase by an additional **10%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">

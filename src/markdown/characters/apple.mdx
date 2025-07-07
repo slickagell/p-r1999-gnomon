@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Others see white.">
+    <CardInfo star="1" type="ATTACK" note={`Others see white.`}>
       1-target attack. Deals **200%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="This APPLe sees color while others see white.">
+    <CardInfo star="2" type="ATTACK" note={`This APPLe sees color while others see white.`}>
       1-target attack. Deals **300%** Mental DMG.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="This APPLe sees color while others see white. I'm the one who's definitely right.">
+    <CardInfo star="3" type="ATTACK" note={`This APPLe sees color while others see white. I'm the one who's definitely right.`}>
       1-target attack. Deals **500%** Mental DMG.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="ATTACK" note="Some people resist knowledge.">
+    <CardInfo star="1" type="ATTACK" note={`Some people resist knowledge.`}>
       1-target attack. Deals **150%** Mental DMG. HP +(the caster's ATK x**40%**) for the ally with the lowest HP.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="Some people resist higher knowledge.">
+    <CardInfo star="2" type="ATTACK" note={`Some people resist higher knowledge.`}>
       1-target attack. Deals **225%** Mental DMG. HP +(the caster's ATK x**60%**) for the ally with the lowest HP.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="Some people resist higher knowledge, but not everyone does that.">
+    <CardInfo star="3" type="ATTACK" note={`Some people resist higher knowledge, but not everyone does that.`}>
       1-target attack. Deals **375%** Mental DMG. HP +(the caster's ATK x**100%**) for the ally with the lowest HP.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="ATTACK" note="My conclusion will let people know how small they are.">
+    <CardInfo type="ATTACK" note={`My conclusion will let people know how small they are.`}>
       Mass attack. Deals **300%** Mental DMG to all enemies. HP +(the caster's ATK x**100%**) for the ally with the lowest HP percentage.
     </CardInfo>
   </Fragment>
@@ -119,7 +119,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    When a round starts, HP +(Lost HP x**8%**) for all allies.
+    At the start of the round, recover (each ally's own Missing HP x**8%**) HP for all allies.
   </Fragment>
 
   <Fragment slot="insight-2-info">
@@ -131,7 +131,7 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *Insignificant Achievement*'s effect changes to: HP +(the caster's ATK x**150%**) for the ally with the lowest HP percentage.
+    *Insignificant Achievements*'s effect changes to: HP +(the caster's ATK x**150%**) for the ally with the lowest HP percentage.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -143,11 +143,11 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *Insignificant Achievement*'s effect changes to: HP +(the caster's ATK x**200%**) for the ally with the lowest HP percentage.
+    *Insignificant Achievements*'s effect changes to: HP +(the caster's ATK x**200%**) for the ally with the lowest HP percentage.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Insignificant Achievement*'s effect changes to: HP +(the caster's ATK x**250%**) for the ally with the lowest HP percentage.
+    *Insignificant Achievements*'s effect changes to: HP +(the caster's ATK x**250%**) for the ally with the lowest HP percentage.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

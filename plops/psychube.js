@@ -1,4 +1,4 @@
-import PSYCHUBE_RARITY from "../src/data/common/psychube/rarity.json" assert { type: "json" };
+import PSYCHUBE_RARITY from "../src/data/common/psychube/rarity.json" with { type: "json" };
 
 export default {
   description: "Create a psychube content mdx file",

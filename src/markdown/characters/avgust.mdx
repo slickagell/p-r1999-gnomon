@@ -49,7 +49,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    47 16/64 x 28 17/64 x 10 40/64 in
+    47 16/64 x 28 17/64 x 10 40/64 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -69,15 +69,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="ATTACK" note="The people here are full of passion.">
+    <CardInfo star="1" type="ATTACK" note={`The people here are full of passion.`}>
       Mass attack. Deals **120%** Mental DMG to 2 enemies; then grants DMG Dealt **+10%** to self and allies in front for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note="The people here are full of passion and tenacity.">
+    <CardInfo star="2" type="ATTACK" note={`The people here are full of passion and tenacity.`}>
       Mass attack. Deals **200%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]* and *\[Pos Status]* from the targets hit, then grants DMG Dealt **+10%** to self and allies in front for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note="The people here are full of passion and tenacity, and they have a bright future ahead of them.">
+    <CardInfo star="3" type="ATTACK" note={`The people here are full of passion and tenacity, and they have a bright future ahead of them.`}>
       Mass attack. Deals **300%** Mental DMG to 2 enemies. Dispels all *\[Stats Up]* and *\[Pos Status]* from the targets hit, then grants DMG Dealt **+10%** to self and allies in front for 2 rounds.
     </CardInfo>
   </Fragment>
@@ -87,15 +87,15 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="BUFF" note="A seed.">
+    <CardInfo star="1" type="BUFF" note={`A seed.`}>
       Mass buff. Grants the :effect{param="cure"} status to all allies for 1 round: at the start of each round, recovers (the user's ATK x**50%**) HP; then grants DMG Heal **+10%** to self and allies behind for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="2" type="BUFF" note="A seed planted in soil.">
+    <CardInfo star="2" type="BUFF" note={`A seed planted in soil.`}>
       Mass buff. Grants the :effect{param="cure"} status to all allies for 2 rounds: at the start of each round, recovers (the user's ATK x**50%**) HP; then grants DMG Heal **+10%** to self and allies behind for 2 rounds.
     </CardInfo>
 
-    <CardInfo star="3" type="BUFF" note="A seed planted in soil, with the nourishment of hope.">
+    <CardInfo star="3" type="BUFF" note={`A seed planted in soil, with the nourishment of hope.`}>
       Mass buff. Grants the :effect{param="cure"} status to all allies for 3 rounds: at the start of each round, recovers (the user's ATK x**50%**) HP; then grants DMG Heal **+10%** to self and allies behind for 2 rounds.
     </CardInfo>
   </Fragment>
@@ -105,7 +105,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note="Every child is a blank canvas, waiting to be filled with vibrant colors.">
+    <CardInfo type="ATTACK" note={`Every child is a blank canvas, waiting to be filled with vibrant colors.`}>
       Mass attack. Deals **300%** Mental DMG to all enemies; then grants 1 stack of :effect{param="rousing-morale"} to self and allies in front, and 1 stack of :effect{param="sturdiness"} to self and allies behind.
     </CardInfo>
   </Fragment>
@@ -127,7 +127,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    When entering battle, allies in front grant themselves ATK **+5%**, and allies behind grant themselves DMG Taken **-8%**.
+    When entering battle, gain ATK **+5%** for every ally in front, and gain DMG Taken **-8%** for every ally behind.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -139,7 +139,7 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Wish You Good Health*: At Incantation rank **1/2/3**, \[Cure] duration is increased to **2/3/4** rounds.
+    *Wish You Good Health*: At Incantation rank **1/2/3**, :effect{param="cure"} duration is increased to **2/3/4** rounds.
   </Fragment>
 
   <Fragment slot="portray-3-info">
