@@ -215,12 +215,15 @@ const { id, slides } = Astro.props;
     openLightbox() {
       if (this.isOpenLightbox) return;
 
+      // Prevents scrolling on mobile
+      document.querySelector(":root")?.classList.add("modal_opening");
       document.body.style.overflowY = "hidden";
       document.body.style.height = "100vh";
       this.isOpenLightbox = true;
     },
 
     closeLightbox() {
+      document.querySelector(":root")?.classList.remove("modal_opening");
       document.body.style.removeProperty("overflow-y");
       document.body.style.removeProperty("height");
       this.isOpenLightbox = false;

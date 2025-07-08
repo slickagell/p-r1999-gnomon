@@ -1,3 +1,7 @@
+##### 2025-07-08
+
+* Update the information for several characters that have been out-of-date and inaccurate. (Commit diff: [2fc9328](https://github.com/xREMAGIx/p-r1999-gnomon/commit/2fc932827d13154751adae7c1e5edc976b1f093c))
+
 ##### 2025-07-04
 
 * Add 2.7 characters official data:

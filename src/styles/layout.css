@@ -180,3 +180,10 @@ img[x-zoomable]:hover {
 .carousel-snap > div {
   scroll-snap-align: center;
 }
+
+.modal_opening {
+  touch-action: none;
+  overscroll-behavior: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}
