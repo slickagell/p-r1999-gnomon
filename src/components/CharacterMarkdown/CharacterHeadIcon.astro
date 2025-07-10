@@ -5,29 +5,40 @@ import { kebabCase } from "change-case";
 import CharacterImg from "./CharacterImg.astro";
 
 interface Props {
-  code: string;
+  id?: string;
+  code?: string;
   isInline?: boolean;
   customClass?: string;
   note?: string;
 }
 
-const { code, isInline, customClass, note } = Astro.props;
+const { id, code, isInline, customClass, note } = Astro.props;
 
-const characterEntry = await getEntry("characters", kebabCase(code))!;
+const param = id ?? kebabCase(code ?? "");
+
+const characterEntry = await getEntry("characters", param)!;
 ---
 
-<div class={twMerge("my-2", isInline && "my-0 inline-block", customClass)}>
+<div
+  class={twMerge(
+    "my-2 flex items-center",
+    isInline && "my-0 inline-flex",
+    customClass
+  )}
+>
   <a
     href={`/characters/${characterEntry.id}`}
     class="transition hover:opacity-75"
   >
-    <CharacterImg
-      variant="headicon"
-      gameId={characterEntry.data.gameId}
-      class="mr-2"
-    />
-    <span>{characterEntry.data.name}</span>{" "}
-    <span set:html={note} />
-    <slot name="note" />
+    <CharacterImg variant="headicon" gameId={characterEntry.data.gameId} />
   </a>
+  <div class="ml-2">
+    <a
+      href={`/characters/${characterEntry.id}`}
+      class="transition hover:opacity-75"
+      ><span>{characterEntry.data.name}</span></a
+    >{" "}
+    {note && <span set:html={note} />}
+    <slot name="note" />
+  </div>
 </div>

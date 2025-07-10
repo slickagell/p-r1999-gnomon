@@ -1,21 +1,12 @@
 ---
-import EffectTooltip from "@components/EffectTooltip.astro";
-import MarkdownDiscList from "@components/MarkdownDiscList.astro";
-import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
-import MarkdownHighlight from "@components/MarkdownHighlight.astro";
-import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
-import MarkdownText from "@components/MarkdownText.astro";
-import TableOfContents from "@components/TableOfContents.astro";
+import CharacterHeadIcon from "@components/CharacterMarkdown/CharacterHeadIcon.astro";
+import Icon from "@components/Icon.astro";
+import Tooltip from "@components/Tooltip.astro";
+import { ArchetypeVirtualList } from "@components/VirtualList";
+import ARCHETYPE_TRAIT from "@data/archetype/index.json";
 import Layout from "@layouts/Layout.astro";
+import { twMerge } from "@scripts/utils";
 import "@styles/markdown-layout.css";
-import { getEntry, render } from "astro:content";
-
-const characterArchetypeEntry = await getEntry(
-  "character-docs",
-  "archetype-trait",
-)!;
-
-const { Content } = await render(characterArchetypeEntry);
 ---
 
 <Layout
@@ -34,15 +25,171 @@ const { Content } = await render(characterArchetypeEntry);
     },
   ]}
 >
-  <Content
-    components={{
-      ul: MarkdownDiscList,
-      strong: MarkdownHighlight,
-      em: MarkdownEmphasis,
-      p: MarkdownParagraphContent,
-      effect: EffectTooltip,
-      text: MarkdownText,
-      toc: TableOfContents,
-    }}
-  />
+  <h1>Characters Archetype / Trait</h1>
+  <div class="mt-4 alert border-primary-content gap-y-2">
+    <Icon icon="info-circle" />
+
+    <div>
+      <p class="font-bold">Notice!</p>
+
+      <div class="text-sm">
+        The data is continuously updated, and the following content may not be
+        final.
+        <br />
+        This page works as a <b>summary</b> list of character archetype and trait.
+        For more detailed information, please refer to the character page.
+        <br />
+        <br />
+        <i class="text-xs"
+          >(If you find any missing or incorrect information, please contact me
+          via Discord.)</i
+        >
+      </div>
+    </div>
+  </div>
+  <ArchetypeVirtualList client:only="solid-js" sections={ARCHETYPE_TRAIT}>
+    <Fragment slot="tocFloating">
+      <div x-data="tocFloating">
+        <template x-teleport="body">
+          <div class="fixed bottom-20 right-0 z-40" x-show="isShowToc" x-cloak>
+            <Tooltip>
+              <button
+                slot="toggle"
+                x-transition
+                class="btn btn-secondary rounded-l p-0 w-10 h-10 min-h-min"
+              >
+                <Icon icon="layout-list" />
+              </button>
+              <div
+                x-ref="toc"
+                x-effect="handleShow"
+                x-node.clone-children="toc"
+                class="table-of-contents list-disc list-inside max-h-96 overflow-auto"
+              >
+              </div>
+            </Tooltip>
+          </div>
+        </template>
+      </div>
+    </Fragment>
+    <Fragment slot="archetypes">
+      {
+        ARCHETYPE_TRAIT.map((section) => {
+          return (
+            <>
+              <div>
+                <h2>{section.name}</h2>
+                <p>{section.description}</p>
+                {section.characters && (
+                  <div class="mt-4 grid grid-cols-1 md:grid-cols-2 border border-base-content/75">
+                    {section.characters?.map((character) => {
+                      return (
+                        <CharacterHeadIcon
+                          id={character.id}
+                          customClass={twMerge(
+                            "h-full my-0 p-2 md:p-4 border-b border-r border-base-content/25",
+                            character.skills ? "items-start" : "items-center"
+                          )}
+                        >
+                          <Fragment slot="note">
+                            {character.description && (
+                              <p class="text-sm">{character.description}</p>
+                            )}
+                            {character.skills?.map((skill) => (
+                              <Fragment>
+                                <p class="text-sm font-bold">{skill.name}</p>
+                                <p class="text-sm italic">{skill.note}</p>
+                              </Fragment>
+                            ))}
+                          </Fragment>
+                        </CharacterHeadIcon>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+              {section.sub?.map((sub) => {
+                return (
+                  <div>
+                    <h3>{sub.name}</h3>
+                    <p>{sub.description}</p>
+                    {sub.characters && (
+                      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 border border-base-content/75">
+                        {sub.characters
+                          ?.sort((a, b) => a.id.localeCompare(b.id))
+                          .map(
+                            (character: {
+                              id: string;
+                              description?: string;
+                              skills?: {
+                                name: string;
+                                note: string;
+                              }[];
+                            }) => {
+                              return (
+                                <CharacterHeadIcon
+                                  id={character.id}
+                                  customClass={twMerge(
+                                    "h-full my-0 p-2 md:p-4 border-b border-r border-base-content/25",
+                                    character.skills
+                                      ? "items-start"
+                                      : "items-center"
+                                  )}
+                                >
+                                  <Fragment slot="note">
+                                    {character.description && (
+                                      <p class="text-sm text-primary-content/80">
+                                        {character.description}
+                                      </p>
+                                    )}
+                                    {character.skills?.map((skill) => (
+                                      <Fragment>
+                                        <p class="text-sm font-bold">
+                                          {skill.name}
+                                        </p>
+                                        <p class="text-sm italic">
+                                          {skill.note}
+                                        </p>
+                                      </Fragment>
+                                    ))}
+                                  </Fragment>
+                                </CharacterHeadIcon>
+                              );
+                            }
+                          )}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </>
+          );
+        })
+      }
+    </Fragment>
+  </ArchetypeVirtualList>
 </Layout>
+
+<script>
+  import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
+
+  Alpine.data("tocFloating", () => ({
+    isShowToc: true,
+
+    handleShow() {
+      this.$nextTick(() => {
+        if (this.$refs.toc.hasChildNodes()) {
+          this.isShowToc = true;
+          this.$refs.toc.querySelectorAll("[data-section]").forEach((ele) => {
+            ele.addEventListener("click", () => {
+              (window as any).sectionScroll(ele);
+            });
+          });
+        }
+      });
+    },
+  }));
+</script>

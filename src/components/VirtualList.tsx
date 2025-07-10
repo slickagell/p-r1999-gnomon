@@ -79,13 +79,13 @@ export const ArtefactVirtualList = ({ artefacts }: any) => {
         {list().length > 1 ? "artefacts" : "artefact"}
       </p>
       <WindowVirtualizer ref={setVirtualListElement} data={list()}>
-        {(_, i) => (
-          <div data-index={i}>
-            {!!i && (
+        {(d, i) => (
+          <>
+            {!!i() && (
               <div class="divider before:bg-primary-content/30 after:bg-primary-content/30" />
             )}
-            <div>{list()[i]}</div>
-          </div>
+            <div>{d}</div>
+          </>
         )}
       </WindowVirtualizer>
     </>
@@ -121,8 +121,96 @@ export const EffectVirtualList = ({ effects }: any) => {
   });
 
   return (
-    <WindowVirtualizer data={list()}>
-      {(_, i) => <div data-index={i}>{list()[i]}</div>}
-    </WindowVirtualizer>
+    <WindowVirtualizer data={list()}>{(d, i) => <>{d}</>}</WindowVirtualizer>
+  );
+};
+
+export const ArchetypeVirtualList = ({
+  archetypes,
+  sections,
+  tocFloating,
+}: any) => {
+  if (!archetypes) {
+    return null;
+  }
+
+  let virtualizerRef;
+  let tocRef;
+
+  let sectionIdx = -1;
+  const sectionData = sections.map((section, idx) => {
+    let newSectionIdx = sectionIdx + (sections[idx - 1]?.sub?.length || 0) + 1;
+    sectionIdx = newSectionIdx;
+    return {
+      ...section,
+      idx: newSectionIdx,
+      sub: section.sub?.map((sub, subIdx) => ({
+        ...sub,
+        idx: newSectionIdx + subIdx + 1,
+      })),
+    };
+  });
+  const header = document.getElementById("header");
+  const headerHeight = header?.offsetHeight || 0;
+
+  const [frozenArchetypes] = createSignal([...archetypes.children]);
+  const [frozenTocFloating] = createSignal([...tocFloating.children]);
+
+  createEffect(() => {
+    const exWindow = window as any;
+    exWindow.sectionScroll = function (ele) {
+      const sectionIdx = ele.getAttribute("data-index");
+
+      virtualizerRef.scrollToIndex(sectionIdx, {
+        offset: -headerHeight,
+      });
+    };
+    tocRef.querySelectorAll("[data-section]").forEach((ele) => {
+      ele.addEventListener("click", () => {
+        exWindow.sectionScroll(ele);
+      });
+    });
+  });
+
+  return (
+    <>
+      <h2>Table of Contents</h2>
+      <div id="toc" ref={tocRef}>
+        <ul class="pl-4 [&_li]:block [&_li]:relative [&_li]:before:absolute [&_li]:before:-left-4 [&_li]:before:top-2.5 [&_li]:before:w-1 [&_li]:before:h-1 [&_li]:before:rounded-full [&_li]:before:bg-base-content">
+          {sectionData.map((section) => {
+            return (
+              <li>
+                <span
+                  data-section
+                  class="font-bold cursor-pointer hover:underline hover:text-primary"
+                  data-index={section.idx}
+                >
+                  {section.name}
+                </span>
+                {section.sub && (
+                  <ul class="pl-4 [&_li]:block [&_li]:relative [&_li]:before:absolute [&_li]:before:-left-4 [&_li]:before:top-2.5 [&_li]:before:w-1 [&_li]:before:h-1 [&_li]:before:rounded-full [&_li]:before:bg-base-content">
+                    {section.sub.map((sub) => (
+                      <li>
+                        <span
+                          data-section
+                          class="font-bold cursor-pointer hover:underline hover:text-primary"
+                          data-index={sub.idx}
+                        >
+                          {sub.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      {frozenTocFloating()}
+      <WindowVirtualizer ref={virtualizerRef} data={frozenArchetypes()}>
+        {(d, i) => <>{d}</>}
+      </WindowVirtualizer>
+    </>
   );
 };

@@ -4,22 +4,46 @@
     "description": "Have [Array] skill effect.",
     "characters": [
       {
-        "id": "getian"
+        "id": "getian",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": "create array: [A Prophecy Told] (+DMG Bonus)"
+          }
+        ]
       },
       {
-        "id": "lopera"
+        "id": "lopera",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": "create array: [Crucible Arsenal] (+Crit Rate, +Crit DMG if exceed)"
+          }
+        ]
       },
       {
-        "id": "semmelweis"
+        "id": "semmelweis",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": "create array: [Blood Domain] (-DMG Taken, +DMG Bonus for every missing HP%)"
+          }
+        ]
       },
       {
-        "id": "tuesday"
+        "id": "tuesday",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": "create array: [Horror Story Night] (resolve [Poison] and prevent decrease duration of [Poison])"
+          }
+        ]
       }
     ]
   },
   {
     "name": "Buff",
-    "description": "With *[Buff]* effects.",
+    "description": "With [Buff] effects.",
     "sub": [
       {
         "name": "Stats Up",
@@ -30,7 +54,7 @@
             "skills": [
               {
                 "name": "skill 2",
-                "note": "random based on [Buff] >> target"
+                "note": "random based on [Buff] >> ally"
               }
             ]
           },
@@ -70,7 +94,7 @@
             "skills": [
               {
                 "name": "skill 2",
-                "note": "+Reality DEF, +Mental DEF, -DMG Taken >> target"
+                "note": "+Reality DEF, +Mental DEF, -DMG Taken >> ally"
               }
             ]
           },
@@ -137,7 +161,7 @@
             "skills": [
               {
                 "name": "skill 2",
-                "note": "+Reality DEF, +Mental DEF, -DMG Taken >> target"
+                "note": "+Reality DEF, +Mental DEF, -DMG Taken >> ally"
               }
             ]
           },
@@ -173,7 +197,7 @@
             "skills": [
               {
                 "name": "skill 2",
-                "note": "+DMG Dealt, -DMG Taken >> target, +Penetration Rate >> self"
+                "note": "+DMG Dealt, -DMG Taken >> ally, +Penetration Rate >> self"
               }
             ]
           },
@@ -182,7 +206,7 @@
             "skills": [
               {
                 "name": "skill 1",
-                "note": "+Critical Rate, +Critical DMG >> target"
+                "note": "+Critical Rate, +Critical DMG >> ally"
               }
             ]
           },
@@ -215,7 +239,7 @@
             "skills": [
               {
                 "name": "skill 2",
-                "note": "random based on [Buff] >> target"
+                "note": "random based on [Buff] >> ally"
               }
             ]
           },
@@ -287,9 +311,2477 @@
             "skills": [
               {
                 "name": "skill 2",
-                "note": "grant [Solace] (+ATK) >> target"
+                "note": "grant [Solace] (+ATK) >> ally"
               }
             ]
+          },
+          {
+            "id": "isolde",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "grant [Rousing Morale] (+DMG Bonus) >> all allies"
+              }
+            ]
+          },
+          {
+            "id": "oliver-fog",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "grant [Sturdiness] (-DMG Taken) >> all allies"
+              }
+            ]
+          },
+          {
+            "id": "lopera",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "grant [Incantation Bullet] (+Incantation Might) and [Ritual Bullet] (+Ultimate Might) >> allies based on position"
+              }
+            ]
+          },
+          {
+            "id": "vila",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "grant [Sturdiness] (-DMG Taken) >> ally"
+              },
+              {
+                "name": "skill 1",
+                "note": "upgrade [Song of Generosity] to [Song of Passion] (+Critical Rate, +Critical DMG, +DMG Bonus) >> allie with [Song of Generosity]"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bullet",
+    "description": "Using [Bullet] type",
+    "characters": [
+      {
+        "id": "mondlicht",
+        "skills": [
+          {
+            "name": "insight 1",
+            "note": "cast [Silver Bullet] (-Reality DEF) >> enemy"
+          }
+        ]
+      },
+      {
+        "id": "mr-duncan",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": "cast [Acidic Bullet] (-Reality DEF) and [Fragmented Bullet] (+Genesis DMG) >> enemy"
+          }
+        ]
+      },
+      {
+        "id": "tennant",
+        "skills": [
+          {
+            "name": "ultimate, euphoria 1",
+            "note": "cast [Diamond Bullet] (-Reality DEF) >> enemy"
+          }
+        ]
+      },
+      {
+        "id": "lilya",
+        "skills": [
+          {
+            "name": "euphoria 2",
+            "note": "cast [Pointed Bullet] (-Critical DEF) >> enemy"
+          }
+        ]
+      },
+      {
+        "id": "lopera",
+        "skills": [
+          {
+            "name": "skill 1",
+            "note": "cast [Incantation Bullet] (+Incantation Might) and [Ritual Bullet] (+Ultimate Might) >> allies based on position"
+          },
+          {
+            "name": "skill 2",
+            "note": "cast [Flaming Bullet] (+Burn) >> enemy"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Control",
+    "description": "With [Control] effects.",
+    "sub": [
+      {
+        "name": "Captivated",
+        "description": "With [Captivated] effect.",
+        "characters": [
+          {
+            "id": "anjo-nala",
+            "description": "through [Titillated], which change to [Captivated] in 3 stacks",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "inflict [Titillated] >> enemy"
+              },
+              {
+                "name": "skill 2",
+                "note": "at channel status end, inflict [Titillated] >> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Daze",
+        "description": "With [Daze] effect.",
+        "characters": [
+          {
+            "id": "an-an-lee",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "medicine-pocket",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "mesmer-jr",
+            "description": "through [Paralyze], which change to [Daze] in 2 stacks",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "sweetheart",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "white-rum",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Disarm",
+        "description": "With [Disarm] effect.",
+        "characters": [
+          {
+            "id": "alien-t",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "erick",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "sonetto",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "sputnik",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Freeze",
+        "description": "With [Freeze] effect.",
+        "characters": [
+          {
+            "id": "ms-moissan",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nightmare",
+        "description": "With [Nightmare] effect.",
+        "characters": [
+          {
+            "id": "baby-blue",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "diggers",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "twins-sleep",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Petrify",
+        "description": "With [Petrify] effect.",
+        "characters": [
+          {
+            "id": "druvis-iii",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              },
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "jessica",
+            "skills": [
+              {
+                "name": "euphoria 1",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "loggerhead",
+            "description": "through [Rigidity], which change to [Petrify] in 2 stacks",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "randomly >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "noire",
+            "description": "through [Rigidity], which change to [Petrify] in 2 stacks",
+            "skills": [
+              {
+                "name": "insight 1 + skill 2",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "satsuki",
+            "description": "through [Rigidity], which change to [Petrify] in 2 stacks",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              },
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Seal",
+        "description": "With [Seal] effect.",
+        "characters": [
+          {
+            "id": "bkornblume",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "voyager",
+            "skills": [
+              {
+                "name": "insight 3",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "zima",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Silence",
+        "description": "With [Silence] effect.",
+        "characters": [
+          {
+            "id": "alien-t",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "sputnik",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "voyager",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "inflict after 3 actions >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "x",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "inflict on dispelling enemies's statuses >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "zima",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Counter",
+    "description": "Using [Counter] skill.",
+    "characters": [
+      {
+        "id": "alien-t",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "balloon-party",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": "at rank 2/3"
+          }
+        ]
+      },
+      {
+        "id": "desert-flannel",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "j",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "ms-new-babel",
+        "skills": [
+          {
+            "name": "ultimate"
+          }
+        ]
+      },
+      {
+        "id": "mr-duncan",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "loggerhead",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "sputnik",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "the-fool",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "voyager",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Debuff",
+    "description": "With [Debuff] effects.",
+    "sub": [
+      {
+        "name": "Stats Down",
+        "description": "Increase/decrease attributes of enemy.",
+        "characters": [
+          {
+            "id": "6",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "argus",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "inflict [Pinpointed] (+DMG Taken, -Critical DEF) >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "baby-blue",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "-DMG Dealt, +DMG Taken >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "bkornblume",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "-Reality DEF, +DMG Taken >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "bunny-bunny",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "inflict [Gracious Host] (-Critical Resist Rate, -Critical DEF) >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "cristallo",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3, -Reality DEF >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "diggers",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "-Reality DEF, -Mental DEF >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "erick",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3, -Critical Resist Rate, Critical DEF >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "getian",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "inflict [Shape of Bones] (-Reality DEF, take Genesis DMG) >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "isolde",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "-Critical DEF, -Reality DEF >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "poltergeist",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3, -Mental DEF >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "shamane",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "+DMG Taken, -Reality DEF, -Mental DEF >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "tuesday",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "+Genesis DMG Taken, -Critical Resist >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "twins-sleep",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "-Critical DEF >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "tennant",
+            "skills": [
+              {
+                "name": "ultimate, euphoria 1",
+                "note": "cast [Diamond Bullet] (-Reality DEF) >> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Blind",
+        "description": "Inflict [Blind] effect.",
+        "characters": [
+          {
+            "id": "6",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "click",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "anjo-nala",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Burn",
+        "description": "Inflict [Burn] effect.",
+        "characters": [
+          {
+            "id": "isolde",
+            "skills": [
+              {
+                "name": "skill 1, ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "j"
+          },
+          {
+            "id": "liang-yue",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "while in [Arise, Qiangliang!] status, have more [Justice Talon] >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "loggerhead",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "randomly >> enemy"
+              },
+              {
+                "name": "ultimate",
+                "note": "randomly >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "lopera",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "cast [Flaming Bullet] (+Burn) >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "noire",
+            "skills": [
+              {
+                "name": "insight 1 + skill 2",
+                "note": "randomly >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "spathodea",
+            "skills": [
+              {
+                "name": "insight 3",
+                "note": "when attack scores a Critical Hit >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "ulu",
+            "skills": [
+              {
+                "name": "skill 2, insight 3",
+                "note": ">> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Confusion",
+        "description": "Inflict [Confusion] effect.",
+        "characters": [
+          {
+            "id": "blonney",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "kanjira",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "when in [Pearl Fortune] status >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "matilda",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "tooth-fairy",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "voyager",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "windsong",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Corrode",
+        "description": "Inflict [Corrode] effect.",
+        "characters": [
+          {
+            "id": "the-fool",
+            "skills": [
+              {
+                "name": "skill 2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Fracture",
+        "description": "Inflict [Fracture I] effect.",
+        "characters": [
+          {
+            "id": "6",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "anjo-nala",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mis-aim",
+        "description": "Inflict [Mis-aim] effect.",
+        "characters": [
+          {
+            "id": "6",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "anjo-nala",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nasty Wound",
+        "description": "Inflict [Nasty Wound] effect.",
+        "characters": [
+          {
+            "id": "anjo-nala",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "bunny-bunny",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "cristallo",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "eternity",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Poison",
+        "description": "Inflict [Poison] effect.",
+        "characters": [
+          {
+            "id": "jessica",
+            "skills": [
+              {
+                "name": "ultimate, insight 1, insight 3",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "kanjira",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "liang-yue",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "while in [Arise, Qiangliang!] status, have more [Peace Talon] >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "loggerhead",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "randomly >> enemy"
+              },
+              {
+                "name": "ultimate",
+                "note": "randomly >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "noire",
+            "skills": [
+              {
+                "name": "insight 1 + skill 2",
+                "note": "randomly >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "rabies",
+            "skills": [
+              {
+                "name": "insight 1"
+              }
+            ]
+          },
+          {
+            "id": "sotheby",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": ">> enemies"
+              }
+            ]
+          },
+          {
+            "id": "tuesday",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": ">> enemies"
+              }
+            ]
+          },
+          {
+            "id": "willow",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "change to [Hag's Bane], works as [Poison] >> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Terror",
+        "description": "Inflict [Terror] effect.",
+        "characters": [
+          {
+            "id": "diggers",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Vulnerability",
+        "description": "Inflict [Vulnerability] effect.",
+        "characters": [
+          {
+            "id": "ezra",
+            "description": "through [Honey Fungus], grow after 3 rounds",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "cast [Honey Fungus] >> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Weakness",
+        "description": "Inflict [Weakness] effect.",
+        "characters": [
+          {
+            "id": "anjo-nala",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "randomly >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "bkornblume",
+            "skills": [
+              {
+                "name": "euphoria 1"
+              }
+            ]
+          },
+          {
+            "id": "centurion",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "diggers",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "lorelei",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": ">> enemies"
+              }
+            ]
+          },
+          {
+            "id": "marcus",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": ">> enemies"
+              }
+            ]
+          },
+          {
+            "id": "twins-sleep",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": ">> all enemies"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dispel",
+    "description": "Dispel effects from enemy.",
+    "sub": [
+      {
+        "name": "Stats Up, Pos Status",
+        "description": "Remove [Stats Up], [Pos Status].",
+        "characters": [
+          {
+            "id": "argus",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "avgust",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "charlie",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "at rank 2/3 >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "erick",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "horropedia",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "john-titor",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "mercuria",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "mesmer-jr",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "necrologist",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "pickles",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "x",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Counter",
+        "description": "Remove [Counter] status.",
+        "characters": [
+          {
+            "id": "charlie",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "at rank 2/3 >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "erick",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "horropedia",
+            "skills": [
+              {
+                "name": "insight 1 + skill 2",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "john-titor",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "ms-moissan",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "pickles",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "ttt",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "x",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dodge",
+    "description": "Dodge attacks from enemy.",
+    "sub": [
+      {
+        "name": "Non-Ultimate Reality (Concealment)",
+        "description": "With [Concealment] effect.",
+        "characters": [
+          {
+            "id": "poltergeist",
+            "skills": [
+              {
+                "name": "ultimate"
+              }
+            ]
+          },
+          {
+            "id": "ttt",
+            "skills": [
+              {
+                "name": "insight 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Non-Ultimate",
+        "description": "Dodge all non-ultimate attacks.",
+        "characters": [
+          {
+            "id": "regulus",
+            "skills": [
+              {
+                "name": "ultimate"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Follow-up attack",
+    "description": "Have Follow-up attacks.",
+    "characters": [
+      {
+        "id": "37"
+      },
+      {
+        "id": "anjo-nala"
+      },
+      {
+        "id": "argus"
+      },
+      {
+        "id": "brimley"
+      },
+      {
+        "id": "flutterpage"
+      },
+      {
+        "id": "fatutu"
+      },
+      {
+        "id": "isolde"
+      },
+      {
+        "id": "jiu-niangzi"
+      },
+      {
+        "id": "j"
+      },
+      {
+        "id": "kaalaa-baunaa"
+      },
+      {
+        "id": "lilya"
+      },
+      {
+        "id": "lopera"
+      },
+      {
+        "id": "lucy"
+      },
+      {
+        "id": "ms-new-babel"
+      },
+      {
+        "id": "semmelweis"
+      }
+    ]
+  },
+  {
+    "name": "Force Field",
+    "description": "Have [Force Field] skill effect.",
+    "characters": [
+      {
+        "id": "flutterpage"
+      },
+      {
+        "id": "lucy"
+      },
+      {
+        "id": "mercuria"
+      }
+    ]
+  },
+  {
+    "name": "Heal",
+    "description": "Heal allies.",
+    "characters": [
+      {
+        "id": "6",
+        "skills": [
+          {
+            "name": "skill 1",
+            "note": "through [Vitalize I] effect, randomly >> ally"
+          }
+        ]
+      },
+      {
+        "id": "apple",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> ally with the lowest HP"
+          }
+        ]
+      },
+      {
+        "id": "avgust",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": "start of each round >> self and allies behind"
+          }
+        ]
+      },
+      {
+        "id": "balloon-party",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "barbara",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          },
+          {
+            "name": "insight 3",
+            "note": ">> self, if HP > 90% >> adjacent allies"
+          }
+        ]
+      },
+      {
+        "id": "desert-flannel",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "dikke",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "fatutu",
+        "skills": [
+          {
+            "name": "insight 1",
+            "note": "when retrieving [Spirit Shell] >> all allies"
+          }
+        ]
+      },
+      {
+        "id": "kakania",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> self"
+          },
+          {
+            "name": "insight 3",
+            "note": "when storing [Empathy] >> all allies"
+          }
+        ]
+      },
+      {
+        "id": "la-source",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "loggerhead",
+        "skills": [
+          {
+            "name": "insight 1",
+            "note": "end of round >> all allies carrying [Memory Replay]"
+          }
+        ]
+      },
+      {
+        "id": "medicine-pocket",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "mercuria",
+        "skills": [
+          {
+            "name": "skill 1",
+            "note": ">> ally with the lowest HP"
+          }
+        ]
+      },
+      {
+        "id": "necrologist",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> heal when ally already have [Prayer]"
+          }
+        ]
+      },
+      {
+        "id": "sotheby",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": "give [Cure] effect >> all allies"
+          }
+        ]
+      },
+      {
+        "id": "tooth-fairy",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "vila",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> ally"
+          },
+          {
+            "name": "insight 3",
+            "note": "end of the round >> all allies"
+          }
+        ]
+      },
+      {
+        "id": "yenisei",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> ally"
+          }
+        ]
+      },
+      {
+        "id": "darley-clatter",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> ally with the lowest HP"
+          },
+          {
+            "name": "ultimate",
+            "note": ">> self"
+          }
+        ]
+      },
+      {
+        "id": "lopera",
+        "skills": [
+          {
+            "name": "insight 1",
+            "note": "trigger Bullet effect >> ally with the lowest HP"
+          }
+        ]
+      },
+      {
+        "id": "bunny-bunny",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Impromptu",
+    "description": "With [Impromptu] effect.",
+    "characters": [
+      {
+        "id": "aleph"
+      },
+      {
+        "id": "barcarola"
+      },
+      {
+        "id": "matilda",
+        "skills": [
+          {
+            "name": "euphoria 1"
+          }
+        ]
+      },
+      {
+        "id": "regulus",
+        "skills": [
+          {
+            "name": "euphoria 1"
+          }
+        ]
+      },
+      {
+        "id": "voyager",
+        "skills": [
+          {
+            "name": "euphoria 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Moxie",
+    "description": "Moxie control.",
+    "sub": [
+      {
+        "name": "Gain",
+        "description": "Grant Moxie to self or allies.",
+        "characters": [
+          {
+            "id": "a-knight",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "enemy is defeated >> self"
+              },
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> self"
+              }
+            ]
+          },
+          {
+            "id": "centurion",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> self"
+              }
+            ]
+          },
+          {
+            "id": "darley-clatter",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all allies"
+              }
+            ]
+          },
+          {
+            "id": "door",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all allies"
+              },
+              {
+                "name": "insight 1",
+                "note": "when dies >> all allies"
+              }
+            ]
+          },
+          {
+            "id": "ezra",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all allies"
+              },
+              {
+                "name": "insight 3",
+                "note": "with specific condition, spend Eureka >> self"
+              }
+            ]
+          },
+          {
+            "id": "leilani",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all allies"
+              },
+              {
+                "name": "insight 1",
+                "note": "when entering battle >> all allies and self"
+              }
+            ]
+          },
+          {
+            "id": "lopera",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "trigger Bullet effect >> self"
+              },
+              {
+                "name": "insight 3",
+                "note": "when entering battle >> self"
+              }
+            ]
+          },
+          {
+            "id": "marcus",
+            "description": "through [Perusal] effect, when casting rank 2/3 skill, +Moxie"
+          },
+          {
+            "id": "melania",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "if have [Thief Master] >> self"
+              }
+            ]
+          },
+          {
+            "id": "mercuria",
+            "skills": [
+              {
+                "name": "insight 3",
+                "note": "end of the round, if allies casted 2+ rank 3 skill >> self"
+              }
+            ]
+          },
+          {
+            "id": "pickles",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "trigger [Clarified Topic] >> self"
+              }
+            ]
+          },
+          {
+            "id": "recoleta",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "inflict [Passion Drain] to enemies >> attacker"
+              }
+            ]
+          },
+          {
+            "id": "shamane",
+            "description": "through [Nature's Blessing] effect, +Moxie >> self"
+          },
+          {
+            "id": "vila",
+            "description": "by using [Song of Inspiration] incantation, +Moxie >> ally or self"
+          },
+          {
+            "id": "sputnik",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 3, on counter >> self"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Drain",
+        "description": "Reduce Moxie of enemies.",
+        "characters": [
+          {
+            "id": "click",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "la-source",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          },
+          {
+            "id": "ms-radio",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              },
+              {
+                "name": "insight 1",
+                "note": "when dies >> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "nick-bottom",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "regulus",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemies"
+              }
+            ]
+          },
+          {
+            "id": "sputnik",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": "on counter >> attacker"
+              }
+            ]
+          },
+          {
+            "id": "the-fool",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": "at rank 2/3 >> enemy"
+              }
+            ]
+          },
+          {
+            "id": "x",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> enemy"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Steal",
+        "description": "Steal Moxie from enemies.",
+        "characters": [
+          {
+            "id": "melania",
+            "skills": [
+              {
+                "name": "skill 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Lock",
+        "description": "Prevent enemies from gaining Moxie.",
+        "characters": [
+          {
+            "id": "ms-radio",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "ttt",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> all enemies"
+              }
+            ]
+          },
+          {
+            "id": "x",
+            "skills": [
+              {
+                "name": "insight 3",
+                "note": "when ultimate >> all enemies"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Store",
+        "description": "Store overflow Moxie.",
+        "characters": [
+          {
+            "id": "melania",
+            "skills": [
+              {
+                "name": "euphoria 1"
+              }
+            ]
+          },
+          {
+            "id": "tuesday",
+            "skills": [
+              {
+                "name": "ultimate"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Position",
+    "description": "Buff allies based on their position.",
+    "characters": [
+      {
+        "id": "avgust"
+      },
+      {
+        "id": "loggerhead",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "lopera",
+        "skills": [
+          {
+            "name": "skill 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Precast Incantation",
+    "description": "generate [Precast Incantation] incantation.",
+    "characters": [
+      {
+        "id": "barbara",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": "generate [Counting Sheep]"
+          }
+        ]
+      },
+      {
+        "id": "marcus",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": "generate [Reading Class]"
+          }
+        ]
+      },
+      {
+        "id": "spathodea",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": "generate [Little Boxer]"
+          }
+        ]
+      },
+      {
+        "id": "vila",
+        "skills": [
+          {
+            "name": "ultimate + insight 1",
+            "note": "generate [Song of Inspiration]"
+          }
+        ]
+      },
+      {
+        "id": "windsong",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": "generate [Rehabilitation]"
+          }
+        ]
+      },
+      {
+        "id": "recoleta",
+        "skills": [
+          {
+            "name": "insight 3",
+            "note": "generate [Flood of Fiction]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Enhance Incantation",
+    "description": "Enhance incantations.",
+    "sub": [
+      {
+        "name": "Empower incantation",
+        "description": "With [Empower Incantation I]/[Empower Incantation II] effect.",
+        "characters": [
+          {
+            "id": "6",
+            "skills": [
+              {
+                "name": "skill 2",
+                "note": ">> ally"
+              }
+            ]
+          },
+          {
+            "id": "an-an-lee",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> self"
+              }
+            ]
+          },
+          {
+            "id": "argus",
+            "skills": [
+              {
+                "name": "skill 1",
+                "note": ">> self"
+              }
+            ]
+          },
+          {
+            "id": "bette",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": ">> ally"
+              }
+            ]
+          },
+          {
+            "id": "kaalaa-baunaa",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "when remove [Full Moon] >> self"
+              }
+            ]
+          },
+          {
+            "id": "marcus",
+            "skills": [
+              {
+                "name": "insight 1",
+                "note": "at the start of round >> self"
+              }
+            ]
+          },
+          {
+            "id": "yenisei",
+            "skills": [
+              {
+                "name": "insight 3",
+                "note": "casting Heal, consume [Flow] effect >> self"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rank up",
+        "description": "Increase the rank of incantations that casted intentionally (not randomly like empower).",
+        "characters": [
+          {
+            "id": "barbara",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "through [Counting Sheep] card"
+              }
+            ]
+          },
+          {
+            "id": "liang-yue",
+            "skills": [
+              {
+                "name": "ultimate",
+                "note": "while in [Arise, Qiangliang!] status, cast incantations in green zone"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Rank up (only for rank calculations)",
+        "description": "With [Rank Up] effect.",
+        "characters": [
+          {
+            "id": "mercuria",
+            "skills": [
+              {
+                "name": "ultimate"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Purify",
+    "description": "purify [Stats Down], [Neg Status], or [Control] effects from ally.",
+    "characters": [
+      {
+        "id": "6",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> ally"
+          }
+        ]
+      },
+      {
+        "id": "bunny-bunny",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "dikke",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> self"
+          }
+        ]
+      },
+      {
+        "id": "fatutu",
+        "skills": [
+          {
+            "name": "skill 1",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "john-titor",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "nick-bottom",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> ally"
+          }
+        ]
+      },
+      {
+        "id": "tooth-fairy",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "vila",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Revive",
+    "description": "Have effect that can revive ally.",
+    "characters": [
+      {
+        "id": "necrologist",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Share DMG Taken",
+    "description": "Share DMG Taken with allies.",
+    "characters": [
+      {
+        "id": "fatutu",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "kakania",
+        "skills": [
+          {
+            "name": "insight 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shield",
+    "description": "Can create [Shield].",
+    "characters": [
+      {
+        "id": "barbara",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          },
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "bette",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> ally"
+          }
+        ]
+      },
+      {
+        "id": "door",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "ezra",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "j",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "john-titor",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "ms-moissan",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "ms-new-babel",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          },
+          {
+            "name": "euphoria 1",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "nick-bottom",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> ally"
+          }
+        ]
+      },
+      {
+        "id": "pioneer",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> ally"
+          }
+        ]
+      },
+      {
+        "id": "tennant",
+        "skills": [
+          {
+            "name": "skill 2",
+            "note": ">> all allies"
+          }
+        ]
+      },
+      {
+        "id": "yenisei",
+        "skills": [
+          {
+            "name": "ultimate",
+            "note": ">> all allies"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shifting",
+    "description": "Change the position of the characters in battle.",
+    "characters": [
+      {
+        "id": "pioneer"
+      },
+      {
+        "id": "white-rum",
+        "skills": [
+          {
+            "name": "skill 1",
+            "note": ">> all allies"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Taunt",
+    "description": "With [Taunt] effect.",
+    "characters": [
+      {
+        "id": "alien-t",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "ms-new-babel",
+        "skills": [
+          {
+            "name": "ultimate"
+          }
+        ]
+      },
+      {
+        "id": "ms-new-babel",
+        "skills": [
+          {
+            "name": "ultimate"
+          }
+        ]
+      },
+      {
+        "id": "onion",
+        "skills": [
+          {
+            "name": "insight 1",
+            "note": "after ultimate"
+          }
+        ]
+      },
+      {
+        "id": "pioneer",
+        "skills": [
+          {
+            "name": "skill 2"
+          }
+        ]
+      },
+      {
+        "id": "poltergeist",
+        "skills": [
+          {
+            "name": "ultimate"
+          }
+        ]
+      },
+      {
+        "id": "the-fool",
+        "skills": [
+          {
+            "name": "skill 2"
           }
         ]
       }
