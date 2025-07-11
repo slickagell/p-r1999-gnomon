@@ -1,0 +1,63 @@
+{
+  "name": "Taunt",
+  "description": "With :effect{param=\"taunt\"} effect.",
+  "characters": [
+    {
+      "id": "alien-t",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "ms-new-babel",
+      "skills": [
+        {
+          "name": "ultimate"
+        }
+      ]
+    },
+    {
+      "id": "ms-new-babel",
+      "skills": [
+        {
+          "name": "ultimate"
+        }
+      ]
+    },
+    {
+      "id": "onion",
+      "skills": [
+        {
+          "name": "insight 1",
+          "note": "after ultimate"
+        }
+      ]
+    },
+    {
+      "id": "pioneer",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "poltergeist",
+      "skills": [
+        {
+          "name": "ultimate"
+        }
+      ]
+    },
+    {
+      "id": "the-fool",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    }
+  ]
+}

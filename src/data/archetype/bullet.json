@@ -1,0 +1,55 @@
+{
+  "name": "Bullet",
+  "description": "Using *[Bullet]* type",
+  "characters": [
+    {
+      "id": "mondlicht",
+      "skills": [
+        {
+          "name": "insight 1",
+          "note": "cast [Silver Bullet] (-Reality DEF) >> enemy"
+        }
+      ]
+    },
+    {
+      "id": "mr-duncan",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": "cast [Acidic Bullet] (-Reality DEF) and [Fragmented Bullet] (+Genesis DMG) >> enemy"
+        }
+      ]
+    },
+    {
+      "id": "tennant",
+      "skills": [
+        {
+          "name": "ultimate, euphoria 1",
+          "note": "cast [Diamond Bullet] (-Reality DEF) >> enemy"
+        }
+      ]
+    },
+    {
+      "id": "lilya",
+      "skills": [
+        {
+          "name": "euphoria 2",
+          "note": "cast [Pointed Bullet] (-Critical DEF) >> enemy"
+        }
+      ]
+    },
+    {
+      "id": "lopera",
+      "skills": [
+        {
+          "name": "skill 1",
+          "note": "cast [Incantation Bullet] (+Incantation Might) and [Ritual Bullet] (+Ultimate Might) >> allies based on position"
+        },
+        {
+          "name": "skill 2",
+          "note": "cast [Flaming Bullet] (+Burn) >> enemy"
+        }
+      ]
+    }
+  ]
+}

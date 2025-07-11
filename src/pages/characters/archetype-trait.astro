@@ -1,12 +1,20 @@
 ---
+import AstroMarkdown from "@components/AstroMarkdown.astro";
 import CharacterHeadIcon from "@components/CharacterMarkdown/CharacterHeadIcon.astro";
 import Icon from "@components/Icon.astro";
 import Tooltip from "@components/Tooltip.astro";
 import { ArchetypeVirtualList } from "@components/VirtualList";
-import ARCHETYPE_TRAIT from "@data/archetype/index.json";
 import Layout from "@layouts/Layout.astro";
+import { markdownAST } from "@scripts/remark";
 import { twMerge } from "@scripts/utils";
 import "@styles/markdown-layout.css";
+import { getCollection } from "astro:content";
+
+const archetypes = await getCollection("archetypes");
+
+const archetypesData = archetypes
+  .map((archetype) => archetype.data)
+  .sort((a, b) => a.name.localeCompare(b.name));
 ---
 
 <Layout
@@ -47,12 +55,12 @@ import "@styles/markdown-layout.css";
       </div>
     </div>
   </div>
-  <ArchetypeVirtualList client:only="solid-js" sections={ARCHETYPE_TRAIT}>
+  <ArchetypeVirtualList client:only="solid-js" sections={archetypesData}>
     <Fragment slot="tocFloating">
       <div x-data="tocFloating">
         <template x-teleport="body">
           <div class="fixed bottom-20 right-0 z-40" x-show="isShowToc" x-cloak>
-            <Tooltip>
+            <Tooltip contentCustomClass="max-h-[75vh] overflow-y-auto">
               <button
                 slot="toggle"
                 x-transition
@@ -64,7 +72,6 @@ import "@styles/markdown-layout.css";
                 x-ref="toc"
                 x-effect="handleShow"
                 x-node.clone-children="toc"
-                class="table-of-contents list-disc list-inside max-h-96 overflow-auto"
               >
               </div>
             </Tooltip>
@@ -74,12 +81,12 @@ import "@styles/markdown-layout.css";
     </Fragment>
     <Fragment slot="archetypes">
       {
-        ARCHETYPE_TRAIT.map((section) => {
+        archetypesData.map((section) => {
           return (
             <>
               <div>
                 <h2>{section.name}</h2>
-                <p>{section.description}</p>
+                <AstroMarkdown node={markdownAST(section.description)} />
                 {section.characters && (
                   <div class="mt-4 grid grid-cols-1 md:grid-cols-2 border border-base-content/75">
                     {section.characters?.map((character) => {
@@ -98,7 +105,15 @@ import "@styles/markdown-layout.css";
                             {character.skills?.map((skill) => (
                               <Fragment>
                                 <p class="text-sm font-bold">{skill.name}</p>
-                                <p class="text-sm italic">{skill.note}</p>
+                                {skill.note && (
+                                  <p
+                                    class="text-sm italic"
+                                    set:html={skill.note.replaceAll(
+                                      /\[([^\]]+)\]/g,
+                                      `<i class="text-effect">[$1]</i>`
+                                    )}
+                                  />
+                                )}
                               </Fragment>
                             ))}
                           </Fragment>
@@ -112,7 +127,7 @@ import "@styles/markdown-layout.css";
                 return (
                   <div>
                     <h3>{sub.name}</h3>
-                    <p>{sub.description}</p>
+                    <AstroMarkdown node={markdownAST(sub.description)} />
                     {sub.characters && (
                       <div class="mt-4 grid grid-cols-1 md:grid-cols-2 border border-base-content/75">
                         {sub.characters
@@ -123,7 +138,7 @@ import "@styles/markdown-layout.css";
                               description?: string;
                               skills?: {
                                 name: string;
-                                note: string;
+                                note?: string;
                               }[];
                             }) => {
                               return (
@@ -147,9 +162,15 @@ import "@styles/markdown-layout.css";
                                         <p class="text-sm font-bold">
                                           {skill.name}
                                         </p>
-                                        <p class="text-sm italic">
-                                          {skill.note}
-                                        </p>
+                                        {skill.note && (
+                                          <p
+                                            class="text-sm italic"
+                                            set:html={skill.note.replaceAll(
+                                              /\[([^\]]+)\]/g,
+                                              `<i class="text-effect">[$1]</i>`
+                                            )}
+                                          />
+                                        )}
                                       </Fragment>
                                     ))}
                                   </Fragment>

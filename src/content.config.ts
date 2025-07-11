@@ -26,13 +26,6 @@ const characters = defineCollection({
   }),
 });
 
-const characterDocs = defineCollection({
-  loader: glob({
-    pattern: "**/[^_]*.{md,mdx}",
-    base: "./src/markdown/characters/docs",
-  }),
-});
-
 const effects = defineCollection({
   loader: glob({
     pattern: "**/[^_]*.{md,mdx}",
@@ -122,9 +115,57 @@ const general = defineCollection({
   }),
 });
 
+const archetypes = defineCollection({
+  loader: glob({
+    pattern: "[^_]*.json",
+    base: "./src/data/archetype",
+  }),
+  schema: z.object({
+    name: z.string(),
+    description: z.string(),
+    characters: z
+      .array(
+        z.object({
+          id: z.string(),
+          description: z.string().optional(),
+          skills: z
+            .array(
+              z.object({
+                name: z.string(),
+                note: z.string().optional(),
+              }),
+            )
+            .optional(),
+        }),
+      )
+      .optional(),
+    sub: z
+      .array(
+        z.object({
+          name: z.string(),
+          description: z.string(),
+          characters: z.array(
+            z.object({
+              id: z.string(),
+              description: z.string().optional(),
+              skills: z
+                .array(
+                  z.object({
+                    name: z.string(),
+                    note: z.string().optional(),
+                  }),
+                )
+                .optional(),
+            }),
+          ),
+        }),
+      )
+      .optional(),
+  }),
+});
+
 export const collections = {
   characters,
-  "character-docs": characterDocs,
   effects,
   materials,
   "a-series-of-dusks": aSeriesOfDusks,
@@ -134,4 +175,5 @@ export const collections = {
   "reveries-in-the-rain": reveriesInTheRain,
   psychubes,
   general,
+  archetypes,
 };

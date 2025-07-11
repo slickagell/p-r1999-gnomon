@@ -1,0 +1,42 @@
+{
+  "name": "Dodge",
+  "description": "Dodge attacks from enemy.",
+  "sub": [
+    {
+      "name": "Non-Ultimate Reality",
+      "description": "With :effect{param=\"concealment\"} effect.",
+      "characters": [
+        {
+          "id": "poltergeist",
+          "skills": [
+            {
+              "name": "ultimate"
+            }
+          ]
+        },
+        {
+          "id": "ttt",
+          "skills": [
+            {
+              "name": "insight 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Non-Ultimate",
+      "description": "Dodge all non-ultimate attacks.",
+      "characters": [
+        {
+          "id": "regulus",
+          "skills": [
+            {
+              "name": "ultimate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

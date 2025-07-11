@@ -1,0 +1,17 @@
+{
+  "name": "Dynamo",
+  "description": "With :effect{param=\"dynamo\"} effect.",
+  "characters": [
+    {
+      "id": "lucy"
+    },
+    {
+      "id": "ezra",
+      "skills": [
+        {
+          "name": "euphoria 1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Revive",
+  "description": "Have effect that can revive ally.",
+  "characters": [
+    {
+      "id": "necrologist",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    }
+  ]
+}

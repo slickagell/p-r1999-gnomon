@@ -1,0 +1,36 @@
+{
+  "name": "Impromptu",
+  "description": "Interact with :effect{param=\"impromptu-incantation\"}.",
+  "characters": [
+    {
+      "id": "aleph"
+    },
+    {
+      "id": "barcarola"
+    },
+    {
+      "id": "matilda",
+      "skills": [
+        {
+          "name": "euphoria 1"
+        }
+      ]
+    },
+    {
+      "id": "regulus",
+      "skills": [
+        {
+          "name": "euphoria 1"
+        }
+      ]
+    },
+    {
+      "id": "voyager",
+      "skills": [
+        {
+          "name": "euphoria 1"
+        }
+      ]
+    }
+  ]
+}

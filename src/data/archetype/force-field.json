@@ -1,0 +1,15 @@
+{
+  "name": "Force Field",
+  "description": "Have :effect{param=\"force-field\"} skill effect.",
+  "characters": [
+    {
+      "id": "flutterpage"
+    },
+    {
+      "id": "lucy"
+    },
+    {
+      "id": "mercuria"
+    }
+  ]
+}

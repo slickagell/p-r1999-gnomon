@@ -1,0 +1,331 @@
+{
+  "name": "Buff",
+  "description": "With *[Buff]* effects.",
+  "sub": [
+    {
+      "name": "Stats Up",
+      "description": "Increasing attributes.",
+      "characters": [
+        {
+          "id": "6",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "random based on [Buff] >> ally"
+            }
+          ]
+        },
+        {
+          "id": "an-an-lee",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+DMG Dealt, -DMG Taken >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "argus",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "+DMG Dealt >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "avgust",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "+DMG Dealt >> all allies"
+            },
+            {
+              "name": "skill 2",
+              "note": "+DMG Heal >> allies behind"
+            }
+          ]
+        },
+        {
+          "id": "bette",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Reality DEF, +Mental DEF, -DMG Taken >> ally"
+            }
+          ]
+        },
+        {
+          "id": "cristallo",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Reality DEF, +Mental DEF >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "darley-clatter",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "+DMG Bonus >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "eternity",
+          "skills": [
+            {
+              "name": "euphoria 1",
+              "note": "+Max HP, -DMG Taken >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "lorelei",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Critical DMG, -DMG Taken >> all allies"
+            },
+            {
+              "name": "ultimate",
+              "note": "+DMG Dealt or +Critical Rate >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "mercuria",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Critical Rate >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "mesmer-jr",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Mental DEF >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "nick-bottom",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Reality DEF, +Mental DEF, -DMG Taken >> ally"
+            }
+          ]
+        },
+        {
+          "id": "oliver-fog",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Reality DEF, +Mental DEF >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "pickles",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "+DMG Dealt >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "semmelweis",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+DMG Dealt >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "sonetto",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+DMG Dealt, -DMG Taken >> ally, +Penetration Rate >> self"
+            }
+          ]
+        },
+        {
+          "id": "vila",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "+Critical Rate, +Critical DMG >> ally"
+            }
+          ]
+        },
+        {
+          "id": "ulu",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "+DMG Dealt, -DMG Taken >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "zima",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+DMG Dealt, +DMG Heal >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "name-day",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+DMG Dealt, +DMG Heal >> all allies"
+            },
+            {
+              "name": "ultimate",
+              "note": "+Ultimate DMG >> all allies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pos Status",
+      "description": "Provide special status, increase attributes.",
+      "characters": [
+        {
+          "id": "6",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "random based on [Buff] >> ally"
+            }
+          ]
+        },
+        {
+          "id": "aleph",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "grant [Clarification] (+Incantation Might) >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "avgust",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "grant [Rousing Morale] (+DMG Bonus) and [Sturdiness] (-DMG Taken) >> self and allies based on position"
+            }
+          ]
+        },
+        {
+          "id": "cristallo",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "grant [Sturdiness] (-DMG Taken) >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "desert-flannel",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "grant [Sturdiness] (-DMG Taken) >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "druvis-iii",
+          "skills": [
+            {
+              "name": "insight 3",
+              "note": "grant [Circle of Life] (+DMG Heal, +Leech Rate) >> [Plant] allies"
+            }
+          ]
+        },
+        {
+          "id": "ezra",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "grant [Ghost Fungus] (+Critical DMG) >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "getian",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "create Array: [A Prophecy Told] (+DMG Bonus) >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "kakania",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "grant [Solace] (+ATK) >> ally"
+            }
+          ]
+        },
+        {
+          "id": "isolde",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "grant [Rousing Morale] (+DMG Bonus) >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "oliver-fog",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "grant [Sturdiness] (-DMG Taken) >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "lopera",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "grant [Incantation Bullet] (+Incantation Might) and [Ritual Bullet] (+Ultimate Might) >> allies based on position"
+            }
+          ]
+        },
+        {
+          "id": "vila",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "grant [Sturdiness] (-DMG Taken) >> ally"
+            },
+            {
+              "name": "skill 1",
+              "note": "upgrade [Song of Generosity] to [Song of Passion] (+Critical Rate, +Critical DMG, +DMG Bonus) >> allie with [Song of Generosity]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

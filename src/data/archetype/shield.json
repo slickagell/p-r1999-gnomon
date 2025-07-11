@@ -1,0 +1,122 @@
+{
+  "name": "Shield",
+  "description": "Can create :effect{param=\"shield\"}.",
+  "characters": [
+    {
+      "id": "barbara",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        },
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "bette",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> ally"
+        }
+      ]
+    },
+    {
+      "id": "door",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "ezra",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "j",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "john-titor",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "ms-moissan",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "ms-new-babel",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        },
+        {
+          "name": "euphoria 1",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "nick-bottom",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> ally"
+        }
+      ]
+    },
+    {
+      "id": "pioneer",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> ally"
+        }
+      ]
+    },
+    {
+      "id": "tennant",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "yenisei",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    }
+  ]
+}

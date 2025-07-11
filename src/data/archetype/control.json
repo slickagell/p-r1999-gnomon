@@ -1,0 +1,324 @@
+{
+  "name": "Control",
+  "description": "With *[Control]* effects.",
+  "sub": [
+    {
+      "name": "Captivated",
+      "description": "With :effect{param=\"captivated\"} effect.",
+      "characters": [
+        {
+          "id": "anjo-nala",
+          "description": "through [Titillated], which change to [Captivated] in 3 stacks",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "inflict [Titillated] >> enemy"
+            },
+            {
+              "name": "skill 2",
+              "note": "at channel status end, inflict [Titillated] >> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Daze",
+      "description": "With :effect{param=\"daze\"} effect.",
+      "characters": [
+        {
+          "id": "an-an-lee",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "medicine-pocket",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "mesmer-jr",
+          "description": "through [Paralyze], which change to [Daze] in 2 stacks",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "sweetheart",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "white-rum",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Disarm",
+      "description": "With :effect{param=\"disarm\"} effect.",
+      "characters": [
+        {
+          "id": "alien-t",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "erick",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "sonetto",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "sputnik",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Freeze",
+      "description": "With :effect{param=\"freeze\"} effect.",
+      "characters": [
+        {
+          "id": "ms-moissan",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nightmare",
+      "description": "With :effect{param=\"nightmare\"} effect.",
+      "characters": [
+        {
+          "id": "baby-blue",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "diggers",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "twins-sleep",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Petrify",
+      "description": "With :effect{param=\"petrify\"} effect.",
+      "characters": [
+        {
+          "id": "druvis-iii",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            },
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "jessica",
+          "skills": [
+            {
+              "name": "euphoria 1",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "loggerhead",
+          "description": "through [Rigidity], which change to [Petrify] in 2 stacks",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "randomly >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "noire",
+          "description": "through [Rigidity], which change to [Petrify] in 2 stacks",
+          "skills": [
+            {
+              "name": "insight 1 + skill 2",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "satsuki",
+          "description": "through [Rigidity], which change to [Petrify] in 2 stacks",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            },
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "hissabeth",
+          "description": "through [Rigidity], which change to [Petrify] in 2 stacks",
+          "skills": [
+            {
+              "name": "insight 3",
+              "note": "attack enemy with [Serpentine Scales] >> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Seal",
+      "description": "With :effect{param=\"seal\"} effect.",
+      "characters": [
+        {
+          "id": "bkornblume",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "voyager",
+          "skills": [
+            {
+              "name": "insight 3",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "zima",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Silence",
+      "description": "With :effect{param=\"silence\"} effect.",
+      "characters": [
+        {
+          "id": "alien-t",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "sputnik",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "voyager",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "inflict after 3 actions >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "x",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "inflict on dispelling enemies's statuses >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "zima",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "name": "Dispel",
+  "description": "Dispel effects from enemy.",
+  "sub": [
+    {
+      "name": "Stats Up, Pos Status",
+      "description": "Remove *[Stats Up]*, *[Pos Status]*.",
+      "characters": [
+        {
+          "id": "argus",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "avgust",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "charlie",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "at rank 2/3 >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "erick",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "horropedia",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "john-titor",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "mercuria",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "mesmer-jr",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "necrologist",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "pickles",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "x",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Counter",
+      "description": "Remove *[Counter]* status.",
+      "characters": [
+        {
+          "id": "charlie",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "at rank 2/3 >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "erick",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "horropedia",
+          "skills": [
+            {
+              "name": "insight 1 + skill 2",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "john-titor",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "ms-moissan",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "pickles",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "ttt",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "x",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "name-day",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> 2 enemies"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

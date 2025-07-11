@@ -1,0 +1,87 @@
+{
+  "name": "Counter",
+  "description": "Using *[Counter]* skill.",
+  "characters": [
+    {
+      "id": "alien-t",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "balloon-party",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": "at rank 2/3"
+        }
+      ]
+    },
+    {
+      "id": "desert-flannel",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "j",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "ms-new-babel",
+      "skills": [
+        {
+          "name": "ultimate"
+        }
+      ]
+    },
+    {
+      "id": "mr-duncan",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "loggerhead",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "sputnik",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "the-fool",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "voyager",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    }
+  ]
+}

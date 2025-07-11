@@ -1,0 +1,56 @@
+---
+//* Based on https://github.com/MicroWebStacks/astro-markdown-render/
+
+import { toHtml } from "hast-util-to-html";
+import { toHast } from "mdast-util-to-hast";
+import type { MdastNodes } from "node_modules/mdast-util-to-hast/lib";
+import EffectTooltip from "./EffectTooltip.astro";
+import MarkdownEmphasis from "./MarkdownEmphasis.astro";
+import MarkdownParagraphContent from "./MarkdownParagraphContent.astro";
+
+export interface Props {
+  node: MdastNodes;
+}
+
+const { node } = Astro.props;
+---
+
+{
+  (() => {
+    switch (node.type) {
+      case "root":
+        return (
+          <>
+            {node.children?.map((node) => (
+              <Astro.self node={node} />
+            ))}
+          </>
+        );
+      case "paragraph":
+        return (
+          <MarkdownParagraphContent>
+            {node.children?.map((node) => (
+              <Astro.self node={node} />
+            ))}
+          </MarkdownParagraphContent>
+        );
+
+      case "emphasis":
+        return (
+          <MarkdownEmphasis>
+            {node.children?.map((node) => (
+              <Astro.self node={node} />
+            ))}
+          </MarkdownEmphasis>
+        );
+
+      case "textDirective": {
+        if (node.name === "effect") {
+          return <EffectTooltip {...(node.attributes as any)} />;
+        }
+      }
+      default:
+        return <Fragment set:html={toHtml(toHast(node))} />;
+    }
+  })()
+}

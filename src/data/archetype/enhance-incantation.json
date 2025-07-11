@@ -1,0 +1,113 @@
+{
+  "name": "Enhance Incantation",
+  "description": "Enhance incantations.",
+  "sub": [
+    {
+      "name": "Empower incantation",
+      "description": "With :effect{param=\"empower-incantation-i\"}/:effect{param=\"empower-incantation-ii\"} effect.",
+      "characters": [
+        {
+          "id": "6",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": ">> ally"
+            }
+          ]
+        },
+        {
+          "id": "an-an-lee",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> self"
+            }
+          ]
+        },
+        {
+          "id": "argus",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": ">> self"
+            }
+          ]
+        },
+        {
+          "id": "bette",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> ally"
+            }
+          ]
+        },
+        {
+          "id": "kaalaa-baunaa",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "when remove [Full Moon] >> self"
+            }
+          ]
+        },
+        {
+          "id": "marcus",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "at the start of round >> self"
+            }
+          ]
+        },
+        {
+          "id": "yenisei",
+          "skills": [
+            {
+              "name": "insight 3",
+              "note": "casting Heal, consume [Flow] effect >> self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rank up",
+      "description": "Increase the rank of incantations that casted intentionally (not randomly like empower).",
+      "characters": [
+        {
+          "id": "barbara",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "through [Counting Sheep] card"
+            }
+          ]
+        },
+        {
+          "id": "liang-yue",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "while in [Arise, Qiangliang!] status, cast incantations in green zone"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rank up (only for rank calculations)",
+      "description": "With :effect{param=\"rank-up\"} effect.",
+      "characters": [
+        {
+          "id": "mercuria",
+          "skills": [
+            {
+              "name": "ultimate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

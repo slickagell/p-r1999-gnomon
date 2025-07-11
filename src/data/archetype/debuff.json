@@ -1,0 +1,609 @@
+{
+  "name": "Debuff",
+  "description": "With *[Debuff]* effects.",
+  "sub": [
+    {
+      "name": "Stats Down",
+      "description": "Increase/decrease attributes of enemy.",
+      "characters": [
+        {
+          "id": "6",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "argus",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "inflict [Pinpointed] (+DMG Taken, -Critical DEF) >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "baby-blue",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "-DMG Dealt, +DMG Taken >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "bkornblume",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "-Reality DEF, +DMG Taken >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "bunny-bunny",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "inflict [Gracious Host] (-Critical Resist Rate, -Critical DEF) >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "cristallo",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3, -Reality DEF >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "diggers",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "-Reality DEF, -Mental DEF >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "erick",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3, -Critical Resist Rate, Critical DEF >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "getian",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "inflict [Shape of Bones] (-Reality DEF, take Genesis DMG) >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "isolde",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "-Critical DEF, -Reality DEF >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "poltergeist",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3, -Mental DEF >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "shamane",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+DMG Taken, -Reality DEF, -Mental DEF >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "tuesday",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Genesis DMG Taken, -Critical Resist >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "twins-sleep",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "-Critical DEF >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "tennant",
+          "skills": [
+            {
+              "name": "ultimate, euphoria 1",
+              "note": "cast [Diamond Bullet] (-Reality DEF) >> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Blind",
+      "description": "Inflict :effect{param=\"blind\"} effect.",
+      "characters": [
+        {
+          "id": "6",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "click",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "anjo-nala",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Burn",
+      "description": "Inflict :effect{param=\"burn\"} effect.",
+      "characters": [
+        {
+          "id": "isolde",
+          "skills": [
+            {
+              "name": "skill 1, ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "j"
+        },
+        {
+          "id": "liang-yue",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "while in [Arise, Qiangliang!] status, have more [Justice Talon] >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "loggerhead",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "randomly >> enemy"
+            },
+            {
+              "name": "ultimate",
+              "note": "randomly >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "lopera",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "cast [Flaming Bullet] (+Burn) >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "noire",
+          "skills": [
+            {
+              "name": "insight 1 + skill 2",
+              "note": "randomly >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "spathodea",
+          "skills": [
+            {
+              "name": "insight 3",
+              "note": "when attack scores a Critical Hit >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "ulu",
+          "skills": [
+            {
+              "name": "skill 2, insight 3",
+              "note": ">> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Confusion",
+      "description": "Inflict :effect{param=\"confusion\"} effect.",
+      "characters": [
+        {
+          "id": "blonney",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "kanjira",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "when in [Pearl Fortune] status >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "matilda",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "tooth-fairy",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "voyager",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "windsong",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Corrode",
+      "description": "Inflict :effect{param=\"corrode\"} effect.",
+      "characters": [
+        {
+          "id": "the-fool",
+          "skills": [
+            {
+              "name": "skill 2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fracture",
+      "description": "Inflict :effect{param=\"fracture-i\"} effect.",
+      "characters": [
+        {
+          "id": "6",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "anjo-nala",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mis-aim",
+      "description": "Inflict :effect{param=\"mis-aim\"} effect.",
+      "characters": [
+        {
+          "id": "6",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "anjo-nala",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Nasty Wound",
+      "description": "Inflict :effect{param=\"nasty-wound\"} effect.",
+      "characters": [
+        {
+          "id": "anjo-nala",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "bunny-bunny",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "cristallo",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "eternity",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": ">> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Poison",
+      "description": "Inflict :effect{param=\"poison\"} effect.",
+      "characters": [
+        {
+          "id": "jessica",
+          "skills": [
+            {
+              "name": "ultimate, insight 1, insight 3",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "kanjira",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "liang-yue",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "while in [Arise, Qiangliang!] status, have more [Peace Talon] >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "loggerhead",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "randomly >> enemy"
+            },
+            {
+              "name": "ultimate",
+              "note": "randomly >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "noire",
+          "skills": [
+            {
+              "name": "insight 1 + skill 2",
+              "note": "randomly >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "rabies",
+          "skills": [
+            {
+              "name": "insight 1"
+            }
+          ]
+        },
+        {
+          "id": "sotheby",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": ">> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "tuesday",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": ">> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "willow",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "change to [Hag's Bane], works as [Poison] >> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Terror",
+      "description": "Inflict :effect{param=\"terror\"} effect.",
+      "characters": [
+        {
+          "id": "diggers",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vulnerability",
+      "description": "Inflict :effect{param=\"vulnerability\"} effect.",
+      "characters": [
+        {
+          "id": "ezra",
+          "description": "through [Honey Fungus], grow after 3 rounds",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "cast [Honey Fungus] >> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Weakness",
+      "description": "Inflict :effect{param=\"weakness\"} effect.",
+      "characters": [
+        {
+          "id": "anjo-nala",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "randomly >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "bkornblume",
+          "skills": [
+            {
+              "name": "euphoria 1"
+            }
+          ]
+        },
+        {
+          "id": "centurion",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "diggers",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "lorelei",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": ">> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "marcus",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": ">> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "twins-sleep",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": ">> all enemies"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

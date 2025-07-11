@@ -1,0 +1,25 @@
+{
+  "name": "Position",
+  "description": "Buff self or allies based on their position.",
+  "characters": [
+    {
+      "id": "avgust"
+    },
+    {
+      "id": "loggerhead",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "lopera",
+      "skills": [
+        {
+          "name": "skill 1"
+        }
+      ]
+    }
+  ]
+}

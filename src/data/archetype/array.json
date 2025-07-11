@@ -1,0 +1,42 @@
+{
+  "name": "Array",
+  "description": "Have :effect{param=\"array\"} skill effect.",
+  "characters": [
+    {
+      "id": "getian",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": "create array: [A Prophecy Told] (+DMG Bonus)"
+        }
+      ]
+    },
+    {
+      "id": "lopera",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": "create array: [Crucible Arsenal] (+Crit Rate, +Crit DMG if exceed)"
+        }
+      ]
+    },
+    {
+      "id": "semmelweis",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": "create array: [Blood Domain] (-DMG Taken, +DMG Bonus for every missing HP%)"
+        }
+      ]
+    },
+    {
+      "id": "tuesday",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": "create array: [Horror Story Night] (resolve [Poison] and prevent decrease duration of [Poison])"
+        }
+      ]
+    }
+  ]
+}

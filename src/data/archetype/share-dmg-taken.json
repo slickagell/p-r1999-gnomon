@@ -1,0 +1,22 @@
+{
+  "name": "Share DMG Taken",
+  "description": "Share DMG Taken with allies.",
+  "characters": [
+    {
+      "id": "fatutu",
+      "skills": [
+        {
+          "name": "skill 2"
+        }
+      ]
+    },
+    {
+      "id": "kakania",
+      "skills": [
+        {
+          "name": "insight 1"
+        }
+      ]
+    }
+  ]
+}

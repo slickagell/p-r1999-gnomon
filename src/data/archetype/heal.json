@@ -1,0 +1,211 @@
+{
+  "name": "Heal",
+  "description": "Can heal self or allies.",
+  "characters": [
+    {
+      "id": "6",
+      "skills": [
+        {
+          "name": "skill 1",
+          "note": "through [Vitalize I] effect, randomly >> ally"
+        }
+      ]
+    },
+    {
+      "id": "apple",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> ally with the lowest HP"
+        }
+      ]
+    },
+    {
+      "id": "avgust",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": "start of each round >> self and allies behind"
+        }
+      ]
+    },
+    {
+      "id": "balloon-party",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "barbara",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        },
+        {
+          "name": "insight 3",
+          "note": ">> self, if HP > 90% >> adjacent allies"
+        }
+      ]
+    },
+    {
+      "id": "desert-flannel",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "dikke",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "fatutu",
+      "skills": [
+        {
+          "name": "insight 1",
+          "note": "when retrieving [Spirit Shell] >> all allies"
+        }
+      ]
+    },
+    {
+      "id": "kakania",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> self"
+        },
+        {
+          "name": "insight 3",
+          "note": "when storing [Empathy] >> all allies"
+        }
+      ]
+    },
+    {
+      "id": "la-source",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "loggerhead",
+      "skills": [
+        {
+          "name": "insight 1",
+          "note": "end of round >> all allies carrying [Memory Replay]"
+        }
+      ]
+    },
+    {
+      "id": "medicine-pocket",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "mercuria",
+      "skills": [
+        {
+          "name": "skill 1",
+          "note": ">> ally with the lowest HP"
+        }
+      ]
+    },
+    {
+      "id": "necrologist",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> heal when ally already have [Prayer]"
+        }
+      ]
+    },
+    {
+      "id": "sotheby",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": "give [Cure] effect >> all allies"
+        }
+      ]
+    },
+    {
+      "id": "tooth-fairy",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "vila",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> ally"
+        },
+        {
+          "name": "insight 3",
+          "note": "end of the round >> all allies"
+        }
+      ]
+    },
+    {
+      "id": "yenisei",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> ally"
+        }
+      ]
+    },
+    {
+      "id": "darley-clatter",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> ally with the lowest HP"
+        },
+        {
+          "name": "ultimate",
+          "note": ">> self"
+        }
+      ]
+    },
+    {
+      "id": "lopera",
+      "skills": [
+        {
+          "name": "insight 1",
+          "note": "trigger Bullet effect >> ally with the lowest HP"
+        }
+      ]
+    },
+    {
+      "id": "bunny-bunny",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    }
+  ]
+}

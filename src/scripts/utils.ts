@@ -16,3 +16,20 @@ export async function getFilesWithText(folderPath, matchText) {
 
   return matchedFiles;
 }
+
+export const handleReplaceEffectTextToHtml = (text: string) => {
+  const matches = [...text.matchAll(/\[effect:([^\]]+)\]/gi)];
+
+  const result = matches.map(([, label]) => {
+    const param = label
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-+|-+$)/g, "");
+
+    return {
+      component: "EffectTooltip",
+      props: { param },
+    };
+  });
+};

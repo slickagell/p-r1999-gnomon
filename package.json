@@ -37,6 +37,7 @@
     "nanostores": "^0.11.3",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
+    "remark": "^15.0.1",
     "remark-directive": "^3.0.0",
     "solid-js": "^1.9.3",
     "tailwind-merge": "^2.6.0",

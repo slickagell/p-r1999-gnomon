@@ -1,0 +1,60 @@
+{
+  "name": "Precast Incantation",
+  "description": "generate :effect{param=\"precast-incantation\"} incantation.",
+  "characters": [
+    {
+      "id": "barbara",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": "generate [Counting Sheep]"
+        }
+      ]
+    },
+    {
+      "id": "marcus",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": "generate [Reading Class]"
+        }
+      ]
+    },
+    {
+      "id": "spathodea",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": "generate [Little Boxer]"
+        }
+      ]
+    },
+    {
+      "id": "vila",
+      "skills": [
+        {
+          "name": "insight 1",
+          "note": "after using ultimate, generate [Song of Inspiration]"
+        }
+      ]
+    },
+    {
+      "id": "windsong",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": "generate [Rehabilitation]"
+        }
+      ]
+    },
+    {
+      "id": "recoleta",
+      "skills": [
+        {
+          "name": "insight 3",
+          "note": "generate [Flood of Fiction]"
+        }
+      ]
+    }
+  ]
+}

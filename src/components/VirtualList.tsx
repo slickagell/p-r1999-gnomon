@@ -176,19 +176,35 @@ export const ArchetypeVirtualList = ({
     <>
       <h2>Table of Contents</h2>
       <div id="toc" ref={tocRef}>
-        <ul class="pl-4 [&_li]:block [&_li]:relative [&_li]:before:absolute [&_li]:before:-left-4 [&_li]:before:top-2.5 [&_li]:before:w-1 [&_li]:before:h-1 [&_li]:before:rounded-full [&_li]:before:bg-base-content">
+        <ul class="menu">
           {sectionData.map((section) => {
+            if (!section.sub) {
+              return (
+                <li>
+                  <span
+                    data-section
+                    class="font-bold cursor-pointer hover:underline hover:text-primary"
+                    data-index={section.idx}
+                  >
+                    {section.name}
+                  </span>
+                </li>
+              );
+            }
+
             return (
               <li>
-                <span
-                  data-section
-                  class="font-bold cursor-pointer hover:underline hover:text-primary"
-                  data-index={section.idx}
-                >
-                  {section.name}
-                </span>
-                {section.sub && (
-                  <ul class="pl-4 [&_li]:block [&_li]:relative [&_li]:before:absolute [&_li]:before:-left-4 [&_li]:before:top-2.5 [&_li]:before:w-1 [&_li]:before:h-1 [&_li]:before:rounded-full [&_li]:before:bg-base-content">
+                <details>
+                  <summary>
+                    <span
+                      data-section
+                      data-index={section.idx}
+                      class="font-bold cursor-pointer hover:underline hover:text-primary"
+                    >
+                      {section.name}
+                    </span>
+                  </summary>
+                  <ul>
                     {section.sub.map((sub) => (
                       <li>
                         <span
@@ -201,7 +217,7 @@ export const ArchetypeVirtualList = ({
                       </li>
                     ))}
                   </ul>
-                )}
+                </details>
               </li>
             );
           })}

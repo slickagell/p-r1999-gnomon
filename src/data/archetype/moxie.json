@@ -1,0 +1,304 @@
+{
+  "name": "Moxie",
+  "description": "Moxie control.",
+  "sub": [
+    {
+      "name": "Gain",
+      "description": "Grant Moxie to self or allies.",
+      "characters": [
+        {
+          "id": "a-knight",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "enemy is defeated >> self"
+            },
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> self"
+            }
+          ]
+        },
+        {
+          "id": "centurion",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> self"
+            }
+          ]
+        },
+        {
+          "id": "darley-clatter",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all allies"
+            }
+          ]
+        },
+        {
+          "id": "door",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all allies"
+            },
+            {
+              "name": "insight 1",
+              "note": "when dies >> all allies"
+            }
+          ]
+        },
+        {
+          "id": "ezra",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all allies"
+            },
+            {
+              "name": "insight 3",
+              "note": "with specific condition, spend Eureka >> self"
+            }
+          ]
+        },
+        {
+          "id": "leilani",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all allies"
+            },
+            {
+              "name": "insight 1",
+              "note": "when entering battle >> all allies and self"
+            }
+          ]
+        },
+        {
+          "id": "lopera",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "trigger Bullet effect >> self"
+            },
+            {
+              "name": "insight 3",
+              "note": "when entering battle >> self"
+            }
+          ]
+        },
+        {
+          "id": "marcus",
+          "description": "through [Perusal] effect, when casting rank 2/3 skill, +Moxie >> self"
+        },
+        {
+          "id": "melania",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "if have [Thief Master] >> self"
+            }
+          ]
+        },
+        {
+          "id": "mercuria",
+          "skills": [
+            {
+              "name": "insight 3",
+              "note": "end of the round, if allies casted 2+ rank 3 skill >> self"
+            }
+          ]
+        },
+        {
+          "id": "pickles",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "trigger [Clarified Topic] >> self"
+            }
+          ]
+        },
+        {
+          "id": "recoleta",
+          "skills": [
+            {
+              "name": "insight 1",
+              "note": "inflict [Passion Drain] to enemies >> attacker"
+            }
+          ]
+        },
+        {
+          "id": "shamane",
+          "description": "through [Nature's Blessing] effect, +Moxie >> self"
+        },
+        {
+          "id": "vila",
+          "description": "by using [Song of Inspiration] incantation, +Moxie >> ally or self"
+        },
+        {
+          "id": "sputnik",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 3, on counter >> self"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Drain",
+      "description": "Reduce Moxie of enemies.",
+      "characters": [
+        {
+          "id": "click",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "la-source",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        },
+        {
+          "id": "ms-radio",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            },
+            {
+              "name": "insight 1",
+              "note": "when dies >> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "nick-bottom",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "regulus",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> 2 enemies"
+            }
+          ]
+        },
+        {
+          "id": "sputnik",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "on counter >> attacker"
+            }
+          ]
+        },
+        {
+          "id": "the-fool",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "at rank 2/3 >> enemy"
+            }
+          ]
+        },
+        {
+          "id": "x",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Steal",
+      "description": "Steal Moxie from enemies.",
+      "characters": [
+        {
+          "id": "melania",
+          "skills": [
+            {
+              "name": "skill 1",
+              "note": "if have [Thief Master] >> enemy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lock",
+      "description": "Prevent enemies from gaining Moxie.",
+      "characters": [
+        {
+          "id": "ms-radio",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "ttt",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": ">> all enemies"
+            }
+          ]
+        },
+        {
+          "id": "x",
+          "skills": [
+            {
+              "name": "insight 3",
+              "note": "when ultimate >> all enemies"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Store",
+      "description": "Store overflow Moxie.",
+      "characters": [
+        {
+          "id": "melania",
+          "skills": [
+            {
+              "name": "euphoria 1"
+            }
+          ]
+        },
+        {
+          "id": "tuesday",
+          "skills": [
+            {
+              "name": "ultimate"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "AP",
+  "description": "AP (Action Points) interaction.",
+  "sub": [
+    {
+      "name": "Increase AP",
+      "description": "With :effect{param=\"continuous-action-i\"} effect.",
+      "characters": [
+        {
+          "id": "flutterpage",
+          "skills": [
+            {
+              "name": "skill 2"
+            }
+          ]
+        },
+        {
+          "id": "aleph",
+          "skills": [
+            {
+              "name": "skill 1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Non-consume AP",
+      "description": "With non-consume AP incantation or effect.",
+      "characters": [
+        {
+          "id": "hissabeth",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "generate [Hiss!] incantation"
+            }
+          ]
+        },
+        {
+          "id": "vila",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "generate [Song of Inspiration] incantation"
+            }
+          ]
+        },
+        {
+          "id": "name-day",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "grant [Enname] >> adjacent ally in front"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

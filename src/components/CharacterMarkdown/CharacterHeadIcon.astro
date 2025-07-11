@@ -28,7 +28,7 @@ const characterEntry = await getEntry("characters", param)!;
 >
   <a
     href={`/characters/${characterEntry.id}`}
-    class="transition hover:opacity-75"
+    class="shrink-0 transition hover:opacity-75"
   >
     <CharacterImg variant="headicon" gameId={characterEntry.data.gameId} />
   </a>

@@ -1,0 +1,78 @@
+{
+  "name": "Purify",
+  "description": "purify *[Stats Down]*, *[Neg Status]*, or *[Control]* effects from self or allies.",
+  "characters": [
+    {
+      "id": "6",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> ally"
+        }
+      ]
+    },
+    {
+      "id": "bunny-bunny",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "dikke",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> self"
+        }
+      ]
+    },
+    {
+      "id": "fatutu",
+      "skills": [
+        {
+          "name": "skill 1",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "john-titor",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "nick-bottom",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> ally"
+        }
+      ]
+    },
+    {
+      "id": "tooth-fairy",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    },
+    {
+      "id": "vila",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        }
+      ]
+    }
+  ]
+}
