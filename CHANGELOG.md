@@ -1,3 +1,11 @@
+##### 2025-07-11
+
+* Improve character archetype/trait list for readability
+* Improve what's new modal, now it will be opened automatically when there is a new update
+* Add Kiperina infographic (thanks CTL team for the infographic)
+* Add new psychube: Melodies Old and New
+* Fix carousel bug
+
 ##### 2025-07-08
 
 * Update the information for several characters that have been out-of-date and inaccurate. (Commit diff: [2fc9328](https://github.com/xREMAGIx/p-r1999-gnomon/commit/2fc932827d13154751adae7c1e5edc976b1f093c))

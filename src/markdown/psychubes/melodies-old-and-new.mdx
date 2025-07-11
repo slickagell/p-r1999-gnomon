@@ -1,0 +1,38 @@
+---
+gameId: 1440
+title: "Melodies Old and New"
+rarity: 5
+code: "MELODIES_OLD_AND_NEW"
+image: "1440.png"
+tags: ["Heal","Support"]
+stats: {"HP":2600,"ATTACK":260,"REALITY_DEFENSE":150,"MENTAL_DEFENSE":150}
+specialStat: {"code":"HP","enhances":{"0":{"value":2,"upToLevel":20},"1":{"value":4,"upToLevel":40},"2":{"value":6,"upToLevel":50},"3":{"value":8,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    With new branches and leaves, we craft a compass of the past.<br />Beneath the burning lights, we trade our hearts' intent.<br />Countless paper boats carrying numberless hopes,<br />Countless voices of laughter flowing into a single song.
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    When entering battle, gain Healing Done **+12%**.<br />At the start of the round, all allies gain DMG Dealt **+1%**, stacks up to 3 times.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    When entering battle, gain Healing Done **+14%**.<br />At the start of the round, all allies gain DMG Dealt **+1%**, stacks up to 3 times.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    When entering battle, gain Healing Done **+14%**.<br />At the start of the round, all allies gain DMG Dealt **+2%**, stacks up to 3 times.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    When entering battle, gain Healing Done **+16%**.<br />At the start of the round, all allies gain DMG Dealt **+2%**, stacks up to 3 times.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    When entering battle, gain Healing Done **+16%**.<br />At the start of the round, all allies gain DMG Dealt **+3%**, stacks up to 3 times.
+  </Fragment>
+</PsychubeContent>
