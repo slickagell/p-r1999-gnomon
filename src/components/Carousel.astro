@@ -17,6 +17,12 @@ const { id, slides } = Astro.props;
     @keydown.arrow-right.debounce="next()"
     @keydown.escape.window.debounce="closeLightbox()"
   >
+    <!-- backdrop -->
+    <div
+      class="absolute w-full h-full bg-black/90 blur-3xl"
+      x-bind:class=`{'hidden': !isOpenLightbox}`
+    >
+    </div>
     <!-- previous button -->
     <button
       type="button"
@@ -127,6 +133,7 @@ const { id, slides } = Astro.props;
     dragEndX: null,
     isDragging: false,
     isOpenLightbox: false,
+    lastScrollTopPosition: 0,
 
     init() {
       this.slider = this.$refs.slider;
@@ -215,17 +222,16 @@ const { id, slides } = Astro.props;
     openLightbox() {
       if (this.isOpenLightbox) return;
 
-      // Prevents scrolling on mobile
-      document.querySelector(":root")?.classList.add("modal_opening");
-      document.body.style.overflowY = "hidden";
-      document.body.style.height = "100vh";
+      this.lastScrollTopPosition = window.scrollY;
+      document.querySelector(":root")?.classList.add("html-modal-opening");
+      document.body.classList.add("modal-opening");
       this.isOpenLightbox = true;
     },
 
     closeLightbox() {
-      document.querySelector(":root")?.classList.remove("modal_opening");
-      document.body.style.removeProperty("overflow-y");
-      document.body.style.removeProperty("height");
+      document.querySelector(":root")?.classList.remove("html-modal-opening");
+      document.body.classList.remove("modal-opening");
+      window.scrollTo(0, this.lastScrollTopPosition);
       this.isOpenLightbox = false;
     },
   }));

@@ -181,9 +181,19 @@ img[x-zoomable]:hover {
   scroll-snap-align: center;
 }
 
-.modal_opening {
+.html-modal-opening {
+  margin: 0;
   touch-action: none;
   overscroll-behavior: none;
   overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+}
+
+.modal-opening {
+  margin: 0;
+  touch-action: none;
+  overscroll-behavior: none;
+  overflow: hidden;
+  max-height: 100%;
   -webkit-overflow-scrolling: auto;
 }
