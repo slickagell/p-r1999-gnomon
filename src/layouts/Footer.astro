@@ -14,6 +14,15 @@ import Icon from "@components/Icon.astro";
       </a>
     </aside>
     <nav class="grid-flow-col gap-2 md:place-self-center md:justify-self-end">
+      <div
+        class="tooltip"
+        data-tip="What's new"
+        @click="whatsNewModal.showModal()"
+      >
+        <div class="btn btn-ghost">
+          <Icon icon="news" />
+        </div>
+      </div>
       <a href="/about">
         <div class="tooltip" data-tip="About">
           <div class="btn btn-ghost">

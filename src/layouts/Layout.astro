@@ -6,6 +6,7 @@ import Icon from "@components/Icon.astro";
 import Footer from "@layouts/Footer.astro";
 import GoToTop from "@layouts/GoToTop.astro";
 import Search from "@components/Search.astro";
+import WhatsNew from "./WhatsNew.astro";
 
 interface Props {
   title: string;
@@ -204,7 +205,7 @@ const FULL_MENU = [
           </ul>
           <button
             class="btn btn-outline btn-secondary btn-sm"
-            onclick="searchModal.showModal()"
+            @click="searchModal.showModal()"
           >
             Search
           </button>
@@ -213,5 +214,6 @@ const FULL_MENU = [
     </div>
 
     <GoToTop />
+    <WhatsNew />
   </body>
 </html>

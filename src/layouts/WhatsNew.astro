@@ -1,0 +1,93 @@
+---
+import Icon from "@components/Icon.astro";
+import MarkdownDiscList from "@components/MarkdownDiscList.astro";
+import MarkdownEmphasis from "@components/MarkdownEmphasis.astro";
+import MarkdownHighlight from "@components/MarkdownHighlight.astro";
+import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro";
+import { getEntry, render } from "astro:content";
+
+interface Props {}
+
+const {} = Astro.props;
+
+const whatsNewEntry = await getEntry("general", "whats-new")!;
+const { Content } = await render(whatsNewEntry);
+---
+
+<dialog
+  id="whatsNewModal"
+  x-ref="whatsNewModal"
+  class="modal p-4 md:p-8"
+  x-data="whatsNew"
+>
+  <div
+    class="modal-box w-full h-full max-w-screen-md max-h-[75%] border border-primary-content bg-base-100/80 backdrop-blur-sm flex flex-col p-4 md:p-6"
+  >
+    <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+        <Icon icon="x" />
+      </button>
+    </form>
+    <h3 class="my-2 md:mt-4">What's new</h3>
+    <div class="flex-1 overflow-y-auto h-full">
+      <Content
+        components={{
+          ul: MarkdownDiscList,
+          p: MarkdownParagraphContent,
+          strong: MarkdownHighlight,
+          em: MarkdownEmphasis,
+        }}
+      />
+    </div>
+    <p class="pt-2 text-xs text-right">
+      * Only show 10 latest updated dates. For full changelog, please visit <a
+        href="https://github.com/xREMAGIx/p-r1999-gnomon/blob/develop/CHANGELOG.md"
+        target="_blank"
+        class="custom-link">Changelog</a
+      >
+    </p>
+  </div>
+</dialog>
+
+<script
+  is:inline
+  define:vars={{
+    lastModified: whatsNewEntry.data.lastModified,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("whatsNew", {
+      lastModified,
+    });
+  });
+</script>
+
+<script>
+  import Alpine from "alpinejs";
+  import persist from "@alpinejs/persist";
+  import dayjs from "dayjs";
+
+  Alpine.plugin(persist);
+
+  Alpine.data("whatsNew", function () {
+    return {
+      lastModifiedWhatsNew: this.$persist(dayjs("1999").format("YYYY-MM-DD")),
+
+      init() {
+        if (
+          !!dayjs(this.lastModifiedWhatsNew).diff(
+            dayjs(this.$store.whatsNew.lastModified),
+            "day"
+          )
+        ) {
+          this.$refs.whatsNewModal.showModal();
+          this.$refs.whatsNewModal.addEventListener("close", () => {
+            this.lastModifiedWhatsNew = dayjs(
+              this.$store.whatsNew.lastModified
+            ).format("YYYY-MM-DD");
+          });
+        }
+      },
+    };
+  });
+</script>
