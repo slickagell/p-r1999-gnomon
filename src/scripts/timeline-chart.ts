@@ -4,8 +4,10 @@ import dayjs from "dayjs";
 const MARGIN = { TOP: 16, RIGHT: 32, BOTTOM: 32, LEFT: 32 };
 const CHART_BOX_WIDTH = 1200;
 const CHART_BOX_HEIGHT = 600;
-const CHART_WIDTH = CHART_BOX_WIDTH - MARGIN.LEFT - MARGIN.RIGHT;
-const CHART_HEIGHT = CHART_BOX_HEIGHT - MARGIN.TOP - MARGIN.BOTTOM;
+
+const MARGIN_MOBILE = { TOP: 8, RIGHT: 8, BOTTOM: 24, LEFT: 8 };
+const CHART_BOX_WIDTH_MOBILE = 600;
+const CHART_BOX_HEIGHT_MOBILE = 750;
 
 const MARKER_BOX_WIDTH = 8;
 const MARKER_BOX_HEIGHT = 8;
@@ -35,7 +37,7 @@ const ANECDOTE_EVENT_COLOR = "#617594";
 const EVENTS_Y_GAP = 12;
 const STORM_LINK_GAP = 10;
 
-const STORM_TEXT_FONT_SIZE_REM = 1;
+const STORM_TEXT_FONT_SIZE = 10;
 
 const STORM_NODE_DATA = [
   {
@@ -336,9 +338,6 @@ const PERIOD_EVENT_DATA = [
   },
 ];
 
-const STORM_EVENT_Y_COORDINATE = CHART_HEIGHT / 3;
-const EVENT_Y_COORDINATE = STORM_EVENT_Y_COORDINATE + 50;
-
 const parseDayJsFromString = (date: string | number) => {
   const [year, month, day] = date.toString().split("-");
   if (!month) {
@@ -354,9 +353,22 @@ const parseDate = (date: string | number) => {
 };
 
 export default () => ({
-  chartMargin: MARGIN,
-  chartWidth: CHART_WIDTH,
-  chartHeight: CHART_HEIGHT,
+  isMobile: false,
+  chartMargin: {
+    top: MARGIN.TOP,
+    right: MARGIN.RIGHT,
+    bottom: MARGIN.BOTTOM,
+    left: MARGIN.LEFT,
+  },
+  chartBoxWidth: CHART_BOX_WIDTH,
+  chartBoxHeight: CHART_BOX_HEIGHT,
+  chartWidth: 0,
+  chartHeight: 0,
+  stormEventYCoordinate: 0,
+  eventYCoordinate: 0,
+
+  oldestYear: 1999,
+  latestYear: 1999,
 
   markerBoxWidth: MARKER_BOX_WIDTH,
   markerBoxHeight: MARKER_BOX_HEIGHT,
@@ -367,7 +379,8 @@ export default () => ({
   arrowPoints: ARROW_POINTS,
   circleRadius: CIRCLE_RADIUS,
 
-  chart: null,
+  chartSvg: null,
+  timelineWrapper: null,
 
   scale: 1,
 
@@ -402,7 +415,7 @@ export default () => ({
       (e) => {
         e.preventDefault();
       },
-      { passive: false }
+      { passive: false },
     );
 
     const { oldestPeriodYear, latestPeriodYear } = PERIOD_EVENT_DATA.reduce(
@@ -410,14 +423,14 @@ export default () => ({
         if (
           parseDayJsFromString(stormEventData.period[0]).diff(
             parseDayJsFromString(prev.oldestPeriodYear),
-            "year"
+            "year",
           ) < 0
         ) {
           prev.oldestPeriodYear = stormEventData.period[0].toString();
         }
         if (
           parseDayJsFromString(
-            stormEventData.period[stormEventData.period.length - 1]
+            stormEventData.period[stormEventData.period.length - 1],
           ).diff(parseDayJsFromString(prev.latestPeriodYear), "year") > 0
         ) {
           prev.latestPeriodYear =
@@ -428,7 +441,7 @@ export default () => ({
       {
         oldestPeriodYear: "1999",
         latestPeriodYear: "1999",
-      }
+      },
     );
 
     const { oldestYear, latestYear } = STORM_NODE_DATA.reduce(
@@ -436,14 +449,14 @@ export default () => ({
         if (
           parseDayJsFromString(stormEventData.jump[0]).diff(
             parseDayJsFromString(prev.oldestYear),
-            "year"
+            "year",
           ) < 0
         ) {
           prev.oldestYear = stormEventData.jump[0].toString();
         }
         if (
           parseDayJsFromString(
-            stormEventData.jump[stormEventData.jump.length - 1]
+            stormEventData.jump[stormEventData.jump.length - 1],
           ).diff(parseDayJsFromString(prev.latestYear), "year") > 0
         ) {
           prev.latestYear =
@@ -454,34 +467,67 @@ export default () => ({
       {
         oldestYear: oldestPeriodYear,
         latestYear: latestPeriodYear,
-      }
+      },
     );
+
+    this.oldestYear = oldestYear;
+    this.latestYear = latestYear;
+
+    if (window.innerWidth < 768) {
+      this.isMobile = true;
+      this.chartMargin = {
+        top: MARGIN_MOBILE.TOP,
+        right: MARGIN_MOBILE.RIGHT,
+        bottom: MARGIN_MOBILE.BOTTOM,
+        left: MARGIN_MOBILE.LEFT,
+      };
+      this.chartBoxWidth = CHART_BOX_WIDTH_MOBILE;
+      this.chartBoxHeight = CHART_BOX_HEIGHT_MOBILE;
+    }
+
+    this.initChart();
+    this.initChartData();
+  },
+
+  initChart() {
+    this.chartWidth =
+      this.chartBoxWidth - this.chartMargin.left - this.chartMargin.right;
+    this.chartHeight =
+      this.chartBoxHeight - this.chartMargin.top - this.chartMargin.bottom;
+    this.stormEventYCoordinate = this.chartHeight / 2;
+    this.eventYCoordinate = this.stormEventYCoordinate + 50;
 
     // Add X axis
     this.xLine = d3
       .scaleTime()
       .domain([
-        parseDayJsFromString(oldestYear).subtract(5, "year").toDate(),
-        parseDayJsFromString(latestYear).add(5, "year").toDate(),
+        parseDayJsFromString(this.oldestYear).subtract(5, "year").toDate(),
+        parseDayJsFromString(this.latestYear).add(5, "year").toDate(),
       ])
-      .range([this.chartMargin.LEFT, CHART_BOX_WIDTH - this.chartMargin.RIGHT]);
+      .range([
+        this.chartMargin.left,
+        this.chartBoxWidth - this.chartMargin.right,
+      ]);
 
     this.yLine = d3
       .scaleLinear()
       .domain([0, this.chartHeight])
       .range([
-        this.chartMargin.TOP,
-        CHART_BOX_HEIGHT - this.chartMargin.BOTTOM,
+        this.chartMargin.top,
+        this.chartBoxHeight - this.chartMargin.bottom,
       ]);
 
     // create svg element
 
     // Create a scrolling div containing the area shape and the horizontal axis.
-    const body = d3.select("#timeline").append("div").attr("class", "relative");
+    this.timelineWrapper = d3
+      .select("#timeline")
+      .append("div")
+      .attr("class", "relative");
 
-    this.svg = body
+    this.svg = this.timelineWrapper
       .append("svg")
-      .attr("viewBox", [0, 0, CHART_BOX_WIDTH, CHART_BOX_HEIGHT])
+      .attr("viewBox", [0, 0, this.chartBoxWidth, this.chartBoxHeight])
       .style("display", "block");
 
     this.xAxis = this.svg
@@ -491,14 +537,14 @@ export default () => ({
         "translate(" +
           0 +
           "," +
-          (CHART_BOX_HEIGHT - this.chartMargin.BOTTOM) +
-          ")"
+          (this.chartBoxHeight - this.chartMargin.bottom) +
+          ")",
       )
       .call(d3.axisBottom(this.xLine));
 
     // this.yAxis = this.svg
     //   .append("g")
-    //   .attr("transform", "translate(" + this.chartMargin.LEFT + "," + 0 + ")")
+    //   .attr("transform", "translate(" + this.chartMargin.left + "," + 0 + ")")
     //   .call(d3.axisLeft(this.yLine));
 
     // Set the zoom and Pan features: how much you can zoom, on which part, and what to do when there is a zoom
@@ -506,20 +552,20 @@ export default () => ({
       .zoom()
       .scaleExtent([1, 100]) // This control how much you can unzoom and zoom
       .extent([
-        [this.chartMargin.LEFT, 0],
-        [this.chartWidth - this.chartMargin.RIGHT, this.chartHeight],
+        [this.chartMargin.left, 0],
+        [this.chartWidth - this.chartMargin.right, this.chartHeight],
       ])
       .translateExtent([
-        [this.chartMargin.LEFT, -Infinity],
-        [this.chartWidth - this.chartMargin.RIGHT, Infinity],
+        [this.chartMargin.left, -Infinity],
+        [this.chartWidth - this.chartMargin.right, Infinity],
       ])
       .on("zoom", (event) => this.updateChart(event));
 
     // This add an invisible rect on top of the chart area. This rect can recover pointer events: necessary to understand when the user zoom
-    this.chart = this.svg
+    this.chartSvg = this.svg
       .append("rect")
-      .attr("width", CHART_BOX_WIDTH)
-      .attr("height", CHART_BOX_HEIGHT)
+      .attr("width", this.chartBoxWidth)
+      .attr("height", this.chartBoxHeight)
       .style("fill", "none")
       .style("pointer-events", "all")
       .call(this.zoom);
@@ -531,9 +577,11 @@ export default () => ({
       .append("rect")
       .attr("width", this.chartWidth)
       .attr("height", this.chartHeight)
-      .attr("x", this.chartMargin.LEFT)
-      .attr("y", this.chartMargin.TOP);
+      .attr("x", this.chartMargin.left)
+      .attr("y", this.chartMargin.top);
+  },
 
+  initChartData() {
     this.svg
       .append("defs")
       .append("marker")
@@ -555,8 +603,8 @@ export default () => ({
           year,
           text: event.jumpText[jumpIdx],
           x: this.xLine(parseDate(year)),
-          y: this.yLine(STORM_EVENT_Y_COORDINATE),
-          originY: this.yLine(STORM_EVENT_Y_COORDINATE),
+          y: this.yLine(this.stormEventYCoordinate),
+          originY: this.yLine(this.stormEventYCoordinate),
           r: CIRCLE_RADIUS,
         };
       });
@@ -599,8 +647,8 @@ export default () => ({
           year,
           text: event.periodText[yearIdx],
           x: this.xLine(parseDate(year)),
-          y: this.yLine(STORM_EVENT_Y_COORDINATE),
-          originY: this.yLine(STORM_EVENT_Y_COORDINATE),
+          y: this.yLine(this.stormEventYCoordinate),
+          originY: this.yLine(this.stormEventYCoordinate),
           h: PERIOD_HEIGHT,
           href: event.href,
         };
@@ -613,8 +661,8 @@ export default () => ({
           return {
             year: event.year[0],
             x: this.xLine(parseDate(event.year[0])),
-            y: this.yLine(EVENT_Y_COORDINATE),
-            originY: this.yLine(EVENT_Y_COORDINATE),
+            y: this.yLine(this.eventYCoordinate),
+            originY: this.yLine(this.eventYCoordinate),
             r: CIRCLE_RADIUS,
             label: event.label,
             type: event.type,
@@ -624,7 +672,7 @@ export default () => ({
       );
     });
 
-    let tooltip = body
+    let tooltip = this.timelineWrapper
       .append("div")
       .attr("class", "tooltip")
       .style("opacity", 0)
@@ -666,7 +714,7 @@ export default () => ({
         .attr("x", centreX)
         .attr("y", centreY)
         .attr("text-anchor", "middle")
-        .style("font-size", STORM_TEXT_FONT_SIZE_REM + "rem");
+        .style("font-size", STORM_TEXT_FONT_SIZE + "px");
     });
 
     this.periods = this.svg
@@ -715,7 +763,7 @@ export default () => ({
       });
 
     const yOfXAxis = parseFloat(
-      this.xAxis.attr("transform").split(/[\s,()]+/)[2]
+      this.xAxis.attr("transform").split(/[\s,()]+/)[2],
     );
 
     this.periodZone = this.svg
@@ -833,20 +881,26 @@ export default () => ({
     // d.target.x -= (CIRCLE_RADIUS + MARKER_WIDTH) * reversedX;
     const reversedY = source.y > target.y ? 1 : -1;
     const reversedIndex = index % 2 === 0 ? -1 : 1;
-    source.y += CIRCLE_RADIUS * reversedY * reversedIndex;
-    target.y += (CIRCLE_RADIUS + MARKER_WIDTH) * reversedY * reversedIndex;
+    source.y +=
+      Math.min(CIRCLE_RADIUS * scale, MAX_CIRCLE_RADIUS) *
+      reversedY *
+      reversedIndex;
+    target.y +=
+      (Math.min(CIRCLE_RADIUS * scale, MAX_CIRCLE_RADIUS) + MARKER_WIDTH) *
+      reversedY *
+      reversedIndex;
 
     const context = d3.path();
     context.moveTo(source.x, source.y);
     context.lineTo(
       source.x,
       target.y +
-        (index % 2 === 0 ? 1 : -1) * STORM_LINK_GAP * scale * (index + 1)
+        (index % 2 === 0 ? 1 : -1) * STORM_LINK_GAP * scale * (index + 1),
     );
     context.lineTo(
       target.x,
       target.y +
-        (index % 2 === 0 ? 1 : -1) * STORM_LINK_GAP * scale * (index + 1)
+        (index % 2 === 0 ? 1 : -1) * STORM_LINK_GAP * scale * (index + 1),
     );
     context.lineTo(target.x, target.y);
     return context + "";
@@ -925,7 +979,7 @@ export default () => ({
       .attr(
         "height",
         (d) =>
-          parseFloat(this.xAxis.attr("transform").split(/[\s,()]+/)[2]) - d.y
+          parseFloat(this.xAxis.attr("transform").split(/[\s,()]+/)[2]) - d.y,
       );
 
     this.arrows.attr("d", (d, i) => {
@@ -947,7 +1001,10 @@ export default () => ({
         .attr("y", centreY)
         .style(
           "font-size",
-          Math.min(STORM_TEXT_FONT_SIZE_REM * event.transform.k, 1.5) + "rem"
+          Math.min(
+            STORM_TEXT_FONT_SIZE * event.transform.k,
+            1.5 * STORM_TEXT_FONT_SIZE,
+          ) + "px",
         );
     });
 
@@ -1038,10 +1095,47 @@ export default () => ({
     if (this.isShow.eventNodeGap) {
       this.eventNodes.attr(
         "cy",
-        (d) => d.y + d.epi * EVENTS_Y_GAP * this.scale
+        (d) => d.y + d.epi * EVENTS_Y_GAP * this.scale,
       );
     } else {
       this.eventNodes.attr("cy", (d) => d.y);
+    }
+  },
+
+  onResize() {
+    if (window.innerWidth < 768 && !this.isMobile) {
+      this.isMobile = true;
+      this.chartMargin = {
+        top: MARGIN_MOBILE.TOP,
+        right: MARGIN_MOBILE.RIGHT,
+        bottom: MARGIN_MOBILE.BOTTOM,
+        left: MARGIN_MOBILE.LEFT,
+      };
+      this.chartBoxWidth = CHART_BOX_WIDTH_MOBILE;
+      this.chartBoxHeight = CHART_BOX_HEIGHT_MOBILE;
+      this.timelineWrapper.html(null);
+
+      this.initChart();
+      this.initChartData();
+
+      return;
+    }
+
+    if (this.isMobile) {
+      this.isMobile = false;
+      this.chartMargin = {
+        top: MARGIN.TOP,
+        right: MARGIN.RIGHT,
+        bottom: MARGIN.BOTTOM,
+        left: MARGIN.LEFT,
+      };
+      this.chartBoxWidth = CHART_BOX_WIDTH;
+      this.chartBoxHeight = CHART_BOX_HEIGHT;
+      this.timelineWrapper.html(null);
+
+      this.initChart();
+      this.initChartData();
+      return;
     }
   },
 });
