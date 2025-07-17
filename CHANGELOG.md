@@ -1,3 +1,7 @@
+##### 2025-07-17
+
+* Fix inaccurate mountain ghost mindmap node position (thanks @flare\_azazel for the feedback)
+
 ##### 2025-07-11
 
 * Improve character archetype/trait list for readability
