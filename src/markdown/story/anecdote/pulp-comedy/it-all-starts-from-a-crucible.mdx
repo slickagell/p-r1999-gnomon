@@ -1,7 +1,10 @@
 ---
-title: It All Starts From A Crucible
+title: "It All Starts From a Crucible"
+description: "For the sake of a great cause, some must suffer."
 chapter: 1
 ---
+
+import StoryMarkdownOption from "@components/StoryMarkdown/StoryMarkdownOption.astro"
 
 **Sotheby**:
 
@@ -112,8 +115,6 @@ chapter: 1
 
 * And then occupy their planet.
 
-***
-
 **Sotheby**:
 
 * Ah, Mr. aliEn T!
@@ -128,65 +129,65 @@ chapter: 1
 
 **Mondlicht**:
 
-* So fast ... *pant, pant* ... She runs faster than a wolf, even.
+* So fast ... \*pant, pant\* ... She runs faster than a wolf, even.
 
-\===
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-(options 1)
+    * All the high-born young ladies have such speed.
+  </Fragment>
 
-**Vertin**:
+  <Fragment slot="content">
+    **Mondlicht**:
 
-* Is she using some sort of acceleration potion?
+    * … I see.
+    * Is there something they're trying to escape?
 
-**Mondlicht**:
+    **X**:
 
-* An acceleration ... potion?
-* I've heard of "potions." If there's a potion that makes people faster, could there be one that repels "Big Bad Wolves" too ...?
+    * Hm—perhaps there is.<br />Like social dance lessons or private tutoring?
 
-**X**:
+    **Oliver Fog**:
 
-* Ask Ms. Sotheby. She'll help you out.
-* She's a good girl, very helpful, and she likes taking on new challenges.
-* She's helped me a lot with my experiments.
+    * Or perhaps it's greedy capitalists chasing them down to work overtime.
+    * Did you know that some factory owners even add exhilarating potions to their cafeteria meals?
+    * I say, the Workers' Union exists precisely for this kind of thing! Someone has to stand up and stop them—!
 
-**Oliver Fog**:
+    **X**:
 
-* … I must say, I sincerely disapprove of your behavior.
+    * Hang on. It looks like we're losing her.
+  </Fragment>
+</StoryMarkdownOption>
 
-**X**:
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-* Don't say that; it's a win-win collaboration.<br />Together, we've invented a variety of interesting things.
+    * Is she using some sort of acceleration potion?
+  </Fragment>
 
-\===
+  <Fragment slot="content">
+    **Mondlicht**:
 
-\===
+    * An acceleration ... potion?
+    * I've heard of "potions." If there's a potion that makes people faster, could there be one that repels "Big Bad Wolves" too ...?
 
-(options 2)
+    **X**:
 
-**Vertin**:
+    * Ask Ms. Sotheby. She'll help you out.
+    * She's a good girl, very helpful, and she likes taking on new challenges.
+    * She's helped me a lot with my experiments.
 
-* All the high-born young ladies have such speed.
+    **Oliver Fog**:
 
-**Mondlicht**:
+    * … I must say, I sincerely disapprove of your behavior.
 
-* … I see.
-* Is there something they're trying to escape?
+    **X**:
 
-**X**:
-
-* Hm—perhaps there is.<br />Like social dance lessons or private tutoring?
-
-**Oliver Fog**:
-
-* Or perhaps it's greedy capitalists chasing them down to work overtime.
-* Did you know that some factory owners even add exhilarating potions to their cafeteria meals?
-* I say, the Workers' Union exists precisely for this kind of thing! Someone has to stand up and stop them—!
-
-**X**:
-
-* Hang on. It looks like we're losing her.
-
-\===
+    * Don't say that; it's a win-win collaboration.<br />Together, we've invented a variety of interesting things.
+  </Fragment>
+</StoryMarkdownOption>
 
 **Sotheby**:
 
@@ -273,8 +274,6 @@ chapter: 1
 
 * Huh?<br />... What's he doing?
 
-***
-
 **aliEn T**:
 
 * Great, it worked!
@@ -297,41 +296,41 @@ chapter: 1
 
 * I knew I shouldn't have stayed ...
 
-\===
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-(options 1)
+    * Too late now.
+  </Fragment>
 
-**Vertin**:
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-* Too late now.
+    * No one asked for your input.
 
-**Oliver Fog**:
+    **X**:
 
-* No one asked for your input.
+    * It's too late!~
+  </Fragment>
+</StoryMarkdownOption>
 
-**X**:
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-* It's too late!~
+    * I knew I shouldn't have stayed ...
+  </Fragment>
 
-\===
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-\===
+    * You feel the same way? Then why don't we—
 
-(options 2)
+    **X**:
 
-**Vertin**:
-
-* I knew I shouldn't have stayed ...
-
-**Oliver Fog**:
-
-* You feel the same way? Then why don't we—
-
-**X**:
-
-* It's too late for regrets. Keep up.
-
-\===
+    * It's too late for regrets. Keep up.
+  </Fragment>
+</StoryMarkdownOption>
 
 **X**:
 
@@ -348,8 +347,6 @@ chapter: 1
 * How odd ... Smoke, strange potions ...
 * First Mr. aliEn T, now the lot of them. Where is everyone going?
 * Something like this happened in the village once.<br />Could those filthy "Wolves" have followed us here too ...?
-
-***
 
 **aliEn T**:
 
@@ -377,52 +374,56 @@ chapter: 1
 
 * Ah, yes ... My sincerest apologies for that.
 
-\===
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-(options 1)
+    * Oliver Fog made most of the noise ...
+  </Fragment>
 
-**Vertin**:
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-* Oliver Fog made most of the noise ...
+    * Vertin?!
 
-**Oliver Fog**:
+    **X**:
 
-* Vertin?!
+    * It's true. Fog's voice was louder.<br />I'm sorry for blaming you, Vertin.
 
-**X**:
+    **Oliver Fog**:
 
-* It's true. Fog's voice was louder.<br />I'm sorry for blaming you, Vertin.
+    * ... You ... I ... What kind of people have I got mixed up with? It's impossible to predict what you'll do next ...
+  </Fragment>
+</StoryMarkdownOption>
 
-**Oliver Fog**:
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-* ... You ... I ... What kind of people have I got mixed up with? It's impossible to predict what you'll do next ...
+    * You're right. I'm sorry. My footsteps were too loud.
+  </Fragment>
 
-\===
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-\===
+    * Don't say that. I was the one making most of the noise.
 
-(options 2)
+    **X**:
 
-**Vertin**:
+    * Right, don't say that. It's all his fault.
 
-* You're right. I'm sorry. My footsteps were too loud.
+    **Oliver Fog**:
 
-**Oliver Fog**:
-
-* Don't say that. I was the one making most of the noise.
-
-**X**:
-
-* Right, don't say that. It's all his fault.
-
-**Oliver Fog**:
-
-* …
-* You're lucky I have thick skin and such a dutiful sense of responsibility. Otherwise, I would not be shouldering this overtime work.
-
-\===
+    * …
+    * You're lucky I have thick skin and such a dutiful sense of responsibility. Otherwise, I would not be shouldering this overtime work.
+  </Fragment>
+</StoryMarkdownOption>
 
 **X**:
 
 * You have to face reality, my friend. That little metal gentleman is going to get away.
 * Enough chit-chat. Ladies and gentlemen of the tracking team, we must pick up the pace!
+
+<br />
+
+<span class="text-base-content/50">(TO BE CONTINUED…)</span>

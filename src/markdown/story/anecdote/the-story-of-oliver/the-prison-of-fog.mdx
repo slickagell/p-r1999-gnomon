@@ -1,9 +1,14 @@
 ---
-title: The Prison of Fog
+title: "The Prison of Fog"
+description: "What lies beyond the exquisitely crafted cage of mist?"
 chapter: 1
 ---
 
+import StoryMarkdownOption from "@components/StoryMarkdown/StoryMarkdownOption.astro"
+
 *I can't remember when it was that I began to hate the fog.*
+
+***
 
 *This city, forever shrouded in fog, prompts the overwrought comparison between Sisyphus's endless struggle and our own.*
 
@@ -30,6 +35,8 @@ chapter: 1
 * ...
 * Oliver Fog?
 
+***
+
 **Oliver Fog**:
 
 * Oh... Sorry, Miss Vertin. I lost myself for a moment there. What were we talking about just now?
@@ -50,48 +57,47 @@ chapter: 1
 
 * Before I offer you a response, Miss Vertin, allow me to ask a question. Who was it that proposed I join you in this operation of yours?
 
-\===
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-(options 1)
+    * It was Mr. Knight.
+  </Fragment>
 
-**Vertin**:
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-* It was Mr. Knight.
+    * And will he also be taking part?
 
-**Oliver Fog**:
+    **Vertin**:
 
-* And will he also be taking part?
-* Deception is not your strong suit. It's entirely obvious that you're covering for him.
+    * Mr. Knight will not be taking part in this operation, but he recommended you wholeheartedly.
 
-**Vertin**:
+    **Oliver Fog**:
 
-* Mr. Knight will not be taking part in this operation, but he recommended you wholeheartedly.
+    * You do know that he's egging me on by passing this work to me? It's quite evident, Miss Vertin.
+  </Fragment>
+</StoryMarkdownOption>
 
-**Oliver Fog**:
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-* You do know that he's egging me on by passing this work to me? It's quite evident, Miss Vertin.
+    * And what if I were to say I was the one that chose you, recommendations notwithstanding?
+  </Fragment>
 
-\===
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-\===
+    * Deception is not your strong suit. It's entirely obvious that you're covering for him.
+    * You know for a fact that I am not the kind to work on a day off, and based on your personality, which is shall we say; conciliatory in nature, you would never have proposed such a plan.
+    * So, then. The suit of armor put you up to this? Am I right?
 
-(options 2)
+    **Vertin**:
 
-**Vertin**:
-
-* And what if I were to say I was the one that chose you, recommendations notwithstanding?
-
-**Oliver Fog**:
-
-* Deception is not your strong suit. It's entirely obvious that you're covering for him.
-* You know for a fact that I am not the kind to work on a day off, and based on your personality, which is shall we say; conciliatory in nature, you would never have proposed such a plan.
-* So, then. The suit of armor put you up to this? Am I right?
-
-**Vertin**:
-
-* .....Perhaps. But why would you suspect him in the first place?
-
-\===
+    * .....Perhaps. But why would you suspect him in the first place?
+  </Fragment>
+</StoryMarkdownOption>
 
 **Oliver Fog**:
 
@@ -122,7 +128,7 @@ chapter: 1
 
 * Then I thank you for your understanding, Miss Vertin. If there's nothing else I can help you with, I will take my leave. there's work I've yet to finish today.
 
-***
+> (Somewhere in the Suitcase)
 
 **A Knight**:
 
@@ -229,10 +235,11 @@ chapter: 1
 * Timekeeper? You came to visit, too? Did something happen to Mr. Fog today? He appears to be in quite a foul mood.
 
 **Vertin**:
-(options)
 
 * I don't think he's very happy about having to work outside of his schedule.
 
 **Crowd**:
 
 * I see...
+
+> (TO BE CONTINUED ...)

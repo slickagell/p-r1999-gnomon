@@ -1,0 +1,17 @@
+---
+interface Props {}
+
+const {} = Astro.props;
+---
+
+<div class="mt-4 collapse collapse-arrow border border-primary">
+  <input type="checkbox" class="peer min-h-10" />
+  <div
+    class="collapse-title py-0 pt-1 min-h-10 after:!top-1/2 after:!-rotate-45 peer-checked:after:!rotate-45 [&_span]:mt-0"
+  >
+    <slot name="option" />
+  </div>
+  <div class="collapse-content">
+    <slot name="content" />
+  </div>
+</div>

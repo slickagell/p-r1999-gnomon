@@ -1,7 +1,10 @@
 ---
-title: A New Window
+title: "A New Window"
+description: "A window can symbolize optimism, desire, a new beginning, and endless possibilities."
 chapter: 3
 ---
+
+import StoryMarkdownOption from "@components/StoryMarkdown/StoryMarkdownOption.astro"
 
 > (Messy Room)
 
@@ -79,9 +82,9 @@ chapter: 3
 * What's this? A family photo album?
 * Oh, a picture—presumably this is his wife and daughter. It's just like my family!
 
-***
-
 *Several hours earlier ...*
+
+***
 
 **Oliver Fog**:
 
@@ -102,58 +105,58 @@ chapter: 3
 
 * Enjoy your work, Oliver Holmes.
 
-\===
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-(options 1)
+    * I think work is what he dislikes most.
+  </Fragment>
 
-**Vertin**:
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-* I think work is what he dislikes most.
+    * You're right, Vertin.
+    * I do hate work. And what we're doing now is very similar to my usual work—just walking around the streets, waiting for trouble to happen.
 
-**Oliver Fog**:
+    **X**:
 
-* You're right, Vertin.
-* I do hate work. And what we're doing now is very similar to my usual work—just walking around the streets, waiting for trouble to happen.
+    * Helping others makes you happy. Everyone says that, right?
 
-**X**:
+    **Oliver Fog**:
 
-* Helping others makes you happy. Everyone says that, right?
+    * Ha, I'm not falling for that. That's what those administrators who contacted me said!
+  </Fragment>
+</StoryMarkdownOption>
 
-**Oliver Fog**:
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-* Ha, I'm not falling for that. That's what those administrators who contacted me said!
+    * What about me?
+  </Fragment>
 
-\===
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-\===
+    * ... Is the title "Holmes" really so charming?
 
-(options 2)
+    **X**:
 
-**Vertin**:
+    * Of course, it's Sherlock Holmes! Everyone wants to be Sherlock Holmes.
 
-* What about me?
+    **Oliver Fog**:
 
-**Oliver Fog**:
+    * Well, I don't. He looks busy.<br />Or rather, the only side of him we see is when he's busy deducing things and solving crimes.
 
-* ... Is the title "Holmes" really so charming?
+    **X**:
 
-**X**:
+    * Well, the name of that book is The Sherlock Holmes Mysteries, not The Sherlock Holmes Vacation.
 
-* Of course, it's Sherlock Holmes! Everyone wants to be Sherlock Holmes.
+    **Oliver Fog**:
 
-**Oliver Fog**:
-
-* Well, I don't. He looks busy.<br />Or rather, the only side of him we see is when he's busy deducing things and solving crimes.
-
-**X**:
-
-* Well, the name of that book is The Sherlock Holmes Mysteries, not The Sherlock Holmes Vacation.
-
-**Oliver Fog**:
-
-* It is precisely for that reason that Holmes significantly intensified Conan Doyle's "overtime." So, Doyle punished Holmes with "death," but he still climbed up from the cliff, and everything remained the same.
-
-\===
+    * It is precisely for that reason that Holmes significantly intensified Conan Doyle's "overtime." So, Doyle punished Holmes with "death," but he still climbed up from the cliff, and everything remained the same.
+  </Fragment>
+</StoryMarkdownOption>
 
 **X**:
 
@@ -195,7 +198,8 @@ chapter: 3
 **Fruit Seller**:
 
 * Thief! Don't think you can get away!<br />Police! Someone call the police!
-* The fruit seller grabs the arm with which X is holding the apple and yanks him back.
+
+*The fruit seller grabs the arm with which X is holding the apple and yanks him back.*
 
 **X**:
 
@@ -237,8 +241,6 @@ chapter: 3
 
 * I'm referring to most eras, my dear friend.
 
-***
-
 **The police**:
 
 * We've documented the matter. Your reason for filing a report is ... for the theft of an apple, right?
@@ -263,41 +265,41 @@ chapter: 3
 
 * ... This is my first time wearing handcuffs.
 
-\===
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-(options 1)
+    * Me too.
+  </Fragment>
 
-**Vertin**:
+  <Fragment slot="content">
+    **X**:
 
-* Me too.
+    * Oh! It's my first time too!
 
-**X**:
+    **Oliver Fog**:
 
-* Oh! It's my first time too!
+    * No need to be modest, Mr. X. I've never met anyone more adept at wearing handcuffs than you.
+  </Fragment>
+</StoryMarkdownOption>
 
-**Oliver Fog**:
+<StoryMarkdownOption>
+  <Fragment slot="option">
+    **Vertin**:
 
-* No need to be modest, Mr. X. I've never met anyone more adept at wearing handcuffs than you.
+    * I hope Bunny Bunny and Mondlicht are alright.
+  </Fragment>
 
-\===
+  <Fragment slot="content">
+    **Oliver Fog**:
 
-\===
+    * As long as Bunny Bunny is there, they'll be fine ... You can trust her and her formidable strength to take care of both of them.
 
-(options 2)
+    **X**:
 
-**Vertin**:
-
-* I hope Bunny Bunny and Mondlicht are alright.
-
-**Oliver Fog**:
-
-* As long as Bunny Bunny is there, they'll be fine ... You can trust her and her formidable strength to take care of both of them.
-
-**X**:
-
-* I've seldom seen a better guardian than her. Don't worry.
-
-\===
+    * I've seldom seen a better guardian than her. Don't worry.
+  </Fragment>
+</StoryMarkdownOption>
 
 **The police**:
 
@@ -330,17 +332,8 @@ chapter: 3
 **The police**:
 
 * Are you wrapping up too? How did things go this morning?
-
-**The police II**:
-
 * Don't ask ... What about you? What are you doing with these people?
-
-**The police**:
-
 * Solving a little dispute. They just need to make a statement.
-
-**The police II**:
-
 * Oh boy! I wish our day was that easy. Sir, you have no idea! That brown-haired girl is terrifying—I've seen bears less scary than her!
 
 **Mondlicht**:
@@ -369,7 +362,7 @@ chapter: 3
 
 * That's funny. We were following aliEn T and lost him too. Then we got into trouble right after.
 
-*Vertin*
+**Vertin**:
 
 * Yes, yes, it all sounds like a great, long, confusing story.
 
@@ -479,3 +472,7 @@ chapter: 3
 **The police**:
 
 * Alright, time to take your information, beginning with the little girl—what's your name?
+
+<br />
+
+<span class="text-base-content/50">(TO BE CONTINUED…)</span>
