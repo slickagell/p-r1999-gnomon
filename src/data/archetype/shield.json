@@ -117,6 +117,15 @@
           "note": ">> all allies"
         }
       ]
+    },
+    {
+      "id": "kiperina",
+      "skills": [
+        {
+          "name": "skill 2",
+          "note": ">> all allies"
+        }
+      ]
     }
   ]
 }

@@ -73,6 +73,19 @@
           "note": ">> all allies"
         }
       ]
+    },
+    {
+      "id": "kiperina",
+      "skills": [
+        {
+          "name": "ultimate",
+          "note": ">> all allies"
+        },
+        {
+          "name": "insight 3",
+          "note": "at the start of each round, purify *[Control]* >> all allies"
+        }
+      ]
     }
   ]
 }

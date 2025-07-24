@@ -80,7 +80,7 @@ strong {
 }
 
 .main-background {
-  background-image: linear-gradient(to bottom, #434343, #070707 20rem);
+  background-image: linear-gradient(to bottom, #434343, hsl(var(--b2)) 20rem);
 }
 
 .pagefind-ui {

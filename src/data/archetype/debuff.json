@@ -140,6 +140,15 @@
               "note": "cast [Diamond Bullet] (-Reality DEF) >> enemy"
             }
           ]
+        },
+        {
+          "id": "kiperina",
+          "skills": [
+            {
+              "name": "ultimate",
+              "note": "+DMG Taken, -Critical Resist >> all enemies"
+            }
+          ]
         }
       ]
     },

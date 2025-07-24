@@ -1,3 +1,10 @@
+##### 2025-07-24
+
+* Add Kiperina official data
+* Add new psychube: Aurora After Winter
+* Update character archetype/trait list
+* Fix bug not displaying resonance pattern materials
+
 ##### 2025-07-17
 
 * Fix inaccurate mountain ghost mindmap node position (thanks @flare\_azazel for the feedback)

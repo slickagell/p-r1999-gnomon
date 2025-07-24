@@ -15,6 +15,10 @@ const archetypes = await getCollection("archetypes");
 const archetypesData = archetypes
   .map((archetype) => archetype.data)
   .sort((a, b) => a.name.localeCompare(b.name));
+
+const sortCharacters = (characters) => {
+  return characters.sort((a, b) => a.id.localeCompare(b.id));
+};
 ---
 
 <Layout
@@ -89,7 +93,7 @@ const archetypesData = archetypes
                 <AstroMarkdown node={markdownAST(section.description)} />
                 {section.characters && (
                   <div class="mt-4 grid grid-cols-1 md:grid-cols-2 border border-base-content/75">
-                    {section.characters?.map((character) => {
+                    {sortCharacters(section.characters)?.map((character) => {
                       return (
                         <CharacterHeadIcon
                           id={character.id}
@@ -130,54 +134,52 @@ const archetypesData = archetypes
                     <AstroMarkdown node={markdownAST(sub.description)} />
                     {sub.characters && (
                       <div class="mt-4 grid grid-cols-1 md:grid-cols-2 border border-base-content/75">
-                        {sub.characters
-                          ?.sort((a, b) => a.id.localeCompare(b.id))
-                          .map(
-                            (character: {
-                              id: string;
-                              description?: string;
-                              skills?: {
-                                name: string;
-                                note?: string;
-                              }[];
-                            }) => {
-                              return (
-                                <CharacterHeadIcon
-                                  id={character.id}
-                                  customClass={twMerge(
-                                    "h-full my-0 p-2 md:p-4 border-b border-r border-base-content/25",
-                                    character.skills
-                                      ? "items-start"
-                                      : "items-center"
+                        {sortCharacters(sub.characters)?.map(
+                          (character: {
+                            id: string;
+                            description?: string;
+                            skills?: {
+                              name: string;
+                              note?: string;
+                            }[];
+                          }) => {
+                            return (
+                              <CharacterHeadIcon
+                                id={character.id}
+                                customClass={twMerge(
+                                  "h-full my-0 p-2 md:p-4 border-b border-r border-base-content/25",
+                                  character.skills
+                                    ? "items-start"
+                                    : "items-center"
+                                )}
+                              >
+                                <Fragment slot="note">
+                                  {character.description && (
+                                    <p class="text-sm text-primary-content/80">
+                                      {character.description}
+                                    </p>
                                   )}
-                                >
-                                  <Fragment slot="note">
-                                    {character.description && (
-                                      <p class="text-sm text-primary-content/80">
-                                        {character.description}
+                                  {character.skills?.map((skill) => (
+                                    <Fragment>
+                                      <p class="text-sm font-bold">
+                                        {skill.name}
                                       </p>
-                                    )}
-                                    {character.skills?.map((skill) => (
-                                      <Fragment>
-                                        <p class="text-sm font-bold">
-                                          {skill.name}
-                                        </p>
-                                        {skill.note && (
-                                          <p
-                                            class="text-sm italic"
-                                            set:html={skill.note.replaceAll(
-                                              /\[([^\]]+)\]/g,
-                                              `<i class="text-effect">[$1]</i>`
-                                            )}
-                                          />
-                                        )}
-                                      </Fragment>
-                                    ))}
-                                  </Fragment>
-                                </CharacterHeadIcon>
-                              );
-                            }
-                          )}
+                                      {skill.note && (
+                                        <p
+                                          class="text-sm italic"
+                                          set:html={skill.note.replaceAll(
+                                            /\[([^\]]+)\]/g,
+                                            `<i class="text-effect">[$1]</i>`
+                                          )}
+                                        />
+                                      )}
+                                    </Fragment>
+                                  ))}
+                                </Fragment>
+                              </CharacterHeadIcon>
+                            );
+                          }
+                        )}
                       </div>
                     )}
                   </div>

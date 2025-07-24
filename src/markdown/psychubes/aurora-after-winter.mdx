@@ -1,0 +1,38 @@
+---
+gameId: 1547
+title: "Aurora After Winter"
+rarity: 6
+code: "AURORA_AFTER_WINTER"
+image: "1547.png"
+tags: ["Survival","Support"]
+stats: {"HP":3000,"ATTACK":360,"REALITY_DEFENSE":160,"MENTAL_DEFENSE":160}
+specialStat: {"code":"HP","enhances":{"0":{"value":10,"upToLevel":20},"1":{"value":12,"upToLevel":40},"2":{"value":14,"upToLevel":50},"3":{"value":16,"upToLevel":60}}}
+---
+
+import PsychubeContent from "@components/PsychubeMarkdown/PsychubeContent.astro";
+
+<PsychubeContent {...frontmatter}>
+  <Fragment slot="description">
+    Inhale, take a step forward—preserve those old memories in your shell,<br />Jump, twirl—catch the last glimmers of starlight before they vanish.<br />Infinite paths lie ahead, but only you, my little lilac,<br />Amidst the swaying of rings, I imagine the whisper of spring's approach.<br />And after the snow, what face will spring wear?
+  </Fragment>
+
+  <Fragment slot="amplification-1-content">
+    When the carrier casts a Buff incantation, gain ATK **+0.4%**, stacks up to 10 times.<br />If the carrier is of the *\[Star]* afflatus, for every 1 Eureka consumed by allies, grant Critical DMG **+0.4%** to all allies, stacks up to 30 times.
+  </Fragment>
+
+  <Fragment slot="amplification-2-content">
+    When the carrier casts a Buff incantation, gain ATK **+0.6%**, stacks up to 10 times.<br />If the carrier is of the *\[Star]* afflatus, for every 1 Eureka consumed by allies, grant Critical DMG **+0.4%** to all allies, stacks up to 30 times.
+  </Fragment>
+
+  <Fragment slot="amplification-3-content">
+    When the carrier casts a Buff incantation, gain ATK **+0.6%**, stacks up to 10 times.<br />If the carrier is of the *\[Star]* afflatus, for every 1 Eureka consumed by allies, grant Critical DMG **+0.6%** to all allies, stacks up to 30 times.
+  </Fragment>
+
+  <Fragment slot="amplification-4-content">
+    When the carrier casts a Buff incantation, gain ATK **+0.8%**, stacks up to 10 times.<br />If the carrier is of the *\[Star]* afflatus, for every 1 Eureka consumed by allies, grant Critical DMG **+0.6%** to all allies, stacks up to 30 times.
+  </Fragment>
+
+  <Fragment slot="amplification-5-content">
+    When the carrier casts a Buff incantation, gain ATK **+0.8%**, stacks up to 10 times.<br />If the carrier is of the *\[Star]* afflatus, for every 1 Eureka consumed by allies, grant Critical DMG **+0.8%** to all allies, stacks up to 30 times.
+  </Fragment>
+</PsychubeContent>

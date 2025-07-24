@@ -15,7 +15,6 @@ specialties: ["SHIELD","SUPPORT","DISPELLER"]
 limited: 0
 mainPiece: "u"
 euphorias: 0
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -35,23 +34,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An arcanist's work. Exhibited in the 1980s for 15 years. Completed in Spring, on April 19. First exhibited in Murmansk, USSR, later transferred to Leningrad. After several years of touring within the country, it was archived at the LSCC.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Aurora
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Faint Glimmer at the Horizon \[Star], Strolling Through the Sky
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Woody and Aromatic, Red Apple, Hearth Smoke, Sandalwood, Sage, Honey
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    61 1/32 x 20 5/16 x 18 7/64 in.
   </Fragment>
 
   <Fragment slot="toc">
@@ -67,48 +66,48 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    Colors From Space
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note={`A cascade of iridescent light.`}>
+      Mass attack. Deals **150%** Mental DMG to 2 enemies; after the attack, consumes 2 Eureka to grant attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note={`A cascade of iridescent light spills from the boundless sky.`}>
+      Mass attack. Deals **225%** Mental DMG to 2 enemies; after the attack, consumes 2 Eureka to grant attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note={`A cascade of iridescent light spills from the boundless sky, brief as breath, bright as memory.`}>
+      Mass attack. Deals **375%** Mental DMG to 2 enemies; after the attack, consumes 2 Eureka to grant attack instance +1 to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    For Everyone
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note={`Beneath the same starry sky.`}>
+      Mass buff. Grants a Shield with (Kiperina's ATK x**150%**) HP to all allies for 2 rounds; when actively cast, the Shield gains an additional **30%** Shield Factor; and if a target is already holding a Shield, the value of this Shield is stacked on top of that target's existing Shield, up to a maximum Shield value of (Kiperina's ATK x**650%**) HP; for an ally holding this Shield, every 600 Shield HP value held grants Critical Rate **+1.5%** and DMG Bonus **+1.2%** to that ally.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note={`Beneath the same starry sky, let's share the memories we still carry.`}>
+      Mass buff. Grants a Shield with (Kiperina's ATK x**225%**) HP to all allies for 2 rounds; when actively cast, the Shield gains an additional **45%** Shield Factor; and if a target is already holding a Shield, the value of this Shield is stacked on top of that target's existing Shield, up to a maximum Shield value of (Kiperina's ATK x**650%**) HP; for an ally holding this Shield, every 600 Shield HP value held grants Critical Rate **+1.5%** and DMG Bonus **+1.2%** to that ally.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note={`Beneath the same starry sky, let's share the memories we still carry and toast to a future lit by starlight.`}>
+      Mass buff. Grants a Shield with (Kiperina's ATK x**375%**) HP to all allies for 2 rounds; when actively cast, the Shield gains an additional **75%** Shield Factor; and if a target is already holding a Shield, the value of this Shield is stacked on top of that target's existing Shield, up to a maximum Shield value of (Kiperina's ATK x**650%**) HP; for an ally holding this Shield, every 600 Shield HP value held grants Critical Rate **+1.5%** and DMG Bonus **+1.2%** to that ally.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Reach for the Stars
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="DEBUFF" note={`A childish yet sincere resolve to keep the stars company.`}>
+      Mass Debuff. Inflicts :effect{param="cosmic-radiation"} on all enemies for 3 rounds. Dispels *\[Stats Down]*, *\[Neg Status]*, and *\[Control]* statuses from all allies. Grants an additional 6 points of :effect{param="inspiration"} to :effect{param="impromptu-incantation"} for the round.
     </CardInfo>
   </Fragment>
 
@@ -117,19 +116,19 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Child of Dawn
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    Whenever an ally consumes Eureka, accumulate points of :effect{param="inspiration"}. Whenever allies score 2 combined critical hits with their incantations and or :effect{param="impromptu-incantation"}, Kiperina gains Eureka +1. At the end of the round, for each point of Eureka consumed by Kiperina and for each point of her excess Eureka, she gains 1 stack of :effect{param="auroral-corona"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    ATK **+5%** when the caster enters battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    When entering battle, gain Eureka +4 for self. At the start of the round, dispel 1 type of *\[Control]* status from all allies and consume as many points of Eureka as possible, and for every 2 points of Eureka consumed, cast a rank 1 *\[For Everyone]*.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -137,23 +136,23 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Child of Dawn*: When :effect{param="auroral-corona"} is at 1+ stacks, the DMG Bonus granted to all allies is increased to **+15%**. When :effect{param="auroral-corona"} is at 20 stacks, :effect{param="impromptu-incantation"}'s excess Critical Rate is now converted into Critical DMG at a **75%** rate.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *For Everyone*: For every 600 Shield HP from this effect held on an ally, the Critical Rate gained is increased to **+2%**, and the DMG Bonus gained is increased to **+1.5%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *For Everyone*: At incantation rank **1/2/3**, the *\[Shield]* granted to all allies is increased to (Kiperina's ATK x**180%**/**270%**/**450%**) HP.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *For Everyone*: When actively cast, the additional Shield Factor is increased to **70%**/**105%**/**175%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Child of Dawn*: When :effect{param="auroral-corona-id-1"} is at 1+ stacks, the DMG Bonus granted to all allies is increased to **+20%**. When :effect{param="auroral-corona-id-1"} is at 20 stacks, :effect{param="impromptu-incantation"}'s excess Critical Rate is now converted into Critical DMG at a **100%** rate.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
@@ -161,13 +160,19 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="resonance-board">
-    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPieces} />
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPiecesMaterials} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube
   </Fragment>
 
   <Fragment slot="psychube-content">
     #### Best in Slot
 
-    <div class="flex justify-center md:justify-start" />
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon param="aurora-after-winter" />
+    </div>
 
     #### Other alternative
 

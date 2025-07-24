@@ -197,6 +197,15 @@
               "note": "+Ultimate DMG >> all allies"
             }
           ]
+        },
+        {
+          "id": "kiperina",
+          "skills": [
+            {
+              "name": "skill 2",
+              "note": "+Critical Rate, +DMG Bonus >> all allies with amount of Shield"
+            }
+          ]
         }
       ]
     },
