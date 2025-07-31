@@ -1,0 +1,311 @@
+---
+import AstroMarkdown from "@components/AstroMarkdown.astro";
+import Icon from "@components/Icon.astro";
+import { markdownAST } from "@scripts/remark";
+
+interface Props {
+  map: AbilityMapType;
+}
+
+export interface AbilityMapType {
+  nodes: {
+    id: string;
+    code?: string;
+    offsetX?: number;
+    offsetY?: number;
+    r?: number;
+    title?: string;
+    icon?: string;
+    isNotClickable?: boolean;
+    description?: string;
+  }[];
+  links: { source: string; target: string }[];
+}
+
+const { map } = Astro.props;
+---
+
+<div x-data="abilityMap">
+  <div id="ability-map"></div>
+  <div class="flex justify-end items-center">
+    <!-- <button class="btn btn-sm" @click="clear"> Clear </button> -->
+    <p class="text-xs">* Click on a node to see its content</p>
+  </div>
+  <div
+    x-show="selectedNode"
+    class="mt-4 card card-compact bg-primary-content/10"
+  >
+    <div class="card-body">
+      <div class="card-content">
+        {
+          map.nodes.map((node) => {
+            return (
+              <template x-if={`selectedNode?.code === '${node.code}'`}>
+                <div>
+                  <div class="flex gap-10 justify-end">
+                    <div class="card-actions">
+                      <button
+                        class="btn btn-square btn-sm"
+                        @click="clearSelectedNode"
+                      >
+                        <Icon icon="x" />
+                      </button>
+                    </div>
+                  </div>
+                  {node.description && (
+                    <AstroMarkdown node={markdownAST(node.description)} />
+                  )}
+                </div>
+              </template>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    map,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("ability", {
+      map,
+    });
+  });
+</script>
+
+<script>
+  import Alpine from "alpinejs";
+  import anchor from "@alpinejs/anchor";
+
+  Alpine.plugin(anchor);
+  import * as d3 from "d3";
+
+  const WIDTH = 400;
+  const HEIGHT = 300;
+
+  const ROOT_X = WIDTH / 2;
+  const ROOT_Y = HEIGHT - 40;
+  const OFFSET = 40;
+  const TRANSITION_DURATION_TIME = 250;
+  const DEFAULT_NODE_R = 15;
+  const NODE_COLOR = "#252525";
+  const NODE_STROKE_COLOR = "#d0ac81";
+  const NODE_SELECTED_COLOR = "#4d4d4d";
+  const NODE_STROKE_SELECTED_COLOR = "#bba893";
+  const NODE_ACTIVE_COLOR = "#fff";
+  const NODE_STROKE_ACTIVE_COLOR = "#db6f39";
+  const LINK_COLOR = "#999";
+  const LINK_ACTIVE_COLOR = "#db6f39";
+  const TITLE_COLOR = "#d0ac81";
+
+  Alpine.data("abilityMap", () => ({
+    svg: null,
+    links: null,
+    nodes: null,
+    selectedNode: null,
+    hoveredNode: null,
+    activeNodes: [],
+    activeCodes: [],
+    activeLinks: [],
+
+    openTooltip: false,
+    anchorTooltip: "",
+
+    init() {
+      const data = this.$store.ability.map;
+
+      // The force simulation mutates links and nodes, so create a copy
+      // so that re-evaluating this cell produces the same result.
+      const nodes = data.nodes.map((d) => ({
+        ...d,
+        r: d.r ?? DEFAULT_NODE_R,
+        x: ROOT_X + OFFSET * (d.offsetX ?? 0),
+        y: ROOT_Y + OFFSET * (d.offsetY ?? 0),
+      }));
+      const links = data.links.map((d) => {
+        const source = nodes.find((n) => n.id === d.source);
+        const target = nodes.find((n) => n.id === d.target);
+        return {
+          ...d,
+          source,
+          target,
+        };
+      });
+
+      const titles = nodes
+        .filter((d) => !!d.title)
+        .map((d) => ({
+          ...d,
+          x: ROOT_X + OFFSET * (d.offsetX ?? 0),
+          y: ROOT_Y + OFFSET * (d.offsetY ?? 0) + d.r / 2 + 32,
+        }));
+
+      this.links = links;
+      this.nodes = nodes;
+
+      // Create the SVG container.
+      const svg = d3
+        .select("#ability-map")
+        .append("svg")
+        .attr("viewBox", [0, 0, WIDTH, HEIGHT])
+        .attr("style", "max-width: 100%; height: auto;");
+
+      // Add a line for each link, and a circle for each node.
+      const linkSvg = svg
+        .append("g")
+        .selectAll()
+        .data(links)
+        .join("line")
+        .attr("data-source", (d) => d.source.id)
+        .attr("data-target", (d) => d.target.id)
+        .attr("x1", (d) => d.source.x)
+        .attr("y1", (d) => d.source.y)
+        .attr("x2", (d) => d.target.x)
+        .attr("y2", (d) => d.target.y)
+        .attr("stroke", LINK_COLOR)
+        .attr("stroke-opacity", 0.6)
+        .attr("stroke-width", 1);
+
+      const nodeSvg = svg
+        .append("g")
+        .selectAll()
+        .data(nodes)
+        .join("circle")
+        .attr("class", "node")
+        .attr("id", (d) => d.id)
+        .attr("x-ref", (d) => `node-${d.id}`)
+        .attr("cx", (d) => d.x)
+        .attr("cy", (d) => d.y)
+        .attr("r", (d) => d.r)
+        .attr("fill", (d) => (d.active ? NODE_ACTIVE_COLOR : NODE_COLOR))
+        .attr("stroke", (d) =>
+          d.active ? NODE_STROKE_ACTIVE_COLOR : NODE_STROKE_COLOR
+        )
+        .attr("stroke-width", 1)
+        .on("click", async (e, d) => {
+          if (d.isNotClickable) return;
+          const isSelectedNodeActive = !!this.activeCodes.includes(
+            this.selectedNode?.code
+          );
+          d3.select("circle[id='" + this.selectedNode?.id + "']")
+            .attr("fill", () =>
+              isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+            )
+            .attr("stroke", () =>
+              isSelectedNodeActive
+                ? NODE_STROKE_ACTIVE_COLOR
+                : NODE_STROKE_COLOR
+            );
+
+          this.selectedNode = {
+            id: d.id,
+            code: d.code,
+          };
+
+          d3.select(e.target)
+            .attr("fill", NODE_SELECTED_COLOR)
+            .attr("stroke", NODE_STROKE_SELECTED_COLOR);
+        });
+
+      const iconSvg = svg
+        .append("g")
+        .selectAll()
+        .data(nodes)
+        .join("image")
+        .attr("xlink:href", (d) =>
+          d.icon ? `/images/characters/kassandra/abicon-${d.icon}.png` : ""
+        )
+        .attr("x", (d) => d.x - (d.r * 2) / 2)
+        .attr("y", (d) => d.y - (d.r * 2) / 2)
+        .attr("width", (d) => d.r * 2)
+        .attr("height", (d) => d.r * 2)
+        .style("pointer-events", "none");
+
+      const titleSvg = svg
+        .append("g")
+        .selectAll()
+        .data(titles)
+        .join("text")
+        .text((d) => d.title)
+        .attr("x", (d) => d.x)
+        .attr("y", (d) => d.y)
+        .attr("text-anchor", "middle")
+        .attr("fill", TITLE_COLOR);
+    },
+
+    clearSelectedNode() {
+      const isSelectedNodeActive = !!this.activeCodes.includes(
+        this.selectedNode?.code
+      );
+      d3.select("circle[id='" + this.selectedNode?.id + "']")
+        .attr("fill", () =>
+          isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+        )
+        .attr("stroke", () =>
+          isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : NODE_STROKE_COLOR
+        );
+
+      this.selectedNode = null;
+    },
+
+    clear() {
+      this.activeNodes.forEach((node) => {
+        d3.select('circle[id="' + node.id + '"]')
+          .attr("fill", NODE_COLOR)
+          .attr("stroke", null);
+      });
+      this.activeLinks.forEach((link) => {
+        d3.select(
+          'line[data-source="' +
+            link.source +
+            '"][data-target="' +
+            link.target +
+            '"]'
+        ).attr("stroke", LINK_COLOR);
+      });
+
+      this.clearSelectedNode();
+      this.hoveredNode = null;
+      this.activeNodes = [];
+      this.activeCodes = [];
+      this.activeLinks = [];
+    },
+
+    setRecommended(name) {
+      this.clear();
+      const data = this.$store.mythManifest.mindmap;
+      const recommended = data.recommended.find((ele) => ele.name === name);
+      this.activeNodes = data.nodes.filter((ele) => {
+        return recommended.activeNodes.includes(ele.id);
+      });
+      this.activeCodes = this.activeNodes.map((ele) => ele.code);
+      this.activeNodes.forEach((node) => {
+        d3.select('circle[id="' + node.id + '"]')
+          .attr("fill", NODE_ACTIVE_COLOR)
+          .attr("stroke", NODE_STROKE_ACTIVE_COLOR);
+      });
+
+      const activeLinks = data.links.filter((ele) => {
+        return (
+          this.activeNodes.some((node) => node.id === ele.source) &&
+          this.activeNodes.some((node) => node.id === ele.target)
+        );
+      });
+      this.activeLinks = activeLinks;
+      activeLinks.forEach((link) => {
+        d3.select(
+          'line[data-source="' +
+            link.source +
+            '"][data-target="' +
+            link.target +
+            '"]'
+        ).attr("stroke", LINK_ACTIVE_COLOR);
+      });
+    },
+  }));
+</script>

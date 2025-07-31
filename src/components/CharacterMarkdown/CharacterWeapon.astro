@@ -1,0 +1,152 @@
+---
+import CustomImage from "@components/CustomImage.astro";
+import { capitalCase } from "change-case";
+
+interface Props {
+  characterId: string;
+  primaryWeapons: {
+    code: string;
+    name: string;
+  }[];
+  secondaryWeapons: {
+    code: string;
+    name: string;
+  }[];
+}
+
+const { primaryWeapons, secondaryWeapons, characterId } = Astro.props;
+
+const weapons = Array(primaryWeapons.length + secondaryWeapons.length)
+  .fill({})
+  .map((_, i) => {
+    const elIdx = Math.floor(i / 2);
+    if (i % 2 === 0) {
+      return {
+        ...primaryWeapons[elIdx],
+        weaponType: "primary",
+      };
+    }
+
+    return {
+      ...secondaryWeapons[elIdx],
+      weaponType: "secondary",
+    };
+  });
+---
+
+<div x-data="weapon">
+  <div class="relative">
+    <div
+      class="grid grid-cols-2 md:grid-cols-[repeat(2,minmax(0,auto))] gap-x-1 gap-y-2 md:gap-4 justify-between"
+    >
+      {
+        weapons.map((weapon) => (
+          <div
+            class:list={[
+              "relative p-2 md:p-4 cursor-pointer before:absolute before:inset-0 before:border before:border-base-content/10",
+              {
+                "before:skew-y-3 md:before:skew-y-6":
+                  weapon.weaponType === "primary",
+                "before:-skew-y-3 md:before:-skew-y-6":
+                  weapon.weaponType === "secondary",
+              },
+            ]}
+            x-bind:class={`selected${capitalCase(weapon.weaponType)} === '${weapon.code}' ? 'before:!border-primary' : ''`}
+            x-on:click={`handleSelect${capitalCase(weapon.weaponType)}Weapon("${weapon.code}")`}
+          >
+            <CustomImage
+              class={"w-10 md:w-32 mx-auto"}
+              src={`/images/characters/${characterId}/${weapon.code}.png`}
+              alt={weapon.name}
+              loading="lazy"
+            />
+            <p class="text-center text-xs md:text-sm">{weapon.name}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div
+      class="flex items-center gap-2 md:gap-10 mt-6 md:absolute md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2"
+    >
+      <div class="border border-base-content/10 p-4 flex-1 md:flex-initial">
+        <template x-if="selectedPrimary">
+          <img
+            class="w-10 md:w-32 mx-auto"
+            loading="lazy"
+            :src="`/images/characters/${characterId}/${selectedPrimary}.png`"
+            :alt="selectedPrimary + ' headicon'"
+          />
+        </template>
+        <p class="text-center" x-text="primaryName"></p>
+      </div>
+      <span class="text-xl">x</span>
+      <div class="border border-base-content/10 p-4 flex-1 md:flex-initial">
+        <template x-if="selectedSecondary">
+          <img
+            class="w-10 md:w-32 mx-auto"
+            loading="lazy"
+            :src="`/images/characters/${characterId}/${selectedSecondary}.png`"
+            :alt="selectedSecondary + ' headicon'"
+          />
+        </template>
+        <p class="text-center" x-text="secondaryName"></p>
+      </div>
+    </div>
+  </div>
+  <div
+    x-show="!!selectedPrimary && !!selectedSecondary"
+    class="mt-6 paper-texture text-black !max-w-full"
+  >
+    <slot name="combination-selected-content" />
+  </div>
+</div>
+
+<script
+  is:inline
+  define:vars={{
+    characterId,
+    primaryWeapons,
+    secondaryWeapons,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("weapons", {
+      characterId,
+      primaryWeapons,
+      secondaryWeapons,
+    });
+  });
+</script>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("weapon", () => ({
+    characterId: "",
+    selectedPrimary: "",
+    selectedSecondary: "",
+    primaryName: "",
+    secondaryName: "",
+    combination: "",
+
+    init() {
+      this.characterId = this.$store.weapons.characterId;
+    },
+
+    handleSelectPrimaryWeapon(code) {
+      this.selectedPrimary = code;
+      this.combination = `${this.selectedPrimary}|${this.selectedSecondary}`;
+      this.primaryName = this.$store.weapons.primaryWeapons.find(
+        (w) => w.code === this.selectedPrimary
+      )?.name;
+    },
+
+    handleSelectSecondaryWeapon(code) {
+      this.selectedSecondary = code;
+      this.combination = `${this.selectedPrimary}|${this.selectedSecondary}`;
+      this.secondaryName = this.$store.weapons.secondaryWeapons.find(
+        (w) => w.code === this.selectedSecondary
+      )?.name;
+    },
+  }));
+</script>

@@ -1,0 +1,98 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 0
+      },
+      "ATTACK": {
+        "value": 0
+      },
+      "REALITY_DEFENSE": {
+        "value": 0
+      },
+      "MENTAL_DEFENSE": {
+        "value": 0
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 0
+      },
+      "CRITICAL_RATE": {
+        "value": 0,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 0,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      {
+        "code": "SHARPODONTY",
+        "require": 18000
+      },
+      {
+        "code": "PAGE_OF_STARLIT_ASCENT",
+        "require": 6
+      },
+      {
+        "code": "",
+        "require": 5
+      },
+      {
+        "code": "",
+        "require": 6
+      }
+    ],
+    "2": [
+      {
+        "code": "SHARPODONTY",
+        "require": 40000
+      },
+      {
+        "code": "SCROLL_OF_STARLIT_ASCENT",
+        "require": 10
+      },
+      {
+        "code": "",
+        "require": 6
+      },
+      {
+        "code": "",
+        "require": 6
+      }
+    ],
+    "3": [
+      {
+        "code": "SHARPODONTY",
+        "require": 200000
+      },
+      {
+        "code": "TOME_OF_STARLIT_ASCENT",
+        "require": 16
+      },
+      {
+        "code": "",
+        "require": 3
+      },
+      {
+        "code": "",
+        "require": 5
+      }
+    ]
+  },
+  "resonanceMaterials": {},
+  "weapons": {
+    "primaryWeapons": [
+      { "name": "Venetian Falchion", "code": "venetian-falchion" },
+      { "name": "Condottiero War Hammer", "code": "condottiero-war-hammer" },
+      { "name": "Captain's Sword", "code": "captain-s-sword" }
+    ],
+    "secondaryWeapons": [
+      { "name": "Channeled Cinquedea", "code": "channeled-cinquedea" },
+      { "name": "Butcher Knife", "code": "butcher-knife" },
+      { "name": "Sultan's Knife", "code": "sultan-s-knife" }
+    ]
+  }
+}

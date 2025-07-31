@@ -16,10 +16,6 @@ function sortCharacters(a, b) {
     return -(a.data.star - b.data.star);
   }
 
-  if (a.data.version !== b.data.version) {
-    return -(a.data.version - b.data.version);
-  }
-
   const diffDay = dayjs(a.data.releaseDate).diff(dayjs(b.data.releaseDate));
   if (diffDay > 0) {
     return -1;
@@ -582,11 +578,13 @@ const characters = characterEntries.map((entry) => {
                         src={`/images/characters/common/bg-character.png`}
                         alt={`bg-character`}
                       />
-                      <CustomImage
-                        class="absolute top-0 left-0 w-full -z-1"
-                        src={`/images/frame/${characterEntry.data.gameId}01.png`}
-                        alt={`character-card-${characterEntry.data.id}`}
-                      />
+                      {characterEntry.data.gameId && (
+                        <CustomImage
+                          class="absolute top-0 left-0 w-full -z-1"
+                          src={`/images/frame/${characterEntry.data.gameId}01.png`}
+                          alt={`character-card-${characterEntry.data.id}`}
+                        />
+                      )}
                       <CustomImage
                         class="absolute bottom-0 left-0 w-full"
                         src={`/images/characters/common/bg-rare-${characterEntry.data.star}.png`}
