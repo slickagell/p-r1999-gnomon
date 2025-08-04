@@ -1,3 +1,7 @@
+##### 2025-08-04
+
+* Add new operatic reflection mindmap recommendation (thanks @jellbell0312)
+
 ##### 2025-07-24
 
 * Add Kiperina official data
