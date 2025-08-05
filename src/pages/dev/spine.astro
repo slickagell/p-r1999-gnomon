@@ -1,0 +1,36 @@
+---
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout
+  title="Dev"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Dev",
+    },
+  ]}
+>
+  <h1>Spine</h1>
+  <div x-data="spine">
+    <canvas id="canvas" style="width: 100%; height: 100%;"></canvas>
+  </div>
+</Layout>
+
+<script>
+  import Alpine from "alpinejs";
+  import { init } from "@scripts/spine";
+
+  Alpine.data("spine", () => ({
+    init() {
+      this.loadSpine();
+    },
+
+    loadSpine() {
+      init();
+    },
+  }));
+</script>
