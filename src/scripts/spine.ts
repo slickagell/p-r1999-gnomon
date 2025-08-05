@@ -13,6 +13,11 @@ let skeletonRenderer;
 let lastFrameTime;
 let character;
 
+let isScreenShotting = false;
+let screenshot;
+
+export { screenshot };
+
 export function init() {
   // Setup canvas and WebGL context. We pass alpha: false to canvas.getContext() so we don't use premultiplied alpha when
   // loading textures. That is handled separately by PolygonBatcher.
@@ -74,7 +79,7 @@ export function loadCharacter(initialAnimation, premultipliedAlpha) {
   // Create an AnimationState, and set the initial animation in looping mode.
   var animationStateData = new spine.AnimationStateData(skeleton.data);
   var animationState = new spine.AnimationState(animationStateData);
-  animationState.setAnimation(0, initialAnimation, true);
+  animationState.setAnimation(0, initialAnimation, false);
 
   // Pack everything up and return to caller.
   return {
@@ -102,7 +107,7 @@ export function render() {
   // Update the MVP matrix to adjust for canvas size changes
   resize();
 
-  gl.clearColor(0.3, 0.3, 0.3, 1);
+  gl.clearColor(0, 0, 0, 0);
   gl.clear(gl.COLOR_BUFFER_BIT);
 
   // Apply the animation state based on the delta time.
@@ -125,6 +130,11 @@ export function render() {
   batcher.end();
 
   shader.unbind();
+
+  if (isScreenShotting) {
+    isScreenShotting = false;
+    screenshot = canvas.toDataURL("image/png");
+  }
 
   requestAnimationFrame(render);
 }
@@ -150,4 +160,8 @@ export function resize() {
 
   mvp.ortho2d(centerX - width / 2, centerY - height / 2, width, height);
   gl.viewport(0, 0, canvas.width, canvas.height);
+}
+
+export function setIsScreenShotting(isScreenShottingData: boolean) {
+  isScreenShotting = isScreenShottingData;
 }
