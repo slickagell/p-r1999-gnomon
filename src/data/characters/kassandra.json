@@ -91,7 +91,6 @@
         "offsetY": -0.75,
         "r": 20,
         "title": "Hunter",
-        "icon": "hunter",
         "isNotClickable": true
       },
       {
@@ -99,7 +98,6 @@
         "offsetX": -2.5,
         "offsetY": -2,
         "code": "hunter-1",
-        "icon": "hunter",
         "description": "*[Advent of Artemis]*: Inflicts additional *[Lethal Injury]*.:br When entering battle, gain *[Way of Artemis]*.:br *[Way of Artemis]*—Force Field effect: All allies gain a Critical DMG increase."
       },
       {
