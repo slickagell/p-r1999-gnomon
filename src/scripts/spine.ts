@@ -24,7 +24,7 @@ export function init() {
   canvas = document.getElementById("canvas");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-  var config = { alpha: false };
+  let config = { premultipliedalpha: false };
   gl =
     canvas.getContext("webgl", config) ||
     canvas.getContext("experimental-webgl", config);
@@ -60,25 +60,25 @@ export function load() {
 
 export function loadCharacter(initialAnimation, premultipliedAlpha) {
   // Load the texture atlas from the AssetManager.
-  var atlas = assetManager.get("/roles/301001_x.atlas");
+  let atlas = assetManager.get("/roles/301001_x.atlas");
 
   // Create a AtlasAttachmentLoader that resolves region, mesh, boundingbox and path attachments
-  var atlasLoader = new spine.AtlasAttachmentLoader(atlas);
+  let atlasLoader = new spine.AtlasAttachmentLoader(atlas);
 
   // Create a SkeletonBinary instance for parsing the .skel file.
-  var skeletonBinary = new spine.SkeletonBinary(atlasLoader);
+  let skeletonBinary = new spine.SkeletonBinary(atlasLoader);
 
   // Set the scale to apply during parsing, parse the file, and create a new skeleton.
   skeletonBinary.scale = 1;
-  var skeletonData = skeletonBinary.readSkeletonData(
+  let skeletonData = skeletonBinary.readSkeletonData(
     assetManager.get("/roles/301001_x_ui.skel"),
   );
-  var skeleton = new spine.Skeleton(skeletonData);
-  var bounds = calculateSetupPoseBounds(skeleton);
+  let skeleton = new spine.Skeleton(skeletonData);
+  let bounds = calculateSetupPoseBounds(skeleton);
 
   // Create an AnimationState, and set the initial animation in looping mode.
-  var animationStateData = new spine.AnimationStateData(skeleton.data);
-  var animationState = new spine.AnimationState(animationStateData);
+  let animationStateData = new spine.AnimationStateData(skeleton.data);
+  let animationState = new spine.AnimationState(animationStateData);
   animationState.setAnimation(0, initialAnimation, false);
 
   // Pack everything up and return to caller.
@@ -93,15 +93,15 @@ export function loadCharacter(initialAnimation, premultipliedAlpha) {
 export function calculateSetupPoseBounds(skeleton) {
   skeleton.setToSetupPose();
   skeleton.updateWorldTransform();
-  var offset = new spine.Vector2();
-  var size = new spine.Vector2();
+  let offset = new spine.Vector2();
+  let size = new spine.Vector2();
   skeleton.getBounds(offset, size, []);
   return { offset: offset, size: size };
 }
 
 export function render() {
-  var now = Date.now() / 1000;
-  var delta = now - lastFrameTime;
+  let now = Date.now() / 1000;
+  let delta = now - lastFrameTime;
   lastFrameTime = now;
 
   // Update the MVP matrix to adjust for canvas size changes
@@ -111,9 +111,9 @@ export function render() {
   gl.clear(gl.COLOR_BUFFER_BIT);
 
   // Apply the animation state based on the delta time.
-  var skeleton = character.skeleton;
-  var state = character.state;
-  var premultipliedAlpha = character.premultipliedAlpha;
+  let skeleton = character.skeleton;
+  let state = character.state;
+  let premultipliedAlpha = character.premultipliedAlpha;
   state.update(delta);
   state.apply(skeleton);
   skeleton.updateWorldTransform();
@@ -140,23 +140,28 @@ export function render() {
 }
 
 export function resize() {
-  var w = canvas.clientWidth;
-  var h = canvas.clientHeight;
-  if (canvas.width != w || canvas.height != h) {
+  let w = canvas.clientWidth;
+  let h = canvas.clientHeight;
+  if (canvas.width !== w || canvas.height !== h) {
     canvas.width = w;
     canvas.height = h;
   }
 
   // Calculations to center the skeleton in the canvas.
-  var bounds = character.bounds;
-  var centerX = bounds.offset.x + bounds.size.x / 2;
-  var centerY = bounds.offset.y + bounds.size.y / 2;
-  var scaleX = bounds.size.x / canvas.width;
-  var scaleY = bounds.size.y / canvas.height;
-  var scale = Math.max(scaleX, scaleY) * 1.2;
+  let bounds = character.bounds;
+
+  // Update canvas size to match the character.
+  canvas.width = bounds.size.x;
+  canvas.height = bounds.size.y;
+
+  let centerX = bounds.offset.x + bounds.size.x / 2;
+  let centerY = bounds.offset.y + bounds.size.y / 2;
+  let scaleX = bounds.size.x / canvas.width;
+  let scaleY = bounds.size.y / canvas.height;
+  let scale = Math.max(scaleX, scaleY) * 1.2;
   if (scale < 1) scale = 1;
-  var width = canvas.width * scale;
-  var height = canvas.height * scale;
+  let width = canvas.width * scale;
+  let height = canvas.height * scale;
 
   mvp.ortho2d(centerX - width / 2, centerY - height / 2, width, height);
   gl.viewport(0, 0, canvas.width, canvas.height);
