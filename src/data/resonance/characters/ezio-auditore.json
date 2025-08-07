@@ -1,0 +1,45 @@
+{
+  "mainPiece": "RP_X_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        { "param": "rheingold", "require": 1 },
+        { "param": "murmur-of-insanity", "require": 2 },
+        { "param": "bifurcated-skeleton", "require": 4 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        { "param": "golden-fleece", "require": 1 },
+        { "param": "murmur-of-insanity", "require": 2 },
+        { "param": "biting-box", "require": 3 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "STUPEFACTION": {
+      "materials": [
+        { "param": "fruit-of-good-and-evil", "require": 1 },
+        { "param": "emerald-slate", "require": 2 },
+        { "param": "goose-neck", "require": 3 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "ASPIRATIONAL": {
+      "materials": [
+        { "param": "mistilteinn", "require": 1 },
+        { "param": "murmur-of-insanity", "require": 2 },
+        { "param": "prophetic-bird", "require": 5 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "HYPERPHRENIA": {
+      "materials": [
+        { "param": "golden-fleece", "require": 1 },
+        { "param": "silver-bullet", "require": 2 },
+        { "param": "winged-key", "require": 3 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    }
+  }
+}

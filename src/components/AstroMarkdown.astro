@@ -48,6 +48,10 @@ const { node } = Astro.props;
         if (node.name === "effect") {
           return <EffectTooltip {...(node.attributes as any)} />;
         }
+        if (node.name === "br") {
+          return <br />;
+        }
+        return <Fragment set:html={toHtml(toHast(node))} />;
       }
       default:
         return <Fragment set:html={toHtml(toHast(node))} />;

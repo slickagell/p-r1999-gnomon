@@ -1,0 +1,117 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": { "value": 6534 },
+      "ATTACK": { "value": 1143 },
+      "REALITY_DEFENSE": { "value": 500 },
+      "MENTAL_DEFENSE": { "value": 492 },
+      "CRITICAL_TECHNIQUE": { "value": 1106 },
+      "CRITICAL_RATE": { "value": 36.87, "unit": "%" },
+      "CRITICAL_DMG": { "value": 55.3, "unit": "%" }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      { "param": "sharpodonty", "require": 18000 },
+      { "param": "page-of-starlit-ascent", "require": 6 },
+      { "param": "trembling-tooth", "require": 5 },
+      { "param": "esoteric-bones", "require": 5 }
+    ],
+    "2": [
+      { "param": "sharpodonty", "require": 40000 },
+      { "param": "scroll-of-starlit-ascent", "require": 10 },
+      { "param": "cicada-wings", "require": 6 },
+      { "param": "prophetic-bird", "require": 6 }
+    ],
+    "3": [
+      { "param": "sharpodonty", "require": 200000 },
+      { "param": "tome-of-starlit-ascent", "require": 16 },
+      { "param": "silver-bullet", "require": 6 },
+      { "param": "fruit-of-good-and-evil", "require": 3 }
+    ]
+  },
+  "resonanceMaterials": {
+    "2": [{ "param": "moment-of-dissonance", "require": 5 }],
+    "3": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "silver-ore", "require": 5 }
+    ],
+    "4": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "shattered-bones", "require": 4 },
+      { "param": "solidus", "require": 3 }
+    ],
+    "5": [
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "perpetual-cog", "require": 3 },
+      { "param": "liquefied-terror", "require": 3 }
+    ],
+    "6": [
+      { "param": "sharpodonty", "require": 30000 },
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "clawed-pendulum", "require": 3 }
+    ],
+    "7": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "golden-grass-incense", "require": 5 }
+    ],
+    "8": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "prophetic-bird", "require": 4 },
+      { "param": "esoteric-bones", "require": 6 }
+    ],
+    "9": [
+      { "param": "brief-cacophony", "require": 8 },
+      { "param": "winged-key", "require": 6 },
+      { "param": "luminite-ore", "require": 6 }
+    ],
+    "10": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "biting-box", "require": 6 },
+      { "param": "goose-neck", "require": 5 }
+    ],
+    "11": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sharpodonty", "require": 120000 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "platinum-ouija", "require": 4 }
+    ],
+    "12": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "wyrmling-skeleton", "require": 4 },
+      { "param": "holy-silver", "require": 5 }
+    ],
+    "13": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "bogeyman", "require": 5 },
+      { "param": "red-lacquer-slab", "require": 6 }
+    ],
+    "14": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "mistilteinn", "require": 2 },
+      { "param": "murmur-of-insanity", "require": 4 }
+    ],
+    "15": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "serpent-scepter", "require": 3 },
+      { "param": "goldbell-spirit-bottle", "require": 4 }
+    ]
+  },
+  "weapons": {
+    "primaryWeapons": [
+      { "name": "Venetian Falchion", "code": "venetian-falchion" },
+      { "name": "Condottiero War Hammer", "code": "condottiero-war-hammer" },
+      { "name": "Captain's Sword", "code": "captain-s-sword" }
+    ],
+    "secondaryWeapons": [
+      { "name": "Channeled Cinquedea", "code": "channeled-cinquedea" },
+      { "name": "Butcher Knife", "code": "butcher-knife" },
+      { "name": "Sultan's Knife", "code": "sultan-s-knife" }
+    ]
+  }
+}

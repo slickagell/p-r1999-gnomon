@@ -1,0 +1,278 @@
+---
+name: "Ezio Auditore"
+id: "ezio-auditore"
+gameId: "3123"
+code: "EZIO_AUDITORE"
+gender: "MALE"
+star: 6
+afflatus: "STAR"
+dmgType: "REALITY"
+race: "HUMAN"
+birthday: "6/24"
+version: "AC"
+releaseDate: "2025-08-07"
+specialties: ["ASSASSINATION","DPS","RIPOSTE"]
+limited: 1
+mainPiece: "x"
+euphorias: 0
+---
+
+import CardInfo from "@components/CardInfo.astro";
+import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterWeapon from '@components/CharacterMarkdown/CharacterWeapon.astro';
+
+import Material from "@components/Material.astro";
+import ResonanceBoard from "@components/ResonanceBoard.astro";
+import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
+import DMG_TYPE from "@data/common/character/dmg-type.json";
+import RACE from "@data/common/character/race.json";
+import SPECIALTY from "@data/common/character/specialty.json";
+import CHARACTER from "@data/characters/ezio-auditore.json";
+import RESONANCE from "@data/resonance/characters/ezio-auditore.json";
+import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
+
+# {frontmatter.name}
+
+<CharacterContent {...frontmatter} {...CHARACTER}>
+  <Fragment slot="info-description">
+    A human's artwork. Exhibited in the late 15th century for 34 years. Completed in summer, on the 24th of June. Originally exhibited in the Republic of Florence, later moved to Venice, Rome, Istanbul, and more.
+  </Fragment>
+
+  <Fragment slot="info-medium">
+    Stealth
+  </Fragment>
+
+  <Fragment slot="info-afflatus">
+    The Prophet of Florence \[Star], Assassin of the Brotherhood
+  </Fragment>
+
+  <Fragment slot="info-fragrance-note">
+    Woody, Leather, Silver, Benzoin, Iris
+  </Fragment>
+
+  <Fragment slot="info-dimensions">
+    72 3/64 x24 13/32 x23 15/64 in.
+  </Fragment>
+
+  <Fragment slot="toc">
+    ::toc
+  </Fragment>
+
+  <Fragment slot="profile-section-title">
+    ## Profile
+  </Fragment>
+
+  <Fragment slot="arcane-skills-section-title">
+    Arcane Skills
+  </Fragment>
+
+  <Fragment slot="skill-1-title">
+    Work in the Dark
+  </Fragment>
+
+  <Fragment slot="skill-1-cards-info">
+    <CardInfo star="1" type="ATTACK" note={`Hidden among the crowd.`}>
+      1-target attack. Deals **400%** Reality DMG. This attack counts as an *\[Assassination]*.
+    </CardInfo>
+
+    <CardInfo star="2" type="ATTACK" note={`Hidden among the crowd, he draws the blade in his sleeve.`}>
+      1-target attack. Deals **600%** Reality DMG. This attack counts as an *\[Assassination]*.
+    </CardInfo>
+
+    <CardInfo star="3" type="ATTACK" note={`Hidden among the crowd, he draws the blade in his sleeve. "Requiescat in Pace."`}>
+      1-target attack. Deals **1000%** Reality DMG. This attack counts as an *\[Assassination]*.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="skill-2-title">
+    Serve the Light
+  </Fragment>
+
+  <Fragment slot="skill-2-cards-info">
+    <CardInfo star="1" type="COUNTER" note={`He fights in the dark.`}>
+      Self counter. Ezio Auditore inflicts :effect{param="eyes-caught"} on the enemy with most queued attack incantations for 1 round and enters the :effect{param="fighting-experience"} for 1 round.
+    </CardInfo>
+
+    <CardInfo star="2" type="COUNTER" note={`He fights in the dark to bring about the light.`}>
+      Self counter. Ezio Auditore inflicts :effect{param="eyes-caught"} on the enemy with most queued attack incantations for 2 rounds and enters the :effect{param="fighting-experience"} for 2 rounds.
+    </CardInfo>
+
+    <CardInfo star="3" type="COUNTER" note={`He fights in the dark to bring about the light, like an eagle guiding the sun.`}>
+      Self counter. Ezio Auditore inflicts :effect{param="eyes-caught"} on the enemy with most queued attack incantations for 3 rounds and enters the :effect{param="fighting-experience"} for 3 rounds.
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="ultimate-title">
+    Branding of Faith
+  </Fragment>
+
+  <Fragment slot="ultimate-card-info">
+    <CardInfo type="ATTACK" note={`He leaps off the tower of history, diving towards freedom.`}>
+      Select 1 enemy target and cast :effect{param="arrow-of-faith"} or :effect{param="edge-of-faith"} 3 times, then cast :effect{param="death-be-not-unkind"} (target selection is not subject to enemy's relevant effects).
+    </CardInfo>
+  </Fragment>
+
+  <Fragment slot="weapon-section-title">
+    Weapon
+  </Fragment>
+
+  <Fragment slot="weapon-section-content">
+    <CharacterWeapon characterId={frontmatter.id} primaryWeapons={CHARACTER.weapons.primaryWeapons} secondaryWeapons={CHARACTER.weapons.secondaryWeapons}>
+      <Fragment slot="combination-selected-content">
+        <div x-show="selectedPrimary==='venetian-falchion'">
+          Ultimate counts as an Extra Action;
+
+          *\[Work in the Dark]* inflicts **1** stack of :effect{param="assassin-mark"} on the target hit.
+        </div>
+
+        <div x-show="selectedPrimary==='condottiero-war-hammer'">
+          When casting Ultimate, each time :effect{param="arrow-of-faith"}, :effect{param="edge-of-faith"}, or :effect{param="death-be-not-unkind"} is cast, for every 100 points of Critical Technique Ezio has more than the target, this attack gains Final DMG Dealt **+1%**.
+
+          After other allies cast Ultimate, Ezio gains **1** stack of :effect{param="eagle-s-guidance"} and Synchronization **+10%**.
+        </div>
+
+        <div x-show="selectedPrimary==='captain-s-sword'">
+          Gain Synchronization **+10%** at the end of the round.
+
+          When attacking, inflict **1** instance of :effect{param="poison"} on the target hit for **3** rounds: at the end of the round, take (the user's ATK x**10%**) Genesis DMG.
+
+          When attacking, deal :effect{param="additional-genesis-dmg"} based on the number of :effect{param="poison"} instances on the target; *\[Assassination]*'s effect changes from increasing DMG to dealing Genesis DMG directly.
+        </div>
+
+        <div class="divider m-0 before:bg-primary-content after:bg-primary-content" x-show="!!selectedSecondary" />
+
+        <div x-show="combination==='venetian-falchion|channeled-cinquedea'">
+          When entering battle, own extra actions gain DMG Bonus **+50%**.
+
+          When attacking, excess Critical Rate is converted to Critical DMG at a ratio of **100%**.
+        </div>
+
+        <div x-show="combination==='venetian-falchion|butcher-knife'">
+          When entering battle, own extra actions gain DMG Bonus **+50%**.
+
+          After an allied action, if any enemy dies, cast *\[Work in the Dark]* on an enemy with the lowest HP percentage. This attack counts as a follow-up attack and does not inflict :effect{param="assassin-mark"} on the target. Triggers up to **2** times per round.
+        </div>
+
+        <div x-show="combination==='venetian-falchion|sultan-s-knife'">
+          When entering battle, own extra actions gain DMG Bonus **+50%**.
+
+          *\[Serve the Light]* inflicts :effect{param="eyes-caught"} on all enemies, and the duration of :effect{param="fighting-experience"} and :effect{param="eyes-caught"} **+1** round.
+        </div>
+
+        <div x-show="combination==='condottiero-war-hammer|channeled-cinquedea'">
+          When entering battle, Ultimate Might **+15%**.
+
+          At the start of the round, Synchronization **+15%**.
+        </div>
+
+        <div x-show="combination==='condottiero-war-hammer|butcher-knife'">
+          When entering battle, Ultimate Might **+15%**.
+
+          When casting Ultimate, if the attack target has no other allies, this attack gains DMG Dealt **+30%**, and gains Synchronization **+15%** after the Ultimate.
+        </div>
+
+        <div x-show="combination==='condottiero-war-hammer|sultan-s-knife'">
+          When entering battle, Ultimate Might **+15%**.
+
+          After an allied action, if an enemy target dies, gain Synchronization **+15%**.
+        </div>
+
+        <div x-show="combination==='captain-s-sword|channeled-cinquedea'">
+          When entering battle, Genesis DMG **+15%**.
+
+          When attacking, inflict **1** additional instance of *\[Poison]* on the targets hit for **3** rounds.
+        </div>
+
+        <div x-show="combination==='captain-s-sword|butcher-knife'">
+          When entering battle, Genesis DMG **+15%**.
+
+          When an attack target has no other allies, on hitting the target, inflict **2** additional instances of *\[Poison]* on that target for **3** rounds.
+        </div>
+
+        <div x-show="combination==='captain-s-sword|sultan-s-knife'">
+          When entering battle, Genesis DMG **+15%**.
+
+          After an enemy dies, that enemy's instances of *\[Poison]* are inherited by each of that enemy's remaining allies, with each target inheriting up to **10** instances of *\[Poison]* this way.
+        </div>
+      </Fragment>
+    </CharacterWeapon>
+  </Fragment>
+
+  <Fragment slot="inheritance-section-title">
+    Inheritance
+  </Fragment>
+
+  <Fragment slot="inheritance-title">
+    Precognition
+  </Fragment>
+
+  <Fragment slot="insight-0-info">
+    Replace Moxie with Synchronization. At the start of the round, if Synchronization reaches **100%**, cast Ultimate immediately (cannot cast Ultimate in any other ways).
+
+    How to increase Synchronization:
+
+    When a basic incantation triggers *\[Assassination]*, Synchronization **+5%**.
+
+    When casting :effect{param="counter-kill"} to riposte an enemy with :effect{param="eyes-caught"}, Synchronization **+5%**.
+
+    After defeating an enemy, Synchronization **+10%**.
+  </Fragment>
+
+  <Fragment slot="insight-1-info">
+    When being attacked in the :effect{param="fighting-experience"} status, gain DMG Taken **-15%**; if the attacker is in the :effect{param="eyes-caught"} status, gain an additional DMG Taken **-30%**.
+  </Fragment>
+
+  <Fragment slot="insight-2-info">
+    Critical DMG **+15%** when entering battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    After being attacked, if own HP is below **30%**, dispel all enemies' :effect{param="eyes-caught"} and enter the :effect{param="shadowstalk"} status for 1 round, up to 1 time per round.
+
+    When any ally triggers *\[Assassination]*, gain 1 stack of :effect{param="apprentice-assassin"}.
+  </Fragment>
+
+  <Fragment slot="portray-section-title">
+    Portray
+  </Fragment>
+
+  <Fragment slot="portray-1-info">
+    *The Three Tenets*: When triggering an *\[Assassination]* in the :effect{param="master-assassin"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+10%**. When casting *Branding of Faith*, :effect{param="arrow-of-faith"} and :effect{param="edge-of-faith"} can be cast up to **4** times.
+  </Fragment>
+
+  <Fragment slot="portray-2-info">
+    Enhance Weapon Effects: :effect{param="enhanced-venetian-falchion-id-1"}, :effect{param="enhanced-condottiero-war-hammer-id-1"}, :effect{param="enhanced-captain-s-sword-id-1"}.
+  </Fragment>
+
+  <Fragment slot="portray-3-info">
+    *The Three Tenets*: When triggering an *\[Assassination]* in the :effect{param="master-assassin-id-1"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+11%**. When casting rank **1/2/3** *Work in the Dark*, deal **460/675/1125%** Reality DMG. When casting *Branding of Faith*, :effect{param="arrow-of-faith"}/:effect{param="edge-of-faith"} deal **140%**/**140%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-4-info">
+    *The Three Tenets*: When triggering an *\[Assassination]* in the :effect{param="master-assassin-id-2"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+12%**. *Serve the Light*: When being attacked in the :effect{param="counter-kill"} status, riposte to deal **600%** Reality DMG; when other allies are being attacked, riposte to deal **600%** Reality DMG. When casting *Branding of Faith*, :effect{param="death-be-not-unkind"} deals **900%** Reality DMG.
+  </Fragment>
+
+  <Fragment slot="portray-5-info">
+    Enhance Weapon Combination Effects: :effect{param="enhanced-venetian-falchion-id-2"}, :effect{param="enhanced-condottiero-war-hammer-id-2"}, :effect{param="enhanced-captain-s-sword-id-2"}.
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Reasoning
+  </Fragment>
+
+  <Fragment slot="resonance-board">
+    <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPiecesMaterials} />
+  </Fragment>
+
+  <Fragment slot="materials-section-title">
+    ## Materials
+  </Fragment>
+
+  <Fragment slot="insight-materials-section-title">
+    Insight Materials
+  </Fragment>
+
+  <Fragment slot="resonance-materials-section-title">
+    Resonance Materials
+  </Fragment>
+</CharacterContent>

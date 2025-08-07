@@ -1,5 +1,10 @@
-##### 2025-08-04
+##### 2025-08-07
 
+* Add new AC characters:
+  * Ezio Auditore
+  * Kassandra, Alexios (these page info still in development until official release)
+* Add new characters euphoria: Marcus, Eternity, Vila
+* Add new psychube: As the Bell Tolls
 * Add new operatic reflection mindmap recommendation (thanks @jellbell0312)
 
 ##### 2025-07-24

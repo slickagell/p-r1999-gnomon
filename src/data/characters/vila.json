@@ -26,6 +26,87 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "gameId": "308701",
+      "code": "IDEALS_ON_HER_SHOULDER",
+      "name": "Ideals on Her Shoulder",
+      "materials": {
+        "0": [
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "golden-fleece", "require": 3 }
+        ],
+        "1": [
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "rheingold", "require": 1 },
+          { "param": "goldbell-spirit-bottle", "require": 1 }
+        ],
+        "2": [
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "fruit-of-good-and-evil", "require": 1 },
+          { "param": "platinum-ouija", "require": 2 }
+        ],
+        "3": [
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "mistilteinn", "require": 2 },
+          { "param": "emerald-slate", "require": 2 }
+        ],
+        "4": [
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "golden-fleece", "require": 2 },
+          { "param": "bogeyman", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
+          "data": {
+            "HP": { "value": 160 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 10 },
+            "MENTAL_DEFENSE": { "value": 10 },
+            "HEALING_DONE": { "value": 10, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
+          "data": {
+            "HP": { "value": 265 },
+            "ATTACK": { "value": 53 },
+            "REALITY_DEFENSE": { "value": 16 },
+            "MENTAL_DEFENSE": { "value": 21 },
+            "HEALING_DONE": { "value": 15, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
+          "data": {
+            "HP": { "value": 370 },
+            "ATTACK": { "value": 71 },
+            "REALITY_DEFENSE": { "value": 27 },
+            "MENTAL_DEFENSE": { "value": 32 },
+            "HEALING_DONE": { "value": 20, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
+          "data": {
+            "HP": { "value": 585 },
+            "ATTACK": { "value": 111 },
+            "REALITY_DEFENSE": { "value": 49 },
+            "MENTAL_DEFENSE": { "value": 49 },
+            "HEALING_DONE": { "value": 20, "unit": "%" }
+          }
+        }
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

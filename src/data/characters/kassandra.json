@@ -1,0 +1,210 @@
+{
+  "baseStats": {
+    "maxBaseStats": {
+      "HP": {
+        "value": 0
+      },
+      "ATTACK": {
+        "value": 0
+      },
+      "REALITY_DEFENSE": {
+        "value": 0
+      },
+      "MENTAL_DEFENSE": {
+        "value": 0
+      },
+      "CRITICAL_TECHNIQUE": {
+        "value": 0
+      },
+      "CRITICAL_RATE": {
+        "value": 0,
+        "unit": "%"
+      },
+      "CRITICAL_DMG": {
+        "value": 0,
+        "unit": "%"
+      }
+    }
+  },
+  "insightMaterials": {
+    "1": [
+      { "param": "sharpodonty", "require": 18000 },
+      { "param": "page-of-mineral-wealth", "require": 6 },
+      { "param": "silver-ore", "require": 6 },
+      { "param": "spell-of-fortune", "require": 6 }
+    ],
+    "2": [
+      { "param": "sharpodonty", "require": 40000 },
+      { "param": "scroll-of-mineral-wealth", "require": 10 },
+      { "param": "liquefied-terror", "require": 5 },
+      { "param": "golden-grass-incense", "require": 5 }
+    ],
+    "3": [
+      { "param": "sharpodonty", "require": 200000 },
+      { "param": "tome-of-mineral-wealth", "require": 16 },
+      { "param": "wyrmling-skeleton", "require": 6 },
+      { "param": "golden-fleece", "require": 3 }
+    ]
+  },
+  "resonanceMaterials": {
+    "2": [{ "param": "moment-of-dissonance", "require": 5 }],
+    "3": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "trembling-tooth", "require": 4 }
+    ],
+    "4": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "magnesia-crystal", "require": 4 },
+      { "param": "solidus", "require": 3 }
+    ],
+    "5": [
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "luminite-ore", "require": 3 },
+      { "param": "rough-silver-ingot", "require": 4 }
+    ],
+    "6": [
+      { "param": "sharpodonty", "require": 30000 },
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "clawed-pendulum", "require": 3 }
+    ],
+    "7": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "bifurcated-skeleton", "require": 5 }
+    ],
+    "8": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "winged-key", "require": 4 },
+      { "param": "spell-of-fortune", "require": 6 }
+    ],
+    "9": [
+      { "param": "brief-cacophony", "require": 8 },
+      { "param": "holy-silver", "require": 6 },
+      { "param": "perpetual-cog", "require": 4 }
+    ],
+    "10": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "prophetic-bird", "require": 6 },
+      { "param": "biting-box", "require": 6 }
+    ],
+    "11": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sharpodonty", "require": 120000 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "platinum-ouija", "require": 4 }
+    ],
+    "12": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "wyrmling-skeleton", "require": 4 },
+      { "param": "golden-grass-incense", "require": 5 }
+    ],
+    "13": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "silver-bullet", "require": 5 },
+      { "param": "red-lacquer-slab", "require": 6 }
+    ],
+    "14": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "fruit-of-good-and-evil", "require": 2 },
+      { "param": "glowing-mothwing", "require": 4 }
+    ],
+    "15": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "mistilteinn", "require": 3 },
+      { "param": "bogeyman", "require": 4 }
+    ]
+  },
+  "abilityMap": {
+    "nodes": [
+      {
+        "id": "1",
+        "offsetX": -2.5,
+        "offsetY": -0.75,
+        "r": 20,
+        "title": "Hunter",
+        "isNotClickable": true
+      },
+      {
+        "id": "2",
+        "offsetX": -2.5,
+        "offsetY": -2,
+        "code": "hunter-1",
+        "description": "*[Advent of Artemis]*: Inflicts additional *[Lethal Injury]*.:br When entering battle, gain *[Way of Artemis]*.:br *[Way of Artemis]*—Force Field effect: All allies gain a Critical DMG increase."
+      },
+      {
+        "id": "3",
+        "offsetX": -3.5,
+        "offsetY": -3.5,
+        "code": "hunter-2",
+        "description": "*[Fury of Ares]*, *[Advent of Artemis]*, *[Rain of Destruction]*: Inflict additional *[Lethal Injury]*.:br *[Way of Ares]*, *[Way of Artemis]*, *[Way of Nyx]* Enhancements: When an ally triggers an *[Assassination]*, deals additional Reality DMG."
+      },
+      {
+        "id": "4",
+        "offsetX": -2.5,
+        "offsetY": -5,
+        "code": "hunter-3",
+        "description": "*[Sparta Kick]*, *[Rain of Destruction]*, *[Rush Assassination]*: Inflict additional *[Lethal Injury]*.<br>*[Way of Artemis]* Enhancement: Grants Critical Rate to all allies."
+      },
+      {
+        "id": "5",
+        "offsetY": -0.75,
+        "r": 20,
+        "title": "Warrior",
+        "isNotClickable": true
+      },
+      {
+        "id": "6",
+        "offsetY": -2,
+        "code": "warrior-1"
+      },
+      {
+        "id": "7",
+        "offsetY": -3.5,
+        "code": "warrior-2"
+      },
+      {
+        "id": "8",
+        "offsetY": -5,
+        "code": "warrior-3"
+      },
+      {
+        "id": "9",
+        "offsetX": 2.5,
+        "offsetY": -0.75,
+        "r": 20,
+        "title": "Assassin",
+        "isNotClickable": true
+      },
+      {
+        "id": "10",
+        "offsetX": 2.5,
+        "offsetY": -2,
+        "code": "assassin-1"
+      },
+      {
+        "id": "11",
+        "offsetX": 3.5,
+        "offsetY": -3.5,
+        "code": "assassin-2"
+      },
+      {
+        "id": "12",
+        "offsetX": 2.5,
+        "offsetY": -5,
+        "code": "assassin-3"
+      }
+    ],
+    "links": [
+      { "source": "2", "target": "3" },
+      { "source": "3", "target": "4" },
+      { "source": "6", "target": "7" },
+      { "source": "7", "target": "8" },
+      { "source": "10", "target": "11" },
+      { "source": "11", "target": "12" }
+    ]
+  }
+}

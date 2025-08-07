@@ -1,0 +1,40 @@
+{
+  "mainPiece": "RP_X_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        { "param": "silver-bullet", "require": 2 },
+        { "param": "clawed-pendulum", "require": 3 },
+        { "param": "sharpodonty", "require": 100000 }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        { "param": "glowing-mothwing", "require": 2 },
+        { "param": "goose-neck", "require": 3 },
+        { "param": "sharpodonty", "require": 100000 }
+      ]
+    },
+    "STUPEFACTION": {
+      "materials": [
+        { "param": "golden-compass", "require": 2 },
+        { "param": "prophetic-bird", "require": 5 },
+        { "param": "sharpodonty", "require": 100000 }
+      ]
+    },
+    "ASPIRATIONAL": {
+      "materials": [
+        { "param": "watch-core", "require": 2 },
+        { "param": "winged-key", "require": 3 },
+        { "param": "sharpodonty", "require": 100000 }
+      ]
+    },
+    "HYPERPHRENIA": {
+      "materials": [
+        { "param": "watch-core", "require": 2 },
+        { "param": "golden-grass-incense", "require": 3 },
+        { "param": "sharpodonty", "require": 100000 }
+      ]
+    }
+  }
+}

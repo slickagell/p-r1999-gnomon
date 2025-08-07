@@ -1,0 +1,45 @@
+{
+  "mainPiece": "RP_X_5_01",
+  "patternPieces": {
+    "ELUCIDATION": {
+      "materials": [
+        { "param": "fruit-of-good-and-evil", "require": 1 },
+        { "param": "glowing-mothwing", "require": 2 },
+        { "param": "bifurcated-skeleton", "require": 4 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "GENUINITY": {
+      "materials": [
+        { "param": "mistilteinn", "require": 1 },
+        { "param": "golden-compass", "require": 2 },
+        { "param": "clawed-pendulum", "require": 3 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "STUPEFACTION": {
+      "materials": [
+        { "param": "mistilteinn", "require": 1 },
+        { "param": "golden-compass", "require": 2 },
+        { "param": "clawed-pendulum", "require": 3 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "ASPIRATIONAL": {
+      "materials": [
+        { "param": "fruit-of-good-and-evil", "require": 1 },
+        { "param": "platinum-ouija", "require": 2 },
+        { "param": "holy-silver", "require": 4 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "HYPERPHRENIA": {
+      "materials": [
+        { "param": "mistilteinn", "require": 1 },
+        { "param": "watch-core", "require": 2 },
+        { "param": "winged-key", "require": 3 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    }
+  }
+}
