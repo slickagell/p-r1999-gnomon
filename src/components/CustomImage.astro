@@ -3,6 +3,7 @@ import type { HTMLAttributes } from "astro/types";
 import { Image, inferRemoteSize } from "astro:assets";
 import imageSize from "image-size";
 import { resolve as resolvePath } from "node:path";
+import fs from "fs";
 
 type ImageSize = { width: number; height: number };
 
@@ -36,9 +37,12 @@ const tryImageSize = async (src: string) => {
   };
   if (typeof src === "string" && src.startsWith("/")) {
     try {
-      const localImgDimension = imageSize(
-        resolvePath(process.cwd(), `public${src}`),
-      );
+      let path = resolvePath(process.cwd(), `public${src}`);
+      const isExist = fs.existsSync(path);
+      if (!isExist) {
+        path = resolvePath(process.cwd(), `public/images/placeholder.png`);
+      }
+      const localImgDimension = imageSize(path);
       dimensions = {
         width: localImgDimension.width || 0,
         height: localImgDimension.height || 0,
@@ -66,12 +70,12 @@ if (
   if (presetWidth && imgOriginWidth > presetWidth) {
     imgWidth = presetWidth;
     imgHeight = parseInt(
-      (imgOriginHeight * (imgWidth / imgOriginWidth)).toFixed(2),
+      (imgOriginHeight * (imgWidth / imgOriginWidth)).toFixed(2)
     );
   } else if (presetHeight && imgOriginHeight > presetHeight) {
     imgHeight = presetHeight;
     imgWidth = parseInt(
-      (imgOriginWidth * (imgHeight / imgOriginHeight)).toFixed(2),
+      (imgOriginWidth * (imgHeight / imgOriginHeight)).toFixed(2)
     );
   } else {
     imgWidth = imgOriginWidth;
