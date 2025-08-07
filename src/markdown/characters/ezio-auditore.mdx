@@ -43,7 +43,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    The Prophet of Florence [Star], Assassin of the Brotherhood
+    The Prophet of Florence \[Star], Assassin of the Brotherhood
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -72,15 +72,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="skill-1-cards-info">
     <CardInfo star="1" type="ATTACK" note={`Hidden among the crowd.`}>
-      1-target attack. Deals **400%** Reality DMG. This attack counts as an *[Assassination]*.
+      1-target attack. Deals **400%** Reality DMG. This attack counts as an *\[Assassination]*.
     </CardInfo>
 
     <CardInfo star="2" type="ATTACK" note={`Hidden among the crowd, he draws the blade in his sleeve.`}>
-      1-target attack. Deals **600%** Reality DMG. This attack counts as an *[Assassination]*.
+      1-target attack. Deals **600%** Reality DMG. This attack counts as an *\[Assassination]*.
     </CardInfo>
 
     <CardInfo star="3" type="ATTACK" note={`Hidden among the crowd, he draws the blade in his sleeve. "Requiescat in Pace."`}>
-      1-target attack. Deals **1000%** Reality DMG. This attack counts as an *[Assassination]*.
+      1-target attack. Deals **1000%** Reality DMG. This attack counts as an *\[Assassination]*.
     </CardInfo>
   </Fragment>
 
@@ -117,50 +117,82 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="weapon-section-content">
-    <CharacterWeapon
-      characterId={frontmatter.id}
-      primaryWeapons={CHARACTER.weapons.primaryWeapons}
-      secondaryWeapons={CHARACTER.weapons.secondaryWeapons}
-    >
+    <CharacterWeapon characterId={frontmatter.id} primaryWeapons={CHARACTER.weapons.primaryWeapons} secondaryWeapons={CHARACTER.weapons.secondaryWeapons}>
       <Fragment slot="combination-selected-content">
-        <div x-show="combination==='venetian-falchion|channeled-cinquedea'">
-          When attacking, excess Critical Rate is converted into Critical DMG.
+        <div x-show="selectedPrimary==='venetian-falchion'">
+          Ultimate counts as an Extra Action;
 
-          Ezio's ultimates now count as Extra Actions. *\[Work in the Dark]* inflicts *\[Assassin's Mark]* on the target hit.
+          *\[Work in the Dark]* inflicts **1** stack of :effect{param="assassin-mark"} on the target hit.
+        </div>
+
+        <div x-show="selectedPrimary==='condottiero-war-hammer'">
+          When casting Ultimate, each time :effect{param="arrow-of-faith"}, :effect{param="edge-of-faith"}, or :effect{param="death-be-not-unkind"} is cast, for every 100 points of Critical Technique Ezio has more than the target, this attack gains Final DMG Dealt **+1%**.
+
+          After other allies cast Ultimate, Ezio gains **1** stack of :effect{param="eagle-s-guidance"} and Synchronization **+10%**.
+        </div>
+
+        <div x-show="selectedPrimary==='captain-s-sword'">
+          Gain Synchronization **+10%** at the end of the round.
+
+          When attacking, inflict **1** instance of :effect{param="poison"} on the target hit for **3** rounds: at the end of the round, take (the user's ATK x**10%**) Genesis DMG.
+
+          When attacking, deal :effect{param="additional-genesis-dmg"} based on the number of :effect{param="poison"} instances on the target; *\[Assassination]*'s effect changes from increasing DMG to dealing Genesis DMG directly.
+        </div>
+
+        <div class="divider m-0 before:bg-primary-content after:bg-primary-content" x-show="!!selectedSecondary" />
+
+        <div x-show="combination==='venetian-falchion|channeled-cinquedea'">
+          When entering battle, own extra actions gain DMG Bonus **+50%**.
+
+          When attacking, excess Critical Rate is converted to Critical DMG at a ratio of **100%**.
         </div>
 
         <div x-show="combination==='venetian-falchion|butcher-knife'">
-          At the start of the round, gain Synchronization.
+          When entering battle, own extra actions gain DMG Bonus **+50%**.
 
-          During the casting of Ezio's ultimate, each time after *\[Arrow of Faith]* or *\[Edge of Faith]* is cast, grant a damage boost to the subsequent *\[Assassination]* attacks during that ultimate.After another ally casts an ultimate, Ezio gains *\[Eagle's Guidance]* and Synchronization.
+          After an allied action, if any enemy dies, cast *\[Work in the Dark]* on an enemy with the lowest HP percentage. This attack counts as a follow-up attack and does not inflict :effect{param="assassin-mark"} on the target. Triggers up to **2** times per round.
         </div>
 
         <div x-show="combination==='venetian-falchion|sultan-s-knife'">
-          :TODO - Update combination venetian-falchion|sultan-s-knife content:
+          When entering battle, own extra actions gain DMG Bonus **+50%**.
+
+          *\[Serve the Light]* inflicts :effect{param="eyes-caught"} on all enemies, and the duration of :effect{param="fighting-experience"} and :effect{param="eyes-caught"} **+1** round.
         </div>
 
         <div x-show="combination==='condottiero-war-hammer|channeled-cinquedea'">
-          :TODO - Update combination condottiero-war-hammer|channeled-cinquedea content:
+          When entering battle, Ultimate Might **+15%**.
+
+          At the start of the round, Synchronization **+15%**.
         </div>
 
         <div x-show="combination==='condottiero-war-hammer|butcher-knife'">
-          :TODO - Update combination condottiero-war-hammer|butcher-knife content:
+          When entering battle, Ultimate Might **+15%**.
+
+          When casting Ultimate, if the attack target has no other allies, this attack gains DMG Dealt **+30%**, and gains Synchronization **+15%** after the Ultimate.
         </div>
 
         <div x-show="combination==='condottiero-war-hammer|sultan-s-knife'">
-          :TODO - Update combination condottiero-war-hammer|sultan-s-knife content:
+          When entering battle, Ultimate Might **+15%**.
+
+          After an allied action, if an enemy target dies, gain Synchronization **+15%**.
         </div>
 
         <div x-show="combination==='captain-s-sword|channeled-cinquedea'">
-          :TODO - Update combination captain-s-sword|channeled-cinquedea content:
+          When entering battle, Genesis DMG **+15%**.
+
+          When attacking, inflict **1** additional instance of *\[Poison]* on the targets hit for **3** rounds.
         </div>
 
         <div x-show="combination==='captain-s-sword|butcher-knife'">
-          :TODO - Update combination captain-s-sword|butcher-knife content:
+          When entering battle, Genesis DMG **+15%**.
+
+          When an attack target has no other allies, on hitting the target, inflict **2** additional instances of *\[Poison]* on that target for **3** rounds.
         </div>
 
         <div x-show="combination==='captain-s-sword|sultan-s-knife'">
-          :TODO - Update combination captain-s-sword|sultan-s-knife content:
+          When entering battle, Genesis DMG **+15%**.
+
+          After an enemy dies, that enemy's instances of *\[Poison]* are inherited by each of that enemy's remaining allies, with each target inheriting up to **10** instances of *\[Poison]* this way.
         </div>
       </Fragment>
     </CharacterWeapon>
@@ -179,7 +211,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
     How to increase Synchronization:
 
-    When a basic incantation triggers *[Assassination]*, Synchronization **+5%**.
+    When a basic incantation triggers *\[Assassination]*, Synchronization **+5%**.
 
     When casting :effect{param="counter-kill"} to riposte an enemy with :effect{param="eyes-caught"}, Synchronization **+5%**.
 
@@ -196,8 +228,8 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="insight-3-info">
     After being attacked, if own HP is below **30%**, dispel all enemies' :effect{param="eyes-caught"} and enter the :effect{param="shadowstalk"} status for 1 round, up to 1 time per round.
-    
-    When any ally triggers *[Assassination]*, gain 1 stack of :effect{param="apprentice-assassin"}.
+
+    When any ally triggers *\[Assassination]*, gain 1 stack of :effect{param="apprentice-assassin"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -205,7 +237,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *The Three Tenets*: When triggering an *[Assassination]* in the :effect{param="master-assassin"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+10%**. When casting *Branding of Faith*, :effect{param="arrow-of-faith"} and :effect{param="edge-of-faith"} can be cast up to **4** times.
+    *The Three Tenets*: When triggering an *\[Assassination]* in the :effect{param="master-assassin"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+10%**. When casting *Branding of Faith*, :effect{param="arrow-of-faith"} and :effect{param="edge-of-faith"} can be cast up to **4** times.
   </Fragment>
 
   <Fragment slot="portray-2-info">
@@ -213,11 +245,11 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *The Three Tenets*: When triggering an *[Assassination]* in the :effect{param="master-assassin-id-1"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+11%**. When casting rank **1/2/3** *Work in the Dark*, deal **460/675/1125%** Reality DMG. When casting *Branding of Faith*, :effect{param="arrow-of-faith"}/:effect{param="edge-of-faith"} deal **140%**/**140%** Reality DMG.
+    *The Three Tenets*: When triggering an *\[Assassination]* in the :effect{param="master-assassin-id-1"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+11%**. When casting rank **1/2/3** *Work in the Dark*, deal **460/675/1125%** Reality DMG. When casting *Branding of Faith*, :effect{param="arrow-of-faith"}/:effect{param="edge-of-faith"} deal **140%**/**140%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    *The Three Tenets*: When triggering an *[Assassination]* in the :effect{param="master-assassin-id-2"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+12%**. *Serve the Light*: When being attacked in the :effect{param="counter-kill"} status, riposte to deal **600%** Reality DMG; when other allies are being attacked, riposte to deal **600%** Reality DMG. When casting *Branding of Faith*, :effect{param="death-be-not-unkind"} deals **900%** Reality DMG.
+    *The Three Tenets*: When triggering an *\[Assassination]* in the :effect{param="master-assassin-id-2"} status, for every **100** points of Critical Technique the attacker has more than the target, gain Final DMG Dealt **+12%**. *Serve the Light*: When being attacked in the :effect{param="counter-kill"} status, riposte to deal **600%** Reality DMG; when other allies are being attacked, riposte to deal **600%** Reality DMG. When casting *Branding of Faith*, :effect{param="death-be-not-unkind"} deals **900%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-5-info">

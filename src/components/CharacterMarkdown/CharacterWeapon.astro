@@ -94,7 +94,7 @@ const weapons = Array(primaryWeapons.length + secondaryWeapons.length)
     </div>
   </div>
   <div
-    x-show="!!selectedPrimary && !!selectedSecondary"
+    x-show="!!selectedPrimary"
     class="mt-6 paper-texture text-black !max-w-full"
   >
     <slot name="combination-selected-content" />
@@ -134,7 +134,12 @@ const weapons = Array(primaryWeapons.length + secondaryWeapons.length)
     },
 
     handleSelectPrimaryWeapon(code) {
-      this.selectedPrimary = code;
+      if (this.selectedPrimary === code) {
+        this.selectedPrimary = "";
+        this.selectedSecondary = "";
+      } else {
+        this.selectedPrimary = code;
+      }
       this.combination = `${this.selectedPrimary}|${this.selectedSecondary}`;
       this.primaryName = this.$store.weapons.primaryWeapons.find(
         (w) => w.code === this.selectedPrimary
@@ -142,7 +147,11 @@ const weapons = Array(primaryWeapons.length + secondaryWeapons.length)
     },
 
     handleSelectSecondaryWeapon(code) {
-      this.selectedSecondary = code;
+      if (this.selectedSecondary === code) {
+        this.selectedSecondary = "";
+      } else {
+        this.selectedSecondary = code;
+      }
       this.combination = `${this.selectedPrimary}|${this.selectedSecondary}`;
       this.secondaryName = this.$store.weapons.secondaryWeapons.find(
         (w) => w.code === this.selectedSecondary
