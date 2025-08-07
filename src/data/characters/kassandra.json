@@ -28,61 +28,96 @@
   },
   "insightMaterials": {
     "1": [
-      {
-        "param": "sharpodonty",
-        "require": 18000
-      },
-      {
-        "param": "page-of-mineral-wealth",
-        "require": 6
-      },
-      {
-        "param": "",
-        "require": 5
-      },
-      {
-        "param": "",
-        "require": 6
-      }
+      { "param": "sharpodonty", "require": 18000 },
+      { "param": "page-of-mineral-wealth", "require": 6 },
+      { "param": "silver-ore", "require": 6 },
+      { "param": "spell-of-fortune", "require": 6 }
     ],
     "2": [
-      {
-        "param": "sharpodonty",
-        "require": 40000
-      },
-      {
-        "param": "scroll-of-mineral-wealth",
-        "require": 10
-      },
-      {
-        "param": "",
-        "require": 6
-      },
-      {
-        "param": "",
-        "require": 6
-      }
+      { "param": "sharpodonty", "require": 40000 },
+      { "param": "scroll-of-mineral-wealth", "require": 10 },
+      { "param": "liquefied-terror", "require": 5 },
+      { "param": "golden-grass-incense", "require": 5 }
     ],
     "3": [
-      {
-        "param": "sharpodonty",
-        "require": 200000
-      },
-      {
-        "param": "tome-of-mineral-wealth",
-        "require": 16
-      },
-      {
-        "param": "",
-        "require": 3
-      },
-      {
-        "param": "",
-        "require": 5
-      }
+      { "param": "sharpodonty", "require": 200000 },
+      { "param": "tome-of-mineral-wealth", "require": 16 },
+      { "param": "wyrmling-skeleton", "require": 6 },
+      { "param": "golden-fleece", "require": 3 }
     ]
   },
-  "resonanceMaterials": {},
+  "resonanceMaterials": {
+    "2": [{ "param": "moment-of-dissonance", "require": 5 }],
+    "3": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "trembling-tooth", "require": 4 }
+    ],
+    "4": [
+      { "param": "moment-of-dissonance", "require": 5 },
+      { "param": "magnesia-crystal", "require": 4 },
+      { "param": "solidus", "require": 3 }
+    ],
+    "5": [
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "luminite-ore", "require": 3 },
+      { "param": "rough-silver-ingot", "require": 4 }
+    ],
+    "6": [
+      { "param": "sharpodonty", "require": 30000 },
+      { "param": "brief-cacophony", "require": 5 },
+      { "param": "clawed-pendulum", "require": 3 }
+    ],
+    "7": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "bifurcated-skeleton", "require": 5 }
+    ],
+    "8": [
+      { "param": "brief-cacophony", "require": 6 },
+      { "param": "winged-key", "require": 4 },
+      { "param": "spell-of-fortune", "require": 6 }
+    ],
+    "9": [
+      { "param": "brief-cacophony", "require": 8 },
+      { "param": "holy-silver", "require": 6 },
+      { "param": "perpetual-cog", "require": 4 }
+    ],
+    "10": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "prophetic-bird", "require": 6 },
+      { "param": "biting-box", "require": 6 }
+    ],
+    "11": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sharpodonty", "require": 120000 },
+      { "param": "sonorous-knell", "require": 5 },
+      { "param": "platinum-ouija", "require": 4 }
+    ],
+    "12": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "wyrmling-skeleton", "require": 4 },
+      { "param": "golden-grass-incense", "require": 5 }
+    ],
+    "13": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 6 },
+      { "param": "silver-bullet", "require": 5 },
+      { "param": "red-lacquer-slab", "require": 6 }
+    ],
+    "14": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "fruit-of-good-and-evil", "require": 2 },
+      { "param": "glowing-mothwing", "require": 4 }
+    ],
+    "15": [
+      { "param": "interlaced-shudder", "require": 1 },
+      { "param": "sonorous-knell", "require": 8 },
+      { "param": "mistilteinn", "require": 3 },
+      { "param": "bogeyman", "require": 4 }
+    ]
+  },
   "abilityMap": {
     "nodes": [
       {

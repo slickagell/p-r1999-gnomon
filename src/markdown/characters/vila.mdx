@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -179,6 +180,30 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPiecesMaterials} />
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      After an allied character is attacked, if their HP is below **70%**, Vila casts a rank 1 *Wordless Song* to them, up to 2 times per round.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      When entering battle, Vila gains Healing Done **+7%** for every 1000 Max HP she has, and Moxie +1.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      :effect{param="rusalka"} New Effect Added: the non-ranked Ultimates cast by Plant, Spirit, and Intelligence characters count as rank 3 incantations. When in the :effect{param="rusalka"} status, Vila can obtain Ultimate. At the start of the round, if in the :effect{param="rusalka"} status, gains rank +1 for a random incantation.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      *Song of Inspiration* New Effect Added: Grants :effect{param="song-of-passion-id-1"} to the target and gains Moxie +1. :effect{param="song-of-generosity-id-1"} and :effect{param="song-of-passion-id-1"} can be granted to multiple targets.
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">

@@ -174,24 +174,30 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     Precognition
   </Fragment>
 
-  <Fragment slot="insight-1-info">
+  <Fragment slot="insight-0-info">
     Replace Moxie with Synchronization. At the start of the round, if Synchronization reaches **100%**, cast Ultimate immediately (cannot cast Ultimate in any other ways).
 
-How to increase Synchronization:
+    How to increase Synchronization:
 
-When a basic incantation triggers *[Assassination]*, Synchronization **+5%**.
+    When a basic incantation triggers *[Assassination]*, Synchronization **+5%**.
 
-When casting :effect{param="counter-kill"} to riposte an enemy with :effect{param="eyes-caught"}, Synchronization **+5%**.
+    When casting :effect{param="counter-kill"} to riposte an enemy with :effect{param="eyes-caught"}, Synchronization **+5%**.
 
-After defeating an enemy, Synchronization **+10%**.
+    After defeating an enemy, Synchronization **+10%**.
   </Fragment>
 
-  <Fragment slot="insight-2-info">
+  <Fragment slot="insight-1-info">
     When being attacked in the :effect{param="fighting-experience"} status, gain DMG Taken **-15%**; if the attacker is in the :effect{param="eyes-caught"} status, gain an additional DMG Taken **-30%**.
   </Fragment>
 
-  <Fragment slot="insight-3-info">
+  <Fragment slot="insight-2-info">
     Critical DMG **+15%** when entering battle.
+  </Fragment>
+
+  <Fragment slot="insight-3-info">
+    After being attacked, if own HP is below **30%**, dispel all enemies' :effect{param="eyes-caught"} and enter the :effect{param="shadowstalk"} status for 1 round, up to 1 time per round.
+    
+    When any ally triggers *[Assassination]*, gain 1 stack of :effect{param="apprentice-assassin"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">

@@ -1,11 +1,11 @@
 ---
-name: "Kassandra"
-id: "kassandra"
-gameId: "3124"
-code: "KASSANDRA"
-gender: "FEMALE"
+name: "Alexios"
+id: "alexios"
+gameId: "3122"
+code: "ALEXIOS"
+gender: ""
 star: 6
-afflatus: "MINERAL"
+afflatus: "BEAST"
 dmgType: "REALITY"
 race: "HUMAN"
 birthday: ""
@@ -19,7 +19,6 @@ isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
-import CharacterAbilityMap from '@components/CharacterMarkdown/CharacterAbilityMap.astro';
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -27,11 +26,11 @@ import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
 import RACE from "@data/common/character/race.json";
 import SPECIALTY from "@data/common/character/specialty.json";
-import CHARACTER from "@data/characters/kassandra.json";
-import RESONANCE from "@data/resonance/characters/kassandra.json";
+import CHARACTER from "@data/characters/alexios.json";
+import RESONANCE from "@data/resonance/characters/alexios.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Kassandra
+# Alexios
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
@@ -110,14 +109,6 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <CardInfo type="" note=":TODO - Add character ultimate note:">
       :TODO - Update character ultimate description:
     </CardInfo>
-  </Fragment>
-
-  <Fragment slot="ability-section-title">
-    Ability
-  </Fragment>
-
-  <Fragment slot="ability-section-content">
-    <CharacterAbilityMap map={CHARACTER.abilityMap} />
   </Fragment>
 
   <Fragment slot="inheritance-section-title">

@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -160,6 +161,39 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="portray-5-info">
     *Reading Class*: At incantation rank **1/2/3**, the Mental DMG is increased to **230/380/520%**.
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+  
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      :effect{param="perusal"} New Effect Added: After an allied rank 2/3 incantation is cast, Marcus gains 1/2 stacks of :effect{param="life-experience"}. At the start of the round, consumes 1/2 stacks of :effect{param="life-experience"} to generate 1 rank 1/2 Precast Incantation - Reading Class, then consumes 1/2 stacks of :effect{param="life-experience"} to generate 1 rank 1/2 Precast Incantation - From the Lantern if there is :effect{param="life-experience"} left.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      *Next Chapter*: All the :effect{param="preparation-marcus"} gained become rank 2 Precast Incantation - Reading Class.
+
+When attacking, consumes 2 stacks of :effect{param="life-experience"} to enhance incantation effect:
+
+*Reading Class*: Deal an additional (basic Mental DMG x**100%**) Mental DMG. At rank 3 incantation, Penetration Rate **+30%**.
+
+*From the Lantern*: Deal an additional (basic Mental DMG x**100%**) Mental DMG. If the target is in the :effect{param="annotate"} status, deal an additional **90/120/225%** Mental DMG.
+
+*Next Chapter*: Deal an additional (basic Mental DMG x**100%**) Mental DMG. If the target is in the :effect{param="annotate"} status, deal an additional **600%** Mental DMG.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      Enemies in the :effect{param="annotate"} status no longer recover Eureka for Marcus when they take action. Instead, when Marcus attacks an enemy in the :effect{param="annotate"} status, excess Critical Rate is converted to Critical DMG, and recovers 1 Eureka for Marcus.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      At the end of the round, upon gaining 8 stacks of :effect{param="life-experience"}, gains :effect{param="continuous-action-i"} for 1 round.
+    </div>
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -33,199 +33,154 @@
       "name": "Drink Deep, Cerulean Waves So Blue",
       "materials": {
         "0": [
-          {
-            "param": "key-of-thought",
-            "require": 12
-          },
-          {
-            "param": "sprout-of-fantasy",
-            "require": 40
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 200
-          },
-          {
-            "param": "mistilteinn",
-            "require": 3
-          }
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "mistilteinn", "require": 3 }
         ],
         "1": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 20
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 80
-          },
-          {
-            "param": "serpent-scepter",
-            "require": 1
-          },
-          {
-            "param": "watch-core",
-            "require": 1
-          }
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "serpent-scepter", "require": 1 },
+          { "param": "watch-core", "require": 1 }
         ],
         "2": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 30
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 120
-          },
-          {
-            "param": "rheingold",
-            "require": 1
-          },
-          {
-            "param": "goldbell-spirit-bottle",
-            "require": 2
-          }
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "rheingold", "require": 1 },
+          { "param": "goldbell-spirit-bottle", "require": 2 }
         ],
         "3": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 35
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 140
-          },
-          {
-            "param": "fruit-of-good-and-evil",
-            "require": 2
-          },
-          {
-            "param": "bogeyman",
-            "require": 2
-          }
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "fruit-of-good-and-evil", "require": 2 },
+          { "param": "bogeyman", "require": 2 }
         ],
         "4": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 40
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 160
-          },
-          {
-            "param": "mistilteinn",
-            "require": 2
-          },
-          {
-            "param": "incorrupt-monkeypaw",
-            "require": 2
-          }
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "mistilteinn", "require": 2 },
+          { "param": "incorrupt-monkeypaw", "require": 2 }
         ]
       },
       "stats": {
         "1": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 195
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
           "data": {
-            "HP": {
-              "value": 130
-            },
-            "ATTACK": {
-              "value": 30
-            },
-            "REALITY_DEFENSE": {
-              "value": 15
-            },
-            "MENTAL_DEFENSE": {
-              "value": 8
-            },
-            "GENESIS_DMG_BONUS": {
-              "value": 5,
-              "unit": "%"
-            }
+            "HP": { "value": 130 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 15 },
+            "MENTAL_DEFENSE": { "value": 8 },
+            "GENESIS_DMG_BONUS": { "value": 5, "unit": "%" }
           }
         },
         "2": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 446
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
           "data": {
-            "HP": {
-              "value": 260
-            },
-            "ATTACK": {
-              "value": 48
-            },
-            "REALITY_DEFENSE": {
-              "value": 22
-            },
-            "MENTAL_DEFENSE": {
-              "value": 18
-            },
-            "GENESIS_DMG_BONUS": {
-              "value": 7.5,
-              "unit": "%"
-            }
+            "HP": { "value": 260 },
+            "ATTACK": { "value": 48 },
+            "REALITY_DEFENSE": { "value": 22 },
+            "MENTAL_DEFENSE": { "value": 18 },
+            "GENESIS_DMG_BONUS": { "value": 7.5, "unit": "%" }
           }
         },
         "3": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 776
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
           "data": {
-            "HP": {
-              "value": 390
-            },
-            "ATTACK": {
-              "value": 66
-            },
-            "REALITY_DEFENSE": {
-              "value": 34
-            },
-            "MENTAL_DEFENSE": {
-              "value": 28
-            },
-            "GENESIS_DMG_BONUS": {
-              "value": 10,
-              "unit": "%"
-            }
+            "HP": { "value": 390 },
+            "ATTACK": { "value": 66 },
+            "REALITY_DEFENSE": { "value": 34 },
+            "MENTAL_DEFENSE": { "value": 28 },
+            "GENESIS_DMG_BONUS": { "value": 10, "unit": "%" }
           }
         },
         "4": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 1811
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
           "data": {
-            "HP": {
-              "value": 605
-            },
-            "ATTACK": {
-              "value": 101
-            },
-            "REALITY_DEFENSE": {
-              "value": 57
-            },
-            "MENTAL_DEFENSE": {
-              "value": 48
-            },
-            "GENESIS_DMG_BONUS": {
-              "value": 10,
-              "unit": "%"
-            }
+            "HP": { "value": 605 },
+            "ATTACK": { "value": 101 },
+            "REALITY_DEFENSE": { "value": 57 },
+            "MENTAL_DEFENSE": { "value": 48 },
+            "GENESIS_DMG_BONUS": { "value": 10, "unit": "%" }
+          }
+        }
+      }
+    },
+    {
+      "gameId": "305102",
+      "code": "TURN_OF_THE_TIDE",
+      "name": "Turn of the Tide",
+      "materials": {
+        "0": [
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "serpent-scepter", "require": 3 }
+        ],
+        "1": [
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "serpent-scepter", "require": 1 },
+          { "param": "watch-core", "require": 1 }
+        ],
+        "2": [
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "rheingold", "require": 1 },
+          { "param": "goldbell-spirit-bottle", "require": 2 }
+        ],
+        "3": [
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "fruit-of-good-and-evil", "require": 2 },
+          { "param": "bogeyman", "require": 2 }
+        ],
+        "4": [
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "mistilteinn", "require": 2 },
+          { "param": "incorrupt-monkeypaw", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
+          "data": {
+            "HP": { "value": 130 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 15 },
+            "MENTAL_DEFENSE": { "value": 8 },
+            "GENESIS_DMG_BONUS": { "value": 5, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
+          "data": {
+            "HP": { "value": 260 },
+            "ATTACK": { "value": 48 },
+            "REALITY_DEFENSE": { "value": 22 },
+            "MENTAL_DEFENSE": { "value": 18 },
+            "GENESIS_DMG_BONUS": { "value": 7.5, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
+          "data": {
+            "HP": { "value": 390 },
+            "ATTACK": { "value": 66 },
+            "REALITY_DEFENSE": { "value": 34 },
+            "MENTAL_DEFENSE": { "value": 28 },
+            "GENESIS_DMG_BONUS": { "value": 10, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
+          "data": {
+            "HP": { "value": 605 },
+            "ATTACK": { "value": 101 },
+            "REALITY_DEFENSE": { "value": 57 },
+            "MENTAL_DEFENSE": { "value": 48 },
+            "GENESIS_DMG_BONUS": { "value": 10, "unit": "%" }
           }
         }
       }

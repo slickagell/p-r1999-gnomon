@@ -183,8 +183,27 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
-      When an ally attacks, for every **10%** Missing Max HP the ally has, the ally gains Critical Rate **+4%** and Critical DMG **+6%** (stacks up to 5 times); if the ally's HP is below **50%**, then the ally's excess Critical Rate is converted to Critical DMG."
+      When an ally attacks, for every **10%** Missing Max HP the ally has, the ally gains Critical Rate **+4%** and Critical DMG **+6%** (stacks up to 5 times); if the ally's HP is below **50%**, then the ally's excess Critical Rate is converted to Critical DMG.
     </div>
+    
+    <div x-show={`active==='${CHARACTER.euphorias[1].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[1].materials[1]} stats={CHARACTER.euphorias[1].stats[1]} />
+
+      Whenever an ally loses HP, accumulate points of :effect{param="bloodtithe"}. When entering battle, gain :effect{param="blood-of-immortality"}. :effect{param="blood-of-immortality"} Enhancement: At the start of the round, consume all allies' (Current HP x**20%**) HP; if there are 10/20/30 Bloodtithe points, consume them to upgrade :effect{param="blood-of-immortality"}; at rank I/II/III, :effect{param="blood-of-immortality"} grants Max HP **+10/30/60%**, and ATK **+50/70/120** for every 1000 Max HP owned.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[1].materials[2]} stats={CHARACTER.euphorias[1].stats[2]} />
+
+      When :effect{param="blood-of-immortality"} reaches rank II, *Vigor Handbag* *Vintage Handfan* grants Moxie +1.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[1].materials[3]} stats={CHARACTER.euphorias[1].stats[3]} />
+
+      When :effect{param="blood-of-immortality"} reaches rank III, *Anecdotes in Exeter* guarantees a critical hit and deals an additional (basic Reality DMG x**100%**) Reality DMG.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[1].materials[4]} stats={CHARACTER.euphorias[1].stats[4]} />
+
+      At the start of the round, if :effect{param="blood-of-immortality"} is at rank III, consumes 10 :effect{param="bloodtithe"} points to cast *Anecdotes in Exeter*.
+    </div>
+    
   </Fragment>
 
   <Fragment slot="overview-section-title">
