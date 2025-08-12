@@ -59,6 +59,10 @@ export default {
         ["hadal-zone"]: "#3998c2",
 
         ["timeline-storm"]: "#db6f39",
+        ["timeline-main-story"]: "#EF9C66",
+        ["timeline-event-story"]: "#FCDC94",
+        ["timeline-character-story"]: "#B1C29E",
+        ["timeline-anecdote"]: "#78ABA8",
       },
       gridTemplateColumns: {
         filter: "auto 1fr",

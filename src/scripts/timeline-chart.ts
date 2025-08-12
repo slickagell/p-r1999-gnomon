@@ -1,5 +1,7 @@
 import * as d3 from "d3";
 import dayjs from "dayjs";
+import STORM_NODE_DATA from "@data/timeline/storm-node.json";
+import PERIOD_EVENT_DATA from "@data/timeline/period-event.json";
 
 const MARGIN = { TOP: 16, RIGHT: 32, BOTTOM: 32, LEFT: 32 };
 const CHART_BOX_WIDTH = 1200;
@@ -29,314 +31,15 @@ const MAX_PERIOD_HEIGHT = 8;
 const TRANSITION_DURATION_TIME = 300;
 
 const PERIOD_COLOR = "#EBE0D5";
-const MAIN_STORY_EVENT_COLOR = "#873a4b";
-const EVENT_EVENT_COLOR = "#d3c47c";
-const CHARACTER_STORY_EVENT_COLOR = "#623583";
-const ANECDOTE_EVENT_COLOR = "#617594";
+const MAIN_STORY_EVENT_COLOR = "#EF9C66";
+const EVENT_EVENT_COLOR = "#FCDC94";
+const CHARACTER_STORY_EVENT_COLOR = "#B1C29E";
+const ANECDOTE_EVENT_COLOR = "#78ABA8";
 
 const EVENTS_Y_GAP = 12;
 const STORM_LINK_GAP = 10;
 
 const STORM_TEXT_FONT_SIZE = 10;
-
-const STORM_NODE_DATA = [
-  {
-    id: "storm_1",
-    jump: ["1999", "1996"],
-    jumpText: ["1999", "1996"],
-  },
-  {
-    id: "storm_2",
-    jump: ["1997", "1985"],
-    jumpText: ["1997", "1985"],
-  },
-  {
-    id: "storm_3",
-    jump: ["1987", "1977"],
-    jumpText: ["1987", "1977"],
-  },
-  {
-    id: "storm_4",
-    jump: ["1978", "1933"],
-    jumpText: ["1978", "193X"],
-  },
-  {
-    id: "storm_5",
-    jump: ["1937", "1912"],
-    jumpText: ["193X", "1912"],
-  },
-  {
-    id: "storm_6",
-    jump: ["1913", "1966"],
-    jumpText: ["1913", "1966"],
-  },
-  {
-    id: "storm_7",
-    jump: ["1966", "1929"],
-    jumpText: ["1966", "1929"],
-  },
-  {
-    id: "storm_8",
-    jump: ["1929", "1913"],
-    jumpText: ["1929", "1913"],
-  },
-  {
-    id: "storm_9",
-    jump: ["1914", "1990"],
-    jumpText: ["1914", "1990"],
-  },
-];
-
-const PERIOD_EVENT_DATA = [
-  {
-    period: [1996, 1997],
-    periodText: ["1996", "1997"],
-    href: "#period-1996---1997",
-    events: [
-      {
-        year: [1996],
-        label: "1.8 - Farewell Rayashki",
-        type: "event-story",
-      },
-      {
-        year: [1996],
-        label: "Beginning of chapter 3",
-        type: "main-story",
-      },
-    ],
-  },
-  {
-    period: [1985, 1987],
-    periodText: ["1985", "1987"],
-    href: "#period-1985---1987",
-    events: [
-      {
-        year: [1985],
-        label: "Vila's character story: Dawn Arrives As Usual",
-        type: "character-story",
-      },
-      {
-        year: [1985],
-        label: "Windsong's character story: Silver Knot (present time)",
-        type: "character-story",
-      },
-      {
-        year: [1986],
-        label: "Zeno's anecdote",
-        type: "anecdote",
-      },
-      {
-        year: [1986],
-        label: "Middle of chapter 5",
-        type: "main-story",
-      },
-      {
-        year: [1987],
-        label: "2.7 - 1987 Cosmic Overtune",
-        type: "event-story",
-      },
-      {
-        year: [1987],
-        label: "Chapter 3",
-        type: "main-story",
-      },
-      {
-        year: [1987],
-        label: "6's character story",
-        type: "character-story",
-      },
-    ],
-  },
-  {
-    period: [1977, 1978],
-    periodText: ["1977", "1978"],
-    href: "#period-1977---1978",
-    events: [
-      {
-        year: [1977],
-        label: "Mesmer's anecdote",
-        type: "anecdote",
-      },
-    ],
-  },
-  {
-    period: [1933, 1937],
-    periodText: ["193X", "193X"],
-    href: "#period-193x---194x",
-    events: [
-      {
-        year: [1935],
-        label: "2.3 - Chronicles of Uluru: London Dawning",
-        type: "event-story",
-      },
-    ],
-  },
-  {
-    period: [1912, 1913],
-    periodText: ["1912", "1913"],
-    href: "#period-1912---1913",
-    events: [
-      {
-        year: [1912],
-        label: "Marcus's character story",
-        type: "character-story",
-      },
-      {
-        year: [1912],
-        label: "Eagle's anecdote",
-        type: "anecdote",
-      },
-    ],
-  },
-  {
-    period: [1966],
-    periodText: ["1966"],
-    href: "#year-1966",
-    events: [
-      {
-        year: [1966],
-        label: "1.1 - The Theft of the Rimet Cup",
-        type: "event-story",
-      },
-      {
-        year: [1966],
-        label: "1.3 - Journey to Mor Pankh",
-        type: "event-story",
-      },
-    ],
-  },
-  {
-    period: [1929],
-    periodText: ["1929"],
-    href: "#year-1929",
-    events: [
-      {
-        year: [1929],
-        label: "Chapter Prologue",
-        type: "main-story",
-      },
-      {
-        year: [1929],
-        label: "Chapter 1",
-        type: "main-story",
-      },
-      {
-        year: [1929],
-        label: "Chapter 2",
-        type: "main-story",
-      },
-    ],
-  },
-  {
-    period: [1913, 1914],
-    periodText: ["1913", "1914"],
-    href: "#period-1913---1914",
-    events: [
-      {
-        year: [1913],
-        label: "Chapter 3",
-        type: "main-story",
-      },
-      {
-        year: [1913],
-        label: "Chapter 4",
-        type: "main-story",
-      },
-      {
-        year: [1914],
-        label: "Beginning of chapter 5",
-        type: "main-story",
-      },
-      {
-        year: [1914],
-        label: "Digger's anecdote",
-        type: "anecdote",
-      },
-      {
-        year: [1914],
-        label: "Semmelweis: Echoes in the Mountain",
-        type: "event-story",
-      },
-      {
-        year: [1914],
-        label: "Chapter 6",
-        type: "main-story",
-      },
-      {
-        year: [1914],
-        label: "Chapter 7",
-        type: "main-story",
-      },
-      {
-        year: [1914],
-        label: "Semmelweis: A Series of Dusks",
-        type: "event-story",
-      },
-    ],
-  },
-  {
-    period: [1990, "1991-03-22"],
-    periodText: ["1990", "1991"],
-    href: "#year-1990",
-    events: [
-      {
-        year: ["1990-09"],
-        label: "1.2 - A Nightmare at Green Lake",
-        type: "event-story",
-      },
-      {
-        year: ["1990-09"],
-        label: "2.0 - Floor It! To the Golden City",
-        type: "event-story",
-      },
-      {
-        year: ["1990-10"],
-        label: "2.1 - Route 77: The Haunted Highway",
-        type: "event-story",
-      },
-      {
-        year: ["1990-11"],
-        label: "Chapter 8",
-        type: "main-story",
-      },
-      {
-        year: ["1991-01"],
-        label: "1.5 - Revival! The Uluru Games",
-        type: "event-story",
-      },
-      {
-        year: ["1991-01"],
-        label: "2.5 - Showdown in Chinatown",
-        type: "event-story",
-      },
-      {
-        year: ["1991-01"],
-        label: "37's anecdote",
-        type: "anecdote",
-      },
-      {
-        year: ["1991-02"],
-        label: "2.4 - Last Evenings on Earth",
-        type: "event-story",
-      },
-      {
-        year: ["1991-03"],
-        label: "Blonney's anecdote",
-        type: "anecdote",
-      },
-      {
-        year: ["1991-03"],
-        label: "Semmelweis's anecdote",
-        type: "anecdote",
-      },
-      {
-        year: ["1991-03-22"],
-        label: "Chapter 9",
-        type: "main-story",
-      },
-    ],
-  },
-];
 
 const parseDayJsFromString = (date: string | number) => {
   const [year, month, day] = date.toString().split("-");
@@ -408,6 +111,8 @@ export default () => ({
     anecdoteNode: true,
     eventNodeGap: true,
   },
+
+  selectedPeriod: "",
 
   init() {
     document.querySelector("#timeline")?.addEventListener(
@@ -650,7 +355,7 @@ export default () => ({
           y: this.yLine(this.stormEventYCoordinate),
           originY: this.yLine(this.stormEventYCoordinate),
           h: PERIOD_HEIGHT,
-          href: event.href,
+          param: event.param,
         };
       });
     });
@@ -723,10 +428,9 @@ export default () => ({
       .selectAll(".period")
       .data(periodTimes)
       .enter()
-      .append("a")
-      .attr("href", (d) => d[0].href)
       .append("rect")
-      .attr("class", "period");
+      .attr("class", "period")
+      .on("click", (e, d, i) => this.showInfoModal(e, d, i));
 
     this.periods
       .attr("x", (d) => d[0].x)
@@ -1137,5 +841,15 @@ export default () => ({
       this.initChartData();
       return;
     }
+  },
+
+  showInfoModal(e, d, i) {
+    this.selectedPeriod = d[0]?.param;
+
+    const nodeInfoModal = document.querySelector(
+      "#node-info-modal",
+    ) as HTMLDialogElement;
+
+    nodeInfoModal?.showModal();
   },
 });

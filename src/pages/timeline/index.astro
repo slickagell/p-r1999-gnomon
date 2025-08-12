@@ -6,6 +6,7 @@ import MarkdownParagraphContent from "@components/MarkdownParagraphContent.astro
 import Layout from "@layouts/Layout.astro";
 import { render } from "astro:content";
 import { getEntry } from "astro:content";
+import PERIOD_EVENT_DATA from "@data/timeline/period-event.json";
 import "@styles/timeline.css";
 
 const timelineContentEntry = await getEntry("timeline", "general")!;
@@ -133,6 +134,74 @@ const { Content } = await render(timelineContentEntry);
         </div>
       </div>
     </div>
+    <dialog id="node-info-modal" class="modal">
+      <div class="modal-box">
+        <form method="dialog">
+          <button
+            class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+          >
+            ✕
+          </button>
+        </form>
+        {
+          PERIOD_EVENT_DATA.map((period) => {
+            return (
+              <div x-show={`selectedPeriod === '${period.param}'`}>
+                <h3 class="text-primary-content">
+                  {period.periodText.join(" - ")}
+                </h3>
+                <div class="md:mt-4 md:grid md:grid-cols-[max-content_1fr] gap-x-2 gap-y-4">
+                  {period.events.map((event) => {
+                    return (
+                      <>
+                        {event.year.map((year) => {
+                          return (
+                            <>
+                              <p class="mt-4">{year}</p>
+                              <div>
+                                {(() => {
+                                  switch (event.type) {
+                                    case "event-story":
+                                      return (
+                                        <p class="text-timeline-event-story">
+                                          Event Story
+                                        </p>
+                                      );
+                                    case "character-story":
+                                      return (
+                                        <p class="text-timeline-character-story">
+                                          Character Story
+                                        </p>
+                                      );
+                                    case "anecdote":
+                                      return (
+                                        <p class="text-timeline-anecdote">
+                                          Anecdote
+                                        </p>
+                                      );
+                                    default:
+                                      return (
+                                        <p class="text-timeline-main-story">
+                                          Main Story
+                                        </p>
+                                      );
+                                  }
+                                })()}
+                                {event.label}
+                              </div>
+                            </>
+                          );
+                        })}
+                      </>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </dialog>
   </div>
   <div class="mt-8">
     <Content
@@ -145,6 +214,7 @@ const { Content } = await render(timelineContentEntry);
     />
   </div>
 </Layout>
+
 <script>
   import timelineChart from "@scripts/timeline-chart";
   import Alpine from "alpinejs";
