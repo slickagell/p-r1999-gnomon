@@ -87,7 +87,7 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
         <p class="text-center">
           Chapter <span x-text="activeChapter.chapter"></span>
         </p>
-        <span class="text-center" x-text="activeChapter.title"></span>
+        <p class="text-center" x-text="activeChapter.title"></p>
       </div>
       <button
         :disabled={`activeChapterIdx === ${anecdoteChapters.length - 1}`}
@@ -134,7 +134,7 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
         <p class="text-center">
           Chapter <span x-text="activeChapter.chapter"></span>
         </p>
-        <span class="text-center" x-text="activeChapter.title"></span>
+        <p class="text-center" x-text="activeChapter.title"></p>
       </div>
       <button
         :disabled={`activeChapterIdx === ${anecdoteChapters.length - 1}`}
@@ -180,7 +180,6 @@ const anecdotePart = await getEntry("anecdoteStory", id)!;
         title: chapter.title,
         description: chapter.description,
       }));
-      console.log(this.chapters);
       this.renderChapter();
     },
 

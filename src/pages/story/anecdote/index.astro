@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
 import { getCollection } from "astro:content";
 
 const anecdoteEntries = await getCollection(
@@ -30,16 +31,27 @@ const anecdoteEntries = await getCollection(
 
   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
     {
-      anecdoteEntries.map((anecdoteEntry) => (
-        <a href={`/story/anecdote/${anecdoteEntry.id}`}>
-          <div class="card card-compact border border-primary">
-            <div class="card-body">
-              <h2 class="card-title">{anecdoteEntry.data.title}</h2>
-              <p>{anecdoteEntry.data.description}</p>
+      anecdoteEntries
+        .sort((a, b) => a.data.title.localeCompare(b.data.title))
+        .map((anecdoteEntry) => (
+          <a href={`/story/anecdote/${anecdoteEntry.id}`}>
+            <div class="card card-compact border border-primary">
+              <div class="card-body">
+                <div class="flex gap-4 items-center">
+                  <CharacterImg
+                    class="shrink-0"
+                    variant="headicon"
+                    gameId={anecdoteEntry.data.characterGameId}
+                  />
+                  <div>
+                    <h2 class="card-title">{anecdoteEntry.data.title}</h2>
+                    <p>{anecdoteEntry.data.description}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </a>
-      ))
+          </a>
+        ))
     }
   </div>
 </Layout>
