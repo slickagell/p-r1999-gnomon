@@ -1,0 +1,42 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const eventEntries = await getCollection("eventStory", ({ id: entryId }) => {
+  return !entryId.includes("/");
+});
+---
+
+<Layout
+  title="Event"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Story",
+      href: "/story",
+    },
+    {
+      label: "Event",
+    },
+  ]}
+>
+  <h1>Event</h1>
+
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+    {
+      eventEntries.map((eventEntry) => (
+        <a href={`/story/event/${eventEntry.id}`}>
+          <div class="card card-compact border border-primary">
+            <div class="card-body">
+              <h2 class="card-title">{eventEntry.data.title}</h2>
+              <p>{eventEntry.data.description}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Layout>

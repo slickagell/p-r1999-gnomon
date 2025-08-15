@@ -1,0 +1,226 @@
+---
+import Icon from "@components/Icon.astro";
+import StoryMarkdownBlockquote from "@components/StoryMarkdown/StoryMarkdownBlockquote.astro";
+import StoryMarkdownDiscList from "@components/StoryMarkdown/StoryMarkdownDiscList.astro";
+import StoryMarkdownEmphasis from "@components/StoryMarkdown/StoryMarkdownEmphasis.astro";
+import StoryMarkdownHighlight from "@components/StoryMarkdown/StoryMarkdownHighlight.astro";
+import StoryMarkdownParagraphContent from "@components/StoryMarkdown/StoryMarkdownParagraphContent.astro";
+import StoryMarkdownThematicBreak from "@components/StoryMarkdown/StoryMarkdownThematicBreak.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection, getEntry, render } from "astro:content";
+import fs from "fs";
+
+export async function getStaticPaths() {
+  const anecdoteFolders = fs.readdirSync("./src/markdown/story/anecdote");
+  return anecdoteFolders.map((folder) => ({
+    params: { slug: folder },
+    props: { id: folder },
+  }));
+}
+
+const { id } = Astro.props;
+const anecdoteEntries = await getCollection(
+  "anecdoteStory",
+  ({ id: entryId }) => {
+    return entryId.includes(id + "/");
+  }
+);
+
+const sortedAnecdoteEntries = anecdoteEntries.sort((a, b) => {
+  return a.data.chapter - b.data.chapter;
+});
+
+const anecdoteChapters = sortedAnecdoteEntries.map((entry, idx) => {
+  return {
+    id: entry.id.split("/").pop() ?? idx + "",
+    chapter: entry.data.chapter,
+    title: entry.data.title,
+    description: entry.data.description,
+  };
+});
+const anecdotePart = await getEntry("anecdoteStory", id)!;
+---
+
+<Layout
+  title={`${anecdotePart.data.title} | Anecdote`}
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Story",
+      href: "/story",
+    },
+    {
+      label: "Anecdote",
+      href: "/story/anecdote",
+    },
+    {
+      label: anecdotePart.data.title,
+    },
+  ]}
+>
+  <h1>{anecdotePart.data.title}</h1>
+
+  <div x-data="dataset">
+    <select
+      class="select select-secondary w-full my-4"
+      @change="changeChapter($event.target.value)"
+    >
+      <template x-for="chapter in chapters">
+        <option
+          x-text="'Chapter ' + chapter.chapter + ': ' + chapter.title"
+          :value="chapter.id"
+          :selected="activeChapterIdx === chapter.id"></option>
+      </template>
+    </select>
+    <div class="flex gap-2 justify-center items-center" x-ref="topChapter">
+      <button
+        :disabled="activeChapterIdx === 0"
+        class="disabled:opacity-30"
+        @click="prevChapter"
+      >
+        <Icon icon="chevron-compact-left" />
+      </button>
+      <div>
+        <p class="text-center">
+          Chapter <span x-text="activeChapter.chapter"></span>
+        </p>
+        <p class="text-center" x-text="activeChapter.title"></p>
+      </div>
+      <button
+        :disabled={`activeChapterIdx === ${anecdoteChapters.length - 1}`}
+        class="disabled:opacity-30"
+        @click="nextChapter"
+      >
+        <Icon icon="chevron-compact-right" />
+      </button>
+    </div>
+    <p class="mt-4 text-center italic" x-text="activeChapter.description"></p>
+    <div class="divider"></div>
+    {
+      sortedAnecdoteEntries.map(async (entry, idx) => {
+        const { Content } = await render(entry);
+
+        return (
+          <template x-if={`activeChapterIdx === ${idx}`}>
+            <div>
+              <Content
+                components={{
+                  p: StoryMarkdownParagraphContent,
+                  strong: StoryMarkdownHighlight,
+                  ul: StoryMarkdownDiscList,
+                  em: StoryMarkdownEmphasis,
+                  hr: StoryMarkdownThematicBreak,
+                  blockquote: StoryMarkdownBlockquote,
+                }}
+              />
+            </div>
+          </template>
+        );
+      })
+    }
+    <div class="divider"></div>
+    <div class="flex gap-2 justify-center items-center">
+      <button
+        :disabled="activeChapterIdx === 0"
+        class="disabled:opacity-30"
+        @click="prevChapter"
+      >
+        <Icon icon="chevron-compact-left" />
+      </button>
+      <div>
+        <p class="text-center">
+          Chapter <span x-text="activeChapter.chapter"></span>
+        </p>
+        <p class="text-center" x-text="activeChapter.title"></p>
+      </div>
+      <button
+        :disabled={`activeChapterIdx === ${anecdoteChapters.length - 1}`}
+        class="disabled:opacity-30"
+        @click="nextChapter"
+      >
+        <Icon icon="chevron-compact-right" />
+      </button>
+    </div>
+  </div>
+</Layout>
+
+<script
+  is:inline
+  define:vars={{
+    chapters: anecdoteChapters,
+  }}
+>
+  document.addEventListener("alpine:init", () => {
+    window.Alpine.store("anecdote", {
+      chapters,
+    });
+  });
+</script>
+
+<script>
+  import Alpine from "alpinejs";
+
+  Alpine.data("dataset", () => ({
+    chapters: [],
+    activeChapterIdx: 0,
+    activeChapter: {
+      id: 0,
+      chapter: "",
+      title: "",
+      description: "",
+    },
+
+    init() {
+      this.chapters = this.$store.anecdote.chapters.map((chapter, idx) => ({
+        id: idx,
+        chapter: chapter.chapter,
+        title: chapter.title,
+        description: chapter.description,
+      }));
+      this.renderChapter();
+    },
+
+    renderChapter() {
+      const chapter = this.$store.anecdote.chapters[this.activeChapterIdx];
+
+      if (!chapter) {
+        return;
+      }
+
+      this.activeChapter = {
+        id: this.activeChapterIdx,
+        chapter: chapter.chapter,
+        title: chapter.title,
+        description: chapter.description,
+      };
+
+      this.$nextTick(() => {
+        this.scrollToTop();
+      });
+    },
+
+    nextChapter() {
+      this.activeChapterIdx++;
+      this.renderChapter();
+    },
+
+    prevChapter() {
+      this.activeChapterIdx--;
+      this.renderChapter();
+    },
+
+    changeChapter(chapterId) {
+      this.activeChapterIdx = +chapterId;
+      this.renderChapter();
+    },
+
+    scrollToTop() {
+      const topChapterPos =
+        this.$refs.topChapter.getBoundingClientRect().top + window.scrollY - 72;
+      window.scrollTo({ top: topChapterPos, behavior: "smooth" });
+    },
+  }));
+</script>
