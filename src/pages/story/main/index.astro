@@ -1,4 +1,5 @@
 ---
+import CustomImage from "@components/CustomImage.astro";
 import Layout from "@layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
@@ -30,9 +31,18 @@ const mainStoryEntries = await getCollection("mainStory", ({ id: entryId }) => {
       mainStoryEntries.map((eventEntry) => (
         <a href={`/story/main/${eventEntry.id}`}>
           <div class="card card-compact border border-primary">
-            <div class="card-body">
-              <h2 class="card-title">{eventEntry.data.title}</h2>
-              <p>{eventEntry.data.description}</p>
+            <div class="card-body !py-2">
+              <div class="flex gap-4 items-center">
+                <CustomImage
+                  class="w-1/4"
+                  src={`/images/chapter/${eventEntry.data.pic}`}
+                  alt={eventEntry.data.title}
+                />
+                <div>
+                  <h2 class="card-title">{eventEntry.data.title}</h2>
+                  <p>{eventEntry.data.description}</p>
+                </div>
+              </div>
             </div>
           </div>
         </a>
