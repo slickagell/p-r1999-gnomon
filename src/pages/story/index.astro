@@ -1,0 +1,51 @@
+---
+import Layout from "@layouts/Layout.astro";
+
+const storiesType = [
+  //   {
+  //     title: "Main Story",
+  //     href: "/story/main",
+  //     desc: "Main Story chapters",
+  //   },
+  {
+    title: "Anecdote",
+    href: "/story/anecdote",
+    desc: "Anecdote",
+  },
+  //   {
+  //     title: "Event",
+  //     href: "/story/event",
+  //     desc: "Story from event patches",
+  //   },
+];
+---
+
+<Layout
+  title="Story"
+  breadcrumbs={[
+    {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "Story",
+    },
+  ]}
+>
+  <h1>Story</h1>
+
+  <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+    {
+      storiesType.map((storyType) => (
+        <a href={storyType.href}>
+          <div class="card card-compact border border-primary">
+            <div class="card-body">
+              <h2 class="card-title">{storyType.title}</h2>
+              <p>{storyType.desc}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</Layout>

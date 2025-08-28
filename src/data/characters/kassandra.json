@@ -1,29 +1,13 @@
 {
   "baseStats": {
     "maxBaseStats": {
-      "HP": {
-        "value": 0
-      },
-      "ATTACK": {
-        "value": 0
-      },
-      "REALITY_DEFENSE": {
-        "value": 0
-      },
-      "MENTAL_DEFENSE": {
-        "value": 0
-      },
-      "CRITICAL_TECHNIQUE": {
-        "value": 0
-      },
-      "CRITICAL_RATE": {
-        "value": 0,
-        "unit": "%"
-      },
-      "CRITICAL_DMG": {
-        "value": 0,
-        "unit": "%"
-      }
+      "HP": { "value": 6927 },
+      "ATTACK": { "value": 1110 },
+      "REALITY_DEFENSE": { "value": 520 },
+      "MENTAL_DEFENSE": { "value": 520 },
+      "CRITICAL_TECHNIQUE": { "value": 1070 },
+      "CRITICAL_RATE": { "value": 35.67, "unit": "%" },
+      "CRITICAL_DMG": { "value": 53.5, "unit": "%" }
     }
   },
   "insightMaterials": {
@@ -133,21 +117,28 @@
         "offsetX": -2.5,
         "offsetY": -2,
         "code": "hunter-1",
-        "description": "*[Advent of Artemis]*: Inflicts additional *[Lethal Injury]*.:br When entering battle, gain *[Way of Artemis]*.:br *[Way of Artemis]*—Force Field effect: All allies gain a Critical DMG increase."
+        "nodeTitle": "Predator Shot",
+        "description": "*Advent of Artemis* inflicts 1 additional stack of :effect{param=\"lethal-injury\"}.",
+        "fieldDesc": "*[Way of Artemis]*: *[Force Field]* effect: All allies gain Critical DMG +(**27%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**). :effect{param=\"assassination\"} allies gain an additional Critical DMG +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**).",
+        "activeDesc": "When entering battle, gain *[Way of Artemis]*; if there is already *[Way of Ares]* or *[Way of Nyx]* on self, gain Critical Rate **+15%** instead.\n\n*[Way of Artemis]*: *[Force Field]* effect: All allies gain DMG Bonus +(**27%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**). :effect{param=\"assassination\"} allies gain an additional DMG Bonus +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**)."
       },
       {
         "id": "3",
         "offsetX": -3.5,
         "offsetY": -3.5,
         "code": "hunter-2",
-        "description": "*[Fury of Ares]*, *[Advent of Artemis]*, *[Rain of Destruction]*: Inflict additional *[Lethal Injury]*.:br *[Way of Ares]*, *[Way of Artemis]*, *[Way of Nyx]* Enhancements: When an ally triggers an *[Assassination]*, deals additional Reality DMG."
+        "nodeTitle": "Sixth Sense",
+        "description": "When *Fury of Ares*, *Advent of Artemis*, or :effect{param=\"rain-of-destruction-id-0\"} hits the targets, inflict 1 additional stack of :effect{param=\"lethal-injury\"} on them.\n\nCurrent *[Force Field]* New Effect Added: When an allied :effect{param=\"assassination\"} is triggered, deal an additional **50%** DMG of the attacker's type."
       },
       {
         "id": "4",
         "offsetX": -2.5,
         "offsetY": -5,
         "code": "hunter-3",
-        "description": "*[Sparta Kick]*, *[Rain of Destruction]*, *[Rush Assassination]*: Inflict additional *[Lethal Injury]*.<br>*[Way of Artemis]* Enhancement: Grants Critical Rate to all allies."
+        "nodeTitle": "Archery Master",
+        "description": ":effect{param=\"sparta-kick-id-0\"}, :effect{param=\"rain-of-destruction-id-2\"}, and :effect{param=\"rush-assassination-id-0\"} trigger 1 additional stack of :effect{param=\"lethal-injury\"}.\n\nCurrent *[Force Field]* New Effect Added: When an allied :effect{param=\"assassination\"} is triggered, deal an additional **75%** DMG of the attacker's type.",
+        "fieldDesc": "*[Way of Artemis]*: *[Force Field]* effect: All allies gain Critical DMG +(**27%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**). :effect{param=\"assassination\"} allies gain an additional Critical DMG +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**). Grant Critical Rate **+15%** to all allies and an additional Critical Rate **+10%** to :effect{param=\"assassination\"} allies.",
+        "activeDesc": "*[Way of Artemis]* effect improved. All allies gain Critical Rate **+15%**. :effect{param=\"assassination\"} allies gain an additional Critical Rate **+10%**."
       },
       {
         "id": "5",
@@ -159,17 +150,27 @@
       {
         "id": "6",
         "offsetY": -2,
-        "code": "warrior-1"
+        "code": "warrior-1",
+        "nodeTitle": "Charge Attack",
+        "description": "Extra Action DMG **+20%**",
+        "fieldDesc": "*[Way of Ares]*: *[Force Field]* effect: All allies gain DMG Bonus +(**14%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**2.8%**). :effect{param=\"assassination\"} allies gain an additional DMG Bonus +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**2.8%**).",
+        "activeDesc": "When entering battle, gain *[Way of Ares]*; if there is already *[Way of Artemis]* or *[Way of Nyx]* on self, gain Incantation Might **+18%** instead.\n\n*[Way of Ares]*: *[Force Field]* effect: All allies gain DMG Bonus +(**14%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**2.8%**). :effect{param=\"assassination\"} allies gain an additional DMG Bonus +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**2.8%**)."
       },
       {
         "id": "7",
         "offsetY": -3.5,
-        "code": "warrior-2"
+        "code": "warrior-2",
+        "nodeTitle": "Weapons Master",
+        "description": ":effect{param=\"sparta-kick-id-0\"} inflicts :effect{param=\"kick-gash-id-0\"} on the target hit for 3 rounds.\n:effect{param=\"rain-of-destruction-id-0\"} inflicts :effect{param=\"arrow-gash-id-0\"} on the targets hit for 3 rounds.\n:effect{param=\"rush-assassination-id-0\"} inflicts :effect{param=\"assassination-gash-id-0\"} on the target hit for 3 rounds.\n:effect{param=\"rush-assassination-combo-id-0\"} inflicts :effect{param=\"assassination-gash-id-0\"} on the target hit for 3 rounds."
       },
       {
         "id": "8",
         "offsetY": -5,
-        "code": "warrior-3"
+        "code": "warrior-3",
+        "nodeTitle": "Overpower Attacks",
+        "description": "*Fury of Ares*: For every different type of :effect{param=\"gash-id-0\"} on the main target, cast :effect{param=\"sparta-kick-id-1\"} to them again.",
+        "fieldDesc": "*[Way of Ares]*: *[Force Field]* effect: All allies gain DMG Bonus +(**14%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**2.8%**). :effect{param=\"assassination\"} allies gain an additional DMG Bonus +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**2.8%**). Grant Incantation Might **+18%** to all allies and an additional Incantation Might **+12%** to :effect{param=\"assassination\"} allies.",
+        "activeDesc": "*[Way of Ares]* effect improved. All allies gain Incantation Might **+18%**. :effect{param=\"assassination\"} allies gain an additional Incantation Might **+12%**."
       },
       {
         "id": "9",
@@ -183,19 +184,29 @@
         "id": "10",
         "offsetX": 2.5,
         "offsetY": -2,
-        "code": "assassin-1"
+        "code": "assassin-1",
+        "nodeTitle": "Shadow Assassin",
+        "description": "When Kassandra performs an :effect{param=\"assassination\"}, for every 100 points of Critical Technique the attacker has more than the target, the attack gains an additional Final DMG Dealt **+1%**.",
+        "fieldDesc": "*[Way of Nyx]*: *[Force Field]* effect: All allies gain ATK +(**7%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**1.4%**). :effect{param=\"assassination\"} allies gain an additional ATK +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**1.4%**).",
+        "activeDesc": "When entering battle, gain *[Way of Nyx]*; if there is already *[Way of Artemis]* or *[Way of Ares]* on self, gain Penetration Rate **+24%** instead.\n\n*[Way of Nyx]*: *[Force Field]* effect: All allies gain ATK +(**7%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**1.4%**). :effect{param=\"assassination\"} allies gain an additional ATK +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**1.4%**)."
       },
       {
         "id": "11",
         "offsetX": 3.5,
         "offsetY": -3.5,
-        "code": "assassin-2"
+        "code": "assassin-2",
+        "nodeTitle": "Critical Assassination",
+        "description": "Grants :effect{param=\"assassination\"} instead of *Fury of Ares*, *Advent of Artemis*.\n\n*Falconer's Instinct* no longer grants :effect{param=\"sparta-kick-id-0\"} or :effect{param=\"rain-of-destruction-id-0\"}."
       },
       {
         "id": "12",
         "offsetX": 2.5,
         "offsetY": -5,
-        "code": "assassin-3"
+        "code": "assassin-3",
+        "nodeTitle": "Shadow of Nyx",
+        "description": ":effect{param=\"rush-assassination-id-0\"} New Effect Added: After scoring a critical hit, gain :effect{param=\"preparation-kassandra-id-0\"}.\n\nWhen an allied :effect{param=\"assassination\"} is triggered or when an allied Ultimate is cast, gain Adrenaline +1.",
+        "fieldDesc": "*[Way of Nyx]*: *[Force Field]* effect: All allies gain ATK +(**7%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**1.4%**). :effect{param=\"assassination\"} allies gain an additional ATK +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**1.4%**). Grant Penetration Rate **+24%** to all allies and an additional Penetration Rate **+16%** to :effect{param=\"assassination\"} allies.",
+        "activeDesc": "*[Way of Nyx]* effect improved. All allies gain Penetration Rate **+24%**. :effect{param=\"assassination\"} allies gain an additional Penetration Rate **+16%**."
       }
     ],
     "links": [

@@ -1,6 +1,6 @@
 {
   "mainPiece": "RP_X_5_01",
-  "patternPieces": {
+  "patternPiecesMaterials": {
     "ELUCIDATION": {
       "materials": [
         { "param": "fruit-of-good-and-evil", "require": 1 },

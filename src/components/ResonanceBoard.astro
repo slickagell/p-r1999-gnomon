@@ -54,7 +54,7 @@ const initialActiveResonanceLevel =
 
 const mainPieceCode = resonanceMainPiece?.replace("RP_", "");
 
-const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
+const patternPiecesMaterials = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
   (
     prev: [
       {
@@ -64,7 +64,7 @@ const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
         materials?: RequireMaterialType[];
       },
     ],
-    patternPiece,
+    patternPiece
   ) => {
     if (patternPiece[0].includes(mainPieceCode)) {
       return [
@@ -80,10 +80,10 @@ const patternPieces = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
     {
       id: `RPP_${mainPieceCode}_PLACIDITY`,
     },
-  ],
+  ]
 );
 
-const patternOptions = patternPieces.map((ele) => {
+const patternOptions = patternPiecesMaterials.map((ele) => {
   const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
 
   if (pattern === "PLACIDITY") {
@@ -99,7 +99,7 @@ const patternOptions = patternPieces.map((ele) => {
   };
 });
 
-const patternTagsList = patternPieces.map((ele) => {
+const patternTagsList = patternPiecesMaterials.map((ele) => {
   const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
 
   if (pattern === "PLACIDITY") {
@@ -115,7 +115,7 @@ const patternTagsList = patternPieces.map((ele) => {
   };
 });
 
-const patternMaterialsList = patternPieces.map((ele) => {
+const patternMaterialsList = patternPiecesMaterials.map((ele) => {
   const pattern = ele.id.replace(`RPP_${mainPieceCode}_`, "");
 
   return {
@@ -551,7 +551,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
     resonancePatternPieces,
     mainPieceCode,
     baseStats,
-    patternPieces: patternMaterialsList,
+    patternPiecesMaterials: patternMaterialsList,
   }}
 >
   document.addEventListener("alpine:init", () => {
@@ -566,7 +566,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
       resonancePatternPieces,
       mainPieceCode,
       baseStats,
-      patternPieces,
+      patternPiecesMaterials,
     });
   });
 </script>
@@ -632,7 +632,7 @@ const patternMaterialsList = patternPieces.map((ele) => {
             ...this.baseStats[statKey],
             ...stats,
           };
-        },
+        }
       );
     },
   }));

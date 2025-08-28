@@ -8,19 +8,19 @@ star: 6
 afflatus: "MINERAL"
 dmgType: "REALITY"
 race: "HUMAN"
-birthday: ""
+birthday: "8/7"
 version: "AC"
 releaseDate: "2025-08-28"
-specialties: []
+specialties: ["ASSASSINATION","DPS","SUPPORT"]
 limited: 1
 mainPiece: "x"
 euphorias: 0
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterAbilityMap from '@components/CharacterMarkdown/CharacterAbilityMap.astro';
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -31,27 +31,27 @@ import CHARACTER from "@data/characters/kassandra.json";
 import RESONANCE from "@data/resonance/characters/kassandra.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Kassandra
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    Human artwork. Exhibited in 431 BCE for 27 years. Creation date unknown. Originally exhibited in Sparta, it later drifted to the island of Kephallonia and toured various Greek city-states.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Hounded
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Limestone of Wander [Mineral], the Eagle Bearer
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Marine - Salt, Amber, Vetiver
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    72 3/64x23 15/64x19 11/16 inches.
   </Fragment>
 
   <Fragment slot="toc">
@@ -67,49 +67,75 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    Fury of Ares
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note={`A howling western wind.`}>
+      Mass attack. Deals **120%** Reality DMG to 2 enemies and gains Adrenaline +1.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note={`A howling western wind, blowing from Odysseus's homeland.`}>
+      Mass attack. Deals **180%** Reality DMG to 2 enemies and gains Adrenaline +2.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note={`A howling western wind, blowing from Odysseus's homeland toward the land of two kings.`}>
+      Mass attack. Deals **300%** Reality DMG to 2 enemies and gains Adrenaline +4.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    Advent of Artemis
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="DEBUFF" note={`On her shoulder hangs a silver bow and quiver.`}>
+      1-target attack. Deals **150%** Reality DMG. Inflicts 1 stack of :effect{param="lethal-injury"} on the target hit.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="DEBUFF" note={`On her shoulder hangs a silver bow and quiver, arrows clinking.`}>
+      1-target attack. Deals **225%** Reality DMG. Inflicts 2 stack of :effect{param="lethal-injury"} on the target hit.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="DEBUFF" note={`On her shoulder hangs a silver bow and quiver, arrows clinking. The wicked shall repay their debts with tears before her arrows.`}>
+      1-target attack. Deals **375%** Reality DMG. Inflicts 4 stacks of :effect{param="lethal-injury"} on the target hit.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Rush Assassination
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note={`Victory and golden fate are ordained to her by the gods.`}>
+      1-target attack. Deals **750%** Reality DMG. This attack counts as an :effect{param="assassination"}.
     </CardInfo>
+  </Fragment>
+
+  <Fragment slot="extra-cards">
+    <p class="subtitle">Sparta Kick</p>
+
+    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
+      <div class="basis-full lg:basis-auto shrink-0">
+        <CustomImage class="w-48" src={`/images/skill/${frontmatter.gameId}0141.png`} alt="sparta-kick" />
+      </div>
+
+      <CardInfo type="DEBUFF" note="">
+        1-target attack. Deals **200%** Reality DMG. Inflicts :effect{param="daze"} on the target hit. If the target is already in the :effect{param="daze"} status, deals an additional **100%** Reality DMG.
+      </CardInfo>
+    </div>
+
+    <p class="subtitle">Rain of Destruction</p>
+
+    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
+      <div class="basis-full lg:basis-auto shrink-0">
+        <CustomImage class="w-48" src={`/images/skill/${frontmatter.gameId}0151.png`} alt="rain-of-destruction" />
+      </div>
+
+      <CardInfo type="ATTACK" note="">
+        Mass attack. Deals **500%** Reality DMG to all enemies.
+      </CardInfo>
+    </div>
   </Fragment>
 
   <Fragment slot="ability-section-title">
@@ -125,19 +151,19 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Precognition
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    When entering battle, gain Adrenaline +1. At the start of the round, gain Adrenaline +1.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    DMG Dealt **+8%** when entering battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    When any ally triggers an :effect{param="assassination"}, gains 1 stack of :effect{param="guidance-of-three-gods"}; if there are other :effect{param="assassination"} characters on the team, gains 1 extra stack of :effect{param="guidance-of-three-gods"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -145,27 +171,49 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *Falconer's Instinct*: At the start of the round, gains Adrenaline **+2**.
+
+*Fury of Ares*: At rank **1/2/3**, deals **150/225/375%** Reality DMG.
+
+*Advent of Artemis*: At rank **1/2/3**, deals **240/360/600%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *[Way of Artemis]*: Each stack of :effect{param="guidance-of-three-gods"} provides Critical DMG **+9.3%**, and an additional Critical DMG **+9.3%** for :effect{param="assassination"} characters.
+
+*[Way of Ares]*: Each stack of :effect{param="guidance-of-three-gods"} provides DMG Bonus **+4.8%**, and an additional DMG Bonus **+4.8%** for :effect{param="assassination"} characters.
+
+*[Way of Nyx]*: Each stack of :effect{param="guidance-of-three-gods"} provides ATK **+2.8%**, and an additional ATK **+2.8%** for :effect{param="assassination"} characters.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    :effect{param="sparta-kick-id-0"}: Deal **300%** Reality DMG.
+
+:effect{param="rain-of-destruction-id-0"}: Deal **700%** Reality DMG.
+
+:effect{param="rush-assassination-id-0"}: Deal **1250%** Reality DMG.
+
+:effect{param="rush-assassination-combo-id-0"}: Deal **1250%** Reality DMG.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *[Way of Artemis]*: Provides Critical Rate **+24%**, and an additional Critical Rate **+16%** for :effect{param="assassination"} characters.
+
+*[Way of Ares]*: Provides Incantation Might **+30%**, and an additional Incantation Might **+20%** for :effect{param="assassination"} characters.
+
+*[Way of Nyx]*: Provides Penetration Rate **+42%**, and an additional Penetration Rate **+28%** for :effect{param="assassination"} characters.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    :effect{param="sixth-sense"}: When an ally triggers :effect{param="assassination"}, deal an additional **125%** DMG.
+
+:effect{param="weapons-master"}/:effect{param="kick-gash-id-0"}/:effect{param="arrow-gash-id-0"}/:effect{param="assassination-gash-id-0"}: deal **20%** Genesis DMG.
+
+:effect{param="shadow-assassin"}: When triggering an :effect{param="assassination"}, for every **100** points of Critical Technique Kassandra has more than the target, this attack gains Final DMG Dealt **+4%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
-    ## Resonance
+    ## Reasoning
   </Fragment>
 
   <Fragment slot="resonance-board">

@@ -1424,8 +1424,8 @@ export default () => ({
 
     const pieceCode = this.$store.resonance.mainPieceCode;
 
-    const patternPiece = this.$store.resonance.patternPieces.find((piece) =>
-      piece.id.includes(pattern),
+    const patternPiece = this.$store.resonance.patternPiecesMaterials.find(
+      (piece) => piece.id.includes(pattern),
     );
 
     if (!patternPiece) return;

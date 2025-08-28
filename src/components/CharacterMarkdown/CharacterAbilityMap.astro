@@ -15,9 +15,12 @@ export interface AbilityMapType {
     offsetY?: number;
     r?: number;
     title?: string;
+    nodeTitle?: string;
     icon?: string;
     isNotClickable?: boolean;
     description?: string;
+    fieldDesc?: string;
+    activeDesc?: string;
   }[];
   links: { source: string; target: string }[];
 }
@@ -42,7 +45,8 @@ const { map } = Astro.props;
             return (
               <template x-if={`selectedNode?.code === '${node.code}'`}>
                 <div>
-                  <div class="flex gap-10 justify-end">
+                  <div class="flex gap-4 md:gap-10 justify-between">
+                    <h4 class="m-0">{node.nodeTitle}</h4>
                     <div class="card-actions">
                       <button
                         class="btn btn-square btn-sm"
@@ -54,6 +58,14 @@ const { map } = Astro.props;
                   </div>
                   {node.description && (
                     <AstroMarkdown node={markdownAST(node.description)} />
+                  )}
+                  {node.fieldDesc && (
+                    <div class="my-4" />
+                    <AstroMarkdown node={markdownAST(node.fieldDesc)} />
+                  )}
+                  {node.activeDesc && (
+                    <hr class="my-4" />
+                    <AstroMarkdown node={markdownAST(node.activeDesc)} />
                   )}
                 </div>
               </template>

@@ -1,6 +1,6 @@
 {
   "mainPiece": "RP_U_5_01",
-  "patternPieces": {
+  "patternPiecesMaterials": {
     "HYPER": {
       "materials": [
         {
