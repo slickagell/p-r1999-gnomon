@@ -13,7 +13,7 @@ const {} = Astro.props;
     x-transition
     @click="handleScrollToTop"
     x-ref="goToTop"
-    class="fixed bottom-4 right-4 btn btn-primary rounded-full text-white p-0 z-40 w-10 h-10 min-h-min"
+    class="fixed bottom-4 right-4 btn btn-primary text-white p-0 z-40 w-8 h-8 md:w-10 md:h-10 min-h-min"
   >
     <Icon icon="chevron-up" />
   </button>
@@ -24,6 +24,13 @@ const {} = Astro.props;
   Alpine.data("goToTop", () => ({
     isShow: false,
 
+    init() {
+      Alpine.store("layout", {
+        ...this.$store.layout,
+        goToTop: this.$refs.goToTop,
+      });
+    },
+
     handleScroll() {
       this.isShow = window.scrollY > 200;
 
@@ -31,7 +38,7 @@ const {} = Astro.props;
         this.$store.layout.footer?.getBoundingClientRect().y ?? 0;
 
       if (window.innerHeight >= footStartPos) {
-        this.$refs.goToTop.style.bottom = `${(window.innerHeight - footStartPos + 16) / 16}rem`;
+        this.$refs.goToTop.style.bottom = `${window.innerHeight - footStartPos + 16}px`;
       } else {
         this.$refs.goToTop.style.removeProperty("bottom");
       }

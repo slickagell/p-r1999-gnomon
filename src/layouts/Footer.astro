@@ -52,6 +52,7 @@ import Icon from "@components/Icon.astro";
   Alpine.data("footer", () => ({
     init() {
       Alpine.store("layout", {
+        ...this.$store.layout,
         footer: this.$refs.footer,
       });
     },

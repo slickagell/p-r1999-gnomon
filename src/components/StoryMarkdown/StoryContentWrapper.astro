@@ -13,50 +13,48 @@ interface Props {
 }
 
 const { chapters } = Astro.props;
+
+const storyThemes = [
+  {
+    value: "story-default",
+    label: "Default",
+  },
+  {
+    value: "story-light",
+    label: "Light",
+  },
+  {
+    value: "story-fall",
+    label: "Fall",
+  },
+];
 ---
 
-<div x-data="dataset">
-  <select
-    class="select select-secondary w-full my-4"
-    @change="changeChapter($event.target.value)"
-  >
-    <template x-for="chapter in chapters">
-      <option
-        x-text="'Chapter ' + chapter.chapter + ': ' + chapter.title"
-        :value="chapter.id"
-        :selected="activeChapterIdx === chapter.id"></option>
-    </template>
-  </select>
-  <div class="flex gap-2 justify-center items-center" x-ref="topChapter">
-    <button
-      :disabled="activeChapterIdx === 0"
-      class="disabled:opacity-30"
-      @click="prevChapter"
+<div x-data="story" class="relative -mx-4">
+  <div class="px-4" x-ref="topChapter">
+    <p class="text-center">
+      Chapter <span x-text="activeChapter.chapter"></span>
+    </p>
+    <p
+      class="text-center text-lg font-medium text-primary-content"
+      x-text="activeChapter.title"
     >
-      <Icon icon="chevron-compact-left" />
-    </button>
-    <div>
-      <p class="text-center">
-        Chapter <span x-text="activeChapter.chapter"></span>
-      </p>
-      <p class="text-center" x-text="activeChapter.title"></p>
-    </div>
-    <button
-      :disabled={`activeChapterIdx === ${chapters.length - 1}`}
-      class="disabled:opacity-30"
-      @click="nextChapter"
-    >
-      <Icon icon="chevron-compact-right" />
-    </button>
+    </p>
   </div>
-  <p class="mt-4 text-center italic" x-text="activeChapter.description"></p>
+  <p class="mt-3 px-4 text-center italic" x-text="activeChapter.description">
+  </p>
   <div class="divider"></div>
 
   <!-- Content -->
-  <slot name="story-content" />
+  <div x-ref="storyContent" class="pt-1 px-4 pb-4" :data-theme="activeTheme">
+    <slot name="story-content" />
+  </div>
 
   <div class="divider"></div>
-  <div class="flex gap-2 justify-center items-center">
+
+  <div
+    class="sticky z-10 bottom-0 left-0 right-0 bg-base-300 border-t border-b border-primary/50 py-2 px-4 flex justify-between gap-4 items-center"
+  >
     <button
       :disabled="activeChapterIdx === 0"
       class="disabled:opacity-30"
@@ -64,11 +62,34 @@ const { chapters } = Astro.props;
     >
       <Icon icon="chevron-compact-left" />
     </button>
-    <div>
-      <p class="text-center">
-        Chapter <span x-text="activeChapter.chapter"></span>
-      </p>
-      <p class="text-center" x-text="activeChapter.title"></p>
+    <div class="flex-1 flex justify-center gap-2">
+      <select
+        class="select select-sm max-w-max w-full"
+        @change="changeChapter($event.target.value)"
+      >
+        <template x-for="chapter in chapters">
+          <option
+            :value="chapter.id"
+            :selected="activeChapterIdx === chapter.id"
+          >
+            <span x-text="'Chapter ' + chapter.chapter"></span>
+            <span x-text="': ' + chapter.title"></span>
+          </option>
+        </template>
+      </select>
+      <select
+        class="select select-sm max-w-max w-full"
+        @change="changeTheme($event.target.value)"
+      >
+        {storyThemes.map((theme) => (
+          <option
+            value={theme.value}
+            :selected=`activeTheme === '${theme.value}'`
+          >
+            {theme.label}
+          </option>
+        ))} 
+      </select>
     </div>
     <button
       :disabled={`activeChapterIdx === ${chapters.length - 1}`}
@@ -96,7 +117,8 @@ const { chapters } = Astro.props;
 <script>
   import Alpine from "alpinejs";
 
-  Alpine.data("dataset", () => ({
+  Alpine.data("story", () => ({
+    activeTheme: "story-default",
     chapters: [],
     activeChapterIdx: 0,
     activeChapter: {
@@ -114,6 +136,10 @@ const { chapters } = Astro.props;
         description: chapter.description,
       }));
       this.renderChapter();
+
+      this.$nextTick(() => {
+        this.$store.layout.goToTop.classList.add("bottom-[3.625rem]");
+      });
     },
 
     renderChapter() {
@@ -155,5 +181,9 @@ const { chapters } = Astro.props;
         this.$refs.topChapter.getBoundingClientRect().top + window.scrollY - 72;
       window.scrollTo({ top: topChapterPos, behavior: "smooth" });
     },
+
+    changeTheme(theme) {
+      this.activeTheme = theme;
+    }
   }));
 </script>

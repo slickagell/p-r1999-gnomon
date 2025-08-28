@@ -92,6 +92,26 @@ export default {
           "primary-content": "#d0ac81",
           "base-content": "#FFFFF0",
         },
+        ["story-light"]: {
+          "--rounded-btn": "0",
+          "--rounded-badge": "0",
+          "--rounded-box": "0",
+
+          "base-content": "#1b1b1b",
+          "base-100": "#F0F0F0",
+          primary: "#B25121",
+          "primary-content": "#8E6535",
+        },
+        ["story-fall"]: {
+          "--rounded-btn": "0",
+          "--rounded-badge": "0",
+          "--rounded-box": "0",
+
+          "base-content": "#1b1b1b",
+          "base-100": "#FFF5EE",
+          primary: "#B85422",
+          "primary-content": "#946937",
+        },
       },
     ],
   },
