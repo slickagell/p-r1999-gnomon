@@ -1,29 +1,13 @@
 {
   "baseStats": {
     "maxBaseStats": {
-      "HP": {
-        "value": 0
-      },
-      "ATTACK": {
-        "value": 0
-      },
-      "REALITY_DEFENSE": {
-        "value": 0
-      },
-      "MENTAL_DEFENSE": {
-        "value": 0
-      },
-      "CRITICAL_TECHNIQUE": {
-        "value": 0
-      },
-      "CRITICAL_RATE": {
-        "value": 0,
-        "unit": "%"
-      },
-      "CRITICAL_DMG": {
-        "value": 0,
-        "unit": "%"
-      }
+      "HP": { "value": 6167 },
+      "ATTACK": { "value": 1077 },
+      "REALITY_DEFENSE": { "value": 410 },
+      "MENTAL_DEFENSE": { "value": 410 },
+      "CRITICAL_TECHNIQUE": { "value": 892 },
+      "CRITICAL_RATE": { "value": 29.73, "unit": "%" },
+      "CRITICAL_DMG": { "value": 44.6, "unit": "%" }
     }
   },
   "insightMaterials": {

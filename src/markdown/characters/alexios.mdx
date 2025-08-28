@@ -3,19 +3,18 @@ name: "Alexios"
 id: "alexios"
 gameId: "3122"
 code: "ALEXIOS"
-gender: ""
+gender: "MALE"
 star: 5
 afflatus: "BEAST"
 dmgType: "REALITY"
 race: "HUMAN"
-birthday: ""
+birthday: "8/7"
 version: "AC"
 releaseDate: "2025-08-28"
-specialties: []
+specialties: ["ASSASSINATION","DPS"]
 limited: 1
 mainPiece: "x"
 euphorias: 0
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -30,27 +29,27 @@ import CHARACTER from "@data/characters/alexios.json";
 import RESONANCE from "@data/resonance/characters/alexios.json";
 import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
-# Alexios
+# {frontmatter.name}
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    Human artwork. Exhibited in 431 BCE for 20 years. Creation date unknown. Originally exhibited in Sparta, later vanished without a trace. Reappeared around 431 BCE, and toured various Greek city-states.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Cruelty
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Roaring Blood and Bone [Beast], Demigod "Deimos"
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Leather - Iron, Ash, Birch Tar, Civet Musk
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    72 3/64x27 3/4x21 17/64 inches.
   </Fragment>
 
   <Fragment slot="toc">
@@ -66,48 +65,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    "Stronger than Ares."
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note={`The man wields this sword due to his greed.`}>
+      1-target attack. Deals **200%** Reality DMG. Gains Adrenaline +1.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note={`The man wields this sword in pursuit of absolute power.`}>
+      1-target attack. Deals **300%** Reality DMG. Gains Adrenaline +2.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note={`The man wields this sword in pursuit of absolute power, not knowing that it is hung above his head by the thinnest of threads.`}>
+      1-target attack. Deals **500%** Reality DMG. Gains Adrenaline +4.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    "Better than Apollo!"
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note={`A golden bow drawn to the fullest.`}>
+      Mass attack. Deals **120%** Reality DMG to 2 enemies. If this attack scores a critical hit, gains Adrenaline +1.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note={`A golden bow, drawn to the fullest. Its string vibrating aggressively.`}>
+      Mass attack. Deals **180%** Reality DMG to 2 enemies. If this attack scores a critical hit, gains Adrenaline +2.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note={`A golden bow, drawn to the fullest. Its string vibrating aggressively. He will quench its thirst with the blood of his enemies.`}>
+      Mass attack. Deals **300%** Reality DMG to 2 enemies. If this attack scores a critical hit, gains Adrenaline +4.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Sun of Fear
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note={`Faces pale, they tremble in fear, as if they heard the thunder of Mount Ida.`}>
+      Mass attack. Deals **400%** Reality DMG to all enemies. Gains 1 stack of :effect{param="blood-of-isu-id-0"}. This attack counts as an :effect{param="assassination"}.
     </CardInfo>
   </Fragment>
 
@@ -116,19 +115,21 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Precognition
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    At the start of the round, gains Adrenaline +1.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    DMG Dealt **+8%** when entering battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    After an allied attack triggers :effect{param="assassination"}, gains Adrenaline +1.
+
+After an allied attack triggers :effect{param="assassination"}, if there are other :effect{param="assassination"} characters on the team, **5%** chance to cast Ultimate, up to 1 time per round; if Kassandra is on the team, the chance is increased to **10%**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,27 +137,27 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *"Stronger than Ares."*: At rank **1/2/3** incantation, Reality DMG Dealt is increased to **240/360/600%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Blood or Wail*: At the start of the round, the number of Adrenaline gained is increased to **2**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *"Better than Apollo!"*: At rank **1/2/3** incantation, Reality DMG Dealt is increased to **150/225/375%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *Sun of Fear*: :effect{param="blood-of-isu-id-0"}'s additional Reality DMG is increased to **100%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Sun of Fear*: Reality DMG increased to **500%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">
-    ## Resonance
+    ## Reasoning
   </Fragment>
 
   <Fragment slot="resonance-board">
