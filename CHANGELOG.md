@@ -1,3 +1,10 @@
+##### 2025-08-28
+
+* Add Kassandra, Alexios official data
+* Add new psychube: An Epic's End
+* Add anecdote's transcripts
+* Fix bugs
+
 ##### 2025-08-07
 
 * Add new AC characters:
