@@ -28,25 +28,30 @@ const mainStoryEntries = await getCollection("mainStory", ({ id: entryId }) => {
 
   <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
     {
-      mainStoryEntries.map((eventEntry) => (
-        <a href={`/story/main/${eventEntry.id}`}>
-          <div class="card card-compact border border-primary">
-            <div class="card-body !py-2">
-              <div class="flex gap-4 items-center">
-                <CustomImage
-                  class="w-1/4"
-                  src={`/images/chapter/${eventEntry.data.pic}`}
-                  alt={eventEntry.data.title}
-                />
-                <div>
-                  <h2 class="card-title">{eventEntry.data.title}</h2>
-                  <p>{eventEntry.data.description}</p>
+      mainStoryEntries
+        .sort((a, b) => a.data.chapterNumber - b.data.chapterNumber)
+        .map((eventEntry) => (
+          <a href={`/story/main/${eventEntry.id}`}>
+            <div class="card card-compact border border-primary">
+              <div class="card-body !py-2">
+                <div class="flex gap-4 items-center">
+                  <CustomImage
+                    class="w-1/4"
+                    src={`/images/chapter/${eventEntry.data.pic}`}
+                    alt={eventEntry.data.title ?? eventEntry.data.pic}
+                  />
+                  <div>
+                    <h5 class="my-0 text-primary-content font-medium">
+                      {eventEntry.data.chapterIndex}
+                    </h5>
+                    <h2 class="card-title">{eventEntry.data.title}</h2>
+                    <p>{eventEntry.data.description}</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </a>
-      ))
+          </a>
+        ))
     }
   </div>
 </Layout>

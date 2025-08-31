@@ -36,7 +36,20 @@ const versions = [
       if (entry.data.version) return entry.data.version;
     })
   ),
-].sort((a, b) => parseFloat(b ?? "") - parseFloat(a ?? ""));
+].sort((a, b) => {
+  if (!a || !b) return 0;
+  const numA = parseFloat(a);
+  const numB = parseFloat(b);
+  const aIsNum = !isNaN(numA);
+  const bIsNum = !isNaN(numB);
+
+  if (aIsNum && bIsNum) {
+    return numB - numA;
+  }
+  if (aIsNum) return -1;
+  if (bIsNum) return 1;
+  return a.localeCompare(b);
+});
 
 const specialties = [
   ...new Set(characterEntries.map((entry) => entry.data.specialties).flat()),
