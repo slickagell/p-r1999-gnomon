@@ -11,7 +11,7 @@
 }
 
 html {
-  @apply text-[calc(16/375*100vw)] md:text-[calc(16/1320*100vw)] lg:text-[16px];
+  @apply text-[min(16px,calc(16/375*100vw))] md:text-[min(16px,calc(16/1280*100vw))] xl:text-[16px];
   /* scroll-behavior: smooth; */
   scrollbar-color: hsl(var(--p)) transparent;
   scrollbar-width: thin;

@@ -92,6 +92,14 @@ export default {
           "primary-content": "#d0ac81",
           "base-content": "#FFFFF0",
         },
+        ["story-default"]: {
+          "--rounded-btn": "0",
+          "--rounded-badge": "0",
+          "--rounded-box": "0",
+
+          "base-content": "#FFFFF0",
+          "base-100": "#1b1b1b",
+        },
         ["story-light"]: {
           "--rounded-btn": "0",
           "--rounded-badge": "0",
