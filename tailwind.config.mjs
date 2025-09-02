@@ -98,6 +98,7 @@ export default {
           "--rounded-box": "0",
 
           "base-content": "#FFFFF0",
+          "primary-content": "#d0ac81",
           "base-100": "#1b1b1b",
         },
         ["story-light"]: {
