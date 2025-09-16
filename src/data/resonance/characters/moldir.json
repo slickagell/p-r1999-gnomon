@@ -1,43 +1,43 @@
 {
-  "mainPiece": "RP_X_5_01",
+  "mainPiece": "RP_Z_5_01",
   "patternPiecesMaterials": {
     "ELUCIDATION": {
       "materials": [
         { "param": "fruit-of-good-and-evil", "require": 1 },
-        { "param": "glowing-mothwing", "require": 2 },
-        { "param": "bifurcated-skeleton", "require": 4 },
+        { "param": "silver-bullet", "require": 2 },
+        { "param": "biting-box", "require": 3 },
         { "param": "sharpodonty", "require": 120000 }
       ]
     },
     "GENUINITY": {
       "materials": [
-        { "param": "mistilteinn", "require": 1 },
+        { "param": "rheingold", "require": 1 },
         { "param": "golden-compass", "require": 2 },
-        { "param": "clawed-pendulum", "require": 3 },
+        { "param": "golden-beetle", "require": 3 },
         { "param": "sharpodonty", "require": 120000 }
       ]
     },
-    "STUPEFACTION": {
-      "materials": [
-        { "param": "mistilteinn", "require": 1 },
-        { "param": "golden-compass", "require": 2 },
-        { "param": "clawed-pendulum", "require": 3 },
-        { "param": "sharpodonty", "require": 120000 }
-      ]
-    },
-    "ASPIRATIONAL": {
+    "MERCY": {
       "materials": [
         { "param": "fruit-of-good-and-evil", "require": 1 },
-        { "param": "platinum-ouija", "require": 2 },
-        { "param": "holy-silver", "require": 4 },
+        { "param": "goldbell-spirit-bottle", "require": 2 },
+        { "param": "golden-beetle", "require": 3 },
         { "param": "sharpodonty", "require": 120000 }
       ]
     },
-    "HYPERPHRENIA": {
+    "EQUANIMITY": {
+      "materials": [
+        { "param": "golden-fleece", "require": 1 },
+        { "param": "glowing-mothwing", "require": 2 },
+        { "param": "red-lacquer-slab", "require": 3 },
+        { "param": "sharpodonty", "require": 120000 }
+      ]
+    },
+    "EQUIBALANCE": {
       "materials": [
         { "param": "mistilteinn", "require": 1 },
-        { "param": "watch-core", "require": 2 },
-        { "param": "winged-key", "require": 3 },
+        { "param": "bogeyman", "require": 2 },
+        { "param": "holy-silver", "require": 4 },
         { "param": "sharpodonty", "require": 120000 }
       ]
     }
@@ -46,15 +46,39 @@
   "recommended": {
     "10-11-12-13-14-15": [
       {
-        "name": "Follow-up Attack",
+        "name": "Attack",
+        "patternRecommended": "ELUCIDATION",
         "source": {
           "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356"
         },
-        "patternRecommended": "ELUCIDATION",
         "resonance": [
           {
-            "blocks": ["0-0", "0-1", "1-0", "2-0"],
+            "blocks": ["0-0", "0-1"],
+            "shape": [[1, 1]],
+            "orientation": 1,
+            "pieceId": "RP_I_2_01"
+          },
+          {
+            "blocks": ["1-0", "1-1", "2-0"],
+            "shape": [
+              [1, 1],
+              [1, 0]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["2-1", "3-0", "3-1"],
+            "shape": [
+              [0, 1],
+              [1, 1]
+            ],
+            "orientation": 3,
+            "pieceId": "RP_L_3_01"
+          },
+          {
+            "blocks": ["4-0", "4-1", "5-0", "6-0"],
             "shape": [
               [1, 1],
               [1, 0],
@@ -64,17 +88,7 @@
             "pieceId": "RP_L_4_02"
           },
           {
-            "blocks": ["1-1", "2-1", "3-0", "3-1"],
-            "shape": [
-              [0, 1],
-              [0, 1],
-              [1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_L_4_02"
-          },
-          {
-            "blocks": ["0-2", "0-3", "1-2", "1-3"],
+            "blocks": ["5-1", "5-2", "6-1", "6-2"],
             "shape": [
               [1, 1],
               [1, 1]
@@ -83,36 +97,7 @@
             "pieceId": "RP_O_4_01"
           },
           {
-            "blocks": ["2-2", "2-3", "3-2", "3-3"],
-            "shape": [
-              [1, 1],
-              [1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_O_4_01"
-          },
-          {
-            "blocks": ["0-4", "1-4", "1-5", "2-5"],
-            "shape": [
-              [1, 0],
-              [1, 1],
-              [0, 1]
-            ],
-            "orientation": 6,
-            "pieceId": "RP_Z_4_02"
-          },
-          {
-            "blocks": ["0-5", "0-6", "1-6", "2-6"],
-            "shape": [
-              [1, 1],
-              [0, 1],
-              [0, 1]
-            ],
-            "orientation": 3,
-            "pieceId": "RP_L_4_01"
-          },
-          {
-            "blocks": ["2-4", "3-4", "3-5", "4-4"],
+            "blocks": ["0-2", "1-2", "1-3", "2-2"],
             "shape": [
               [1, 0],
               [1, 1],
@@ -122,22 +107,16 @@
             "pieceId": "RP_T_4_01"
           },
           {
-            "blocks": ["3-6", "4-6", "5-6", "6-6"],
-            "shape": [[1], [1], [1], [1]],
-            "orientation": 1,
-            "pieceId": "RP_I_4_01"
-          },
-          {
-            "blocks": ["4-0", "4-1", "4-2", "5-0"],
+            "blocks": ["0-3", "0-4", "1-4"],
             "shape": [
-              [1, 1, 1],
-              [1, 0, 0]
+              [1, 1],
+              [0, 1]
             ],
             "orientation": 6,
-            "pieceId": "RP_L_4_01"
+            "pieceId": "RP_L_3_01"
           },
           {
-            "blocks": ["5-1", "6-0", "6-1", "6-2"],
+            "blocks": ["2-3", "3-2", "3-3", "3-4"],
             "shape": [
               [0, 1, 0],
               [1, 1, 1]
@@ -146,17 +125,44 @@
             "pieceId": "RP_T_4_01"
           },
           {
-            "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1],
-              [0, 1, 0]
-            ],
+            "blocks": ["2-4"],
+            "shape": [[1]],
             "orientation": 1,
-            "pieceId": "RP_X_5_01"
+            "pieceId": "RP_O_1_02"
           },
           {
-            "blocks": ["4-5", "5-5", "6-4", "6-5"],
+            "blocks": ["0-5", "1-5", "2-5", "3-5"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["0-6", "1-6", "2-6", "3-6"],
+            "shape": [[1], [1], [1], [1]],
+            "orientation": 1,
+            "pieceId": "RP_I_4_01"
+          },
+          {
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
+            "shape": [
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["4-4", "4-5", "5-4", "5-5"],
+            "shape": [
+              [1, 1],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_O_4_01"
+          },
+          {
+            "blocks": ["4-6", "5-6", "6-5", "6-6"],
             "shape": [
               [0, 1],
               [0, 1],
@@ -168,12 +174,12 @@
         ]
       },
       {
-        "name": "Ultimate",
+        "name": "Damage",
+        "patternRecommended": "ELUCIDATION",
         "source": {
           "label": "CTL Team",
           "link": "https://docs.google.com/spreadsheets/d/1Xpd7HKO2CAnsPa40Ho-scMfubGXGKKYaefs0bHkpDpc/edit?gid=1538829356#gid=1538829356"
         },
-        "patternRecommended": "ELUCIDATION",
         "resonance": [
           {
             "blocks": ["0-0", "1-0", "2-0", "3-0"],
@@ -206,28 +212,46 @@
             "pieceId": "RP_O_4_01"
           },
           {
-            "blocks": ["0-4", "0-5", "0-6", "1-6"],
+            "blocks": ["0-4", "1-4", "1-5", "2-4"],
             "shape": [
-              [1, 1, 1],
-              [0, 0, 1]
+              [1, 0],
+              [1, 1],
+              [1, 0]
             ],
-            "orientation": 8,
-            "pieceId": "RP_L_4_02"
-          },
-          {
-            "blocks": ["1-4", "2-4"],
-            "shape": [[1], [1]],
             "orientation": 6,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_T_4_01"
           },
           {
-            "blocks": ["3-4", "3-5"],
-            "shape": [[1, 1]],
+            "blocks": ["2-5", "3-4", "3-5", "3-6"],
+            "shape": [
+              [0, 1, 0],
+              [1, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_T_4_01"
+          },
+          {
+            "blocks": ["0-5", "0-6", "1-6", "2-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
             "orientation": 3,
-            "pieceId": "RP_I_2_01"
+            "pieceId": "RP_L_4_01"
           },
           {
-            "blocks": ["1-5", "2-5", "2-6", "3-6"],
+            "blocks": ["4-0", "5-0", "6-0", "6-1"],
+            "shape": [
+              [1, 0],
+              [1, 0],
+              [1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_L_4_01"
+          },
+          {
+            "blocks": ["4-1", "5-1", "5-2", "6-2"],
             "shape": [
               [1, 0],
               [1, 1],
@@ -237,50 +261,34 @@
             "pieceId": "RP_Z_4_02"
           },
           {
-            "blocks": ["4-0", "4-1", "4-2", "5-0"],
+            "blocks": ["4-2", "4-3", "5-3", "6-3", "6-4"],
             "shape": [
-              [1, 1, 1],
-              [1, 0, 0]
+              [1, 1, 0],
+              [0, 1, 0],
+              [0, 1, 1]
+            ],
+            "orientation": 1,
+            "pieceId": "RP_Z_5_01"
+          },
+          {
+            "blocks": ["4-4", "5-4", "5-5", "6-5"],
+            "shape": [
+              [1, 0],
+              [1, 1],
+              [0, 1]
             ],
             "orientation": 6,
+            "pieceId": "RP_Z_4_02"
+          },
+          {
+            "blocks": ["4-5", "4-6", "5-6", "6-6"],
+            "shape": [
+              [1, 1],
+              [0, 1],
+              [0, 1]
+            ],
+            "orientation": 3,
             "pieceId": "RP_L_4_01"
-          },
-          {
-            "blocks": ["4-4", "4-5", "4-6", "5-6"],
-            "shape": [
-              [1, 1, 1],
-              [0, 0, 1]
-            ],
-            "orientation": 8,
-            "pieceId": "RP_L_4_02"
-          },
-          {
-            "blocks": ["4-3", "5-2", "5-3", "5-4", "6-3"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1],
-              [0, 1, 0]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_X_5_01"
-          },
-          {
-            "blocks": ["5-1", "6-0", "6-1", "6-2"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
-          },
-          {
-            "blocks": ["5-5", "6-4", "6-5", "6-6"],
-            "shape": [
-              [0, 1, 0],
-              [1, 1, 1]
-            ],
-            "orientation": 1,
-            "pieceId": "RP_T_4_01"
           }
         ]
       }

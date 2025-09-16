@@ -65,7 +65,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="arcane-skills-section-title">
-     Arcane Skills
+    Arcane Skills
   </Fragment>
 
   <Fragment slot="transform-skill-content">
@@ -79,12 +79,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
             </label>
         ))}
       </div>
+
       <div x-cloak x-show={`currentTransformId === '${frontmatter.transformInfos[0].gameId}'`}>
-        <CharacterSkillInfo
-          variant="skill-1"
-          gameId={frontmatter.gameId}
-          customImgSkillId={frontmatter.transformInfos[0].gameId+'11'}
-        >
+        <CharacterSkillInfo variant="skill-1" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[0].gameId+'11'}>
           <Fragment slot="skill-title">
             :TODO - Update base skill 1 title:
           </Fragment>
@@ -104,11 +101,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           </Fragment>
         </CharacterSkillInfo>
 
-        <CharacterSkillInfo
-          variant="skill-2"
-          gameId={frontmatter.gameId}
-          customImgSkillId={frontmatter.transformInfos[0].gameId+'21'}
-        >
+        <CharacterSkillInfo variant="skill-2" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[0].gameId+'21'}>
           <Fragment slot="skill-title">
             :TODO - Update base skill 2 title:
           </Fragment>
@@ -128,12 +121,9 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           </Fragment>
         </CharacterSkillInfo>
       </div>
+
       <div x-cloak x-show={`currentTransformId === '${frontmatter.transformInfos[1].gameId}'`}>
-        <CharacterSkillInfo
-          variant="skill-1"
-          gameId={frontmatter.gameId}
-          customImgSkillId={frontmatter.transformInfos[1].gameId+'11'}
-        >
+        <CharacterSkillInfo variant="skill-1" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'11'}>
           <Fragment slot="skill-title">
             :TODO - Update transform skill 1 title:
           </Fragment>
@@ -153,11 +143,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           </Fragment>
         </CharacterSkillInfo>
 
-        <CharacterSkillInfo
-          variant="skill-2"
-          gameId={frontmatter.gameId}
-          customImgSkillId={frontmatter.transformInfos[1].gameId+'21'}
-        >
+        <CharacterSkillInfo variant="skill-2" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'21'}>
           <Fragment slot="skill-title">
             :TODO - Update transform skill 2 title:
           </Fragment>
@@ -177,11 +163,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           </Fragment>
         </CharacterSkillInfo>
 
-        <CharacterSkillInfo
-          variant="ultimate"
-          gameId={frontmatter.gameId}
-          customImgSkillId={frontmatter.transformInfos[1].gameId+'31'}
-        >
+        <CharacterSkillInfo variant="ultimate" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'31'}>
           <Fragment slot="skill-title">
             :TODO - Update transform ultimate title:
           </Fragment>
@@ -193,11 +175,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           </Fragment>
         </CharacterSkillInfo>
 
-        <CharacterSkillInfo
-          variant="external"
-          gameId={frontmatter.gameId}
-          customImgSkillId={frontmatter.transformInfos[1].gameId+'22'}
-        >
+        <CharacterSkillInfo variant="external" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'22'}>
           <Fragment slot="skill-title">
             :TODO - Update transform external 1 title:
           </Fragment>
@@ -209,11 +187,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           </Fragment>
         </CharacterSkillInfo>
 
-        <CharacterSkillInfo
-          variant="external"
-          gameId={frontmatter.gameId}
-          customImgSkillId={frontmatter.transformInfos[1].gameId+'23'}
-        >
+        <CharacterSkillInfo variant="external" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'23'}>
           <Fragment slot="skill-title">
             :TODO - Update transform external 2 title:
           </Fragment>
@@ -247,7 +221,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   <Fragment slot="insight-3-info">
     :TODO - Update inheritance insight-3:
   </Fragment>
-  
+
   <Fragment slot="portray-section-title">
     Portray
   </Fragment>

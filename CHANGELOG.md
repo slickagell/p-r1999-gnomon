@@ -1,3 +1,8 @@
+##### 2025-09-16
+
+* Add new characters in 2.8: Nautika, Moldir, Ulrich, Buddy Fairchild (these page info still in development until official release)
+* Fix some text descriptions
+
 ##### 2025-08-28
 
 * Add Kassandra, Alexios official data

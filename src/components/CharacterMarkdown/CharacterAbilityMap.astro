@@ -60,12 +60,16 @@ const { map } = Astro.props;
                     <AstroMarkdown node={markdownAST(node.description)} />
                   )}
                   {node.fieldDesc && (
-                    <div class="my-4" />
-                    <AstroMarkdown node={markdownAST(node.fieldDesc)} />
+                    <>
+                      <div class="my-4" />
+                      <AstroMarkdown node={markdownAST(node.fieldDesc)} />
+                    </>
                   )}
                   {node.activeDesc && (
-                    <hr class="my-4" />
-                    <AstroMarkdown node={markdownAST(node.activeDesc)} />
+                    <>
+                      <hr class="my-4" />
+                      <AstroMarkdown node={markdownAST(node.activeDesc)} />
+                    </>
                   )}
                 </div>
               </template>
@@ -196,22 +200,22 @@ const { map } = Astro.props;
         .attr("r", (d) => d.r)
         .attr("fill", (d) => (d.active ? NODE_ACTIVE_COLOR : NODE_COLOR))
         .attr("stroke", (d) =>
-          d.active ? NODE_STROKE_ACTIVE_COLOR : NODE_STROKE_COLOR
+          d.active ? NODE_STROKE_ACTIVE_COLOR : NODE_STROKE_COLOR,
         )
         .attr("stroke-width", 1)
         .on("click", async (e, d) => {
           if (d.isNotClickable) return;
           const isSelectedNodeActive = !!this.activeCodes.includes(
-            this.selectedNode?.code
+            this.selectedNode?.code,
           );
           d3.select("circle[id='" + this.selectedNode?.id + "']")
             .attr("fill", () =>
-              isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+              isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR,
             )
             .attr("stroke", () =>
               isSelectedNodeActive
                 ? NODE_STROKE_ACTIVE_COLOR
-                : NODE_STROKE_COLOR
+                : NODE_STROKE_COLOR,
             );
 
           this.selectedNode = {
@@ -230,7 +234,7 @@ const { map } = Astro.props;
         .data(nodes)
         .join("image")
         .attr("xlink:href", (d) =>
-          d.icon ? `/images/characters/kassandra/abicon-${d.icon}.png` : ""
+          d.icon ? `/images/characters/kassandra/abicon-${d.icon}.png` : "",
         )
         .attr("x", (d) => d.x - (d.r * 2) / 2)
         .attr("y", (d) => d.y - (d.r * 2) / 2)
@@ -252,14 +256,14 @@ const { map } = Astro.props;
 
     clearSelectedNode() {
       const isSelectedNodeActive = !!this.activeCodes.includes(
-        this.selectedNode?.code
+        this.selectedNode?.code,
       );
       d3.select("circle[id='" + this.selectedNode?.id + "']")
         .attr("fill", () =>
-          isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR
+          isSelectedNodeActive ? NODE_ACTIVE_COLOR : NODE_COLOR,
         )
         .attr("stroke", () =>
-          isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : NODE_STROKE_COLOR
+          isSelectedNodeActive ? NODE_STROKE_ACTIVE_COLOR : NODE_STROKE_COLOR,
         );
 
       this.selectedNode = null;
@@ -277,7 +281,7 @@ const { map } = Astro.props;
             link.source +
             '"][data-target="' +
             link.target +
-            '"]'
+            '"]',
         ).attr("stroke", LINK_COLOR);
       });
 
@@ -315,7 +319,7 @@ const { map } = Astro.props;
             link.source +
             '"][data-target="' +
             link.target +
-            '"]'
+            '"]',
         ).attr("stroke", LINK_ACTIVE_COLOR);
       });
     },

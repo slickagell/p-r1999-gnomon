@@ -119,7 +119,7 @@
         "code": "hunter-1",
         "nodeTitle": "Predator Shot",
         "description": "*Advent of Artemis* inflicts 1 additional stack of :effect{param=\"lethal-injury\"}.",
-        "activeDesc": "When entering battle, gain *[Way of Artemis]*; if there is already *[Way of Ares]* or *[Way of Nyx]* on self, gain Critical Rate **+15%** instead.\n\n*[Way of Artemis]*: *[Force Field]* effect: All allies gain DMG Bonus +(**27%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**). :effect{param=\"assassination\"} allies gain an additional DMG Bonus +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**)."
+        "activeDesc": "When entering battle, gain *[Way of Artemis]*; if there is already *[Way of Ares]* or *[Way of Nyx]* on self, gain Critical Rate **+15%** instead.\n\n*[Way of Artemis]*: *[Force Field]* effect: All allies gain Critical DMG +(**27%** + number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**). :effect{param=\"assassination\"} allies gain an additional DMG Bonus +(number of :effect{param=\"guidance-of-three-gods\"} stacks x**5.4%**)."
       },
       {
         "id": "3",

@@ -111,7 +111,7 @@ const hasSkill2Reinforced = Astro.slots.has("skill-2-cards-info-reinforced");
 const hasOverview = Astro.slots.has("overview-section-title");
 const hasInfographic = Astro.slots.has("infographic-section-title");
 const hasEuphoriaInfographic = Astro.slots.has(
-  "euphoria-infographic-section-title"
+  "euphoria-infographic-section-title",
 );
 
 const hasSkillBreakdown = Astro.slots.has("skill-breakdown-section-title");
@@ -638,7 +638,7 @@ if (hasInfographic) {
           {(async () => {
             const files = await getFilesWithText(
               "public/images/infographic",
-              gameId
+              gameId,
             );
             if (!files.length) return null;
 
@@ -669,8 +669,8 @@ if (hasInfographic) {
                   const existedEuphoriaInfographic = fs.existsSync(
                     path.join(
                       "public/images/euphoria/infographic",
-                      `${euphoria.gameId}.jpg`
-                    )
+                      `${euphoria.gameId}.jpg`,
+                    ),
                   );
                   return existedEuphoriaInfographic;
                 });
@@ -874,7 +874,7 @@ if (hasInfographic) {
                     Object.entries(
                       JSON.parse(JSON.stringify(insightMaterials)) as {
                         [insightLevel: string]: RequireMaterialType[];
-                      }
+                      },
                     )
                       .reduce((accumulator: RequireMaterialType[], current) => {
                         const [insightLevel, currentValue] = current;
@@ -885,7 +885,7 @@ if (hasInfographic) {
                             accumulator.some((m) => m.param === material.param)
                           ) {
                             const index = accumulator.findIndex(
-                              (m) => m.param === material.param
+                              (m) => m.param === material.param,
                             );
                             accumulator[index].require += material.require;
                           } else {
@@ -917,7 +917,7 @@ if (hasInfographic) {
                   Object.values(
                     JSON.parse(JSON.stringify(insightMaterials)) as {
                       [insightLevel: string]: RequireMaterialType[];
-                    }
+                    },
                   )
                     .reduce((accumulator, currentValue) => {
                       currentValue.forEach((material) => {
@@ -925,7 +925,7 @@ if (hasInfographic) {
                           accumulator.some((m) => m.param === material.param)
                         ) {
                           const index = accumulator.findIndex(
-                            (m) => m.param === material.param
+                            (m) => m.param === material.param,
                           );
                           accumulator[index].require += material.require;
                         } else {
@@ -992,7 +992,7 @@ if (hasInfographic) {
                         />
                       ))}
                     </div>
-                  )
+                  ),
                 )}
               </div>
             </div>
@@ -1008,7 +1008,7 @@ if (hasInfographic) {
                   {Object.entries(
                     JSON.parse(JSON.stringify(resonanceMaterials)) as {
                       [resonanceLevel: string]: RequireMaterialType[];
-                    }
+                    },
                   )
                     .reduce((accumulator: RequireMaterialType[], current) => {
                       const [resonanceLevel, currentValue] = current;
@@ -1019,7 +1019,7 @@ if (hasInfographic) {
                           accumulator.some((m) => m.param === material.param)
                         ) {
                           const index = accumulator.findIndex(
-                            (m) => m.param === material.param
+                            (m) => m.param === material.param,
                           );
                           accumulator[index].require += material.require;
                         } else {
@@ -1050,7 +1050,7 @@ if (hasInfographic) {
                 {Object.values(
                   JSON.parse(JSON.stringify(resonanceMaterials)) as {
                     [resonanceLevel: string]: RequireMaterialType[];
-                  }
+                  },
                 )
                   .reduce(
                     (accumulator: RequireMaterialType[], currentValue) => {
@@ -1059,7 +1059,7 @@ if (hasInfographic) {
                           accumulator.some((m) => m.param === material.param)
                         ) {
                           const index = accumulator.findIndex(
-                            (m) => m.param === material.param
+                            (m) => m.param === material.param,
                           );
                           accumulator[index].require += material.require;
                         } else {
@@ -1068,7 +1068,7 @@ if (hasInfographic) {
                       });
                       return accumulator;
                     },
-                    []
+                    [],
                   )
                   .map((material) => (
                     <Material
@@ -1119,7 +1119,7 @@ if (hasInfographic) {
             (b.getAttribute("data-rarity") ?? 0)
             ? 1
             : -1;
-        }
+        },
       );
 
       this.$el.replaceChildren(...sorted);
