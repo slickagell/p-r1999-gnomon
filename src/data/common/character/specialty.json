@@ -97,5 +97,8 @@
   },
   "ASSASSINATION": {
     "title": "Assassination"
+  },
+  "UNKNOWN": {
+    "title": "Unknown"
   }
 }

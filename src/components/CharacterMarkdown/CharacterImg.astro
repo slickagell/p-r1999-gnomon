@@ -16,6 +16,7 @@ interface Props {
     | "headicon"
     | "infographic";
   gameId?: string;
+  customImgGameId?: string;
   id?: string;
   code?: string;
   class?: string;
@@ -25,6 +26,7 @@ const {
   variant,
   id = "",
   gameId = "",
+  customImgGameId = "",
   code = "",
   class: customClass,
 } = Astro.props;
@@ -70,7 +72,11 @@ const {
             <CustomImage
               class="w-80"
               loading="eager"
-              src={`/images/portrait/${gameId}01.png`}
+              src={
+                customImgGameId
+                  ? `/images/portrait/${customImgGameId}.png`
+                  : `/images/portrait/${gameId}01.png`
+              }
               alt="portrait"
             />
           );
@@ -80,7 +86,11 @@ const {
           return (
             <CustomImage
               class="w-40"
-              src={`/images/udimo/${gameId}01.png`}
+              src={
+                customImgGameId
+                  ? `/images/udimo/${customImgGameId}.png`
+                  : `/images/udimo/${gameId}01.png`
+              }
               alt="udimo"
             />
           );
@@ -90,7 +100,11 @@ const {
           return (
             <CustomImage
               class="w-24"
-              src={`/images/chibi/${gameId}01.png`}
+              src={
+                customImgGameId
+                  ? `/images/chibi/${customImgGameId}.png`
+                  : `/images/chibi/${gameId}01.png`
+              }
               alt="chibi"
             />
           );

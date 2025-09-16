@@ -1,0 +1,80 @@
+---
+import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
+import CustomImage from "@components/CustomImage.astro";
+
+interface Props {
+  variant: "skill-1" | "skill-2" | "ultimate" | "external";
+  customImgSkillId?: string;
+  gameId: string;
+  hasReinforced?: boolean;
+}
+
+const { variant, gameId, hasReinforced, customImgSkillId } = Astro.props;
+---
+
+<div class="subtitle-slot">
+  <slot name="skill-title" />
+</div>
+<div
+  class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
+  {...hasReinforced && {
+    ["x-data"]: "{ reinforced: false }",
+  }}
+>
+  <div class="basis-full lg:basis-auto shrink-0">
+    {
+      customImgSkillId || variant === "external" ? (
+        <CustomImage
+          class="w-48"
+          src={`/images/skill/${customImgSkillId}.png`}
+          alt={`skill ${customImgSkillId ?? ""}`}
+        />
+      ) : (
+        <CharacterImg variant={variant} gameId={gameId} />
+      )
+    }
+
+    {
+      hasReinforced && (
+        <div class="form-control">
+          <label class="label w-fit gap-2 cursor-pointer">
+            <span class="label-text">Reinforce</span>
+
+            <input
+              type="checkbox"
+              class="checkbox checkbox-secondary"
+              x-model="reinforced"
+            />
+          </label>
+        </div>
+      )
+    }
+  </div>
+
+  {
+    hasReinforced ? (
+      <Fragment>
+        <div x-cloak x-show="!reinforced">
+          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+            <slot name="skill-card-info" />
+          </div>
+        </div>
+        <div x-cloak x-show="reinforced">
+          <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
+            <slot name="skill-card-info-reinforced" />
+          </div>
+        </div>
+      </Fragment>
+    ) : (
+      <div
+        class:list={[
+          "flex gap-5 flex-col items-center md:items-stretch flex-wrap",
+          { "md:flex-row": variant === "skill-1" || variant === "skill-2" },
+          { "xl:flex-row": variant === "ultimate" || variant === "external" },
+        ]}
+      >
+        <slot name="skill-card-info" />
+      </div>
+    )
+  }
+</div>

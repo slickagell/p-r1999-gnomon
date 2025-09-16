@@ -1,6 +1,7 @@
 ---
 import Carousel from "@components/Carousel.astro";
 import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
+import CharacterSkillInfo from "@components/CharacterMarkdown/CharacterSkillInfo.astro";
 import CharacterStar from "@components/CharacterMarkdown/CharacterStar.astro";
 import CustomImage from "@components/CustomImage.astro";
 import Icon from "@components/Icon.astro";
@@ -25,7 +26,7 @@ type Props = {
   race: string;
   version: string;
   specialties: string[];
-  isLimited: string;
+  limited: string;
   euphorias?: {
     gameId: string;
     code: string;
@@ -41,6 +42,12 @@ type Props = {
     [resonanceLevel: string]: RequireMaterialType[];
   };
   isDev?: boolean;
+  hasTransform?: boolean;
+  transformInfos?: {
+    label: string;
+    gameId: string;
+    race: string;
+  }[];
 };
 
 const {
@@ -52,11 +59,13 @@ const {
   race,
   version,
   specialties,
-  isLimited,
+  limited,
   euphorias,
   insightMaterials,
   resonanceMaterials,
   isDev,
+  hasTransform,
+  transformInfos,
 } = Astro.props;
 
 enum PROFILE_TABS {
@@ -143,7 +152,12 @@ if (hasInfographic) {
   )
 }
 
-<div class="flex justify-between flex-col-reverse md:flex-row gap-8">
+<div
+  class="flex justify-between flex-col-reverse md:flex-row gap-8"
+  {...hasTransform && {
+    "x-data": `{ currentTransformInfoId: '${transformInfos?.[1].gameId ?? ""}' }`,
+  }}
+>
   <div>
     <div
       class="flex gap-x-8 gap-y-2 items-center justify-center md:justify-start flex-wrap"
@@ -160,15 +174,29 @@ if (hasInfographic) {
       </div>
 
       <div class="flex gap-2">
-        <div class="badge badge-outline badge-primary">
-          {RACE[race].title}
-        </div>
+        {
+          hasTransform ? (
+            transformInfos?.map((transformInfo) => (
+              <div
+                class="badge badge-outline badge-primary"
+                x-cloak
+                x-show={`'${transformInfo.gameId}' === currentTransformInfoId`}
+              >
+                {RACE[transformInfo.race].title}
+              </div>
+            ))
+          ) : (
+            <div class="badge badge-outline badge-primary">
+              {RACE[race].title}
+            </div>
+          )
+        }
 
         <div class="badge bg-base-content/20">
           {"Version " + version}
         </div>
 
-        {isLimited && <div class="badge badge-primary text-white">Limited</div>}
+        {!!limited && <div class="badge badge-primary text-white">Limited</div>}
       </div>
     </div>
 
@@ -201,23 +229,75 @@ if (hasInfographic) {
     </div>
   </div>
 
-  <div class="flex flex-col items-center shrink-0">
-    <CharacterImg variant="portrait" gameId={gameId} />
+  {
+    hasTransform ? (
+      <div class="flex flex-col items-center shrink-0">
+        {transformInfos?.map((transformInfo) => (
+          <div
+            x-cloak
+            x-show={`'${transformInfo.gameId}' === currentTransformInfoId`}
+          >
+            <CharacterImg
+              variant="portrait"
+              gameId={gameId}
+              customImgGameId={transformInfo.gameId}
+            />
+          </div>
+        ))}
+        <div class="mt-5 flex gap-6 justify-center items-end">
+          <div class="text-center">
+            {transformInfos?.map((transformInfo) => (
+              <div
+                x-cloak
+                x-show={`'${transformInfo.gameId}' === currentTransformInfoId`}
+              >
+                <CharacterImg
+                  variant="chibi"
+                  gameId={gameId}
+                  customImgGameId={transformInfo.gameId}
+                />
+              </div>
+            ))}
+            Chibi
+          </div>
 
-    <div class="mt-5 flex gap-6 justify-center items-end">
-      <div class="text-center">
-        <CharacterImg variant="chibi" gameId={gameId} />
-
-        Chibi
+          <div class="text-center">
+            <CharacterImg variant="udimo" gameId={gameId} />
+            Udimo
+          </div>
+        </div>
+        <div class="mt-6 flex gap-4">
+          {transformInfos?.map((transformInfo) => (
+            <label class="label cursor-pointer gap-2">
+              <input
+                type="radio"
+                class="radio radio-primary"
+                value={transformInfo.gameId}
+                x-model="currentTransformInfoId"
+              />
+              <span class="label-text">{transformInfo.label}</span>
+            </label>
+          ))}
+        </div>
       </div>
+    ) : (
+      <div class="flex flex-col items-center shrink-0">
+        <CharacterImg variant="portrait" gameId={gameId} />
 
-      <div class="text-center">
-        <CharacterImg variant="udimo" gameId={gameId} />
+        <div class="mt-5 flex gap-6 justify-center items-end">
+          <div class="text-center">
+            <CharacterImg variant="chibi" gameId={gameId} />
+            Chibi
+          </div>
 
-        Udimo
+          <div class="text-center">
+            <CharacterImg variant="udimo" gameId={gameId} />
+            Udimo
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    )
+  }
 </div>
 
 {/* TOC */}
@@ -268,6 +348,7 @@ if (hasInfographic) {
       ><slot name="portray-section-title" /></button
     >
     <button
+      x-cloak
       x-show={hasEuphoria}
       class="tab tab-bordered"
       x-bind:class={`(activeTab === '${PROFILE_TABS.EUPHORIA}') && 'tab-active'`}
@@ -278,124 +359,64 @@ if (hasInfographic) {
 
   <div x-cloak x-show={`activeTab === '${PROFILE_TABS.ARCANE_SKILLS}'`}>
     <div class="mt-4">
-      {/* Arcane Skills */}
+      {
+        hasTransform ? (
+          <>
+            <slot name="transform-skill-content" />
+          </>
+        ) : (
+          <>
+            {/* Arcane Skills */}
 
-      {/* Skill 1 */}
-      <div class="subtitle-slot">
-        <slot name="skill-1-title" />
-      </div>
-      <div
-        class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
-        {...hasSkill1Reinforced && { ["x-data"]: "{ reinforced: false }" }}
-      >
-        <div class="basis-full lg:basis-auto shrink-0">
-          <CharacterImg variant="skill-1" gameId={gameId} />
+            {/* Skill 1 */}
+            <CharacterSkillInfo
+              variant="skill-1"
+              gameId={gameId}
+              hasReinforced={hasSkill1Reinforced}
+            >
+              <slot name="skill-1-title" slot="skill-title" />
 
-          {
-            hasSkill1Reinforced && (
-              <div class="form-control">
-                <label class="label w-fit gap-2 cursor-pointer">
-                  <span class="label-text">Reinforce</span>
+              <slot name="skill-1-cards-info" slot="skill-card-info" />
 
-                  <input
-                    type="checkbox"
-                    class="checkbox checkbox-secondary"
-                    x-model="reinforced"
-                  />
-                </label>
-              </div>
-            )
-          }
-        </div>
+              <slot
+                name="skill-1-cards-info-reinforced"
+                slot="skill-card-info-reinforced"
+              />
+            </CharacterSkillInfo>
 
-        {
-          hasSkill1Reinforced ? (
-            <Fragment>
-              <div x-cloak x-show="!reinforced">
-                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-                  <slot name="skill-1-cards-info" />
-                </div>
-              </div>
-              <div x-cloak x-show="reinforced">
-                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-                  <slot name="skill-1-cards-info-reinforced" />
-                </div>
-              </div>
-            </Fragment>
-          ) : (
-            <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-              <slot name="skill-1-cards-info" />
-            </div>
-          )
-        }
-      </div>
+            {/* Skill 2 */}
+            <CharacterSkillInfo
+              variant="skill-2"
+              gameId={gameId}
+              hasReinforced={hasSkill2Reinforced}
+            >
+              <slot name="skill-2-title" slot="skill-title" />
 
-      {/* Skill 2 */}
-      <div class="subtitle-slot">
-        <slot name="skill-2-title" />
-      </div>
-      <div
-        class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap xl:flex-nowrap"
-        {...hasSkill2Reinforced && { ["x-data"]: "{ reinforced: false }" }}
-      >
-        <div class="basis-full lg:basis-auto shrink-0">
-          <CharacterImg variant="skill-2" gameId={gameId} />
+              <slot name="skill-2-cards-info" slot="skill-card-info" />
 
-          {
-            hasSkill2Reinforced && (
-              <div class="form-control">
-                <label class="label w-fit gap-2 cursor-pointer">
-                  <span class="label-text">Reinforce</span>
+              <slot
+                name="skill-2-cards-info-reinforced"
+                slot="skill-card-info-reinforced"
+              />
+            </CharacterSkillInfo>
 
-                  <input
-                    type="checkbox"
-                    class="checkbox checkbox-secondary"
-                    x-model="reinforced"
-                  />
-                </label>
-              </div>
-            )
-          }
-        </div>
+            {/* Ultimate */}
+            <CharacterSkillInfo variant="ultimate" gameId={gameId}>
+              <slot name="ultimate-title" slot="skill-title" />
 
-        {
-          hasSkill2Reinforced ? (
-            <Fragment>
-              <div x-cloak x-show="!reinforced">
-                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-                  <slot name="skill-2-cards-info" />
-                </div>
-              </div>
-              <div x-cloak x-show="reinforced">
-                <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-                  <slot name="skill-2-cards-info-reinforced" />
-                </div>
-              </div>
-            </Fragment>
-          ) : (
-            <div class="flex gap-5 flex-col md:flex-row items-center md:items-stretch flex-wrap">
-              <slot name="skill-2-cards-info" />
-            </div>
-          )
-        }
-      </div>
+              <slot name="ultimate-cards-info" slot="skill-card-info" />
 
-      {/* Ultimate */}
-      <div class="subtitle-slot">
-        <slot name="ultimate-title" />
-      </div>
+              <slot
+                name="ultimate-cards-info-reinforced"
+                slot="skill-card-info-reinforced"
+              />
+            </CharacterSkillInfo>
 
-      <div
-        class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap"
-      >
-        <div class="basis-full lg:basis-auto shrink-0">
-          <CharacterImg variant="ultimate" gameId={gameId} />
-        </div>
-
-        <slot name="ultimate-card-info" />
-      </div>
-      {/* Extra Cards */}
-      <slot name="extra-cards" />
+            {/* Extra Cards */}
+            <slot name="extra-cards" />
+          </>
+        )
+      }
     </div>
   </div>
 
@@ -1064,6 +1085,26 @@ if (hasInfographic) {
     </div>
   </div>
 </div>
+
+<!-- {hasTransform && (
+  <script
+    is:inline
+    define:vars={{ transformInfos }}
+  >
+    document.addEventListener("alpine:init", () => {
+      window.Alpine.store("character", {
+        transformInfos,
+        currentInfoId: transformInfos[0].id,
+      });
+    });
+  </script>
+
+  <script>
+    import Alpine from "alpinejs";
+
+ 
+  </script>
+)} -->
 
 <script>
   import Alpine from "alpinejs";

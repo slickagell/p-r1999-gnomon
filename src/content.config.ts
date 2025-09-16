@@ -23,6 +23,15 @@ const characters = defineCollection({
     limited: z.number(),
     mainPiece: z.string(),
     euphorias: z.number(),
+    hasTransform: z.boolean().optional(),
+    transformInfos: z
+      .array(
+        z.object({
+          label: z.string(),
+          gameId: z.string(),
+        }),
+      )
+      .optional(),
   }),
 });
 
