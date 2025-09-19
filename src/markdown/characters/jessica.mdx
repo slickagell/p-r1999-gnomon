@@ -155,20 +155,19 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     *Gaze From the Forest*: Reality DMG increased to **500%**.
   </Fragment>
 
-   <Fragment slot="euphoria-section-title">
+  <Fragment slot="euphoria-section-title">
     Euphoria
   </Fragment>
 
   <Fragment slot="euphoria-content">
-  
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
       When entering battle and at the end of the round, gain 2 stacks of :effect{param="moss-on-stone-id-1"} for self; after an ally actively casts and attacks with an incantation, if the main target is in a :effect{param="poison"} status, gain 1 stack of :effect{param="moss-on-stone-id-1"} for self.
 
-At the start of the round, if holding 10 stacks of :effect{param="moss-on-stone-id-1"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an additional :effect{param="petrify"} status on the main target for 1 round, and remove all :effect{param="moss-on-stone-id-1"} statuses on self at the end of the round.
+      At the start of the round, if holding 10 stacks of :effect{param="moss-on-stone-id-1"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an additional :effect{param="petrify"} status on the main target for 1 round, and remove all :effect{param="moss-on-stone-id-1"} statuses on self at the end of the round.
 
-Attacking an enemy in the :effect{param="petrify"} status does not remove the :effect{param="petrify"} status.
+      Attacking an enemy in the :effect{param="petrify"} status does not remove the :effect{param="petrify"} status.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
@@ -182,7 +181,7 @@ Attacking an enemy in the :effect{param="petrify"} status does not remove the :e
 
       When actively attacking, if the main target is in the :effect{param="petrify"} status, the attack is always a critical hit.
     </div>
-    
+
     <div x-show={`active==='${CHARACTER.euphorias[1].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[1].materials[1]} stats={CHARACTER.euphorias[1].stats[1]} />
 
@@ -200,7 +199,6 @@ Attacking an enemy in the :effect{param="petrify"} status does not remove the :e
 
       :effect{param="mycelium-mayhem-id-1"}'s effect: Poison DMG Taken **+10%**. Each time :effect{param="poison"} is resolved on the holder, the user inflicts 1 stack of :effect{param="fungal-culture"} on the holder for 3 rounds. When the target is inflicted with :effect{param="mycelium-mayhem-id-1"}, for every stack of :effect{param="fungal-culture"} the target has, inflict 1 instance of :effect{param="poison"} on the target for 2 rounds, deal (the user's ATK x**30%**) Genesis DMG at the end of the round, then remove :effect{param="fungal-culture"} from the target.
     </div>
-    
   </Fragment>
 
   <Fragment slot="resonance-section-title">

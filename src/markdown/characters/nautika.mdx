@@ -44,7 +44,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    Mother Spirit's Glow [Spirit], Myth Archaeology
+    Mother Spirit's Glow \[Spirit], Myth Archaeology
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
@@ -71,12 +71,12 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <div x-data={`{ currentTransformId: '${frontmatter.transformInfos[1].gameId}' }`}>
       <div class="flex gap-4">
         {
-          frontmatter.transformInfos.map((transformInfo) => (
-            <label class="label cursor-pointer gap-2">
-              <input type="radio" class="radio radio-primary" value={transformInfo.gameId} x-model="currentTransformId"/>
-              <span class="label-text">{transformInfo.label}</span> 
-            </label>
-        ))}
+                  frontmatter.transformInfos.map((transformInfo) => (
+                    <label class="label cursor-pointer gap-2">
+                      <input type="radio" class="radio radio-primary" value={transformInfo.gameId} x-model="currentTransformId"/>
+                      <span class="label-text">{transformInfo.label}</span> 
+                    </label>
+                ))}
       </div>
 
       <div x-cloak x-show={`currentTransformId === '${frontmatter.transformInfos[0].gameId}'`}>
@@ -129,16 +129,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
           <Fragment slot="skill-card-info">
             <CardInfo star="1" type="ATTACK" note={`Life is reignited from the ashes.`}>
-      Mass attack. Loses (Current HP x**20%**) HP to deal **100%** Reality DMG to 2 enemies. This attack also deals **100%** Reality DMG based on **10%** of Nautika's Max HP instead of ATK. Gains 4 stacks of :effect{param="higge"}.
-    </CardInfo>
+              Mass attack. Loses (Current HP x**20%**) HP to deal **100%** Reality DMG to 2 enemies. This attack also deals **100%** Reality DMG based on **10%** of Nautika's Max HP instead of ATK. Gains 4 stacks of :effect{param="higge"}.
+            </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note={`Through the howling agony, life is reignited from the ashes.`}>
-      Mass attack. Loses (Current HP x**30%**) HP to deal **150%** Reality DMG to 2 enemies. This attack also deals **100%** Reality DMG based on **15%** of Nautika's Max HP instead of ATK. Gains 6 stacks of :effect{param="higge"}.
-    </CardInfo>
+            <CardInfo star="2" type="ATTACK" note={`Through the howling agony, life is reignited from the ashes.`}>
+              Mass attack. Loses (Current HP x**30%**) HP to deal **150%** Reality DMG to 2 enemies. This attack also deals **100%** Reality DMG based on **15%** of Nautika's Max HP instead of ATK. Gains 6 stacks of :effect{param="higge"}.
+            </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note={`Through the howling agony and heavy weight, life is reignited from the ashes.`}>
-      Mass attack. Loses (Current HP x**50%**) HP to deal **250%** Reality DMG to 2 enemies. This attack also deals **100%** Reality DMG based on **25%** of Nautika's Max HP instead of ATK. Gains 10 stacks of :effect{param="higge"}.
-    </CardInfo>
+            <CardInfo star="3" type="ATTACK" note={`Through the howling agony and heavy weight, life is reignited from the ashes.`}>
+              Mass attack. Loses (Current HP x**50%**) HP to deal **250%** Reality DMG to 2 enemies. This attack also deals **100%** Reality DMG based on **25%** of Nautika's Max HP instead of ATK. Gains 10 stacks of :effect{param="higge"}.
+            </CardInfo>
           </Fragment>
         </CharacterSkillInfo>
 
@@ -149,16 +149,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
           <Fragment slot="skill-card-info">
             <CardInfo star="1" type="ADAPTIVE" note={`The untaken path.`}>
-      Choose 1 out of rank 1 *[Weaver of Light]* and *[Martyr of the Abyss]*.
-    </CardInfo>
+              Choose 1 out of rank 1 *\[Weaver of Light]* and *\[Martyr of the Abyss]*.
+            </CardInfo>
 
-    <CardInfo star="2" type="ADAPTIVE" note={`Real, yet cold. Illusory, yet warm.`}>
-      Choose 1 out of rank 2 *[Weaver of Light]* and *[Martyr of the Abyss]*.
-    </CardInfo>
+            <CardInfo star="2" type="ADAPTIVE" note={`Real, yet cold. Illusory, yet warm.`}>
+              Choose 1 out of rank 2 *\[Weaver of Light]* and *\[Martyr of the Abyss]*.
+            </CardInfo>
 
-    <CardInfo star="3" type="ADAPTIVE" note={`Certainty in advance. Warmth in sanctuary.`}>
-      Choose 1 out of rank 3 *[Weaver of Light]* and *[Martyr of the Abyss]*.
-    </CardInfo>
+            <CardInfo star="3" type="ADAPTIVE" note={`Certainty in advance. Warmth in sanctuary.`}>
+              Choose 1 out of rank 3 *\[Weaver of Light]* and *\[Martyr of the Abyss]*.
+            </CardInfo>
           </Fragment>
         </CharacterSkillInfo>
 
@@ -169,16 +169,16 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
           <Fragment slot="skill-card-info">
             <CardInfo star="1" type="COUNTER" note={`Do you see the light?`}>
-      Self counter. Enters :effect{param="mother-spirit-s-guidance"} status for 3 rounds. Gains DMG Taken **-10%** for 3 rounds.
-    </CardInfo>
+              Self counter. Enters :effect{param="mother-spirit-s-guidance"} status for 3 rounds. Gains DMG Taken **-10%** for 3 rounds.
+            </CardInfo>
 
-    <CardInfo star="2" type="COUNTER" note={`Do you see the light? It comes all the way from the distant home.`}>
-      Self counter. Enters :effect{param="mother-spirit-s-guidance"} status for 3 rounds. Gains DMG Taken **-15%** for 3 rounds.
-    </CardInfo>
+            <CardInfo star="2" type="COUNTER" note={`Do you see the light? It comes all the way from the distant home.`}>
+              Self counter. Enters :effect{param="mother-spirit-s-guidance"} status for 3 rounds. Gains DMG Taken **-15%** for 3 rounds.
+            </CardInfo>
 
-    <CardInfo star="3" type="COUNTER" note={`Do you see the light? It comes all the way from the distant home, weaving dreams into your reality.`}>
-      Self counter. Enters :effect{param="mother-spirit-s-guidance"} status for 3 rounds. Gains DMG Taken **-25%** for 3 rounds.
-    </CardInfo>
+            <CardInfo star="3" type="COUNTER" note={`Do you see the light? It comes all the way from the distant home, weaving dreams into your reality.`}>
+              Self counter. Enters :effect{param="mother-spirit-s-guidance"} status for 3 rounds. Gains DMG Taken **-25%** for 3 rounds.
+            </CardInfo>
           </Fragment>
         </CharacterSkillInfo>
 
@@ -189,28 +189,28 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
           <Fragment slot="skill-card-info">
             <CardInfo star="1" type="ATTACK" note={`Dive into the darkness.`}>
-      1-target attack. Depletes (Current HP x**20%**) HP from all characters (not higher than **20%** of Nautika's Max HP). Grants :effect{param="adversity-i"} to all allies for 3 rounds. Deals (number of characters x**50%**) Reality DMG based on **10%** of Nautika's Max HP instead of ATK.
-    </CardInfo>
+              1-target attack. Depletes (Current HP x**20%**) HP from all characters (not higher than **20%** of Nautika's Max HP). Grants :effect{param="adversity-i"} to all allies for 3 rounds. Deals (number of characters x**50%**) Reality DMG based on **10%** of Nautika's Max HP instead of ATK.
+            </CardInfo>
 
-    <CardInfo star="2" type="ATTACK" note={`Dive into the darkness. Don't be afraid.`}>
-      1-target attack. Depletes (Current HP x**30%**) HP from all characters (not higher than **30%** of Nautika's Max HP). Grants :effect{param="adversity-i"} to all allies for 3 rounds. Deals (number of characters x**50%**) Reality DMG based on **15%** of Nautika's Max HP instead of ATK.
-    </CardInfo>
+            <CardInfo star="2" type="ATTACK" note={`Dive into the darkness. Don't be afraid.`}>
+              1-target attack. Depletes (Current HP x**30%**) HP from all characters (not higher than **30%** of Nautika's Max HP). Grants :effect{param="adversity-i"} to all allies for 3 rounds. Deals (number of characters x**50%**) Reality DMG based on **15%** of Nautika's Max HP instead of ATK.
+            </CardInfo>
 
-    <CardInfo star="3" type="ATTACK" note={`Dive into the darkness and listen to your heart's deepest whispers.`}>
-      1-target attack. Depletes (Current HP x**50%**) HP from all characters (not higher than **50%** of Nautika's Max HP). Grants :effect{param="adversity-i"} to all allies for 3 rounds. Deals (number of characters x**50%**) Reality DMG based on **25%** of Nautika's Max HP instead of ATK.
-    </CardInfo>
+            <CardInfo star="3" type="ATTACK" note={`Dive into the darkness and listen to your heart's deepest whispers.`}>
+              1-target attack. Depletes (Current HP x**50%**) HP from all characters (not higher than **50%** of Nautika's Max HP). Grants :effect{param="adversity-i"} to all allies for 3 rounds. Deals (number of characters x**50%**) Reality DMG based on **25%** of Nautika's Max HP instead of ATK.
+            </CardInfo>
           </Fragment>
         </CharacterSkillInfo>
-      
-      <CharacterSkillInfo variant="ultimate" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'31'}>
+
+        <CharacterSkillInfo variant="ultimate" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'31'}>
           <Fragment slot="skill-title">
             Divine Yoik
           </Fragment>
 
           <Fragment slot="skill-card-info">
             <CardInfo type="CHANNEL" note={`A thousand tales spoke your name; ten thousand mouths sang your praise.`}>
-      Self channel. Enters :effect{param="blood-sacrifice"} for 1 round. This does not take up the allied Incantation Draw Limit.
-    </CardInfo>
+              Self channel. Enters :effect{param="blood-sacrifice"} for 1 round. This does not take up the allied Incantation Draw Limit.
+            </CardInfo>
           </Fragment>
         </CharacterSkillInfo>
       </div>
@@ -221,7 +221,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     Inheritance
   </Fragment>
 
- <Fragment slot="inheritance-title">
+  <Fragment slot="inheritance-title">
     No Longer Poles Apart
   </Fragment>
 
@@ -230,15 +230,15 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    Nautika accumulates :effect{param="bloodtithe"} whenever an ally loses HP. When entering battle, loses (Current HP x**50%**) HP to gain :effect{param="bloodtithe"}/*[Max Bloodtithe]* **+8** (Nautika's HP won't drop below **15%** due to such HP loss effects).
+    Nautika accumulates :effect{param="bloodtithe"} whenever an ally loses HP. When entering battle, loses (Current HP x**50%**) HP to gain :effect{param="bloodtithe"}/*\[Max Bloodtithe]* **+8** (Nautika's HP won't drop below **15%** due to such HP loss effects).
 
-Nautika's Moxie is replaced by Faith. Whenever :effect{param="bloodtithe"} increases, Faith **+1**. Nautika's Ultimate is available when Faith reaches **8**.
+    Nautika's Moxie is replaced by Faith. Whenever :effect{param="bloodtithe"} increases, Faith **+1**. Nautika's Ultimate is available when Faith reaches **8**.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    In :effect{param="mother-spirit-s-guidance"} status, for every **8** points of :effect{param="bloodtithe"} increased, casts *[Mouth Of The Mother]* 1 time.
+    In :effect{param="mother-spirit-s-guidance"} status, for every **8** points of :effect{param="bloodtithe"} increased, casts *\[Mouth Of The Mother]* 1 time.
 
-At the start of the round, if without :effect{param="reborn"}, consumes **4** points of :effect{param="bloodtithe"} to gain :effect{param="reborn"}; the :effect{param="bloodtithe"} cost for each subsequent trigger increases by **4**.
+    At the start of the round, if without :effect{param="reborn"}, consumes **4** points of :effect{param="bloodtithe"} to gain :effect{param="reborn"}; the :effect{param="bloodtithe"} cost for each subsequent trigger increases by **4**.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -246,25 +246,25 @@ At the start of the round, if without :effect{param="reborn"}, consumes **4** po
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    *No Longer Poles Apart*: When entering battle, :effect{param="bloodtithe"}/*[Max Bloodtithe]* gained is increased to **16**. :effect{param="higge"}'s Max HP bonus is increased to **+3%**. The increased points of :effect{param="bloodtithe"} required to cast *[Mouth Of The Mother]* is reduced to **6**.
+    *No Longer Poles Apart*: When entering battle, :effect{param="bloodtithe"}/*\[Max Bloodtithe]* gained is increased to **16**. :effect{param="higge"}'s Max HP bonus is increased to **+3%**. The increased points of :effect{param="bloodtithe"} required to cast *\[Mouth Of The Mother]* is reduced to **6**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    *Divine Yoik*: During :effect{param="blood-sacrifice"}, the required points of :effect{param="bloodtithe"} consumed to gain *[Blood Sacrifice]* is reduced to **7**. *[Blood Sacrifice]*'s point limit is increased to **27**. The percentage of own Max HP replacing every *[A Thousand Scars]*'s DMG dealt is increased to x**27.5%** and for every point of *[Blood Sacrifice]*, Max HP is increased to **+10%**. The percentage of own Max HP replacing *[A Thousand Springs]*'s DMG dealt is increased to x**50%** and Max HP is increased to **+30%**.
+    *Divine Yoik*: During :effect{param="blood-sacrifice"}, the required points of :effect{param="bloodtithe"} consumed to gain *\[Blood Sacrifice]* is reduced to **7**. *\[Blood Sacrifice]*'s point limit is increased to **27**. The percentage of own Max HP replacing every *\[A Thousand Scars]*'s DMG dealt is increased to x**27.5%** and for every point of *\[Blood Sacrifice]*, Max HP is increased to **+10%**. The percentage of own Max HP replacing *\[A Thousand Springs]*'s DMG dealt is increased to x**50%** and Max HP is increased to **+30%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    *No Longer Poles Apart*: :effect{param="mother-spirit-s-guidance-id-1"}'s Healing Taken is changed to **+20%**. For every **10%** HP lost, Healing Taken is changed to **+7.5%**, up to **60%**. *[Mouth Of The Mother]*'s HP loss is increased to **30%** of current HP. The percentage of own Max HP replacing additional DMG dealt is increased to x**25%**.
+    *No Longer Poles Apart*: :effect{param="mother-spirit-s-guidance-id-1"}'s Healing Taken is changed to **+20%**. For every **10%** HP lost, Healing Taken is changed to **+7.5%**, up to **60%**. *\[Mouth Of The Mother]*'s HP loss is increased to **30%** of current HP. The percentage of own Max HP replacing additional DMG dealt is increased to x**25%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
     *Martyr of the Abyss*: At Incantation rank **1/2/3**, the percentage of own Max HP replacing DMG dealt is increased to **20/30/50%**.
 
-*Weaver of Light*: At Incantation rank **1/2/3**, DMG Taken Reduction is changed to **+20/25/40%** and the duration is increased to **4** rounds. The duration of :effect{param="mother-spirit-s-guidance-id-2"} is increased to **4** rounds.
+    *Weaver of Light*: At Incantation rank **1/2/3**, DMG Taken Reduction is changed to **+20/25/40%** and the duration is increased to **4** rounds. The duration of :effect{param="mother-spirit-s-guidance-id-2"} is increased to **4** rounds.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    *Divine Yoik*: During :effect{param="blood-sacrifice-id-1"}, the required points of :effect{param="bloodtithe"} consumed to gain *[Blood Sacrifice]* is reduced to **6**. *[Blood Sacrifice]*'s point limit is increased to **30**. The percentage of own Max HP replacing every *[A Thousand Scars]*'s DMG dealt is increased to x**35%**.
+    *Divine Yoik*: During :effect{param="blood-sacrifice-id-1"}, the required points of :effect{param="bloodtithe"} consumed to gain *\[Blood Sacrifice]* is reduced to **6**. *\[Blood Sacrifice]*'s point limit is increased to **30**. The percentage of own Max HP replacing every *\[A Thousand Scars]*'s DMG dealt is increased to x**35%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

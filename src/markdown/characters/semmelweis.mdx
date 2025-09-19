@@ -157,38 +157,36 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
     *Blood Thirst*: When in the :effect{param="feral-instinct-id-61902"} status, for each HP loss effect suffered by any ally when an ally takes an action, this :effect{param="truth-revealed-id-61902"} now deals an additional Reality DMG **+60%**.
   </Fragment>
 
-    <Fragment slot="euphoria-section-title">
+  <Fragment slot="euphoria-section-title">
     Euphoria
   </Fragment>
 
   <Fragment slot="euphoria-content">
-  
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
       Whenever an ally loses HP, accumulates points of :effect{param="bloodtithe"}.
 
-When entering battle, gains Max HP **+50%** and grants (Semmelweis's Max HP x**10%**) Max HP to other allies.
+      When entering battle, gains Max HP **+50%** and grants (Semmelweis's Max HP x**10%**) Max HP to other allies.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
       Enhance *Effective Means*: The DMG dealt by allies in the :effect{param="fresh-blood"} status is additionally increased by **10%** and the duration of the granted status is increased to 3 rounds.
 
-:effect{param="fresh-blood"}'s effect is changed to: When taking an action, lose **10%** of current HP. Critical Rate **+20%**. Critical DMG **+20%**.
+      :effect{param="fresh-blood"}'s effect is changed to: When taking an action, lose **10%** of current HP. Critical Rate **+20%**. Critical DMG **+20%**.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
       For every 8 :effect{param="bloodtithe"} points gained by all allies combined, gain Moxie +1 for self.
 
-:effect{param="truth-revealed-id-61901"} deals (**100%** + own Max HP x**30%**) Reality DMG instead and grants :effect{param="bloodtithe"} +2.
+      :effect{param="truth-revealed-id-61901"} deals (**100%** + own Max HP x**30%**) Reality DMG instead and grants :effect{param="bloodtithe"} +2.
 
       <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
 
       :effect{param="blood-domain-id-61901"}'s additional effects: Allies' Healing Taken **+10%**. For every **10%** of Max HP missing, gain additional Healing Taken **+4%** (up to **32%**).
 
-When under :effect{param="blood-domain-id-62801"}, if max :effect{param="bloodtithe"} reaches 50/70, after an ally takes an action, they lose **5%** of current HP and gain Extra Action DMG Dealt **+15%**/**30%**. If the ally has :effect{param="fresh-blood-id-62801"}, they gain an additional Extra Action DMG Dealt **+10%**/**20%**.
+      When under :effect{param="blood-domain-id-62801"}, if max :effect{param="bloodtithe"} reaches 50/70, after an ally takes an action, they lose **5%** of current HP and gain Extra Action DMG Dealt **+15%**/**30%**. If the ally has :effect{param="fresh-blood-id-62801"}, they gain an additional Extra Action DMG Dealt **+10%**/**20%**.
     </div>
-    
   </Fragment>
 
   <Fragment slot="resonance-section-title">

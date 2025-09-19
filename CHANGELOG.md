@@ -1,3 +1,9 @@
+##### 2025-09-19
+
+* Add 2.8 characters official data:
+  * Nautika, Ulrich, Buddy Fairchild info
+  * Lucy, Regulus, Jessica, Semmelweis euphoria info
+
 ##### 2025-09-16
 
 * Add new characters in 2.8: Nautika, Moldir, Ulrich, Buddy Fairchild (these page info still in development until official release)
