@@ -5,5 +5,6 @@
   "BUFF": "buff",
   "CHANNEL": "channel",
   "COUNTER": "counter",
-  "VERSATILE": "versatile"
+  "VERSATILE": "versatile",
+  "ADAPTIVE": "adaptive"
 }

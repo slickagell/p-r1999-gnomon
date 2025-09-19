@@ -8,14 +8,13 @@ star: 5
 afflatus: "PLANT"
 dmgType: "REALITY"
 race: "ARCANIST"
-birthday: ""
+birthday: "5/20"
 version: "2.8"
 releaseDate: "2025-09-19"
-specialties: ["UNKNOWN"]
+specialties: ["DPS","BURST_DMG","MOXIE"]
 limited: 0
 mainPiece: "z"
 euphorias: 0
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -34,23 +33,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An arcanist's work. Exhibited in the 1990s for 5 years. Completed in Spring, on May 20. Exhibited in Florida, USA.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Dried Pinecone
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Fiery Pinefruit [Plant], Friend of Animals
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Fougere - Oakmoss, Clary Sage, Juniper Berries
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    47 15/64 x 17 23/32 x 7 7/8 inches.
   </Fragment>
 
   <Fragment slot="toc">
@@ -66,48 +65,48 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    I Thank You, Nature!
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="ATTACK" note={`The pine trees grow 'em, we fling 'em.`}>
+      1-target attack. Deals **200%** Reality DMG. Gains 2 stacks of :effect{param="buddy-badge"}.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="ATTACK" note={`The pine trees grow 'em, we fling 'em—straight to the enemy's forehead.`}>
+      1-target attack. Deals **300%** Reality DMG. Gains 3 stacks of :effect{param="buddy-badge"}.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="ATTACK" note={`The pine trees grow 'em, we fling 'em—straight to the enemy's forehead. Squirrel tradition, proudly upheld.`}>
+      1-target attack. Deals **500%** Reality DMG. Gains 4 stacks of :effect{param="buddy-badge"}.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    I Salute You, Pals!
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="BUFF" note={`From pole to pole.`}>
+      Self buff. Gains 5 stacks of :effect{param="buddy-badge"}; gains Moxie +1 additionally if this creates surplus stacks of :effect{param="buddy-badge"}.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="BUFF" note={`From pole to pole, it's a homecoming for my penguin pals.`}>
+      Self buff. Gains 7 stacks of :effect{param="buddy-badge"}; gains Moxie +1 additionally if this creates surplus stacks of :effect{param="buddy-badge"}.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="BUFF" note={`From pole to pole, it's a homecoming for my penguin pals—and a glorious expedition for the Nutcracker Super Squad!`}>
+      Self buff. Gains 10 stacks of :effect{param="buddy-badge"}; gains Moxie +1 additionally if this creates surplus stacks of :effect{param="buddy-badge"}.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    The Nutcracker Super Squad
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="ATTACK" note={`Hey, enjoyed the spectacle my penguin pals put on? O' course ya did!`}>
+      Mass attack. Consume all stacks of :effect{param="buddy-badge"} to deal **300%** Reality DMG to all enemies. For every 1 stack consumed, deals **50%** additional Reality DMG. When at least 10 stacks are consumed, this attack guarantees a critical hit. After attacking, all allies gain DMG Dealt **+30%** for 3 rounds.
     </CardInfo>
   </Fragment>
 
@@ -116,19 +115,19 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    Fluffy Sergeant
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    When another ally casts Ultimate, gains 2 stacks of :effect{param="buddy-badge"}.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    ATK **+5%** when entering battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    At the start of the round, if at no less than 10 stacks of :effect{param="buddy-badge"}, gains Moxie +1, and casting Ultimate within the round costs no AP.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,23 +135,23 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *The Nutcracker Super Squad*: For every **1** stack of :effect{param="buddy-badge"} consumed, additional Reality DMG dealt is increased to **75%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *The Nutcracker Super Squad*: Reality DMG increased to **400%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *The Nutcracker Super Squad*: DMG Dealt increased to **+45%** for all allies.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *The Nutcracker Super Squad*: Reality DMG increased to **500%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *The Nutcracker Super Squad*: For every **1** stack of :effect{param="buddy-badge"} consumed, additional Reality DMG dealt is increased to **100%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

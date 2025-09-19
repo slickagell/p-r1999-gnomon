@@ -98,6 +98,15 @@
   "ASSASSINATION": {
     "title": "Assassination"
   },
+  "BLOODTITHE": {
+    "title": "Bloodtithe"
+  },
+  "ADAPTIVE": {
+    "title": "Adaptive"
+  },
+  "DYNAMO": {
+    "title": "Dynamo"
+  },
   "UNKNOWN": {
     "title": "Unknown"
   }

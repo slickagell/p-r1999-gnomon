@@ -11,11 +11,10 @@ race: "AWAKENED"
 birthday: ""
 version: "2.8"
 releaseDate: "2025-09-19"
-specialties: ["UNKNOWN"]
+specialties: ["DYNAMO","SUPPORT","EXTRA_ACTION"]
 limited: 0
 mainPiece: "x"
 euphorias: 0
-isDev: true
 ---
 
 import CardInfo from "@components/CardInfo.astro";
@@ -34,23 +33,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
 <CharacterContent {...frontmatter} {...CHARACTER}>
   <Fragment slot="info-description">
-    :TODO - Add character description:
+    An awakened's work. Exhibited in the 1940s for an unknown period. Completed in the spring, on May 30th. Originally exhibited in the USA, and later moved to the Laplace Scientific Computing Center.
   </Fragment>
 
   <Fragment slot="info-medium">
-    :TODO - Add character medium description:
+    Thought Current
   </Fragment>
 
   <Fragment slot="info-afflatus">
-    :TODO - Add character afflatus description:
+    Rhythm of Wisdom [Intelligence], Decipherment
   </Fragment>
 
   <Fragment slot="info-fragrance-note">
-    :TODO - Add character fragrance description:
+    Woody Essential Oil, Metal, Fir, Calcium
   </Fragment>
 
   <Fragment slot="info-dimensions">
-    :TODO - Add character dimension description:
+    71 46/71x27 9/14x18 9/10 inches.
   </Fragment>
 
   <Fragment slot="toc">
@@ -66,48 +65,48 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="skill-1-title">
-    :TODO - Update skill-1 name:
+    Scanning Mode
   </Fragment>
 
   <Fragment slot="skill-1-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-1 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="CHANNEL" note={`17.71 hours of scanning ...`}>
+      Self channel. Enters :effect{param="structure-analysis-id-1"} status for 3 rounds. If already in this status, gains 6 stacks of :effect{param="ceremonious-ultimate-might"} and transfers up to 5 stacks of :effect{param="dynamo"} into :effect{param="pulsing-field"}.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-1 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="CHANNEL" note={`17.71 hours of scanning, a 46-page repair plan written, 385 Laplace network pages updated ...`}>
+      Self channel. Enters :effect{param="structure-analysis-id-1"} status for 3 rounds. If already in this status, gains 8 stacks of :effect{param="ceremonious-ultimate-might"} and transfers up to 5 stacks of :effect{param="dynamo"} into :effect{param="pulsing-field"}.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-1 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="CHANNEL" note={`17.71 hours of scanning, a 46-page repair plan written, 385 Laplace network pages updated—all to fix one simple, dumb glitch.`}>
+      Self channel. Enters :effect{param="structure-analysis-id-1"} status for 3 rounds. If already in this status, gains 10 stacks of :effect{param="ceremonious-ultimate-might"} and transfers up to 5 stacks of :effect{param="dynamo"} into :effect{param="pulsing-field"}.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="skill-2-title">
-    :TODO - Update skill-2 name:
+    Brown Noise
   </Fragment>
 
   <Fragment slot="skill-2-cards-info">
-    <CardInfo star="1" type="" note=":TODO - Add character skill-2 star-1 note:">
-      :TODO - Add character skill-1 star-1 description:
+    <CardInfo star="1" type="CHANNEL" note={`A deep, soothing rhythm.`}>
+      Self channel. Enters :effect{param="frequency-analysis-id-1"} status for 3 rounds. If already in this status, gains 6 stacks of :effect{param="ceremonious-ultimate-might"} and transfers up to 5 stacks of :effect{param="dynamo"} into :effect{param="pulsing-field"}.
     </CardInfo>
 
-    <CardInfo star="2" type="" note=":TODO - Add character skill-2 star-2 note:">
-      :TODO - Add character skill-2 star-2 description:
+    <CardInfo star="2" type="CHANNEL" note={`A deep, soothing rhythm favored by the ferrofluid in the tank.`}>
+      Self channel. Enters :effect{param="frequency-analysis-id-1"} status for 3 rounds. If already in this status, gains 8 stacks of :effect{param="ceremonious-ultimate-might"} and transfers up to 5 stacks of :effect{param="dynamo"} into :effect{param="pulsing-field"}.
     </CardInfo>
 
-    <CardInfo star="3" type="" note=":TODO - Add character skill-2 star-3 note:">
-      :TODO - Add character skill-3 star-3 description:
+    <CardInfo star="3" type="CHANNEL" note={`A deep, soothing rhythm favored by the ferrofluid in the tank—EUREKA!`}>
+      Self channel. Enters :effect{param="frequency-analysis-id-1"} status for 3 rounds. If already in this status, gains 10 stacks of :effect{param="ceremonious-ultimate-might"} and transfers up to 5 stacks of :effect{param="dynamo"} into :effect{param="pulsing-field"}.
     </CardInfo>
   </Fragment>
 
   <Fragment slot="ultimate-title">
-    :TODO - Update ultimate name:
+    Mind That Computes Infinity
   </Fragment>
 
   <Fragment slot="ultimate-card-info">
-    <CardInfo type="" note=":TODO - Add character ultimate note:">
-      :TODO - Update character ultimate description:
+    <CardInfo type="CHANNEL" note={`The ultimate truth can be found with a cosmic-scale mind like this—theoretically.`}>
+      Self channel. Enters :effect{param="hyper-analysis-id-1"} status for 1 round. Extends the duration of :effect{param="structure-analysis-id-1"}/:effect{param="frequency-analysis-id-1"} by 1 round. Gains 30 stacks of :effect{param="dynamo"} and transfers up to 30 stacks of :effect{param="dynamo"} into :effect{param="pulsing-field"}.
     </CardInfo>
   </Fragment>
 
@@ -116,19 +115,29 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="inheritance-title">
-    :TODO - Update inheritance title:
+    The First Rhythm
   </Fragment>
 
   <Fragment slot="insight-1-info">
-    :TODO - Update inheritance insight-1:
+    Gains :effect{param="amplified-surge-id-310701"}.
+
+When entering battle, gains **20** stacks of :effect{param="dynamo"}.
+
+At the start of the round, if not under a :effect{param="pulsing-field"} of any level, deploy :effect{param="pulsing-field-lv-1"}.
+
+At the end of the round, gains 5 stacks of :effect{param="dynamo"} and transfers up to **15** stacks of :effect{param="dynamo"} into the :effect{param="pulsing-field"}.
+
+At the end of the round, casts :effect{param="surge-spike-id-1"} 1 time.
+
+Ultimate does not take up the allied Incantation Draw Limit.
   </Fragment>
 
   <Fragment slot="insight-2-info">
-    :TODO - Update inheritance insight-2:
+    DMG Dealt **+8%** when entering battle.
   </Fragment>
 
   <Fragment slot="insight-3-info">
-    :TODO - Update inheritance insight-3:
+    At the end of the round, for every stack of :effect{param="dynamo"} transferred by the team within the round, Ulrich gains **1** stack of :effect{param="decryption-key"} for his :effect{param="structure-analysis-id-1"}, :effect{param="frequency-analysis-id-1"}, and :effect{param="hyper-analysis-id-1"} and **5** stacks of :effect{param="dynamo"}.
   </Fragment>
 
   <Fragment slot="portray-section-title">
@@ -136,23 +145,23 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="portray-1-info">
-    :TODO - Update portray lv-1 content:
+    *The First Rhythm*: For every stack of :effect{param="decryption-key"} in :effect{param="frequency-analysis-id-1"}, Ultimate Might is changed to **+5.5%**. For every stack of :effect{param="decryption-key"} in :effect{param="structure-analysis-id-1"}, DMG Taken Reduction is changed to **-5.5%**.
   </Fragment>
 
   <Fragment slot="portray-2-info">
-    :TODO - Update portray lv-2 content:
+    *Mind That Computes Infinity*: When :effect{param="hyper-analysis-id-1"} is cast from a completed channel, the Reality DMG dealt to all enemies is increased to **900%**.
   </Fragment>
 
   <Fragment slot="portray-3-info">
-    :TODO - Update portray lv-3 content:
+    *The First Rhythm*: If under :effect{param="pulsing-field-lv-3"}, when :effect{param="hyper-analysis-id-2"} is cast from a completed channel, the additional Reality DMG dealt based on the number of stacks of :effect{param="decryption-key"} is increased to **175%**.
   </Fragment>
 
   <Fragment slot="portray-4-info">
-    :TODO - Update portray lv-4 content:
+    *The First Rhythm*: When :effect{param="surge-spike-id-2"} is cast, the additional Reality DMG dealt based on the number of stacks of :effect{param="decryption-key"} in :effect{param="structure-analysis-id-2"}/:effect{param="frequency-analysis-id-2"} is increased to **25%**.
   </Fragment>
 
   <Fragment slot="portray-5-info">
-    :TODO - Update portray lv-5 content:
+    *Mind That Computes Infinity*: When :effect{param="hyper-analysis-id-2"} is cast from a completed channel, the Reality DMG dealt to all enemies is increased to **1050%** and the additional Reality DMG dealt based on the number of stacks of Decryption Key is increased to **175%**.
   </Fragment>
 
   <Fragment slot="resonance-section-title">

@@ -63,6 +63,14 @@ const { type, class: customClass } = Astro.props;
               alt="attr-versatile icon"
             />
           );
+        case "ADAPTIVE":
+          return (
+            <CustomImage
+              class:list={twMerge(["w-64", customClass])}
+              src="/images/card/attr-adaptive.png"
+              alt="attr-adaptive icon"
+            />
+          );
         default:
           return (
             <CustomImage

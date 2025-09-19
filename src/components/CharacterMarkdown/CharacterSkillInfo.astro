@@ -3,7 +3,7 @@ import CharacterImg from "@components/CharacterMarkdown/CharacterImg.astro";
 import CustomImage from "@components/CustomImage.astro";
 
 interface Props {
-  variant: "skill-1" | "skill-2" | "ultimate" | "external";
+  variant: "skill-1" | "skill-2" | "ultimate" | "external" | "external-full";
   customImgSkillId?: string;
   gameId: string;
   hasReinforced?: boolean;
@@ -23,7 +23,9 @@ const { variant, gameId, hasReinforced, customImgSkillId } = Astro.props;
 >
   <div class="basis-full lg:basis-auto shrink-0">
     {
-      customImgSkillId || variant === "external" ? (
+      customImgSkillId ||
+      variant === "external" ||
+      variant === "external-full" ? (
         <CustomImage
           class="w-48"
           src={`/images/skill/${customImgSkillId}.png`}
@@ -69,7 +71,12 @@ const { variant, gameId, hasReinforced, customImgSkillId } = Astro.props;
       <div
         class:list={[
           "flex gap-5 flex-col items-center md:items-stretch flex-wrap",
-          { "md:flex-row": variant === "skill-1" || variant === "skill-2" },
+          {
+            "md:flex-row":
+              variant === "skill-1" ||
+              variant === "skill-2" ||
+              variant === "external-full",
+          },
           { "xl:flex-row": variant === "ultimate" || variant === "external" },
         ]}
       >
