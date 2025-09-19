@@ -155,23 +155,24 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
     *Gaze From the Forest*: Reality DMG increased to **500%**.
   </Fragment>
 
-  <Fragment slot="resonance-section-title">
-    ## Resonance
-  </Fragment>
-
-  <Fragment slot="euphoria-section-title">
+   <Fragment slot="euphoria-section-title">
     Euphoria
   </Fragment>
 
   <Fragment slot="euphoria-content">
+  
     <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
       <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
 
-      When entering battle and at the end of the round, gain **2** stacks of :effect{param="moss-on-stone"} for self; after an ally actively casts and attacks with an incantation, if the main target is in a :effect{param="poison"} status, gain **1** stack of :effect{param="moss-on-stone"} for self. At the start of the round, if holding **10** stacks of :effect{param="moss-on-stone"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an, additional :effect{param="petrify"} status on the main target for **1** round, and remove all :effect{param="moss-on-stone"} statuses on self at the end of the round. Attacking an enemy in the :effect{param="petrify"} status does not remove the :effect{param="petrify"} status.
+      When entering battle and at the end of the round, gain 2 stacks of :effect{param="moss-on-stone-id-1"} for self; after an ally actively casts and attacks with an incantation, if the main target is in a :effect{param="poison"} status, gain 1 stack of :effect{param="moss-on-stone-id-1"} for self.
+
+At the start of the round, if holding 10 stacks of :effect{param="moss-on-stone-id-1"}, then right before this unit actively casts and attacks with an incantation for the first time in the round, inflict an additional :effect{param="petrify"} status on the main target for 1 round, and remove all :effect{param="moss-on-stone-id-1"} statuses on self at the end of the round.
+
+Attacking an enemy in the :effect{param="petrify"} status does not remove the :effect{param="petrify"} status.
 
       <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
 
-      *\[White Blankie]*: At incantation rank **1/2/3**, the Reality DMG bonus from each additional instance :effect{param="poison"} is increased to **80%/120%/200%**, and the :effect{param="petrify"} status is regarded as **2** additional instances of :effect{param="poison"}.
+      *White Blankie*: At incantation rank 1/2/3, the Reality DMG bonus from each additional instance :effect{param="poison"} is increased to **80%**/**120%**/**200%**; and the :effect{param="petrify"} status is regarded as 2 additional instances of :effect{param="poison"}.
 
       <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
 
@@ -181,6 +182,29 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
       When actively attacking, if the main target is in the :effect{param="petrify"} status, the attack is always a critical hit.
     </div>
+    
+    <div x-show={`active==='${CHARACTER.euphorias[1].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[1].materials[1]} stats={CHARACTER.euphorias[1].stats[1]} />
+
+      When entering battle and at the start of every 3 rounds (Round 1, 3, 6, 9 ...), inflict :effect{param="mycelium-mayhem-id-1"} on all enemies for 3 rounds.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[1].materials[2]} stats={CHARACTER.euphorias[1].stats[2]} />
+
+      *Gaze From the Forest*: After hitting the target, immediately resolve :effect{param="poison"} effects on all enemies.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[1].materials[3]} stats={CHARACTER.euphorias[1].stats[3]} />
+
+      When *White Blankie* or *Good Friends* lands a hit, inflict 2 instances of :effect{param="poison"} on the target hit for 2 rounds: at the end of the round, take (the user's ATK x**30%**) Genesis DMG. At the end of the round, if the enemy with the most :effect{param="poison"} instances has at least 5 instances of :effect{param="poison"}, cast a rank 1 *White Blankie* on the enemy with the highest HP percentage and gain Moxie +1.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[1].materials[4]} stats={CHARACTER.euphorias[1].stats[4]} />
+
+      :effect{param="mycelium-mayhem-id-1"}'s effect: Poison DMG Taken **+10%**. Each time :effect{param="poison"} is resolved on the holder, the user inflicts 1 stack of :effect{param="fungal-culture"} on the holder for 3 rounds. When the target is inflicted with :effect{param="mycelium-mayhem-id-1"}, for every stack of :effect{param="fungal-culture"} the target has, inflict 1 instance of :effect{param="poison"} on the target for 2 rounds, deal (the user's ATK x**30%**) Genesis DMG at the end of the round, then remove :effect{param="fungal-culture"} from the target.
+    </div>
+    
+  </Fragment>
+
+  <Fragment slot="resonance-section-title">
+    ## Resonance
   </Fragment>
 
   <Fragment slot="resonance-board">

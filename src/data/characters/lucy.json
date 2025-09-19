@@ -26,6 +26,87 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "gameId": "308601",
+      "code": "THE_DAWN_WAITS_AT_THE_END_OF_THE_STAIRS",
+      "name": "The Dawn Waits at the End of the Stairs",
+      "materials": {
+        "0": [
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "rheingold", "require": 3 }
+        ],
+        "1": [
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "fruit-of-good-and-evil", "require": 1 },
+          { "param": "platinum-ouija", "require": 1 }
+        ],
+        "2": [
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "mistilteinn", "require": 1 },
+          { "param": "glowing-mothwing", "require": 2 }
+        ],
+        "3": [
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "golden-fleece", "require": 2 },
+          { "param": "watch-core", "require": 2 }
+        ],
+        "4": [
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "serpent-scepter", "require": 2 },
+          { "param": "goldbell-spirit-bottle", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
+          "data": {
+            "HP": { "value": 160 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 10 },
+            "MENTAL_DEFENSE": { "value": 10 },
+            "ULTIMATE_MIGHT": { "value": 10, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
+          "data": {
+            "HP": { "value": 295 },
+            "ATTACK": { "value": 48 },
+            "REALITY_DEFENSE": { "value": 16 },
+            "MENTAL_DEFENSE": { "value": 21 },
+            "ULTIMATE_MIGHT": { "value": 15, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
+          "data": {
+            "HP": { "value": 430 },
+            "ATTACK": { "value": 66 },
+            "REALITY_DEFENSE": { "value": 27 },
+            "MENTAL_DEFENSE": { "value": 27 },
+            "ULTIMATE_MIGHT": { "value": 20, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
+          "data": {
+            "HP": { "value": 645 },
+            "ATTACK": { "value": 101 },
+            "REALITY_DEFENSE": { "value": 49 },
+            "MENTAL_DEFENSE": { "value": 49 },
+            "ULTIMATE_MIGHT": { "value": 20, "unit": "%" }
+          }
+        }
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

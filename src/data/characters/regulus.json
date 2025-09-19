@@ -26,6 +26,87 @@
       }
     }
   },
+  "euphorias": [
+    {
+      "gameId": "302501",
+      "code": "SHINE_BRIGHT_LIKE_REGULUS",
+      "name": "Shine Bright Like Regulus",
+      "materials": {
+        "0": [
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "fruit-of-good-and-evil", "require": 3 }
+        ],
+        "1": [
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "rheingold", "require": 1 },
+          { "param": "emerald-slate", "require": 1 }
+        ],
+        "2": [
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "fruit-of-good-and-evil", "require": 1 },
+          { "param": "golden-compass", "require": 2 }
+        ],
+        "3": [
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "mistilteinn", "require": 2 },
+          { "param": "bogeyman", "require": 2 }
+        ],
+        "4": [
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "golden-fleece", "require": 2 },
+          { "param": "wyrmling-skeleton", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
+          "data": {
+            "HP": { "value": 130 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 8 },
+            "MENTAL_DEFENSE": { "value": 17 },
+            "CRITICAL_RATE": { "value": 7.5, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
+          "data": {
+            "HP": { "value": 235 },
+            "ATTACK": { "value": 53 },
+            "REALITY_DEFENSE": { "value": 18 },
+            "MENTAL_DEFENSE": { "value": 24 },
+            "CRITICAL_RATE": { "value": 11.5, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
+          "data": {
+            "HP": { "value": 340 },
+            "ATTACK": { "value": 76 },
+            "REALITY_DEFENSE": { "value": 23 },
+            "MENTAL_DEFENSE": { "value": 36 },
+            "CRITICAL_RATE": { "value": 15.5, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
+          "data": {
+            "HP": { "value": 525 },
+            "ATTACK": { "value": 111 },
+            "REALITY_DEFENSE": { "value": 47 },
+            "MENTAL_DEFENSE": { "value": 61 },
+            "CRITICAL_RATE": { "value": 15.5, "unit": "%" }
+          }
+        }
+      }
+    }
+  ],
   "insightMaterials": {
     "1": [
       {

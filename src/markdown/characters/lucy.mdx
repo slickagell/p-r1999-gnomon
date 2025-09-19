@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -197,6 +198,32 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="portray-5-info">
     *The First Push*: :effect{param="data-iteration-id-2"}'s ATK bonus is increased to **8%**, and maximum stacks is increased to **6**; and whenever an ally gains **1** Moxie or Eureka, the stacks of :effect{param="dynamo"} gained is increased to **2**.
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+  
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      At the start of the round, if not under a :effect{param="pulsing-field"} of any level, deploy :effect{param="pulsing-field-lv-1"}. After casting a reinforced incantation, transfer up to 10 stacks of :effect{param="dynamo"} into the :effect{param="pulsing-field"}.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      When entering battle, gain 20 stacks of :effect{param="dynamo"}. After reinforcing an incantation, gain 1 stack of :effect{param="data-iteration-id-1"}.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      :effect{param="amplified-surge-id-3086"} gained
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      Reinforcing an incantation doesn't consume :effect{param="dynamo"}. No longer gain :effect{param="dynamo"} when an enemy dies. When under a :effect{param="pulsing-field"}, reinforced incantations deal (:effect{param="conservation-of-energy-id-11"}'s Reality DMG x**50/70/120%**) Reality DMG based on the array's level. When under :effect{param="pulsing-field-lv-3"}, for every 1 stack of :effect{param="dynamo"} owned, reinforced incantations additionally deal **8%** Reality DMG. Reinforced incantations' DMG is affected by Ultimate Might at a ratio of **100%**, and for every 1 stack of :effect{param="data-iteration-id-1"} owned, the ratio increases by **10%**.
+    </div>
+    
   </Fragment>
 
   <Fragment slot="resonance-section-title">

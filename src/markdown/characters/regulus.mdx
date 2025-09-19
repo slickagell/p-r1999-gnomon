@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
@@ -152,6 +153,34 @@ import PIECES_LIST from "@data/resonance/common/main-t-pieces-list.json";
 
   <Fragment slot="portray-5-info">
     *Sleepless Rave*: :effect{param="riot-and-roll"} **+1** round for all allies.
+  </Fragment>
+
+  <Fragment slot="euphoria-section-title">
+    Euphoria
+  </Fragment>
+
+  <Fragment slot="euphoria-content">
+  
+    <div x-show={`active==='${CHARACTER.euphorias[0].code}'`}>
+      <CharacterEpiphanyContent epiphanyLevel={1} materials={CHARACTER.euphorias[0].materials[1]} stats={CHARACTER.euphorias[0].stats[1]} />
+
+      Gain Max Eureka +5. At the start of the round, gain Eureka +4. Whenever an ally consumes Eureka, accumulate points of :effect{param="inspiration"}. When entering battle, accumulate 3 points of :effect{param="inspiration"}. Starting from round 2, at the start of every round, generate 1 Precast Incantation :effect{param="rock-n-roll-forever"}.
+
+When entering battle, gain :effect{param="restless-heart"}. :effect{param="restless-heart"} removes after landing a non-critical attack. When :effect{param="restless-heart"} status is dispelled, the effect of gaining Moxie is replaced with gaining 1 stack of :effect{param="sturdiness"} if in :effect{param="restless-heart"} at the start of the round.
+
+      <CharacterEpiphanyContent epiphanyLevel={2} materials={CHARACTER.euphorias[0].materials[2]} stats={CHARACTER.euphorias[0].stats[2]} />
+
+      After casting *Treat for the Ears* or *Challenge for the Eyes*, consume 2 Eureka and gain :effect{param="impromptu-incantation"} attack instances +1.
+
+      <CharacterEpiphanyContent epiphanyLevel={3} materials={CHARACTER.euphorias[0].materials[3]} stats={CHARACTER.euphorias[0].stats[3]} />
+
+      *Sleepless Rave*: Grant 8 points of :effect{param="inspiration"} to :effect{param="impromptu-incantation"} for the round.
+
+      <CharacterEpiphanyContent epiphanyLevel={4} materials={CHARACTER.euphorias[0].materials[4]} stats={CHARACTER.euphorias[0].stats[4]} />
+
+      At the start of the round, inflicts the :effect{param="rockstar-spotlight"} status on the main target for 1 round after the adjacent ally in front performs their attack for the round.
+    </div>
+    
   </Fragment>
 
   <Fragment slot="resonance-section-title">

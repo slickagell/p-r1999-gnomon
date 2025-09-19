@@ -33,199 +33,154 @@
       "name": "Nature's Prayer for Spring's Embrace",
       "materials": {
         "0": [
-          {
-            "param": "key-of-thought",
-            "require": 12
-          },
-          {
-            "param": "sprout-of-fantasy",
-            "require": 40
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 200
-          },
-          {
-            "param": "golden-fleece",
-            "require": 3
-          }
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "golden-fleece", "require": 3 }
         ],
         "1": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 20
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 80
-          },
-          {
-            "param": "mistilteinn",
-            "require": 1
-          },
-          {
-            "param": "glowing-mothwing",
-            "require": 1
-          }
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "mistilteinn", "require": 1 },
+          { "param": "glowing-mothwing", "require": 1 }
         ],
         "2": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 30
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 120
-          },
-          {
-            "param": "golden-fleece",
-            "require": 1
-          },
-          {
-            "param": "watch-core",
-            "require": 2
-          }
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "golden-fleece", "require": 1 },
+          { "param": "watch-core", "require": 2 }
         ],
         "3": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 35
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 140
-          },
-          {
-            "param": "serpent-scepter",
-            "require": 2
-          },
-          {
-            "param": "goldbell-spirit-bottle",
-            "require": 2
-          }
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "serpent-scepter", "require": 2 },
+          { "param": "goldbell-spirit-bottle", "require": 2 }
         ],
         "4": [
-          {
-            "param": "sprout-of-fantasy",
-            "require": 40
-          },
-          {
-            "param": "seed-of-inspiration",
-            "require": 160
-          },
-          {
-            "param": "rheingold",
-            "require": 2
-          },
-          {
-            "param": "bogeyman",
-            "require": 2
-          }
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "rheingold", "require": 2 },
+          { "param": "bogeyman", "require": 2 }
         ]
       },
       "stats": {
         "1": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 195
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
           "data": {
-            "HP": {
-              "value": 130
-            },
-            "ATTACK": {
-              "value": 30
-            },
-            "REALITY_DEFENSE": {
-              "value": 15
-            },
-            "MENTAL_DEFENSE": {
-              "value": 10
-            },
-            "INCANTATION_MIGHT": {
-              "value": 7.5,
-              "unit": "%"
-            }
+            "HP": { "value": 130 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 15 },
+            "MENTAL_DEFENSE": { "value": 10 },
+            "INCANTATION_MIGHT": { "value": 7.5, "unit": "%" }
           }
         },
         "2": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 446
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
           "data": {
-            "HP": {
-              "value": 235
-            },
-            "ATTACK": {
-              "value": 53
-            },
-            "REALITY_DEFENSE": {
-              "value": 21
-            },
-            "MENTAL_DEFENSE": {
-              "value": 21
-            },
-            "INCANTATION_MIGHT": {
-              "value": 11.5,
-              "unit": "%"
-            }
+            "HP": { "value": 235 },
+            "ATTACK": { "value": 53 },
+            "REALITY_DEFENSE": { "value": 21 },
+            "MENTAL_DEFENSE": { "value": 21 },
+            "INCANTATION_MIGHT": { "value": 11.5, "unit": "%" }
           }
         },
         "3": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 776
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
           "data": {
-            "HP": {
-              "value": 370
-            },
-            "ATTACK": {
-              "value": 71
-            },
-            "REALITY_DEFENSE": {
-              "value": 32
-            },
-            "MENTAL_DEFENSE": {
-              "value": 27
-            },
-            "INCANTATION_MIGHT": {
-              "value": 15.5,
-              "unit": "%"
-            }
+            "HP": { "value": 370 },
+            "ATTACK": { "value": 71 },
+            "REALITY_DEFENSE": { "value": 32 },
+            "MENTAL_DEFENSE": { "value": 27 },
+            "INCANTATION_MIGHT": { "value": 15.5, "unit": "%" }
           }
         },
         "4": {
-          "materials": [
-            {
-              "param": "seed-of-inspiration",
-              "require": 1811
-            }
-          ],
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
           "data": {
-            "HP": {
-              "value": 615
-            },
-            "ATTACK": {
-              "value": 106
-            },
-            "REALITY_DEFENSE": {
-              "value": 49
-            },
-            "MENTAL_DEFENSE": {
-              "value": 49
-            },
-            "INCANTATION_MIGHT": {
-              "value": 15.5,
-              "unit": "%"
-            }
+            "HP": { "value": 615 },
+            "ATTACK": { "value": 106 },
+            "REALITY_DEFENSE": { "value": 49 },
+            "MENTAL_DEFENSE": { "value": 49 },
+            "INCANTATION_MIGHT": { "value": 15.5, "unit": "%" }
+          }
+        }
+      }
+    },
+    {
+      "gameId": "305602",
+      "code": "A_STORY_WOVEN_FROM_TWIGS",
+      "name": "A Story Woven from Twigs",
+      "materials": {
+        "0": [
+          { "param": "key-of-thought", "require": 12 },
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 200 },
+          { "param": "mistilteinn", "require": 3 }
+        ],
+        "1": [
+          { "param": "sprout-of-fantasy", "require": 20 },
+          { "param": "seed-of-inspiration", "require": 80 },
+          { "param": "mistilteinn", "require": 1 },
+          { "param": "glowing-mothwing", "require": 1 }
+        ],
+        "2": [
+          { "param": "sprout-of-fantasy", "require": 30 },
+          { "param": "seed-of-inspiration", "require": 120 },
+          { "param": "golden-fleece", "require": 1 },
+          { "param": "watch-core", "require": 2 }
+        ],
+        "3": [
+          { "param": "sprout-of-fantasy", "require": 35 },
+          { "param": "seed-of-inspiration", "require": 140 },
+          { "param": "serpent-scepter", "require": 2 },
+          { "param": "goldbell-spirit-bottle", "require": 2 }
+        ],
+        "4": [
+          { "param": "sprout-of-fantasy", "require": 40 },
+          { "param": "seed-of-inspiration", "require": 160 },
+          { "param": "rheingold", "require": 2 },
+          { "param": "bogeyman", "require": 2 }
+        ]
+      },
+      "stats": {
+        "1": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 195 }],
+          "data": {
+            "HP": { "value": 130 },
+            "ATTACK": { "value": 30 },
+            "REALITY_DEFENSE": { "value": 15 },
+            "MENTAL_DEFENSE": { "value": 10 },
+            "INCANTATION_MIGHT": { "value": 7.5, "unit": "%" }
+          }
+        },
+        "2": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 446 }],
+          "data": {
+            "HP": { "value": 235 },
+            "ATTACK": { "value": 53 },
+            "REALITY_DEFENSE": { "value": 21 },
+            "MENTAL_DEFENSE": { "value": 21 },
+            "INCANTATION_MIGHT": { "value": 11.5, "unit": "%" }
+          }
+        },
+        "3": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 776 }],
+          "data": {
+            "HP": { "value": 370 },
+            "ATTACK": { "value": 71 },
+            "REALITY_DEFENSE": { "value": 32 },
+            "MENTAL_DEFENSE": { "value": 27 },
+            "INCANTATION_MIGHT": { "value": 15.5, "unit": "%" }
+          }
+        },
+        "4": {
+          "materials": [{ "param": "seed-of-inspiration", "require": 1811 }],
+          "data": {
+            "HP": { "value": 615 },
+            "ATTACK": { "value": 106 },
+            "REALITY_DEFENSE": { "value": 49 },
+            "MENTAL_DEFENSE": { "value": 49 },
+            "INCANTATION_MIGHT": { "value": 15.5, "unit": "%" }
           }
         }
       }
