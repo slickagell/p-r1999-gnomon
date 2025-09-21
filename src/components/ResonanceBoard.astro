@@ -64,7 +64,7 @@ const patternPiecesMaterials = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
         materials?: RequireMaterialType[];
       },
     ],
-    patternPiece
+    patternPiece,
   ) => {
     if (patternPiece[0].includes(mainPieceCode)) {
       return [
@@ -80,7 +80,7 @@ const patternPiecesMaterials = Object.entries(RESONANCE_PATTERN_PIECES).reduce(
     {
       id: `RPP_${mainPieceCode}_PLACIDITY`,
     },
-  ]
+  ],
 );
 
 const patternOptions = patternPiecesMaterials.map((ele) => {
@@ -632,7 +632,7 @@ const patternMaterialsList = patternPiecesMaterials.map((ele) => {
             ...this.baseStats[statKey],
             ...stats,
           };
-        }
+        },
       );
     },
   }));

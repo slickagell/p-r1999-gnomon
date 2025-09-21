@@ -70,12 +70,12 @@ if (
   if (presetWidth && imgOriginWidth > presetWidth) {
     imgWidth = presetWidth;
     imgHeight = parseInt(
-      (imgOriginHeight * (imgWidth / imgOriginWidth)).toFixed(2)
+      (imgOriginHeight * (imgWidth / imgOriginWidth)).toFixed(2),
     );
   } else if (presetHeight && imgOriginHeight > presetHeight) {
     imgHeight = presetHeight;
     imgWidth = parseInt(
-      (imgOriginWidth * (imgHeight / imgOriginHeight)).toFixed(2)
+      (imgOriginWidth * (imgHeight / imgOriginHeight)).toFixed(2),
     );
   } else {
     imgWidth = imgOriginWidth;

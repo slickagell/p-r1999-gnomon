@@ -69,6 +69,11 @@ export default {
       fontFamily: {
         sans: ['"Noto Sans"', ...defaultTheme.fontFamily.sans],
       },
+      backgroundImage: {
+        "card-border": "url('/images/card/card-border.png')",
+        "unique-card-border": "url('/images/card/unique-card-border.png')",
+        "unique-card-text": "url('/images/card/unique-card-text.png')",
+      },
     },
   },
   daisyui: {

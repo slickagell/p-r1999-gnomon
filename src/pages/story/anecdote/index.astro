@@ -7,7 +7,7 @@ const anecdoteEntries = await getCollection(
   "anecdoteStory",
   ({ id: entryId }) => {
     return !entryId.includes("/");
-  }
+  },
 );
 ---
 

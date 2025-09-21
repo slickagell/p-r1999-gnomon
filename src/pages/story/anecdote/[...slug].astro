@@ -23,7 +23,7 @@ const anecdoteEntries = await getCollection(
   "anecdoteStory",
   ({ id: entryId }) => {
     return entryId.includes(id + "/");
-  }
+  },
 );
 
 const sortedAnecdoteEntries = anecdoteEntries.sort((a, b) => {

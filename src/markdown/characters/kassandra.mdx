@@ -22,6 +22,7 @@ import CharacterAbilityMap from '@components/CharacterMarkdown/CharacterAbilityM
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -218,6 +219,24 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPiecesMaterials} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon param="an-epic-s-end" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon param="blasphemer-of-night" />
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">

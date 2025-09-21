@@ -99,7 +99,7 @@ const sortCharacters = (characters) => {
                           id={character.id}
                           customClass={twMerge(
                             "h-full my-0 p-2 md:p-4 border-b border-r border-base-content/25",
-                            character.skills ? "items-start" : "items-center"
+                            character.skills ? "items-start" : "items-center",
                           )}
                         >
                           <Fragment slot="note">
@@ -114,7 +114,7 @@ const sortCharacters = (characters) => {
                                     class="text-sm italic"
                                     set:html={skill.note.replaceAll(
                                       /\[([^\]]+)\]/g,
-                                      `<i class="text-effect">[$1]</i>`
+                                      `<i class="text-effect">[$1]</i>`,
                                     )}
                                   />
                                 )}
@@ -150,7 +150,7 @@ const sortCharacters = (characters) => {
                                   "h-full my-0 p-2 md:p-4 border-b border-r border-base-content/25",
                                   character.skills
                                     ? "items-start"
-                                    : "items-center"
+                                    : "items-center",
                                 )}
                               >
                                 <Fragment slot="note">
@@ -169,7 +169,7 @@ const sortCharacters = (characters) => {
                                           class="text-sm italic"
                                           set:html={skill.note.replaceAll(
                                             /\[([^\]]+)\]/g,
-                                            `<i class="text-effect">[$1]</i>`
+                                            `<i class="text-effect">[$1]</i>`,
                                           )}
                                         />
                                       )}
@@ -178,7 +178,7 @@ const sortCharacters = (characters) => {
                                 </Fragment>
                               </CharacterHeadIcon>
                             );
-                          }
+                          },
                         )}
                       </div>
                     )}

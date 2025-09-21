@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterSkillInfo from '@components/CharacterMarkdown/CharacterSkillInfo.astro';
 import CharacterHeadIcon from '@components/CharacterMarkdown/CharacterHeadIcon.astro';
 import CharacterImg from '@components/CharacterMarkdown/CharacterImg.astro';
 import CharacterSkillTooltip from '@components/CharacterMarkdown/CharacterSkillTooltip.astro';
@@ -116,17 +117,17 @@ import PIECES_LIST from "@data/resonance/common/main-z-pieces-list.json";
   </Fragment>
 
   <Fragment slot="extra-cards">
-    <p class="subtitle">Grave Digger</p>
+    <CharacterSkillInfo variant="external" gameId={frontmatter.gameId} customImgSkillId={`${frontmatter.gameId}0141`}>
+      <Fragment slot="skill-title">
+        Grave Digger
+      </Fragment>
 
-    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
-      <div class="basis-full lg:basis-auto shrink-0">
-        <CustomImage class="w-48" src={`/images/skill/${frontmatter.gameId}0141.png`} alt="grave-digger" />
-      </div>
-
-      <CardInfo type="ATTACK" note="">
-        1-target attack. At rank **1/2/3**, deals **100%/150%/300%** Reality DMG. At rank 2 and higher, gain Moxie +1 for self. At rank 3, this attack is always a critical hit.
-      </CardInfo>
-    </div>
+      <Fragment slot="skill-card-info">
+        <CardInfo type="ATTACK" note="">
+          1-target attack. At rank **1/2/3**, deals **100%/150%/300%** Reality DMG. At rank 2 and higher, gain Moxie +1 for self. At rank 3, this attack is always a critical hit.
+        </CardInfo>
+      </Fragment>
+    </CharacterSkillInfo>
   </Fragment>
 
   <Fragment slot="inheritance-section-title">

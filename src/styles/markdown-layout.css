@@ -87,7 +87,7 @@ ul {
 }
 
 .subtitle-slot > div {
-  @apply text-primary-content text-2xl font-bold my-4 text-center md:text-left;
+  @apply text-primary-content text-2xl font-bold mt-6 md:mt-8 mb-4 text-center md:text-left;
 }
 
 .tabs-slot {

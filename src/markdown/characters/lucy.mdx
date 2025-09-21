@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterSkillInfo from '@components/CharacterMarkdown/CharacterSkillInfo.astro';
 import CharacterEpiphanyContent from '@components/CharacterMarkdown/CharacterEpiphanyContent.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
@@ -141,17 +142,17 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="extra-cards">
-    <p class="subtitle">Conservation of Energy</p>
+    <CharacterSkillInfo variant="external" gameId={frontmatter.gameId} customImgSkillId={`760001`}>
+      <Fragment slot="skill-title">
+        Conservation of Energy
+      </Fragment>
 
-    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
-      <div class="basis-full lg:basis-auto shrink-0">
-        <CustomImage class="w-48" src={`/images/skill/760001.png`} alt="conservation-of-energy" />
-      </div>
-
-      <CardInfo type="ATTACK" note="">
-        Mass attack. Deals **100%** Reality DMG to all enemies. Consume 10 stacks of :effect{param="dynamo"} to grant Penetration Rate **+50%** to this attack. If reinforced, this attack deals an **50%** additional Reality DMG to targets below **50%** HP, ignores Dodge and does not trigger Reflect or Riposte.
-      </CardInfo>
-    </div>
+      <Fragment slot="skill-card-info">
+        <CardInfo type="ATTACK" note="">
+          Mass attack. Deals **100%** Reality DMG to all enemies. Consume 10 stacks of :effect{param="dynamo"} to grant Penetration Rate **+50%** to this attack. If reinforced, this attack deals an **50%** additional Reality DMG to targets below **50%** HP, ignores Dodge and does not trigger Reflect or Riposte.
+        </CardInfo>
+      </Fragment>
+    </CharacterSkillInfo>
   </Fragment>
 
   <Fragment slot="inheritance-section-title">

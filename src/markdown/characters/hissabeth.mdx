@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterSkillInfo from '@components/CharacterMarkdown/CharacterSkillInfo.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
@@ -114,17 +115,17 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
   </Fragment>
 
   <Fragment slot="extra-cards">
-    <p class="subtitle">Hiss!</p>
+    <CharacterSkillInfo variant="external" gameId={frontmatter.gameId} customImgSkillId={`${frontmatter.gameId}0141`}>
+      <Fragment slot="skill-title">
+        Hiss!
+      </Fragment>
 
-    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
-      <div class="basis-full lg:basis-auto shrink-0">
-        <CustomImage class="w-48" src={`/images/skill/${frontmatter.gameId}0141.png`} alt="" />
-      </div>
-
-      <CardInfo type="VERSATILE" note="">
-        1-target attack. Deals **50%**/**100%**/**250%** Mental DMG; inflicts 1/2/4 stacks of :effect{param="serpentine-scales"} and gains 0/1/2 Moxie. This effect counts as an ultimate and does not consume AP.
-      </CardInfo>
-    </div>
+      <Fragment slot="skill-card-info">
+        <CardInfo type="VERSATILE" note="">
+          1-target attack. Deals **50%**/**100%**/**250%** Mental DMG; inflicts 1/2/4 stacks of :effect{param="serpentine-scales"} and gains 0/1/2 Moxie. This effect counts as an ultimate and does not consume AP.
+        </CardInfo>
+      </Fragment>
+    </CharacterSkillInfo>
   </Fragment>
 
   <Fragment slot="inheritance-section-title">

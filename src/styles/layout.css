@@ -203,3 +203,11 @@ img[x-zoomable]:hover {
   max-height: 100%;
   -webkit-overflow-scrolling: auto;
 }
+
+.skill-card-border {
+  @apply inline-block mt-5 relative z-0 before:-z-10 before:absolute before:-translate-y-2 before:-inset-3 before:bg-card-border before:bg-center before:bg-no-repeat before:bg-contain;
+}
+
+.ultimate-card-border {
+  @apply inline-block mt-10 mb-8 mx-10 relative z-0 before:absolute before:-translate-y-2 before:-inset-8 before:bg-unique-card-border before:bg-center before:bg-no-repeat before:bg-contain after:absolute after:bg-unique-card-text after:-bottom-12 after:left-1/2 after:-translate-x-1/2 after:w-64 after:h-16 after:bg-no-repeat after:bg-contain [&>img]:rounded-t-[15rem];
+}

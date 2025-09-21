@@ -160,7 +160,7 @@ const { id, slides } = Astro.props;
     setActiveItem(event) {
       // Figures out which thumbnail should be active based on the scroll position of the slider items wrapper
       this.activeItem = Math.round(
-        event.target.scrollLeft / (event.target.scrollWidth / this.numItems)
+        event.target.scrollLeft / (event.target.scrollWidth / this.numItems),
       );
     },
 

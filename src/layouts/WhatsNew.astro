@@ -77,13 +77,13 @@ const { Content } = await render(whatsNewEntry);
         if (
           !!dayjs(this.lastModifiedWhatsNew).diff(
             dayjs(this.$store.whatsNew.lastModified),
-            "day"
+            "day",
           )
         ) {
           this.$refs.whatsNewModal.showModal();
           this.$refs.whatsNewModal.addEventListener("close", () => {
             this.lastModifiedWhatsNew = dayjs(
-              this.$store.whatsNew.lastModified
+              this.$store.whatsNew.lastModified,
             ).format("YYYY-MM-DD");
           });
         }

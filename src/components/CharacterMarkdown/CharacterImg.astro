@@ -112,31 +112,37 @@ const {
         case "skill-1": {
           if (!gameId) return null;
           return (
-            <CustomImage
-              class={twMerge("w-48", customClass)}
-              src={`/images/skill/${gameId}0111.png`}
-              alt="skill-1"
-            />
+            <div class="skill-card-border">
+              <CustomImage
+                class={twMerge(" w-48", customClass)}
+                src={`/images/skill/${gameId}0111.png`}
+                alt="skill-1"
+              />
+            </div>
           );
         }
         case "skill-2": {
           if (!gameId) return null;
           return (
-            <CustomImage
-              class={twMerge("w-48", customClass)}
-              src={`/images/skill/${gameId}0121.png`}
-              alt="skill-2"
-            />
+            <div class="skill-card-border">
+              <CustomImage
+                class={twMerge("w-48", customClass)}
+                src={`/images/skill/${gameId}0121.png`}
+                alt="skill-2"
+              />
+            </div>
           );
         }
         case "ultimate": {
           if (!gameId) return null;
           return (
-            <CustomImage
-              class={twMerge("w-48", customClass)}
-              src={`/images/skill/${gameId}0131.png`}
-              alt="ultimate"
-            />
+            <div class="ultimate-card-border">
+              <CustomImage
+                class={twMerge("w-48", customClass)}
+                src={`/images/skill/${gameId}0131.png`}
+                alt="ultimate"
+              />
+            </div>
           );
         }
         case "headicon": {

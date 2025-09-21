@@ -142,7 +142,7 @@ const weapons = Array(primaryWeapons.length + secondaryWeapons.length)
       }
       this.combination = `${this.selectedPrimary}|${this.selectedSecondary}`;
       this.primaryName = this.$store.weapons.primaryWeapons.find(
-        (w) => w.code === this.selectedPrimary
+        (w) => w.code === this.selectedPrimary,
       )?.name;
     },
 
@@ -154,7 +154,7 @@ const weapons = Array(primaryWeapons.length + secondaryWeapons.length)
       }
       this.combination = `${this.selectedPrimary}|${this.selectedSecondary}`;
       this.secondaryName = this.$store.weapons.secondaryWeapons.find(
-        (w) => w.code === this.selectedSecondary
+        (w) => w.code === this.selectedSecondary,
       )?.name;
     },
   }));

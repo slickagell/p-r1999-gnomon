@@ -19,6 +19,7 @@ euphorias: 0
 
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
+import CharacterSkillInfo from '@components/CharacterMarkdown/CharacterSkillInfo.astro';
 import CustomImage from "@components/CustomImage.astro";
 import Material from "@components/Material.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
@@ -112,17 +113,17 @@ import PIECES_LIST from "@data/resonance/common/main-u-pieces-list.json";
   </Fragment>
 
   <Fragment slot="extra-cards">
-    <p class="subtitle">Counting Sheep</p>
+    <CharacterSkillInfo variant="external" gameId={frontmatter.gameId} customImgSkillId={`${frontmatter.gameId}0141`}>
+      <Fragment slot="skill-title">
+        Counting Sheep
+      </Fragment>
 
-    <div class="flex gap-5 flex-col xl:flex-row items-center md:items-stretch flex-wrap">
-      <div class="basis-full lg:basis-auto shrink-0">
-        <CustomImage class="w-48" src={`/images/skill/30990141.png`} alt="counting-sheep" />
-      </div>
-
-      <CardInfo type="VERSATILE" note="">
-        After incantations are cast and queued, grant rank +1 to the incantation ahead of this incantation, and rank -1 to the incantation behind of this incantation.
-      </CardInfo>
-    </div>
+      <Fragment slot="skill-card-info">
+        <CardInfo type="VERSATILE" note="">
+          After incantations are cast and queued, grant rank +1 to the incantation ahead of this incantation, and rank -1 to the incantation behind of this incantation.
+        </CardInfo>
+      </Fragment>
+    </CharacterSkillInfo>
   </Fragment>
 
   <Fragment slot="inheritance-section-title">

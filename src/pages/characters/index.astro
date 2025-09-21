@@ -34,7 +34,7 @@ const versions = [
   ...new Set(
     characterEntries.map((entry) => {
       if (entry.data.version) return entry.data.version;
-    })
+    }),
   ),
 ].sort((a, b) => {
   if (!a || !b) return 0;
@@ -717,7 +717,7 @@ const characters = characterEntries.map((entry) => {
           acc[characterEntry.id] = true;
           return acc;
         },
-        {}
+        {},
       );
       this.numberOfCharacters = Object.keys(this.isShowCharacter).length;
     },
@@ -749,7 +749,7 @@ const characters = characterEntries.map((entry) => {
         this.euphoriaFilter.includes(euphorias + "") &&
         this.versionFilter.includes(version) &&
         this.specialtyFilter.some((specialty) =>
-          specialties.includes(specialty)
+          specialties.includes(specialty),
         );
 
       return !this.searchText
@@ -766,7 +766,7 @@ const characters = characterEntries.map((entry) => {
         this.isShowCharacter[character.id] = isShow;
       }
       this.numberOfCharacters = Object.keys(this.isShowCharacter).filter(
-        (id) => this.isShowCharacter[id]
+        (id) => this.isShowCharacter[id],
       ).length;
     },
 
@@ -836,7 +836,7 @@ const characters = characterEntries.map((entry) => {
     toggleSpecialty(specialty: string) {
       if (this.specialtyFilter.includes(specialty)) {
         this.specialtyFilter = this.specialtyFilter.filter(
-          (v) => v !== specialty
+          (v) => v !== specialty,
         );
       } else {
         this.specialtyFilter.push(specialty);

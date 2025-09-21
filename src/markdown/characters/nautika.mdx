@@ -23,6 +23,7 @@ import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import CharacterSkillInfo from '@components/CharacterMarkdown/CharacterSkillInfo.astro';
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -71,12 +72,12 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
     <div x-data={`{ currentTransformId: '${frontmatter.transformInfos[1].gameId}' }`}>
       <div class="flex gap-4">
         {
-                  frontmatter.transformInfos.map((transformInfo) => (
-                    <label class="label cursor-pointer gap-2">
-                      <input type="radio" class="radio radio-primary" value={transformInfo.gameId} x-model="currentTransformId"/>
-                      <span class="label-text">{transformInfo.label}</span> 
-                    </label>
-                ))}
+          frontmatter.transformInfos.map((transformInfo) => (
+            <label class="label cursor-pointer gap-2">
+              <input type="radio" class="radio radio-primary" value={transformInfo.gameId} x-model="currentTransformId"/>
+              <span class="label-text">{transformInfo.label}</span> 
+            </label>
+        ))}
       </div>
 
       <div x-cloak x-show={`currentTransformId === '${frontmatter.transformInfos[0].gameId}'`}>
@@ -202,7 +203,7 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
           </Fragment>
         </CharacterSkillInfo>
 
-        <CharacterSkillInfo variant="ultimate" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'31'}>
+        <CharacterSkillInfo variant="external-ultimate" gameId={frontmatter.gameId} customImgSkillId={frontmatter.transformInfos[1].gameId+'31'}>
           <Fragment slot="skill-title">
             Divine Yoik
           </Fragment>
@@ -273,6 +274,24 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPiecesMaterials} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon param="embrace-the-past" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon param="on-the-hand-of-time" />
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">

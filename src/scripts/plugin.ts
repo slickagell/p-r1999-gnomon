@@ -355,11 +355,11 @@ export function Zoomable(Alpine) {
     const zoomOutBtn = container.querySelector(".zoomable-zoom-out");
     const closeBtn = container.querySelector(".zoomable-close");
 
-    addButtonListeners(zoomInBtn, zoomIn),
+    (addButtonListeners(zoomInBtn, zoomIn),
       addButtonListeners(zoomOutBtn, zoomOut),
       addButtonListeners(closeBtn, closeImage),
       // Attach global event listeners
-      container.addEventListener("mousedown", startDragging);
+      container.addEventListener("mousedown", startDragging));
     window.addEventListener("mousemove", drag);
     window.addEventListener("mouseup", stopDragging);
 

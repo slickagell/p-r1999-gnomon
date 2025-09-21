@@ -20,8 +20,8 @@ euphorias: 0
 import CardInfo from "@components/CardInfo.astro";
 import CharacterContent from '@components/CharacterMarkdown/CharacterContent.astro';
 import CharacterWeapon from '@components/CharacterMarkdown/CharacterWeapon.astro';
-
 import Material from "@components/Material.astro";
+import PsychubeIcon from "@components/PsychubeMarkdown/PsychubeIcon.astro";
 import ResonanceBoard from "@components/ResonanceBoard.astro";
 import AFFLATUS_TYPE from "@data/common/character/afflatus-type.json";
 import DMG_TYPE from "@data/common/character/dmg-type.json";
@@ -262,6 +262,26 @@ import PIECES_LIST from "@data/resonance/common/main-x-pieces-list.json";
 
   <Fragment slot="resonance-board">
     <ResonanceBoard maxResonanceLevel={15} resonancePieces={PIECES_LIST} recommendedResonanceList={RESONANCE.recommended} recommendedResonancePattern={RESONANCE.patternRecommended} baseStats={CHARACTER.baseStats} resonanceMainPiece={RESONANCE.mainPiece} resonancePatternPieces={RESONANCE.patternPiecesMaterials} />
+  </Fragment>
+
+  <Fragment slot="psychube-section-title">
+    ## Psychube
+  </Fragment>
+
+  <Fragment slot="psychube-content">
+    #### Best in Slot
+
+    <div class="flex justify-center md:justify-start">
+      <PsychubeIcon param="as-the-bell-tolls" />
+    </div>
+
+    #### Other alternative
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-2 md:gap-4 items-center">
+      <PsychubeIcon param="falling-for-a-sweet-phenomenon" />
+
+      <PsychubeIcon param="outside-the-city" />
+    </div>
   </Fragment>
 
   <Fragment slot="materials-section-title">

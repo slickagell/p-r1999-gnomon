@@ -63,7 +63,7 @@ const enemyGroups = enemies.reduce(
     acc[wave].push(enemy);
     return acc;
   },
-  {} as Record<number, EnemyData[]>
+  {} as Record<number, EnemyData[]>,
 );
 ---
 
@@ -356,7 +356,7 @@ const enemyGroups = enemies.reduce(
             },
           ];
         },
-        []
+        [],
       );
     },
 
@@ -372,7 +372,7 @@ const enemyGroups = enemies.reduce(
 
       this.active = activeId;
       this.activeEnemy = this.$store.zone.enemies.find(
-        (enemy) => enemy.id === activeId
+        (enemy) => enemy.id === activeId,
       );
       this.activePhase = "1";
       this.phases = this.activeEnemy.phases
@@ -385,7 +385,7 @@ const enemyGroups = enemies.reduce(
       if (phase === "1") {
         this.activePhase = "1";
         this.activeEnemy = this.$store.zone.enemies.find(
-          (enemy) => enemy.id === this.activeEnemy.id
+          (enemy) => enemy.id === this.activeEnemy.id,
         );
         this.handleMappingStats();
         return;

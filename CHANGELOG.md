@@ -1,3 +1,9 @@
+##### 2025-09-21
+
+* Add new psychubes: Embrace the Past, A Tingle of a Thought
+* Update material cheatsheet
+* Update UI in character detail page
+
 ##### 2025-09-19
 
 * Add 2.8 characters official data:
